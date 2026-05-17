@@ -73,7 +73,7 @@ _eval_clause({'finding': 'ecog_ps', 'threshold': 2, 'comparator': '<='}, {'ecog_
 | Total `condition:` strings | 443 |
 | Prose-shaped (contain `<`, `>`, `=`, ` and `, ` or `, ALL-CAPS gene token, or `(`) | **376 (85%)** |
 | Algorithm files containing ≥1 prose condition | **120 (79%)** |
-| Audited algorithms (first 30) where step-1 is entirely prose → falls through to `default_indication` on every patient | 8 / 30 (27%) |
+| Algorithms (all 152 with a `decision_tree`) where step-1 is entirely prose → falls through to `default_indication` on every patient | **45 / 152 (30%)** |
 
 Examples of step-1-prose-only algorithms:
 
@@ -105,6 +105,9 @@ doesn't.
    strings at evaluation time and emit a one-time warning per clause.
    Authors get told their tree isn't being walked the way it reads. This
    is a small engine-only change (≤30 LOC + 1 test), shipped in this PR.
+   Scope note: the warning fires on `{condition: "..."}` clauses only.
+   Prose passed under `{finding: "..."}` (deliberate-author shape) is
+   not flagged.
 
 2. **Structured condition vocabulary.** Add a small parser or canonical
    AST for clauses like `"ECOG PS <= 2"` → `{finding: ecog, threshold: 2,
