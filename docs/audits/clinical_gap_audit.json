@@ -1,20 +1,20 @@
 {
-  "generated_at_utc": "2026-05-18T11:14:56Z",
-  "kb_root": "/home/runner/work/OpenOnco/OpenOnco/knowledge_base/hosted/content",
+  "generated_at_utc": "2026-05-18T22:25:21Z",
+  "kb_root": "C:\\Users\\805\\cancer-autoresearch\\.claude\\worktrees\\suspicious-almeida-e4fb10\\knowledge_base\\hosted\\content",
   "entity_counts": {
-    "diseases": 78,
-    "drugs": 256,
-    "regimens": 370,
-    "indications": 436,
+    "diseases": 82,
+    "drugs": 265,
+    "regimens": 376,
+    "indications": 492,
     "biomarkers": 181,
     "biomarker_actionability": 448,
     "contraindications": 12,
-    "redflags": 524,
+    "redflags": 552,
     "algorithms": 152,
-    "tests": 115,
+    "tests": 117,
     "supportive_care": 13,
     "monitoring": 8,
-    "sources": 388,
+    "sources": 395,
     "workups": 24,
     "questionnaires": 78,
     "mdt_skills": 16,
@@ -27,13 +27,13 @@
     "schema_errors": 0,
     "ref_errors": 0,
     "contract_errors": 0,
-    "contract_warnings": 190
+    "contract_warnings": 218
   },
   "gaps": [
     {
       "id": "clinical_signoff",
       "title": "Clinical sign-off",
-      "current": "15/1930 signoff-eligible entities reviewed (0.8%)",
+      "current": "15/2020 signoff-eligible entities reviewed (0.7%)",
       "target": ">=85% reviewed before public guideline-grade claims",
       "status": "blocked_on_reviewers",
       "blocker": "Cannot be fixed by code; requires qualified Clinical Co-Lead review.",
@@ -41,9 +41,9 @@
       "details": {
         "by_type": {
           "indications": {
-            "total": 436,
+            "total": 492,
             "reviewed": 15,
-            "gap": 421
+            "gap": 477
           },
           "algorithms": {
             "total": 152,
@@ -51,14 +51,14 @@
             "gap": 152
           },
           "regimens": {
-            "total": 370,
+            "total": 376,
             "reviewed": 0,
-            "gap": 370
+            "gap": 376
           },
           "redflags": {
-            "total": 524,
+            "total": 552,
             "reviewed": 0,
-            "gap": 524
+            "gap": 552
           },
           "biomarker_actionability": {
             "total": 448,
@@ -71,13 +71,13 @@
     {
       "id": "solid_2l_plus",
       "title": "Solid tumor 2L+ coverage",
-      "current": "23/42 solid diseases have a 2L+ algorithm; 24/42 have a 2L+ indication",
+      "current": "23/46 solid diseases have a 2L+ algorithm; 24/46 have a 2L+ indication",
       "target": "Every modeled solid disease has at least one advanced/relapsed-line algorithm and indication.",
       "status": "coverage_gap",
       "blocker": "Missing disease-by-disease 2L+ algorithm/indication authoring queue.",
       "next_action": "Prioritize missing high-volume solid diseases, then rare solid diseases.",
       "details": {
-        "solid_total": 42,
+        "solid_total": 46,
         "with_2l_algorithm": [
           "DIS-B-ALL",
           "DIS-BREAST",
@@ -131,6 +131,10 @@
         ],
         "missing_2l_algorithm": [
           {
+            "id": "DIS-ADRENOCORTICAL-CARCINOMA",
+            "name": "Adrenocortical carcinoma"
+          },
+          {
             "id": "DIS-ANAL-SCC",
             "name": "Anal squamous cell carcinoma (Anal SCC)"
           },
@@ -175,6 +179,10 @@
             "name": "Lymphangioleiomyomatosis"
           },
           {
+            "id": "DIS-LEIOMYOSARCOMA",
+            "name": "Leiomyosarcoma"
+          },
+          {
             "id": "DIS-MENINGIOMA",
             "name": "Meningioma"
           },
@@ -185,6 +193,14 @@
           {
             "id": "DIS-MTC",
             "name": "Medullary thyroid carcinoma"
+          },
+          {
+            "id": "DIS-OSTEOSARCOMA",
+            "name": "Osteosarcoma"
+          },
+          {
+            "id": "DIS-PHEOCHROMOCYTOMA",
+            "name": "Pheochromocytoma"
           },
           {
             "id": "DIS-PNET",
@@ -212,7 +228,7 @@
     {
       "id": "surgery_radiation_structure",
       "title": "Surgery/radiation detail",
-      "current": "structured surgery entities: no; structured radiation entities: no; 424 indications mention surgery/radiation in text",
+      "current": "structured surgery entities: no; structured radiation entities: no; 480 indications mention surgery/radiation in text",
       "target": "Dedicated modality entities for surgery and radiation with dose/fraction/intent/timing fields.",
       "status": "schema_gap",
       "blocker": "Current KB carries surgery/radiation mostly as prose inside indications.",
@@ -224,8 +240,13 @@
           "IND-ANAL-SCC-LA-1L-NIGRO-CRT",
           "IND-ATC-BRAF-V600E-DAB-TRAM",
           "IND-ATC-PACLITAXEL-CARBOPLATIN",
+          "IND-BARRETTS-ESOPHAGUS-PREVENTION-SURVEILLANCE",
           "IND-BCC-1L-SONIDEGIB",
           "IND-BCC-1L-VISMODEGIB",
+          "IND-BRCA-CARRIER-INTENSIFIED",
+          "IND-BRCA-CARRIER-SURVEILLANCE",
+          "IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE",
+          "IND-BRCA-HBOC-SUSPICION-PREVENTION-GENETIC-COUNSELING",
           "IND-BREAST-HER2-POS-EARLY-NEOADJUVANT",
           "IND-BREAST-HR-POS-1L-INAVOLISIB",
           "IND-BREAST-HR-POS-EARLY-ADJ-CDK46I",
@@ -234,6 +255,7 @@
           "IND-BREAST-TNBC-METASTATIC-1L-PEMBRO-CHEMO",
           "IND-CHONDROSARCOMA-ADVANCED-DOXORUBICIN",
           "IND-CLL-1L-ZANUBRUTINIB",
+          "IND-COWDEN-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE",
           "IND-CRC-3L-FRUQUINTINIB",
           "IND-CRC-ADJUVANT-STAGE2-HIGHRISK-FOLFOX",
           "IND-CRC-ADJUVANT-STAGE3-CAPOX",
@@ -254,6 +276,8 @@
           "IND-ESOPH-DEFINITIVE-CRT-SCC",
           "IND-ESOPH-OLIGOMET-SYSTEMIC-PLUS-LOCAL",
           "IND-ESOPH-RESECTABLE-CROSS-NEOADJUVANT",
+          "IND-FAP-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE",
+          "IND-FAP-SUSPICION-PREVENTION-GENETIC-COUNSELING",
           "IND-GASTRIC-METASTATIC-2L-RAMUCIRUMAB-PACLITAXEL",
           "IND-GASTRIC-OLIGOMET-SYSTEMIC-PLUS-LOCAL",
           "IND-GASTRIC-PERIOP-FLOT4",
@@ -264,11 +288,22 @@
           "IND-GIST-1L-IMATINIB",
           "IND-GLIOMA-LOW-GRADE-1L-RT-PCV",
           "IND-GRANULOSA-CELL-1L-CARBOPLATIN-PACLITAXEL",
+          "IND-HLRCC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE",
+          "IND-HLRCC-SUSPICION-PREVENTION-GENETIC-COUNSELING",
           "IND-HNSCC-RM-1L-PEMBRO-CHEMO",
+          "IND-IBD-CRC-PREVENTION-CHROMOENDOSCOPY",
           "IND-IFS-NTRK-LAROTRECTINIB",
           "IND-IMT-ALK-CRIZOTINIB",
+          "IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE",
+          "IND-LI-FRAUMENI-SUSPICION-PREVENTION-GENETIC-COUNSELING",
+          "IND-LYNCH-CARRIER-INTENSIFIED",
+          "IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE",
+          "IND-LYNCH-SUSPICION-PREVENTION-GENETIC-COUNSELING",
           "IND-MELANOMA-ADJUVANT-PEMBRO-STAGE-III",
           "IND-MELANOMA-METASTATIC-1L-PEMBRO-MONO",
+          "IND-MEN1-SUSPICION-PREVENTION-GENETIC-COUNSELING",
+          "IND-MEN2-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE",
+          "IND-MEN2-SUSPICION-PREVENTION-GENETIC-COUNSELING",
           "IND-MENINGIOMA-1L-RESECTION-RT",
           "IND-MESOTHELIOMA-1L-NIVO-IPI",
           "IND-MM-1L-DVRD",
@@ -281,26 +316,7 @@
           "IND-NSCLC-PERIOPERATIVE-PEMBRO",
           "IND-OVARIAN-2L-PLAT-RES-PLD-BEV",
           "IND-OVARIAN-2L-PLAT-RES-WEEKLY-PAC-BEV",
-          "IND-OVARIAN-2L-PLAT-SENS-CARBO-GEM-BEV",
-          "IND-OVARIAN-2L-PLAT-SENS-CARBO-PLD-BEV",
-          "IND-OVARIAN-3L-POST-PARPi-POST-MIRVE",
-          "IND-OVARIAN-ADVANCED-1L-CARBO-PACLI-HRD-NEG",
-          "IND-OVARIAN-MAINT-BEV",
-          "IND-PDAC-ADJUVANT-MFOLFIRINOX",
-          "IND-PDAC-BORDERLINE-RESECTABLE-NEOADJ-FOLFIRINOX",
-          "IND-PDAC-LAPC-CHEMORADIATION",
-          "IND-PDAC-METASTATIC-1L-FOLFIRINOX",
-          "IND-RCC-ADJUVANT-PEMBRO",
-          "IND-RCC-NON-CLEAR-CELL-1L-CABOZANTINIB",
-          "IND-RCC-VHL-DISEASE-BELZUTIFAN",
-          "IND-RECTAL-TNT-LONG-COURSE-PRODIGE23",
-          "IND-RECTAL-TNT-SHORT-COURSE-RAPIDO",
-          "IND-SALIVARY-PALLIATIVE-PACLITAXEL-CARBO",
-          "IND-SCLC-LS-CONSOLIDATION-DURVA",
-          "IND-SMZL-1L-RITUXIMAB",
-          "IND-STS-ADVANCED-1L-AI",
-          "IND-STS-ADVANCED-1L-DOXORUBICIN",
-          "IND-TGCT-1L-PEXIDARTINIB"
+          "IND-OVARIAN-2L-PLAT-SENS-CARBO-GEM-BEV"
         ],
         "radiation_mentions": [
           "IND-ADVSM-1L-AVAPRITINIB",
@@ -343,8 +359,14 @@
           "IND-B-ALL-3L-TISAGENLECLEUCEL",
           "IND-B-ALL-BLINATUMOMAB-MRD-OR-RR",
           "IND-B-ALL-POST-CONSOLIDATION-POMP-MAINTENANCE",
+          "IND-BARRETTS-ESOPHAGUS-PREVENTION-OBSERVATION",
+          "IND-BARRETTS-ESOPHAGUS-PREVENTION-SURVEILLANCE",
           "IND-BCC-1L-SONIDEGIB",
           "IND-BCC-1L-VISMODEGIB",
+          "IND-BRCA-CARRIER-INTENSIFIED",
+          "IND-BRCA-CARRIER-SURVEILLANCE",
+          "IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE",
+          "IND-BRCA-HBOC-SUSPICION-PREVENTION-GENETIC-COUNSELING",
           "IND-BREAST-BRCA-MET-TALAZOPARIB",
           "IND-BREAST-HER2-LOW-2L-DATO-DXD",
           "IND-BREAST-HER2-POS-3L-TUCATINIB",
@@ -375,33 +397,27 @@
           "IND-BURKITT-1L-HYPERCVAD-R",
           "IND-BURKITT-2L-RDHAP-ASCT",
           "IND-BURKITT-2L-RICE-ASCT",
-          "IND-CERVICAL-2L-TISOTUMAB-VEDOTIN",
-          "IND-CERVICAL-LOCALLY-ADVANCED-CRT",
-          "IND-CERVICAL-METASTATIC-1L-PEMBRO-CHEMO-BEV",
-          "IND-CHL-1L-A-AVD",
-          "IND-CHL-1L-ABVD",
-          "IND-CHL-1L-N-AVD",
-          "IND-CHL-2L-BRENTUXIMAB-MAINTENANCE",
-          "IND-CHL-2L-PEMBROLIZUMAB"
+          "IND-CELIAC-REFRACTORY-EATL-PREVENTION-OBSERVATION",
+          "IND-CELIAC-REFRACTORY-EATL-PREVENTION-SURVEILLANCE"
         ],
-        "mention_count": 424
+        "mention_count": 480
       }
     },
     {
       "id": "supportive_care_depth",
       "title": "Supportive-care depth",
-      "current": "135/370 regimens have mandatory supportive care (36.5%); 43 have monitoring; 327 have dose adjustments",
+      "current": "135/376 regimens have mandatory supportive care (35.9%); 43 have monitoring; 333 have dose adjustments",
       "target": "Every active regimen has supportive care, monitoring, dose-adjustment, and patient-watchpoint coverage.",
       "status": "coverage_gap",
       "blocker": "Supportive-care records exist, but regimen attachment is incomplete.",
       "next_action": "Audit high-toxicity regimens first, then fill missing regimen attachments.",
       "details": {
-        "regimens_total": 370,
+        "regimens_total": 376,
         "with_mandatory_supportive_care": 135,
         "with_premedication": 265,
         "with_monitoring": 43,
-        "with_dose_adjustments": 327,
-        "with_between_visit_watchpoints": 263,
+        "with_dose_adjustments": 333,
+        "with_between_visit_watchpoints": 269,
         "missing_mandatory_supportive_care": [
           "REG-2GEN-TKI-CML",
           "REG-5FU-LV-BEV-CKD-MODIFIED",
@@ -501,7 +517,13 @@
           "REG-GEM-NAB-PAC",
           "REG-GEMCITABINE-CISPLATIN-CHOLANGIO",
           "REG-GEMCITABINE-DOCETAXEL-STS",
+          "REG-HBV-ENTECAVIR",
+          "REG-HBV-TENOFOVIR-AF",
+          "REG-HIV-BIKTARVY",
+          "REG-HP-BISMUTH-QUADRUPLE",
           "REG-HP-MAINTENANCE",
+          "REG-HP-PPI-CLAR-AMOX",
+          "REG-HPV-GARDASIL-9",
           "REG-HU-PV-ET",
           "REG-HYPOFRACTIONATED-RT-GBM",
           "REG-IMATINIB-CML",
@@ -516,28 +538,22 @@
           "REG-LANREOTIDE-AUTOGEL-GI-NET",
           "REG-LAROTRECTINIB-IFS",
           "REG-LAROTRECTINIB-PANTUMOR",
-          "REG-LENALIDOMIDE-MDS-DEL5Q",
-          "REG-LENV-PEMBRO-RCC",
-          "REG-LENVATINIB-THYROID-RAI-REF",
-          "REG-LIFILEUCEL-TIL-MELANOMA",
-          "REG-LORLATINIB-NSCLC",
-          "REG-LURBINECTEDIN-SCLC-RR",
-          "REG-LUSPATERCEPT-MDS-LR"
+          "REG-LENALIDOMIDE-MDS-DEL5Q"
         ]
       }
     },
     {
       "id": "drug_indication_tracking",
       "title": "Drug indication and off-label tracking",
-      "current": "812 drug-disease-indication pairs inferred from regimens; 0 carry explicit labeled/off-label status",
+      "current": "820 drug-disease-indication pairs inferred from regimens; 0 carry explicit labeled/off-label status",
       "target": "Every drug-use pair has explicit regulatory-label status, NCCN/ESMO category, and source provenance.",
       "status": "schema_gap",
       "blocker": "No first-class drug_indications entity directory/schema is present.",
       "next_action": "Introduce a drug_indications entity, then backfill from existing indications/regimens.",
       "details": {
         "drug_indications_schema_present": false,
-        "inferred_drug_disease_indication_pairs": 812,
-        "pairs_with_indication_evidence_context": 812,
+        "inferred_drug_disease_indication_pairs": 820,
+        "pairs_with_indication_evidence_context": 820,
         "explicit_label_status_pairs": 0,
         "sample_pairs": [
           {

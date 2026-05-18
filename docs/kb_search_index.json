@@ -6,13 +6,13 @@
       "kind_key": "diseases",
       "title": "Acute Myeloid Leukemia",
       "url": "/diseases.html#DIS-AML",
-      "subtitle": "ICD-10: C92.0 | family: Мієлоїдна гематологія | fill 88% | verified 0% | 15 indications | 10 regimens | 16 red flags",
+      "subtitle": "ICD-10: C92.0 | family: Мієлоїдна гематологія | fill 88% | verified 0% | 17 indications | 10 regimens | 18 red flags",
       "sources": [],
       "diseases": [
         "DIS-AML"
       ],
-      "used_by_count": 41,
-      "search_text": "dis-aml acute myeloid leukemia disease мієлоїдна гематологія c92.0 fill 88 verified 0 bio 4 drug 13 indication 15 regimen 10 redflag 16 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 45,
+      "search_text": "dis-aml acute myeloid leukemia disease мієлоїдна гематологія c92.0 fill 88 verified 0 bio 4 drug 13 indication 17 regimen 10 redflag 18 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-APL",
@@ -27,6 +27,20 @@
       ],
       "used_by_count": 17,
       "search_text": "dis-apl acute promyelocytic leukemia disease мієлоїдна гематологія c92.4 fill 75 verified 0 bio 0 drug 4 indication 4 regimen 4 redflag 9 1l algorithm 2l algorithm questionnaire "
+    },
+    {
+      "id": "DIS-ADRENOCORTICAL-CARCINOMA",
+      "kind": "Disease",
+      "kind_key": "diseases",
+      "title": "Adrenocortical carcinoma",
+      "url": "/diseases.html#DIS-ADRENOCORTICAL-CARCINOMA",
+      "subtitle": "ICD-10: C74.0 | family: Солідні пухлини | fill 0% | verified 0% | 0 indications | 0 regimens | 0 red flags",
+      "sources": [],
+      "diseases": [
+        "DIS-ADRENOCORTICAL-CARCINOMA"
+      ],
+      "used_by_count": 0,
+      "search_text": "dis-adrenocortical-carcinoma adrenocortical carcinoma disease солідні пухлини c74.0 fill 0 verified 0 bio 0 drug 0 indication 0 regimen 0 redflag 0    "
     },
     {
       "id": "DIS-GRANULOSA-CELL",
@@ -48,13 +62,13 @@
       "kind_key": "diseases",
       "title": "Adult T-Cell Leukemia/Lymphoma",
       "url": "/diseases.html#DIS-ATLL",
-      "subtitle": "ICD-10: C91.5 | family: Лімфоїдна гематологія | fill 88% | verified 0% | 3 indications | 3 regimens | 7 red flags",
+      "subtitle": "ICD-10: C91.5 | family: Лімфоїдна гематологія | fill 88% | verified 0% | 5 indications | 3 regimens | 8 red flags",
       "sources": [],
       "diseases": [
         "DIS-ATLL"
       ],
-      "used_by_count": 13,
-      "search_text": "dis-atll adult t-cell leukemia/lymphoma disease лімфоїдна гематологія c91.5 fill 88 verified 0 bio 1 drug 9 indication 3 regimen 3 redflag 7 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 16,
+      "search_text": "dis-atll adult t-cell leukemia/lymphoma disease лімфоїдна гематологія c91.5 fill 88 verified 0 bio 1 drug 9 indication 5 regimen 3 redflag 8 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-MASTOCYTOSIS",
@@ -76,13 +90,13 @@
       "kind_key": "diseases",
       "title": "Anal squamous cell carcinoma (Anal SCC)",
       "url": "/diseases.html#DIS-ANAL-SCC",
-      "subtitle": "ICD-10: C21.0 | family: Солідні пухлини | fill 62% | verified 0% | 3 indications | 3 regimens | 0 red flags",
+      "subtitle": "ICD-10: C21.0 | family: Солідні пухлини | fill 75% | verified 0% | 3 indications | 3 regimens | 1 red flags",
       "sources": [],
       "diseases": [
         "DIS-ANAL-SCC"
       ],
-      "used_by_count": 6,
-      "search_text": "dis-anal-scc anal squamous cell carcinoma (anal scc) disease солідні пухлини c21.0 fill 62 verified 0 bio 0 drug 5 indication 3 regimen 3 redflag 0 1l algorithm  questionnaire "
+      "used_by_count": 7,
+      "search_text": "dis-anal-scc anal squamous cell carcinoma (anal scc) disease солідні пухлини c21.0 fill 75 verified 0 bio 0 drug 5 indication 3 regimen 3 redflag 1 1l algorithm  questionnaire "
     },
     {
       "id": "DIS-ALCL",
@@ -160,13 +174,13 @@
       "kind_key": "diseases",
       "title": "Burkitt Lymphoma",
       "url": "/diseases.html#DIS-BURKITT",
-      "subtitle": "ICD-10: C83.7 | family: Лімфоїдна гематологія | fill 88% | verified 0% | 5 indications | 5 regimens | 7 red flags",
+      "subtitle": "ICD-10: C83.7 | family: Лімфоїдна гематологія | fill 88% | verified 0% | 7 indications | 5 regimens | 8 red flags",
       "sources": [],
       "diseases": [
         "DIS-BURKITT"
       ],
-      "used_by_count": 17,
-      "search_text": "dis-burkitt burkitt lymphoma disease лімфоїдна гематологія c83.7 fill 88 verified 0 bio 3 drug 13 indication 5 regimen 5 redflag 7 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 20,
+      "search_text": "dis-burkitt burkitt lymphoma disease лімфоїдна гематологія c83.7 fill 88 verified 0 bio 3 drug 13 indication 7 regimen 5 redflag 8 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-CERVICAL",
@@ -174,13 +188,13 @@
       "kind_key": "diseases",
       "title": "Cervical carcinoma",
       "url": "/diseases.html#DIS-CERVICAL",
-      "subtitle": "ICD-10: C53 | family: Солідні пухлини | fill 88% | verified 0% | 3 indications | 3 regimens | 7 red flags",
+      "subtitle": "ICD-10: C53 | family: Солідні пухлини | fill 88% | verified 0% | 5 indications | 4 regimens | 9 red flags",
       "sources": [],
       "diseases": [
         "DIS-CERVICAL"
       ],
-      "used_by_count": 13,
-      "search_text": "dis-cervical cervical carcinoma disease солідні пухлини c53 fill 88 verified 0 bio 2 drug 6 indication 3 regimen 3 redflag 7 1l algorithm  questionnaire "
+      "used_by_count": 18,
+      "search_text": "dis-cervical cervical carcinoma disease солідні пухлини c53 fill 88 verified 0 bio 2 drug 7 indication 5 regimen 4 redflag 9 1l algorithm  questionnaire "
     },
     {
       "id": "DIS-CHOLANGIOCARCINOMA",
@@ -188,13 +202,13 @@
       "kind_key": "diseases",
       "title": "Cholangiocarcinoma",
       "url": "/diseases.html#DIS-CHOLANGIOCARCINOMA",
-      "subtitle": "ICD-10: C22.1, C24.0 | family: Солідні пухлини | fill 88% | verified 0% | 8 indications | 8 regimens | 7 red flags",
+      "subtitle": "ICD-10: C22.1, C24.0 | family: Солідні пухлини | fill 88% | verified 0% | 8 indications | 8 regimens | 8 red flags",
       "sources": [],
       "diseases": [
         "DIS-CHOLANGIOCARCINOMA"
       ],
-      "used_by_count": 23,
-      "search_text": "dis-cholangiocarcinoma cholangiocarcinoma disease солідні пухлини c22.1, c24.0 fill 88 verified 0 bio 3 drug 9 indication 8 regimen 8 redflag 7 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 24,
+      "search_text": "dis-cholangiocarcinoma cholangiocarcinoma disease солідні пухлини c22.1, c24.0 fill 88 verified 0 bio 3 drug 9 indication 8 regimen 8 redflag 8 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-CHONDROSARCOMA",
@@ -258,13 +272,13 @@
       "kind_key": "diseases",
       "title": "Colorectal carcinoma",
       "url": "/diseases.html#DIS-CRC",
-      "subtitle": "ICD-10: C18-C20 | family: Солідні пухлини | fill 88% | verified 0% | 25 indications | 15 regimens | 11 red flags",
+      "subtitle": "ICD-10: C18-C20 | family: Солідні пухлини | fill 88% | verified 0% | 35 indications | 15 regimens | 18 red flags",
       "sources": [],
       "diseases": [
         "DIS-CRC"
       ],
-      "used_by_count": 51,
-      "search_text": "dis-crc colorectal carcinoma disease солідні пухлини c18-c20 fill 88 verified 0 bio 5 drug 16 indication 25 regimen 15 redflag 11 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 68,
+      "search_text": "dis-crc colorectal carcinoma disease солідні пухлини c18-c20 fill 88 verified 0 bio 5 drug 16 indication 35 regimen 15 redflag 18 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-MELANOMA",
@@ -286,13 +300,13 @@
       "kind_key": "diseases",
       "title": "Diffuse Large B-Cell Lymphoma, Not Otherwise Specified",
       "url": "/diseases.html#DIS-DLBCL-NOS",
-      "subtitle": "ICD-10: C83.3 | family: Лімфоїдна гематологія | fill 88% | verified 0% | 12 indications | 9 regimens | 15 red flags",
+      "subtitle": "ICD-10: C83.3 | family: Лімфоїдна гематологія | fill 88% | verified 0% | 14 indications | 10 regimens | 16 red flags",
       "sources": [],
       "diseases": [
         "DIS-DLBCL-NOS"
       ],
-      "used_by_count": 36,
-      "search_text": "dis-dlbcl-nos diffuse large b-cell lymphoma, not otherwise specified disease лімфоїдна гематологія c83.3 fill 88 verified 0 bio 8 drug 14 indication 12 regimen 9 redflag 15 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 40,
+      "search_text": "dis-dlbcl-nos diffuse large b-cell lymphoma, not otherwise specified disease лімфоїдна гематологія c83.3 fill 88 verified 0 bio 8 drug 15 indication 14 regimen 10 redflag 16 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-ENDOMETRIAL",
@@ -300,13 +314,13 @@
       "kind_key": "diseases",
       "title": "Endometrial carcinoma",
       "url": "/diseases.html#DIS-ENDOMETRIAL",
-      "subtitle": "ICD-10: C54 | family: Солідні пухлини | fill 88% | verified 40% | 5 indications | 4 regimens | 8 red flags",
+      "subtitle": "ICD-10: C54 | family: Солідні пухлини | fill 88% | verified 40% | 5 indications | 4 regimens | 11 red flags",
       "sources": [],
       "diseases": [
         "DIS-ENDOMETRIAL"
       ],
-      "used_by_count": 17,
-      "search_text": "dis-endometrial endometrial carcinoma disease солідні пухлини c54 fill 88 verified 40 bio 2 drug 5 indication 5 regimen 4 redflag 8 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 20,
+      "search_text": "dis-endometrial endometrial carcinoma disease солідні пухлини c54 fill 88 verified 40 bio 2 drug 5 indication 5 regimen 4 redflag 11 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-EATL",
@@ -314,13 +328,13 @@
       "kind_key": "diseases",
       "title": "Enteropathy-Associated T-Cell Lymphoma",
       "url": "/diseases.html#DIS-EATL",
-      "subtitle": "ICD-10: C86.2 | family: Лімфоїдна гематологія | fill 75% | verified 0% | 2 indications | 2 regimens | 5 red flags",
+      "subtitle": "ICD-10: C86.2 | family: Лімфоїдна гематологія | fill 75% | verified 0% | 4 indications | 2 regimens | 6 red flags",
       "sources": [],
       "diseases": [
         "DIS-EATL"
       ],
-      "used_by_count": 9,
-      "search_text": "dis-eatl enteropathy-associated t-cell lymphoma disease лімфоїдна гематологія c86.2 fill 75 verified 0 bio 0 drug 7 indication 2 regimen 2 redflag 5 1l algorithm  questionnaire "
+      "used_by_count": 12,
+      "search_text": "dis-eatl enteropathy-associated t-cell lymphoma disease лімфоїдна гематологія c86.2 fill 75 verified 0 bio 0 drug 7 indication 4 regimen 2 redflag 6 1l algorithm  questionnaire "
     },
     {
       "id": "DIS-EPITHELIOID-SARCOMA",
@@ -342,13 +356,13 @@
       "kind_key": "diseases",
       "title": "Esophageal carcinoma",
       "url": "/diseases.html#DIS-ESOPHAGEAL",
-      "subtitle": "ICD-10: C15 | family: Солідні пухлини | fill 88% | verified 18% | 11 indications | 10 regimens | 8 red flags",
+      "subtitle": "ICD-10: C15 | family: Солідні пухлини | fill 88% | verified 15% | 13 indications | 10 regimens | 9 red flags",
       "sources": [],
       "diseases": [
         "DIS-ESOPHAGEAL"
       ],
-      "used_by_count": 29,
-      "search_text": "dis-esophageal esophageal carcinoma disease солідні пухлини c15 fill 88 verified 18 bio 3 drug 13 indication 11 regimen 10 redflag 8 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 32,
+      "search_text": "dis-esophageal esophageal carcinoma disease солідні пухлини c15 fill 88 verified 15 bio 3 drug 13 indication 13 regimen 10 redflag 9 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-ET",
@@ -398,13 +412,13 @@
       "kind_key": "diseases",
       "title": "Gastric and gastroesophageal junction adenocarcinoma",
       "url": "/diseases.html#DIS-GASTRIC",
-      "subtitle": "ICD-10: C16 | family: Солідні пухлини | fill 88% | verified 33% | 9 indications | 8 regimens | 10 red flags",
+      "subtitle": "ICD-10: C16 | family: Солідні пухлини | fill 88% | verified 27% | 11 indications | 9 regimens | 15 red flags",
       "sources": [],
       "diseases": [
         "DIS-GASTRIC"
       ],
-      "used_by_count": 27,
-      "search_text": "dis-gastric gastric and gastroesophageal junction adenocarcinoma disease солідні пухлини c16 fill 88 verified 33 bio 5 drug 14 indication 9 regimen 8 redflag 10 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 35,
+      "search_text": "dis-gastric gastric and gastroesophageal junction adenocarcinoma disease солідні пухлини c16 fill 88 verified 27 bio 5 drug 18 indication 11 regimen 9 redflag 15 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-GIST",
@@ -426,13 +440,13 @@
       "kind_key": "diseases",
       "title": "GI neuroendocrine tumor (carcinoid)",
       "url": "/diseases.html#DIS-GI-NET",
-      "subtitle": "ICD-10: C17.9 | family: Солідні пухлини | fill 88% | verified 0% | 1 indications | 1 regimens | 2 red flags",
+      "subtitle": "ICD-10: C17.9 | family: Солідні пухлини | fill 88% | verified 0% | 1 indications | 1 regimens | 3 red flags",
       "sources": [],
       "diseases": [
         "DIS-GI-NET"
       ],
-      "used_by_count": 4,
-      "search_text": "dis-gi-net gi neuroendocrine tumor (carcinoid) disease солідні пухлини c17.9 fill 88 verified 0 bio 1 drug 1 indication 1 regimen 1 redflag 2 1l algorithm  questionnaire "
+      "used_by_count": 5,
+      "search_text": "dis-gi-net gi neuroendocrine tumor (carcinoid) disease солідні пухлини c17.9 fill 88 verified 0 bio 1 drug 1 indication 1 regimen 1 redflag 3 1l algorithm  questionnaire "
     },
     {
       "id": "DIS-GBM",
@@ -440,13 +454,13 @@
       "kind_key": "diseases",
       "title": "Glioblastoma",
       "url": "/diseases.html#DIS-GBM",
-      "subtitle": "ICD-10: C71 | family: Солідні пухлини | fill 88% | verified 0% | 4 indications | 4 regimens | 5 red flags",
+      "subtitle": "ICD-10: C71 | family: Солідні пухлини | fill 88% | verified 0% | 4 indications | 4 regimens | 6 red flags",
       "sources": [],
       "diseases": [
         "DIS-GBM"
       ],
-      "used_by_count": 13,
-      "search_text": "dis-gbm glioblastoma disease солідні пухлини c71 fill 88 verified 0 bio 2 drug 2 indication 4 regimen 4 redflag 5 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 14,
+      "search_text": "dis-gbm glioblastoma disease солідні пухлини c71 fill 88 verified 0 bio 2 drug 2 indication 4 regimen 4 redflag 6 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-HCL",
@@ -468,13 +482,13 @@
       "kind_key": "diseases",
       "title": "HCV-associated Marginal Zone Lymphoma",
       "url": "/diseases.html#DIS-HCV-MZL",
-      "subtitle": "ICD-10: C88.4 | family: Лімфоїдна гематологія | fill 88% | verified 0% | 3 indications | 3 regimens | 5 red flags",
+      "subtitle": "ICD-10: C88.4 | family: Лімфоїдна гематологія | fill 88% | verified 0% | 5 indications | 3 regimens | 6 red flags",
       "sources": [],
       "diseases": [
         "DIS-HCV-MZL"
       ],
-      "used_by_count": 11,
-      "search_text": "dis-hcv-mzl hcv-associated marginal zone lymphoma disease лімфоїдна гематологія c88.4 fill 88 verified 0 bio 1 drug 3 indication 3 regimen 3 redflag 5 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 14,
+      "search_text": "dis-hcv-mzl hcv-associated marginal zone lymphoma disease лімфоїдна гематологія c88.4 fill 88 verified 0 bio 1 drug 3 indication 5 regimen 3 redflag 6 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-HNSCC",
@@ -496,13 +510,13 @@
       "kind_key": "diseases",
       "title": "Hepatocellular carcinoma",
       "url": "/diseases.html#DIS-HCC",
-      "subtitle": "ICD-10: C22.0 | family: Солідні пухлини | fill 88% | verified 0% | 6 indications | 6 regimens | 7 red flags",
+      "subtitle": "ICD-10: C22.0 | family: Солідні пухлини | fill 88% | verified 0% | 12 indications | 7 regimens | 10 red flags",
       "sources": [],
       "diseases": [
         "DIS-HCC"
       ],
-      "used_by_count": 19,
-      "search_text": "dis-hcc hepatocellular carcinoma disease солідні пухлини c22.0 fill 88 verified 0 bio 3 drug 8 indication 6 regimen 6 redflag 7 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 29,
+      "search_text": "dis-hcc hepatocellular carcinoma disease солідні пухлини c22.0 fill 88 verified 0 bio 4 drug 9 indication 12 regimen 7 redflag 10 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-HSTCL",
@@ -566,13 +580,13 @@
       "kind_key": "diseases",
       "title": "Invasive breast cancer",
       "url": "/diseases.html#DIS-BREAST",
-      "subtitle": "ICD-10: C50 | family: Солідні пухлини | fill 88% | verified 0% | 28 indications | 19 regimens | 24 red flags",
+      "subtitle": "ICD-10: C50 | family: Солідні пухлини | fill 88% | verified 0% | 36 indications | 19 regimens | 29 red flags",
       "sources": [],
       "diseases": [
         "DIS-BREAST"
       ],
-      "used_by_count": 71,
-      "search_text": "dis-breast invasive breast cancer disease солідні пухлини c50 fill 88 verified 0 bio 11 drug 26 indication 28 regimen 19 redflag 24 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 84,
+      "search_text": "dis-breast invasive breast cancer disease солідні пухлини c50 fill 88 verified 0 bio 11 drug 26 indication 36 regimen 19 redflag 29 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-JMML",
@@ -587,6 +601,20 @@
       ],
       "used_by_count": 2,
       "search_text": "dis-jmml juvenile myelomonocytic leukemia disease солідні пухлини c93.3 fill 50 verified 0 bio 0 drug 0 indication 1 regimen 1 redflag 0 1l algorithm  questionnaire "
+    },
+    {
+      "id": "DIS-LEIOMYOSARCOMA",
+      "kind": "Disease",
+      "kind_key": "diseases",
+      "title": "Leiomyosarcoma",
+      "url": "/diseases.html#DIS-LEIOMYOSARCOMA",
+      "subtitle": "ICD-10: C49, C54.2 | family: Солідні пухлини | fill 0% | verified 0% | 0 indications | 0 regimens | 0 red flags",
+      "sources": [],
+      "diseases": [
+        "DIS-LEIOMYOSARCOMA"
+      ],
+      "used_by_count": 0,
+      "search_text": "dis-leiomyosarcoma leiomyosarcoma disease солідні пухлини c49, c54.2 fill 0 verified 0 bio 0 drug 0 indication 0 regimen 0 redflag 0    "
     },
     {
       "id": "DIS-GLIOMA-LOW-GRADE",
@@ -622,13 +650,13 @@
       "kind_key": "diseases",
       "title": "Malignant mesothelioma",
       "url": "/diseases.html#DIS-MESOTHELIOMA",
-      "subtitle": "ICD-10: C45.0 | family: Солідні пухлини | fill 75% | verified 0% | 3 indications | 3 regimens | 1 red flags",
+      "subtitle": "ICD-10: C45.0 | family: Солідні пухлини | fill 75% | verified 0% | 3 indications | 3 regimens | 2 red flags",
       "sources": [],
       "diseases": [
         "DIS-MESOTHELIOMA"
       ],
-      "used_by_count": 7,
-      "search_text": "dis-mesothelioma malignant mesothelioma disease солідні пухлини c45.0 fill 75 verified 0 bio 0 drug 4 indication 3 regimen 3 redflag 1 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 8,
+      "search_text": "dis-mesothelioma malignant mesothelioma disease солідні пухлини c45.0 fill 75 verified 0 bio 0 drug 4 indication 3 regimen 3 redflag 2 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-MPNST",
@@ -664,13 +692,13 @@
       "kind_key": "diseases",
       "title": "Medullary thyroid carcinoma",
       "url": "/diseases.html#DIS-MTC",
-      "subtitle": "ICD-10: C73 | family: Солідні пухлини | fill 88% | verified 100% | 2 indications | 2 regimens | 6 red flags",
+      "subtitle": "ICD-10: C73 | family: Солідні пухлини | fill 88% | verified 50% | 4 indications | 2 regimens | 7 red flags",
       "sources": [],
       "diseases": [
         "DIS-MTC"
       ],
-      "used_by_count": 10,
-      "search_text": "dis-mtc medullary thyroid carcinoma disease солідні пухлини c73 fill 88 verified 100 bio 1 drug 2 indication 2 regimen 2 redflag 6 1l algorithm  questionnaire "
+      "used_by_count": 13,
+      "search_text": "dis-mtc medullary thyroid carcinoma disease солідні пухлини c73 fill 88 verified 50 bio 1 drug 2 indication 4 regimen 2 redflag 7 1l algorithm  questionnaire "
     },
     {
       "id": "DIS-MENINGIOMA",
@@ -720,13 +748,13 @@
       "kind_key": "diseases",
       "title": "Myelodysplastic Syndromes — Higher Risk",
       "url": "/diseases.html#DIS-MDS-HR",
-      "subtitle": "ICD-10: D46.2 | family: Мієлоїдна гематологія | fill 75% | verified 0% | 3 indications | 3 regimens | 9 red flags",
+      "subtitle": "ICD-10: D46.2 | family: Мієлоїдна гематологія | fill 75% | verified 0% | 3 indications | 3 regimens | 10 red flags",
       "sources": [],
       "diseases": [
         "DIS-MDS-HR"
       ],
-      "used_by_count": 15,
-      "search_text": "dis-mds-hr myelodysplastic syndromes — higher risk disease мієлоїдна гематологія d46.2 fill 75 verified 0 bio 0 drug 2 indication 3 regimen 3 redflag 9 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 16,
+      "search_text": "dis-mds-hr myelodysplastic syndromes — higher risk disease мієлоїдна гематологія d46.2 fill 75 verified 0 bio 0 drug 2 indication 3 regimen 3 redflag 10 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-MDS-LR",
@@ -734,13 +762,13 @@
       "kind_key": "diseases",
       "title": "Myelodysplastic Syndromes — Lower Risk",
       "url": "/diseases.html#DIS-MDS-LR",
-      "subtitle": "ICD-10: D46.9 | family: Мієлоїдна гематологія | fill 75% | verified 0% | 4 indications | 4 regimens | 8 red flags",
+      "subtitle": "ICD-10: D46.9 | family: Мієлоїдна гематологія | fill 75% | verified 0% | 4 indications | 4 regimens | 9 red flags",
       "sources": [],
       "diseases": [
         "DIS-MDS-LR"
       ],
-      "used_by_count": 16,
-      "search_text": "dis-mds-lr myelodysplastic syndromes — lower risk disease мієлоїдна гематологія d46.9 fill 75 verified 0 bio 0 drug 4 indication 4 regimen 4 redflag 8 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 17,
+      "search_text": "dis-mds-lr myelodysplastic syndromes — lower risk disease мієлоїдна гематологія d46.9 fill 75 verified 0 bio 0 drug 4 indication 4 regimen 4 redflag 9 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-NODAL-MZL",
@@ -776,13 +804,27 @@
       "kind_key": "diseases",
       "title": "Non-small cell lung cancer",
       "url": "/diseases.html#DIS-NSCLC",
-      "subtitle": "ICD-10: C34 | family: Солідні пухлини | fill 88% | verified 0% | 45 indications | 28 regimens | 27 red flags",
+      "subtitle": "ICD-10: C34 | family: Солідні пухлини | fill 88% | verified 0% | 49 indications | 28 regimens | 29 red flags",
       "sources": [],
       "diseases": [
         "DIS-NSCLC"
       ],
-      "used_by_count": 100,
-      "search_text": "dis-nsclc non-small cell lung cancer disease солідні пухлини c34 fill 88 verified 0 bio 19 drug 31 indication 45 regimen 28 redflag 27 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 106,
+      "search_text": "dis-nsclc non-small cell lung cancer disease солідні пухлини c34 fill 88 verified 0 bio 19 drug 31 indication 49 regimen 28 redflag 29 1l algorithm 2l algorithm questionnaire "
+    },
+    {
+      "id": "DIS-OSTEOSARCOMA",
+      "kind": "Disease",
+      "kind_key": "diseases",
+      "title": "Osteosarcoma",
+      "url": "/diseases.html#DIS-OSTEOSARCOMA",
+      "subtitle": "ICD-10: C40, C41 | family: Солідні пухлини | fill 0% | verified 0% | 0 indications | 0 regimens | 0 red flags",
+      "sources": [],
+      "diseases": [
+        "DIS-OSTEOSARCOMA"
+      ],
+      "used_by_count": 0,
+      "search_text": "dis-osteosarcoma osteosarcoma disease солідні пухлини c40, c41 fill 0 verified 0 bio 0 drug 0 indication 0 regimen 0 redflag 0    "
     },
     {
       "id": "DIS-OVARIAN",
@@ -790,13 +832,13 @@
       "kind_key": "diseases",
       "title": "Ovarian carcinoma",
       "url": "/diseases.html#DIS-OVARIAN",
-      "subtitle": "ICD-10: C56 | family: Солідні пухлини | fill 88% | verified 0% | 15 indications | 11 regimens | 13 red flags",
+      "subtitle": "ICD-10: C56 | family: Солідні пухлини | fill 88% | verified 0% | 15 indications | 11 regimens | 19 red flags",
       "sources": [],
       "diseases": [
         "DIS-OVARIAN"
       ],
-      "used_by_count": 39,
-      "search_text": "dis-ovarian ovarian carcinoma disease солідні пухлини c56 fill 88 verified 0 bio 4 drug 11 indication 15 regimen 11 redflag 13 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 45,
+      "search_text": "dis-ovarian ovarian carcinoma disease солідні пухлини c56 fill 88 verified 0 bio 4 drug 11 indication 15 regimen 11 redflag 19 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-PDAC",
@@ -804,13 +846,13 @@
       "kind_key": "diseases",
       "title": "Pancreatic ductal adenocarcinoma",
       "url": "/diseases.html#DIS-PDAC",
-      "subtitle": "ICD-10: C25 | family: Солідні пухлини | fill 88% | verified 0% | 8 indications | 5 regimens | 10 red flags",
+      "subtitle": "ICD-10: C25 | family: Солідні пухлини | fill 88% | verified 0% | 8 indications | 5 regimens | 17 red flags",
       "sources": [],
       "diseases": [
         "DIS-PDAC"
       ],
-      "used_by_count": 23,
-      "search_text": "dis-pdac pancreatic ductal adenocarcinoma disease солідні пухлини c25 fill 88 verified 0 bio 1 drug 9 indication 8 regimen 5 redflag 10 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 30,
+      "search_text": "dis-pdac pancreatic ductal adenocarcinoma disease солідні пухлини c25 fill 88 verified 0 bio 1 drug 9 indication 8 regimen 5 redflag 17 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-PNET",
@@ -818,13 +860,13 @@
       "kind_key": "diseases",
       "title": "Pancreatic neuroendocrine tumor",
       "url": "/diseases.html#DIS-PNET",
-      "subtitle": "ICD-10: C25.4 | family: Солідні пухлини | fill 88% | verified 0% | 1 indications | 1 regimens | 2 red flags",
+      "subtitle": "ICD-10: C25.4 | family: Солідні пухлини | fill 88% | verified 0% | 3 indications | 1 regimens | 3 red flags",
       "sources": [],
       "diseases": [
         "DIS-PNET"
       ],
-      "used_by_count": 4,
-      "search_text": "dis-pnet pancreatic neuroendocrine tumor disease солідні пухлини c25.4 fill 88 verified 0 bio 1 drug 1 indication 1 regimen 1 redflag 2 1l algorithm  questionnaire "
+      "used_by_count": 7,
+      "search_text": "dis-pnet pancreatic neuroendocrine tumor disease солідні пухлини c25.4 fill 88 verified 0 bio 1 drug 1 indication 3 regimen 1 redflag 3 1l algorithm  questionnaire "
     },
     {
       "id": "DIS-THYROID-PAPILLARY",
@@ -832,13 +874,13 @@
       "kind_key": "diseases",
       "title": "Papillary thyroid carcinoma",
       "url": "/diseases.html#DIS-THYROID-PAPILLARY",
-      "subtitle": "ICD-10: C73 | family: Солідні пухлини | fill 75% | verified 0% | 1 indications | 1 regimens | 5 red flags",
+      "subtitle": "ICD-10: C73 | family: Солідні пухлини | fill 75% | verified 0% | 1 indications | 1 regimens | 6 red flags",
       "sources": [],
       "diseases": [
         "DIS-THYROID-PAPILLARY"
       ],
-      "used_by_count": 7,
-      "search_text": "dis-thyroid-papillary papillary thyroid carcinoma disease солідні пухлини c73 fill 75 verified 0 bio 0 drug 1 indication 1 regimen 1 redflag 5 1l algorithm  questionnaire "
+      "used_by_count": 8,
+      "search_text": "dis-thyroid-papillary papillary thyroid carcinoma disease солідні пухлини c73 fill 75 verified 0 bio 0 drug 1 indication 1 regimen 1 redflag 6 1l algorithm  questionnaire "
     },
     {
       "id": "DIS-PTCL-NOS",
@@ -853,6 +895,20 @@
       ],
       "used_by_count": 13,
       "search_text": "dis-ptcl-nos peripheral t-cell lymphoma, nos disease лімфоїдна гематологія c84.4 fill 75 verified 0 bio 0 drug 8 indication 4 regimen 4 redflag 5 1l algorithm 2l algorithm questionnaire "
+    },
+    {
+      "id": "DIS-PHEOCHROMOCYTOMA",
+      "kind": "Disease",
+      "kind_key": "diseases",
+      "title": "Pheochromocytoma",
+      "url": "/diseases.html#DIS-PHEOCHROMOCYTOMA",
+      "subtitle": "ICD-10: D35.0 | family: Солідні пухлини | fill 12% | verified 0% | 0 indications | 0 regimens | 1 red flags",
+      "sources": [],
+      "diseases": [
+        "DIS-PHEOCHROMOCYTOMA"
+      ],
+      "used_by_count": 1,
+      "search_text": "dis-pheochromocytoma pheochromocytoma disease солідні пухлини d35.0 fill 12 verified 0 bio 0 drug 0 indication 0 regimen 0 redflag 1    "
     },
     {
       "id": "DIS-PV",
@@ -930,13 +986,13 @@
       "kind_key": "diseases",
       "title": "Prostate adenocarcinoma",
       "url": "/diseases.html#DIS-PROSTATE",
-      "subtitle": "ICD-10: C61 | family: Солідні пухлини | fill 88% | verified 0% | 9 indications | 8 regimens | 15 red flags",
+      "subtitle": "ICD-10: C61 | family: Солідні пухлини | fill 88% | verified 0% | 9 indications | 8 regimens | 20 red flags",
       "sources": [],
       "diseases": [
         "DIS-PROSTATE"
       ],
-      "used_by_count": 32,
-      "search_text": "dis-prostate prostate adenocarcinoma disease солідні пухлини c61 fill 88 verified 0 bio 4 drug 10 indication 9 regimen 8 redflag 15 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 37,
+      "search_text": "dis-prostate prostate adenocarcinoma disease солідні пухлини c61 fill 88 verified 0 bio 4 drug 10 indication 9 regimen 8 redflag 20 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-RCC",
@@ -944,13 +1000,13 @@
       "kind_key": "diseases",
       "title": "Renal cell carcinoma",
       "url": "/diseases.html#DIS-RCC",
-      "subtitle": "ICD-10: C64 | family: Солідні пухлини | fill 88% | verified 0% | 9 indications | 7 regimens | 8 red flags",
+      "subtitle": "ICD-10: C64 | family: Солідні пухлини | fill 88% | verified 0% | 13 indications | 7 regimens | 11 red flags",
       "sources": [],
       "diseases": [
         "DIS-RCC"
       ],
-      "used_by_count": 24,
-      "search_text": "dis-rcc renal cell carcinoma disease солідні пухлини c64 fill 88 verified 0 bio 1 drug 7 indication 9 regimen 7 redflag 8 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 31,
+      "search_text": "dis-rcc renal cell carcinoma disease солідні пухлини c64 fill 88 verified 0 bio 1 drug 7 indication 13 regimen 7 redflag 11 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-SALIVARY",
@@ -972,13 +1028,13 @@
       "kind_key": "diseases",
       "title": "Small cell lung cancer",
       "url": "/diseases.html#DIS-SCLC",
-      "subtitle": "ICD-10: C34 | family: Солідні пухлини | fill 75% | verified 0% | 7 indications | 7 regimens | 7 red flags",
+      "subtitle": "ICD-10: C34 | family: Солідні пухлини | fill 75% | verified 0% | 7 indications | 7 regimens | 9 red flags",
       "sources": [],
       "diseases": [
         "DIS-SCLC"
       ],
-      "used_by_count": 21,
-      "search_text": "dis-sclc small cell lung cancer disease солідні пухлини c34 fill 75 verified 0 bio 0 drug 7 indication 7 regimen 7 redflag 7 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 23,
+      "search_text": "dis-sclc small cell lung cancer disease солідні пухлини c34 fill 75 verified 0 bio 0 drug 7 indication 7 regimen 7 redflag 9 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-SOFT-TISSUE-SARCOMA",
@@ -986,13 +1042,13 @@
       "kind_key": "diseases",
       "title": "Soft tissue sarcoma",
       "url": "/diseases.html#DIS-SOFT-TISSUE-SARCOMA",
-      "subtitle": "ICD-10: C49.9 | family: Солідні пухлини | fill 62% | verified 0% | 4 indications | 4 regimens | 0 red flags",
+      "subtitle": "ICD-10: C49.9 | family: Солідні пухлини | fill 75% | verified 0% | 4 indications | 4 regimens | 1 red flags",
       "sources": [],
       "diseases": [
         "DIS-SOFT-TISSUE-SARCOMA"
       ],
-      "used_by_count": 8,
-      "search_text": "dis-soft-tissue-sarcoma soft tissue sarcoma disease солідні пухлини c49.9 fill 62 verified 0 bio 0 drug 6 indication 4 regimen 4 redflag 0 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 9,
+      "search_text": "dis-soft-tissue-sarcoma soft tissue sarcoma disease солідні пухлини c49.9 fill 75 verified 0 bio 0 drug 6 indication 4 regimen 4 redflag 1 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-SPLENIC-MZL",
@@ -1070,13 +1126,13 @@
       "kind_key": "diseases",
       "title": "Urothelial carcinoma",
       "url": "/diseases.html#DIS-UROTHELIAL",
-      "subtitle": "ICD-10: C67 | family: Солідні пухлини | fill 88% | verified 0% | 6 indications | 6 regimens | 7 red flags",
+      "subtitle": "ICD-10: C67 | family: Солідні пухлини | fill 88% | verified 0% | 8 indications | 6 regimens | 10 red flags",
       "sources": [],
       "diseases": [
         "DIS-UROTHELIAL"
       ],
-      "used_by_count": 19,
-      "search_text": "dis-urothelial urothelial carcinoma disease солідні пухлини c67 fill 88 verified 0 bio 1 drug 6 indication 6 regimen 6 redflag 7 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 24,
+      "search_text": "dis-urothelial urothelial carcinoma disease солідні пухлини c67 fill 88 verified 0 bio 1 drug 6 indication 8 regimen 6 redflag 10 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-WM",
@@ -10192,12 +10248,12 @@
       "kind_key": "biomarkers",
       "title": "HCV RNA (quantitative PCR)",
       "url": "/kb/biomarkers/bio-hcv-rna.html",
-      "subtitle": "sources: SRC-EASL-HCV-2023 | reviewed 2026-04-24 | pending_clinical_signoff",
+      "subtitle": "sources: SRC-EASL-HCV-2023 | reviewed 2026-05-18 | pending_clinical_signoff",
       "sources": [
         "SRC-EASL-HCV-2023"
       ],
       "diseases": [],
-      "used_by_count": 15,
+      "used_by_count": 17,
       "search_text": "bio-hcv-rna hcv rna (quantitative pcr) biomarker biomarker hcv pcr hcv rna by quantitative pcr hcv viral load рнк hcv (кількісна плр) src-easl-hcv-2023     binary positive/negative used for indication applicability; quantitative value tracked for antiviral response assessment (svr12 = undetectable at week 12 post-treatment)."
     },
     {
@@ -10795,7 +10851,7 @@
         "SRC-NCCN-GASTRIC-2025"
       ],
       "diseases": [],
-      "used_by_count": 33,
+      "used_by_count": 34,
       "search_text": "bio-msi-status microsatellite instability status biomarker biomarker msi msi status (msi-h / msi-l / mss) microsatellite instability статус мікросателітної нестабільності src-nccn-colon-2025 src-nccn-gastric-2025     "
     },
     {
@@ -11278,7 +11334,7 @@
         "SRC-NCCN-SCLC-2025"
       ],
       "diseases": [],
-      "used_by_count": 2,
+      "used_by_count": 4,
       "search_text": "bio-rb1 rb1 loss-of-function (retinoblastoma protein) biomarker biomarker rb1 loss / retinoblastoma gene mutation втрата функції rb1 (ретинобластомний білок) src-eau-bladder-2024 src-nccn-sclc-2025     rb1 encodes the retinoblastoma protein (prb), the master g1/s checkpoint regulator. prb normally sequesters e2f transcription factors to prevent s-phase entry; loss of prb → uncontrolled cell cycle progression. clinical contexts: (1) hereditary retinoblastoma: germline rb1 mutation → bilateral/multifocal retinoblastoma in childhood; lifetime elevated risk of osteosarcoma, sclc, melanoma. (2) sclc: biallelic rb1 loss + tp53 mutation defines the sclc molecular signature (~95% of sclc). prb loss by ihc is used in pathologic diagnosis. no targeted therapy for rb1 deficiency per se; sclc treatment is chemotherapy (ep/ec) ± atezolizumab. (3) urothelial carcinoma: rb1 alterations in ~30% of muscle-invasive bladder cancer; associated with basal/squamous subtype; not currently targeted. (4) breast cancer: rb1 mutations occur in ~10% of tnbc; rb1 loss predicts resistance to cdk4/6 inhibitors (palbociclib, ribociclib, abemaciclib) — prb is the substrate for cdk4/6 that drives cell cycle entry; without prb, cdk4/6 inhibition is ineffective. (5) osteosarcoma: rb1 alterations in ~30%. therapeutic implication of rb1 loss in hr+ breast cancer: cdk4/6 inhibitors are essentially non-functional without prb; test for rb1 loss when cdk4/6i resistance is encountered. this is a resistance biomarker, not a sensitivity marker."
     },
     {
@@ -11294,7 +11350,7 @@
         "SRC-ONCOKB"
       ],
       "diseases": [],
-      "used_by_count": 22,
+      "used_by_count": 23,
       "search_text": "bio-ret ret alterations (fusion or activating point mutation) biomarker biomarker ret c634r ret m918t ret alterations ret fusion ret-rearranged альтерації ret (фузія або активуюча точкова мутація) src-esmo-nsclc-metastatic-2024 src-nccn-nsclc-2025 src-oncokb     fusions: ~1–2% of nsclc adenocarcinoma; ~10–20% of papillary thyroid carcinoma. selpercatinib (libretto-001 / -431) and pralsetinib (arrow) are approved for ret-fusion+ nsclc and ptc. point mutations (m918t, codon 634): hereditary medullary thyroid carcinoma in men2a (c634) / men2b (m918t) and ~50% of sporadic mtc. selpercatinib and pralsetinib are 1l for advanced ret-mutant mtc (libretto-001, arrow); multikinase tkis (vandetanib, cabozantinib) are alternatives. germline testing is mandatory for any mtc patient."
     },
     {
@@ -11308,7 +11364,7 @@
         "SRC-NCCN-THYROID-2025"
       ],
       "diseases": [],
-      "used_by_count": 1,
+      "used_by_count": 2,
       "search_text": "bio-ret-m918t ret m918t mutation (men2b / sporadic mtc) biomarker biomarker ret m918t мутація ret m918t (men2b / спорадичний мрщз) src-nccn-thyroid-2025     most aggressive ret mutation. germline → men2b (multiple endocrine neoplasia type 2b) — defines need for prophylactic thyroidectomy before age 1. sporadic in ~25% of mtc, associated with poorer prognosis. selpercatinib (retsevmo) and pralsetinib (gavreto) — selective ret inhibitors; libretto-001 orr ~60-70% in advanced mtc. replaced multikinase inhibitors (vandetanib, cabozantinib) as 1l systemic therapy in actionable ret-altered advanced mtc."
     },
     {
@@ -11507,7 +11563,7 @@
         "SRC-NCCN-MM-2025"
       ],
       "diseases": [],
-      "used_by_count": 79,
+      "used_by_count": 82,
       "search_text": "bio-tp53-mutation tp53 mutation / del(17p) biomarker biomarker 17p deletion tp53 del 17p p53 mutation мутація tp53 / del(17p) src-nccn-aml-2025 src-nccn-bcell-2025 src-nccn-mm-2025     universal adverse marker across most hematologic + solid malignancies — predicts poor response to chemo + chemoimmuno; selects for novel- agent regimens / targeted therapies / cellular therapy / allosct. **cross-disease decision impact in our kb (current scope):** - **cll/sll**: tp53-mut or del(17p) → contraindicates chemoimmuno (fcr/br); favors fixed-duration veno (cll14) over btki continuous in some guidelines. captured in composite bio-cll-high-risk-genetics + rf-cll-high-risk. - **mcl**: tp53-mut → predicts chemoimmuno failure (intensive r-chop/r-dhap+autosct outcomes substantially worse); routes to btki-based 1l (acalabrutinib+r) regardless of fitness. captured in rf-mcl-blastoid-or-tp53. - **mm**: del(17p) part of high-risk cytogenetics composite — drives quadruplet (d-vrd) over triplet (vrd). captured in bio-mm-cytogenetics-hr + rf-mm-high-risk-cytogenetics. - **dlbcl** (future scope): predicts r-chop failure; flag for early car-t pathway consideration at 2l+. not yet driving 1l algorithm. - **aml** (future scope, not in kb yet): tp53-mut aml has dismal chemo outcomes — currently routes directly to allosct consideration + venetoclax-azacitidine for unfit + clinical trials. this entity is the **standalone marker citation** for all the above. engine algorithms reference it indirectly via composite biomarkers (cll-high-risk-genetics, mm-cytogenetics-hr) or via redflags (rf-mcl-blastoid-or-tp53). centralizing it here gives clean traceability + ready ground for future direct-driving rules (e.g., 2l car-t flag) without re-encoding the source citation in multiple places."
     },
     {
@@ -11642,7 +11698,7 @@
       "subtitle": "pending_clinical_signoff",
       "sources": [],
       "diseases": [],
-      "used_by_count": 2,
+      "used_by_count": 3,
       "search_text": "bio-vhl-status vhl gene status biomarker biomarker статус гена vhl      germline testing offered for bilateral/multifocal rcc, rcc <46, syndromic features."
     },
     {
@@ -11688,6 +11744,21 @@
       "diseases": [],
       "used_by_count": 1,
       "search_text": "drug-mercaptopurine 6-mercaptopurine drug drug 6-меркаптопурин mercaptopurine purinethol purixan src-nccn-bcell-2025   purine antagonist; converted by hgprt to thio-imp, which inhibits de novo purine biosynthesis and incorporates into dna/rna as thio-dgtp, causing chain termination and triggering apoptosis. backbone of b-all maintenance (pomp / vincristine + mtx + 6-mp + prednisone) for 2-3 years post-induction-consolidation.  cornerstone of b-all maintenance (pomp regimen, 2-3 years post-induction- consolidation). tpmt and nudt15 genotyping should be performed pre-initiation when available — poor metabolizers require dramatic dose reduction or alternative therapy. take on empty stomach (food + dairy reduce absorption ~25%). avoid allopurinol coadministration without dose reduction. bedtime dosing improves tolerance."
+    },
+    {
+      "id": "DRUG-GARDASIL-9",
+      "kind": "Drug",
+      "kind_key": "drugs",
+      "title": "9-valent HPV vaccine",
+      "url": "/kb/drugs/drug-gardasil-9.html",
+      "subtitle": "sources: SRC-ESMO-CERVICAL-2024, SRC-NCCN-CERVICAL-2025 | reviewed 2026-05-18",
+      "sources": [
+        "SRC-ESMO-CERVICAL-2024",
+        "SRC-NCCN-CERVICAL-2025"
+      ],
+      "diseases": [],
+      "used_by_count": 2,
+      "search_text": "drug-gardasil-9 9-valent hpv vaccine drug drug 9-валентна вакцина проти впл 9vhpv gardasil 9 gardasil-9 hpv9 human papillomavirus (hpv) 9-valent vaccine, recombinant recombinant 9-valent hpv vaccine src-esmo-cervical-2024 src-nccn-cervical-2025   recombinant non-infectious nine-valent hpv vaccine. each dose contains virus-like particles (vlps) assembled from the l1 major capsid protein of nine hpv types — 6, 11, 16, 18, 31, 33, 45, 52, and 58 — produced in saccharomyces cerevisiae and adjuvanted with amorphous aluminium hydroxyphosphate sulfate (aahs). l1 vlps are immunogenic but contain no viral dna — cannot cause hpv infection. vaccination elicits high-titer neutralizing igg that prevents incident infection by the covered hpv types. cancer-prevention pathway: prevents persistent infection with the hpv types responsible for ~90% of cervical cancers, ~90% of anal cancers, ~70% of vaginal/vulvar cancers, ~60% of penile cancers, and a growing fraction of oropharyngeal cancers.  stub — v0.2 prevention-workstream authoring; pending two-clinical-co-lead signoff per charter §6.1 dev-mode. gardasil-9 is the only hpv vaccine currently available in most markets (gardasil-4 and cervarix-2 are discontinued). recommended by who, acip, esmo, nccn for routine hpv immunization, ideally before sexual debut (age 9-14, 2 doses). catch-up through age 45 supported with shared-decision making in adults. prevents hpv-driven cancers: cervical (path a v0.2-a scope — primary prevention for the largest infectious-etiology cancer attributable fraction globally), anal, vaginal, vulvar, penile, oropharyngeal, and certain head/neck cancers. vaccine modality — no standard pharmacology block; immunogenicity data captured in separate `immunogenicity` field (preserved as extra under permissive schema; render layer can ignore or surface). ndc 0006-4119; vaccines are tracked by ndc and cvx codes, not by rxnorm — rxnorm_id intentionally null. ukraine-specific: gardasil-9 is not on the national vaccination schedule and is not reimbursed by nszu as of 2026-05; available out-of-pocket at private centers (~₴5000-8000/dose × 2-3 doses) — a substantial cost barrier in the ukrainian context. funding-pathway work (philanthropy, regional pilots) is out of scope for this drug entry. two-co-lead signoff queued for v0.2-a clinical review."
     },
     {
       "id": "DRUG-ABEMACICLIB",
@@ -11865,6 +11936,20 @@
       "diseases": [],
       "used_by_count": 5,
       "search_text": "drug-amivantamab amivantamab drug drug jnj-61186372 rybrevant amivantamab-vmjw амівантамаб src-esmo-nsclc-metastatic-2024 src-nccn-nsclc-2025   fully human bispecific igg1 antibody simultaneously binding extracellular domains of egfr (epidermal growth factor receptor) and met (hepatocyte growth factor receptor / c-met). the dual engagement triggers (1) ligand-blocking inhibition of both receptors, (2) downregulation / internalization of egfr-met heterodimers, (3) fc-mediated effector function (adcc, trogocytosis, adcp) via low-fucose engineered fc. active against egfr exon-20 insertion mutations (which are insensitive to classical egfr-tkis) and against secondary met-amplification- mediated resistance to osimertinib. pivotal evidence: chrysalis (egfr exon 20 ins nsclc post-platinum: orr ~40%, fda accelerated 2021 — first targeted therapy for ex20ins); mariposa (amivantamab + lazertinib vs osimertinib 1l egfr ex19del/l858r nsclc: mpfs 23.7 vs 16.6 mo hr 0.70, fda aug 2024); mariposa-2 (amivantamab + chemo ± lazertinib vs chemo post-osimertinib); papillon (amivantamab + chemo 1l egfr ex20ins).  sc formulation strongly preferred from cycle-2 onward where available — substantially lower irr rate (paloma-3 ~13% vs ~65% iv) and shorter administration time. cycle-1 day-1 iv infusion split (350 mg → wait → remainder) reduces irr severity. vte prophylaxis (prophylactic-dose lmwh or doac for first 4 months) is mandated by the mariposa / mariposa-2 protocols when combined with lazertinib — vte risk is substantially elevated vs ami or laz monotherapy. premedication for iv (steroid + antihistamine + antipyretic) is non-negotiable. aggressive egfr-class skin care (clindamycin gel, oral doxycycline 100 mg bid prophylaxis, emollients, sun protection); paronychia: chlorhexidine soaks + high-potency topical steroid + careful nail care. baseline workup: lfts, albumin, cbc, ecg, pregnancy test, ct chest (ild baseline). monitor lfts / cbc / albumin q2 wk first 8 wk then monthly; ct chest at any new respiratory symptoms. ua access via eap / self-pay only."
+    },
+    {
+      "id": "DRUG-AMOXICILLIN",
+      "kind": "Drug",
+      "kind_key": "drugs",
+      "title": "Amoxicillin",
+      "url": "/kb/drugs/drug-amoxicillin.html",
+      "subtitle": "sources: SRC-NCCN-BCELL-2025 | reviewed 2026-05-18",
+      "sources": [
+        "SRC-NCCN-BCELL-2025"
+      ],
+      "diseases": [],
+      "used_by_count": 1,
+      "search_text": "drug-amoxicillin amoxicillin drug drug amoxil flemoxin hiconcil ospamox trimox амоксицилін src-nccn-bcell-2025   semi-synthetic aminopenicillin that binds to penicillin-binding proteins (pbps) in actively dividing bacteria, inhibiting cross-linking of the peptidoglycan cell-wall layer and triggering autolysin-mediated bactericidal effect. spectrum: broader than penicillin v/g — includes many streptococcus spp., enterococcus faecalis, listeria monocytogenes, helicobacter pylori, and some gram-negatives (e. coli, proteus mirabilis, haemophilus influenzae, salmonella, shigella) where no β-lactamase expression. susceptible to β-lactamase hydrolysis (hence augmentin combination with clavulanic acid for many gram-negative infections).  stub — v0.2 prevention-workstream authoring; pending two-clinical-co-lead signoff per charter §6.1 dev-mode. standard β-lactam component of h. pylori triple therapy (clarithromycin + ppi + amoxicillin × 14d) used to prevent gastric malt lymphoma progression and reduce gastric-adenocarcinoma risk. penicillin allergy is the key contraindication — substitute metronidazole if true allergy, or refer for allergy evaluation as ~90% of self-reported penicillin allergy is not confirmed on testing. active against h. pylori with virtually no resistance (unlike clarithromycin, where resistance is rising). dose-limiting toxicity is rare; clavulanic acid combination (augmentin) shifts the ae profile toward hepatotoxicity and diarrhea — not used in h. pylori. ukraine: cheap, ubiquitous, out-of-pocket for h. pylori. two-co-lead signoff queued for v0.2-a clinical review."
     },
     {
       "id": "DRUG-ANAGRELIDE",
@@ -12168,6 +12253,20 @@
       "search_text": "drug-bexarotene bexarotene drug drug targretin бексаротен src-esmo-ctcl-2024 src-nccn-bcell-2025   selectively binds and activates retinoid x receptors (rxrα, rxrβ, rxrγ), which heterodimerize with other nuclear receptors to regulate gene expression involved in cellular differentiation and proliferation. in ctcl induces apoptosis and differentiation of malignant t-cells.  duvic 2001 phase 2/3 in r/r ctcl — orr ~45-55% (any stage), durable in maintenance setting. fda-approved for ctcl refractory to ≥1 prior line. triglyceride and thyroid management are the dominant practical challenges — atorvastatin or fenofibrate prophylaxis usually started concurrently; levothyroxine empirically considered. topical gel useful for limited skin lesions. major ua access barrier — international supply required."
     },
     {
+      "id": "DRUG-BICTEGRAVIR-EMTRICITABINE-TENOFOVIR-AF",
+      "kind": "Drug",
+      "kind_key": "drugs",
+      "title": "Bictegravir / Emtricitabine / Tenofovir alafenamide",
+      "url": "/kb/drugs/drug-bictegravir-emtricitabine-tenofovir-af.html",
+      "subtitle": "sources: SRC-NIH-AIDS-2024 | reviewed 2026-05-18",
+      "sources": [
+        "SRC-NIH-AIDS-2024"
+      ],
+      "diseases": [],
+      "used_by_count": 1,
+      "search_text": "drug-bictegravir-emtricitabine-tenofovir-af bictegravir / emtricitabine / tenofovir alafenamide drug drug b/f/taf bic/ftc/taf bictarvy biktarvy біктегравір / емтрицитабін / тенофовіру алафенамід src-nih-aids-2024   fixed-dose single-tablet regimen (str) combining three active components. bictegravir (50 mg) is a second-generation hiv-1 integrase strand- transfer inhibitor (insti) that blocks integration of viral dna into the host chromosome — high barrier to resistance, similar to dolutegravir. emtricitabine (200 mg) is a cytidine-analog nrti that, after intracellular phosphorylation, competitively inhibits hiv-1 reverse transcriptase and terminates chain elongation. tenofovir alafenamide (25 mg) is a phosphonamidate prodrug of tenofovir delivering active tenofovir-dp primarily intracellularly, with reduced systemic exposure and lower renal / bone toxicity than tdf. cancer-prevention pathway: sustained hiv viral suppression and immune reconstitution reduce risk of aids-defining malignancies (kaposi sarcoma, non-hodgkin lymphomas including primary cns lymphoma and burkitt lymphoma, invasive cervical cancer) and several non-aids-defining cancers (hpv-related anal / oropharyngeal, hepatocellular, hodgkin lymphoma).  stub — v0.2 prevention-workstream authoring; pending two-clinical-co-lead signoff per charter §6.1 dev-mode. biktarvy is one of the preferred single-tablet initial art regimens per nih-aids 2024, ias-usa, dhhs, esmo hiv-and-cancer guidance. single tablet, once-daily, with or without food, no booster (cobicistat / ritonavir), no hla-b*5701 screening needed. high barrier to resistance. cancer-prevention rationale: durable viral suppression with cd4 reconstitution reduces incidence of aids- defining cancers (kaposi sarcoma, nhl including pcnsl and burkitt, invasive cervical cancer) and several non-aids-defining cancers (anal, oropharyngeal, hepatocellular, hodgkin lymphoma) — meta-analyses suggest substantial relative-risk reduction with sustained suppression. note: biktarvy is not indicated for hiv prep (pre-exposure prophylaxis — use truvada [ftc/tdf] or descovy [ftc/taf]) — prep is a separate workstream. polyvalent cation chelation is the major adherence pitfall — patient counseling on supplement timing is critical. two-co-lead signoff queued for v0.2-a clinical review."
+    },
+    {
       "id": "DRUG-BINIMETINIB",
       "kind": "Drug",
       "kind_key": "drugs",
@@ -12181,6 +12280,20 @@
       "diseases": [],
       "used_by_count": 1,
       "search_text": "drug-binimetinib binimetinib drug drug arry-162 mek162 mektovi бінiметиніб src-esmo-melanoma-2024 src-nccn-melanoma-2025   selective allosteric (non-atp-competitive) inhibitor of mek1/mek2 kinases that bind a pocket adjacent to the atp site, locking mek in an inactive conformation. blocks downstream phosphorylation of erk1/2 in the constitutively activated ras/raf/mek/erk pathway, suppressing proliferation and survival signaling in braf v600-mutant tumor cells. combined with a braf inhibitor (encorafenib) the doublet mitigates paradoxical mapk reactivation seen with brafi monotherapy and prolongs response duration. clinical evidence: columbus (encorafenib + binimetinib vs vemurafenib in braf v600 unresectable / metastatic melanoma, mpfs 14.9 vs 7.3 mo, mos 33.6 vs 16.9 mo). historically evaluated as the third agent in beacon-crc triplet (no os gain over encorafenib + cetuximab doublet — doublet is the standard for braf v600e mcrc).  used exclusively in combination with encorafenib for braf v600 melanoma (columbus) — encorafenib monotherapy is not standard. mandatory baseline workup: lfts, ck, lvef echo, ophthalmologic exam, ecg (for qtc), pregnancy test. monitor: lfts + ck every 2 weeks for first 8 weeks then monthly; lvef echo at 1 month then every 3 months; ophtho for any new visual symptom. compared with dabrafenib+trametinib the toxicity profile is broadly similar but with less pyrexia and somewhat more retinal events. in ua, access is via cross-border eu centers, eap, or self-pay; dabrafenib+trametinib remains the нсзу-funded brafi+meki."
+    },
+    {
+      "id": "DRUG-BISMUTH-SUBCITRATE",
+      "kind": "Drug",
+      "kind_key": "drugs",
+      "title": "Bismuth subcitrate potassium",
+      "url": "/kb/drugs/drug-bismuth-subcitrate.html",
+      "subtitle": "sources: SRC-NCCN-BCELL-2025 | reviewed 2026-05-18",
+      "sources": [
+        "SRC-NCCN-BCELL-2025"
+      ],
+      "diseases": [],
+      "used_by_count": 1,
+      "search_text": "drug-bismuth-subcitrate bismuth subcitrate potassium drug drug bismuth subcitrate colloidal bismuth subcitrate (cbs) de-nol gastrostat pylera (component, with metronidazole + tetracycline) tripotassium dicitrato bismuthate (tdb) ulkavis бісмуту субцитрат калію src-nccn-bcell-2025   colloidal bismuth salt that, in the acid gastric milieu, precipitates as bismuth oxychloride and bismuth citrate, which: (i) adhere to ulcer craters and the gastric mucus layer to form a protective barrier; (ii) directly damage helicobacter pylori cell wall and impair iron and nickel uptake — bactericidal effect; (iii) inhibit h. pylori urease, phospholipase, and proteolytic enzymes; (iv) stimulate prostaglandin e2, bicarbonate, and mucus secretion. synergistic with metronidazole and tetracycline in quadruple therapy — also overcomes clarithromycin resistance, the primary mode of failure for standard triple therapy.  stub — v0.2 prevention-workstream authoring; pending two-clinical-co-lead signoff per charter §6.1 dev-mode. cornerstone of bismuth-based quadruple therapy (pbmt — ppi + bismuth + metronidazole + tetracycline) for h. pylori eradication, increasingly preferred over standard triple therapy in regions with clarithromycin resistance >15% (much of europe including ukraine). overcomes clarithromycin and metronidazole resistance. the black tongue and black stools are the most patient- visible side effects — pre-counseling is essential to avoid panic. encephalopathy is rare and historically associated with prolonged high- dose use; 10-14 day pbmt courses have a clean safety record. rxnorm has separate codes for \"bismuth subcitrate\" variants but no single canonical id for \"bismuth subcitrate potassium\" was confirmed at draft time — orchestrator should verify. ukraine: de-nol is the dominant brand; widely available, out-of-pocket. two-co-lead signoff queued for v0.2-a clinical review."
     },
     {
       "id": "DRUG-BLEOMYCIN",
@@ -12539,6 +12652,20 @@
       "diseases": [],
       "used_by_count": 1,
       "search_text": "drug-cladribine cladribine (2-cda) drug drug cladribine leustatin litak кладрибін src-nccn-bcell-2025   resistant to deamination by ada; phosphorylated to active triphosphate that incorporates into dna, inhibits dna repair, and induces apoptosis. selectively cytotoxic to lymphocytes.  single 7-day course produces durable cr in >85% of hcl — one of the most effective single-agent regimens in oncology. mandatory pjp prophylaxis (cotrimoxazole) and hsv prophylaxis (acyclovir) for ≥1 year post — profound lasting cd4 lymphopenia."
+    },
+    {
+      "id": "DRUG-CLARITHROMYCIN",
+      "kind": "Drug",
+      "kind_key": "drugs",
+      "title": "Clarithromycin",
+      "url": "/kb/drugs/drug-clarithromycin.html",
+      "subtitle": "sources: SRC-NCCN-BCELL-2025 | reviewed 2026-05-18",
+      "sources": [
+        "SRC-NCCN-BCELL-2025"
+      ],
+      "diseases": [],
+      "used_by_count": 1,
+      "search_text": "drug-clarithromycin clarithromycin drug drug biaxin klabax klacid кларитроміцин src-nccn-bcell-2025   macrolide antibiotic that binds reversibly to the 50s ribosomal subunit near the peptidyl transferase center, blocking the translocation step of peptide elongation and producing bacteriostatic (or bactericidal at high intracellular concentrations) inhibition of protein synthesis. spectrum: streptococcus spp., staphylococcus spp. (methicillin-susceptible), haemophilus influenzae, moraxella catarrhalis, atypicals (mycoplasma pneumoniae, chlamydophila pneumoniae, legionella), mycobacterium avium complex (mac), and helicobacter pylori (in combination therapy). active metabolite 14-hydroxyclarithromycin contributes to h. influenzae coverage. cancer-prevention relevance: macrolide component of h. pylori triple therapy — eradication reduces gastric cancer risk in chronic carriers (kss §20 v0.2-a scope).  stub — v0.2 prevention-workstream authoring; pending two-clinical-co-lead signoff per charter §6.1 dev-mode. key component of h. pylori standard triple therapy (clarithromycin + ppi + amoxicillin or metronidazole) used for gastric-malt-lymphoma treatment and gastric-cancer-prevention. watch: rising regional clarithromycin resistance in h. pylori (>15-20% in many european centers including ukraine) means triple therapy is failing more often — quadruple bismuth-based therapy (pbmt) is becoming first-line in high-resistance settings. local antibiogram or community- resistance data should drive regimen choice. strong cyp3a4 inhibitor — drug interactions are extensive and clinically critical (esp. statins, colchicine, calcineurin inhibitors, anticoagulants). pre-prescription medication review is mandatory. cardiac mortality signal from claricor is real but absolute risk small — avoid in cad where alternatives exist. ukraine: out-of-pocket pharmacy, widely available, generics affordable. two-co-lead signoff queued for v0.2-a clinical review."
     },
     {
       "id": "DRUG-COBIMETINIB",
@@ -12968,7 +13095,7 @@
         "SRC-NCCN-BCELL-2025"
       ],
       "diseases": [],
-      "used_by_count": 1,
+      "used_by_count": 2,
       "search_text": "drug-entecavir entecavir drug drug baraclude ентекавір src-nccn-bcell-2025   guanosine analog; inhibits hbv reverse transcriptase / polymerase activity, suppressing viral replication.  used as hbv reactivation prophylaxis in hbsag+ or anti-hbc+ patients receiving rituximab/obinutuzumab or chemotherapy. continue for at least 12 months after completing immunosuppressive therapy."
     },
     {
@@ -14000,7 +14127,7 @@
         "SRC-NCCN-MM-2025"
       ],
       "diseases": [],
-      "used_by_count": 0,
+      "used_by_count": 1,
       "search_text": "drug-metronidazole metronidazole drug drug flagyl metrogyl trichopolum метронідазол src-nccn-bcell-2025 src-nccn-mm-2025   nitroimidazole prodrug that diffuses passively into bacteria and protozoa, where the low redox potential of anaerobic / microaerophilic organisms reduces its 5-nitro group to reactive radical intermediates (nitroso, hydroxylamine). these intermediates damage dna via strand breakage and helix destabilization, producing bactericidal effect. aerobic organisms cannot reduce the prodrug efficiently — hence the selective anaerobic spectrum. active against bacteroides fragilis group, clostridioides spp. (including c. difficile and c. perfringens), fusobacterium, peptostreptococcus, prevotella, and the protozoa trichomonas, giardia, entamoeba histolytica. no activity against aerobic bacteria. standard add-on for anaerobic coverage in intra-abdominal, gynecologic, and dental infections, often paired with cefepime or aztreonam in febrile neutropenia with suspected intra-abdominal source. fda-approved 1963.  cheap, ubiquitous, narrow-spectrum anaerobic coverage. in febrile neutropenia, added when intra-abdominal or perirectal source is suspected (classic context: severe mucositis with abdominal pain, perianal cellulitis / abscess, typhlitis / neutropenic enterocolitis) and the primary β-lactam lacks anaerobic activity (cefepime, aztreonam, ceftriaxone). not needed when pip-tazo or meropenem is the primary agent — these already cover anaerobes. critical interactions: warfarin (inr doubles — pre-emptively halve warfarin); alcohol (disulfiram-like reaction including iv preparations containing ethanol excipient — read drug labels). peripheral neuropathy is the limiting toxicity for prolonged use (≥4-6 weeks) — often persistent even after discontinuation; minimize duration. c. difficile colitis: oral metronidazole 500 mg q8h is acceptable for mild-moderate disease but oral vancomycin (or fidaxomicin) is preferred for severe (wbc >15,000, creatinine ≥1.5×) per idsa 2017. ukraine: cheap and ubiquitous; nszu-covered."
     },
     {
@@ -14272,6 +14399,20 @@
       "diseases": [],
       "used_by_count": 2,
       "search_text": "drug-olutasidenib olutasidenib drug drug rezlidhia олутасиденіб src-civic src-esmo-aml-2020 src-nccn-aml-2025   oral, potent, selective small-molecule inhibitor of mutant isocitrate dehydrogenase 1 (idh1) bearing r132 substitutions (r132h, r132c, r132g, r132s, r132l). binds an allosteric site on the mutant idh1 dimer, blocking the neomorphic conversion of α-ketoglutarate to (r)-2-hydroxyglutarate (2-hg) — the oncometabolite that drives dna + histone hypermethylation and arrests myeloid differentiation. 2-hg suppression restores myeloid differentiation in idh1-mutant aml blasts (induces phenotypic conversion of blasts to functional neutrophils — analogous to ivosidenib mechanism, but with less potential for qtc prolongation in the head-to-head pharmacology profile). pivotal study 2102-hem-101 (cortes blood 2024) phase ii cohort r/r aml (n=153, idh1-r132 mutant relapsed/refractory aml) showed cr+crh 35%, cr 32%, mdor 25.9 mo, median time to cr/crh 1.9 mo, transfusion independence 56-fold among cr/crh responders → fda accelerated approval dec 1, 2022.  olutasidenib (rezlidhia, rigel pharmaceuticals) is the second fda-approved idh1-mutant inhibitor (after ivosidenib / tibsovo, servier 2018). both target idh1-r132 mutations in r/r aml; key differences: (1) olutasidenib pivotal data were in r/r aml mono (cohort r/r, n=153, orr/cr/crh 35%); ivosidenib has both r/r aml mono approval and newly-diagnosed aml approval (combined with azacitidine, agile trial). (2) olutasidenib has a less prominent qtc-prolongation signal than ivosidenib but a more prominent transaminitis signal. (3) differentiation syndrome boxed warning applies to both agents (class idh-inhibitor effect — analogous to atra-ds in apl). (4) cross-resistance: switching from ivosidenib → olutasidenib at progression can restore response in a subset (watts blood 2024) — suggests idh1-r132 second-site resistance mutations may differ between agents. nccn-aml 2025 lists olutasidenib as a category 2a option for idh1-mut r/r aml (alongside ivosidenib). ema has not approved olutasidenib (as of 2026-04-29) — in eu, ivosidenib is the idh1-mut r/r aml standard. companion diagnostic: abbott realtime idh1 assay (fda-cleared); ngs panels (foundationone heme, myaml, oncomap) detecting idh1 r132 are clinically interchangeable. charter §2 / src-civic reference for idh1 actionability rendering. missing source ids to flag: src-2102-hem-101 (pivotal phase ii cortes 2024), src-fda-rezlidhia, src-agile (ivosidenib comparator) not yet authored."
+    },
+    {
+      "id": "DRUG-OMEPRAZOLE",
+      "kind": "Drug",
+      "kind_key": "drugs",
+      "title": "Omeprazole",
+      "url": "/kb/drugs/drug-omeprazole.html",
+      "subtitle": "sources: SRC-NCCN-BCELL-2025 | reviewed 2026-05-18",
+      "sources": [
+        "SRC-NCCN-BCELL-2025"
+      ],
+      "diseases": [],
+      "used_by_count": 2,
+      "search_text": "drug-omeprazole omeprazole drug drug losec omez ortanol prilosec омепразол src-nccn-bcell-2025   prodrug that is acid-activated in the parietal cell secretory canaliculus to a sulfenamide cation, which forms a covalent disulfide bond with cysteine residues of the h+/k+-atpase (proton pump) and irreversibly inhibits gastric acid secretion. new pump synthesis is required for recovery (≥24 h half-life of effect despite ~1 h plasma half-life). cancer-prevention relevance: profound gastric acid suppression is required for h. pylori antimicrobial efficacy (clarithromycin and amoxicillin both require near-neutral gastric ph for stability and bactericidal activity) — ppi is the linchpin of triple / quadruple h. pylori eradication regimens.  stub — v0.2 prevention-workstream authoring; pending two-clinical-co-lead signoff per charter §6.1 dev-mode. ppi is the linchpin of h. pylori triple and quadruple eradication therapy — without near-neutral gastric ph, clarithromycin is unstable and amoxicillin/tetracycline are less bactericidal. standard 20 mg bid dose for 14 days in both triple and quadruple pbmt regimens. critical interactions: clopidogrel (use pantoprazole instead), rilpivirine (contraindicated), high-dose methotrexate (hold), ph-dependent tkis in oncology context (erlotinib, dasatinib, etc.). cyp2c19 poor metabolizer status (esp. asian patients) → higher exposure and better h. pylori cure rates with standard doses; some experts dose ppi by genotype. ukraine: cheap, otc, ubiquitous, out-of-pocket. long-term safety concerns (bone, b12, mg, aki, cdi, pneumonia) are largely irrelevant for a 14-day eradication course. two-co-lead signoff queued for v0.2-a clinical review."
     },
     {
       "id": "DRUG-ONDANSETRON",
@@ -15091,6 +15232,36 @@
       "search_text": "drug-temozolomide temozolomide drug drug temodal temodar темозоломід src-eano-gbm-2024 src-nccn-cns-2025   methylates dna at o6/n7 of guanine. crosses blood-brain barrier efficiently — backbone of stupp protocol for newly-diagnosed glioblastoma (concurrent + adjuvant). mgmt promoter methylation predicts response (methylated → ~3× longer os benefit vs unmethylated).  pjp prophylaxis (tmp-smx 1 ss mon/wed/fri or atovaquone 1500 mg daily, alternative dapsone 100 mg daily after g6pd screen) during concurrent rt + tmz phase and adjuvant tmz phase — universal lymphopenia (typically cd4 <200) creates opportunistic-infection risk window persisting weeks after the last cycle. mgmt promoter methylation testing is critical for treatment decision (stupp nejm 2005; hegi nejm 2005): methylated → ~3× greater os benefit vs unmethylated. noa-08 + nordic trials: in elderly (>65) unmethylated → consider hypofractionated rt alone; methylated → tmz-only or short-course rt + tmz. ccnu + tmz doublet (ceteg/noa-09) showed os benefit in mgmt-methylated newly-dx gbm. premedicate with 5-ht3 (ondansetron 8 mg) 1 hour before each dose; mon-fri schedules ease antiemetic burden. cbc weekly during concurrent rt, q2 weeks during adjuvant. ua: registered; нсзу-reimbursed for gbm (stupp) + anaplastic glioma."
     },
     {
+      "id": "DRUG-TENOFOVIR-AF",
+      "kind": "Drug",
+      "kind_key": "drugs",
+      "title": "Tenofovir alafenamide",
+      "url": "/kb/drugs/drug-tenofovir-af.html",
+      "subtitle": "sources: SRC-AASLD-HBV-2024, SRC-NIH-AIDS-2024 | reviewed 2026-05-18",
+      "sources": [
+        "SRC-AASLD-HBV-2024",
+        "SRC-NIH-AIDS-2024"
+      ],
+      "diseases": [],
+      "used_by_count": 1,
+      "search_text": "drug-tenofovir-af tenofovir alafenamide drug drug taf tenofovir af vemlidy тенофовіру алафенамід src-aasld-hbv-2024 src-nih-aids-2024   second-generation phosphonamidate prodrug of tenofovir; stabilized to resist plasma hydrolysis (versus tdf) so it preferentially delivers tenofovir intracellularly to hepatocytes (hbv) and lymphocytes (hiv). once in target cell, intracellular cathepsin a cleaves taf to tenofovir, which is then phosphorylated to tenofovir-dp and competitively inhibits hbv polymerase / hiv-1 reverse transcriptase with chain termination. yields ~90% lower systemic tenofovir exposure than tdf at equivalent intracellular concentrations — reduced renal and bone toxicity.  stub — v0.2 prevention-workstream authoring; pending two-clinical-co-lead signoff per charter §6.1 dev-mode. aasld-2024 preferred first-line hbv antiviral alongside tdf and entecavir; preferred over tdf in older adults (>60), reduced gfr (crcl <60), and osteopenia/osteoporosis given the ~90% lower systemic tenofovir exposure. also a backbone of multiple hiv-1 fdc art regimens (biktarvy, genvoya, descovy). long-term hbv suppression is the etiologic-prevention pathway for hbv-mediated hcc and hbv-associated b-cell nhl (the v0.2-a scope). note: avoid in decompensated cirrhosis — use entecavir or tdf instead (taf clinical data in decompensated disease are limited). the hiv-art weight-gain signal vs tdf is well-described but irrelevant to hbv monotherapy at 25 mg/day. two-co-lead signoff queued for v0.2-a clinical review."
+    },
+    {
+      "id": "DRUG-TENOFOVIR-DF",
+      "kind": "Drug",
+      "kind_key": "drugs",
+      "title": "Tenofovir disoproxil fumarate",
+      "url": "/kb/drugs/drug-tenofovir-df.html",
+      "subtitle": "sources: SRC-AASLD-HBV-2024, SRC-NIH-AIDS-2024 | reviewed 2026-05-18",
+      "sources": [
+        "SRC-AASLD-HBV-2024",
+        "SRC-NIH-AIDS-2024"
+      ],
+      "diseases": [],
+      "used_by_count": 0,
+      "search_text": "drug-tenofovir-df tenofovir disoproxil fumarate drug drug tdf tenofovir df viread тенофовіру дизопроксил фумарат src-aasld-hbv-2024 src-nih-aids-2024   acyclic nucleotide analog prodrug; the parent compound tenofovir is phosphorylated intracellularly to tenofovir diphosphate, which competitively inhibits hbv polymerase / hiv-1 reverse transcriptase and terminates the nascent viral dna chain after incorporation. active against wild-type hbv, lamivudine-resistant hbv, and hiv-1; no activity against hcv.  stub — v0.2 prevention-workstream authoring; pending two-clinical-co-lead signoff per charter §6.1 dev-mode. first-line oral antiviral for chronic hbv per aasld-2024; one of three preferred agents (tdf, taf, entecavir). long-term hbv suppression is the etiologic-prevention pathway for hbv- driven hcc and hbv-associated b-cell nhl (the v0.2-a prevention scope). tdf carries a higher signal of nephrotoxicity and bone-density loss than taf — prefer taf in older adults, baseline renal impairment, or osteopenia/osteoporosis. also a backbone of hiv-1 art (commonly co- formulated with emtricitabine ± efavirenz / rilpivirine). the cancer- prevention rationale spans both hbv-mediated hcc reduction (the dominant effect — meta-analyses show ~50-70% hcc risk reduction with sustained viral suppression) and chronic-hbv-associated nhl risk reduction (smaller but consistent signal). two-co-lead signoff queued for v0.2-a clinical review."
+    },
+    {
       "id": "DRUG-TEPOTINIB",
       "kind": "Drug",
       "kind_key": "drugs",
@@ -15104,6 +15275,20 @@
       "diseases": [],
       "used_by_count": 1,
       "search_text": "drug-tepotinib tepotinib drug drug tepmetko тепотініб src-esmo-nsclc-metastatic-2024 src-nccn-nsclc-2025   selective met inhibitor with similar efficacy profile to capmatinib. vision trial: orr ~46% in 1l met ex14+ nsclc.  once-daily alternative to capmatinib bid. edema dominant ae."
+    },
+    {
+      "id": "DRUG-TETRACYCLINE",
+      "kind": "Drug",
+      "kind_key": "drugs",
+      "title": "Tetracycline",
+      "url": "/kb/drugs/drug-tetracycline.html",
+      "subtitle": "sources: SRC-NCCN-BCELL-2025 | reviewed 2026-05-18",
+      "sources": [
+        "SRC-NCCN-BCELL-2025"
+      ],
+      "diseases": [],
+      "used_by_count": 1,
+      "search_text": "drug-tetracycline tetracycline drug drug achromycin pylera (component, with bismuth + metronidazole) sumycin tetracycline hydrochloride tetrosan тетрациклін src-nccn-bcell-2025   tetracycline binds reversibly to the 30s ribosomal subunit at the a site, preventing aminoacyl-trna from associating with the ribosome and blocking the elongation step of bacterial protein synthesis. bacteriostatic. broad spectrum: gram-positives, gram-negatives, atypicals (mycoplasma, chlamydia, rickettsia), spirochetes, helicobacter pylori (including metronidazole- and clarithromycin-resistant strains in pbmt quadruple therapy). distinct from doxycycline (semi-synthetic, longer half-life, better tissue penetration) — but cheaper and historically the canonical pbmt component.  stub — v0.2 prevention-workstream authoring; pending two-clinical-co-lead signoff per charter §6.1 dev-mode. standard tetracycline component of pbmt (ppi + bismuth + metronidazole + tetracycline) — the preferred h. pylori regimen in regions with clarithromycin resistance >15% or after prior triple-therapy failure. tetracycline (not doxycycline) is the evidence-based pbmt component per maastricht vi / florence consensus — doxycycline substitution has lower cure rates and is not equivalent. pylera fixed-dose capsule (us/eu) bundles bismuth + metronidazole + tetracycline at lower per-component doses, taken qid × 10 days with ppi. major patient adherence challenge: qid dosing × 10-14 days with meal-timing constraints and food/dairy/antacid spacing. photosensitivity counseling required. in ukraine, tetracycline aptechna availability has been spotty in some regions — verify supply before prescribing or use pylera if available. two-co-lead signoff queued for v0.2-a clinical review."
     },
     {
       "id": "DRUG-THIOTEPA",
@@ -17532,6 +17717,23 @@
       "search_text": "rf-b-all-emergency-tls-leukostasis b-all with hyperleukocytosis (wbc ≥100 k/µl — ph+ b-all especially), tumor lysis syndrome... red flag red flag  src-blast-gokbuget-2018 src-nccn-bcell-2025 dis-b-all b-all with hyperleukocytosis (wbc ≥100 k/µl — ph+ b-all especially), tumor lysis syndrome (ldh >2× uln, uric acid >7.5 mg/dl, hyperkalemia, hyperphosphatemia, hypocalcemia) or symptomatic leukostasis at diagnosis   per nccn all/lbl burkitt/b-all section: rasburicase 0.2 mg/kg iv pre-cycle for high-risk tls; iv hydration 3 l/m²/day. hyperleukocytosis in b-all is less common than aml/t-all but ph+ b-all can present with very high wbc. direction hold until stabilization; priority 10. stub — requires clinical co-lead signoff."
     },
     {
+      "id": "RF-BARRETTS-ESOPHAGUS-PREVENTION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Barrett's esophagus (intestinal metaplasia of the distal esophagus with goblet cells on b...",
+      "url": "/kb/redflags/rf-barretts-esophagus-prevention.html",
+      "subtitle": "disease: DIS-ESOPHAGEAL | sources: SRC-ESMO-ESOPHAGEAL-2024, SRC-NCCN-ESOPHAGEAL-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-ESMO-ESOPHAGEAL-2024",
+        "SRC-NCCN-ESOPHAGEAL-2025"
+      ],
+      "diseases": [
+        "DIS-ESOPHAGEAL"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-barretts-esophagus-prevention barrett's esophagus (intestinal metaplasia of the distal esophagus with goblet cells on b... red flag red flag  src-esmo-esophageal-2024 src-nccn-esophageal-2025 dis-esophageal barrett's esophagus (intestinal metaplasia of the distal esophagus with goblet cells on biopsy after egd performed for chronic gerd or barrett's-specific surveillance) in an individual without a current esophageal adenocarcinoma diagnosis. established precursor lesion to esophageal adenocarcinoma — annual progression rates: non-dysplastic barrett's ~0.1-0.3%/year to eac, low-grade dysplasia (lgd) ~0.7-2%/year, high-grade dysplasia (hgd) ~7-19%/year. endoscopic surveillance and endoscopic eradication therapy (radiofrequency ablation, endoscopic mucosal resection) for dysplastic barrett's substantially reduce eac incidence and mortality. prevention-persona redflag (§20 ratification 2026-05-18, v0.3 chronic-condition pilot).   v0.3 chronic-condition prevention pilot — barrett's esophagus. prevention-persona redflag (charter §3 amended 2026-05-18 path a, hcp-mediated). fires when patient profile shows confirmed barrett's esophagus (with or without dysplasia) and no confirmed esophageal adenocarcinoma. engine routes such patients to a preventionplan with 2 tracks: intensified egd surveillance per acg/nccn cadences (ind-barretts-esophagus-prevention-surveillance) as the standard pathway; routine q5y egd observation (ind-barretts-esophagus- prevention-observation) as the alternative — appropriate only for confirmed non-dysplastic barrett, not for any dysplasia grade. evidence for surveillance + endoscopic eradication therapy reducing eac incidence: hgd ablation reduces progression to eac by ~75% vs observation (shaheen et al. jama 2014; aim-dysplasia trial). lgd ablation reduces progression to hgd/eac by ~75% (surf trial, phoa et al. jama 2014). for non-dysplastic barrett, surveillance does not reduce incidence but improves earliest-stage detection. dysplasia management: lgd → endoscopic eradication therapy (rfa ± emr for visible lesions) or intensified surveillance q6-12mo if patient declines. hgd → endoscopic eradication therapy mandatory (rfa + emr); esophagectomy reserved for non-responders or invasive t1b disease. ppi co-therapy: high-dose ppi (omeprazole 40mg bid or equivalent) is recommended for symptom control and esophagitis healing in all barrett's patients regardless of surveillance track; reduces inflammatory progression but does not by itself prevent eac development. sources todo: acg barrett's esophagus clinical guideline 2022 (shaheen et al.) as a new src entity; aga barrett's esophagus clinical practice update 2022 as a new src entity. this is a stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption (sources cited, draft flag set)."
+    },
+    {
       "id": "RF-IFS-ORGAN-DYSFUNCTION",
       "kind": "Red flag",
       "kind_key": "redflags",
@@ -18343,6 +18545,57 @@
       "search_text": "rf-hcc-child-pugh-b-c child-pugh b or c cirrhosis in hcc patient. cp-a is the only fully- studied class for ici... red flag red flag  src-aasld-hcc-2023 src-nccn-hcc-2025 dis-hcc child-pugh b or c cirrhosis in hcc patient. cp-a is the only fully- studied class for ici combinations (atezo+bev, durva+treme); cp-b has partial sorafenib/lenvatinib data but worse safety; cp-c generally precludes systemic therapy (focus on supportive care + transplant evaluation if liver-limited disease).   child-pugh score assesses encephalopathy, ascites, bilirubin, albumin, inr. cp-b: ici-bev contraindicated (anti-angiogenic stress on decompensated liver); sorafenib partial data (gideon registry). cp-c: best supportive care + hepatology / transplant; systemic chemo not indicated."
     },
     {
+      "id": "RF-CHRONIC-HCV-NHL-PREVENTION-OPPORTUNITY",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Chronic HCV infection (HCV-RNA detectable / persistent viremia) in an individual without...",
+      "url": "/kb/redflags/rf-chronic-hcv-nhl-prevention-opportunity.html",
+      "subtitle": "disease: DIS-HCV-MZL | sources: SRC-EASL-HCV-2023, SRC-NCCN-BCELL-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-EASL-HCV-2023",
+        "SRC-NCCN-BCELL-2025"
+      ],
+      "diseases": [
+        "DIS-HCV-MZL"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-chronic-hcv-nhl-prevention-opportunity chronic hcv infection (hcv-rna detectable / persistent viremia) in an individual without... red flag red flag  src-easl-hcv-2023 src-nccn-bcell-2025 dis-hcv-mzl chronic hcv infection (hcv-rna detectable / persistent viremia) in an individual without a current b-cell nhl diagnosis. iarc group 1 carcinogen (hcv) — established etiological driver of indolent b-cell lymphomas (mzl, lymphoplasmacytic, splenic-mzl, low-grade dlbcl subset) and hcc. daa-based curative antiviral therapy is the highest-leverage prevention pathway and reduces both nhl incidence and hcc incidence post-svr12. prevention-persona redflag (§20 ratification 2026-05-18).   prevention-persona redflag (charter §3 amended 2026-05-18 path a, hcp-mediated). fires when patient profile shows chronic hcv (hcv-rna detectable or hcv-ab+ with persistent viremia >6 months) and no confirmed b-cell nhl diagnosis. engine routes such patients to a preventionplan recommending daa antiviral therapy (per ind-chronic-hcv-prevention-daa) as the etiological-cancer-prevention pathway. evidence for hcv → nhl causation (iarc group 1): multiple cohort studies show 2-3x increased risk of indolent b-cell nhl in chronic hcv carriers; epidemiology especially robust for mzl subtypes. daa cure (svr12) has been associated with reduced nhl incidence in post-treatment cohorts (de-re et al. and others) and with regression of established hcv-associated indolent nhl (the basis of ind-hcv-mzl-1l-antiviral for the treatment persona). this is a stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption (sources cited, draft flag set). engine consumption is deferred to v0.2 implementation wave — the preventionplan code path does not yet exist; this rf lands as schema-valid declarative content awaiting that wave."
+    },
+    {
+      "id": "RF-CHRONIC-H-PYLORI-MALIGNANCY-PREVENTION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Chronic Helicobacter pylori infection (positive urea breath test, stool antigen, gastric...",
+      "url": "/kb/redflags/rf-chronic-h-pylori-malignancy-prevention.html",
+      "subtitle": "disease: DIS-GASTRIC | sources: SRC-NCCN-BCELL-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-NCCN-BCELL-2025"
+      ],
+      "diseases": [
+        "DIS-GASTRIC"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-chronic-h-pylori-malignancy-prevention chronic helicobacter pylori infection (positive urea breath test, stool antigen, gastric... red flag red flag  src-nccn-bcell-2025 dis-gastric chronic helicobacter pylori infection (positive urea breath test, stool antigen, gastric biopsy histology, or stool pcr) in an individual without a current gastric malignancy diagnosis. iarc group 1 carcinogen (h. pylori) — established etiological driver of gastric adenocarcinoma (intestinal-type primarily) and gastric malt lymphoma. eradication therapy reduces gastric-cancer incidence (nnt ~15 in high-incidence populations per cochrane meta-analyses) and is curative for early-stage gastric malt lymphoma in ~70-80% of cases (wotherspoon regression). prevention-persona redflag (§20 ratification 2026-05-18).   prevention-persona redflag (charter §3 amended 2026-05-18 path a, hcp-mediated). fires when patient profile shows chronic h. pylori (positive ubt / stool antigen / biopsy histology / stool pcr) and no confirmed gastric malignancy. engine routes such patients to a preventionplan recommending eradication therapy (per ind-h-pylori-prevention-eradication) as the etiological-cancer- prevention pathway. evidence for h. pylori → gastric cancer causation (iarc group 1): multiple cochrane meta-analyses show eradication reduces gastric adenocarcinoma incidence (rr ~0.54-0.66, nnt ~15-50 depending on population baseline incidence). effect is stronger in high-incidence populations and in younger individuals where atrophic gastritis / intestinal metaplasia has not yet developed. evidence for h. pylori → gastric malt lymphoma: eradication is the first-line treatment for early-stage gastric malt lymphoma, with wotherspoon regression in ~70-80% of cases (especially t(11;18)- negative). this is treatment-persona territory (existing malt lymphoma in setting of confirmed h. pylori → treatment indication, not yet authored) — distinct from prevention persona (chronic h. pylori → prevent malt/adenocarcinoma development). sources todo: iarc monograph 100b (h. pylori group 1) as a new src entity; maastricht vi/florence consensus (2022) as a new src entity for eradication regimens; aga 2024 h. pylori treatment guideline as a new src entity. v0.2-a continuation backlog. this is a stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption (sources cited, draft flag set). engine consumption is operational via §20 preventionplan path (commit `24ff626661`, 2026-05-18) — this rf will fire and produce a 2-track preventionplan as soon as a matching prevention indication is loaded."
+    },
+    {
+      "id": "RF-CHRONIC-HBV-MALIGNANCY-PREVENTION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Chronic Hepatitis B infection (HBsAg+ ≥6 months OR HBV-DNA detectable ≥6 months) in an in...",
+      "url": "/kb/redflags/rf-chronic-hbv-malignancy-prevention.html",
+      "subtitle": "disease: DIS-HCC | sources: SRC-AASLD-HBV-2024, SRC-AASLD-HCC-2023, SRC-EASL-HBV-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-AASLD-HBV-2024",
+        "SRC-AASLD-HCC-2023",
+        "SRC-EASL-HBV-2025"
+      ],
+      "diseases": [
+        "DIS-HCC"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-chronic-hbv-malignancy-prevention chronic hepatitis b infection (hbsag+ ≥6 months or hbv-dna detectable ≥6 months) in an in... red flag red flag  src-aasld-hbv-2024 src-aasld-hcc-2023 src-easl-hbv-2025 dis-hcc chronic hepatitis b infection (hbsag+ ≥6 months or hbv-dna detectable ≥6 months) in an individual without a current hcc or hbv-associated lymphoma diagnosis. iarc group 1 carcinogen (hbv) — established etiological driver of hcc (lifetime risk 15-25% in untreated chronic hbv per who; 5-10x reduction with antiviral suppression) and a contributor to b-cell nhl (hcc the dominant cancer outcome). long-term nucleos(t)ide analog suppression (entecavir / tenofovir tdf or taf) reduces hcc incidence. prevention-persona redflag (§20 ratification 2026-05-18).   prevention-persona redflag for hbv-associated cancer prevention. fires on hbsag+ or detectable hbv-dna in patient without hcc. engine routes to preventionplan recommending nucleos(t)ide analog suppression (per ind-chronic-hbv-prevention-antiviral) + afp+us hcc surveillance q6mo per aasld protocol. stub pending co-lead review. cancer scope: anchor target dis-hcc. hbv-associated dlbcl/nhl is also documented in literature but with weaker effect-size data than the hcv-nhl link; covered via the broader nhl prevention surveillance bullet in the antiviral indication rationale. distinct from rf-universal-hbv-reactivation-risk (existing) which is the treatment-time rf for hbv reactivation during anti-cd20 / chemo."
+    },
+    {
       "id": "RF-UROTHELIAL-ORGAN-DYSFUNCTION",
       "kind": "Red flag",
       "kind_key": "redflags",
@@ -18820,6 +19073,54 @@
       "search_text": "rf-car-t-eligible composite eligibility for car-t cell therapy: ecog ≤2 and adequate organ function (lvef ≥... red flag red flag  src-zuma-1-neelapu-2017 src-zuma-7-locke-2022  composite eligibility for car-t cell therapy: ecog ≤2 and adequate organ function (lvef ≥40%, crcl ≥30 ml/min, bilirubin ≤2× uln, ast/alt ≤5× uln, no severe pulmonary disease) and no active uncontrolled cns disease and adequate bridging plan available and no active uncontrolled infection. used to gate referral to axi-cel, brexu-cel, liso-cel, tisa-cel, ide-cel, cilta-cel.   composite gate harmonized across landmark car-t trials (zuma-1, transcend, juliet, zuma-7, transform, zuma-2, karmma, cartitude-1). real-world expansion of criteria (cibmtr analysis): ecog 2 acceptable with consultant judgment; lvef 40-50% acceptable with cardiology input; bilirubin elevation from disease (gilbert, hemolysis, cholestasis) vs primary hepatic dysfunction must be distinguished. active cns disease requires control (resection / it / rt) before lymphodepletion; some centers offer car-t for primary cns lymphoma with restricted criteria. bridging plan is critical — manufacture takes 2-5 weeks; if bridging chemo gives pr/cr, lymphodepletion still scheduled. ineligibility for one product (e.g., cilta-cel parkinsonism risk) does not preclude another (ide-cel) — re-evaluate per product."
     },
     {
+      "id": "RF-LYNCH-CONFIRMED-CARRIER",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Confirmed germline pathogenic / likely-pathogenic variant in a Lynch syndrome (MMR / EPCA...",
+      "url": "/kb/redflags/rf-lynch-confirmed-carrier.html",
+      "subtitle": "disease: DIS-CRC, DIS-ENDOMETRIAL, DIS-GASTRIC, DIS-OVARIAN | sources: SRC-ASCO-ACMG-LYNCH-2014, SRC-ESGO-ENDOMETRIAL-2025, SRC-ESMO-CRC-2024, SRC-NCCN-GENETIC-FAMILIAL-CRC-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-ASCO-ACMG-LYNCH-2014",
+        "SRC-ESGO-ENDOMETRIAL-2025",
+        "SRC-ESMO-CRC-2024",
+        "SRC-NCCN-GENETIC-FAMILIAL-CRC-2025"
+      ],
+      "diseases": [
+        "DIS-CRC",
+        "DIS-ENDOMETRIAL",
+        "DIS-GASTRIC",
+        "DIS-OVARIAN",
+        "DIS-PDAC",
+        "DIS-PROSTATE",
+        "DIS-UROTHELIAL"
+      ],
+      "used_by_count": 3,
+      "search_text": "rf-lynch-confirmed-carrier confirmed germline pathogenic / likely-pathogenic variant in a lynch syndrome (mmr / epca... red flag red flag  src-asco-acmg-lynch-2014 src-esgo-endometrial-2025 src-esmo-crc-2024 src-nccn-genetic-familial-crc-2025 dis-crc dis-endometrial dis-gastric dis-ovarian dis-pdac dis-prostate dis-urothelial confirmed germline pathogenic / likely-pathogenic variant in a lynch syndrome (mmr / epcam) gene — mlh1, msh2, msh6, pms2, or epcam (3' deletion silencing msh2). patient has had a germline test returned positive; the family-history-suspicion question is settled. no current personal cancer diagnosis in the carrier being assessed (current cancer diagnosis routes to treatment-track plan with carrier status recorded for tailored systemic / surgical decisions). prevention-persona redflag (§20, v0.2-b confirmed-carrier surveillance pathway — distinct from the family-history-suspicion pathway in rf-lynch-family-history-suspicion which fires before testing).   v0.2-b confirmed-carrier surveillance pathway — lynch syndrome. fires on documented germline mmr / epcam pathogenic variant positivity in an asymptomatic individual. engine routes to preventionplan recommending: (a) ind-lynch-carrier-surveillance (standard) — nccn genetic / familial high-risk: colorectal carrier surveillance protocol (colonoscopy q1-2y from 25 or 10y before youngest family crc; endometrial sampling + tvus q1-2y from 30-35 in women; annual urinalysis; egd q3-5y from 40; pancreatic surveillance discussion when ≥2 affected first-degree relatives) (b) ind-lynch-carrier-intensified (aggressive) — standard protocol plus discussion of prophylactic hysterectomy / bso post-childbearing age 40 (women) and daily aspirin per capp2 trial (gene-aware: stronger effect documented in mlh1 / msh2 carriers). triggers correspond to a positive germline panel result (variant classification per acmg framework — pathogenic / likely pathogenic; vus results route back to the family-history-suspicion pathway via rf-lynch-family-history-suspicion pending segregation or functional studies). stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption. penetrance reference (nccn genetic / familial high-risk: colorectal v2.2025): - crc lifetime risk: ~70-80% (mlh1 / msh2); ~25-50% (msh6 / pms2) - endometrial (women): ~40-60% (mlh1 / msh2); ~17-44% (msh6); lower in pms2 - gastric: ~6-13%; ovarian: ~4-20%; urothelial: ~4-25%; pancreatic: ~3-6%; brain (turcot variant): modestly elevated; sebaceous (muir-torre variant): elevated but uncommon"
+    },
+    {
+      "id": "RF-BRCA-CONFIRMED-CARRIER",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Confirmed germline pathogenic / likely-pathogenic variant in BRCA1 or BRCA2 — the canonic...",
+      "url": "/kb/redflags/rf-brca-confirmed-carrier.html",
+      "subtitle": "disease: DIS-BREAST, DIS-OVARIAN, DIS-PDAC, DIS-PROSTATE | sources: SRC-ESMO-BREAST-EARLY-2024, SRC-ESMO-OVARIAN-2024, SRC-NCCN-BREAST-2025, SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-ESMO-BREAST-EARLY-2024",
+        "SRC-ESMO-OVARIAN-2024",
+        "SRC-NCCN-BREAST-2025",
+        "SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025",
+        "SRC-NCCN-OVARIAN-2025"
+      ],
+      "diseases": [
+        "DIS-BREAST",
+        "DIS-OVARIAN",
+        "DIS-PDAC",
+        "DIS-PROSTATE"
+      ],
+      "used_by_count": 3,
+      "search_text": "rf-brca-confirmed-carrier confirmed germline pathogenic / likely-pathogenic variant in brca1 or brca2 — the canonic... red flag red flag  src-esmo-breast-early-2024 src-esmo-ovarian-2024 src-nccn-breast-2025 src-nccn-genetic-familial-breast-ovarian-2025 src-nccn-ovarian-2025 dis-breast dis-ovarian dis-pdac dis-prostate confirmed germline pathogenic / likely-pathogenic variant in brca1 or brca2 — the canonical hboc (hereditary breast and ovarian cancer) spectrum genes. patient has had a germline test returned positive; the family-history-suspicion question is settled. no current personal cancer diagnosis in the carrier being assessed (current cancer diagnosis routes to treatment-track plan with carrier status driving systemic-therapy selection — parp inhibitor consideration, platinum sensitivity, rrm / rrso interaction). prevention-persona redflag (§20, v0.2-b confirmed-carrier surveillance pathway — distinct from the family-history-suspicion pathway in rf-brca-hboc-family-history-suspicion which fires before testing).   v0.2-b confirmed-carrier surveillance pathway — brca1 / brca2. fires on documented germline brca pathogenic variant positivity in an asymptomatic individual. engine routes to preventionplan recommending: (a) ind-brca-carrier-surveillance (standard) — nccn genetic / familial high-risk: breast, ovarian, pancreatic carrier surveillance protocol (annual breast mri from age 25 alternating with mammogram from 30; clinical breast exam q6mo; tvus + ca-125 q6mo from age 30-35 framed honestly as suboptimal; psa + dre for brca2 men from 40) (b) ind-brca-carrier-intensified (aggressive) — standard protocol plus discussion of risk-reducing mastectomy (rrm) age 25-30 (brca1 > brca2 urgency) and risk-reducing bso (rrso) age 35-40 (brca1) / 40-45 (brca2) post-childbearing. triggers correspond to a positive germline panel result (variant classification per acmg framework — pathogenic / likely pathogenic). palb2, chek2, atm, rad51c/d, brip1 confirmed carriers receive distinct (gene-specific) protocols and would be authored as separate confirmed-carrier rfs in future v0.2-b iterations (out of scope here per task allowlist). stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption. penetrance reference (nccn genetic / familial high-risk: breast, ovarian, pancreatic v2.2025): - breast (women): brca1 ~55-72% lifetime; brca2 ~45-69% - ovarian (women): brca1 ~39-44%; brca2 ~11-17% - male breast: brca2 ~6.8%; brca1 ~1-5% - pancreatic (pdac): brca2 ~5-10%; brca1 ~2-3% - prostate (men): brca2 ~20-30% high-grade / metastatic; brca1 modest elevation"
+    },
+    {
       "id": "RF-MELANOMA-NF1-MUT-CANDIDATE",
       "kind": "Red flag",
       "kind_key": "redflags",
@@ -18972,6 +19273,98 @@
       ],
       "used_by_count": 1,
       "search_text": "rf-endometrial-high-risk-biology dmmr/msi-high or p53-abnormal or pole-mutated — tcga classification drives ici eligibilit... red flag red flag  src-esmo-endometrial-2022 src-nccn-uterine-2025 dis-endometrial dmmr/msi-high or p53-abnormal or pole-mutated — tcga classification drives ici eligibility.   universal molecular profiling. dmmr triggers lynch screening."
+    },
+    {
+      "id": "RF-CHRONIC-EBV-MALIGNANCY-PREVENTION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Documented chronic EBV infection (positive EBV-PCR with persistently detectable viremia >...",
+      "url": "/kb/redflags/rf-chronic-ebv-malignancy-prevention.html",
+      "subtitle": "disease: DIS-BURKITT | sources: SRC-NCCN-BCELL-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-NCCN-BCELL-2025"
+      ],
+      "diseases": [
+        "DIS-BURKITT"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-chronic-ebv-malignancy-prevention documented chronic ebv infection (positive ebv-pcr with persistently detectable viremia >... red flag red flag  src-nccn-bcell-2025 dis-burkitt documented chronic ebv infection (positive ebv-pcr with persistently detectable viremia >3 months) and a context of elevated ebv-associated malignancy risk (post-solid-organ-transplant or post-hsct immunosuppression, congenital immunodeficiency, or hiv co-infection). iarc group 1 carcinogen (ebv) — established etiological driver of burkitt lymphoma, post-transplant lymphoproliferative disorder (ptld), nasopharyngeal carcinoma, ebv-positive dlbcl of the elderly, hodgkin lymphoma (subset), gastric carcinoma (subset). population-wide prevention is impractical (>90% adults seropositive globally), so the rf is gated by an additional immunocompromise context — that is where ebv viremia drives clinically actionable elevated risk and ebv-dna monitoring is standard-of-care. prevention-persona redflag (§20 ratification 2026-05-18).   prevention-persona redflag for ebv-driven cancer prevention in immunocompromised hosts. unlike hcv/hbv/h. pylori, there is no curative anti-ebv regimen; the prevention pathway is (a) reduce immunosuppression where feasible, (b) preemptive rituximab in post-transplant patients with rising ebv-dna (per international ptld guidelines), (c) periodic ebv-dna monitoring. stub pending co-lead review. gating by additional immunocompromise context is deliberate — ebv seroprevalence is >90% in immunocompetent adults globally, so a rf triggered on ebv alone would fire universally and provide no clinical signal."
+    },
+    {
+      "id": "RF-RADON-MALIGNANCY-PREVENTION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Documented elevated radon exposure — either residential (indoor-air radon ≥4 pCi/L per EP...",
+      "url": "/kb/redflags/rf-radon-malignancy-prevention.html",
+      "subtitle": "disease: DIS-NSCLC, DIS-SCLC | sources: SRC-ESMO-NSCLC-EARLY-2024, SRC-NCCN-NSCLC-2025, SRC-NCCN-SCLC-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-ESMO-NSCLC-EARLY-2024",
+        "SRC-NCCN-NSCLC-2025",
+        "SRC-NCCN-SCLC-2025"
+      ],
+      "diseases": [
+        "DIS-NSCLC",
+        "DIS-SCLC"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-radon-malignancy-prevention documented elevated radon exposure — either residential (indoor-air radon ≥4 pci/l per ep... red flag red flag  src-esmo-nsclc-early-2024 src-nccn-nsclc-2025 src-nccn-sclc-2025 dis-nsclc dis-sclc documented elevated radon exposure — either residential (indoor-air radon ≥4 pci/l per epa action threshold, or ≥148 bq/m³ per who threshold; geographic high-risk areas with documented home measurement) or occupational (uranium / hard-rock mining, milling and processing; underground non-uranium mining with documented radon-progeny exposure; pre-regulation occupations) — in an individual without a current lung-cancer diagnosis. radon (²²²rn) and its short-lived progeny (²¹⁸po, ²¹⁴pb, ²¹⁴bi, ²¹⁴po) emit alpha radiation that deposits in bronchial epithelium when inhaled. radon is an iarc group 1 carcinogen — the second-leading cause of lung cancer overall after tobacco smoking, and the leading cause among never-smokers. radon-smoking interaction is synergistic (greater than additive but submultiplicative on the log-additive scale), with smoker- radon-exposed workers carrying ~10-25x background lung-cancer risk per high cumulative exposure. there is no curative intervention for prior radon exposure — radon mitigation in occupied dwellings (sub-slab depressurization, ventilation improvements), smoking-cessation counseling (synergistic risk-reduction), and annual ldct surveillance per modified uspstf criteria are the levers. prevention-persona redflag (§20 ratification 2026-05-18, v0.3 occupational pilot starter).   prevention-persona redflag — v0.3 occupational/environmental pilot starter. mixed occupational-and-residential scope: the same risk-category enum value (`occupational`) covers both per kss §20.1 7-category taxonomy (the taxonomy has no separate environmental bucket — radon's residential-exposure context is treated as occupational-equivalent for routing). fires when patient profile carries documented elevated radon exposure (residential at-or-above epa action level, or documented high residential with smoking history, or occupational uranium-mining / processing exposure) and no confirmed lung-cancer diagnosis. engine routes to a 2-track preventionplan: (a) ind-radon-prevention-mitigation-and-screening (standard) — radon mitigation (sub-slab depressurization, ventilation, sealing) for residential exposure; smoking- cessation counseling (synergistic with radon for lung cancer); annual ldct per modified uspstf criteria adjusted for radon-elevated risk. (b) ind-radon-prevention-observation (surveillance) — unmodified uspstf screening criteria only; patient declines intensified imaging surveillance and / or radon mitigation. evidence base (iarc monograph 100d 2012; beir vi report 1999; darby et al. 2005 european pooled residential analysis; krewski et al. 2005 north american pooled residential analysis; lubin et al. 2004 chinese residential analysis; uranium-miner cohorts — colorado plateau, czech, french): - residential radon: per 100 bq/m³ sustained exposure, ~16% relative increase in lung-cancer risk for never-smokers and current smokers (multiplicative on smoking rr). - uranium-miner cohorts: smr 2-5x for moderately exposed, ≥10x for heavily exposed. - latency: 5-25 years; effect persists decades after exposure cessation. - smoking interaction: greater than additive but sub-multiplicative on log-additive scale; smoking-cessation meaningfully attenuates radon risk in smokers. sources todo: iarc monograph 100d (2012); epa radon risk assessment (citizen's guide to radon, 2022 update); beir vi report (1999) as new src entities. v0.3 source-authoring backlog. stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption."
+    },
+    {
+      "id": "RF-OCC-ASBESTOS-MALIGNANCY-PREVENTION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Documented historical occupational exposure to asbestos fibres (chrysotile, amosite, croc...",
+      "url": "/kb/redflags/rf-occ-asbestos-malignancy-prevention.html",
+      "subtitle": "disease: DIS-MESOTHELIOMA, DIS-NSCLC, DIS-OVARIAN, DIS-SCLC | sources: SRC-ESMO-NSCLC-EARLY-2024, SRC-NCCN-NSCLC-2025, SRC-NCCN-SCLC-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-ESMO-NSCLC-EARLY-2024",
+        "SRC-NCCN-NSCLC-2025",
+        "SRC-NCCN-SCLC-2025"
+      ],
+      "diseases": [
+        "DIS-MESOTHELIOMA",
+        "DIS-NSCLC",
+        "DIS-OVARIAN",
+        "DIS-SCLC"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-occ-asbestos-malignancy-prevention documented historical occupational exposure to asbestos fibres (chrysotile, amosite, croc... red flag red flag  src-esmo-nsclc-early-2024 src-nccn-nsclc-2025 src-nccn-sclc-2025 dis-mesothelioma dis-nsclc dis-ovarian dis-sclc documented historical occupational exposure to asbestos fibres (chrysotile, amosite, crocidolite, anthophyllite, tremolite, actinolite) in an individual without a current asbestos-associated malignancy diagnosis. classic high-risk occupations: shipyard workers, insulators, boilermakers, pipefitters, asbestos-cement manufacture / installation, brake-lining manufacture / repair, demolition / construction trades pre-regulation, miners and millers of asbestos ore. asbestos is an iarc group 1 carcinogen — established etiological driver of malignant mesothelioma (pleural and peritoneal), lung cancer (synergistic with tobacco — multiplicative risk), and (per the 2012 iarc monograph 100c update) ovarian and laryngeal cancer. latency from first exposure to mesothelioma is typically 20-50 years; lung-cancer latency is shorter (10-30 years) and cumulative-dose- and smoking-dependent. there is no curative intervention for prior exposure — exposure-cessation counseling, smoking-cessation counseling (synergistic lung-cancer risk), and intensified surveillance are the levers. prevention-persona redflag (§20 ratification 2026-05-18, v0.3 occupational pilot starter).   prevention-persona redflag — v0.3 occupational/environmental pilot starter (charter §3 prevention scope, ratified 2026-05-18 path a, hcp-mediated). fires when patient profile carries documented prior occupational asbestos exposure and no confirmed asbestos-associated malignancy diagnosis. engine routes such patients to a 2-track preventionplan: (a) ind-occ-asbestos-prevention-intensified-surveillance (standard) — counseling on exposure cessation (typically irrelevant for retired / non-active workers), smoking- cessation counseling (paramount due to multiplicative lung- cancer synergy), annual ldct chest from 10-20 years post first exposure adjusted by smoking status, discussion of pleural surveillance. (b) ind-occ-asbestos-prevention-observation (surveillance) — routine general-population screening only; patient declines intensified imaging surveillance for any reason (cost, radiation concerns, anxiety, preference). trigger findings are computed booleans from occupational-history intake at the patient-profile layer (fhir patient + observation / condition extensions; computation pipeline downstream of kb and not yet implemented). evidence base (iarc monograph 100c 2012; lemasters et al. 2007 systematic review; hodgson & darnton 2000 meta-analysis; atsdr asbestos toxicological profile): - mesothelioma smr ~5-200x in asbestos-exposed cohorts depending on fibre type (amphiboles > chrysotile) and cumulative dose; ~80% of mesothelioma cases attributable to asbestos exposure - lung-cancer smr ~2-5x in asbestos-only exposure; ~50x in asbestos + smoking (multiplicative interaction). smoking cessation post-exposure substantially reduces incremental risk. - ovarian cancer smr ~1.8-2.0x in heavily-exposed female cohorts (textile mill workers, asbestos-cement workers) per iarc 100c meta-analysis. - latency: mesothelioma ≥20 years from first exposure typically; lung cancer ≥10-15 years; ovarian variable. sources todo: iarc monograph 100c (2012) as a new src entity for authoritative group-1 classification; atsdr asbestos tox profile (2001 + 2014 update) as a new src entity. v0.3 source-authoring backlog. stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption. engine consumption is operational via §20 preventionplan path — this rf will fire and produce a 2-track preventionplan as soon as the paired prevention indications below are loaded."
+    },
+    {
+      "id": "RF-OCC-BENZENE-MALIGNANCY-PREVENTION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Documented historical occupational exposure to benzene in an individual without a current...",
+      "url": "/kb/redflags/rf-occ-benzene-malignancy-prevention.html",
+      "subtitle": "disease: DIS-AML, DIS-MDS-HR, DIS-MDS-LR | sources: SRC-ELN-AML-2022, SRC-ESMO-MDS-2021, SRC-NCCN-AML-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-ELN-AML-2022",
+        "SRC-ESMO-MDS-2021",
+        "SRC-NCCN-AML-2025"
+      ],
+      "diseases": [
+        "DIS-AML",
+        "DIS-MDS-HR",
+        "DIS-MDS-LR"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-occ-benzene-malignancy-prevention documented historical occupational exposure to benzene in an individual without a current... red flag red flag  src-eln-aml-2022 src-esmo-mds-2021 src-nccn-aml-2025 dis-aml dis-mds-hr dis-mds-lr documented historical occupational exposure to benzene in an individual without a current myeloid neoplasm diagnosis. classic high-exposure occupations: petroleum refining, petrochemical manufacturing, rubber / tire industry, shoemaking (cement / adhesive use pre-regulation), printing / lithography (solvent use), pharmaceutical manufacturing, coke / coal-tar industry, motor- vehicle service (fuel-pump / gasoline exposure pre-vapor-recovery), laboratory work with benzene solvent (largely historical). benzene is an iarc group 1 carcinogen with the strongest hematopoietic- malignancy linkage of any non-radiation occupational exposure — established etiological driver of acute myeloid leukemia (especially aml with cytogenetic abnormalities of chromosomes 5, 7, 8; monosomy 7), myelodysplastic syndromes (low- and high-risk mds subtypes both elevated), and acute lymphoblastic leukemia (smaller magnitude). latency from first exposure to aml / mds is typically 5-15 years; some cohorts show persistent elevation decades after exposure cessation. chronic high-dose benzene also causes aplastic anemia (often a precursor to mds / aml transformation) and pancytopenia. there is no curative intervention for prior exposure — exposure-cessation (if active), longitudinal cbc surveillance for cytopenia emergence, and low-threshold marrow evaluation if persistent cytopenia are the levers. prevention- persona redflag (§20 ratification 2026-05-18, v0.3 occupational pilot starter).   prevention-persona redflag — v0.3 occupational pilot starter. fires when patient profile carries documented prior occupational benzene exposure and no confirmed myeloid neoplasm diagnosis. engine routes such patients to a 2-track preventionplan: (a) ind-occ-benzene-prevention-intensified-surveillance (standard) — exposure-cessation counseling (if active), cbc q6-12 months with peripheral smear review for cytopenias, low-threshold bone marrow evaluation for persistent cytopenia (>3-6 months) or unexplained macrocytic anemia, co-management with hematology if any abnormality emerges. (b) ind-occ-benzene-prevention-observation (surveillance) — symptom-triggered evaluation only; patient declines routine cbc surveillance for any reason. evidence base (iarc monograph 100f 2012; vlaanderen et al. 2011 systematic review; khalade et al. 2010 meta-analysis; pulmonary industry cohort studies eg, pliofilm cohort rinsky et al. 1987; chinese cohort hayes et al. 1997): - aml smr ~2-3x in moderately exposed cohorts (cumulative dose ~40 ppm-years); ~10x in heavily exposed cohorts. dose-response established at exposures >40 ppm-years. - mds smr ~2-4x; benzene-attributable mds frequently progresses to aml. - latency: typically 5-15 years; persistent excess risk noted ≥20 years post-exposure-cessation in some cohorts. - no threshold below which risk is demonstrably zero; osha pel 1 ppm 8-hr twa + 5 ppm stel acts as a regulatory threshold, not a biological no-effect level. sources todo: iarc monograph 100f (2012) as a new src entity for authoritative group-1 classification; atsdr benzene toxicological profile (2007 + 2024 update) as a new src entity; niosh benzene bulletin / osha benzene standard as regulatory references. v0.3 source-authoring backlog. stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption."
+    },
+    {
+      "id": "RF-OCC-AROMATIC-AMINES-MALIGNANCY-PREVENTION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Documented occupational aromatic-amine exposure — benzidine, 2-naphthylamine, 4-aminobiph...",
+      "url": "/kb/redflags/rf-occ-aromatic-amines-malignancy-prevention.html",
+      "subtitle": "disease: DIS-UROTHELIAL | sources: SRC-NCCN-BCELL-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-NCCN-BCELL-2025"
+      ],
+      "diseases": [
+        "DIS-UROTHELIAL"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-occ-aromatic-amines-malignancy-prevention documented occupational aromatic-amine exposure — benzidine, 2-naphthylamine, 4-aminobiph... red flag red flag  src-nccn-bcell-2025 dis-urothelial documented occupational aromatic-amine exposure — benzidine, 2-naphthylamine, 4-aminobiphenyl — primarily in historical pre-regulation dye, rubber, leather, pigment, and chemical-manufacturing industries (mostly pre-1980s in regulated countries; ongoing in unregulated jurisdictions). iarc group 1 carcinogen for bladder cancer. engine routes to preventionplan recommending annual urinalysis + cytology + low-threshold cystoscopy for hematuria + smoking cessation.   prevention-persona redflag for aromatic-amines → urothelial bladder cancer prevention. fires on documented occupational exposure. dis-urothelial anchor preferred but using dis-hcc as fallback if not in kb on this branch. stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode."
     },
     {
       "id": "RF-PRIOR-IO-PROGRESSION",
@@ -19280,6 +19673,206 @@
       ],
       "used_by_count": 1,
       "search_text": "rf-hcl-transformation-progression failure to achieve cr after 2 courses cladribine or early relapse (<2 years) — switch to... red flag red flag  src-esmo-dlbcl-2024 src-nccn-bcell-2025 dis-hcl failure to achieve cr after 2 courses cladribine or early relapse (<2 years) — switch to alternative purine analog + rituximab, vemurafenib (braf v600e+), or moxetumomab pasudotox.   refractory/early-relapsed hcl has multiple 2l options; selection driven by braf status and prior exposure. sits in 2l algorithm not 1l."
+    },
+    {
+      "id": "RF-BRCA-HBOC-FAMILY-HISTORY-SUSPICION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Family pedigree meeting criteria suggestive of Hereditary Breast and Ovarian Cancer (HBOC...",
+      "url": "/kb/redflags/rf-brca-hboc-family-history-suspicion.html",
+      "subtitle": "disease: DIS-BREAST, DIS-OVARIAN, DIS-PDAC, DIS-PROSTATE | sources: SRC-ESMO-BREAST-EARLY-2024, SRC-ESMO-OVARIAN-2024, SRC-NCCN-BREAST-2025, SRC-NCCN-OVARIAN-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-ESMO-BREAST-EARLY-2024",
+        "SRC-ESMO-OVARIAN-2024",
+        "SRC-NCCN-BREAST-2025",
+        "SRC-NCCN-OVARIAN-2025"
+      ],
+      "diseases": [
+        "DIS-BREAST",
+        "DIS-OVARIAN",
+        "DIS-PDAC",
+        "DIS-PROSTATE"
+      ],
+      "used_by_count": 3,
+      "search_text": "rf-brca-hboc-family-history-suspicion family pedigree meeting criteria suggestive of hereditary breast and ovarian cancer (hboc... red flag red flag  src-esmo-breast-early-2024 src-esmo-ovarian-2024 src-nccn-breast-2025 src-nccn-ovarian-2025 dis-breast dis-ovarian dis-pdac dis-prostate family pedigree meeting criteria suggestive of hereditary breast and ovarian cancer (hboc) syndrome (most commonly germline brca1 / brca2 pathogenic variants; modern hboc panels also cover palb2, chek2, atm, rad51c/d, brip1): any of (a) first- or second-degree relative with a confirmed brca1 or brca2 pathogenic variant; (b) first-degree relative with breast cancer diagnosed <50y; (c) any first- or second-degree relative with high-grade serous ovarian / fallopian-tube / primary peritoneal carcinoma at any age; (d) any male breast cancer in family; (e) ashkenazi jewish ancestry combined with personal or family history of breast or ovarian cancer (founder-mutation prevalence — brca1 185delag, brca1 5382insc, brca2 6174delt); (f) multi-cancer cluster suggestive of hboc (breast + ovarian + pancreatic + metastatic prostate in close relatives). no current personal cancer diagnosis in the individual at risk. prevention-persona redflag (§20 ratification 2026-05-18, v0.2-b hereditary pilot — brca/hboc).   v0.2-b hereditary pilot — brca / hboc. fires on pedigree-based suspicion of hboc syndrome in an asymptomatic individual (no current cancer diagnosis). engine routes to preventionplan recommending: (a) genetic counseling + germline brca1/2 (+ extended hboc panel) testing via ind-brca-hboc-suspicion-prevention-genetic-counseling (standard) (b) empirical enhanced surveillance for patients declining testing via ind-brca-hboc-suspicion-prevention-enhanced-surveillance (surveillance / alternative). trigger criteria correspond to nccn genetic/familial high-risk: breast, ovarian, and pancreatic v2.2025 testing criteria (simplified for v0.2-b pilot; production version will encode full decision logic including criteria for personal-history variants and quantitative risk-model thresholds — tyrer-cuzick ≥20% lifetime, brcapro ≥10% mutation probability). stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption. source-set todo: nccn genetic/familial high-risk: breast/ovarian/pancreatic as a dedicated src-* entity (v0.2-b follow-up authoring; license posture to verify per scope proposal open question #7). confirmed brca carriers (germline mutation positive on panel) route to a different prevention pathway (carrier-confirmed surveillance — annual breast mri from 25-30 alternating with mammogram, transvaginal ultrasound + ca-125 q6mo from 30-35 with documented limitations, discussion of risk-reducing mastectomy and risk-reducing bilateral salpingo-oophorectomy [bso] post-childbearing age 35-40 for brca1 / 40-45 for brca2). that pathway is v0.2-b follow-up authoring (rf-brca-confirmed-carrier + ind-brca-carrier-*). lifetime cancer risk in confirmed brca carriers (per nccn genetic/ familial high-risk: breast, ovarian and pancreatic): - breast (women): brca1 ~55-72%; brca2 ~45-69% - ovarian: brca1 ~39-44%; brca2 ~11-17% - male breast: brca2 ~6.8%; brca1 ~1-5% - pancreatic (pdac): brca2 ~5-10%; brca1 ~2-3% - prostate (men): brca2 ~20-30% (high-grade / metastatic); brca1 modest elevation"
+    },
+    {
+      "id": "RF-LYNCH-FAMILY-HISTORY-SUSPICION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Family pedigree meeting criteria suggestive of hereditary nonpolyposis colorectal cancer...",
+      "url": "/kb/redflags/rf-lynch-family-history-suspicion.html",
+      "subtitle": "disease: DIS-CRC, DIS-ENDOMETRIAL, DIS-GASTRIC, DIS-OVARIAN | sources: SRC-ESGO-ENDOMETRIAL-2025, SRC-ESMO-CRC-2024, SRC-ESMO-ENDOMETRIAL-2022 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-ESGO-ENDOMETRIAL-2025",
+        "SRC-ESMO-CRC-2024",
+        "SRC-ESMO-ENDOMETRIAL-2022"
+      ],
+      "diseases": [
+        "DIS-CRC",
+        "DIS-ENDOMETRIAL",
+        "DIS-GASTRIC",
+        "DIS-OVARIAN",
+        "DIS-PDAC",
+        "DIS-PROSTATE",
+        "DIS-UROTHELIAL"
+      ],
+      "used_by_count": 3,
+      "search_text": "rf-lynch-family-history-suspicion family pedigree meeting criteria suggestive of hereditary nonpolyposis colorectal cancer... red flag red flag  src-esgo-endometrial-2025 src-esmo-crc-2024 src-esmo-endometrial-2022 dis-crc dis-endometrial dis-gastric dis-ovarian dis-pdac dis-prostate dis-urothelial family pedigree meeting criteria suggestive of hereditary nonpolyposis colorectal cancer (hnpcc) / lynch syndrome: any of (a) amsterdam ii criteria — ≥3 relatives with lynch-spectrum cancer (crc, endometrial, small bowel, urothelial, hepatobiliary, brain, sebaceous skin), spanning ≥2 generations, with ≥1 first-degree relative and ≥1 diagnosis <50y; (b) revised bethesda criteria; (c) premm5 model ≥2.5%; or (d) first-degree relative with lynch-spectrum cancer diagnosed <50. no current personal cancer diagnosis in the individual at risk. prevention-persona redflag (§20 ratification 2026-05-18, v0.2-b hereditary pilot starter).   v0.2-b hereditary pilot starter. fires on pedigree-based suspicion of lynch syndrome / hnpcc in an asymptomatic individual (no current cancer diagnosis). engine routes to preventionplan recommending: (a) genetic counseling + germline mmr/epcam panel testing via ind-lynch-suspicion-prevention-genetic-counseling (standard) (b) enhanced empirical surveillance for patients declining testing via ind-lynch-suspicion-prevention-enhanced- surveillance (alternative). triggers correspond to established lynch-suspicion criteria (amsterdam ii, revised bethesda, premm5 ≥2.5%, single-relative <50 bright-line). patient profile is expected to carry these as computed booleans from the pedigree input (fhir familymemberhistory at the data-standards layer; computation is a downstream concern not yet implemented). stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption. source-set todo: nccn genetic/familial high-risk: colorectal/endometrial (license posture to verify per scope proposal open question #7); acmg lynch testing guidance. confirmed lynch carriers (germline mutation positive on panel) route to a different prevention pathway (carrier-confirmed surveillance — colonoscopy q1-2y from 25, endometrial surveillance, etc.). that pathway is v0.2-b follow-up authoring (rf-lynch-confirmed-carrier + ind-lynch-carrier-surveillance). lifetime cancer risk in confirmed lynch carriers (per nccn genetic/ familial high-risk: colorectal): - crc: ~70-80% (mlh1/msh2); ~25-50% (msh6/pms2) - endometrial (women): ~40-60% (mlh1/msh2); ~17-44% (msh6) - stomach: ~6-13%; ovarian: ~4-20%; urothelial: ~4-25%; pancreas: ~3-6% - sebaceous neoplasms (muir-torre variant): elevated but uncommon"
+    },
+    {
+      "id": "RF-LI-FRAUMENI-FAMILY-HISTORY-SUSPICION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Family pedigree or personal history meeting criteria suggestive of Li-Fraumeni Syndrome (...",
+      "url": "/kb/redflags/rf-li-fraumeni-family-history-suspicion.html",
+      "subtitle": "disease: DIS-AML, DIS-BREAST, DIS-GBM, DIS-SOFT-TISSUE-SARCOMA | sources: SRC-NCCN-AML-2025, SRC-NCCN-BREAST-2025, SRC-NCCN-CNS-2025, SRC-NCCN-SARCOMA | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-NCCN-AML-2025",
+        "SRC-NCCN-BREAST-2025",
+        "SRC-NCCN-CNS-2025",
+        "SRC-NCCN-SARCOMA"
+      ],
+      "diseases": [
+        "DIS-AML",
+        "DIS-BREAST",
+        "DIS-GBM",
+        "DIS-SOFT-TISSUE-SARCOMA"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-li-fraumeni-family-history-suspicion family pedigree or personal history meeting criteria suggestive of li-fraumeni syndrome (... red flag red flag  src-nccn-aml-2025 src-nccn-breast-2025 src-nccn-cns-2025 src-nccn-sarcoma dis-aml dis-breast dis-gbm dis-soft-tissue-sarcoma family pedigree or personal history meeting criteria suggestive of li-fraumeni syndrome (lfs; germline tp53 pathogenic variant), one of the most penetrant hereditary cancer syndromes known: any of (a) first- or second-degree relative with a confirmed tp53 pathogenic variant; (b) chompret criteria met — proband with an lfs-spectrum tumor (soft-tissue sarcoma, osteosarcoma, premenopausal breast cancer, cns tumor, adrenocortical carcinoma, leukemia, or lung bronchoalveolar carcinoma) before age 46 and ≥1 first/second-degree relative with lfs-spectrum tumor (other than breast if proband had breast cancer) before age 56 or with multiple primaries at any age; or proband with multiple primary tumors (≥2, with first before age 46); or proband with adrenocortical carcinoma, choroid plexus carcinoma, embryonal anaplastic subtype rhabdomyosarcoma, regardless of family history; (c) classic li-fraumeni criteria met — proband with sarcoma diagnosed <45 + first-degree relative with any cancer <45 + an additional first/second-degree relative with any cancer <45 or with sarcoma at any age; (d) proband with ≥2 primary lfs-spectrum tumors (soft-tissue sarcoma, osteosarcoma, breast premenopausal, cns tumor, adrenocortical carcinoma, leukemia) at any age. no current personal cancer diagnosis in the at-risk individual being assessed (current cancer diagnosis routes to treatment-track plan with germline-testing recommendation embedded). prevention-persona redflag (§20 ratification 2026-05-18, v0.2-b hereditary pilot — li-fraumeni).   v0.2-b hereditary pilot — li-fraumeni syndrome (lfs). fires on pedigree-based suspicion of lfs in an asymptomatic individual (no current cancer diagnosis). engine routes to preventionplan recommending: (a) genetic counseling + germline tp53 testing via ind-li-fraumeni-suspicion-prevention-genetic-counseling (standard) (b) empirical toronto-protocol-style enhanced surveillance for patients declining testing via ind-li-fraumeni-suspicion-prevention-enhanced-surveillance (surveillance / alternative, resource-intensive — explicit patient-autonomy framing per charter §11). trigger criteria correspond to (1) chompret criteria for tp53 testing (revised 2015), (2) classic li-fraumeni criteria (li & fraumeni 1988 / birch et al. 1994), and (3) nccn genetic/familial high-risk: breast, ovarian and pancreatic v2.2025 lfs section testing criteria. simplified for v0.2-b pilot; production version may add quantitative scoring (lfs mutation probability score). stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption. source-set todo: nccn genetic/familial high-risk: breast/ovarian/pancreatic, dedicated tp53/lfs testing guidance from mai et al. nci consortium, bougeard et al. revised chompret criteria, as dedicated src-* entities (v0.2-b follow-up authoring; license posture to verify per scope proposal open question #7). confirmed tp53 carriers (germline mutation positive on panel) route to a different prevention pathway (carrier-confirmed toronto- protocol surveillance — annual whole-body mri + annual brain mri + careful skin exam + colonoscopy q2-5y from 25 + breast mri from 20-25 for women + risk-reducing mastectomy discussion + radiation avoidance for confirmed carriers). that pathway is v0.2-b follow-up authoring (rf-li-fraumeni-confirmed-carrier + ind-li-fraumeni-carrier-*). **radiation avoidance caveat (critical):** tp53 carriers have documented elevated risk of radiation-induced secondary cancers in the treatment field. diagnostic radiation (ct, mammography, x-ray) is minimized in favor of mri / ultrasound when feasible. therapeutic radiation for index cancers in tp53 carriers requires multidisciplinary discussion of alternatives (surgery alone, systemic therapy alone). this applies to confirmed carriers — for suspicion-only individuals, standard imaging is acceptable until confirmation. lifetime cancer risk in confirmed tp53 carriers (per mai et al. nci consortium analysis and bougeard et al. revised chompret data): - lifetime cumulative cancer risk: ~70% by age 50 in men, ~90% by age 50 in women (driven by breast cancer); ≥90% lifetime in both sexes. - breast (women): ~54% by age 70; mean dx age ~33y. - soft-tissue sarcoma: ~15% lifetime. - osteosarcoma: ~5-10% lifetime. - cns tumor: ~10-15% lifetime. - adrenocortical carcinoma: ~6-13% lifetime (much higher in childhood — pediatric adrenocortical carcinoma is essentially diagnostic of lfs in some populations). - leukemia: ~4-6% lifetime. - multiple primary cancers in lifetime: ~50%. **psychological burden caveat:** li-fraumeni syndrome carries substantial psychological burden — predicted lifetime risk approaches 100%, and routine surveillance is resource-intensive and anxiety-provoking. pre-test counseling must explicitly address this and connect patients to lfs-specific support resources (lfs association, living lfs, etc.)."
+    },
+    {
+      "id": "RF-COWDEN-FAMILY-HISTORY-SUSPICION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Family pedigree suggestive of Cowden syndrome / PTEN hamartoma tumor syndrome (PHTS): any...",
+      "url": "/kb/redflags/rf-cowden-family-history-suspicion.html",
+      "subtitle": "disease: DIS-BREAST, DIS-CRC, DIS-ENDOMETRIAL, DIS-RCC | sources: SRC-NCCN-BREAST-2025, SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-NCCN-BREAST-2025",
+        "SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025"
+      ],
+      "diseases": [
+        "DIS-BREAST",
+        "DIS-CRC",
+        "DIS-ENDOMETRIAL",
+        "DIS-RCC",
+        "DIS-THYROID-PAPILLARY"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-cowden-family-history-suspicion family pedigree suggestive of cowden syndrome / pten hamartoma tumor syndrome (phts): any... red flag red flag  src-nccn-breast-2025 src-nccn-genetic-familial-breast-ovarian-2025 dis-breast dis-crc dis-endometrial dis-rcc dis-thyroid-papillary family pedigree suggestive of cowden syndrome / pten hamartoma tumor syndrome (phts): any of (a) a family member with a known pathogenic pten variant; (b) cowden clinical diagnostic criteria met in the proband or in a family member per revised cleveland clinic / nccn framework — macrocephaly (≥97th percentile, occipitofrontal circumference ≥58 cm in adult women / ≥60 cm in adult men) plus characteristic mucocutaneous findings (multiple trichilemmomas, acral keratoses, papillomatous papules) or characteristic gi hamartomatous polyps, or multi-organ involvement spanning breast (early-onset / bilateral), endometrial (especially under 50), follicular thyroid pathology, and characteristic cns lesions; (c) a proband or family member with lhermitte-duclos disease (adult- onset dysplastic cerebellar gangliocytoma) — pathognomonic for cowden and a stand-alone diagnostic criterion. no current personal cancer diagnosis in the individual at risk. prevention-persona redflag (§20 ratification 2026-05-18, v0.2-b hereditary pilot — additional).   v0.2-b hereditary pilot — cowden syndrome / pten hamartoma tumor syndrome. fires on pedigree-based suspicion of cowden in an asymptomatic individual (no current cancer diagnosis). engine routes to preventionplan recommending: (a) genetic counseling + germline pten panel testing via ind-cowden-suspicion-prevention-genetic-counseling (standard) (b) empirical multi-organ cowden-style surveillance for patients declining testing via ind-cowden-suspicion-prevention- enhanced-surveillance (alternative). triggers correspond to established cowden suspicion criteria. the cleveland clinic / nccn scoring system is the most-cited clinical framework: a cleveland clinic cowden score that incorporates pathognomonic / major / minor criteria with weighted scoring is the practical tool used to recommend germline pten testing. lhermitte- duclos disease — adult-onset dysplastic gangliocytoma — is pathognomonic and stand-alone diagnostic. stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption. source-set todo: nccn genetic/familial high-risk: breast, ovarian, pancreatic (covers cowden surveillance) is currently cited via src-nccn-genetic-familial-breast-ovarian-2025; dedicated pten-syndromes-specific sources (tan et al. lifetime cancer risks in phts, clin cancer res 2012; cowden syndrome / phts clinical practice guidelines — eng et al.) are v0.2-b authoring backlog new src entities. confirmed pten carriers (germline pten pathogenic variant positive) route to a different prevention pathway (carrier-confirmed structured multi-organ surveillance — breast mri + mammography from age 30, endometrial sampling discussion from 35-40, annual thyroid us, colonoscopy from age 35, dermatologic evaluation q1y, renal imaging baseline). that pathway is v0.2-b follow-up authoring (rf-cowden-confirmed-carrier + ind-cowden-carrier-surveillance). lifetime cancer risk in confirmed pten carriers (tan et al. clin cancer res 2012; nccn genetic/familial high-risk breast ovarian pancreatic): - breast (women): ~85% lifetime; often early-onset (40s) and bilateral - endometrial: ~28% lifetime; often early-onset (under 50) - thyroid (non-medullary; predominantly follicular, also papillary and hürthle-cell): ~35% lifetime; multinodular goiter near-universal but mostly benign - renal (predominantly papillary rcc and chromophobe): ~34% lifetime - colorectal: ~9% lifetime; ganglioneuromatous + hyperplastic polyps near-universal but adenoma fraction modest - melanoma: ~6% lifetime; modest elevation, no dedicated surveillance protocol vs general population - bannayan-riley-ruvalcaba (pediatric phts variant): macrocephaly, lipomas, hemangiomas, intestinal hamartomatous polyposis, developmental delay"
+    },
+    {
+      "id": "RF-FAP-FAMILY-HISTORY-SUSPICION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Family pedigree suggestive of Familial Adenomatous Polyposis (FAP) or the attenuated FAP...",
+      "url": "/kb/redflags/rf-fap-family-history-suspicion.html",
+      "subtitle": "disease: DIS-CRC, DIS-GASTRIC, DIS-PDAC, DIS-PROSTATE | sources: SRC-ESMO-CRC-2024, SRC-NCCN-COLON-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-ESMO-CRC-2024",
+        "SRC-NCCN-COLON-2025"
+      ],
+      "diseases": [
+        "DIS-CRC",
+        "DIS-GASTRIC",
+        "DIS-PDAC",
+        "DIS-PROSTATE"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-fap-family-history-suspicion family pedigree suggestive of familial adenomatous polyposis (fap) or the attenuated fap... red flag red flag  src-esmo-crc-2024 src-nccn-colon-2025 dis-crc dis-gastric dis-pdac dis-prostate family pedigree suggestive of familial adenomatous polyposis (fap) or the attenuated fap (afap) / gardner-variant spectrum: any of (a) a family member with a known pathogenic apc variant; (b) classic fap phenotype — >100 colorectal adenomatous polyps in the proband or a first/second-degree relative; (c) attenuated fap phenotype — 10-100 colorectal adenomas in a relative plus family history of crc under 60; (d) first-degree relative with a confirmed clinical fap diagnosis; (e) family member with extracolonic fap / gardner manifestations (osteomas, epidermoid cysts, congenital hypertrophy of the retinal pigment epithelium [chrpe], or desmoid tumors). no current personal cancer diagnosis in the individual at risk. prevention-persona redflag (§20 ratification 2026-05-18, v0.2-b hereditary pilot starter).   v0.2-b hereditary pilot — fap. fires on pedigree-based suspicion of fap / afap / gardner-variant in an asymptomatic individual (no current cancer diagnosis). engine routes to preventionplan recommending: (a) genetic counseling + germline apc panel testing (modern multi-gene panels include mutyh for map differential — note that mutyh-associated polyposis is autosomal recessive vs autosomal-dominant fap) via ind-fap-suspicion-prevention-genetic-counseling (standard) (b) empirical enhanced surveillance for patients declining testing via ind-fap-suspicion-prevention-enhanced- surveillance (alternative). triggers correspond to established fap-suspicion criteria. patient profile is expected to carry these as computed booleans from the pedigree input (fhir familymemberhistory at the data-standards layer; computation is a downstream concern not yet implemented). stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption. source-set todo: nccn genetic/familial high-risk: colorectal as a new src entity (per scope proposal open question #7 on license posture); american college of gastroenterology fap surveillance guidance. confirmed apc carriers (germline mutation positive on panel) route to a different prevention pathway (carrier-confirmed surveillance — sigmoidoscopy q1-2y from age 10-12 in classic fap / colonoscopy q1-2y in attenuated fap; upper-gi egd q1-3y from age 25-30 with duodenal-polyp spigelman staging; prophylactic colectomy late teens / early 20s in classic fap, individualized in afap). that pathway is v0.2-b follow-up authoring (rf-fap-confirmed-carrier + ind-fap-carrier-surveillance). lifetime cancer risk in confirmed fap carriers (nccn genetic/ familial high-risk: colorectal): - crc: ~100% by age 40 in classic fap without colectomy; ~70-80% by age 80 in attenuated fap - duodenal adenocarcinoma: ~5-10% lifetime - gastric fundic-gland polyposis: ~30-50% (most benign; adenocarcinoma transformation rare) - desmoid tumors: ~10-20% lifetime, often post-surgical; a leading cause of fap mortality after crc - thyroid (papillary cribriform-morular variant): ~1-2% - hepatoblastoma in children of fap families: ~1-2% under age 5 - cns (medulloblastoma — turcot variant): rare"
+    },
+    {
+      "id": "RF-HLRCC-FAMILY-HISTORY-SUSPICION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Family pedigree suggestive of Hereditary Leiomyomatosis and Renal Cell Cancer (HLRCC) syn...",
+      "url": "/kb/redflags/rf-hlrcc-family-history-suspicion.html",
+      "subtitle": "disease: DIS-RCC | sources: SRC-ESMO-RCC-2024, SRC-NCCN-KIDNEY-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-ESMO-RCC-2024",
+        "SRC-NCCN-KIDNEY-2025"
+      ],
+      "diseases": [
+        "DIS-RCC"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-hlrcc-family-history-suspicion family pedigree suggestive of hereditary leiomyomatosis and renal cell cancer (hlrcc) syn... red flag red flag  src-esmo-rcc-2024 src-nccn-kidney-2025 dis-rcc family pedigree suggestive of hereditary leiomyomatosis and renal cell cancer (hlrcc) syndrome, caused by germline pathogenic variants in fumarate hydratase (fh): any of (a) a family member with a known pathogenic fh gene variant; (b) family history of cutaneous leiomyomas (pathognomonic for hlrcc) and/or multiple uterine leiomyomas with early onset (under 30) in female relatives; (c) family history of papillary type-2 / fh-deficient renal cell carcinoma — aggressive hlrcc-associated histology characterised by prominent eosinophilic nucleoli and perinucleolar halos (so-called \"viral inclusion-like\" nucleoli). no current personal cancer diagnosis in the individual at risk. prevention-persona redflag (§20 ratification 2026-05-18, v0.2-b hereditary pilot starter).   v0.2-b hereditary pilot — hlrcc. fires on pedigree-based suspicion of hlrcc syndrome in an asymptomatic individual (no current cancer diagnosis). engine routes to preventionplan recommending: (a) genetic counseling + germline fh gene panel testing (modern renal-cancer hereditary panels include fh, vhl, flcn, met, bap1, sdhb/c/d for differential) via ind-hlrcc-suspicion-prevention-genetic-counseling (standard) (b) empirical annual abdominal mri surveillance for patients declining testing via ind-hlrcc-suspicion-prevention-enhanced- surveillance (alternative). triggers correspond to established hlrcc-suspicion criteria. cutaneous leiomyomas are pathognomonic (firm, painful, often multiple, characteristic histology — well-circumscribed intradermal fascicles of smooth-muscle cells). multiple early-onset uterine leiomyomas plus family history of cutaneous leiomyomas or papillary type-2 rcc strongly suggest hlrcc. papillary type-2 rcc in hlrcc is notably more aggressive than sporadic papillary type-2 — can metastasize from very small primary tumors, justifying the aggressive low-threshold surveillance protocol below. stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption. source-set todo: nccn genetic/familial high-risk: kidney as a new src entity; hlrcc family alliance international surveillance guidelines (menko et al. 2014, smit et al. 2011); acmg fh testing guidance. confirmed fh carriers (germline mutation positive on panel) route to a different prevention pathway (carrier-confirmed annual contrast-enhanced abdominal mri starting age 8-10 — yes, early childhood; gynecologic management plan for women including reproductive counseling regarding fibroid burden and hysterectomy timing). that pathway is v0.2-b follow-up authoring (rf-hlrcc-confirmed-carrier + ind-hlrcc-carrier-surveillance). lifetime cancer risk in confirmed fh carriers (hlrcc family alliance, nccn kidney): - hlrcc-associated rcc (papillary type-2 / fh-deficient): ~15-30% lifetime; mean age at diagnosis ~40-45; aggressive behavior with high metastatic potential even from small tumors (<3 cm); 5-year survival of metastatic hlrcc-rcc historically poor (~10-30%) though emerging fh-deficient targeted approaches (bevacizumab-erlotinib combinations) may improve outcomes - uterine leiomyomas: ~70-100% of female carriers; mean age onset ~20s-30s; often very large, very numerous; commonly symptomatic (menorrhagia, dysmenorrhea, infertility); high hysterectomy rate - cutaneous leiomyomas: ~75% lifetime; firm, painful skin nodules from arrector pili smooth muscle; often the first manifestation and pathognomonic - uterine leiomyosarcoma (rare but elevated): ~1-2% lifetime; decision-making around hysterectomy specimen pathology particularly important"
+    },
+    {
+      "id": "RF-MEN1-FAMILY-HISTORY-SUSPICION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Family pedigree suggestive of Multiple Endocrine Neoplasia type 1 (MEN1, Wermer syndrome)...",
+      "url": "/kb/redflags/rf-men1-family-history-suspicion.html",
+      "subtitle": "disease: DIS-GI-NET, DIS-PNET | sources: SRC-NCCN-NET-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-NCCN-NET-2025"
+      ],
+      "diseases": [
+        "DIS-GI-NET",
+        "DIS-PNET"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-men1-family-history-suspicion family pedigree suggestive of multiple endocrine neoplasia type 1 (men1, wermer syndrome)... red flag red flag  src-nccn-net-2025 dis-gi-net dis-pnet family pedigree suggestive of multiple endocrine neoplasia type 1 (men1, wermer syndrome): any of (a) a family member with a known pathogenic men1 gene variant; (b) classic men1 phenotype met in the family — ≥2 of (primary hyperparathyroidism, anterior pituitary adenoma, gastro-entero-pancreatic neuroendocrine tumor [gep-net]) in the proband or in two first-degree relatives; (c) a first-degree relative with a clinical men1 diagnosis carrying ≥1 of the three classic men1 tumors. no current personal cancer diagnosis in the individual at risk. prevention-persona redflag (§20 ratification 2026-05-18, v0.2-b hereditary pilot — additional).   v0.2-b hereditary pilot — men1. fires on pedigree-based suspicion of multiple endocrine neoplasia type 1 in an asymptomatic individual (no current cancer diagnosis). engine routes to preventionplan recommending: (a) genetic counseling + germline men1 panel testing via ind-men1-suspicion-prevention-genetic-counseling (standard) (b) empirical multi-organ men1 surveillance for patients declining testing via ind-men1-suspicion-prevention-enhanced- surveillance (alternative). triggers correspond to established men1-suspicion criteria (a known men1 pathogenic variant in family, classic men1 ≥2-of-3 phenotype cluster meeting clinical-diagnosis criteria, or a first-degree relative with clinical men1 + ≥1 classic tumor — the \"any one men1 tumor in a relative with confirmed men1\" pedigree-spread bright line). patient profile is expected to carry these as computed booleans from the pedigree input (fhir familymemberhistory at the data-standards layer; computation is a downstream concern not yet implemented). stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption. source-set todo: dedicated men1 surveillance source — thakker et al. jcem clinical practice guidelines for men1 (2012, endorsed by endocrine society / european men1 consortium) as a new src entity for v0.2-b authoring backlog; ese-2024 men1 update. confirmed men1 carriers (germline men1 mutation positive on panel) route to a different prevention pathway (carrier-confirmed structured multi-organ surveillance — biochemistry from age 5, imaging from age 10). that pathway is v0.2-b follow-up authoring (rf-men1-confirmed-carrier + ind-men1-carrier-surveillance). lifetime cancer/tumor risk in confirmed men1 carriers (thakker jcem 2012; ese 2024): - primary hyperparathyroidism: ~95% by age 50; multi-glandular parathyroid hyperplasia (vs sporadic adenoma); presents earliest of any men1 tumor (median age 20-25) - gep-nets (pancreatic, duodenal, gastric): ~30-80% lifetime; gastrinoma most common (zollinger-ellison) → multifocal duodenal; insulinoma, glucagonoma, vipoma less frequent; malignant transformation is the dominant men1 mortality driver - pituitary adenoma: ~30-40% lifetime; prolactinoma most common (~60% of men1 pituitary), followed by gh-secreting (acromegaly), acth-secreting, non-functioning - adrenocortical tumors (mostly non-functioning): ~20-40%; rarely malignant - bronchial / thymic carcinoid neuroendocrine tumors: ~5-10%; thymic net more common in male men1 carriers, often aggressive - cutaneous (facial angiofibromas, collagenomas, lipomas): high frequency but benign — useful as clinical clue in pedigree"
+    },
+    {
+      "id": "RF-MEN2-FAMILY-HISTORY-SUSPICION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Family pedigree suggestive of Multiple Endocrine Neoplasia type 2 (MEN2A or MEN2B, RET-dr...",
+      "url": "/kb/redflags/rf-men2-family-history-suspicion.html",
+      "subtitle": "disease: DIS-MTC | sources: SRC-ATA-THYROID-2015, SRC-NCCN-THYROID-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-ATA-THYROID-2015",
+        "SRC-NCCN-THYROID-2025"
+      ],
+      "diseases": [
+        "DIS-MTC"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-men2-family-history-suspicion family pedigree suggestive of multiple endocrine neoplasia type 2 (men2a or men2b, ret-dr... red flag red flag  src-ata-thyroid-2015 src-nccn-thyroid-2025 dis-mtc family pedigree suggestive of multiple endocrine neoplasia type 2 (men2a or men2b, ret-driven): any of (a) a family member with a known pathogenic ret variant; (b) first- or second-degree relative with medullary thyroid carcinoma (mtc) — bright line because ~25% of all mtc is hereditary and a single mtc in a relative is sufficient pedigree-suspicion for ret workup; (c) classic men2 phenotype cluster in family — men2a pattern (mtc + pheochromocytoma + primary hyperparathyroidism) or men2b pattern (mtc + pheochromocytoma + mucosal neuromas / marfanoid habitus / corneal nerve thickening, with no parathyroid involvement). no current personal cancer diagnosis in the individual at risk. prevention-persona redflag (§20 ratification 2026-05-18, v0.2-b hereditary pilot — additional).   v0.2-b hereditary pilot — men2. fires on pedigree-based suspicion of men2a or men2b (ret-driven) in an asymptomatic individual (no current cancer diagnosis). engine routes to preventionplan recommending: (a) genetic counseling + germline ret panel testing — when positive drives the central men2 surgical decision (prophylactic thyroidectomy timing by ret mutation risk class per ata 2015: hst [highest risk, e.g., m918t → men2b] = before age 1; h [high risk, e.g., c634 codons → classic men2a] = age ≤5; mod [moderate risk] = age 5 with biochemical surveillance) via ind-men2-suspicion-prevention-genetic-counseling (standard) (b) empirical structured surveillance for patients declining testing — periodic neck us, calcitonin, plasma metanephrines — via ind-men2-suspicion-prevention-enhanced-surveillance (alternative). triggers correspond to established men2-suspicion criteria. the single-mtc-in-a-relative bright line reflects ata 2015 guidance: hereditary fraction of all mtc is ~25%, ret germline testing is recommended for every mtc patient, and that recommendation cascades to first/second-degree relatives. stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption. source-set todo: ata 2015 revised guidelines for the management of mtc (wells et al., thyroid 2015) provides the ret-class-based prophylactic thyroidectomy framework; nccn genetic/familial high-risk: endocrine (currently a todo source) as a v0.2-b authoring backlog new src entity. confirmed ret carriers (germline ret pathogenic variant positive) route to a different prevention pathway (carrier-confirmed prophylactic thyroidectomy at ata-class-specific age + lifelong pheochromocytoma / parathyroid surveillance). that pathway is v0.2-b follow-up authoring (rf-men2-confirmed-carrier + ind-men2-carrier-surveillance). lifetime cancer/tumor risk in confirmed men2 carriers (ata 2015): - mtc: near-100% lifetime penetrance — defines the syndrome; age of onset varies sharply by ret class (men2b m918t: infancy-toddlerhood; classic men2a c634: childhood-adolescence; moderate-risk ret variants: adulthood) - pheochromocytoma: ~50% in men2a; ~50% in men2b; preferentially bilateral / adrenal medullary; rarely paraganglioma; emerges typically after mtc (age 30s-40s) but childhood cases documented - primary hyperparathyroidism: ~20-30% in men2a only (absent in men2b); multi-glandular hyperplasia - mucosal neuromas + marfanoid + corneal nerve thickening: men2b pathognomonic stigmata, often visible in infancy but frequently under-recognized - hirschsprung disease: ~7% in men2a c620/c618 (specific ret variant subgroup)"
+    },
+    {
+      "id": "RF-PEUTZ-JEGHERS-FAMILY-HISTORY-SUSPICION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Family pedigree suggestive of Peutz-Jeghers syndrome (PJS): any of (a) a family member wi...",
+      "url": "/kb/redflags/rf-peutz-jeghers-family-history-suspicion.html",
+      "subtitle": "disease: DIS-BREAST, DIS-CERVICAL, DIS-CRC, DIS-GASTRIC | sources: SRC-NCCN-COLON-2025, SRC-NCCN-GENETIC-FAMILIAL-CRC-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-NCCN-COLON-2025",
+        "SRC-NCCN-GENETIC-FAMILIAL-CRC-2025"
+      ],
+      "diseases": [
+        "DIS-BREAST",
+        "DIS-CERVICAL",
+        "DIS-CRC",
+        "DIS-GASTRIC",
+        "DIS-OVARIAN",
+        "DIS-PDAC"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-peutz-jeghers-family-history-suspicion family pedigree suggestive of peutz-jeghers syndrome (pjs): any of (a) a family member wi... red flag red flag  src-nccn-colon-2025 src-nccn-genetic-familial-crc-2025 dis-breast dis-cervical dis-crc dis-gastric dis-ovarian dis-pdac family pedigree suggestive of peutz-jeghers syndrome (pjs): any of (a) a family member with a known pathogenic stk11 / lkb1 variant; (b) classic peutz-jeghers clinical phenotype in proband or relative — characteristic mucocutaneous melanin pigmentation (peri-oral, buccal mucosa, perianal, digital tips) together with at least one characteristic peutz-jeghers gi hamartomatous polyp (small bowel, colon, or stomach); (c) a first-degree relative with a clinical pjs diagnosis and a personal or family history of small-bowel intussusception requiring intervention (the classic pjs childhood presentation, often the index acute event leading to diagnosis). no current personal cancer diagnosis in the individual at risk. prevention-persona redflag (§20 ratification 2026-05-18, v0.2-b hereditary pilot — additional).   v0.2-b hereditary pilot — peutz-jeghers syndrome. fires on pedigree- based suspicion of pjs in an asymptomatic individual (no current cancer diagnosis). engine routes to preventionplan recommending: (a) genetic counseling + germline stk11 panel testing via ind-peutz-jeghers-suspicion-prevention-genetic-counseling (standard) (b) empirical multi-organ peutz-jeghers surveillance for patients declining testing via ind-peutz-jeghers-suspicion-prevention- enhanced-surveillance (alternative). triggers correspond to established pjs clinical and pedigree criteria. who / nccn diagnostic criteria for pjs: (i) ≥2 pjs-type hamartomatous polyps confirmed histologically; (ii) any number of pjs polyps + family history of pjs; (iii) characteristic mucocutaneous pigmentation + family history of pjs; (iv) characteristic mucocutaneous pigmentation + any pjs polyp. the pedigree-suspicion triggers in this rf map to those criteria from the \"asymptomatic relative\" perspective. stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption. source-set todo: dedicated pjs surveillance source — acg clinical guideline on genetic testing and management of hereditary gastrointestinal cancer syndromes (syngal et al. 2015), beggs et al. gut 2010 / 2025 update pjs european consensus — as v0.2-b authoring backlog new src entities. confirmed stk11 carriers (germline stk11 pathogenic variant positive) route to a different prevention pathway (carrier-confirmed structured multi-organ surveillance — vce / mr enterography q2-3y from age 8-10, colonoscopy q2-3y from age 18, egd q2-3y from age 18, breast mri + mammography from age 25-30, pancreatic surveillance with eus / mri starting age 30-35, gynecological exam q1y). that pathway is v0.2-b follow-up authoring (rf-peutz-jeghers-confirmed-carrier + ind-peutz-jeghers-carrier- surveillance). lifetime cancer risk in confirmed stk11 carriers (hearle et al. clin cancer res 2006; acg 2015; nccn genetic/familial high-risk colorectal): - colorectal: ~39% lifetime - pancreatic adenocarcinoma: ~11-36% lifetime — highest hereditary pancreatic-cancer risk of any syndrome - breast (women): ~32-54% lifetime — comparable to brca1/2 - gastric: ~29% lifetime - small-bowel adenocarcinoma: ~13% lifetime — highest hereditary small-bowel-cancer risk - ovarian sex-cord-stromal (sctat — sex-cord tumor with annular tubules) in women: ~8-21% - cervical adenoma malignum (minimal-deviation adenocarcinoma): ~10% — rare but pathognomonic - lung: modest elevation (~7-17%) - testicular sertoli-cell tumors (large-cell calcifying variant): ~9% in men; usually pre-pubertal and benign-acting but hormonally active (gynecomastia) - childhood intussusception from pjs small-bowel polyps: ~50% by age 20 in untreated pjs — the classic acute presentation that often leads to diagnosis"
+    },
+    {
+      "id": "RF-VHL-FAMILY-HISTORY-SUSPICION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Family pedigree suggestive of Von Hippel-Lindau (VHL) disease: any of (a) a family member...",
+      "url": "/kb/redflags/rf-vhl-family-history-suspicion.html",
+      "subtitle": "disease: DIS-PDAC, DIS-RCC | sources: SRC-ESMO-RCC-2024, SRC-NCCN-KIDNEY-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-ESMO-RCC-2024",
+        "SRC-NCCN-KIDNEY-2025"
+      ],
+      "diseases": [
+        "DIS-PDAC",
+        "DIS-RCC"
+      ],
+      "used_by_count": 3,
+      "search_text": "rf-vhl-family-history-suspicion family pedigree suggestive of von hippel-lindau (vhl) disease: any of (a) a family member... red flag red flag  src-esmo-rcc-2024 src-nccn-kidney-2025 dis-pdac dis-rcc family pedigree suggestive of von hippel-lindau (vhl) disease: any of (a) a family member with a known pathogenic vhl gene variant; (b) first-degree relative with clear-cell renal cell carcinoma diagnosed before age 46 (early-onset rcc bright-line for hereditary rcc syndrome workup); (c) family history of bilateral or multifocal rcc (suggestive of hereditary rcc syndrome, with vhl the most common cause); (d) family history of cns or retinal hemangioblastoma (pathognomonic vhl manifestation); (e) family history of pheochromocytoma / paraganglioma co-occurring with rcc or hemangioblastoma (the multi-organ vhl pattern). no current personal cancer diagnosis in the individual at risk. prevention-persona redflag (§20 ratification 2026-05-18, v0.2-b hereditary pilot starter).   v0.2-b hereditary pilot — vhl. fires on pedigree-based suspicion of vhl disease in an asymptomatic individual (no current cancer diagnosis). engine routes to preventionplan recommending: (a) genetic counseling + germline vhl gene panel testing (modern renal-cancer hereditary panels include vhl, fh, flcn, met, bap1, sdhb/c/d, tsc1/2 for differential) via ind-vhl-suspicion-prevention-genetic-counseling (standard) (b) empirical multi-organ surveillance for patients declining testing via ind-vhl-suspicion-prevention-enhanced- surveillance (alternative). triggers correspond to established vhl-suspicion criteria. patient profile is expected to carry these as computed booleans from the pedigree input (fhir familymemberhistory at the data-standards layer; computation is a downstream concern not yet implemented). stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption. source-set todo: nccn genetic/familial high-risk: kidney as a new src entity; vhl alliance / international vhl surveillance guidelines (2020 consensus); acmg vhl testing guidance. confirmed vhl carriers (germline mutation positive on panel) route to a different prevention pathway (carrier-confirmed structured multi-organ surveillance starting in early childhood). that pathway is v0.2-b follow-up authoring (rf-vhl-confirmed-carrier + ind-vhl-carrier-surveillance). lifetime cancer risk in confirmed vhl carriers (vhl alliance surveillance guidelines, nccn kidney): - clear-cell rcc: ~25-60% lifetime; multifocal / bilateral pattern; emerges typically age 30-60 - cns hemangioblastoma: ~60-80% lifetime; cerebellar > spinal > brainstem; emerges age 20-40 - retinal hemangioblastoma: ~25-60% lifetime; can emerge in childhood (age 5-15); leading cause of vision loss in vhl - pheochromocytoma / paraganglioma: ~10-20% lifetime; emerges age 5-30 (childhood onset documented); preferentially bilateral / adrenal - pancreatic neuroendocrine tumors: ~10-15% lifetime; often multifocal - pancreatic cysts (serous cystadenoma): ~50-70% lifetime; mostly benign but distinguishes from sporadic - endolymphatic-sac tumors (elst): ~10-15% lifetime; cause sensorineural hearing loss; emerge age 20-40 - epididymal cystadenoma (men) / broad-ligament cystadenoma (women): ~25-60% lifetime; benign but pathognomonic"
     },
     {
       "id": "RF-CHOLANGIO-FGFR2-FUSION-ACTIONABLE",
@@ -20516,6 +21109,23 @@
       "search_text": "rf-smzl-transformation-progression histologic transformation to dlbcl (rapid progression, new constitutional symptoms, ldh s... red flag red flag  src-esmo-mzl-2024 src-nccn-bcell-2025 dis-splenic-mzl histologic transformation to dlbcl (rapid progression, new constitutional symptoms, ldh spike) — biopsy-confirmed transformation reclassifies as dlbcl pathway.   transformation to dlbcl changes the disease classification entirely — the engine should hand off to dlbcl algorithm with the dlbcl biopsy result."
     },
     {
+      "id": "RF-CHRONIC-HIV-MALIGNANCY-PREVENTION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "HIV infection (positive serology) in an individual without a current AIDS-defining or HIV...",
+      "url": "/kb/redflags/rf-chronic-hiv-malignancy-prevention.html",
+      "subtitle": "disease: DIS-DLBCL-NOS | sources: SRC-NCCN-BCELL-2025, SRC-NIH-AIDS-2024 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-NCCN-BCELL-2025",
+        "SRC-NIH-AIDS-2024"
+      ],
+      "diseases": [
+        "DIS-DLBCL-NOS"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-chronic-hiv-malignancy-prevention hiv infection (positive serology) in an individual without a current aids-defining or hiv... red flag red flag  src-nccn-bcell-2025 src-nih-aids-2024 dis-dlbcl-nos hiv infection (positive serology) in an individual without a current aids-defining or hiv-associated malignancy diagnosis. iarc group 1 carcinogen (hiv-1) — drives elevated risk of kaposi sarcoma (ks), non-hodgkin lymphoma (especially dlbcl, burkitt, pcnsl), invasive cervical cancer (aids-defining trio), and elevated incidence of hodgkin lymphoma, anal cancer, hcc (via hcv co-infection), and oropharyngeal cancer. effective antiretroviral therapy (art) with durable virological suppression substantially reduces all aids-defining malignancy incidence and modestly reduces non-aids-defining cancer incidence. prevention-persona redflag (§20 ratification 2026-05-18).   prevention-persona redflag for hiv-associated cancer prevention. fires on positive hiv serology in patient without aids-defining or hiv-associated malignancy. engine routes to preventionplan recommending durable art suppression (per ind-chronic-hiv-prevention-art) + cancer screening cadence (annual anal cytology in msm/hiv+; q3-yearly cervical pap in wlhiv; opportunistic kaposi/oral hairy leukoplakia visual screening). stub pending co-lead review. cancer scope: anchored to dis-dlbcl-nos as the canonical hiv-associated nhl. ks, cervical, anal, hodgkin, hcc are also hiv-associated; covered via screening recommendations in the art indication rationale rather than discrete disease anchors (until dis-kaposi etc. land in v0.2-a authoring backlog)."
+    },
+    {
       "id": "RF-PCNSL-INFECTION-SCREENING",
       "kind": "Red flag",
       "kind_key": "redflags",
@@ -20605,6 +21215,22 @@
       ],
       "used_by_count": 4,
       "search_text": "rf-ovarian-hrd-actionability hrd-positive (brca1/2 mutation or genomic instability score ≥42) high-grade serous ovaria... red flag red flag  src-esmo-ovarian-2024 src-nccn-ovarian-2025 dis-ovarian hrd-positive (brca1/2 mutation or genomic instability score ≥42) high-grade serous ovarian carcinoma. treatment-defining for parpi maintenance after platinum-based induction. olaparib (solo-1 brca-only, paola-1 with bev) + niraparib (prima all-comer) substantially improve pfs in hrd-positive subset.   hrd testing on ffpe tumor + paired germline. reflex brca → if wt, proceed to gis scoring. solo-1: brca-mut maintenance olaparib mpfs 56 vs 14 mo. paola-1: hrd-positive (brca-mut or gis+) bev+olap mpfs 37 vs 22 mo. prima: niraparib all-comer maintenance benefit weighted toward hrd+ subset."
+    },
+    {
+      "id": "RF-CHRONIC-HTLV-1-MALIGNANCY-PREVENTION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "HTLV-1 (human T-lymphotropic virus type 1) infection (positive HTLV-1 serology or HTLV-1...",
+      "url": "/kb/redflags/rf-chronic-htlv-1-malignancy-prevention.html",
+      "subtitle": "disease: DIS-ATLL | sources: SRC-NCCN-BCELL-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-NCCN-BCELL-2025"
+      ],
+      "diseases": [
+        "DIS-ATLL"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-chronic-htlv-1-malignancy-prevention htlv-1 (human t-lymphotropic virus type 1) infection (positive htlv-1 serology or htlv-1... red flag red flag  src-nccn-bcell-2025 dis-atll htlv-1 (human t-lymphotropic virus type 1) infection (positive htlv-1 serology or htlv-1 proviral dna detectable) in an individual without a current atll (adult t-cell leukemia/lymphoma) diagnosis. iarc group 1 carcinogen (htlv-1) — established etiological driver of atll (lifetime risk 2-5% in htlv-1 carriers per japanese and caribbean cohort studies). no curative antiviral therapy exists; the prevention pathway is high-risk-carrier counseling, periodic hematologic surveillance (cbc + ldh q6-12mo, clonality testing if lymphocytosis develops), and transmission-prevention measures (avoid blood donation, breast-milk substitution where feasible). prevention-persona redflag (§20 ratification 2026-05-18).   prevention-persona redflag for htlv-1-driven atll prevention. unlike hcv/hbv/h. pylori, there is no curative regimen — the intervention is surveillance + transmission prevention, not cure. stub pending co-lead review. geographic context: htlv-1 endemic regions include japan (southwest), caribbean basin, parts of sub-saharan africa, parts of south america, middle east. ukraine is low-prevalence; this rf is more relevant for diaspora patients or those with travel/origin from endemic regions."
     },
     {
       "id": "RF-ATLL-INFECTION-SCREENING",
@@ -21087,6 +21713,24 @@
       ],
       "used_by_count": 1,
       "search_text": "rf-hnscc-transformation-progression loco-regional recurrence within 6 months of definitive chemoradiation, new distant metast... red flag red flag  src-nccn-nsclc-2025 src-oncokb dis-hnscc loco-regional recurrence within 6 months of definitive chemoradiation, new distant metastasis (lung, bone, liver), carotid blowout risk on imaging, or rapid airway compromise — emergency-tier flag requiring airway / vascular evaluation, salvage-surgery feasibility review, and immediate transition from curative to palliative-systemic intent.   early loco-regional recurrence (<6 mo) after crt carries dismal prognosis (mos ~6–9 mo) and excludes most curative re-irradiation trials (rtog 0421 / 1009 require ≥6 mo). salvage surgery feasibility is the key axis — multidisciplinary review mandatory. carotid encasement on imaging is a surgical contraindication and predicts fatal blowout if re-irradiated; embolization / palliation only. airway compromise: tracheostomy before any chemo / rt escalation. transition to keynote-048-style palliative systemic therapy (pembrolizumab ± chemo by cps) when re-treatment infeasible."
+    },
+    {
+      "id": "RF-IBD-CRC-PREVENTION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Long-standing inflammatory bowel disease (IBD) with colonic involvement — either ulcerati...",
+      "url": "/kb/redflags/rf-ibd-crc-prevention.html",
+      "subtitle": "disease: DIS-CRC | sources: SRC-ESMO-COLON-2024, SRC-ESMO-CRC-2024, SRC-NCCN-COLON-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-ESMO-COLON-2024",
+        "SRC-ESMO-CRC-2024",
+        "SRC-NCCN-COLON-2025"
+      ],
+      "diseases": [
+        "DIS-CRC"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-ibd-crc-prevention long-standing inflammatory bowel disease (ibd) with colonic involvement — either ulcerati... red flag red flag  src-esmo-colon-2024 src-esmo-crc-2024 src-nccn-colon-2025 dis-crc long-standing inflammatory bowel disease (ibd) with colonic involvement — either ulcerative colitis (uc) with diagnosis ≥8 years, or crohn's colitis (involvement of ≥1/3 of colon) with diagnosis ≥8 years, or ibd with concomitant primary sclerosing cholangitis (psc) regardless of duration (psc-ibd is the highest-risk ibd subgroup for colorectal cancer — cumulative crc risk ~15-30% at 30 years from psc diagnosis). no current colorectal cancer diagnosis. chronic colonic inflammation drives colitis-associated dysplasia and crc via an inflammation-dysplasia-carcinoma sequence distinct from sporadic crc (often arises from flat dysplasia, multifocal, harder to detect by conventional white-light colonoscopy). surveillance colonoscopy with chromoendoscopy or high-definition white-light reduces crc mortality in this population. prevention-persona redflag (§20 ratification 2026-05-18, v0.3 chronic-condition pilot).   v0.3 chronic-condition prevention pilot — ibd-associated crc. prevention-persona redflag (charter §3 amended 2026-05-18 path a, hcp-mediated). fires when patient profile shows long-standing ibd with colonic involvement and no confirmed crc. engine routes to preventionplan with 2 tracks: surveillance colonoscopy with chromoendoscopy q1-2y per aga/ecco/nccn (ind-ibd-crc-prevention-chromoendoscopy) as standard; routine q3-5y colonoscopy (ind-ibd-crc-prevention-observation) as alternative — clinically below standard-of-care but included per §15.2 c4 and charter §11 patient-autonomy framing. evidence base: - **aga clinical practice update on surveillance and management of dysplasia in ibd (2021):** chromoendoscopy with targeted biopsies preferred over white-light random biopsies. q1-3y surveillance from 8-10y after ibd diagnosis (extension of colitis matters more than duration), or from psc diagnosis in psc-ibd. - **ecco guideline on ibd-associated crc (2024):** aligns with aga; additionally recommends high-definition white-light + virtual chromoendoscopy (nbi, bli) as alternative to dye-spray when chromoendoscopy not available. - **crc risk in uc (eaden meta-analysis jama 2001 + updated sr cohorts):** cumulative 2% at 10y, 8% at 20y, 18% at 30y. - **crc risk in psc-ibd:** ~15-30% lifetime, with onset 5-15 years earlier than non-psc ibd. annual colonoscopy from psc diagnosis regardless of ibd duration. - **crohn-colitis crc risk:** comparable to uc when ≥1/3 of colon involved; lower for ileal-only crohn (~background population risk). psc-ibd subgroup separately captured in rf-psc-cholangiocarcinoma- prevention (this pilot). patients with psc-ibd fire both rfs and receive overlapping but separately-anchored preventionplan tracks (crc-prevention via this rf, cholangiocarcinoma-prevention via the psc rf) — engine deduplication respects the disease-anchor split. dysplasia management: any dysplasia on biopsy → expert gi pathologist review; visible polypoid lesions amenable to endoscopic resection (dalm = dysplasia-associated lesion or mass that can be completely resected) routes to endoscopic management + intensified surveillance; flat invisible high-grade dysplasia or multifocal lgd → discussion of proctocolectomy. sources todo: aga clinical practice update on surveillance and management of dysplasia in ibd (murthy et al. gastroenterology 2021) as a new src entity; ecco guidelines on therapeutics in inflammatory bowel disease (2024) as a new src entity. this is a stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption."
     },
     {
       "id": "RF-GLIOMA-LOW-GRADE-FRAILTY-AGE",
@@ -22276,6 +22920,24 @@
       "search_text": "rf-car-t-ineligible-organ patient fails organ-function thresholds for car-t cell therapy: any of lvef <40%, crcl <3... red flag red flag  src-transcend-nhl-001-abramson-2020 src-zuma-1-neelapu-2017  patient fails organ-function thresholds for car-t cell therapy: any of lvef <40%, crcl <30 ml/min, bilirubin >2× uln (non-gilbert / non-disease- related), ast/alt >5× uln, severe pulmonary disease (dlco <40% or o2 requirement), or uncontrolled active infection. triggers exclusion from car-t pathways and pivot to bispecific antibodies, adc, or salvage chemotherapy.   pivotal trial exclusions; real-world data (cibmtr, french descar-t) suggest some flexibility but at increased crs/icans-mortality cost. alternatives by disease: dlbcl/hgbl — bispecifics (epcoritamab, glofitamab), polatuzumab + bendamustine + rituximab (polarix salvage setting), tafasitamab + lenalidomide (l-mind); mcl — pirtobrutinib, bendamustine-based regimens; multiple myeloma — talquetamab, teclistamab, elranatamab, selinexor combinations, belantamab. direction `hold` for car-t pathway only; other systemic therapy remains feasible with attenuation per rf-organ-* siblings."
     },
     {
+      "id": "RF-VHL-CONFIRMED-CARRIER",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Patient has a confirmed germline VHL pathogenic variant (positive germline test result, d...",
+      "url": "/kb/redflags/rf-vhl-confirmed-carrier.html",
+      "subtitle": "disease: DIS-HCC, DIS-PHEOCHROMOCYTOMA | sources: SRC-ASCO-ACMG-LYNCH-2014, SRC-NCCN-BCELL-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-ASCO-ACMG-LYNCH-2014",
+        "SRC-NCCN-BCELL-2025"
+      ],
+      "diseases": [
+        "DIS-HCC",
+        "DIS-PHEOCHROMOCYTOMA"
+      ],
+      "used_by_count": 3,
+      "search_text": "rf-vhl-confirmed-carrier patient has a confirmed germline vhl pathogenic variant (positive germline test result, d... red flag red flag  src-asco-acmg-lynch-2014 src-nccn-bcell-2025 dis-hcc dis-pheochromocytoma patient has a confirmed germline vhl pathogenic variant (positive germline test result, distinct from the pedigree-suspicion phase). vhl alliance active surveillance guidelines apply: structured multi-organ imaging + biochemical surveillance from childhood. confirmed-carrier redflag (§20, v0.2-b follow-on to rf-vhl-family-history-suspicion).   prevention-persona confirmed-carrier redflag for vhl syndrome. fires when patient profile has germline_vhl_pathogenic_variant_confirmed=true. engine routes to preventionplan recommending vhl alliance active surveillance protocol: mri brain+spine q1y from age 15-16; mri abdomen (kidneys+adrenals+pancreas) q1-2y from 15; ophthalmology q1y from age 1-5; catecholamines/metanephrines q1y from age 5-10; comprehensive audiology q2-3y. diseases-anchored to dis-hcc (closest in-kb hepatobiliary anchor since dis-rcc may not be in this branch) and dis-pheochromocytoma (newly authored). stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode."
+    },
+    {
       "id": "RF-OBLIGATE-CARDIO-TOXIC-NAIVE",
       "kind": "Red flag",
       "kind_key": "redflags",
@@ -22468,6 +23130,24 @@
       ],
       "used_by_count": 0,
       "search_text": "rf-ifs-frailty-age pediatric ifs with neonatal age (<3 months), low birth weight / failure to thrive (weight... red flag red flag  src-nccn-pediatric-sarcoma src-oncokb dis-ifs pediatric ifs with neonatal age (<3 months), low birth weight / failure to thrive (weight <-2sd for age), or hemodynamic instability — vac cytotoxic protocols poorly tolerated in this very-young population; larotrectinib / entrectinib are the substantially safer alternative. this is the pediatric counterpart of adult frailty-age.   ifs often presents at birth or in the first 6 months of life; very young infants tolerate cytotoxic chemotherapy poorly (myelosuppression, hepatic immaturity, cardiac sensitivity to anthracyclines). vac protocol carries significant infectious mortality in <3 months. the emergence of trk-inhibitors (larotrectinib pediatric label down to newborns; entrectinib down to 1 month) has transformed practice — these agents have orr >90% and are the preferred 1l for fusion-positive ifs in this age group. this frailty flag pushes harder toward trk- inhibitor monotherapy when fusion-positive (>90% of cases)."
+    },
+    {
+      "id": "RF-CHRONIC-HPV-MALIGNANCY-PREVENTION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Persistent high-risk HPV infection (HPV-16, 18, 31, 33, 45, 52, 58 detected on cervical c...",
+      "url": "/kb/redflags/rf-chronic-hpv-malignancy-prevention.html",
+      "subtitle": "disease: DIS-ANAL-SCC, DIS-CERVICAL | sources: SRC-NCCN-ANAL-2025, SRC-NCCN-CERVICAL-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-NCCN-ANAL-2025",
+        "SRC-NCCN-CERVICAL-2025"
+      ],
+      "diseases": [
+        "DIS-ANAL-SCC",
+        "DIS-CERVICAL"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-chronic-hpv-malignancy-prevention persistent high-risk hpv infection (hpv-16, 18, 31, 33, 45, 52, 58 detected on cervical c... red flag red flag  src-nccn-anal-2025 src-nccn-cervical-2025 dis-anal-scc dis-cervical persistent high-risk hpv infection (hpv-16, 18, 31, 33, 45, 52, 58 detected on cervical co-test, anal cytology, or oropharyngeal swab), or absence of completed hpv vaccination series in age-eligible individual. iarc group 1 carcinogen (hpv) — established etiological driver of cervical (>99% attributable), anal (~90%), oropharyngeal (~70% in us/eu), vulvar/vaginal, and penile squamous cell carcinomas. hpv vaccination (gardasil-9 nonavalent) reduces incidence; screening (cervical pap/hpv co-testing, anal cytology in high-risk groups) enables early-stage detection. prevention-persona redflag (§20 ratification 2026-05-18).   prevention-persona redflag for hpv-associated cancer prevention. fires on persistent high-risk hpv positivity or incomplete/absent vaccination in age-eligible individual. engine routes to preventionplan recommending vaccination (gardasil-9) and/or risk-group-appropriate screening cadence (cervical: uspstf pap+hpv co-test q5y ages 30-65; anal: hra + cytology q1y in msm/hiv+/post-transplant). stub pending co-lead review. cancer scope: anchored to dis-cervical and dis-anal-scc. oropharyngeal squamous cell carcinoma and vulvar/vaginal/penile not yet in kb — v0.2-a authoring backlog."
     },
     {
       "id": "RF-CERVICAL-PDL1-CPS-1-PLUS",
@@ -22898,6 +23578,26 @@
       "search_text": "rf-dipss-plus-high primary myelofibrosis with dipss-plus intermediate-2 or high risk — allohct referral mand... red flag red flag  src-dipss-plus-gangat-2011 src-esmo-mpn-2015 src-nccn-mpn-2025 dis-pmf primary myelofibrosis with dipss-plus intermediate-2 or high risk — allohct referral mandatory in eligible patients (only curative option); ruxolitinib for symptom + spleen control while awaiting transplant   dipss-plus (gangat 2011) extends dipss with platelets <100k, rbc transfusion-dependence, unfavorable karyotype. int-2 / high → median os ~2.9 / 1.3 years without allohct. allohct is the only curative modality but 30-50% trm in older patients. mipss70/mipss70+v2.0 are newer molecular extensions. companion to rf-pmf-high-risk-dipss (existing, similar trigger): kept as a separately-named cross-cutting flag using the canonical risk-score nomenclature so future mdt briefs can target the named score directly."
     },
     {
+      "id": "RF-PSC-CHOLANGIOCARCINOMA-PREVENTION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Primary sclerosing cholangitis (PSC) — confirmed by characteristic cholangiographic findi...",
+      "url": "/kb/redflags/rf-psc-cholangiocarcinoma-prevention.html",
+      "subtitle": "disease: DIS-CHOLANGIOCARCINOMA, DIS-CRC, DIS-HCC | sources: SRC-AASLD-HCC-2023, SRC-NCCN-COLON-2025, SRC-NCCN-HEPATOBILIARY | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-AASLD-HCC-2023",
+        "SRC-NCCN-COLON-2025",
+        "SRC-NCCN-HEPATOBILIARY"
+      ],
+      "diseases": [
+        "DIS-CHOLANGIOCARCINOMA",
+        "DIS-CRC",
+        "DIS-HCC"
+      ],
+      "used_by_count": 3,
+      "search_text": "rf-psc-cholangiocarcinoma-prevention primary sclerosing cholangitis (psc) — confirmed by characteristic cholangiographic findi... red flag red flag  src-aasld-hcc-2023 src-nccn-colon-2025 src-nccn-hepatobiliary dis-cholangiocarcinoma dis-crc dis-hcc primary sclerosing cholangitis (psc) — confirmed by characteristic cholangiographic findings on mrcp or ercp (multifocal intra-/extra- hepatic biliary strictures with intervening dilatation, beaded appearance) and/or liver biopsy (concentric periductal fibrosis, onion-skin pattern). includes psc-ibd subgroup (very high risk for both crc and cholangiocarcinoma) and psc with dominant biliary stricture (additional cholangiocarcinoma risk requiring focused diagnostic workup). no current cholangiocarcinoma, gallbladder cancer, or hcc diagnosis. psc is the strongest known risk factor for cholangiocarcinoma — lifetime risk ~10-15% (vs ~0.01% in general population); annual incidence ~0.5-1.5% per year. gallbladder cancer risk also elevated ~10-fold. cirrhotic psc adds hcc risk in the general cirrhosis pattern. surveillance with mri/mrcp + ca 19-9 ± ercp for dominant strictures enables earlier detection. prevention-persona redflag (§20 ratification 2026-05-18, v0.3 chronic-condition pilot).   v0.3 chronic-condition prevention pilot — psc. prevention-persona redflag (charter §3 amended 2026-05-18 path a, hcp-mediated). fires when patient profile shows confirmed psc (any trigger) and no current cholangiocarcinoma / gallbladder cancer / hcc diagnosis. engine routes to preventionplan with 2 tracks: intensified imaging surveillance (annual mri/mrcp + ca 19-9 ± ercp for dominant strictures, annual colonoscopy if psc-ibd) (ind-psc-cholangiocarcinoma-prevention-surveillance) as standard; routine q2-3y imaging surveillance (ind-psc-cholangiocarcinoma- prevention-observation) as alternative. disease anchors verified 2026-05-18: dis-cholangiocarcinoma exists as a kb entity. anchored psc primarily to dis-cholangiocarcinoma (per advisor recommendation). dis-crc included for psc-ibd subgroup; dis-hcc included for cirrhotic psc hcc risk. evidence base: - **psc → cholangiocarcinoma:** lifetime risk ~10-15%; annual incidence ~0.5-1.5%/year (multiple population-based registry studies including bergquist et al. gastroenterology 2002, boberg et al. hepatology 2009). - **psc → gallbladder cancer:** ~10-fold elevated relative risk; ~3-14% lifetime risk depending on cohort. gallbladder polyp ≥0.8 cm → cholecystectomy. - **psc-ibd → crc:** ~15-30% lifetime; onset 5-15 years earlier than non-psc ibd. annual colonoscopy from psc diagnosis regardless of ibd duration (separately handled via rf-ibd-crc- prevention when concurrent ibd trigger fires). - **cirrhotic psc → hcc:** standard cirrhosis-driven hcc risk (~1-4%/year); aasld hcc surveillance (semi-annual us ± afp) applies once cirrhosis is established. non-cirrhotic psc does not carry materially elevated hcc risk. ercp with brushings for dominant strictures: cytology has limited sensitivity (~40-50%) but high specificity; combined with fish polysomy improves yield to ~60-70%. ercp itself carries pancreatitis / cholangitis risk — reserved for diagnostic workup of dominant stricture, not routine surveillance. liver transplant evaluation: indicated for end-stage psc (decompensated cirrhosis, intractable cholangitis, intractable pruritus, hilar cholangiocarcinoma meeting mayo protocol criteria for transplant- combined neoadjuvant therapy). sources todo: aasld practice guidance on psc (bowlus et al. hepatology 2023) as a new src entity — primary psc surveillance guideline. easl psc clinical practice guideline (2022) as a new src entity. this is a stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption."
+    },
+    {
       "id": "RF-IFS-TRANSFORMATION-PROGRESSION",
       "kind": "Red flag",
       "kind_key": "redflags",
@@ -23280,6 +23980,22 @@
       "search_text": "rf-organ-pulmonary-dlco-low reduced pulmonary diffusing capacity (dlco <60% predicted). bleomycin, bcnu/carmustine, b... red flag red flag  src-esmo-hodgkin-2024 src-nccn-bcell-2025  reduced pulmonary diffusing capacity (dlco <60% predicted). bleomycin, bcnu/carmustine, beam conditioning, gemcitabine in combination with thoracic rt, and ici in patients with prior pneumonitis are relatively/absolutely contraindicated. triggers avd-without-bleomycin, alternative lymphoma conditioning (leam, feam, beeam), or omission of bleomycin from abvd per rathl.   bleomycin pulmonary toxicity is dose-dependent (cumulative >270 iu) and risk-elevated by baseline dlco <60%, age >40, smoking, prior thoracic rt, renal dysfunction. rathl trial (johnson 2016) established pet2-negative-then-avd safety, halving bleomycin exposure without pfs loss. for autosct conditioning: beam (bcnu 300 mg/m²) carries 10-20% pneumonitis at dlco <60% — substitute leam (lomustine) or beeam (bendamustine) per institutional preference. for ici: prior pneumonitis grade ≥2 contraindicates rechallenge."
     },
     {
+      "id": "RF-CELIAC-REFRACTORY-EATL-PREVENTION",
+      "kind": "Red flag",
+      "kind_key": "redflags",
+      "title": "Refractory celiac disease — defined as persistent villous atrophy despite strict gluten-f...",
+      "url": "/kb/redflags/rf-celiac-refractory-eatl-prevention.html",
+      "subtitle": "disease: DIS-EATL | sources: SRC-NCCN-BCELL-2025 | reviewed 2026-05-18 | pending_clinical_signoff",
+      "sources": [
+        "SRC-NCCN-BCELL-2025"
+      ],
+      "diseases": [
+        "DIS-EATL"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-celiac-refractory-eatl-prevention refractory celiac disease — defined as persistent villous atrophy despite strict gluten-f... red flag red flag  src-nccn-bcell-2025 dis-eatl refractory celiac disease — defined as persistent villous atrophy despite strict gluten-free diet for ≥1 year, or aberrant intraepithelial lymphocyte (iel) clonality on flow cytometry (refractory celiac type 2 — rcd2), or recurrent symptoms with ulcerative jejunitis. refractory celiac type 2 carries ~50% lifetime eatl (enteropathy-associated t-cell lymphoma) risk. engine routes to preventionplan recommending intensive monitoring + small-bowel surveillance imaging + immunosuppression discussion. prevention-persona redflag (§20 ratification, v0.3 chronic-condition).   prevention-persona redflag for refractory celiac → eatl prevention. fires on persistent villous atrophy / aberrant iel clonality / rcd2 features. stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode."
+    },
+    {
       "id": "RF-EATL-TRANSFORMATION-PROGRESSION",
       "kind": "Red flag",
       "kind_key": "redflags",
@@ -23583,7 +24299,7 @@
         "SRC-NCCN-BCELL-2025"
       ],
       "diseases": [],
-      "used_by_count": 12,
+      "used_by_count": 13,
       "search_text": "rf-universal-hbv-reactivation-risk risk of hbv reactivation prior to immunosuppressive / cytotoxic therapy: hbsag-positive (... red flag red flag  src-easl-hcv-2023 src-nccn-bcell-2025  risk of hbv reactivation prior to immunosuppressive / cytotoxic therapy: hbsag-positive (high-risk) or hbsag-negative + anti-hbc-positive (occult hbv, intermediate risk). applies to anti-cd20 (rituximab, obinutuzumab), btki, autosct, and any high-dose corticosteroid regimen.   mandates entecavir or tenofovir prophylaxis from -7 days through +12 months post-last-anti-cd20 (nccn b-cell v2.2025 §hbv-1). reactivation rate without prophylaxis: 30-50% in hbsag+, 5-10% in hbsag-/anti-hbc+ cohorts receiving anti-cd20 (huang et al. 2014, seto et al. 2014). replaces the disease-specific rf-hbv-coinfection pattern; that rf is retained for algo-hcv-mzl-1l pending the clinical-co-lead decision in docs/plans/archive/rf_wiring_audit_2026-04-25.md."
     },
     {
@@ -24465,10 +25181,10 @@
     }
   ],
   "counts": {
-    "Disease": 78,
-    "Drugs": 256,
+    "Disease": 82,
+    "Drugs": 265,
     "Biomarkers": 181,
-    "Red flags": 524,
+    "Red flags": 552,
     "Actionability": 448
   }
 }

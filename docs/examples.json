@@ -13251,5 +13251,264 @@
     "quality_label": "Діагностичний brief",
     "quality_label_en": "Diagnostic brief",
     "quality_class": "quality-diagnostic"
+  },
+  {
+    "case_id": "prevention-brca-pedigree",
+    "label": "Підозра на BRCA/HBOC · педігрі + ашкеназі-єврейське походження",
+    "label_en": "BRCA/HBOC suspicion · pedigree + Ashkenazi ancestry",
+    "disease_id": null,
+    "file": "patient_brca_pedigree_prevention.json",
+    "json": {
+      "patient_id": "BRCA-PREV-001",
+      "comment": "32yo woman, mother diagnosed with breast cancer at 38, maternal aunt with high-grade serous ovarian cancer at 52, Ashkenazi-Jewish ancestry. Patient herself untested, no current cancer. Engine routes to PreventionPlan: standard = pre-test counseling + germline BRCA1/2 + extended-panel (PALB2/CHEK2/ATM/RAD51C/D) testing; alternative = empirical enhanced surveillance (breast MRI q1y from 25-30, alternating with mammogram from 30). Validates v0.2-B BRCA/HBOC hereditary pilot.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 32,
+        "sex": "female",
+        "ecog": 0
+      },
+      "findings": {
+        "family_breast_cancer_under_50": true,
+        "family_ovarian_cancer_any_age": true,
+        "family_ashkenazi_jewish_ancestry_with_breast_or_ovarian": true,
+        "Mother breast cancer age 38": true,
+        "Maternal aunt high-grade serous ovarian cancer age 52": true,
+        "No personal cancer diagnosis": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-fap-pedigree",
+    "label": "Підозра на FAP · батько-носій · germline APC + sigmoidoscopy з 10-12",
+    "label_en": "FAP suspicion · father confirmed carrier · germline APC + sigmoidoscopy from 10-12",
+    "disease_id": null,
+    "file": "patient_fap_pedigree_prevention.json",
+    "json": {
+      "patient_id": "FAP-PREV-001",
+      "comment": "16yo whose father has confirmed FAP (APC pathogenic variant, >100 colorectal adenomas, treated with prophylactic colectomy age 22). Patient untested, asymptomatic. Engine routes to PreventionPlan: standard = pre-test counseling + germline APC panel (incl. MUTYH for MAP differential); alternative = empirical sigmoidoscopy from age 10-12. Validates v0.2-B FAP hereditary pilot.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 16,
+        "sex": "male",
+        "ecog": 0
+      },
+      "findings": {
+        "family_apc_known_pathogenic_variant": true,
+        "family_first_degree_fap_diagnosed_relative": true,
+        "family_classic_fap_phenotype": true,
+        "Father confirmed FAP carrier, prophylactic colectomy age 22": true,
+        "No personal cancer diagnosis": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-hpylori-pbmt",
+    "label": "H. pylori → шлунковий рак · ерадикація PBMT",
+    "label_en": "H. pylori → gastric cancer · PBMT eradication",
+    "disease_id": null,
+    "file": "patient_chronic_hpylori_prevention.json",
+    "json": {
+      "patient_id": "HPYLORI-PREV-001",
+      "comment": "48yo male, positive H. pylori urea breath test on routine evaluation for dyspepsia. No current malignancy. Engine routes to PreventionPlan: standard = bismuth quadruple eradication (PBMT, preferred in Ukraine due to >15% clarithromycin resistance); alternative = active observation. Validates v0.2-A H. pylori → gastric / MALT prevention pathway.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 48,
+        "sex": "male",
+        "ecog": 1
+      },
+      "findings": {
+        "h_pylori_status": "positive",
+        "Confirmed chronic H. pylori infection": true,
+        "No gastric malignancy on upper GI evaluation": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-hbv-entecavir",
+    "label": "HBV → HCC · ентекавір + AFP/УЗД q6mo",
+    "label_en": "HBV → HCC · entecavir + AFP/US q6mo",
+    "disease_id": null,
+    "file": "patient_chronic_hbv_prevention.json",
+    "json": {
+      "patient_id": "HBV-PREV-001",
+      "comment": "42yo female, chronic HBV (HBsAg+ >6 months, HBV-DNA detectable). No current HCC. Engine routes to PreventionPlan: standard = entecavir 0.5mg daily + q6mo HCC surveillance (US + AFP); alternative = HCC surveillance alone. Validates v0.2-A HBV → HCC prevention pathway. Reimbursed via НСЗУ.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 42,
+        "sex": "female",
+        "ecog": 0,
+        "decompensated_cirrhosis": false
+      },
+      "findings": {
+        "hbsag": "positive",
+        "hbv_dna": "detectable",
+        "Chronic HBV >6 months confirmed": true,
+        "No HCC on baseline imaging": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-hcv-daa",
+    "label": "HCV → індолентна B-NHL · профілактика через DAA",
+    "label_en": "HCV → indolent B-NHL · DAA-based prevention",
+    "disease_id": null,
+    "file": "patient_chronic_hcv_prevention.json",
+    "json": {
+      "patient_id": "HCV-PREV-001",
+      "comment": "Chronic HCV-positive adult, no confirmed B-cell NHL. Engine should NOT find a Disease and SHOULD route to the §20 PreventionPlan path: 2 prevention tracks (DAA standard + observation alternative). Validates v0.2-A infectious-etiology anchor (CHARTER §3 prevention scope, ratified 2026-05-18).",
+      "biomarkers": {
+        "BIO-HCV-RNA": "detectable"
+      },
+      "demographics": {
+        "age": 52,
+        "sex": "male",
+        "ecog": 1,
+        "decompensated_cirrhosis": false
+      },
+      "findings": {
+        "HCV RNA detectable": true,
+        "No confirmed lymphoma": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-hiv-art",
+    "label": "HIV → AIDS-визначальні раки · ART (Biktarvy)",
+    "label_en": "HIV → AIDS-defining malignancies · ART (Biktarvy)",
+    "disease_id": null,
+    "file": "patient_chronic_hiv_prevention.json",
+    "json": {
+      "patient_id": "HIV-PREV-001",
+      "comment": "35yo male, newly-diagnosed HIV (positive serology, CD4 380, VL 45000), no current AIDS-defining malignancy. Engine routes to PreventionPlan: standard = Biktarvy single-tablet ART + cancer screening cadence (anal cytology q1-3y, oral KS visual screening); alternative = ART decline (clinically aberrant, included for §15.2 C4). Validates v0.2-A HIV → DLBCL / KS / anal / cervical prevention pathway. Reimbursed via НСЗУ.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 35,
+        "sex": "male",
+        "ecog": 0
+      },
+      "findings": {
+        "hiv_status": "positive",
+        "HIV-RNA viral load 45000 copies/mL": true,
+        "CD4 count 380 cells/microL": true,
+        "No AIDS-defining malignancy on baseline workup": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-hpv-gardasil9",
+    "label": "HPV → cervical/anal · Gardasil-9 + Pap-скринінг",
+    "label_en": "HPV → cervical/anal · Gardasil-9 + Pap screening",
+    "disease_id": null,
+    "file": "patient_hpv_persistent_prevention.json",
+    "json": {
+      "patient_id": "HPV-PREV-001",
+      "comment": "29yo female, persistent HPV-16 positive on cervical co-testing, unvaccinated. Engine routes to PreventionPlan: standard = Gardasil-9 nonavalent vaccination (3-dose series) + age-appropriate cervical screening cadence; alternative = screening alone without vaccination. Validates v0.2-A HPV → cervical / anal cancer prevention pathway.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 29,
+        "sex": "female",
+        "ecog": 0
+      },
+      "findings": {
+        "hpv_high_risk_status": "positive",
+        "hpv_vaccine_status": "unvaccinated",
+        "Persistent HPV-16 on cervical co-test": true,
+        "No cervical CIN on colposcopy": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-lynch-pedigree",
+    "label": "Підозра на Lynch · Amsterdam II · germline MMR-панель",
+    "label_en": "Lynch suspicion · Amsterdam II · germline MMR panel",
+    "disease_id": null,
+    "file": "patient_lynch_pedigree_prevention.json",
+    "json": {
+      "patient_id": "LYNCH-PREV-001",
+      "comment": "38yo female, family history meeting Amsterdam II criteria: mother CRC age 42, maternal grandfather CRC age 56, maternal aunt endometrial cancer age 48 (three Lynch-spectrum cancers across two generations, one first-degree relative, one diagnosis <50). No personal cancer diagnosis. Engine routes to PreventionPlan: standard = genetic counseling + germline MMR/EPCAM panel; alternative = empirical enhanced surveillance (colonoscopy q1-2y from 25, endometrial surveillance from 30-35). Validates v0.2-B Lynch hereditary pilot.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 38,
+        "sex": "female",
+        "ecog": 0
+      },
+      "findings": {
+        "family_amsterdam_ii_criteria_met": true,
+        "family_first_degree_lynch_spectrum_under_50": true,
+        "Mother CRC age 42": true,
+        "Maternal grandfather CRC age 56": true,
+        "Maternal aunt endometrial cancer age 48": true,
+        "No personal cancer diagnosis": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-vhl-pedigree",
+    "label": "Підозра на VHL · мати з гемангіобластомою + феохромоцитомою",
+    "label_en": "VHL suspicion · mother with hemangioblastoma + pheochromocytoma",
+    "disease_id": null,
+    "file": "patient_vhl_pedigree_prevention.json",
+    "json": {
+      "patient_id": "VHL-PREV-001",
+      "comment": "24yo male whose mother had cerebellar hemangioblastoma at 34 and bilateral pheochromocytoma at 38. Father healthy. No personal symptoms. Engine routes to PreventionPlan: standard = pre-test counseling + germline VHL gene panel; alternative = empirical VHL-protocol surveillance (MRI brain+spine q1y from age 15, MRI abdomen q1-2y, ophthalmology q1y, catecholamines/metanephrines q1y). Validates v0.2-B VHL hereditary pilot. Father-with-kidney-cancer scenario the project initiator highlighted is the canonical clinical motivation.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 24,
+        "sex": "male",
+        "ecog": 0
+      },
+      "findings": {
+        "family_hemangioblastoma_cns_or_retinal": true,
+        "family_pheochromocytoma_paraganglioma_with_rcc_or_hemangioblastoma": true,
+        "Mother cerebellar hemangioblastoma age 34": true,
+        "Mother bilateral pheochromocytoma age 38": true,
+        "No personal cancer diagnosis": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
   }
 ]
