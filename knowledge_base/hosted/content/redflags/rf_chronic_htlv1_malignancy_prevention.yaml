@@ -1,0 +1,69 @@
+id: RF-CHRONIC-HTLV-1-MALIGNANCY-PREVENTION
+definition: >-
+  HTLV-1 (human T-lymphotropic virus type 1) infection (positive
+  HTLV-1 serology or HTLV-1 proviral DNA detectable) in an individual
+  without a current ATLL (adult T-cell leukemia/lymphoma) diagnosis.
+  IARC Group 1 carcinogen (HTLV-1) — established etiological driver of
+  ATLL (lifetime risk 2-5% in HTLV-1 carriers per Japanese and
+  Caribbean cohort studies). No curative antiviral therapy exists;
+  the prevention pathway is high-risk-carrier counseling, periodic
+  hematologic surveillance (CBC + LDH q6-12mo, clonality testing if
+  lymphocytosis develops), and transmission-prevention measures (avoid
+  blood donation, breast-milk substitution where feasible).
+  Prevention-persona RedFlag (§20 ratification 2026-05-18).
+definition_ua: >-
+  Інфекція HTLV-1 (human T-lymphotropic virus type 1, позитивна
+  HTLV-1 серологія або визначувана HTLV-1 провірусна ДНК) у пацієнта
+  без поточного діагнозу ATLL (T-клітинна лейкемія/лімфома дорослих).
+  HTLV-1 — канцероген IARC Group 1, встановлений етіологічний драйвер
+  ATLL (lifetime ризик 2-5% у носіїв HTLV-1 за японськими та
+  карибськими когортними дослідженнями). Куративна антивірусна терапія
+  відсутня; шлях profilaktyky — консультування високоризикового носія,
+  періодичне гематологічне спостереження (CBC + LDH q6-12 міс,
+  тестування клональності при розвитку лімфоцитозу) та заходи
+  prevention передачі (уникнення донорства крові, заміна грудного
+  молока де можливо). RedFlag персони prevention (ратифікація §20,
+  2026-05-18).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "htlv_1_status"
+      value: "positive"
+    - finding: "htlv_1_serology"
+      value: "positive"
+    - finding: "htlv_1_proviral_dna"
+      value: "detectable"
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: infectious
+
+relevant_diseases:
+  - DIS-ATLL
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag for HTLV-1-driven ATLL prevention. Unlike
+  HCV/HBV/H. pylori, there is no curative regimen — the intervention
+  is surveillance + transmission prevention, not cure. STUB pending
+  Co-Lead review.
+
+  Geographic context: HTLV-1 endemic regions include Japan (southwest),
+  Caribbean basin, parts of sub-Saharan Africa, parts of South America,
+  Middle East. Ukraine is low-prevalence; this RF is more relevant for
+  diaspora patients or those with travel/origin from endemic regions.
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1

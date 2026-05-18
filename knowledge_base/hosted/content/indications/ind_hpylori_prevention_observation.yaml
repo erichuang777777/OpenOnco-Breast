@@ -1,0 +1,131 @@
+id: IND-H-PYLORI-PREVENTION-OBSERVATION
+plan_track: surveillance
+
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-GASTRIC
+
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+
+  demographic_constraints:
+    ecog_max: 3
+
+# Active observation — no eradication regimen, just periodic surveillance.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Primary endpoint: avoidance of antibiotic course when patient
+    declines eradication. Cancer-incidence outcome: chronic H. pylori
+    without eradication carries elevated gastric-cancer risk
+    (RR ~1.5-3x for adenocarcinoma; ~6x for MALT lymphoma development);
+    surveillance captures malignancy at earliest detectable stage but
+    does NOT reduce incidence.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-H-PYLORI-PREVENTION-ERADICATION.
+  Patient with chronic H. pylori who declines eradication antibiotic
+  therapy — for any reason (antibiotic-stewardship concerns, prior
+  treatment failure with resistant strain, drug intolerance, preference)
+  — is offered active observation as the alternative pathway.
+
+  Active observation in this context means baseline workup (CBC, periodic
+  symptom inquiry, low threshold for upper endoscopy when alarm features
+  develop: weight loss, dysphagia, melena, persistent dyspepsia
+  unresponsive to acid suppression) and periodic re-evaluation. The
+  patient remains at elevated gastric-malignancy risk relative to
+  eradicated comparator; surveillance does not reduce incidence but
+  improves likelihood of early-stage detection if malignancy emerges.
+  Per CHARTER §11 patient-autonomy framing: cancer-incidence-reduction
+  from eradication is meaningful but not life-saving in absolute terms,
+  so observation is a legitimate informed-consent alternative.
+
+  Routing reconsiderations: the patient may revisit eradication at any
+  subsequent visit; this Indication does not preclude treatment
+  escalation. Alarm features during observation (unintended weight loss,
+  dysphagia, GI bleeding, persistent unexplained dyspepsia in patient
+  >55yo or with new symptoms) route immediately to diagnostic upper
+  endoscopy with biopsy — and if gastric malignancy is confirmed, to
+  the treatment-persona algorithm via existing DIS-GASTRIC Indications.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до
+  IND-H-PYLORI-PREVENTION-ERADICATION. Пацієнтові з хронічним H. pylori,
+  який відмовляється від ерадикаційної антибіотикотерапії — з будь-якої
+  причини (стурбованість щодо antibiotic stewardship, попередня
+  невдача з резистентним штамом, непереносимість препаратів,
+  вибір) — пропонується активне спостереження як альтернативний шлях.
+
+  Активне спостереження в цьому контексті означає baseline workup
+  (CBC, періодичне опитування симптомів, низький поріг для верхньої
+  ендоскопії при появі alarm features: схуднення, дисфагія, мелена,
+  стійка диспепсія, що не реагує на кислотну супресію) та періодичну
+  переоцінку. Пацієнт залишається з підвищеним ризиком шлункової
+  малігнізації відносно ерадикованого компаратора; спостереження не
+  знижує захворюваність, але покращує шанси раннього виявлення
+  малігнізації. За CHARTER §11 framing автономії пацієнта: зниження
+  захворюваності раком від ерадикації — значуще, але не життєрятівне в
+  абсолютних термінах, тому спостереження — легітимна альтернатива
+  informed-consent.
+
+  Reroute: пацієнт може повернутися до ерадикації на будь-якому
+  подальшому візиті; ця Indication не виключає ескалацію лікування.
+  Alarm features під час спостереження (ненавмисне схуднення, дисфагія,
+  ШКТ-кровотеча, стійка нез'ясована диспепсія у пацієнта >55 років або
+  з новими симптомами) маршрутизують до діагностичної верхньої
+  ендоскопії з біопсією — і якщо підтверджено шлункову малігнізацію,
+  до treatment-persona алгоритму через існуючі DIS-GASTRIC Indications.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Patients with chronic H. pylori who decline antibiotic eradication
+      require ongoing monitoring for malignancy emergence; alarm features
+      route to diagnostic endoscopy."
+
+do_not_do:
+  - "Не презентувати observation як еквівалент ерадикації — incidence-reduction відсутній."
+  - "Не ігнорувати alarm features (схуднення, дисфагія, ШКТ-кровотеча) — immediate upper endoscopy."
+  - "Не використовувати цей шлях як стандарт першої лінії — eradication-track залишається preferred recommendation."
+  - "Не продовжувати observation за наявності intestinal metaplasia / dysplasia на біопсії — це pre-cancerous, потребує ерадикації + посиленої surveillance endoscopy."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to eradication — incidence-reduction is absent."
+  - "Do not ignore alarm features (weight loss, dysphagia, GI bleeding) — immediate upper endoscopy."
+  - "Do not use this pathway as a first-line standard — the eradication track remains the preferred recommendation."
+  - "Do not continue observation in the presence of intestinal metaplasia / dysplasia on biopsy — this is pre-cancerous, requires eradication + enhanced surveillance endoscopy."
+
+known_controversies: []
+
+time_critical: false
+
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — alternative-track companion to IND-H-PYLORI-PREVENTION-
+  ERADICATION, ratified under CHARTER §6.1 dev-mode exemption alongside
+  the primary track. Required for §15.2 C4 ≥2-tracks invariant on the
+  PreventionPlan shape (KSS §20.2). Two-Co-Lead signoff queued.

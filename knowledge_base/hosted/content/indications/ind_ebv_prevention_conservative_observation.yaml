@@ -1,0 +1,73 @@
+id: IND-CHRONIC-EBV-PREVENTION-CONSERVATIVE-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BURKITT
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Less-frequent EBV-DNA monitoring (q3-6 months) captures established
+    PTLD at later stage than the active-surveillance protocol; treatment
+    outcomes for late-stage PTLD are inferior to those for early-stage
+    PTLD detected during active monitoring.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-CHRONIC-EBV-PREVENTION-ACTIVE-
+  SURVEILLANCE. Used when intensive EBV-DNA monitoring is impractical
+  (e.g., low-resource settings, patient preference, lower-risk
+  immunocompromised contexts) — adopts a conservative cadence
+  (CBC + clinical symptom inquiry q3-6 months, EBV-DNA only when
+  symptomatic).
+
+  Per CHARTER §11 patient-autonomy framing.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до
+  IND-CHRONIC-EBV-PREVENTION-ACTIVE-SURVEILLANCE. Використовується
+  коли інтенсивний EBV-DNA моніторинг непрактичний (напр., low-resource
+  settings, вибір пацієнта, контекст нижчого ризику імунокомпрометації)
+  — приймає консервативну частоту (CBC + клінічне опитування симптомів
+  q3-6 міс, EBV-DNA лише при симптомах).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не використовувати цей шлях у high-risk post-HSCT або early post-solid-organ-transplant пацієнтів — потрібна active surveillance."
+  - "Не ігнорувати new lymphadenopathy / B-симптоми — immediate EBV-DNA + imaging escalation."
+
+do_not_do_en:
+  - "Do not use this pathway in high-risk post-HSCT or early post-solid-organ-transplant patients — active surveillance is required."
+  - "Do not ignore new lymphadenopathy / B-symptoms — immediate EBV-DNA + imaging escalation."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — alternative-track companion for EBV prevention.

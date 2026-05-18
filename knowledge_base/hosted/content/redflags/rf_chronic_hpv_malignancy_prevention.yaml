@@ -1,0 +1,71 @@
+id: RF-CHRONIC-HPV-MALIGNANCY-PREVENTION
+definition: >-
+  Persistent high-risk HPV infection (HPV-16, 18, 31, 33, 45, 52, 58
+  detected on cervical co-test, anal cytology, or oropharyngeal swab),
+  or absence of completed HPV vaccination series in age-eligible
+  individual. IARC Group 1 carcinogen (HPV) — established etiological
+  driver of cervical (>99% attributable), anal (~90%), oropharyngeal
+  (~70% in US/EU), vulvar/vaginal, and penile squamous cell carcinomas.
+  HPV vaccination (Gardasil-9 nonavalent) reduces incidence; screening
+  (cervical Pap/HPV co-testing, anal cytology in high-risk groups)
+  enables early-stage detection. Prevention-persona RedFlag (§20
+  ratification 2026-05-18).
+definition_ua: >-
+  Персистуюча інфекція ВПЛ високого ризику (HPV-16, 18, 31, 33, 45, 52,
+  58, виявлено при цервікальному ко-тесті, анальній цитології або
+  орофарингеальному мазку) АБО відсутність завершеного курсу
+  ВПЛ-вакцинації в особи відповідного віку. ВПЛ — канцероген IARC
+  Group 1, встановлений етіологічний драйвер цервікального (>99%
+  атрибутивно), анального (~90%), орофарингеального (~70% у США/ЄС),
+  вульварного/вагінального та пенільного плоскоклітинного раку.
+  ВПЛ-вакцинація (Gardasil-9 нонавалентна) знижує захворюваність;
+  скринінг (цервікальний Pap/ВПЛ ко-тест, анальна цитологія в групах
+  високого ризику) дозволяє раннє виявлення. RedFlag персони prevention
+  (ратифікація §20, 2026-05-18).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "hpv_high_risk_status"
+      value: "positive"
+    - finding: "hpv_vaccine_status"
+      value: "incomplete"
+    - finding: "hpv_vaccine_status"
+      value: "unvaccinated"
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: infectious
+
+relevant_diseases:
+  - DIS-CERVICAL
+  - DIS-ANAL-SCC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-CERVICAL-2025
+  - SRC-NCCN-ANAL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag for HPV-associated cancer prevention.
+  Fires on persistent high-risk HPV positivity OR incomplete/absent
+  vaccination in age-eligible individual. Engine routes to PreventionPlan
+  recommending vaccination (Gardasil-9) and/or risk-group-appropriate
+  screening cadence (cervical: USPSTF Pap+HPV co-test q5y ages 30-65;
+  anal: HRA + cytology q1y in MSM/HIV+/post-transplant). STUB pending
+  Co-Lead review.
+
+  Cancer scope: anchored to DIS-CERVICAL and DIS-ANAL-SCC. Oropharyngeal
+  squamous cell carcinoma and vulvar/vaginal/penile not yet in KB —
+  v0.2-A authoring backlog.
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1

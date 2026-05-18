@@ -1,0 +1,99 @@
+id: IND-CHRONIC-EBV-PREVENTION-ACTIVE-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BURKITT
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    EBV-DNA monitoring + preemptive rituximab in rising-titer PTLD:
+    ~70-80% reduction in PTLD progression to overt lymphoma. Reducing
+    immunosuppression in transplant recipients with rising EBV viremia:
+    ~30-50% remission in early PTLD when feasible.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+  - TEST-LDH
+desired_tests:
+  - TEST-LFT
+
+rationale: >
+  Standard-track prevention pathway for EBV-driven lymphoma in
+  immunocompromised hosts (post-transplant, HSCT, congenital
+  immunodeficiency, HIV+). Three components:
+
+  **(1) Quantitative EBV-DNA monitoring (q1-2 weeks initially in
+  post-transplant settings, q1-3 months chronically).** Rising titers
+  (>10x baseline OR >1000 copies/mL by qPCR) trigger active
+  intervention.
+
+  **(2) Reduction of immunosuppression (RIS)** in transplant
+  recipients with rising EBV viremia, when graft function allows.
+  ~30-50% achieve remission of early PTLD with RIS alone.
+
+  **(3) Preemptive rituximab** for sustained rising EBV-DNA titers
+  in solid-organ transplant or post-HSCT settings: rituximab 375 mg/m²
+  weekly × 1-4 doses, guided by EBV-DNA response. Reduces progression
+  to overt PTLD by ~70-80%.
+
+  Population-wide EBV vaccination is in trials but not yet approved.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для EBV-driven лімфоми в
+  імунокомпрометованих хазяях (post-transplant, ТГСК, вроджений
+  імунодефіцит, ВІЛ+). Три компоненти:
+
+  **(1) Кількісний EBV-DNA моніторинг (q1-2 тижні спочатку в
+  post-transplant контексті, q1-3 міс хронічно).** Підвищення титрів
+  (>10x baseline АБО >1000 копій/мл за qPCR) тригерує активне
+  втручання.
+
+  **(2) Зниження імуносупресії (RIS)** в transplant-реципієнтів з
+  ростом EBV-віремії, коли функція трансплантату дозволяє. ~30-50%
+  досягають ремісії ранньої PTLD при RIS самостійно.
+
+  **(3) Preemptive rituximab** для стабільно зростаючих EBV-DNA титрів
+  при solid-organ transplant або post-HSCT: rituximab 375 мг/м²
+  щотижнево × 1-4 дози, керовано EBV-DNA відповіддю. Знижує
+  прогресію до явної PTLD на ~70-80%.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: supports
+
+do_not_do:
+  - "Не пропускати quantitative EBV-DNA monitoring у post-transplant пацієнтів — це основа preemptive стратегії."
+  - "Не призначати rituximab без транспортної координації з трансплантологом / гематологом."
+  - "Не reducing immunosuppression у патієнта з рисом graft rejection — окремий клінічний consult потрібен."
+
+do_not_do_en:
+  - "Do not skip quantitative EBV-DNA monitoring in post-transplant patients — this is the foundation of the preemptive strategy."
+  - "Do not initiate rituximab without coordination with the transplant team / hematology."
+  - "Do not reduce immunosuppression in a patient at risk of graft rejection — a separate clinical consult is required."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — v0.2-A continuation. Rituximab Regimen authoring (REG-RITUXIMAB-PREEMPTIVE-PTLD) is v0.2-A backlog.

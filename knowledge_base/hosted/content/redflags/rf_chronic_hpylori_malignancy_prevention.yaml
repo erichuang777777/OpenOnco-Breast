@@ -1,0 +1,135 @@
+id: RF-CHRONIC-H-PYLORI-MALIGNANCY-PREVENTION
+definition: >-
+  Chronic Helicobacter pylori infection (positive urea breath test, stool
+  antigen, gastric biopsy histology, or stool PCR) in an individual
+  without a current gastric malignancy diagnosis. IARC Group 1
+  carcinogen (H. pylori) — established etiological driver of gastric
+  adenocarcinoma (intestinal-type primarily) and gastric MALT lymphoma.
+  Eradication therapy reduces gastric-cancer incidence (NNT ~15 in
+  high-incidence populations per Cochrane meta-analyses) and is curative
+  for early-stage gastric MALT lymphoma in ~70-80% of cases (Wotherspoon
+  regression). Prevention-persona RedFlag (§20 ratification 2026-05-18).
+definition_ua: >-
+  Хронічна інфекція Helicobacter pylori (позитивний дихальний уреазний
+  тест, антиген у калі, гістологія біопсії шлунка або стульова ПЛР) у
+  пацієнта без поточного діагнозу шлункової малігнізації. H. pylori —
+  канцероген IARC Group 1, встановлений етіологічний драйвер
+  аденокарциноми шлунка (переважно інтестинального типу) та MALT-лімфоми
+  шлунка. Ерадикаційна терапія знижує захворюваність шлунковим раком
+  (NNT ~15 у популяціях високої захворюваності за мета-аналізами Cochrane)
+  та є куративною для ранньої стадії MALT-лімфоми шлунка у ~70-80%
+  випадків (регресія Wotherspoon). RedFlag персони prevention
+  (ратифікація §20, 2026-05-18).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "h_pylori_status"
+      value: "positive"
+    - finding: "urea_breath_test"
+      value: "positive"
+    - finding: "h_pylori_stool_antigen"
+      value: "positive"
+    - finding: "h_pylori_biopsy_histology"
+      value: "positive"
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+# §20 prevention extension — drives engine routing to PreventionPlan
+# when patient carries this RF and no confirmed Disease (KSS §20.2).
+risk_category: infectious
+
+# Cancers being prevented: gastric adenocarcinoma (in KB as DIS-GASTRIC).
+# Gastric MALT lymphoma is also H. pylori-driven but not yet a distinct
+# Disease entity in OpenOnco KB — coverage via this RF anchors gastric
+# adenocarcinoma prevention now; DIS-GASTRIC-MALT to be authored
+# separately as a v0.2-A follow-up.
+relevant_diseases:
+  - DIS-GASTRIC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag (CHARTER §3 amended 2026-05-18 Path A,
+  HCP-mediated). Fires when patient profile shows chronic H. pylori
+  (positive UBT / stool antigen / biopsy histology / stool PCR) AND no
+  confirmed gastric malignancy. Engine routes such patients to a
+  PreventionPlan recommending eradication therapy (per
+  IND-H-PYLORI-PREVENTION-ERADICATION) as the etiological-cancer-
+  prevention pathway.
+
+  Evidence for H. pylori → gastric cancer causation (IARC Group 1):
+  multiple Cochrane meta-analyses show eradication reduces gastric
+  adenocarcinoma incidence (RR ~0.54-0.66, NNT ~15-50 depending on
+  population baseline incidence). Effect is stronger in high-incidence
+  populations and in younger individuals where atrophic gastritis /
+  intestinal metaplasia has not yet developed.
+
+  Evidence for H. pylori → gastric MALT lymphoma: eradication is the
+  first-line treatment for early-stage gastric MALT lymphoma, with
+  Wotherspoon regression in ~70-80% of cases (especially t(11;18)-
+  negative). This is treatment-persona territory (existing MALT lymphoma
+  in setting of confirmed H. pylori → treatment Indication, not yet
+  authored) — distinct from prevention persona (chronic H. pylori →
+  prevent MALT/adenocarcinoma development).
+
+  Sources TODO: IARC Monograph 100B (H. pylori Group 1) as a new SRC
+  entity; Maastricht VI/Florence Consensus (2022) as a new SRC entity
+  for eradication regimens; AGA 2024 H. pylori treatment guideline as
+  a new SRC entity. v0.2-A continuation backlog.
+
+  This is a STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1
+  dev-mode exemption (sources cited, draft flag set).
+
+  Engine consumption is OPERATIONAL via §20 PreventionPlan path (commit
+  `24ff626661`, 2026-05-18) — this RF will fire and produce a 2-track
+  PreventionPlan as soon as a matching prevention Indication is loaded.
+notes_ua: >
+  Prevention-persona RedFlag (CHARTER §3 поправка 2026-05-18, Path A
+  HCP-mediated). Спрацьовує коли профіль пацієнта показує хронічний
+  H. pylori (позитивний УДТ / антиген у калі / гістологія біопсії /
+  стульова ПЛР) ТА відсутній підтверджений діагноз шлункової
+  малігнізації. Engine маршрутизує таких пацієнтів до PreventionPlan,
+  що рекомендує ерадикаційну терапію (через IND-H-PYLORI-PREVENTION-
+  ERADICATION) як шлях етіологічної профілактики раку.
+
+  Доказова база H. pylori → рак шлунка (IARC Group 1): множинні
+  мета-аналізи Cochrane показують зниження захворюваності аденокарциномою
+  шлунка після ерадикації (RR ~0.54-0.66, NNT ~15-50 залежно від базової
+  захворюваності в популяції). Ефект сильніший у популяціях високої
+  захворюваності та у молодших пацієнтів, де атрофічний гастрит /
+  кишкова метаплазія ще не розвинулися.
+
+  Доказова база H. pylori → MALT-лімфома шлунка: ерадикація — перша лінія
+  лікування ранньої стадії MALT-лімфоми шлунка з регресією Wotherspoon
+  у ~70-80% випадків (особливо t(11;18)-негативних). Це територія
+  treatment-персони (існуюча MALT-лімфома з підтвердженим H. pylori →
+  treatment Indication, ще не написана) — відмінна від prevention
+  персони (хронічний H. pylori → запобігання розвитку MALT/
+  аденокарциноми).
+
+  TODO джерела: IARC Monograph 100B (H. pylori Group 1) як нова SRC
+  entity; Maastricht VI/Florence Consensus (2022) як нова SRC для
+  ерадикаційних режимів; AGA 2024 H. pylori treatment guideline як
+  нова SRC. Backlog продовження v0.2-A.
+
+  Це STUB, очікує підпис двох Clinical Co-Lead за §6.1 dev-mode
+  exemption (джерела процитовано, draft встановлено).
+
+  Споживання engine ОПЕРАЦІЙНЕ через §20 PreventionPlan шлях (коміт
+  `24ff626661`, 2026-05-18) — цей RF спрацює і видасть 2-track
+  PreventionPlan як тільки відповідна prevention Indication завантажена.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+
+draft: true

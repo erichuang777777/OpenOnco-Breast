@@ -1,0 +1,89 @@
+id: IND-CHRONIC-HIV-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-DLBCL-NOS
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Without ART: AIDS-defining malignancy incidence substantially
+    elevated (lifetime risk of NHL >10x general population, KS >100x).
+    Surveillance captures malignancy at earliest detectable stage but
+    does NOT reduce incidence.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+  - TEST-LFT
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-CHRONIC-HIV-PREVENTION-ART. Patient
+  who declines ART — a clinically aberrant choice in modern medicine
+  but documented in real practice (treatment-refusal subgroups, access
+  constraints, untreated HIV) — receives intensified cancer screening:
+  anal cytology q6-12mo, cervical Pap q6-12mo, visual oral/KS
+  inspection at every visit, low threshold for systemic evaluation
+  with new lymphadenopathy / B-symptoms.
+
+  This is NOT a recommended pathway — the DAA-equivalent ART decision
+  is well-established as life-saving (not just cancer-incidence-
+  reducing). Indication included strictly to satisfy §15 C4 ≥2-tracks
+  invariant and to honor CHARTER §11 patient-autonomy framing for
+  patients who, despite counseling, decline ART.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до
+  IND-CHRONIC-HIV-PREVENTION-ART. Пацієнт, який відмовляється від
+  АРТ — клінічно аберантний вибір в сучасній медицині, але
+  задокументований у реальній практиці (treatment-refusal subgroups,
+  обмеження доступу, нелікований ВІЛ) — отримує посилений
+  cancer-скринінг: анальна цитологія q6-12 міс, цервікальний Pap
+  q6-12 міс, візуальна orаль/KS інспекція на кожному візиті, низький
+  поріг для системної оцінки при новій лімфаденопатії / B-симптомах.
+
+  ЦЕ НЕ рекомендований шлях — рішення про АРТ добре встановлене як
+  життєрятівне (не просто зниження захворюваності раком). Indication
+  включено суто для задоволення §15 C4 ≥2-tracks інваріанту та для
+  поваги до CHARTER §11 framing автономії пацієнта для пацієнтів, які,
+  попри консультування, відмовляються від АРТ.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NIH-AIDS-2024
+    position: context
+
+do_not_do:
+  - "Не презентувати observation як еквівалент АРТ — АРТ є життєрятівною інтервенцією, не просто cancer-prevention."
+  - "Не пропускати periodic re-counseling про важливість ART — більшість пацієнтів врешті приймають терапію після додаткових візитів."
+  - "Не використовувати цей шлях як перший вибір — ART-track залишається preferred standard of care."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to ART — ART is a life-saving intervention, not merely cancer prevention."
+  - "Do not skip periodic re-counseling about the importance of ART — most patients eventually accept therapy after additional visits."
+  - "Do not use this pathway as a first choice — the ART track remains the preferred standard of care."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — alternative-track companion for HIV prevention. Clinically aberrant pathway included for §15.2 C4 ≥2-tracks invariant compliance and CHARTER §11 patient-autonomy framing.

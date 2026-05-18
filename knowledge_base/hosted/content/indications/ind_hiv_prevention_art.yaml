@@ -1,0 +1,97 @@
+id: IND-CHRONIC-HIV-PREVENTION-ART
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-DLBCL-NOS
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Sustained ART with HIV-RNA <50 copies/mL: AIDS-defining malignancy
+    incidence reduction >80% (NA-ACCORD, Swiss HIV Cohort). NHL
+    incidence reduction ~50-60%, Kaposi sarcoma >90%, invasive cervical
+    cancer ~60%. Modest reduction (~20-30%) in non-AIDS-defining cancer
+    incidence (anal, HCC, lung).
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+  - TEST-LFT
+  - TEST-LDH
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for HIV-associated cancers.
+  Durable antiretroviral therapy with the goal of HIV-RNA <50 copies/mL
+  and CD4 reconstitution is the cornerstone — reduces AIDS-defining
+  malignancy incidence by >80% and modestly reduces non-AIDS-defining
+  malignancy incidence.
+
+  Regimen selection per current DHHS / EACS / NIH AIDSinfo guidelines
+  (typically a single-tablet integrase inhibitor-based regimen — e.g.,
+  bictegravir/emtricitabine/tenofovir-alafenamide, dolutegravir-based
+  combinations). Drug-drug interaction screening mandatory before any
+  cancer treatment is added.
+
+  Cancer screening cadence (in addition to ART):
+  - **Anal cytology q1-3y** in MSM/HIV+ and women with HIV (HRA referral
+    if abnormal).
+  - **Cervical Pap q1y** in WLHIV until 3 normal then q3y per US-DHHS
+    OI guidelines.
+  - **Visual oral / Kaposi inspection** at every routine visit.
+  - **HCC surveillance** (ultrasound + AFP q6mo) if HBV/HCV
+    co-infection or cirrhosis.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для ВІЛ-асоційованих раків.
+  Тривала антиретровірусна терапія з метою ВІЛ-РНК <50 копій/мл і
+  реконституції CD4 — основа: знижує захворюваність AIDS-визначальною
+  малігнізацією на >80% і помірно знижує захворюваність не-AIDS-
+  визначальною малігнізацією.
+
+  Вибір режиму — за поточними рекомендаціями DHHS / EACS / NIH
+  AIDSinfo (зазвичай однотаблетковий integrase inhibitor-base режим —
+  напр., bictegravir/emtricitabine/tenofovir-alafenamide, dolutegravir-
+  base комбінації). Скринінг лікарських взаємодій — обов'язковий перед
+  будь-яким додаванням протиракового лікування.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NIH-AIDS-2024
+    position: supports
+  - source_id: SRC-NCCN-BCELL-2025
+    position: supports
+
+do_not_do:
+  - "Не пропускати drug-drug interaction screening перед будь-яким cancer treatment у HIV+ пацієнта."
+  - "Не припиняти ART під час cancer treatment без HIV-specialist consult."
+  - "Не використовувати efavirenz-base регіми у пацієнтів з історією depression/suicidality."
+
+do_not_do_en:
+  - "Do not skip drug-drug interaction screening before any cancer treatment in an HIV+ patient."
+  - "Do not discontinue ART during cancer treatment without an HIV-specialist consult."
+  - "Do not use efavirenz-based regimens in patients with a history of depression / suicidality."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — v0.2-A continuation. ART Regimen authoring is v0.2-A backlog.

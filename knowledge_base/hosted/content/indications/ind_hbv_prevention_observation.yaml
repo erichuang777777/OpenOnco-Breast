@@ -1,0 +1,87 @@
+id: IND-CHRONIC-HBV-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-HCC
+  stage_requirements: []
+  biomarker_requirements_required:
+    - biomarker_id: BIO-HBV-SEROLOGY
+      required: true
+      value_constraint: "HBsAg positive OR HBV-DNA detectable"
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Primary endpoint: HCC surveillance compliance (ultrasound + AFP q6mo).
+    Cancer-incidence outcome: chronic HBV without antiviral suppression
+    carries elevated HCC risk (lifetime ~15-25%); surveillance captures
+    HCC at earliest detectable stage but does NOT reduce incidence.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+  - TEST-LFT
+desired_tests:
+  - TEST-LDH
+
+rationale: >
+  Alternative-track companion to IND-CHRONIC-HBV-PREVENTION-ANTIVIRAL.
+  Patient with chronic HBV who declines antiviral therapy — for any
+  reason (low viremia in inactive-carrier state, drug intolerance, prior
+  treatment failure, preference) — is offered HCC surveillance per
+  AASLD: ultrasound + AFP q6mo. Inactive carriers (HBeAg negative,
+  HBV-DNA <2000 IU/mL, ALT normal) are a recognized subgroup who may
+  not require active antiviral suppression per AASLD criteria — but
+  surveillance remains mandatory.
+
+  Patient remains at elevated HCC risk; surveillance does not reduce
+  incidence but improves likelihood of early-stage detection. Per
+  CHARTER §11 patient-autonomy framing.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до
+  IND-CHRONIC-HBV-PREVENTION-ANTIVIRAL. Пацієнт з хронічним HBV, який
+  відмовляється від антивірусної терапії — з будь-якої причини
+  (низька віремія в inactive-carrier стані, непереносимість препаратів,
+  попередня невдача лікування, вибір) — отримує HCC-surveillance за
+  AASLD: ультразвук + AFP q6mo. Inactive carriers (HBeAg негативні,
+  HBV-ДНК <2000 МО/мл, ALT нормальна) — визнана підгрупа, що може не
+  потребувати активної антивірусної супресії за критеріями AASLD —
+  але surveillance залишається обов'язковим.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-AASLD-HCC-2023
+    position: supports
+  - source_id: SRC-AASLD-HBV-2024
+    position: context
+
+do_not_do:
+  - "Не пропускати q6mo HCC surveillance навіть в inactive-carrier стані."
+  - "Не вважати observation еквівалентним антивірусній супресії — incidence-reduction відсутній."
+
+do_not_do_en:
+  - "Do not skip q6mo HCC surveillance even in inactive-carrier state."
+  - "Do not consider observation equivalent to antiviral suppression — incidence-reduction is absent."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — alternative-track companion for HBV prevention. §15.2 C4 ≥2-tracks invariant compliance.

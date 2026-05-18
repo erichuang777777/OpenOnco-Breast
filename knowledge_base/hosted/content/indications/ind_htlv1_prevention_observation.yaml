@@ -1,0 +1,73 @@
+id: IND-CHRONIC-HTLV-1-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-ATLL
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: very_low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Minimal surveillance (annual or symptom-driven only) defers ATLL
+    detection to symptomatic presentation, when outcomes are inferior
+    to early-detection scenarios.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-CHRONIC-HTLV-1-PREVENTION-
+  SURVEILLANCE. Used when active hematologic surveillance is impractical
+  (low-resource setting, patient preference, geographic isolation from
+  specialist care) — adopts symptom-driven surveillance only (annual
+  CBC; care-seeking if lymphadenopathy / skin lesions / hypercalcemia
+  symptoms develop).
+
+  Per CHARTER §11 patient-autonomy framing.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до
+  IND-CHRONIC-HTLV-1-PREVENTION-SURVEILLANCE. Використовується коли
+  активне гематологічне спостереження непрактичне (low-resource setting,
+  вибір пацієнта, географічна ізоляція від спеціалізованої допомоги) —
+  приймає symptom-driven спостереження лише (щорічний CBC; звернення
+  до лікаря при появі лімфаденопатії / шкірних уражень / симптомів
+  гіперкальціємії).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не ігнорувати developing лімфаденопатію / шкірні bullae у HTLV-1+ пацієнта — immediate evaluation."
+  - "Не використовувати цей шлях у пацієнтів з documented high proviral load — active surveillance preferred."
+
+do_not_do_en:
+  - "Do not ignore developing lymphadenopathy / skin bullae in an HTLV-1+ patient — immediate evaluation."
+  - "Do not use this pathway in patients with documented high proviral load — active surveillance is preferred."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — alternative-track companion for HTLV-1 prevention.

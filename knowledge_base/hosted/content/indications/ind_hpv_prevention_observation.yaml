@@ -1,0 +1,78 @@
+id: IND-CHRONIC-HPV-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CERVICAL
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Cervical-cancer mortality reduction with screening alone (no
+    vaccination): ~70-80% (Pap screening era data, pre-vaccine).
+    Patient remains at higher HPV-cancer incidence than vaccinated
+    comparator.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-CHRONIC-HPV-PREVENTION-VACCINATION-
+  SCREENING. Patient who declines or is ineligible for HPV vaccination
+  (age >45 in most jurisdictions; pregnancy; severe acute illness;
+  prior anaphylaxis to vaccine component) but accepts age-appropriate
+  cervical / anal screening cadence.
+
+  Screening alone (no vaccination) reduces cervical-cancer mortality by
+  ~70-80% but does not match the >90% reduction projected with
+  vaccination + screening combined. Per CHARTER §11 patient-autonomy
+  framing.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт, який відмовляється від
+  HPV-вакцинації або не підходить для неї (вік >45 в більшості
+  юрисдикцій; вагітність; тяжка гостра хвороба; попередня анафілаксія
+  на компонент вакцини), але приймає вікові скринінг-протоколи.
+
+  Скринінг сам по собі (без вакцинації) знижує цервікально-ракову
+  смертність на ~70-80%, але не досягає >90% зниження, прогнозованого
+  при комбінації вакцинації + скринінгу. Per CHARTER §11 framing
+  автономії пацієнта.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-CERVICAL-2025
+    position: supports
+
+do_not_do:
+  - "Не презентувати observation як еквівалент vaccination + screening — incidence-reduction нижче."
+  - "Не пропускати age-appropriate скринінг — це залишається mainstay у невакцинованих."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to vaccination + screening — incidence-reduction is lower."
+  - "Do not skip age-appropriate screening — this remains the mainstay in unvaccinated individuals."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — alternative-track companion for HPV prevention.
