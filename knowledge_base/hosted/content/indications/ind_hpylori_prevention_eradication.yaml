@@ -20,12 +20,11 @@ applicable_to:
 triggered_by_redflags:
   - RF-CHRONIC-H-PYLORI-MALIGNANCY-PREVENTION
 
-# Eradication regimen is not yet authored as a Regimen entity (v0.2-A
-# follow-up — needs DRUG-CLARITHROMYCIN / DRUG-AMOXICILLIN / DRUG-OMEPRAZOLE
-# / DRUG-BISMUTH-SUBCITRATE / DRUG-TETRACYCLINE which don't exist in KB
-# yet). Eradication options described in rationale. Render layer handles
-# null regimen gracefully (track with no regimen card).
-recommended_regimen: null
+# Standard primary eradication regimen: PBMT bismuth-quadruple — preferred
+# in Ukraine and most of Eastern Europe due to clarithromycin resistance
+# >15% (Maastricht VI/Florence Consensus 2022). Alternative regimen
+# REG-HP-PPI-CLAR-AMOX listed in rationale for low-resistance regions.
+recommended_regimen: REG-HP-BISMUTH-QUADRUPLE
 concurrent_therapy: []
 followed_by: []
 

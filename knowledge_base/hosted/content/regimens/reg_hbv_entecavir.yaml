@@ -1,0 +1,76 @@
+id: REG-HBV-ENTECAVIR
+name: "Entecavir — chronic HBV antiviral suppression"
+name_ua: "Ентекавір — антивірусна супресія хронічного HBV"
+alternate_names:
+  - "Entecavir mono"
+  - "Baraclude"
+
+components:
+  - drug_id: DRUG-ENTECAVIR
+    dose: "0.5 mg PO (1.0 mg if lamivudine-refractory)"
+    schedule: "once daily on an empty stomach"
+    route: PO
+    duration: "ongoing — chronic suppression (typically indefinite or until HBsAg seroconversion + 12 months)"
+
+cycle_length_days: 30
+total_cycles: "ongoing — long-term suppression"
+
+toxicity_profile: low
+
+premedication: []
+mandatory_supportive_care: []
+monitoring_schedule_id:
+
+dose_adjustments:
+  - condition: "Renal impairment (CrCl <50 mL/min)"
+    modification: "Reduce dose per CrCl: 0.25mg daily (CrCl 30-49), 0.15mg daily (CrCl 10-29), 0.05mg daily (CrCl <10)"
+    rationale: "Entecavir is primarily renally excreted; dose reduction prevents accumulation"
+    source_refs:
+      - SRC-AASLD-HBV-2024
+  - condition: "HIV coinfection"
+    modification: "Do NOT use entecavir as monotherapy in HIV — switch to full ART (tenofovir-based regimen covers both HBV and HIV)"
+    rationale: "Entecavir has weak anti-HIV activity that can select HIV resistance mutations; monotherapy in HIV is contraindicated"
+    source_refs:
+      - SRC-AASLD-HBV-2024
+      - SRC-NIH-AIDS-2024
+
+ukraine_availability:
+  all_components_registered: true
+  all_components_reimbursed: true
+  notes: "Entecavir is reimbursed via НСЗУ national HBV treatment programme."
+
+sources:
+  - SRC-AASLD-HBV-2024
+  - SRC-EASL-HBV-2025
+  - SRC-AASLD-HCC-2023
+
+between_visit_watchpoints:
+  - trigger_ua: "Легка втома або головний біль у перші 2-4 тижні"
+    action_ua: "Зазвичай минає — занотуйте і обговоріть на наступному візиті"
+    urgency: log_at_next_visit
+    sources:
+      - SRC-AASLD-HBV-2024
+  - trigger_ua: "Жовтяниця (жовте забарвлення шкіри або очей) або потемніння сечі"
+    action_ua: "Подзвоніть у клініку того ж дня — ознака можливого hepatic flare або погіршення функції печінки"
+    urgency: call_clinic_same_day
+    sources:
+      - SRC-AASLD-HBV-2024
+  - trigger_ua: "Раптова сильна слабкість м'язів, болі або темна сеча"
+    action_ua: "Звертайтесь у лікарню негайно — рідкісна, але серйозна лактоацидоз/мітохондріальна токсичність"
+    urgency: er_now
+    sources:
+      - SRC-AASLD-HBV-2024
+  - trigger_ua: "Будь-який натяк на припинення прийому без узгодження з лікарем"
+    action_ua: "Звертайтесь у клініку негайно — припинення може спричинити важкий hepatic flare; ніколи не припиняти без consultation"
+    urgency: call_clinic_same_day
+    sources:
+      - SRC-AASLD-HBV-2024
+
+last_reviewed: "2026-05-18"
+notes: >
+  First-line nucleoside analog for chronic HBV suppression. Achieves HBV-DNA undetectability in >95% of treatment-naive patients over 12 months. Long-term suppression reduces HCC incidence by ~50% (HR 0.5, AASLD 2024). Combined with q6mo HCC surveillance (US + AFP) for full cancer-prevention benefit. Discontinuation requires hepatologist consultation due to severe hepatic flare risk.
+notes_ua: >
+  Нуклеозидний аналог першої лінії для супресії хронічного HBV. Досягає невизначуваності HBV-ДНК у >95% пацієнтів без попереднього лікування за 12 місяців. Тривала супресія знижує захворюваність ГЦК на ~50% (HR 0.5, AASLD 2024). У поєднанні з q6mo HCC-surveillance (УЗ + AFP) для повної онко-профілактичної користі. Припинення потребує консультації гепатолога через ризик важкого hepatic flare.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_authoring
+draft_revision: 1

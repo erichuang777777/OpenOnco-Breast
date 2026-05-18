@@ -1,0 +1,86 @@
+id: REG-HP-BISMUTH-QUADRUPLE
+name: "Bismuth quadruple therapy (PBMT) — 14 days"
+name_ua: "Бісмутова квадра-терапія (PBMT) — 14 днів"
+alternate_names:
+  - "PBMT 14d"
+  - "Bismuth quadruple"
+  - "Quadruple bismuth therapy"
+
+components:
+  - drug_id: DRUG-OMEPRAZOLE
+    dose: "20 mg PO"
+    schedule: "twice daily"
+    route: PO
+    duration: "14 days continuous"
+  - drug_id: DRUG-BISMUTH-SUBCITRATE
+    dose: "120 mg PO"
+    schedule: "four times daily"
+    route: PO
+    duration: "14 days continuous"
+  - drug_id: DRUG-METRONIDAZOLE
+    dose: "500 mg PO"
+    schedule: "three times daily"
+    route: PO
+    duration: "14 days continuous"
+  - drug_id: DRUG-TETRACYCLINE
+    dose: "500 mg PO"
+    schedule: "four times daily"
+    route: PO
+    duration: "14 days continuous"
+
+cycle_length_days: 14
+total_cycles: "1 (single 14-day eradication course)"
+
+toxicity_profile: moderate
+
+premedication: []
+mandatory_supportive_care: []
+monitoring_schedule_id:
+
+dose_adjustments:
+  - condition: "Severe renal impairment (CrCl <30 mL/min)"
+    modification: "Avoid bismuth subcitrate due to accumulation risk; consider PPI-clarithromycin-amoxicillin triple if clarithromycin resistance not high"
+    rationale: "Bismuth subcitrate is renally excreted; accumulation risk in severe renal impairment"
+    source_refs:
+      - SRC-MAASTRICHT-VI-FLORENCE-2022
+
+ukraine_availability:
+  all_components_registered: true
+  all_components_reimbursed: false
+  notes: "All four components are pharmacy-accessible in Ukraine. Out-of-pocket cost ~500-1500 UAH per full 14-day course depending on local pricing. Not currently reimbursed via НСЗУ."
+
+sources:
+  - SRC-MAASTRICHT-VI-FLORENCE-2022
+  - SRC-AGA-H-PYLORI-2024
+  - SRC-NCCN-BCELL-2025
+
+between_visit_watchpoints:
+  - trigger_ua: "Темне забарвлення стільця або язика"
+    action_ua: "Це нормальний косметичний ефект бісмуту — занотуйте і обговоріть на наступному візиті"
+    urgency: log_at_next_visit
+    sources:
+      - SRC-MAASTRICHT-VI-FLORENCE-2022
+  - trigger_ua: "Помірна нудота або металевий смак у роті"
+    action_ua: "Поширений ефект метронідазолу — приймайте з їжею; занотуйте на наступному візиті"
+    urgency: log_at_next_visit
+    sources:
+      - SRC-MAASTRICHT-VI-FLORENCE-2022
+  - trigger_ua: "Виражена діарея, особливо з кров'ю або слизом"
+    action_ua: "Подзвоніть у клініку того ж дня — антибіотик-асоційований коліт (C. difficile) потребує оцінки"
+    urgency: call_clinic_same_day
+    sources:
+      - SRC-NCCN-BCELL-2025
+  - trigger_ua: "Алергічна реакція на тетрациклін — кропив'янка, набряк обличчя/губ, утруднене дихання"
+    action_ua: "Звертайтесь у лікарню негайно — припиніть прийом препарату"
+    urgency: er_now
+    sources:
+      - SRC-MAASTRICHT-VI-FLORENCE-2022
+
+last_reviewed: "2026-05-18"
+notes: >
+  First-line H. pylori eradication regimen for regions with clarithromycin resistance >15% — includes Ukraine and most of Eastern Europe per Maastricht VI/Florence Consensus 2022. Achieves ~85-90% eradication. Confirm SVR (eradication) ≥4 weeks after completion, ≥2 weeks off PPI, via urea breath test or stool antigen.
+notes_ua: >
+  Перша лінія ерадикації H. pylori для регіонів з кларитроміцин-резистентністю >15% — включно з Україною та більшістю Східної Європи, per Maastricht VI/Florence Consensus 2022. Досягає ~85-90% ерадикації. Підтвердити SVR (ерадикацію) ≥4 тижні після завершення, ≥2 тижні без PPI, через дихальний уреазний тест або стульовий антиген.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_authoring
+draft_revision: 1

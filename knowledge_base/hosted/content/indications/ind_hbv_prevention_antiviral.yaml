@@ -16,11 +16,10 @@ applicable_to:
 triggered_by_redflags:
   - RF-CHRONIC-HBV-MALIGNANCY-PREVENTION
 
-# Antiviral regimen (entecavir or tenofovir TDF/TAF) needs separate
-# Regimen authoring with new Drug entities (DRUG-ENTECAVIR,
-# DRUG-TENOFOVIR-DF, DRUG-TENOFOVIR-AF). v0.2-A backlog. Currently
-# captured in rationale.
-recommended_regimen: null
+# Standard antiviral suppression regimen: entecavir 0.5mg PO daily. Alternative
+# REG-HBV-TENOFOVIR-AF (Vemlidy 25mg PO daily) preferred in patients with
+# renal/bone comorbidity. Both are reimbursed via НСЗУ national HBV programme.
+recommended_regimen: REG-HBV-ENTECAVIR
 concurrent_therapy: []
 followed_by: []
 

@@ -1,0 +1,79 @@
+id: REG-HPV-GARDASIL-9
+name: "HPV nonavalent vaccination (Gardasil-9) — 3-dose series"
+name_ua: "ВПЛ нонавалентна вакцинація (Gardasil-9) — серія з 3 доз"
+alternate_names:
+  - "Gardasil-9 3-dose"
+  - "HPV-9 vaccine"
+
+components:
+  - drug_id: DRUG-GARDASIL-9
+    dose: "0.5 mL IM"
+    schedule: "0 / 2 / 6 months (3-dose series)"
+    route: IM
+    duration: "24 weeks (3 doses over 6 months)"
+
+cycle_length_days: 180
+total_cycles: "1 (single 3-dose primary series)"
+
+toxicity_profile: low
+
+premedication: []
+mandatory_supportive_care: []
+monitoring_schedule_id:
+
+dose_adjustments:
+  - condition: "Pregnancy"
+    modification: "Postpone remaining doses until post-partum"
+    rationale: "Insufficient safety data in pregnancy; inadvertent vaccination has not shown teratogenicity"
+    source_refs:
+      - SRC-NCCN-CERVICAL-2025
+  - condition: "Acute severe febrile illness"
+    modification: "Postpone until recovery"
+    rationale: "Standard immunization-postponement guidance"
+    source_refs:
+      - SRC-NCCN-CERVICAL-2025
+  - condition: "Immunocompromise"
+    modification: "Vaccinate per standard schedule; consider 3-dose series even for younger age groups (9-14) who would otherwise receive 2-dose schedule"
+    rationale: "Reduced immune response in immunocompromised may benefit from full 3-dose series"
+    source_refs:
+      - SRC-NCCN-CERVICAL-2025
+
+ukraine_availability:
+  all_components_registered: true
+  all_components_reimbursed: false
+  notes: "Gardasil-9 registered in Ukraine as private-pay vaccine. Not currently in the national НСЗУ immunization programme. Cost ~3500-5000 UAH per dose (out-of-pocket); 3-dose series ~10000-15000 UAH total."
+
+sources:
+  - SRC-NCCN-CERVICAL-2025
+  - SRC-NCCN-ANAL-2025
+
+between_visit_watchpoints:
+  - trigger_ua: "Біль, почервоніння або набряк у місці ін'єкції"
+    action_ua: "Це поширена локальна реакція — зазвичай минає за 2-3 дні; прикладіть холод"
+    urgency: log_at_next_visit
+    sources:
+      - SRC-NCCN-CERVICAL-2025
+  - trigger_ua: "Легка лихоманка або головний біль протягом 1-2 днів"
+    action_ua: "Поширений ефект — парацетамол при потребі; занотуйте"
+    urgency: log_at_next_visit
+    sources:
+      - SRC-NCCN-CERVICAL-2025
+  - trigger_ua: "Запаморочення або непритомність у перші 15 хвилин після ін'єкції"
+    action_ua: "Це vasovagal syncope, не алергія — залишайтесь сидячи 15 хв після ін'єкції в клініці"
+    urgency: log_at_next_visit
+    sources:
+      - SRC-NCCN-CERVICAL-2025
+  - trigger_ua: "Алергічна анафілаксія — набряк горла, утруднене дихання, кропив'янка по всьому тілу"
+    action_ua: "Звертайтесь у лікарню негайно — рідкісна, але потребує негайної допомоги"
+    urgency: er_now
+    sources:
+      - SRC-NCCN-CERVICAL-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  HPV nonavalent vaccine covering HPV-6, 11, 16, 18, 31, 33, 45, 52, 58. 3-dose series (0/2/6 months) for ages 15+. 2-dose series (0/6-12 months) for ages 9-14 — only if first dose received <15yo. >90% efficacy against HPV-attributable pre-cancer and cancer when administered before sexual debut. Catch-up vaccination ages 15-26 routinely recommended; shared-decision-making ages 27-45.
+notes_ua: >
+  ВПЛ нонавалентна вакцина, що покриває HPV-6, 11, 16, 18, 31, 33, 45, 52, 58. Серія з 3 доз (0/2/6 міс) для віку 15+. Серія з 2 доз (0/6-12 міс) для віку 9-14 — лише якщо перша доза отримана до 15 років. >90% ефективність проти ВПЛ-атрибутивних передракових станів і раку при введенні до сексуального дебюту. Catch-up вакцинація вік 15-26 рекомендується рутинно; shared-decision-making вік 27-45.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_authoring
+draft_revision: 1

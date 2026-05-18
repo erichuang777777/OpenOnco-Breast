@@ -465,6 +465,26 @@ def _try_generate_prevention_plan(
     matched_indications = _find_prevention_indications(
         fired_rfs, patient_biomarkers, entities
     )
+
+    # Sort prevention indications by plan_track preference so the standard
+    # / intervention track is the engine-selected default (is_default=True
+    # on track[0]). Without this, KB iteration order picks alphabetically-
+    # first which may surface the observation/surveillance track as default.
+    # Order: standard > aggressive > surveillance > palliative > other.
+    _PREVENTION_TRACK_ORDER = {
+        "standard": 0,
+        "aggressive": 1,
+        "surveillance": 2,
+        "palliative": 3,
+        "trial": 4,
+    }
+    matched_indications.sort(
+        key=lambda ind: (
+            _PREVENTION_TRACK_ORDER.get(ind.get("plan_track", ""), 99),
+            ind.get("id", ""),
+        )
+    )
+
     if not matched_indications:
         result.warnings.append(
             "prevention RFs fired ("

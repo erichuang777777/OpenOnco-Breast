@@ -13,7 +13,9 @@ applicable_to:
 triggered_by_redflags:
   - RF-CHRONIC-HIV-MALIGNANCY-PREVENTION
 
-recommended_regimen: null
+# Standard single-tablet ART: Biktarvy (bictegravir/emtricitabine/TAF). Preferred
+# first-line per DHHS/EACS/NIH AIDSinfo 2024. Reimbursed via НСЗУ HIV programme.
+recommended_regimen: REG-HIV-BIKTARVY
 concurrent_therapy: []
 followed_by: []
 

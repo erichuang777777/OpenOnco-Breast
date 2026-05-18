@@ -13,7 +13,9 @@ applicable_to:
 triggered_by_redflags:
   - RF-CHRONIC-HPV-MALIGNANCY-PREVENTION
 
-recommended_regimen: null
+# HPV vaccination regimen — Gardasil-9 nonavalent, 3-dose series (0/2/6 months).
+# Plus age-appropriate cervical/anal screening cadence (rationale below).
+recommended_regimen: REG-HPV-GARDASIL-9
 concurrent_therapy: []
 followed_by: []
 
