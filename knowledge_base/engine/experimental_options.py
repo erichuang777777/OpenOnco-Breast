@@ -31,6 +31,7 @@ from typing import Callable, Optional
 from knowledge_base.schemas.experimental_option import (
     ExperimentalOption,
     ExperimentalTrial,
+    UaSiteDetail,
 )
 from knowledge_base.engine.trial_outlook import score_trial
 
@@ -74,16 +75,51 @@ class TrialQuery:
 SearchFn = Callable[..., list[dict]]
 
 
-def _ua_sites_from_countries(countries: list[str]) -> list[str]:
-    """Surface UA presence as a string list. ctgov returns ISO-2 country
-    codes via LocationCountry; we don't have city granularity from the
-    summary fields, so a single `"UA"` marker suffices for now. The full
-    site list lives behind a separate `get_trial(nct_id)` call."""
+_UA_COUNTRY_TOKENS = {"UA", "UKRAINE"}
 
+
+def _is_ua_country(value: object) -> bool:
+    """ctgov is inconsistent: search-mode flat fields return full names
+    ("Ukraine"), full-record mode returns ISO-2 codes ("UA"). Match
+    either, case-insensitively."""
+    if not isinstance(value, str):
+        return False
+    return value.strip().upper() in _UA_COUNTRY_TOKENS
+
+
+def _ua_sites_from_countries(countries: list[str]) -> list[str]:
+    """Binary UA marker, kept for cache-shape backward compat. The
+    structured per-site detail lives in `ua_sites_detail` (populated by
+    `_ua_sites_detail_from_locations`); this list is now redundant in
+    new data but preserved so legacy cached `ExperimentalOption` JSONs
+    keep loading.
+    """
     if not countries:
         return []
-    norm = {c.strip().upper() for c in countries if c and isinstance(c, str)}
-    return ["UA"] if "UA" in norm or "UKRAINE" in norm else []
+    return ["UA"] if any(_is_ua_country(c) for c in countries) else []
+
+
+def _ua_sites_detail_from_locations(locations: list) -> list[UaSiteDetail]:
+    """Filter a parsed ctgov `locations` list to UA records and convert
+    them to `UaSiteDetail`. Empty when the upstream record carried no
+    UA site OR when only country-level info was available."""
+    if not locations:
+        return []
+    out: list[UaSiteDetail] = []
+    for loc in locations:
+        if not isinstance(loc, dict):
+            continue
+        if not _is_ua_country(loc.get("country")):
+            continue
+        out.append(
+            UaSiteDetail(
+                facility=loc.get("facility") or None,
+                city=loc.get("city") or None,
+                state=loc.get("state") or None,
+                status=loc.get("status") or None,
+            )
+        )
+    return out
 
 
 def _to_trial(
@@ -120,6 +156,7 @@ def _to_trial(
         last_scored=sync_ts,
     )
 
+    raw_locations = study.get("locations") or []
     return ExperimentalTrial(
         nct_id=nct,
         title=study.get("title") or study.get("BriefTitle") or "",
@@ -133,6 +170,7 @@ def _to_trial(
         sites_ua=_ua_sites_from_countries(
             list(countries) if isinstance(countries, list) else []
         ),
+        ua_sites_detail=_ua_sites_detail_from_locations(raw_locations),
         sites_global_count=study.get("location_count"),
         last_synced=sync_ts,
         outlook=outlook,

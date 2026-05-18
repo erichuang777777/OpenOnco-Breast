@@ -62,6 +62,28 @@ class TrialOutlook(Base):
     last_scored: Optional[str] = None  # ISO date
 
 
+class UaSiteDetail(Base):
+    """One Ukrainian recruiting site for an `ExperimentalTrial`.
+
+    Closes Gap 2 from `docs/reviews/ctgov-wiring-audit-2026-05-18.md` — the
+    previous render shape exposed a single "UA" badge per trial, discarding
+    facility, city, and per-site status. Per `CHARTER §1` the UA-local
+    angle is one of OpenOnco's structural differentiators, so the patient
+    looking at their Plan should see *where* in Ukraine to ask about
+    screening, not just that a UA site exists somewhere.
+
+    All fields optional because ctgov v2's flat-fields response sometimes
+    returns parallel arrays of different lengths (e.g. facility list
+    longer than city list when one site lacks a city tag). The mapper
+    zips defensively and fills `None` where data is missing.
+    """
+
+    facility: Optional[str] = None
+    city: Optional[str] = None
+    state: Optional[str] = None
+    status: Optional[str] = None  # RECRUITING | ACTIVE_NOT_RECRUITING | …
+
+
 class ExperimentalTrial(Base):
     """One ClinicalTrials.gov study entry, parsed from the v2 API."""
 
@@ -75,6 +97,12 @@ class ExperimentalTrial(Base):
     exclusion_summary: Optional[str] = None
     countries: list[str] = Field(default_factory=list)  # ISO-2 codes from ctgov
     sites_ua: list[str] = Field(default_factory=list)   # UA city names if any
+    # Structured per-UA-site detail (facility, city, state, status).
+    # Populated when ctgov returns location-level fields; empty list when
+    # the search-mode response only carried country names. Render falls
+    # back to the binary `sites_ua` badge when this list is empty.
+    # Default-empty for cache-shape backward compatibility.
+    ua_sites_detail: list[UaSiteDetail] = Field(default_factory=list)
     sites_global_count: Optional[int] = None
     last_synced: Optional[str] = None  # ISO date
 
