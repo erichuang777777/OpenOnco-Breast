@@ -22,11 +22,77 @@ This evaluator is intentionally tight:
 - Unknown comparators raise.
 - Free-text conditions are looked up in `patient_findings` by the exact
   condition string; if absent, treated as False.
+
+Prose-condition warning
+-----------------------
+`{condition: "ECOG PS 0-2"}` style clauses look like predicates to a human
+reader but the evaluator can only resolve them as flat lookup keys. When
+the lookup misses (the common case), the clause silently returns False.
+The audit `docs/reviews/openonco-state-audit-2026-05-17.md` showed 376 of
+443 algorithm `condition:` strings are prose-shaped, and ~27% of audited
+algorithms had step-1 made entirely of prose clauses (decision tree falls
+through to `default_indication` on every patient). To avoid changing
+routing semantics retroactively, this module *warns* — it does not
+re-interpret. Routing is unchanged; authors get told the tree isn't
+walked the way it reads.
 """
 
 from __future__ import annotations
 
+import logging
+import re
 from typing import Any
+
+_log = logging.getLogger(__name__)
+
+# Tokens / shapes that indicate `condition:` is English prose, not a flat
+# finding key. Pure ALL-CAPS / digit / hyphen / underscore strings (BRCA1,
+# KIT, BIO-HER2, ECOG_PS, hcv_status) are legitimate finding keys and are
+# NOT treated as prose. Anything containing operators, boolean
+# connectives, parens, or a space followed by lowercase letters is prose.
+_PROSE_TOKENS = re.compile(
+    r"[<>=≥≤]"           # threshold operator characters
+    r"|\s(or|and)\s"      # English boolean connectives
+    r"|[(),]"             # punctuation typical in prose
+    r"|\s[a-z]"           # space followed by lowercase = multi-word prose
+    r"|[A-Z]\s[A-Z]"      # ALL-CAPS followed by space + ALL-CAPS, e.g. "ECOG PS"
+)
+
+# Dedup so a 500-patient batch doesn't print the same warning 500x per
+# clause. Cleared between processes; reset hook below for tests.
+_PROSE_WARNED: set[str] = set()
+
+
+def _looks_like_prose_condition(text: str) -> bool:
+    """True if `text` reads as English prose rather than a flat finding key.
+
+    Authors sometimes write `condition: "ECOG PS 0-2"` or
+    `condition: "BRCA1 or BRCA2 somatic pathogenic"`. The evaluator
+    cannot parse these and silently returns False. This helper detects
+    that shape so the caller can warn once per unique string.
+    """
+    if not isinstance(text, str) or not text:
+        return False
+    return _PROSE_TOKENS.search(text) is not None
+
+
+def _warn_prose_once(text: str) -> None:
+    if text in _PROSE_WARNED:
+        return
+    _PROSE_WARNED.add(text)
+    _log.warning(
+        "engine.condition.prose_unevaluable: %r reads as English prose "
+        "but the clause evaluator only resolves flat finding keys. "
+        "Result will be False. Restructure as "
+        "{finding: ..., threshold/value: ...} or add an explicit "
+        "patient_findings entry with the same string as the key.",
+        text,
+    )
+
+
+def _reset_prose_warnings_for_tests() -> None:
+    """Clear the warned-strings cache. Test helper only."""
+    _PROSE_WARNED.clear()
 
 
 _COMPARATORS = {
@@ -125,8 +191,15 @@ def _eval_clause(clause: dict, findings: dict[str, Any]) -> bool:
     if "value" in clause:
         return actual == clause["value"]
 
-    # Named condition with no threshold / value — truthy lookup
-    return bool(actual)
+    # Named condition with no threshold / value — truthy lookup.
+    # If the key didn't resolve to a finding and the text reads as English
+    # prose ("ECOG PS 0-2", "BRCA1 or BRCA2 ...") emit a one-time warning
+    # so the author sees that the clause is being treated as silent-False.
+    # Result semantics are unchanged.
+    result = bool(actual)
+    if not result and "condition" in clause and _looks_like_prose_condition(finding_key):
+        _warn_prose_once(finding_key)
+    return result
 
 
 def evaluate_redflag_trigger(trigger: dict, findings: dict[str, Any]) -> bool:
