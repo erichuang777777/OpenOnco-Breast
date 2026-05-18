@@ -1,15 +1,15 @@
 {
-  "generated_at_utc": "2026-05-18T22:25:21Z",
+  "generated_at_utc": "2026-05-18T22:41:50Z",
   "kb_root": "C:\\Users\\805\\cancer-autoresearch\\.claude\\worktrees\\suspicious-almeida-e4fb10\\knowledge_base\\hosted\\content",
   "entity_counts": {
     "diseases": 82,
     "drugs": 265,
     "regimens": 376,
-    "indications": 492,
+    "indications": 512,
     "biomarkers": 181,
     "biomarker_actionability": 448,
     "contraindications": 12,
-    "redflags": 552,
+    "redflags": 562,
     "algorithms": 152,
     "tests": 117,
     "supportive_care": 13,
@@ -27,13 +27,13 @@
     "schema_errors": 0,
     "ref_errors": 0,
     "contract_errors": 0,
-    "contract_warnings": 218
+    "contract_warnings": 228
   },
   "gaps": [
     {
       "id": "clinical_signoff",
       "title": "Clinical sign-off",
-      "current": "15/2020 signoff-eligible entities reviewed (0.7%)",
+      "current": "15/2050 signoff-eligible entities reviewed (0.7%)",
       "target": ">=85% reviewed before public guideline-grade claims",
       "status": "blocked_on_reviewers",
       "blocker": "Cannot be fixed by code; requires qualified Clinical Co-Lead review.",
@@ -41,9 +41,9 @@
       "details": {
         "by_type": {
           "indications": {
-            "total": 492,
+            "total": 512,
             "reviewed": 15,
-            "gap": 477
+            "gap": 497
           },
           "algorithms": {
             "total": 152,
@@ -56,9 +56,9 @@
             "gap": 376
           },
           "redflags": {
-            "total": 552,
+            "total": 562,
             "reviewed": 0,
-            "gap": 552
+            "gap": 562
           },
           "biomarker_actionability": {
             "total": 448,
@@ -228,7 +228,7 @@
     {
       "id": "surgery_radiation_structure",
       "title": "Surgery/radiation detail",
-      "current": "structured surgery entities: no; structured radiation entities: no; 480 indications mention surgery/radiation in text",
+      "current": "structured surgery entities: no; structured radiation entities: no; 500 indications mention surgery/radiation in text",
       "target": "Dedicated modality entities for surgery and radiation with dose/fraction/intent/timing fields.",
       "status": "schema_gap",
       "blocker": "Current KB carries surgery/radiation mostly as prose inside indications.",
@@ -288,6 +288,7 @@
           "IND-GIST-1L-IMATINIB",
           "IND-GLIOMA-LOW-GRADE-1L-RT-PCV",
           "IND-GRANULOSA-CELL-1L-CARBOPLATIN-PACLITAXEL",
+          "IND-HLRCC-CARRIER-SURVEILLANCE",
           "IND-HLRCC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE",
           "IND-HLRCC-SUSPICION-PREVENTION-GENETIC-COUNSELING",
           "IND-HNSCC-RM-1L-PEMBRO-CHEMO",
@@ -296,6 +297,8 @@
           "IND-IMT-ALK-CRIZOTINIB",
           "IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE",
           "IND-LI-FRAUMENI-SUSPICION-PREVENTION-GENETIC-COUNSELING",
+          "IND-LIFESTYLE-OBESITY-PREVENTION-OBSERVATION",
+          "IND-LIFESTYLE-OBESITY-PREVENTION-WEIGHT-LOSS",
           "IND-LYNCH-CARRIER-INTENSIFIED",
           "IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE",
           "IND-LYNCH-SUSPICION-PREVENTION-GENETIC-COUNSELING",
@@ -313,10 +316,7 @@
           "IND-NSCLC-2L-DOCETAXEL-RAMUCIRUMAB",
           "IND-NSCLC-2L-PD-L1-POST-IO-DOCETAXEL",
           "IND-NSCLC-ADJUVANT-ATEZO-PDL1POS",
-          "IND-NSCLC-PERIOPERATIVE-PEMBRO",
-          "IND-OVARIAN-2L-PLAT-RES-PLD-BEV",
-          "IND-OVARIAN-2L-PLAT-RES-WEEKLY-PAC-BEV",
-          "IND-OVARIAN-2L-PLAT-SENS-CARBO-GEM-BEV"
+          "IND-NSCLC-PERIOPERATIVE-PEMBRO"
         ],
         "radiation_mentions": [
           "IND-ADVSM-1L-AVAPRITINIB",
@@ -400,7 +400,7 @@
           "IND-CELIAC-REFRACTORY-EATL-PREVENTION-OBSERVATION",
           "IND-CELIAC-REFRACTORY-EATL-PREVENTION-SURVEILLANCE"
         ],
-        "mention_count": 480
+        "mention_count": 500
       }
     },
     {

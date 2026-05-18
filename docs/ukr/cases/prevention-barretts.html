@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>План лікування — Карцинома стравоходу (плоскоклітинна + аденокарцинома)</title>
+<!-- openonco-seo:start -->
+<meta name="description" content="План лікування — Карцинома стравоходу (плоскоклітинна + аденокарцинома): синтетичний кейс OpenOnco з перевірюваною логікою та без реальних даних пацієнтів.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="ai-summary" content="План лікування — Карцинома стравоходу (плоскоклітинна + аденокарцинома): синтетичний кейс OpenOnco з перевірюваною логікою та без реальних даних пацієнтів.">
+<meta name="ai-content-declaration" content="Публічна документація OpenOnco, сторінки онкологічної бази знань із джерелами та синтетичні приклади; без реальних даних пацієнтів; не замінює рішення лікаря.">
+<link rel="canonical" href="https://openonco.info/ukr/cases/prevention-barretts.html">
+<link rel="alternate" hreflang="en" href="https://openonco.info/cases/prevention-barretts.html">
+<link rel="alternate" hreflang="uk" href="https://openonco.info/ukr/cases/prevention-barretts.html">
+<link rel="alternate" hreflang="x-default" href="https://openonco.info/">
+<meta property="og:site_name" content="OpenOnco">
+<meta property="og:type" content="article">
+<meta property="og:title" content="План лікування — Карцинома стравоходу (плоскоклітинна + аденокарцинома)">
+<meta property="og:description" content="План лікування — Карцинома стравоходу (плоскоклітинна + аденокарцинома): синтетичний кейс OpenOnco з перевірюваною логікою та без реальних даних пацієнтів.">
+<meta property="og:url" content="https://openonco.info/ukr/cases/prevention-barretts.html">
+<meta property="og:image" content="https://openonco.info/MDT.png">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="План лікування — Карцинома стравоходу (плоскоклітинна + аденокарцинома)">
+<meta name="twitter:description" content="План лікування — Карцинома стравоходу (плоскоклітинна + аденокарцинома): синтетичний кейс OpenOnco з перевірюваною логікою та без реальних даних пацієнтів.">
+<meta name="twitter:image" content="https://openonco.info/MDT.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalWebPage","name":"План лікування — Карцинома стравоходу (плоскоклітинна + аденокарцинома)","description":"План лікування — Карцинома стравоходу (плоскоклітинна + аденокарцинома): синтетичний кейс OpenOnco з перевірюваною логікою та без реальних даних пацієнтів.","url":"https://openonco.info/ukr/cases/prevention-barretts.html","inLanguage":"uk-UA","isAccessibleForFree":true,"publisher":{"@type":"Organization","name":"OpenOnco","url":"https://openonco.info","logo":"https://openonco.info/logo.svg"},"about":["oncology decision support","source-grounded medical knowledge base","synthetic oncology examples","clinical AI retrieval"],"audience":[{"@type":"MedicalAudience","audienceType":"Clinicians"},{"@type":"Audience","audienceType":"Patients"},{"@type":"Audience","audienceType":"Laboratories"},{"@type":"Audience","audienceType":"Investors"}],"potentialAction":{"@type":"ReadAction","target":"https://openonco.info/ukr/cases/prevention-barretts.html"}}</script>
+<!-- openonco-seo:end -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --green-900: #0a2e1a; --green-800: #0d3f24; --green-700: #14532d;
+    --green-600: #166534; --green-500: #16a34a; --green-400: #22c55e;
+    --green-300: #4ade80; --green-200: #86efac; --green-100: #dcfce7;
+    --green-50: #f0fdf4; --teal: #0d9488; --teal-dark: #115e59;
+    --red-alert: #dc2626; --red-bg: #fef2f2;
+    --amber-alert: #d97706; --amber-bg: #fffbeb;
+    --blue-bg: #eff6ff; --blue-700: #1d4ed8;
+    --purple-bg: #faf5ff; --purple-700: #7e22ce;
+    --gray-50: #f9fafb; --gray-100: #f3f4f6; --gray-200: #e5e7eb;
+    --gray-500: #6b7280; --gray-700: #374151; --gray-900: #111827;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', Menlo, monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; }
+body {
+    font-family: var(--font-body); color: var(--gray-900);
+    background: var(--gray-50); line-height: 1.55;
+}
+.page {
+    max-width: 920px; margin: 0 auto; padding: 32px 48px;
+    background: white; min-height: 100vh;
+    box-shadow: 0 0 24px rgba(0,0,0,.04);
+}
+@media print {
+    body { background: white; }
+    .page { box-shadow: none; padding: 16mm; max-width: 100%; }
+    @page { size: A4; margin: 12mm; }
+    .no-print { display: none; }
+    section { page-break-inside: avoid; }
+}
+
+/* Header */
+.doc-header {
+    border-bottom: 2px solid var(--green-700);
+    padding-bottom: 18px; margin-bottom: 24px;
+}
+.doc-label {
+    font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--green-700); margin-bottom: 8px;
+}
+.doc-title {
+    font-family: var(--font-display); font-size: 32px; line-height: 1.15;
+    color: var(--green-900); margin-bottom: 6px;
+}
+.doc-sub {
+    font-size: 14px; color: var(--gray-500);
+    font-family: var(--font-mono);
+}
+
+/* Patient strip */
+.patient-strip {
+    background: var(--green-50); border-left: 4px solid var(--green-600);
+    padding: 14px 18px; margin-bottom: 22px; border-radius: 4px;
+}
+.patient-strip .label {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--green-700); margin-bottom: 4px;
+}
+.patient-strip .value { font-size: 15px; color: var(--gray-900); }
+.patient-meta-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px 16px; margin-top: 12px; padding-top: 12px;
+    border-top: 1px solid rgba(20, 83, 45, .16);
+}
+.patient-meta-item { min-width: 0; }
+.patient-meta-item .meta-label {
+    display: block; font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: .6px; text-transform: uppercase; color: var(--green-700);
+    margin-bottom: 2px;
+}
+.patient-meta-item .meta-value {
+    display: block; font-size: 14px; color: var(--gray-900);
+    overflow-wrap: anywhere;
+}
+
+/* Banner — diagnostic phase */
+.banner {
+    border-radius: 8px; padding: 16px 20px; margin-bottom: 22px;
+    border-left: 4px solid; font-size: 14px; line-height: 1.55;
+}
+.banner--diagnostic {
+    background: var(--amber-bg); border-color: var(--amber-alert);
+    color: #92400e;
+}
+.banner--diagnostic strong { display: block; font-size: 15px; margin-bottom: 4px; }
+.banner--info {
+    background: var(--green-50); border-color: var(--green-500);
+    color: var(--green-800);
+}
+.banner--alert {
+    background: var(--red-bg); border-color: var(--red-alert);
+    color: #991b1b;
+}
+
+/* Sections */
+section { margin-bottom: 28px; }
+h2 {
+    font-family: var(--font-display); font-size: 22px; line-height: 1.2;
+    color: var(--green-800); margin-bottom: 12px;
+}
+.section-sub {
+    font-size: 13px; color: var(--gray-500); margin-bottom: 14px;
+    font-family: var(--font-mono);
+}
+h3 {
+    font-size: 14px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; margin: 18px 0 10px; color: var(--gray-700);
+}
+
+/* Tracks (treatment plan) */
+.tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.track {
+    border: 1px solid var(--gray-200); border-radius: 10px; padding: 18px;
+    background: white;
+}
+.track--default { border-left: 4px solid var(--green-600); }
+.track--alternative { border-left: 4px solid var(--gray-500); }
+.track--surveillance { border-left: 4px solid var(--teal); }
+.track--palliative { border-left: 4px solid var(--purple-700); }
+.track-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 8px;
+}
+.track-name { font-family: var(--font-display); font-size: 18px; }
+.track-default-badge {
+    background: var(--green-100); color: var(--green-700);
+    font-size: 10px; padding: 2px 8px; border-radius: 4px;
+    font-family: var(--font-mono); text-transform: uppercase;
+}
+.track dl { font-size: 13px; }
+.track dt { font-weight: 700; color: var(--gray-700); margin-top: 8px; }
+.track dd { color: var(--gray-700); margin-left: 0; }
+.track ul { font-size: 13px; padding-left: 18px; }
+
+/* Tables — workup steps, etc. */
+.tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
+.tbl th {
+    background: var(--green-700); color: white; padding: 8px 10px;
+    text-align: left; font-size: 11px; letter-spacing: 0.5px;
+    text-transform: uppercase; font-weight: 600;
+}
+.tbl td {
+    padding: 8px 10px; border-bottom: 1px solid var(--gray-100);
+    vertical-align: top; color: var(--gray-700);
+}
+.tbl tr:last-child td { border-bottom: none; }
+.tbl tbody tr:nth-child(even) td { background: var(--gray-50); }
+
+/* Badges */
+.badge {
+    display: inline-block; padding: 2px 7px; border-radius: 4px;
+    font-size: 10px; font-weight: 600; font-family: var(--font-mono);
+    text-transform: uppercase; letter-spacing: 0.3px;
+}
+.badge--required { background: var(--red-bg); color: #b91c1c; }
+.badge--recommended { background: var(--blue-bg); color: var(--blue-700); }
+.badge--optional { background: var(--gray-100); color: var(--gray-700); }
+.badge--blocking { background: var(--red-bg); color: #b91c1c; }
+.badge--default { background: var(--green-100); color: var(--green-700); }
+.badge--lab { background: var(--blue-bg); color: var(--blue-700); }
+.badge--imaging { background: var(--purple-bg); color: var(--purple-700); }
+.badge--histology { background: var(--amber-bg); color: #92400e; }
+.badge--consult { background: var(--gray-100); color: var(--gray-700); }
+.badge--other { background: var(--gray-100); color: var(--gray-700); }
+
+/* Per-test "Where to order" cell — pre-treatment investigations */
+.lab-avail-cell { font-size: 12px; line-height: 1.5; }
+.lab-chip {
+    display: inline-block; padding: 1px 6px; border-radius: 3px;
+    background: var(--blue-bg); color: var(--blue-700);
+    font-family: var(--font-mono); font-size: 11px;
+    text-decoration: none; white-space: nowrap;
+}
+a.lab-chip:hover { text-decoration: underline; }
+
+/* Lists */
+.role-list { list-style: none; padding: 0; }
+.role-list li {
+    padding: 10px 0; border-bottom: 1px dashed var(--gray-200);
+}
+.role-list li:last-child { border-bottom: none; }
+.role-list .role-name { font-weight: 600; color: var(--gray-900); }
+.role-list .role-reason {
+    font-size: 13px; color: var(--gray-700); margin-top: 4px;
+}
+.role-list .role-questions {
+    font-size: 12px; color: var(--gray-500); margin-top: 4px;
+    font-family: var(--font-mono);
+}
+
+.q-list { list-style: none; padding: 0; }
+.q-list li {
+    padding: 12px 14px; margin-bottom: 8px;
+    border-radius: 6px; background: var(--gray-50);
+    border-left: 3px solid var(--gray-200);
+}
+.q-list li.blocking {
+    border-left-color: var(--red-alert); background: var(--red-bg);
+}
+.q-list--featured {
+    margin: 8px 0 18px;
+}
+.q-list--featured li {
+    background: #fff;
+    border: 1px solid var(--green-200);
+    border-left: 4px solid var(--green-600);
+    box-shadow: 0 4px 14px rgba(6, 78, 59, 0.06);
+}
+.q-list--featured li.blocking {
+    border-color: var(--red-alert);
+    border-left-color: var(--red-alert);
+}
+.q-list--featured .q-text {
+    font-size: 15px;
+    font-weight: 600;
+}
+.q-list .q-id {
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--gray-500); margin-bottom: 4px;
+}
+.q-list .q-text { font-size: 14px; color: var(--gray-900); margin-bottom: 4px; }
+.q-list .q-rationale { font-size: 12px; color: var(--gray-700); font-style: italic; }
+.q-list .q-owner {
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--green-700); margin-top: 4px;
+}
+
+/* MDT block */
+.mdt {
+    background: var(--green-50); border-radius: 10px; padding: 18px;
+    margin-top: 14px;
+}
+
+/* Steps timeline (workup) */
+.steps { padding-left: 0; list-style: none; }
+.steps li {
+    padding: 10px 0 10px 36px; position: relative;
+    border-bottom: 1px solid var(--gray-100);
+}
+.steps li:last-child { border-bottom: none; }
+.steps .step-num {
+    position: absolute; left: 0; top: 12px; width: 24px; height: 24px;
+    background: var(--green-600); color: white; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; font-family: var(--font-mono);
+}
+.steps .step-name { font-weight: 600; color: var(--gray-900); }
+.steps .step-rationale { font-size: 12px; color: var(--gray-500); margin-top: 4px; }
+
+/* Sources */
+.sources { font-family: var(--font-mono); font-size: 11px; color: var(--gray-500); }
+.sources li { padding: 4px 0; }
+
+/* Etiological driver — featured card for etiologically_driven archetype */
+.etiology-card {
+    background: linear-gradient(135deg, var(--green-50) 0%, white 100%);
+    border-left: 4px solid var(--teal); border-radius: 8px;
+    padding: 18px 20px; margin-bottom: 22px;
+}
+.etiology-card .label {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--teal-dark); margin-bottom: 6px;
+}
+.etiology-card .archetype {
+    font-family: var(--font-display); font-size: 18px; color: var(--green-900);
+    margin-bottom: 8px;
+}
+.etiology-card ul { padding-left: 20px; font-size: 14px; color: var(--gray-700); }
+.etiology-card ul li { padding: 3px 0; }
+
+/* PRO/CONTRA — two-column grid for red flags */
+.pro-contra { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.pc-col { border: 1px solid var(--gray-200); border-radius: 8px; padding: 14px; }
+.pc-col--pro { border-left: 4px solid var(--amber-alert); background: var(--amber-bg); }
+.pc-col--contra { border-left: 4px solid var(--red-alert); background: var(--red-bg); }
+.pc-col h3 { color: var(--gray-900); margin-top: 0; }
+.pc-col ul { padding-left: 20px; font-size: 13px; color: var(--gray-700); }
+.pc-col li { padding: 4px 0; }
+.pc-col .rf-id {
+    font-family: var(--font-mono); font-size: 10px; color: var(--gray-500);
+    display: block; margin-top: 2px;
+}
+
+/* Branch-explanation — actually-fired RFs from the engine trace, with
+   the conflict-resolution winner highlighted. Distinct from PRO/CONTRA
+   above (which lists possible triggers in the abstract). */
+.branch-explanation { margin: 18px 0; }
+.branch-explanation .branch-step {
+    background: var(--green-bg, #ecfdf5); border-left: 4px solid var(--green-700, #047857);
+    padding: 10px 14px; border-radius: 6px; margin-bottom: 10px;
+}
+.branch-explanation .branch-step-head {
+    font-size: 13px; color: var(--gray-700); margin-bottom: 6px; font-weight: 600;
+}
+.branch-explanation .branch-step ul {
+    margin: 0; padding-left: 20px; font-size: 13px; color: var(--gray-700);
+}
+.branch-explanation .branch-step li { padding: 3px 0; line-height: 1.5; }
+.branch-explanation .rf-winner-tag {
+    font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.5px;
+    background: var(--green-700, #047857); color: white;
+    padding: 1px 6px; border-radius: 3px; margin-left: 4px; vertical-align: 1px;
+}
+.branch-explanation .src-chip {
+    font-family: var(--font-mono); font-size: 9.5px;
+    background: var(--gray-100); color: var(--gray-700);
+    padding: 1px 6px; border-radius: 3px; margin-left: 4px;
+}
+
+/* Do-not — strongly framed prohibitive list */
+.do-not {
+    background: var(--red-bg); border-left: 4px solid var(--red-alert);
+    border-radius: 6px; padding: 14px 18px; margin-bottom: 12px;
+}
+.do-not .track-name {
+    font-family: var(--font-display); font-size: 15px; color: var(--gray-900);
+    margin-bottom: 8px;
+}
+.do-not ul { padding-left: 20px; font-size: 13px; color: #7f1d1d; }
+.do-not li { padding: 3px 0; }
+
+/* Timeline — horizontal phase strip */
+.timeline {
+    display: flex; gap: 4px; margin-top: 8px;
+    overflow-x: auto; padding-bottom: 8px;
+}
+.tl-phase {
+    flex: 1; min-width: 120px;
+    background: var(--green-100); border-radius: 6px;
+    padding: 10px 12px; border-top: 3px solid var(--green-600);
+}
+.tl-phase--baseline { border-top-color: var(--teal); background: #ccfbf1; }
+.tl-phase--induction { border-top-color: var(--green-600); background: var(--green-100); }
+.tl-phase--response { border-top-color: var(--amber-alert); background: var(--amber-bg); }
+.tl-phase--maintenance { border-top-color: var(--blue-700); background: var(--blue-bg); }
+.tl-phase--followup { border-top-color: var(--gray-500); background: var(--gray-100); }
+.tl-phase .name {
+    font-weight: 700; font-size: 12px; color: var(--gray-900);
+    margin-bottom: 4px;
+}
+.tl-phase .window {
+    font-family: var(--font-mono); font-size: 10px; color: var(--gray-700);
+}
+
+/* Footer */
+.doc-footer {
+    margin-top: 40px; padding-top: 20px;
+    border-top: 1px solid var(--gray-200);
+    font-size: 11px; color: var(--gray-500); line-height: 1.6;
+}
+.fda-disclosure {
+    background: var(--gray-50); padding: 14px; border-radius: 6px;
+    margin-bottom: 14px; font-size: 12px; color: var(--gray-700);
+}
+.fda-disclosure strong { color: var(--gray-900); }
+.version-chain {
+    font-family: var(--font-mono); font-size: 11px;
+    background: var(--gray-100); padding: 8px 12px; border-radius: 4px;
+    margin-bottom: 10px;
+}
+.medical-disclaimer {
+    font-style: italic; color: var(--gray-700); font-size: 11px;
+    border-left: 2px solid var(--gray-200); padding-left: 12px;
+}
+
+/* Skill catalog block */
+.skill-catalog {
+    margin-top: 18px;
+    border-top: 1px dashed var(--green-200);
+    padding-top: 10px;
+}
+.skill-catalog summary {
+    cursor: pointer;
+    color: var(--gray-700);
+    font-size: 13px;
+    font-weight: 600;
+}
+.skill-catalog table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.skill-catalog th {
+    text-align: left; padding: 6px 8px; background: var(--gray-100);
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.5px;
+    text-transform: uppercase; color: var(--gray-700);
+}
+.skill-catalog td {
+    padding: 6px 8px; border-bottom: 1px solid var(--gray-100);
+    vertical-align: top;
+}
+.skill-catalog tr.activated td:first-child::before {
+    content: "✓ "; color: var(--green-600); font-weight: 700;
+}
+.skill-catalog tr.dormant { color: var(--gray-500); }
+.skill-catalog tr.dormant td:first-child::before {
+    content: "○ "; color: var(--gray-500);
+}
+.skill-catalog .ver {
+    font-family: var(--font-mono); color: var(--gray-700);
+}
+
+/* Access Matrix (ua-ingestion plan §4) */
+.access-matrix { margin-top: 32px; padding: 20px; background: var(--green-50);
+    border: 1px solid var(--green-200); border-radius: 6px;
+}
+.access-matrix details { width: 100%; }
+.access-matrix summary {
+    cursor: pointer; list-style: none; display: flex; flex-direction: column;
+    gap: 4px; padding: 4px 0;
+}
+.access-matrix summary::-webkit-details-marker { display: none; }
+.access-matrix summary::before {
+    content: "▶ "; color: var(--green-700); font-size: 12px; margin-right: 4px;
+}
+.access-matrix details[open] summary::before { content: "▼ "; }
+.access-matrix summary h2 {
+    display: inline; font-family: var(--font-display); font-size: 22px;
+    color: var(--green-900); margin: 0;
+}
+.access-matrix .section-sub { font-size: 12px; color: var(--gray-700); }
+.access-matrix-table {
+    width: 100%; border-collapse: collapse; margin-top: 14px;
+    font-size: 12.5px; background: white;
+}
+.access-matrix-table th {
+    text-align: left; padding: 8px 10px; background: var(--green-100);
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.5px;
+    text-transform: uppercase; color: var(--green-700);
+    border-bottom: 1px solid var(--green-200);
+}
+.access-matrix-table td {
+    padding: 10px; border-bottom: 1px solid var(--gray-100);
+    vertical-align: top;
+}
+.access-matrix-table tr:last-child td { border-bottom: none; }
+.access-matrix-table .track-cell { width: 32%; }
+.access-matrix-table .regimen-name {
+    font-size: 11.5px; color: var(--gray-700); margin-top: 3px;
+}
+.access-matrix-table .regimen-id {
+    font-family: var(--font-mono); font-size: 10px; color: var(--gray-500);
+}
+.access-matrix-table .cost-cell { width: 22%; font-variant-numeric: tabular-nums; }
+.access-matrix-table .cost-row { line-height: 1.5; }
+.access-matrix-table .cost-label {
+    font-family: var(--font-mono); font-size: 10px; color: var(--gray-500);
+    margin-right: 4px;
+}
+.access-matrix-table .cost-trial {
+    color: var(--green-700); font-style: italic;
+}
+.access-matrix-table .cost-unknown {
+    color: var(--amber-alert); font-style: italic;
+}
+.access-matrix-table .pathway-cell { width: 22%; font-size: 11.5px; }
+.access-matrix-table .pathway-cell .alt-paths {
+    font-size: 10px; color: var(--gray-500);
+}
+.access-matrix-table .badge--ok { background: var(--green-100); color: var(--green-700); }
+.access-matrix-table .badge--no { background: var(--red-bg); color: var(--red-alert); }
+.access-matrix-table .badge--unknown { background: var(--gray-100); color: var(--gray-500); }
+.access-matrix-table .badge {
+    display: inline-block; padding: 2px 8px; border-radius: 3px;
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+.access-matrix-table tr.track-trial { background: var(--purple-bg); }
+.access-matrix-table .notes {
+    font-size: 11px; color: var(--gray-700); margin-top: 4px; font-style: italic;
+}
+.access-matrix-table .notes-stale {
+    font-size: 11px; color: var(--amber-alert); margin-top: 4px; font-weight: 600;
+}
+.access-matrix-table .more-notes {
+    cursor: help; color: var(--gray-500); font-size: 10px; margin-left: 4px;
+    border-bottom: 1px dotted var(--gray-500);
+}
+.access-matrix .matrix-disclaimer {
+    margin-top: 10px; font-size: 11px; color: var(--gray-500); font-style: italic;
+}
+.access-matrix .matrix-plan-notes {
+    margin: 10px 0 4px 0; padding: 8px 12px; background: var(--amber-bg);
+    border-left: 3px solid var(--amber-alert); list-style: none; font-size: 12px;
+    color: var(--gray-900);
+}
+@media print {
+    .access-matrix { background: white; border: 1px solid var(--gray-200); }
+    .access-matrix details { width: 100%; }
+    .access-matrix summary::before { content: ""; }
+    .access-matrix details:not([open]) > *:not(summary) { display: block; }
+}
+
+/* Variant actionability — ESCAT tier badges */
+.variant-actionability { margin: 22px 0; }
+.variant-actionability h2 { color: var(--green-800); }
+.variant-actionability .section-sub {
+    font-size: 12px; color: var(--gray-500); margin-bottom: 10px;
+    font-family: var(--font-mono);
+}
+.actionability-table {
+    width: 100%; border-collapse: collapse; font-size: 12.5px;
+    background: white; border: 1px solid var(--gray-200); border-radius: 6px;
+    overflow: hidden;
+}
+.actionability-table th {
+    text-align: left; padding: 8px 10px; background: var(--green-700); color: white;
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.5px;
+    text-transform: uppercase; font-weight: 600;
+}
+.actionability-table td {
+    padding: 8px 10px; border-bottom: 1px solid var(--gray-100);
+    vertical-align: top; color: var(--gray-700);
+}
+.actionability-table tr:last-child td { border-bottom: none; }
+.actionability-table tbody tr:nth-child(even) td { background: var(--gray-50); }
+.actionability-table .gene { font-family: var(--font-mono); font-weight: 600; color: var(--gray-900); }
+.actionability-table .variant { font-family: var(--font-mono); color: var(--gray-700); }
+.actionability-table .summary { font-size: 12px; color: var(--gray-700); }
+.actionability-table .combos { font-size: 12px; color: var(--gray-700); }
+.actionability-table .src-list {
+    font-family: var(--font-mono); font-size: 10.5px; color: var(--gray-500);
+}
+.actionability-table .src-list li { padding: 1px 0; list-style: none; }
+.actionability-table .empty-row td {
+    text-align: center; color: var(--gray-500); font-style: italic;
+    padding: 14px 10px;
+}
+
+/* Tier badges — ESCAT (IA/IB green; IIA/IIB yellow; IIIA/IIIB orange;
+   IV light gray; X gray). Per-source level details render via
+   .evidence-sources <ul> in the same row. */
+.tier-badge {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+    letter-spacing: 0.4px; white-space: nowrap;
+}
+.escat-IA, .escat-IB { background: #16a34a; color: white; }
+.escat-IIA, .escat-IIB { background: #facc15; color: #713f12; }
+.escat-IIIA, .escat-IIIB { background: #f97316; color: white; }
+.escat-IV { background: var(--gray-100); color: var(--gray-700); }
+.escat-X { background: var(--gray-200); color: var(--gray-700); }
+
+/* Per-source evidence list inside each actionability row */
+.evidence-sources {
+    list-style: none; padding-left: 0; margin: 0;
+    font-family: var(--font-mono); font-size: 11px;
+}
+.evidence-sources li { padding: 1px 0; color: var(--gray-700); }
+
+/* Biomarker audit sub-sections (covered / uncovered split) */
+.biomarker-subsection { margin-bottom: 10px; }
+.biomarker-subsection-header {
+    font-size: 12px; font-weight: 600; padding: 5px 0 4px 0;
+    font-family: var(--font-mono); letter-spacing: 0.3px;
+}
+.biomarker-subsection.covered .biomarker-subsection-header { color: var(--green-700); }
+.biomarker-subsection.uncovered .biomarker-subsection-header { color: #b45309; }
+.uncovered-table th { background: #78716c; }
+.biomarker-status-negative {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    background: var(--gray-100); color: var(--gray-600);
+    font-family: var(--font-mono); font-size: 11px;
+}
+.biomarker-status-bio_exists {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    background: #dbeafe; color: #1e40af;
+    font-family: var(--font-mono); font-size: 11px;
+}
+.biomarker-status-unmatched {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    background: #fef3c7; color: #92400e;
+    font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+}
+.evidence-sources .evidence-meta { color: var(--gray-500); font-size: 10px; }
+.evidence-sources a { color: var(--green-700); text-decoration: none; }
+.evidence-sources a:hover { text-decoration: underline; }
+
+/* Resistance evidence flag — ⚠ badge for direction="Does Not Support"
+   or significance contains "Resistance" (CIViC anti-evidence). */
+.evidence-resistance {
+    display: inline-block; padding: 0 6px; margin-left: 4px;
+    border-radius: 3px;
+    background: #fee2e2; color: #991b1b;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.3px;
+}
+
+/* Fallback rendering — when leveled evidence is unavailable,
+   primary_sources are promoted as citation cards without a level.
+   Visually muted relative to leveled evidence. */
+.evidence-sources--fallback li.evidence-fallback {
+    color: var(--gray-600); font-style: italic;
+}
+.evidence-fallback-note {
+    margin-top: 4px;
+    font-size: 10px; color: var(--gray-500);
+    font-family: var(--font-sans); font-style: italic;
+}
+
+/* NSZU availability badges — per-drug coverage flag rendered alongside
+   each component in the track's drug list. Render-time metadata only
+   (engine never reads these — CHARTER §8.3 invariant). */
+.nszu-badge {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-size: 0.85em; font-weight: 600; white-space: nowrap;
+    margin-left: 6px; vertical-align: middle;
+}
+.nszu-covered { background: #d4edda; color: #155724; }
+.nszu-partial { background: #fff3cd; color: #856404; }
+.nszu-oop { background: #ffe5cc; color: #804000; }
+.nszu-not-registered { background: #f8d7da; color: #721c24; }
+
+/* ── Sign-off badges (CHARTER §6.1) ──────────────────────────────
+   Surfaces Clinical Co-Lead approval state on each track in the
+   treatment Plan render. Emitted by render._render_signoff_badge.
+   Mirrored in docs/style.css for the static-site renderer. */
+.track-signoff { margin: 4px 0 8px 0; }
+.signoff-badge {
+    display: inline-block; padding: 4px 10px; border-radius: 4px;
+    font-size: 0.85em; font-weight: 600; line-height: 1.3;
+    border: 1px solid transparent;
+}
+.signoff-pending {
+    background: #fef2f2; color: #991b1b; border-color: #fecaca;
+}
+.signoff-partial {
+    background: #fffbeb; color: #92400e; border-color: #fde68a;
+}
+.signoff-complete {
+    background: #ecfdf5; color: #065f46; border-color: #a7f3d0;
+}
+
+.drug-list { list-style: none; padding-left: 0; margin: 4px 0; }
+.drug-list .drug-row { padding: 3px 0; line-height: 1.5; }
+.drug-list .drug-name { font-weight: 600; }
+.drug-list .drug-id { font-family: var(--font-mono); font-size: 11px; color: var(--gray-500); }
+.drug-list .drug-dose { color: var(--gray-700); font-size: 12px; margin-left: 4px; }
+
+/* Treatment phases — multi-phase regimen rendering (PR2 of phases-refactor).
+   Each phase is a discrete block with its own heading + drug list. Legacy
+   auto-wrapped single-phase regimens (name="main") render the wrapper but
+   suppress the heading, keeping the visual close to pre-PR2 for unmigrated
+   YAMLs. Multi-phase regimens (lymphodepletion → main_infusion for axi-cel,
+   etc.) render as visually separated blocks per
+   docs/reviews/regimen-phases-refactor-plan-2026-04-28.md §4.4. */
+.phase-block {
+    border: 1px solid var(--gray-200); border-radius: 6px;
+    padding: 10px 14px; margin-bottom: 8px; background: var(--gray-50);
+}
+.phase-block:last-child { margin-bottom: 4px; }
+.phase-block[data-phase="main"]:only-of-type {
+    /* Auto-wrapped legacy regimen — single block, no border noise. */
+    border: none; padding: 0; background: transparent;
+}
+.phase-block .phase-heading {
+    font-family: var(--font-mono); font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    color: var(--green-700); margin: 0 0 6px 0; font-weight: 700;
+}
+.phase-block .drug-list { margin: 0; }
+
+/* Bridging options block — CAR-T / TIL manufacturing-window slot. Lists
+   acceptable bridging regimen IDs; rendered after all phase blocks. */
+.bridging-options {
+    margin-top: 10px; padding: 10px 14px; background: var(--blue-bg);
+    border-left: 3px solid var(--blue-700); border-radius: 4px;
+}
+.bridging-options .bridging-options-label {
+    font-size: 12px; color: var(--blue-700);
+    font-weight: 600; margin-bottom: 4px;
+}
+.bridging-options-list {
+    list-style: none; padding-left: 0; margin: 0;
+    font-family: var(--font-mono); font-size: 11px; color: var(--gray-700);
+}
+.bridging-options-list li.bridging-option { padding: 2px 0; }
+
+/* PR5 — citation-presence guard
+   `.no-citation-badge` is the WARN-mode flag rendered inline at the top of
+   any Regimen / Indication / BMA cell whose declared sources fail to
+   resolve to a real Source entity. It uses a soft amber palette so it
+   reads as a warning without overpowering surrounding clinical content.
+   `.stripped-block` is the STRICT-mode placeholder that replaces the
+   block body when the same condition fires.
+
+   Source: docs/reviews/cross-repo-task_torrent-sync-plan-2026-04-28.md
+   §6 verifier algorithms — item #1 "Cite-or-strip at render". */
+.no-citation-badge {
+  display: inline-block;
+  background: #fff8e1;
+  color: #6d4c00;
+  border: 1px solid #ffd54f;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  margin: 4px 0;
+}
+.stripped-block {
+  background: #fafafa;
+  border: 1px dashed #bbb;
+  color: #888;
+  padding: 8px;
+  font-style: italic;
+  text-align: center;
+}
+</style>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<style>.oo-topbar-host{position:sticky;top:0;z-index:100;}.oo-topbar-host .top-bar{background:#fff;color:#111827;padding:13px 24px;display:flex;justify-content:space-between;align-items:center;font-family:Source Sans 3,sans-serif;border-bottom:1px solid #e5e7eb;width:100%;max-width:100%;overflow-x:clip;}.oo-topbar-host .brand-line{display:flex;align-items:center;gap:12px;margin-right:30px;}.oo-topbar-host .brand-logo{display:none;}.oo-topbar-host .brand-mini{display:inline-flex;align-items:center;gap:9px;font-family:Playfair Display,Georgia,serif;font-size:26px;font-weight:900;color:#14532d;text-decoration:none;letter-spacing:0;}.oo-topbar-host .top-nav{display:flex;align-items:center;flex:1;margin:0 24px 0 16px;gap:4px;}.oo-topbar-host .top-nav a{color:#374151;padding:6px 10px;text-decoration:none;font-size:14.5px;font-weight:700;border-radius:4px;}.oo-topbar-host .top-nav a:hover{color:#14532d;background:transparent;}.oo-topbar-host .top-right{display:flex;align-items:center;gap:14px;flex-shrink:0;}.oo-topbar-host .top-cta-group{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end;}.oo-topbar-host .lang-switch{display:inline-flex;align-items:center;gap:0;background:#fff;border:1px solid #e5e7eb;border-radius:4px;font-family:JetBrains Mono,monospace;font-size:11px;letter-spacing:.5px;overflow:hidden;flex-shrink:0;}.oo-topbar-host .lang-switch .lang-current,.oo-topbar-host .lang-switch .lang-other{width:56px;box-sizing:border-box;padding:4px 9px;display:inline-flex;align-items:center;justify-content:center;gap:5px;}.oo-topbar-host .lang-switch .lang-current{background:#14532d;color:white;font-weight:600;}.oo-topbar-host .lang-switch .lang-other{color:#374151;text-decoration:none;transition:background .12s;}.oo-topbar-host .lang-switch .lang-other:hover{background:transparent;color:#14532d;}.oo-topbar-host .lang-switch .lang-flag{display:inline-block;width:14px;height:10px;border-radius:1.5px;box-shadow:0 0 0 1px rgba(0,0,0,.25) inset;}.oo-topbar-host .lang-switch .lang-flag.flag-ua{background:linear-gradient(to bottom,#0057b7 50%,#ffd500 50%);}.oo-topbar-host .lang-switch .lang-flag.flag-en{background:#012169 url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L60,30 M60,0 L0,30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0,0 L60,30 M60,0 L0,30' stroke='%23C8102E' stroke-width='2'/%3E%3Cpath d='M30,0 V30 M0,15 H60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30,0 V30 M0,15 H60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E") center/cover no-repeat;}.oo-topbar-host .btn-cta-top{color:#14532d;background:white;padding:10px 16px;border-radius:7px;font-weight:700;font-size:15px;text-decoration:none;border:1px solid #e5e7eb;box-shadow:none;white-space:nowrap;min-width:112px;box-sizing:border-box;text-align:center;display:inline-block;}.oo-topbar-host .btn-cta-try{min-width:132px;}.oo-topbar-host .btn-cta-top:hover{filter:none;}.case-bar{background:#0d3f24;color:#dcfce7;padding:8px 24px;display:flex;justify-content:space-between;align-items:center;font-family:Source Sans 3,sans-serif;font-size:13px;}.case-bar a{color:#86efac;text-decoration:none;margin-left:14px;}.case-bar a:hover{text-decoration:underline;}@media print{.oo-topbar-host,.case-bar{display:none;}}@media (max-width:700px){.oo-topbar-host .top-bar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 12px;align-items:center;padding:12px max(14px,env(safe-area-inset-right)) 14px max(14px,env(safe-area-inset-left));}.oo-topbar-host .brand-line{grid-column:1;grid-row:1;min-width:0;margin-right:0;}.oo-topbar-host .brand-mini{max-width:100%;font-size:22px;overflow:hidden;text-overflow:ellipsis;}.oo-topbar-host .top-right{display:contents;}.oo-topbar-host .lang-switch{grid-column:2;grid-row:1;justify-self:end;font-size:10px;}.oo-topbar-host .lang-switch .lang-current,.oo-topbar-host .lang-switch .lang-other{width:48px;padding:4px 6px;}.oo-topbar-host .top-nav{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;margin:0;gap:4px;justify-content:stretch;}.oo-topbar-host .top-nav a{min-width:0;padding:8px 4px;text-align:center;overflow-wrap:anywhere;line-height:1.15;}.oo-topbar-host .top-cta-group{grid-column:1/-1;grid-row:3;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;gap:6px;justify-content:stretch;}.oo-topbar-host .btn-cta-top{display:flex;align-items:center;justify-content:center;width:100%;min-width:0;min-height:44px;padding:8px 6px;font-size:13px;line-height:1.12;white-space:normal;overflow-wrap:anywhere;}.oo-topbar-host .btn-cta-try{min-width:0;}.case-bar{display:grid;gap:6px;padding:8px max(14px,env(safe-area-inset-right)) 8px max(14px,env(safe-area-inset-left));}.case-bar a{margin-left:0;margin-right:12px;}}</style>
+</head>
+<body>
+<div class="oo-topbar-host no-print"><header class="top-bar">
+  <div class="brand-line">
+    <a href="/ukr/" class="brand-mini">OpenOnco</a>
+  </div>
+  <nav class="top-nav">
+    <a href="/ukr/">Головна</a>
+    <a href="/ukr/capabilities.html">Можливості</a>
+    <a href="/ukr/about.html">Про проєкт</a>
+  </nav>
+  <div class="top-right">
+    <div class="lang-switch" role="group" aria-label="Language">
+      <span class="lang-current"><span class="lang-flag flag-ua" aria-hidden="true"></span>UA</span>
+      <a class="lang-other" href="/cases/prevention-barretts.html"><span class="lang-flag flag-en" aria-hidden="true"></span>EN</a>
+    </div>
+    <div class="top-cta-group">
+      <a href="/ukr/try.html" class="btn-cta-top btn-cta-try">План лікування</a>
+      <a href="/ukr/kb.html" class="btn-cta-top btn-cta-secondary">Онко-вікі</a>
+      <a href="/ukr/ask.html" class="btn-cta-top btn-cta-secondary">Туморборд</a>
+    </div>
+  </div>
+</header></div>
+<div class="case-bar no-print"><div>OpenOnco · <strong>Barrett's esophagus → esophageal AC · EGD surveillance q3-5y</strong></div><div><a href="/ukr/gallery.html">← Назад до галереї</a><a href="https://github.com/romeo111/OpenOnco/issues/new?title=%5Bfeedback%5D+prevention-barretts&labels=tester-feedback" target="_blank" rel="noopener">Feedback на цей кейс</a></div></div>
+<div class="page"><div class="doc-header"><div class="doc-label">OpenOnco · Treatment Plan</div><div class="doc-title">План лікування — Карцинома стравоходу (плоскоклітинна + аденокарцинома)</div><div class="doc-sub">PLAN-BARRETTS-PREV-001-V1 · v1 · 2026-05-18</div></div><div class="patient-strip"><div class="label">Пацієнт</div><div class="value">BARRETTS-PREV-001 · Algorithm: </div><div class="patient-meta-grid"><div class="patient-meta-item"><span class="meta-label">Діагноз</span><span class="meta-value">Карцинома стравоходу (плоскоклітинна + аденокарцинома)</span></div><div class="patient-meta-item"><span class="meta-label">МОЗ / ICD-10</span><span class="meta-value">C15</span></div><div class="patient-meta-item"><span class="meta-label">ICD-O-3</span><span class="meta-value">8070/3; C15</span></div></div></div><section class="variant-actionability"><h2>Клінічна значущість мутацій (ESCAT)</h2><div class="section-sub">Контекст для тумор-борду — інженер не використовує ці тіри для вибору треку</div><table class="actionability-table"><thead><tr><th>Біомаркер</th><th>Варіант</th><th>ESCAT</th><th>Доказова база</th><th>Клінічна дія</th><th>Препарати</th><th>Джерела</th></tr></thead><tbody><tr class="empty-row"><td colspan="7">Не знайдено клінічно значущих варіантів у цьому профілі.</td></tr></tbody></table></section><section><h2>Primary current-line option</h2><div class="tracks"><div class="track track--standard"><div class="track-head"><div class="track-name">Стандартний план</div><span class="track-default-badge">★ DEFAULT</span></div><dl><dt>Indication</dt><dd>IND-BARRETTS-ESOPHAGUS-PREVENTION-SURVEILLANCE</dd><dt>Regimen</dt><dd>—</dd><dt>Reason</dt><dd>Recommended prevention pathway per fired RF(s): RF-BARRETTS-ESOPHAGUS-PREVENTION</dd></dl></div></div></section><section><details><summary><h2>Other current-line alternatives (1 tracks)</h2><span class="section-sub">Same treatment line; review when biomarker, access, contraindication, or patient-context assumptions change.</span></summary><div class="tracks"><div class="track track--surveillance"><div class="track-head"><div class="track-name">Активне спостереження (watch-and-wait)</div></div><dl><dt>Indication</dt><dd>IND-BARRETTS-ESOPHAGUS-PREVENTION-OBSERVATION</dd><dt>Regimen</dt><dd>—</dd><dt>Reason</dt><dd>Alternative prevention pathway presented for HCP consideration</dd></dl></div></div></details></section><section><h2>Pre-treatment investigations</h2><div class="section-sub">Дослідження перед стартом терапії · критичні / стандарт / бажано · поєднані по треках</div><table class="tbl"><thead><tr><th>ID</th><th>Назва</th><th>Пріоритет</th><th>Категорія</th><th>Де замовити</th><th>Потрібно для</th></tr></thead><tbody><tr><td>TEST-CBC</td><td>Загальний аналіз крові з лейкоцитарною формулою</td><td><span class="badge badge--required">Критично</span></td><td>lab</td><td class="lab-avail-cell">—</td><td>усі треки</td></tr></tbody></table></section><section><h2>Що НЕ робити</h2><div class="section-sub">Прямі прохібітивні правила, кожне з обґрунтуванням у regimen / supportive care / contraindication</div><div class="do-not"><div class="track-name">Стандартний план (IND-BARRETTS-ESOPHAGUS-PREVENTION-SURVEILLANCE)</div><ul><li>Не використовувати високодозовий PPI як еквівалент EET для дисплазійного Barrett — PPI контролює симптоми/езофагіт, але не запобігає прогресії дисплазії до EAC.</li><li>Не пропонувати езофагектомію як first-line для T1a HGD або інтрамукозного EAC — endoscopic eradication therapy має кращі onkologic outcomes з меншою morbidity.</li><li>Не покладатися на одиничну LGD-діагностику без експертного GI-pathology огляду — ~50% LGD reclassified as non-dysplastic at expert review; reduces over-treatment.</li><li>Не виконувати РЧА без підтвердженого CE-IM endpoint (повна ерадикація кишкової метаплазії) — часткова ерадикація залишає residual ризик прогресії.</li><li>Не пропускати Seattle протокол біопсій (4-квадрантні кожні 1-2 см) — random sampling ≠ Seattle; пропущена dysplasia при недостатньому sampling.</li><li>Не призначати аспірин-хемопревенцію без оцінки ризику кровотечі — bleeding risk vs cancer-prevention benefit має бути shared-decision-making.</li></ul></div><div class="do-not"><div class="track-name">Активне спостереження (watch-and-wait) (IND-BARRETTS-ESOPHAGUS-PREVENTION-OBSERVATION)</div><ul><li>Не використовувати цей шлях у пацієнтів з LGD або HGD — потребують intensified surveillance або ендоскопічної ерадикаційної терапії.</li><li>Не презентувати q5y observation як еквівалент intensified surveillance — interval-cancer ризик вищий через нижчу частоту sampling.</li><li>Не ігнорувати alarm features (дисфагія, схуднення, ШКТ-кровотеча) під час observation — immediate upper endoscopy показана.</li><li>Не пропускати periodic re-discussion intensified track — пацієнти, які обрали observation, можуть змінити переваги після додаткових візитів або появи risk factors.</li><li>Не використовувати цей шлях у пацієнтів з довгим сегментом Barrett (≥3 см) та множинними EAC factor risk — коротші інтервали (q3 роки) виправдані.</li></ul></div></section><section><h2>MDT brief</h2><div class="mdt"><h3>Якість даних</h3><div class="section-sub"><strong>Можна використовувати з застереженнями.</strong> Критичних прогалин default-треку не знайдено, але MDT має переглянути наведені застереження перед фінальним підписанням.</div><ul><li>Покриття біомаркерів: 0/0 відомо (100%), 0 відсутньо, 0 прогалин default-треку</li><li>Неоцінені RedFlags: RF-AAIPI-HIGH, RF-ACTIVE-AUTOIMMUNE-DISEASE-ICI-RISK, RF-ADVSM-KIT-D816V, RF-AGGRESSIVE-HISTOLOGY-TRANSFORMATION, RF-AITL-AUTOIMMUNE-CYTOPENIA, RF-AITL-EBV-DRIVEN-B-CELL, RF-AITL-FRAILTY-AGE, RF-AITL-HYPOGAMMA, RF-AITL-ORGAN-DYSFUNCTION, RF-AITL-ROMIDEPSIN-INELIGIBLE, RF-AITL-TRANSFORMATION-PROGRESSION, RF-ALCL-FRAILTY-AGE, RF-ALCL-INFECTION-SCREENING, RF-ALCL-ORGAN-DYSFUNCTION, RF-ALCL-TRANSFORMATION-PROGRESSION, RF-AML-CD33-POS-GO-CANDIDATE, RF-AML-CORE-BINDING-FACTOR-FAVORABLE, RF-AML-EMERGENCY-TLS-LEUKOSTASIS, RF-AML-FLT3-ACTIONABLE, RF-AML-FRAILTY-AGE, RF-AML-HIGH-RISK-BIOLOGY, RF-AML-IDH1-MUT-ACTIONABLE, RF-AML-IDH2-MUT-ACTIONABLE, RF-AML-INFECTION-SCREENING, RF-AML-KMT2A-ACTIONABLE, RF-AML-MEASURABLE-RESIDUAL-DISEASE, RF-AML-NPM1-MUT-FAVORABLE, RF-AML-ORGAN-DYSFUNCTION, RF-AML-SECONDARY-AML-MRC-CPX351-ELIGIBLE, RF-AML-TP53-ADVERSE, RF-AML-TRANSFORMATION-PROGRESSION, RF-APL-EMERGENCY-DIC, RF-APL-FRAILTY-AGE, RF-APL-HIGH-RISK-BIOLOGY, RF-APL-INFECTION-SCREENING, RF-APL-ORGAN-DYSFUNCTION, RF-APL-TRANSFORMATION-PROGRESSION, RF-ASCT-ELIGIBLE-COMPOSITE, RF-ATC-BRAF-V600E-ACTIONABLE, RF-ATLL-HIGH-RISK-BIOLOGY, RF-ATLL-HYPERCALCEMIA, RF-ATLL-INFECTION-SCREENING, RF-ATLL-ORGAN-DYSFUNCTION, RF-ATLL-SHIMOYAMA-INDOLENT, RF-ATLL-TRANSFORMATION-PROGRESSION, RF-B-ALL-CNS-LEUKEMIA, RF-B-ALL-EMERGENCY-TLS-LEUKOSTASIS, RF-B-ALL-FRAILTY-AGE, RF-B-ALL-HIGH-RISK-BIOLOGY, RF-B-ALL-INFECTION-SCREENING, RF-B-ALL-ORGAN-DYSFUNCTION, RF-B-ALL-TRANSFORMATION-PROGRESSION, RF-BALL-CD22-POS-INO-CANDIDATE, RF-BARRETTS-ESOPHAGUS-PREVENTION, RF-BINET-A, RF-BINET-B-C, RF-BRCA-CONFIRMED-CARRIER, RF-BRCA-HBOC-FAMILY-HISTORY-SUSPICION, RF-BREAST-AKT1-E17K-ACTIONABLE, RF-BREAST-AKT1-E17K-CAPIVASERTIB-CANDIDATE, RF-BREAST-BRCA-GERMLINE-ACTIONABLE, RF-BREAST-CDH1-LOBULAR-CANDIDATE, RF-BREAST-EARLY-STAGE, RF-BREAST-ESR1-MUT-ACTIONABLE, RF-BREAST-ESR1-Y537S-D538G-CANDIDATE, RF-BREAST-FRAILTY-AGE, RF-BREAST-HER2-AMP-ACTIONABLE, RF-BREAST-HER2-LOW-ACTIONABLE, RF-BREAST-HER2-ULTRALOW-CANDIDATE, RF-BREAST-HIGH-RISK-BIOLOGY, RF-BREAST-INFECTION-SCREENING, RF-BREAST-ORGAN-DYSFUNCTION, RF-BREAST-OVARIAN-HRD-ASSAY-DISTINCTION, RF-BREAST-PIK3CA-COALT-INAVOLISIB-CANDIDATE, RF-BREAST-PIK3CA-MUT-ACTIONABLE, RF-BREAST-STAGE-IV-METASTATIC, RF-BREAST-TNBC, RF-BREAST-TRANSFORMATION-PROGRESSION, RF-BULKY-DISEASE, RF-BURKITT-EMERGENCY-TLS, RF-BURKITT-FRAILTY-AGE, RF-BURKITT-HIGH-RISK, RF-BURKITT-IFOS-CONTRAINDICATED, RF-BURKITT-INFECTION-SCREENING, RF-BURKITT-ORGAN-DYSFUNCTION, RF-BURKITT-TRANSFORMATION-PROGRESSION, RF-CAR-T-ELIGIBLE, RF-CAR-T-INELIGIBLE-AGE-COMORBID, RF-CAR-T-INELIGIBLE-ORGAN, RF-CELIAC-REFRACTORY-EATL-PREVENTION, RF-CERVICAL-FRAILTY-AGE, RF-CERVICAL-HIGH-RISK-BIOLOGY, RF-CERVICAL-HYDRONEPHROSIS-PELVIC-OBSTRUCTION, RF-CERVICAL-INFECTION-SCREENING, RF-CERVICAL-PDL1-CPS-1-PLUS, RF-CERVICAL-TRANSFORMATION-PROGRESSION, RF-CHAARTED-HIGH-VOLUME-MHSPC, RF-CHL-ADVANCED-STAGE, RF-CHL-FRAILTY-AGE, RF-CHL-INFECTION-SCREENING, RF-CHL-ORGAN-DYSFUNCTION, RF-CHL-TRANSFORMATION-PROGRESSION, RF-CHOLANGIO-FGFR2-FUSION-ACTIONABLE, RF-CHOLANGIO-IDH1-R132-ACTIONABLE, RF-CHOLANGIOCARCINOMA-FRAILTY-AGE, RF-CHOLANGIOCARCINOMA-HIGH-RISK-BIOLOGY, RF-CHOLANGIOCARCINOMA-INFECTION-SCREENING, RF-CHOLANGIOCARCINOMA-ORGAN-DYSFUNCTION, RF-CHOLANGIOCARCINOMA-TRANSFORMATION-PROGRESSION, RF-CHONDROSARCOMA-FRAILTY-AGE, RF-CHONDROSARCOMA-HIGH-RISK-BIOLOGY, RF-CHONDROSARCOMA-INFECTION-SCREENING, RF-CHONDROSARCOMA-ORGAN-DYSFUNCTION, RF-CHONDROSARCOMA-TRANSFORMATION-PROGRESSION, RF-CHRONIC-EBV-MALIGNANCY-PREVENTION, RF-CHRONIC-H-PYLORI-MALIGNANCY-PREVENTION, RF-CHRONIC-HBV-MALIGNANCY-PREVENTION, RF-CHRONIC-HCV-NHL-PREVENTION-OPPORTUNITY, RF-CHRONIC-HIV-MALIGNANCY-PREVENTION, RF-CHRONIC-HPV-MALIGNANCY-PREVENTION, RF-CHRONIC-HTLV-1-MALIGNANCY-PREVENTION, RF-CHRONIC-PANCREATITIS-PDAC-PREVENTION, RF-CLL-FRAILTY-AGE, RF-CLL-HIGH-RISK, RF-CLL-INFECTION-SCREENING, RF-CLL-ORGAN-DYSFUNCTION, RF-CLL-POST-BTKI-C481-ACTIONABLE, RF-CLL-TP53-DELETION-ACTIONABLE, RF-CLL-TRANSFORMATION-PROGRESSION, RF-CLL-VEN-RESISTANT-ACTIONABLE, RF-CML-COMORBIDITY-COMPLEX, RF-CML-FRAILTY-AGE, RF-CML-HIGH-RISK-ELTS, RF-CML-INFECTION-SCREENING, RF-CML-ORGAN-DYSFUNCTION, RF-CML-T315I-MUTATION, RF-CML-TRANSFORMATION-PROGRESSION, RF-CNS-METASTASES-ACTIVE, RF-COWDEN-FAMILY-HISTORY-SUSPICION, RF-CRC-BRAF-V600E-POOR-PROGNOSIS, RF-CRC-EMERGENCY-OBSTRUCTION-PERFORATION, RF-CRC-FRAILTY-AGE, RF-CRC-HER2-AMP-ACTIONABLE, RF-CRC-INFECTION-SCREENING, RF-CRC-MSI-H-ACTIONABILITY, RF-CRC-OLIGOMET-LIVER-DEFINITION, RF-CRC-RAS-MUTANT, RF-CRC-RAS-WT, RF-CRC-TRANSFORMATION-PROGRESSION, RF-DECOMP-CIRRHOSIS, RF-DIPSS-PLUS-HIGH, RF-DLBCL-CART-INELIGIBLE-POST-2L, RF-DLBCL-CD20-POS-EPCORITAMAB-CANDIDATE, RF-DLBCL-CD20-POS-GLOFITAMAB-CANDIDATE, RF-DLBCL-CD79B-MUT-MCD-CANDIDATE, RF-DLBCL-CNS-RISK, RF-DLBCL-FRAILTY-AGE, RF-DLBCL-HIGH-IPI, RF-DLBCL-HIGH-RISK-BIOLOGY, RF-DLBCL-INFECTION-SCREENING, RF-DLBCL-ORGAN-DYSFUNCTION, RF-DLBCL-TRANSFORMATION-PROGRESSION, RF-EATL-HIGH-RISK-BIOLOGY, RF-EATL-INFECTION-SCREENING, RF-EATL-ORGAN-DYSFUNCTION, RF-EATL-TRANSFORMATION-PROGRESSION, RF-ENDOMETRIAL-FIT-FOR-LENVATINIB-COMBO, RF-ENDOMETRIAL-FRAILTY-AGE, RF-ENDOMETRIAL-HIGH-RISK-BIOLOGY, RF-ENDOMETRIAL-INFECTION-SCREENING, RF-ENDOMETRIAL-ORGAN-DYSFUNCTION, RF-ENDOMETRIAL-TRANSFORMATION-PROGRESSION, RF-ESOPH-FRAILTY-AGE, RF-ESOPH-HIGH-RISK-BIOLOGY, RF-ESOPH-INFECTION-SCREENING, RF-ESOPH-SEVERE-DYSPHAGIA-ASPIRATION, RF-ESOPH-TRANSFORMATION-PROGRESSION, RF-ESOPHAGEAL-POST-CROSS-NON-PCR, RF-ET-HU-RESISTANT-INTOLERANT, RF-ET-TRANSFORMATION-PROGRESSION, RF-FAP-CONFIRMED-CARRIER, RF-FAP-FAMILY-HISTORY-SUSPICION, RF-FL-EZH2-Y641-ACTIONABLE, RF-FL-FRAILTY-AGE, RF-FL-HIGH-TUMOR-BURDEN-GELF, RF-FL-INFECTION-SCREENING, RF-FL-ORGAN-DYSFUNCTION, RF-FL-TRANSFORMATION-SUSPECT, RF-FOLLICULAR-TRANSFORMATION, RF-FRAILTY-AGE-G8-LOW, RF-GASTRIC-CLDN18-2-ACTIONABLE, RF-GASTRIC-EMERGENCY-BLEED-OBSTRUCTION, RF-GASTRIC-FRAILTY-AGE, RF-GASTRIC-HIGH-RISK-BIOLOGY, RF-GASTRIC-INFECTION-SCREENING, RF-GASTRIC-PDL1-CPS-1-PLUS, RF-GASTRIC-TRANSFORMATION-PROGRESSION, RF-GBM-FRAILTY-AGE, RF-GBM-HIGH-RISK-BIOLOGY, RF-GBM-INFECTION-SCREENING, RF-GBM-INTRACRANIAL-PRESSURE-EMERGENCY, RF-GBM-TRANSFORMATION-PROGRESSION, RF-GELF-CRITERIA-MET, RF-GELF-LOW-BURDEN, RF-GIST-FRAILTY-AGE, RF-GIST-HIGH-RISK-BIOLOGY, RF-GIST-INFECTION-SCREENING, RF-GIST-ORGAN-DYSFUNCTION, RF-GIST-PDGFRA-D842V, RF-GIST-TRANSFORMATION-PROGRESSION, RF-GLIOMA-LOW-GRADE-FRAILTY-AGE, RF-GLIOMA-LOW-GRADE-HIGH-RISK-BIOLOGY, RF-GLIOMA-LOW-GRADE-INFECTION-SCREENING, RF-GLIOMA-LOW-GRADE-INTRACRANIAL-PRESSURE, RF-GLIOMA-LOW-GRADE-ORGAN-DYSFUNCTION, RF-GLIOMA-LOW-GRADE-TRANSFORMATION-PROGRESSION, RF-HASFORD-HIGH, RF-HBV-COINFECTION, RF-HCC-AFP-RAPID-RISE, RF-HCC-CHILD-PUGH-B-C, RF-HCC-FRAILTY-AGE, RF-HCC-HBV-REACTIVATION-RISK, RF-HCC-HIGH-RISK-BIOLOGY, RF-HCC-VARICEAL-BLEED, RF-HCL-FRAILTY-AGE, RF-HCL-HIGH-RISK-BIOLOGY, RF-HCL-INFECTION-SCREENING, RF-HCL-ORGAN-DYSFUNCTION, RF-HCL-TRANSFORMATION-PROGRESSION, RF-HCV-MZL-FRAILTY-AGE, RF-HGBL-DH-CNS-PROPHYLAXIS-TRIGGER, RF-HGBL-DH-EMERGENCY-TLS, RF-HGBL-DH-HIGH-RISK-BIOLOGY, RF-HGBL-DH-INFECTION-SCREENING, RF-HGBL-DH-ORGAN-DYSFUNCTION, RF-HGBL-DH-TRANSFORMATION-PROGRESSION, RF-HLRCC-CONFIRMED-CARRIER, RF-HLRCC-FAMILY-HISTORY-SUSPICION, RF-HNSCC-FRAILTY-AGE, RF-HNSCC-HIGH-RISK-BIOLOGY, RF-HNSCC-INFECTION-SCREENING, RF-HNSCC-ORGAN-DYSFUNCTION, RF-HNSCC-TRANSFORMATION-PROGRESSION, RF-HSTCL-HIGH-RISK-BIOLOGY, RF-HSTCL-INFECTION-SCREENING, RF-HSTCL-ORGAN-DYSFUNCTION, RF-HSTCL-TRANSFORMATION-PROGRESSION, RF-IATROGENIC-PRIOR-RADIATION-PREVENTION, RF-IBD-CRC-PREVENTION, RF-IFS-FRAILTY-AGE, RF-IFS-HIGH-RISK-BIOLOGY, RF-IFS-INFECTION-SCREENING, RF-IFS-ORGAN-DYSFUNCTION, RF-IFS-TRANSFORMATION-PROGRESSION, RF-IMT-FRAILTY-AGE, RF-IMT-HIGH-RISK-BIOLOGY, RF-IMT-INFECTION-SCREENING, RF-IMT-ORGAN-DYSFUNCTION, RF-IMT-TRANSFORMATION-PROGRESSION, RF-IPI-HIGH, RF-IPI-INTERMEDIATE, RF-IPI-LOW, RF-IPSS-M-HIGH, RF-IPSS-R-VERY-HIGH, RF-ISS-1, RF-ISS-3, RF-LACTATION-ACTIVE, RF-LATITUDE-HIGH-RISK-MHSPC, RF-LEPTOMENINGEAL-DISEASE, RF-LI-FRAUMENI-CONFIRMED-CARRIER, RF-LI-FRAUMENI-FAMILY-HISTORY-SUSPICION, RF-LIFESTYLE-ALCOHOL-CANCER-PREVENTION, RF-LIFESTYLE-OBESITY-CANCER-PREVENTION, RF-LIFESTYLE-TOBACCO-CANCER-PREVENTION, RF-LYNCH-CONFIRMED-CARRIER, RF-LYNCH-FAMILY-HISTORY-SUSPICION, RF-MASTOCYTOSIS-FRAILTY-AGE, RF-MASTOCYTOSIS-HIGH-RISK-BIOLOGY, RF-MASTOCYTOSIS-INFECTION-SCREENING, RF-MASTOCYTOSIS-ORGAN-DYSFUNCTION, RF-MASTOCYTOSIS-TRANSFORMATION-PROGRESSION, RF-MCL-BLASTOID-OR-TP53, RF-MCL-BLASTOID-VARIANT, RF-MCL-FRAILTY-AGE, RF-MCL-INFECTION-SCREENING, RF-MCL-ORGAN-DYSFUNCTION, RF-MCL-POST-BTKI-C481-ACTIONABLE, RF-MCL-TRANSFORMATION-PROGRESSION, RF-MDS-DEL-5Q-ISOLATED, RF-MDS-FRAILTY-AGE, RF-MDS-HIGH-RISK-IPSS, RF-MDS-INFECTION-SCREENING, RF-MDS-ORGAN-DYSFUNCTION, RF-MDS-TP53-MUTATION, RF-MDS-TRANSFORMATION-PROGRESSION, RF-MDS-TRANSPLANT-ELIGIBLE, RF-MELANOMA-BRAF-V600-ACTIONABLE, RF-MELANOMA-HIGH-RISK-BIOLOGY, RF-MELANOMA-INFECTION-SCREENING, RF-MELANOMA-IO-RESISTANT, RF-MELANOMA-KIT-MUT-ACTIONABLE, RF-MELANOMA-NF1-MUT-CANDIDATE, RF-MELANOMA-ORGAN-DYSFUNCTION, RF-MELANOMA-STAGE-III-RESECTED, RF-MELANOMA-TRANSFORMATION-PROGRESSION, RF-MEN1-FAMILY-HISTORY-SUSPICION, RF-MEN2-FAMILY-HISTORY-SUSPICION, RF-MF-LARGE-CELL-TRANSFORMATION, RF-MF-SEZARY-FRAILTY-AGE, RF-MF-SEZARY-INFECTION-SCREENING, RF-MF-SEZARY-LEUKEMIC, RF-MF-SEZARY-ORGAN-DYSFUNCTION, RF-MIPI-HIGH, RF-MIPI-LOW, RF-MM-BCMA-EXPRESSION-POS, RF-MM-CD38-EXPRESSION-DARA-CANDIDATE, RF-MM-CORD-COMPRESSION, RF-MM-FRAILTY-AGE, RF-MM-HIGH-RISK-CYTOGENETICS, RF-MM-HYPERCALCEMIA, RF-MM-HYPERVISCOSITY, RF-MM-INFECTION-SCREENING, RF-MM-RENAL-DYSFUNCTION, RF-MM-T11-14-ACTIONABLE, RF-MM-TRANSFORMATION-PROGRESSION, RF-MPNST-ADVANCED-DOXORUBICIN-UNSUITABLE, RF-MPNST-FRAILTY-AGE, RF-MPNST-HIGH-RISK-BIOLOGY, RF-MPNST-INFECTION-SCREENING, RF-MPNST-ORGAN-DYSFUNCTION, RF-MPNST-TRANSFORMATION-PROGRESSION, RF-MTC-FRAILTY-AGE, RF-MTC-HIGH-RISK-BIOLOGY, RF-MTC-INFECTION-SCREENING, RF-MTC-ORGAN-DYSFUNCTION, RF-MTC-RET-MUTANT, RF-MTC-TRANSFORMATION-PROGRESSION, RF-NET-CARCINOID-SYNDROME, RF-NET-HIGH-GRADE-G3, RF-NK-T-NASAL-HIGH-RISK-BIOLOGY, RF-NK-T-NASAL-INFECTION-SCREENING, RF-NK-T-NASAL-ORGAN-DYSFUNCTION, RF-NK-T-NASAL-TRANSFORMATION-PROGRESSION, RF-NLPBL-FRAILTY-AGE, RF-NLPBL-HIGH-RISK-BIOLOGY, RF-NLPBL-INFECTION-SCREENING, RF-NLPBL-ORGAN-DYSFUNCTION, RF-NLPBL-RT-CONTRAINDICATED, RF-NLPBL-TRANSFORMATION-PROGRESSION, RF-NMZL-FRAILTY-AGE, RF-NMZL-HIGH-RISK-BIOLOGY, RF-NMZL-INFECTION-SCREENING, RF-NMZL-ORGAN-DYSFUNCTION, RF-NMZL-TRANSFORMATION-PROGRESSION, RF-NSCLC-ALK-FUSION-ACTIONABLE, RF-NSCLC-BRAF-V600E-ACTIONABLE, RF-NSCLC-BRAIN-METS-EMERGENCY, RF-NSCLC-CORD-COMPRESSION, RF-NSCLC-EGFR-C797S-RESISTANCE, RF-NSCLC-EGFR-EX19DEL-ACTIONABLE, RF-NSCLC-EGFR-EX20INS-ACTIONABLE, RF-NSCLC-EGFR-T790M-ACTIONABLE, RF-NSCLC-FRAILTY-AGE, RF-NSCLC-HER2-MUT-ACTIONABLE, RF-NSCLC-HER3-HIGH-PATRITUMAB-CANDIDATE, RF-NSCLC-HIGH-RISK-BIOLOGY, RF-NSCLC-INFECTION-SCREENING, RF-NSCLC-KRAS-G12C-ACTIONABLE, RF-NSCLC-MALIGNANT-EFFUSION, RF-NSCLC-MET-AMP-ACTIONABLE, RF-NSCLC-MET-EX14-ACTIONABLE, RF-NSCLC-NRG1-FUSION-ZENO-CANDIDATE, RF-NSCLC-NTRK-FUSION-ACTIONABLE, RF-NSCLC-ORGAN-DYSFUNCTION, RF-NSCLC-PDL1-50-PLUS, RF-NSCLC-RET-FUSION-ACTIONABLE, RF-NSCLC-ROS1-FUSION-ACTIONABLE, RF-NSCLC-SVC-SYNDROME, RF-NSCLC-TRANSFORMATION-PROGRESSION, RF-NSCLC-TROP2-DATO-CANDIDATE, RF-OBLIGATE-CARDIO-TOXIC-NAIVE, RF-OCC-AROMATIC-AMINES-MALIGNANCY-PREVENTION, RF-OCC-ASBESTOS-MALIGNANCY-PREVENTION, RF-OCC-BENZENE-MALIGNANCY-PREVENTION, RF-OCC-VINYL-CHLORIDE-MALIGNANCY-PREVENTION, RF-OLIGOMET-DEFINITION, RF-ONCOLOGIC-EMERGENCY-CORD-COMPRESSION, RF-ONCOLOGIC-EMERGENCY-SVC, RF-ONCOLOGIC-EMERGENCY-TLS, RF-ORGAN-CARDIAC-LVEF-LOW, RF-ORGAN-HEPATIC-CHILD-PUGH-B, RF-ORGAN-HEPATIC-CHILD-PUGH-C, RF-ORGAN-PULMONARY-DLCO-LOW, RF-ORGAN-RENAL-IMPAIRED, RF-OVARIAN-BRCA-MUT-ACTIONABLE, RF-OVARIAN-FRA-HIGH-ACTIONABLE, RF-OVARIAN-FRAILTY-AGE, RF-OVARIAN-HRD-ACTIONABILITY, RF-OVARIAN-HRD-POSITIVE-ACTIONABLE, RF-OVARIAN-INFECTION-SCREENING, RF-OVARIAN-PERIOPERATIVE-VTE, RF-OVARIAN-PLATINUM-RESISTANT, RF-OVARIAN-PLATINUM-SENSITIVE, RF-OVARIAN-SUBOPTIMAL-DEBULKING, RF-OVARIAN-TRANSFORMATION-PROGRESSION, RF-PAN-ATM-CHEK2-CDK12-PARPI-CANDIDATE, RF-PAN-BRCA-SOMATIC-PARPI-CANDIDATE, RF-PAN-CTDNA-MRD-POSITIVE, RF-PAN-PALB2-PARPI-CANDIDATE, RF-PAN-PDL1-CLONE-22C3-PEMBRO-ELIGIBLE, RF-PCNSL-FRAILTY-AGE, RF-PCNSL-HIGH-RISK-BIOLOGY, RF-PCNSL-INFECTION-SCREENING, RF-PCNSL-INTRACRANIAL-PRESSURE, RF-PCNSL-ORGAN-DYSFUNCTION, RF-PCNSL-TRANSFORMATION-PROGRESSION, RF-PDAC-BILIARY-OBSTRUCTION-CHOLANGITIS, RF-PDAC-FIT-FOR-FOLFIRINOX, RF-PDAC-FRAILTY-AGE, RF-PDAC-HIGH-RISK-BIOLOGY, RF-PDAC-INFECTION-SCREENING, RF-PDAC-TRANSFORMATION-PROGRESSION, RF-PEUTZ-JEGHERS-FAMILY-HISTORY-SUSPICION, RF-PMBCL-FRAILTY-AGE, RF-PMBCL-HIGH-RISK-BIOLOGY, RF-PMBCL-INFECTION-SCREENING, RF-PMBCL-MEDIASTINAL-AIRWAY, RF-PMBCL-ORGAN-DYSFUNCTION, RF-PMBCL-SVC-SYNDROME, RF-PMBCL-TRANSFORMATION-PROGRESSION, RF-PMF-ANEMIA-DOMINANT, RF-PMF-BLAST-PROGRESSION, RF-PMF-FRAILTY-AGE, RF-PMF-HIGH-RISK-DIPSS, RF-PMF-INFECTION-SCREENING, RF-PMF-ORGAN-DYSFUNCTION, RF-POLE-POLD1-ENDOMETRIAL-LOW-RISK, RF-PREGNANCY-ACTIVE, RF-PREGNANCY-PLANNING, RF-PRIOR-BRAFI-MEKI-FAILED, RF-PRIOR-BTKI-PROGRESSION, RF-PRIOR-BV-NAIVE, RF-PRIOR-CDK46I-PROGRESSION, RF-PRIOR-EGFRI-PROGRESSION, RF-PRIOR-HDACI-NAIVE, RF-PRIOR-IO-PROGRESSION, RF-PRIOR-PARPI-EXPOSED, RF-PRIOR-PLATINUM-RESISTANT, RF-PROSTATE-AR-AMP-ARSI-RESISTANCE, RF-PROSTATE-AR-V7-ARSI-RESISTANCE, RF-PROSTATE-CORD-COMPRESSION, RF-PROSTATE-FRAILTY-AGE, RF-PROSTATE-HIGH-RISK-BIOLOGY, RF-PROSTATE-INFECTION-SCREENING, RF-PROSTATE-ORGAN-DYSFUNCTION, RF-PROSTATE-PSA-PROGRESSION, RF-PROSTATE-TMPRSS2-ERG-PROGNOSTIC, RF-PROSTATE-TRANSFORMATION-PROGRESSION, RF-PSC-CHOLANGIOCARCINOMA-PREVENTION, RF-PTCL-NOS-FRAILTY-AGE, RF-PTCL-NOS-INFECTION-SCREENING, RF-PTCL-NOS-ORGAN-DYSFUNCTION, RF-PTCL-NOS-TRANSFORMATION-PROGRESSION, RF-PTLD-FRAILTY-AGE, RF-PTLD-HIGH-RISK-BIOLOGY, RF-PTLD-INFECTION-SCREENING, RF-PTLD-ORGAN-DYSFUNCTION, RF-PTLD-TRANSFORMATION-PROGRESSION, RF-PV-ET-FRAILTY-AGE, RF-PV-ET-HIGH-THROMBOSIS-RISK, RF-PV-ET-INFECTION-SCREENING, RF-PV-ET-ORGAN-DYSFUNCTION, RF-PV-ET-PREGNANCY-OR-PLANNING, RF-PV-HU-RESISTANCE-INTOLERANCE, RF-R-ISS-3-HIGH-RISK, RF-RADON-MALIGNANCY-PREVENTION, RF-RAI-HIGH, RF-RAI-LOW, RF-RCC-FRAILTY-AGE, RF-RCC-HIGH-RISK-BIOLOGY, RF-RCC-IMDC-INTERMEDIATE-POOR-RISK, RF-RCC-INFECTION-SCREENING, RF-RCC-ORGAN-DYSFUNCTION, RF-RCC-TRANSFORMATION-PROGRESSION, RF-REPRODUCTIVE-BREAST-ENDOMETRIAL-PREVENTION, RF-RICHTER-TRANSFORMATION, RF-SALIVARY-ADVANCED-PALLIATIVE, RF-SALIVARY-FRAILTY-AGE, RF-SALIVARY-HIGH-RISK-BIOLOGY, RF-SALIVARY-INFECTION-SCREENING, RF-SALIVARY-ORGAN-DYSFUNCTION, RF-SALIVARY-TRANSFORMATION-PROGRESSION, RF-SANZ-HIGH-RISK, RF-SANZ-INTERMEDIATE, RF-SANZ-LOW-RISK, RF-SCLC-BRAIN-METS-EMERGENCY, RF-SCLC-FRAILTY-AGE, RF-SCLC-HIGH-RISK-BIOLOGY, RF-SCLC-INFECTION-SCREENING, RF-SCLC-ORGAN-DYSFUNCTION, RF-SCLC-PARANEOPLASTIC, RF-SCLC-SVC-SYNDROME, RF-SMZL-FRAILTY-AGE, RF-SMZL-HIGH-RISK-BIOLOGY, RF-SMZL-INFECTION-SCREENING, RF-SMZL-ORGAN-DYSFUNCTION, RF-SMZL-TRANSFORMATION-PROGRESSION, RF-SOKAL-HIGH, RF-T-ALL-CNS-LEUKEMIA, RF-T-ALL-EMERGENCY-TLS-LEUKOSTASIS, RF-T-ALL-FRAILTY-AGE, RF-T-ALL-HIGH-RISK-BIOLOGY, RF-T-ALL-INFECTION-SCREENING, RF-T-ALL-MEDIASTINAL-AIRWAY, RF-T-ALL-ORGAN-DYSFUNCTION, RF-T-ALL-TRANSFORMATION-PROGRESSION, RF-T-PLL-HIGH-RISK-BIOLOGY, RF-T-PLL-INFECTION-SCREENING, RF-T-PLL-ORGAN-DYSFUNCTION, RF-T-PLL-TRANSFORMATION-PROGRESSION, RF-TCELL-CD30-POSITIVE, RF-THYROID-ANAPLASTIC-FRAILTY-AGE, RF-THYROID-ANAPLASTIC-HIGH-RISK-BIOLOGY, RF-THYROID-ANAPLASTIC-INFECTION-SCREENING, RF-THYROID-ANAPLASTIC-ORGAN-DYSFUNCTION, RF-THYROID-ANAPLASTIC-TRANSFORMATION-PROGRESSION, RF-THYROID-PAPILLARY-FRAILTY-AGE, RF-THYROID-PAPILLARY-HIGH-RISK-BIOLOGY, RF-THYROID-PAPILLARY-INFECTION-SCREENING, RF-THYROID-PAPILLARY-ORGAN-DYSFUNCTION, RF-THYROID-PAPILLARY-TRANSFORMATION-PROGRESSION, RF-UNIVERSAL-HBV-REACTIVATION-RISK, RF-UNIVERSAL-INFUSION-REACTION-FIRST-CYCLE, RF-UNIVERSAL-TLS-RISK, RF-UROTHELIAL-EV-CONTRAINDICATED, RF-UROTHELIAL-FRAILTY-AGE, RF-UROTHELIAL-HIGH-RISK-BIOLOGY, RF-UROTHELIAL-INFECTION-SCREENING, RF-UROTHELIAL-ORGAN-DYSFUNCTION, RF-UROTHELIAL-TRANSFORMATION-PROGRESSION, RF-UVEAL-MELANOMA-BAP1-MUT-CANDIDATE, RF-VHL-CONFIRMED-CARRIER, RF-VHL-FAMILY-HISTORY-SUSPICION, RF-WM-CXCR4-WHIM-MUTANT, RF-WM-FRAILTY-AGE, RF-WM-HIGH-RISK-BIOLOGY, RF-WM-HYPERVISCOSITY, RF-WM-INFECTION-SCREENING, RF-WM-MYD88-L265P-ACTIONABLE, RF-WM-TRANSFORMATION-PROGRESSION</li></ul><details class="skill-catalog"><summary>Технічні метадані MDT skills (0/16 активовано в цьому плані)</summary><div class="section-sub">Усі зареєстровані віртуальні спеціалісти. ✓ — активовано для цього кейсу; ○ — не активовано (доступні для інших клінічних сценаріїв).</div><table><thead><tr><th>Спеціаліст</th><th>skill_id</th><th>Версія</th><th>Last reviewed</th><th>Sign-offs</th><th>Domain</th></tr></thead><tbody><tr class="dormant"><td>Спеціаліст з клітинної терапії (CAR-T)</td><td><code>cellular_therapy_specialist</code></td><td class="ver">v0.1.0</td><td>2026-04-25</td><td>0</td><td>cellular_therapy</td></tr><tr class="dormant"><td>Клінічний фармацевт</td><td><code>clinical_pharmacist</code></td><td class="ver">v0.1.0</td><td>2026-04-25</td><td>0</td><td>clinical_pharmacy</td></tr><tr class="dormant"><td>Гематолог / онкогематолог</td><td><code>hematologist</code></td><td class="ver">v0.1.0</td><td>2026-04-25</td><td>0</td><td>hematology_oncology</td></tr><tr class="dormant"><td>Гематопатолог (специфічно для лімфом / лейкозів / мієломи)</td><td><code>hematopathologist</code></td><td class="ver">v0.1.0</td><td>2026-04-25</td><td>0</td><td>hematopathology</td></tr><tr class="dormant"><td>Інфекціоніст / гепатолог</td><td><code>infectious_disease_hepatology</code></td><td class="ver">v0.1.0</td><td>2026-04-25</td><td>0</td><td>infectious_diseases</td></tr><tr class="dormant"><td>Медичний онколог (хіміотерапевт солідних пухлин)</td><td><code>medical_oncologist</code></td><td class="ver">v0.1.0</td><td>2026-04-25</td><td>0</td><td>solid_oncology</td></tr><tr class="dormant"><td>Молекулярний генетик / молекулярний онколог</td><td><code>molecular_geneticist</code></td><td class="ver">v0.1.0</td><td>2026-04-25</td><td>0</td><td>molecular_oncology</td></tr><tr class="dormant"><td>Паліативна допомога</td><td><code>palliative_care</code></td><td class="ver">v0.1.0</td><td>2026-04-25</td><td>0</td><td>palliative_care</td></tr><tr class="dormant"><td>Патолог (загальний)</td><td><code>pathologist</code></td><td class="ver">v0.1.0</td><td>2026-04-25</td><td>0</td><td>pathology</td></tr><tr class="dormant"><td>Сімейний лікар / терапевт</td><td><code>primary_care</code></td><td class="ver">v0.1.0</td><td>2026-04-25</td><td>0</td><td>primary_care</td></tr><tr class="dormant"><td>Психолог / онкопсихолог</td><td><code>psychologist</code></td><td class="ver">v0.1.0</td><td>2026-04-25</td><td>0</td><td>psychosocial</td></tr><tr class="dormant"><td>Радіотерапевт (променева терапія)</td><td><code>radiation_oncologist</code></td><td class="ver">v0.1.0</td><td>2026-04-25</td><td>0</td><td>radiation_oncology</td></tr><tr class="dormant"><td>Лікар-радіолог</td><td><code>radiologist</code></td><td class="ver">v0.1.0</td><td>2026-04-25</td><td>0</td><td>diagnostic_imaging</td></tr><tr class="dormant"><td>Соціальний працівник / кейс-менеджер</td><td><code>social_worker_case_manager</code></td><td class="ver">v0.1.0</td><td>2026-04-25</td><td>0</td><td>psychosocial</td></tr><tr class="dormant"><td>Хірург-онколог</td><td><code>surgical_oncologist</code></td><td class="ver">v0.1.0</td><td>2026-04-25</td><td>0</td><td>surgical_oncology</td></tr><tr class="dormant"><td>Спеціаліст з трансплантації (BMT)</td><td><code>transplant_specialist</code></td><td class="ver">v0.1.0</td><td>2026-04-25</td><td>0</td><td>cellular_therapy</td></tr></tbody></table></details></div></section><section><h2>Sources cited</h2><ul class='sources'><li>SRC-ESMO-ESOPHAGEAL-2024: ESMO Esophageal Cancer (2024)</li><li>SRC-NCCN-ESOPHAGEAL-2025: NCCN Esophageal and EGJ Cancers (v.3.2025)</li></ul></section><section class="experimental-track experimental-track--unset"><h2>Експериментальні опції (клінічні дослідження)</h2><div class="section-sub">Третій трек плану — open-enrollment trials з ClinicalTrials.gov.</div><p class="empty-state">🔬 Дані недоступні — синхронізація з ClinicalTrials.gov не виконана. Передайте experimental_search_fn у generate_plan() або синхронізуйте офлайн (per ua-ingestion plan §3.3).</p></section><div class="doc-footer"><div class="version-chain">plan_id: PLAN-BARRETTS-PREV-001-V1 | version: 1 | generated: 2026-05-18T22:41:29.226851+00:00</div><div class="fda-disclosure"><strong>Per FDA non-device CDS positioning (CHARTER §15):</strong> HCP-mediated prevention / early-diagnosis counseling for at-risk asymptomatic individuals (CHARTER §3 amendment 2026-05-18, Path A). Not a medical device; not for autonomous clinical decision-making; not for patient-direct deployment.</div><div class="fda-disclosure"><strong>Per FDA non-device CDS positioning (CHARTER §15):</strong> Both prevention options below are presented for review. The engine&#x27;s selection of a &#x27;recommended&#x27; default does not constitute a clinical decision. Final selection requires HCP judgment incorporating information not available to the system (patient values, prior conversations, access constraints, undocumented comorbidities).</div><div class="medical-disclaimer">Цей документ — інформаційний ресурс для підтримки обговорення в тумор-борді (per CHARTER §11). Не система, що приймає клінічні рішення. Усі рекомендації потребують перевірки лікуючим лікарем.</div></div></div>
+</body>
+</html>

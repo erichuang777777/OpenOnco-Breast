@@ -13253,6 +13253,124 @@
     "quality_class": "quality-diagnostic"
   },
   {
+    "case_id": "prevention-occ-aromatic-amines",
+    "label": "Aromatic amines → urothelial · annual urinalysis + cytology",
+    "label_en": "Aromatic amines → urothelial · annual urinalysis + cytology",
+    "disease_id": null,
+    "file": "patient_occupational_aromatic_amines_prevention.json",
+    "json": {
+      "patient_id": "OCC-AROMATIC-AMINES-PREV-001",
+      "comment": "68yo male, 22 years in pre-regulation dye industry (benzidine + 2-naphthylamine handling, pre-1980s). No current cancer. Engine routes to PreventionPlan: standard = annual urinalysis + urine cytology + low-threshold cystoscopy for hematuria + smoking cessation; alternative = routine general-population urology screening. Validates v0.3 aromatic amines → bladder cancer prevention pilot.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 68,
+        "sex": "male",
+        "ecog": 1
+      },
+      "findings": {
+        "occupational_aromatic_amine_exposure_documented": true,
+        "occupational_dye_rubber_leather_industry_pre_regulation": true,
+        "Dye industry worker 1965-1987 (pre-regulation era)": true,
+        "Never smoker": true,
+        "Baseline urinalysis negative for hematuria": true,
+        "No current urothelial malignancy": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-occ-asbestos",
+    "label": "Азбест → mesothelioma / NSCLC · LDCT + smoking cessation",
+    "label_en": "Asbestos → mesothelioma / NSCLC · LDCT + smoking cessation",
+    "disease_id": null,
+    "file": "patient_occupational_asbestos_prevention.json",
+    "json": {
+      "patient_id": "OCC-ASBESTOS-PREV-001",
+      "comment": "62yo male, 25 years occupational asbestos exposure (shipyard insulator pre-regulation era), current smoker. No current cancer. Engine routes to PreventionPlan (after Agent G Wave 2 pilot lands): standard = annual LDCT chest from 10y post first exposure + smoking cessation counseling + pleural surveillance discussion; alternative = routine general-population screening only. Validates v0.3 IARC Group 1 occupational pilot.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 62,
+        "sex": "male",
+        "ecog": 1
+      },
+      "findings": {
+        "occupational_asbestos_exposure_documented": true,
+        "occupational_asbestos_exposure_years_ge_5": true,
+        "Current smoker, 35 pack-years": true,
+        "Shipyard insulator 1975-2000 (pre-regulation)": true,
+        "No current mesothelioma or lung cancer on baseline imaging": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-barretts",
+    "label": "Barrett's esophagus → esophageal AC · EGD surveillance q3-5y",
+    "label_en": "Barrett's esophagus → esophageal AC · EGD surveillance q3-5y",
+    "disease_id": null,
+    "file": "patient_barretts_esophagus_prevention.json",
+    "json": {
+      "patient_id": "BARRETTS-PREV-001",
+      "comment": "54yo male with confirmed long-segment (>3cm) Barrett's esophagus on EGD, non-dysplastic. Chronic GERD on PPI. No current esophageal adenocarcinoma. Engine routes to PreventionPlan: standard = EGD surveillance q3-5y for non-dysplastic Barrett's per ACG + high-dose PPI for symptom/healing; alternative = routine q5y cadence. Validates v0.3 Barrett's → esophageal AC prevention pilot.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 54,
+        "sex": "male",
+        "ecog": 0
+      },
+      "findings": {
+        "barretts_esophagus_diagnosis_confirmed": true,
+        "Long-segment Barrett's (>3cm)": true,
+        "Non-dysplastic histology": true,
+        "Chronic GERD on high-dose PPI": true,
+        "No current esophageal adenocarcinoma": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-occ-benzene",
+    "label": "Бензол → AML / MDS · CBC q6-12mo + smear review",
+    "label_en": "Benzene → AML / MDS · CBC q6-12mo + smear review",
+    "disease_id": null,
+    "file": "patient_occupational_benzene_prevention.json",
+    "json": {
+      "patient_id": "OCC-BENZENE-PREV-001",
+      "comment": "55yo male, 18 years occupational benzene exposure (petroleum refining), no current hematologic malignancy. CBC stable. Engine routes to PreventionPlan: standard = CBC q6-12mo with peripheral smear review for cytopenias + low-threshold bone marrow eval if persistent cytopenia; alternative = symptom-driven evaluation. Validates v0.3 benzene → AML / MDS prevention pilot.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 55,
+        "sex": "male",
+        "ecog": 0
+      },
+      "findings": {
+        "occupational_benzene_exposure_documented": true,
+        "occupational_benzene_exposure_years_ge_5": true,
+        "occupational_petroleum_refining_or_solvent_industry": true,
+        "Refinery operator 2007-present (18 years)": true,
+        "Baseline CBC stable, no cytopenias": true,
+        "No current AML/MDS on workup": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
     "case_id": "prevention-brca-pedigree",
     "label": "Підозра на BRCA/HBOC · педігрі + ашкеназі-єврейське походження",
     "label_en": "BRCA/HBOC suspicion · pedigree + Ashkenazi ancestry",
@@ -13273,6 +13391,63 @@
         "family_ashkenazi_jewish_ancestry_with_breast_or_ovarian": true,
         "Mother breast cancer age 38": true,
         "Maternal aunt high-grade serous ovarian cancer age 52": true,
+        "No personal cancer diagnosis": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-brca1-carrier",
+    "label": "BRCA1 підтверджений носій (Ashkenazi founder) · breast MRI q1y з 25",
+    "label_en": "BRCA1 confirmed carrier (Ashkenazi founder) · breast MRI q1y from 25",
+    "disease_id": null,
+    "file": "patient_brca1_confirmed_carrier_prevention.json",
+    "json": {
+      "patient_id": "BRCA1-CARRIER-PREV-001",
+      "comment": "27yo female, recently confirmed BRCA1 c.5266dupC pathogenic variant (Ashkenazi founder mutation, cascade testing after maternal aunt's ovarian cancer diagnosis). No personal cancer. Engine routes to PreventionPlan (after Agent I): standard = BRCA1 carrier surveillance — breast MRI q1y from age 25 + clinical breast exam q6mo + mammogram from 30 alternating with MRI + TVUS + CA 125 q6mo from 30-35 (limited evidence for ovarian surveillance — note); alternative = intensified track with risk-reducing mastectomy (RRM) discussion at 25-30 + risk-reducing BSO at 35-40 post-childbearing (most impactful intervention for ovarian cancer reduction in BRCA1 carriers).",
+      "biomarkers": {},
+      "demographics": {
+        "age": 27,
+        "sex": "female",
+        "ecog": 0
+      },
+      "findings": {
+        "germline_brca1_pathogenic_variant_confirmed": true,
+        "BRCA1 c.5266dupC Ashkenazi founder mutation": true,
+        "Cascade testing positive after maternal aunt high-grade serous ovarian": true,
+        "No personal cancer diagnosis": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-cowden-pedigree",
+    "label": "Cowden (PTEN) · macrocephaly + mucocutaneous papillomas",
+    "label_en": "Cowden (PTEN) · macrocephaly + mucocutaneous papillomas",
+    "disease_id": null,
+    "file": "patient_cowden_pedigree_prevention.json",
+    "json": {
+      "patient_id": "COWDEN-PREV-001",
+      "comment": "35yo female with macrocephaly (head circumference >97th %ile), characteristic mucocutaneous papillomas of the tongue and gingivae, family history of multiple thyroid nodules. Meets revised Cleveland Clinic / NCCN Cowden clinical criteria. No current cancer. Engine routes to PreventionPlan (after Agent F): standard = pre-test counseling + germline PTEN panel + breast cancer screening at 30 (mammography + breast MRI) + thyroid US q1y + endometrial surveillance discussion at 35-40 + colonoscopy from age 35; alternative = empirical surveillance.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 35,
+        "sex": "female",
+        "ecog": 0
+      },
+      "findings": {
+        "family_cowden_clinical_diagnostic_criteria_met": true,
+        "Macrocephaly head circumference >97th percentile": true,
+        "Mucocutaneous papillomas tongue + gingivae": true,
+        "Family history of multiple thyroid nodules": true,
         "No personal cancer diagnosis": true
       }
     },
@@ -13453,6 +13628,63 @@
     "quality_class": "quality-curated"
   },
   {
+    "case_id": "prevention-ibd-uc",
+    "label": "Long-standing UC → CRC · chromoendoscopy q1-2y",
+    "label_en": "Long-standing UC → CRC · chromoendoscopy q1-2y",
+    "disease_id": null,
+    "file": "patient_ibd_uc_long_standing_prevention.json",
+    "json": {
+      "patient_id": "IBD-UC-PREV-001",
+      "comment": "44yo female, ulcerative colitis diagnosed at age 22 (22-year duration, extensive colitis, on biologic therapy). No current CRC. Engine routes to PreventionPlan: standard = surveillance colonoscopy with random + targeted biopsies q1-2y (chromoendoscopy preferred per AGA), discussion of dysplasia management; alternative = q3-5y colonoscopy cadence. Validates v0.3 IBD → CRC prevention pilot.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 44,
+        "sex": "female",
+        "ecog": 0
+      },
+      "findings": {
+        "inflammatory_bowel_disease_uc_diagnosis_ge_8y": true,
+        "UC diagnosis at age 22 (22 years duration)": true,
+        "Extensive colitis (pancolonic)": true,
+        "Currently on biologic therapy (infliximab) — well-controlled": true,
+        "No current colorectal malignancy on surveillance colonoscopy": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-lynch-carrier",
+    "label": "Lynch підтверджений носій (MSH2) · NCCN surveillance",
+    "label_en": "Lynch confirmed carrier (MSH2) · NCCN surveillance",
+    "disease_id": null,
+    "file": "patient_lynch_confirmed_carrier_prevention.json",
+    "json": {
+      "patient_id": "LYNCH-CARRIER-PREV-001",
+      "comment": "29yo female, recently confirmed MSH2 germline pathogenic variant (cascade testing after mother's CRC diagnosis revealed Lynch syndrome). No personal cancer. Engine routes to PreventionPlan (after Agent I Wave 2 confirmed-carrier pathway lands): standard = NCCN Genetic/Familial High-Risk Colorectal carrier surveillance — colonoscopy q1-2y from 25 (or 10y before youngest family CRC), endometrial sampling + TVUS q1-2y from 30-35, urinalysis annual, upper endoscopy q3-5y from 40; alternative = intensified track with risk-reducing hysterectomy/BSO discussion post-childbearing + aspirin per CAPP2 trial.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 29,
+        "sex": "female",
+        "ecog": 0
+      },
+      "findings": {
+        "germline_msh2_pathogenic_variant_confirmed": true,
+        "Cascade testing positive after mother CRC diagnosis": true,
+        "MSH2 c.942+3A>T splice variant (classified pathogenic)": true,
+        "No personal cancer diagnosis": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
     "case_id": "prevention-lynch-pedigree",
     "label": "Підозра на Lynch · Amsterdam II · germline MMR-панель",
     "label_en": "Lynch suspicion · Amsterdam II · germline MMR panel",
@@ -13473,6 +13705,215 @@
         "Mother CRC age 42": true,
         "Maternal grandfather CRC age 56": true,
         "Maternal aunt endometrial cancer age 48": true,
+        "No personal cancer diagnosis": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-men1-pedigree",
+    "label": "Підозра на MEN1 · класичні критерії · germline MEN1-панель",
+    "label_en": "MEN1 suspicion · classic criteria · germline MEN1 panel",
+    "disease_id": null,
+    "file": "patient_men1_pedigree_prevention.json",
+    "json": {
+      "patient_id": "MEN1-PREV-001",
+      "comment": "30yo female, father with primary hyperparathyroidism (age 35) + pituitary prolactinoma (age 42), paternal aunt with pancreatic neuroendocrine tumor (age 48). Three MEN1-spectrum tumors across two generations meeting classic MEN1 criteria. Engine routes to PreventionPlan (after Agent F Wave 2 lands): standard = pre-test counseling + germline MEN1 panel + age-appropriate surveillance (PTH/Ca q1y from age 5, pituitary MRI q3y, GEP-NET surveillance); alternative = empirical multi-organ surveillance.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 30,
+        "sex": "female",
+        "ecog": 0
+      },
+      "findings": {
+        "family_classic_men1_criteria_met": true,
+        "family_first_degree_men1_with_one_men1_tumor": true,
+        "Father primary hyperparathyroidism age 35 + pituitary prolactinoma age 42": true,
+        "Paternal aunt pancreatic neuroendocrine tumor age 48": true,
+        "No personal MEN1-spectrum tumor": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-men2-pedigree",
+    "label": "MEN2A (RET C634R) · вирішення про прорпрофілактичну тиреоїдектомію",
+    "label_en": "MEN2A (RET C634R) · prophylactic thyroidectomy timing decision",
+    "disease_id": null,
+    "file": "patient_men2_pedigree_prevention.json",
+    "json": {
+      "patient_id": "MEN2-PREV-001",
+      "comment": "8yo whose mother has confirmed MEN2A (RET C634R pathogenic variant + medullary thyroid carcinoma diagnosed age 28 + bilateral pheochromocytoma). Patient untested, asymptomatic. Engine routes to PreventionPlan (after Agent F): standard = pre-test counseling + germline RET panel + age-appropriate prophylactic thyroidectomy timing per RET mutation classification (C634R = MEN2A high-risk → prophylactic thyroidectomy by age 5) + calcitonin q6mo + metanephrines q1y from age 8; alternative = empirical surveillance. Time-sensitive given RET-mutation classification — prophylactic thyroidectomy is curative if performed before MTC develops.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 8,
+        "sex": "male",
+        "ecog": 0
+      },
+      "findings": {
+        "family_ret_known_pathogenic_variant": true,
+        "family_medullary_thyroid_carcinoma_first_or_second_degree": true,
+        "family_men2_phenotype_cluster": true,
+        "Mother confirmed RET C634R MEN2A": true,
+        "Mother MTC age 28 + bilateral pheo": true,
+        "No personal cancer diagnosis": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-peutz-jeghers-pedigree",
+    "label": "Peutz-Jeghers · мукокутанеозна пігментація + інвагінація",
+    "label_en": "Peutz-Jeghers · mucocutaneous pigmentation + intussusception",
+    "disease_id": null,
+    "file": "patient_peutz_jeghers_pedigree_prevention.json",
+    "json": {
+      "patient_id": "PEUTZ-JEGHERS-PREV-001",
+      "comment": "14yo with characteristic perioral and buccal mucosal pigmentation (mucocutaneous melanin spots) + history of small-bowel intussusception age 10 requiring resection (showed hamartomatous polyps on histology). Father similarly affected with Peutz-Jeghers phenotype. Engine routes to PreventionPlan (after Agent F): standard = pre-test counseling + germline STK11 panel + small-bowel surveillance (VCE or MR enterography q2-3y from age 8-10) + colonoscopy q2-3y from age 18 + breast MRI from 30 (women); alternative = empirical surveillance.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 14,
+        "sex": "female",
+        "ecog": 0
+      },
+      "findings": {
+        "family_classic_peutz_jeghers_phenotype": true,
+        "family_first_degree_peutz_jeghers_with_intussusception_history": true,
+        "Perioral + buccal mucosal pigmentation": true,
+        "Small-bowel intussusception age 10 (hamartomatous polyps on histology)": true,
+        "Father similarly affected with PJ phenotype": true,
+        "No personal cancer diagnosis": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-psc-ibd",
+    "label": "PSC + UC (найвищий ризик) · MRI/MRCP q1y + annual колоноскопія",
+    "label_en": "PSC + UC (highest risk) · MRI/MRCP q1y + annual colonoscopy",
+    "disease_id": null,
+    "file": "patient_psc_ibd_prevention.json",
+    "json": {
+      "patient_id": "PSC-IBD-PREV-001",
+      "comment": "39yo male with primary sclerosing cholangitis diagnosed 7 years ago + concurrent ulcerative colitis (PSC-IBD subtype = very high CRC + cholangiocarcinoma risk). No current hepatobiliary or colorectal malignancy. Engine routes to PreventionPlan: standard = annual MRI/MRCP + CA 19-9 for cholangiocarcinoma surveillance + annual colonoscopy from PSC diagnosis (PSC-IBD subgroup) + ERCP with brushings for dominant strictures + liver transplant evaluation as disease progresses; alternative = routine cadence q2-3y. Validates v0.3 PSC → cholangiocarcinoma + CRC prevention pilot. Patient is in the highest-risk subgroup.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 39,
+        "sex": "male",
+        "ecog": 1
+      },
+      "findings": {
+        "primary_sclerosing_cholangitis_diagnosis_confirmed": true,
+        "primary_sclerosing_cholangitis_with_ibd": true,
+        "PSC diagnosed 2019 (7 years)": true,
+        "Concurrent ulcerative colitis": true,
+        "No dominant biliary stricture currently": true,
+        "No current cholangiocarcinoma or colorectal malignancy": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-celiac-refractory",
+    "label": "Refractory celiac type 2 → EATL · small-bowel imaging q1-2y",
+    "label_en": "Refractory celiac type 2 → EATL · small-bowel imaging q1-2y",
+    "disease_id": null,
+    "file": "patient_celiac_refractory_prevention.json",
+    "json": {
+      "patient_id": "CELIAC-REFR-PREV-001",
+      "comment": "51yo female with refractory celiac disease type 2 (persistent villous atrophy despite strict gluten-free diet for 4 years + aberrant intraepithelial lymphocyte clonality). No current EATL. Engine routes to PreventionPlan: standard = strict gluten-free diet adherence + periodic small-bowel imaging (MR enterography or VCE) q1-2y + immunosuppression discussion for refractory type 2; alternative = gluten-free diet alone. Validates v0.3 celiac refractory → EATL prevention pilot. Refractory type 2 carries very high EATL risk.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 51,
+        "sex": "female",
+        "ecog": 1
+      },
+      "findings": {
+        "celiac_disease_refractory_type_2": true,
+        "celiac_disease_with_persistent_villous_atrophy_despite_gluten_free_diet_ge_1y": true,
+        "celiac_disease_with_aberrant_iel_clonality": true,
+        "Celiac diagnosed 2010, strict GFD adherence for 4 years": true,
+        "Persistent villous atrophy on follow-up biopsy": true,
+        "Aberrant IEL clonality on flow cytometry": true,
+        "No current EATL on small-bowel imaging": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-radon",
+    "label": "Residential radon (8.5 pCi/L) · mitigation + LDCT + smoking cessation",
+    "label_en": "Residential radon (8.5 pCi/L) · mitigation + LDCT + smoking cessation",
+    "disease_id": null,
+    "file": "patient_residential_radon_prevention.json",
+    "json": {
+      "patient_id": "RADON-PREV-001",
+      "comment": "58yo female, residential radon measurement 8.5 pCi/L (EPA threshold 4 pCi/L), former smoker (quit 5y ago, 20 pack-years). No current cancer. Engine routes to PreventionPlan: standard = radon mitigation (sub-slab depressurization) + annual LDCT screening adjusted for radon-elevated risk; alternative = routine cadence per USPSTF general population. Validates v0.3 radon → lung cancer prevention pilot. Radon-smoking synergy notable.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 58,
+        "sex": "female",
+        "ecog": 0
+      },
+      "findings": {
+        "residential_radon_exposure_ge_4_pci_per_l": true,
+        "residential_radon_exposure_documented_high_with_smoking_hx": true,
+        "Home radon test 8.5 pCi/L (basement living space)": true,
+        "Former smoker, 20 pack-years, quit 5 years ago": true,
+        "No current lung cancer on baseline LDCT": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-vhl-carrier",
+    "label": "VHL підтверджений носій (Arg167Gln) · VHL Alliance protocol",
+    "label_en": "VHL confirmed carrier (Arg167Gln) · VHL Alliance protocol",
+    "disease_id": null,
+    "file": "patient_vhl_confirmed_carrier_prevention.json",
+    "json": {
+      "patient_id": "VHL-CARRIER-PREV-001",
+      "comment": "19yo male, recently confirmed VHL c.500G>A (Arg167Gln) pathogenic variant (cascade testing after father's cerebellar hemangioblastoma + pheochromocytoma). No personal lesions yet on baseline imaging. Engine routes to PreventionPlan (after Agent I): standard = VHL Alliance Active Surveillance protocol — MRI brain + spine q1y from age 15-16 (started 4 years ago), MRI abdomen (kidneys + adrenals + pancreas) q1-2y from age 15, ophthalmology q1y (started at age 1-5 ideally, currently catching up), catecholamines / metanephrines q1y from age 5-10, comprehensive audiology q2-3y; alternative = intensified track with nephron-sparing surgery threshold for renal lesions ≥3cm + CNS hemangioblastoma resection threshold discussion. Canonical 'family-with-kidney-cancer' protocol — RCC is the leading cause of mortality in adult VHL carriers.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 19,
+        "sex": "male",
+        "ecog": 0
+      },
+      "findings": {
+        "germline_vhl_pathogenic_variant_confirmed": true,
+        "VHL c.500G>A (Arg167Gln) confirmed pathogenic": true,
+        "Cascade testing positive after father confirmed VHL": true,
+        "Baseline MRI brain/spine/abdomen — no current lesions": true,
+        "Baseline catecholamines/metanephrines normal": true,
         "No personal cancer diagnosis": true
       }
     },
