@@ -1,0 +1,70 @@
+id: IND-LIFESTYLE-TOBACCO-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-LIFESTYLE-TOBACCO-CANCER-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Continued active tobacco use: cumulative cancer incidence + cardiovascular + pulmonary morbidity continues to climb with each year of exposure. Lung cancer screening alone (without cessation) captures earlier-stage disease but does not reduce incidence."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-LIFESTYLE-TOBACCO-PREVENTION-CESSATION.
+  Patient declines structured cessation program — receives USPSTF lung cancer
+  screening eligibility check (LDCT if eligible) + repeated brief intervention
+  with each clinical contact (5A framework's "Ask + Advise + Arrange follow-up"
+  with low-intensity). Per CHARTER §11 patient-autonomy framing — continued
+  smoking is a legitimate patient choice but framed as suboptimal vs.
+  cessation comparator.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від structured
+  cessation — отримує USPSTF lung cancer screening eligibility check + brief
+  intervention на кожному клінічному контакті. Per CHARTER §11.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не презентувати observation як еквівалент cessation — cancer incidence reduction не досягається."
+  - "Не пропускати brief intervention на кожному візиті — навіть якщо пацієнт відмовляється, repeated counseling має кумулятивний ефект."
+  - "Не виключати пацієнта зі lung cancer screening через odmovu від cessation — screening залишається indicated незалежно."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to cessation — cancer incidence reduction is not achieved."
+  - "Do not skip brief intervention at every visit — even if the patient declines, repeated counseling has cumulative effect."
+  - "Do not exclude a patient from lung cancer screening because of cessation refusal — screening remains indicated regardless."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for tobacco prevention. §15.2 C4 ≥2-tracks invariant."

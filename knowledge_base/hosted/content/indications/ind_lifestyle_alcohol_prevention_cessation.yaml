@@ -1,0 +1,104 @@
+id: IND-LIFESTYLE-ALCOHOL-PREVENTION-CESSATION
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-HCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-LIFESTYLE-ALCOHOL-CANCER-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: "Alcohol cessation in heavy drinkers reduces HCC incidence by ~50% over 10 years post-cessation in those without established cirrhosis. Head + neck + esophageal SCC incidence reduction follows cessation with similar lag. Breast cancer risk in women does not return to baseline but cessation prevents incremental dose-dependent risk increase."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  - TEST-LFT
+desired_tests:
+  - TEST-LDH
+
+rationale: >
+  Standard-track prevention pathway for heavy alcohol use. Components:
+
+  **(1) Structured cessation / moderation counseling** — brief intervention by
+  primary clinician + referral to addiction-medicine specialist if dependence.
+  AUDIT-C screening + motivational interviewing.
+
+  **(2) Pharmacotherapy for alcohol use disorder** (per AAP / SAMHSA):
+  - Naltrexone (oral or extended-release IM) — first-line
+  - Acamprosate — alternative; renal-adjusted dosing
+  - Disulfiram — only with reliable adherence support
+  - Off-label: gabapentin, topiramate, ondansetron
+
+  **(3) Liver disease evaluation** — FIB-4 + transient elastography for staging
+  alcohol-related liver disease. If cirrhosis confirmed → HCC surveillance
+  (US + AFP q6mo per AASLD) — routes to broader HCC-surveillance pathway.
+
+  **(4) Targeted cancer screening** — endoscopy for heavy-drinking + tobacco-
+  using cohort to evaluate esophageal SCC risk. Breast cancer screening per
+  USPSTF cadence for women.
+
+  Combined cessation + targeted screening produces meaningful cancer-
+  incidence reduction in heavy-drinking cohorts.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для важкого вживання алкоголю.
+
+  **(1) Структуроване припинення / помірність** — brief intervention +
+  направлення до addiction-medicine specialist при залежності. AUDIT-C
+  screening + motivational interviewing.
+
+  **(2) Фармакотерапія alcohol use disorder** — налтрексон (per oral or
+  extended-release IM) перша лінія; acamprosate альтернатива; disulfiram
+  з reliable adherence support.
+
+  **(3) Оцінка хвороби печінки** — FIB-4 + transient elastography. При
+  цирозі → HCC surveillance (УЗ + AFP q6mo per AASLD).
+
+  **(4) Targeted cancer screening** — ендоскопія для heavy-drinking +
+  tobacco-using cohort. Breast cancer screening per USPSTF cadence.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle
+draft_revision: 1
+
+sources:
+  - source_id: SRC-AASLD-HCC-2023
+    position: supports
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не пропускати FIB-4 / fibrosis assessment у heavy drinkers — silent cirrhosis common."
+  - "Не використовувати disulfiram у пацієнтів з coronary artery disease (cardiotoxic interaction with alcohol)."
+  - "Не очікувати reduction breast cancer risk до baseline — cessation запобігає incremental ризик."
+  - "Не ігнорувати alcohol-tobacco synergy — combined cessation важливіша ніж кожне окремо."
+
+do_not_do_en:
+  - "Do not skip FIB-4 / fibrosis assessment in heavy drinkers — silent cirrhosis is common."
+  - "Do not use disulfiram in patients with coronary artery disease (cardiotoxic interaction with alcohol)."
+  - "Do not expect breast cancer risk reduction to baseline — cessation prevents incremental risk."
+  - "Do not ignore alcohol-tobacco synergy — combined cessation more impactful than either alone."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 lifestyle prevention pilot (alcohol). Two-Co-Lead signoff queued."

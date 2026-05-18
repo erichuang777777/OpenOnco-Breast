@@ -1,0 +1,67 @@
+id: RF-LIFESTYLE-TOBACCO-CANCER-PREVENTION
+definition: >-
+  Active tobacco smoking (current smoker OR cessation <15 years) OR
+  smokeless tobacco use OR significant secondhand smoke exposure. IARC
+  Group 1 carcinogen — established etiological driver of lung cancer
+  (NSCLC + SCLC; population-attributable fraction ~80-90%), urothelial
+  bladder cancer, head + neck squamous cell carcinoma, oropharyngeal,
+  laryngeal, esophageal SCC, pancreatic cancer, kidney (RCC), cervical,
+  acute myeloid leukemia (component cause), and others (~20 cancer
+  types per US Surgeon General reports). Tobacco cessation is the single
+  highest-impact modifiable cancer-risk-factor intervention. Prevention-
+  persona RedFlag (§20 v0.3 lifestyle pilot).
+definition_ua: >-
+  Активне куріння (поточний курець АБО кинули <15 років) АБО використання
+  бездимного тютюну АБО значна secondhand smoke exposure. IARC Group 1
+  канцероген — встановлений етіологічний драйвер раку легень (NSCLC +
+  SCLC; population-attributable fraction ~80-90%), urothelial bladder
+  cancer, head + neck squamous cell carcinoma, oropharyngeal, laryngeal,
+  esophageal SCC, pancreatic cancer, нирки (RCC), cervical, AML, та
+  інших (~20 cancer types за US Surgeon General reports). Tobacco
+  cessation — найвпливовіша модифікована протиракова інтервенція.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "tobacco_status_current_smoker"
+      value: true
+    - finding: "tobacco_pack_years_ge_20"
+      value: true
+    - finding: "tobacco_cessation_within_15y"
+      value: true
+    - finding: "smokeless_tobacco_use"
+      value: true
+    - finding: "significant_secondhand_smoke_exposure"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: lifestyle
+
+# Tobacco-related cancers; anchor to most-attributable (lung) — engine surfaces
+# all relevant_diseases in render. Multiple anchors documented because lifestyle
+# tobacco is the single broadest cancer etiology.
+relevant_diseases:
+  - DIS-NSCLC
+  - DIS-SCLC
+  - DIS-UROTHELIAL
+  - DIS-PDAC
+  - DIS-HCC
+  - DIS-AML
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for active tobacco use. Highest-impact modifiable cancer-risk-factor intervention. Engine routes to PreventionPlan recommending structured cessation counseling + pharmacotherapy + LDCT lung screening if USPSTF-eligible. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle
+draft_revision: 1
