@@ -1,0 +1,12 @@
+{
+  "patient_id": "BRCA1-CARRIER-PREV-001",
+  "comment": "27yo female, recently confirmed BRCA1 c.5266dupC pathogenic variant (Ashkenazi founder mutation, cascade testing after maternal aunt's ovarian cancer diagnosis). No personal cancer. Engine routes to PreventionPlan (after Agent I): standard = BRCA1 carrier surveillance — breast MRI q1y from age 25 + clinical breast exam q6mo + mammogram from 30 alternating with MRI + TVUS + CA 125 q6mo from 30-35 (limited evidence for ovarian surveillance — note); alternative = intensified track with risk-reducing mastectomy (RRM) discussion at 25-30 + risk-reducing BSO at 35-40 post-childbearing (most impactful intervention for ovarian cancer reduction in BRCA1 carriers).",
+  "biomarkers": {},
+  "demographics": {"age": 27, "sex": "female", "ecog": 0},
+  "findings": {
+    "germline_brca1_pathogenic_variant_confirmed": true,
+    "BRCA1 c.5266dupC Ashkenazi founder mutation": true,
+    "Cascade testing positive after maternal aunt high-grade serous ovarian": true,
+    "No personal cancer diagnosis": true
+  }
+}

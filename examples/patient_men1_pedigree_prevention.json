@@ -1,0 +1,13 @@
+{
+  "patient_id": "MEN1-PREV-001",
+  "comment": "30yo female, father with primary hyperparathyroidism (age 35) + pituitary prolactinoma (age 42), paternal aunt with pancreatic neuroendocrine tumor (age 48). Three MEN1-spectrum tumors across two generations meeting classic MEN1 criteria. Engine routes to PreventionPlan (after Agent F Wave 2 lands): standard = pre-test counseling + germline MEN1 panel + age-appropriate surveillance (PTH/Ca q1y from age 5, pituitary MRI q3y, GEP-NET surveillance); alternative = empirical multi-organ surveillance.",
+  "biomarkers": {},
+  "demographics": {"age": 30, "sex": "female", "ecog": 0},
+  "findings": {
+    "family_classic_men1_criteria_met": true,
+    "family_first_degree_men1_with_one_men1_tumor": true,
+    "Father primary hyperparathyroidism age 35 + pituitary prolactinoma age 42": true,
+    "Paternal aunt pancreatic neuroendocrine tumor age 48": true,
+    "No personal MEN1-spectrum tumor": true
+  }
+}
