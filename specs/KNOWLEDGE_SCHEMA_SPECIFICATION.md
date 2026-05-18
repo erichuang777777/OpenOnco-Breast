@@ -1657,7 +1657,7 @@ jobs:
 - Not validated against other diagnoses
 
 **Known limitations:**
-- Not modeled: clinical trial matching (requires a separate entity), genetic syndromes (such as germline BRCA), multidisciplinary coordination
+- Not modeled: clinical trial matching (requires a separate entity), ~~genetic syndromes (such as germline BRCA)~~ — *germline-syndrome modeling addressed for the prevention persona by §20 (ratified 2026-05-18); treatment-time germline integration still pending* — multidisciplinary coordination
 - Fine-grained dose modifications — simplified
 - Temporal reasoning (what happens when) — limited
 - Interaction with patient preferences — not yet modeled
@@ -1824,3 +1824,146 @@ lands:
    render fixtures land alongside steps 4-5 in Phase C.
 7. **Done 2026-05-07.** Re-stamped 5 GI diseases as
    `proposal_status: full` and removed the `awaiting_proposal` field.
+
+---
+
+## 20. Prevention extensions (RATIFIED 2026-05-18)
+
+**Status:** ratified 2026-05-18 under CHARTER §12 dev-mode exemption
+(Initiator-only, v0.1 phase). Drives the prevention / early-diagnosis
+deliverable scoped by CHARTER §3 (amended 2026-05-18) and proposed in
+`docs/plans/openonco_prevention_scope_2026-05-18-1500.md` (Path A —
+HCP-mediated). Engine, validator, and render passes are deferred to the
+v0.2 implementation waves; this section ratifies only the schema-level
+contract.
+
+**Why now:** CHARTER §3 was amended on 2026-05-18 to include
+HCP-mediated prevention / early-diagnosis recommendations for at-risk
+asymptomatic individuals. The existing schema can compose most of the
+required pattern (`Disease.archetype = etiologically_driven` already
+covers infectious causation; `RedFlag` already drives Indication routing;
+`Algorithm` already encodes decision trees), but four fields are missing
+to disambiguate prevention output from treatment output and to mark
+biomarkers usable in asymptomatic patients. This section adds those
+four fields without introducing any new top-level entity.
+
+### 20.1. Ratified additive fields
+
+```yaml
+# Indication addition (extends §7 schema)
+intent: treatment        # NEW enum, default = "treatment" (on read; no
+                         # backfill required across existing ~400 YAMLs).
+                         # Valid values:
+                         #   treatment    — current implicit behaviour
+                         #   prevention   — for at-risk asymptomatic individuals
+                         #   screening    — population/risk-group screening cadence
+                         #   surveillance — known carriers / post-treatment monitoring
+
+# Biomarker additions (extend §4 schema)
+clinical_context:        # NEW array enum, multi-valued. Default on read:
+                         # ["tumor_profiling"] (current implicit behaviour).
+                         # Valid values:
+                         #   germline_susceptibility  — hereditary risk variants (BRCA1/2, VHL, FH, MMR, ...)
+                         #   tumor_profiling          — current implicit (HER2, KRAS, ...)
+                         #   screening_surveillance   — used for asymptomatic monitoring in high-risk subgroups
+                         #                              (AFP in cirrhosis, calcitonin in MEN2, ...)
+                         #   prognostic               — affects prognosis of known disease
+                         #   predictive               — predicts response to a specific therapy
+                         # One marker MAY carry multiple contexts (e.g., MMR/MSI =
+                         # germline_susceptibility + tumor_profiling + predictive).
+  - tumor_profiling
+
+applicable_in_asymptomatic: false   # NEW bool, default false. Fast filter for
+                                    # prevention-plan composition; only true for
+                                    # markers with established asymptomatic use
+                                    # (germline panels, syndrome-specific monitoring
+                                    # markers).
+
+# RedFlag addition (extends §9 schema)
+risk_category:           # NEW enum, optional (current treatment-time RedFlag
+                         # categories continue to work without this field).
+                         # Valid values (prevention persona):
+                         #   genetic            — pedigree-driven, germline-test indication
+                         #   infectious         — chronic infection that elevates cancer risk
+                         #   chronic_condition  — autoimmune / inflammatory / metabolic precondition
+                         #   occupational       — IARC-classified workplace exposure
+                         #   iatrogenic         — prior radiation / immunosuppression / cytotoxic Rx
+                         #   lifestyle          — smoking, alcohol, BMI, diet, UV
+                         #   reproductive       — parity, menarche/menopause, HRT
+```
+
+### 20.2. Engine + render impact (deferred to v0.2 implementation waves)
+
+- `engine.plan` introduces a `PreventionPlan` output shape parallel to
+  the existing `Plan`. Same `tracks` architecture (≥2 tracks per
+  CHARTER §15.2 C4 — e.g., standard-surveillance vs. intensified-
+  surveillance, or treat-the-cause vs. monitor).
+- The Plan-vs-PreventionPlan branch is selected on patient input:
+  - patient carries a confirmed Disease → Plan (treatment, existing).
+  - patient carries no confirmed Disease but ≥1 prevention-eligible
+    RedFlag (genetic / infectious / occupational / ...) → PreventionPlan.
+- Engine filters `Indication` entities by `intent`: Plan uses
+  `intent = treatment` (or unset → defaults to treatment); PreventionPlan
+  uses `intent ∈ {prevention, screening, surveillance}`.
+- Engine filters `Biomarker` entities for the asymptomatic case by
+  `applicable_in_asymptomatic = true` AND `clinical_context` ∋
+  `{germline_susceptibility, screening_surveillance}`.
+- Render: PreventionPlan reuses the existing clinician + patient-mode
+  render contracts (PATIENT_MODE_SPEC). The patient bundle remains a
+  translation, not a separate clinical product — preserving the §15 C1
+  HCP-only positioning.
+- Validator: existing referential-integrity rules apply unchanged. New
+  enum constraints on `Indication.intent`, `Biomarker.clinical_context`,
+  `RedFlag.risk_category` are loader-level Pydantic validation.
+
+### 20.3. Pilot sequence (deferred to v0.2 chunk specs)
+
+Per the originating scope proposal:
+
+- **v0.2-A: Infectious etiologies** (recommended starter). HepB, HepC,
+  HPV, H. pylori, EBV, HIV, HTLV-1 as `Indication(intent=prevention)`
+  cases. Highest ROI in Ukraine; validated by patient-zero (HCV-MZL DAA
+  pathway); cleanest source-license posture (IARC Group 1 public, WHO,
+  AASLD/NCCN already in KB).
+- **v0.2-B: Hereditary risk** (germline + pedigree triage). Multi-syndrome
+  (BRCA/HBOC, Lynch, Li-Fraumeni, FAP/MAP, hereditary RCC syndromes
+  VHL/HLRCC/BHD/HPRC/BAP1). Lynch pilots the architecture first. Risk
+  models (Amsterdam II, PREMM5, Manchester, Tyrer-Cuzick v8, BOADICEA)
+  encoded as declarative `Algorithm` entities re-implemented from
+  published primary papers. NCCN Genetic/Familial High-Risk license
+  posture must be verified before relying on it (open question #7 in
+  the scope proposal).
+- **v0.3: Occupational + chronic conditions** (IARC Group 1 environmental
+  + inflammatory predispositions like Barrett's, IBD, PSC, celiac).
+- **v0.3+: Lifestyle, iatrogenic, reproductive** (full 7-category
+  coverage).
+
+### 20.4. Resolution path
+
+1. Clinical Co-Leads review §20.1 and either ratify or counter-propose.
+   **Ratified 2026-05-18** under CHARTER §12 dev-mode exemption
+   (Initiator-only, v0.1 phase). Formal Co-Lead ratification queued for
+   first-Co-Lead appointment.
+2. Pydantic schema additions: `Indication.intent: Literal[...] = "treatment"`,
+   `Biomarker.clinical_context: list[Literal[...]] = ["tumor_profiling"]`,
+   `Biomarker.applicable_in_asymptomatic: bool = False`,
+   `RedFlag.risk_category: Optional[Literal[...]] = None`. **Pending v0.2
+   implementation.**
+3. Loader-side enum validation. **Pending v0.2 implementation.**
+4. Engine: `PreventionPlan` shape + intent-filtering branch in
+   `plan.generate_plan()`. **Pending v0.2 implementation.**
+5. Render: PreventionPlan render contract (likely reuses `_render_plan`
+   with intent-aware section labels). **Pending v0.2 implementation.**
+6. Tests: golden fixtures for the first v0.2-A infectious-etiology case
+   (HCV-MZL prevention pathway is the natural anchor — it inverts the
+   existing patient-zero treatment fixture). **Pending v0.2-A chunk.**
+
+### 20.5. Banned sources reminder
+
+Per CHARTER §2 and project policy, the following sources remain banned
+for the OpenOnco pilot and must not appear in any prevention-side
+sources/citations: **OncoKB** (ToS conflict with CHARTER §2 free public
+resource), **SNOMED CT** (license), **MedDRA** (license). Substitutes
+for the prevention domain: IARC Monographs (public), WHO, USPSTF (public
+domain), AASLD, NCCN (existing license; Genetic/Familial sub-license to
+be verified before use), ESMO, peer-reviewed primary publications.
