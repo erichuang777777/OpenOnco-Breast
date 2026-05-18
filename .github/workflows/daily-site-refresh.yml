@@ -49,6 +49,33 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -e ".[dev]"
 
+      # Per-NCT ctgov cache for the cited-trials status section (PR #595,
+      # #596). Caches `knowledge_base/hosted/content/cache/ctgov_studies/`
+      # between runs so we don't re-fetch ~149 NCTs every day. Key is
+      # derived from Source + Indication file hashes — when the citing
+      # NCT set changes, the key changes and we refetch on next run.
+      # `restore-keys` falls back to any older snapshot so a small KB
+      # edit doesn't invalidate the whole cache.
+      - name: Restore ctgov-studies cache
+        uses: actions/cache@v4
+        with:
+          path: knowledge_base/hosted/content/cache/ctgov_studies
+          key: ctgov-studies-${{ hashFiles('knowledge_base/hosted/content/sources/*.yaml', 'knowledge_base/hosted/content/indications/*.yaml') }}
+          restore-keys: |
+            ctgov-studies-
+
+      # Populate / refresh the per-NCT cache for cited pivotal trials.
+      # Script enforces a 30-day TTL on cache entries; restored entries
+      # within TTL are skipped, only new or stale NCTs hit upstream.
+      # `continue-on-error: true` — if api.clinicaltrials.gov is
+      # unreachable, the rendered Plans simply omit the cited-trials
+      # section (the render layer suppresses silently when cache is
+      # empty); daily refresh still publishes the rest of the site.
+      - name: Sync ctgov-studies cache for cited pivotal trials
+        continue-on-error: true
+        run: |
+          python scripts/sync_ctgov_studies.py --sleep 0.3
+
       - name: Regenerate docs/ from current KB
         run: |
           python -m scripts.build_site
