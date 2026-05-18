@@ -1,0 +1,45 @@
+id: RF-VHL-CONFIRMED-CARRIER
+definition: >-
+  Patient has a confirmed germline VHL pathogenic variant (positive germline
+  test result, distinct from the pedigree-suspicion phase). VHL Alliance Active
+  Surveillance Guidelines apply: structured multi-organ imaging + biochemical
+  surveillance from childhood. Confirmed-carrier RedFlag (§20, v0.2-B follow-on
+  to RF-VHL-FAMILY-HISTORY-SUSPICION).
+definition_ua: >-
+  Пацієнт має підтверджений germline VHL патогенний варіант (позитивний
+  germline test result, відмінно від pedigree-suspicion фази). VHL Alliance
+  Active Surveillance Guidelines: структуроване multi-organ imaging +
+  biochemical surveillance з дитинства. Confirmed-carrier RedFlag (§20, v0.2-B
+  follow-on до RF-VHL-FAMILY-HISTORY-SUSPICION).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "germline_vhl_pathogenic_variant_confirmed"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: genetic
+
+relevant_diseases:
+  - DIS-HCC
+  - DIS-PHEOCHROMOCYTOMA
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-ASCO-ACMG-LYNCH-2014
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona confirmed-carrier RedFlag for VHL syndrome. Fires when patient profile has germline_vhl_pathogenic_variant_confirmed=true. Engine routes to PreventionPlan recommending VHL Alliance Active Surveillance protocol: MRI brain+spine q1y from age 15-16; MRI abdomen (kidneys+adrenals+pancreas) q1-2y from 15; ophthalmology q1y from age 1-5; catecholamines/metanephrines q1y from age 5-10; comprehensive audiology q2-3y. Diseases-anchored to DIS-HCC (closest in-KB hepatobiliary anchor since DIS-RCC may not be in this branch) and DIS-PHEOCHROMOCYTOMA (newly authored). STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_completion
+draft_revision: 1

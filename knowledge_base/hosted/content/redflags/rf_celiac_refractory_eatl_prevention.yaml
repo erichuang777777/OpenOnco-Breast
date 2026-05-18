@@ -1,0 +1,50 @@
+id: RF-CELIAC-REFRACTORY-EATL-PREVENTION
+definition: >-
+  Refractory celiac disease — defined as persistent villous atrophy despite
+  strict gluten-free diet for ≥1 year, OR aberrant intraepithelial lymphocyte
+  (IEL) clonality on flow cytometry (refractory celiac type 2 — RCD2), OR
+  recurrent symptoms with ulcerative jejunitis. Refractory celiac type 2 carries
+  ~50% lifetime EATL (enteropathy-associated T-cell lymphoma) risk. Engine
+  routes to PreventionPlan recommending intensive monitoring + small-bowel
+  surveillance imaging + immunosuppression discussion. Prevention-persona
+  RedFlag (§20 ratification, v0.3 chronic-condition).
+definition_ua: >-
+  Рефрактерна целіакія — визначається як persistent villous atrophy незважаючи
+  на strict gluten-free diet ≥1 рік, АБО аберантна клональність
+  intraepithelial lymphocytes (IEL) на flow cytometry (refractory celiac type 2
+  — RCD2), АБО recurrent symptoms з ulcerative jejunitis. RCD2 несе ~50%
+  lifetime EATL ризик. RedFlag персони prevention.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "celiac_disease_refractory_type_2"
+      value: true
+    - finding: "celiac_disease_with_persistent_villous_atrophy_despite_gluten_free_diet_ge_1y"
+      value: true
+    - finding: "celiac_disease_with_aberrant_iel_clonality"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: chronic_condition
+
+relevant_diseases:
+  - DIS-EATL
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for refractory celiac → EATL prevention. Fires on persistent villous atrophy / aberrant IEL clonality / RCD2 features. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_completion
+draft_revision: 1

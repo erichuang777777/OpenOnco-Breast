@@ -1,0 +1,112 @@
+id: IND-PEUTZ-JEGHERS-SUSPICION-PREVENTION-GENETIC-COUNSELING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-PEUTZ-JEGHERS-FAMILY-HISTORY-SUSPICION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: "Germline STK11 panel testing positivity in pedigree-suspicion populations: ~70-90% in classic PJ phenotype. Confirmed STK11 pathogenic variant carriers have lifetime cancer risks: GI (~40-65% CRC + gastric + small bowel + pancreas), breast (~30-55% women), gynecologic (~10-20% cervical adenoma malignum + ovarian sex-cord), testicular Sertoli cell. Surveillance reduces mortality particularly for small-bowel intussusception (canonical PJ complication, often in first 2 decades)."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  - TEST-GERMLINE-MULTI-GENE-PANEL
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for Peutz-Jeghers syndrome (STK11/LKB1) family
+  history suspicion. Two parallel referrals:
+
+  **(1) Genetic counseling referral.** Pre-test counseling: autosomal dominant
+  inheritance, variable penetrance, cascade testing for relatives, implications
+  for reproductive planning (pre-implantation genetic testing option), psychological
+  preparation for high cancer risk across multiple organ systems.
+
+  **(2) Germline STK11/LKB1 panel testing.** Modern multi-gene panels cover STK11
+  along with the broader hereditary CRC + breast + GI cancer set. Variant
+  classification per ACMG framework.
+
+  **Surveillance protocol for confirmed STK11 carriers** (per international PJ
+  consensus):
+  - Small-bowel surveillance via video capsule endoscopy (VCE) OR MR enterography
+    q2-3 years starting age 8-10 (small-bowel hamartomatous polyposis can present
+    with intussusception in childhood).
+  - Colonoscopy q2-3 years starting age 18.
+  - EGD q2-3 years starting age 8-10.
+  - Breast MRI from age 30 (women).
+  - Pancreatic surveillance discussion (EUS/MRI q1-2y from 30-35) — controversial,
+    high-volume center referral.
+  - Annual clinical breast/testicular/pelvic exam from puberty.
+  - Cervical Pap with adenoma malignum awareness (women).
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для родовідної підозри на синдром Peutz-
+  Jeghers (STK11/LKB1). Два паралельні направлення:
+
+  **(1) Направлення на генетичне консультування.** Pre-test counseling: autosomal
+  dominant наслідування, варіабельна пенетрантність, cascade тестування для
+  родичів, наслідки для reproductive planning (опція pre-implantation genetic
+  testing), психологічна підготовка до високого онкоризику в багатьох
+  органних системах.
+
+  **(2) Germline STK11/LKB1 панельне тестування.** Сучасні мультигенні панелі
+  покривають STK11 разом з ширшим набором спадкових КРР + молочна залоза + GI
+  ризиків. Класифікація варіантів за ACMG.
+
+  **Surveillance протокол для підтверджених STK11 носіїв:**
+  - Small-bowel surveillance через video capsule endoscopy (VCE) АБО MR enterography
+    q2-3 роки з 8-10 років (small-bowel hamartomatous polyposis може презентуватися
+    інвагінацією у дитинстві).
+  - Колоноскопія q2-3 роки з 18.
+  - EGD q2-3 роки з 8-10.
+  - Breast MRI з 30 років (жінки).
+  - Pancreatic surveillance discussion (EUS/MRI q1-2y з 30-35) — контроверсійно,
+    направлення в high-volume центр.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_completion
+draft_revision: 1
+
+sources:
+  - source_id: SRC-ESMO-CRC-2024
+    position: supports
+  - source_id: SRC-ASCO-ACMG-LYNCH-2014
+    position: context
+
+do_not_do:
+  - "Не призначати germline тестування без pre-test counseling."
+  - "Не використовувати дитячу колоноскопію без чіткого clinical indication — small-bowel hamartomas можна моніторити через VCE/MR enterography з меншою інвазивністю."
+  - "Не презентувати negative-panel result як zero-risk — residual ризик через rare варіанти, не покриті панеллю."
+  - "Не пропускати breast surveillance у STK11+ жінок — breast cancer ризик ~30-55%."
+
+do_not_do_en:
+  - "Do not order germline testing without pre-test counseling."
+  - "Do not use pediatric colonoscopy without clear clinical indication — small-bowel hamartomas can be monitored via VCE/MR enterography with less invasiveness."
+  - "Do not present a negative-panel result as zero-risk — residual risk through rare variants not covered by the panel."
+  - "Do not skip breast surveillance in STK11+ women — breast cancer risk ~30-55%."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B Peutz-Jeghers hereditary pilot. Two-Clinical-Co-Lead signoff queued per CHARTER §6.1 dev-mode."

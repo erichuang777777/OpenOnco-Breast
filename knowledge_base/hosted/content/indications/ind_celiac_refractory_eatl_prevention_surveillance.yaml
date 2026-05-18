@@ -1,0 +1,90 @@
+id: IND-CELIAC-REFRACTORY-EATL-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-EATL
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-CELIAC-REFRACTORY-EATL-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Intensive surveillance (small-bowel VCE/MR enterography q1-2y + flow cytometry IEL clonality monitoring) detects EATL development at earliest stage. Immunosuppression (cladribine, autologous HSCT consideration) for RCD2 in specialist centers can delay EATL transformation in ~30-50% of cases."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  - TEST-LDH
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for refractory celiac disease, especially RCD2.
+  Three components:
+
+  **(1) Strict gluten-free diet adherence** — even refractory celiac requires
+  continued strict GFD; some patients with apparent refractory disease have
+  inadvertent gluten exposure. Dietitian + gluten contamination assessment.
+
+  **(2) Small-bowel surveillance imaging** — video capsule endoscopy (VCE) or MR
+  enterography q1-2 years for early EATL detection. Lesion characteristics:
+  enterography wall-thickening, intussusception, ulcerative jejunitis on VCE.
+
+  **(3) Immunosuppression discussion in RCD2** — cladribine, anti-TNF, or autologous
+  hematopoietic stem cell transplant for RCD2 may delay EATL transformation. These
+  are highly specialized interventions — referral to celiac-specialty center.
+
+  Per AGA / BSG guidelines.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для рефрактерної целіакії, особливо RCD2.
+
+  **(1) Strict gluten-free diet adherence** — навіть рефрактерна целіакія потребує
+  продовження strict GFD; deyaki пацієнти з apparent refractory мають inadvertent
+  gluten exposure. Dietitian + gluten contamination assessment.
+
+  **(2) Small-bowel surveillance imaging** — video capsule endoscopy (VCE) або MR
+  enterography q1-2 роки для раннього виявлення EATL.
+
+  **(3) Обговорення імуносупресії при RCD2** — кладрибін, anti-TNF, або autologous
+  HSCT можуть затримати EATL transformation. Високо специалізовано — направлення
+  в celiac-specialty center.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_completion
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не пропускати periodic IEL clonality monitoring у RCD2 — clonal evolution передує EATL."
+  - "Не починати імуносупресію без celiac-specialist consultation."
+  - "Не використовувати rituximab для RCD2 — це T-cell захворювання, не B-cell."
+
+do_not_do_en:
+  - "Do not skip periodic IEL clonality monitoring in RCD2 — clonal evolution precedes EATL."
+  - "Do not start immunosuppression without celiac-specialist consultation."
+  - "Do not use rituximab for RCD2 — this is a T-cell disorder, not B-cell."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 chronic-condition pilot. Two-Co-Lead signoff queued."

@@ -1,0 +1,112 @@
+id: IND-VHL-CARRIER-SURVEILLANCE
+plan_track: standard
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-HCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-VHL-CONFIRMED-CARRIER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: "Per VHL Alliance Active Surveillance protocol: early-stage RCC detection in carriers receiving annual MRI abdomen approaches 100% sensitivity; CNS hemangioblastomas detected before symptomatic spinal-cord compression in most cases; pheochromocytoma detected before hypertensive crisis via annual catecholamine screening; uveal lesions caught before vision loss via annual ophthalmology. Resection thresholds preserve organ function (nephron-sparing surgery for renal lesions ≥3cm)."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  - TEST-LFT
+desired_tests: []
+
+rationale: >
+  Standard-track confirmed-carrier surveillance for VHL syndrome (germline VHL
+  pathogenic variant confirmed). Per VHL Alliance Active Surveillance Guidelines:
+
+  **Brain + spine MRI q1y from age 15-16** — CNS hemangioblastomas are the most
+  common VHL-associated tumor; surveillance enables resection before symptomatic
+  cord compression or hydrocephalus.
+
+  **MRI abdomen (kidneys + adrenals + pancreas) q1-2y from age 15** —
+  surveillance for clear-cell RCC (lifetime risk 25-45%), pheochromocytoma
+  (10-20%), pancreatic neuroendocrine tumors / serous cystadenomas (10-15%).
+  Nephron-sparing surgery (partial nephrectomy) is the standard for renal
+  lesions ≥3cm — preserves renal function while removing tumor before metastasis.
+
+  **Ophthalmology q1y from age 1-5** — retinal hemangioblastomas (capillary
+  hemangiomas) treated with laser photocoagulation or cryotherapy before vision
+  loss.
+
+  **Catecholamines / metanephrines q1y from age 5-10** — pheochromocytoma
+  screening; if elevated → MRI adrenals + 24h urine + plasma free metanephrines.
+
+  **Comprehensive audiology q2-3y** — endolymphatic sac tumors (rare but
+  characteristic; can cause hearing loss).
+
+  RCC is the leading cause of mortality in adult VHL carriers — adherence to the
+  q1-2y abdominal MRI cadence is the highest-priority surveillance item.
+
+rationale_ua: >
+  Стандартний-трек confirmed-carrier surveillance для синдрому VHL
+  (підтверджений germline VHL патогенний варіант). За VHL Alliance Active
+  Surveillance Guidelines:
+
+  **MRI brain + spine q1y з 15-16 років** — CNS гемангіобластоми — найпоширеніша
+  VHL-асоційована пухлина; surveillance дозволяє резекцію до симптоматичної
+  cord compression або гідроцефалії.
+
+  **MRI abdomen (нирки + надниркові + підшлункова) q1-2y з 15 років** —
+  surveillance clear-cell RCC (lifetime ризик 25-45%), феохромоцитоми (10-20%),
+  pancreatic neuroendocrine tumors / serous cystadenomas (10-15%). Nephron-
+  sparing surgery (часткова нефректомія) — стандарт для renal lesions ≥3см —
+  зберігає функцію нирки перед metastasis.
+
+  **Офтальмологія q1y з 1-5 років** — retinal hemangioblastomas (capillary
+  hemangiomas), лікування laser photocoagulation або cryotherapy до vision loss.
+
+  **Catecholamines / metanephrines q1y з 5-10 років** — pheochromocytoma
+  screening; при підвищенні → MRI надниркових + 24h urine + plasma free
+  metanephrines.
+
+  RCC — провідна причина смертності в adult VHL carriers — adherence до q1-2y
+  abdominal MRI cadence — найвищий пріоритет surveillance.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_completion
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не пропускати annual abdominal MRI у VHL carriers — RCC — провідна причина смертності у дорослих."
+  - "Не використовувати whole-body radiation surveillance — VHL carriers чутливі до radiation-induced secondary malignancies; MRI без радіації preferred."
+  - "Не пропускати pediatric ophthalmology — retinal hemangioblastomas можуть початися дуже рано."
+  - "Не делегувати VHL surveillance non-specialist — multi-organ coordination потребує VHL-experienced center."
+
+do_not_do_en:
+  - "Do not skip annual abdominal MRI in VHL carriers — RCC is the leading cause of mortality in adults."
+  - "Do not use whole-body radiation surveillance — VHL carriers are sensitive to radiation-induced secondary malignancies; non-ionizing MRI preferred."
+  - "Do not skip pediatric ophthalmology — retinal hemangioblastomas can begin very early."
+  - "Do not delegate VHL surveillance to non-specialists — multi-organ coordination requires a VHL-experienced center."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B VHL confirmed-carrier surveillance pathway. Two-Clinical-Co-Lead signoff queued per CHARTER §6.1 dev-mode."
