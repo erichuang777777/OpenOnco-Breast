@@ -50,6 +50,7 @@ from .access_matrix import build_access_matrix
 from .algorithm_eval import walk_algorithm
 from .experimental_options import SearchFn, enumerate_experimental_options
 from .actionability_types import ActionabilityLayer
+from .redflag_eval import evaluate_redflag_trigger
 
 
 # Track labels — ordered, default labels for the well-known plan_track values.
@@ -208,6 +209,357 @@ def _find_algorithm(
 
 def _collect_redflags(entities_by_id: dict) -> dict[str, dict]:
     return {eid: info["data"] for eid, info in entities_by_id.items() if info["type"] == "redflags"}
+
+
+def _flatten_findings(patient: dict) -> dict:
+    """Build the flat findings dict used by RF trigger evaluation.
+
+    Composes patient.findings + patient.biomarkers + patient.demographics
+    into a single dict. `setdefault` preserves explicit `findings` over
+    biomarker / demographic name collisions. Used by both the treatment
+    path (after algorithm resolution) and the prevention path (KSS §20.2
+    — RF firing detection without a Disease).
+    """
+    findings = dict(patient.get("findings") or {})
+    for k, v in (patient.get("biomarkers") or {}).items():
+        findings.setdefault(k, v)
+    for k, v in (patient.get("demographics") or {}).items():
+        findings.setdefault(k, v)
+    return findings
+
+
+# ── §20 Prevention path (RATIFIED 2026-05-18) ────────────────────────────────
+# When patient profile lacks a confirmed Disease but carries ≥1 fired
+# prevention-eligible RedFlag (RedFlag.risk_category set), the engine
+# routes to PreventionPlan generation instead of failing to plan. Tracks
+# come from Indications with intent ∈ {prevention, screening, surveillance}
+# whose applicable_to.disease_id matches the fired RF's relevant_diseases.
+# CHARTER §15 C1 preserved: HCP user, patient-mode bundle = translation
+# of the HCP-targeted plan, not a separate clinical product.
+
+
+def _is_prevention_redflag(rf: dict) -> bool:
+    """A RedFlag participates in the prevention path iff risk_category is
+    set (KSS §20.1). Treatment-time RedFlags (risk_category unset) are
+    invisible to PreventionPlan generation."""
+    return bool(rf.get("risk_category"))
+
+
+def _find_fired_prevention_rfs(
+    findings: dict, redflag_lookup: dict[str, dict]
+) -> list[dict]:
+    """Return the list of prevention RedFlags whose trigger fires on the
+    patient findings. Order preserved from KB iteration."""
+    fired: list[dict] = []
+    for rf in redflag_lookup.values():
+        if not _is_prevention_redflag(rf):
+            continue
+        trigger = rf.get("trigger")
+        if not isinstance(trigger, dict):
+            continue
+        if evaluate_redflag_trigger(trigger, findings):
+            fired.append(rf)
+    return fired
+
+
+def _is_prevention_indication(ind: dict) -> bool:
+    """Indication participates in PreventionPlan iff intent ∈
+    {prevention, screening, surveillance}. The default `treatment` intent
+    is invisible to PreventionPlan."""
+    intent = ind.get("intent", "treatment")
+    return intent in ("prevention", "screening", "surveillance")
+
+
+def _find_prevention_indications(
+    fired_rfs: list[dict],
+    patient_biomarkers: dict,
+    entities: dict,
+) -> list[dict]:
+    """Find prevention Indications matching at least one fired RF.
+
+    Matching contract (KSS §20.2):
+      - Indication.intent ∈ {prevention, screening, surveillance}
+      - Indication.applicable_to.disease_id ∈ fired_rf.relevant_diseases
+        for at least one fired RF
+      - is_track_excluded returns False against patient biomarker profile
+
+    Returns deduplicated Indication dicts in stable order (first-match
+    by RF iteration). Engine downstream materializes one track per
+    Indication.
+    """
+    relevant_disease_ids: set[str] = set()
+    for rf in fired_rfs:
+        for did in rf.get("relevant_diseases") or []:
+            if did and did != "*":
+                relevant_disease_ids.add(did)
+
+    seen: set[str] = set()
+    matched: list[dict] = []
+    for eid, info in entities.items():
+        if info["type"] != "indications":
+            continue
+        ind = info["data"]
+        if not _is_prevention_indication(ind):
+            continue
+        applicable = ind.get("applicable_to") or {}
+        ind_disease = applicable.get("disease_id")
+        if ind_disease not in relevant_disease_ids:
+            continue
+        if eid in seen:
+            continue
+        if is_track_excluded(ind, patient_biomarkers):
+            continue
+        matched.append(ind)
+        seen.add(eid)
+    return matched
+
+
+def _build_prevention_fda_compliance(
+    fired_rfs: list[dict],
+    tracks: list["PlanTrack"],
+    entities: dict,
+    warnings: list[str],
+) -> "FDAComplianceMetadata":
+    """Prevention-specific synthesizer for the four §15 Criterion-4 fields.
+
+    Phrasing differs from the treatment-path synthesizer: intended use is
+    prevention/screening counsel, the HCP user spec covers genetic
+    counselor / primary-care MD / oncologist consultations, patient
+    population is at-risk asymptomatic individuals, algorithm summary
+    describes the RF-driven routing (no Algorithm walked).
+
+    All §15 C1-C7 invariants preserved: HCP-only audience, ≥2 tracks
+    (caller verifies), no time-critical Indications (per the RFs filtered
+    in via risk_category), no raw image / signal input (CDS scope
+    unchanged).
+    """
+    source_ids: set[str] = set()
+    for t in tracks:
+        ind = t.indication_data or {}
+        for s in ind.get("sources") or []:
+            if isinstance(s, dict) and s.get("source_id"):
+                source_ids.add(s["source_id"])
+            elif isinstance(s, str):
+                source_ids.add(s)
+    for rf in fired_rfs:
+        for sid in rf.get("sources") or []:
+            if isinstance(sid, str):
+                source_ids.add(sid)
+
+    sources_summary: list[str] = []
+    for sid in sorted(source_ids):
+        srec = _resolve(entities, sid)
+        if srec:
+            sources_summary.append(
+                f"{sid}: {srec.get('title', '')} ({srec.get('version', '')})"
+            )
+        else:
+            sources_summary.append(f"{sid}: (not in KB)")
+
+    time_critical = any((t.indication_data or {}).get("time_critical") for t in tracks)
+
+    rf_summary = ", ".join(rf.get("id", "?") for rf in fired_rfs) or "(none)"
+    prevention_targets = sorted(
+        {
+            (t.indication_data or {}).get("applicable_to", {}).get("disease_id", "?")
+            for t in tracks
+        }
+    )
+
+    limitations: list[str] = list(warnings)
+    if time_critical:
+        limitations.append(
+            "WARNING: Prevention plan includes time-critical Indications — "
+            "falls OUTSIDE FDA non-device CDS carve-out per §520(o)(1)(E)."
+        )
+    if len(tracks) < 2:
+        limitations.append(
+            f"WARNING: PreventionPlan has only {len(tracks)} track(s) — "
+            "CHARTER §15.2 C4 requires ≥2. Author additional prevention "
+            "Indication(s) for the matched RF(s) before publishing."
+        )
+
+    return FDAComplianceMetadata(
+        intended_use=(
+            "HCP-mediated prevention / early-diagnosis counseling for "
+            "at-risk asymptomatic individuals (CHARTER §3 amendment "
+            "2026-05-18, Path A). Not a medical device; not for autonomous "
+            "clinical decision-making; not for patient-direct deployment."
+        ),
+        hcp_user_specification=(
+            "Licensed clinician (genetic counselor, primary-care physician, "
+            "oncologist, or hematologist) conducting a risk-assessment "
+            "consultation with the at-risk individual. Intended user must "
+            "be qualified to independently review the basis of every "
+            "recommendation and to order genetic tests / referrals where "
+            "indicated."
+        ),
+        patient_population_match=(
+            f"At-risk asymptomatic adult individuals with no current "
+            f"diagnosis of the cancer(s) being targeted for prevention "
+            f"({', '.join(prevention_targets) or '?'}). Eligibility "
+            f"established via the fired prevention RedFlag(s): {rf_summary}."
+        ),
+        algorithm_summary=(
+            "Rule-based prevention routing: patient findings evaluated "
+            "against prevention-eligible RedFlag triggers (RedFlag."
+            "risk_category set per KSS §20.1). Fired RFs route the patient "
+            "to candidate prevention Indications whose applicable_to."
+            "disease_id matches the RF's relevant_diseases. ≥2 tracks "
+            "presented for HCP review (KSS §20.2)."
+        ),
+        data_sources_summary=sources_summary,
+        data_limitations=limitations,
+        automation_bias_warning=(
+            "Both prevention options below are presented for review. The "
+            "engine's selection of a 'recommended' default does not "
+            "constitute a clinical decision. Final selection requires HCP "
+            "judgment incorporating information not available to the "
+            "system (patient values, prior conversations, access "
+            "constraints, undocumented comorbidities)."
+        ),
+        time_critical=time_critical,
+    )
+
+
+def _try_generate_prevention_plan(
+    patient: dict,
+    entities: dict,
+    redflag_lookup: dict[str, dict],
+    result: "PlanResult",
+    plan_version: int,
+    supersedes: Optional[str],
+    revision_trigger: Optional[str],
+) -> bool:
+    """Run the prevention path. Mutates `result` in place when ≥1 prevention
+    RF fires and ≥1 prevention Indication matches. Returns True iff a
+    PreventionPlan was built; False means caller falls through to the
+    existing 'could not resolve disease' warning.
+
+    §15 C4 ≥2-tracks invariant: when only one Indication matches, the
+    PreventionPlan is still built but FDA compliance metadata carries an
+    explicit limitation warning. Authoring TODO is for the clinical
+    content side (add a second prevention Indication for that RF / disease
+    bucket), not for the engine to synthesize.
+    """
+    findings = _flatten_findings(patient)
+    fired_rfs = _find_fired_prevention_rfs(findings, redflag_lookup)
+    if not fired_rfs:
+        return False
+
+    patient_biomarkers = patient.get("biomarkers") or {}
+    matched_indications = _find_prevention_indications(
+        fired_rfs, patient_biomarkers, entities
+    )
+    if not matched_indications:
+        result.warnings.append(
+            "prevention RFs fired ("
+            + ", ".join(rf.get("id", "?") for rf in fired_rfs)
+            + ") but no prevention Indications matched the patient profile"
+        )
+        return False
+
+    tracks: list[PlanTrack] = []
+    for i, ind in enumerate(matched_indications):
+        track_label = ind.get("plan_track") or ind.get("id", "")
+        is_default = i == 0
+        reason = (
+            "Recommended prevention pathway per fired RF(s): "
+            + ", ".join(rf.get("id", "?") for rf in fired_rfs)
+            if is_default
+            else "Alternative prevention pathway presented for HCP consideration"
+        )
+        tracks.append(
+            _materialize_track(track_label, ind["id"], is_default, reason, entities)
+        )
+
+    fda = _build_prevention_fda_compliance(
+        fired_rfs, tracks, entities, result.warnings
+    )
+
+    rf_disease_targets = sorted(
+        {
+            (ind.get("applicable_to") or {}).get("disease_id")
+            for ind in matched_indications
+            if (ind.get("applicable_to") or {}).get("disease_id")
+        }
+    )
+    kb_state = {
+        "loaded_entities": len(entities),
+        "indications_used": [t.indication_id for t in tracks],
+        "sequencing_indications": [],
+        "fired_prevention_redflags": [rf.get("id") for rf in fired_rfs],
+        "prevention_targets": rf_disease_targets,
+        "algorithm_version": None,  # no algorithm walked for prevention path
+    }
+
+    plan_id = (
+        f"PLAN-{(result.patient_id or 'ANONYMOUS').upper()}-V{plan_version}"
+    )
+    result.plan = Plan(
+        id=plan_id,
+        patient_id=result.patient_id or "ANONYMOUS",
+        version=plan_version,
+        generated_at=datetime.now(timezone.utc).isoformat(),
+        supersedes=supersedes,
+        superseded_by=None,
+        revision_trigger=revision_trigger,
+        patient_snapshot=patient,
+        algorithm_id=None,  # PreventionPlan: no algorithm
+        knowledge_base_state=kb_state,
+        tracks=tracks,
+        sequencing_tracks=[],
+        fda_compliance=fda,
+        trace=[
+            {
+                "step": "prevention_rf_fired",
+                "rf_id": rf.get("id"),
+                "risk_category": rf.get("risk_category"),
+                "clinical_direction": rf.get("clinical_direction"),
+            }
+            for rf in fired_rfs
+        ],
+        warnings=result.warnings,
+        annotations=[],
+    )
+
+    # Back-compat shortcuts
+    if tracks:
+        result.default_indication_id = tracks[0].indication_id
+        result.default_indication = tracks[0].indication_data
+        if len(tracks) >= 2:
+            result.alternative_indication_id = tracks[1].indication_id
+            result.alternative_indication = tracks[1].indication_data
+
+    # kb_resolved — disease is the prevention TARGET (the cancer being
+    # prevented), pulled from the first matched indication. Render layer
+    # uses this for the "prevention target" header.
+    primary_target_id = (
+        (matched_indications[0].get("applicable_to") or {}).get("disease_id")
+        if matched_indications
+        else None
+    )
+    test_ids: set[str] = set()
+    redflag_ids: set[str] = {rf.get("id") for rf in fired_rfs if rf.get("id")}
+    drug_ids: set[str] = set()
+    for t in tracks:
+        ind = t.indication_data or {}
+        test_ids.update(ind.get("required_tests") or [])
+        test_ids.update(ind.get("desired_tests") or [])
+        reg = t.regimen_data or {}
+        for comp in reg.get("components") or []:
+            did = comp.get("drug_id") if isinstance(comp, dict) else None
+            if did:
+                drug_ids.add(did)
+    result.kb_resolved = {
+        "disease": _resolve(entities, primary_target_id) if primary_target_id else None,
+        "algorithm": None,
+        "tests": {tid: _resolve(entities, tid) for tid in test_ids if _resolve(entities, tid)},
+        "red_flags": {rid: _resolve(entities, rid) for rid in redflag_ids if _resolve(entities, rid)},
+        "drugs": {did: _resolve(entities, did) for did in drug_ids if _resolve(entities, did)},
+    }
+
+    return True
 
 
 def _resolve(entities: dict, entity_id: Optional[str]) -> Optional[dict]:
@@ -479,6 +831,20 @@ def generate_plan(
     entities = load.entities_by_id
     disease_id = _find_disease_id(patient, entities)
     if disease_id is None:
+        # §20 prevention path (RATIFIED 2026-05-18) — patient has no confirmed
+        # Disease, but may carry ≥1 fired prevention-eligible RedFlag. Try
+        # PreventionPlan generation before failing.
+        prevention_redflags = _collect_redflags(entities)
+        if _try_generate_prevention_plan(
+            patient,
+            entities,
+            prevention_redflags,
+            result,
+            plan_version=plan_version,
+            supersedes=supersedes,
+            revision_trigger=revision_trigger,
+        ):
+            return result
         result.warnings.append("Could not resolve disease from patient.disease")
         return result
     result.disease_id = disease_id
@@ -507,11 +873,7 @@ def generate_plan(
     result.algorithm_id = algo["id"]
 
     # Flatten findings + biomarkers + demographics for clause evaluation
-    findings = dict(patient.get("findings") or {})
-    for k, v in (patient.get("biomarkers") or {}).items():
-        findings.setdefault(k, v)
-    for k, v in (patient.get("demographics") or {}).items():
-        findings.setdefault(k, v)
+    findings = _flatten_findings(patient)
 
     # Hard gate: ECOG PS ≥ 4 — active treatment is clinically inappropriate.
     # Standard and aggressive tracks are suppressed; palliative/surveillance/trial
