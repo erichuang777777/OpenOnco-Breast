@@ -1,0 +1,192 @@
+id: IND-HLRCC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-RCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-HLRCC-FAMILY-HISTORY-SUSPICION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Empirical HLRCC-style surveillance (annual contrast-enhanced
+    abdominal MRI from age 8-10 with radical-nephrectomy threshold
+    on any detected solid renal mass; annual skin exam; gynecologic
+    follow-up for women): expected to capture HLRCC-RCC at localised
+    stage in the subset who are actual carriers (~50-90% of pedigree-
+    suspicion individuals depending on phenotype stringency). Does
+    NOT carry the diagnostic certainty of germline confirmation —
+    carriers may receive unnecessary intensive surveillance when
+    negative testing would have de-escalated, non-carriers receive
+    childhood-initiated annual MRI that could have been safely
+    declined, and the autosomal-dominant cascade-testing benefit
+    (siblings, children, partner-fumarase-risk assessment) is lost
+    without proband genetic confirmation. The aggressive nephrectomy
+    threshold on any detected mass also amplifies the cost of
+    unnecessary surveillance: a non-carrier with an incidentally-
+    detected indeterminate renal cyst may face surgical workup that
+    would not have been triggered in a general-population context.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-HLRCC-SUSPICION-PREVENTION-
+  GENETIC-COUNSELING. Patient with pedigree suspicion of HLRCC who
+  declines genetic counseling and/or germline FH testing — for any
+  reason (cost, insurance concerns, psychological / anxiety
+  considerations, family privacy, geographic access constraints,
+  reluctance to commit children to lifelong-MRI surveillance without
+  diagnostic confirmation) — is offered empirical annual abdominal
+  MRI surveillance applied as if HLRCC were confirmed:
+
+  **Renal:** Annual contrast-enhanced abdominal MRI starting age
+  8-10 (matches confirmed-carrier protocol because HLRCC-RCC
+  aggressive biology means metastasis can occur from small tumors
+  and the standard "wait until adulthood" approach used in most
+  hereditary cancer syndromes is not safe). **Radical nephrectomy
+  threshold** on any detected solid renal mass — the empirical
+  surveillance must include the aggressive treatment threshold,
+  otherwise the surveillance loses its purpose; an indeterminate
+  enhancing lesion in the kidney of an at-HLRCC-suspicion patient
+  is managed as if HLRCC-RCC. CT alternative if MRI contraindicated.
+
+  **Dermatology:** Annual skin exam for cutaneous leiomyomas;
+  biopsy of any new firm painful nodule. If pathognomonic cutaneous
+  leiomyomas are confirmed histologically, the empirical-surveillance
+  rationale is strengthened — and re-discussion of genetic testing
+  becomes particularly important (proband biopsy with FH IHC can
+  complement panel testing).
+
+  **Gynecologic (women):** Symptom-driven gynecologic follow-up for
+  uterine fibroids — pelvic exam q1-2 years; pelvic imaging
+  (transvaginal ultrasound or MRI) if symptomatic (menorrhagia,
+  dysmenorrhea, pelvic mass, infertility). Reproductive planning
+  discussion regarding fertility-preservation options (oocyte
+  cryopreservation before any myomectomy / hysterectomy) is
+  appropriate even without genetic confirmation if the family
+  history is strong.
+
+  Per CHARTER §11 patient-autonomy framing: genetic testing is a
+  shared-decision-making domain. HLRCC is a particularly compelling
+  syndrome for genetic confirmation because (1) the renal surveillance
+  is childhood-initiating and high-burden; (2) the aggressive
+  nephrectomy threshold means the cost of empirical false-positive
+  is high (unnecessary surgery in non-carriers); (3) the partner-FH-
+  testing implication for reproductive counseling is unique among
+  hereditary cancer syndromes — biallelic FH causes fumarase
+  deficiency, a severe neonatal neurometabolic syndrome distinct from
+  HLRCC. Empirical surveillance preserves the early-detection benefit
+  for the index patient but loses the partner-testing and cascade-
+  testing benefits; this trade-off should be explicit in counseling.
+
+  Routing reconsiderations: if patient eventually accepts germline
+  testing, results reroute to (a) confirmed-carrier pathway, (b)
+  general-population pathway, or (c) continued pedigree-suspicion if
+  VUS.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до
+  IND-HLRCC-SUSPICION-PREVENTION-GENETIC-COUNSELING. Пацієнт з
+  родовідною підозрою на HLRCC, який відмовляється від генетичного
+  консультування та/або germline FH тестування — з будь-якої причини
+  (вартість, страхові міркування, психологічні / тривожні міркування,
+  сімейна приватність, географічні обмеження, небажання зобов'язувати
+  дітей до пожиттєвого MRI-спостереження без діагностичного
+  підтвердження) — отримує empіричне щорічне абдомінальне MRI
+  спостереження як якщо б HLRCC був підтверджений:
+
+  **Ниркове:** Щорічна контрастна абдомінальна MRI з 8-10 років
+  (відповідає протоколу підтвердженого носія, бо aggressive biology
+  HLRCC-РСС означає, що метастазування може відбуватися з малих
+  пухлин, і стандартний підхід «чекати до дорослого віку», що
+  використовується в більшості спадкових раку-синдромів, не є
+  безпечним). **Поріг радикальної нефректомії** на будь-яку
+  виявлену solid renal mass — empіричне спостереження має включати
+  агресивний treatment поріг, інакше surveillance втрачає свою
+  мету; невизначене enhancing ураження у нирці пацієнта з
+  HLRCC-підозрою керується як HLRCC-РСС. CT альтернатива при
+  контраіндикованому MRI.
+
+  **Дерматологічне:** Щорічний шкірний огляд на кутанні лейоміоми;
+  біопсія будь-якого нового firm painful nodule. Якщо
+  патогномонічні кутанні лейоміоми підтверджені гістологічно,
+  empirical-surveillance rationale посилюється — і re-discussion
+  генетичного тестування стає особливо важливою (proband біопсія з
+  FH IHC може доповнити панельне тестування).
+
+  **Гінекологічне (жінки):** Симптом-керовані гінекологічні візити
+  для маткових фіброміом — pelvic exam q1-2 роки; pelvic
+  візуалізаційне обстеження (транс-вагінальний ультразвук або MRI)
+  при симптоматиці (menorrhagia, dysmenorrhea, тазова маса,
+  безпліддя). Репродуктивне планування щодо fertility-preservation
+  опцій (cryopreservation ооцитів до будь-якої міомектомії /
+  гістеректомії) доречне навіть без генетичного підтвердження
+  якщо сімейна історія сильна.
+
+  Per CHARTER §11 framing автономії пацієнта: генетичне тестування —
+  shared-decision-making домен. HLRCC — особливо переконливий
+  синдром для генетичного підтвердження бо (1) ниркове
+  спостереження childhood-initiating та high-burden; (2) aggressive
+  nephrectomy threshold означає, що вартість empirical
+  false-positive висока (непотрібна хірургія у не-носіїв); (3)
+  partner-FH-testing наслідок для репродуктивного консультування
+  унікальний серед спадкових раку-синдромів — біалельне FH спричиняє
+  fumarase deficiency, важкий неонатальний нейрометаболічний синдром
+  окремий від HLRCC. Empіричне спостереження зберігає early-detection
+  benefit для index пацієнта, але втрачає partner-testing і
+  cascade-testing benefits; цей trade-off має бути експліцитним при
+  консультуванні.
+
+  Reroute: якщо пацієнт врешті приймає germline тестування,
+  результати маршрутизуються до (а) confirmed-carrier шлях, (б)
+  general-population шлях, або (в) продовжена pedigree-підозра при
+  VUS.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_hereditary_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-ESMO-RCC-2024
+    position: supports
+  - source_id: SRC-NCCN-KIDNEY-2025
+    position: supports
+
+do_not_do:
+  - "Не презентувати enhanced surveillance як еквівалент genetic confirmation — diagnostic precision відсутня; cascade-testing і partner-FH-testing benefits для родичів втрачаються; це трейд-офф особливо вагомий при HLRCC через child-onset surveillance і fumarase-deficiency репродуктивний ризик."
+  - "Не застосовувати «правило 3-см» VHL до emp​іричних HLRCC-спостережень — HLRCC-РСС біологія агресивна, і будь-яка solid renal mass потребує радикальної нефректомії, а не tumor-sparing підходу; зміна порогу втрачає мету surveillance."
+  - "Не пропускати periodic re-discussion про genetic testing — більшість пацієнтів врешті приймають тестування після додаткових візитів, особливо при підкреслюванні partner-FH-testing benefits для дітей."
+  - "Не починати дитячі MRI до 8 років без demonstrable proband-leiomyoma або strong family-history clustering — pediatric sedation ризик при щорічному MRI потребує clear-benefit pathway."
+  - "Не пропускати pre-procedure fertility-preservation обговорення у молодих жінок з emp​іричною HLRCC-підозрою, які стикаються з myomectomy / hysterectomy — навіть без генетичного підтвердження репродуктивні наслідки fibroid surgery значні."
+
+do_not_do_en:
+  - "Do not present enhanced surveillance as equivalent to genetic confirmation — diagnostic precision is absent; cascade-testing and partner-FH-testing benefits for relatives are lost; this trade-off is particularly weighty in HLRCC given the child-onset surveillance and fumarase-deficiency reproductive risk."
+  - "Do not apply the VHL '3-cm rule' to empirical HLRCC surveillance — HLRCC-RCC biology is aggressive, and any solid renal mass requires radical nephrectomy rather than a tumor-sparing approach; changing the threshold defeats the purpose of surveillance."
+  - "Do not skip periodic re-discussion of genetic testing — most patients eventually accept testing after additional visits, especially when partner-FH-testing benefits for children are emphasized."
+  - "Do not start childhood MRIs before age 8 without demonstrable proband-leiomyoma or strong family-history clustering — pediatric sedation risk at annual MRI cadence requires a clear-benefit pathway."
+  - "Do not skip pre-procedure fertility-preservation discussion in young women with empirical HLRCC suspicion who face myomectomy / hysterectomy — even without genetic confirmation, the reproductive consequences of fibroid surgery are significant."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — alternative-track companion for HLRCC hereditary prevention pilot. §15.2 C4 ≥2-tracks invariant compliance.

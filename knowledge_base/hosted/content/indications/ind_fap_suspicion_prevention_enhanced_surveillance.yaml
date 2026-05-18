@@ -1,0 +1,178 @@
+id: IND-FAP-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-FAP-FAMILY-HISTORY-SUSPICION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Empirical FAP-style surveillance (annual sigmoidoscopy from
+    age 10-12 with escalation to colonoscopy on polyp emergence; low
+    threshold for colectomy when polyposis becomes endoscopically
+    unmanageable): expected to capture CRC at earliest detectable
+    stage in the subset who are actual carriers (~30-90% of pedigree-
+    suspicion individuals depending on phenotype stringency). Does
+    NOT carry the diagnostic certainty of germline confirmation —
+    carriers may receive unnecessary intensive surveillance when
+    negative testing would have de-escalated, non-carriers receive
+    surveillance that could have been safely declined, and the
+    autosomal-dominant inheritance means cascade testing of siblings
+    / children remains unresolved without proband genetic confirmation.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-FAP-SUSPICION-PREVENTION-GENETIC-
+  COUNSELING. Patient with pedigree suspicion of FAP / AFAP / Gardner-
+  variant who declines genetic counseling and/or germline APC testing
+  — for any reason (cost, insurance concerns, psychological / anxiety
+  considerations, family privacy, geographic access constraints) — is
+  offered empirical enhanced surveillance applied as if FAP were
+  confirmed:
+
+  **Colorectal:** Annual flexible sigmoidoscopy starting age 10-12
+  (matches classic-FAP carrier-confirmation protocol because FAP polyps
+  characteristically emerge in the rectum and sigmoid first). When
+  >5-10 adenomas accumulate, escalate to full colonoscopy q1-2 years.
+  **Low threshold for prophylactic colectomy** if polyp burden reaches
+  the carrier-confirmation surgical threshold (>20-30 adenomas, dense
+  carpeting that is endoscopically unmanageable, or any high-grade
+  dysplasia / invasive carcinoma).
+
+  **Upper-GI:** EGD q3-5 years starting age 25-30 — empirical
+  surveillance for duodenal polyposis. Spigelman staging on detected
+  polyps. Lower-intensity than confirmed-carrier protocol (q1-3 years)
+  because pre-test probability is lower without APC confirmation.
+
+  **Desmoid tumor awareness:** counsel patient about desmoid risk
+  post-surgery (relevant if colectomy is later performed). Low
+  threshold for abdominal imaging if palpable mass develops.
+
+  **Thyroid:** Annual physical thyroid exam; ultrasound only if
+  nodular changes detected.
+
+  **Hepatoblastoma screening in children:** AFP + abdominal US q3-6
+  months birth to age 5 should be discussed with the pediatrician
+  even without genetic confirmation if the family history strongly
+  suggests FAP (this is the highest-stakes empirical recommendation —
+  hepatoblastoma is aggressive and 5-year survival drops sharply if
+  detection is delayed).
+
+  Per CHARTER §11 patient-autonomy framing: genetic testing is a
+  shared-decision-making domain. Patients who decline testing retain
+  access to surveillance benefit, with the caveat that empirical
+  surveillance lacks the diagnostic precision of confirmed genetic
+  status — and the cascade-testing benefit for relatives is lost.
+  Periodic re-discussion of testing is appropriate; this pathway does
+  not preclude future genetic testing.
+
+  Routing reconsiderations: if patient eventually accepts germline
+  testing, results reroute to (a) confirmed-carrier pathway, (b)
+  general-population pathway, or (c) continued pedigree-suspicion if
+  VUS.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до
+  IND-FAP-SUSPICION-PREVENTION-GENETIC-COUNSELING. Пацієнт з
+  родовідною підозрою на FAP / AFAP / Gardner-варіант, який
+  відмовляється від генетичного консультування та/або germline APC
+  тестування — з будь-якої причини (вартість, страхові міркування,
+  психологічні / тривожні міркування, сімейна приватність, географічні
+  обмеження доступу) — отримує empіричне посилене спостереження як
+  якщо б FAP був підтверджений:
+
+  **Колоректальне:** Щорічна гнучка сигмоїдоскопія з 10-12 років
+  (відповідає протоколу класичного FAP при підтвердженому носійстві,
+  бо FAP-поліпи характерно з'являються спочатку у прямій і
+  сигмоподібній кишці). Коли накопичується >5-10 аденом, ескалація
+  до повної колоноскопії q1-2 роки. **Низький поріг для
+  профілактичної колектомії** якщо обтяженість поліпами досягає
+  хірургічного порогу підтвердженого носійства (>20-30 аденом,
+  щільне carpeting, що ендоскопічно некероване, або будь-яка
+  high-grade дисплазія / інвазивна карцинома).
+
+  **Верхньо-ШКТ:** EGD q3-5 років з 25-30 років — empіричне
+  спостереження для дуоденального поліпозу. Spigelman стадіювання
+  виявлених поліпів. Менш інтенсивно ніж протокол підтвердженого
+  носія (q1-3 роки), бо pre-test probability нижча без APC
+  підтвердження.
+
+  **Усвідомлення десмоїдних пухлин:** консультування пацієнта про
+  ризик десмоїду після хірургії (актуально якщо колектомія
+  виконується пізніше). Низький поріг для абдомінального
+  візуалізаційного обстеження при пальпованому утворенні.
+
+  **Щитоподібна залоза:** Щорічний фізикальний огляд щитоподібної
+  залози; УЗД лише при виявленні нодулярних змін.
+
+  **Скринінг гепатобластоми у дітей:** AFP + абдомінальне УЗД q3-6
+  місяців від народження до 5 років має обговорюватися з педіатром
+  навіть без генетичного підтвердження, якщо сімейна історія сильно
+  свідчить про FAP (це highest-stakes empірична рекомендація —
+  гепатобластома агресивна і 5-річне виживання різко знижується при
+  затримці виявлення).
+
+  Per CHARTER §11 framing автономії пацієнта: генетичне тестування —
+  shared-decision-making домен. Пацієнти, які відмовляються від
+  тестування, зберігають доступ до surveillance benefit, з
+  застереженням що empіричне спостереження не має diagnostic precision
+  підтвердженого генетичного статусу — і cascade-testing benefit для
+  родичів втрачається. Періодична re-discussion тестування доречна;
+  цей шлях не виключає майбутнього генетичного тестування.
+
+  Reroute: якщо пацієнт врешті приймає germline тестування,
+  результати маршрутизуються до (а) confirmed-carrier шлях, (б)
+  general-population шлях, або (в) продовжена pedigree-підозра при
+  VUS.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_hereditary_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-ESMO-CRC-2024
+    position: supports
+  - source_id: SRC-NCCN-COLON-2025
+    position: supports
+
+do_not_do:
+  - "Не презентувати enhanced surveillance як еквівалент genetic confirmation — diagnostic precision відсутня; cascade-testing benefit для родичів втрачається."
+  - "Не виконувати профілактичну колектомію у emp​іричних спостереженнях без demonstrable polyposis (≥20 аденом) або high-grade дисплазії / інвазивної карциноми — confirmed APC носійство або polyp burden обґрунтовує операцію, не сімейна історія сама по собі."
+  - "Не пропускати periodic re-discussion про genetic testing — більшість пацієнтів врешті приймають тестування після додаткових візитів та зменшення тривоги."
+  - "Не пропускати hepatoblastoma скринінг (AFP + УЗД) у дітей з сильної FAP-сім'ї, навіть без генетичного підтвердження — інтервал q3-6 місяців birth до 5 років обов'язковий."
+  - "Не починати щорічний верхньо-ШКТ EGD у emp​іричних спостереженнях підлітків — duodenal polyposis рідко емержує до 25-30 років, а інтенсивний скринінг без APC підтвердження надлишковий."
+
+do_not_do_en:
+  - "Do not present enhanced surveillance as equivalent to genetic confirmation — diagnostic precision is absent; cascade-testing benefit for relatives is lost."
+  - "Do not perform prophylactic colectomy in empirical surveillance without demonstrable polyposis (≥20 adenomas) or high-grade dysplasia / invasive carcinoma — confirmed APC carrier status or polyp burden justifies surgery, family history alone does not."
+  - "Do not skip periodic re-discussion of genetic testing — most patients eventually accept testing after additional visits and reduced anxiety."
+  - "Do not skip hepatoblastoma screening (AFP + ultrasound) in children of a strong FAP family even without genetic confirmation — q3-6 month interval birth to age 5 is mandatory."
+  - "Do not start annual upper-GI EGD in empirical surveillance of adolescents — duodenal polyposis rarely emerges before age 25-30, and intensive screening without APC confirmation is excessive."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — alternative-track companion for FAP hereditary prevention pilot. §15.2 C4 ≥2-tracks invariant compliance.

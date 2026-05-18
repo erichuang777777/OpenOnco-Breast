@@ -1,0 +1,238 @@
+id: IND-VHL-SUSPICION-PREVENTION-GENETIC-COUNSELING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-RCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-VHL-FAMILY-HISTORY-SUSPICION
+
+# No drug regimen — intervention is referral + germline-test ordering +
+# pre/post-test counseling + a structured carrier-confirmation multi-
+# organ surveillance protocol (not a Regimen entity).
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Diagnostic yield of germline VHL panel testing in pedigree-
+    suspicion populations: ~40-90% positive carrier identification
+    (varies by criterion stringency — known-pathogenic-variant family
+    ~100% on cascade testing; bilateral / multifocal RCC suspicion
+    ~30-50%; isolated CNS hemangioblastoma in proband ~80%; early-
+    onset clear-cell RCC <46 without other features ~10-15%).
+    Confirmed carrier routes to structured multi-organ surveillance
+    starting in early childhood — VHL is one of the strongest
+    natural-history candidates for early-detection benefit: retinal
+    hemangioblastoma early laser / cryotherapy preserves vision in
+    most cases; RCC tumor-sparing partial nephrectomy at 3-cm
+    threshold preserves renal function while preventing metastatic
+    spread; pheochromocytoma catecholamine screening detects pre-
+    crisis disease.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  # Germline panel test entity not yet authored as a TEST-* — v0.2-B
+  # follow-up.
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for individuals with pedigree
+  suspicion of Von Hippel-Lindau disease. Three parallel referrals:
+
+  **(1) Genetic counseling referral.** Pre-test counseling covers:
+  inheritance pattern (autosomal dominant, near-complete penetrance
+  ~90-95% by age 60), implications for family members (cascade
+  testing if positive — siblings at 50% risk; children at 50% risk;
+  preimplantation genetic diagnosis available; importantly, childhood
+  surveillance protocol means early identification of carrier-
+  children enables timely intervention for retinal hemangioblastoma
+  and pheochromocytoma which emerge in childhood), insurance / GINA
+  considerations, psychological aspects of lifelong multi-organ
+  surveillance burden. Per ACMG / ASCO guidelines, pre-test counseling
+  is the standard of care before germline testing.
+
+  **(2) Germline VHL gene panel testing.** Modern hereditary renal-
+  cancer panels (e.g., Invitae renal-cancer panel, Color renal-cancer
+  panel) cover VHL (full sequencing + large-deletion / duplication
+  analysis — large deletions account for ~30% of VHL pathogenic
+  variants and require dedicated MLPA or array-CGH analysis), plus
+  the hereditary-RCC differential genes (FH for HLRCC, FLCN for
+  Birt-Hogg-Dubé, MET for hereditary papillary RCC, BAP1, SDHB/C/D
+  for paraganglioma-pheochromocytoma syndromes, TSC1/2 for tuberous
+  sclerosis). Variant classification per ACMG framework.
+
+  **(3) Carrier-confirmation surveillance plan (sequel pathway).**
+    Positive VHL carrier → structured multi-organ surveillance per
+    VHL Alliance / International VHL Consensus Surveillance Guidelines
+    (2020) and NCCN Kidney Cancer Genetic/Familial High-Risk:
+    - **CNS:** MRI brain + complete spine q1-2 years from age 15-16
+      (cerebellar > spinal > brainstem hemangioblastomas). Lifelong.
+    - **Abdomen (kidneys / adrenals / pancreas):** Contrast-enhanced
+      MRI abdomen q1-2 years from age 15-16. RCC surveillance with
+      the "3-cm rule" — tumor-sparing partial nephrectomy when a
+      lesion reaches 3 cm to balance metastatic risk against renal
+      function preservation. Pancreatic NETs and adrenal pheochromo-
+      cytomas captured in the same imaging.
+    - **Ophthalmology:** Dilated fundoscopy with retinal angiography
+      q1 year from age 1-5 — yes, this protocol starts in early
+      childhood. Retinal hemangioblastomas are one of the earliest
+      VHL manifestations and treatable with laser photocoagulation
+      or cryotherapy at small sizes, preventing vision loss.
+    - **Catecholamines / metanephrines:** Plasma free metanephrines
+      or 24-hour urine metanephrines q1 year from age 5-10 (yes,
+      childhood) to screen for pheochromocytoma / paraganglioma.
+      Annual blood pressure check at every primary-care visit.
+    - **Hearing / vestibular:** Audiometry q3-5 years from age 15;
+      MRI internal auditory canal if hearing loss or vertigo
+      develops (endolymphatic-sac tumor screen).
+    - **Reproductive:** Epididymal / broad-ligament cystadenoma
+      surveillance per pelvic exam; these are benign but
+      pathognomonic.
+
+  Negative result (no pathogenic / likely-pathogenic variant on a
+  high-quality panel including large-deletion analysis) → re-
+  stratify residual family-history risk; if family history is very
+  strong and panel is comprehensive, consider that the proband may
+  carry a non-VHL hereditary RCC syndrome (FH / HLRCC, FLCN / BHD,
+  SDH-related) and pursue dedicated workup for those. VUS result →
+  managed as pedigree suspicion (this Indication) until segregation
+  analysis or functional studies clarify.
+
+  Genetic counseling and germline VHL testing are typically covered
+  by insurance in the US/EU when pedigree criteria are met; in
+  Ukraine, germline testing is available through private labs at
+  out-of-pocket cost (~5000-15000 UAH for multi-gene panel; large-
+  deletion analysis may be a separate charge).
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для осіб з родовідною підозрою на
+  хворобу Von Hippel-Lindau. Три паралельні направлення:
+
+  **(1) Направлення на генетичне консультування.** Pre-test
+  консультування охоплює: спадкування (аутосомно-домінантне, near-
+  complete пенетрантність ~90-95% до 60 років), наслідки для членів
+  сім'ї (cascade тестування при позитиві — сібси з ризиком 50%; діти
+  з ризиком 50%; преімплантаційна генетична діагностика доступна;
+  важливо: дитячий протокол спостереження означає, що рання
+  ідентифікація дітей-носіїв уможливлює своєчасну інтервенцію для
+  ретинальних гемангіобластом і феохромоцитом, які проявляються в
+  дитинстві), страхові / GINA-міркування, психологічні аспекти
+  пожиттєвого тягаря мульти-органного спостереження. За ACMG / ASCO
+  настановами, pre-test консультування — standard of care перед
+  germline тестуванням.
+
+  **(2) Germline VHL панельне тестування.** Сучасні панелі
+  спадкового РСС (напр., Invitae renal-cancer panel, Color renal-
+  cancer panel) покривають VHL (повне секвенування + large-deletion
+  / duplication аналіз — великі делеції становлять ~30% патогенних
+  VHL варіантів і потребують спеціальної MLPA або array-CGH аналізи),
+  плюс гени диференційного діагнозу спадкового РСС (FH для HLRCC,
+  FLCN для Birt-Hogg-Dubé, MET для спадкового папілярного РСС,
+  BAP1, SDHB/C/D для феохромо-парагангліома синдромів, TSC1/2 для
+  туберозного склерозу). Класифікація варіантів за рамкою ACMG.
+
+  **(3) План спостереження при підтвердженому носійстві (sequel).**
+    Позитивний VHL носій → структуроване мульти-органне спостереження
+    per VHL Alliance / International VHL Consensus Surveillance
+    Guidelines (2020) та NCCN Kidney Genetic/Familial High-Risk:
+    - **ЦНС:** MRI головного мозку + повний хребет q1-2 роки з
+      15-16 років (мозочок > спинний мозок > стовбур
+      гемангіобластоми). Пожиттєво.
+    - **Абдомен (нирки / наднирники / підшлункова):** Контрастна MRI
+      абдомену q1-2 роки з 15-16 років. РСС-спостереження з
+      "правилом 3-см" — tumor-sparing часткова нефректомія коли
+      ураження досягає 3 см, щоб збалансувати метастатичний ризик
+      проти збереження ниркової функції. Підшлункові NET і
+      феохромоцитоми наднирників фіксуються тим самим візуалізаційним
+      обстеженням.
+    - **Офтальмологія:** Розширена фундоскопія з ретинальною
+      ангіографією q1 рік з 1-5 років — так, цей протокол починається
+      у ранньому дитинстві. Ретинальні гемангіобластоми — один з
+      найбільш ранніх проявів VHL і піддаються лазерній
+      фотокоагуляції або кріотерапії на малих розмірах, запобігаючи
+      втраті зору.
+    - **Катехоламіни / метанефрини:** Плазмові вільні метанефрини
+      або 24-годинні сечові метанефрини q1 рік з 5-10 років (так,
+      дитинство) для скринінгу феохромоцитоми / парагангліоми.
+      Щорічне вимірювання АТ при кожному primary-care візиті.
+    - **Слух / вестибулярна функція:** Аудіометрія q3-5 років з 15
+      років; MRI внутрішнього слухового каналу при виникненні
+      приглухуватості або запаморочення (скринінг ендолімфатичного
+      мішка).
+    - **Репродуктивна:** Спостереження епідидимальних / широко-
+      зв'язкових цистаденом per pelvic exam; ці утворення доброякісні
+      але патогномонічні.
+
+  Негативний результат (без патогенного / ймовірно-патогенного
+  варіанту на високоякісній панелі, що включає large-deletion
+  аналіз) → ре-стратифікація залишкового сімейно-історичного ризику;
+  якщо сімейна історія дуже сильна і панель комплексна, розгляньте
+  що пробанд може нести non-VHL спадковий РСС-синдром (FH / HLRCC,
+  FLCN / BHD, SDH-related) і переходьте до спеціалізованого workup
+  для цих. VUS результат → ведеться як родовідна підозра (ця
+  Indication) до segregation analysis або functional studies.
+
+  Генетичне консультування та germline VHL тестування зазвичай
+  покриваються страхуванням у США/ЄС при відповідності критеріям; в
+  Україні germline тестування доступне через приватні лабораторії за
+  out-of-pocket вартість (~5000-15000 грн за мультигенну панель;
+  large-deletion аналіз може бути окремою платою).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_hereditary_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-ESMO-RCC-2024
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Germline testing for hereditary RCC syndromes including VHL is
+      recommended for individuals with clear-cell RCC under 46,
+      bilateral / multifocal RCC, CNS / retinal hemangioblastoma, or
+      family history of these features."
+  - source_id: SRC-NCCN-KIDNEY-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Patients with suspected hereditary RCC syndromes including VHL
+      should receive germline panel testing; confirmed VHL carriers
+      enter structured multi-organ surveillance (CNS MRI, abdominal
+      MRI, ophthalmology, catecholamines) starting in childhood per
+      VHL Alliance consensus guidelines."
+
+do_not_do:
+  - "Не призначати germline тестування без pre-test консультування — інформована згода + обговорення дитячого скринінг-тягаря обов'язкові."
+  - "Не treter VUS результат як патогенний — управляйте як родовідну підозру до подальших даних; не починайте дитячий скринінг-протокол на підставі VUS."
+  - "Не пропускати MLPA / large-deletion аналіз — ~30% патогенних VHL варіантів — великі делеції, пропущені sequencing-only тестуванням."
+  - "Не презентувати negative-panel результат як zero-risk — non-VHL hereditary RCC syndromes (FH / HLRCC, FLCN / BHD, SDHB/C/D) можуть бути basis сильної сімейної історії; розгляньте дедиковану панель."
+  - "Не пропускати дитячий офтальмологічний скринінг (q1 рік з 1-5 років) у підтверджених VHL-сім'ях — retinal hemangioblastoma — провідна причина втрати зору при VHL і легко лікується при ранньому виявленні."
+  - "Не пропускати скринінг катехоламінів / метанефринів у підтверджених VHL-сім'ях з 5-10 років — pheochromocytoma в дитячому віці може представитися гіпертензивним кризом / cardiovascular collapse, але pre-symptomatic detection дозволяє безпечну елективну ад​реналектомію."
+
+do_not_do_en:
+  - "Do not order germline testing without pre-test counseling — informed consent and discussion of the childhood surveillance burden are mandatory."
+  - "Do not treat a VUS result as pathogenic — manage as pedigree suspicion pending further data; do not initiate the childhood surveillance protocol based on a VUS."
+  - "Do not skip MLPA / large-deletion analysis — ~30% of pathogenic VHL variants are large deletions missed by sequencing-only testing."
+  - "Do not present a negative-panel result as zero-risk — non-VHL hereditary RCC syndromes (FH / HLRCC, FLCN / BHD, SDHB/C/D) may underlie a strong family history; consider a dedicated panel."
+  - "Do not skip childhood ophthalmologic screening (q1 year from age 1-5) in confirmed VHL families — retinal hemangioblastoma is a leading cause of vision loss in VHL and is treatable at small sizes."
+  - "Do not skip catecholamine / metanephrine screening in confirmed VHL families from age 5-10 — childhood pheochromocytoma may present as hypertensive crisis / cardiovascular collapse, but pre-symptomatic detection enables safe elective adrenalectomy."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — v0.2-B hereditary pilot (VHL). VHL Alliance International Surveillance Guidelines (2020 consensus) + NCCN Genetic/Familial High-Risk Kidney as new SRC entities are v0.2-B authoring backlog. Two-Co-Lead signoff queued.
