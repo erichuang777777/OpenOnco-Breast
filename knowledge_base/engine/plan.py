@@ -288,7 +288,11 @@ def _find_prevention_indications(
     Indication.
     """
     relevant_disease_ids: set[str] = set()
+    fired_rf_ids: set[str] = set()
     for rf in fired_rfs:
+        rid = rf.get("id")
+        if rid:
+            fired_rf_ids.add(rid)
         for did in rf.get("relevant_diseases") or []:
             if did and did != "*":
                 relevant_disease_ids.add(did)
@@ -304,6 +308,16 @@ def _find_prevention_indications(
         applicable = ind.get("applicable_to") or {}
         ind_disease = applicable.get("disease_id")
         if ind_disease not in relevant_disease_ids:
+            continue
+        # §20 cross-etiology contamination guard: if the Indication declares
+        # `triggered_by_redflags` (one or more RF IDs), require at least one
+        # of those RFs to be in the fired set. Empty list = legacy
+        # behavior (disease_id match only). This is the disambiguator for
+        # cases like Lynch-suspicion (which lists DIS-GASTRIC because
+        # Lynch elevates gastric risk) NOT pulling in H. pylori prevention
+        # indications which also target DIS-GASTRIC.
+        triggered_by = ind.get("triggered_by_redflags") or []
+        if triggered_by and not (set(triggered_by) & fired_rf_ids):
             continue
         if eid in seen:
             continue

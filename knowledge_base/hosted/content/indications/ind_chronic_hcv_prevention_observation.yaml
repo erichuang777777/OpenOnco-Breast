@@ -30,6 +30,9 @@ applicable_to:
   demographic_constraints:
     ecog_max: 3
 
+triggered_by_redflags:
+  - RF-CHRONIC-HCV-NHL-PREVENTION-OPPORTUNITY
+
 # Active-surveillance regimen — reuses the post-DAA observation entity.
 # Surveillance cadence is similar regardless of whether the patient took
 # DAA or declined it (CBC, LFT, AFP+US, periodic imaging) — the

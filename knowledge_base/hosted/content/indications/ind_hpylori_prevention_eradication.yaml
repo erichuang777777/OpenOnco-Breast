@@ -17,6 +17,9 @@ applicable_to:
   demographic_constraints:
     ecog_max: 3
 
+triggered_by_redflags:
+  - RF-CHRONIC-H-PYLORI-MALIGNANCY-PREVENTION
+
 # Eradication regimen is not yet authored as a Regimen entity (v0.2-A
 # follow-up — needs DRUG-CLARITHROMYCIN / DRUG-AMOXICILLIN / DRUG-OMEPRAZOLE
 # / DRUG-BISMUTH-SUBCITRATE / DRUG-TETRACYCLINE which don't exist in KB

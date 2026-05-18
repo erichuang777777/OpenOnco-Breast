@@ -36,6 +36,9 @@ applicable_to:
     ecog_max: 3
     decompensated_cirrhosis: false  # decompensated (Child-Pugh B/C) — separate hepatology pathway
 
+triggered_by_redflags:
+  - RF-CHRONIC-HCV-NHL-PREVENTION-OPPORTUNITY
+
 recommended_regimen: REG-DAA-SOF-VEL
 concurrent_therapy: []
 followed_by:

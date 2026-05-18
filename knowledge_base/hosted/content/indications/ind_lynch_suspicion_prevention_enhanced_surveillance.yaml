@@ -1,0 +1,133 @@
+id: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-LYNCH-FAMILY-HISTORY-SUSPICION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Empirical enhanced surveillance (colonoscopy q1-2y from age 25 or
+    10y before youngest family CRC dx; endometrial surveillance):
+    expected to capture cancer at earliest detectable stage in the
+    subset who are actual carriers (~15-25% of pedigree-suspicion
+    individuals). Does NOT carry the diagnostic certainty of genetic
+    testing — carriers may receive unnecessary intensive surveillance
+    when negative testing would have de-escalated, and non-carriers
+    receive surveillance that could have been safely declined.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-LYNCH-SUSPICION-PREVENTION-GENETIC-
+  COUNSELING. Patient with pedigree suspicion of Lynch syndrome who
+  declines genetic counseling and/or germline testing — for any reason
+  (cost, insurance concerns, psychological / anxiety considerations,
+  family privacy, geographic access constraints) — is offered empirical
+  enhanced surveillance applied as if Lynch were confirmed:
+
+  **Colorectal:** Colonoscopy q1-2 years starting age 25 (or 10 years
+  before youngest CRC dx in family, whichever is earlier). Removal of
+  all polyps; histologic review for adenomas / serrated lesions.
+
+  **Endometrial / ovarian (women):** Annual endometrial sampling +
+  transvaginal ultrasound starting age 30-35 (NCCN protocol;
+  evidence-base modest). Discussion of risk-reducing hysterectomy +
+  BSO post-childbearing age 40+ (this is a major decision and should
+  only be considered if genetic confirmation is later obtained or
+  family history is very strong).
+
+  **Urothelial:** Annual urinalysis ± urine cytology starting age 30-35.
+  Low-threshold cystoscopy for hematuria.
+
+  **Gastric:** Surveillance EGD q3-5y from age 30-35 (consider in
+  families with multiple gastric cancers).
+
+  **Pancreatic (PDAC):** No routine pancreatic screening unless ≥2
+  first/second-degree affected family members or known FAMMM / Peutz-
+  Jeghers overlap — referral to pancreatic-cancer high-risk
+  surveillance program.
+
+  Per CHARTER §11 patient-autonomy framing: genetic testing is a
+  shared-decision-making domain. Patients who decline testing retain
+  access to surveillance benefit, with the caveat that empirical
+  surveillance lacks the diagnostic precision of confirmed genetic
+  status. Periodic re-discussion of testing is appropriate; this
+  pathway does not preclude future genetic testing.
+
+  Routing reconsiderations: if patient eventually accepts genetic
+  testing, results recoute to (a) confirmed-carrier pathway, (b)
+  general-population pathway, or (c) continued pedigree-suspicion if
+  VUS.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до
+  IND-LYNCH-SUSPICION-PREVENTION-GENETIC-COUNSELING. Пацієнт з
+  родовідною підозрою на синдром Lynch, який відмовляється від
+  генетичного консультування та/або germline тестування — з будь-якої
+  причини (вартість, страхові міркування, психологічні / тривожні
+  міркування, сімейна приватність, географічні обмеження доступу) —
+  отримує empіричне посилене спостереження, як якщо б Lynch був
+  підтверджений:
+
+  **Колоректальне:** Колоноскопія q1-2 роки з 25-річного віку (або
+  10 років до наймолодшого КРР діагнозу в сім'ї, що раніше). Видалення
+  всіх поліпів; гістологічний огляд аденом / serrated уражень.
+
+  **Ендометріальне / оваріальне (жінки):** Щорічна біопсія ендометрію
+  + трансвагінальний ультразвук з 30-35 років (NCCN протокол; база
+  доказів помірна). Обговорення risk-reducing гістеректомії + BSO
+  post-childbearing вік 40+ (це велике рішення і має розглядатися
+  лише якщо генетичне підтвердження пізніше отримано або сімейна
+  історія дуже сильна).
+
+  Per CHARTER §11 framing автономії пацієнта.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-ESMO-CRC-2024
+    position: supports
+  - source_id: SRC-ESGO-ENDOMETRIAL-2025
+    position: supports
+
+do_not_do:
+  - "Не презентувати enhanced surveillance як еквівалент genetic confirmation — diagnostic precision відсутня."
+  - "Не рекомендувати risk-reducing surgery без genetic confirmation — це necessitates a confirmed carrier diagnosis."
+  - "Не пропускати periodic re-discussion про genetic testing — більшість пацієнтів врешті приймають тестування після додаткових візитів та зменшення тривоги."
+  - "Не використовувати empirical pancreatic screening (EUS / MRI) routine у Lynch-suspicion без ≥2 first/second-degree-affected або additional syndrome overlap."
+
+do_not_do_en:
+  - "Do not present enhanced surveillance as equivalent to genetic confirmation — diagnostic precision is absent."
+  - "Do not recommend risk-reducing surgery without genetic confirmation — these necessitate a confirmed carrier diagnosis."
+  - "Do not skip periodic re-discussion of genetic testing — most patients eventually accept testing after additional visits and reduced anxiety."
+  - "Do not use empirical pancreatic screening (EUS / MRI) routinely in Lynch suspicion without ≥2 first/second-degree-affected or additional syndrome overlap."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — alternative-track companion for Lynch hereditary prevention pilot. §15.2 C4 ≥2-tracks invariant compliance.

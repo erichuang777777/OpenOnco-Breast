@@ -248,6 +248,14 @@ PILOT_SCENARIOS = [
         "IND-CHRONIC-HTLV-1-PREVENTION-SURVEILLANCE",
         "IND-CHRONIC-HTLV-1-PREVENTION-OBSERVATION",
     ),
+    (
+        "lynch",
+        {"family_amsterdam_ii_criteria_met": True},
+        "RF-LYNCH-FAMILY-HISTORY-SUSPICION",
+        "DIS-CRC",
+        "IND-LYNCH-SUSPICION-PREVENTION-GENETIC-COUNSELING",
+        "IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE",
+    ),
 ]
 
 
@@ -259,7 +267,9 @@ PILOT_SCENARIOS = [
 def test_v02a_pilot_produces_two_track_prevention_plan(
     name, findings, rf_id, disease_target, std_ind, obs_ind
 ):
-    """Each v0.2-A infectious-etiology pilot produces a 2-track PreventionPlan."""
+    """Each v0.2-A / v0.2-B pilot produces a 2-track PreventionPlan
+    containing exactly the pilot's two intended Indications (cross-
+    etiology isolation: no contamination from other pilots' Indications)."""
     patient = {
         "patient_id": f"PREV-PILOT-{name.upper()}-001",
         "biomarkers": {},
@@ -271,12 +281,61 @@ def test_v02a_pilot_produces_two_track_prevention_plan(
     assert result.algorithm_id is None
     assert result.plan.algorithm_id is None
     # §15.2 C4: ≥2 tracks
-    assert len(result.plan.tracks) >= 2, f"{name}: only {len(result.plan.tracks)} track(s)"
     track_ids = {t.indication_id for t in result.plan.tracks}
-    assert std_ind in track_ids, f"{name}: missing standard track {std_ind}"
-    assert obs_ind in track_ids, f"{name}: missing observation track {obs_ind}"
+    assert track_ids == {std_ind, obs_ind}, (
+        f"{name}: tracks {track_ids} != expected {{std_ind, obs_ind}} = "
+        f"{{{std_ind}, {obs_ind}}}. Cross-etiology contamination via "
+        f"triggered_by_redflags binding is the likely cause if extra "
+        f"tracks appear."
+    )
     # Fired RF + cancer-being-prevented surface in kb_state
     fired = result.plan.knowledge_base_state.get("fired_prevention_redflags") or []
     assert rf_id in fired, f"{name}: RF {rf_id} did not fire"
     targets = result.plan.knowledge_base_state.get("prevention_targets") or []
     assert disease_target in targets, f"{name}: target {disease_target} missing"
+
+
+# ── Cross-etiology isolation regression guard ─────────────────────────────
+
+
+def test_lynch_does_not_pull_in_h_pylori_indications():
+    """Regression guard for the v0.2-B fix (commit on 2026-05-18):
+    Lynch RF lists DIS-GASTRIC in relevant_diseases (Lynch carriers have
+    elevated gastric cancer risk), but H. pylori prevention indications
+    also target DIS-GASTRIC. Without the triggered_by_redflags binding,
+    a Lynch patient would get 4 tracks (Lynch + H. pylori). The fix
+    ensures explicit RF binding disambiguates."""
+    patient = {
+        "patient_id": "LYNCH-ISOLATION-001",
+        "biomarkers": {},
+        "demographics": {"age": 38, "ecog": 0},
+        "findings": {"family_amsterdam_ii_criteria_met": True},
+    }
+    result = generate_plan(patient, kb_root=KB_ROOT)
+    assert result.plan is not None
+    track_ids = {t.indication_id for t in result.plan.tracks}
+    # Lynch tracks must be present
+    assert "IND-LYNCH-SUSPICION-PREVENTION-GENETIC-COUNSELING" in track_ids
+    assert "IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE" in track_ids
+    # H. pylori tracks must NOT be present
+    assert "IND-H-PYLORI-PREVENTION-ERADICATION" not in track_ids
+    assert "IND-H-PYLORI-PREVENTION-OBSERVATION" not in track_ids
+
+
+def test_hpylori_does_not_pull_in_other_pilot_indications():
+    """Inverse direction: H. pylori RF lists only DIS-GASTRIC; a H. pylori
+    patient must not get Lynch indications even though Lynch RF also
+    lists DIS-GASTRIC."""
+    patient = {
+        "patient_id": "HPYLORI-ISOLATION-001",
+        "biomarkers": {},
+        "demographics": {"age": 48, "ecog": 1},
+        "findings": {"h_pylori_status": "positive"},
+    }
+    result = generate_plan(patient, kb_root=KB_ROOT)
+    assert result.plan is not None
+    track_ids = {t.indication_id for t in result.plan.tracks}
+    assert track_ids == {
+        "IND-H-PYLORI-PREVENTION-ERADICATION",
+        "IND-H-PYLORI-PREVENTION-OBSERVATION",
+    }

@@ -10,6 +10,9 @@ applicable_to:
   demographic_constraints:
     ecog_max: 3
 
+triggered_by_redflags:
+  - RF-CHRONIC-HIV-MALIGNANCY-PREVENTION
+
 recommended_regimen: null
 concurrent_therapy: []
 followed_by: []
