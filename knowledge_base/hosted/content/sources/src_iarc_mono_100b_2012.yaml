@@ -1,0 +1,57 @@
+id: SRC-IARC-MONO-100B-2012
+source_type: monograph
+title: 'IARC Monographs on the Evaluation of Carcinogenic Risks to Humans, Volume
+  100B: A Review of Human Carcinogens. Part B: Biological Agents'
+version: Volume 100B (2012)
+authors:
+- International Agency for Research on Cancer
+- World Health Organization
+journal: null
+url: https://publications.iarc.fr/119
+access_level: open_access
+currency_status: current
+current_as_of: '2012'
+evidence_tier: 1
+hosting_mode: referenced
+hosting_justification: null
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v02_prevention_authoring
+license:
+  name: CC-BY-NC-SA 3.0 IGO (IARC / WHO Intergovernmental Organization licence) [VERIFY]
+  url: https://creativecommons.org/licenses/by-nc-sa/3.0/igo/
+  spdx_id: CC-BY-NC-SA-3.0-IGO
+attribution:
+  required: true
+  text: 'IARC Monographs on the Evaluation of Carcinogenic Risks to Humans, Volume
+    100B. A Review of Human Carcinogens. Part B: Biological Agents. Lyon: International
+    Agency for Research on Cancer; 2012. © International Agency for Research on Cancer.'
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+sharealike_required: true
+known_restrictions:
+- IGO licence terms differ from the standard CC-BY-NC-SA — verify reuse interpretation
+  before any derivative work
+- WHO/IARC publication; matched to conservative posture of SRC-WHO-LNSC-2023 pending
+  legal review
+legal_review:
+  status: pending
+  notes: Verify IARC/WHO CC-BY-NC-SA-3.0-IGO scope for a non-profit clinical decision-support
+    use; confirm SPDX identifier alignment.
+relates_to_diseases: []
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. Cited by prevention RFs and Indications (Lynch
+  / H. pylori / etc.) in the v0.2-A and v0.2-B pilots. IARC Group 1 carcinogenicity
+  classifications for biological agents: HCV, HBV, HPV (high-risk types), HIV-1 (indirect
+  via immunosuppression), EBV, HTLV-1, H. pylori (gastric MALT lymphoma + gastric
+  adenocarcinoma), KSHV/HHV-8, and MCV (Merkel cell polyomavirus). Foundational reference
+  for v0.2-A infectious-etiology prevention pilots covering 7 oncogenic infectious
+  agents.
+
+  '
+pages_count: 480
+references_count: 1600
+corpus_role: primary_guideline

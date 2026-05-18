@@ -1,0 +1,65 @@
+id: SRC-ASCO-ACMG-LYNCH-2014
+source_type: guideline
+title: 'Hereditary colorectal cancer syndromes: American Society of Clinical Oncology
+  Clinical Practice Guideline endorsement of the familial risk-colorectal cancer:
+  European Society for Medical Oncology Clinical Practice Guidelines (J Clin Oncol
+  2015;33(2):209-217)'
+version: ASCO endorsement 2014 (published J Clin Oncol 2015;33(2):209-217)
+authors:
+- Stoffel EM
+- Mangu PB
+- Gruber SB
+- Hamilton SR
+- Kalady MF
+- Lau MWY
+- Lu KH
+- Roach N
+- Limburg PJ
+journal: Journal of Clinical Oncology
+doi: 10.1200/JCO.2014.58.1322
+pmid: '25452455'
+url: https://ascopubs.org/doi/10.1200/JCO.2014.58.1322
+access_level: open_access
+currency_status: current
+current_as_of: '2015-01-10'
+evidence_tier: 1
+hosting_mode: referenced
+hosting_justification: null
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v02_prevention_authoring
+license:
+  name: ASCO publications — copyright ASCO (open access for this endorsement document)
+  url: https://ascopubs.org/page/help/permissions
+  spdx_id: null
+attribution:
+  required: true
+  text: 'Stoffel EM et al., Hereditary colorectal cancer syndromes: ASCO endorsement
+    of the ESMO familial-risk CRC guideline. J Clin Oncol 2015;33(2):209-217. doi:10.1200/JCO.2014.58.1322'
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+legal_review:
+  status: pending
+  notes: ASCO open-access endorsement; verify exact ASCO permissions terms for engine-paraphrase
+    derivative use before public launch.
+relates_to_diseases: []
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. Cited by prevention RFs and Indications (Lynch
+  syndrome diagnostic criteria, MMR / MSI testing cascade, family-history-driven CRC
+  surveillance) in the v0.2-B Lynch hereditary pilot. ASCO endorsement of the ESMO
+  familial-risk colorectal-cancer guideline; covers Amsterdam II and revised Bethesda
+  criteria, MMR-IHC / MSI as universal tumor screen for CRC patients, germline mutation
+  testing for MLH1 / MSH2 / MSH6 / PMS2 / EPCAM, and surveillance recommendations
+  for confirmed Lynch carriers.
+
+  Citation-year asymmetry: entity ID uses 2014 (the year ASCO formally endorsed the
+  ESMO guideline); the journal publication appeared in J Clin Oncol 2015 (Volume 33,
+  Issue 2). Both years are correct in context — not an error.
+
+  '
+pages_count: 9
+references_count: 90
+corpus_role: primary_guideline

@@ -1,0 +1,53 @@
+id: SRC-AASLD-IDSA-HCV-2023
+source_type: guideline
+title: 'AASLD-IDSA Recommendations for Testing, Managing, and Treating Hepatitis C
+  (living document; 2023 captured version)'
+version: '2023 captured snapshot of the living document hosted at hcvguidelines.org'
+authors:
+- American Association for the Study of Liver Diseases
+- Infectious Diseases Society of America
+journal: null
+url: https://www.hcvguidelines.org
+access_level: open_access
+currency_status: current
+current_as_of: '2023'
+evidence_tier: 1
+hosting_mode: referenced
+hosting_justification: null
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v02_prevention_authoring
+license:
+  name: AASLD-IDSA HCV Guidance — academic reuse with attribution; living document
+  url: https://www.hcvguidelines.org/contents
+  spdx_id: null
+attribution:
+  required: true
+  text: 'AASLD-IDSA. Recommendations for Testing, Managing, and Treating Hepatitis
+    C. https://www.hcvguidelines.org (living document; captured 2023).'
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+known_restrictions:
+- Living document — recommendations change between captures; URL is evergreen and
+  may not match the 2023 captured snapshot. Maintainers should re-verify quarterly.
+legal_review:
+  status: pending
+  notes: AASLD/IDSA publish at hcvguidelines.org under open-access academic-reuse
+    posture; confirm derivative/engine-paraphrase scope before public launch.
+relates_to_diseases:
+- DIS-HCV-MZL
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. Cited by prevention RFs and Indications (HCV
+  screening / DAA cure / B-cell NHL prevention) in the v0.2-A pilot. The hcvguidelines.org
+  living document is updated on a rolling basis; 2023 captured version covers DAA
+  regimens (sofosbuvir/velpatasvir, glecaprevir/pibrentasvir, sofosbuvir/velpatasvir/voxilaprevir),
+  universal-screening recommendations, and post-cure follow-up. Pairs with SRC-EASL-HCV-2023
+  as the US-side Tier-1 reference for the HCV→NHL prevention anchor (KSS §20).
+
+  '
+pages_count: 100
+references_count: 500
+corpus_role: primary_guideline
