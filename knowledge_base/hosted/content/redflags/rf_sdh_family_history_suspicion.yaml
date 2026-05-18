@@ -1,0 +1,42 @@
+id: RF-SDH-FAMILY-HISTORY-SUSPICION
+definition: >-
+  Family pedigree suggestive of SDH (succinate dehydrogenase) deficiency
+  syndrome — confirmed germline SDHB / SDHC / SDHD / SDHA / SDHAF2
+  pathogenic variant OR cluster of paraganglioma + pheochromocytoma +
+  renal cell carcinoma + GIST (Carney-Stratakis). SDH-deficient RCC is
+  aggressive (often type-2-papillary morphology). Prevention-persona
+  RedFlag (§20 v0.2-B).
+definition_ua: >-
+  Сімейний родовід, підозрілий на SDH (succinate dehydrogenase) deficiency
+  syndrome.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "family_sdh_known_pathogenic_variant"
+      value: true
+    - finding: "family_paraganglioma_or_pheochromocytoma_pediatric_or_familial"
+      value: true
+    - finding: "family_sdh_deficient_rcc_or_gist"
+      value: true
+
+clinical_direction: investigate
+severity: major
+priority: 100
+category: other
+risk_category: genetic
+
+relevant_diseases:
+  - DIS-RCC
+  - DIS-PHEOCHROMOCYTOMA
+
+shifts_algorithm: []
+sources: [SRC-NCCN-BCELL-2025]
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for SDH-deficiency syndrome. STUB pending two-Co-Lead signoff."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_more_hereditary
+draft_revision: 1

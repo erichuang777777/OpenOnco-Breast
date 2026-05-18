@@ -1,0 +1,75 @@
+id: IND-HPRC-SUSPICION-PREVENTION-GENETIC-COUNSELING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-RCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints: {ecog_max: 3}
+
+triggered_by_redflags:
+  - RF-HPRC-FAMILY-HISTORY-SUSPICION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Germline MET testing in HPRC-pedigree cohort: positive rate ~20-40%. Confirmed carriers have lifetime papillary type 1 RCC risk ~50-80%; bilateral and multifocal disease common. Surveillance enables early detection at stage amenable to nephron-sparing surgery."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: [TEST-CBC, TEST-GERMLINE-MULTI-GENE-PANEL]
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for HPRC.
+
+  **(1) Genetic counseling + germline MET panel.**
+
+  **(2) Confirmed-carrier surveillance:**
+  - Annual abdominal MRI starting age 30 (or 10y before youngest family RCC)
+  - Nephron-sparing surgery threshold: ≥3cm for unifocal lesions (similar to VHL)
+  - Active surveillance permissible for smaller lesions (HPRC-RCC is less
+    aggressive than HLRCC-RCC; different from FH-RCC paradigm)
+
+  **(3) Cascade testing of first-degree relatives.**
+
+rationale_ua: >
+  Стандартний-трек для HPRC.
+
+  **(1) Genetic counseling + germline MET panel.**
+
+  **(2) Surveillance:**
+  - Annual abdominal MRI з 30 років
+  - Nephron-sparing surgery поріг: ≥3см
+  - Active surveillance permissible для менших lesions
+
+  **(3) Cascade testing родичів.**
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_more_hereditary
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не використовувати HLRCC-RCC paradigm у HPRC — HPRC-RCC менш агресивна, active surveillance permissible."
+
+do_not_do_en:
+  - "Do not use the HLRCC-RCC paradigm in HPRC — HPRC-RCC is less aggressive, active surveillance is permissible."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B HPRC hereditary pilot."

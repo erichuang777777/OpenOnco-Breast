@@ -1,0 +1,39 @@
+id: RF-HPRC-FAMILY-HISTORY-SUSPICION
+definition: >-
+  Family pedigree suggestive of HPRC (Hereditary Papillary Renal Cancer)
+  — MET-driven type 1 papillary RCC inheritance, autosomal dominant —
+  with bilateral/multifocal papillary type 1 RCC OR ≥2 first/second-
+  degree relatives with papillary type 1 RCC OR family confirmed MET
+  pathogenic variant. Prevention-persona RedFlag (§20 v0.2-B).
+definition_ua: >-
+  Сімейний родовід, підозрілий на HPRC (Hereditary Papillary Renal
+  Cancer) — MET-driven type 1 papillary RCC спадковість, autosomal
+  dominant.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "family_met_known_pathogenic_variant"
+      value: true
+    - finding: "family_papillary_type1_rcc_first_or_second_degree"
+      value: true
+    - finding: "family_bilateral_multifocal_papillary_rcc"
+      value: true
+
+clinical_direction: investigate
+severity: major
+priority: 100
+category: other
+risk_category: genetic
+
+relevant_diseases: [DIS-RCC]
+shifts_algorithm: []
+sources: [SRC-NCCN-BCELL-2025]
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for HPRC. STUB pending two-Co-Lead signoff."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_more_hereditary
+draft_revision: 1

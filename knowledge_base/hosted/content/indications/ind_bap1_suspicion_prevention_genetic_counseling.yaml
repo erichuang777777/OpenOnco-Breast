@@ -1,0 +1,82 @@
+id: IND-BAP1-SUSPICION-PREVENTION-GENETIC-COUNSELING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-RCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints: {ecog_max: 3}
+
+triggered_by_redflags:
+  - RF-BAP1-FAMILY-HISTORY-SUSPICION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Germline BAP1 panel testing in pedigree-suspicion cohort: positive rate ~30-60% in classic phenotype. Confirmed carriers have lifetime risks: uveal melanoma ~30%, cutaneous melanoma ~15-25%, mesothelioma ~25%, clear-cell RCC ~10-15%, basal cell carcinoma + atypical Spitz tumors elevated. Surveillance enables early detection."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests: [TEST-CBC, TEST-GERMLINE-MULTI-GENE-PANEL]
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for BAP1 tumor predisposition syndrome.
+
+  **(1) Genetic counseling + germline BAP1 panel testing.** Autosomal dominant
+  inheritance.
+
+  **(2) Confirmed-carrier surveillance protocol** (per BAP1 Interest Group
+  consensus):
+  - Annual ophthalmologic exam (dilated fundoscopy) for uveal melanoma
+  - Annual whole-body skin exam by dermatologist for cutaneous melanoma + atypical
+    Spitz tumors
+  - Annual abdominal MRI for clear-cell RCC surveillance
+  - Awareness of mesothelioma — chest imaging individualized; avoid asbestos
+    exposure as additive risk
+
+  **(3) Cascade testing of first-degree relatives.**
+
+rationale_ua: >
+  Стандартний-трек для BAP1 syndrome.
+
+  **(1) Genetic counseling + germline BAP1 panel.**
+
+  **(2) Surveillance протокол:**
+  - Annual ophthalmologic exam для uveal melanoma
+  - Annual whole-body skin exam для cutaneous melanoma
+  - Annual abdominal MRI для clear-cell RCC
+
+  **(3) Cascade testing родичів.**
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_more_hereditary
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не пропускати ophthalmologic surveillance — uveal melanoma — найпоширеніший BAP1-tumor."
+  - "Не ігнорувати asbestos exposure history у BAP1+ — додатковий risk multiplier для mesothelioma."
+
+do_not_do_en:
+  - "Do not skip ophthalmologic surveillance — uveal melanoma is the most common BAP1 tumor."
+  - "Do not ignore asbestos exposure history in BAP1+ — additive risk multiplier for mesothelioma."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B BAP1 hereditary pilot."

@@ -1,0 +1,84 @@
+id: IND-SDH-SUSPICION-PREVENTION-GENETIC-COUNSELING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-PHEOCHROMOCYTOMA
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints: {ecog_max: 3}
+
+triggered_by_redflags:
+  - RF-SDH-FAMILY-HISTORY-SUSPICION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Germline SDH-panel testing (SDHA/B/C/D/AF2) in pedigree-suspicion cohort: positive rate varies by phenotype (~15-50%). SDHB carriers have highest malignancy risk among SDH subtypes — paraganglioma + RCC + GIST surveillance critical."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: [TEST-CBC, TEST-GERMLINE-MULTI-GENE-PANEL]
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for SDH-deficiency syndromes.
+
+  **(1) Genetic counseling + germline SDH-panel** (SDHA, SDHB, SDHC, SDHD,
+  SDHAF2).
+
+  **(2) Confirmed-carrier surveillance** (per Endocrine Society guidelines):
+  - Annual whole-body MRI from age 6-10 in SDHB carriers (childhood-onset
+    paragangliomas reported)
+  - Annual metanephrines / methoxytyramine / catecholamines
+  - Head + neck MRI q2-3y for parasympathetic paragangliomas
+  - Abdominal MRI for RCC + GIST surveillance
+  - SDHB > SDHD > SDHC > SDHA carrier-risk gradient (SDHB highest)
+
+  **(3) Cascade testing** — paternal inheritance pattern for SDHD/SDHAF2
+  (imprinting), autosomal dominant for SDHA/B/C.
+
+rationale_ua: >
+  Стандартний-трек для SDH-deficiency.
+
+  **(1) Genetic counseling + germline SDH-panel.**
+
+  **(2) Surveillance:**
+  - Annual whole-body MRI з 6-10 років у SDHB carriers
+  - Annual metanephrines
+  - Head + neck MRI q2-3y
+  - Abdominal MRI для RCC + GIST
+
+  **(3) Cascade testing з paternal inheritance для SDHD/SDHAF2.**
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_more_hereditary
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не пропускати pediatric surveillance у SDHB carriers — childhood-onset paragangliomas."
+  - "Не ігнорувати GIST awareness у SDH+ — Carney-Stratakis subset."
+  - "Не використовувати SDHD/SDHAF2 cascade testing maternal-side — imprinting змінює inheritance pattern."
+
+do_not_do_en:
+  - "Do not skip pediatric surveillance in SDHB carriers — childhood-onset paragangliomas."
+  - "Do not ignore GIST awareness in SDH+ — Carney-Stratakis subset."
+  - "Do not use maternal-side cascade testing for SDHD/SDHAF2 — imprinting alters inheritance pattern."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B SDH hereditary pilot."
