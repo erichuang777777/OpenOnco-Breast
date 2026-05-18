@@ -1,0 +1,13 @@
+{
+  "patient_id": "VHL-PREV-001",
+  "comment": "24yo male whose mother had cerebellar hemangioblastoma at 34 and bilateral pheochromocytoma at 38. Father healthy. No personal symptoms. Engine routes to PreventionPlan: standard = pre-test counseling + germline VHL gene panel; alternative = empirical VHL-protocol surveillance (MRI brain+spine q1y from age 15, MRI abdomen q1-2y, ophthalmology q1y, catecholamines/metanephrines q1y). Validates v0.2-B VHL hereditary pilot. Father-with-kidney-cancer scenario the project initiator highlighted is the canonical clinical motivation.",
+  "biomarkers": {},
+  "demographics": {"age": 24, "sex": "male", "ecog": 0},
+  "findings": {
+    "family_hemangioblastoma_cns_or_retinal": true,
+    "family_pheochromocytoma_paraganglioma_with_rcc_or_hemangioblastoma": true,
+    "Mother cerebellar hemangioblastoma age 34": true,
+    "Mother bilateral pheochromocytoma age 38": true,
+    "No personal cancer diagnosis": true
+  }
+}

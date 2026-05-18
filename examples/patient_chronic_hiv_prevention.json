@@ -1,0 +1,12 @@
+{
+  "patient_id": "HIV-PREV-001",
+  "comment": "35yo male, newly-diagnosed HIV (positive serology, CD4 380, VL 45000), no current AIDS-defining malignancy. Engine routes to PreventionPlan: standard = Biktarvy single-tablet ART + cancer screening cadence (anal cytology q1-3y, oral KS visual screening); alternative = ART decline (clinically aberrant, included for §15.2 C4). Validates v0.2-A HIV → DLBCL / KS / anal / cervical prevention pathway. Reimbursed via НСЗУ.",
+  "biomarkers": {},
+  "demographics": {"age": 35, "sex": "male", "ecog": 0},
+  "findings": {
+    "hiv_status": "positive",
+    "HIV-RNA viral load 45000 copies/mL": true,
+    "CD4 count 380 cells/microL": true,
+    "No AIDS-defining malignancy on baseline workup": true
+  }
+}

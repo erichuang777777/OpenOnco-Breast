@@ -1,0 +1,13 @@
+{
+  "patient_id": "FAP-PREV-001",
+  "comment": "16yo whose father has confirmed FAP (APC pathogenic variant, >100 colorectal adenomas, treated with prophylactic colectomy age 22). Patient untested, asymptomatic. Engine routes to PreventionPlan: standard = pre-test counseling + germline APC panel (incl. MUTYH for MAP differential); alternative = empirical sigmoidoscopy from age 10-12. Validates v0.2-B FAP hereditary pilot.",
+  "biomarkers": {},
+  "demographics": {"age": 16, "sex": "male", "ecog": 0},
+  "findings": {
+    "family_apc_known_pathogenic_variant": true,
+    "family_first_degree_fap_diagnosed_relative": true,
+    "family_classic_fap_phenotype": true,
+    "Father confirmed FAP carrier, prophylactic colectomy age 22": true,
+    "No personal cancer diagnosis": true
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "patient_id": "HPYLORI-PREV-001",
+  "comment": "48yo male, positive H. pylori urea breath test on routine evaluation for dyspepsia. No current malignancy. Engine routes to PreventionPlan: standard = bismuth quadruple eradication (PBMT, preferred in Ukraine due to >15% clarithromycin resistance); alternative = active observation. Validates v0.2-A H. pylori → gastric / MALT prevention pathway.",
+  "biomarkers": {},
+  "demographics": {"age": 48, "sex": "male", "ecog": 1},
+  "findings": {
+    "h_pylori_status": "positive",
+    "Confirmed chronic H. pylori infection": true,
+    "No gastric malignancy on upper GI evaluation": true
+  }
+}
