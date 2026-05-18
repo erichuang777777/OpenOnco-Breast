@@ -1,0 +1,180 @@
+id: IND-CHRONIC-HCV-PREVENTION-DAA
+plan_track: standard
+
+# §20 prevention extension (RATIFIED 2026-05-18) — this Indication is
+# selected by the engine ONLY when assembling a PreventionPlan (patient
+# has no confirmed Disease but carries RF-CHRONIC-HCV-NHL-PREVENTION-
+# OPPORTUNITY). Treatment-time plan generation ignores Indications with
+# intent != treatment.
+intent: prevention
+
+applicable_to:
+  # `disease_id` here = the cancer being prevented (per KSS §20.2 routing
+  # contract). DIS-HCV-MZL is the canonical HCV-associated indolent NHL
+  # in the OpenOnco KB; HCV's IARC Group 1 designation extends to
+  # additional indolent B-cell lymphoma subtypes (lymphoplasmacytic /
+  # WM, splenic-MZL, low-grade DLBCL fraction) that are not yet modeled
+  # as distinct Disease entities. Anchored to DIS-HCV-MZL as the
+  # validation-ready slice.
+  disease_id: DIS-HCV-MZL
+
+  # line_of_therapy intentionally unset: prevention is not on the
+  # line-of-therapy axis. The engine routing branch for intent=prevention
+  # ignores LOT (KSS §20.2 — branch is selected by patient state +
+  # fired prevention-eligible RF, not by LOT).
+
+  stage_requirements: []
+
+  biomarker_requirements_required:
+    - biomarker_id: BIO-HCV-RNA
+      required: true
+      value_constraint: "detectable"
+
+  biomarker_requirements_excluded: []
+
+  demographic_constraints:
+    ecog_max: 3
+    decompensated_cirrhosis: false  # decompensated (Child-Pugh B/C) — separate hepatology pathway
+
+recommended_regimen: REG-DAA-SOF-VEL
+concurrent_therapy: []
+followed_by:
+  - IND-HCV-MZL-POST-DAA-SURVEILLANCE  # post-SVR12 surveillance pathway (existing)
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  hcv_cure_rate_svr12: ">95% SVR12 in treatment-naive non-cirrhotic HCV"
+  overall_response_rate: "Primary endpoint: HCV cure (SVR12). Cancer-prevention endpoint: reduced incidence of HCV-associated indolent B-cell NHL in post-SVR12 cohorts (de-Re et al., post-DAA registries)."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  - TEST-LFT
+  - TEST-HBV-SEROLOGY  # critical screen before DAA — occult HBV reactivation risk
+  - TEST-FIB4          # cirrhosis assessment
+
+desired_tests:
+  - TEST-LDH           # baseline; rising LDH during surveillance = transformation flag
+
+rationale: >
+  Prevention-persona Indication anchoring the v0.2-A pilot (KSS §20.3).
+  Patient with chronic HCV (HCV-RNA detectable / persistent viremia)
+  and no current B-cell NHL diagnosis is offered DAA antiviral therapy
+  (sofosbuvir/velpatasvir 12 weeks) as the etiological cancer-prevention
+  pathway. HCV is an IARC Group 1 carcinogen with established causal
+  role in indolent B-cell NHL (especially MZL and splenic-MZL
+  subtypes) and HCC. DAA achieves SVR12 in >95% of treatment-naive
+  non-cirrhotic patients and is associated with reduced incidence of
+  HCV-associated NHL in post-treatment cohorts.
+
+  In Ukraine, SOF/VEL is fully reimbursed via the НСЗУ national HCV
+  treatment programme — the same access pathway as the treatment-persona
+  IND-HCV-MZL-1L-ANTIVIRAL. This makes infectious-etiology prevention
+  one of the highest-ROI workstreams for the project (CHARTER §3
+  prevention scope amendment 2026-05-18).
+
+  Routes to IND-HCV-MZL-POST-DAA-SURVEILLANCE for the
+  post-SVR12 active-surveillance window during which lymphoma incidence
+  is monitored. Decompensated cirrhosis (Child-Pugh B/C) is excluded —
+  those patients route to a hepatology-led pathway not yet modeled in
+  the KB.
+
+rationale_ua: >
+  Prevention-persona Indication, що закріплює v0.2-A пілот (KSS §20.3).
+  Пацієнтові з хронічним HCV (визначувана HCV-РНК / стійка віремія)
+  та без поточного діагнозу B-клітинної НХЛ пропонується DAA-терапія
+  (софосбувір/велпатасвір 12 тижнів) як шлях етіологічної профілактики
+  раку. HCV — канцероген IARC Group 1 з встановленою причинною роллю
+  в індолентній B-клітинній НХЛ (особливо підтипи MZL та splenic-MZL)
+  і в ГЦК. DAA досягає SVR12 у >95% terapeutично-наївних
+  нециротичних пацієнтів та асоціюється зі зниженням захворюваності
+  HCV-асоційованої НХЛ у пост-терапевтичних когортах.
+
+  В Україні SOF/VEL повністю відшкодовується через національну програму
+  НСЗУ з лікування HCV — той самий шлях доступу як для treatment-persona
+  IND-HCV-MZL-1L-ANTIVIRAL. Це робить інфекційну етіологічну
+  профілактику одним з workstream-ів з найвищим ROI для проєкту
+  (поправка CHARTER §3 щодо prevention scope 2026-05-18).
+
+  Маршрутизує до IND-HCV-MZL-POST-DAA-SURVEILLANCE для вікна активного
+  спостереження після SVR12, протягом якого моніториться захворюваність
+  лімфомою. Декомпенсований цироз (Child-Pugh B/C) виключено — такі
+  пацієнти маршрутизуються до гепатологічного шляху, ще не змодельованого
+  в KB.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-EASL-HCV-2023
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Sofosbuvir/velpatasvir 12 weeks for treatment-naive non-cirrhotic
+      HCV; SVR12 >95%. DAA-based HCV cure reduces extrahepatic
+      manifestations including HCV-associated B-cell lymphoproliferative
+      disease."
+  - source_id: SRC-NCCN-BCELL-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "DAA-based antiviral therapy preferred for HCV+ indolent B-cell
+      lymphomas; etiological-cancer-prevention rationale extends to HCV
+      carriers without established lymphoma when SOF/VEL is accessible."
+
+do_not_do:
+  - "Не призначати DAA при decompensated cirrhosis (Child-Pugh B/C) без гепатологічного консиліуму — окремий regimen."
+  - "Не комбінувати sofosbuvir з аміодароном — ризик важкої брадикардії та зупинки серця."
+  - "Не пропускати HBV серологію (HBsAg + anti-HBc) перед стартом — окультна HBV може реактивуватися навіть при antiviral-only підході."
+  - "Не презентувати DAA як 'protection from cancer' пацієнту — це cancer-incidence-reduction інтервенція, не guarantee. Disclaimer per CHARTER §11."
+  - "Не призначати prevention-persona DAA пацієнту, у якого є confirmed B-cell NHL — це treatment-persona шлях через IND-HCV-MZL-1L-ANTIVIRAL, не prevention."
+
+do_not_do_en:
+  - "Do not prescribe DAA in decompensated cirrhosis (Child-Pugh B/C) without a hepatology consult — separate regimen."
+  - "Do not combine sofosbuvir with amiodarone — risk of severe bradycardia and cardiac arrest."
+  - "Do not skip HBV serology (HBsAg + anti-HBc) before start — occult HBV may reactivate even with an antiviral-only approach."
+  - "Do not present DAA to the patient as 'protection from cancer' — this is a cancer-incidence-reduction intervention, not a guarantee. Disclaimer per CHARTER §11."
+  - "Do not prescribe prevention-persona DAA to a patient with confirmed B-cell NHL — that is the treatment-persona pathway via IND-HCV-MZL-1L-ANTIVIRAL, not prevention."
+
+known_controversies:
+  - topic: "Magnitude of NHL-incidence reduction from DAA cure"
+    positions:
+      - position: "Significant reduction in HCV-associated NHL incidence post-SVR12"
+        sources:
+          - SRC-EASL-HCV-2023
+        evidence_note: "Multiple post-DAA cohort studies show reduced NHL incidence; effect size varies by lymphoma subtype and follow-up duration"
+      - position: "Effect on NHL incidence reduction less well-quantified than HCC reduction"
+        evidence_note: "Some authors caution that NHL-prevention magnitude is less established than HCC-prevention; recommend DAA primarily for HCV cure, NHL/HCC reduction as ancillary benefit"
+    our_default: "Recommend DAA for HCV cure first; cancer-incidence-reduction (NHL + HCC) framed as ancillary benefit, not primary indication"
+    rationale: >
+      Preserves clinical honesty per CHARTER §8.3 + §11. DAA is
+      well-indicated for HCV cure on its own merits; NHL-prevention is
+      a clinically meaningful but less precisely quantified ancillary
+      benefit. Avoid overclaiming.
+
+time_critical: false
+
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — v0.2-A anchor for the prevention persona (CHARTER §3 scope
+  amendment 2026-05-18, KSS §20 ratification). Requires two-Clinical-
+  Co-Lead signoff per §6.1 dev-mode exemption. Sources cited (EASL HCV
+  2023, NCCN B-cell 2025). HBV-prophylaxis and decompensated-cirrhosis
+  guards explicit in `do_not_do`.
+
+  Engine consumption deferred to v0.2 implementation wave: the
+  intent-aware filter in `plan.generate_plan()` + the PreventionPlan
+  shape are not yet implemented. This Indication lands as schema-valid
+  declarative content waiting for that wave (KSS §20.4 step 4).
+
+  Follow-up authoring TODOs (out of scope for this anchor):
+  - IARC Monograph 100B citation (HCV Group 1) — add as new SRC entity.
+  - AASLD-IDSA HCV guidance citation — add as new SRC entity.
+  - Equivalent prevention-persona Indications for HepB, H. pylori,
+    HPV, EBV, HIV, HTLV-1 (v0.2-A scope continuation).

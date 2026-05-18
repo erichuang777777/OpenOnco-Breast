@@ -5,7 +5,13 @@ from typing import Optional
 from pydantic import Field, field_validator
 
 from ._reviewer_signoff import ReviewerSignoff, _migrate_int_signoffs
-from .base import Base, RedFlagCategory, RedFlagDirection, RedFlagSeverity
+from .base import (
+    Base,
+    PreventionRiskCategory,
+    RedFlagCategory,
+    RedFlagDirection,
+    RedFlagSeverity,
+)
 
 
 class RedFlagTrigger(Base):
@@ -35,6 +41,15 @@ class RedFlag(Base):
     # coverage tooling doesn't need keyword heuristics. Defaults to OTHER
     # for un-categorized RFs (legacy compatibility); CI prefers explicit value.
     category: RedFlagCategory = RedFlagCategory.OTHER
+
+    # §20 prevention extension (RATIFIED 2026-05-18). 7-category risk-factor
+    # taxonomy for the prevention persona (IARC Monographs + WCRF/AICR +
+    # USPSTF + NCCN Genetic/Familial High-Risk). Distinct from `category`
+    # above (treatment-time 5-type matrix). Optional — existing
+    # treatment-time RedFlags continue to work with this field unset.
+    # A single RedFlag may carry BOTH a treatment-time `category` and a
+    # prevention-time `risk_category` if it applies to both personas.
+    risk_category: Optional[PreventionRiskCategory] = None
 
     # Optional explicit branch wiring. When set, lets test/coverage tooling
     # confirm that this RedFlag actually drives a specific decision-tree

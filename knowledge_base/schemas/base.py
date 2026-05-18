@@ -117,6 +117,87 @@ class RedFlagCategory(str, Enum):
     OTHER = "other"
 
 
+# ── §20 prevention extensions (RATIFIED 2026-05-18) ───────────────────────────
+# These enums power the prevention / early-diagnosis persona ratified in
+# KNOWLEDGE_SCHEMA_SPECIFICATION §20. They are additive: existing
+# treatment-time entities load unchanged via default-on-read in the
+# respective Pydantic schemas (Indication, Biomarker, RedFlag). Engine /
+# validator / render integration is deferred to v0.2 implementation
+# waves — these enums are the foundation, not the consumer.
+
+
+class IndicationIntent(str, Enum):
+    """Audience / purpose of an Indication (KSS §20.1).
+
+    `treatment` is the default and back-compat value — every Indication
+    authored before 2026-05-18 is treatment by definition. The other
+    three intents power the Prevention Plan deliverable scoped by
+    CHARTER §3 amendment 2026-05-18 (Path A, HCP-mediated).
+
+    Distinction between prevention / screening / surveillance:
+    - `prevention`   — at-risk asymptomatic individual, intervention
+                       targets a modifiable risk factor (treat HCV with
+                       DAA → reduce NHL/HCC risk).
+    - `screening`    — population/risk-group cadence for early detection
+                       (mammography in BRCA carriers, colonoscopy q1-2y
+                       in Lynch carriers).
+    - `surveillance` — known carrier or post-treatment monitoring
+                       (catecholamines in confirmed VHL, AFP+US in
+                       post-SVR12 cirrhotics).
+    """
+
+    TREATMENT = "treatment"
+    PREVENTION = "prevention"
+    SCREENING = "screening"
+    SURVEILLANCE = "surveillance"
+
+
+class BiomarkerClinicalContext(str, Enum):
+    """Which clinical question a biomarker answers (KSS §20.1).
+
+    Multi-valued on `Biomarker.clinical_context` — one marker may serve
+    several contexts. Example: MMR / MSI is simultaneously
+    `germline_susceptibility` (Lynch carriers), `tumor_profiling`
+    (drives MSI-H classification of CRC), and `predictive` (predicts
+    response to checkpoint inhibitors).
+
+    Default-on-read for legacy biomarkers is `[tumor_profiling]`, which
+    matches current implicit behavior across the ~170 existing Biomarker
+    YAMLs.
+    """
+
+    GERMLINE_SUSCEPTIBILITY = "germline_susceptibility"
+    TUMOR_PROFILING = "tumor_profiling"
+    SCREENING_SURVEILLANCE = "screening_surveillance"
+    PROGNOSTIC = "prognostic"
+    PREDICTIVE = "predictive"
+
+
+class PreventionRiskCategory(str, Enum):
+    """7-category risk-factor taxonomy for the prevention persona (KSS §20.1).
+
+    Used on `RedFlag.risk_category` (new field, optional — existing
+    treatment-time RFs continue to work with this field unset). Mirrors
+    the framework adopted from IARC Monographs + WCRF/AICR + USPSTF +
+    NCCN Genetic/Familial High-Risk guidelines (scope proposal §5).
+
+    Distinct from `RedFlagCategory` (above), which is the treatment-time
+    5-type matrix from REDFLAG_AUTHORING_GUIDE §2. A single RedFlag may
+    carry BOTH a treatment-time `category` and a prevention-time
+    `risk_category` if it applies to both personas (rare but possible —
+    e.g., a chronic-infection RF could fire for treatment-time HBV
+    prophylaxis AND for prevention-time HCC/NHL risk).
+    """
+
+    GENETIC = "genetic"
+    INFECTIOUS = "infectious"
+    CHRONIC_CONDITION = "chronic_condition"
+    OCCUPATIONAL = "occupational"
+    IATROGENIC = "iatrogenic"
+    LIFESTYLE = "lifestyle"
+    REPRODUCTIVE = "reproductive"
+
+
 # ── Common embedded models ────────────────────────────────────────────────────
 
 
@@ -249,6 +330,10 @@ __all__ = [
     "RedFlagDirection",
     "RedFlagSeverity",
     "RedFlagCategory",
+    # §20 prevention extensions (RATIFIED 2026-05-18)
+    "IndicationIntent",
+    "BiomarkerClinicalContext",
+    "PreventionRiskCategory",
     "License",
     "Attribution",
     "LegalReview",

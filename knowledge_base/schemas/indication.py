@@ -15,7 +15,13 @@ from typing import Optional
 from pydantic import Field, field_validator, model_validator
 
 from ._reviewer_signoff import ReviewerSignoff, _migrate_int_signoffs
-from .base import Base, Citation, EvidenceLevel, StrengthOfRecommendation
+from .base import (
+    Base,
+    Citation,
+    EvidenceLevel,
+    IndicationIntent,
+    StrengthOfRecommendation,
+)
 
 
 # Sentinel SRC-* id assigned to outcome values that pre-date the Phase 2
@@ -260,6 +266,15 @@ class Indication(Base):
     do_not_do_en: list[str] = Field(default_factory=list)
 
     plan_track: Optional[str] = None  # "standard" | "aggressive" | "trial" | "palliative"
+
+    # §20 prevention extension (RATIFIED 2026-05-18). Audience / purpose of
+    # this Indication. Default `treatment` matches every Indication authored
+    # before 2026-05-18 — no backfill required across the ~400 existing
+    # Indication YAMLs. Prevention / screening / surveillance values power
+    # the Prevention Plan deliverable scoped by CHARTER §3 (Path A,
+    # HCP-mediated). Engine intent-filter integration deferred to v0.2
+    # implementation waves.
+    intent: IndicationIntent = IndicationIntent.TREATMENT
 
     # FDA non-device CDS positioning (per specs/CHARTER.md §15).
     # If `time_critical: true`, this Indication falls OUTSIDE the §520(o)(1)(E)

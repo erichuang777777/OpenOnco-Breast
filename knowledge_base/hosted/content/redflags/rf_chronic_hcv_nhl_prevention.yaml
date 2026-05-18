@@ -1,0 +1,103 @@
+id: RF-CHRONIC-HCV-NHL-PREVENTION-OPPORTUNITY
+definition: >-
+  Chronic HCV infection (HCV-RNA detectable / persistent viremia) in an
+  individual without a current B-cell NHL diagnosis. IARC Group 1
+  carcinogen (HCV) — established etiological driver of indolent
+  B-cell lymphomas (MZL, lymphoplasmacytic, splenic-MZL, low-grade
+  DLBCL subset) and HCC. DAA-based curative antiviral therapy is the
+  highest-leverage prevention pathway and reduces both NHL incidence
+  and HCC incidence post-SVR12. Prevention-persona RedFlag (§20
+  ratification 2026-05-18).
+definition_ua: >-
+  Хронічна інфекція HCV (визначувана HCV-РНК / стійка віремія) у
+  пацієнта без поточного діагнозу В-клітинної НХЛ. HCV — канцероген
+  IARC Group 1, встановлений етіологічний драйвер індолентних
+  В-клітинних лімфом (MZL, лімфоплазмоцитарна, селезінкова MZL,
+  частина DLBCL низького ступеня) і ГЦК. Курабельна DAA-терапія —
+  найвищий за впливом шлях профілактики, знижує захворюваність як на
+  НХЛ, так і на ГЦК після SVR12. RedFlag персони prevention
+  (ратифікація §20, 2026-05-18).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "hcv_rna"
+      value: "detectable"
+    - finding: "hcv_ab_with_persistent_viremia"
+      value: "positive"
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+
+# Treatment-time category falls back to OTHER — this RF is prevention-
+# persona only and does not fire during treatment-time plan generation.
+category: other
+
+# §20 prevention extension — drives engine routing to PreventionPlan when
+# patient carries this RF and no confirmed Disease (KSS §20.2).
+risk_category: infectious
+
+relevant_diseases:
+  - DIS-HCV-MZL
+
+shifts_algorithm: []
+
+sources:
+  - SRC-EASL-HCV-2023
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag (CHARTER §3 amended 2026-05-18 Path A,
+  HCP-mediated). Fires when patient profile shows chronic HCV (HCV-RNA
+  detectable OR HCV-Ab+ with persistent viremia >6 months) AND no
+  confirmed B-cell NHL diagnosis. Engine routes such patients to a
+  PreventionPlan recommending DAA antiviral therapy (per
+  IND-CHRONIC-HCV-PREVENTION-DAA) as the etiological-cancer-prevention
+  pathway.
+
+  Evidence for HCV → NHL causation (IARC Group 1): multiple cohort
+  studies show 2-3x increased risk of indolent B-cell NHL in chronic
+  HCV carriers; epidemiology especially robust for MZL subtypes. DAA
+  cure (SVR12) has been associated with reduced NHL incidence in
+  post-treatment cohorts (de-Re et al. and others) and with regression
+  of established HCV-associated indolent NHL (the basis of
+  IND-HCV-MZL-1L-ANTIVIRAL for the treatment persona).
+
+  This is a STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1
+  dev-mode exemption (sources cited, draft flag set).
+
+  Engine consumption is DEFERRED to v0.2 implementation wave — the
+  PreventionPlan code path does not yet exist; this RF lands as
+  schema-valid declarative content awaiting that wave.
+notes_ua: >
+  Prevention-persона RedFlag (CHARTER §3 поправка 2026-05-18, Path A
+  HCP-mediated). Спрацьовує коли профіль пацієнта показує хронічний
+  HCV (виявлювана HCV-РНК АБО позитивні anti-HCV з стійкою віремією
+  >6 міс) ТА відсутній підтверджений діагноз B-клітинної НХЛ.
+  Engine маршрутизує таких пацієнтів до PreventionPlan, що рекомендує
+  DAA-терапію (через IND-CHRONIC-HCV-PREVENTION-DAA) як шлях
+  етіологічної профілактики раку.
+
+  Доказова база HCV → НХЛ (IARC Group 1): когортні дослідження
+  показують 2-3-кратне підвищення ризику індолентної В-клітинної НХЛ
+  у носіїв хронічного HCV; епідеміологія особливо надійна для
+  підтипів MZL. Виліковування DAA (SVR12) асоціюється зі зниженням
+  захворюваності НХЛ у пост-терапевтичних когортах та регресією
+  встановленої HCV-асоційованої індолентної НХЛ (основа для
+  IND-HCV-MZL-1L-ANTIVIRAL для treatment персони).
+
+  Це STUB, очікує підпис двох Clinical Co-Lead за §6.1 dev-mode
+  exemption CHARTER (джерела процитовано, draft встановлено).
+
+  Споживання engine ВІДКЛАДЕНО до v0.2 implementation wave — кодовий
+  шлях PreventionPlan ще не існує; цей RF приземляється як
+  schema-valid декларативний контент в очікуванні цієї хвилі.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+
+draft: true
