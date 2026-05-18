@@ -1842,15 +1842,26 @@ HCP-mediated prevention / early-diagnosis recommendations for at-risk
 asymptomatic individuals. The existing schema can compose most of the
 required pattern (`Disease.archetype = etiologically_driven` already
 covers infectious causation; `RedFlag` already drives Indication routing;
-`Algorithm` already encodes decision trees), but four fields are missing
-to disambiguate prevention output from treatment output and to mark
-biomarkers usable in asymptomatic patients. This section adds those
-four fields without introducing any new top-level entity.
+`Algorithm` already encodes decision trees), but **five** fields are
+missing to disambiguate prevention output from treatment output, to
+mark biomarkers usable in asymptomatic patients, and to bind prevention
+Indications to their specific etiological RedFlags. This section adds
+those five fields without introducing any new top-level entity.
+
+The fifth field (`Indication.triggered_by_redflags`) was added during
+v0.2-B implementation (commit `8e1b05e43f`, 2026-05-18) after the
+v0.2-B Lynch pilot surfaced a real cross-etiology contamination bug:
+Lynch RF lists DIS-GASTRIC in `relevant_diseases` because Lynch carriers
+have elevated gastric-cancer risk, but H. pylori prevention indications
+also target DIS-GASTRIC — without explicit RF binding, a Lynch patient
+received 4 tracks (Lynch + H. pylori) instead of 2. §20.1 amended in
+place to document the field; ratification timestamp unchanged
+(same dev-mode session).
 
 ### 20.1. Ratified additive fields
 
 ```yaml
-# Indication addition (extends §7 schema)
+# Indication additions (extend §7 schema)
 intent: treatment        # NEW enum, default = "treatment" (on read; no
                          # backfill required across existing ~400 YAMLs).
                          # Valid values:
@@ -1858,6 +1869,21 @@ intent: treatment        # NEW enum, default = "treatment" (on read; no
                          #   prevention   — for at-risk asymptomatic individuals
                          #   screening    — population/risk-group screening cadence
                          #   surveillance — known carriers / post-treatment monitoring
+
+triggered_by_redflags:   # NEW list of RedFlag IDs. When populated AND
+                         # intent ∈ {prevention, screening, surveillance},
+                         # the engine prevention path only matches this
+                         # Indication when ≥1 of the listed RFs fired.
+                         # Empty list = back-compat (match by disease_id
+                         # only). Disambiguator for cross-etiology overlap
+                         # — e.g., Lynch RF lists DIS-GASTRIC because Lynch
+                         # elevates gastric risk, but Lynch-prevention
+                         # indications must not pull in H. pylori
+                         # eradication indications which also target
+                         # DIS-GASTRIC. Treatment-intent indications ignore
+                         # this field (engine prevention guard is only
+                         # consulted on the prevention path).
+  - <RF-id>
 
 # Biomarker additions (extend §4 schema)
 clinical_context:        # NEW array enum, multi-valued. Default on read:
@@ -1944,19 +1970,38 @@ Per the originating scope proposal:
    **Ratified 2026-05-18** under CHARTER §12 dev-mode exemption
    (Initiator-only, v0.1 phase). Formal Co-Lead ratification queued for
    first-Co-Lead appointment.
-2. Pydantic schema additions: `Indication.intent: Literal[...] = "treatment"`,
-   `Biomarker.clinical_context: list[Literal[...]] = ["tumor_profiling"]`,
-   `Biomarker.applicable_in_asymptomatic: bool = False`,
-   `RedFlag.risk_category: Optional[Literal[...]] = None`. **Pending v0.2
-   implementation.**
-3. Loader-side enum validation. **Pending v0.2 implementation.**
+2. Pydantic schema additions:
+     - `Indication.intent: Literal[...] = "treatment"`
+     - `Indication.triggered_by_redflags: list[str] = []`
+     - `Biomarker.clinical_context: list[Literal[...]] = ["tumor_profiling"]`
+     - `Biomarker.applicable_in_asymptomatic: bool = False`
+     - `RedFlag.risk_category: Optional[Literal[...]] = None`
+
+   **DONE 2026-05-18** (commits `553595b2f5` foundation +
+   `8e1b05e43f` cross-etiology fix). Default-on-read; no backfill
+   required across 450+ Indication / 181+ Biomarker / 532+ RedFlag YAMLs.
+3. Loader-side enum validation. **DONE 2026-05-18** (Pydantic
+   `Literal[...]` typing handles this automatically; KB validator
+   green: 3142/3142 entities load, all refs resolve).
 4. Engine: `PreventionPlan` shape + intent-filtering branch in
-   `plan.generate_plan()`. **Pending v0.2 implementation.**
+   `plan.generate_plan()`. **DONE 2026-05-18** (commit `24ff626661`).
+   `_try_generate_prevention_plan` orchestrator + 6 helpers; cross-
+   etiology isolation guard via `triggered_by_redflags` matching
+   (commit `8e1b05e43f`). 21 e2e tests in
+   `tests/test_prevention_engine.py`. `Plan.algorithm_id` made
+   `Optional[str] = None`.
 5. Render: PreventionPlan render contract (likely reuses `_render_plan`
-   with intent-aware section labels). **Pending v0.2 implementation.**
-6. Tests: golden fixtures for the first v0.2-A infectious-etiology case
-   (HCV-MZL prevention pathway is the natural anchor — it inverts the
-   existing patient-zero treatment fixture). **Pending v0.2-A chunk.**
+   with intent-aware section labels). **Pending v0.2 follow-up** —
+   render layer not yet verified for null-algorithm PreventionPlan
+   output; minor f-string in `mdt_orchestrator.py:1481` references
+   `plan.algorithm_id` and would render "None" for prevention paths
+   if exercised (not currently routed through MDT orchestrator).
+6. Tests: golden fixtures for v0.2-A infectious-etiology cases.
+   **DONE 2026-05-18** (commits `24ff626661` + `7bfda90209` +
+   `8e1b05e43f`). 8 prevention pilots covered: HCV, H.pylori, HBV,
+   HPV, HIV, EBV (immunocompromised), HTLV-1, Lynch. 21 prevention
+   tests + 6 parametrized pilot scenarios + 2 cross-etiology
+   isolation regression guards.
 
 ### 20.5. Banned sources reminder
 
