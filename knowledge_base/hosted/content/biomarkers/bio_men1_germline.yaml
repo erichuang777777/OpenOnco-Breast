@@ -1,0 +1,22 @@
+id: BIO-MEN1-GERMLINE
+names:
+  preferred: "MEN1 (menin) germline pathogenic variant"
+  ukrainian: "MEN1 (менін) germline патогенний варіант"
+  english: "MEN1 germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: MEN1
+  gene_hugo_id: HGNC:7010
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources: [SRC-NCCN-BCELL-2025]
+last_reviewed: "2026-05-18"
+notes: "MEN1 germline — drives Multiple Endocrine Neoplasia type 1: primary hyperparathyroidism + pituitary adenomas + GEP-NETs (gastrinoma, insulinoma). STUB."
+notes_ua: "MEN1 germline — драйвер MEN1: primary hyperparathyroidism + pituitary adenomas + GEP-NETs."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_germline
+draft_revision: 1

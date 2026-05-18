@@ -1,0 +1,91 @@
+id: IND-IATROGENIC-TRANSPLANT-IMMUNOSUPPRESSION-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BURKITT
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints: {ecog_max: 3}
+
+triggered_by_redflags:
+  - RF-IATROGENIC-TRANSPLANT-IMMUNOSUPPRESSION-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Annual whole-body skin exam + EBV-DNA monitoring + cervical/anal cytology in post-transplant cohorts: ~50-70% reduction in late-stage diagnosis of PTLD + skin cancers + HPV-associated cancers."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests: [TEST-CBC, TEST-LFT]
+desired_tests: []
+
+rationale: >
+  Standard-track surveillance for transplant-immunosuppression cohort.
+
+  **(1) Annual whole-body skin exam by dermatologist** — SCC + BCC most common
+  post-transplant malignancy; aggressive SCC subset specific to immunosuppressed.
+
+  **(2) Quantitative EBV-DNA q1-3 months** in post-solid-organ-transplant +
+  post-HSCT for PTLD surveillance. Rising titers → reduce immunosuppression
+  (RIS) + preemptive rituximab.
+
+  **(3) Cervical Pap + HPV co-test annually** in post-transplant women.
+
+  **(4) Anal cytology q1-3y** in MSM + women with anogenital HPV history.
+
+  **(5) Oral cancer awareness** at routine dental visits.
+
+  **(6) HCC surveillance** (US + AFP q6mo) in post-transplant with HBV/HCV
+  history.
+
+rationale_ua: >
+  Стандартний-трек surveillance для transplant-immunosuppression.
+
+  **(1) Annual whole-body skin exam** dermatologist.
+
+  **(2) Quantitative EBV-DNA q1-3 міс** — PTLD surveillance.
+
+  **(3) Annual cervical Pap + HPV.**
+
+  **(4) Anal cytology q1-3y** для MSM + жінок з anogenital HPV.
+
+  **(5) Oral cancer awareness.**
+
+  **(6) HCC surveillance** при HBV/HCV history.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_iatrogenic
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+  - source_id: SRC-NCCN-CERVICAL-2025
+    position: context
+
+do_not_do:
+  - "Не пропускати q1-3 міс EBV-DNA в перші 2 роки post-transplant — peak PTLD risk."
+  - "Не використовувати annual skin exam — обмежено; післятрансплантаційні SCC агресивні, q3-6mo preferred."
+  - "Не reducing immunosuppression при PTLD-rising без transplant team coordination — graft rejection risk."
+
+do_not_do_en:
+  - "Do not skip q1-3 month EBV-DNA in the first 2 years post-transplant — peak PTLD risk."
+  - "Do not use annual skin exam alone — post-transplant SCCs are aggressive; q3-6mo preferred."
+  - "Do not reduce immunosuppression on PTLD-rising without transplant team coordination — graft rejection risk."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 iatrogenic pilot (transplant immunosuppression). Two-Co-Lead signoff queued."

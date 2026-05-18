@@ -1,0 +1,27 @@
+id: BIO-MLH1-GERMLINE
+names:
+  preferred: "MLH1 germline pathogenic variant"
+  ukrainian: "MLH1 germline патогенний варіант"
+  english: "MLH1 germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: MLH1
+  gene_hugo_id: HGNC:7127
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements:
+  - "Whole blood or buccal/saliva DNA"
+  - "Germline panel — NGS sequencing + del/dup analysis"
+clinical_context:
+  - germline_susceptibility
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources:
+  - SRC-ESMO-CRC-2024
+  - SRC-ASCO-ACMG-LYNCH-2014
+last_reviewed: "2026-05-18"
+notes: "MLH1 germline pathogenic variants drive Lynch syndrome (one of the four mismatch-repair genes). High penetrance: lifetime CRC ~70-80%, endometrial ~40-60% in women. STUB pending two-Co-Lead signoff."
+notes_ua: "MLH1 germline patogenic varianti — драйвер Lynch syndrome. Висока пенетрантність: lifetime КРР ~70-80%, ендометрій ~40-60% у жінок."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_germline
+draft_revision: 1

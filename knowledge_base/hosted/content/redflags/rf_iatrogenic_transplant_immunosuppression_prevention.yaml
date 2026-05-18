@@ -1,0 +1,42 @@
+id: RF-IATROGENIC-TRANSPLANT-IMMUNOSUPPRESSION-PREVENTION
+definition: >-
+  Chronic immunosuppression for solid-organ transplant or post-allogeneic HSCT.
+  Elevated risk of: post-transplant lymphoproliferative disorder (PTLD,
+  EBV-driven), squamous cell carcinoma + basal cell carcinoma (skin),
+  Kaposi sarcoma (HHV-8), non-melanoma + melanoma skin cancers, anal cancer
+  (HPV-driven), cervical cancer, oropharyngeal cancer, HCC (HBV/HCV
+  reactivation in transplant context). Prevention-persona RedFlag.
+definition_ua: >-
+  Хронічна імуносупресія для solid-organ transplant або post-allogeneic HSCT.
+  Підвищений ризик: PTLD (EBV-driven), SCC + BCC шкіри, Kaposi sarcoma,
+  anal + cervical + oropharyngeal cancers (HPV), HCC.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "post_solid_organ_transplant_immunosuppression"
+      value: true
+    - finding: "post_allogeneic_hsct_chronic_immunosuppression"
+      value: true
+
+clinical_direction: investigate
+severity: major
+priority: 100
+category: other
+risk_category: iatrogenic
+
+relevant_diseases:
+  - DIS-BURKITT
+  - DIS-DLBCL-NOS
+  - DIS-CERVICAL
+
+shifts_algorithm: []
+sources: [SRC-NCCN-BCELL-2025, SRC-NCCN-CERVICAL-2025]
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for transplant immunosuppression. Engine routes to PreventionPlan with intensive surveillance + reduce immunosuppression discussion + targeted screening. STUB."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_iatrogenic
+draft_revision: 1

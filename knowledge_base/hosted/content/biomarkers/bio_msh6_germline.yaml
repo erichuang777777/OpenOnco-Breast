@@ -1,0 +1,25 @@
+id: BIO-MSH6-GERMLINE
+names:
+  preferred: "MSH6 germline pathogenic variant"
+  ukrainian: "MSH6 germline патогенний варіант"
+  english: "MSH6 germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: MSH6
+  gene_hugo_id: HGNC:7329
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements:
+  - "Whole blood or saliva DNA"
+clinical_context:
+  - germline_susceptibility
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources:
+  - SRC-ESMO-CRC-2024
+last_reviewed: "2026-05-18"
+notes: "MSH6 germline — lower-penetrance Lynch gene. CRC ~25-50%, endometrial ~17-44% in women — later age of onset than MLH1/MSH2 carriers. STUB."
+notes_ua: "MSH6 germline — нижчо-пенетрантний Lynch ген."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_germline
+draft_revision: 1

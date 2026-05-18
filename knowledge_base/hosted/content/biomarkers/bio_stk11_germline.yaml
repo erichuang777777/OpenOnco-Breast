@@ -1,0 +1,22 @@
+id: BIO-STK11-GERMLINE
+names:
+  preferred: "STK11 (LKB1) germline pathogenic variant"
+  ukrainian: "STK11 (LKB1) germline патогенний варіант"
+  english: "STK11 germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: STK11
+  gene_hugo_id: HGNC:11389
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources: [SRC-ESMO-CRC-2024]
+last_reviewed: "2026-05-18"
+notes: "STK11/LKB1 germline — drives Peutz-Jeghers syndrome. Lifetime cancer risk ~80% across GI + breast + gynecologic + testicular Sertoli + pancreas. STUB."
+notes_ua: "STK11 germline — драйвер Peutz-Jeghers syndrome."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_germline
+draft_revision: 1
