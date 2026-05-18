@@ -121,6 +121,11 @@ CASE_CATEGORIES: list[tuple[str, str, str]] = [
     ("lymphoblastic",  "Лімфобластні (ALL/LBL)",  "Lymphoblastic (ALL/LBL)"),
     ("solid",          "Солідні пухлини",         "Solid tumors"),
     ("diagnostic",     "Діагностика (pre-biopsy)", "Diagnostic (pre-biopsy)"),
+    # NEW (2026-05-18): prevention persona per CHARTER §3 amendment + KSS §20.
+    # Patient has no confirmed Disease but ≥1 prevention-eligible RedFlag
+    # (infectious / genetic / chronic-condition / occupational / etc.) →
+    # engine produces a PreventionPlan with intent-prevention Indications.
+    ("prevention",     "Профілактика / ранній діагноз", "Prevention / early diagnosis"),
 ]
 
 
@@ -6279,5 +6284,113 @@ CASES: list[CaseEntry] = [
         summary_en="Synthetic profile: BIO-MET (amplification or activating mutation (papillary type-1 conte). ESCAT IIA. Engine: 5 tracks. Not for clinical decisions.",
     ),
     # ── /AUTO-BMA-EXAMPLES ──
+
+    # ── PREVENTION CASES (v0.2 — KSS §20 PreventionPlan demos) ──────────
+    # Each case feeds an at-risk-individual patient profile (no confirmed
+    # Disease, ≥1 prevention-eligible RedFlag) into the engine; result is
+    # a 2-track PreventionPlan with the standard intervention as default
+    # and the patient-autonomy alternative track. CHARTER §3 amended
+    # 2026-05-18 (Path A, HCP-mediated prevention). All cases STUB pending
+    # two-Clinical-Co-Lead signoff per §6.1 dev-mode exemption.
+    CaseEntry(
+        case_id="prevention-hcv-daa",
+        file="patient_chronic_hcv_prevention.json",
+        label_ua="HCV → індолентна B-NHL · профілактика через DAA",
+        summary_ua="52-річний чоловік з хронічним HCV (HCV-РНК визначувана), без підтвердженої лімфоми. Engine генерує PreventionPlan: стандарт = SOF/VEL 12 тижнів для ерадикації HCV (зниження NHL-захворюваності + HCC-ризик); альтернатива = active surveillance. Reimbursed via НСЗУ.",
+        badge="Prevention Plan",
+        badge_class="bdg-plan",
+        category="prevention",
+        label_en="HCV → indolent B-NHL · DAA-based prevention",
+        summary_en="52yo male with chronic HCV (HCV-RNA detectable), no confirmed lymphoma. Engine produces PreventionPlan: standard = SOF/VEL 12-week DAA for HCV cure (reduces NHL incidence + HCC risk); alternative = active surveillance. Reimbursed via Ukrainian NHSU programme.",
+    ),
+    CaseEntry(
+        case_id="prevention-hpylori-pbmt",
+        file="patient_chronic_hpylori_prevention.json",
+        label_ua="H. pylori → шлунковий рак · ерадикація PBMT",
+        summary_ua="48-річний чоловік з позитивним УДТ на H. pylori, без шлункової малігнізації. Engine генерує PreventionPlan: стандарт = бісмутова квадра-терапія (PBMT) 14 днів (preferred в Україні через >15% кларитроміцин-резистентність per Maastricht VI); альтернатива = активне спостереження.",
+        badge="Prevention Plan",
+        badge_class="bdg-plan",
+        category="prevention",
+        label_en="H. pylori → gastric cancer · PBMT eradication",
+        summary_en="48yo male with +UBT for H. pylori, no gastric malignancy. Engine produces PreventionPlan: standard = PBMT bismuth-quadruple 14-day course (preferred in Ukraine due to >15% clarithromycin resistance per Maastricht VI/Florence Consensus 2022); alternative = active observation.",
+    ),
+    CaseEntry(
+        case_id="prevention-hbv-entecavir",
+        file="patient_chronic_hbv_prevention.json",
+        label_ua="HBV → HCC · ентекавір + AFP/УЗД q6mo",
+        summary_ua="42-річна жінка з хронічним HBV (HBsAg+, HBV-ДНК визначувана), без ГЦК. Engine генерує PreventionPlan: стандарт = ентекавір 0.5мг/день + AASLD-HCC-surveillance УЗД+AFP q6mo (зниження ГЦК-захворюваності на ~50%); альтернатива = surveillance-only.",
+        badge="Prevention Plan",
+        badge_class="bdg-plan",
+        category="prevention",
+        label_en="HBV → HCC · entecavir + AFP/US q6mo",
+        summary_en="42yo female with chronic HBV (HBsAg+, HBV-DNA detectable), no HCC. Engine produces PreventionPlan: standard = entecavir 0.5mg daily + AASLD HCC surveillance (US + AFP q6mo) — reduces HCC incidence ~50%; alternative = surveillance alone.",
+    ),
+    CaseEntry(
+        case_id="prevention-hpv-gardasil9",
+        file="patient_hpv_persistent_prevention.json",
+        label_ua="HPV → cervical/anal · Gardasil-9 + Pap-скринінг",
+        summary_ua="29-річна жінка, персистуючий HPV-16+, невакцинована. Engine генерує PreventionPlan: стандарт = нонавалентна вакцина Gardasil-9 (3 дози) + cervical screening cadence per USPSTF; альтернатива = screening alone без вакцинації.",
+        badge="Prevention Plan",
+        badge_class="bdg-plan",
+        category="prevention",
+        label_en="HPV → cervical/anal · Gardasil-9 + Pap screening",
+        summary_en="29yo female, persistent HPV-16+, unvaccinated. Engine produces PreventionPlan: standard = Gardasil-9 nonavalent vaccine (3-dose series) + age-appropriate cervical screening cadence per USPSTF; alternative = screening alone.",
+    ),
+    CaseEntry(
+        case_id="prevention-hiv-art",
+        file="patient_chronic_hiv_prevention.json",
+        label_ua="HIV → AIDS-визначальні раки · ART (Biktarvy)",
+        summary_ua="35-річний чоловік, нещодавньо діагностований ВІЛ (CD4 380, VL 45000), без AIDS-визначальної малігнізації. Engine генерує PreventionPlan: стандарт = однотаблетковий ART (Biktarvy) + cancer-screening cadence (анальна цитологія, цервікальний Pap); альтернатива = ART decline (клінічно аберантний шлях для §15.2 C4).",
+        badge="Prevention Plan",
+        badge_class="bdg-plan",
+        category="prevention",
+        label_en="HIV → AIDS-defining malignancies · ART (Biktarvy)",
+        summary_en="35yo male newly diagnosed with HIV (CD4 380, VL 45000), no AIDS-defining malignancy. Engine produces PreventionPlan: standard = single-tablet ART (Biktarvy) + cancer screening cadence (anal cytology, cervical Pap); alternative = ART decline (clinically aberrant — included for §15.2 C4 ≥2-tracks invariant).",
+    ),
+    CaseEntry(
+        case_id="prevention-lynch-pedigree",
+        file="patient_lynch_pedigree_prevention.json",
+        label_ua="Підозра на Lynch · Amsterdam II · germline MMR-панель",
+        summary_ua="38-річна жінка з родинним анамнезом, що відповідає Амстердамським критеріям II (мати КРР 42, дід КРР 56, тітка рак ендометрію 48). Engine генерує PreventionPlan: стандарт = генетичне консультування + germline MMR/EPCAM-панель; альтернатива = empirical посилене спостереження (colonoscopy q1-2y з 25, ендометріальне з 30-35).",
+        badge="Prevention Plan",
+        badge_class="bdg-plan",
+        category="prevention",
+        label_en="Lynch suspicion · Amsterdam II · germline MMR panel",
+        summary_en="38yo female with family history meeting Amsterdam II criteria (mother CRC 42, grandfather CRC 56, aunt endometrial 48). Engine produces PreventionPlan: standard = genetic counseling + germline MMR/EPCAM panel; alternative = empirical enhanced surveillance (colonoscopy q1-2y from 25, endometrial from 30-35).",
+    ),
+    CaseEntry(
+        case_id="prevention-brca-pedigree",
+        file="patient_brca_pedigree_prevention.json",
+        label_ua="Підозра на BRCA/HBOC · педігрі + ашкеназі-єврейське походження",
+        summary_ua="32-річна жінка: мати рак молочної залози 38, тітка high-grade serous ovarian 52, ашкеназі-єврейське походження. Engine генерує PreventionPlan: стандарт = pre-test counseling + germline BRCA1/2 + extended-panel (PALB2/CHEK2/ATM/RAD51C/D) тест; альтернатива = empirical enhanced surveillance (MRI breast q1y з 25-30).",
+        badge="Prevention Plan",
+        badge_class="bdg-plan",
+        category="prevention",
+        label_en="BRCA/HBOC suspicion · pedigree + Ashkenazi ancestry",
+        summary_en="32yo female: mother breast cancer at 38, maternal aunt high-grade serous ovarian at 52, Ashkenazi-Jewish ancestry. Engine produces PreventionPlan: standard = pre-test counseling + germline BRCA1/2 + extended panel (PALB2/CHEK2/ATM/RAD51C/D); alternative = empirical enhanced surveillance (breast MRI q1y from 25-30).",
+    ),
+    CaseEntry(
+        case_id="prevention-vhl-pedigree",
+        file="patient_vhl_pedigree_prevention.json",
+        label_ua="Підозра на VHL · мати з гемангіобластомою + феохромоцитомою",
+        summary_ua="24-річний чоловік: мати мала церебеллярну гемангіобластому в 34 і двосторонню феохромоцитому в 38. Engine генерує PreventionPlan: стандарт = pre-test counseling + germline VHL-панель; альтернатива = empirical VHL-протокол (MRI brain+spine q1y з 15, MRI abdomen q1-2y, метанефрини q1y). Канонічний 'my-father-died-from-kidney-cancer' сценарій, описаний project initiator.",
+        badge="Prevention Plan",
+        badge_class="bdg-plan",
+        category="prevention",
+        label_en="VHL suspicion · mother with hemangioblastoma + pheochromocytoma",
+        summary_en="24yo male: mother had cerebellar hemangioblastoma at 34 and bilateral pheochromocytoma at 38. Engine produces PreventionPlan: standard = pre-test counseling + germline VHL panel; alternative = empirical VHL-protocol surveillance (MRI brain+spine q1y from 15, MRI abdomen q1-2y, catecholamines/metanephrines q1y). Canonical 'my-father-died-from-kidney-cancer' scenario the project initiator highlighted.",
+    ),
+    CaseEntry(
+        case_id="prevention-fap-pedigree",
+        file="patient_fap_pedigree_prevention.json",
+        label_ua="Підозра на FAP · батько-носій · germline APC + sigmoidoscopy з 10-12",
+        summary_ua="16-річний пацієнт, батько має підтверджений FAP (APC-мутація, прорпрофілактична колектомія в 22). Engine генерує PreventionPlan: стандарт = pre-test counseling + germline APC-панель (incl. MUTYH для MAP-диференціалу); альтернатива = empirical sigmoidoscopy з 10-12 років.",
+        badge="Prevention Plan",
+        badge_class="bdg-plan",
+        category="prevention",
+        label_en="FAP suspicion · father confirmed carrier · germline APC + sigmoidoscopy from 10-12",
+        summary_en="16yo with father confirmed FAP (APC mutation, prophylactic colectomy age 22). Engine produces PreventionPlan: standard = pre-test counseling + germline APC panel (incl. MUTYH for MAP differential); alternative = empirical sigmoidoscopy from age 10-12.",
+    ),
+    # ── /PREVENTION CASES ──
 
 ]
