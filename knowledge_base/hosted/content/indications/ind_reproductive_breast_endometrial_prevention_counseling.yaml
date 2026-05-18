@@ -1,0 +1,98 @@
+id: IND-REPRODUCTIVE-BREAST-ENDOMETRIAL-PREVENTION-COUNSELING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints: {ecog_max: 3}
+
+triggered_by_redflags:
+  - RF-REPRODUCTIVE-BREAST-ENDOMETRIAL-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Counseling enables informed shared-decision-making about modifiable factors (HRT duration, anovulation treatment in PCOS). Adherence to USPSTF mammography + endometrial-cancer awareness reduces stage at diagnosis. Tamoxifen / aromatase inhibitor chemoprevention discussion for high-risk women (Gail score ≥1.66% 5y or BCSC ≥3% 5y) — produces ~50% breast-cancer incidence reduction but with side-effect burden."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests: [TEST-CBC]
+desired_tests: []
+
+rationale: >
+  Standard-track counseling + screening for reproductive-history-elevated cancer
+  risk. Components:
+
+  **(1) Risk stratification** — Gail / BCSC / Tyrer-Cuzick risk calculator for
+  invasive breast cancer 5y/lifetime risk. Some risk factors are non-modifiable
+  (menarche, menopause age), but cumulative risk informs surveillance intensity.
+
+  **(2) HRT minimization** — combined HRT use ≥5y elevates breast cancer risk
+  modestly + significantly elevates endometrial cancer risk (unopposed
+  estrogen in women with intact uterus is contraindicated). Estrogen-only HRT
+  in post-hysterectomy women has more favorable profile.
+
+  **(3) PCOS / anovulation management** — progesterone challenge or combined OCP
+  in chronic anovulation reduces endometrial cancer risk substantially.
+
+  **(4) Chemoprevention discussion** for high-risk women — tamoxifen 20mg/d ×5y
+  OR raloxifene 60mg/d ×5y (postmenopausal); aromatase inhibitors are
+  alternatives. Reduces hormone-receptor-positive breast cancer incidence by
+  ~50% but with thromboembolic / endometrial cancer / vasomotor side effects.
+  USPSTF Grade B recommendation for women at high risk per accepted models.
+
+  **(5) Screening adherence** — annual mammography per USPSTF (age 40-74);
+  endometrial cancer awareness (post-menopausal bleeding evaluation immediate).
+
+rationale_ua: >
+  Стандартний-трек counseling + screening для reproductive-history-elevated
+  cancer ризик.
+
+  **(1) Risk stratification** — Gail / BCSC / Tyrer-Cuzick risk calculator.
+
+  **(2) HRT minimization** — combined HRT використання ≥5р elevates breast cancer
+  ризик modestly; estrogen-only HRT в post-hysterectomy women more favorable.
+
+  **(3) PCOS / anovulation management** — progesterone challenge або combined OCP.
+
+  **(4) Chemoprevention discussion** — tamoxifen / raloxifene для high-risk
+  women.
+
+  **(5) Screening adherence** — щорічна мамографія per USPSTF.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_completion
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+  - source_id: SRC-ESGO-ENDOMETRIAL-2025
+    position: supports
+
+do_not_do:
+  - "Не призначати unopposed estrogen HRT жінкам з intact uterus — endometrial cancer ризик."
+  - "Не використовувати chemoprevention в low-risk cohort — side-effect burden перевищує бенефіт."
+  - "Не ігнорувати post-menopausal bleeding — immediate endometrial sampling."
+
+do_not_do_en:
+  - "Do not prescribe unopposed estrogen HRT to women with intact uterus — endometrial cancer risk."
+  - "Do not use chemoprevention in a low-risk cohort — side-effect burden exceeds benefit."
+  - "Do not ignore post-menopausal bleeding — immediate endometrial sampling."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 reproductive prevention pilot. Two-Co-Lead signoff queued."

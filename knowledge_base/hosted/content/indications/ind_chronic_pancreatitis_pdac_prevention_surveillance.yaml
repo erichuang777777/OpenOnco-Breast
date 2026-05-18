@@ -1,0 +1,87 @@
+id: IND-CHRONIC-PANCREATITIS-PDAC-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-PDAC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints: {ecog_max: 3}
+
+triggered_by_redflags:
+  - RF-CHRONIC-PANCREATITIS-PDAC-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Annual MRI/MRCP + EUS in hereditary pancreatitis enables PDAC detection at earlier stage; CAPS Consortium guidelines support surveillance in PRSS1/SPINK1 carriers. Smoking + alcohol cessation reduces PDAC incidence ~40% in chronic pancreatitis cohort."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  - TEST-LFT
+desired_tests: []
+
+rationale: >
+  Standard-track surveillance for chronic pancreatitis → PDAC prevention.
+
+  **(1) Surveillance imaging** — annual MRI/MRCP and/or EUS starting age 40 in
+  hereditary pancreatitis (or 20y after symptom onset in alcoholic chronic
+  pancreatitis). Refer to PDAC-experienced center.
+
+  **(2) Smoking cessation** — multiplicative synergy with alcohol; primary
+  modifiable risk factor.
+
+  **(3) Alcohol cessation** in alcoholic chronic pancreatitis — both reduces
+  PDAC incidence and slows pancreatic functional decline.
+
+  **(4) Diabetes management** if present — new-onset diabetes after age 50
+  with weight loss may represent paraneoplastic PDAC presentation.
+
+rationale_ua: >
+  Стандартний-трек surveillance для хронічного панкреатиту → PDAC prevention.
+
+  **(1) Surveillance imaging** — щорічна MRI/MRCP та/або EUS з 40 років при
+  спадковому панкреатиті (або 20р після symptom onset при alcoholic chronic
+  pancreatitis). Direct to PDAC-experienced center.
+
+  **(2) Smoking cessation** — мультиплікативна synergy з алкоголем.
+
+  **(3) Alcohol cessation** при alcoholic chronic pancreatitis.
+
+  **(4) Diabetes management** якщо present — new-onset діабет після 50 років
+  з weight loss може представляти paraneoplastic PDAC.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_completion
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не делегувати pancreatic surveillance non-specialist center — потребує EUS expertise."
+  - "Не пропускати smoking cessation — primary modifiable factor."
+  - "Не ігнорувати new-onset діабет з weight loss — paraneoplastic PDAC presentation."
+
+do_not_do_en:
+  - "Do not delegate pancreatic surveillance to non-specialist centers — requires EUS expertise."
+  - "Do not skip smoking cessation — primary modifiable factor."
+  - "Do not ignore new-onset diabetes with weight loss — paraneoplastic PDAC presentation."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 chronic-condition pilot (chronic pancreatitis). Two-Co-Lead signoff queued."

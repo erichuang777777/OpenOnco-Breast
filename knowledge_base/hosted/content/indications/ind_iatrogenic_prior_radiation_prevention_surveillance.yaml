@@ -1,0 +1,103 @@
+id: IND-IATROGENIC-PRIOR-RADIATION-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints: {ecog_max: 3}
+
+triggered_by_redflags:
+  - RF-IATROGENIC-PRIOR-RADIATION-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: "Childhood Cancer Survivor Study cohort: women with chest RT (mantle, mediastinal, total-body) at age <30y have 30-55% cumulative breast cancer incidence by age 50. COG-LTFU surveillance reduces stage at diagnosis. Targeted surveillance for sarcoma, thyroid, lung, leukemia depends on irradiated field."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: [TEST-CBC, TEST-LFT]
+desired_tests: []
+
+rationale: >
+  Standard-track surveillance for prior therapeutic radiation. Components per
+  COG-LTFU (Children's Oncology Group Long-Term Follow-Up) guidelines:
+
+  **Mantle / chest RT in adolescence/young adulthood (women):**
+  - Annual breast MRI from age 25 OR 8y post-RT (whichever later)
+  - Alternating with mammography from age 30
+  - Clinical breast exam q6mo
+
+  **Pediatric Hodgkin / Wilms / sarcoma RT survivors:**
+  - Lung cancer screening with LDCT — eligibility per modified USPSTF criteria
+  - Thyroid US q3-5y if cervical/mantle field
+  - Skin exam q1y if extensive field
+
+  **Pelvic RT survivors:**
+  - Colorectal cancer screening at younger age (typically 10y earlier than
+    general-population USPSTF threshold)
+  - Bladder cancer surveillance (urinalysis + cytology q1-3y)
+
+  **All RT survivors:**
+  - CBC q1y (secondary leukemia surveillance)
+  - Awareness of radiation-induced sarcoma — any soft-tissue mass or bone
+    pain in irradiated field warrants immediate imaging.
+
+  Cardiovascular surveillance (echo + ECG) and endocrine surveillance (thyroid
+  function) are separate concerns but routinely co-managed in this cohort.
+
+rationale_ua: >
+  Стандартний-трек surveillance для prior therapeutic radiation. Components
+  per COG-LTFU:
+
+  **Mantle / chest RT в adolescence/young adulthood (жінки):**
+  - Щорічна breast MRI з 25 років АБО 8р post-RT
+  - Alternating з мамографією з 30 років
+
+  **Pediatric Hodgkin / Wilms / sarcoma RT survivors:**
+  - Lung cancer screening через LDCT
+  - Thyroid US q3-5y
+
+  **Pelvic RT survivors:**
+  - CRC screening раніше (10р earlier than USPSTF threshold)
+  - Bladder cancer surveillance
+
+  **Всі RT survivors:**
+  - CBC q1y (secondary leukemia surveillance)
+  - Awareness про radiation-induced sarcoma
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_completion
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+  - source_id: SRC-NCCN-CERVICAL-2025
+    position: context
+
+do_not_do:
+  - "Не пропускати breast MRI у post-mantle-RT жінок — risk порівнянний з BRCA1 carriers."
+  - "Не делегувати pediatric-cancer-survivor surveillance non-experienced clinic — COG-LTFU guidelines complex."
+  - "Не використовувати mammography як primary breast screening у post-mantle-RT жінок до 30 — breast tissue radiation-sensitive."
+
+do_not_do_en:
+  - "Do not skip breast MRI in post-mantle-RT women — risk comparable to BRCA1 carriers."
+  - "Do not delegate pediatric-cancer-survivor surveillance to non-experienced clinics — COG-LTFU guidelines are complex."
+  - "Do not use mammography as primary breast screening in post-mantle-RT women <30 — breast tissue is radiation-sensitive."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 iatrogenic prevention pilot (prior radiation). Two-Co-Lead signoff queued."

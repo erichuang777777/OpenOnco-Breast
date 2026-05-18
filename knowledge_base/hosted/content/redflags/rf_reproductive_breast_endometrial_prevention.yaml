@@ -1,0 +1,52 @@
+id: RF-REPRODUCTIVE-BREAST-ENDOMETRIAL-PREVENTION
+definition: >-
+  Reproductive-history risk factors for hormone-driven cancers (breast +
+  endometrial + ovarian primarily): nulliparity, late first pregnancy
+  (≥30 years), early menarche (<12 years), late menopause (≥55 years),
+  combined hormone replacement therapy (HRT) ≥5 years, OR persistent
+  anovulation (PCOS, perimenopause). Each independently confers modest
+  RR ~1.2-1.5 for hormone-receptor-positive breast cancer + endometrial
+  cancer. Cumulative effect non-trivial. Prevention-persona RedFlag
+  (§20 v0.3 reproductive).
+definition_ua: >-
+  Reproductive-history risk factors для hormone-driven cancers: nulliparity,
+  late first pregnancy (≥30 років), early menarche (<12 років), late
+  menopause (≥55 років), combined HRT ≥5 років АБО persistent anovulation
+  (PCOS, перименопауза). Кожний незалежно дає modest RR ~1.2-1.5 для
+  hormone-receptor-positive breast cancer + endometrial cancer.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "nulliparous_age_ge_30"
+      value: true
+    - finding: "early_menarche_age_lt_12"
+      value: true
+    - finding: "late_menopause_age_ge_55"
+      value: true
+    - finding: "combined_hrt_use_ge_5y"
+      value: true
+    - finding: "persistent_anovulation_or_pcos"
+      value: true
+
+clinical_direction: investigate
+severity: minor
+priority: 110
+category: other
+risk_category: reproductive
+
+relevant_diseases:
+  - DIS-BREAST
+  - DIS-ENDOMETRIAL
+  - DIS-OVARIAN
+
+shifts_algorithm: []
+sources: [SRC-NCCN-BCELL-2025, SRC-ESGO-ENDOMETRIAL-2025]
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for reproductive-history risk factors. Effect sizes are modest individually but cumulative significant. STUB pending two-Co-Lead signoff."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_completion
+draft_revision: 1

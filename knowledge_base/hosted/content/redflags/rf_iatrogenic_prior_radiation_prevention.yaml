@@ -1,0 +1,49 @@
+id: RF-IATROGENIC-PRIOR-RADIATION-PREVENTION
+definition: >-
+  History of therapeutic radiation exposure ≥5 years ago to a body region —
+  most commonly mantle / chest radiotherapy for Hodgkin lymphoma in
+  adolescence/young adulthood; breast/thorax RT for childhood cancers;
+  pelvic RT for testicular / cervical / rectal cancer. Increased risk of
+  radiation-induced second primary malignancies in irradiated field: breast
+  cancer (post-mantle RT in women), sarcoma, thyroid cancer, lung cancer,
+  esophageal cancer, secondary leukemia. Risk peaks 10-30 years post-RT.
+  Prevention-persona RedFlag (§20 v0.3 iatrogenic).
+definition_ua: >-
+  Історія therapeutic radiation exposure ≥5 років тому — переважно mantle /
+  chest radiotherapy для Hodgkin lymphoma в adolescence/young adulthood;
+  breast/thorax RT для childhood cancers; pelvic RT. Підвищений ризик
+  radiation-induced second primary malignancies. Risk peaks 10-30 років post-RT.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "history_therapeutic_radiation_ge_5y_ago"
+      value: true
+    - finding: "history_mantle_field_radiotherapy"
+      value: true
+    - finding: "history_childhood_cancer_radiotherapy"
+      value: true
+
+clinical_direction: investigate
+severity: major
+priority: 100
+category: other
+risk_category: iatrogenic
+
+relevant_diseases:
+  - DIS-BREAST
+  - DIS-NSCLC
+  - DIS-AML
+  - DIS-OSTEOSARCOMA
+  - DIS-LEIOMYOSARCOMA
+
+shifts_algorithm: []
+sources: [SRC-NCCN-BCELL-2025, SRC-NCCN-CERVICAL-2025]
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for prior therapeutic radiation. Childhood Cancer Survivor Study + LATE consortium document increased second primary malignancy risk decades post-RT. STUB pending two-Co-Lead signoff."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_completion
+draft_revision: 1

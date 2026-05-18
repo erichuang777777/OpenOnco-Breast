@@ -1,0 +1,61 @@
+id: IND-REPRODUCTIVE-BREAST-ENDOMETRIAL-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints: {ecog_max: 3}
+
+triggered_by_redflags:
+  - RF-REPRODUCTIVE-BREAST-ENDOMETRIAL-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "USPSTF general-population screening adherence (no enhanced cadence) catches some breast + endometrial cancer at screening-detected stage. Chemoprevention decline does not affect screening yield."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: [TEST-CBC]
+desired_tests: []
+
+rationale: >
+  Alternative-track companion. Patient declines chemoprevention / HRT
+  modifications — receives general USPSTF screening cadence + brief
+  intervention at each contact. Per CHARTER §11 patient-autonomy framing.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. USPSTF screening cadence + brief
+  intervention. Per CHARTER §11.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_completion
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не пропускати screening adherence — це основа цього шляху."
+  - "Не ігнорувати post-menopausal bleeding — immediate endometrial sampling."
+
+do_not_do_en:
+  - "Do not skip screening adherence — this is the foundation of this pathway."
+  - "Do not ignore post-menopausal bleeding — immediate endometrial sampling."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for reproductive prevention. §15.2 C4 ≥2-tracks invariant."
