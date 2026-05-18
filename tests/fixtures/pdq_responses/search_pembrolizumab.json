@@ -1,0 +1,17 @@
+{
+  "total": 7,
+  "results": [
+    {
+      "cdr_id": "CDR0000062955",
+      "title": "Breast Cancer Treatment (PDQ®)",
+      "audience": "Health Professionals",
+      "url": "https://www.cancer.gov/types/breast/hp/breast-treatment-pdq"
+    },
+    {
+      "cdr_id": "CDR0000062847",
+      "title": "Non-Small Cell Lung Cancer Treatment (PDQ®)",
+      "audience": "Health Professionals",
+      "url": "https://www.cancer.gov/types/lung/hp/non-small-cell-lung-treatment-pdq"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+id: SRC-PDQ
+source_type: guideline
+title: "NCI Physician Data Query (PDQ) — cancer information summaries"
+version: "syndication-v1"
+authors:
+  - PDQ Cancer Information Summaries Editorial Boards
+  - National Cancer Institute
+journal: "Cancer.gov"
+url: https://www.cancer.gov/publications/pdq
+access_level: open_access
+currency_status: current
+current_as_of: "2026-05-18"
+evidence_tier: 2
+precedence_policy: confirmatory
+
+# Licensing & hosting (SOURCE_INGESTION_SPEC §3)
+# PDQ is a service of the National Cancer Institute, an agency of the
+# US federal government. As a US federal-government work, PDQ content
+# is in the public domain in the United States per 17 U.S.C. §105 and
+# may be reused without permission, modification restrictions, or
+# share-alike obligations. NCI requests but does not require
+# attribution. Full classification: docs/reviews/pdq-license-2026-05-18.md.
+hosting_mode: referenced
+ingestion:
+  method: live_api
+  client: knowledge_base.clients.pdq_client.PdqClient
+  endpoint: https://www.cancer.gov/syndication
+  rate_limit: "1 req/s, burst 3 (self-imposed; NCI publishes no formal limit)"
+cache_policy:
+  enabled: true
+  ttl_hours: 168
+  scope: query_result
+license:
+  name: "US Public Domain (17 U.S.C. §105)"
+  url: https://www.cancer.gov/policies/copyright-reuse
+attribution:
+  required: false
+  text: "Reproduced from PDQ®, the National Cancer Institute's comprehensive cancer information database (cancer.gov)."
+commercial_use_allowed: true
+redistribution_allowed: true
+modifications_allowed: true
+sharealike_required: false
+known_restrictions:
+  - "PDQ® is a registered trademark of the U.S. Department of Health and Human Services. The PDQ trademark may not be used to imply NCI endorsement of a derivative product."
+  - "Non-US copyright may apply to material PDQ summaries quote from non-government sources (figures, tables); follow the embedded attribution when present."
+legal_review:
+  status: reviewed
+  reviewer: claude
+  date: "2026-05-18"
+  notes: |
+    Self-review under CHARTER §6.1 dev-mode exemption (v0.1 phase).
+    Classification rests on 17 U.S.C. §105 and NCI's published reuse
+    policy at cancer.gov/policies/copyright-reuse. Re-review triggers:
+    (a) any change to that policy, (b) any plan to redistribute
+    PDQ-derived content under a non-public-domain license, (c) any use
+    of the PDQ® trademark in product naming. Full reasoning in
+    docs/reviews/pdq-license-2026-05-18.md.
+
+relates_to_diseases: []
+last_verified: "2026-05-18"
+verifier: claude
+notes: |
+  Scaffold lands the client + Source entity without populating any
+  indication.evidence_sources or regimen prose fields from PDQ yet.
+  Populating Indications with PDQ-derived rationale prose is a
+  separate follow-up workstream gated by clinical co-lead review of
+  each authored field.
+
+  Why PDQ matters: NCI editorial boards write structured, neutral,
+  citable summaries of treatment evidence per cancer type. The "why"
+  prose currently thin in our Indication.notes_for_clinician fields
+  can pull verbatim from PDQ without license friction.
+pages_count: 1200
+references_count: 18000
+corpus_role: primary_guideline
