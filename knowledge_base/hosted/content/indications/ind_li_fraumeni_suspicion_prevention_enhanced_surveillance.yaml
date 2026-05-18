@@ -1,0 +1,236 @@
+id: IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-LI-FRAUMENI-FAMILY-HISTORY-SUSPICION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Empirical Toronto-protocol-style surveillance applied without
+    genetic confirmation: assumes the patient is a TP53 carrier
+    despite no laboratory evidence. Diagnostic yield uncertain —
+    Toronto Protocol benefit (Villani et al. Lancet Oncology 2016;
+    ~25-35% 5-year survival improvement vs untreated controls) is
+    documented ONLY in genetically-confirmed carriers. Empirical
+    application without confirmation: (a) Some pedigree-suspicion
+    individuals are not actual carriers (background rate ~30-70%
+    of suspicion-criteria-meeting families); these individuals
+    incur resource cost, anxiety, and incidental-finding harm
+    without benefit. (b) For actual carriers in the suspicion
+    cohort, surveillance benefit is preserved. Net: empirical
+    Toronto-protocol surveillance is RESOURCE-INTENSIVE (annual
+    WB-MRI ~10000-25000 UAH, annual brain MRI ~5000-12000 UAH per
+    scan in Ukrainian private centers) AND not formally evidence-
+    based without confirmation — this Indication frames the
+    pathway as patient-autonomy alternative per CHARTER §11.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-LI-FRAUMENI-SUSPICION-PREVENTION-
+  GENETIC-COUNSELING. Patient with pedigree suspicion of Li-Fraumeni
+  Syndrome who declines genetic counseling and/or germline TP53
+  testing — for any reason (cost, insurance / GINA concerns,
+  psychological / anxiety-overload considerations, family privacy,
+  religious or cultural objections, geographic access constraints)
+  — is offered empirical Toronto-protocol-style surveillance applied
+  as if LFS were confirmed, with explicit recognition that this
+  pathway is RESOURCE-INTENSIVE and may not be a sustainable or
+  cost-effective allocation without genetic confirmation:
+
+  **Empirical Toronto-protocol surveillance (modified):**
+  - Annual whole-body MRI (WB-MRI) from age of risk awareness or
+    early adulthood — soft-tissue sarcoma, abdominal / pelvic
+    primary tumor surveillance.
+  - Annual brain MRI with gadolinium contrast from same starting
+    age — CNS tumor surveillance.
+  - Annual abdominal ultrasound + adrenal-focused imaging — particularly
+    important in pediatric / young-adult patients (adrenocortical
+    carcinoma is dramatically over-represented in LFS).
+  - Annual dermatologic exam.
+  - Annual breast MRI from age 20-25 for women (alternating
+    q6 months with ULTRASOUND in young patients, transitioning to
+    mammogram alternating from age 30 with explicit radiation-
+    minimization framing — though in suspicion-only individuals
+    without confirmation, mammography is less restricted than in
+    confirmed carriers).
+  - Annual physical exam + neurologic exam + bloodwork (CBC
+    surveillance for hematologic primaries).
+  - Colonoscopy q2-5 years from age 25.
+
+  **Resource-intensity caveat (critical):** This surveillance regimen
+  is one of the most resource-intensive in oncology prevention.
+  Annual WB-MRI + annual brain MRI + annual breast MRI for a young
+  adult: ~5-10 hours of MRI scanner time per year, ~25000-50000 UAH
+  per year in private Ukrainian centers, with cumulative-decade
+  costs reaching ~250000-500000 UAH per surveilled individual. In
+  confirmed carriers, this cost is offset by the ~25-35% 5-year
+  survival benefit (Villani et al.); without genetic confirmation,
+  the benefit-to-cost ratio is undocumented and potentially
+  unfavorable for individuals who are not actual carriers.
+
+  **Radiation considerations:** In suspicion-only individuals
+  (no genetic confirmation), routine mammography and CT can
+  proceed with standard clinical indications — the radiation-
+  avoidance principle is most stringent for CONFIRMED carriers.
+  However, given the high pre-test probability in
+  classic-LFS-criteria families, some clinicians extend radiation
+  minimization (MRI / ultrasound substitution where feasible) to
+  suspicion-only individuals as a precautionary stance.
+
+  **Risk-reducing surgery:** Risk-reducing mastectomy is NOT
+  offered empirically without genetic confirmation. The decision
+  to undergo bilateral risk-reducing mastectomy is one of the most
+  consequential in hereditary cancer care; demonstrated carrier
+  status is required to justify the benefit/harm calculation
+  (~90% breast-cancer-risk reduction vs irreversible bilateral
+  surgery, body-image impact, surgical risks).
+
+  Per CHARTER §11 patient-autonomy framing: genetic testing is a
+  shared-decision-making domain. Patients who decline testing retain
+  access to surveillance benefit (with documented caveats),
+  with the explicit understanding that empirical surveillance:
+  (a) lacks the diagnostic precision and evidence base of
+  carrier-confirmed Toronto-protocol surveillance;
+  (b) is resource-intensive and may produce incidental findings
+  with their own management cascades;
+  (c) cannot support risk-reducing surgery decisions;
+  (d) does not enable cascade-testing-driven family interventions.
+  Periodic re-discussion of testing is strongly indicated — many
+  patients eventually accept testing after additional visits,
+  family events, or reduced anxiety.
+
+  Routing reconsiderations: if patient eventually accepts genetic
+  testing, results route to (a) confirmed-carrier carrier-specific
+  pathway (Toronto Protocol with formal evidence base, plus
+  radiation-avoidance for therapeutic radiation if any future
+  cancer is diagnosed), (b) general-population pathway, or (c)
+  continued pedigree-suspicion if VUS.
+
+  **Sustainability caveat:** Annual Toronto-protocol surveillance
+  may not be a sustainable lifetime regimen for many patients
+  without confirmation, both financially and psychologically.
+  Periodic re-discussion of testing is appropriate; some patients
+  accept testing specifically to de-escalate empirical surveillance
+  if they test negative.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до
+  IND-LI-FRAUMENI-SUSPICION-PREVENTION-GENETIC-COUNSELING. Пацієнт з
+  родовідною підозрою на Li-Fraumeni синдром, який відмовляється від
+  генетичного консультування та/або germline TP53 тестування — з
+  будь-якої причини (вартість, страхові / GINA міркування,
+  психологічні / anxiety-overload міркування, сімейна приватність,
+  релігійні чи культурні заперечення, географічні обмеження доступу)
+  — отримує emпіричний Toronto-protocol-style скринінг, як якщо б
+  LFS був підтверджений, з явним визнанням, що цей шлях RESOURCE-
+  INTENSIVE і може не бути sustainable або cost-effective allocation
+  без генетичного підтвердження:
+
+  **Empіричний Toronto-protocol скринінг (модифікований):**
+  - Щорічна whole-body МРТ з віку усвідомлення ризику або раннього
+    дорослого життя.
+  - Щорічна brain МРТ з гадолінієвим контрастом з того ж стартового
+    віку.
+  - Щорічне abdominal ultrasound + adrenal-focused imaging.
+  - Щорічний дерматологічний огляд.
+  - Щорічна МРТ молочної залози з 20-25 років для жінок
+    (чергуючи q6 місяців з ULTRASOUND у молодих пацієнтів,
+    переходячи до мамографії, що чергується, з 30 років з явним
+    radiation-minimization framing — хоча у suspicion-only осіб
+    без підтвердження мамографія менш обмежена, ніж у підтверджених
+    носіїв).
+  - Щорічний фізичний огляд + неврологічний огляд + bloodwork.
+  - Колоноскопія q2-5 років з 25 років.
+
+  **Resource-intensity caveat (критичний):** Цей скринінговий
+  режим — один з найбільш resource-intensive в oncology
+  prevention. Щорічна WB-МРТ + щорічна brain МРТ + щорічна
+  breast МРТ для молодого дорослого: ~5-10 годин MRI scanner
+  часу на рік, ~25000-50000 UAH на рік у приватних українських
+  центрах, з cumulative-decade витратами, що досягають
+  ~250000-500000 UAH на surveilled особу. У підтверджених носіїв
+  ця вартість компенсується ~25-35% 5-річною перевагою виживання
+  (Villani et al.); без генетичного підтвердження benefit-to-cost
+  співвідношення undocumented і потенційно несприятливе для осіб,
+  що не є фактичними носіями.
+
+  **Radiation considerations:** У suspicion-only осіб (без
+  генетичного підтвердження) рутинна мамографія та КТ можуть
+  проходити зі стандартними клінічними показаннями — принцип
+  radiation-avoidance найбільш суворий для ПІДТВЕРДЖЕНИХ носіїв.
+  Однак, з огляду на високу pre-test probability в classic-LFS-
+  criteria сім'ях, деякі клініцисти поширюють radiation
+  minimization (МРТ / ультразвук-substitution де можливо) на
+  suspicion-only осіб як обережну позицію.
+
+  **Risk-reducing хірургія:** Risk-reducing мастектомія НЕ
+  пропонується emпірично без генетичного підтвердження. Рішення
+  про двосторонню risk-reducing мастектомію — одне з найбільш
+  consequential у hereditary cancer care; демонстрований статус
+  носія потрібен, щоб виправдати benefit/harm розрахунок (~90%
+  зниження ризику раку молочної залози vs незворотна двостороння
+  хірургія, body-image вплив, хірургічні ризики).
+
+  Per CHARTER §11 framing автономії пацієнта.
+
+  **Sustainability caveat:** Щорічний Toronto-protocol скринінг
+  може не бути sustainable lifetime регіменом для багатьох пацієнтів
+  без підтвердження, як фінансово, так і психологічно. Periodic
+  re-discussion тестування доречне; деякі пацієнти приймають
+  тестування саме для de-escalate empіричного скринінгу, якщо
+  тестуються негативно.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BREAST-2025
+    position: supports
+  - source_id: SRC-NCCN-SARCOMA
+    position: supports
+  - source_id: SRC-NCCN-CNS-2025
+    position: supports
+
+do_not_do:
+  - "Не презентувати empіричний Toronto-protocol скринінг як еквівалент confirmed-carrier шляху — evidence base (Villani et al.) застосовується тільки до genetically-підтверджених носіїв, і resource cost може бути нестійким без підтвердження."
+  - "Не рекомендувати risk-reducing мастектомію або інші незворотні втручання без genetic confirmation — необхідне підтверджене status носія для виправдання benefit/harm розрахунку."
+  - "Не пропускати periodic re-discussion про genetic testing — багато пацієнтів приймають тестування саме для de-escalate empіричного скринінгу, якщо тестуються негативно; testing-first шлях надає більш точне допасування скринінгу до фактичного ризику."
+  - "Не запускати Toronto-protocol для VUS результату — VUS не є патогенним statusом; empіричний скринінг без підтвердження вже resource-intensive, і VUS не виправдовує додаткове ескалювання."
+  - "Не презентувати annual WB-MRI як рутинну / без incidental-finding risk — incidental findings часті в whole-body imaging і запускають diagnostic cascades, які мають власні витрати і ризики (включаючи radiation, якщо follow-up imaging є КТ-базованим)."
+
+do_not_do_en:
+  - "Do not present empirical Toronto-protocol surveillance as equivalent to the confirmed-carrier pathway — the evidence base (Villani et al.) applies only to genetically-confirmed carriers, and the resource cost may be unsustainable without confirmation."
+  - "Do not recommend risk-reducing mastectomy or other irreversible interventions without genetic confirmation — confirmed carrier status is required to justify the benefit/harm calculation."
+  - "Do not skip periodic re-discussion of genetic testing — many patients accept testing specifically to de-escalate empirical surveillance if they test negative; the testing-first pathway provides more precise matching of surveillance to actual risk."
+  - "Do not trigger Toronto-protocol for a VUS result — a VUS is not a pathogenic status; empirical surveillance without confirmation is already resource-intensive, and a VUS does not justify further escalation."
+  - "Do not present annual WB-MRI as routine / without incidental-finding risk — incidental findings are common in whole-body imaging and trigger diagnostic cascades that carry their own costs and risks (including radiation if follow-up imaging is CT-based)."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — alternative-track companion for Li-Fraumeni Syndrome hereditary prevention pilot. §15.2 C4 ≥2-tracks invariant compliance. Resource-intensive empirical pathway framed explicitly as patient-autonomy alternative per CHARTER §11 — production version may add a quantitative cost-effectiveness annotation.

@@ -1,0 +1,130 @@
+id: RF-BRCA-HBOC-FAMILY-HISTORY-SUSPICION
+definition: >-
+  Family pedigree meeting criteria suggestive of Hereditary Breast and
+  Ovarian Cancer (HBOC) syndrome (most commonly germline BRCA1 / BRCA2
+  pathogenic variants; modern HBOC panels also cover PALB2, CHEK2, ATM,
+  RAD51C/D, BRIP1): any of (a) first- or second-degree relative with a
+  confirmed BRCA1 or BRCA2 pathogenic variant; (b) first-degree relative
+  with breast cancer diagnosed <50y; (c) any first- or second-degree
+  relative with high-grade serous ovarian / fallopian-tube / primary
+  peritoneal carcinoma at any age; (d) any male breast cancer in
+  family; (e) Ashkenazi Jewish ancestry combined with personal or
+  family history of breast or ovarian cancer (founder-mutation
+  prevalence — BRCA1 185delAG, BRCA1 5382insC, BRCA2 6174delT);
+  (f) multi-cancer cluster suggestive of HBOC (breast + ovarian +
+  pancreatic + metastatic prostate in close relatives). No current
+  personal cancer diagnosis in the individual at risk.
+  Prevention-persona RedFlag (§20 ratification 2026-05-18, v0.2-B
+  hereditary pilot — BRCA/HBOC).
+definition_ua: >-
+  Сімейний родовід, що відповідає критеріям підозри на синдром
+  спадкового раку молочної залози та яєчників (HBOC; найчастіше
+  гермінативні патогенні варіанти BRCA1 / BRCA2; сучасні HBOC-панелі
+  також покривають PALB2, CHEK2, ATM, RAD51C/D, BRIP1): будь-яке з
+  (а) родич першого/другого ступеня з підтвердженим патогенним
+  варіантом BRCA1 чи BRCA2; (б) родич першого ступеня з раком
+  молочної залози, діагностованим <50р; (в) будь-який родич
+  першого/другого ступеня з high-grade серозним раком яєчників /
+  маткової труби / первинним перитонеальним раком будь-якого віку;
+  (г) будь-який рак молочної залози у чоловіка в сім'ї;
+  (д) ашкеназько-єврейське походження у поєднанні з особистою або
+  сімейною історією раку молочної залози чи яєчників (prevalence
+  засновницьких мутацій — BRCA1 185delAG, BRCA1 5382insC, BRCA2
+  6174delT); (е) мультираковий кластер, що нагадує HBOC (молочна
+  залоза + яєчник + підшлункова + метастатичний простатичний рак у
+  близьких родичів). Поточний особистий діагноз раку у пацієнта з
+  ризиком відсутній. Prevention-persona RedFlag (ратифікація §20,
+  2026-05-18, v0.2-B пілот спадковості — BRCA/HBOC).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "family_brca_known_pathogenic_variant"
+      value: true
+    - finding: "family_breast_cancer_under_50"
+      value: true
+    - finding: "family_ovarian_cancer_any_age"
+      value: true
+    - finding: "family_male_breast_cancer"
+      value: true
+    - finding: "family_ashkenazi_jewish_ancestry_with_breast_or_ovarian"
+      value: true
+    - finding: "family_breast_ovarian_pancreatic_prostate_metastatic_cluster"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+# §20 prevention extension — drives engine routing to PreventionPlan
+# when patient carries this RF and no confirmed Disease (KSS §20.2).
+risk_category: genetic
+
+# HBOC-spectrum cancers present in KB: breast (DIS-BREAST), ovarian
+# (DIS-OVARIAN), pancreatic adenocarcinoma (DIS-PDAC), prostate
+# (DIS-PROSTATE). Modern HBOC panels (BRCA1/2 + PALB2 etc.) elevate
+# risk across this constellation.
+relevant_diseases:
+  - DIS-BREAST
+  - DIS-OVARIAN
+  - DIS-PDAC
+  - DIS-PROSTATE
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BREAST-2025
+  - SRC-NCCN-OVARIAN-2025
+  - SRC-ESMO-BREAST-EARLY-2024
+  - SRC-ESMO-OVARIAN-2024
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.2-B hereditary pilot — BRCA / HBOC. Fires on pedigree-based
+  suspicion of HBOC syndrome in an asymptomatic individual (no current
+  cancer diagnosis). Engine routes to PreventionPlan recommending:
+    (a) genetic counseling + germline BRCA1/2 (+ extended HBOC panel)
+        testing via
+        IND-BRCA-HBOC-SUSPICION-PREVENTION-GENETIC-COUNSELING (standard)
+    (b) empirical enhanced surveillance for patients declining
+        testing via
+        IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+        (surveillance / alternative).
+
+  Trigger criteria correspond to NCCN Genetic/Familial High-Risk:
+  Breast, Ovarian, and Pancreatic v2.2025 testing criteria
+  (simplified for v0.2-B pilot; production version will encode full
+  decision logic including criteria for personal-history variants
+  and quantitative risk-model thresholds — Tyrer-Cuzick ≥20% lifetime,
+  BRCAPRO ≥10% mutation probability).
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption. Source-set TODO: NCCN Genetic/Familial High-Risk:
+  Breast/Ovarian/Pancreatic as a dedicated SRC-* entity (v0.2-B
+  follow-up authoring; license posture to verify per scope proposal
+  open question #7).
+
+  Confirmed BRCA carriers (germline mutation positive on panel) route
+  to a DIFFERENT prevention pathway (carrier-confirmed surveillance —
+  annual breast MRI from 25-30 alternating with mammogram, transvaginal
+  ultrasound + CA-125 q6mo from 30-35 with documented limitations,
+  discussion of risk-reducing mastectomy and risk-reducing
+  bilateral salpingo-oophorectomy [BSO] post-childbearing age 35-40
+  for BRCA1 / 40-45 for BRCA2). That pathway is v0.2-B follow-up
+  authoring (RF-BRCA-CONFIRMED-CARRIER + IND-BRCA-CARRIER-*).
+
+  Lifetime cancer risk in confirmed BRCA carriers (per NCCN Genetic/
+  Familial High-Risk: Breast, Ovarian and Pancreatic):
+    - Breast (women): BRCA1 ~55-72%; BRCA2 ~45-69%
+    - Ovarian: BRCA1 ~39-44%; BRCA2 ~11-17%
+    - Male breast: BRCA2 ~6.8%; BRCA1 ~1-5%
+    - Pancreatic (PDAC): BRCA2 ~5-10%; BRCA1 ~2-3%
+    - Prostate (men): BRCA2 ~20-30% (high-grade / metastatic);
+      BRCA1 modest elevation
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_anchor
+draft_revision: 1

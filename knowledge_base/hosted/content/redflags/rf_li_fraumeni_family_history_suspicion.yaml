@@ -1,0 +1,168 @@
+id: RF-LI-FRAUMENI-FAMILY-HISTORY-SUSPICION
+definition: >-
+  Family pedigree or personal history meeting criteria suggestive of
+  Li-Fraumeni Syndrome (LFS; germline TP53 pathogenic variant), one of
+  the most penetrant hereditary cancer syndromes known: any of (a)
+  first- or second-degree relative with a confirmed TP53 pathogenic
+  variant; (b) Chompret criteria met — proband with an LFS-spectrum
+  tumor (soft-tissue sarcoma, osteosarcoma, premenopausal breast
+  cancer, CNS tumor, adrenocortical carcinoma, leukemia, or lung
+  bronchoalveolar carcinoma) before age 46 AND ≥1 first/second-degree
+  relative with LFS-spectrum tumor (other than breast if proband had
+  breast cancer) before age 56 or with multiple primaries at any age;
+  OR proband with multiple primary tumors (≥2, with first before age
+  46); OR proband with adrenocortical carcinoma, choroid plexus
+  carcinoma, embryonal anaplastic subtype rhabdomyosarcoma, regardless
+  of family history; (c) classic Li-Fraumeni criteria met — proband
+  with sarcoma diagnosed <45 + first-degree relative with any cancer
+  <45 + an additional first/second-degree relative with any cancer
+  <45 OR with sarcoma at any age; (d) proband with ≥2 primary
+  LFS-spectrum tumors (soft-tissue sarcoma, osteosarcoma, breast
+  premenopausal, CNS tumor, adrenocortical carcinoma, leukemia) at
+  any age. No current personal cancer diagnosis in the at-risk
+  individual being assessed (current cancer diagnosis routes to
+  treatment-track plan with germline-testing recommendation
+  embedded). Prevention-persona RedFlag (§20 ratification 2026-05-18,
+  v0.2-B hereditary pilot — Li-Fraumeni).
+definition_ua: >-
+  Сімейний родовід або особиста історія, що відповідає критеріям
+  підозри на синдром Li-Fraumeni (LFS; гермінативний патогенний
+  варіант TP53), один з найбільш пенетрантних спадкових онкосиндромів
+  відомих: будь-яке з (а) родич першого/другого ступеня з
+  підтвердженим патогенним варіантом TP53; (б) виконуються критерії
+  Chompret — пробанд з LFS-spectrum пухлиною (soft-tissue саркома,
+  остеосаркома, premenopausal рак молочної залози, CNS пухлина,
+  адренокортикальна карцинома, лейкемія або bronchoalveolar carcinoma
+  легені) до 46р І ≥1 родич першого/другого ступеня з LFS-spectrum
+  пухлиною (крім молочної залози, якщо пробанд мав рак молочної
+  залози) до 56р або з множинними primaries будь-якого віку; АБО
+  пробанд з множинними primaries (≥2, з першим до 46р); АБО пробанд
+  з адренокортикальною карциномою, choroid plexus карциномою,
+  embryonal anaplastic subtype рабдоміосаркомою, незалежно від
+  сімейної історії; (в) виконуються classic Li-Fraumeni критерії —
+  пробанд із саркомою, діагностованою <45 + родич першого ступеня з
+  будь-яким раком <45 + додатковий родич першого/другого ступеня з
+  будь-яким раком <45 АБО з саркомою будь-якого віку; (г) пробанд з
+  ≥2 primary LFS-spectrum пухлинами (soft-tissue саркома,
+  остеосаркома, premenopausal breast, CNS пухлина, адренокортикальна
+  карцинома, лейкемія) будь-якого віку. Поточний особистий діагноз
+  раку у пацієнта з ризиком відсутній. Prevention-persona RedFlag
+  (ратифікація §20, 2026-05-18, v0.2-B пілот спадковості — Li-Fraumeni).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "family_tp53_known_pathogenic_variant"
+      value: true
+    - finding: "family_chompret_criteria_met"
+      value: true
+    - finding: "family_classic_lfs_criteria_met"
+      value: true
+    - finding: "family_multiple_lfs_spectrum_cancers_in_proband"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+# §20 prevention extension — drives engine routing to PreventionPlan
+# when patient carries this RF and no confirmed Disease (KSS §20.2).
+risk_category: genetic
+
+# LFS-spectrum cancers in KB: breast cancer (DIS-BREAST — most common
+# LFS-spectrum cancer in adults), AML (DIS-AML — myeloid leukemia
+# component), soft-tissue sarcoma (DIS-SOFT-TISSUE-SARCOMA — sarcoma
+# component), GBM (DIS-GBM — CNS tumor component). Adrenocortical
+# carcinoma, choroid plexus carcinoma, and osteosarcoma do not have
+# dedicated DIS-* entities in current KB; future authoring may add
+# them (out of v0.2-B scope per task constraints).
+relevant_diseases:
+  - DIS-BREAST
+  - DIS-AML
+  - DIS-SOFT-TISSUE-SARCOMA
+  - DIS-GBM
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BREAST-2025
+  - SRC-NCCN-SARCOMA
+  - SRC-NCCN-CNS-2025
+  - SRC-NCCN-AML-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.2-B hereditary pilot — Li-Fraumeni Syndrome (LFS). Fires on
+  pedigree-based suspicion of LFS in an asymptomatic individual (no
+  current cancer diagnosis). Engine routes to PreventionPlan
+  recommending:
+    (a) genetic counseling + germline TP53 testing via
+        IND-LI-FRAUMENI-SUSPICION-PREVENTION-GENETIC-COUNSELING
+        (standard)
+    (b) empirical Toronto-protocol-style enhanced surveillance for
+        patients declining testing via
+        IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+        (surveillance / alternative, resource-intensive — explicit
+        patient-autonomy framing per CHARTER §11).
+
+  Trigger criteria correspond to (1) Chompret criteria for TP53
+  testing (revised 2015), (2) classic Li-Fraumeni criteria (Li &
+  Fraumeni 1988 / Birch et al. 1994), and (3) NCCN Genetic/Familial
+  High-Risk: Breast, Ovarian and Pancreatic v2.2025 LFS section
+  testing criteria. Simplified for v0.2-B pilot; production version
+  may add quantitative scoring (LFS Mutation Probability Score).
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption. Source-set TODO: NCCN Genetic/Familial High-Risk:
+  Breast/Ovarian/Pancreatic, dedicated TP53/LFS testing guidance from
+  Mai et al. NCI consortium, Bougeard et al. revised Chompret
+  criteria, as dedicated SRC-* entities (v0.2-B follow-up authoring;
+  license posture to verify per scope proposal open question #7).
+
+  Confirmed TP53 carriers (germline mutation positive on panel) route
+  to a DIFFERENT prevention pathway (carrier-confirmed Toronto-
+  protocol surveillance — annual whole-body MRI + annual brain MRI +
+  careful skin exam + colonoscopy q2-5y from 25 + breast MRI from
+  20-25 for women + risk-reducing mastectomy discussion + RADIATION
+  AVOIDANCE for confirmed carriers). That pathway is v0.2-B
+  follow-up authoring (RF-LI-FRAUMENI-CONFIRMED-CARRIER +
+  IND-LI-FRAUMENI-CARRIER-*).
+
+  **RADIATION AVOIDANCE caveat (critical):** TP53 carriers have
+  documented elevated risk of radiation-induced secondary cancers in
+  the treatment field. Diagnostic radiation (CT, mammography, X-ray)
+  is minimized in favor of MRI / ultrasound when feasible.
+  Therapeutic radiation for index cancers in TP53 carriers requires
+  multidisciplinary discussion of alternatives (surgery alone,
+  systemic therapy alone). This applies to CONFIRMED carriers — for
+  suspicion-only individuals, standard imaging is acceptable until
+  confirmation.
+
+  Lifetime cancer risk in confirmed TP53 carriers (per Mai et al.
+  NCI consortium analysis and Bougeard et al. revised Chompret data):
+    - Lifetime cumulative cancer risk: ~70% by age 50 in men, ~90%
+      by age 50 in women (driven by breast cancer); ≥90% lifetime in
+      both sexes.
+    - Breast (women): ~54% by age 70; mean dx age ~33y.
+    - Soft-tissue sarcoma: ~15% lifetime.
+    - Osteosarcoma: ~5-10% lifetime.
+    - CNS tumor: ~10-15% lifetime.
+    - Adrenocortical carcinoma: ~6-13% lifetime (much higher in
+      childhood — pediatric adrenocortical carcinoma is essentially
+      diagnostic of LFS in some populations).
+    - Leukemia: ~4-6% lifetime.
+    - Multiple primary cancers in lifetime: ~50%.
+
+  **Psychological burden caveat:** Li-Fraumeni syndrome carries
+  substantial psychological burden — predicted lifetime risk
+  approaches 100%, and routine surveillance is resource-intensive
+  and anxiety-provoking. Pre-test counseling must explicitly address
+  this and connect patients to LFS-specific support resources
+  (LFS Association, Living LFS, etc.).
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_anchor
+draft_revision: 1

@@ -1,0 +1,244 @@
+id: IND-BRCA-HBOC-SUSPICION-PREVENTION-GENETIC-COUNSELING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-BRCA-HBOC-FAMILY-HISTORY-SUSPICION
+
+# No drug regimen — intervention is referral + germline-test ordering +
+# pre/post-test counseling. recommended_regimen: null is appropriate.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Diagnostic yield of germline BRCA1/2 (+ extended HBOC panel) testing
+    in pedigree-suspicion populations: ~10-25% positive carrier
+    identification overall (variable by criterion stringency — Ashkenazi
+    founder testing in BRCA-affected family ~40%, single-relative
+    breast-cancer-<50 ~5-15%, multi-cancer cluster ~20-30%). Confirmed
+    carrier routes to enhanced surveillance with documented mortality
+    benefit: annual breast MRI + alternating mammogram reduces
+    interval-cancer rate substantially in BRCA carriers; risk-reducing
+    BSO between ages 35-45 reduces ovarian cancer incidence by ~80-90%
+    and all-cause mortality. Risk-reducing mastectomy reduces breast
+    cancer incidence by ~90% (option, not requirement).
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  # Germline panel test entity not yet authored as a TEST-* — v0.2-B
+  # follow-up. Currently referenced in rationale.
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for individuals with pedigree
+  suspicion of Hereditary Breast and Ovarian Cancer syndrome. Two
+  parallel referrals:
+
+  **(1) Genetic counseling referral.** Pre-test counseling covers:
+  inheritance pattern (autosomal dominant), penetrance (high for
+  BRCA1/BRCA2, moderate for PALB2/CHEK2, lower for ATM), implications
+  for first-degree relatives (cascade testing if positive), GINA /
+  insurance considerations (genetic information non-discrimination
+  protections in the US; check Ukrainian / EU equivalents per local
+  jurisdiction), psychological aspects (HBOC carries significant
+  cancer-anxiety burden — premorbid surveillance fatigue is a real
+  phenomenon). Per ACMG / ASCO / NCCN guidelines, pre-test counseling
+  by a certified genetic counselor or trained clinician is the
+  standard of care before germline testing.
+
+  **(2) Germline multi-gene HBOC panel testing.** Modern panels
+  (e.g., Invitae Common Hereditary Cancers panel, Color hereditary
+  cancer panel, GeneDx OncoGene Comprehensive, Myriad MyRisk) cover
+  BRCA1, BRCA2, PALB2, CHEK2, ATM, RAD51C, RAD51D, BRIP1, plus
+  contextual genes (TP53, PTEN, STK11, CDH1, NF1) for broader
+  syndrome differential. Variant classification per ACMG framework:
+  pathogenic / likely pathogenic / VUS / likely benign / benign.
+  Ashkenazi Jewish patients with strong pedigree may start with
+  3-mutation founder panel (BRCA1 185delAG, BRCA1 5382insC, BRCA2
+  6174delT) for cost efficiency, escalating to full panel if negative.
+
+  **Sequel pathway (positive panel — confirmed BRCA1/BRCA2 carrier):**
+  - Breast surveillance — annual breast MRI starting age 25-30
+    (alternating q6 months with mammogram from age 30); clinical
+    breast exam q6-12mo.
+  - Ovarian surveillance — risk-reducing bilateral
+    salpingo-oophorectomy (BSO) is recommended between ages 35-40 for
+    BRCA1, 40-45 for BRCA2, after childbearing complete. Pre-BSO
+    interim screening (transvaginal ultrasound + CA-125 q6mo)
+    is offered but has documented poor sensitivity for early-stage
+    disease — must be explicitly framed as suboptimal vs BSO.
+  - Risk-reducing mastectomy — option, discussed but not mandated;
+    informed-consent process emphasizes that surveillance and
+    risk-reducing surgery are both acceptable with different risk /
+    quality-of-life tradeoffs.
+  - Male carriers — annual clinical breast exam, breast imaging
+    starting age 50, prostate-cancer screening (PSA) from age 40-45
+    (BRCA2 high-priority).
+  - Pancreatic — high-risk surveillance program referral if ≥1 affected
+    first-degree relative + BRCA2 carrier (EUS + MRCP annually from
+    age 50 or 10y before youngest family PDAC dx).
+
+  **Sequel pathway (positive panel — moderate-penetrance variant
+  PALB2/CHEK2/ATM):** modified surveillance — annual mammogram +/-
+  MRI from age 30; ovarian surveillance generally not indicated for
+  these moderate-penetrance variants (penetrance for ovarian is
+  much lower than for BRCA1/2); discuss family planning per
+  inheritance pattern.
+
+  **Sequel pathway (negative panel):** general-population screening
+  cadence per USPSTF guidelines + re-stratification by remaining
+  family-history risk (quantitative model — Tyrer-Cuzick — may still
+  indicate elevated empirical risk warranting enhanced surveillance
+  even without identified variant).
+
+  **Sequel pathway (VUS — variant of uncertain significance):**
+  managed as pedigree-suspicion (this Indication / surveillance
+  pathway) until segregation analysis or functional studies
+  reclassify. VUS should NOT drive clinical management decisions.
+
+  Genetic counseling and germline testing are typically covered by
+  insurance in the US / EU when NCCN pedigree criteria are met; in
+  Ukraine, germline testing is available through private labs at
+  out-of-pocket cost (~5000-15000 UAH for multi-gene HBOC panel,
+  ~1500-3000 UAH for Ashkenazi founder panel).
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для осіб з родовідною підозрою на
+  синдром спадкового раку молочної залози та яєчників (HBOC). Дві
+  паралельні направлення:
+
+  **(1) Направлення на генетичне консультування.** Pre-test
+  консультування охоплює: спадкування (аутосомно-домінантне),
+  пенетрантність (висока для BRCA1/BRCA2, помірна для PALB2/CHEK2,
+  нижча для ATM), наслідки для родичів першого ступеня (cascade
+  тестування при позитиві), GINA / страхові міркування (захист від
+  генетичної дискримінації в США; перевірити українські / ЄС
+  еквіваленти за місцевою юрисдикцією), психологічні аспекти (HBOC
+  несе суттєвий cancer-anxiety тягар — преморбідна surveillance fatigue
+  — реальне явище). За ACMG / ASCO / NCCN настановами, pre-test
+  консультування у сертифікованого генетичного консультанта або
+  навченого клініциста — standard of care перед germline тестуванням.
+
+  **(2) Germline мультигенне HBOC панельне тестування.** Сучасні
+  панелі (напр., Invitae Common Hereditary Cancers panel, Color
+  hereditary cancer panel, GeneDx OncoGene Comprehensive, Myriad
+  MyRisk) покривають BRCA1, BRCA2, PALB2, CHEK2, ATM, RAD51C, RAD51D,
+  BRIP1, плюс контекстуальні гени (TP53, PTEN, STK11, CDH1, NF1) для
+  ширшої диференціації синдромів. Класифікація варіантів за рамкою
+  ACMG: патогенний / ймовірно патогенний / VUS / ймовірно
+  доброякісний / доброякісний. Пацієнти ашкеназько-єврейського
+  походження з сильним родоводом можуть починати з 3-мутаційної
+  засновницької панелі (BRCA1 185delAG, BRCA1 5382insC, BRCA2
+  6174delT) для cost-ефективності, з ескалацією до повної панелі при
+  негативному результаті.
+
+  **Наступний шлях (позитивна панель — підтверджений BRCA1/BRCA2
+  носій):**
+  - Скринінг молочної залози — щорічна МРТ молочної залози з 25-30
+    років (чергуючи q6 місяців з мамографією з 30 років); клінічний
+    огляд молочних залоз q6-12 міс.
+  - Скринінг яєчників — risk-reducing двостороння сальпінго-
+    оваріектомія (BSO) рекомендована між 35-40 роками для BRCA1,
+    40-45 для BRCA2, після завершення дітородіння. Pre-BSO проміжний
+    скринінг (трансвагінальний ультразвук + CA-125 q6 міс)
+    пропонується, але має задокументовану погану чутливість для
+    ранніх стадій — мусить бути явно framed як subоптимальний vs BSO.
+  - Risk-reducing мастектомія — опція, обговорюється, але не
+    обов'язкова; процес інформованої згоди підкреслює, що скринінг і
+    risk-reducing хірургія обидва прийнятні з різними trade-off
+    ризику / якості життя.
+  - Чоловіки-носії — щорічний клінічний огляд молочних залоз, breast
+    imaging з 50 років, скринінг раку передміхурової залози (ПСА) з
+    40-45 років (BRCA2 високий пріоритет).
+  - Підшлункова — направлення на програму високого ризику, якщо ≥1
+    уражений родич першого ступеня + BRCA2 носій (EUS + MRCP
+    щорічно з 50 років або 10 років до наймолодшого сімейного PDAC dx).
+
+  **Наступний шлях (позитивна панель — варіант помірної
+  пенетрантності PALB2/CHEK2/ATM):** модифікований скринінг — щорічна
+  мамографія +/- МРТ з 30 років; скринінг яєчників зазвичай не
+  показаний для цих варіантів помірної пенетрантності (пенетрантність
+  для яєчників значно нижча, ніж для BRCA1/2); обговорити планування
+  сім'ї за патерном спадкування.
+
+  **Наступний шлях (негативна панель):** general-population скринінг-
+  частота за настановами USPSTF + ре-стратифікація залишкового
+  сімейно-історичного ризику (кількісна модель — Tyrer-Cuzick — може
+  все ще вказувати на підвищений емпіричний ризик, що виправдовує
+  посилений скринінг навіть без ідентифікованого варіанту).
+
+  **Наступний шлях (VUS — variant of uncertain significance):**
+  ведеться як родовідна підозра (ця Indication / шлях скринінгу) до
+  segregation analysis або functional studies для рекласифікації.
+  VUS НЕ повинна керувати клінічними рішеннями.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BREAST-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Genetic counseling and BRCA1/BRCA2 testing recommended for
+      individuals meeting NCCN Genetic/Familial High-Risk Assessment
+      criteria for HBOC syndrome. Multi-gene panel testing is
+      appropriate when multiple hereditary cancer syndromes are in
+      the differential."
+  - source_id: SRC-NCCN-OVARIAN-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "All women with high-grade serous ovarian, fallopian-tube, or
+      primary peritoneal carcinoma should be offered germline testing
+      regardless of family history. Family-cascade testing is
+      indicated upon carrier identification."
+  - source_id: SRC-ESMO-BREAST-EARLY-2024
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Hereditary breast cancer susceptibility testing should be
+      offered to patients meeting criteria; counseling precedes
+      testing."
+  - source_id: SRC-ESMO-OVARIAN-2024
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Germline BRCA1/BRCA2 testing recommended in all patients with
+      epithelial ovarian carcinoma; cascade testing of affected
+      relatives upon positive identification."
+
+do_not_do:
+  - "Не призначати germline тестування без pre-test консультування — інформована згода, психологічна підготовка та обговорення GINA-наслідків обов'язкові."
+  - "Не трактувати VUS результат як патогенний — управляйте як родовідну підозру до подальших даних з segregation analysis або functional studies."
+  - "Не призначати risk-reducing хірургію (BSO / мастектомія) у носіїв без обговорення reproductive-planning, hormone-replacement-therapy наслідків post-BSO, та психологічного впливу — це shared-decision-making процес, а не алгоритмічна рекомендація."
+  - "Не презентувати negative-panel результат як zero-risk — quantitative модель (Tyrer-Cuzick) може показувати залишковий ризик >20% lifetime, що виправдовує посилений скринінг навіть без variantу; deep intronic / regulatory варіанти не покриті стандартними панелями."
+  - "Не пропускати male-carrier шлях — BRCA2 чоловіки мають підвищений ризик раку молочної залози (~6.8%) і метастатичного простатичного раку (~20-30%); сімейна історія сприймається як «жіноча проблема» в багатьох клінічних культурах і потребує явного contraargument."
+
+do_not_do_en:
+  - "Do not order germline testing without pre-test counseling — informed consent, psychological preparation, and GINA-implication discussion are mandatory."
+  - "Do not treat a VUS result as pathogenic — manage as pedigree suspicion pending further data from segregation analysis or functional studies."
+  - "Do not recommend risk-reducing surgery (BSO / mastectomy) in carriers without a discussion of reproductive planning, hormone-replacement-therapy sequelae post-BSO, and psychological impact — this is a shared-decision-making process, not an algorithmic recommendation."
+  - "Do not present a negative-panel result as zero-risk — quantitative model (Tyrer-Cuzick) may show residual lifetime risk >20%, warranting enhanced screening even without identified variant; deep intronic / regulatory variants are not covered by standard panels."
+  - "Do not skip the male-carrier pathway — BRCA2 men have elevated breast (~6.8%) and metastatic prostate (~20-30%) cancer risk; family history is perceived as a 'women's problem' in many clinical cultures and requires explicit counter-framing."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — v0.2-B hereditary pilot for BRCA / HBOC. NCCN Genetic/Familial High-Risk Breast/Ovarian/Pancreatic as a new SRC entity is v0.2-B authoring backlog (per scope proposal open question #7 on license posture). Cascade testing of confirmed-carrier first-degree relatives + interventions for confirmed carriers (RF-BRCA-CONFIRMED-CARRIER + IND-BRCA-CARRIER-*) are v0.2-B follow-up authoring.

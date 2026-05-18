@@ -1,0 +1,204 @@
+id: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-BRCA-HBOC-FAMILY-HISTORY-SUSPICION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Empirical enhanced surveillance (annual breast MRI from age 25-30
+    alternating with mammogram from age 30; transvaginal ultrasound +
+    CA-125 q6 months from age 30-35 with documented sensitivity
+    limitations; clinical breast exam q6 months): expected to capture
+    breast cancer at earliest detectable stage in the subset who are
+    actual BRCA / HBOC carriers (~10-25% of pedigree-suspicion
+    individuals). Ovarian surveillance has POOR documented sensitivity
+    for early-stage disease in both confirmed carriers and empirical
+    cohorts — must be framed as inferior to risk-reducing BSO (which
+    is only an option after genetic confirmation). Does NOT carry the
+    diagnostic certainty of germline testing — carriers receive
+    unnecessary intensive surveillance when targeted intervention
+    (risk-reducing surgery) would have been preferred; non-carriers
+    receive surveillance that could have been safely declined.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-BRCA-HBOC-SUSPICION-PREVENTION-
+  GENETIC-COUNSELING. Patient with pedigree suspicion of HBOC syndrome
+  who declines genetic counseling and/or germline testing — for any
+  reason (cost, insurance / GINA concerns, psychological / cancer-
+  anxiety considerations, family privacy, geographic access
+  constraints, religious or cultural objections to genetic testing)
+  — is offered empirical enhanced surveillance applied as if HBOC
+  were confirmed (best-available proxy in the absence of genetic
+  confirmation):
+
+  **Breast (women):** Annual breast MRI starting age 25-30 (insurance
+  coverage in many jurisdictions requires documented family history
+  with ≥20% lifetime risk per Tyrer-Cuzick; out-of-pocket option
+  otherwise). Mammogram alternating q6 months with MRI starting age
+  30 — staggered to provide imaging every 6 months overall. Clinical
+  breast exam q6-12 months by clinician familiar with high-risk
+  surveillance. Patient-performed monthly breast self-exam encouraged
+  (modest evidence base, no harm).
+
+  **Ovarian (women):** Transvaginal ultrasound + serum CA-125 q6
+  months from age 30-35 — explicitly framed as suboptimal
+  surveillance (sensitivity for early-stage high-grade serous ovarian
+  carcinoma is poor; UKCTOCS trial and follow-up data do not
+  demonstrate mortality benefit even in BRCA-confirmed carriers). Low
+  threshold for diagnostic imaging or referral for new or persistent
+  pelvic symptoms (bloating, early satiety, urinary urgency,
+  abdominal-pelvic pain).
+
+  **Male-line considerations (men in HBOC-suspicious pedigree):**
+  Annual clinical breast exam from age 35. Breast imaging if
+  gynecomastia or palpable mass. PSA + digital rectal exam from age
+  45-50 (lower threshold than population — BRCA2-associated prostate
+  cancer is often high-grade / metastatic at presentation).
+
+  **Pancreatic:** Routine pancreatic surveillance is NOT recommended
+  empirically without genetic confirmation. If ≥2 first/second-degree
+  affected family members with pancreatic adenocarcinoma, referral to
+  pancreatic-cancer high-risk surveillance program is appropriate
+  regardless of genetic-testing status.
+
+  **Risk-reducing surgery:** NOT offered empirically without genetic
+  confirmation. Risk-reducing mastectomy and risk-reducing BSO are
+  major irreversible interventions that require demonstrated carrier
+  status to justify the harm/benefit ratio. Patients re-considering
+  testing later in life is appropriate and supported — many decline-
+  testing patients eventually accept testing after additional clinic
+  visits, family events, or reduced anxiety.
+
+  Per CHARTER §11 patient-autonomy framing: genetic testing is a
+  shared-decision-making domain. Patients who decline testing retain
+  access to surveillance benefit, with the explicit caveat that
+  empirical surveillance lacks the diagnostic precision of confirmed
+  genetic status — and notably, that risk-reducing surgery
+  (mastectomy, BSO) cannot be offered empirically. Periodic
+  re-discussion of testing is appropriate; this pathway does not
+  preclude future genetic testing.
+
+  Routing reconsiderations: if patient eventually accepts genetic
+  testing, results route to (a) confirmed-carrier carrier-specific
+  pathway, (b) general-population pathway, or (c) continued pedigree-
+  suspicion if VUS.
+
+  **Resource-intensity caveat:** Annual breast MRI is expensive
+  (~3000-8000 UAH per scan in Ukrainian private centers; insurance-
+  varying in US/EU). Empirical lifetime-MRI surveillance from age 25
+  without genetic confirmation may not be a sustainable resource
+  allocation; testing-first is the cost-effective default at
+  population scale, and this Indication explicitly frames the
+  surveillance pathway as patient-autonomy-respecting rather than
+  cost-optimal.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до
+  IND-BRCA-HBOC-SUSPICION-PREVENTION-GENETIC-COUNSELING. Пацієнт з
+  родовідною підозрою на HBOC синдром, який відмовляється від
+  генетичного консультування та/або germline тестування — з будь-якої
+  причини (вартість, страхові / GINA міркування, психологічні /
+  cancer-anxiety міркування, сімейна приватність, географічні
+  обмеження доступу, релігійні чи культурні заперечення проти
+  генетичного тестування) — отримує empіричне посилене спостереження,
+  як якщо б HBOC був підтверджений (best-available proxy в
+  відсутність генетичного підтвердження):
+
+  **Молочна залоза (жінки):** Щорічна МРТ молочної залози з 25-30
+  років (страхове покриття в багатьох юрисдикціях вимагає
+  задокументованої сімейної історії з lifetime ризиком ≥20% за
+  Tyrer-Cuzick; out-of-pocket опція в іншому випадку). Мамографія,
+  що чергується q6 місяців з МРТ, з 30 років — розподілена, щоб
+  забезпечити imaging кожні 6 місяців загалом. Клінічний огляд
+  молочних залоз q6-12 міс. клініцистом, знайомим з high-risk
+  скринінгом. Пацієнт-виконуваний щомісячний самоогляд молочних
+  залоз заохочується (помірна доказова база, без шкоди).
+
+  **Яєчники (жінки):** Трансвагінальний ультразвук + сироватковий
+  CA-125 q6 місяців з 30-35 років — явно frame як subоптимальний
+  скринінг (чутливість для ранніх стадій high-grade серозного раку
+  яєчників погана; UKCTOCS випробування та follow-up дані не
+  демонструють переваги по смертності навіть у BRCA-підтверджених
+  носіїв). Низький поріг для діагностичного imaging або направлення
+  при нових чи persistent тазових симптомах (здуття, ранне насичення,
+  urinary urgency, abdominal-pelvic біль).
+
+  **Чоловічі міркування (чоловіки в HBOC-підозрюваному родоводі):**
+  Щорічний клінічний огляд молочних залоз з 35 років. Breast imaging
+  при гінекомастії або пальпованому ущільненні. ПСА + digital rectal
+  exam з 45-50 років (нижчий поріг, ніж популяційний — BRCA2-
+  асоційований простатичний рак часто high-grade / метастатичний
+  на момент presentation).
+
+  **Підшлункова:** Рутинний скринінг підшлункової НЕ рекомендований
+  emпірично без генетичного підтвердження. Якщо ≥2 родичів першого/
+  другого ступеня з PDAC, направлення на програму високого ризику
+  доречне незалежно від статусу генетичного тестування.
+
+  **Risk-reducing хірургія:** НЕ пропонується emпірично без
+  генетичного підтвердження. Risk-reducing мастектомія та BSO —
+  major незворотні втручання, що вимагають демонстрованого статусу
+  носія для виправдання співвідношення шкоди/користі. Повторне
+  розглядання тестування пацієнтом пізніше в житті доречне і
+  підтримується — багато decline-testing пацієнтів врешті приймають
+  тестування після додаткових клінічних візитів, сімейних подій або
+  зменшеної тривоги.
+
+  Per CHARTER §11 framing автономії пацієнта.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BREAST-2025
+    position: supports
+  - source_id: SRC-NCCN-OVARIAN-2025
+    position: supports
+  - source_id: SRC-ESMO-BREAST-EARLY-2024
+    position: supports
+
+do_not_do:
+  - "Не презентувати enhanced surveillance як еквівалент genetic confirmation — diagnostic precision відсутня, і risk-reducing хірургія недоступна emпірично."
+  - "Не рекомендувати risk-reducing хірургію (мастектомія / BSO) без genetic confirmation — необхідне підтверджене status носія для виправдання незворотного втручання."
+  - "Не пропускати periodic re-discussion про genetic testing — більшість пацієнтів врешті приймають тестування після додаткових візитів, сімейних подій та зменшення тривоги; testing-first шлях клінічно та коштом більш ефективний."
+  - "Не презентувати ovarian surveillance (TVUS + CA-125) як ефективний — UKCTOCS дані не показують переваги по смертності; це best-available proxy, а не доказово-підтверджене скринінгове втручання."
+  - "Не пропускати male-line розгляд — BRCA2 чоловіки в pedigree мають підвищений ризик і потребують відповідного скринінгу (breast clinical exam, PSA), що часто пропускається у family-history рутинах."
+
+do_not_do_en:
+  - "Do not present enhanced surveillance as equivalent to genetic confirmation — diagnostic precision is absent and risk-reducing surgery is unavailable empirically."
+  - "Do not recommend risk-reducing surgery (mastectomy / BSO) without genetic confirmation — confirmed carrier status is required to justify these irreversible interventions."
+  - "Do not skip periodic re-discussion of genetic testing — most patients eventually accept testing after additional visits, family events, and reduced anxiety; the testing-first pathway is more clinically and cost-effective."
+  - "Do not present ovarian surveillance (TVUS + CA-125) as effective — UKCTOCS data do not demonstrate mortality benefit; this is a best-available proxy, not an evidence-supported screening intervention."
+  - "Do not skip male-line consideration — BRCA2 men in the pedigree have elevated risk and need appropriate screening (breast clinical exam, PSA), which is often missed in family-history routines."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — alternative-track companion for BRCA / HBOC hereditary prevention pilot. §15.2 C4 ≥2-tracks invariant compliance.
