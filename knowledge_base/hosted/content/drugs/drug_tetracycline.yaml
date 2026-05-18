@@ -1,0 +1,131 @@
+id: DRUG-TETRACYCLINE
+names:
+  preferred: "Tetracycline"
+  ukrainian: "Тетрациклін"
+  english: "Tetracycline"
+  synonyms:
+    - "Tetracycline hydrochloride"
+  brand_names:
+    - "Sumycin"
+    - "Achromycin"
+    - "Tetrosan"
+    - "Pylera (component, with bismuth + metronidazole)"
+atc_code: J01AA07
+rxnorm_id: "10395"
+drug_class: "First-generation tetracycline antibiotic (broad-spectrum bacteriostatic)"
+mechanism: >
+  Tetracycline binds reversibly to the 30S ribosomal subunit at the A site,
+  preventing aminoacyl-tRNA from associating with the ribosome and blocking
+  the elongation step of bacterial protein synthesis. Bacteriostatic.
+  Broad spectrum: Gram-positives, Gram-negatives, atypicals (Mycoplasma,
+  Chlamydia, Rickettsia), spirochetes, Helicobacter pylori (including
+  metronidazole- and clarithromycin-resistant strains in PBMT quadruple
+  therapy). Distinct from doxycycline (semi-synthetic, longer half-life,
+  better tissue penetration) — but cheaper and historically the canonical
+  PBMT component.
+
+regulatory_status:
+  fda:
+    approved: true
+    year_first_approval: 1954
+    indications_brief:
+      - "Helicobacter pylori eradication (component of PBMT quadruple therapy with PPI + bismuth + metronidazole)"
+      - "Rickettsial infections (Rocky Mountain spotted fever, typhus group)"
+      - "Atypical respiratory infections (Mycoplasma pneumoniae, Chlamydophila pneumoniae, psittacosis)"
+      - "Brucellosis, tularemia, plague, cholera (in combination)"
+      - "Acne vulgaris (severe / inflammatory)"
+      - "Inhalation anthrax (post-exposure prophylaxis)"
+  ema:
+    approved: true
+    year_first_approval: 1955
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Зареєстровано в Україні (generics — Tetrosan, Tetracycline-Darnitsa). НСЗУ-програма ерадикації H. pylori на 2026-05 не передбачена — оплата з кишені пацієнта. Перевірено drlz.com.ua 2026-05-18. У деяких випадках обмежена аптечна доступність — у разі відсутності альтернатива — доксициклін у складі модифікованої PBMT."
+typical_dosing: >
+  H. pylori PBMT quadruple therapy (adult): 500 mg PO QID × 10-14 days,
+  with PPI (omeprazole 20 mg BID) + bismuth subcitrate 120 mg QID +
+  metronidazole 500 mg TID-QID. Take on empty stomach (1 hour before or
+  2 hours after meals) — food and dairy substantially reduce absorption.
+  Separate from polyvalent cations (antacids, iron, calcium, dairy) by
+  ≥2-3 hours. Renal adjustment: AVOID in renal impairment (CrCl <60) —
+  tetracycline (unlike doxycycline) is renally excreted and accumulates;
+  use doxycycline instead. Hepatic: caution in severe hepatic impairment;
+  hepatotoxicity risk with high doses. Pediatric: contraindicated in
+  children <8 years (permanent tooth discoloration, enamel hypoplasia,
+  bone growth inhibition).
+formulations:
+  - "Capsule 250 mg, 500 mg"
+  - "Oral suspension 125 mg/5 mL (regional / compounded)"
+  - "Pylera capsule (125 mg tetracycline + 125 mg metronidazole + 140 mg bismuth subcitrate potassium)"
+
+absolute_contraindications:
+  - "Hypersensitivity to tetracycline or other tetracyclines"
+  - "Pregnancy (Category D — fetal tooth/bone effects; bone-growth retardation)"
+  - "Breastfeeding (excretion in breast milk; infant tooth effects)"
+  - "Children <8 years (permanent tooth discoloration, enamel hypoplasia, bone-growth inhibition)"
+  - "Severe renal impairment (CrCl <60 mL/min) — accumulates with risk of hepatotoxicity and azotemia; use doxycycline instead"
+  - "Severe hepatic impairment (Child-Pugh C)"
+black_box_warnings: []
+major_interactions:
+  - "Polyvalent cations (antacids with Al/Mg/Ca, iron, zinc, sucralfate, calcium, magnesium, dairy products, bismuth — except in PBMT regimen): chelation reduces absorption — separate by ≥2-3 hours"
+  - "Warfarin: increased anticoagulant effect (gut-flora alteration) — monitor INR"
+  - "Penicillins: theoretical antagonism (bacteriostatic vs bactericidal) — clinically uncertain; avoid in serious infections requiring β-lactam"
+  - "Methotrexate: tetracycline displaces protein-bound MTX → increased toxicity — caution with high-dose MTX"
+  - "Digoxin: increased digoxin levels (gut-flora alteration) — monitor"
+  - "Retinoids (isotretinoin, etretinate): additive pseudotumor cerebri risk — AVOID combination"
+  - "Oral contraceptives: theoretical reduced efficacy (gut-flora hypothesis) — evidence weak; backup contraception advised"
+  - "Live oral typhoid vaccine, BCG: antibacterial activity may inactivate"
+  - "Methoxyflurane: nephrotoxicity (anesthesia interaction)"
+common_adverse_events:
+  - "Nausea — ~5-10%"
+  - "Diarrhea — ~5%"
+  - "Vomiting — ~3-5%"
+  - "Anorexia — ~3-5%"
+  - "Epigastric distress — ~3-5%"
+  - "Photosensitivity (UVA) — ~3-5%"
+  - "Rash — ~2-3%"
+  - "Vaginal / oral candidiasis — ~3-5%"
+  - "Glossitis / sore throat — ~2%"
+  - "Esophagitis / esophageal ulcer (if swallowed without enough water or supine) — ~1-2%"
+  - "Mild transaminitis — ~1-2%"
+serious_adverse_events:
+  - "Hepatotoxicity (acute fatty liver of pregnancy — historically reported with high-dose IV tetracycline in pregnancy; less common with oral)"
+  - "Pseudotumor cerebri (benign intracranial hypertension) — rare; combined with retinoids especially"
+  - "Severe hypersensitivity / DRESS / SJS / TEN (rare)"
+  - "Anaphylaxis (rare)"
+  - "Permanent tooth discoloration in children <8 years"
+  - "Bone-growth inhibition in fetus / infant"
+  - "Acute pancreatitis (rare)"
+  - "Renal toxicity / Fanconi syndrome (with expired / degraded tetracycline — historical concern; modern formulations safer)"
+  - "Clostridioides difficile colitis"
+  - "Hemolytic anemia / thrombocytopenia / neutropenia (rare)"
+  - "Lupus-like syndrome (rare)"
+pharmacology:
+  half_life_hours: 8  # ~6-12 h normal renal function; prolonged in renal impairment
+  clearance: "Renal — ~60% excreted unchanged in urine via glomerular filtration; ~20% in bile; remainder hepatic metabolism"
+  protein_binding_pct: 65
+  metabolism: "Minimal hepatic metabolism; enterohepatic recirculation; absorption substantially reduced by food and polyvalent cations"
+sources:
+  - SRC-NCCN-BCELL-2025
+last_reviewed: "2026-05-18"
+reviewer_signoffs: []
+notes: >
+  STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. Standard tetracycline component of
+  PBMT (PPI + bismuth + metronidazole + tetracycline) — the preferred H.
+  pylori regimen in regions with clarithromycin resistance >15% or after
+  prior triple-therapy failure. Tetracycline (not doxycycline) is the
+  evidence-based PBMT component per Maastricht VI / Florence consensus —
+  doxycycline substitution has lower cure rates and is not equivalent.
+  Pylera fixed-dose capsule (US/EU) bundles bismuth + metronidazole +
+  tetracycline at lower per-component doses, taken QID × 10 days with
+  PPI. Major patient adherence challenge: QID dosing × 10-14 days with
+  meal-timing constraints and food/dairy/antacid spacing. Photosensitivity
+  counseling required. In Ukraine, tetracycline aptechna availability has
+  been spotty in some regions — verify supply before prescribing or use
+  Pylera if available. Two-Co-Lead signoff queued for v0.2-A clinical
+  review.

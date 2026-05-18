@@ -1,0 +1,134 @@
+id: DRUG-BICTEGRAVIR-EMTRICITABINE-TENOFOVIR-AF
+names:
+  preferred: "Bictegravir / Emtricitabine / Tenofovir alafenamide"
+  ukrainian: "Біктегравір / Емтрицитабін / Тенофовіру алафенамід"
+  english: "Bictegravir / Emtricitabine / Tenofovir alafenamide"
+  synonyms:
+    - "BIC/FTC/TAF"
+    - "B/F/TAF"
+    - "Bictarvy"
+  brand_names:
+    - "Biktarvy"
+atc_code: J05AR20
+rxnorm_id: "2055969"
+drug_class: "Fixed-dose combination HIV-1 antiretroviral — integrase strand transfer inhibitor (INSTI) + two NRTIs"
+mechanism: >
+  Fixed-dose single-tablet regimen (STR) combining three active components.
+  Bictegravir (50 mg) is a second-generation HIV-1 integrase strand-
+  transfer inhibitor (INSTI) that blocks integration of viral DNA into the
+  host chromosome — high barrier to resistance, similar to dolutegravir.
+  Emtricitabine (200 mg) is a cytidine-analog NRTI that, after intracellular
+  phosphorylation, competitively inhibits HIV-1 reverse transcriptase and
+  terminates chain elongation. Tenofovir alafenamide (25 mg) is a
+  phosphonamidate prodrug of tenofovir delivering active tenofovir-DP
+  primarily intracellularly, with reduced systemic exposure and lower
+  renal / bone toxicity than TDF. Cancer-prevention pathway: sustained HIV
+  viral suppression and immune reconstitution reduce risk of AIDS-defining
+  malignancies (Kaposi sarcoma, non-Hodgkin lymphomas including primary
+  CNS lymphoma and Burkitt lymphoma, invasive cervical cancer) and
+  several non-AIDS-defining cancers (HPV-related anal / oropharyngeal,
+  hepatocellular, Hodgkin lymphoma).
+
+regulatory_status:
+  fda:
+    approved: true
+    year_first_approval: 2018
+    indications_brief:
+      - "HIV-1 infection — initial treatment in ART-naive adults and pediatric patients ≥2 years and ≥14 kg"
+      - "HIV-1 infection — virologically suppressed adults on stable ART (replacement)"
+      - "Cancer-prevention pathway: sustained HIV suppression reduces AIDS-defining and non-AIDS-defining cancer incidence"
+  ema:
+    approved: true
+    year_first_approval: 2018
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: true
+    reimbursement_indications:
+      - "ВІЛ-інфекція — як перша лінія антиретровірусної терапії (АРТ) у дорослих і дітей ≥2 років і ≥14 кг (у межах НСЗУ-програми лікування ВІЛ)"
+      - "ВІЛ-інфекція — як заміна стабільного режиму у вірусологічно пригнічених пацієнтів"
+    last_verified: "2026-05-18"
+    notes: "Зареєстровано в Україні (Biktarvy, Gilead). НСЗУ-покриття за програмою лікування ВІЛ через ДУ «Центр громадського здоров'я МОЗ України». Включений до сучасних україньких клінічних настанов з АРТ як одна з рекомендованих першолінійних опцій. Перевірено drlz.com.ua станом на 2026-05-18."
+typical_dosing: >
+  Adult and pediatric (≥25 kg): 1 tablet (50/200/25 mg) PO once daily, with
+  or without food. Pediatric 14-25 kg: low-strength tablet 30/120/15 mg PO
+  once daily. Renal adjustment: NOT recommended in CrCl <30 (use alternative
+  regimen — TAF approved down to CrCl 15, but coformulation studied only
+  to CrCl ≥30). HD patients: 1 tablet daily after dialysis on dialysis
+  days (limited data). Hepatic: no adjustment in mild/moderate (Child-Pugh
+  A/B); avoid in severe hepatic impairment (C). Abrupt discontinuation in
+  HIV/HBV coinfected patients → risk of severe HBV exacerbation (boxed
+  warning — monitor LFTs ≥several months post-stop). PrEP: NOT indicated
+  for HIV pre-exposure prophylaxis (use Truvada or Descovy).
+formulations:
+  - "Tablet 50 mg bictegravir / 200 mg emtricitabine / 25 mg tenofovir alafenamide (adult)"
+  - "Low-strength tablet 30 mg bictegravir / 120 mg emtricitabine / 15 mg tenofovir alafenamide (pediatric 14-25 kg)"
+
+absolute_contraindications:
+  - "Hypersensitivity to any component (bictegravir, emtricitabine, tenofovir alafenamide)"
+  - "Concurrent use with rifampin (substantial bictegravir exposure reduction → virologic failure)"
+  - "Concurrent use with dofetilide (bictegravir inhibits OCT2 / MATE1 renal transporters → toxic dofetilide levels)"
+  - "CrCl <30 mL/min (limited data; use alternative ART)"
+  - "Severe hepatic impairment (Child-Pugh C)"
+black_box_warnings:
+  - "Severe acute exacerbation of hepatitis B upon discontinuation in HIV/HBV coinfected patients — monitor LFTs ≥several months post-stop"
+major_interactions:
+  - "Rifampin: substantial reduction in bictegravir exposure → contraindicated"
+  - "Rifabutin: reduces bictegravir exposure — avoid or use boosted alternative"
+  - "Antacids, calcium / iron / magnesium / zinc supplements: chelation reduces bictegravir absorption — separate by ≥2 h (take Biktarvy first then supplement) or take supplement with food ≥2 h after Biktarvy"
+  - "Multivitamins with polyvalent cations: same chelation concern — separate timing"
+  - "Sucralfate: reduces absorption — separate"
+  - "Dofetilide: contraindicated (bictegravir inhibits OCT2 / MATE1)"
+  - "Metformin: bictegravir increases metformin exposure ~30-40% (OCT2 / MATE1 inhibition) — consider metformin dose reduction or monitoring"
+  - "Other CYP3A / UGT1A1 substrates: minor interactions; bictegravir is metabolized by both, modest impact"
+  - "Strong inducers (carbamazepine, phenytoin, oxcarbazepine, phenobarbital, St. John's wort): reduce bictegravir exposure — avoid"
+  - "Carbamazepine, phenytoin: contraindicated / avoid"
+  - "Probenecid: increases tenofovir exposure"
+  - "Adefovir, tenofovir-containing other regimens: avoid duplicate tenofovir"
+common_adverse_events:
+  - "Headache — ~5%"
+  - "Diarrhea — ~5%"
+  - "Nausea — ~3-5%"
+  - "Fatigue — ~3-5%"
+  - "Abnormal dreams — ~3-5%"
+  - "Insomnia — ~2-3%"
+  - "Dizziness — ~2-3%"
+  - "Rash — ~2%"
+  - "Weight gain — ~5-10% over 1-2 years (signal in INSTI + TAF regimens)"
+  - "Mild dyslipidemia (LDL, total cholesterol) — common"
+serious_adverse_events:
+  - "Severe HBV exacerbation on discontinuation (boxed)"
+  - "Severe hypersensitivity / DRESS / SJS / TEN (rare)"
+  - "Lactic acidosis / hepatic steatosis (NRTI class — rare with TAF)"
+  - "Immune reconstitution inflammatory syndrome (IRIS) in advanced HIV starting ART (within first weeks)"
+  - "Suicidal ideation / depression (INSTI class signal; small absolute risk; pre-existing psychiatric history is a flag)"
+  - "Weight gain — significant in some patients (mechanism uncertain — adipocyte effects, food intake, metabolic shift)"
+  - "Renal tubulopathy (rare with TAF vs TDF)"
+  - "Bone-density loss (modest with TAF vs TDF)"
+  - "Hepatotoxicity (rare)"
+pharmacology:
+  half_life_hours: 18  # bictegravir ~18 h; emtricitabine ~10 h; TAF ~0.5 h (prodrug)
+  clearance: "Multimodal — bictegravir hepatic (CYP3A4 + UGT1A1, ~equal split); emtricitabine renal; TAF intracellular cleavage to tenofovir, then renal"
+  protein_binding_pct: 99  # bictegravir; emtricitabine <4%; TAF ~80%
+  metabolism: "Bictegravir hepatic CYP3A4 and UGT1A1; emtricitabine minimal metabolism (renal excretion of parent); TAF cleaved intracellularly by cathepsin A to tenofovir, then phosphorylated"
+sources:
+  - SRC-NIH-AIDS-2024
+last_reviewed: "2026-05-18"
+reviewer_signoffs: []
+notes: >
+  STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. Biktarvy is one of the preferred
+  single-tablet initial ART regimens per NIH-AIDS 2024, IAS-USA, DHHS,
+  ESMO HIV-and-cancer guidance. Single tablet, once-daily, with or without
+  food, no booster (cobicistat / ritonavir), no HLA-B*5701 screening
+  needed. High barrier to resistance. Cancer-prevention rationale: durable
+  viral suppression with CD4 reconstitution reduces incidence of AIDS-
+  defining cancers (Kaposi sarcoma, NHL including PCNSL and Burkitt,
+  invasive cervical cancer) and several non-AIDS-defining cancers (anal,
+  oropharyngeal, hepatocellular, Hodgkin lymphoma) — meta-analyses suggest
+  substantial relative-risk reduction with sustained suppression. Note:
+  Biktarvy is NOT indicated for HIV PrEP (pre-exposure prophylaxis — use
+  Truvada [FTC/TDF] or Descovy [FTC/TAF]) — PrEP is a separate workstream.
+  Polyvalent cation chelation is the major adherence pitfall — patient
+  counseling on supplement timing is critical. Two-Co-Lead signoff queued
+  for v0.2-A clinical review.
