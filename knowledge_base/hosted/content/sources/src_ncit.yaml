@@ -1,0 +1,85 @@
+id: SRC-NCIT
+source_type: terminology
+title: "NCI Thesaurus — controlled cancer vocabulary"
+version: "evs-v1"
+authors:
+  - National Cancer Institute Enterprise Vocabulary Services
+  - National Institutes of Health
+journal: "ncithesaurus.nci.nih.gov"
+url: https://ncithesaurus.nci.nih.gov/ncitbrowser/
+access_level: open_access
+currency_status: current
+current_as_of: "2026-05-18"
+evidence_tier: 6
+precedence_policy: secondary_evidence_base
+
+# Licensing & hosting (SOURCE_INGESTION_SPEC §3)
+# NCI Thesaurus is published by the NCI Enterprise Vocabulary Services
+# (EVS), a unit of the National Institutes of Health. As a work of the
+# US federal government, NCIt content is in the public domain in the
+# United States under 17 U.S.C. §105. NCI's terms at
+# https://www.cancer.gov/policies/copyright-reuse state that cancer
+# information is generally not copyrighted and may be freely reused.
+# Full classification: docs/reviews/ncit-license-2026-05-18.md.
+hosting_mode: referenced
+ingestion:
+  method: live_api
+  client: knowledge_base.clients.ncit_client.NcitClient
+  endpoint: https://api-evsrest.nci.nih.gov/api/v1
+  rate_limit: "1 req/s, burst 3 (self-imposed; EVS publishes no formal limit)"
+cache_policy:
+  enabled: true
+  ttl_hours: 720
+  scope: query_result
+license:
+  name: "US Public Domain (17 U.S.C. §105)"
+  url: https://www.cancer.gov/policies/copyright-reuse
+attribution:
+  required: false
+  text: "Concept normalization via NCI Thesaurus (ncithesaurus.nci.nih.gov)."
+commercial_use_allowed: true
+redistribution_allowed: true
+modifications_allowed: true
+sharealike_required: false
+known_restrictions:
+  - "NCIt cross-references concepts to other vocabularies (SNOMED CT, MedDRA, ICD-O-3, MeSH). Cross-reference *codes* (e.g. a SNOMED CT concept ID) are NOT NCI-authored content — those code systems retain their original licenses. OpenOnco only consumes the NCIt concept code itself, not the cross-referenced codes from license-restricted vocabularies."
+  - "NCIt content updates monthly. Cached concept records past 30 days are refreshed by the client's TTL."
+legal_review:
+  status: reviewed
+  reviewer: claude
+  date: "2026-05-18"
+  notes: |
+    Self-review under CHARTER §6.1 dev-mode exemption (v0.1 phase).
+    Same posture as SRC-PDQ and SRC-CTGOV-REGISTRY: US federal-government
+    work under 17 U.S.C. §105. Concept codes, preferred terms,
+    synonyms, and NCI-authored definitions are public domain.
+    Cross-references to license-restricted vocabularies (SNOMED CT,
+    MedDRA) are NOT consumed by OpenOnco — we use only the NCIt code
+    layer.
+
+    Re-review triggers: (a) NCI changes its reuse policy, (b) any
+    plan to consume cross-referenced SNOMED CT / MedDRA codes from
+    NCIt records (would inherit those vocabularies' licenses), (c)
+    migration to `hosted` mode. Full reasoning in
+    docs/reviews/ncit-license-2026-05-18.md.
+
+relates_to_diseases: []
+last_verified: "2026-05-18"
+verifier: claude
+notes: |
+  Scaffold lands the client + Source entity + optional `ncit` fields
+  on `Disease.codes` and `BiomarkerExternalIDs`. Populating per-entity
+  codes is a separate clinical-content workstream gated by CHARTER §6.1.
+
+  Why NCIt matters: the patient-input flow normalizes free-text terms
+  ("lung cancer", "EGFR positive") to KB IDs (`DIS-NSCLC`, `BIO-EGFR-MUTATION`).
+  NCIt is the canonical NIH-maintained vocabulary backing that mapping;
+  every cancer concept has a stable code, preferred term, synonym list,
+  and machine-readable cross-references.
+
+  Sibling source scaffolds shipping same license shape:
+    - src_pdq.yaml  (PR #589)
+    - src_ctgov.yaml (PR #592)
+pages_count: 0
+references_count: 0
+corpus_role: terminology
