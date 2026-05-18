@@ -1681,6 +1681,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://openonco.info/cases/prevention-bap1-pedigree.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://openonco.info/cases/prevention-barretts.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -1697,6 +1702,11 @@
   </url>
   <url>
     <loc>https://openonco.info/cases/prevention-celiac-refractory.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/cases/prevention-chronic-pancreatitis.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
   </url>
@@ -1741,6 +1751,21 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://openonco.info/cases/prevention-lifestyle-alcohol.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/cases/prevention-lifestyle-obesity.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/cases/prevention-lifestyle-tobacco.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://openonco.info/cases/prevention-lynch-carrier.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -1781,12 +1806,27 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://openonco.info/cases/prevention-post-transplant.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/cases/prevention-prior-radiation.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://openonco.info/cases/prevention-psc-ibd.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://openonco.info/cases/prevention-radon.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/cases/prevention-reproductive.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
   </url>
@@ -6456,7 +6496,17 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://openonco.info/kb/biomarkers/bio-fh-germline.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://openonco.info/kb/biomarkers/bio-fl-flipi.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/kb/biomarkers/bio-flcn-germline.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
   </url>
@@ -6671,6 +6721,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://openonco.info/kb/biomarkers/bio-men1-germline.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://openonco.info/kb/biomarkers/bio-met-amplification.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -6691,7 +6746,22 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://openonco.info/kb/biomarkers/bio-mlh1-germline.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://openonco.info/kb/biomarkers/bio-mm-cytogenetics-hr.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/kb/biomarkers/bio-msh2-germline.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/kb/biomarkers/bio-msh6-germline.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
   </url>
@@ -6702,6 +6772,11 @@
   </url>
   <url>
     <loc>https://openonco.info/kb/biomarkers/bio-mum1-ihc.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/kb/biomarkers/bio-mutyh-germline.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
   </url>
@@ -6816,6 +6891,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://openonco.info/kb/biomarkers/bio-pms2-germline.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://openonco.info/kb/biomarkers/bio-pold1-hypermutator.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -6891,6 +6971,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://openonco.info/kb/biomarkers/bio-sdhb-germline.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://openonco.info/kb/biomarkers/bio-sezary-count.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -6907,6 +6992,11 @@
   </url>
   <url>
     <loc>https://openonco.info/kb/biomarkers/bio-smo.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/kb/biomarkers/bio-stk11-germline.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
   </url>
@@ -8576,6 +8666,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://openonco.info/kb/redflags/rf-bap1-family-history-suspicion.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://openonco.info/kb/redflags/rf-barretts-esophagus-prevention.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -9216,6 +9311,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://openonco.info/kb/redflags/rf-fammm-family-history-suspicion.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://openonco.info/kb/redflags/rf-fap-confirmed-carrier.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -9551,6 +9651,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://openonco.info/kb/redflags/rf-hprc-family-history-suspicion.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://openonco.info/kb/redflags/rf-hstcl-frailty-age.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -9577,6 +9682,11 @@
   </url>
   <url>
     <loc>https://openonco.info/kb/redflags/rf-iatrogenic-prior-radiation-prevention.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/kb/redflags/rf-iatrogenic-transplant-immunosuppression-prevention.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
   </url>
@@ -10867,6 +10977,11 @@
   </url>
   <url>
     <loc>https://openonco.info/kb/redflags/rf-sclc-svc-syndrome.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/kb/redflags/rf-sdh-family-history-suspicion.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
   </url>
@@ -12831,6 +12946,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://openonco.info/ukr/cases/prevention-bap1-pedigree.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://openonco.info/ukr/cases/prevention-barretts.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -12847,6 +12967,11 @@
   </url>
   <url>
     <loc>https://openonco.info/ukr/cases/prevention-celiac-refractory.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/ukr/cases/prevention-chronic-pancreatitis.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
   </url>
@@ -12891,6 +13016,21 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://openonco.info/ukr/cases/prevention-lifestyle-alcohol.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/ukr/cases/prevention-lifestyle-obesity.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/ukr/cases/prevention-lifestyle-tobacco.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://openonco.info/ukr/cases/prevention-lynch-carrier.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -12931,12 +13071,27 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://openonco.info/ukr/cases/prevention-post-transplant.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/ukr/cases/prevention-prior-radiation.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://openonco.info/ukr/cases/prevention-psc-ibd.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://openonco.info/ukr/cases/prevention-radon.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/ukr/cases/prevention-reproductive.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
   </url>
@@ -17571,7 +17726,17 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://openonco.info/ukr/kb/biomarkers/bio-fh-germline.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://openonco.info/ukr/kb/biomarkers/bio-fl-flipi.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/ukr/kb/biomarkers/bio-flcn-germline.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
   </url>
@@ -17786,6 +17951,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://openonco.info/ukr/kb/biomarkers/bio-men1-germline.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://openonco.info/ukr/kb/biomarkers/bio-met-amplification.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -17806,7 +17976,22 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://openonco.info/ukr/kb/biomarkers/bio-mlh1-germline.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://openonco.info/ukr/kb/biomarkers/bio-mm-cytogenetics-hr.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/ukr/kb/biomarkers/bio-msh2-germline.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/ukr/kb/biomarkers/bio-msh6-germline.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
   </url>
@@ -17817,6 +18002,11 @@
   </url>
   <url>
     <loc>https://openonco.info/ukr/kb/biomarkers/bio-mum1-ihc.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/ukr/kb/biomarkers/bio-mutyh-germline.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
   </url>
@@ -17931,6 +18121,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://openonco.info/ukr/kb/biomarkers/bio-pms2-germline.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://openonco.info/ukr/kb/biomarkers/bio-pold1-hypermutator.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -18006,6 +18201,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://openonco.info/ukr/kb/biomarkers/bio-sdhb-germline.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://openonco.info/ukr/kb/biomarkers/bio-sezary-count.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -18022,6 +18222,11 @@
   </url>
   <url>
     <loc>https://openonco.info/ukr/kb/biomarkers/bio-smo.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/ukr/kb/biomarkers/bio-stk11-germline.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
   </url>
@@ -19691,6 +19896,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://openonco.info/ukr/kb/redflags/rf-bap1-family-history-suspicion.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://openonco.info/ukr/kb/redflags/rf-barretts-esophagus-prevention.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -20331,6 +20541,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://openonco.info/ukr/kb/redflags/rf-fammm-family-history-suspicion.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://openonco.info/ukr/kb/redflags/rf-fap-confirmed-carrier.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -20666,6 +20881,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://openonco.info/ukr/kb/redflags/rf-hprc-family-history-suspicion.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://openonco.info/ukr/kb/redflags/rf-hstcl-frailty-age.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -20692,6 +20912,11 @@
   </url>
   <url>
     <loc>https://openonco.info/ukr/kb/redflags/rf-iatrogenic-prior-radiation-prevention.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/ukr/kb/redflags/rf-iatrogenic-transplant-immunosuppression-prevention.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
   </url>
@@ -21982,6 +22207,11 @@
   </url>
   <url>
     <loc>https://openonco.info/ukr/kb/redflags/rf-sclc-svc-syndrome.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://openonco.info/ukr/kb/redflags/rf-sdh-family-history-suspicion.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>weekly</changefreq>
   </url>

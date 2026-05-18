@@ -1,0 +1,13 @@
+{
+  "patient_id": "REPRO-PREV-001",
+  "comment": "62yo nulliparous postmenopausal woman, late menopause at 56, 8 years combined HRT, no current cancer. Multi-factor reproductive cancer risk. Engine routes to PreventionPlan: standard = risk stratification (Gail/BCSC/Tyrer-Cuzick) + HRT minimization + tamoxifen chemoprevention discussion if high-risk + screening adherence; alternative = USPSTF screening adherence + brief intervention.",
+  "biomarkers": {},
+  "demographics": {"age": 62, "sex": "female", "ecog": 0},
+  "findings": {
+    "nulliparous_age_ge_30": true,
+    "late_menopause_age_ge_55": true,
+    "combined_hrt_use_ge_5y": true,
+    "Nulliparous; menopause age 56; 8y combined HRT use": true,
+    "No personal cancer diagnosis": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "patient_id": "LIFESTYLE-OBESITY-PREV-001",
+  "comment": "52yo postmenopausal woman, BMI 37 (class 2 obesity), no current cancer. Engine routes to PreventionPlan: standard = structured behavioral weight-loss + GLP-1 RA pharmacotherapy (semaglutide 2.4mg) + bariatric surgery referral discussion + BMI-elevated cancer screening (mammography, endometrial awareness); alternative = brief intervention + screening only.",
+  "biomarkers": {},
+  "demographics": {"age": 52, "sex": "female", "ecog": 1},
+  "findings": {
+    "bmi_ge_30": true,
+    "bmi_ge_35": true,
+    "obesity_class_diagnosis": "positive",
+    "BMI 37 (class 2 obesity)": true,
+    "Postmenopausal": true,
+    "No current malignancy": true
+  }
+}

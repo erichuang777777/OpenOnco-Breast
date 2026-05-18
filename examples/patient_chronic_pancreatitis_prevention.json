@@ -1,0 +1,11 @@
+{
+  "patient_id": "PANC-CHRONIC-PREV-001",
+  "comment": "55yo male with confirmed hereditary chronic pancreatitis (PRSS1 R122H pathogenic variant), no current PDAC. Engine routes to PreventionPlan: standard = annual MRI/MRCP + EUS from 40 (CAPS protocol) + smoking + alcohol cessation; alternative = symptom-driven evaluation.",
+  "biomarkers": {},
+  "demographics": {"age": 55, "sex": "male", "ecog": 1},
+  "findings": {
+    "chronic_pancreatitis_hereditary_pancreatitis_prss1_or_spink1": true,
+    "Hereditary pancreatitis (PRSS1 R122H confirmed)": true,
+    "No current PDAC on baseline EUS": true
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "patient_id": "BAP1-PREV-001",
+  "comment": "41yo male, father with uveal melanoma age 52 + mesothelioma age 60, maternal cousin clear-cell RCC age 38. Family BAP1-spectrum cluster. Engine routes to PreventionPlan: standard = germline BAP1 panel + annual ophth + skin exam + abdominal MRI; alternative = empirical multi-organ surveillance.",
+  "biomarkers": {},
+  "demographics": {"age": 41, "sex": "male", "ecog": 0},
+  "findings": {
+    "family_bap1_spectrum_cluster": true,
+    "Father uveal melanoma age 52 + mesothelioma age 60": true,
+    "Maternal cousin clear-cell RCC age 38": true,
+    "No personal cancer diagnosis": true
+  }
+}

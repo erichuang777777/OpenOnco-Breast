@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T22:41:33.889891+00:00",
+  "generated_at": "2026-05-18T22:54:52.378365+00:00",
   "total_diseases": 82,
   "rows": [
     {
@@ -209,9 +209,9 @@
       "icd10": "C83.7",
       "n_bios": 3,
       "n_drugs": 13,
-      "n_inds": 7,
+      "n_inds": 9,
       "n_regs": 5,
-      "n_rfs": 8,
+      "n_rfs": 9,
       "algo_1l": true,
       "algo_2l": true,
       "has_quest": true,
@@ -231,7 +231,7 @@
       "n_drugs": 7,
       "n_inds": 5,
       "n_regs": 4,
-      "n_rfs": 9,
+      "n_rfs": 10,
       "algo_1l": true,
       "algo_2l": false,
       "has_quest": true,
@@ -371,7 +371,7 @@
       "n_drugs": 15,
       "n_inds": 14,
       "n_regs": 10,
-      "n_rfs": 16,
+      "n_rfs": 17,
       "algo_1l": true,
       "algo_2l": true,
       "has_quest": true,
@@ -971,7 +971,7 @@
       "n_drugs": 4,
       "n_inds": 3,
       "n_regs": 3,
-      "n_rfs": 2,
+      "n_rfs": 3,
       "algo_1l": true,
       "algo_2l": true,
       "has_quest": true,
@@ -1209,9 +1209,9 @@
       "icd10": "C25",
       "n_bios": 1,
       "n_drugs": 9,
-      "n_inds": 10,
+      "n_inds": 12,
       "n_regs": 5,
-      "n_rfs": 20,
+      "n_rfs": 21,
       "algo_1l": true,
       "algo_2l": true,
       "has_quest": true,
@@ -1220,7 +1220,7 @@
       "fill_pct": 88,
       "verified_pct": 0,
       "n_curated": 1,
-      "outcomes_cited_pct": 22.22222222222222
+      "outcomes_cited_pct": 20.689655172413794
     },
     {
       "id": "DIS-PHEOCHROMOCYTOMA",
@@ -1229,18 +1229,18 @@
       "icd10": "D35.0",
       "n_bios": 0,
       "n_drugs": 0,
-      "n_inds": 0,
+      "n_inds": 2,
       "n_regs": 0,
-      "n_rfs": 1,
+      "n_rfs": 2,
       "algo_1l": false,
       "algo_2l": false,
       "has_quest": false,
       "is_stub_quest": false,
       "has_workup": false,
-      "fill_pct": 12,
+      "fill_pct": 25,
       "verified_pct": 0,
       "n_curated": 0,
-      "outcomes_cited_pct": null
+      "outcomes_cited_pct": 0.0
     },
     {
       "id": "DIS-PMBCL",
@@ -1389,9 +1389,9 @@
       "icd10": "C64",
       "n_bios": 1,
       "n_drugs": 7,
-      "n_inds": 15,
+      "n_inds": 19,
       "n_regs": 7,
-      "n_rfs": 13,
+      "n_rfs": 16,
       "algo_1l": true,
       "algo_2l": true,
       "has_quest": true,
@@ -1400,7 +1400,7 @@
       "fill_pct": 88,
       "verified_pct": 0,
       "n_curated": 2,
-      "outcomes_cited_pct": 29.62962962962963
+      "outcomes_cited_pct": 25.806451612903224
     },
     {
       "id": "DIS-SALIVARY",

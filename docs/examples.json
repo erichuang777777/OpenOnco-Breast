@@ -13253,6 +13253,34 @@
     "quality_class": "quality-diagnostic"
   },
   {
+    "case_id": "prevention-lifestyle-alcohol",
+    "label": "Алкоголь → HCC/CRC/esoph-SCC/breast · cessation + naltrexone",
+    "label_en": "Alcohol → HCC/CRC/esophageal-SCC/breast · cessation + naltrexone",
+    "disease_id": null,
+    "file": "patient_lifestyle_alcohol_prevention.json",
+    "json": {
+      "patient_id": "LIFESTYLE-ALCOHOL-PREV-001",
+      "comment": "49yo male, heavy alcohol use (~25 drinks/week × 15 years), no current cancer. Engine routes to PreventionPlan: standard = AUDIT-C + motivational interviewing + naltrexone + FIB-4 + targeted screening (esophageal/HCC); alternative = symptom-driven + brief intervention.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 49,
+        "sex": "male",
+        "ecog": 1
+      },
+      "findings": {
+        "alcohol_heavy_use_above_threshold": true,
+        "alcohol_lifetime_drink_years_ge_40": true,
+        "Heavy alcohol use 25 drinks/week × 15y": true,
+        "No current malignancy": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
     "case_id": "prevention-occ-aromatic-amines",
     "label": "Aromatic amines → urothelial · annual urinalysis + cytology",
     "label_en": "Aromatic amines → urothelial · annual urinalysis + cytology",
@@ -13303,6 +13331,34 @@
         "Current smoker, 35 pack-years": true,
         "Shipyard insulator 1975-2000 (pre-regulation)": true,
         "No current mesothelioma or lung cancer on baseline imaging": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-bap1-pedigree",
+    "label": "Підозра на BAP1 · uveal melanoma + mesothelioma + RCC у родині",
+    "label_en": "BAP1 suspicion · uveal melanoma + mesothelioma + RCC in family",
+    "disease_id": null,
+    "file": "patient_bap1_pedigree_prevention.json",
+    "json": {
+      "patient_id": "BAP1-PREV-001",
+      "comment": "41yo male, father with uveal melanoma age 52 + mesothelioma age 60, maternal cousin clear-cell RCC age 38. Family BAP1-spectrum cluster. Engine routes to PreventionPlan: standard = germline BAP1 panel + annual ophth + skin exam + abdominal MRI; alternative = empirical multi-organ surveillance.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 41,
+        "sex": "male",
+        "ecog": 0
+      },
+      "findings": {
+        "family_bap1_spectrum_cluster": true,
+        "Father uveal melanoma age 52 + mesothelioma age 60": true,
+        "Maternal cousin clear-cell RCC age 38": true,
+        "No personal cancer diagnosis": true
       }
     },
     "quality_rank": 20,
@@ -13572,6 +13628,33 @@
     "quality_class": "quality-curated"
   },
   {
+    "case_id": "prevention-chronic-pancreatitis",
+    "label": "Спадковий панкреатит (PRSS1) → PDAC · MRI/MRCP + EUS q1-2y",
+    "label_en": "Hereditary pancreatitis (PRSS1) → PDAC · MRI/MRCP + EUS q1-2y",
+    "disease_id": null,
+    "file": "patient_chronic_pancreatitis_prevention.json",
+    "json": {
+      "patient_id": "PANC-CHRONIC-PREV-001",
+      "comment": "55yo male with confirmed hereditary chronic pancreatitis (PRSS1 R122H pathogenic variant), no current PDAC. Engine routes to PreventionPlan: standard = annual MRI/MRCP + EUS from 40 (CAPS protocol) + smoking + alcohol cessation; alternative = symptom-driven evaluation.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 55,
+        "sex": "male",
+        "ecog": 1
+      },
+      "findings": {
+        "chronic_pancreatitis_hereditary_pancreatitis_prss1_or_spink1": true,
+        "Hereditary pancreatitis (PRSS1 R122H confirmed)": true,
+        "No current PDAC on baseline EUS": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
     "case_id": "prevention-hiv-art",
     "label": "HIV → AIDS-визначальні раки · ART (Biktarvy)",
     "label_en": "HIV → AIDS-defining malignancies · ART (Biktarvy)",
@@ -13774,6 +13857,36 @@
     "quality_class": "quality-curated"
   },
   {
+    "case_id": "prevention-lifestyle-obesity",
+    "label": "Ожиріння (BMI 37) → 13 cancers · GLP-1 RA + bariatric ref",
+    "label_en": "Obesity (BMI 37) → 13 cancer types · GLP-1 RA + bariatric referral",
+    "disease_id": null,
+    "file": "patient_lifestyle_obesity_prevention.json",
+    "json": {
+      "patient_id": "LIFESTYLE-OBESITY-PREV-001",
+      "comment": "52yo postmenopausal woman, BMI 37 (class 2 obesity), no current cancer. Engine routes to PreventionPlan: standard = structured behavioral weight-loss + GLP-1 RA pharmacotherapy (semaglutide 2.4mg) + bariatric surgery referral discussion + BMI-elevated cancer screening (mammography, endometrial awareness); alternative = brief intervention + screening only.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 52,
+        "sex": "female",
+        "ecog": 1
+      },
+      "findings": {
+        "bmi_ge_30": true,
+        "bmi_ge_35": true,
+        "obesity_class_diagnosis": "positive",
+        "BMI 37 (class 2 obesity)": true,
+        "Postmenopausal": true,
+        "No current malignancy": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
     "case_id": "prevention-peutz-jeghers-pedigree",
     "label": "Peutz-Jeghers · мукокутанеозна пігментація + інвагінація",
     "label_en": "Peutz-Jeghers · mucocutaneous pigmentation + intussusception",
@@ -13795,6 +13908,62 @@
         "Small-bowel intussusception age 10 (hamartomatous polyps on histology)": true,
         "Father similarly affected with PJ phenotype": true,
         "No personal cancer diagnosis": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-post-transplant",
+    "label": "Post-kidney-transplant 6y · EBV-DNA + skin/Pap/anal screening",
+    "label_en": "Post-kidney-transplant 6y · EBV-DNA + skin/Pap/anal screening",
+    "disease_id": null,
+    "file": "patient_post_transplant_prevention.json",
+    "json": {
+      "patient_id": "TRANSPLANT-IMMUNO-PREV-001",
+      "comment": "44yo female, status post-kidney-transplant 6 years ago on tacrolimus + mycophenolate immunosuppression. No current malignancy. Engine routes to PreventionPlan: standard = annual whole-body skin exam + EBV-DNA q3-6mo + cervical Pap + anal cytology + oral cancer awareness; alternative = general USPSTF cadence.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 44,
+        "sex": "female",
+        "ecog": 1
+      },
+      "findings": {
+        "post_solid_organ_transplant_immunosuppression": true,
+        "Status post-kidney-transplant 2020": true,
+        "Chronic tacrolimus + mycophenolate immunosuppression": true,
+        "No current malignancy": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-prior-radiation",
+    "label": "Post-mantle-RT survivor (Hodgkin age 18) · COG-LTFU surveillance",
+    "label_en": "Post-mantle-RT survivor (Hodgkin age 18) · COG-LTFU surveillance",
+    "disease_id": null,
+    "file": "patient_prior_radiation_prevention.json",
+    "json": {
+      "patient_id": "RAD-SURVIVOR-PREV-001",
+      "comment": "33yo woman, mantle field radiotherapy for Hodgkin lymphoma at age 18 (15y ago). Cured of lymphoma; no current cancer. Engine routes to PreventionPlan: standard = COG-LTFU protocol (annual breast MRI from 25 / 8y post-RT; alternating mammogram from 30; LDCT eligibility; thyroid US; secondary leukemia CBC); alternative = general USPSTF cadence.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 33,
+        "sex": "female",
+        "ecog": 0
+      },
+      "findings": {
+        "history_therapeutic_radiation_ge_5y_ago": true,
+        "history_mantle_field_radiotherapy": true,
+        "Hodgkin lymphoma 2011, mantle RT age 18": true,
+        "No current malignancy": true
       }
     },
     "quality_rank": 20,
@@ -13865,6 +14034,35 @@
     "quality_class": "quality-curated"
   },
   {
+    "case_id": "prevention-reproductive",
+    "label": "Reproductive risk · nulliparous + late menopause + HRT ≥5y",
+    "label_en": "Reproductive risk · nulliparous + late menopause + HRT ≥5y",
+    "disease_id": null,
+    "file": "patient_reproductive_prevention.json",
+    "json": {
+      "patient_id": "REPRO-PREV-001",
+      "comment": "62yo nulliparous postmenopausal woman, late menopause at 56, 8 years combined HRT, no current cancer. Multi-factor reproductive cancer risk. Engine routes to PreventionPlan: standard = risk stratification (Gail/BCSC/Tyrer-Cuzick) + HRT minimization + tamoxifen chemoprevention discussion if high-risk + screening adherence; alternative = USPSTF screening adherence + brief intervention.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 62,
+        "sex": "female",
+        "ecog": 0
+      },
+      "findings": {
+        "nulliparous_age_ge_30": true,
+        "late_menopause_age_ge_55": true,
+        "combined_hrt_use_ge_5y": true,
+        "Nulliparous; menopause age 56; 8y combined HRT use": true,
+        "No personal cancer diagnosis": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
     "case_id": "prevention-radon",
     "label": "Residential radon (8.5 pCi/L) · mitigation + LDCT + smoking cessation",
     "label_en": "Residential radon (8.5 pCi/L) · mitigation + LDCT + smoking cessation",
@@ -13885,6 +14083,33 @@
         "Home radon test 8.5 pCi/L (basement living space)": true,
         "Former smoker, 20 pack-years, quit 5 years ago": true,
         "No current lung cancer on baseline LDCT": true
+      }
+    },
+    "quality_rank": 20,
+    "quality_tier": "curated",
+    "quality_label": "Кураторський план",
+    "quality_label_en": "Curated plan",
+    "quality_class": "quality-curated"
+  },
+  {
+    "case_id": "prevention-lifestyle-tobacco",
+    "label": "Куріння → lung/urothelial/PDAC/AML · 5A counseling + varenicline",
+    "label_en": "Tobacco → lung/urothelial/PDAC/AML · 5A counseling + varenicline",
+    "disease_id": null,
+    "file": "patient_lifestyle_tobacco_prevention.json",
+    "json": {
+      "patient_id": "LIFESTYLE-TOBACCO-PREV-001",
+      "comment": "57yo male, current smoker, 30 pack-years, no current cancer. Engine routes to PreventionPlan: standard = 5A structured cessation counseling + varenicline/NRT pharmacotherapy + USPSTF LDCT lung cancer screening eligibility; alternative = brief intervention only.",
+      "biomarkers": {},
+      "demographics": {
+        "age": 57,
+        "sex": "male",
+        "ecog": 0
+      },
+      "findings": {
+        "tobacco_status_current_smoker": true,
+        "tobacco_pack_years_ge_20": true,
+        "No current malignancy on baseline workup": true
       }
     },
     "quality_rank": 20,

@@ -174,13 +174,13 @@
       "kind_key": "diseases",
       "title": "Burkitt Lymphoma",
       "url": "/ukr/diseases.html#DIS-BURKITT",
-      "subtitle": "ICD-10: C83.7 | родина: Лімфоїдна гематологія | fill 88% | verified 0% | 7 indications | 5 regimens | 8 red flags",
+      "subtitle": "ICD-10: C83.7 | родина: Лімфоїдна гематологія | fill 88% | verified 0% | 9 indications | 5 regimens | 9 red flags",
       "sources": [],
       "diseases": [
         "DIS-BURKITT"
       ],
-      "used_by_count": 20,
-      "search_text": "dis-burkitt burkitt lymphoma хвороба лімфоїдна гематологія c83.7 fill 88 verified 0 bio 3 drug 13 indication 7 regimen 5 redflag 8 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 23,
+      "search_text": "dis-burkitt burkitt lymphoma хвороба лімфоїдна гематологія c83.7 fill 88 verified 0 bio 3 drug 13 indication 9 regimen 5 redflag 9 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-CERVICAL",
@@ -188,13 +188,13 @@
       "kind_key": "diseases",
       "title": "Cervical carcinoma",
       "url": "/ukr/diseases.html#DIS-CERVICAL",
-      "subtitle": "ICD-10: C53 | родина: Солідні пухлини | fill 88% | verified 0% | 5 indications | 4 regimens | 9 red flags",
+      "subtitle": "ICD-10: C53 | родина: Солідні пухлини | fill 88% | verified 0% | 5 indications | 4 regimens | 10 red flags",
       "sources": [],
       "diseases": [
         "DIS-CERVICAL"
       ],
-      "used_by_count": 18,
-      "search_text": "dis-cervical cervical carcinoma хвороба солідні пухлини c53 fill 88 verified 0 bio 2 drug 7 indication 5 regimen 4 redflag 9 1l algorithm  questionnaire "
+      "used_by_count": 19,
+      "search_text": "dis-cervical cervical carcinoma хвороба солідні пухлини c53 fill 88 verified 0 bio 2 drug 7 indication 5 regimen 4 redflag 10 1l algorithm  questionnaire "
     },
     {
       "id": "DIS-CHOLANGIOCARCINOMA",
@@ -300,13 +300,13 @@
       "kind_key": "diseases",
       "title": "Diffuse Large B-Cell Lymphoma, Not Otherwise Specified",
       "url": "/ukr/diseases.html#DIS-DLBCL-NOS",
-      "subtitle": "ICD-10: C83.3 | родина: Лімфоїдна гематологія | fill 88% | verified 0% | 14 indications | 10 regimens | 16 red flags",
+      "subtitle": "ICD-10: C83.3 | родина: Лімфоїдна гематологія | fill 88% | verified 0% | 14 indications | 10 regimens | 17 red flags",
       "sources": [],
       "diseases": [
         "DIS-DLBCL-NOS"
       ],
-      "used_by_count": 40,
-      "search_text": "dis-dlbcl-nos diffuse large b-cell lymphoma, not otherwise specified хвороба лімфоїдна гематологія c83.3 fill 88 verified 0 bio 8 drug 15 indication 14 regimen 10 redflag 16 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 41,
+      "search_text": "dis-dlbcl-nos diffuse large b-cell lymphoma, not otherwise specified хвороба лімфоїдна гематологія c83.3 fill 88 verified 0 bio 8 drug 15 indication 14 regimen 10 redflag 17 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-ENDOMETRIAL",
@@ -650,13 +650,13 @@
       "kind_key": "diseases",
       "title": "Malignant mesothelioma",
       "url": "/ukr/diseases.html#DIS-MESOTHELIOMA",
-      "subtitle": "ICD-10: C45.0 | родина: Солідні пухлини | fill 75% | verified 0% | 3 indications | 3 regimens | 2 red flags",
+      "subtitle": "ICD-10: C45.0 | родина: Солідні пухлини | fill 75% | verified 0% | 3 indications | 3 regimens | 3 red flags",
       "sources": [],
       "diseases": [
         "DIS-MESOTHELIOMA"
       ],
-      "used_by_count": 8,
-      "search_text": "dis-mesothelioma malignant mesothelioma хвороба солідні пухлини c45.0 fill 75 verified 0 bio 0 drug 4 indication 3 regimen 3 redflag 2 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 9,
+      "search_text": "dis-mesothelioma malignant mesothelioma хвороба солідні пухлини c45.0 fill 75 verified 0 bio 0 drug 4 indication 3 regimen 3 redflag 3 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-MPNST",
@@ -846,13 +846,13 @@
       "kind_key": "diseases",
       "title": "Pancreatic ductal adenocarcinoma",
       "url": "/ukr/diseases.html#DIS-PDAC",
-      "subtitle": "ICD-10: C25 | родина: Солідні пухлини | fill 88% | verified 0% | 10 indications | 5 regimens | 20 red flags",
+      "subtitle": "ICD-10: C25 | родина: Солідні пухлини | fill 88% | verified 0% | 12 indications | 5 regimens | 21 red flags",
       "sources": [],
       "diseases": [
         "DIS-PDAC"
       ],
-      "used_by_count": 35,
-      "search_text": "dis-pdac pancreatic ductal adenocarcinoma хвороба солідні пухлини c25 fill 88 verified 0 bio 1 drug 9 indication 10 regimen 5 redflag 20 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 38,
+      "search_text": "dis-pdac pancreatic ductal adenocarcinoma хвороба солідні пухлини c25 fill 88 verified 0 bio 1 drug 9 indication 12 regimen 5 redflag 21 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-PNET",
@@ -902,13 +902,13 @@
       "kind_key": "diseases",
       "title": "Pheochromocytoma",
       "url": "/ukr/diseases.html#DIS-PHEOCHROMOCYTOMA",
-      "subtitle": "ICD-10: D35.0 | родина: Солідні пухлини | fill 12% | verified 0% | 0 indications | 0 regimens | 1 red flags",
+      "subtitle": "ICD-10: D35.0 | родина: Солідні пухлини | fill 25% | verified 0% | 2 indications | 0 regimens | 2 red flags",
       "sources": [],
       "diseases": [
         "DIS-PHEOCHROMOCYTOMA"
       ],
-      "used_by_count": 1,
-      "search_text": "dis-pheochromocytoma pheochromocytoma хвороба солідні пухлини d35.0 fill 12 verified 0 bio 0 drug 0 indication 0 regimen 0 redflag 1    "
+      "used_by_count": 4,
+      "search_text": "dis-pheochromocytoma pheochromocytoma хвороба солідні пухлини d35.0 fill 25 verified 0 bio 0 drug 0 indication 2 regimen 0 redflag 2    "
     },
     {
       "id": "DIS-PV",
@@ -1000,13 +1000,13 @@
       "kind_key": "diseases",
       "title": "Renal cell carcinoma",
       "url": "/ukr/diseases.html#DIS-RCC",
-      "subtitle": "ICD-10: C64 | родина: Солідні пухлини | fill 88% | verified 0% | 15 indications | 7 regimens | 13 red flags",
+      "subtitle": "ICD-10: C64 | родина: Солідні пухлини | fill 88% | verified 0% | 19 indications | 7 regimens | 16 red flags",
       "sources": [],
       "diseases": [
         "DIS-RCC"
       ],
-      "used_by_count": 35,
-      "search_text": "dis-rcc renal cell carcinoma хвороба солідні пухлини c64 fill 88 verified 0 bio 1 drug 7 indication 15 regimen 7 redflag 13 1l algorithm 2l algorithm questionnaire "
+      "used_by_count": 42,
+      "search_text": "dis-rcc renal cell carcinoma хвороба солідні пухлини c64 fill 88 verified 0 bio 1 drug 7 indication 19 regimen 7 redflag 16 1l algorithm 2l algorithm questionnaire "
     },
     {
       "id": "DIS-SALIVARY",
@@ -10043,6 +10043,34 @@
       "search_text": "bio-fgfr3-mutation fgfr3 mutation/fusion biomarker біомаркер мутація/фузія fgfr3      required pre-erdafitinib testing."
     },
     {
+      "id": "BIO-FH-GERMLINE",
+      "kind": "Біомаркер",
+      "kind_key": "biomarkers",
+      "title": "FH (fumarate hydratase) germline pathogenic variant",
+      "url": "/ukr/kb/biomarkers/bio-fh-germline.html",
+      "subtitle": "джерела: SRC-NCCN-BCELL-2025 | переглянуто 2026-05-18 | очікує клінічного підпису",
+      "sources": [
+        "SRC-NCCN-BCELL-2025"
+      ],
+      "diseases": [],
+      "used_by_count": 0,
+      "search_text": "bio-fh-germline fh (fumarate hydratase) germline pathogenic variant biomarker біомаркер fh (фумарат-гідратаза) germline патогенний варіант fh germline pathogenic variant src-nccn-bcell-2025     fh germline — drives hlrcc (hereditary leiomyomatosis and renal cell cancer). aggressive papillary type 2 rcc + cutaneous + uterine leiomyomas. stub."
+    },
+    {
+      "id": "BIO-FLCN-GERMLINE",
+      "kind": "Біомаркер",
+      "kind_key": "biomarkers",
+      "title": "FLCN (folliculin) germline pathogenic variant",
+      "url": "/ukr/kb/biomarkers/bio-flcn-germline.html",
+      "subtitle": "джерела: SRC-NCCN-BCELL-2025 | переглянуто 2026-05-18 | очікує клінічного підпису",
+      "sources": [
+        "SRC-NCCN-BCELL-2025"
+      ],
+      "diseases": [],
+      "used_by_count": 0,
+      "search_text": "bio-flcn-germline flcn (folliculin) germline pathogenic variant biomarker біомаркер flcn (фолікулін) germline патогенний варіант flcn germline pathogenic variant src-nccn-bcell-2025     flcn germline — drives birt-hogg-dubé (bhd) syndrome: chromophobe / oncocytic rcc + cutaneous fibrofolliculomas + pulmonary cysts + spontaneous pneumothorax. stub."
+    },
+    {
       "id": "BIO-FLT3-F691L",
       "kind": "Біомаркер",
       "kind_key": "biomarkers",
@@ -10793,6 +10821,20 @@
       "search_text": "bio-mds-del-5q mds with del(5q) cytogenetic abnormality biomarker біомаркер 5q minus syndrome 5q- syndrome mds del 5q del(5q) mds isolated del(5q) мдс з цитогенетичною аномалією del(5q) src-esmo-mds-2021 src-ipss-m-bernard-2022 src-mds-004-fenaux-2011 src-nccn-aml-2025     del(5q) is detected in ~10-15% of mds-lr cases. who 5th edition recognizes \"mds with isolated del(5q)\" as a distinct entity defined by the 5q deletion as the sole cytogenetic abnormality (or with one additional non-monosomy-7 abnormality), <5% bm blasts, and characteristic clinical features (macrocytic anemia, normal-to-high platelets, hypolobated megakaryocytes). lenalidomide mds-003 (houston phase-2) + mds-004 (phase-3 rct, fenaux et al., blood 2011) — at 10 mg po d1-21/28d: ~56% achieve rbc transfusion independence vs 5.9% placebo at 26 weeks; ~20-25% achieve cytogenetic cr (loss of del(5q) clone). mechanism: cereblon-mediated selective degradation of ck1α encoded within the 5q33.1 commonly-deleted region — del(5q) cells haploinsufficient and uniquely sensitive. critical: tp53 co-mutation (~20% of del(5q) mds) predicts lenalidomide resistance + higher aml transformation risk (~30-40% at 2 years vs ~10% tp53-wt) — tp53 ngs screening mandatory before initiating lenalidomide. triggers rf-mds-del-5q-isolated (existing)."
     },
     {
+      "id": "BIO-MEN1-GERMLINE",
+      "kind": "Біомаркер",
+      "kind_key": "biomarkers",
+      "title": "MEN1 (menin) germline pathogenic variant",
+      "url": "/ukr/kb/biomarkers/bio-men1-germline.html",
+      "subtitle": "джерела: SRC-NCCN-BCELL-2025 | переглянуто 2026-05-18 | очікує клінічного підпису",
+      "sources": [
+        "SRC-NCCN-BCELL-2025"
+      ],
+      "diseases": [],
+      "used_by_count": 0,
+      "search_text": "bio-men1-germline men1 (menin) germline pathogenic variant biomarker біомаркер men1 (менін) germline патогенний варіант men1 germline pathogenic variant src-nccn-bcell-2025     men1 germline — drives multiple endocrine neoplasia type 1: primary hyperparathyroidism + pituitary adenomas + gep-nets (gastrinoma, insulinoma). stub."
+    },
+    {
       "id": "BIO-MET",
       "kind": "Біомаркер",
       "kind_key": "biomarkers",
@@ -10869,6 +10911,50 @@
       "search_text": "bio-dmmr-ihc mismatch repair protein expression by ihc biomarker біомаркер mlh1/msh2/msh6/pms2 panel mmr ihc dmmr / pmmr by ihc експресія mmr-білків (ігх) src-nccn-colon-2025     "
     },
     {
+      "id": "BIO-MLH1-GERMLINE",
+      "kind": "Біомаркер",
+      "kind_key": "biomarkers",
+      "title": "MLH1 germline pathogenic variant",
+      "url": "/ukr/kb/biomarkers/bio-mlh1-germline.html",
+      "subtitle": "джерела: SRC-ASCO-ACMG-LYNCH-2014, SRC-ESMO-CRC-2024 | переглянуто 2026-05-18 | очікує клінічного підпису",
+      "sources": [
+        "SRC-ASCO-ACMG-LYNCH-2014",
+        "SRC-ESMO-CRC-2024"
+      ],
+      "diseases": [],
+      "used_by_count": 1,
+      "search_text": "bio-mlh1-germline mlh1 germline pathogenic variant biomarker біомаркер mlh1 germline патогенний варіант src-asco-acmg-lynch-2014 src-esmo-crc-2024     mlh1 germline pathogenic variants drive lynch syndrome (one of the four mismatch-repair genes). high penetrance: lifetime crc ~70-80%, endometrial ~40-60% in women. stub pending two-co-lead signoff."
+    },
+    {
+      "id": "BIO-MSH2-GERMLINE",
+      "kind": "Біомаркер",
+      "kind_key": "biomarkers",
+      "title": "MSH2 germline pathogenic variant",
+      "url": "/ukr/kb/biomarkers/bio-msh2-germline.html",
+      "subtitle": "джерела: SRC-ASCO-ACMG-LYNCH-2014, SRC-ESMO-CRC-2024 | переглянуто 2026-05-18 | очікує клінічного підпису",
+      "sources": [
+        "SRC-ASCO-ACMG-LYNCH-2014",
+        "SRC-ESMO-CRC-2024"
+      ],
+      "diseases": [],
+      "used_by_count": 1,
+      "search_text": "bio-msh2-germline msh2 germline pathogenic variant biomarker біомаркер msh2 germline патогенний варіант src-asco-acmg-lynch-2014 src-esmo-crc-2024     msh2 germline drives lynch syndrome. high penetrance similar to mlh1: lifetime crc ~70-80%, endometrial ~40-60% in women, urothelial elevated. stub."
+    },
+    {
+      "id": "BIO-MSH6-GERMLINE",
+      "kind": "Біомаркер",
+      "kind_key": "biomarkers",
+      "title": "MSH6 germline pathogenic variant",
+      "url": "/ukr/kb/biomarkers/bio-msh6-germline.html",
+      "subtitle": "джерела: SRC-ESMO-CRC-2024 | переглянуто 2026-05-18 | очікує клінічного підпису",
+      "sources": [
+        "SRC-ESMO-CRC-2024"
+      ],
+      "diseases": [],
+      "used_by_count": 0,
+      "search_text": "bio-msh6-germline msh6 germline pathogenic variant biomarker біомаркер msh6 germline патогенний варіант src-esmo-crc-2024     msh6 germline — lower-penetrance lynch gene. crc ~25-50%, endometrial ~17-44% in women — later age of onset than mlh1/msh2 carriers. stub."
+    },
+    {
       "id": "BIO-MUM1-IHC",
       "kind": "Біомаркер",
       "kind_key": "biomarkers",
@@ -10881,6 +10967,20 @@
       "diseases": [],
       "used_by_count": 2,
       "search_text": "bio-mum1-ihc mum1/irf4 ihc (multiple myeloma oncogene 1) biomarker біомаркер irf4 ihc interferon regulatory factor 4 mum1 immunohistochemistry mum1/irf4 protein expression src-nccn-b-cell-2025     mum1/irf4 ihc completes the hans algorithm for dlbcl coo classification. the hans algorithm has ~80% concordance with gep (lymph2cx) for gcb/non-gcb classification. non-gcb dlbcl (by hans) has historically worse prognosis with r-chop and is the target of emerging combination therapies (e.g., lenalidomide + r-chop = r²-chop in the phoenix trial — showed benefit in young/fit non-gcb, particularly non-gcb by coo). the hans ihc panel (cd10, bcl6, mum1) is recommended in all dlbcl where molecular coo profiling is not available."
+    },
+    {
+      "id": "BIO-MUTYH-GERMLINE",
+      "kind": "Біомаркер",
+      "kind_key": "biomarkers",
+      "title": "MUTYH germline pathogenic variant (biallelic for MAP)",
+      "url": "/ukr/kb/biomarkers/bio-mutyh-germline.html",
+      "subtitle": "джерела: SRC-ESMO-CRC-2024 | переглянуто 2026-05-18 | очікує клінічного підпису",
+      "sources": [
+        "SRC-ESMO-CRC-2024"
+      ],
+      "diseases": [],
+      "used_by_count": 0,
+      "search_text": "bio-mutyh-germline mutyh germline pathogenic variant (biallelic for map) biomarker біомаркер mutyh germline pathogenic variant mutyh germline патогенний варіант (biallelic для map) src-esmo-crc-2024     mutyh germline — biallelic variants drive mutyh-associated polyposis (map), autosomal recessive. attenuated fap-like phenotype. monoallelic carriers have modest crc risk elevation. common founder variants: y179c, g396d. stub."
     },
     {
       "id": "BIO-MYC-REARRANGEMENT",
@@ -11195,6 +11295,20 @@
       "search_text": "bio-pik3r1 pik3r1 mutation (p85α regulatory subunit of pi3k) biomarker біомаркер pik3r1 / p85α mutation мутація pik3r1 (регуляторна субодиниця p85α pi3k) src-esgo-endometrial-2025 src-nccn-uterine-2025     pik3r1 encodes the p85α regulatory subunit of pi3kα (phosphatidylinositol 3-kinase). p85α normally inhibits the p110α catalytic subunit; pik3r1 mutations (deletions and missense in the ish2 domain) reduce this inhibition, activating pi3k/akt/mtor signaling. clinical contexts: (1) endometrial cancer: pik3r1 mutations in ~33% — among the highest frequencies in any cancer type. co-occurs with pik3ca (~50% of ec have pi3k pathway mutations). pik3r1-mutant ec may be sensitized to pi3k/akt/mtor inhibitors. alpelisib (pi3kα inhibitor) is fda-approved for pik3ca-mutant hr+ breast cancer (solar-1); evidence in ec is more limited — lenvatinib + everolimus is the approved mtor-based combination for advanced ec (keynote-775, not pik3r1-specific). copanlisib (pan-pi3k inhibitor) and other pi3k inhibitors are being evaluated in ec basket trials. (2) breast cancer: pik3r1 mutations in ~8–10% (often with pik3ca co-mutation); may predict pi3k inhibitor sensitivity similarly to pik3ca. (3) glioblastoma: pik3r1 mutations in ~10%. therapeutic note: alpelisib (pi3kα-specific) is approved only for pik3ca-mutant hr+ breast cancer (companion diagnostic: therascreen pik3ca test). pik3r1 mutations are not currently included in the approved alpelisib companion diagnostic but may co-activate the same pathway — clinical trial enrollment preferred."
     },
     {
+      "id": "BIO-PMS2-GERMLINE",
+      "kind": "Біомаркер",
+      "kind_key": "biomarkers",
+      "title": "PMS2 germline pathogenic variant",
+      "url": "/ukr/kb/biomarkers/bio-pms2-germline.html",
+      "subtitle": "джерела: SRC-ESMO-CRC-2024 | переглянуто 2026-05-18 | очікує клінічного підпису",
+      "sources": [
+        "SRC-ESMO-CRC-2024"
+      ],
+      "diseases": [],
+      "used_by_count": 0,
+      "search_text": "bio-pms2-germline pms2 germline pathogenic variant biomarker біомаркер pms2 germline патогенний варіант src-esmo-crc-2024     pms2 germline — lowest-penetrance lynch gene. crc ~15-20%, endometrial ~15%. pseudogene pms2cl makes sequencing technically challenging. stub."
+    },
+    {
       "id": "BIO-POLD1-HYPERMUTATOR",
       "kind": "Біомаркер",
       "kind_key": "biomarkers",
@@ -11410,6 +11524,20 @@
       "search_text": "bio-ros1-g2032r ros1 g2032r resistance mutation biomarker біомаркер ros1 g2032r — мутація резистентності ros1 p.g2032r ros1 solvent-front mutation src-esmo-nsclc-metastatic-2024 src-nccn-nsclc-2025 src-trident1-drilon-2024     most common acquired resistance mutation in ros1-rearranged nsclc treated with crizotinib (~40% of resistance cases). solvent-front position structurally analogous to alk g1202r; confers cross- resistance to crizotinib, ceritinib, entrectinib, and lorlatinib. repotrectinib (tpx-0005), a next-generation macrocyclic ros1/trk inhibitor, demonstrates activity in g2032r-positive patients per trident-1 (drilon 2024, nejm): orr ~38-58% in tki-pretreated cohort including g2032r-positive subset. fda-approved 2023 for ros1+ nsclc (tki-naive and post-tki). standard recommendation when g2032r detected on prior ros1-tki failure."
     },
     {
+      "id": "BIO-SDHB-GERMLINE",
+      "kind": "Біомаркер",
+      "kind_key": "biomarkers",
+      "title": "SDHB germline pathogenic variant",
+      "url": "/ukr/kb/biomarkers/bio-sdhb-germline.html",
+      "subtitle": "джерела: SRC-NCCN-BCELL-2025 | переглянуто 2026-05-18 | очікує клінічного підпису",
+      "sources": [
+        "SRC-NCCN-BCELL-2025"
+      ],
+      "diseases": [],
+      "used_by_count": 0,
+      "search_text": "bio-sdhb-germline sdhb germline pathogenic variant biomarker біомаркер sdhb germline патогенний варіант src-nccn-bcell-2025     sdhb germline — highest malignancy risk among sdh subtypes (paraganglioma + pheo + rcc + gist). stub."
+    },
+    {
       "id": "BIO-SF3B1",
       "kind": "Біомаркер",
       "kind_key": "biomarkers",
@@ -11473,6 +11601,20 @@
       "diseases": [],
       "used_by_count": 3,
       "search_text": "bio-brca-somatic somatic brca1/brca2 pathogenic variant biomarker біомаркер somatic brca1/brca2 mutation (tumor-only) sbrca1 sbrca2 tumor brca соматичний патогенний варіант brca1/brca2 src-civic src-nccn-ovarian-2025 src-nccn-pancreatic-2025 src-nccn-prostate-2025 src-profound-debono-2020     distinct entity from bio-brca-germline: same hrr-deficient phenotype but absent the inherited-cancer-risk implication and (in some labels) reduced parpi access. confirmation of somatic vs germline status requires paired germline testing — tumor-only ngs reports a \"brca\" call that may in fact be germline in ~40% of cases (per asco/cap germline-implications guidance)."
+    },
+    {
+      "id": "BIO-STK11-GERMLINE",
+      "kind": "Біомаркер",
+      "kind_key": "biomarkers",
+      "title": "STK11 (LKB1) germline pathogenic variant",
+      "url": "/ukr/kb/biomarkers/bio-stk11-germline.html",
+      "subtitle": "джерела: SRC-ESMO-CRC-2024 | переглянуто 2026-05-18 | очікує клінічного підпису",
+      "sources": [
+        "SRC-ESMO-CRC-2024"
+      ],
+      "diseases": [],
+      "used_by_count": 0,
+      "search_text": "bio-stk11-germline stk11 (lkb1) germline pathogenic variant biomarker біомаркер stk11 (lkb1) germline патогенний варіант stk11 germline pathogenic variant src-esmo-crc-2024     stk11/lkb1 germline — drives peutz-jeghers syndrome. lifetime cancer risk ~80% across gi + breast + gynecologic + testicular sertoli + pancreas. stub."
     },
     {
       "id": "BIO-SEZARY-COUNT",
@@ -18617,6 +18759,25 @@
       "search_text": "rf-chronic-hbv-malignancy-prevention chronic hepatitis b infection (hbsag+ ≥6 months or hbv-dna detectable ≥6 months) in an in... red flag тривожна ознака  src-aasld-hbv-2024 src-aasld-hcc-2023 src-easl-hbv-2025 dis-hcc chronic hepatitis b infection (hbsag+ ≥6 months or hbv-dna detectable ≥6 months) in an individual without a current hcc or hbv-associated lymphoma diagnosis. iarc group 1 carcinogen (hbv) — established etiological driver of hcc (lifetime risk 15-25% in untreated chronic hbv per who; 5-10x reduction with antiviral suppression) and a contributor to b-cell nhl (hcc the dominant cancer outcome). long-term nucleos(t)ide analog suppression (entecavir / tenofovir tdf or taf) reduces hcc incidence. prevention-persona redflag (§20 ratification 2026-05-18).   prevention-persona redflag for hbv-associated cancer prevention. fires on hbsag+ or detectable hbv-dna in patient without hcc. engine routes to preventionplan recommending nucleos(t)ide analog suppression (per ind-chronic-hbv-prevention-antiviral) + afp+us hcc surveillance q6mo per aasld protocol. stub pending co-lead review. cancer scope: anchor target dis-hcc. hbv-associated dlbcl/nhl is also documented in literature but with weaker effect-size data than the hcv-nhl link; covered via the broader nhl prevention surveillance bullet in the antiviral indication rationale. distinct from rf-universal-hbv-reactivation-risk (existing) which is the treatment-time rf for hbv reactivation during anti-cd20 / chemo."
     },
     {
+      "id": "RF-IATROGENIC-TRANSPLANT-IMMUNOSUPPRESSION-PREVENTION",
+      "kind": "Тривожна ознака",
+      "kind_key": "redflags",
+      "title": "Chronic immunosuppression for solid-organ transplant or post-allogeneic HSCT. Elevated ri...",
+      "url": "/ukr/kb/redflags/rf-iatrogenic-transplant-immunosuppression-prevention.html",
+      "subtitle": "хвороба: DIS-BURKITT, DIS-CERVICAL, DIS-DLBCL-NOS | джерела: SRC-NCCN-BCELL-2025, SRC-NCCN-CERVICAL-2025 | переглянуто 2026-05-18 | очікує клінічного підпису",
+      "sources": [
+        "SRC-NCCN-BCELL-2025",
+        "SRC-NCCN-CERVICAL-2025"
+      ],
+      "diseases": [
+        "DIS-BURKITT",
+        "DIS-CERVICAL",
+        "DIS-DLBCL-NOS"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-iatrogenic-transplant-immunosuppression-prevention chronic immunosuppression for solid-organ transplant or post-allogeneic hsct. elevated ri... red flag тривожна ознака  src-nccn-bcell-2025 src-nccn-cervical-2025 dis-burkitt dis-cervical dis-dlbcl-nos chronic immunosuppression for solid-organ transplant or post-allogeneic hsct. elevated risk of: post-transplant lymphoproliferative disorder (ptld, ebv-driven), squamous cell carcinoma + basal cell carcinoma (skin), kaposi sarcoma (hhv-8), non-melanoma + melanoma skin cancers, anal cancer (hpv-driven), cervical cancer, oropharyngeal cancer, hcc (hbv/hcv reactivation in transplant context). prevention-persona redflag.   prevention-persona redflag for transplant immunosuppression. engine routes to preventionplan with intensive surveillance + reduce immunosuppression discussion + targeted screening. stub."
+    },
+    {
       "id": "RF-CHRONIC-PANCREATITIS-PDAC-PREVENTION",
       "kind": "Тривожна ознака",
       "kind_key": "redflags",
@@ -19797,6 +19958,24 @@
       "search_text": "rf-li-fraumeni-family-history-suspicion family pedigree or personal history meeting criteria suggestive of li-fraumeni syndrome (... red flag тривожна ознака  src-nccn-aml-2025 src-nccn-breast-2025 src-nccn-cns-2025 src-nccn-sarcoma dis-aml dis-breast dis-gbm dis-soft-tissue-sarcoma family pedigree or personal history meeting criteria suggestive of li-fraumeni syndrome (lfs; germline tp53 pathogenic variant), one of the most penetrant hereditary cancer syndromes known: any of (a) first- or second-degree relative with a confirmed tp53 pathogenic variant; (b) chompret criteria met — proband with an lfs-spectrum tumor (soft-tissue sarcoma, osteosarcoma, premenopausal breast cancer, cns tumor, adrenocortical carcinoma, leukemia, or lung bronchoalveolar carcinoma) before age 46 and ≥1 first/second-degree relative with lfs-spectrum tumor (other than breast if proband had breast cancer) before age 56 or with multiple primaries at any age; or proband with multiple primary tumors (≥2, with first before age 46); or proband with adrenocortical carcinoma, choroid plexus carcinoma, embryonal anaplastic subtype rhabdomyosarcoma, regardless of family history; (c) classic li-fraumeni criteria met — proband with sarcoma diagnosed <45 + first-degree relative with any cancer <45 + an additional first/second-degree relative with any cancer <45 or with sarcoma at any age; (d) proband with ≥2 primary lfs-spectrum tumors (soft-tissue sarcoma, osteosarcoma, breast premenopausal, cns tumor, adrenocortical carcinoma, leukemia) at any age. no current personal cancer diagnosis in the at-risk individual being assessed (current cancer diagnosis routes to treatment-track plan with germline-testing recommendation embedded). prevention-persona redflag (§20 ratification 2026-05-18, v0.2-b hereditary pilot — li-fraumeni).   v0.2-b hereditary pilot — li-fraumeni syndrome (lfs). fires on pedigree-based suspicion of lfs in an asymptomatic individual (no current cancer diagnosis). engine routes to preventionplan recommending: (a) genetic counseling + germline tp53 testing via ind-li-fraumeni-suspicion-prevention-genetic-counseling (standard) (b) empirical toronto-protocol-style enhanced surveillance for patients declining testing via ind-li-fraumeni-suspicion-prevention-enhanced-surveillance (surveillance / alternative, resource-intensive — explicit patient-autonomy framing per charter §11). trigger criteria correspond to (1) chompret criteria for tp53 testing (revised 2015), (2) classic li-fraumeni criteria (li & fraumeni 1988 / birch et al. 1994), and (3) nccn genetic/familial high-risk: breast, ovarian and pancreatic v2.2025 lfs section testing criteria. simplified for v0.2-b pilot; production version may add quantitative scoring (lfs mutation probability score). stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption. source-set todo: nccn genetic/familial high-risk: breast/ovarian/pancreatic, dedicated tp53/lfs testing guidance from mai et al. nci consortium, bougeard et al. revised chompret criteria, as dedicated src-* entities (v0.2-b follow-up authoring; license posture to verify per scope proposal open question #7). confirmed tp53 carriers (germline mutation positive on panel) route to a different prevention pathway (carrier-confirmed toronto- protocol surveillance — annual whole-body mri + annual brain mri + careful skin exam + colonoscopy q2-5y from 25 + breast mri from 20-25 for women + risk-reducing mastectomy discussion + radiation avoidance for confirmed carriers). that pathway is v0.2-b follow-up authoring (rf-li-fraumeni-confirmed-carrier + ind-li-fraumeni-carrier-*). **radiation avoidance caveat (critical):** tp53 carriers have documented elevated risk of radiation-induced secondary cancers in the treatment field. diagnostic radiation (ct, mammography, x-ray) is minimized in favor of mri / ultrasound when feasible. therapeutic radiation for index cancers in tp53 carriers requires multidisciplinary discussion of alternatives (surgery alone, systemic therapy alone). this applies to confirmed carriers — for suspicion-only individuals, standard imaging is acceptable until confirmation. lifetime cancer risk in confirmed tp53 carriers (per mai et al. nci consortium analysis and bougeard et al. revised chompret data): - lifetime cumulative cancer risk: ~70% by age 50 in men, ~90% by age 50 in women (driven by breast cancer); ≥90% lifetime in both sexes. - breast (women): ~54% by age 70; mean dx age ~33y. - soft-tissue sarcoma: ~15% lifetime. - osteosarcoma: ~5-10% lifetime. - cns tumor: ~10-15% lifetime. - adrenocortical carcinoma: ~6-13% lifetime (much higher in childhood — pediatric adrenocortical carcinoma is essentially diagnostic of lfs in some populations). - leukemia: ~4-6% lifetime. - multiple primary cancers in lifetime: ~50%. **psychological burden caveat:** li-fraumeni syndrome carries substantial psychological burden — predicted lifetime risk approaches 100%, and routine surveillance is resource-intensive and anxiety-provoking. pre-test counseling must explicitly address this and connect patients to lfs-specific support resources (lfs association, living lfs, etc.)."
     },
     {
+      "id": "RF-BAP1-FAMILY-HISTORY-SUSPICION",
+      "kind": "Тривожна ознака",
+      "kind_key": "redflags",
+      "title": "Family pedigree suggestive of BAP1 tumor predisposition syndrome — confirmed germline BAP...",
+      "url": "/ukr/kb/redflags/rf-bap1-family-history-suspicion.html",
+      "subtitle": "хвороба: DIS-MESOTHELIOMA, DIS-RCC | джерела: SRC-ASCO-ACMG-LYNCH-2014, SRC-NCCN-BCELL-2025 | переглянуто 2026-05-18 | очікує клінічного підпису",
+      "sources": [
+        "SRC-ASCO-ACMG-LYNCH-2014",
+        "SRC-NCCN-BCELL-2025"
+      ],
+      "diseases": [
+        "DIS-MESOTHELIOMA",
+        "DIS-RCC"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-bap1-family-history-suspicion family pedigree suggestive of bap1 tumor predisposition syndrome — confirmed germline bap... red flag тривожна ознака  src-asco-acmg-lynch-2014 src-nccn-bcell-2025 dis-mesothelioma dis-rcc family pedigree suggestive of bap1 tumor predisposition syndrome — confirmed germline bap1 pathogenic variant in family or cluster of characteristic bap1-spectrum tumors (uveal melanoma + cutaneous melanoma + mesothelioma + clear-cell rcc ± atypical spitz tumors). prevention-persona redflag (§20 v0.2-b).   prevention-persona redflag for bap1 syndrome family history. stub pending two-co-lead signoff."
+    },
+    {
       "id": "RF-COWDEN-FAMILY-HISTORY-SUSPICION",
       "kind": "Тривожна ознака",
       "kind_key": "redflags",
@@ -19838,6 +20017,23 @@
       "search_text": "rf-fap-family-history-suspicion family pedigree suggestive of familial adenomatous polyposis (fap) or the attenuated fap... red flag тривожна ознака  src-esmo-crc-2024 src-nccn-colon-2025 dis-crc dis-gastric dis-pdac dis-prostate family pedigree suggestive of familial adenomatous polyposis (fap) or the attenuated fap (afap) / gardner-variant spectrum: any of (a) a family member with a known pathogenic apc variant; (b) classic fap phenotype — >100 colorectal adenomatous polyps in the proband or a first/second-degree relative; (c) attenuated fap phenotype — 10-100 colorectal adenomas in a relative plus family history of crc under 60; (d) first-degree relative with a confirmed clinical fap diagnosis; (e) family member with extracolonic fap / gardner manifestations (osteomas, epidermoid cysts, congenital hypertrophy of the retinal pigment epithelium [chrpe], or desmoid tumors). no current personal cancer diagnosis in the individual at risk. prevention-persona redflag (§20 ratification 2026-05-18, v0.2-b hereditary pilot starter).   v0.2-b hereditary pilot — fap. fires on pedigree-based suspicion of fap / afap / gardner-variant in an asymptomatic individual (no current cancer diagnosis). engine routes to preventionplan recommending: (a) genetic counseling + germline apc panel testing (modern multi-gene panels include mutyh for map differential — note that mutyh-associated polyposis is autosomal recessive vs autosomal-dominant fap) via ind-fap-suspicion-prevention-genetic-counseling (standard) (b) empirical enhanced surveillance for patients declining testing via ind-fap-suspicion-prevention-enhanced- surveillance (alternative). triggers correspond to established fap-suspicion criteria. patient profile is expected to carry these as computed booleans from the pedigree input (fhir familymemberhistory at the data-standards layer; computation is a downstream concern not yet implemented). stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption. source-set todo: nccn genetic/familial high-risk: colorectal as a new src entity (per scope proposal open question #7 on license posture); american college of gastroenterology fap surveillance guidance. confirmed apc carriers (germline mutation positive on panel) route to a different prevention pathway (carrier-confirmed surveillance — sigmoidoscopy q1-2y from age 10-12 in classic fap / colonoscopy q1-2y in attenuated fap; upper-gi egd q1-3y from age 25-30 with duodenal-polyp spigelman staging; prophylactic colectomy late teens / early 20s in classic fap, individualized in afap). that pathway is v0.2-b follow-up authoring (rf-fap-confirmed-carrier + ind-fap-carrier-surveillance). lifetime cancer risk in confirmed fap carriers (nccn genetic/ familial high-risk: colorectal): - crc: ~100% by age 40 in classic fap without colectomy; ~70-80% by age 80 in attenuated fap - duodenal adenocarcinoma: ~5-10% lifetime - gastric fundic-gland polyposis: ~30-50% (most benign; adenocarcinoma transformation rare) - desmoid tumors: ~10-20% lifetime, often post-surgical; a leading cause of fap mortality after crc - thyroid (papillary cribriform-morular variant): ~1-2% - hepatoblastoma in children of fap families: ~1-2% under age 5 - cns (medulloblastoma — turcot variant): rare"
     },
     {
+      "id": "RF-FAMMM-FAMILY-HISTORY-SUSPICION",
+      "kind": "Тривожна ознака",
+      "kind_key": "redflags",
+      "title": "Family pedigree suggestive of FAMMM (Familial Atypical Multiple Mole Melanoma) syndrome /...",
+      "url": "/ukr/kb/redflags/rf-fammm-family-history-suspicion.html",
+      "subtitle": "хвороба: DIS-PDAC | джерела: SRC-ASCO-ACMG-LYNCH-2014, SRC-NCCN-BCELL-2025 | переглянуто 2026-05-18 | очікує клінічного підпису",
+      "sources": [
+        "SRC-ASCO-ACMG-LYNCH-2014",
+        "SRC-NCCN-BCELL-2025"
+      ],
+      "diseases": [
+        "DIS-PDAC"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-fammm-family-history-suspicion family pedigree suggestive of fammm (familial atypical multiple mole melanoma) syndrome /... red flag тривожна ознака  src-asco-acmg-lynch-2014 src-nccn-bcell-2025 dis-pdac family pedigree suggestive of fammm (familial atypical multiple mole melanoma) syndrome / cdkn2a (p16-ink4a) hereditary predisposition — ≥2 first/second-degree relatives with melanoma or multiple atypical nevi (≥50) + family melanoma history or family with melanoma + pancreatic adenocarcinoma cluster. cdkn2a carriers have lifetime melanoma risk ~60-80% + pancreatic adenocarcinoma risk ~15-25%. prevention-persona redflag (§20 v0.2-b).   prevention-persona redflag for fammm / cdkn2a. stub pending two-co-lead signoff."
+    },
+    {
       "id": "RF-HLRCC-FAMILY-HISTORY-SUSPICION",
       "kind": "Тривожна ознака",
       "kind_key": "redflags",
@@ -19853,6 +20049,22 @@
       ],
       "used_by_count": 2,
       "search_text": "rf-hlrcc-family-history-suspicion family pedigree suggestive of hereditary leiomyomatosis and renal cell cancer (hlrcc) syn... red flag тривожна ознака  src-esmo-rcc-2024 src-nccn-kidney-2025 dis-rcc family pedigree suggestive of hereditary leiomyomatosis and renal cell cancer (hlrcc) syndrome, caused by germline pathogenic variants in fumarate hydratase (fh): any of (a) a family member with a known pathogenic fh gene variant; (b) family history of cutaneous leiomyomas (pathognomonic for hlrcc) and/or multiple uterine leiomyomas with early onset (under 30) in female relatives; (c) family history of papillary type-2 / fh-deficient renal cell carcinoma — aggressive hlrcc-associated histology characterised by prominent eosinophilic nucleoli and perinucleolar halos (so-called \"viral inclusion-like\" nucleoli). no current personal cancer diagnosis in the individual at risk. prevention-persona redflag (§20 ratification 2026-05-18, v0.2-b hereditary pilot starter).   v0.2-b hereditary pilot — hlrcc. fires on pedigree-based suspicion of hlrcc syndrome in an asymptomatic individual (no current cancer diagnosis). engine routes to preventionplan recommending: (a) genetic counseling + germline fh gene panel testing (modern renal-cancer hereditary panels include fh, vhl, flcn, met, bap1, sdhb/c/d for differential) via ind-hlrcc-suspicion-prevention-genetic-counseling (standard) (b) empirical annual abdominal mri surveillance for patients declining testing via ind-hlrcc-suspicion-prevention-enhanced- surveillance (alternative). triggers correspond to established hlrcc-suspicion criteria. cutaneous leiomyomas are pathognomonic (firm, painful, often multiple, characteristic histology — well-circumscribed intradermal fascicles of smooth-muscle cells). multiple early-onset uterine leiomyomas plus family history of cutaneous leiomyomas or papillary type-2 rcc strongly suggest hlrcc. papillary type-2 rcc in hlrcc is notably more aggressive than sporadic papillary type-2 — can metastasize from very small primary tumors, justifying the aggressive low-threshold surveillance protocol below. stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption. source-set todo: nccn genetic/familial high-risk: kidney as a new src entity; hlrcc family alliance international surveillance guidelines (menko et al. 2014, smit et al. 2011); acmg fh testing guidance. confirmed fh carriers (germline mutation positive on panel) route to a different prevention pathway (carrier-confirmed annual contrast-enhanced abdominal mri starting age 8-10 — yes, early childhood; gynecologic management plan for women including reproductive counseling regarding fibroid burden and hysterectomy timing). that pathway is v0.2-b follow-up authoring (rf-hlrcc-confirmed-carrier + ind-hlrcc-carrier-surveillance). lifetime cancer risk in confirmed fh carriers (hlrcc family alliance, nccn kidney): - hlrcc-associated rcc (papillary type-2 / fh-deficient): ~15-30% lifetime; mean age at diagnosis ~40-45; aggressive behavior with high metastatic potential even from small tumors (<3 cm); 5-year survival of metastatic hlrcc-rcc historically poor (~10-30%) though emerging fh-deficient targeted approaches (bevacizumab-erlotinib combinations) may improve outcomes - uterine leiomyomas: ~70-100% of female carriers; mean age onset ~20s-30s; often very large, very numerous; commonly symptomatic (menorrhagia, dysmenorrhea, infertility); high hysterectomy rate - cutaneous leiomyomas: ~75% lifetime; firm, painful skin nodules from arrector pili smooth muscle; often the first manifestation and pathognomonic - uterine leiomyosarcoma (rare but elevated): ~1-2% lifetime; decision-making around hysterectomy specimen pathology particularly important"
+    },
+    {
+      "id": "RF-HPRC-FAMILY-HISTORY-SUSPICION",
+      "kind": "Тривожна ознака",
+      "kind_key": "redflags",
+      "title": "Family pedigree suggestive of HPRC (Hereditary Papillary Renal Cancer) — MET-driven type...",
+      "url": "/ukr/kb/redflags/rf-hprc-family-history-suspicion.html",
+      "subtitle": "хвороба: DIS-RCC | джерела: SRC-NCCN-BCELL-2025 | переглянуто 2026-05-18 | очікує клінічного підпису",
+      "sources": [
+        "SRC-NCCN-BCELL-2025"
+      ],
+      "diseases": [
+        "DIS-RCC"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-hprc-family-history-suspicion family pedigree suggestive of hprc (hereditary papillary renal cancer) — met-driven type... red flag тривожна ознака  src-nccn-bcell-2025 dis-rcc family pedigree suggestive of hprc (hereditary papillary renal cancer) — met-driven type 1 papillary rcc inheritance, autosomal dominant — with bilateral/multifocal papillary type 1 rcc or ≥2 first/second- degree relatives with papillary type 1 rcc or family confirmed met pathogenic variant. prevention-persona redflag (§20 v0.2-b).   prevention-persona redflag for hprc. stub pending two-co-lead signoff."
     },
     {
       "id": "RF-MEN1-FAMILY-HISTORY-SUSPICION",
@@ -19909,6 +20121,23 @@
       ],
       "used_by_count": 2,
       "search_text": "rf-peutz-jeghers-family-history-suspicion family pedigree suggestive of peutz-jeghers syndrome (pjs): any of (a) a family member wi... red flag тривожна ознака  src-nccn-colon-2025 src-nccn-genetic-familial-crc-2025 dis-breast dis-cervical dis-crc dis-gastric dis-ovarian dis-pdac family pedigree suggestive of peutz-jeghers syndrome (pjs): any of (a) a family member with a known pathogenic stk11 / lkb1 variant; (b) classic peutz-jeghers clinical phenotype in proband or relative — characteristic mucocutaneous melanin pigmentation (peri-oral, buccal mucosa, perianal, digital tips) together with at least one characteristic peutz-jeghers gi hamartomatous polyp (small bowel, colon, or stomach); (c) a first-degree relative with a clinical pjs diagnosis and a personal or family history of small-bowel intussusception requiring intervention (the classic pjs childhood presentation, often the index acute event leading to diagnosis). no current personal cancer diagnosis in the individual at risk. prevention-persona redflag (§20 ratification 2026-05-18, v0.2-b hereditary pilot — additional).   v0.2-b hereditary pilot — peutz-jeghers syndrome. fires on pedigree- based suspicion of pjs in an asymptomatic individual (no current cancer diagnosis). engine routes to preventionplan recommending: (a) genetic counseling + germline stk11 panel testing via ind-peutz-jeghers-suspicion-prevention-genetic-counseling (standard) (b) empirical multi-organ peutz-jeghers surveillance for patients declining testing via ind-peutz-jeghers-suspicion-prevention- enhanced-surveillance (alternative). triggers correspond to established pjs clinical and pedigree criteria. who / nccn diagnostic criteria for pjs: (i) ≥2 pjs-type hamartomatous polyps confirmed histologically; (ii) any number of pjs polyps + family history of pjs; (iii) characteristic mucocutaneous pigmentation + family history of pjs; (iv) characteristic mucocutaneous pigmentation + any pjs polyp. the pedigree-suspicion triggers in this rf map to those criteria from the \"asymptomatic relative\" perspective. stub pending two-clinical-co-lead signoff per charter §6.1 dev-mode exemption. source-set todo: dedicated pjs surveillance source — acg clinical guideline on genetic testing and management of hereditary gastrointestinal cancer syndromes (syngal et al. 2015), beggs et al. gut 2010 / 2025 update pjs european consensus — as v0.2-b authoring backlog new src entities. confirmed stk11 carriers (germline stk11 pathogenic variant positive) route to a different prevention pathway (carrier-confirmed structured multi-organ surveillance — vce / mr enterography q2-3y from age 8-10, colonoscopy q2-3y from age 18, egd q2-3y from age 18, breast mri + mammography from age 25-30, pancreatic surveillance with eus / mri starting age 30-35, gynecological exam q1y). that pathway is v0.2-b follow-up authoring (rf-peutz-jeghers-confirmed-carrier + ind-peutz-jeghers-carrier- surveillance). lifetime cancer risk in confirmed stk11 carriers (hearle et al. clin cancer res 2006; acg 2015; nccn genetic/familial high-risk colorectal): - colorectal: ~39% lifetime - pancreatic adenocarcinoma: ~11-36% lifetime — highest hereditary pancreatic-cancer risk of any syndrome - breast (women): ~32-54% lifetime — comparable to brca1/2 - gastric: ~29% lifetime - small-bowel adenocarcinoma: ~13% lifetime — highest hereditary small-bowel-cancer risk - ovarian sex-cord-stromal (sctat — sex-cord tumor with annular tubules) in women: ~8-21% - cervical adenoma malignum (minimal-deviation adenocarcinoma): ~10% — rare but pathognomonic - lung: modest elevation (~7-17%) - testicular sertoli-cell tumors (large-cell calcifying variant): ~9% in men; usually pre-pubertal and benign-acting but hormonally active (gynecomastia) - childhood intussusception from pjs small-bowel polyps: ~50% by age 20 in untreated pjs — the classic acute presentation that often leads to diagnosis"
+    },
+    {
+      "id": "RF-SDH-FAMILY-HISTORY-SUSPICION",
+      "kind": "Тривожна ознака",
+      "kind_key": "redflags",
+      "title": "Family pedigree suggestive of SDH (succinate dehydrogenase) deficiency syndrome — confirm...",
+      "url": "/ukr/kb/redflags/rf-sdh-family-history-suspicion.html",
+      "subtitle": "хвороба: DIS-PHEOCHROMOCYTOMA, DIS-RCC | джерела: SRC-NCCN-BCELL-2025 | переглянуто 2026-05-18 | очікує клінічного підпису",
+      "sources": [
+        "SRC-NCCN-BCELL-2025"
+      ],
+      "diseases": [
+        "DIS-PHEOCHROMOCYTOMA",
+        "DIS-RCC"
+      ],
+      "used_by_count": 2,
+      "search_text": "rf-sdh-family-history-suspicion family pedigree suggestive of sdh (succinate dehydrogenase) deficiency syndrome — confirm... red flag тривожна ознака  src-nccn-bcell-2025 dis-pheochromocytoma dis-rcc family pedigree suggestive of sdh (succinate dehydrogenase) deficiency syndrome — confirmed germline sdhb / sdhc / sdhd / sdha / sdhaf2 pathogenic variant or cluster of paraganglioma + pheochromocytoma + renal cell carcinoma + gist (carney-stratakis). sdh-deficient rcc is aggressive (often type-2-papillary morphology). prevention-persona redflag (§20 v0.2-b).   prevention-persona redflag for sdh-deficiency syndrome. stub pending two-co-lead signoff."
     },
     {
       "id": "RF-VHL-FAMILY-HISTORY-SUSPICION",
@@ -25375,8 +25604,8 @@
   "counts": {
     "Хвороба": 82,
     "Препарати": 265,
-    "Біомаркери": 181,
-    "Тривожні ознаки": 562,
+    "Біомаркери": 191,
+    "Тривожні ознаки": 567,
     "Клінічна застосовність": 448
   }
 }
