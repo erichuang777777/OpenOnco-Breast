@@ -1,0 +1,43 @@
+id: RF-LI-FRAUMENI-CONFIRMED-CARRIER
+definition: >-
+  Patient has a confirmed germline TP53 pathogenic variant (positive
+  germline test, distinct from pedigree-suspicion phase). Toronto Protocol
+  whole-body MRI-based surveillance applies. Confirmed-carrier RedFlag
+  (§20, v0.2-B follow-on to RF-LI-FRAUMENI-FAMILY-HISTORY-SUSPICION).
+definition_ua: >-
+  Пацієнт має підтверджений germline TP53 патогенний варіант. Toronto
+  Protocol whole-body MRI-based surveillance застосовується.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "germline_tp53_pathogenic_variant_confirmed"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+risk_category: genetic
+
+relevant_diseases:
+  - DIS-BREAST
+  - DIS-AML
+  - DIS-OSTEOSARCOMA
+  - DIS-LEIOMYOSARCOMA
+  - DIS-ADRENOCORTICAL-CARCINOMA
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-ASCO-ACMG-LYNCH-2014
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona confirmed-carrier RedFlag for Li-Fraumeni syndrome. Engine routes to PreventionPlan recommending Toronto Protocol whole-body MRI + brain MRI + colonoscopy from 25 + breast MRI from 20-25 (women) + AVOID radiation. STUB pending two-Clinical-Co-Lead signoff."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_carrier_completion
+draft_revision: 1

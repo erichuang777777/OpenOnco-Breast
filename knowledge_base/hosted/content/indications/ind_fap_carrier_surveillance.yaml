@@ -1,0 +1,100 @@
+id: IND-FAP-CARRIER-SURVEILLANCE
+plan_track: standard
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-FAP-CONFIRMED-CARRIER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: "Classic FAP untreated: ~100% CRC by age 40. Prophylactic colectomy + structured upper-GI surveillance per InSiGHT / NCCN protocols: median life expectancy normalized; mortality from CRC near-zero in adherent cohort. Duodenal cancer becomes leading cause of cancer mortality in post-colectomy cohort — Spigelman-staged surveillance and prophylactic duodenectomy in Spigelman IV reduce that risk."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests:
+  - TEST-LFT
+
+rationale: >
+  Standard-track confirmed-carrier surveillance per NCCN Genetic/Familial
+  High-Risk: Colorectal + InSiGHT FAP guidelines:
+
+  **Classic FAP (typical APC variant, dense polyposis phenotype):**
+  - Annual sigmoidoscopy from age 10-12.
+  - Colonoscopy when polyps appear (typically 12-15).
+  - Prophylactic colectomy (typically late teens to early 20s) — total proctocolectomy
+    with IPAA or total colectomy with IRA. Specific timing is patient-individualized
+    based on polyp burden + dysplasia + symptoms.
+  - Upper EGD q1-3 years starting age 25-30 with Spigelman staging of duodenal
+    polyposis; prophylactic duodenectomy considered at Spigelman IV.
+  - Annual thyroid US — cribriform-morular variant papillary thyroid cancer.
+  - Desmoid tumor awareness (especially post-colectomy).
+
+  **Attenuated FAP (3' / 5' APC variants, attenuated polyposis phenotype):**
+  - Colonoscopy q1-2y starting age 18-20 (later onset than classic).
+  - Polypectomy as polyps emerge; colectomy timing more flexible — may avoid
+    if polyposis remains manageable endoscopically.
+  - Upper EGD q1-3y starting 25-30.
+
+  **MAP differential (MUTYH biallelic):** similar phenotype, recessive
+  inheritance; surveillance similar to attenuated FAP. Already covered by the
+  germline panel testing.
+
+rationale_ua: >
+  Стандартний-трек confirmed-carrier surveillance per NCCN + InSiGHT FAP:
+
+  **Класична FAP:**
+  - Щорічна сигмоїдоскопія з 10-12 років.
+  - Колоноскопія коли поліпи з'являються (12-15).
+  - Прорпрофілактична колектомія (typically late teens to early 20s) — total
+    proctocolectomy with IPAA або total colectomy with IRA.
+  - Upper EGD q1-3 роки з 25-30 років з Spigelman staging; prophylactic
+    duodenectomy при Spigelman IV.
+  - Щорічна thyroid US.
+
+  **Attenuated FAP:**
+  - Колоноскопія q1-2y з 18-20 років.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_carrier_completion
+draft_revision: 1
+
+sources:
+  - source_id: SRC-ESMO-CRC-2024
+    position: supports
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не відкладати prophylactic colectomy в classic FAP після появи dense polyposis — CRC ризик ~100% до 40 років."
+  - "Не пропускати upper EGD surveillance post-colectomy — duodenal cancer leading mortality."
+  - "Не використовувати тільки colonoscopy в attenuated FAP — також потрібна upper-GI surveillance."
+
+do_not_do_en:
+  - "Do not delay prophylactic colectomy in classic FAP after dense polyposis appears — CRC risk approaches 100% by age 40."
+  - "Do not skip upper EGD surveillance post-colectomy — duodenal cancer is the leading cause of mortality."
+  - "Do not use colonoscopy alone in attenuated FAP — upper-GI surveillance also required."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B FAP confirmed-carrier surveillance pathway."

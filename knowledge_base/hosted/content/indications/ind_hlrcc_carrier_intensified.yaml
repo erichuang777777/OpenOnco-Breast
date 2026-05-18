@@ -1,0 +1,64 @@
+id: IND-HLRCC-CARRIER-INTENSIFIED
+plan_track: aggressive
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-RCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-HLRCC-CONFIRMED-CARRIER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Intensified q6mo abdominal MRI in HLRCC carriers with prior renal lesions or rapidly-progressing fibroid burden enables earlier detection of new lesions; modest incremental benefit over annual MRI cadence."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track for HLRCC carriers with prior renal interventions or
+  aggressive fibroid phenotype. Intensified q6 month abdominal MRI cadence +
+  early hysterectomy discussion in women with refractory fibroid symptoms.
+  Per CHARTER §11.
+
+rationale_ua: >
+  Альтернативно-трекова Indication для HLRCC carriers. Інтенсифікована q6 міс
+  abdominal MRI + рання гістеректомія для жінок з refractory fibroid symptoms.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_carrier_completion
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не призначати hysterectomy виключно для cancer-prevention indication без shared decision-making."
+  - "Не подвоювати MRI cadence без access to HLRCC-experienced radiology."
+
+do_not_do_en:
+  - "Do not recommend hysterectomy solely for cancer-prevention indication without shared decision-making."
+  - "Do not double MRI cadence without access to HLRCC-experienced radiology."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B HLRCC intensified-track. §15.2 C4 ≥2-tracks invariant."
