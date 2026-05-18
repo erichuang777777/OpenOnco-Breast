@@ -1,0 +1,82 @@
+id: TEST-PEDIGREE-FAMILY-HISTORY
+names:
+  preferred: "Structured pedigree / family-history collection (3-generation)"
+  ukrainian: "Структурований родовід / збір сімейного анамнезу (3 покоління)"
+loinc_codes: ["75315-2"]  # Family history of cancer panel
+category: clinical_assessment
+purpose: >
+  Structured 3-generation pedigree + family-history collection per the
+  FHIR FamilyMemberHistory shape (DATA_STANDARDS) — input to hereditary-
+  cancer-syndrome risk-flagging RedFlags. Drives downstream decisions
+  for germline panel testing referral and prevention / surveillance
+  Indication firing in the v0.2-B prevention workstream.
+
+specimen: "Clinical interview — no biological specimen. Patient (proband) recall + medical-record verification where possible."
+turnaround_time: "Same-visit (30–60 minutes for trained clinician / genetic counselor); follow-up updates as new family events emerge"
+priority_class: critical  # Required input for ALL hereditary-syndrome screening pathways; cannot fire prevention RFs without it
+
+availability_ukraine:
+  state_funded: true
+  typical_cost_uah: null
+  typical_availability: "All clinical settings — capable of being collected by any clinician; structured 3-generation pedigree typically requires genetic-counselor or specialty-trained oncologist for optimal capture"
+  notes: >
+    Free of charge as part of standard oncology / family-medicine
+    consultation. Quality of capture varies — structured pedigree
+    questionnaires (NCI Family History Tool, Surgeon General's My
+    Family Health Portrait) recommended over ad-hoc clinician
+    interview to reduce recall bias and ensure 3-generation depth.
+    Genetic-counselor referral recommended when criteria flag a
+    hereditary syndrome.
+
+sources:
+  - SRC-ASCO-ACMG-LYNCH-2014                          # ASCO-endorsed criteria for hereditary CRC screening (Amsterdam II + revised Bethesda use family-history input)
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025     # NCCN family-history criteria for hereditary breast / ovarian referral
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025                # NCCN family-history criteria for hereditary CRC referral
+
+last_reviewed: "2026-05-19"
+review_status: pending_clinical_signoff
+drafted_by: claude_extraction
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+  Structured 3-generation pedigree / family-history collection is the
+  foundational clinical-assessment input for hereditary cancer syndrome
+  screening. It feeds the family-history-based RedFlags that trigger
+  prevention / surveillance Indications across the v0.2-B prevention
+  workstream (Lynch, FAP, BRCA / HBOC, Li-Fraumeni, VHL, HLRCC, MEN2,
+  paraganglioma syndromes).
+
+  Data elements (per FHIR FamilyMemberHistory + DATA_STANDARDS):
+  - Relationship to proband (parent, sibling, child, grandparent,
+    aunt/uncle, cousin; maternal vs paternal lineage); both biological
+    parents included by default.
+  - Cancer diagnoses (cancer type + age at diagnosis; primary site;
+    bilaterality / multifocality where relevant).
+  - Non-cancer hereditary findings relevant to syndrome scoring
+    (cutaneous leiomyomas → HLRCC; café-au-lait macules → NF1;
+    hamartomatous polyps → Peutz-Jeghers / juvenile polyposis;
+    macrocephaly → Cowden; mucocutaneous Peutz-Jeghers freckling).
+  - Ancestry / ethnicity (Ashkenazi Jewish → BRCA founder variant
+    prior probability; Northern European → CHEK2 1100delC founder
+    variant; targeted founder testing may be more cost-effective
+    than full panel in specific ancestries).
+  - Consanguinity (autosomal-recessive considerations).
+
+  Clinical-criteria scoring systems that consume this input:
+  - Amsterdam II criteria (Lynch syndrome).
+  - Revised Bethesda criteria (Lynch / MSI-screening trigger).
+  - Chompret criteria (Li-Fraumeni TP53 testing).
+  - NCCN family-history criteria (BRCA1/2 referral).
+  - Manchester score / BOADICEA / Tyrer-Cuzick (BRCA / HBOC risk
+    prediction — not adopted as engine inputs in this KB, but
+    referenced for completeness).
+  - NCCN polyposis criteria (≥10 cumulative adenomas → APC / MUTYH
+    germline testing).
+
+  Engineering note: this Test entity is referenced by v0.2-B
+  prevention RedFlags as a required-input gate (priority_class:
+  critical). Without structured family-history collection, the
+  prevention persona cannot accurately fire syndrome-suspicion RFs,
+  and downstream germline panel testing referrals will be missed.
+  Structured pedigree-capture instruments (NCI Family History Tool,
+  My Family Health Portrait) are not procured / hosted in this KB —
+  they are referenced as the recommended data-collection vehicle.

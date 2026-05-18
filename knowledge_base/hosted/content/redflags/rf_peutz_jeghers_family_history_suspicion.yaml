@@ -1,0 +1,153 @@
+id: RF-PEUTZ-JEGHERS-FAMILY-HISTORY-SUSPICION
+definition: >-
+  Family pedigree suggestive of Peutz-Jeghers syndrome (PJS): any of
+  (a) a family member with a known pathogenic STK11 / LKB1 variant;
+  (b) classic Peutz-Jeghers clinical phenotype in proband or relative
+  — characteristic mucocutaneous melanin pigmentation (peri-oral,
+  buccal mucosa, perianal, digital tips) together with at least one
+  characteristic Peutz-Jeghers GI hamartomatous polyp (small bowel,
+  colon, or stomach); (c) a first-degree relative with a clinical PJS
+  diagnosis and a personal or family history of small-bowel
+  intussusception requiring intervention (the classic PJS childhood
+  presentation, often the index acute event leading to diagnosis).
+  No current personal cancer diagnosis in the individual at risk.
+  Prevention-persona RedFlag (§20 ratification 2026-05-18, v0.2-B
+  hereditary pilot — additional).
+definition_ua: >-
+  Сімейний родовід, що відповідає підозрі на синдром Peutz-Jeghers
+  (PJS): будь-яке з (а) родич з відомим патогенним варіантом гена
+  STK11 / LKB1; (б) класичний клінічний фенотип Peutz-Jeghers у
+  пробанда або родича — характерна шкірно-слизова меланінова пігментація
+  (періоральна, букальна слизова, періанальна, дистальні фаланги
+  пальців) разом із принаймні одним характерним Peutz-Jeghers
+  шлунково-кишковим гамартоматозним поліпом (тонка кишка, ободова
+  кишка або шлунок); (в) родич першого ступеня з клінічним діагнозом
+  PJS та особистою або сімейною історією тонкокишкової інвагінації,
+  що потребувала втручання (класична PJS-презентація у дитячому віці,
+  часто є початковою гострою подією, що призводить до діагнозу).
+  Поточний особистий діагноз раку у пацієнта з ризиком відсутній.
+  Prevention-persona RedFlag (ратифікація §20, 2026-05-18, v0.2-B
+  пілот спадковості — додатковий).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "family_stk11_known_pathogenic_variant"
+      value: true
+    - finding: "family_classic_peutz_jeghers_phenotype"
+      value: true
+    - finding: "family_first_degree_peutz_jeghers_with_intussusception_history"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+# §20 prevention extension — drives engine routing to PreventionPlan
+# when patient carries this RF and no confirmed Disease (KSS §20.2).
+risk_category: genetic
+
+# Peutz-Jeghers-spectrum cancers (existing KB Disease entities):
+# - Colorectal cancer (~39% lifetime) drives the highest-yield
+#   surveillance action (colonoscopy q2-3y from age 18). Anchored
+#   to DIS-CRC as primary disease_id.
+# - Pancreatic adenocarcinoma (~11-36% lifetime, the highest hereditary-
+#   pancreatic-cancer risk of any syndrome — Peutz-Jeghers has the
+#   strongest evidence base for pancreatic-cancer hereditary screening
+#   programs alongside hereditary pancreatitis). Anchored to DIS-PDAC.
+# - Breast cancer (~32-54% lifetime, comparable to BRCA-spectrum) —
+#   PJS-attributable breast cancer is histologically similar to
+#   sporadic but earlier-onset; surveillance: breast MRI + mammography
+#   from age 30. Anchored to DIS-BREAST.
+# - Gastric cancer (~29% lifetime) — gastric hamartomatous polyposis
+#   is part of the small-bowel-dominant PJS-polyp distribution.
+#   Anchored to DIS-GASTRIC.
+# - Small-bowel adenocarcinoma (~13% lifetime — the highest hereditary-
+#   small-bowel-cancer risk of any syndrome). No dedicated
+#   DIS-SMALL-BOWEL entity in OpenOnco KB; small-bowel surveillance
+#   (VCE / MR enterography) anchored under DIS-CRC's surveillance
+#   protocol notes.
+# - Ovarian sex-cord stromal tumors (SCTAT, sex-cord tumor with annular
+#   tubules) ~8-21% in women — anchored to DIS-OVARIAN.
+# - Cervical adenoma malignum (minimal-deviation adenocarcinoma of
+#   cervix) — rare but pathognomonic. Anchored to DIS-CERVICAL.
+relevant_diseases:
+  - DIS-CRC
+  - DIS-PDAC
+  - DIS-BREAST
+  - DIS-GASTRIC
+  - DIS-OVARIAN
+  - DIS-CERVICAL
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-NCCN-COLON-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.2-B hereditary pilot — Peutz-Jeghers syndrome. Fires on pedigree-
+  based suspicion of PJS in an asymptomatic individual (no current
+  cancer diagnosis). Engine routes to PreventionPlan recommending:
+    (a) genetic counseling + germline STK11 panel testing via
+        IND-PEUTZ-JEGHERS-SUSPICION-PREVENTION-GENETIC-COUNSELING
+        (standard)
+    (b) empirical multi-organ Peutz-Jeghers surveillance for patients
+        declining testing via IND-PEUTZ-JEGHERS-SUSPICION-PREVENTION-
+        ENHANCED-SURVEILLANCE (alternative).
+
+  Triggers correspond to established PJS clinical and pedigree
+  criteria. WHO / NCCN diagnostic criteria for PJS: (i) ≥2 PJS-type
+  hamartomatous polyps confirmed histologically; (ii) any number of
+  PJS polyps + family history of PJS; (iii) characteristic
+  mucocutaneous pigmentation + family history of PJS; (iv)
+  characteristic mucocutaneous pigmentation + any PJS polyp. The
+  pedigree-suspicion triggers in this RF map to those criteria from
+  the "asymptomatic relative" perspective.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption. Source-set TODO: dedicated PJS surveillance source —
+  ACG Clinical Guideline on Genetic Testing and Management of
+  Hereditary Gastrointestinal Cancer Syndromes (Syngal et al. 2015),
+  Beggs et al. Gut 2010 / 2025 update PJS European consensus — as
+  v0.2-B authoring backlog new SRC entities.
+
+  Confirmed STK11 carriers (germline STK11 pathogenic variant positive)
+  route to a DIFFERENT prevention pathway (carrier-confirmed
+  structured multi-organ surveillance — VCE / MR enterography q2-3y
+  from age 8-10, colonoscopy q2-3y from age 18, EGD q2-3y from age 18,
+  breast MRI + mammography from age 25-30, pancreatic surveillance
+  with EUS / MRI starting age 30-35, gynecological exam q1y).
+  That pathway is v0.2-B follow-up authoring
+  (RF-PEUTZ-JEGHERS-CONFIRMED-CARRIER + IND-PEUTZ-JEGHERS-CARRIER-
+  SURVEILLANCE).
+
+  Lifetime cancer risk in confirmed STK11 carriers (Hearle et al.
+  Clin Cancer Res 2006; ACG 2015; NCCN Genetic/Familial High-Risk
+  Colorectal):
+    - Colorectal: ~39% lifetime
+    - Pancreatic adenocarcinoma: ~11-36% lifetime — highest hereditary
+      pancreatic-cancer risk of any syndrome
+    - Breast (women): ~32-54% lifetime — comparable to BRCA1/2
+    - Gastric: ~29% lifetime
+    - Small-bowel adenocarcinoma: ~13% lifetime — highest hereditary
+      small-bowel-cancer risk
+    - Ovarian sex-cord-stromal (SCTAT — sex-cord tumor with annular
+      tubules) in women: ~8-21%
+    - Cervical adenoma malignum (minimal-deviation adenocarcinoma):
+      ~10% — rare but pathognomonic
+    - Lung: modest elevation (~7-17%)
+    - Testicular Sertoli-cell tumors (large-cell calcifying variant):
+      ~9% in men; usually pre-pubertal and benign-acting but
+      hormonally active (gynecomastia)
+    - Childhood intussusception from PJS small-bowel polyps: ~50%
+      by age 20 in untreated PJS — the classic acute presentation
+      that often leads to diagnosis
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_hereditary_pilot
+draft_revision: 1

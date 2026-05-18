@@ -1,0 +1,123 @@
+id: RF-MEN1-FAMILY-HISTORY-SUSPICION
+definition: >-
+  Family pedigree suggestive of Multiple Endocrine Neoplasia type 1
+  (MEN1, Wermer syndrome): any of (a) a family member with a known
+  pathogenic MEN1 gene variant; (b) classic MEN1 phenotype met in the
+  family — ≥2 of (primary hyperparathyroidism, anterior pituitary
+  adenoma, gastro-entero-pancreatic neuroendocrine tumor [GEP-NET]) in
+  the proband or in two first-degree relatives; (c) a first-degree
+  relative with a clinical MEN1 diagnosis carrying ≥1 of the three
+  classic MEN1 tumors. No current personal cancer diagnosis in the
+  individual at risk. Prevention-persona RedFlag (§20 ratification
+  2026-05-18, v0.2-B hereditary pilot — additional).
+definition_ua: >-
+  Сімейний родовід, що відповідає підозрі на синдром множинної
+  ендокринної неоплазії типу 1 (MEN1, синдром Вермера): будь-яке з
+  (а) родич з відомим патогенним варіантом гена MEN1; (б) класичний
+  фенотип MEN1 у сім'ї — ≥2 з (первинний гіперпаратиреоз, аденома
+  передньої долі гіпофіза, гастро-ентеро-панкреатична нейроендокринна
+  пухлина [GEP-NET]) у пробанда або у двох родичів першого ступеня;
+  (в) родич першого ступеня з клінічним діагнозом MEN1, що несе ≥1 з
+  трьох класичних MEN1-пухлин. Поточний особистий діагноз раку у
+  пацієнта з ризиком відсутній. Prevention-persona RedFlag (ратифікація
+  §20, 2026-05-18, v0.2-B пілот спадковості — додатковий).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "family_men1_known_pathogenic_variant"
+      value: true
+    - finding: "family_classic_men1_criteria_met"
+      value: true
+    - finding: "family_first_degree_men1_with_one_men1_tumor"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+# §20 prevention extension — drives engine routing to PreventionPlan
+# when patient carries this RF and no confirmed Disease (KSS §20.2).
+risk_category: genetic
+
+# MEN1-spectrum cancers using existing KB Disease entities:
+# - GEP-NETs are the dominant MEN1 cancer driver (lifetime risk ~30-80%,
+#   leading cause of MEN1-specific mortality). Anchored to DIS-PNET
+#   (pancreatic NETs are the canonical MEN1 GEP-NET).
+# - Duodenal/foregut NETs (gastrinomas, glucagonomas, VIPomas) anchored
+#   to DIS-GI-NET as the closest existing entity for non-pancreatic
+#   GEP-NETs.
+# - Primary hyperparathyroidism (~95% lifetime penetrance in MEN1) and
+#   pituitary adenomas (~30-40%) do not have dedicated Disease entities
+#   in OpenOnco KB — they are managed by endocrinology surveillance,
+#   captured under DIS-PNET's multi-organ surveillance protocol notes.
+# - Adrenocortical / thymic / bronchial carcinoid neuroendocrine tumors
+#   (uncommon MEN1 manifestations) anchored under DIS-GI-NET.
+relevant_diseases:
+  - DIS-PNET
+  - DIS-GI-NET
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-NET-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.2-B hereditary pilot — MEN1. Fires on pedigree-based suspicion of
+  Multiple Endocrine Neoplasia type 1 in an asymptomatic individual
+  (no current cancer diagnosis). Engine routes to PreventionPlan
+  recommending:
+    (a) genetic counseling + germline MEN1 panel testing via
+        IND-MEN1-SUSPICION-PREVENTION-GENETIC-COUNSELING (standard)
+    (b) empirical multi-organ MEN1 surveillance for patients declining
+        testing via IND-MEN1-SUSPICION-PREVENTION-ENHANCED-
+        SURVEILLANCE (alternative).
+
+  Triggers correspond to established MEN1-suspicion criteria (a known
+  MEN1 pathogenic variant in family, classic MEN1 ≥2-of-3 phenotype
+  cluster meeting clinical-diagnosis criteria, or a first-degree
+  relative with clinical MEN1 + ≥1 classic tumor — the "any one MEN1
+  tumor in a relative with confirmed MEN1" pedigree-spread bright
+  line). Patient profile is expected to carry these as computed
+  booleans from the pedigree input (FHIR FamilyMemberHistory at the
+  data-standards layer; computation is a downstream concern not yet
+  implemented).
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption. Source-set TODO: dedicated MEN1 surveillance source —
+  Thakker et al. JCEM Clinical Practice Guidelines for MEN1 (2012,
+  endorsed by Endocrine Society / European MEN1 consortium) as a new
+  SRC entity for v0.2-B authoring backlog; ESE-2024 MEN1 update.
+
+  Confirmed MEN1 carriers (germline MEN1 mutation positive on panel)
+  route to a DIFFERENT prevention pathway (carrier-confirmed structured
+  multi-organ surveillance — biochemistry from age 5, imaging from
+  age 10). That pathway is v0.2-B follow-up authoring
+  (RF-MEN1-CONFIRMED-CARRIER + IND-MEN1-CARRIER-SURVEILLANCE).
+
+  Lifetime cancer/tumor risk in confirmed MEN1 carriers (Thakker JCEM
+  2012; ESE 2024):
+    - Primary hyperparathyroidism: ~95% by age 50; multi-glandular
+      parathyroid hyperplasia (vs sporadic adenoma); presents
+      earliest of any MEN1 tumor (median age 20-25)
+    - GEP-NETs (pancreatic, duodenal, gastric): ~30-80% lifetime;
+      gastrinoma most common (Zollinger-Ellison) → multifocal
+      duodenal; insulinoma, glucagonoma, VIPoma less frequent;
+      malignant transformation is the dominant MEN1 mortality driver
+    - Pituitary adenoma: ~30-40% lifetime; prolactinoma most common
+      (~60% of MEN1 pituitary), followed by GH-secreting (acromegaly),
+      ACTH-secreting, non-functioning
+    - Adrenocortical tumors (mostly non-functioning): ~20-40%; rarely
+      malignant
+    - Bronchial / thymic carcinoid neuroendocrine tumors: ~5-10%;
+      thymic NET more common in male MEN1 carriers, often aggressive
+    - Cutaneous (facial angiofibromas, collagenomas, lipomas): high
+      frequency but benign — useful as clinical clue in pedigree
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_hereditary_pilot
+draft_revision: 1

@@ -1,0 +1,144 @@
+id: DIS-ADRENOCORTICAL-CARCINOMA
+names:
+  preferred: "Adrenocortical carcinoma (ACC)"
+  ukrainian: "Адренокортикальна карцинома (АКК)"
+  english: "Adrenocortical carcinoma"
+  synonyms:
+    - "ACC"
+    - "Adrenal cortical carcinoma"
+    - "Carcinoma of adrenal cortex"
+
+codes:
+  icd_o_3_morphology: "8370/3"  # Adrenal cortical carcinoma
+  icd_o_3_topography: ["C74.0"]  # Adrenal cortex
+  icd_10: "C74.0"
+  who_classification: "WHO Endocrine and Neuroendocrine Tumours 5th ed (2022): Adrenal cortical carcinoma"
+
+archetype: stage_driven
+oncotree_code: ACC
+lineage: "carcinoma"
+
+etiological_factors:
+  - "Sporadic (most adult cases)"
+  - "Li-Fraumeni syndrome (germline TP53) — strong association in pediatric ACC; ~50–80% of pediatric ACC harbours germline TP53; ~3–7% of adult ACC"
+  - "Beckwith-Wiedemann syndrome (11p15 imprinting / IGF2 dysregulation) — pediatric overgrowth syndrome, ACC predisposition"
+  - "Lynch syndrome (germline MLH1/MSH2/MSH6/PMS2/EPCAM) — modest ACC risk (<5%)"
+  - "MEN1 (germline MEN1) — adrenocortical lesions; rarely true ACC"
+  - "FAP (germline APC) — rare association"
+
+related_diseases:
+  - DIS-PHEOCHROMOCYTOMA       # adjacent adrenal anatomy; distinct biology; differential at imaging discovery
+  - DIS-CRC                    # Lynch overlap
+
+key_biomarkers:
+  - BIO-TP53-MUTATION          # germline TP53 in Li-Fraumeni cases; somatic TP53 ~20% of adult ACC
+  - BIO-MSI-STATUS             # rare MSI-H subset (Lynch); pembrolizumab actionable in tumor-agnostic context
+
+epidemiology:
+  global_incidence: "~0.7–2 per million/year — ultra-rare; bimodal age distribution (peak in childhood <5y; second peak 40–60y)"
+  hereditary_proportion: "Pediatric ACC: up to 50–80% germline TP53 (Li-Fraumeni). Adult ACC: ~3–7% germline TP53; total hereditary ~10%"
+  functional_proportion: "~60% functional (cortisol-secreting most common → Cushing syndrome; mineralocorticoid, androgen, mixed less common); ~40% non-functional"
+  five_year_survival: "Stage I–II ~60–80%, stage III ~35–50%, stage IV <15%"
+
+sources:
+  - SRC-NCCN-NET-2025                                  # NCCN Neuroendocrine and Adrenal Tumors (covers ACC)
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025      # framework for TP53 / Li-Fraumeni germline testing (used analogously)
+
+last_reviewed: "2026-05-19"
+reviewers: []
+reviewer_signoffs: 0
+
+metadata:
+  proposal_status: partial
+  awaiting_proposal: >
+    Source gap: ACC-specific guidelines not yet ingested (ESMO ACC
+    2020 Clinical Practice Guideline, ENSAT ACC consensus 2018, NCCN
+    Neuroendocrine — adrenal section). Treatment Indications
+    (adrenalectomy with curative intent + adjuvant mitotane for high-
+    recurrence-risk stage I–III; mitotane ± EDP chemotherapy for
+    advanced disease per FIRM-ACT) referenced in prose pending
+    guideline-anchored Indication authoring. Germline TP53 testing
+    cross-references Li-Fraumeni prevention pilot in v0.2-B.
+
+notes: >
+  Adrenocortical carcinoma is an aggressive rare cancer of the adrenal
+  cortex. Bimodal age distribution (pediatric and adult peaks) reflects
+  two distinct biological contexts: pediatric ACC is overwhelmingly
+  hereditary (Li-Fraumeni / Beckwith-Wiedemann), adult ACC is mostly
+  sporadic with ~10% hereditary component.
+
+  Functional ACC presents with hormonal syndromes: hypercortisolism
+  (Cushing — most common, ~50% of functional ACC), virilization
+  (androgen-secreting; especially in women), feminization (estrogen-
+  secreting; rare; in men), Conn syndrome (aldosterone-secreting;
+  rare). Non-functional ACC presents with mass effect, abdominal pain,
+  or as incidental imaging finding.
+
+  Staging: ENSAT (European Network for the Study of Adrenal Tumors)
+  staging system; tumor size >6 cm, capsular invasion, regional nodes,
+  distant metastasis are key prognostic factors. Mitotic count (Weiss
+  score / Helsinki score) drives recurrence-risk stratification.
+
+  Treatment fundamentals (full Indications pending): radical
+  adrenalectomy with curative intent for resectable disease — open
+  approach historically preferred (laparoscopic associated with
+  positive-margin / peritoneal-seeding risk in retrospective series).
+  Mitotane (adrenolytic; o,p'-DDD) adjuvant after R0 resection in
+  high-recurrence-risk stage I–III (ADIUVO trial; pending updated
+  evidence). Advanced disease: mitotane ± etoposide / doxorubicin /
+  cisplatin (EDP-M per FIRM-ACT). Second-line evidence is weak;
+  pembrolizumab in MSI-H / TMB-H subsets.
+
+  Hereditary link to Li-Fraumeni: per NCCN, germline TP53 testing is
+  recommended for ALL pediatric ACC and for adult ACC with personal /
+  family history fitting Chompret criteria. Identified Li-Fraumeni
+  carriers enter lifetime multi-organ surveillance (annual whole-body
+  MRI per Toronto protocol; breast MRI; colonoscopy; brain MRI) — a
+  primary use-case for v0.2-B Li-Fraumeni prevention pilot.
+notes_ua: |
+  Адренокортикальна карцинома — агресивна рідкісна пухлина кори
+  надниркової залози. Бімодальний віковий розподіл (педіатричний та
+  дорослий піки) відображає два біологічно різні контексти:
+  педіатрична АКК переважно є спадковою (Li-Fraumeni / Beckwith-
+  Wiedemann), дорослі випадки переважно спорадичні з ~10% спадковою
+  складовою.
+
+  Гормонально активна АКК проявляється гормональними синдромами:
+  гіперкортизолізм (синдром Кушинга — найчастіший, ~50% функціональних
+  АКК), вірилізація (андроген-продукуюча; особливо у жінок),
+  фемінізація (естроген-продукуюча; рідко; у чоловіків), синдром
+  Конна (альдостерон-продукуюча; рідко). Гормонально неактивна АКК
+  проявляється масовим ефектом, болем у животі або як випадкова
+  знахідка при візуалізації.
+
+  Стадіювання: за системою ENSAT (Європейська мережа дослідження
+  пухлин надниркових залоз); розмір пухлини >6 см, інвазія капсули,
+  регіонарні лімфатичні вузли та віддалені метастази — ключові
+  прогностичні фактори. Мітотичний індекс (шкала Weiss / Helsinki)
+  визначає стратифікацію ризику рецидиву.
+
+  Принципи лікування (повний набір Indications очікується): радикальна
+  адреналектомія з лікувальною метою при резектабельній хворобі —
+  історично перевага надається відкритому доступу (за
+  ретроспективними даними лапароскопічний метод асоційований із
+  ризиком позитивного краю / перитонеального обсіменіння). Ад'ювантний
+  мітотан (адренолітик; o,p'-DDD) після R0-резекції за умови високого
+  ризику рецидиву на стадіях I–III (дослідження ADIUVO; очікуються
+  оновлені дані). Поширена хвороба: мітотан ± етопозид / доксорубіцин
+  / цисплатин (EDP-M за FIRM-ACT). Доказова база у другій лінії
+  слабка; пембролізумаб у MSI-H / TMB-H підгрупах.
+
+  Спадковий зв'язок із Li-Fraumeni: за NCCN, гермінальне тестування
+  TP53 рекомендоване ВСІМ педіатричним пацієнтам з АКК і дорослим
+  пацієнтам з особистим / родинним анамнезом, що відповідає
+  критеріям Chompret. Виявлені носії Li-Fraumeni вступають у
+  пожиттєву мультиорганну програму спостереження (щорічне МРТ
+  всього тіла за Торонтським протоколом; МРТ молочних залоз;
+  колоноскопія; МРТ головного мозку) — основний сценарій
+  застосування v0.2-B профілактичного пілота Li-Fraumeni.
+
+review_status: pending_clinical_signoff
+drafted_by: claude_extraction
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_ua_01
+draft_revision: 1

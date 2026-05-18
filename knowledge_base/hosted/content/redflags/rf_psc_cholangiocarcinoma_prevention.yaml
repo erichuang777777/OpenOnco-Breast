@@ -1,0 +1,170 @@
+id: RF-PSC-CHOLANGIOCARCINOMA-PREVENTION
+definition: >-
+  Primary sclerosing cholangitis (PSC) — confirmed by characteristic
+  cholangiographic findings on MRCP or ERCP (multifocal intra-/extra-
+  hepatic biliary strictures with intervening dilatation, beaded
+  appearance) and/or liver biopsy (concentric periductal fibrosis,
+  onion-skin pattern). Includes PSC-IBD subgroup (very high risk for
+  both CRC and cholangiocarcinoma) and PSC with dominant biliary
+  stricture (additional cholangiocarcinoma risk requiring focused
+  diagnostic workup). No current cholangiocarcinoma, gallbladder
+  cancer, or HCC diagnosis. PSC is the strongest known risk factor
+  for cholangiocarcinoma — lifetime risk ~10-15% (vs ~0.01% in general
+  population); annual incidence ~0.5-1.5% per year. Gallbladder cancer
+  risk also elevated ~10-fold. Cirrhotic PSC adds HCC risk in the
+  general cirrhosis pattern. Surveillance with MRI/MRCP + CA 19-9 ±
+  ERCP for dominant strictures enables earlier detection.
+  Prevention-persona RedFlag (§20 ratification 2026-05-18, v0.3
+  chronic-condition pilot).
+definition_ua: >-
+  Первинний склерозуючий холангіт (PSC) — підтверджений характерними
+  холангіографічними знахідками на MRCP або ERCP (мультифокальні
+  внутрішньо-/позапечінкові біліарні стриктури з проміжними
+  розширеннями, beaded appearance) та/або біопсією печінки
+  (концентричний перидуктальний фіброз, onion-skin pattern). Включає
+  PSC-IBD підгрупу (дуже високий ризик і КРР, і холангіокарциноми) та
+  PSC з домінантною біліарною стриктурою. Поточний діагноз
+  холангіокарциноми, раку жовчного міхура або HCC відсутній. PSC —
+  найсильніший відомий фактор ризику холангіокарциноми — lifetime ризик
+  ~10-15% (vs ~0.01% у загальній популяції); річна incidence
+  ~0.5-1.5%/рік. Ризик раку жовчного міхура також підвищений у ~10
+  разів. Цирротичний PSC додає HCC ризик. Спостереження з MRI/MRCP +
+  CA 19-9 ± ERCP для домінантних стриктур забезпечує раннє виявлення.
+  Prevention-persona RedFlag (ратифікація §20, 2026-05-18, v0.3 пілот
+  chronic-condition).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "primary_sclerosing_cholangitis_diagnosis_confirmed"
+      value: true
+    - finding: "primary_sclerosing_cholangitis_with_ibd"
+      value: true
+    - finding: "primary_sclerosing_cholangitis_with_dominant_stricture"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+# §20 prevention extension — drives engine routing to PreventionPlan
+# when patient carries this RF and no confirmed Disease (KSS §20.2).
+risk_category: chronic_condition
+
+# Cancers being prevented:
+#   - Cholangiocarcinoma (DIS-CHOLANGIOCARCINOMA) — primary anchor;
+#     PSC is the strongest known risk factor (~10-15% lifetime).
+#   - CRC (DIS-CRC) — added because PSC-IBD trigger covers the
+#     PSC-with-IBD subgroup which carries very high CRC risk; this
+#     RF's PreventionPlan tracks include CRC-side counsel and route to
+#     RF-IBD-CRC-PREVENTION when both fire (overlap by design).
+#   - HCC (DIS-HCC) — secondary anchor for cirrhotic PSC; general
+#     cirrhosis-driven HCC risk applies. Surveillance MRI also covers
+#     HCC in the hepatic imaging field.
+relevant_diseases:
+  - DIS-CHOLANGIOCARCINOMA
+  - DIS-CRC
+  - DIS-HCC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-AASLD-HCC-2023
+  - SRC-NCCN-HEPATOBILIARY
+  - SRC-NCCN-COLON-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.3 chronic-condition prevention pilot — PSC.
+  Prevention-persona RedFlag (CHARTER §3 amended 2026-05-18 Path A,
+  HCP-mediated). Fires when patient profile shows confirmed PSC (any
+  trigger) AND no current cholangiocarcinoma / gallbladder cancer / HCC
+  diagnosis. Engine routes to PreventionPlan with 2 tracks: intensified
+  imaging surveillance (annual MRI/MRCP + CA 19-9 ± ERCP for dominant
+  strictures, annual colonoscopy if PSC-IBD)
+  (IND-PSC-CHOLANGIOCARCINOMA-PREVENTION-SURVEILLANCE) as standard;
+  routine q2-3y imaging surveillance (IND-PSC-CHOLANGIOCARCINOMA-
+  PREVENTION-OBSERVATION) as alternative.
+
+  Disease anchors verified 2026-05-18: DIS-CHOLANGIOCARCINOMA exists
+  as a KB entity. Anchored PSC primarily to DIS-CHOLANGIOCARCINOMA
+  (per advisor recommendation). DIS-CRC included for PSC-IBD subgroup;
+  DIS-HCC included for cirrhotic PSC HCC risk.
+
+  Evidence base:
+    - **PSC → cholangiocarcinoma:** lifetime risk ~10-15%; annual
+      incidence ~0.5-1.5%/year (multiple population-based registry
+      studies including Bergquist et al. Gastroenterology 2002,
+      Boberg et al. Hepatology 2009).
+    - **PSC → gallbladder cancer:** ~10-fold elevated relative risk;
+      ~3-14% lifetime risk depending on cohort. Gallbladder polyp
+      ≥0.8 cm → cholecystectomy.
+    - **PSC-IBD → CRC:** ~15-30% lifetime; onset 5-15 years earlier
+      than non-PSC IBD. Annual colonoscopy from PSC diagnosis
+      regardless of IBD duration (separately handled via RF-IBD-CRC-
+      PREVENTION when concurrent IBD trigger fires).
+    - **Cirrhotic PSC → HCC:** standard cirrhosis-driven HCC risk
+      (~1-4%/year); AASLD HCC surveillance (semi-annual US ± AFP)
+      applies once cirrhosis is established. Non-cirrhotic PSC does
+      NOT carry materially elevated HCC risk.
+
+  ERCP with brushings for dominant strictures: cytology has limited
+  sensitivity (~40-50%) but high specificity; combined with FISH
+  polysomy improves yield to ~60-70%. ERCP itself carries pancreatitis
+  / cholangitis risk — reserved for diagnostic workup of dominant
+  stricture, not routine surveillance.
+
+  Liver transplant evaluation: indicated for end-stage PSC (decompensated
+  cirrhosis, intractable cholangitis, intractable pruritus, hilar
+  cholangiocarcinoma meeting Mayo protocol criteria for transplant-
+  combined neoadjuvant therapy).
+
+  Sources TODO: AASLD Practice Guidance on PSC (Bowlus et al.
+  Hepatology 2023) as a new SRC entity — primary PSC surveillance
+  guideline. EASL PSC Clinical Practice Guideline (2022) as a new SRC
+  entity.
+
+  This is a STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1
+  dev-mode exemption.
+notes_ua: >
+  v0.3 пілот prevention chronic-condition — PSC.
+  Prevention-persona RedFlag. Спрацьовує коли підтверджено PSC та
+  відсутній поточний діагноз холангіокарциноми / раку жовчного міхура
+  / HCC. Engine маршрутизує до PreventionPlan з 2 треками: посилене
+  imaging-спостереження (щорічно MRI/MRCP + CA 19-9 ± ERCP для
+  домінантних стриктур, щорічна колоноскопія при PSC-IBD)
+  (IND-PSC-CHOLANGIOCARCINOMA-PREVENTION-SURVEILLANCE) як стандарт;
+  рутинне imaging-спостереження q2-3 роки (IND-PSC-CHOLANGIOCARCINOMA-
+  PREVENTION-OBSERVATION) як альтернатива.
+
+  Disease anchors: PSC primary anchor — DIS-CHOLANGIOCARCINOMA (існує
+  в KB). DIS-CRC включено для PSC-IBD підгрупи; DIS-HCC для цирротичного
+  PSC.
+
+  Доказова база:
+    - **PSC → холангіокарцинома:** lifetime ~10-15%; ~0.5-1.5%/рік.
+    - **PSC → рак жовчного міхура:** ~10x RR; ~3-14% lifetime.
+      Поліп жовчного міхура ≥0.8 см → холецистектомія.
+    - **PSC-IBD → КРР:** ~15-30% lifetime; онсет на 5-15 років раніше.
+      Щорічна колоноскопія від PSC діагнозу.
+    - **Цирротичний PSC → HCC:** стандартний цирроз-керований ризик;
+      AASLD HCC surveillance.
+
+  ERCP з brushings для домінантних стриктур: chytology limited
+  sensitivity (~40-50%); комбінована з FISH polysomy ~60-70%.
+
+  Печінкова трансплантація: показана для end-stage PSC.
+
+  TODO джерела: AASLD Practice Guidance on PSC (Bowlus 2023) та
+  EASL PSC Guideline (2022) як нові SRC entities.
+
+  Це STUB, очікує підпис двох Clinical Co-Lead за §6.1 dev-mode
+  exemption.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+draft: true

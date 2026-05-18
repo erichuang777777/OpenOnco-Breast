@@ -1,0 +1,175 @@
+id: IND-OCC-ASBESTOS-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-OCC-ASBESTOS-MALIGNANCY-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Primary endpoint: avoidance of intensified imaging surveillance
+    when patient declines the LDCT pathway. Cancer-incidence outcome:
+    no reduction in asbestos-attributable mesothelioma / lung-cancer
+    / ovarian-cancer incidence; LDCT detects lung cancer at earlier
+    stages with documented ~20-25% lung-cancer-specific mortality
+    reduction in NLST / NELSON cohorts (extension to asbestos-only
+    non-smokers is mechanistic, not RCT-confirmed). Routine general-
+    population USPSTF screening alone leaves the asbestos-attributable
+    excess risk unaddressed. Smoking-cessation counseling remains
+    appropriate regardless of imaging-track choice.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-OCC-ASBESTOS-PREVENTION-
+  INTENSIFIED-SURVEILLANCE. Patient with documented prior occupational
+  asbestos exposure who declines intensified imaging surveillance —
+  for any reason (cost, radiation-dose concerns, anxiety from
+  serial-imaging false-positive cascade, preference for less-
+  interventional pathway, geographic access constraints, life
+  expectancy / competing illness) — is offered routine general-
+  population screening only:
+
+  **Lung-cancer screening:** Apply USPSTF 2021 criteria unmodified
+  (age 50-80, ≥20 pack-years, current smoker or quit within 15
+  years). If patient meets these criteria they receive annual LDCT
+  at the routine cadence; if they do not, no imaging screening is
+  offered. This pathway accepts that asbestos-attributable lung-
+  cancer risk is unaddressed by imaging surveillance — patient is
+  explicitly informed.
+
+  **Mesothelioma screening:** None — explicit absence of validated
+  modality means there is no general-population mesothelioma
+  screening; this track makes no change to that posture.
+
+  **Smoking cessation:** Still offered — this is the lever with the
+  largest mortality benefit regardless of imaging-track choice.
+  Patient who continues smoking is at multiplicative lung-cancer
+  risk; declining LDCT does not reduce the rationale for cessation
+  counseling.
+
+  **Symptom-triggered evaluation:** Low threshold for diagnostic
+  workup if new or persistent chest / abdominal symptoms develop
+  (dyspnea, pleuritic pain, chronic cough, hemoptysis, weight loss,
+  abdominal distension, pleural effusion on incidental imaging) —
+  this pathway does not preclude diagnostic intervention.
+
+  Routing reconsiderations: the patient may revisit the intensified-
+  surveillance pathway at any subsequent visit; this Indication does
+  not preclude future imaging escalation. New occupational re-exposure
+  (eg, demolition work) or change in life expectancy may prompt
+  re-discussion. Per CHARTER §11 patient-autonomy framing: imaging
+  surveillance is a shared-decision-making domain where the
+  cost / radiation / anxiety profile must be weighed against an
+  incremental mortality benefit that has indirect evidence support
+  for the asbestos-exposed non-smoker cohort.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до IND-OCC-ASBESTOS-
+  PREVENTION-INTENSIFIED-SURVEILLANCE. Пацієнт з документованим
+  попереднім професійним впливом азбесту, який відмовляється від
+  інтенсифікованого imaging-спостереження — з будь-якої причини
+  (вартість, занепокоєння радіаційною дозою, тривога від каскаду
+  false-positive serial-imaging, перевага менш-інтервенційного
+  шляху, географічні обмеження доступу, очікувана тривалість
+  життя / competing illness) — отримує тільки рутинний
+  загальнопопуляційний скринінг:
+
+  **Скринінг раку легень:** Застосовувати USPSTF 2021 критерії без
+  модифікації (вік 50-80, ≥20 pack-years, поточний курець або
+  кинув за останні 15 років). Якщо пацієнт відповідає цим критеріям,
+  він отримує щорічну LDCT з рутинною частотою; якщо ні, imaging-
+  скринінг не пропонується. Цей шлях приймає, що
+  asbestos-attributable lung-cancer ризик не адресується imaging-
+  спостереженням — пацієнт явно інформований.
+
+  **Скринінг мезотеліоми:** Немає — явна відсутність валідованої
+  модальності означає, що загальнопопуляційний скринінг мезотеліоми
+  відсутній; цей трек не змінює цю позицію.
+
+  **Припинення куріння:** Все ще пропонується — це важіль з
+  найбільшою вигодою для смертності незалежно від вибору imaging-
+  треку. Пацієнт, що продовжує палити, має мультиплікативний ризик
+  раку легень; відмова від LDCT не зменшує raison d'être counseling
+  щодо припинення.
+
+  **Symptom-triggered оцінка:** Низький поріг для діагностичного
+  workup при появі нових або persistent симптомів з боку грудної
+  клітки / черевної порожнини (диспное, плевральний біль,
+  хронічний кашель, кровохаркання, втрата ваги, абдомінальне
+  розтягнення, плевральний випіт на інцидентальному imaging) — цей
+  шлях не виключає діагностичне втручання.
+
+  Reroute: пацієнт може повернутися до інтенсифікованого
+  спостереження на будь-якому подальшому візиті; ця Indication не
+  виключає майбутню imaging-ескалацію. Нове професійне re-exposure
+  (напр., демоліційна робота) або зміна очікуваної тривалості життя
+  можуть спонукати re-discussion. Per CHARTER §11 framing автономії
+  пацієнта: imaging-спостереження — shared-decision-making domain,
+  де профіль вартості / радіації / тривоги повинен зважуватися
+  проти incremental mortality benefit, який має непряму evidence-
+  підтримку для asbestos-exposed non-smoker когорти.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-NSCLC-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Patients who decline lung-cancer screening at the intensified
+      cadence require ongoing surveillance via symptom-triggered
+      evaluation; smoking-cessation counseling remains foundational."
+  - source_id: SRC-ESMO-NSCLC-EARLY-2024
+    position: context
+    relevant_quote_paraphrase: >-
+      "Shared decision-making is integral to lung-cancer screening
+      enrollment; patients may decline imaging in favor of clinical
+      surveillance."
+
+do_not_do:
+  - "Не презентувати observation як еквівалент imaging surveillance — incidence-detection benefit відсутній; asbestos-attributable excess risk не адресується."
+  - "Не ігнорувати alarm features (диспное, плевральний біль, кровохаркання, втрата ваги) — immediate діагностичне imaging + multidisciplinary review."
+  - "Не використовувати цей шлях як стандарт першої лінії — intensified-surveillance трек залишається preferred recommendation для asbestos-exposed cohort."
+  - "Не пропускати counseling щодо припинення куріння — рекомендація актуальна незалежно від imaging-track вибору."
+  - "Не presenting decision як остаточне — periodic re-discussion intensified-surveillance треку доречне на повторних візитах."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to imaging surveillance — incidence-detection benefit is absent; asbestos-attributable excess risk is unaddressed."
+  - "Do not ignore alarm features (dyspnea, pleuritic pain, hemoptysis, weight loss) — immediate diagnostic imaging + multidisciplinary review."
+  - "Do not use this pathway as a first-line standard — the intensified-surveillance track remains the preferred recommendation for the asbestos-exposed cohort."
+  - "Do not skip smoking-cessation counseling — the recommendation is relevant regardless of imaging-track choice."
+  - "Do not present the decision as final — periodic re-discussion of the intensified-surveillance track is appropriate at follow-up visits."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — alternative-track companion for asbestos occupational
+  prevention pilot. §15.2 C4 ≥2-tracks invariant compliance.
+  Two-Clinical-Co-Lead signoff queued per CHARTER §6.1 dev-mode
+  exemption.

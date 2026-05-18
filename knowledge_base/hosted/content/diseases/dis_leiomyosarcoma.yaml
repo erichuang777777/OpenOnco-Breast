@@ -1,0 +1,161 @@
+id: DIS-LEIOMYOSARCOMA
+names:
+  preferred: "Leiomyosarcoma (LMS)"
+  ukrainian: "Лейоміосаркома (LMS)"
+  english: "Leiomyosarcoma"
+  synonyms:
+    - "LMS"
+    - "Uterine leiomyosarcoma (uLMS)"
+    - "Retroperitoneal leiomyosarcoma"
+    - "Cutaneous / soft-tissue leiomyosarcoma"
+
+codes:
+  icd_o_3_morphology: "8890/3"  # Leiomyosarcoma NOS
+  icd_o_3_topography: ["C49", "C54.2"]  # Connective + soft tissues; uterine myometrium
+  icd_10: "C49, C54.2"
+  who_classification: "WHO Soft Tissue and Bone Tumours 5th ed (2020): Leiomyosarcoma; WHO Female Genital Tumours 5th ed (2020): Uterine leiomyosarcoma"
+
+archetype: stage_driven
+oncotree_code: LMS
+lineage: "sarcoma"
+
+etiological_factors:
+  - "Sporadic (most cases)"
+  - "Hereditary leiomyomatosis and renal cell cancer (HLRCC; germline FH) — strong predisposition to cutaneous + uterine leiomyomas; lifetime uterine LMS risk elevated (rare but real); FH-deficient uLMS has distinct biology"
+  - "Li-Fraumeni syndrome (germline TP53) — LMS over-represented across hereditary cancer syndromes; modest predisposition"
+  - "Retinoblastoma survivors (germline RB1) — second-primary LMS risk"
+  - "Prior pelvic radiation — secondary uterine / pelvic LMS in radiation field (decades latency)"
+
+related_diseases:
+  - DIS-SOFT-TISSUE-SARCOMA       # parent STS entity covers LMS as a histological subtype; this entity provides prevention / hereditary anchor for HLRCC + Li-Fraumeni + uterine subset
+  - DIS-RCC                       # HLRCC overlap (papillary type 2 RCC)
+  - DIS-ENDOMETRIAL               # uterine differential — uLMS distinct from endometrial adenocarcinoma
+
+key_biomarkers:
+  - BIO-TP53-MUTATION             # somatic TP53 ~50% of LMS; germline TP53 in Li-Fraumeni-associated LMS
+  - BIO-RB1                       # somatic RB1 loss common in LMS; germline RB1 in retinoblastoma survivors
+
+epidemiology:
+  global_incidence: "~1–1.5 per 100K/year (all LMS subtypes); ~15% of adult soft-tissue sarcomas"
+  anatomic_distribution: "Retroperitoneal / abdominal-pelvic ~40%; uterine (uLMS) ~25%; cutaneous + extremity ~25%; vascular (large vessels) ~10%"
+  sex_distribution: "Uterine LMS exclusively female (post-menopausal predominance); non-uterine subtypes slight female predominance overall"
+  five_year_survival: "Localized resectable LMS ~50–70%; uterine LMS stage I ~50% (poorer than similar-stage STS at other sites); metastatic disease ~15–25%"
+
+sources:
+  - SRC-NCCN-SARCOMA              # NCCN Soft Tissue Sarcoma (LMS chapter)
+  - SRC-ESMO-SARCOMA-2024         # ESMO sarcoma update 2024
+  - SRC-NCCN-UTERINE-2025         # NCCN Uterine Neoplasms (uLMS chapter)
+
+last_reviewed: "2026-05-19"
+reviewers: []
+reviewer_signoffs: 0
+
+metadata:
+  proposal_status: partial
+  awaiting_proposal: >
+    Full systemic-therapy Indications (doxorubicin ± dacarbazine for
+    1L per LMS-04; gemcitabine + docetaxel as 1L alternative or
+    2L per GEDDIS / SARC-005; trabectedin per ANNOUNCE / French
+    retrospective; pazopanib per PALETTE; eribulin per Schöffski
+    LMS subset analysis) referenced in prose pending guideline-
+    anchored Indication authoring. Uterine LMS-specific second-line
+    (aromatase inhibitor for ER-positive uLMS; nivolumab in trials)
+    pending. Germline FH cascade cross-references prevention-track
+    v0.2-B HLRCC pilot (already authored).
+
+notes: >
+  Leiomyosarcoma is a smooth-muscle-origin sarcoma occupying ~15% of
+  adult soft-tissue sarcoma volume. This entity is authored as a
+  prevention / hereditary anchor for genetic-syndrome surveillance
+  workstreams (HLRCC, Li-Fraumeni); for general STS systemic-therapy
+  decision support the parent entity DIS-SOFT-TISSUE-SARCOMA remains
+  the canonical reference, which treats LMS as one of several
+  histological subtypes.
+
+  Three anatomic subsets with distinct biology + clinical context:
+  - Retroperitoneal / abdominal-pelvic LMS (~40%): often arises from
+    inferior vena cava or great vessels; surgery is principal modality;
+    chemo-sensitivity moderate (doxorubicin-based 1L).
+  - Uterine leiomyosarcoma (uLMS, ~25%): post-menopausal; presents as
+    rapidly enlarging uterine mass; often misdiagnosed pre-operatively
+    as benign leiomyoma. Total abdominal hysterectomy + bilateral
+    salpingo-oophorectomy for localized disease; chemo benefit modest
+    (LMS-02 / GeDDiS). uLMS has a distinct hereditary anchor (HLRCC,
+    germline FH).
+  - Cutaneous + extremity LMS (~25%): better prognosis when small +
+    superficial; wide local excision often curative.
+
+  Hereditary syndromes and prevention workstream relationships:
+  - HLRCC (germline FH): cutaneous leiomyomas are sentinel finding;
+    uterine fibroids appear early (often <40y) and can transform
+    rarely to uLMS. Aggressive papillary type 2 RCC is the dominant
+    malignancy concern in HLRCC. v0.2-B HLRCC prevention pilot
+    (already authored in this repo) drives early gynecologic
+    surveillance + renal-imaging cascade.
+  - Li-Fraumeni (germline TP53): LMS is over-represented across
+    syndromic sarcoma spectrum; Toronto-protocol surveillance
+    relevant. v0.2-B pilot.
+  - Retinoblastoma survivors (germline RB1): post-RT LMS risk in
+    treatment field decades later.
+
+  Treatment fundamentals (full Indications pending): doxorubicin 1L
+  remains anchor; doxorubicin + dacarbazine has emerging evidence
+  (LMS-04) in advanced LMS specifically; gemcitabine + docetaxel as
+  alternative 1L or 2L with specific activity in LMS (most evidence
+  in uLMS subset); trabectedin and pazopanib for further lines.
+  Surgery (en-bloc R0 resection) remains the only curative modality
+  in localized disease.
+notes_ua: |
+  Лейоміосаркома — саркома, що походить із гладких м'язів, складає
+  ~15% сарком м'яких тканин у дорослих. Ця нозологія створена як
+  профілактично-спадковий якір для робочих програм спостереження за
+  генетичними синдромами (HLRCC, Li-Fraumeni); для загальної
+  підтримки рішень із системної терапії при STS канонічним
+  залишається батьківський запис DIS-SOFT-TISSUE-SARCOMA, який
+  розглядає LMS як один із гістологічних підтипів.
+
+  Три анатомічні підмножини з відмінною біологією та клінічним
+  контекстом:
+  - Заочеревинна / абдомінально-тазова LMS (~40%): часто походить із
+    нижньої порожнистої вени або великих судин; хірургія — основний
+    метод; помірна чутливість до хіміотерапії (доксорубіцин-вмісна
+    1-ша лінія).
+  - Лейоміосаркома матки (uLMS, ~25%): постменопаузальний вік;
+    проявляється швидко зростаючою матковою пухлиною; часто
+    помилково діагностується як доброякісна лейоміома до операції.
+    Тотальна абдомінальна гістеректомія + двобічна сальпінго-
+    оваріоектомія при локалізованій хворобі; ефект хіміотерапії
+    помірний (LMS-02 / GeDDiS). uLMS має окремий спадковий якір —
+    HLRCC (гермінальний FH).
+  - Шкірна та LMS кінцівок (~25%): кращий прогноз при невеликих та
+    поверхневих ураженнях; широке локальне висічення часто
+    забезпечує лікування.
+
+  Спадкові синдроми та зв'язок із профілактичною лінією робіт:
+  - HLRCC (гермінальний FH): шкірні лейоміоми — сторожова знахідка;
+    маткові міоми з'являються рано (часто <40 років) і рідко можуть
+    трансформуватися в uLMS. Агресивний папілярний RCC 2-го типу —
+    домінуючий онкологічний ризик при HLRCC. Пілот v0.2-B HLRCC
+    (вже створений у цьому репозиторії) запускає ранній
+    гінекологічний нагляд + каскад візуалізації нирок.
+  - Li-Fraumeni (гермінальний TP53): LMS надмірно представлена у
+    синдромному спектрі сарком; актуальне спостереження за
+    Торонтським протоколом. Пілот v0.2-B.
+  - Реконвалесценти ретинобластоми (гермінальний RB1): ризик
+    постпроменевої LMS у полі терапії десятиліттями пізніше.
+
+  Принципи лікування (повний набір Indications очікується):
+  доксорубіцин (doxorubicin) залишається опорою 1-ї лінії; для
+  поширеної LMS доксорубіцин + дакарбазин (dacarbazine, LMS-04)
+  має нові докази; гемцитабін (gemcitabine) + доцетаксел (docetaxel)
+  — альтернатива 1-ї лінії або 2-га лінія зі специфічною
+  активністю при LMS (більшість даних — на підгрупі uLMS); далі
+  трабектедин (trabectedin) та пазопаніб (pazopanib). Хірургія
+  (en-bloc R0-резекція) залишається єдиним лікувальним методом при
+  локалізованій хворобі.
+
+review_status: pending_clinical_signoff
+drafted_by: claude_extraction
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_ua_01
+draft_revision: 1

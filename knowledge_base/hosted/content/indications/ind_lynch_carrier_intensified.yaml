@@ -1,0 +1,206 @@
+id: IND-LYNCH-CARRIER-INTENSIFIED
+plan_track: aggressive
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-LYNCH-CONFIRMED-CARRIER
+
+# No drug regimen. Daily aspirin (CAPP2) is a shared-decision discussion
+# point — explicitly NOT auto-prescribed. Risk-reducing hysterectomy /
+# BSO is a surgical procedure (not a Regimen entity) discussed but not
+# encoded as a recommended_regimen FK.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Intensified track layers two evidence-supported prophylactic /
+    chemoprevention options on top of the standard NCCN surveillance
+    protocol. (1) Risk-reducing hysterectomy + bilateral salpingo-
+    oophorectomy (BSO) post-childbearing age 40 reduces endometrial
+    cancer incidence to near-zero and ovarian cancer incidence by
+    ~85-90% in confirmed Lynch female carriers (NCCN Category 2A; no
+    OS benefit shown in RCTs, but cancer-specific incidence reduction
+    is well documented). (2) Daily aspirin 300-600 mg ≥2 years
+    reduces CRC incidence in MLH1 / MSH2 carriers by ~50% (CAPP2
+    trial 10-year and 20-year follow-up — Burn et al. 2011, Burn et
+    al. 2020; effect size modest in MSH6 / PMS2 carriers). Both
+    interventions are appropriate for shared-decision discussion;
+    neither is mandated.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Aggressive-track confirmed-carrier pathway: layered on top of the
+  IND-LYNCH-CARRIER-SURVEILLANCE standard protocol with two
+  intensification options that escalate beyond surveillance alone.
+
+  **Foundation:** All standard surveillance from IND-LYNCH-CARRIER-
+  SURVEILLANCE applies (colonoscopy q1-2y from 25; endometrial
+  sampling + TVUS q1-2y from 30-35 women; urinalysis annual; EGD
+  q3-5y from 40; pancreatic if ≥2 affected first-degree; annual
+  dermatology for Muir-Torre).
+
+  **Intensification 1 — Prophylactic gynecologic surgery (women,
+  post-childbearing age 40+):** Risk-reducing hysterectomy + BSO is
+  the canonical Lynch-spectrum prophylactic surgery. Effective in
+  preventing endometrial cancer (incidence to near-zero) and ovarian
+  cancer (~85-90% reduction). Timing: age 40 post-childbearing or
+  after age 45 if childbearing extends later (NCCN Genetic / Familial
+  High-Risk: Colorectal v2.2025). Shared-decision-making must cover:
+    - Surgical risk (laparoscopic / robotic morbidity, anesthesia
+      considerations)
+    - Surgical menopause sequelae (vasomotor symptoms, bone density
+      loss, cardiovascular risk) — managed with hormone replacement
+      therapy (HRT) when not contraindicated; HRT is appropriate for
+      Lynch carriers post-RRSO (Lynch is not a hormone-driven cancer
+      syndrome in the manner of BRCA — HRT use in Lynch BSO is
+      better tolerated)
+    - Fertility planning (must precede surgery; preserve oocytes /
+      embryos if future fertility desired)
+    - Alternative: continued endometrial / ovarian surveillance with
+      explicit framing of the suboptimal sensitivity, especially for
+      ovarian cancer
+
+  **Intensification 2 — Daily aspirin chemoprevention (CAPP2):** CAPP2
+  trial (Burn et al. NEJM 2011; 20-year follow-up Burn et al. Lancet
+  2020) demonstrated that 600 mg daily aspirin × 2 years in confirmed
+  Lynch carriers reduces CRC incidence by ~50% (durable to 20 years).
+  Dose-finding work in CAPP3 (300 mg daily) ongoing. Effect size is
+  strongest in MLH1 / MSH2 carriers (more lifetime adenoma turnover);
+  attenuated in MSH6 / PMS2. Shared-decision-making must cover:
+    - Bleeding risk (GI hemorrhage, intracranial hemorrhage,
+      perioperative considerations)
+    - GI tolerance (PPI co-prescription for high-risk patients)
+    - Renal function (NSAID-induced AKI risk)
+    - Concomitant antiplatelet / anticoagulant therapy
+    - Optimal start age (NCCN does not specify; expert practice age
+      25-40 once colonoscopy program established)
+    - Duration of effect (CAPP2 demonstrated durable benefit ≥10y
+      after 2y course — chemoprevention does not require lifelong
+      dosing)
+
+  **Other intensification considerations (not core to this track but
+  discussed at HCP discretion):**
+    - Empirical immune-checkpoint chemoprevention is investigational
+      (no licensed indication; trials ongoing for MSI-high carriers).
+      Do NOT prescribe outside trial setting.
+    - Hepatobiliary surveillance: no routine MRI MRCP recommended
+      empirically; symptom-driven only.
+    - Cascade testing remains a continuous responsibility — every
+      visit re-confirms family's testing status.
+
+  Per CHARTER §11: prophylactic surgery and chemoprevention are
+  classic shared-decision-making domains. Patient autonomy is
+  paramount; neither intervention is mandated, and both have
+  legitimate decline options (standard surveillance from
+  IND-LYNCH-CARRIER-SURVEILLANCE remains the floor).
+
+rationale_ua: >
+  Aggressive-трекова Indication: накладена поверх IND-LYNCH-CARRIER-
+  SURVEILLANCE стандартного протоколу з двома опціями інтенсифікації,
+  що ескалують за межі лише спостереження.
+
+  **Foundation:** Усе стандартне спостереження з IND-LYNCH-CARRIER-
+  SURVEILLANCE застосовується (колоноскопія q1-2y з 25; біопсія
+  ендометрію + TVUS q1-2y з 30-35 жінки; аналіз сечі щорічно; EGD
+  q3-5y з 40; підшлункова якщо ≥2 родичів першого ступеня; щорічно
+  дерматологія для Muir-Torre).
+
+  **Інтенсифікація 1 — Профілактична гінекологічна хірургія (жінки,
+  post-childbearing вік 40+):** Risk-reducing гістеректомія + BSO —
+  канонічна Lynch-spectrum профілактична операція. Ефективна у
+  запобіганні раку ендометрію (захворюваність до нуля) та раку
+  яєчників (~85-90% зменшення). Час: вік 40 post-childbearing або
+  після 45, якщо childbearing extends later (NCCN). Shared-decision-
+  making має охоплювати: хірургічний ризик, surgical menopause
+  sequelae (HRT застосовний у Lynch BSO post-childbearing — Lynch не
+  є hormone-driven онкосиндромом, як BRCA), fertility planning,
+  альтернативу продовженого скринінгу.
+
+  **Інтенсифікація 2 — Щоденний аспірин (CAPP2):** CAPP2 trial
+  (Burn et al. NEJM 2011; 20-річний follow-up Burn et al. Lancet
+  2020) показав, що 600 мг щоденно × 2 роки у підтверджених Lynch-
+  носіїв зменшує захворюваність КРР на ~50% (durable до 20 років).
+  Сильніший ефект у MLH1 / MSH2 (більше lifetime adenoma turnover);
+  attenuated у MSH6 / PMS2. Shared-decision-making має охоплювати:
+  bleeding ризик (GI кровотеча, intracranial кровотеча), GI
+  толерантність (PPI co-prescription), ниркову функцію, конкомітантну
+  антитромбоцитарну / антикоагулянтну терапію, optimal start age
+  (NCCN не specifies; expert practice 25-40 років після встановлення
+  колоноскопічної програми), тривалість ефекту (durable benefit ≥10y
+  після 2y курсу).
+
+  **Інші міркування інтенсифікації:** empirical immune-checkpoint
+  chemoprevention investigational; cascade testing залишається
+  continuous responsibility.
+
+  Per CHARTER §11: prophylactic хірургія та chemoprevention — класичні
+  shared-decision-making домени. Автономія пацієнта є первинною; жодне
+  з втручань не є обов'язковим.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_confirmed_carrier
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Risk-reducing hysterectomy and bilateral salpingo-oophorectomy
+      should be discussed with confirmed Lynch syndrome women who have
+      completed childbearing, typically at age 40-45; daily aspirin
+      may be considered for CRC chemoprevention based on CAPP2 trial
+      evidence following shared decision-making."
+  - source_id: SRC-ASCO-ACMG-LYNCH-2014
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Risk-reducing surgery and chemoprevention with aspirin are
+      acceptable options for Lynch carriers; shared decision-making is
+      essential."
+  - source_id: SRC-ESMO-CRC-2024
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Daily aspirin chemoprevention may be offered to Lynch carriers
+      following individualized discussion of bleeding risk per CAPP2
+      data; gene-specific (MLH1 / MSH2 stronger evidence) effect
+      modification noted."
+
+do_not_do:
+  - "Не призначати risk-reducing хірургію або chemoprevention як обов'язкове — це shared-decision-making домен, з повним обговоренням ризик / користь / альтернативи."
+  - "Не пропонувати risk-reducing хірургію без обговорення fertility planning та menopausal-sequelae management — HRT post-RRSO у Lynch є clinically acceptable і часто appropriate (Lynch не hormone-driven)."
+  - "Не використовувати empirical immune-checkpoint chemoprevention поза clinical trial — currently investigational, не licensed."
+  - "Не auto-prescribe аспірин без оцінки bleeding ризику, GI / ниркової функції, конкомітантної антитромбоцитарної / антикоагулянтної терапії."
+  - "Не пропускати re-discussion з пацієнтом про intensification options якщо initial decline був motivated тривогою або incomplete information — пацієнти часто переглядають через час."
+
+do_not_do_en:
+  - "Do not present risk-reducing surgery or chemoprevention as mandatory — these are shared-decision-making with full discussion of risk / benefit / alternatives."
+  - "Do not offer risk-reducing surgery without discussion of fertility planning and menopausal-sequelae management — HRT post-RRSO in Lynch is clinically acceptable and often appropriate (Lynch is not hormone-driven)."
+  - "Do not use empirical immune-checkpoint chemoprevention outside a clinical trial — currently investigational and not licensed."
+  - "Do not auto-prescribe aspirin without bleeding-risk, GI / renal function, and concomitant antiplatelet / anticoagulant assessment."
+  - "Do not skip re-discussion of intensification options with patients whose initial decline was motivated by anxiety or incomplete information — patients often reconsider over time."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B confirmed-carrier intensified track (Lynch). Sibling — IND-LYNCH-CARRIER-SURVEILLANCE (standard plan_track). §15.2 C4 ≥2-tracks invariant compliance."

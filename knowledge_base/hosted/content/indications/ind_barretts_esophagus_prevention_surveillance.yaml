@@ -1,0 +1,222 @@
+id: IND-BARRETTS-ESOPHAGUS-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-ESOPHAGEAL
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-BARRETTS-ESOPHAGUS-PREVENTION
+
+# No systemic drug regimen — primary intervention is endoscopic
+# (EGD surveillance ± RFA/EMR endoscopic eradication therapy for
+# dysplasia) plus high-dose PPI for symptom control. PPI is supportive,
+# not a Regimen FK. recommended_regimen: null is appropriate.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Endoscopic eradication therapy (RFA ± EMR) for dysplastic Barrett:
+    HGD ablation reduces progression to EAC by ~75% vs observation
+    (Shaheen et al. JAMA 2014, AIM-Dysplasia); LGD ablation reduces
+    progression to HGD/EAC by ~75% (SURF trial, Phoa et al. JAMA 2014).
+    For non-dysplastic Barrett, surveillance q3-5y captures EAC at
+    earliest detectable stage (typically T1a — amenable to endoscopic
+    resection with 5-year OS >95%) but does not reduce baseline
+    incidence (~0.1-0.3%/year). PPI co-therapy heals reflux esophagitis
+    in >90% within 8 weeks; does not by itself prevent EAC progression.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  # TEST-EGD-VARICES-SCREENING is the closest existing TEST-* entity
+  # for upper endoscopy — Barrett-specific TEST-EGD-BARRETTS-SURVEILLANCE
+  # not yet authored. Referenced in rationale.
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for patients with confirmed Barrett's
+  esophagus. Surveillance and eradication cadence depends on dysplasia
+  grade:
+
+  **Non-dysplastic Barrett's:** EGD with Seattle protocol biopsies
+  (4-quadrant biopsies every 1-2 cm of Barrett segment + targeted
+  biopsies of any visible irregularities) every 3-5 years per ACG /
+  NCCN. Long-segment Barrett (≥3 cm) and shorter intervals favored for
+  patients with multiple risk factors (male, age >50, white, central
+  obesity, smoking, long-segment Barrett).
+
+  **Low-grade dysplasia (LGD), confirmed by expert GI pathologist
+  review (LGD is the most over-called dysplasia grade; expert review
+  reclassifies ~50% as non-dysplastic):**
+    - **Preferred:** Endoscopic eradication therapy — radiofrequency
+      ablation (RFA) ± endoscopic mucosal resection (EMR) for visible
+      lesions. RFA reduces progression by ~75% (SURF, Phoa 2014).
+    - **Alternative (patient declines EET):** Intensified surveillance
+      EGD with Seattle protocol biopsies every 6-12 months until
+      regression, progression to HGD, or patient accepts EET.
+
+  **High-grade dysplasia (HGD) or intramucosal adenocarcinoma (T1a):**
+  Endoscopic eradication therapy is the **standard of care** —
+  EMR for visible lesions to confirm staging (T1a vs T1b) followed by
+  RFA of residual flat Barrett segment until complete eradication of
+  intestinal metaplasia (CE-IM). Surgical esophagectomy reserved for
+  T1b invasive disease, EET non-responders, or multifocal HGD not
+  amenable to endoscopic management. Per Shaheen 2014, RFA reduces
+  progression from HGD to invasive EAC by ~80%.
+
+  **PPI co-therapy (all grades):** High-dose PPI (omeprazole 40 mg BID,
+  pantoprazole 40 mg BID, or esomeprazole 40 mg BID) — symptom control
+  and esophagitis healing, supports Barrett mucosal recovery between
+  ablation sessions. PPI alone does not prevent EAC progression but is
+  baseline supportive therapy in all surveillance protocols.
+
+  **Aspirin + PPI combination chemoprevention** (AspECT trial, Jankowski
+  et al. Lancet 2018): adding low-dose aspirin to high-dose PPI reduces
+  composite endpoint of all-cause mortality, EAC, and HGD by ~24% in
+  Barrett patients without high bleeding risk. NCCN considers aspirin
+  chemoprevention as 2B for patients at elevated cardiovascular risk
+  who can tolerate it. Not universal practice; shared-decision-making
+  with the patient.
+
+  **Endoscopic eradication completeness:** post-RFA, surveillance EGD
+  with biopsies every 3 months for the first year, every 6 months for
+  year 2, then annually until 3 consecutive negative EGDs. Recurrent
+  intestinal metaplasia (~10-25% over 5 years post-CE-IM) treated with
+  repeat focal RFA.
+
+  In Ukraine, EGD with Seattle-protocol biopsies is available in major
+  centers (NSZU-covered for symptomatic GERD investigation but not
+  Barrett-specific surveillance; out-of-pocket ~2000-5000 UAH per
+  procedure). RFA + EMR available in a small number of tertiary centers
+  in Kyiv and Lviv; international referral may be needed for complex
+  cases.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для пацієнтів з підтвердженим
+  стравоходом Барретта. Спостереження та ерадикаційна частота залежать
+  від ступеня дисплазії:
+
+  **Не-дисплазійний Barrett:** EGD з біопсіями за Сіетл-протоколом
+  (4-квадрантні біопсії кожні 1-2 см сегмента Barrett + цільові біопсії
+  будь-яких видимих нерівностей) кожні 3-5 років per ACG/NCCN.
+  Довгий-сегмент Barrett (≥3 см) та коротші інтервали для пацієнтів з
+  множинними факторами ризику (чоловіки, вік >50, біла раса,
+  центральне ожиріння, куріння, довгий сегмент).
+
+  **Дисплазія низького ступеня (LGD), підтверджена експертним
+  GI-патологом (LGD — найбільш over-called grade; експертний огляд
+  перекласифікує ~50% як не-дисплазійні):**
+    - **Перевага:** Ендоскопічна ерадикаційна терапія — радіочастотна
+      абляція (RFA) ± ендоскопічна резекція слизової (EMR) для видимих
+      уражень. RFA знижує прогресію на ~75% (SURF, Phoa 2014).
+    - **Альтернатива (пацієнт відмовляється від EET):** Посилене
+      спостереження EGD з Сіетл-біопсіями кожні 6-12 місяців до
+      регресії, прогресії до HGD або згоди пацієнта на EET.
+
+  **Дисплазія високого ступеня (HGD) або інтрамукозна аденокарцинома
+  (T1a):** Ендоскопічна ерадикаційна терапія — **стандарт лікування**.
+  EMR для видимих уражень для підтвердження стадії (T1a vs T1b), далі
+  RFA залишкового flat Barrett сегмента до повної ерадикації кишкової
+  метаплазії (CE-IM). Хірургічна езофагектомія резервована для T1b
+  інвазивного захворювання, нон-респондерів EET або мультифокального
+  HGD, що не піддається ендоскопічному управлінню. Per Shaheen 2014,
+  RFA знижує прогресію HGD → інвазивний EAC на ~80%.
+
+  **PPI co-терапія (всі ступені):** Високодозовий PPI (омепразол 40 мг
+  BID, пантопразол 40 мг BID або езомепразол 40 мг BID) — контроль
+  симптомів та загоєння езофагіту, підтримує відновлення слизової
+  Barrett між абляційними сесіями. PPI окремо не запобігає прогресії
+  EAC, але є базовою підтримуючою терапією.
+
+  **Aspirin + PPI комбінована хемопревенція** (AspECT trial, Jankowski
+  et al. Lancet 2018): додавання низькодозового аспірину до високодозового
+  PPI знижує composite endpoint смертності, EAC та HGD на ~24% у
+  пацієнтів з Barrett без високого ризику кровотечі. NCCN розглядає
+  аспірин-хемопревенцію як 2B для пацієнтів з підвищеним серцево-
+  судинним ризиком, які можуть переносити його.
+
+  **Повнота ендоскопічної ерадикації:** після RFA — спостережувальна
+  EGD з біопсіями кожні 3 місяці перший рік, кожні 6 місяців другий рік,
+  далі щорічно до 3 послідовних негативних EGD. Рецидивна кишкова
+  метаплазія (~10-25% за 5 років після CE-IM) лікується повторним
+  фокальним RFA.
+
+  В Україні EGD з біопсіями за Сіетл-протоколом доступна в великих
+  центрах (НСЗУ покриває для симптоматичного ГЕРХ-обстеження, але не
+  Barrett-специфічне спостереження; out-of-pocket ~2000-5000 грн за
+  процедуру). RFA + EMR доступні у невеликій кількості третинних
+  центрів у Києві та Львові; міжнародне направлення може знадобитися
+  для складних випадків.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-ESOPHAGEAL-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Barrett's esophagus surveillance and endoscopic eradication therapy
+      (RFA, EMR) for dysplastic Barrett are the standard of care.
+      Non-dysplastic Barrett: EGD with Seattle protocol biopsies every
+      3-5 years. LGD: confirm by expert GI pathologist; endoscopic
+      eradication therapy preferred. HGD: endoscopic eradication therapy
+      mandatory; esophagectomy reserved for non-responders or T1b."
+  - source_id: SRC-ESMO-ESOPHAGEAL-2024
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Barrett's surveillance recommended in all confirmed cases.
+      Endoscopic eradication therapy (RFA, EMR) is first-line for
+      dysplastic Barrett. PPI co-therapy supports mucosal recovery."
+
+do_not_do:
+  - "Не використовувати високодозовий PPI як еквівалент EET для дисплазійного Barrett — PPI контролює симптоми/езофагіт, але не запобігає прогресії дисплазії до EAC."
+  - "Не пропонувати езофагектомію як first-line для T1a HGD або інтрамукозного EAC — endoscopic eradication therapy має кращі onkologic outcomes з меншою morbidity."
+  - "Не покладатися на одиничну LGD-діагностику без експертного GI-pathology огляду — ~50% LGD reclassified as non-dysplastic at expert review; reduces over-treatment."
+  - "Не виконувати РЧА без підтвердженого CE-IM endpoint (повна ерадикація кишкової метаплазії) — часткова ерадикація залишає residual ризик прогресії."
+  - "Не пропускати Seattle протокол біопсій (4-квадрантні кожні 1-2 см) — random sampling ≠ Seattle; пропущена dysplasia при недостатньому sampling."
+  - "Не призначати аспірин-хемопревенцію без оцінки ризику кровотечі — bleeding risk vs cancer-prevention benefit має бути shared-decision-making."
+
+do_not_do_en:
+  - "Do not use high-dose PPI as a substitute for EET in dysplastic Barrett — PPI controls symptoms/esophagitis but does not prevent dysplasia progression to EAC."
+  - "Do not offer esophagectomy as first-line for T1a HGD or intramucosal EAC — endoscopic eradication therapy has better oncologic outcomes with less morbidity."
+  - "Do not rely on a single LGD diagnosis without expert GI pathology review — ~50% of LGD is reclassified as non-dysplastic at expert review; reduces over-treatment."
+  - "Do not perform RFA without confirmed CE-IM endpoint (complete eradication of intestinal metaplasia) — partial eradication leaves residual progression risk."
+  - "Do not skip Seattle protocol biopsies (4-quadrant every 1-2 cm) — random sampling ≠ Seattle; dysplasia missed when sampling is inadequate."
+  - "Do not prescribe aspirin chemoprevention without assessing bleeding risk — bleeding risk vs cancer-prevention benefit must be a shared-decision-making conversation."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — v0.3 chronic-condition prevention pilot (Barrett's esophagus).
+  Two-Co-Lead signoff queued. Aspirin-chemoprevention controversy
+  (AspECT) currently in rationale; may become a dedicated
+  known_controversies entry once a SRC entity for the AspECT trial is
+  authored.
+
+  Sources TODO: ACG Barrett's Esophagus Clinical Guideline 2022
+  (Shaheen et al.) and AGA Barrett's Esophagus Clinical Practice Update
+  2022 as new SRC entities — primary guideline citations for Seattle
+  biopsy protocol, RFA cadence, and CE-IM endpoint definitions.
+
+  Engine smoke-tested (worktree feat/chronic-condition-prevention-
+  2026-05-18): RF-BARRETTS-ESOPHAGUS-PREVENTION fires and routes to 2
+  PreventionPlan tracks (this Indication as default + observation
+  alternative).

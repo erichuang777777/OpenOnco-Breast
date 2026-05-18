@@ -1,0 +1,163 @@
+id: IND-BARRETTS-ESOPHAGUS-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-ESOPHAGEAL
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-BARRETTS-ESOPHAGUS-PREVENTION
+
+# Active observation — routine-cadence EGD only, no RFA/EMR, no PPI
+# co-therapy beyond patient-driven GERD symptom management. Appropriate
+# ONLY for confirmed non-dysplastic Barrett.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Routine-cadence EGD q5y (non-dysplastic Barrett only): captures EAC
+    at earliest detectable stage IF malignancy emerges (~0.1-0.3%/year
+    progression in non-dysplastic Barrett), but lower-frequency sampling
+    increases interval-cancer risk vs intensified surveillance.
+    Surveillance does NOT reduce baseline incidence. Inappropriate for
+    any dysplasia grade — LGD progression risk ~0.7-2%/year, HGD risk
+    ~7-19%/year, both warrant intensified surveillance or endoscopic
+    eradication therapy (see IND-BARRETTS-ESOPHAGUS-PREVENTION-
+    SURVEILLANCE).
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-BARRETTS-ESOPHAGUS-PREVENTION-
+  SURVEILLANCE. Appropriate for patients with **confirmed non-dysplastic
+  Barrett's esophagus only**, who choose minimal-intensity surveillance
+  for any of: cost / access constraints, anxiety about repeated
+  procedures, geographic distance to GI center, preference for lower-
+  frequency monitoring, very-short-segment Barrett (<1 cm) where some
+  guidelines question the need for surveillance altogether.
+
+  **Cadence:** EGD every 5 years per ACG / NCCN minimum surveillance
+  interval for non-dysplastic Barrett. Seattle protocol biopsies
+  preferred but lower sampling acceptable if patient and clinician
+  agree (with explicit understanding of reduced sensitivity).
+
+  **Not appropriate for:**
+    - LGD — minimum surveillance q6-12mo, preferred RFA (see standard
+      track)
+    - HGD — endoscopic eradication therapy is standard of care; routine
+      q5y is below the standard of care and would represent under-
+      treatment
+    - Patients with multiple EAC risk factors (long-segment Barrett ≥3
+      cm, male sex with onset >50, white race, central obesity,
+      smoking history) — these patients benefit from shorter intervals
+      (q3y or less)
+
+  **PPI co-therapy:** symptom-driven only (PPI for active GERD symptoms;
+  no high-dose protocol). Per CHARTER §11 patient-autonomy framing:
+  non-dysplastic Barrett carries low absolute EAC risk (~1-3% lifetime),
+  so routine q5y observation is a legitimate informed-consent choice
+  with documented trade-offs — patient retains access to upgrade to
+  intensified surveillance at any future visit if dysplasia emerges or
+  preferences change.
+
+  **Alarm features** (unintended weight loss, dysphagia, odynophagia,
+  GI bleeding, persistent or worsening reflux unresponsive to PPI,
+  iron-deficiency anemia of unclear etiology) route immediately to
+  diagnostic upper endoscopy with biopsies — and if EAC or HGD is
+  confirmed, to the treatment-persona algorithm via existing
+  DIS-ESOPHAGEAL Indications.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до
+  IND-BARRETTS-ESOPHAGUS-PREVENTION-SURVEILLANCE. Доречно для пацієнтів
+  з **підтвердженим не-дисплазійним стравоходом Барретта лише**, які
+  обирають мінімальної інтенсивності спостереження з причин: вартість /
+  доступ, тривога щодо повторних процедур, географічна відстань до
+  GI-центра, перевага нижчої частоти моніторингу, дуже-короткий-сегмент
+  Barrett (<1 см) де деякі настанови питають необхідність спостереження
+  взагалі.
+
+  **Частота:** EGD кожні 5 років per ACG/NCCN мінімальний інтервал
+  спостереження для не-дисплазійного Barrett. Сіетл-протокол біопсій
+  переважно, але нижче sampling прийнятне якщо пацієнт і клініцист
+  згодні (з явним розумінням зниженої чутливості).
+
+  **Не доречно для:**
+    - LGD — мінімальне спостереження q6-12 міс, переважно RFA (див.
+      standard track)
+    - HGD — ендоскопічна ерадикаційна терапія — стандарт лікування;
+      рутинна q5y нижче standard of care і представляла б under-
+      treatment
+    - Пацієнтів з множинними факторами ризику EAC (довгий сегмент
+      Barrett ≥3 см, чоловіча стать з початком >50, біла раса,
+      центральне ожиріння, історія куріння) — ці пацієнти отримують
+      користь від коротших інтервалів (q3 роки або менше)
+
+  **PPI co-терапія:** лише symptom-driven (PPI для активних симптомів
+  ГЕРХ; без високодозового протоколу). Per CHARTER §11 framing
+  автономії пацієнта: не-дисплазійний Barrett має низький абсолютний
+  EAC ризик (~1-3% lifetime), тому рутинна q5y observation — легітимний
+  informed-consent вибір з документованими trade-offs — пацієнт зберігає
+  доступ до upgrade до посиленого спостереження на будь-якому
+  майбутньому візиті якщо дисплазія з'являється або переваги змінюються.
+
+  **Alarm features** (ненавмисне схуднення, дисфагія, одинофагія,
+  ШКТ-кровотеча, стійкий або погіршений рефлюкс не реагує на PPI,
+  залізодефіцитна анемія неясної етіології) маршрутизують негайно до
+  діагностичної верхньої ендоскопії з біопсіями — і якщо EAC або HGD
+  підтверджено, до treatment-persona алгоритму через існуючі
+  DIS-ESOPHAGEAL Indications.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-ESOPHAGEAL-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Non-dysplastic Barrett's may be surveilled at the q5y minimum
+      interval; dysplastic Barrett requires intensified surveillance
+      and/or endoscopic eradication therapy."
+  - source_id: SRC-ESMO-ESOPHAGEAL-2024
+    position: context
+
+do_not_do:
+  - "Не використовувати цей шлях у пацієнтів з LGD або HGD — потребують intensified surveillance або ендоскопічної ерадикаційної терапії."
+  - "Не презентувати q5y observation як еквівалент intensified surveillance — interval-cancer ризик вищий через нижчу частоту sampling."
+  - "Не ігнорувати alarm features (дисфагія, схуднення, ШКТ-кровотеча) під час observation — immediate upper endoscopy показана."
+  - "Не пропускати periodic re-discussion intensified track — пацієнти, які обрали observation, можуть змінити переваги після додаткових візитів або появи risk factors."
+  - "Не використовувати цей шлях у пацієнтів з довгим сегментом Barrett (≥3 см) та множинними EAC factor risk — коротші інтервали (q3 роки) виправдані."
+
+do_not_do_en:
+  - "Do not use this pathway in patients with LGD or HGD — they require intensified surveillance or endoscopic eradication therapy."
+  - "Do not present q5y observation as equivalent to intensified surveillance — interval-cancer risk is higher due to lower sampling frequency."
+  - "Do not ignore alarm features (dysphagia, weight loss, GI bleeding) during observation — immediate upper endoscopy is indicated."
+  - "Do not skip periodic re-discussion of the intensified track — patients who chose observation may change preferences after additional visits or emergence of risk factors."
+  - "Do not use this pathway in patients with long-segment Barrett (≥3 cm) and multiple EAC risk factors — shorter intervals (q3y) are warranted."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — alternative-track companion for Barrett's prevention. Required
+  for §15.2 C4 ≥2-tracks invariant on the PreventionPlan shape (KSS
+  §20.2). Two-Co-Lead signoff queued.

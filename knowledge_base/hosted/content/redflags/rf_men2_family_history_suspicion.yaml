@@ -1,0 +1,127 @@
+id: RF-MEN2-FAMILY-HISTORY-SUSPICION
+definition: >-
+  Family pedigree suggestive of Multiple Endocrine Neoplasia type 2
+  (MEN2A or MEN2B, RET-driven): any of (a) a family member with a known
+  pathogenic RET variant; (b) first- or second-degree relative with
+  medullary thyroid carcinoma (MTC) — bright line because ~25% of all
+  MTC is hereditary and a single MTC in a relative is sufficient
+  pedigree-suspicion for RET workup; (c) classic MEN2 phenotype
+  cluster in family — MEN2A pattern (MTC + pheochromocytoma +
+  primary hyperparathyroidism) OR MEN2B pattern (MTC + pheochromocytoma
+  + mucosal neuromas / marfanoid habitus / corneal nerve thickening,
+  with no parathyroid involvement). No current personal cancer
+  diagnosis in the individual at risk. Prevention-persona RedFlag
+  (§20 ratification 2026-05-18, v0.2-B hereditary pilot — additional).
+definition_ua: >-
+  Сімейний родовід, що відповідає підозрі на синдром множинної
+  ендокринної неоплазії типу 2 (MEN2A або MEN2B, RET-обумовлений):
+  будь-яке з (а) родич з відомим патогенним варіантом гена RET; (б)
+  родич першого або другого ступеня з медулярним раком щитоподібної
+  залози (MTC) — bright-line, оскільки ~25% усього MTC є спадковим,
+  і один випадок MTC у родича є достатньою родовідною підозрою для
+  RET-workup; (в) класичний MEN2 фенотиповий кластер у сім'ї —
+  MEN2A-патерн (MTC + феохромоцитома + первинний гіперпаратиреоз) АБО
+  MEN2B-патерн (MTC + феохромоцитома + слизові невроми / марфаноподібна
+  будова / потовщення корнеальних нервів, без ураження паращитоподібних
+  залоз). Поточний особистий діагноз раку у пацієнта з ризиком
+  відсутній. Prevention-persona RedFlag (ратифікація §20, 2026-05-18,
+  v0.2-B пілот спадковості — додатковий).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "family_ret_known_pathogenic_variant"
+      value: true
+    - finding: "family_medullary_thyroid_carcinoma_first_or_second_degree"
+      value: true
+    - finding: "family_men2_phenotype_cluster"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+# §20 prevention extension — drives engine routing to PreventionPlan
+# when patient carries this RF and no confirmed Disease (KSS §20.2).
+risk_category: genetic
+
+# MEN2-spectrum cancers using existing KB Disease entities:
+# - Medullary thyroid carcinoma is the defining and near-100%-penetrant
+#   MEN2 cancer (anchored to DIS-MTC). Prophylactic thyroidectomy
+#   timing is the central clinical decision driven by RET mutation
+#   risk class.
+# - Pheochromocytoma (~50% in MEN2A, ~50% in MEN2B) does not have a
+#   dedicated DIS-* entity in OpenOnco KB — it is managed under
+#   DIS-MTC's multi-organ surveillance protocol (plasma metanephrines
+#   from age 8-16 depending on RET class).
+# - Primary hyperparathyroidism (MEN2A only, ~20-30%) similarly handled
+#   under DIS-MTC surveillance notes.
+relevant_diseases:
+  - DIS-MTC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-ATA-THYROID-2015
+  - SRC-NCCN-THYROID-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.2-B hereditary pilot — MEN2. Fires on pedigree-based suspicion of
+  MEN2A or MEN2B (RET-driven) in an asymptomatic individual (no
+  current cancer diagnosis). Engine routes to PreventionPlan
+  recommending:
+    (a) genetic counseling + germline RET panel testing — when positive
+        drives the central MEN2 surgical decision (prophylactic
+        thyroidectomy timing by RET mutation risk class per ATA 2015:
+        HST [highest risk, e.g., M918T → MEN2B] = before age 1; H
+        [high risk, e.g., C634 codons → classic MEN2A] = age ≤5; MOD
+        [moderate risk] = age 5 with biochemical surveillance) via
+        IND-MEN2-SUSPICION-PREVENTION-GENETIC-COUNSELING (standard)
+    (b) empirical structured surveillance for patients declining
+        testing — periodic neck US, calcitonin, plasma metanephrines —
+        via IND-MEN2-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+        (alternative).
+
+  Triggers correspond to established MEN2-suspicion criteria. The
+  single-MTC-in-a-relative bright line reflects ATA 2015 guidance:
+  hereditary fraction of all MTC is ~25%, RET germline testing is
+  recommended for every MTC patient, and that recommendation cascades
+  to first/second-degree relatives.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption. Source-set TODO: ATA 2015 Revised Guidelines for the
+  Management of MTC (Wells et al., Thyroid 2015) provides the
+  RET-class-based prophylactic thyroidectomy framework; NCCN
+  Genetic/Familial High-Risk: Endocrine (currently a TODO source) as
+  a v0.2-B authoring backlog new SRC entity.
+
+  Confirmed RET carriers (germline RET pathogenic variant positive)
+  route to a DIFFERENT prevention pathway (carrier-confirmed
+  prophylactic thyroidectomy at ATA-class-specific age + lifelong
+  pheochromocytoma / parathyroid surveillance). That pathway is
+  v0.2-B follow-up authoring (RF-MEN2-CONFIRMED-CARRIER +
+  IND-MEN2-CARRIER-SURVEILLANCE).
+
+  Lifetime cancer/tumor risk in confirmed MEN2 carriers (ATA 2015):
+    - MTC: near-100% lifetime penetrance — defines the syndrome;
+      age of onset varies sharply by RET class (MEN2B M918T:
+      infancy-toddlerhood; classic MEN2A C634: childhood-adolescence;
+      moderate-risk RET variants: adulthood)
+    - Pheochromocytoma: ~50% in MEN2A; ~50% in MEN2B; preferentially
+      bilateral / adrenal medullary; rarely paraganglioma; emerges
+      typically after MTC (age 30s-40s) but childhood cases documented
+    - Primary hyperparathyroidism: ~20-30% in MEN2A only (absent in
+      MEN2B); multi-glandular hyperplasia
+    - Mucosal neuromas + marfanoid + corneal nerve thickening: MEN2B
+      pathognomonic stigmata, often visible in infancy but frequently
+      under-recognized
+    - Hirschsprung disease: ~7% in MEN2A C620/C618 (specific RET
+      variant subgroup)
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_hereditary_pilot
+draft_revision: 1

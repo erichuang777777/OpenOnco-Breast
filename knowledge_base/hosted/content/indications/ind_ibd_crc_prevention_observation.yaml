@@ -1,0 +1,177 @@
+id: IND-IBD-CRC-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IBD-CRC-PREVENTION
+
+# Active observation — routine-cadence colonoscopy (q3-5y) with
+# white-light random biopsies. No chromoendoscopy, no IBD-specific
+# dysplasia decision-tree. Below the AGA/ECCO/NCCN standard of care for
+# long-standing IBD; included per §15.2 C4 and CHARTER §11 patient-
+# autonomy framing.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Routine q3-5y colonoscopy with random biopsies (general high-risk
+    cadence — clinically unusual for established long-standing IBD
+    where q1-2y chromoendoscopy is standard): captures interval CRC
+    later than chromoendoscopy-based surveillance, with reduced
+    sensitivity for flat dysplasia. Surveillance does NOT reduce
+    baseline incidence (~2% at 10y, 8% at 20y, 18% at 30y in
+    long-standing UC); improvement in early-stage detection is partial
+    at lower frequency. PSC-IBD subgroup: this cadence is below the
+    standard of care and is not appropriate.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  - TEST-COLONOSCOPY-FULL
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-IBD-CRC-PREVENTION-CHROMOENDOSCOPY.
+  Patient with long-standing IBD who declines intensified IBD-specific
+  surveillance — for any reason (procedural anxiety, geographic access
+  to chromoendoscopy-capable centers, cost concerns, preference for
+  general-population-style cadence, IBD in deep remission with normal
+  mucosa on prior exams) — is offered routine-cadence colonoscopy.
+
+  **Cadence:** Colonoscopy every 3-5 years with white-light random
+  biopsies (4-quadrant every 10 cm) + targeted biopsies of visible
+  abnormalities. This matches general high-risk-population cadence
+  (e.g., post-adenoma surveillance) rather than IBD-specific cadence.
+
+  **Not appropriate for:**
+    - **PSC-IBD** — highest-risk IBD subgroup; q3-5y is well below
+      AGA / ECCO standard (annual from PSC diagnosis). This pathway
+      should NOT be offered to PSC-IBD patients.
+    - **Patients with prior dysplasia on biopsy** — intensified
+      surveillance is mandatory regardless of patient preference; this
+      pathway is unsafe.
+    - **Patients with persistent active inflammation despite therapy**
+      — mucosal healing reduces CRC risk; uncontrolled inflammation
+      warrants both treatment escalation and intensified surveillance.
+    - **Patients with family history of CRC under 50** — additional
+      hereditary-risk evaluation warranted; routine cadence under-
+      delivers.
+
+  **Patient counseling required:** Per CHARTER §11 patient-autonomy
+  framing, this pathway represents a documented departure from AGA /
+  ECCO / NCCN standard of care for long-standing IBD. The patient
+  should be informed that:
+    (a) absolute CRC risk in long-standing IBD is meaningfully
+        elevated (cumulative ~18% at 30 years in UC);
+    (b) chromoendoscopy-based q1-2y surveillance has documented
+        mortality benefit via early dysplasia detection;
+    (c) routine q3-5y cadence detects CRC later, with worse survival
+        outcomes when malignancy emerges;
+    (d) re-engagement with intensified surveillance is available at
+        any future visit.
+
+  **Alarm features** (rectal bleeding inconsistent with active IBD,
+  unintended weight loss, persistent change in bowel habit beyond
+  baseline IBD pattern, iron-deficiency anemia, abdominal mass, family
+  history clarification revealing CRC under 50) route immediately to
+  diagnostic colonoscopy — and if CRC is confirmed, to the treatment-
+  persona algorithm via existing DIS-CRC Indications.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до
+  IND-IBD-CRC-PREVENTION-CHROMOENDOSCOPY. Пацієнт з тривалим IBD, який
+  відмовляється від посиленого IBD-специфічного спостереження — з
+  будь-якої причини (procedural anxiety, географічна доступність
+  chromoendoscopy-центрів, вартість, перевага general-population-style
+  cadence, IBD в глибокій ремісії з нормальною слизовою на попередніх
+  обстеженнях) — отримує рутинну колоноскопію.
+
+  **Частота:** Колоноскопія кожні 3-5 років з white-light random
+  біопсіями (4-квадрантні кожні 10 см) + цільові біопсії видимих
+  abnormalities. Це відповідає general high-risk-population cadence
+  (напр. post-adenoma surveillance), а не IBD-специфічній cadence.
+
+  **Не доречно для:**
+    - **PSC-IBD** — найвища-ризикова IBD-підгрупа; q3-5y значно нижче
+      AGA/ECCO стандарту (щорічно від PSC діагнозу). Цей шлях НЕ слід
+      пропонувати PSC-IBD пацієнтам.
+    - **Пацієнтів з попередньою дисплазією на біопсії** — посилене
+      спостереження обов'язкове незалежно від переваг пацієнта.
+    - **Пацієнтів з persistent active inflammation** — mucosal healing
+      знижує CRC ризик; uncontrolled inflammation потребує ескалації
+      терапії та посиленого спостереження.
+    - **Пацієнтів з сімейною історією КРР під 50** — додаткова
+      hereditary-risk оцінка виправдана.
+
+  **Обов'язкове консультування пацієнта:** Per CHARTER §11 framing
+  автономії пацієнта, цей шлях представляє документований відхід від
+  AGA/ECCO/NCCN standard of care. Пацієнта слід інформувати, що:
+    (а) абсолютний CRC ризик у тривалому IBD істотно підвищений
+        (cumulative ~18% за 30 років у UC);
+    (б) chromoendoscopy-based q1-2y спостереження має документовану
+        mortality benefit;
+    (в) рутинна q3-5y cadence виявляє CRC пізніше, з гіршими survival
+        результатами;
+    (г) re-engagement з посиленим спостереженням доступний на будь-
+        якому майбутньому візиті.
+
+  **Alarm features** (ректальна кровотеча inconsistent з активним IBD,
+  ненавмисне схуднення, persistent change у bowel habit, залізодефіцитна
+  анемія, абдомінальне утворення, сімейна історія раку під 50) —
+  негайно diagnostic колоноскопія.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-COLON-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Routine-cadence colonoscopy (q3-5y) is appropriate for general
+      high-risk populations but is below the IBD-specific standard of
+      care for long-standing colitis."
+  - source_id: SRC-ESMO-CRC-2024
+    position: context
+
+do_not_do:
+  - "Не використовувати цей шлях у PSC-IBD пацієнтів — щорічна колоноскопія від PSC діагнозу — standard of care."
+  - "Не використовувати цей шлях у пацієнтів з попередньою дисплазією на біопсії — посилене спостереження обов'язкове."
+  - "Не пропускати документоване консультування пацієнта про відхід від AGA/ECCO/NCCN standard — informed consent обов'язковий."
+  - "Не подовжувати q3-5y cadence у пацієнтів з персистентним активним запаленням — потрібна терапевтична escalation та посилене спостереження."
+  - "Не ігнорувати alarm features під час observation — immediate diagnostic колоноскопія."
+
+do_not_do_en:
+  - "Do not use this pathway in PSC-IBD patients — annual colonoscopy from PSC diagnosis is the standard of care."
+  - "Do not use this pathway in patients with prior dysplasia on biopsy — intensified surveillance is mandatory."
+  - "Do not skip documented patient counseling about departure from AGA/ECCO/NCCN standard — informed consent is mandatory."
+  - "Do not extend q3-5y cadence in patients with persistent active inflammation — therapeutic escalation and intensified surveillance are warranted."
+  - "Do not ignore alarm features during observation — immediate diagnostic colonoscopy."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — alternative-track companion for IBD-CRC prevention pilot.
+  Required for §15.2 C4 ≥2-tracks invariant on PreventionPlan shape
+  (KSS §20.2). Clinically below standard-of-care for long-standing IBD
+  (q1-2y chromoendoscopy is AGA/ECCO/NCCN standard); included for
+  patient-autonomy framing per CHARTER §11.

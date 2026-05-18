@@ -1,0 +1,173 @@
+id: IND-MEN2-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-MTC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-MEN2-FAMILY-HISTORY-SUSPICION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Empirical MEN2 surveillance (calcitonin q6 months, neck ultrasound
+    q1 year, plasma metanephrines q1 year from age 8-12): expected to
+    capture early MTC structural / biochemical disease in the subset
+    who are actual RET carriers (~25-95% of pedigree-suspicion
+    individuals depending on family-history stringency). Does NOT
+    permit the high-impact MEN2 intervention — RET-class-driven
+    prophylactic thyroidectomy — which requires confirmed RET status.
+    Surveillance can catch MTC earlier than symptomatic presentation
+    but cannot prevent MTC the way prophylactic surgery in a confirmed
+    HST / H RET carrier can. Pheochromocytoma surveillance prevents
+    hypertensive-crisis mortality.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-MEN2-SUSPICION-PREVENTION-GENETIC-
+  COUNSELING. Patient with pedigree suspicion of MEN2A or MEN2B who
+  declines genetic counseling and/or germline RET testing — for any
+  reason (cost, insurance concerns, psychological / anxiety
+  considerations, family privacy, geographic access constraints) — is
+  offered empirical structured surveillance applied as if MEN2 were
+  confirmed:
+
+  **Thyroid:** Serum calcitonin q6 months + neck ultrasound q1 year
+  starting at the age the youngest MTC was diagnosed in the family
+  minus 10 years (or age 5, whichever is earlier; though in practice
+  MOD-class onset can be later, the empirical protocol must cover
+  for the possibility of HST / H mutations in the kindred since RET
+  class is unknown without testing). Pentagastrin / calcium stimulation
+  testing is largely historical and not recommended for routine
+  empirical screening. Empirical prophylactic thyroidectomy is NOT
+  recommended in the absence of RET confirmation — the surgical
+  decision rests on confirmed RET-class stratification per ATA 2015.
+
+  **Pheochromocytoma:** Plasma free metanephrines or 24-hour urine
+  metanephrines q1 year from age 8-12 (the earlier age 8 if the
+  family includes MEN2B / HST suspicion; the later age 12 if pedigree
+  suggests MEN2A / MOD only). Adrenal imaging (MRI or CT) if
+  metanephrines elevated. Annual blood pressure check at every
+  primary-care visit.
+
+  **Parathyroid (if MEN2A pattern in family):** Serum calcium + PTH
+  q1 year from age 11. If the pedigree includes MEN2B-only features
+  (mucosal neuromas, marfanoid habitus without parathyroid
+  involvement), parathyroid surveillance is not required.
+
+  **Examination for MEN2B stigmata:** Annual examination for
+  developing mucosal neuromas (lips / tongue / buccal mucosa),
+  marfanoid habitus, corneal nerve thickening — particularly important
+  in pre-pubertal children where the family history is ambiguous
+  for MEN2A vs MEN2B.
+
+  Per CHARTER §11 patient-autonomy framing: genetic testing is a
+  shared-decision-making domain. Patients who decline testing retain
+  access to surveillance benefit, with the strong caveat that
+  empirical surveillance lacks the diagnostic precision of confirmed
+  RET status — and in MEN2, that precision is uniquely impactful
+  because the central intervention (prophylactic thyroidectomy) is
+  not justifiable without genetic confirmation. Periodic re-discussion
+  of testing is appropriate; the cost-benefit balance is strongly
+  in favor of testing in MEN2 versus most other hereditary syndromes
+  given the high MTC penetrance and the curative effect of timely
+  surgery.
+
+  Routing reconsiderations: if patient eventually accepts germline
+  testing, results reroute to (a) confirmed-carrier pathway, (b)
+  general-population pathway, or (c) continued pedigree-suspicion if
+  VUS.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до IND-MEN2-SUSPICION-
+  PREVENTION-GENETIC-COUNSELING. Пацієнт з родовідною підозрою на
+  MEN2A або MEN2B, який відмовляється від генетичного консультування
+  та/або germline RET-тестування — отримує empіричне структуроване
+  спостереження як якщо б MEN2 був підтверджений:
+
+  **Щитоподібна залоза:** Сироватковий кальцитонін q6 місяців + УЗД
+  шиї q1 рік починаючи з віку, у якому наймолодший MTC у сім'ї був
+  діагностований мінус 10 років (або 5 років, що раніше; на практиці
+  MOD-класовий початок може бути пізнішим, але empіричний протокол
+  повинен покривати можливість HST / H мутацій у спорідненості,
+  оскільки RET-клас невідомий без тестування). Пентагастрин /
+  кальцієва стимуляція — здебільшого історична і не рекомендується
+  для рутинного empіричного скринінгу. Empірична профілактична
+  тиреоїдектомія НЕ рекомендується за відсутності RET-підтвердження
+  — хірургічне рішення базується на підтвердженій RET-стратифікації
+  per ATA 2015.
+
+  **Феохромоцитома:** Плазмові вільні метанефрини або 24-годинні
+  сечові метанефрини q1 рік з 8-12 років (раніший вік 8 при підозрі
+  MEN2B / HST; пізніший вік 12 при пропозиції MEN2A / MOD). Adrenal
+  візуалізація при елевації. Щорічне вимірювання АТ при кожному
+  primary-care візиті.
+
+  **Паращитоподібні залози (при MEN2A-патерні у сім'ї):** Сироватковий
+  кальцій + PTH q1 рік з 11 років. Якщо родовід включає лише MEN2B-
+  ознаки (слизові невроми, марфаноподібна будова без ураження
+  паращитоподібних), паращитоподібний скринінг не потрібний.
+
+  **Обстеження на MEN2B-стигмати:** Щорічне обстеження для розвитку
+  слизових неврем (губи / язик / букальна слизова), марфаноподібної
+  будови, потовщення корнеальних нервів — особливо важливе у
+  препубертальних дітей, де сімейна історія неоднозначна для MEN2A
+  vs MEN2B.
+
+  Per CHARTER §11 framing автономії пацієнта. cost-benefit balance
+  сильно на користь тестування у MEN2 порівняно з більшістю інших
+  спадкових синдромів через високу MTC-пенетрантність і curative
+  effect своєчасної хірургії.
+
+  Reroute: якщо пацієнт врешті приймає germline тестування,
+  результати маршрутизуються до (а) confirmed-carrier шлях, (б)
+  general-population шлях, або (в) продовжена pedigree-підозра при VUS.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_hereditary_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-ATA-THYROID-2015
+    position: supports
+  - source_id: SRC-NCCN-THYROID-2025
+    position: supports
+
+do_not_do:
+  - "Не презентувати empіричне спостереження як еквівалент genetic confirmation — у MEN2 особливо diagnostic precision є prerequisite для центральної інтервенції (профілактична тиреоїдектомія)."
+  - "Не виконувати empіричну профілактичну тиреоїдектомію без RET-підтвердження — chirurgical decision-making у MEN2 спирається на ATA-class стратифікацію, яка вимагає genetic testing."
+  - "Не пропускати alpha-blockade pre-operatively якщо феохромоцитома виявляється під час empіричного спостереження — навіть без підтвердженого RET, виявлений pheo має лікуватися як високо-ризикова резекція."
+  - "Не використовувати пентагастрин / кальцієву стимуляцію тестування — historic procedure replaced by basal calcitonin + ultrasound; не показано у сучасному empіричному спостереженні."
+  - "Не пропускати periodic re-discussion про genetic testing — у MEN2 особливо cost-benefit balance сильно у користь testing; більшість пацієнтів врешті приймають тестування."
+
+do_not_do_en:
+  - "Do not present empirical surveillance as equivalent to genetic confirmation — in MEN2 specifically, diagnostic precision is a prerequisite for the central intervention (prophylactic thyroidectomy)."
+  - "Do not perform empirical prophylactic thyroidectomy without RET confirmation — surgical decision-making in MEN2 rests on ATA-class stratification that requires genetic testing."
+  - "Do not skip alpha-blockade pre-operatively if a pheochromocytoma is found during empirical surveillance — even without confirmed RET, a detected pheo must be treated as a high-risk resection."
+  - "Do not use pentagastrin / calcium stimulation testing — this is a historic procedure replaced by basal calcitonin + ultrasound; not indicated in modern empirical surveillance."
+  - "Do not skip periodic re-discussion of genetic testing — in MEN2 specifically, the cost-benefit balance strongly favors testing; most patients eventually accept testing."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — alternative-track companion for MEN2 hereditary prevention pilot. §15.2 C4 ≥2-tracks invariant compliance.

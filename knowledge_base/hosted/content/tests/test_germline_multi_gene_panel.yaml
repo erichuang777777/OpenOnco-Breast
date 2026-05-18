@@ -1,0 +1,89 @@
+id: TEST-GERMLINE-MULTI-GENE-PANEL
+names:
+  preferred: "Germline multi-gene hereditary cancer panel (NGS)"
+  ukrainian: "Гермінальна мульти-генна онко-панель (NGS)"
+loinc_codes: ["81247-9", "81296-6"]  # Cancer-related, full-panel germline-NGS LOINC codes
+category: genomic
+purpose: >
+  Comprehensive germline pathogenic-variant screening for hereditary
+  cancer susceptibility across the major hereditary cancer syndromes —
+  drives index-patient diagnosis, family cascade testing, and
+  prevention / surveillance Indication firing in the v0.2-B prevention
+  workstream.
+
+specimen: "Peripheral whole blood (EDTA tube) or saliva (Oragene-style kit) — blood preferred for minor patients and post-transplant patients"
+turnaround_time: "14–28 days from accession to reported result; reflex confirmatory orthogonal assay (Sanger or MLPA for CNV) may extend to 35–42 days"
+priority_class: standard
+
+availability_ukraine:
+  state_funded: false
+  typical_cost_uah: null
+  typical_availability: "Private molecular-genetics labs; cost-bearing patient unless covered by oncologist-led research program or charitable funding"
+  notes: >
+    No state-funded germline multi-gene panel is reimbursed under NSZU
+    as of 2026-05; pre-test genetic counseling is required per
+    international standards but UA-side counseling capacity is limited.
+    Add to prevention-pathway funding-tracker queue.
+
+lab_availability_ua:
+  - lab: "CSD Lab"
+    product_code: "M089"
+    product_name: "MyGene HRR — NGS-панель спадкових мутацій у 32 генах"
+    url: "https://www.csdlab.ua/analyzes/molekulyarno-genetichni-doslidzhennya-onkologichni"
+    confirmation: "product_code_verified"
+    coverage_notes: >
+      32-gene HRR-focused panel (BRCA1/2 + 30 additional genes
+      relevant to hereditary breast / ovarian / prostate / pancreatic
+      cancer). Cross-references TEST-GERMLINE-BRCA-PANEL. Does NOT
+      cover full Lynch (MMR), Li-Fraumeni (TP53 isolated), polyposis
+      (APC / MUTYH / STK11 / PTEN / SMAD4 / BMPR1A), VHL, MEN2,
+      paraganglioma (SDHx). Patient profiles flagging multiple
+      syndromes need broader cancer-panel referral (typically
+      international labs — Invitae / Ambry / GeneDx / Centogene).
+    last_verified: "2026-05-01"
+
+sources:
+  - SRC-ASCO-ACMG-LYNCH-2014                          # framework for germline panel testing in hereditary CRC (Lynch syndrome)
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025     # framework for hereditary breast / ovarian panel
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025                # framework for hereditary CRC / polyposis panel
+
+last_reviewed: "2026-05-19"
+review_status: pending_clinical_signoff
+drafted_by: claude_extraction
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+  Multi-gene hereditary cancer germline panel — NGS-based sequencing
+  of 30–100+ genes implicated in hereditary cancer syndromes. Used
+  index-patient testing and family cascade screening.
+
+  Typical gene coverage (provider-dependent; verify per product):
+  - Lynch syndrome MMR: MLH1, MSH2, MSH6, PMS2, EPCAM
+  - Hereditary breast / ovarian: BRCA1, BRCA2, PALB2, CHEK2, ATM
+  - HRR-extended: RAD51C, RAD51D, BRIP1, BARD1
+  - Li-Fraumeni: TP53
+  - Polyposis: APC, MUTYH, STK11 (Peutz-Jeghers), PTEN (Cowden),
+    SMAD4, BMPR1A (juvenile polyposis), GREM1
+  - Hereditary diffuse gastric: CDH1
+  - Renal cancer: VHL, FH (HLRCC), FLCN (Birt-Hogg-Dubé), MET
+  - Paraganglioma / pheochromocytoma: SDHA, SDHB, SDHC, SDHD,
+    SDHAF2, TMEM127, MAX, RET (MEN2), NF1 (NF1 syndrome), MEN1
+  - Others (less common but standard on broader panels): CDKN2A
+    (melanoma / pancreatic), POLE / POLD1 (polymerase proofreading-
+    associated polyposis), BAP1 (mesothelioma / uveal melanoma)
+
+  Result reporting follows the ACMG / AMP framework: pathogenic /
+  likely-pathogenic / variant-of-uncertain-significance (VUS) /
+  likely-benign / benign. Only P / LP variants drive clinical action;
+  VUS results require periodic reanalysis as evidence accumulates.
+
+  Pre-test genetic counseling is REQUIRED (NCCN, ASCO, ACMG, NSGC).
+  Post-test counseling required for any P / LP / VUS finding.
+  Cascade testing — single-site testing for the family-specific variant
+  — is the canonical follow-up for first-degree relatives once a
+  proband variant is identified.
+
+  Engineering note: this Test entity is referenced by v0.2-B prevention
+  Indications across multiple syndromes (FAP, Lynch, BRCA / HBOC,
+  Li-Fraumeni, VHL, HLRCC). The lab_availability_ua block points to
+  CSD's HRR-focused panel as the most accessible UA option; broader
+  syndromic coverage typically requires international referral.

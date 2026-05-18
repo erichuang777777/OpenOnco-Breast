@@ -1,0 +1,196 @@
+id: IND-BRCA-CARRIER-SURVEILLANCE
+plan_track: standard
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-BRCA-CONFIRMED-CARRIER
+
+# No drug regimen — intervention is multi-organ surveillance plus
+# (for men) PSA / DRE. Risk-reducing surgery (RRM / RRSO) is the
+# INTENSIFIED-track companion.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    NCCN Genetic / Familial High-Risk: Breast, Ovarian, Pancreatic
+    surveillance in confirmed BRCA1 / BRCA2 carriers achieves
+    earlier-stage breast cancer detection — annual breast MRI is the
+    most sensitive imaging modality (sensitivity ~80-90% in BRCA
+    carriers vs ~30-40% mammography alone). Alternating mammogram +
+    MRI provides imaging every 6 months overall. Ovarian
+    surveillance via TVUS + CA-125 has documented poor sensitivity
+    for early-stage high-grade serous carcinoma — UKCTOCS / UKFOCSS
+    trials do not demonstrate mortality benefit even in BRCA-
+    confirmed cohorts; framed honestly as suboptimal vs RRSO (which
+    is offered in the INTENSIFIED track). PSA + DRE in BRCA2 men
+    from age 40 captures the high-grade prostate cancer enrichment
+    documented in BRCA2 carriers.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track confirmed-carrier surveillance pathway for individuals
+  with a documented germline BRCA1 / BRCA2 pathogenic variant. The
+  surveillance protocol below assumes the genetic-test question is
+  already settled — pre-test counseling, panel testing, and variant
+  classification have all been completed prior to this Indication
+  firing.
+
+  **Breast (women — gene-aware):** Annual breast MRI starting age 25
+  (BRCA1) / 30 (BRCA2) — earlier start in BRCA1 reflects the
+  documented earlier-onset breast cancer in BRCA1 carriers (median
+  diagnosis ~40 BRCA1 vs ~45 BRCA2). Mammogram alternating q6 months
+  with MRI from age 30 — staggered to provide imaging every 6 months
+  overall. Clinical breast exam q6 months by clinician familiar with
+  high-risk surveillance. Patient-performed monthly breast self-exam
+  encouraged.
+
+  **Ovarian (women):** Transvaginal ultrasound + serum CA-125 q6
+  months from age 30-35 — explicitly framed as suboptimal
+  surveillance (UKCTOCS / UKFOCSS data do not show mortality
+  benefit). Risk-reducing BSO is the evidence-based intervention,
+  offered in the INTENSIFIED track. Pre-RRSO patients who decline /
+  defer surgery receive interim surveillance with honest framing of
+  limitations. Low threshold for diagnostic imaging or specialist
+  referral on new pelvic symptoms (bloating, early satiety, urinary
+  urgency, abdominal-pelvic pain).
+
+  **Breast (men — BRCA2 enriched, BRCA1 lesser):** Annual clinical
+  breast exam from age 35. Breast imaging triggered by gynecomastia
+  or palpable mass (ultrasound first; mammogram / MRI for indeterminate
+  findings). Patient education on monthly self-exam.
+
+  **Prostate (men — BRCA2 high-grade enriched):** PSA + DRE annually
+  from age 40 (BRCA2 carriers; lower threshold than population — the
+  IMPACT study demonstrated higher rates of clinically significant
+  prostate cancer at lower PSA thresholds in BRCA2 carriers). BRCA1
+  men: PSA / DRE from age 45 per NCCN; lesser evidence base.
+  Biopsy threshold individualized — multiparametric MRI before
+  biopsy is increasingly used in this high-risk cohort.
+
+  **Pancreatic (PDAC):** Pancreatic surveillance via annual MRI MRCP
+  ± EUS in BRCA2 carriers with ≥1 affected first-degree relative
+  (CAPS consortium consensus); BRCA1 carriers receive surveillance
+  only if ≥2 affected first-degree relatives. Surveillance does NOT
+  decrease pancreatic cancer mortality at the population level —
+  framed honestly as a high-risk-cohort intervention with uncertain
+  individual benefit. Discussion documented even when CAPS criteria
+  not met.
+
+  **Cascade testing:** Confirmed carrier status mandates cascade
+  testing offer to all first-degree relatives + cousins on the
+  affected line, including male relatives (often overlooked in
+  family-history practice; male BRCA2 carriers have meaningful
+  pancreatic and prostate cancer risk).
+
+  Per CHARTER §11 patient-autonomy framing: surveillance schedules
+  are shared-decision-making with the patient. Cadence
+  individualization (e.g., bilateral breast surveillance every 6
+  months vs alternating q6 mammogram / MRI) is appropriate.
+
+rationale_ua: >
+  Стандартний-трек шлях спостереження підтверджених носіїв для осіб з
+  задокументованим гермінативним патогенним варіантом BRCA1 / BRCA2.
+
+  **Молочна залоза (жінки — gene-aware):** Щорічна МРТ молочної
+  залози з 25 років (BRCA1) / 30 років (BRCA2) — раніший початок у
+  BRCA1 відображає earlier-onset breast cancer у BRCA1 носіїв
+  (медіана diagnosis ~40 BRCA1 vs ~45 BRCA2). Мамографія, що
+  чергується q6 місяців з МРТ, з 30 років. Клінічний огляд молочних
+  залоз q6 місяців клініцистом, знайомим з high-risk скринінгом.
+
+  **Яєчники (жінки):** Трансвагінальний ультразвук + сироватковий
+  CA-125 q6 місяців з 30-35 років — явно frame як subоптимальний
+  скринінг (UKCTOCS / UKFOCSS дані не показують переваги по
+  смертності). Risk-reducing BSO — evidence-based втручання,
+  пропонується в INTENSIFIED-треку.
+
+  **Молочна залоза (чоловіки — BRCA2 enriched):** Щорічний клінічний
+  огляд молочних залоз з 35 років. Breast imaging при гінекомастії
+  або пальпованому ущільненні.
+
+  **Простата (чоловіки — BRCA2 high-grade enriched):** ПСА + DRE
+  щорічно з 40 років (BRCA2 носії; нижчий поріг, ніж популяційний —
+  IMPACT study продемонструвало вищі rates clinically significant
+  prostate cancer at lower PSA thresholds у BRCA2 носіїв). BRCA1
+  чоловіки: ПСА / DRE з 45 років per NCCN.
+
+  **Підшлункова (PDAC):** Спостереження через щорічне MRI MRCP ± EUS
+  у BRCA2 носіїв з ≥1 ураженим родичем першого ступеня (CAPS
+  consortium consensus); BRCA1 — лише при ≥2 уражених родичах
+  першого ступеня. Спостереження НЕ зменшує mortality на популяційному
+  рівні — frame чесно як high-risk-cohort intervention з невизначеною
+  individual benefit.
+
+  **Cascade тестування:** Підтверджений статус носія вимагає
+  пропонування cascade тестування всім родичам першого ступеня +
+  кузенам на ураженій лінії, включаючи чоловіків.
+
+  Per CHARTER §11 framing автономії пацієнта.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_confirmed_carrier
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Confirmed BRCA1 / BRCA2 carriers should receive annual breast
+      MRI from age 25-30, alternating with mammogram from age 30,
+      with clinical breast exam q6mo; TVUS + CA-125 q6mo from 30-35
+      is offered with documented limitations until risk-reducing BSO
+      is performed. Male BRCA2 carriers receive PSA + DRE annually
+      from age 40."
+  - source_id: SRC-NCCN-BREAST-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Annual breast MRI is the most sensitive imaging modality in
+      BRCA carriers; staggered q6-month imaging with mammogram from
+      age 30 provides imaging every 6 months."
+  - source_id: SRC-NCCN-OVARIAN-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Ovarian surveillance via TVUS + CA-125 has documented poor
+      sensitivity for early-stage high-grade serous ovarian carcinoma
+      — must be framed as suboptimal vs risk-reducing BSO."
+
+do_not_do:
+  - "Не пропускати cascade-тестування — особливо male родичів першого ступеня (BRCA2 чоловіки мають meaningful prostate / pancreatic ризик, часто пропускається у family-history рутинах)."
+  - "Не презентувати TVUS + CA-125 як ефективний скринінг яєчників — UKCTOCS / UKFOCSS дані не показують mortality benefit; framing має бути чесним з направленням до RRSO як evidence-based опції."
+  - "Не використовувати general-population mammogram cadence (q2y від 50) для BRCA-носія — annual MRI з 25-30 років з alternating мамографією з 30 — мінімальний стандарт."
+  - "Не пропонувати risk-reducing хірургію як стандартну частину surveillance — це INTENSIFIED-трек, з повним обговоренням ризику / користі / альтернатив."
+  - "Не пропускати male-line міркування — щорічний CBE з 35, PSA з 40 (BRCA2) / 45 (BRCA1); ці пункти часто опускаються у HBOC family-history рутинах."
+
+do_not_do_en:
+  - "Do not skip cascade testing — especially male first-degree relatives (BRCA2 men have meaningful prostate / pancreatic risk, frequently missed in family-history routines)."
+  - "Do not present TVUS + CA-125 as effective ovarian screening — UKCTOCS / UKFOCSS data do not show mortality benefit; framing must be honest with referral to RRSO as the evidence-based option."
+  - "Do not use general-population mammogram cadence (q2y from 50) for a BRCA carrier — annual MRI from 25-30 with alternating mammogram from 30 is the floor."
+  - "Do not offer risk-reducing surgery as standard surveillance — this is the INTENSIFIED track with full risk / benefit / alternatives discussion."
+  - "Do not skip male-line considerations — annual CBE from 35, PSA from 40 (BRCA2) / 45 (BRCA1); these often get dropped in HBOC family-history routines."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B confirmed-carrier surveillance pathway (BRCA). Two-Clinical-Co-Lead signoff queued. Sibling — IND-BRCA-CARRIER-INTENSIFIED (aggressive plan_track)."
