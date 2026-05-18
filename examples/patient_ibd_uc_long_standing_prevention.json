@@ -1,0 +1,13 @@
+{
+  "patient_id": "IBD-UC-PREV-001",
+  "comment": "44yo female, ulcerative colitis diagnosed at age 22 (22-year duration, extensive colitis, on biologic therapy). No current CRC. Engine routes to PreventionPlan: standard = surveillance colonoscopy with random + targeted biopsies q1-2y (chromoendoscopy preferred per AGA), discussion of dysplasia management; alternative = q3-5y colonoscopy cadence. Validates v0.3 IBD → CRC prevention pilot.",
+  "biomarkers": {},
+  "demographics": {"age": 44, "sex": "female", "ecog": 0},
+  "findings": {
+    "inflammatory_bowel_disease_uc_diagnosis_ge_8y": true,
+    "UC diagnosis at age 22 (22 years duration)": true,
+    "Extensive colitis (pancolonic)": true,
+    "Currently on biologic therapy (infliximab) — well-controlled": true,
+    "No current colorectal malignancy on surveillance colonoscopy": true
+  }
+}

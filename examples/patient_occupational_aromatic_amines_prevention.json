@@ -1,0 +1,14 @@
+{
+  "patient_id": "OCC-AROMATIC-AMINES-PREV-001",
+  "comment": "68yo male, 22 years in pre-regulation dye industry (benzidine + 2-naphthylamine handling, pre-1980s). No current cancer. Engine routes to PreventionPlan: standard = annual urinalysis + urine cytology + low-threshold cystoscopy for hematuria + smoking cessation; alternative = routine general-population urology screening. Validates v0.3 aromatic amines → bladder cancer prevention pilot.",
+  "biomarkers": {},
+  "demographics": {"age": 68, "sex": "male", "ecog": 1},
+  "findings": {
+    "occupational_aromatic_amine_exposure_documented": true,
+    "occupational_dye_rubber_leather_industry_pre_regulation": true,
+    "Dye industry worker 1965-1987 (pre-regulation era)": true,
+    "Never smoker": true,
+    "Baseline urinalysis negative for hematuria": true,
+    "No current urothelial malignancy": true
+  }
+}

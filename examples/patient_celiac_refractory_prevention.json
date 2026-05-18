@@ -1,0 +1,15 @@
+{
+  "patient_id": "CELIAC-REFR-PREV-001",
+  "comment": "51yo female with refractory celiac disease type 2 (persistent villous atrophy despite strict gluten-free diet for 4 years + aberrant intraepithelial lymphocyte clonality). No current EATL. Engine routes to PreventionPlan: standard = strict gluten-free diet adherence + periodic small-bowel imaging (MR enterography or VCE) q1-2y + immunosuppression discussion for refractory type 2; alternative = gluten-free diet alone. Validates v0.3 celiac refractory → EATL prevention pilot. Refractory type 2 carries very high EATL risk.",
+  "biomarkers": {},
+  "demographics": {"age": 51, "sex": "female", "ecog": 1},
+  "findings": {
+    "celiac_disease_refractory_type_2": true,
+    "celiac_disease_with_persistent_villous_atrophy_despite_gluten_free_diet_ge_1y": true,
+    "celiac_disease_with_aberrant_iel_clonality": true,
+    "Celiac diagnosed 2010, strict GFD adherence for 4 years": true,
+    "Persistent villous atrophy on follow-up biopsy": true,
+    "Aberrant IEL clonality on flow cytometry": true,
+    "No current EATL on small-bowel imaging": true
+  }
+}

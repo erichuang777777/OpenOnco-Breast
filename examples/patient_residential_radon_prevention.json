@@ -1,0 +1,13 @@
+{
+  "patient_id": "RADON-PREV-001",
+  "comment": "58yo female, residential radon measurement 8.5 pCi/L (EPA threshold 4 pCi/L), former smoker (quit 5y ago, 20 pack-years). No current cancer. Engine routes to PreventionPlan: standard = radon mitigation (sub-slab depressurization) + annual LDCT screening adjusted for radon-elevated risk; alternative = routine cadence per USPSTF general population. Validates v0.3 radon → lung cancer prevention pilot. Radon-smoking synergy notable.",
+  "biomarkers": {},
+  "demographics": {"age": 58, "sex": "female", "ecog": 0},
+  "findings": {
+    "residential_radon_exposure_ge_4_pci_per_l": true,
+    "residential_radon_exposure_documented_high_with_smoking_hx": true,
+    "Home radon test 8.5 pCi/L (basement living space)": true,
+    "Former smoker, 20 pack-years, quit 5 years ago": true,
+    "No current lung cancer on baseline LDCT": true
+  }
+}

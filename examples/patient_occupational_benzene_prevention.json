@@ -1,0 +1,14 @@
+{
+  "patient_id": "OCC-BENZENE-PREV-001",
+  "comment": "55yo male, 18 years occupational benzene exposure (petroleum refining), no current hematologic malignancy. CBC stable. Engine routes to PreventionPlan: standard = CBC q6-12mo with peripheral smear review for cytopenias + low-threshold bone marrow eval if persistent cytopenia; alternative = symptom-driven evaluation. Validates v0.3 benzene → AML / MDS prevention pilot.",
+  "biomarkers": {},
+  "demographics": {"age": 55, "sex": "male", "ecog": 0},
+  "findings": {
+    "occupational_benzene_exposure_documented": true,
+    "occupational_benzene_exposure_years_ge_5": true,
+    "occupational_petroleum_refining_or_solvent_industry": true,
+    "Refinery operator 2007-present (18 years)": true,
+    "Baseline CBC stable, no cytopenias": true,
+    "No current AML/MDS on workup": true
+  }
+}
