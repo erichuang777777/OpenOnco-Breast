@@ -1,0 +1,13 @@
+{
+  "results": [
+    {
+      "id": "G1-A0",
+      "name": "CPIC Guideline for fluoropyrimidines and DPYD",
+      "url": "https://cpicpgx.org/guidelines/guideline-for-fluoropyrimidines-and-dpyd/",
+      "pharmgkbid": "PA166104939",
+      "publications": [
+        {"pmid": "29152729", "title": "Clinical Pharmacogenetics Implementation Consortium (CPIC) Guideline for Dihydropyrimidine Dehydrogenase Genotype and Fluoropyrimidine Dosing: 2017 Update"}
+      ]
+    }
+  ]
+}

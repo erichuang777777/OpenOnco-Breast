@@ -1,0 +1,79 @@
+id: SRC-CPIC
+source_type: guideline
+title: "Clinical Pharmacogenetics Implementation Consortium (CPIC) Guidelines"
+version: "api-v1"
+authors:
+  - Clinical Pharmacogenetics Implementation Consortium
+  - PharmGKB
+journal: "Clinical Pharmacology & Therapeutics (CPIC guideline series)"
+url: https://cpicpgx.org/guidelines/
+access_level: open_access
+currency_status: current
+current_as_of: "2026-05-18"
+evidence_tier: 1
+precedence_policy: confirmatory
+
+# Licensing & hosting (SOURCE_INGESTION_SPEC §3)
+# CPIC guideline text is licensed CC BY 4.0; the underlying CPIC data
+# tables (allele functionality, diplotype→phenotype, drug recommendations)
+# are released under CC0. Both licenses are compatible with CHARTER §2
+# (free public resource). Full classification:
+# docs/reviews/cpic-license-2026-05-18.md.
+hosting_mode: referenced
+ingestion:
+  method: live_api
+  client: knowledge_base.clients.cpic_client.CpicClient
+  endpoint: https://api.cpicpgx.org/v1
+  rate_limit: "1 req/s, burst 3 (self-imposed; CPIC publishes no formal limit)"
+cache_policy:
+  enabled: true
+  ttl_hours: 168
+  scope: query_result
+license:
+  name: "CC BY 4.0 (guidelines) / CC0 1.0 (data tables)"
+  url: https://creativecommons.org/licenses/by/4.0/
+  spdx_id: CC-BY-4.0
+attribution:
+  required: true
+  text: "Pharmacogenomic recommendation adapted from CPIC guideline (cpicpgx.org), CC BY 4.0."
+commercial_use_allowed: true
+redistribution_allowed: true
+modifications_allowed: true
+sharealike_required: false
+known_restrictions:
+  - "CC BY 4.0 requires attribution on every reuse of guideline text — propagate the standard CPIC citation alongside any rendered recommendation."
+  - "CPIC guideline updates ~quarterly; cache TTL set to 7 days. Re-fetch monthly when populating the KB."
+legal_review:
+  status: reviewed
+  reviewer: claude
+  date: "2026-05-18"
+  notes: |
+    Self-review under CHARTER §6.1 dev-mode exemption (v0.1 phase).
+    CC BY 4.0 is one of the cleanest licenses for our use case —
+    permissive on commercial use and modification, requires only
+    attribution which we already do per Source-citation pattern. The
+    underlying CPIC data tables are CC0 (the cleanest possible).
+    Re-review triggers: (a) CPIC changes the guideline license, (b)
+    OpenOnco adopts a closed-source commercial tier, (c) migration
+    to `hosted` mode (snapshotting). Full reasoning in
+    docs/reviews/cpic-license-2026-05-18.md.
+
+relates_to_diseases: []
+last_verified: "2026-05-18"
+verifier: claude
+notes: |
+  Scaffold lands the client + Source entity. Populating
+  pharmacogenomic-aware RedFlags / Indications from CPIC content is a
+  separate workstream gated by clinical co-lead review per CHARTER
+  §6.1 — DPYD → fluoropyrimidine and TPMT/NUDT15 → thiopurine are
+  the canonical oncology entry points.
+
+  Why CPIC matters: pharmacogenomic dosing is currently invisible in
+  the engine. A DPYD poor-metaboliser patient routed to FOLFOX should
+  see a hard "reduce 5-FU to 50% or contraindicate" RedFlag based on
+  CPIC DPYD-fluoropyrimidine guideline (Amstutz et al, CPT 2017,
+  updated 2020). Same shape for TPMT/NUDT15 → 6-MP/azathioprine in
+  pediatric ALL.
+pages_count: 350
+references_count: 2400
+corpus_role: primary_guideline
