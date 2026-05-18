@@ -1865,6 +1865,46 @@ def _outlook_notes_index(outlook) -> dict[str, str]:
     return idx
 
 
+def _render_ua_sites(trial, target_lang: str) -> str:
+    """Render the UA-sites cell for one trial row.
+
+    Three states, in priority order:
+
+    1. `ua_sites_detail` non-empty → list each UA facility with city +
+       per-site status. This is the high-information path; surfaces the
+       cities a Ukrainian patient can actually ask about. Closes Gap 2
+       from `docs/reviews/ctgov-wiring-audit-2026-05-18.md`.
+    2. `sites_ua` non-empty (legacy path) → binary UA badge. Old cached
+       records carry this; new records also carry it for backward compat.
+    3. Neither → em-dash placeholder.
+    """
+    detail = getattr(trial, "ua_sites_detail", None) or []
+    if detail:
+        # One line per UA site: "City — Facility (status)". Empty fields
+        # collapse cleanly (e.g. "Kyiv (RECRUITING)" when facility absent).
+        lines: list[str] = []
+        for site in detail:
+            parts: list[str] = []
+            if site.city:
+                parts.append(_h(site.city))
+            if site.facility:
+                parts.append(_h(site.facility))
+            line = " — ".join(parts) if parts else _h("Ukraine")
+            if site.status:
+                line += f' <span class="trial-site-status">({_h(site.status)})</span>'
+            lines.append(f'<li>{line}</li>')
+        title_attr = "Recruiting sites in Ukraine"
+        return (
+            f'<div class="trial-ua-detail" title="{_h(title_attr)}">'
+            '<span class="badge badge--ua">UA</span>'
+            f'<ul class="trial-ua-sites">{"".join(lines)}</ul>'
+            '</div>'
+        )
+    if getattr(trial, "sites_ua", None):
+        return '<span class="badge badge--ua" title="Site present in Ukraine">UA</span>'
+    return "—"
+
+
 def _render_cited_trials_status(
     body_html: str,
     target_lang: str = "uk",
@@ -1987,9 +2027,12 @@ def _render_experimental_options(option, target_lang: str = "uk") -> str:
 
     rows = []
     for t in trials:
-        ua_badge = ""
-        if t.sites_ua:
-            ua_badge = '<span class="badge badge--ua" title="Site present in Ukraine">UA</span>'
+        # Structured UA detail (city + facility + per-site status) when
+        # the upstream ctgov record carried site-level fields. Closes
+        # Gap 2 from docs/reviews/ctgov-wiring-audit-2026-05-18.md.
+        # Falls back to the binary UA badge for old cached records that
+        # only know country-level info.
+        ua_cell = _render_ua_sites(t, target_lang)
         elig = t.inclusion_summary or ""
         elig_short = (elig[:140] + "…") if len(elig) > 140 else elig
         outlook_cell = _render_trial_outlook(
@@ -2003,7 +2046,7 @@ def _render_experimental_options(option, target_lang: str = "uk") -> str:
             f'<td class="trial-phase">{_h(t.phase or "—")}</td>'
             f'<td class="trial-status">{_h(t.status)}</td>'
             f'<td class="trial-sponsor">{_h(t.sponsor or "—")}</td>'
-            f'<td class="trial-ua">{ua_badge or "—"}</td>'
+            f'<td class="trial-ua">{ua_cell}</td>'
             f'<td class="trial-outlook">{outlook_cell}</td>'
             f'<td class="trial-elig">{_h(elig_short)}</td>'
             "</tr>"
