@@ -1,0 +1,27 @@
+id: BIO-P16-IHC-CERVICAL-DYSPLASIA
+names:
+  preferred: "p16/INK4a IHC (cervical dysplasia discrimination)"
+  ukrainian: "p16/INK4a ІГХ (диференціація цервікальної дисплазії)"
+  english: "p16 IHC for cervical CIN/HSIL"
+  synonyms: ["CDKN2A IHC", "p16-INK4a immunohistochemistry", "p16 block-positive staining"]
+biomarker_type: protein_expression_ihc
+measurement:
+  method: "IHC on FFPE cervical biopsy; CINtec p16 antibody (clone E6H4 — LAST/CAP-validated)"
+  units: "categorical: block-positive (diffuse strong nuclear+cytoplasmic in basal/parabasal third) | focal/negative"
+specimen_requirements:
+  - "FFPE cervical biopsy block"
+  - "Adequate epithelium thickness (no cautery artifact in basal zone)"
+clinical_context: [screening_surveillance, diagnostic_workup, precursor_lesion]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: ihc_no_variant
+external_ids:
+  hgnc_symbol: CDKN2A
+sources: [SRC-NCCN-CERVICAL-2025, SRC-ESMO-CERVICAL-2024]
+last_reviewed: "2026-05-18"
+notes: >
+  STUB. LAST/CAP-recommended adjunct IHC to distinguish CIN2 (HSIL biology
+  — block-positive p16) from CIN1 (LSIL, mimicking metaplasia — focal/
+  negative). Block-positive p16 = surrogate for HR-HPV-driven transforming
+  infection; upgrades CIN2 morphologic equivocal cases into HSIL, triggering
+  excisional treatment (LEEP/cold-knife conization) rather than observation.
+  Not a treatment-selection variant biomarker — IHC surrogate only.

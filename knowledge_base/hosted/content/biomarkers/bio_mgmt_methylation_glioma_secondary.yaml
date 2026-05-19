@@ -1,0 +1,30 @@
+id: BIO-MGMT-METHYLATION-GLIOMA-SECONDARY
+names:
+  preferred: "MGMT methylation — secondary-GBM / IDH-mutant glioma progression context"
+  ukrainian: "Метилювання MGMT — вторинна ГБМ / IDH-мутантна гліома, контекст прогресії"
+  english: "MGMT methylation in secondary-GBM surveillance"
+  synonyms: ["MGMT in IDH-mutant astrocytoma transformation", "secondary glioblastoma MGMT"]
+biomarker_type: methylation
+measurement:
+  method: "Methylation-specific PCR (MSP) OR pyrosequencing OR EPIC methylation array on FFPE re-resection / re-biopsy sample at progression"
+  units: "categorical: methylated | unmethylated"
+specimen_requirements:
+  - "FFPE tumor block from progression/transformation specimen (≥40% tumor cellularity)"
+  - "Paired primary tumor block when available for clonal-evolution context"
+clinical_context: [screening_surveillance, dysplasia_grading, hereditary_surveillance]
+applicable_in_asymptomatic: false
+oncokb_skip_reason: tumor_agnostic
+external_ids:
+  hgnc_symbol: MGMT
+related_biomarkers: [BIO-MGMT-METHYLATION, BIO-IDH1-R132H]
+sources: [SRC-NCCN-CNS-2025, SRC-EANO-GBM-2024]
+last_reviewed: "2026-05-18"
+notes: >
+  STUB. Companion to BIO-MGMT-METHYLATION (primary-GBM treatment-selection
+  scope). Surveillance use: IDH-mutant astrocytoma transformation to
+  grade 4 / secondary GBM — MGMT status at progression informs second-line
+  TMZ rechallenge vs lomustine vs trial. Distinction from primary entry
+  is non-rigid (overlapping biology); kept as separate STUB so progression-
+  context citations don't bleed into newly-diagnosed GBM rendering.
+  Reviewer may merge with BIO-MGMT-METHYLATION if scope distinction is
+  judged contrived.

@@ -1,0 +1,25 @@
+id: BIO-PAP-CYTOLOGY-CERVICAL
+names:
+  preferred: "Pap cytology (cervical liquid-based cytology)"
+  ukrainian: "Цитологія за Папаніколау (рідинна цервікальна цитологія)"
+  english: "Cervical cytology"
+  synonyms: ["Pap smear", "Pap test", "ThinPrep cytology", "SurePath cytology", "LBC"]
+biomarker_type: serum_marker
+measurement:
+  method: "Liquid-based cytology of cervical brushing; Bethesda 2014 reporting (NILM, ASC-US, LSIL, ASC-H, HSIL, AGC, AIS, SCC)"
+  units: "categorical: NILM | ASC-US | LSIL | ASC-H | HSIL | AGC | AIS | SCC"
+specimen_requirements:
+  - "Cervical brush sample in liquid preservative (ThinPrep / SurePath vial)"
+  - "Adequate cellularity per Bethesda criteria"
+clinical_context: [screening, screening_surveillance, precursor_lesion]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: tumor_marker
+sources: [SRC-NCCN-CERVICAL-2025, SRC-ESMO-CERVICAL-2024]
+last_reviewed: "2026-05-18"
+notes: >
+  STUB. USPSTF Grade A — cervical cancer screening; cytology-only every
+  3 years ages 21-29, then cytology q3y OR co-test q5y OR primary HPV
+  q5y ages 30-65. ASCCP 2019 risk-based management triages results into
+  surveillance / colposcopy / excisional treatment. Cytology sensitivity
+  for CIN3+ ~50-70% per single test; HPV-based primary screening
+  (BIO-HPV-DNA-CERVICAL-PRIMARY) increasingly preferred.

@@ -1,0 +1,25 @@
+id: BIO-STOOL-DNA-MULTITARGET-CRC
+names:
+  preferred: "Multi-target stool DNA test (mt-sDNA, Cologuard-class)"
+  ukrainian: "Мультитаргетний ДНК-тест калу (mt-sDNA, клас Cologuard)"
+  english: "Multi-target stool DNA test"
+  synonyms: ["mt-sDNA", "Cologuard", "FIT-DNA", "stool-based DNA screening"]
+biomarker_type: methylation
+measurement:
+  method: "Quantitative molecular assay on whole stool: KRAS mutations (7 point mutations) + NDRG4/BMP3 methylation + β-actin + hemoglobin immunoassay (FIT component); composite score"
+  units: "categorical: positive (composite score ≥183) | negative"
+specimen_requirements:
+  - "Whole stool sample, lab-provided collection kit + buffer/stabilizer"
+  - "Ship within ≤72h of collection"
+clinical_context: [screening, screening_surveillance]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: tumor_marker
+sources: [SRC-NCCN-COLON-2025, SRC-ESMO-COLON-2024]
+last_reviewed: "2026-05-18"
+notes: >
+  STUB. USPSTF Grade A — average-risk CRC screening, every 3 years ages
+  45-85. Sensitivity ~92% for CRC, ~42% for advanced adenoma — higher
+  than FIT alone but with lower specificity (~87% vs ~95%) → more
+  false-positive colonoscopies. Positive mt-sDNA → diagnostic colonoscopy.
+  Not for symptomatic, family-history Lynch/FAP, prior CRC/polyps, or
+  IBD-associated surveillance.

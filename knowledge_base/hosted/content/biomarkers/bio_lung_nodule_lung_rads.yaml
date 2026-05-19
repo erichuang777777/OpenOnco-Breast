@@ -1,0 +1,25 @@
+id: BIO-LUNG-NODULE-LUNG-RADS
+names:
+  preferred: "Lung-RADS v2022 — LDCT lung-screening nodule classification"
+  ukrainian: "Lung-RADS v2022 — класифікація вузлів при НДКТ-скринінгу легень"
+  english: "Lung-RADS for low-dose CT screening"
+  synonyms: ["Lung-RADS", "ACR Lung-RADS v2022", "LDCT nodule category"]
+biomarker_type: clinical_composite
+measurement:
+  method: "Low-dose CT chest with structured Lung-RADS scoring: category 0 (incomplete), 1 (negative), 2 (benign), 3 (probably benign), 4A (suspicious), 4B (very suspicious), 4X (additional features ↑ malignancy), S (clinically significant non-lung)"
+  units: "categorical Lung-RADS: 0 | 1 | 2 | 3 | 4A | 4B | 4X | S"
+specimen_requirements:
+  - "Low-dose CT chest (≤1.5 mGy CTDIvol, ~1 mSv effective)"
+  - "Standardized protocol per ACR / NCCN; trained radiologist"
+clinical_context: [screening, screening_surveillance]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: clinical_composite
+sources: [SRC-NCCN-NSCLC-2025, SRC-NCCN-SCLC-2025]
+last_reviewed: "2026-05-18"
+notes: >
+  STUB. USPSTF Grade B (2021) — annual LDCT lung-screening ages 50-80,
+  ≥20 pack-year history, current smoker or quit ≤15 y. Lung-RADS v2022
+  drives interval: 1-2 → annual; 3 → 6 mo; 4A → 3 mo + PET/biopsy
+  consideration; 4B/4X → tissue diagnosis. NLST + NELSON demonstrated
+  ~20-24% lung-cancer mortality reduction. Adherence to follow-up is
+  primary determinant of program effectiveness.

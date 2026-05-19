@@ -1,0 +1,27 @@
+id: BIO-DUODENAL-ADENOMA-SPIGELMAN-SCORE
+names:
+  preferred: "Spigelman staging (FAP duodenal adenoma burden)"
+  ukrainian: "Стадіювання за Spigelman (тягар дуоденальних аденом при FAP)"
+  english: "Spigelman score for duodenal polyposis"
+  synonyms: ["Spigelman classification", "duodenal polyposis staging", "FAP duodenal stage"]
+biomarker_type: clinical_composite
+measurement:
+  method: "Composite endoscopic + histologic score from duodenoscopy biopsies: (1) polyp number, (2) max polyp size, (3) histology, (4) dysplasia grade. Each scored 0-3 → stage 0 (sum 0), I (1-4), II (5-6), III (7-8), IV (9-12)"
+  units: "categorical Spigelman stage: 0 | I | II | III | IV"
+specimen_requirements:
+  - "Forward + side-viewing duodenoscopy with ampullary inspection"
+  - "Multiple biopsies of largest/most-dysplastic polyps for histology + dysplasia grading"
+clinical_context: [screening_surveillance, precursor_lesion, hereditary_surveillance, dysplasia_grading]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: clinical_composite
+related_biomarkers: [BIO-APC]
+sources: [SRC-NCCN-COLON-2025]
+last_reviewed: "2026-05-18"
+notes: >
+  STUB. Standard staging for duodenal adenomatosis in FAP/MUTYH-associated
+  polyposis. Drives surveillance interval and intervention: stage I-II
+  every 2-5 y; stage III every 6-12 mo + endoscopic ablation; stage IV
+  → referral for prophylactic pancreas-preserving duodenectomy (lifetime
+  duodenal cancer risk ~5-10% overall, ~36% at stage IV). Updated 2017
+  Mayo classification adds ampullary criteria — captured in notes per
+  authoring locality.

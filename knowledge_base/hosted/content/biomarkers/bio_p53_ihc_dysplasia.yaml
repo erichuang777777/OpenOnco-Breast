@@ -1,0 +1,28 @@
+id: BIO-P53-IHC-DYSPLASIA
+names:
+  preferred: "p53 IHC for Barrett's HGD / dysplasia (aberrant expression)"
+  ukrainian: "p53 ІГХ при дисплазії Барретта (аберантна експресія)"
+  english: "p53 IHC in Barrett's high-grade dysplasia"
+  synonyms: ["TP53 IHC Barrett's", "aberrant p53 in dysplasia", "p53 surveillance IHC"]
+biomarker_type: protein_expression_ihc
+measurement:
+  method: "IHC on FFPE biopsy (DO-7 or BP53-12 clone); aberrant = diffuse strong (>80%, 3+) OR null (0% with internal control intact)"
+  units: "categorical: aberrant (overexpression OR null) | wild-type pattern"
+specimen_requirements:
+  - "FFPE Barrett's esophagus biopsy block"
+  - "Internal positive control (stromal lymphocytes) confirmed for null-pattern call"
+clinical_context: [screening_surveillance, precursor_lesion, dysplasia_grading]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: ihc_no_variant
+external_ids:
+  hgnc_symbol: TP53
+related_biomarkers: [BIO-TP53-IHC, BIO-TP53-MUTATION]
+sources: [SRC-NCCN-ESOPHAGEAL-2025]
+last_reviewed: "2026-05-18"
+notes: >
+  STUB. BSG/AGA-endorsed adjunct in Barrett's surveillance: aberrant p53
+  IHC upgrades indefinite-for-dysplasia or low-grade dysplasia toward
+  high-grade behavior, shortening surveillance interval and triggering
+  endoscopic eradication therapy (RFA / EMR). Distinct from BIO-TP53-IHC
+  (endometrial/HGSOC treatment-stratification scope) — this entry is the
+  Barrett's-specific surveillance application.

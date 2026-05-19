@@ -1,0 +1,25 @@
+id: BIO-THYROID-NODULE-US-TIRADS
+names:
+  preferred: "ACR TI-RADS — thyroid nodule ultrasound risk stratification"
+  ukrainian: "ACR TI-RADS — стратифікація ризику вузла щитоподібної залози (УЗД)"
+  english: "Thyroid Imaging Reporting and Data System"
+  synonyms: ["TI-RADS", "ACR TI-RADS 2017", "thyroid nodule risk score"]
+biomarker_type: clinical_composite
+measurement:
+  method: "Grayscale ultrasound nodule scoring across 5 categories (composition, echogenicity, shape, margin, echogenic foci); sum points → TR1 (benign), TR2 (not suspicious), TR3 (mildly suspicious), TR4 (moderately suspicious), TR5 (highly suspicious)"
+  units: "categorical: TR1 | TR2 | TR3 | TR4 | TR5"
+specimen_requirements:
+  - "High-frequency (≥10 MHz) linear transducer thyroid ultrasound"
+  - "Radiologist with TI-RADS training (inter-observer agreement κ ~0.5-0.7)"
+clinical_context: [screening_surveillance, precursor_lesion]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: clinical_composite
+sources: [SRC-NCCN-THYROID-2025, SRC-ATA-THYROID-2015]
+last_reviewed: "2026-05-18"
+notes: >
+  STUB. ACR TI-RADS (2017) sets size-based FNA thresholds: TR5 ≥1 cm,
+  TR4 ≥1.5 cm, TR3 ≥2.5 cm (FNA), smaller → follow-up only. Reduces
+  unnecessary FNAs ~2-3× vs prior size-only criteria. ATA 2015 uses
+  parallel sonographic-pattern scheme (high/intermediate/low/very-low/
+  benign-suspicion) with similar size cutoffs. Either system acceptable;
+  TI-RADS more reproducible across readers.

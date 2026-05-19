@@ -1,0 +1,26 @@
+id: BIO-MAMMOGRAPHY-DENSITY-BIRADS
+names:
+  preferred: "BI-RADS breast density category (mammographic)"
+  ukrainian: "BI-RADS категорія щільності молочної залози (мамографічна)"
+  english: "Breast density on mammography (BI-RADS)"
+  synonyms: ["BI-RADS density", "mammographic density category", "ACR BI-RADS density A-D"]
+biomarker_type: clinical_composite
+measurement:
+  method: "Radiologist-assigned (or AI-assisted) categorical density on digital mammography / DBT: A (almost entirely fatty), B (scattered), C (heterogeneously dense), D (extremely dense)"
+  units: "categorical: A | B | C | D"
+specimen_requirements:
+  - "Standard 2-view digital mammogram (CC + MLO) per breast"
+  - "Digital breast tomosynthesis (DBT) acceptable; reader-trained in BI-RADS 5th ed."
+clinical_context: [screening_surveillance, screening]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: clinical_composite
+sources: [SRC-NCCN-BREAST-2025]
+last_reviewed: "2026-05-18"
+notes: >
+  STUB. FDA mandatory density notification (2024). Categories C+D ("dense
+  breasts") affect ~40% of women aged 40-74 and confer (a) ~1.2-2× higher
+  breast cancer risk and (b) reduced mammography sensitivity (~50-60% in
+  D vs ~85% in A). Triggers supplemental imaging consideration: hand-held
+  ultrasound (HHUS), automated breast US (ABUS), abbreviated MRI (TBI),
+  contrast-enhanced mammography (CEM). Not a treatment biomarker —
+  screening-pathway selector only.
