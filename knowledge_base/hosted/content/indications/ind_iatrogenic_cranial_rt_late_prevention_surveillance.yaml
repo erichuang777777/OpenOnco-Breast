@@ -1,0 +1,151 @@
+id: IND-IATROGENIC-CRANIAL-RT-LATE-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-GBM
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-CRANIAL-RT-LATE-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Childhood Cancer Survivor Study (CCSS) + COG-LTFU cohorts: cranial-RT-exposed survivors have cumulative meningioma incidence 1-3% at 30y, high-grade glioma SIR 8-10× population baseline, GH deficiency in 60-80% of survivors who received ≥30 Gy to hypothalamic-pituitary axis. Structured surveillance enables earlier detection of secondary CNS tumors (better resectability + improved outcomes vs. symptom-driven presentation) and earlier endocrine hormone replacement (improved metabolic + bone + cognitive outcomes). Neurocognitive surveillance enables compensatory accommodations (educational, occupational) and early dementia detection in older survivors."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+  - TEST-CMP
+desired_tests: []
+
+rationale: >
+  Standard-track late-effects surveillance for cancer survivors ≥5y
+  post-completion of treatment that included cranial radiotherapy.
+  Components per Children's Oncology Group Long-Term Follow-Up Guidelines
+  (COG-LTFU) + Childhood Cancer Survivor Study (CCSS) + NCCN CNS Cancers:
+
+  **(1) Annual neurological examination** —
+  - Standardized cognitive screen (validated brief instrument — MoCA,
+    MMSE for older adults; pediatric survivors transition to age-
+    appropriate neuropsychological screening)
+  - Cranial nerve exam (vision, hearing, swallow if upper neck/skull
+    base in field)
+  - Motor + sensory + cerebellar exam
+
+  **(2) Annual endocrine panel** —
+  - TSH + free T4 (hypothyroidism — risk from direct thyroid-field
+    exposure or indirect HP-axis dysfunction)
+  - Morning cortisol ± ACTH stimulation (HP-axis testing if symptoms
+    of adrenal insufficiency: fatigue, postural hypotension)
+  - GH evaluation (IGF-1, stimulation testing) in pediatric exposure
+    cohort with growth-velocity or adult-onset GH-deficiency symptoms
+  - Gonadal axis assessment (LH/FSH + sex hormones; pubertal staging
+    in pediatric survivors)
+  - Prolactin (hypothalamic injury or pituitary stalk-effect)
+  - Bone density (DEXA q2y) — multifactorial late-effect risk
+
+  **(3) Brain MRI q1-3y if symptomatic** —
+  - New persistent headache (especially morning headache, postural
+    component, or progressive)
+  - New focal neurological deficit
+  - New seizure (new-onset epilepsy in survivor warrants urgent
+    workup — secondary meningioma or glioma)
+  - Cognitive change beyond expected age-related decline
+  - Schedule cadence q1y if any concerning finding; q3y for stable
+    asymptomatic surveillance if survivor + clinician prefer scheduled
+    imaging despite no acute trigger
+
+  **(4) Neurocognitive surveillance** —
+  - Pediatric survivors: school-performance + standardized cognitive
+    testing at developmental transitions (entry to elementary, middle,
+    high school, college)
+  - Adult survivors: routine survivorship cognitive screening; refer
+    to neuropsychology for objective evaluation when subjective
+    complaints or screen positive
+
+  **(5) Vascular complications surveillance** —
+  - Stroke / TIA risk elevated post-cranial RT (radiation vasculopathy)
+  - Carotid imaging consideration if cervical neck field involved
+  - Aggressive vascular risk factor modification (BP, lipids, smoking)
+
+  **(6) Co-fired surveillance dimensions** — if patient also has
+  qualifying anthracycline / alkylator exposure, RF-IATROGENIC-
+  ANTHRACYCLINE-LATE-CARDIO-PREVENTION and RF-IATROGENIC-ALKYLATOR-
+  TAML-PREVENTION fire in parallel; survivorship clinic co-manages.
+
+rationale_ua: >
+  Стандартний-трек late-effects surveillance для виживачів раку ≥5р
+  після завершення treatment з cranial radiotherapy. Components per
+  COG-LTFU + CCSS + NCCN CNS:
+
+  **(1) Щорічний неврологічний огляд** — cognitive screen (MoCA/MMSE),
+  cranial nerves, motor/sensory/cerebellar.
+
+  **(2) Щорічна endocrine panel** —
+  - TSH + free T4 (hypothyroidism)
+  - Morning cortisol ± ACTH stim (HP-axis if symptoms)
+  - GH evaluation (IGF-1) у pediatric cohort з GH-deficiency symptoms
+  - Gonadal axis (LH/FSH + sex hormones; pubertal staging)
+  - Prolactin
+  - Bone density DEXA q2y
+
+  **(3) Brain MRI q1-3y якщо symptomatic** — new persistent headache,
+  new focal deficit, new seizure, cognitive change. Schedule q3y для
+  stable asymptomatic surveillance якщо survivor + clinician prefer.
+
+  **(4) Neurocognitive surveillance** — pediatric: standardized testing
+  при developmental transitions; adult: routine screening + neuropsych
+  referral при позитивному screen.
+
+  **(5) Vascular complications surveillance** — radiation vasculopathy;
+  aggressive vascular risk factor modification.
+
+  **(6) Co-fired surveillance dimensions** — якщо patient має qualifying
+  anthracycline / alkylator exposure, відповідні RF спрацьовують
+  паралельно.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_aya_survivor_2026_05_18
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+  - source_id: SRC-NCCN-CNS-2025
+    position: supports
+  - source_id: SRC-COG
+    position: supports
+
+do_not_do:
+  - "Не пропускати annual endocrine panel у cranial-RT survivors — HP-axis dysfunction може бути silent для років при поступовому розвитку."
+  - "Не виконувати routine asymptomatic brain MRI q1y у всіх — yield обмежений; symptom-driven imaging є primary screening modality."
+  - "Не нормалізувати new-onset seizure як 'idiopathic epilepsy' у cranial-RT survivor — warrants urgent brain MRI для secondary CNS tumor evaluation."
+  - "Не пропускати neurocognitive surveillance у adult survivors — late-effects cognitive decline частий і underdiagnosed."
+  - "Не делегувати pediatric-survivor surveillance non-experienced clinic — COG-LTFU guidelines складні і вимагають expertise."
+
+do_not_do_en:
+  - "Do not skip the annual endocrine panel in cranial-RT survivors — HP-axis dysfunction can be silent for years if onset is gradual."
+  - "Do not perform routine asymptomatic brain MRI q1y in everyone — yield is limited; symptom-driven imaging is the primary screening modality."
+  - "Do not normalize new-onset seizure as 'idiopathic epilepsy' in a cranial-RT survivor — warrants urgent brain MRI to evaluate for a secondary CNS tumor."
+  - "Do not skip neurocognitive surveillance in adult survivors — late-effects cognitive decline is common and underdiagnosed."
+  - "Do not delegate pediatric-survivor surveillance to non-experienced clinics — COG-LTFU guidelines are complex and require expertise."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — cancer-survivor late-effects pilot (cranial RT). Three surveillance domains: secondary CNS tumors, endocrine sequelae, neurocognitive. Two-Clinical-Co-Lead signoff queued."

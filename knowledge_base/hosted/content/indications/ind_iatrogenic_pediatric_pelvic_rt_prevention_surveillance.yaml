@@ -1,0 +1,141 @@
+id: IND-IATROGENIC-PEDIATRIC-PELVIC-RT-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-UROTHELIAL
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-PEDIATRIC-PELVIC-RT-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Childhood Cancer Survivor Study (CCSS) + COG-LTFU pediatric pelvic-RT cohorts: cumulative urothelial carcinoma incidence 2-4% at 25-30y post-RT, CRC SIR 3-5× population baseline with cumulative 5-10% at 30y depending on dose + field. Structured surveillance (annual UA + cytology + earlier-onset CRC screening) detects second primaries at earlier stage — meaningfully improved survival vs. symptom-driven late presentation. Pediatric exposure carries higher cumulative lifetime risk vs. adult pelvic RT due to longer time-at-risk."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-URINE-CYTOLOGY
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track late-effects surveillance for survivors ≥5y post-
+  completion of pediatric pelvic radiotherapy. Components per Children's
+  Oncology Group Long-Term Follow-Up Guidelines (COG-LTFU) + Childhood
+  Cancer Survivor Study (CCSS) + ACS guideline-augmentation + NCCN
+  Bladder Cancer + NCCN Colon/Rectal Cancer:
+
+  **(1) Annual urinalysis + urine cytology** —
+  - Both modalities together (each has limited individual sensitivity
+    for urothelial carcinoma; complementary detection)
+  - Annual cadence lifelong (vs. q1-3y in adult-exposure cohorts)
+  - Any unexplained microscopic or gross hematuria → cystoscopy +
+    imaging (CT urography preferred)
+
+  **(2) Earlier-onset colorectal cancer screening** —
+  - Initiate at age 45 OR 10 years post-RT (whichever is earlier)
+  - Colonoscopy as primary screening modality (preferred over FIT in
+    this cohort due to elevated lifetime risk)
+  - q5y if normal initial, q3-5y if polyps detected
+  - Lower threshold for symptomatic evaluation (changed bowel habit,
+    rectal bleeding, persistent abdominal pain → colonoscopy)
+
+  **(3) Pelvic-field secondary cancer awareness** —
+  - Uterine: annual pelvic exam ± endometrial biopsy if abnormal
+    bleeding; consideration of TVUS for those with menstrual changes
+  - Ovarian (if ovaries in field — often gonadal-sparing technique used
+    but verify): pelvic exam + symptom vigilance
+  - Cervical: annual Pap if cervix in field
+  - Bone sarcoma in irradiated pelvic bone: persistent pelvic pain or
+    palpable mass → urgent imaging (no scheduled bone imaging — symptom-
+    driven only)
+
+  **(4) Non-cancer late effects** (co-managed, not primary cancer
+  surveillance scope) — renal vascular hypertension, hypogonadism if
+  gonads in field, bowel dysfunction (radiation enteritis sequelae),
+  bladder fibrosis / capacity reduction, infertility (counsel re:
+  reproductive options).
+
+  **(5) Survivorship clinic integration** — pediatric-cancer-survivor
+  follow-up clinics provide best-coordinated care; community PCP
+  often requires COG-LTFU passport for accurate surveillance schedule.
+
+rationale_ua: >
+  Стандартний-трек late-effects surveillance для виживачів ≥5р після
+  завершення pediatric pelvic radiotherapy. Components per COG-LTFU
+  + CCSS + ACS + NCCN Bladder + NCCN Colon:
+
+  **(1) Щорічний urinalysis + urine cytology** —
+  - Обидві modalities разом (комплементарні)
+  - Annual cadence lifelong
+  - Будь-яка hematuria → cystoscopy + imaging (CT urography preferred)
+
+  **(2) Earlier-onset CRC screening** —
+  - Initiate в 45 років АБО 10р post-RT (раніше)
+  - Colonoscopy як primary screening modality
+  - q5y якщо normal, q3-5y якщо polyps detected
+  - Lower threshold для symptomatic evaluation (changed bowel habit,
+    rectal bleeding → colonoscopy)
+
+  **(3) Pelvic-field secondary cancer awareness** —
+  - Uterine: щорічний pelvic exam ± endometrial biopsy при abnormal
+    bleeding
+  - Ovarian: pelvic exam + symptom vigilance
+  - Cervical: щорічний Pap якщо cervix in field
+  - Bone sarcoma в irradiated pelvic bone: persistent pelvic pain
+    або palpable mass → urgent imaging
+
+  **(4) Non-cancer late effects** (co-managed) — renal vascular HTN,
+  hypogonadism, bowel dysfunction, bladder fibrosis, infertility.
+
+  **(5) Survivorship clinic integration** — pediatric-cancer-survivor
+  follow-up clinics best-coordinated; community PCP вимагає COG-LTFU
+  passport.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_aya_survivor_2026_05_18
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+  - source_id: SRC-NCCN-BLADDER-2025
+    position: supports
+  - source_id: SRC-NCCN-COLON-2025
+    position: supports
+  - source_id: SRC-COG
+    position: supports
+
+do_not_do:
+  - "Не використовувати general-population USPSTF CRC-screening threshold (45-50) у pediatric pelvic-RT survivors — initiate в 45 АБО 10р post-RT (whichever earlier)."
+  - "Не пропускати urine cytology у annual screening — urinalysis alone має нижчу sensitivity для urothelial carcinoma in situ."
+  - "Не нормалізувати microscopic hematuria як 'incidental' у pediatric pelvic-RT survivors — warrants cystoscopy + CT urography."
+  - "Не пропускати pelvic exam щорічно — uterine + ovarian + cervical secondaries можуть presenter abnormal bleeding або pelvic mass."
+  - "Не делегувати pediatric-survivor surveillance non-experienced clinic — COG-LTFU passport документує prior RT field + dose які керують surveillance plan."
+
+do_not_do_en:
+  - "Do not use the general-population USPSTF CRC-screening threshold (45-50) in pediatric pelvic-RT survivors — initiate at 45 OR 10y post-RT (whichever is earlier)."
+  - "Do not skip urine cytology in annual screening — urinalysis alone has lower sensitivity for urothelial carcinoma in situ."
+  - "Do not normalize microscopic hematuria as 'incidental' in pediatric pelvic-RT survivors — warrants cystoscopy + CT urography."
+  - "Do not skip the annual pelvic exam — uterine + ovarian + cervical secondaries may present with abnormal bleeding or pelvic mass."
+  - "Do not delegate pediatric-survivor surveillance to non-experienced clinics — the COG-LTFU passport documents prior RT field + dose, which drive the surveillance plan."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — cancer-survivor late-effects pilot (pediatric pelvic RT). Three surveillance domains: bladder cancer (primary anchor DIS-UROTHELIAL), CRC (earlier screening at 45 or 10y post-RT), other pelvic-field secondaries. Two-Clinical-Co-Lead signoff queued."

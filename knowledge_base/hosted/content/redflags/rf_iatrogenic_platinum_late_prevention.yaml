@@ -1,0 +1,81 @@
+id: RF-IATROGENIC-PLATINUM-LATE-PREVENTION
+definition: >-
+  Cancer survivor with prior cumulative platinum exposure ≥400 mg/m²
+  (cisplatin) or AUC-equivalent carboplatin. Most commonly: testicular
+  germ-cell tumor BEP cycles (cisplatin 100 mg/m² × 4 = 400 mg/m²),
+  ovarian cancer first-line carboplatin/paclitaxel, advanced cervical
+  cancer cisplatin-CRT, head-and-neck SCC concurrent cisplatin-CRT,
+  esophageal cancer FOLFOX/CROSS regimens, NSCLC adjuvant cisplatin
+  doublet. Three principal late-effect domains: (1) cardiovascular —
+  cisplatin associated with accelerated atherosclerosis, hypertension,
+  endothelial dysfunction, Raynaud phenomenon; coronary events SIR
+  1.5-2× population baseline; testicular cancer survivors with BEP
+  exposure have 2-3× CV-mortality at 30y; (2) chronic kidney disease —
+  cisplatin direct tubular toxicity → persistent GFR decline; ~30% of
+  long-term survivors have CKD stage ≥2; magnesium wasting common;
+  (3) therapy-related AML / MDS — platinum (especially cisplatin)
+  contributes to t-MDS risk via DNA-damage; lower-magnitude than
+  topoisomerase-II inhibitors but additive when combined with etoposide
+  (BEP regimen). Ototoxicity + peripheral neuropathy + Raynaud syndrome
+  + male infertility are additional long-term cisplatin sequelae out-of-
+  scope for this RF which focuses on cancer-surveillance + CV/renal
+  risk-modification dimensions. Prevention-persona RedFlag (§20 cancer-
+  survivor late-effects pilot).
+definition_ua: >-
+  Виживач раку з prior cumulative platinum exposure ≥400 мг/м²
+  (cisplatin) або AUC-equivalent carboplatin. Найчастіше: testicular
+  germ-cell tumor BEP cycles (cisplatin 100 мг/м² × 4 = 400 мг/м²),
+  ovarian cancer first-line carboplatin/paclitaxel, advanced cervical
+  cisplatin-CRT, head-and-neck SCC concurrent cisplatin-CRT, esophageal
+  FOLFOX/CROSS regimens, NSCLC adjuvant cisplatin doublet. Три principal
+  late-effect domains: (1) cardiovascular — cisplatin асоційований із
+  accelerated atherosclerosis, hypertension, endothelial dysfunction,
+  Raynaud phenomenon; coronary events SIR 1.5-2× population baseline;
+  testicular cancer survivors з BEP мають 2-3× CV-mortality при 30р;
+  (2) chronic kidney disease — cisplatin direct tubular toxicity →
+  persistent GFR decline; ~30% long-term survivors мають CKD stage ≥2;
+  magnesium wasting часте; (3) therapy-related AML / MDS — platinum
+  contributes до t-MDS ризику через DNA-damage; lower-magnitude ніж
+  topoisomerase-II inhibitors але additive у комбінації з etoposide
+  (BEP regimen).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "survivor_platinum_cumulative_ge_400_mg_m2"
+      value: true
+    - finding: "survivor_cisplatin_late_effect_cv_renal_dimension"
+      value: true
+    - finding: "survivor_bep_or_high_dose_carboplatin_history"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: iatrogenic
+
+# Anchor DIS-AML — secondary t-MDS/t-AML is the cancer surveillance
+# anchor; cardiovascular + renal surveillance dimensions are co-managed
+# under the same RF firing (no separate cancer disease anchor needed
+# for CV/CKD which are non-cancer late effects).
+relevant_diseases:
+  - DIS-AML
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-AML-2025
+  - SRC-NCCN-TESTICULAR-2025
+  - SRC-COG
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Cancer-survivor late-effects RedFlag for cumulative platinum ≥400 mg/m². Surveillance domains: cardiovascular risk modification (BP + lipid panel q1y), nephropathy (creatinine + Mg q1y), secondary AML/MDS (CBC q1y). CV risk modification is the highest-yield late-effect domain. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_aya_survivor_2026_05_18
+draft_revision: 1

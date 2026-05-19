@@ -1,0 +1,74 @@
+id: RF-IATROGENIC-BLEOMYCIN-LATE-PREVENTION
+definition: >-
+  Cancer survivor with history of bleomycin exposure — most commonly
+  testicular germ-cell tumor BEP/EP cycles, Hodgkin lymphoma ABVD or
+  escalated BEACOPP, head-and-neck SCC platinum-bleomycin (legacy). Three
+  pulmonary domains: (1) bleomycin-induced pulmonary fibrosis — dose-
+  dependent (incidence ~10% at cumulative 270-360 units, higher with
+  oxygen exposure, renal dysfunction); subclinical DLCO decline common
+  long-term even at lower cumulative doses; (2) accelerated lung-cancer
+  risk in smokers — bleomycin + tobacco DNA-damage synergy increases
+  second-primary lung-cancer risk; (3) susceptibility to high-FiO2
+  oxygen-induced lung toxicity lifelong (relevant for any future surgery
+  / scuba diving / hyperbaric exposure). Surveillance focus on
+  pulmonary function tests (FEV1, FVC, DLCO) with chest exam at routine
+  survivorship visits; LDCT lung-cancer screening eligibility shifts
+  toward inclusion for bleomycin-exposed survivors who smoke (lower
+  threshold than general-population USPSTF). Prevention-persona RedFlag
+  (§20 cancer-survivor late-effects pilot).
+definition_ua: >-
+  Виживач раку з історією bleomycin exposure — найчастіше testicular
+  germ-cell tumor BEP/EP cycles, Hodgkin lymphoma ABVD або escalated
+  BEACOPP, head-and-neck SCC platinum-bleomycin (legacy). Три pulmonary
+  domains: (1) bleomycin-induced pulmonary fibrosis — dose-dependent
+  (incidence ~10% при cumulative 270-360 units, вище з oxygen exposure,
+  renal dysfunction); subclinical DLCO decline частий long-term навіть
+  при нижчих cumulative doses; (2) прискорений lung-cancer ризик у
+  курців — bleomycin + tobacco DNA-damage synergy підвищує second-
+  primary lung-cancer ризик; (3) susceptibility до high-FiO2 oxygen-
+  induced lung toxicity lifelong (relevant для майбутньої surgery /
+  scuba diving / hyperbaric exposure). Surveillance focus на pulmonary
+  function tests (FEV1, FVC, DLCO) з chest exam при routine survivorship
+  visits; LDCT lung-cancer screening eligibility shifts toward inclusion
+  для bleomycin-exposed survivors які палять (lower threshold than
+  general-population USPSTF).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "survivor_prior_bleomycin_exposure"
+      value: true
+    - finding: "survivor_bleomycin_plus_smoking_history"
+      value: true
+    - finding: "survivor_bep_or_abvd_history_pulmonary_late_effect"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: iatrogenic
+
+# Anchor DIS-NSCLC — second-primary lung cancer is the malignancy
+# surveillance target; the pulmonary-fibrosis surveillance dimension is
+# co-managed (PFTs at survivorship visits) but does not have a separate
+# disease anchor.
+relevant_diseases:
+  - DIS-NSCLC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-NSCLC-2025
+  - SRC-COG
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Cancer-survivor late-effects RedFlag for prior bleomycin exposure. Surveillance domains: pulmonary fibrosis (PFTs + chest exam), second-primary lung cancer (LDCT eligibility shift if smoking history — bleomycin + tobacco synergistic), lifelong high-FiO2 oxygen-toxicity caution. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_aya_survivor_2026_05_18
+draft_revision: 1

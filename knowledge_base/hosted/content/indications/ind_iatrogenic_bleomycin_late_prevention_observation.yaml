@@ -1,0 +1,82 @@
+id: IND-IATROGENIC-BLEOMYCIN-LATE-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-BLEOMYCIN-LATE-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Survivor declines structured PFT surveillance + LDCT screening — receives symptom-prompted evaluation + smoking cessation counseling only. Progressive bleomycin-induced pulmonary fibrosis may present at later stage with persistent dyspnea / oxygen requirement, vs. surveillance-detected subclinical DLCO decline amenable to pulmonology referral + risk-factor modification. Second-primary lung cancer in smoking bleomycin-exposed survivors typically presents at more advanced stage when symptom-driven (vs. earlier stage detected by LDCT screening per NLST + NELSON paradigm)."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-IATROGENIC-BLEOMYCIN-LATE-
+  PREVENTION-SURVEILLANCE. Cancer survivor declines structured PFT
+  surveillance schedule + LDCT lung-cancer screening (surveillance
+  fatigue post-curative treatment, no perceived pulmonary symptoms,
+  cumulative imaging burden concerns, never-smoker or low-smoking-
+  exposure survivor who declines LDCT after shared decision-making) —
+  receives symptom-vigilance education (persistent cough, dyspnea
+  on exertion, new oxygen requirement → urgent PFT + HRCT chest)
+  + smoking cessation counseling (when applicable) + lifelong high-
+  FiO2 oxygen caution education (medical-alert bracelet
+  consideration). Per CHARTER §11 patient-autonomy framing — surveillance
+  refusal is a legitimate choice but framed as suboptimal vs. scheduled-
+  surveillance comparator.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Виживач відмовляється від
+  structured PFT surveillance + LDCT lung-cancer screening — отримує
+  symptom-vigilance education (persistent cough, dyspnea, new oxygen
+  requirement → urgent PFT + HRCT) + smoking cessation counseling
+  + lifelong high-FiO2 oxygen caution. Per CHARTER §11.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_aya_survivor_2026_05_18
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+  - source_id: SRC-COG
+    position: context
+
+do_not_do:
+  - "Не презентувати observation як еквівалент structured PFT surveillance + LDCT screening — late-presentation fibrosis + lung cancer substantially гірші outcomes."
+  - "Не пропускати smoking cessation counseling — навіть на observation track це highest-yield інтервенція."
+  - "Не нормалізувати persistent cough як 'post-viral' у bleomycin survivor — warrants urgent evaluation."
+  - "Не пропускати medical-alert / wallet card counseling re: lifelong high-FiO2 caution — relevant навіть якщо routine PFT surveillance declined."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to structured PFT surveillance + LDCT screening — late-presentation fibrosis + lung cancer have substantially worse outcomes."
+  - "Do not skip smoking cessation counseling — even on the observation track this is the highest-yield intervention."
+  - "Do not normalize persistent cough as 'post-viral' in a bleomycin survivor — warrants urgent evaluation."
+  - "Do not skip medical-alert / wallet card counseling re: lifelong high-FiO2 caution — relevant even if routine PFT surveillance is declined."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for cancer-survivor bleomycin pulmonary late effects. §15.2 C4 ≥2-tracks invariant."

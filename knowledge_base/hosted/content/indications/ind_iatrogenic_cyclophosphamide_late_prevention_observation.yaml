@@ -1,0 +1,82 @@
+id: IND-IATROGENIC-CYCLOPHOSPHAMIDE-LATE-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-UROTHELIAL
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-CYCLOPHOSPHAMIDE-LATE-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Survivor declines structured annual UA + cytology + CBC q3-6mo surveillance schedule — receives symptom-prompted evaluation only. Bladder cancer second primaries often present at muscle-invasive or metastatic stage when symptom-driven, vs. early non-muscle-invasive disease curable with TURBT in surveillance-detected cases. t-MDS may progress to overt t-AML before cytopenia recognized, foreclosing window for allogeneic HSCT in some patients. Outcomes substantially worse with late-presentation vs. surveillance-detected second primaries."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-IATROGENIC-CYCLOPHOSPHAMIDE-LATE-
+  PREVENTION-SURVEILLANCE. Cancer survivor declines structured annual
+  UA + cytology + CBC q3-6mo surveillance schedule (surveillance fatigue,
+  no perceived symptoms, financial/access barrier, geographic distance
+  from survivorship clinic) — receives symptom-vigilance education
+  (any hematuria → urgent UA + urology evaluation; persistent fatigue
+  / easy bruising / recurrent infections / fever → urgent CBC +
+  hematology evaluation) + lifestyle counseling (smoking cessation
+  — independent bladder cancer risk factor; avoid additional alkylator
+  exposure for benign indications). Per CHARTER §11 patient-autonomy
+  framing — surveillance refusal is a legitimate choice but framed
+  as suboptimal vs. scheduled-surveillance comparator.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Виживач відмовляється від
+  structured annual UA + cytology + CBC q3-6mo surveillance schedule —
+  отримує symptom-vigilance education (будь-яка hematuria → urgent
+  UA + urology; persistent fatigue / easy bruising / infections /
+  fever → urgent CBC + hematology) + lifestyle counseling (smoking
+  cessation, avoid additional alkylator exposure). Per CHARTER §11.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_aya_survivor_2026_05_18
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+  - source_id: SRC-COG
+    position: context
+
+do_not_do:
+  - "Не презентувати observation як еквівалент structured surveillance — late-presentation bladder cancer + t-AML substantially гірші outcomes."
+  - "Не нормалізувати any hematuria у cyclophosphamide survivor — warrants urgent cystoscopy навіть на observation track."
+  - "Не пропускати smoking cessation counseling — independent bladder cancer risk factor; additive до cyclophosphamide-induced ризику."
+  - "Не вважати persistent fatigue 'normal post-cancer' — може бути silent t-MDS; CBC q1y мінімум навіть на observation track."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to structured surveillance — late-presentation bladder cancer + t-AML have substantially worse outcomes."
+  - "Do not normalize any hematuria in a cyclophosphamide survivor — warrants urgent cystoscopy even on the observation track."
+  - "Do not skip smoking cessation counseling — independent bladder cancer risk factor; additive to cyclophosphamide-induced risk."
+  - "Do not treat persistent fatigue as 'normal post-cancer' — may be silent t-MDS; CBC q1y is the minimum even on the observation track."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for cancer-survivor cyclophosphamide late effects. §15.2 C4 ≥2-tracks invariant."

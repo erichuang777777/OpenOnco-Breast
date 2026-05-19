@@ -1,0 +1,78 @@
+id: RF-IATROGENIC-PEDIATRIC-PELVIC-RT-PREVENTION
+definition: >-
+  Cancer survivor ≥5 years post-completion of curative-intent oncology
+  treatment that included pediatric pelvic radiotherapy. Most commonly:
+  Wilms tumor flank/pelvic RT, Ewing sarcoma pelvic primary, pediatric
+  rhabdomyosarcoma (genitourinary, paratesticular, bladder/prostate
+  primary), Hodgkin lymphoma pelvic field, neuroblastoma abdominopelvic
+  RT, testicular GCT pelvic adjuvant (less common in pediatric era).
+  Three principal second-primary surveillance domains: (1) bladder
+  cancer — radiation cystitis with chronic inflammation drives urothelial
+  carcinoma decades later; cumulative risk 2-4% at 25-30y post-pediatric
+  pelvic RT; (2) colorectal cancer — radiation field exposure to rectum
+  + distal colon; standardized incidence ratio (SIR) 3-5x population
+  baseline, cumulative 5-10% at 30y depending on dose + field; (3) other
+  pelvic-field secondary cancers (uterine, ovarian if ovaries in field,
+  cervical, sarcoma in irradiated bone). Pediatric exposure carries
+  substantially higher lifetime second-primary risk vs. adult pelvic RT —
+  longer time-at-risk + radiation-sensitive growing tissues. Surveillance
+  cadence per COG-LTFU + Childhood Cancer Survivor Study (CCSS) + ACS
+  guideline-augmentation. Prevention-persona RedFlag (§20 cancer-survivor
+  late-effects pilot).
+definition_ua: >-
+  Виживач раку ≥5 років після завершення curative-intent pediatric
+  оnncologic treatment з pediatric pelvic radiotherapy. Найчастіше: Wilms
+  tumor flank/pelvic RT, Ewing sarcoma pelvic primary, pediatric
+  rhabdomyosarcoma (GU, paratesticular, bladder/prostate primary), Hodgkin
+  lymphoma pelvic field, neuroblastoma abdominopelvic RT. Три principal
+  second-primary surveillance domains: (1) bladder cancer — radiation
+  cystitis з chronic inflammation призводить до urothelial carcinoma
+  декадами пізніше; cumulative ризик 2-4% при 25-30р post-pediatric pelvic
+  RT; (2) колоректальний рак — radiation field exposure rectum + distal
+  colon; SIR 3-5× population baseline, cumulative 5-10% при 30р залежно
+  від dose + field; (3) інші pelvic-field secondary cancers (uterine,
+  ovarian, cervical, sarcoma в опроміненій кістці). Pediatric exposure
+  несе суттєво вищий lifetime second-primary ризик проти adult pelvic
+  RT — довший time-at-risk + radiation-sensitive growing tissues.
+  Surveillance cadence per COG-LTFU + CCSS + ACS guideline-augmentation.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "survivor_pediatric_pelvic_rt_late_effect"
+      value: true
+    - finding: "survivor_5y_post_pediatric_pelvic_rt"
+      value: true
+    - finding: "survivor_pediatric_abdominopelvic_rt_late_effect"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: iatrogenic
+
+# Anchor DIS-UROTHELIAL — bladder cancer is the primary second-primary
+# surveillance target; CRC surveillance is a co-managed second domain
+# but uses the same survivor cohort + same RF firing. Engine fires this
+# RF once; PreventionPlan rationale spells out both surveillance dimensions.
+relevant_diseases:
+  - DIS-UROTHELIAL
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-BLADDER-2025
+  - SRC-NCCN-COLON-2025
+  - SRC-COG
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Cancer-survivor late-effects RedFlag for prior pediatric pelvic radiotherapy ≥5y ago. Three surveillance domains: bladder cancer (urothelial — primary anchor), CRC (earlier screening at 45 or 10y post-RT), other pelvic-field secondaries. Annual UA + cytology + CRC screening earlier per COG-LTFU + CCSS. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_aya_survivor_2026_05_18
+draft_revision: 1

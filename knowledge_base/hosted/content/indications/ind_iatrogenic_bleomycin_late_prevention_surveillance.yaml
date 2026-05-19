@@ -1,0 +1,150 @@
+id: IND-IATROGENIC-BLEOMYCIN-LATE-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-BLEOMYCIN-LATE-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Testicular GCT + Hodgkin lymphoma survivor cohorts: ~10% incidence of clinically significant bleomycin-induced pulmonary fibrosis at cumulative 270-360 units; subclinical DLCO decline in 30-40% of survivors lifelong. PFT surveillance enables earlier detection of progressive fibrosis (smoking cessation + pulmonology referral can stabilize). LDCT lung-cancer screening (when bleomycin + smoking-history overlap moves survivor into screening-eligible group) detects lung cancer at earlier stage with documented survival benefit per NLST + NELSON in general high-risk populations; bleomycin-exposed smokers represent enriched high-risk subgroup."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-PFT-SPIROMETRY
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track late-effects pulmonary surveillance for cancer survivors
+  with prior bleomycin exposure. Components per NCCN NSCLC + ACS Lung
+  Cancer Screening + COG-LTFU + ESMO Testicular Cancer survivorship:
+
+  **(1) Pulmonary function tests (PFTs) cadence** —
+  - Baseline PFT (FEV1, FVC, FEV1/FVC, DLCO) within 6-12 months
+    post-completion if not already documented in primary-treatment
+    record
+  - Repeat PFT q1-2y in first 5y post-completion; q3-5y thereafter
+    if stable
+  - DLCO is most sensitive marker for bleomycin-induced fibrosis
+    (declines before FVC); a >20% decline from baseline warrants
+    pulmonology referral
+
+  **(2) Chest exam at routine survivorship visits** —
+  - Auscultation for crackles / wheezes
+  - Persistent cough, dyspnea on exertion, new oxygen requirement
+    → urgent PFT + HRCT chest
+
+  **(3) Smoking cessation counseling** —
+  - HIGHEST-yield late-effect intervention for bleomycin-exposed
+    survivors; bleomycin + tobacco DNA-damage synergy elevates lung
+    cancer risk above general-population baseline
+  - Pharmacotherapy support (varenicline, nicotine replacement),
+    behavioral support, smoking-cessation clinic referral
+
+  **(4) LDCT lung-cancer screening eligibility shift** —
+  - Survivor with bleomycin exposure + ≥20 pack-year smoking history,
+    age 50-77: ENROLL in annual LDCT screening per modified USPSTF
+    criteria
+  - Survivor with bleomycin exposure + <20 pack-year smoking history
+    or never-smoker: shared decision-making re: LDCT (lower yield
+    in absolute terms but bleomycin still confers elevated risk)
+  - Coordinate with primary care + pulmonology for screening + follow-
+    up of indeterminate nodules per Lung-RADS
+
+  **(5) Lifelong high-FiO2 oxygen caution** —
+  - Patient education: any future surgery, scuba diving, hyperbaric
+    medicine — disclose bleomycin history to anesthesia / dive medicine
+    physician
+  - Anesthesia should target lowest acceptable FiO2 to maintain SpO2
+    ≥92% (avoid >30% FiO2 unless absolutely necessary)
+  - Medical-alert bracelet / wallet card consideration for survivors
+    with significant exposure
+
+  **(6) Co-fired surveillance dimensions** — bleomycin is often co-
+  administered with platinum (BEP regimen, ABVD's component-set);
+  if patient also meets RF-IATROGENIC-PLATINUM-LATE-PREVENTION
+  threshold, that RF fires in parallel and combined PreventionPlan
+  addresses pulmonary + CV/renal/AML surveillance dimensions.
+
+rationale_ua: >
+  Стандартний-трек late-effects pulmonary surveillance для виживачів
+  раку з prior bleomycin exposure. Components per NCCN NSCLC + ACS
+  Lung Cancer Screening + COG-LTFU + ESMO Testicular survivorship:
+
+  **(1) PFTs cadence** —
+  - Baseline PFT (FEV1, FVC, FEV1/FVC, DLCO) протягом 6-12 міс post-
+    completion
+  - q1-2y перші 5р; q3-5y далі якщо stable
+  - DLCO найбільш sensitive marker для bleomycin fibrosis; >20% decline
+    від baseline → pulmonology referral
+
+  **(2) Chest exam при routine survivorship visits** — persistent
+  cough, dyspnea on exertion, new oxygen requirement → urgent PFT
+  + HRCT chest.
+
+  **(3) Smoking cessation counseling** — НАЙВИЩА-yield late-effect
+  інтервенція; bleomycin + tobacco synergistic.
+
+  **(4) LDCT lung-cancer screening eligibility shift** —
+  - Bleomycin + ≥20 pack-year smoking, 50-77 років: ENROLL в annual
+    LDCT screening
+  - Bleomycin + <20 pack-year або never-smoker: shared decision-making
+
+  **(5) Lifelong high-FiO2 oxygen caution** — будь-яка future surgery,
+  scuba diving, hyperbaric medicine — disclose bleomycin history.
+  Anesthesia: lowest acceptable FiO2 для SpO2 ≥92%.
+
+  **(6) Co-fired surveillance dimensions** — bleomycin часто з
+  platinum; якщо також fires RF-IATROGENIC-PLATINUM-LATE-PREVENTION,
+  combined PreventionPlan addresses pulmonary + CV/renal/AML
+  dimensions.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_aya_survivor_2026_05_18
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+  - source_id: SRC-NCCN-NSCLC-2025
+    position: supports
+  - source_id: SRC-COG
+    position: supports
+
+do_not_do:
+  - "Не пропускати DLCO у PFT panel — найбільш sensitive marker для bleomycin-induced fibrosis; FVC alone може залишатися normal на ранніх стадіях."
+  - "Не пропускати smoking cessation counseling — highest-yield late-effect інтервенція; bleomycin + tobacco synergistic."
+  - "Не виключати LDCT lung-cancer screening eligibility лише на основі age — bleomycin survivors з smoking history qualify навіть below general USPSTF threshold."
+  - "Не призначати high-FiO2 oxygen без disclosing bleomycin history до anesthesia — oxygen toxicity може precipitate fibrosis exacerbation lifelong."
+  - "Не нормалізувати persistent cough як 'post-viral' у bleomycin survivor — warrants PFT + HRCT chest."
+
+do_not_do_en:
+  - "Do not skip DLCO in the PFT panel — it is the most sensitive marker for bleomycin-induced fibrosis; FVC alone may remain normal in early stages."
+  - "Do not skip smoking cessation counseling — it is the highest-yield late-effect intervention; bleomycin + tobacco are synergistic."
+  - "Do not exclude LDCT lung-cancer screening eligibility based on age alone — bleomycin survivors with a smoking history qualify even below the general USPSTF threshold."
+  - "Do not order high-FiO2 oxygen without disclosing the bleomycin history to anesthesia — oxygen toxicity can precipitate a fibrosis exacerbation lifelong."
+  - "Do not normalize persistent cough as 'post-viral' in a bleomycin survivor — warrants PFT + HRCT chest."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — cancer-survivor late-effects pilot (bleomycin pulmonary). Three surveillance domains: pulmonary fibrosis (PFTs), second-primary lung cancer (LDCT eligibility shift), lifelong high-FiO2 caution. Two-Clinical-Co-Lead signoff queued."

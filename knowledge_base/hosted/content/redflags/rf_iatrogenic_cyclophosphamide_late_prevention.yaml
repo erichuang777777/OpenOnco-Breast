@@ -1,0 +1,78 @@
+id: RF-IATROGENIC-CYCLOPHOSPHAMIDE-LATE-PREVENTION
+definition: >-
+  Cancer survivor with prior cumulative cyclophosphamide exposure
+  ≥7 g/m² (or ≥30 g lifetime in adults). Most commonly: high-dose
+  regimens in non-Hodgkin lymphoma (Hyper-CVAD, dose-escalated CHOP
+  variants), pediatric ALL induction-consolidation, bone-marrow
+  transplant conditioning (Cy-TBI, Cy-Bu), autoimmune disease cycling
+  pre-rituximab era. Two principal late-effect second-primary domains:
+  (1) bladder cancer — acrolein metabolite causes chronic urothelial
+  damage → urothelial carcinoma; SIR 4-7× population baseline,
+  cumulative incidence 3-5% at 25y post-exposure, latency typically
+  10-20y; (2) therapy-related AML / MDS — cyclophosphamide is an
+  alkylator; t-MDS / t-AML peak 5-10y post-exposure, cumulative ~1-3%
+  at 10y. Cyclophosphamide also drives non-cancer late effects (premature
+  ovarian insufficiency, hemorrhagic cystitis if no MESNA, gonadal
+  dysfunction) — those out-of-scope for this RF which focuses on cancer
+  surveillance. Distinct from RF-IATROGENIC-ALKYLATOR-TAML-PREVENTION
+  (general alkylator t-AML surveillance ≥5y post-chemo): this RF
+  specifically anchors on cumulative cyclophosphamide dose threshold
+  ≥7 g/m² for the bladder-cancer dimension which is cyclophosphamide-
+  specific. Prevention-persona RedFlag (§20 cancer-survivor late-effects
+  pilot).
+definition_ua: >-
+  Виживач раку з prior cumulative cyclophosphamide exposure ≥7 г/м²
+  (або ≥30 г lifetime у дорослих). Найчастіше: high-dose regimens у
+  non-Hodgkin lymphoma (Hyper-CVAD, dose-escalated CHOP variants),
+  pediatric ALL induction-consolidation, bone-marrow transplant
+  conditioning (Cy-TBI, Cy-Bu), autoimmune cycling до-rituximab. Два
+  principal late-effect second-primary domains: (1) bladder cancer —
+  acrolein metabolite викликає chronic urothelial damage → urothelial
+  carcinoma; SIR 4-7× population baseline, cumulative incidence 3-5%
+  при 25р post-exposure, latency типово 10-20р; (2) therapy-related AML
+  / MDS — cyclophosphamide є alkylator; t-MDS / t-AML peak 5-10р post-
+  exposure, cumulative ~1-3% при 10р. Cyclophosphamide також спричиняє
+  non-cancer late effects (POI, hemorrhagic cystitis без MESNA, gonadal
+  dysfunction) — поза scope цього RF.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "survivor_cyclophosphamide_cumulative_ge_7g_m2"
+      value: true
+    - finding: "survivor_cyclophosphamide_late_effect_bladder_dimension"
+      value: true
+    - finding: "survivor_hyper_cvad_or_high_dose_cy_history"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: iatrogenic
+
+# Anchor DIS-UROTHELIAL — bladder cancer is the primary cyclophosphamide-
+# specific surveillance target (acrolein-driven urothelial damage). The
+# t-AML / t-MDS dimension is co-managed via overlap with
+# RF-IATROGENIC-ALKYLATOR-TAML-PREVENTION (DIS-AML anchor); both RFs
+# may fire for the same patient — engine builds combined PreventionPlan.
+relevant_diseases:
+  - DIS-UROTHELIAL
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-BLADDER-2025
+  - SRC-NCCN-AML-2025
+  - SRC-COG
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Cancer-survivor late-effects RedFlag for cumulative cyclophosphamide ≥7 g/m². Surveillance domains: bladder cancer (annual urinalysis + cytology, primary anchor) and t-AML/MDS (CBC q3-6mo for first 5y co-managed with RF-IATROGENIC-ALKYLATOR-TAML-PREVENTION). STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_aya_survivor_2026_05_18
+draft_revision: 1
