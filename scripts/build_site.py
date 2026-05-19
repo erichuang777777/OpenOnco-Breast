@@ -1072,9 +1072,11 @@ def bundle_questionnaires(output_dir: Path) -> dict:
 
 _NAV_LABELS = {
     "uk": {"home": "Головна", "about": "Про проєкт", "try_cta": "План лікування",
-           "diseases": "Хвороби", "ask": "Туморборд", "kb": "Онко-вікі"},
+           "diseases": "Хвороби", "ask": "Туморборд", "kb": "Онко-вікі",
+           "prevent": "Профілактика"},
     "en": {"home": "Home", "about": "About", "try_cta": "Plan Builder",
-           "diseases": "Diseases", "ask": "Tumor Board", "kb": "Onco Wiki"},
+           "diseases": "Diseases", "ask": "Tumor Board", "kb": "Onco Wiki",
+           "prevent": "Prevention"},
 }
 
 
@@ -1164,6 +1166,8 @@ def _render_top_bar(active: str = "", target_lang: str = "en",
     kb_current = ' aria-current="page"' if active in {"kb", "diseases"} else ""
     ask_current = ' aria-current="page"' if active == "ask" else ""
     try_current = ' aria-current="page"' if active == "try" else ""
+    prevent_href = "/ukr/prevent.html" if target_lang == "uk" else "/prevent.html"
+    prevent_current = ' aria-current="page"' if active == "prevent" else ""
 
     return f"""<header class="top-bar">
   <div class="brand-line">
@@ -1181,6 +1185,7 @@ def _render_top_bar(active: str = "", target_lang: str = "en",
     </div>
     <div class="top-cta-group">
       <a href="{try_path}" class="btn-cta-top btn-cta-try"{try_current}>{labels['try_cta']}</a>
+      <a href="{prevent_href}" class="btn-cta-top btn-cta-secondary"{prevent_current}>{labels['prevent']}</a>
       <a href="{kb_href}" class="btn-cta-top btn-cta-secondary"{kb_current}>{labels['kb']}</a>
       <a href="{ask_path}" class="btn-cta-top btn-cta-secondary"{ask_current}>{labels['ask']}</a>
     </div>
