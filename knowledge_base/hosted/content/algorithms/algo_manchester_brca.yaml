@@ -1,0 +1,102 @@
+id: ALGO-MANCHESTER-BRCA
+applicable_to_disease: DIS-BREAST
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention. Anchored to DIS-BREAST — breast cancer
+# is the dominant Manchester-pedigree signal (HBOC overall ~75-90%
+# breast-cancer driven).
+purpose: >
+  Manchester scoring system (Evans 2004, updated 2017) for BRCA1/BRCA2
+  carrier probability based on family pedigree weighted points.
+  Threshold of ≥15 points (combined BRCA1 + BRCA2 score) triggers
+  recommendation for germline BRCA1/2 testing. ≥20 points historically
+  meant ≥20% carrier probability under simpler scoring; modern Manchester
+  v3 (2017) calibrated against population-based BRCA detection rates.
+
+  Output routes to HBOC suspicion prevention pathway when threshold
+  met. Algorithm consumes weighted-point computation from the pedigree
+  (FHIR FamilyMemberHistory + age-at-diagnosis); computation logic is a
+  downstream implementation concern.
+
+output_indications:
+  - IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Genetic counseling + germline BRCA1/2 panel referral is the first
+# action within the surveillance pathway. Algorithm routes only to the
+# surveillance Indication to satisfy the algorithm-routing contract;
+# counseling component is documented in Indication rationale.
+
+decision_tree:
+  - step: 1
+    # Threshold check — Manchester ≥15 (combined BRCA1 + BRCA2 points)
+    # is the standard testing threshold per Evans 2017.
+    evaluate:
+      any_of:
+        - condition: "Manchester combined BRCA1 + BRCA2 score ≥15 points"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Manchester ≥15 — refer for genetic counseling + BRCA1/BRCA2 (or multi-gene HBOC panel) germline testing."
+    if_false:
+      next_step: 2
+  - step: 2
+    # Even below threshold, individual proband features can independently
+    # justify testing (NCCN-style bright-line criteria).
+    evaluate:
+      any_of:
+        - condition: "Triple-negative breast cancer at any age"
+        - condition: "Breast cancer diagnosed at age <46 regardless of family history"
+        - condition: "Male breast cancer at any age"
+        - condition: "Ovarian cancer (epithelial non-mucinous) at any age regardless of family history"
+        - condition: "Ashkenazi Jewish ancestry with breast or ovarian cancer at any age"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "NCCN bright-line testing criterion met (TNBC / breast <46 / male breast / ovarian / Ashkenazi + breast/ovarian) — refer for germline panel testing irrespective of Manchester score."
+    if_false:
+      result: false
+      notes: "Manchester <15 and no NCCN bright-line — re-evaluate with Tyrer-Cuzick v8 (ALGO-TYRER-CUZICK-V8-BREAST) for breast-cancer-only risk modeling or BRCAPRO/BOADICEA if family history is complex. General-population screening per USPSTF + reassess if new family-history events occur."
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding Manchester BRCA
+  scoring (Evans DGR et al. A new scoring system for the
+  chances of identifying a BRCA1/2 mutation outperforms existing
+  models including BRCAPRO. J Med Genet 2004;41:474-480. PMID
+  15173236; Evans DGR et al. Update on the Manchester Scoring System
+  for BRCA1 and BRCA2 testing. J Med Genet 2017;54:674-681. PMID
+  28659446 for v3 update). Primary-paper Source entities (SRC-EVANS-
+  2004-MANCHESTER, SRC-EVANS-2017-MANCHESTER-V3) are v0.2-B authoring
+  backlog.
+
+  Anchored to DIS-BREAST; reach extends to DIS-OVARIAN, DIS-PDAC,
+  DIS-PROSTATE (HBOC-spectrum).
+
+  Scoring summary (Manchester v3, simplified — refer to Evans 2017 for
+  full table):
+    BRCA1 weighted points (sample):
+      - Female breast <30: 6, 30-39: 4, 40-49: 3, 50-59: 2
+      - Male breast: 5
+      - Ovarian <60: 8, ≥60: 5
+      - Pancreatic <60: 1
+      - Prostate <60: 1
+    BRCA2 weighted points (sample):
+      - Female breast <30: 5, 30-39: 4, 40-49: 3, 50-59: 2
+      - Male breast: 8
+      - Ovarian: 5
+      - Pancreatic: 4
+      - Prostate <60: 4, ≥60: 1
+    Threshold for testing: combined BRCA1 + BRCA2 ≥15 (corresponds to
+    ~10% carrier probability).
+
+  Validation: Manchester v3 outperformed BRCAPRO and Penn-II in
+  contemporary multicenter European cohorts. Discrimination similar
+  to BOADICEA without requiring per-disease incidence parameters.
+
+  Cited from RF-BRCA-HBOC-FAMILY-HISTORY-SUSPICION trigger
+  `family_manchester_score_ge_15` (if defined) or Indication
+  `IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE` rationale.
+draft: true

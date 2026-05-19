@@ -1,0 +1,99 @@
+id: ALGO-CLASSIC-LFS-CRITERIA
+applicable_to_disease: DIS-SOFT-TISSUE-SARCOMA
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention. Anchored to DIS-SOFT-TISSUE-SARCOMA
+# because the proband sarcoma <45 anchors the classic criteria (Li &
+# Fraumeni 1988 original).
+purpose: >
+  Classic (original) Li-Fraumeni syndrome criteria from Li & Fraumeni
+  1988 plus Birch 1998 / Eeles 1995 / Frebourg 2001 conventions. Highly
+  specific (~99%) but less sensitive (~40%) than Chompret 2015. All
+  three criteria must be met simultaneously — strict pattern requires
+  a proband sarcoma <45 plus a first-degree relative with any cancer
+  <45 plus another close relative with sarcoma or any cancer <45.
+
+  Use case: high-specificity clinical gateway when classic pattern is
+  visible; failure to meet classic criteria does NOT exclude LFS — fall
+  back to Chompret 2015 (ALGO-CHOMPRET-2015-LFS) which captures ~95% of
+  TP53 carriers.
+
+output_indications:
+  - IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Genetic counseling + germline TP53 panel referral is the first action
+# within the Toronto Protocol surveillance pathway. Algorithm routes
+# only to the surveillance Indication to satisfy the algorithm-routing
+# contract; counseling component is documented in Indication rationale.
+
+decision_tree:
+  - step: 1
+    # Criterion 1: proband with sarcoma diagnosed <45.
+    evaluate:
+      all_of:
+        - condition: "Proband with sarcoma (soft tissue or bone — STS, osteosarcoma, rhabdomyosarcoma, leiomyosarcoma, etc.) diagnosed at age <45"
+    if_true:
+      next_step: 2
+    if_false:
+      result: false
+      notes: "Classic LFS criterion 1 (proband sarcoma <45) not met — apply Chompret 2015 (ALGO-CHOMPRET-2015-LFS) for broader LFS-spectrum capture."
+  - step: 2
+    # Criterion 2: first-degree relative with any cancer <45.
+    evaluate:
+      all_of:
+        - condition: "First-degree relative (parent, sibling, child) with any cancer diagnosed at age <45"
+    if_true:
+      next_step: 3
+    if_false:
+      result: false
+      notes: "Classic LFS criterion 2 (first-degree relative with cancer <45) not met — apply Chompret 2015."
+  - step: 3
+    # Criterion 3: another first-degree OR second-degree relative on the
+    # same lineage with sarcoma at any age OR any cancer <45.
+    evaluate:
+      any_of:
+        - condition: "An additional first-degree or second-degree relative in the same lineage with sarcoma at any age"
+        - condition: "An additional first-degree or second-degree relative in the same lineage with any cancer diagnosed at age <45"
+    if_true:
+      result: IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Classic LFS criteria FULLY satisfied — refer for germline TP53 testing. Sensitivity ~40% for TP53 carriers, specificity ~99% (Bougeard 2015)."
+    if_false:
+      result: false
+      notes: "Classic LFS criterion 3 (additional close relative with sarcoma any age, or cancer <45) not met — apply Chompret 2015 (ALGO-CHOMPRET-2015-LFS)."
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding classic LFS criteria
+  (Li FP, Fraumeni JF Jr et al. A cancer family syndrome in twenty-
+  four kindreds. Cancer Res 1988;48:5358-5362. PMID 3409256). Primary-
+  paper Source entity (SRC-LI-1988-CLASSIC-LFS) is v0.2-B authoring
+  backlog.
+
+  Anchored to DIS-SOFT-TISSUE-SARCOMA; the criteria are sarcoma-
+  pivoted at the proband (criterion 1).
+
+  Performance characteristics (validation in Bougeard 2015 cohort,
+  n=415 unrelated TP53-tested families):
+    - Sensitivity ~40% for TP53 pathogenic carriers
+    - Specificity ~99%
+    - PPV depends on prior; in oncology-clinic-referred populations
+      ~70%
+
+  Use as a high-specificity rule-in algorithm; classic-criteria-
+  positive patients almost always carry TP53 mutations. Classic-
+  criteria-negative patients still need Chompret 2015 evaluation
+  before TP53 is ruled out.
+
+  Cited from prevention RFs for LFS suspicion (IND-LI-FRAUMENI-
+  SUSPICION-PREVENTION-* indications).
+
+  Important LFS-spectrum nuance: childhood adrenocortical carcinoma
+  (ACC) and choroid plexus carcinoma are pathognomonic — classic
+  criteria are not needed to justify TP53 testing for these sentinel
+  tumors (handled by Chompret criterion C).
+draft: true

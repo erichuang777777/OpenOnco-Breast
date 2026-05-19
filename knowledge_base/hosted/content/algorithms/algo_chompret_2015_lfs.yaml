@@ -1,0 +1,114 @@
+id: ALGO-CHOMPRET-2015-LFS
+applicable_to_disease: DIS-SOFT-TISSUE-SARCOMA
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention. Anchored to DIS-SOFT-TISSUE-SARCOMA
+# because soft-tissue sarcoma is the pathognomonic LFS-defining cancer
+# (Chompret 2001 originally; updated 2015). DIS-BREAST is the most
+# common adult LFS cancer but is less specific to LFS clinical suspicion
+# than sarcoma in a young proband.
+purpose: >
+  Chompret 2015 criteria (Bougeard et al. 2015 revision) for clinical
+  suspicion of Li-Fraumeni syndrome (TP53 germline mutation). Less
+  restrictive than classic LFS criteria, capturing ~95% of TP53 carriers
+  vs ~40% for classic LFS. Four independent criteria — any one triggers
+  germline TP53 testing referral.
+
+  LFS-spectrum cancers (Chompret 2015): premenopausal breast cancer,
+  soft tissue sarcoma, osteosarcoma, adrenocortical carcinoma (ACC), CNS
+  tumors (especially choroid plexus carcinoma in children), leukemia,
+  lung adenocarcinoma. Also includes synchronous multiple primary
+  tumors of LFS spectrum.
+
+output_indications:
+  - IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Genetic counseling + germline TP53 panel referral is the first action
+# within the surveillance pathway (LFS Toronto Protocol begins with
+# psychologically-supportive counseling). Algorithm routes only to the
+# surveillance Indication to satisfy the algorithm-routing contract;
+# counseling component is documented in Indication rationale.
+
+decision_tree:
+  - step: 1
+    # Criterion A (family-history-based): proband + family LFS-spectrum.
+    evaluate:
+      all_of:
+        - condition: "Proband with LFS-spectrum tumor (premenopausal breast cancer, soft tissue sarcoma, osteosarcoma, ACC, CNS tumor, leukemia, lung adenocarcinoma) diagnosed at age <46"
+        - condition: "≥1 first-degree or second-degree relative with LFS-spectrum tumor (excluding breast cancer if proband has breast cancer) at age <56, OR multiple primary tumors at any age"
+    if_true:
+      result: IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Chompret criterion A met (proband + family LFS-spectrum) — refer for germline TP53 testing."
+    if_false:
+      next_step: 2
+  - step: 2
+    # Criterion B: multiple primary tumors in same individual.
+    evaluate:
+      all_of:
+        - condition: "Patient with multiple primary tumors (≥2), two of which belong to LFS-spectrum (premenopausal breast, soft tissue sarcoma, osteosarcoma, ACC, CNS, leukemia, lung adenocarcinoma)"
+        - condition: "First tumor diagnosed at age <46"
+    if_true:
+      result: IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Chompret criterion B met (multiple LFS-spectrum primaries, first <46) — refer for germline TP53 testing."
+    if_false:
+      next_step: 3
+  - step: 3
+    # Criterion C: rare-tumor sentinel (ACC, choroid plexus carcinoma,
+    # anaplastic rhabdomyosarcoma).
+    evaluate:
+      any_of:
+        - condition: "Patient with adrenocortical carcinoma (ACC) at any age, regardless of family history"
+        - condition: "Patient with choroid plexus carcinoma at any age, regardless of family history"
+        - condition: "Patient with anaplastic rhabdomyosarcoma with embryonal-anaplastic histology at any age, regardless of family history"
+    if_true:
+      result: IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Chompret criterion C met (sentinel rare tumor: ACC / choroid plexus carcinoma / anaplastic rhabdomyosarcoma) — refer for germline TP53 testing irrespective of family history. These tumors carry the highest single-event yield for TP53."
+    if_false:
+      next_step: 4
+  - step: 4
+    # Criterion D: very-early-onset breast cancer (<31).
+    evaluate:
+      all_of:
+        - condition: "Patient with breast cancer diagnosed at age <31, regardless of family history"
+        - condition: "BRCA1/2 germline pathogenic variant excluded"
+    if_true:
+      result: IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Chompret criterion D met (breast cancer <31, BRCA-negative) — refer for germline TP53 testing."
+    if_false:
+      result: false
+      notes: "Chompret 2015 not satisfied — consider classic LFS criteria (ALGO-CLASSIC-LFS-CRITERIA) which is more restrictive, or expanded hereditary cancer panel if clinical suspicion remains."
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding the Chompret 2015 LFS
+  criteria (Bougeard G et al. Revisiting Li-Fraumeni syndrome from
+  TP53 mutation carriers. J Clin Oncol 2015;33:2345-2352. PMID
+  26014290; Chompret A et al. Sensitivity and predictive value of
+  criteria for p53 germline mutation screening. J Med Genet
+  2001;38:43-47, PMID 11332399, for the original 2001 version).
+  Primary-paper Source entity (SRC-BOUGEARD-2015-CHOMPRET) is v0.2-B
+  authoring backlog.
+
+  Anchored to DIS-SOFT-TISSUE-SARCOMA; LFS-spectrum reach extends to
+  DIS-BREAST, DIS-OSTEOSARCOMA, and all other LFS-spectrum cancers
+  (some not yet authored as Disease entities: ACC, choroid plexus
+  carcinoma, anaplastic rhabdomyosarcoma).
+
+  Sensitivity for TP53 carriers ~95% (Chompret 2015 validation cohort,
+  n=415 unrelated families). Specificity ~50% (positive predictive
+  value depends on prior). Substantially more sensitive than classic
+  LFS criteria (~40%).
+
+  Sentinel-tumor logic (criterion C): ACC, choroid plexus carcinoma,
+  and anaplastic rhabdomyosarcoma are the three tumor types where
+  TP53 germline yield is so high (>50% for childhood ACC; ~50% for
+  choroid plexus carcinoma) that family history is unnecessary.
+
+  Cited from prevention RFs for LFS suspicion in patient pedigrees
+  (referenced by IND-LI-FRAUMENI-SUSPICION-PREVENTION-* indications).
+draft: true

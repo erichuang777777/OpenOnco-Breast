@@ -1,0 +1,125 @@
+id: ALGO-BCSC-BREAST
+applicable_to_disease: DIS-BREAST
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention.
+purpose: >
+  Breast Cancer Surveillance Consortium (BCSC) risk model. 5-year and
+  10-year invasive breast cancer risk for women 35-74 undergoing
+  screening mammography. Distinguishing feature: integrates
+  mammographic breast density (BI-RADS density categories a-d) as a
+  first-class predictor. Inputs: age, race/ethnicity, family history
+  (first-degree relatives), breast biopsy history (with/without
+  atypical hyperplasia), BI-RADS breast density.
+
+  Often used jointly with Gail for chemoprevention discussion; BCSC
+  better discriminates among women with dense breasts and prior
+  biopsies. Calibrated on >1.1M women from the BCSC consortium —
+  validated on contemporary US screening population.
+
+output_indications:
+  - IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# BCSC is a general-population model; elevated-risk strata route into
+# the enhanced-surveillance pathway. Algorithm routes only to the
+# surveillance Indication to satisfy the algorithm-routing contract.
+# Population-risk chemoprevention as a dedicated Indication is v0.2
+# follow-up backlog.
+
+decision_tree:
+  - step: 1
+    # Eligibility gate.
+    evaluate:
+      any_of:
+        - condition: "Patient has known BRCA1/BRCA2 pathogenic variant"
+        - condition: "Patient has strong family history suggesting HBOC (use pedigree-based model)"
+        - condition: "Patient had prior chest/thoracic radiation"
+        - condition: "Patient has personal history of breast cancer or DCIS / LCIS"
+        - condition: "Patient age <35 or >74 (outside BCSC validation range)"
+    if_true:
+      result: null
+      notes: "BCSC not appropriate — apply pedigree-based model (Tyrer-Cuzick v8 / Manchester / BRCAPRO / BOADICEA), or refer for hereditary panel if HBOC suspicion."
+    if_false:
+      next_step: 2
+  - step: 2
+    # High-risk lifetime threshold (NICE ≥30%; ACS ≥20% for MRI).
+    evaluate:
+      any_of:
+        - condition: "BCSC 10-year invasive breast cancer risk ≥6% (high-risk threshold approximating lifetime ≥20-30%)"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "BCSC 10y ≥6% — enhanced surveillance (annual mammography ± MRI per ACS/NCCN, density-adjusted protocol), chemoprevention discussion."
+    if_false:
+      next_step: 3
+  - step: 3
+    # Moderate-risk threshold (USPSTF chemoprevention range, ~5y ≥1.66%
+    # mapped to BCSC 5y ≥3%).
+    evaluate:
+      any_of:
+        - condition: "BCSC 5-year invasive breast cancer risk ≥3.0%"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "BCSC 5y ≥3% — moderate-to-elevated risk. Chemoprevention candidacy (tamoxifen / raloxifene / aromatase inhibitor) + density-adjusted screening (supplemental ultrasound or MRI in heterogeneously/extremely dense breasts per state law / clinical judgement)."
+    if_false:
+      next_step: 4
+  - step: 4
+    # Dense-breast subgroup — even at average overall risk, dense breasts
+    # warrant supplemental screening per many state laws + ACR/ACS.
+    evaluate:
+      all_of:
+        - condition: "BI-RADS density category c (heterogeneously dense) or d (extremely dense)"
+        - condition: "BCSC 5-year invasive breast cancer risk ≥1.66%"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "BI-RADS density c/d + BCSC 5y ≥1.66% — moderate risk amplified by density. Discuss supplemental screening per FDA 2024 mammography density-reporting rule + state-specific notification laws."
+    if_false:
+      result: false
+      notes: "BCSC 5y <1.66%, density not high — average / below-average risk. Routine USPSTF screening cadence."
+
+sources:
+  - SRC-NCCN-BREAST-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding the BCSC risk model
+  (Tice JA et al. Mammographic breast density and the Gail model for
+  breast cancer risk prediction in a screening population. Breast
+  Cancer Res Treat 2005;94:115-122. PMID 16261410; Tice JA et al.
+  Using clinical factors and mammographic breast density to estimate
+  breast cancer risk: development and validation of a new predictive
+  model. Ann Intern Med 2008;148:337-347. PMID 18316752; Tice JA et
+  al. Updates to the BCSC risk model for invasive breast cancer
+  prediction. Cancer Causes Control 2015;26:1043-1052 PMID 25956409 —
+  updated parameter recalibration). Primary-paper Source entity
+  (SRC-TICE-2008-BCSC, SRC-TICE-2015-BCSC-V2) is v0.2-B authoring
+  backlog.
+
+  Anchored to DIS-BREAST.
+
+  Performance characteristics:
+    - C-statistic ~0.66 (Tice 2015) — modestly better discrimination
+      than Gail in screening populations, especially among women with
+      dense breasts
+    - Particularly useful for chemoprevention decision support among
+      women with extremely dense breasts (BI-RADS d) where Gail
+      under-discriminates
+    - Validated for women 35-74; outside this range use Gail
+      (recalibrated) or Tyrer-Cuzick v8
+
+  Model availability: free web calculator at https://tools.bcsc-scc.org/BC5yearRisk/calculator.htm
+  (BCSC Risk Calculator). No public API.
+
+  Joint use with Gail: many programs compute BOTH Gail and BCSC; if
+  either exceeds chemoprevention threshold (1.66% 5y), shared
+  decision-making engaged. BCSC tends to identify additional
+  candidates among women with dense breasts whom Gail underestimates.
+
+  POPULATION-RISK CHEMOPREVENTION GAP: see ALGO-GAIL-BREAST and
+  ALGO-TYRER-CUZICK-V8-BREAST notes — interim routing to enhanced
+  surveillance.
+
+  Cited from prevention RFs for general-population + dense-breast
+  breast cancer risk stratification.
+draft: true

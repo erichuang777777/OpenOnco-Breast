@@ -1,0 +1,102 @@
+id: ALGO-PREMM5-LYNCH
+applicable_to_disease: DIS-CRC
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention.
+purpose: >
+  PREMM5 (Prediction of Mutations in MLH1, MSH2, MSH6, PMS2, and EPCAM)
+  model. Continuous probability score 0-100% for germline pathogenic-
+  variant carriage in any of the five Lynch syndrome genes. Computed
+  from personal + family Lynch-spectrum cancer history with weighted
+  age-at-diagnosis terms. Threshold of ≥2.5% probability is the
+  testing-recommendation cutoff per NCCN / ACG / multi-society 2014
+  consensus (Giardiello 2014).
+
+  PREMM5 differs from PREMM 1,2,6 (older version) by including PMS2 +
+  EPCAM and recalibrating against contemporary multi-gene-panel data.
+  Continuous score allows finer stratification than the binary Amsterdam
+  II / Bethesda criteria.
+
+output_indications:
+  - IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Genetic counseling + germline MMR/EPCAM panel referral is the first
+# action within the surveillance pathway. Algorithm routes only to the
+# surveillance Indication to satisfy the algorithm-routing contract;
+# counseling component is documented in Indication rationale.
+
+decision_tree:
+  - step: 1
+    # High-confidence carrier threshold ≥5% (NCCN higher-yield testing).
+    evaluate:
+      any_of:
+        - condition: "PREMM5 carrier probability ≥5% (high-confidence testing indication)"
+    if_true:
+      result: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "PREMM5 ≥5% — strong indication for germline MMR/EPCAM panel testing + genetic counseling. Diagnostic yield ~25-30% at this threshold."
+    if_false:
+      next_step: 2
+  - step: 2
+    # Standard testing threshold ≥2.5% (Kastrinos 2017 cutoff).
+    evaluate:
+      any_of:
+        - condition: "PREMM5 carrier probability ≥2.5%"
+    if_true:
+      result: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "PREMM5 ≥2.5% — testing-recommendation threshold met. Refer for genetic counseling + germline MMR/EPCAM panel. Diagnostic yield ~10-15% at this threshold."
+    if_false:
+      next_step: 3
+  - step: 3
+    # Borderline 1-2.5% — case-by-case decision, often offer testing
+    # given the low cost and high impact.
+    evaluate:
+      all_of:
+        - condition: "PREMM5 carrier probability 1.0-2.5% (borderline)"
+    if_true:
+      result: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "PREMM5 1.0-2.5% — borderline. Genetic counseling for shared decision; many programs offer testing at this range given falling cost (~$250-500 for multi-gene panel) and high downstream impact. Default to enhanced empirical surveillance pathway if testing declined; route to GENETIC-COUNSELING if patient elects to test."
+    if_false:
+      result: false
+      notes: "PREMM5 <1% — average / near-average Lynch carrier probability. General-population CRC screening per USPSTF (colonoscopy q10y from 45, or alternative modality) unless other risk factors present."
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-ESMO-CRC-2024
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding the PREMM5 model
+  (Kastrinos F et al. Development and validation of the PREMM5 model
+  for comprehensive risk assessment of Lynch syndrome. J Clin Oncol
+  2017;35:2165-2172. PMID 28489507). Updates the PREMM 1,2,6 model
+  (Kastrinos 2011) by adding PMS2 and EPCAM. Primary-paper Source
+  entity (SRC-KASTRINOS-2017-PREMM5) is v0.2-B authoring backlog.
+
+  Anchored to DIS-CRC; reach extends to all Lynch-spectrum (DIS-
+  ENDOMETRIAL, DIS-GASTRIC, DIS-OVARIAN, DIS-UROTHELIAL, DIS-PROSTATE,
+  DIS-PDAC).
+
+  Performance characteristics (Kastrinos 2017 validation):
+    - C-statistic 0.81 (95% CI 0.79-0.84) for combined MMR/EPCAM
+      detection
+    - Diagnostic yield at ≥2.5% threshold: ~10-15%
+    - Diagnostic yield at ≥5% threshold: ~25-30%
+    - Sensitivity at ≥2.5%: ~91%
+    - Specificity at ≥2.5%: ~25%
+    - At ≥5%: sensitivity ~71%, specificity ~63%
+
+  Continuous-score advantages over Amsterdam II / Bethesda:
+    - Avoids binary thresholding error near criterion boundaries
+    - Captures partial pedigree information (e.g., small families,
+      adopted patients with limited family history)
+    - Integrates personal cancer history with family-history weight
+
+  Model availability: free web calculator at https://premm.dfci.harvard.edu/
+  (no public API; the algorithm here is a declarative scoring rule
+  referencing the standardized score, not the calculator itself).
+
+  Cited from RF-LYNCH-FAMILY-HISTORY-SUSPICION trigger
+  `family_premm5_score_ge_2_5pct`.
+draft: true
