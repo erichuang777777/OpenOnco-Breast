@@ -1,0 +1,86 @@
+id: TEST-COLONOSCOPY-SURVEILLANCE
+names:
+  preferred: "Surveillance colonoscopy (full, to cecum, with biopsy)"
+  ukrainian: "Колоноскопія для нагляду (повна, до сліпої кишки, з біопсією)"
+  english: "Surveillance colonoscopy"
+  synonyms: ["Lynch surveillance colonoscopy", "Post-polypectomy colonoscopy", "IBD surveillance colonoscopy"]
+loinc_codes: ["18745-0", "75940-2"]
+category: imaging
+purpose: >
+  CRC surveillance in defined high-risk cohorts: Lynch syndrome (MMR
+  pathogenic-variant carriers q1–2y from age 20–25), familial
+  adenomatous polyposis (FAP — q1–2y from age 10–15 once polyps
+  detected on sigmoidoscopy), serrated polyposis syndrome, post-
+  polypectomy follow-up per US-MSTF intervals, long-standing IBD
+  (≥8 years extensive colitis), and family-history-based screening.
+  Distinct from TEST-COLONOSCOPY-FULL (diagnostic indication —
+  symptoms / positive FIT / abnormal imaging).
+
+specimen: "Biopsy specimens for histology (jumbo / random / targeted depending on indication)"
+turnaround_time: "Procedure same day; histology 5–10 days; pathology summary 7–14 days"
+priority_class: standard
+
+availability_ukraine:
+  state_funded: true
+  typical_availability: "Tertiary endoscopy units widely available; high-definition + chromoendoscopy / NBI limited to major centers"
+  notes: >
+    NSZU reimburses colonoscopy; however, no organized population CRC
+    screening program exists in UA as of 2026-05 — Lynch / FAP / IBD
+    surveillance is patient-initiated or oncologist-referred.
+    High-definition white-light + chromoendoscopy (indigo carmine
+    or NBI) is the standard for Lynch and IBD surveillance and
+    is restricted to tertiary referral endoscopy units.
+
+sources:
+  - SRC-NCCN-COLON-2025
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-ASCO-ACMG-LYNCH-2014
+  - SRC-ESMO-COLON-2024
+
+last_reviewed: "2026-05-18"
+review_status: pending_clinical_signoff
+drafted_by: claude_extraction
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Recommended intervals by indication (NCCN-Genetic/Familial-CRC-2025,
+  US-MSTF post-polypectomy 2020, AGA / ASGE IBD surveillance):
+
+  Lynch syndrome:
+    - MLH1 / MSH2 / EPCAM: q1–2y from age 20–25 (or 2–5 years before
+      earliest family CRC, whichever earlier)
+    - MSH6 / PMS2: q1–2y from age 30–35
+    - Continue lifelong; no upper age cutoff in absence of comorbidity
+
+  FAP / classical:
+    - Annual flexible sigmoidoscopy (TEST-FLEX-SIGMOIDOSCOPY) from
+      age 10–15 until polyps detected → switch to annual full
+      colonoscopy with polypectomy → prophylactic colectomy
+      typically by late teens to early 20s
+
+  Attenuated FAP / MUTYH-associated polyposis:
+    - q1–2y full colonoscopy from age 18–20
+
+  Post-polypectomy (US-MSTF 2020):
+    - 1–2 small (<10 mm) tubular adenomas: 7–10 years
+    - 3–4 small adenomas: 3–5 years
+    - 5–10 small adenomas: 3 years
+    - Advanced adenoma (≥10 mm OR villous OR HGD): 3 years
+    - Sessile serrated polyp ≥10 mm OR with dysplasia: 3 years
+    - >10 adenomas in single exam: refer to genetics
+
+  IBD surveillance:
+    - Pancolitis / left-sided colitis ≥8 years OR PSC + UC any
+      duration: q1–3y with chromoendoscopy + random biopsies
+      (or HD-WLE with targeted biopsies of visible lesions per
+      SCENIC consensus)
+
+  Quality metrics (mandatory documentation): cecal intubation rate
+  ≥95% (screening); adenoma detection rate ≥25% (men) / ≥15%
+  (women) — operator-specific; withdrawal time ≥6 min on negative
+  exams.
+
+  Engineering note: this Test entity is referenced by v0.2-B
+  prevention Indications across Lynch / MMR carriers, FAP / MUTYH,
+  serrated polyposis, IBD-long-standing, and post-polypectomy
+  surveillance cohorts.

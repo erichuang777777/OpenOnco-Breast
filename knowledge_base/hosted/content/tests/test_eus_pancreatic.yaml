@@ -1,0 +1,93 @@
+id: TEST-EUS-PANCREATIC
+names:
+  preferred: "Endoscopic ultrasound — pancreatic surveillance (CAPS protocol)"
+  ukrainian: "Ендоскопічна ультрасонографія — нагляд підшлункової залози (CAPS-протокол)"
+  english: "Pancreatic surveillance EUS"
+  synonyms: ["EUS pancreas", "CAPS EUS", "Surveillance pancreatic EUS"]
+loinc_codes: ["80114-9"]
+category: imaging
+purpose: >
+  Pancreatic ductal adenocarcinoma (PDAC) and high-grade-dysplasia
+  surveillance in defined hereditary / familial high-risk cohorts
+  per CAPS (International Cancer of the Pancreas Screening
+  Consortium) consensus guidelines 2020 and 2022 updates:
+  familial PDAC kindreds with ≥1 affected first-degree relative,
+  Peutz-Jeghers (STK11), familial atypical multiple-mole melanoma
+  (CDKN2A / FAMMM), hereditary pancreatitis (PRSS1, SPINK1, CFTR),
+  Lynch syndrome with PDAC family history, BRCA2 carriers with
+  ≥1 affected FDR, BRCA1 / PALB2 / ATM with ≥1 affected FDR,
+  hereditary diffuse gastric cancer (CDH1) per emerging data.
+  Typically alternates with MRI/MRCP at 6–12 month intervals.
+
+specimen: "Endoscopic procedure under deep sedation / monitored anesthesia; tissue acquisition (FNB / FNA) only for indeterminate lesions identified during exam"
+turnaround_time: "Procedure same day; report within 1–2 days; histopathology 5–10 days if biopsy performed"
+priority_class: standard
+
+availability_ukraine:
+  state_funded: false
+  typical_availability: "Limited — ~5–8 centers nationally with EUS expertise and pancreatic-protocol experience; surveillance-specific pathway essentially absent outside research / private contexts"
+  notes: >
+    EUS-FNA / FNB is established in UA for diagnostic workup of
+    pancreatic mass lesions and submucosal GI tumors; however, the
+    surveillance-pathway use case (asymptomatic high-risk
+    individuals) is not part of routine practice. International
+    referral or research-protocol enrollment is often the practical
+    pathway for confirmed-carrier patients.
+
+sources:
+  - SRC-NCCN-PANCREATIC-2025
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+
+last_reviewed: "2026-05-18"
+review_status: pending_clinical_signoff
+drafted_by: claude_extraction
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Indications (CAPS 2020 / 2022 consensus thresholds):
+
+  Familial PDAC kindreds (no identified pathogenic variant):
+  - ≥1 affected first-degree relative on the same lineage:
+    consider surveillance from age 50 (or 10 years earlier than
+    youngest family case, whichever earlier)
+
+  Specific high-risk pathogenic variants:
+  - Peutz-Jeghers (STK11): start age 35 — highest per-carrier risk
+  - CDKN2A / FAMMM: start age 40
+  - Hereditary pancreatitis (PRSS1): start age 40 (or 20 years
+    after pancreatitis onset)
+  - Lynch syndrome (MLH1 / MSH2): start age 50 with affected FDR
+  - BRCA1 / BRCA2 / PALB2 / ATM: start age 50 if ≥1 affected FDR
+
+  Protocol (CAPS):
+  - Annual surveillance with alternating modalities
+  - EUS at one visit + MRI/MRCP (TEST-MRI-ABDOMEN-RCC pattern; MRI
+    pancreas at 6 months later)
+  - Indeterminate lesions: shortened interval (3–6 months) +
+    multidisciplinary review
+  - Solid lesions / clearly malignant features: tissue acquisition
+    via EUS-FNB / FNA and immediate surgical / oncology referral
+
+  Performance:
+  - PDAC mortality reduction in CAPS cohort: emerging data —
+    early-stage detection improved but population-level mortality
+    benefit not established
+  - Sensitivity for premalignant PanIN / high-grade dysplasia is
+    limited; EUS strength is in solid-lesion detection (~90%
+    sensitivity ≥1 cm)
+
+  Limitations:
+  - Operator-dependent (high-volume EUS center required)
+  - Sedation / anesthesia risk
+  - Pancreatic cyst incidentaloma management overhead (mostly
+    branch-duct IPMN, low malignant potential — but drives
+    surveillance escalation)
+  - Net benefit / harm in moderate-risk cohorts (LR ~5x baseline)
+    is contested — should be offered with explicit shared decision-
+    making
+
+  Engineering note: referenced by v0.2-B prevention Indications for
+  Peutz-Jeghers, FAMMM / CDKN2A, hereditary pancreatitis,
+  BRCA / PALB2 / ATM with FDR, and familial PDAC kindred
+  surveillance pathways.

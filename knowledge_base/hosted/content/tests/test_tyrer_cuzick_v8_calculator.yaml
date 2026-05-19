@@ -1,0 +1,108 @@
+id: TEST-TYRER-CUZICK-V8-CALCULATOR
+names:
+  preferred: "Tyrer-Cuzick (IBIS) v8 breast-cancer risk calculator"
+  ukrainian: "Калькулятор ризику раку молочної залози Tyrer-Cuzick (IBIS) v8"
+  english: "Tyrer-Cuzick v8"
+  synonyms: ["IBIS v8", "TC-8", "Tyrer-Cuzick risk model"]
+loinc_codes: []
+category: clinical_assessment
+purpose: >
+  Multifactorial 10-year + lifetime breast-cancer risk-estimation
+  model that integrates personal reproductive history (age at
+  menarche, parity, age at first live birth, age at menopause,
+  HRT use), BMI, height, mammographic breast density (BI-RADS A–D
+  or Volpara automated quantitative), atypical-hyperplasia / LCIS
+  pathology, family history across maternal and paternal lines,
+  and known pathogenic-variant status (BRCA1, BRCA2, others).
+  Tyrer-Cuzick v8 (2017 update) is the most widely cited risk
+  model and is used per NCCN-Breast / NCCN-Genetic-Familial-
+  Breast-Ovarian to decide eligibility for supplemental MRI
+  screening (≥20% lifetime risk threshold) and risk-reducing
+  endocrine therapy (≥5-year ≥1.66% threshold per Gail or
+  ≥5-year ≥3% by Tyrer-Cuzick for ESMO).
+
+specimen: "Calculated — no specimen"
+turnaround_time: "Calculated; result within minutes when all inputs available"
+priority_class: calculation_based
+
+availability_ukraine:
+  state_funded: true
+  typical_availability: "Free online calculator (ems-trials.org/riskevaluator) and integrated module in many EMR / radiology platforms; no separate cost"
+  notes: >
+    Tyrer-Cuzick v8 is open-access at ems-trials.org. Practical UA
+    pathway: oncologist or genetic counselor inputs patient data
+    into the web calculator at first prevention consultation. The
+    primary friction point is collecting accurate family-history
+    data (often incomplete in primary-care records) — a
+    pre-consultation family-history questionnaire is recommended.
+
+sources:
+  - SRC-NCCN-BREAST-2025
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-ESMO-BREAST-EARLY-2024
+
+last_reviewed: "2026-05-18"
+review_status: pending_clinical_signoff
+drafted_by: claude_extraction
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Input variables (Tyrer-Cuzick v8):
+  - Age, height, weight (BMI)
+  - Age at menarche, age at menopause, current menopausal status
+  - Parity, age at first live birth
+  - Use of hormone replacement therapy (HRT) — type and duration
+  - Mammographic density (BI-RADS A–D categorical OR Volpara /
+    Quantra automated continuous density)
+  - Personal history: atypical ductal hyperplasia (ADH), atypical
+    lobular hyperplasia (ALH), lobular carcinoma in situ (LCIS)
+  - Family history: extended pedigree (mother, father, sisters,
+    brothers, daughters, sons, maternal + paternal aunts /
+    uncles / cousins / grandparents) with age at diagnosis and
+    cancer type (breast, ovarian, prostate, pancreatic)
+  - Known pathogenic-variant status: BRCA1, BRCA2, TP53, PTEN,
+    CDH1, STK11, PALB2 (model partially supports — for confirmed
+    P/LP variant management defer to syndrome-specific
+    surveillance rather than TC-8 lifetime risk)
+  - Ethnicity (Ashkenazi Jewish increment)
+
+  Output:
+  - 10-year breast-cancer risk percentage
+  - Lifetime breast-cancer risk percentage (to age 85)
+  - Risk-stratified to NCCN supplemental-screening thresholds
+
+  Decision thresholds (NCCN-Breast 2025 + NCCN-Genetic-Familial-
+  Breast-Ovarian 2025):
+  - Lifetime risk ≥20%: add annual breast MRI to mammography
+    screening starting age 25–30 (NCCN category 2A)
+  - Lifetime risk 15–20%: discuss MRI; not universal recommendation
+  - Lifetime risk <15%: standard population-screening cadence
+  - 5-year risk ≥3% (Tyrer-Cuzick) or ≥1.66% (Gail): eligible
+    for risk-reducing endocrine therapy (tamoxifen, raloxifene,
+    aromatase inhibitor) — shared decision-making per
+    USPSTF / NCCN
+
+  Performance / limitations:
+  - Tyrer-Cuzick AUC ~0.62–0.73 in validation cohorts — modest
+    individual-level discrimination but acceptable for
+    population-stratification use case
+  - Outperforms Gail in family-history-rich cohorts; comparable
+    in average-risk cohorts
+  - Does NOT replace BRCA / hereditary panel testing — when
+    family-history-based testing criteria are met
+    (NCCN-Genetic-Familial-Breast-Ovarian), panel testing
+    (TEST-GERMLINE-MULTI-GENE-PANEL) is the preferred next step
+    over risk-model calculation
+  - Underestimates risk in women with prior chest RT (e.g.,
+    Hodgkin lymphoma childhood RT) — use dedicated late-effects
+    protocols instead
+  - Does NOT include polygenic-risk-score (PRS) inputs as of v8 —
+    PRS adjustments are emerging research, not part of routine
+    clinical use yet
+
+  Engineering note: referenced by v0.2-B prevention Indications for
+  breast-cancer risk assessment in family-history-positive women,
+  ADH / ALH / LCIS pathology cohort, BRCA-suspicion-pre-testing,
+  and dense-breast surveillance pathways. Calculator output drives
+  decision-rule firing for supplemental MRI and endocrine-prevention
+  Indications.

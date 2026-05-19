@@ -1,0 +1,72 @@
+id: TEST-FLEX-SIGMOIDOSCOPY
+names:
+  preferred: "Flexible sigmoidoscopy"
+  ukrainian: "Сигмоїдоскопія гнучким ендоскопом"
+  english: "Flexible sigmoidoscopy"
+  synonyms: ["Flex sig", "FS", "Pediatric FAP sigmoidoscopy"]
+loinc_codes: ["18760-9"]
+category: imaging
+purpose: >
+  Initial colorectal-surveillance modality in pediatric / adolescent
+  FAP carriers (annual from age 10–15 until first adenomas detected,
+  at which point patients transition to full colonoscopy with
+  polypectomy). Lower sedation burden, no full bowel prep required,
+  acceptable for young children. Also used in selected post-
+  polypectomy / hemorrhoid / left-sided IBD scenarios. Does NOT
+  replace full colonoscopy for adult CRC screening / Lynch
+  surveillance — does not visualize right colon where MMR-deficient
+  cancers cluster.
+
+specimen: "Biopsy specimens for histology if lesions detected"
+turnaround_time: "Same day; histology 5–10 days if biopsies taken"
+priority_class: standard
+
+availability_ukraine:
+  state_funded: true
+  typical_availability: "Endoscopy units widely available; pediatric-experienced endoscopists limited to tertiary children's hospitals"
+  notes: >
+    Standard endoscopy equipment supports flexible sigmoidoscopy;
+    procedural challenge in pediatric FAP cohort is operator
+    experience + age-appropriate sedation, not equipment access.
+    Refer to pediatric gastroenterology for FAP indication.
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-NCCN-COLON-2025
+
+last_reviewed: "2026-05-18"
+review_status: pending_clinical_signoff
+drafted_by: claude_extraction
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  FAP surveillance pathway (NCCN-Genetic/Familial-CRC-2025):
+  - Annual flexible sigmoidoscopy from age 10–15 in confirmed APC
+    carriers OR at-risk first-degree relatives prior to genetic
+    testing if testing deferred to age of consent
+  - Visualizes rectum + sigmoid + descending colon (typically to
+    splenic flexure)
+  - Once even small adenomas are detected on flex sig → switch
+    to annual full colonoscopy with polypectomy
+  - Polyp burden assessment drives timing of prophylactic
+    colectomy (TPC / IRA vs IPAA) — typically late teens to early
+    20s once polyp number exceeds endoscopic-management threshold
+
+  Procedural advantages in pediatric cohort vs full colonoscopy:
+  - No full bowel prep (enema prep only)
+  - Conscious sedation or no sedation acceptable
+  - Procedure time ~10–15 min vs 30+ min for full colonoscopy
+  - Lower cardiopulmonary risk
+
+  Adult CRC screening role:
+  - USPSTF lists flex sig (q5y) as one of multiple acceptable
+    average-risk CRC screening modalities — DOES NOT meet
+    Lynch / FAP / IBD surveillance requirements
+  - Negative flex sig does not exclude right-sided MMR-deficient
+    cancer — must be paired with FIT or replaced by full
+    colonoscopy for high-risk cohorts
+
+  Engineering note: this Test entity is referenced primarily by
+  v0.2-B prevention Indications for FAP / attenuated FAP / MUTYH
+  pediatric surveillance pathways. Adult Lynch / IBD surveillance
+  cite TEST-COLONOSCOPY-SURVEILLANCE instead.

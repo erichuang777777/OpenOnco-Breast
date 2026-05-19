@@ -1,0 +1,89 @@
+id: TEST-MR-ENTEROGRAPHY
+names:
+  preferred: "MR-enterography of small bowel (with oral + IV contrast)"
+  ukrainian: "МР-ентерографія тонкої кишки (з пероральним та в/в контрастом)"
+  english: "MR-enterography"
+  synonyms: ["MRE", "Small-bowel MR", "MR-enteroclysis (alternative form)"]
+loinc_codes: ["79101-6"]
+category: imaging
+purpose: >
+  Cross-sectional small-bowel imaging — mural and mesenteric view
+  complementary to video capsule endoscopy (mucosal view).
+  OpenOnco prevention indications: Peutz-Jeghers surveillance
+  (jejunal / ileal polyp mass + intussusception risk),
+  refractory celiac disease (rule out enteropathy-associated
+  T-cell lymphoma — EATL), Crohn's disease cancer surveillance in
+  long-standing small-bowel involvement, and complex polyposis
+  syndromes with extra-luminal disease. Preferred over CT-
+  enterography for surveillance use cases requiring repeated
+  imaging in pediatric / young-adult populations (no ionizing
+  radiation).
+
+specimen: "Imaging procedure with oral enteric contrast (typically polyethylene-glycol-based) + IV gadolinium"
+turnaround_time: "Acquisition 30–60 min; report 1–3 days"
+priority_class: standard
+
+availability_ukraine:
+  state_funded: false
+  typical_cost_uah: 6500.0
+  typical_availability: "Major academic and private MR centers; small-bowel-protocol expertise limited to ~10–15 UA centers"
+  notes: >
+    Standard MR-enterography requires both an experienced
+    radiologist (small-bowel motility / mural-enhancement
+    interpretation) and the oral enteric-contrast protocol
+    workflow. Many UA private centers offer "MR abdomen" without
+    the dedicated enterography protocol — for the OpenOnco
+    surveillance use case the dedicated protocol is essential.
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-NCCN-COLON-2025
+  - SRC-ESMO-COLON-2024
+
+last_reviewed: "2026-05-18"
+review_status: pending_clinical_signoff
+drafted_by: claude_extraction
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Indications (OpenOnco prevention scope):
+
+  Peutz-Jeghers syndrome (STK11 carriers):
+  - Baseline MR-enterography paired with VCE (TEST-VCE-CAPSULE) at
+    age 8–10
+  - Surveillance q1–3y in alternation or parallel with VCE
+  - MR-E adds: mass effect, intussusception risk, mesenteric
+    lymphadenopathy, extra-luminal disease — features VCE
+    cannot show
+
+  Refractory celiac disease (RCD-II / EATL surveillance):
+  - Indicated when symptoms persist on strict GFD ≥12 months OR
+    flat villous architecture with aberrant intraepithelial-
+    lymphocyte clonality on biopsy
+  - MR-E identifies wall thickening, mass lesion, mesenteric
+    lymphadenopathy suspicious for ulcerative jejunitis or EATL
+
+  Crohn's disease — small-bowel cancer surveillance:
+  - Long-standing ileal Crohn's with strictures has elevated
+    small-bowel adenocarcinoma risk; MR-E is the primary
+    imaging modality for both inflammatory activity and
+    suspected neoplasia
+  - Surveillance frequency tailored to individual risk; no
+    standardized interval, typically q1–3y in symptomatic /
+    high-burden patients
+
+  Limitations:
+  - Patient cooperation with oral enteric-contrast ingestion
+    (typically 1.5–2 L over 45–60 min); challenging in young
+    children — alternative is intubated enteroclysis under
+    sedation
+  - Gadolinium relative contraindication in eGFR <30, pregnancy
+  - Motion artifact in patients unable to perform consistent
+    breath-holds
+  - Does NOT enable tissue acquisition — positive findings
+    require enteroscopy, surgery, or PET-CT for staging
+
+  Engineering note: referenced by v0.2-B prevention Indications
+  for Peutz-Jeghers, refractory celiac disease, and Crohn's-
+  long-standing small-bowel surveillance pathways. Complementary
+  test entity to TEST-VCE-CAPSULE.

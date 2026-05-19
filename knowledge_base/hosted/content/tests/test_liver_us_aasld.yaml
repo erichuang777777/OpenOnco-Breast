@@ -1,0 +1,85 @@
+id: TEST-LIVER-US-AASLD
+names:
+  preferred: "Hepatic ultrasound (HCC surveillance, q6 months)"
+  ukrainian: "УЗД печінки (нагляд ГЦК, q6 місяців)"
+  english: "HCC surveillance liver ultrasound"
+  synonyms: ["Surveillance liver US", "AASLD HCC US", "Q6mo liver ultrasound"]
+loinc_codes: ["37076-3", "30794-2"]
+category: imaging
+purpose: >
+  Hepatocellular carcinoma (HCC) surveillance imaging in defined
+  cirrhotic and high-risk non-cirrhotic chronic-liver-disease
+  cohorts (AASLD 2023, EASL 2018, JSH 2021, KLCA-NCC 2022). Performed
+  every 6 months, typically paired with serum AFP (TEST-AFP).
+  Sensitivity ~63% for HCC at any stage, ~47% for early-stage HCC
+  (CONSORT-style meta-analyses); operator-dependent; obese / NAFLD
+  cirrhotics have particularly limited acoustic windows. Distinct
+  from diagnostic liver imaging — surveillance protocol uses a
+  defined sweep, not lesion-characterization workup.
+
+specimen: "Imaging procedure (no specimen, no contrast)"
+turnaround_time: "Same day; report within 1–3 days"
+priority_class: standard
+
+availability_ukraine:
+  state_funded: true
+  typical_availability: "Universal at hepatology / gastroenterology departments and most primary-care imaging centers"
+  notes: >
+    Ultrasound is widely accessible in UA. Constraint for HCC
+    surveillance quality is operator training (dedicated sweep
+    protocol per AASLD), longitudinal continuity (same operator
+    when possible), and the patient pathway connecting positive
+    surveillance findings → MRI / CECT recall imaging within
+    4 weeks per LI-RADS recall pathway.
+
+sources:
+  - SRC-AASLD-HCC-2023
+  - SRC-NCCN-HCC-2025
+  - SRC-AASLD-HBV-2024
+  - SRC-AASLD-IDSA-HCV-2023
+
+last_reviewed: "2026-05-18"
+review_status: pending_clinical_signoff
+drafted_by: claude_extraction
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Indication (AASLD 2023 HCC surveillance):
+  - All cirrhotic patients regardless of etiology (Child-Pugh A–B,
+    and selected Child-Pugh C if transplant candidates)
+  - Chronic HBV without cirrhosis but elevated risk:
+    Asian male ≥40, Asian female ≥50, African ≥20, family history
+    HCC, HIV co-infection, HDV co-infection
+  - Stage 3+ fibrosis on biopsy / elastography in chronic HCV (per
+    AASLD-IDSA — surveillance continues post-SVR if F3–F4 at time
+    of cure)
+  - PNPLA3 / TM6SF2 high-risk MASLD-cirrhosis cohort (emerging)
+
+  Protocol elements (AASLD-defined):
+  - Frequency: every 6 months (NOT annual — interval scale-up
+    misses interval cancers detectable while still curable)
+  - Paired with serum AFP (TEST-AFP) — combination AUC ~0.80 vs
+    US-alone ~0.69
+  - Recall imaging for any nodule ≥1 cm OR rising AFP →
+    multiphase contrast CT or MRI within 4 weeks per LI-RADS
+    workflow
+
+  Limitations:
+  - Sensitivity drops to <30% in BMI >35 cirrhotics (visualization
+    score C — "limited") — these patients warrant MRI surveillance
+    or, where unavailable, a frank discussion of surveillance
+    limits
+  - Subcapsular HCC, dome lesions under the diaphragm, deep
+    posterior-segment lesions are commonly missed
+
+  Patient pathway expectations: q6mo cadence requires longitudinal
+  patient engagement; documented adherence to surveillance in real-
+  world cohorts is ~30–40%. Plan rendering should highlight the
+  cadence and patient-education component explicitly.
+
+  Engineering note: referenced by v0.2-A infectious-etiology
+  prevention Indications (chronic HBV, chronic HCV pre/post-SVR,
+  HBV/HCV co-infection, HIV/HBV co-infection) and by cirrhosis-
+  etiology RedFlags (alcoholic cirrhosis, hereditary
+  hemochromatosis cirrhosis, MASLD-F3/F4, autoimmune-hepatitis-
+  cirrhosis).

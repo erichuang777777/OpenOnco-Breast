@@ -1,0 +1,108 @@
+id: TEST-METANEPHRINES-PLASMA-PARAGANGLIOMA
+names:
+  preferred: "Plasma free metanephrines + normetanephrines (paraganglioma / pheochromocytoma screening)"
+  ukrainian: "Плазмові вільні метанефрини + норметанефрини (скринінг параганліоми / феохромоцитоми)"
+  english: "Plasma free metanephrines"
+  synonyms: ["Plasma fractionated metanephrines", "PFM", "PHEO screen"]
+loinc_codes: ["29561-8", "53204-5"]
+category: lab
+purpose: >
+  First-line biochemical screening for pheochromocytoma (adrenal-
+  medullary) and paraganglioma (extra-adrenal sympathetic /
+  parasympathetic) tumors. OpenOnco prevention indications:
+  hereditary paraganglioma-pheochromocytoma syndrome (SDHB / SDHC /
+  SDHD / SDHAF2 / SDHA / TMEM127 / MAX carriers — annual surveillance
+  from age 5–10 depending on gene), VHL (annual from age 5–10),
+  MEN2A / MEN2B / FMTC (annual from age 5–10 in highest-risk codons,
+  age 11+ in moderate-risk codons), NF1 (when clinical suspicion of
+  pheochromocytoma — sustained or paroxysmal hypertension,
+  headache, sweating, palpitations). Preferred over 24-hour
+  urinary metanephrines for screening — higher sensitivity (~97%
+  vs ~93%) and easier patient compliance.
+
+specimen: "Plasma (lavender-top EDTA tube) — supine ≥30 min before phlebotomy; processed and frozen within 4 hours; LC-MS/MS preferred over immunoassay"
+turnaround_time: "3–7 days at high-volume reference labs; up to 14 days at smaller centers (LC-MS/MS workflow)"
+priority_class: standard
+
+availability_ukraine:
+  state_funded: false
+  typical_cost_uah: 2200.0
+  typical_availability: "Private reference labs (CSD, Synevo) widely; LC-MS/MS methodology limited to ~5–8 high-volume UA labs"
+  notes: >
+    LC-MS/MS plasma metanephrine assay is the contemporary standard
+    of care; immunoassay-based plasma metanephrines have lower
+    specificity and should not be used for screening of confirmed
+    carriers. Pre-test patient preparation is critical: avoid
+    caffeine, nicotine, strenuous exercise ≥24h; ideally supine
+    seated for ≥30 min before draw; many medications (tricyclics,
+    SNRIs, levodopa, sympathomimetics, MAOI) cause false elevations
+    and should be reviewed pre-test.
+
+lab_availability_ua:
+  - lab: "CSD Lab"
+    product_code: null
+    product_name: "Метанефрини / норметанефрини (плазма)"
+    url: "https://www.csdlab.ua/analyzes/gormoni"
+    confirmation: "category_verified"
+    coverage_notes: "Plasma free metanephrines / normetanephrines fall under CSD's endocrinology lab menu — confirm LC-MS/MS methodology vs immunoassay at booking. Catalog code not publicly enumerated."
+    last_verified: "2026-05-01"
+
+sources:
+  - SRC-NCCN-NET-2025
+  - SRC-NCCN-THYROID-2025
+  - SRC-NCCN-KIDNEY-2025
+
+last_reviewed: "2026-05-18"
+review_status: pending_clinical_signoff
+drafted_by: claude_extraction
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Surveillance regimens by syndrome (combined NCCN-NET / NCCN-Kidney
+  / ATA-MEN2 / Endocrine Society):
+
+  Hereditary paraganglioma-pheochromocytoma syndrome:
+  - SDHB carriers (highest extra-adrenal + metastatic risk):
+    annual plasma metanephrines from age 5–10; whole-body MRI
+    + cervical / abdominal MRI alternating biennially
+  - SDHD / SDHC / SDHAF2 / SDHA: annual plasma metanephrines
+    from age 5–10; imaging cadence per family pattern
+  - TMEM127 / MAX: annual plasma metanephrines from age 10–15
+
+  Von Hippel-Lindau (VHL):
+  - Annual plasma metanephrines from age 5
+  - Paired with annual abdominal MRI (TEST-MRI-ABDOMEN-RCC) for
+    adrenal + retroperitoneal screening
+
+  MEN2A / MEN2B / FMTC (RET):
+  - Annual plasma metanephrines from age 11 for moderate-risk
+    codons; from age 5 for high-risk codons (M918T, C634)
+  - Paired with annual cervical ultrasound + serum calcitonin
+    (TEST-CALCITONIN-MTC) and PTH / ionized calcium
+
+  NF1:
+  - Symptom-driven screening (sustained / paroxysmal hypertension,
+    headache, sweating, palpitations) rather than asymptomatic
+    surveillance — pheochromocytoma penetrance ~1–5% in NF1
+
+  Interpretation:
+  - 2–3× upper-limit-of-normal: borderline; repeat under
+    standardized conditions + clonidine-suppression test or
+    imaging
+  - >4× upper-limit-of-normal: highly suspicious; proceed to
+    cross-sectional imaging (MDCT abdomen / pelvis with
+    pheochromocytoma protocol, or MRI if pediatric / pregnant)
+  - Predominantly elevated normetanephrines: extra-adrenal
+    paraganglioma over adrenal pheo
+
+  Confounders requiring repeat-under-controlled-conditions:
+  - Recent stress, caffeine, nicotine, exercise
+  - Tricyclic antidepressants, SNRIs, MAOI, levodopa, methyldopa,
+    sympathomimetics, buspirone
+  - Acute illness, sleep apnea
+  - Renal failure (urinary route preferred in eGFR <30)
+
+  Engineering note: referenced by v0.2-B prevention Indications for
+  hereditary paraganglioma-pheochromocytoma syndrome, VHL, MEN2A /
+  MEN2B / FMTC, NF1, and tuberous sclerosis-complex carrier
+  surveillance pathways.

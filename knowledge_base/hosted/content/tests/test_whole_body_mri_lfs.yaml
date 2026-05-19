@@ -1,0 +1,101 @@
+id: TEST-WHOLE-BODY-MRI-LFS
+names:
+  preferred: "Whole-body MRI — Li-Fraumeni surveillance (Toronto Protocol)"
+  ukrainian: "МРТ всього тіла — нагляд при синдромі Лі-Фраумені (Toronto-протокол)"
+  english: "LFS surveillance whole-body MRI"
+  synonyms: ["WB-MRI Toronto", "LFS WB-MRI", "TP53 carrier WB-MRI"]
+loinc_codes: []
+category: imaging
+purpose: >
+  Annual whole-body MRI for Li-Fraumeni syndrome (germline TP53
+  carrier) cancer surveillance per the Toronto Protocol (Villani
+  2016 Lancet Oncol cohort study + 2023 SIOP Europe consensus).
+  TP53 carriers have ~70% (men) to ~95% (women) cumulative
+  cancer risk by age 70, with markedly elevated incidence of
+  sarcoma, breast cancer, brain tumor, adrenocortical carcinoma,
+  and acute leukemia. Cumulative-radiation avoidance is paramount
+  (~10–20× radiation-induced second-malignancy risk vs general
+  population), so WB-MRI replaces CT / PET-CT / radiographic
+  surveillance modalities. Distinct from TEST-WHOLE-BODY-MRI
+  (which is MM skeletal-survey indication).
+
+specimen: "Imaging procedure (no specimen, no IV contrast in standard Toronto Protocol)"
+turnaround_time: "Acquisition 45–60 min; subspecialty radiology read 3–7 days; multidisciplinary surveillance review 7–14 days"
+priority_class: standard
+
+availability_ukraine:
+  state_funded: false
+  typical_cost_uah: 9500.0
+  typical_availability: "Limited — ~5–8 UA sites with WB-MRI capability and Toronto-protocol experience; longitudinal-comparison workflow essentially absent"
+  notes: >
+    Standard MR systems can acquire whole-body sequences, but the
+    Toronto Protocol expectation is subspecialty pediatric / LFS-
+    experienced radiology read with longitudinal comparison.
+    Practical UA pathway is often international referral
+    (Germany / Israel / Poland) for index baseline + comparison
+    studies, then local UA acquisition with remote read.
+    No NSZU reimbursement pathway as of 2026-05.
+
+sources:
+  - SRC-NCCN-CNS-2025
+
+last_reviewed: "2026-05-18"
+review_status: pending_clinical_signoff
+drafted_by: claude_extraction
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Toronto Protocol surveillance (Villani 2016 Lancet Oncol; updated
+  consensus 2023):
+
+  Pediatric (age <18) TP53 carriers:
+  - Brain MRI annually from infancy / diagnosis
+  - Abdominal + pelvic US q3–4 months (ages 0–18) for adrenal /
+    abdominal screening — supplements but does NOT replace
+    WB-MRI
+  - Whole-body MRI annually from age 5 (or earlier if family-
+    specific cancer pattern warrants)
+  - 24-hour urinary catecholamines / cortisol q3–4 months in
+    youngest children (adrenocortical carcinoma surveillance)
+  - Colonoscopy from age 25 q2–5y
+  - Skin examination annually
+
+  Adult TP53 carriers:
+  - Brain MRI annually
+  - Whole-body MRI annually
+  - Breast MRI annually from age 20 (women) — mammography
+    AVOIDED until age 30+ then balanced against MRI cost /
+    capacity; some protocols defer mammography entirely
+  - Breast clinical exam q6 months from age 20–25
+  - Risk-reducing mastectomy is discussed but is the
+    INTENSIFIED-track option, not standard surveillance
+  - Colonoscopy from age 25 q2–5y
+  - Skin examination annually
+  - Dermatologic + ophthalmologic exam annually
+
+  Protocol elements (WB-MRI):
+  - Coronal STIR / T2 from head to mid-thigh
+  - Diffusion-weighted imaging (DWI) for whole-body sarcoma /
+    lymphoma detection
+  - Standard Toronto Protocol does NOT use IV gadolinium for
+    routine annual WB-MRI (Gd retention concerns over lifetime
+    of repeat imaging) — selective gadolinium administration
+    if abnormal finding requires characterization
+  - Brain MRI is acquired with contrast (separate dedicated
+    acquisition)
+
+  Evidence for benefit:
+  - Villani 2016 Lancet Oncol: WB-MRI surveillance cohort
+    demonstrated stage-shift toward earlier-stage diagnoses and
+    improved 3-year overall survival vs non-surveilled TP53
+    cohort (88% vs 49%, p<0.001)
+  - Limitations: small numbers, single-center initially,
+    confounding by surveillance-eligible vs lost-to-follow-up
+    bias; psychological surveillance burden non-trivial
+    (anxiety, false positives ~50% of patients over 5-year
+    surveillance window)
+
+  Engineering note: referenced by v0.2-B prevention Indications
+  for Li-Fraumeni syndrome confirmed-carrier and Chompret-
+  criteria-suspicion pathways. Distinct entity from
+  TEST-WHOLE-BODY-MRI (multiple-myeloma indication).

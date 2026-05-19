@@ -1,0 +1,69 @@
+id: TEST-MAMMOGRAPHY
+names:
+  preferred: "Screening mammography (bilateral) ± tomosynthesis"
+  ukrainian: "Скринінгова мамографія (двостороння) ± томосинтез"
+  english: "Screening mammography"
+  synonyms: ["DBT", "Digital breast tomosynthesis", "Bilateral screening mammogram"]
+loinc_codes: ["24606-6", "26346-7"]
+category: imaging
+purpose: >
+  Population breast-cancer screening — asymptomatic women age 40–74
+  (USPSTF 2024 grade B, NCCN annual ≥40). Tomosynthesis adjunct
+  improves cancer detection and reduces recall in dense-breast
+  populations. Distinct from TEST-MAMMOGRAPHY-DIAGNOSTIC (which is
+  triggered by symptoms or screening abnormality). For BRCA1/2,
+  TP53, PALB2 carriers and prior chest-RT (Hodgkin), screening
+  mammography is paired with annual breast MRI per
+  NCCN-Genetic/Familial guidance.
+
+specimen: "Imaging procedure (no specimen)"
+turnaround_time: "Same day; report within 1–2 days"
+priority_class: standard
+
+availability_ukraine:
+  state_funded: true
+  typical_availability: "Widely available at regional oncology centers; tomosynthesis limited to major hospitals and private centers"
+  notes: >
+    UA has no organized population breast-screening program as of 2026-05;
+    screening is opportunistic and patient-initiated. NSZU reimburses
+    diagnostic mammography but no separate code for screening-asymptomatic
+    indication.
+
+sources:
+  - SRC-NCCN-BREAST-2025
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-ESMO-BREAST-EARLY-2024
+
+last_reviewed: "2026-05-18"
+review_status: pending_clinical_signoff
+drafted_by: claude_extraction
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Screening mammography is the workhorse modality for breast-cancer
+  early detection. Cadence options vary by guideline body:
+  - USPSTF 2024: biennial age 40–74 (grade B)
+  - NCCN 2025: annual age ≥40 (average risk)
+  - ACR / SBI: annual age ≥40
+  - Tyrer-Cuzick lifetime risk ≥20% → add annual MRI starting age 30
+    (or 25 for BRCA carriers)
+
+  For hereditary cohorts (BRCA1/2, TP53/Li-Fraumeni, PALB2, CDH1,
+  PTEN, STK11, ATM, CHEK2): pair with annual breast MRI per
+  NCCN-Genetic/Familial. TP53 carriers: avoid mammography under
+  age 30 due to radiation-induced secondary-malignancy risk —
+  MRI preferred as primary modality.
+
+  Prior chest radiotherapy at age 10–30 (Hodgkin lymphoma, breast
+  bed): annual MRI + mammogram starting 8 years post-RT or age 25,
+  whichever later (Children's Oncology Group long-term follow-up
+  guidelines).
+
+  Reported per BI-RADS lexicon (Categories 0–6). Categories 4–5
+  trigger image-guided core biopsy. Category 3 → 6-month short-
+  interval follow-up.
+
+  Engineering note: this Test entity is referenced by v0.2-B
+  prevention Indications across BRCA / HBOC, Li-Fraumeni,
+  Cowden / PTEN, hereditary diffuse gastric (CDH1), and prior-
+  chest-RT cohorts.
