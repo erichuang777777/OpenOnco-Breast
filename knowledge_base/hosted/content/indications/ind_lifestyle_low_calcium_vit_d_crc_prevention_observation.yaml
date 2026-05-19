@@ -1,0 +1,77 @@
+id: IND-LIFESTYLE-LOW-CALCIUM-VIT-D-CRC-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-LIFESTYLE-LOW-CALCIUM-VIT-D-CRC-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Continued combined low calcium intake + vitamin D deficiency: baseline CRC incidence elevated per observational meta-analyses. Skeletal-health risk also unaddressed (fracture / osteoporosis). Age-appropriate screening alone does not reduce incidence."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-LIFESTYLE-LOW-CALCIUM-VIT-D-CRC-
+  PREVENTION-REPLETION. Patient declines structured repletion (cost,
+  preference, lactose intolerance with dairy avoidance + supplement
+  declination, supplement intolerance) — receives USPSTF-cadence CRC
+  screening + brief dietary counseling with each clinical contact +
+  reaffirmation of skeletal-health implications. Per CHARTER §11
+  patient-autonomy framing — dietary / supplementation choice is
+  legitimate but framed as suboptimal vs. RDA-target comparator.
+  Periodic re-discussion of repletion track at follow-up visits is
+  appropriate, especially with age-related fracture-risk progression.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від
+  structured repletion — отримує USPSTF-cadence CRC screening + brief
+  dietary counseling на кожному клінічному контакті + reaffirmation
+  skeletal-health implications. Per CHARTER §11. Periodic re-discussion
+  repletion треку appropriate, especially з age-related fracture-risk
+  progression.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_diet_environmental
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-COLON-2025
+    position: context
+
+do_not_do:
+  - "Не презентувати observation як еквівалент repletion — CRC incidence + skeletal benefits відсутні."
+  - "Не пропускати CRC screening — base-rate USPSTF cadence залишається indicated незалежно від status."
+  - "Не виключати brief dietary counseling на кожному візиті — repeated exposure has cumulative behavioral effect."
+  - "Не ігнорувати fracture-risk monitoring (DEXA, FRAX) — vitamin D / calcium deficiency має додаткові скелетні implications."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to repletion — CRC incidence + skeletal benefits are not achieved."
+  - "Do not skip CRC screening — base-rate USPSTF cadence remains indicated regardless of status."
+  - "Do not skip brief dietary counseling at every visit — repeated exposure has cumulative behavioral effect."
+  - "Do not ignore fracture-risk monitoring (DEXA, FRAX) — vitamin D / calcium deficiency has additional skeletal implications."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for low calcium / vit D prevention. §15.2 C4 ≥2-tracks invariant."

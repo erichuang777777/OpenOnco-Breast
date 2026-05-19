@@ -1,0 +1,69 @@
+id: RF-LIFESTYLE-LOW-CALCIUM-VIT-D-CRC-PREVENTION
+definition: >-
+  Combined low dietary calcium intake (<800 mg/day; IOM RDA 1000-1200
+  mg/day age-dependent) AND vitamin D deficiency (serum 25-hydroxy-
+  vitamin D <30 nmol/L per IOM threshold, <50 nmol/L per Endocrine
+  Society). WCRF/AICR Continuous Update Project rates dietary calcium
+  as "probable" protective for colorectal cancer — meta-analyzed
+  RR ~0.92 per 300 mg/day calcium intake. Vitamin D status (circulating
+  25-OH-D) is associated with CRC risk in observational cohorts
+  (~30% incidence reduction in highest vs lowest quartile per IARC
+  pooled analysis); causal RCT evidence is mixed (VITAL, ViDA trials
+  did not show primary CRC-incidence reduction at population doses but
+  signal for CRC mortality reduction with vitamin D supplementation).
+  Mechanisms: calcium binds bile acids + fatty acids in colonic lumen
+  reducing mucosal cytotoxicity; vitamin D regulates colonocyte
+  proliferation + differentiation via VDR; both modulate Wnt/β-catenin
+  signaling. Combined deficiency compounds risk. Prevention-persona
+  RedFlag (§20 v0.3 diet pilot, 2026-05-18).
+definition_ua: >-
+  Combined low dietary calcium (<800 мг/день; IOM RDA 1000-1200 мг/день
+  age-dependent) ТА vitamin D deficiency (serum 25-OH-D <30 нмоль/л
+  per IOM, <50 нмоль/л per Endocrine Society). WCRF/AICR оцінює
+  dietary calcium як "probable" захисний для CRC — meta-analyzed
+  RR ~0.92 per 300 мг/день calcium intake. Vitamin D status
+  асоціюється з CRC ризиком у observational cohorts (~30% incidence
+  reduction у найвищому проти найнижчого квартилю per IARC pooled
+  analysis); causal RCT evidence mixed (VITAL, ViDA не показали
+  CRC-incidence reduction at population doses, але signal для
+  CRC-mortality reduction). Механізми: calcium зв'язує bile acids +
+  fatty acids у colonic lumen, знижуючи mucosal cytotoxicity; vitamin
+  D регулює colonocyte proliferation + differentiation через VDR;
+  обидва модулюють Wnt/β-catenin signaling. Combined deficiency
+  compounds risk.
+
+trigger:
+  type: lab_value
+  all_of:
+    - finding: "dietary_calcium_intake_lt_800mg_per_day"
+      value: true
+    - finding: "serum_25oh_vitamin_d_lt_30nmol_per_l"
+      value: true
+
+clinical_direction: investigate
+
+severity: minor
+priority: 110
+category: other
+
+risk_category: lifestyle
+
+# Anchor — colorectal cancer. WCRF/AICR probable rating is CRC-
+# specific; associations with breast/prostate are weaker and not
+# anchored here to keep the RF focused.
+relevant_diseases:
+  - DIS-CRC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-COLON-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for combined low calcium intake + vitamin D deficiency. WCRF/AICR probable-evidence for calcium and CRC; IARC pooled signal for vitamin D status. RCT evidence for supplementation is mixed at population doses — counseling emphasizes adequate intake/repletion not pharmacologic dosing. Engine routes to PreventionPlan recommending dietary counseling + vitamin D repletion + CRC screening per USPSTF. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_diet_environmental
+draft_revision: 1

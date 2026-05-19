@@ -1,0 +1,80 @@
+id: RF-ENVIRONMENTAL-OUTDOOR-UV-SKIN-PREVENTION
+definition: >-
+  Chronic high cumulative occupational outdoor UV exposure (≥10 years
+  outdoor work in high-UV-index latitudes — agricultural workers,
+  fishermen, sailors, construction trades, road workers, lifeguards,
+  landscapers, equatorial / sub-tropical residence with daily outdoor
+  exposure). Solar UV radiation is an IARC Group 1 carcinogen
+  (Monograph 100D, 2012) — established etiologic driver of cutaneous
+  squamous cell carcinoma (SCC), basal cell carcinoma (BCC), and
+  melanoma. Occupational outdoor work raises non-melanoma skin cancer
+  (NMSC) risk ~1.5-2x baseline (meta-analyses of outdoor vs indoor
+  worker cohorts); melanoma signal is weaker for chronic occupational
+  UV but strong for intermittent / sunburn-pattern exposure. Risk
+  compounds with Fitzpatrick skin type I-III, age >50, history of
+  ≥5 sunburns, immunosuppression (transplant, autoimmune disease on
+  therapy). Mechanisms: UVB (290-320 nm) directly mutagenic via CPD
+  + 6-4 photoproduct formation in basal keratinocyte DNA, with TP53
+  signature mutations; UVA (320-400 nm) penetrates deeper, generates
+  ROS, contributes to immunosuppression + photoaging. Distinct from
+  RF-LIFESTYLE-UV-EXPOSURE-PREVENTION (which is broader including
+  tanning beds + sunburn history + recreational UV); this RF focuses
+  specifically on cumulative occupational outdoor UV exposure for
+  NMSC risk. Prevention-persona RedFlag (§20 v0.3 environmental
+  pilot, 2026-05-18). risk_category=occupational matches the schema
+  enum directly here (it is genuinely occupational).
+definition_ua: >-
+  Хронічна high cumulative occupational outdoor UV exposure (≥10
+  років outdoor work у high-UV-index latitudes — agricultural workers,
+  fishermen, sailors, construction trades, road workers, lifeguards,
+  landscapers, equatorial / sub-tropical residence з daily outdoor
+  exposure). Solar UV radiation — IARC Group 1 канцероген (Monograph
+  100D, 2012) — встановлений драйвер cutaneous squamous cell
+  carcinoma (SCC), basal cell carcinoma (BCC), та melanoma.
+  Occupational outdoor work підвищує non-melanoma skin cancer (NMSC)
+  ризик ~1.5-2x baseline; melanoma signal слабший для chronic
+  occupational UV але сильний для intermittent / sunburn-pattern
+  exposure. Risk compounds з Fitzpatrick skin type I-III, age >50,
+  history of ≥5 sunburns, immunosuppression. Distinct from RF-
+  LIFESTYLE-UV-EXPOSURE-PREVENTION (broader включаючи tanning beds +
+  sunburn history + recreational UV); цей RF focuses specifically на
+  cumulative occupational outdoor UV exposure для NMSC ризику.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "occupational_outdoor_work_ge_10y_high_uv_latitude"
+      value: true
+    - finding: "occupational_outdoor_uv_exposure_documented"
+      value: true
+    - finding: "agricultural_or_outdoor_trade_history_ge_10y"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+# Direct match — occupational outdoor UV exposure
+risk_category: occupational
+
+# Primary anchor — BCC (most-common cumulative-UV-driven cutaneous
+# malignancy). SCC + melanoma surfaced via relevant_diseases.
+relevant_diseases:
+  - DIS-BCC
+  - DIS-MELANOMA
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-SKIN-2025
+  - SRC-NCCN-MELANOMA-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for chronic occupational outdoor UV exposure ≥10y in high-UV-index latitudes. IARC Group 1 solar UV. Distinct from broader RF-LIFESTYLE-UV-EXPOSURE-PREVENTION (which covers tanning beds + sunburn history + recreational UV). Anchored to DIS-BCC per task brief (closest skin DIS to UV-NMSC). Engine routes to PreventionPlan recommending photoprotection counseling + clinical skin exam cadence + patient skin self-exam education + Vitamin D balance. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_diet_environmental
+draft_revision: 1

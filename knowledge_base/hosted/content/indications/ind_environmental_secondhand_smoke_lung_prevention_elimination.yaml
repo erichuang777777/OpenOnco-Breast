@@ -1,0 +1,170 @@
+id: IND-ENVIRONMENTAL-SECONDHAND-SMOKE-LUNG-PREVENTION-ELIMINATION
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-ENVIRONMENTAL-SECONDHAND-SMOKE-LUNG-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Eliminating ongoing ETS exposure through cohabitant smoking cessation or workplace smoke-free policy enforcement removes the ~20-25% incremental lung-cancer risk from chronic passive smoking. Cardiovascular co-morbidity risk (ischemic heart disease, stroke) is also reduced. Cohabitant smoking cessation has cascading benefits — protects all household members + cessation-benefiting the smoker themselves."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for chronic ETS exposure.
+  Components per US Surgeon General 2006 + 2014 reports + IARC
+  Monograph 83 (2004) + NCCN NSCLC + USPSTF tobacco-cessation
+  framework:
+
+  **(1) Exposure-elimination — primary intervention**
+  - Cohabitant smoking cessation referral — bring spouse / partner /
+    household members who smoke into a tobacco-cessation program.
+    Use the patient as motivational anchor ("your smoking is
+    increasing X's lung-cancer risk by 20-25%"). Tools per RF-
+    LIFESTYLE-TOBACCO-CANCER-PREVENTION: 5A counseling, NRT,
+    varenicline, bupropion, cytisine.
+  - Smoke-free home / vehicle policy — establish complete indoor +
+    in-vehicle smoking ban. "Smoking on the porch / outside" reduces
+    but does not eliminate exposure (thirdhand smoke from clothing /
+    surfaces persists). Mandatory smoke-free policy in shared multi-
+    unit housing where feasible.
+  - Workplace smoke-free policy advocacy — if workplace exposure
+    persists despite Ukrainian legal framework prohibiting workplace
+    smoking (since 2012 amendments to tobacco control law), document
+    occupational exposure for HR / labor protection follow-up.
+  - Public-space avoidance — restaurants, bars, outdoor venues with
+    permitted smoking should be avoided where feasible.
+
+  **(2) Personal mitigation — secondary lever**
+  - HEPA-filter air purifier in living areas where elimination is
+    infeasible (eg, multi-unit housing with neighboring smokers).
+    HEPA reduces but does not eliminate ETS aerosol; gas-phase
+    components persist.
+  - Window-closure + ventilation strategies during peak exposure
+    periods.
+
+  **(3) USPSTF lung-cancer screening eligibility check** — Annual
+  LDCT for ages 50-80, ≥20 pack-years, current or quit within 15
+  years. ETS exposure alone does NOT establish USPSTF screening
+  eligibility; passive-smoking-only never-smokers fall outside the
+  pack-years threshold. NCCN allows clinical judgment for high-
+  cumulative ETS exposure in the presence of additional risk factors
+  (eg, prior tobacco use, family history). Discuss with patient if
+  borderline.
+
+  **(4) Symptom-triggered evaluation** — Low threshold for new
+  persistent cough, hemoptysis, dyspnea, chest pain, unintentional
+  weight loss. ETS exposure does not change evaluation thresholds
+  but raises pre-test probability vs. unexposed never-smoker.
+
+  **(5) Counseling on co-morbidity risk** — ETS exposure also raises
+  cardiovascular disease, stroke, COPD-exacerbation, and (in
+  children) SIDS / asthma / otitis media risk. Holistic clinical
+  surveillance appropriate.
+
+  Resource access in Ukraine: tobacco-cessation pharmacotherapy
+  pharmacy-accessible without НСЗУ reimbursement; cohabitant cessation
+  is the highest-yield intervention.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для chronic ETS exposure. Components
+  per US Surgeon General 2006 + 2014 + IARC Monograph 83 (2004) +
+  NCCN NSCLC + USPSTF tobacco-cessation:
+
+  **(1) Exposure-elimination — primary intervention**
+  - Cohabitant smoking cessation referral — bring spouse / partner /
+    household members у tobacco-cessation program. Use patient як
+    motivational anchor ("ваше куріння підвищує X-овий lung-cancer
+    risk на 20-25%"). Tools per RF-LIFESTYLE-TOBACCO-CANCER-PREVENTION:
+    5A counseling, NRT, varenicline, bupropion, cytisine.
+  - Smoke-free home / vehicle policy — establish complete indoor +
+    in-vehicle smoking ban. "Smoking on the porch / outside" зменшує
+    але не eliminates exposure (thirdhand smoke з clothing / surfaces).
+  - Workplace smoke-free policy advocacy — якщо workplace exposure
+    persists despite Ukrainian legal framework (з 2012 поправок до
+    tobacco control law), document occupational exposure для HR.
+  - Public-space avoidance — restaurants, bars з permitted smoking.
+
+  **(2) Personal mitigation — secondary lever**
+  - HEPA-filter air purifier у living areas де elimination не feasible
+    (multi-unit housing з neighboring smokers). HEPA reduces але не
+    eliminates ETS aerosol; gas-phase components persist.
+  - Window-closure + ventilation strategies під час peak exposure
+    periods.
+
+  **(3) USPSTF lung-cancer screening eligibility check** — Annual
+  LDCT для ages 50-80, ≥20 pack-years, current або quit within 15
+  years. ETS exposure alone НЕ establishes USPSTF screening
+  eligibility. NCCN allows clinical judgment для high-cumulative ETS
+  exposure з additional risk factors.
+
+  **(4) Symptom-triggered evaluation** — Низький поріг для нового
+  persistent cough, hemoptysis, dyspnea, chest pain, unintentional
+  weight loss.
+
+  **(5) Counseling на co-morbidity risk** — ETS exposure також
+  підвищує cardiovascular disease, stroke, COPD-exacerbation, та (в
+  дітей) SIDS / asthma / otitis media ризик.
+
+  Resource access в Україні: tobacco-cessation pharmacotherapy
+  pharmacy-accessible без НСЗУ reimbursement; cohabitant cessation
+  — highest-yield intervention.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_diet_environmental
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-NSCLC-2025
+    position: supports
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не презентувати 'smoking outside' як sufficient elimination — thirdhand smoke з clothing / surfaces persists; complete cohabitant cessation — highest-yield."
+  - "Не пропускати cohabitant smoking-cessation referral — це core lever для passive-smoking exposure reduction."
+  - "Не extrapolate USPSTF screening eligibility до non-smoker ETS-only exposed cohort — LDCT не validated для цього population."
+  - "Не покладатися виключно на air filtration — HEPA reduces aerosol але не gas-phase ETS components."
+  - "Не ігнорувати childhood / in-utero ETS exposure historical — multi-decade effect на lung-cancer + cardiovascular risk."
+
+do_not_do_en:
+  - "Do not present 'smoking outside' as sufficient elimination — thirdhand smoke from clothing / surfaces persists; complete cohabitant cessation is the highest-yield."
+  - "Do not skip cohabitant smoking-cessation referral — it is the core lever for passive-smoking exposure reduction."
+  - "Do not extrapolate USPSTF screening eligibility to a non-smoker ETS-only exposed cohort — LDCT is not validated for this population."
+  - "Do not rely exclusively on air filtration — HEPA reduces aerosol but not gas-phase ETS components."
+  - "Do not ignore historical childhood / in-utero ETS exposure — multi-decade effect on lung-cancer + cardiovascular risk."
+
+known_controversies:
+  - topic: "LDCT screening eligibility for high-cumulative ETS-exposed never-smokers"
+    positions:
+      - position: "USPSTF 2021 limits LDCT screening to age 50-80 + ≥20 pack-years + recent active smoking; passive-smoking-only never-smokers fall outside criteria"
+      - position: "NCCN allows clinical judgment for high-cumulative ETS exposure when concurrent risk factors are present (eg, prior tobacco use, family history)"
+    our_default: "Apply USPSTF 2021 criteria as standard; consider NCCN-style clinical judgment when concurrent risk factors escalate cumulative-risk estimate."
+    rationale: "RCT screening evidence (NLST, NELSON) enrolled smokers; extension to ETS-only never-smoker cohort is mechanistic + not direct-evidence supported."
+
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 environmental prevention pilot (ETS → lung). Two-Clinical-Co-Lead signoff queued. Distinct from RF-LIFESTYLE-TOBACCO-CANCER-PREVENTION (active personal smoking)."

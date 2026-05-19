@@ -1,0 +1,180 @@
+id: IND-ENVIRONMENTAL-OUTDOOR-UV-SKIN-PREVENTION-PHOTOPROTECTION
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-ENVIRONMENTAL-OUTDOOR-UV-SKIN-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Consistent photoprotection (SPF ≥30 broad-spectrum sunscreen + sun-protective clothing + shade-seeking + UV-index awareness) reduces actinic-keratosis incidence (precursor to SCC), reduces cutaneous SCC + BCC incidence in long-term RCTs (Nambour Skin Cancer Prevention Trial: ~40% SCC reduction, ~25% BCC reduction over 8-year follow-up), and modestly reduces melanoma incidence. Clinical full-body skin examination + patient self-exam education enable early detection at curable stage. Vitamin D balance via dietary + targeted supplementation rather than UV exposure."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for chronic occupational outdoor
+  UV exposure. Components per NCCN Skin Cancer + Melanoma 2025 +
+  American Academy of Dermatology + USPSTF Counseling for Skin
+  Cancer Prevention (2018 + 2023 update) + Nambour Skin Cancer
+  Prevention Trial:
+
+  **(1) Personal photoprotection counseling — primary intervention**
+  - Broad-spectrum sunscreen SPF ≥30 (preferably 50+) applied to all
+    sun-exposed skin daily during outdoor work, reapplied every 2
+    hours + after sweating / swimming. ~2 mg/cm² application thickness
+    (~1 shot-glass volume for whole adult body) for label SPF to be
+    achieved.
+  - Sun-protective clothing — long sleeves + long pants, tightly
+    woven fabric, UPF-rated work clothing where occupationally
+    feasible.
+  - Wide-brimmed hat (≥7.5 cm brim) covering face + neck + ears.
+  - UV-blocking sunglasses (UV400 / 99-100% UVA + UVB filtration).
+  - Shade-seeking during peak UV hours (10:00-16:00 in summer at
+    Ukrainian latitudes). Reschedule outdoor work to early-morning /
+    late-afternoon where feasible.
+  - UV-index awareness — check forecast; UV index ≥3 warrants
+    photoprotection; ≥8 warrants additional avoidance.
+
+  **(2) Clinical full-body skin examination** — Annual full-body
+  skin exam by dermatologist or trained primary-care clinician. NCCN
+  cadence may shorten to q6mo if pre-malignant findings (actinic
+  keratoses, dysplastic nevi, prior NMSC) present. Standardized
+  ABCDE evaluation of nevi + photographic mole-mapping where
+  available.
+
+  **(3) Patient skin self-exam education** — Monthly self-exam with
+  attention to:
+  - New / changing skin lesions (especially on sun-exposed sites —
+    face, ears, lips, scalp [if balding], dorsal hands + forearms)
+  - Non-healing sores / ulcerations
+  - Pearly papules with telangiectasia (BCC signature)
+  - Scaly erythematous patches (SCC / actinic keratosis signature)
+  - ABCDE features of pigmented lesions (Asymmetry, Border
+    irregularity, Color variegation, Diameter >6mm, Evolution)
+
+  **(4) Actinic-keratosis treatment** — Pre-malignant AKs identified
+  on clinical exam treated proactively: cryotherapy (liquid nitrogen)
+  for isolated lesions; topical 5-FU / imiquimod / diclofenac for
+  field-cancerization (multiple AKs in confluent sun-exposed areas);
+  photodynamic therapy where available. Treatment prevents AK-to-SCC
+  progression (~10% lifetime risk per individual AK).
+
+  **(5) Vitamin D balance** — Photoprotection may reduce endogenous
+  vitamin D synthesis. Counsel on dietary vitamin D (fatty fish,
+  fortified dairy, eggs) + targeted supplementation 1000-2000 IU/day
+  rather than UV exposure for vitamin D needs (see RF-LIFESTYLE-LOW-
+  CALCIUM-VIT-D-CRC-PREVENTION for full Vit D framework).
+
+  **(6) Tobacco-cessation counseling — synergistic risk** — Tobacco
+  use synergizes with UV exposure for cutaneous SCC (especially
+  lip + oral cavity). See RF-LIFESTYLE-TOBACCO-CANCER-PREVENTION.
+
+  Resource access in Ukraine: broad-spectrum SPF-30+ sunscreens
+  pharmacy-accessible (~200-600 UAH per 200mL); cryotherapy for AKs
+  available at dermatology outpatient clinics; field-treatment topicals
+  prescription-required. Annual dermatology visit ~400-1500 UAH;
+  partial НСЗУ coverage for high-risk-cohort dermatology consultation.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для chronic occupational outdoor
+  UV exposure. Components per NCCN Skin Cancer + Melanoma 2025 +
+  AAD + USPSTF Counseling for Skin Cancer Prevention + Nambour Trial:
+
+  **(1) Personal photoprotection counseling — primary intervention**
+  - Broad-spectrum sunscreen SPF ≥30 (preferably 50+) на всю sun-
+    exposed skin щодня during outdoor work, reapplied every 2 hours
+    + after sweating / swimming. ~2 мг/см² application thickness
+    (~1 shot-glass для whole adult body) для label SPF.
+  - Sun-protective clothing — long sleeves + long pants, tightly
+    woven fabric, UPF-rated work clothing where feasible.
+  - Wide-brimmed hat (≥7.5 см brim) covering face + neck + ears.
+  - UV-blocking sunglasses (UV400 / 99-100% UVA + UVB filtration).
+  - Shade-seeking during peak UV hours (10:00-16:00 у літо at
+    Ukrainian latitudes). Reschedule outdoor work до early-morning /
+    late-afternoon де feasible.
+  - UV-index awareness — check forecast; UV index ≥3 warrants
+    photoprotection; ≥8 warrants additional avoidance.
+
+  **(2) Clinical full-body skin examination** — Annual full-body
+  skin exam by dermatologist or trained primary-care clinician.
+  NCCN cadence може shorten до q6mo якщо pre-malignant findings
+  present.
+
+  **(3) Patient skin self-exam education** — Monthly self-exam:
+  - New / changing skin lesions (especially на face, ears, lips,
+    scalp, dorsal hands + forearms)
+  - Non-healing sores / ulcerations
+  - Pearly papules з telangiectasia (BCC signature)
+  - Scaly erythematous patches (SCC / actinic keratosis signature)
+  - ABCDE features pigmented lesions
+
+  **(4) Actinic-keratosis treatment** — Pre-malignant AKs treated
+  proactively: cryotherapy для isolated lesions; topical 5-FU /
+  imiquimod / diclofenac для field-cancerization; photodynamic
+  therapy where available.
+
+  **(5) Vitamin D balance** — Photoprotection може reduce endogenous
+  vitamin D synthesis. Dietary vitamin D + targeted supplementation
+  1000-2000 IU/день rather than UV exposure.
+
+  **(6) Tobacco-cessation counseling — synergistic risk** — Tobacco
+  use synergizes з UV exposure для cutaneous SCC.
+
+  Resource access в Україні: broad-spectrum SPF-30+ sunscreens
+  pharmacy-accessible (~200-600 грн per 200мл); cryotherapy для AKs
+  at dermatology outpatient clinics; field-treatment topicals
+  prescription-required. Annual dermatology visit ~400-1500 грн.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_diet_environmental
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-SKIN-2025
+    position: supports
+  - source_id: SRC-NCCN-MELANOMA-2025
+    position: supports
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не покладатися виключно на sunscreen — sun-protective clothing + shade + temporal scheduling — equal or superior UV reduction."
+  - "Не використовувати tanning beds як 'safe alternative' — IARC Group 1 з 2009; ризик подвоюється для melanoma при use before age 35."
+  - "Не recommend UV exposure для Vitamin D — dietary + supplementation safer + more reliable, especially at Ukrainian latitudes."
+  - "Не пропускати dermatological skin exam — окремі AKs / early SCC / BCC potentially missed in self-exam."
+  - "Не ігнорувати lip + scalp + ear sun protection — common-missed sites з high cumulative-UV dose."
+  - "Не treat ALL nevi prophylactically — atypical or evolving lesions warrant biopsy; benign nevi observation only."
+
+do_not_do_en:
+  - "Do not rely exclusively on sunscreen — sun-protective clothing + shade + temporal scheduling provide equal or superior UV reduction."
+  - "Do not use tanning beds as a 'safe alternative' — IARC Group 1 since 2009; melanoma risk doubles with use before age 35."
+  - "Do not recommend UV exposure for vitamin D — dietary + supplementation is safer + more reliable, especially at Ukrainian latitudes."
+  - "Do not skip dermatological skin exam — discrete AKs / early SCC / BCC may be missed on self-exam alone."
+  - "Do not overlook lip + scalp + ear sun protection — these are commonly missed sites with high cumulative UV dose."
+  - "Do not treat ALL nevi prophylactically — atypical or evolving lesions warrant biopsy; benign nevi require observation only."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 environmental prevention pilot (outdoor UV → skin). Two-Clinical-Co-Lead signoff queued. Distinct from RF-LIFESTYLE-UV-EXPOSURE-PREVENTION (broader UV including tanning beds + sunburn history)."

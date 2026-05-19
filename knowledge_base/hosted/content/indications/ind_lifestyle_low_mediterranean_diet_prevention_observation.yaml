@@ -1,0 +1,74 @@
+id: IND-LIFESTYLE-LOW-MEDITERRANEAN-DIET-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-LIFESTYLE-LOW-MEDITERRANEAN-DIET-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Continued low Mediterranean-pattern adherence: baseline cancer incidence (CRC, breast, gastric, hepatocellular) elevated proportional to pattern gap. Cardiovascular + metabolic risk also unaddressed. Age-appropriate screening alone captures earlier-stage disease but does not reduce incidence."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-LIFESTYLE-LOW-MEDITERRANEAN-DIET-
+  PREVENTION-ADOPTION. Patient declines structured pattern-level
+  dietary modification (cultural, preference, economic, food-environment
+  constraints) — receives USPSTF-cadence cancer screening per anchor +
+  brief dietary counseling with each clinical contact. Per CHARTER §11
+  patient-autonomy framing — dietary choice is legitimate but framed
+  as suboptimal vs. high-adherence comparator. Periodic re-discussion
+  of adoption track at follow-up visits is appropriate.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від
+  structured pattern-level dietary modification — отримує USPSTF-cadence
+  cancer screening per anchor + brief dietary counseling на кожному
+  клінічному контакті. Per CHARTER §11. Periodic re-discussion adoption
+  треку appropriate на повторних візитах.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_diet_environmental
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-COLON-2025
+    position: context
+
+do_not_do:
+  - "Не презентувати observation як еквівалент pattern adoption — multi-cancer + cardiovascular benefit відсутній."
+  - "Не пропускати CRC screening — base-rate USPSTF cadence залишається indicated незалежно від dietary status."
+  - "Не виключати brief dietary counseling на кожному візиті — repeated exposure has cumulative behavioral effect."
+  - "Не презентувати decision як final — periodic re-discussion adoption треку appropriate на повторних візитах."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to pattern adoption — multi-cancer + cardiovascular benefit is not achieved."
+  - "Do not skip CRC screening — base-rate USPSTF cadence remains indicated regardless of dietary status."
+  - "Do not skip brief dietary counseling at every visit — repeated exposure has cumulative behavioral effect."
+  - "Do not present the decision as final — periodic re-discussion of the adoption track is appropriate at follow-up visits."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for low-Mediterranean-adherence prevention. §15.2 C4 ≥2-tracks invariant."

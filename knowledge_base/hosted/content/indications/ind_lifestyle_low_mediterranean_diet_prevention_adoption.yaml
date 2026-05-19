@@ -1,0 +1,157 @@
+id: IND-LIFESTYLE-LOW-MEDITERRANEAN-DIET-PREVENTION-ADOPTION
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-LIFESTYLE-LOW-MEDITERRANEAN-DIET-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Adoption of Mediterranean dietary pattern is associated with ~12-15% reduction in overall cancer incidence + mortality (EPIC, NHS, PREDIMED meta-analyses); strongest signals for CRC, breast, gastric, hepatocellular cancers. Cardiovascular co-benefits well-established (PREDIMED 2013 primary endpoint: ~30% reduction in major cardiovascular events with extra-virgin olive oil + mixed nuts supplementation vs. low-fat control). Pattern-level intervention has higher fidelity than single-nutrient targeting."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for low Mediterranean-diet
+  adherence. Components per PREDIMED + EPIC + NHS evidence base + ACS
+  2020 Diet + Physical Activity Guideline + NCCN Colon Cancer screening:
+
+  **(1) Mediterranean dietary-pattern counseling** — Target adherence
+  to all 9 MDS components or MEDAS ≥10/14. Key behaviors:
+  - Olive oil as primary culinary fat — ≥4 tablespoons/day extra-virgin
+    where economically feasible
+  - Vegetables — ≥3 servings/day (variety: leafy, cruciferous, allium,
+    tomato-based)
+  - Fruits — ≥3 servings/day with seasonal variety
+  - Legumes — ≥3 servings/week (lentils, chickpeas, beans)
+  - Whole grains — replace refined where feasible (whole-wheat bread,
+    bulgur, brown rice, oats)
+  - Nuts — ≥30 g/day (PREDIMED protocol: 15 g walnuts + 7.5 g almonds
+    + 7.5 g hazelnuts) where affordable
+  - Fish — ≥3 servings/week, emphasize fatty fish (mackerel, sardines,
+    salmon) for ω-3
+  - Reduce red/processed meat to <1 serving/day
+  - Reduce sweets + sugar-sweetened beverages
+  - Wine — IF consumed, moderate (1 glass/day women, 1-2 glasses/day
+    men) with meals; do NOT initiate alcohol consumption for cancer-
+    prevention purposes (conflicts with RF-LIFESTYLE-ALCOHOL-CANCER-
+    PREVENTION; alcohol is a Group-1 carcinogen and dietary-pattern
+    counseling should not encourage initiation)
+
+  **(2) Cultural adaptation** — Mediterranean dietary principles
+  (whole foods, vegetables/fruits/legumes/whole grains base, olive oil
+  primary fat, moderate fish, limited red meat) are adaptable to
+  Ukrainian / Eastern European cuisine. Examples: borscht (vegetable-
+  forward), kasha (whole grain), salo replaced with olive oil, fish
+  emphasis from Black Sea / fresh-water sources, beans + grains
+  combinations. Counseling should be culturally fluent rather than
+  prescriptive Mediterranean-replica.
+
+  **(3) Gradual behavior change** — Adopt 1-2 new behaviors per visit
+  rather than wholesale pattern change. Use motivational interviewing
+  + readiness-stage assessment. Refer to registered dietitian for
+  sustained support.
+
+  **(4) USPSTF-cadence cancer screening** — CRC screening (colonoscopy
+  q10y from age 45, or stool-based) per anchor. Mediterranean-diet
+  adherence does not change screening cadence per current guidelines.
+
+  Pattern-level dietary intervention + age-appropriate screening
+  additive for cancer-incidence reduction across multiple tumor types.
+  Cardiovascular + metabolic co-benefits independent of cancer.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для low Mediterranean-diet
+  adherence. Components per PREDIMED + EPIC + NHS + ACS 2020 + NCCN
+  Colon framework:
+
+  **(1) Mediterranean dietary-pattern counseling** — Target adherence
+  до всіх 9 MDS components або MEDAS ≥10/14. Key behaviors:
+  - Olive oil як primary culinary fat — ≥4 ст. ложки/день extra-virgin
+    where economically feasible
+  - Овочі — ≥3 порції/день (variety: leafy, cruciferous, allium,
+    tomato-based)
+  - Фрукти — ≥3 порції/день з seasonal variety
+  - Бобові — ≥3 порції/тиждень (сочевиця, нут, квасоля)
+  - Whole grains — replace refined where feasible (whole-wheat bread,
+    bulgur, brown rice, oats)
+  - Горіхи — ≥30 г/день (PREDIMED protocol: 15 г walnuts + 7.5 г
+    almonds + 7.5 г hazelnuts) where affordable
+  - Риба — ≥3 порції/тиждень, emphasize fatty fish (mackerel,
+    sardines, salmon) для ω-3
+  - Зменшити red/processed meat до <1 порції/день
+  - Зменшити sweets + sugar-sweetened beverages
+  - Wine — ЯКЩО споживається, помірно (1 склянка/день для жінок, 1-2
+    для чоловіків) з їжею; НЕ розпочинати alcohol для cancer-prevention
+    purposes (alcohol — Group-1 канцероген)
+
+  **(2) Cultural adaptation** — Mediterranean principles адаптовані до
+  української / Східноєвропейської кухні: borscht (vegetable-forward),
+  kasha (whole grain), salo replaced олією, риба з Чорного моря /
+  річкових джерел, beans + grains. Counseling має бути culturally
+  fluent rather than prescriptive Mediterranean-replica.
+
+  **(3) Поступова behavior change** — Adopt 1-2 new behaviors per
+  visit rather than wholesale pattern change. Use motivational
+  interviewing + readiness-stage assessment. Refer до registered
+  dietitian.
+
+  **(4) USPSTF-cadence cancer screening** — CRC screening (colonoscopy
+  q10y з 45 років, або stool-based) per anchor.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_diet_environmental
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-COLON-2025
+    position: supports
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не рекомендувати initiation of alcohol (wine) для cancer-prevention purposes — alcohol є Group-1 канцероген; ризик > потенційна wine-component користь."
+  - "Не презентувати dietary counseling як заміну screening — both interventions complementary."
+  - "Не приписувати prescriptive Mediterranean-replica без cultural adaptation — adherence низька при culturally-foreign pattern."
+  - "Не покладатися на supplements (olive oil capsules, polyphenol extracts) замість whole-food pattern — matrix effects + microbiome interactions не reproducible."
+  - "Не ігнорувати economic constraints (extra-virgin olive oil, nuts, fish можуть бути недоступні) — culturally / economically feasible analogues prioritized."
+
+do_not_do_en:
+  - "Do not recommend initiation of alcohol (wine) for cancer-prevention purposes — alcohol is a Group-1 carcinogen; risk outweighs any putative wine-component benefit."
+  - "Do not present dietary counseling as a substitute for screening — both interventions are complementary."
+  - "Do not prescribe a prescriptive Mediterranean-replica without cultural adaptation — adherence is low with a culturally foreign pattern."
+  - "Do not rely on supplements (olive oil capsules, polyphenol extracts) instead of whole-food pattern — matrix effects + microbiome interactions are not reproducible."
+  - "Do not ignore economic constraints (extra-virgin olive oil, nuts, fish may be inaccessible) — culturally / economically feasible analogues should be prioritized."
+
+known_controversies:
+  - topic: "Wine component of Mediterranean dietary pattern"
+    positions:
+      - position: "PREDIMED protocol included moderate wine with meals as part of the trial-validated pattern"
+      - position: "Alcohol is independently IARC Group-1 carcinogen (RF-LIFESTYLE-ALCOHOL-CANCER-PREVENTION); even moderate alcohol raises breast + HCC + esophageal SCC + CRC risk"
+    our_default: "Do not recommend initiation of alcohol consumption for cancer-prevention purposes. Current moderate drinkers receive total-alcohol counseling per RF-LIFESTYLE-ALCOHOL-CANCER-PREVENTION as a separate prevention lever."
+    rationale: "Net risk vs benefit of wine component is uncertain; potential cardiovascular benefit does not outweigh cancer-incidence risk in initiator populations."
+
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 diet prevention pilot (low Mediterranean adherence → multi-cancer). Two-Clinical-Co-Lead signoff queued. Anchor DIS-CRC per brief; multi-cancer benefit framed in rationale."

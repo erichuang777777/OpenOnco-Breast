@@ -1,0 +1,125 @@
+id: IND-LIFESTYLE-LOW-FIBER-CRC-PREVENTION-DIETARY
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-LIFESTYLE-LOW-FIBER-CRC-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Increasing dietary fibre from <15 g/day to ≥30 g/day is associated with ~15-20% reduction in CRC incidence (meta-analyzed RR; WCRF/AICR convincing-evidence rating). Fibre-rich dietary patterns (whole grains, legumes, vegetables, fruits, nuts) also reduce all-cause + cardiovascular mortality. Population-level intervention potential meaningful — endemic low intake in Western diets."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for low dietary fibre intake.
+  Components per WCRF/AICR Continuous Update Project + ACS 2020 Diet +
+  Physical Activity Guideline + NCCN Colon Cancer screening framework:
+
+  **(1) Dietary fibre-target counseling** — Target ≥25-30 g/day total
+  fibre from whole-food sources:
+  - Whole grains (oats, barley, brown rice, whole-wheat, quinoa) —
+    target ≥3 servings/day
+  - Legumes (beans, lentils, chickpeas, peas) — target ≥4 servings/week
+  - Vegetables — ≥5 servings/day, emphasize cruciferous + leafy greens
+  - Fruits — 2-4 servings/day with skin/pulp intact
+  - Nuts + seeds — 1 oz (28 g) daily as feasible
+
+  **(2) Gradual intake-progression counseling** — Increase fibre by
+  ~5 g/day every 1-2 weeks to minimize GI side effects (bloating, flatus,
+  cramping). Pair with adequate hydration (~2 L water/day). Patients
+  with IBS or prior bowel surgery may need slower progression and
+  soluble-fibre emphasis (psyllium, oats) over insoluble.
+
+  **(3) Mediterranean-style or plant-forward eating pattern** — Whole
+  foods, vegetables, fruits, whole grains, olive oil, moderate fish/
+  poultry. Strongest dietary-pattern evidence for CRC + cardiovascular
+  + all-cause mortality reduction; aligns with high-fibre target.
+
+  **(4) USPSTF-cadence CRC screening** — Colonoscopy q10y from age 45
+  (or stool-based screening: FIT q1y, FIT-DNA q3y as alternatives).
+  Low fibre intake does not change screening cadence per current
+  guidelines but compounds baseline risk.
+
+  **(5) Referral to registered dietitian** for sustained behavioral
+  change, especially if cultural/economic constraints make whole-food
+  dietary patterns challenging.
+
+  Dietary intervention + age-appropriate screening additive for CRC
+  incidence reduction.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для low dietary fibre intake.
+  Components per WCRF/AICR + ACS 2020 + NCCN Colon framework:
+
+  **(1) Dietary fibre-target counseling** — Ціль ≥25-30 г/день з
+  whole-food sources:
+  - Whole grains (овес, ячмінь, brown rice, whole-wheat, кіноа) —
+    ≥3 порції/день
+  - Бобові (квасоля, сочевиця, нут, горох) — ≥4 порції/тиждень
+  - Овочі — ≥5 порцій/день, з акцентом на cruciferous + leafy greens
+  - Фрукти — 2-4 порції/день зі шкірою/м'якоттю
+  - Горіхи + насіння — 28 г/день за можливістю
+
+  **(2) Поступове збільшення інтаке** — Підвищувати fibre на ~5 г/день
+  кожні 1-2 тижні для мінімізації GI side-effects (bloating, flatus,
+  cramping). Pair з гідратацією (~2 л води/день). Пацієнти з IBS або
+  prior bowel surgery — повільніша progression, акцент на soluble fibre
+  (psyllium, овес) над insoluble.
+
+  **(3) Mediterranean-style або plant-forward eating pattern** — Whole
+  foods, овочі, фрукти, whole grains, olive oil, помірне fish/poultry.
+
+  **(4) USPSTF-cadence CRC screening** — Colonoscopy q10y з 45 років
+  (або FIT q1y / FIT-DNA q3y).
+
+  **(5) Direction до registered dietitian** для sustained behavioral
+  change.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_diet_environmental
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-COLON-2025
+    position: supports
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не презентувати dietary counseling як заміну colonoscopy screening — both interventions complementary."
+  - "Не призначати aggressive fibre escalation — поступове збільшення мінімізує GI intolerance і покращує adherence."
+  - "Не покладатися на fibre supplements (psyllium лише) замість whole-food fibre — мікробіом + matrix effects недосяжні з isolated supplements."
+  - "Не ігнорувати cultural / economic constraints — fibre-rich whole foods можуть бути недоступні; counseling має бути feasible."
+
+do_not_do_en:
+  - "Do not present dietary counseling as a substitute for colonoscopy screening — both interventions are complementary."
+  - "Do not prescribe aggressive fibre escalation — gradual progression minimizes GI intolerance and improves adherence."
+  - "Do not rely on fibre supplements (psyllium alone) as a substitute for whole-food fibre — microbiome + matrix effects are not reproduced by isolated supplements."
+  - "Do not ignore cultural / economic constraints — fibre-rich whole foods may be inaccessible; counseling must be feasible."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 diet prevention pilot (low fibre → CRC). Two-Clinical-Co-Lead signoff queued."

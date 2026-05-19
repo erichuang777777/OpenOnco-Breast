@@ -1,0 +1,79 @@
+id: RF-ENVIRONMENTAL-ARSENIC-WATER-PREVENTION
+definition: >-
+  Chronic ingestion of arsenic-contaminated drinking water with
+  inorganic arsenic >10 µg/L (WHO Guideline + US EPA MCL since 2006;
+  prior US standard was 50 µg/L). Inorganic arsenic is an IARC Group 1
+  carcinogen (Monograph 100C, 2012; reaffirms Monograph 84) —
+  established etiologic driver of urothelial / bladder cancer, lung
+  cancer (independent of smoking), and non-melanoma skin cancers (BCC +
+  SCC + Bowen's disease). Endemic high-arsenic groundwater regions:
+  Bangladesh, parts of India + Pakistan, Taiwan, northern Argentina /
+  Chile, US Southwest (private wells), Mongolia, parts of Eastern
+  Europe (including localized Ukrainian rural wells). Dose-response
+  is supralinear at high exposures + uncertain at lower (<100 µg/L)
+  exposures with continued risk demonstrated by cohort studies.
+  Mechanisms: arsenic methylation generates DMA(III) + MMA(III) reactive
+  intermediates; oxidative stress; DNA-repair inhibition (PARP1, XPF);
+  epigenetic dysregulation; co-carcinogenesis with UV in skin.
+  Latency typically 10-40 years from exposure onset. Prevention-persona
+  RedFlag (§20 v0.3 environmental pilot, 2026-05-18). risk_category=
+  occupational is the closest enum match for ambient environmental
+  exposures.
+definition_ua: >-
+  Хронічне споживання arsenic-contaminated drinking water з inorganic
+  arsenic >10 мкг/л (WHO Guideline + US EPA MCL з 2006; попередній
+  US standard 50 мкг/л). Inorganic arsenic — IARC Group 1 канцероген
+  (Monograph 100C, 2012) — встановлений драйвер urothelial / bladder
+  cancer, lung cancer (independent of smoking), та non-melanoma skin
+  cancers (BCC + SCC + Bowen's disease). Endemic high-arsenic
+  groundwater regions: Bangladesh, частини Індії + Пакистану, Тайвань,
+  northern Argentina / Chile, US Southwest (private wells), Mongolia,
+  частини Eastern Europe (including localized Ukrainian rural wells).
+  Латентність 10-40 років від exposure onset. Механізми: arsenic
+  methylation → DMA(III) + MMA(III) reactive intermediates; oxidative
+  stress; DNA-repair inhibition (PARP1, XPF); epigenetic dysregulation;
+  co-carcinogenesis з UV у skin.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "drinking_water_arsenic_gt_10_ug_per_l"
+      value: true
+    - finding: "private_well_arsenic_untested"
+      value: true
+    - finding: "urinary_inorganic_arsenic_elevated"
+      value: true
+    - finding: "endemic_arsenic_region_residence_history"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+# Closest enum match — ambient environmental exposures
+risk_category: occupational
+
+# Primary anchor — urothelial / bladder cancer (strongest arsenic-
+# associated malignancy). Lung + skin cancers also IARC Group-1-
+# associated and surfaced via relevant_diseases.
+relevant_diseases:
+  - DIS-UROTHELIAL
+  - DIS-NSCLC
+  - DIS-BCC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-NSCLC-2025
+  - SRC-NCCN-SKIN-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for chronic inorganic arsenic exposure via drinking water >10 µg/L (WHO + US EPA MCL). IARC Group 1 carcinogen with established urothelial, lung, and non-melanoma skin cancer etiology. Anchored to DIS-UROTHELIAL per task brief; lung + skin surfaced via relevant_diseases. risk_category=occupational is closest enum match. Engine routes to PreventionPlan recommending water source change / filtration + intensified screening for affected organs. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_diet_environmental
+draft_revision: 1

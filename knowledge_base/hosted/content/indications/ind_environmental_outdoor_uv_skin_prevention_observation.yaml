@@ -1,0 +1,84 @@
+id: IND-ENVIRONMENTAL-OUTDOOR-UV-SKIN-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-ENVIRONMENTAL-OUTDOOR-UV-SKIN-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Continued chronic occupational outdoor UV exposure without structured photoprotection: cumulative non-melanoma skin cancer (BCC + SCC) incidence + actinic-keratosis burden + melanoma risk continue to accumulate. Annual clinical skin exam captures earlier-stage disease but does not reduce incidence. Patient skin self-exam education remains appropriate regardless of mitigation-track choice."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-ENVIRONMENTAL-OUTDOOR-UV-SKIN-
+  PREVENTION-PHOTOPROTECTION. Patient declines structured personal
+  photoprotection (occupational practicality — eg, agricultural work
+  in summer heat with PPE intolerance, cost, preference, cosmetic /
+  social factors) — receives annual clinical full-body skin exam +
+  patient skin self-exam education + brief photoprotection counseling
+  with each clinical contact + actinic-keratosis treatment as
+  detected. Per CHARTER §11 patient-autonomy framing — exposure-
+  management constraints are legitimate but framed as suboptimal vs.
+  full-photoprotection comparator. Periodic re-discussion of
+  photoprotection track at follow-up visits is appropriate.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від
+  structured personal photoprotection (occupational practicality
+  — eg, agricultural work у summer heat з PPE intolerance, cost,
+  preference, cosmetic / social factors) — отримує annual clinical
+  full-body skin exam + patient skin self-exam education + brief
+  photoprotection counseling на кожному клінічному контакті +
+  actinic-keratosis treatment as detected. Per CHARTER §11. Periodic
+  re-discussion photoprotection треку appropriate.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_diet_environmental
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-SKIN-2025
+    position: context
+  - source_id: SRC-NCCN-MELANOMA-2025
+    position: context
+
+do_not_do:
+  - "Не презентувати observation як еквівалент photoprotection — BCC + SCC + melanoma incidence reduction не досягається."
+  - "Не пропускати annual clinical skin exam — early detection AKs / NMSC at curable stage."
+  - "Не виключати brief photoprotection counseling на кожному візиті — repeated exposure has cumulative behavioral effect, especially з visible photo-damage."
+  - "Не ігнорувати new persistent skin lesions — symptom-triggered evaluation залишається priority."
+  - "Не презентувати decision як final — periodic re-discussion photoprotection треку appropriate."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to photoprotection — BCC + SCC + melanoma incidence reduction is not achieved."
+  - "Do not skip annual clinical skin exam — early detection of AKs / NMSC at curable stage."
+  - "Do not skip brief photoprotection counseling at every visit — repeated exposure has cumulative behavioral effect, especially with visible photo-damage."
+  - "Do not ignore new persistent skin lesions — symptom-triggered evaluation remains a priority."
+  - "Do not present the decision as final — periodic re-discussion of the photoprotection track is appropriate."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for outdoor UV skin prevention. §15.2 C4 ≥2-tracks invariant."

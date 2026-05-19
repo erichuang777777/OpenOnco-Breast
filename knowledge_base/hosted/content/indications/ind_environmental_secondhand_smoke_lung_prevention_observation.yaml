@@ -1,0 +1,83 @@
+id: IND-ENVIRONMENTAL-SECONDHAND-SMOKE-LUNG-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-ENVIRONMENTAL-SECONDHAND-SMOKE-LUNG-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Continued chronic ETS exposure without elimination: ongoing dose accumulation drives cumulative lung-cancer + cardiovascular + respiratory morbidity. Symptom-triggered evaluation captures earlier-stage disease but does not reduce incidence. Cohabitant smoking cessation referral remains appropriate regardless of mitigation-track choice."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-ENVIRONMENTAL-SECONDHAND-SMOKE-
+  LUNG-PREVENTION-ELIMINATION. Patient cannot effect cohabitant
+  smoking cessation (refusal by smoker, complex domestic dynamics,
+  multi-unit housing without enforcement) — receives brief exposure-
+  awareness counseling with each clinical contact + symptom-triggered
+  evaluation pathway + cohabitant cessation referral on offer at
+  every visit + air-filtration / ventilation guidance as partial
+  mitigation. Per CHARTER §11 patient-autonomy framing — exposure-
+  management constraints are legitimate but framed as suboptimal vs.
+  elimination comparator. Periodic re-discussion of cohabitant
+  cessation track at follow-up visits is appropriate, especially if
+  domestic circumstances change.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт не може effect cohabitant
+  smoking cessation (refusal by smoker, complex domestic dynamics,
+  multi-unit housing without enforcement) — отримує brief exposure-
+  awareness counseling на кожному клінічному контакті + symptom-
+  triggered evaluation pathway + cohabitant cessation referral on
+  offer at every visit + air-filtration / ventilation guidance як
+  partial mitigation. Per CHARTER §11. Periodic re-discussion
+  cohabitant cessation треку appropriate, especially if domestic
+  circumstances change.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_diet_environmental
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-NSCLC-2025
+    position: context
+
+do_not_do:
+  - "Не презентувати observation як еквівалент elimination — lung-cancer + cardiovascular ризик ETS-attributable continues to accumulate."
+  - "Не пропускати cohabitant cessation referral — це core lever, і пропозиція має бути renewed на кожному visit."
+  - "Не ігнорувати alarm features (persistent cough, hemoptysis, dyspnea, weight loss) — immediate diagnostic imaging + multidisciplinary review."
+  - "Не презентувати decision як final — periodic re-discussion elimination треку appropriate especially з changes у domestic circumstances."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to elimination — ETS-attributable lung-cancer + cardiovascular risk continues to accumulate."
+  - "Do not skip cohabitant cessation referral — it is the core lever, and the offer should be renewed at every visit."
+  - "Do not ignore alarm features (persistent cough, hemoptysis, dyspnea, weight loss) — immediate diagnostic imaging + multidisciplinary review."
+  - "Do not present the decision as final — periodic re-discussion of the elimination track is appropriate, especially with changes in domestic circumstances."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for ETS lung prevention. §15.2 C4 ≥2-tracks invariant."

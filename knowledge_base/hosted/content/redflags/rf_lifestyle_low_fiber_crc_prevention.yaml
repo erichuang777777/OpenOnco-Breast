@@ -1,0 +1,61 @@
+id: RF-LIFESTYLE-LOW-FIBER-CRC-PREVENTION
+definition: >-
+  Habitual low dietary fibre intake (<15 g/day; WCRF/AICR convincing-
+  evidence threshold is ≥30 g/day, IOM adequate intake 25 g/day female /
+  38 g/day male). WCRF/AICR Continuous Update Project rates dietary
+  fibre as "convincing" protective for colorectal cancer — each 10 g/day
+  of total fibre intake reduces CRC risk by ~10% (RR ~0.90). Mechanisms:
+  faecal bulking + reduced transit time + microbiota-derived
+  short-chain fatty acids (butyrate) supporting colonocyte differentiation
+  + dilution of luminal carcinogens. Whole-grain, vegetable, fruit, and
+  pulse fibre sources show consistent inverse association with CRC
+  incidence in large prospective cohorts (EPIC, NHS, HPFS). Prevention-
+  persona RedFlag (§20 v0.3 diet pilot, 2026-05-18).
+definition_ua: >-
+  Звичне низьке споживання харчових волокон (<15 г/день; WCRF/AICR
+  поріг ≥30 г/день, IOM adequate intake 25 г/день для жінок / 38 г/день
+  для чоловіків). WCRF/AICR оцінює харчові волокна як "convincing"
+  захисний фактор для колоректального раку — кожні 10 г/день total
+  fibre знижують CRC ризик на ~10% (RR ~0.90). Механізми: faecal
+  bulking + скорочення transit time + microbiota-derived SCFA (butyrate)
+  + розведення люмінальних канцерогенів. Whole-grain, овочі, фрукти, та
+  бобові — стабільне інверсне ассоціювання з CRC incidence у великих
+  prospective cohorts (EPIC, NHS, HPFS).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "dietary_fiber_intake_lt_15g_per_day"
+      value: true
+    - finding: "low_whole_grain_intake"
+      value: true
+    - finding: "low_vegetable_fruit_intake"
+      value: true
+
+clinical_direction: investigate
+
+severity: minor
+priority: 110
+category: other
+
+risk_category: lifestyle
+
+# Primary anchor — colorectal cancer. WCRF/AICR convincing rating is
+# CRC-specific; weaker associations with other GI cancers exist but are
+# not anchored here to keep the RF focused.
+relevant_diseases:
+  - DIS-CRC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-COLON-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for low dietary fibre intake (<15 g/day). WCRF/AICR convincing-evidence rating for CRC. Effect size modest individually but population-attributable fraction non-trivial (low fibre intake is endemic in Western diets). Engine routes to PreventionPlan recommending dietary counseling + USPSTF-cadence CRC screening. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_diet_environmental
+draft_revision: 1

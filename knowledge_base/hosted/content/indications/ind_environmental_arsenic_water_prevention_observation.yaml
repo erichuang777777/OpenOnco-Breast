@@ -1,0 +1,87 @@
+id: IND-ENVIRONMENTAL-ARSENIC-WATER-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-UROTHELIAL
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-ENVIRONMENTAL-ARSENIC-WATER-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Continued chronic arsenic exposure without source change: ongoing dose accumulation drives cumulative bladder + lung + skin cancer + multi-organ toxicity risk. Symptom-triggered evaluation captures earlier-stage disease but does not reduce incidence. Smoking-cessation counseling remains appropriate regardless of exposure-management choice."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-ENVIRONMENTAL-ARSENIC-WATER-
+  PREVENTION-EXPOSURE-ELIMINATION. Patient declines structured water-
+  source change or point-of-use filtration (cost, infrastructure
+  constraint, doubt about exposure relevance, distrust of testing) —
+  receives brief water-safety counseling with each clinical contact +
+  symptom-triggered evaluation pathway + tobacco-cessation counseling
+  + skin-surveillance recommendation (which does not require water-
+  source change). Per CHARTER §11 patient-autonomy framing —
+  exposure-management choice is legitimate but framed as suboptimal
+  vs. source-change comparator. Periodic re-discussion of exposure-
+  elimination track at follow-up visits is appropriate, especially
+  if exposure-related findings (hyperpigmentation, hyperkeratosis,
+  peripheral neuropathy) emerge.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від
+  structured water-source change або point-of-use filtration —
+  отримує brief water-safety counseling на кожному клінічному контакті
+  + symptom-triggered evaluation pathway + tobacco-cessation counseling
+  + skin-surveillance recommendation. Per CHARTER §11. Periodic re-
+  discussion exposure-elimination треку appropriate на повторних
+  візитах, especially з появою exposure-related findings
+  (hyperpigmentation, hyperkeratosis, peripheral neuropathy).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_diet_environmental
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-NSCLC-2025
+    position: context
+  - source_id: SRC-NCCN-SKIN-2025
+    position: context
+
+do_not_do:
+  - "Не презентувати observation як еквівалент exposure elimination — bladder + lung + skin cancer + multi-organ toxicity ризик не reduced."
+  - "Не пропускати tobacco-cessation counseling — multiplicative interaction з arsenic; recommendation relevant незалежно від exposure-management choice."
+  - "Не ігнорувати arsenic-skin-signature findings (hyperpigmentation, hyperkeratosis на palms / soles) — pre-malignant + indicator подовженого exposure."
+  - "Не нехтувати symptom-triggered evaluation hematuria / dysuria / persistent cough / hemoptysis — low threshold for diagnostic workup."
+  - "Не презентувати decision як final — periodic re-discussion exposure-elimination треку appropriate."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to exposure elimination — bladder + lung + skin cancer + multi-organ toxicity risk is not reduced."
+  - "Do not skip tobacco-cessation counseling — multiplicative interaction with arsenic; recommendation is relevant regardless of exposure-management choice."
+  - "Do not ignore arsenic-skin-signature findings (hyperpigmentation, hyperkeratosis on palms / soles) — pre-malignant + indicator of prolonged exposure."
+  - "Do not skip symptom-triggered evaluation of hematuria / dysuria / persistent cough / hemoptysis — low threshold for diagnostic workup."
+  - "Do not present the decision as final — periodic re-discussion of the exposure-elimination track is appropriate."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for arsenic-water prevention. §15.2 C4 ≥2-tracks invariant."
