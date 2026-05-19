@@ -1,0 +1,71 @@
+id: MS-BRCA-CARRIER-OVARIAN-TVUS-CA125-Q6MO
+linked_to_regimen: null  # surveillance — no regimen
+
+phases:
+  - name: baseline
+    window: "At BRCA1 / BRCA2 pathogenic-variant confirmation in a person with ovaries"
+    tests:
+      - TEST-PEDIGREE-FAMILY-HISTORY
+      - TEST-TRANSVAGINAL-US
+      - TEST-CA125
+    visits: ["Gynecologic-oncology + genetics counseling"]
+    checkpoints:
+      - "Confirm BRCA1 / BRCA2 pathogenic / likely-pathogenic variant"
+      - "Lifetime ovarian / fallopian-tube / peritoneal cancer risk BRCA1 ~39-46%, BRCA2 ~10-27%"
+      - "RRSO (risk-reducing salpingo-oophorectomy) is the only intervention with established mortality benefit (Domchek 2010 JAMA) — discuss at every visit"
+      - "Recommended RRSO age: BRCA1 age 35-40 after childbearing; BRCA2 age 40-45"
+      - "Surveillance is INTERIM strategy only — sensitivity poor for early-stage disease (UKFOCSS 2017 cohort)"
+      - "Concurrent breast surveillance — see MS-BRCA-CARRIER-BREAST-MRI-MAMMO-ALTERNATING"
+
+  - name: interim_surveillance
+    window: "Every 6 months from age 30-35 until RRSO (or age limit if RRSO declined)"
+    tests:
+      - TEST-TRANSVAGINAL-US
+      - TEST-CA125
+    visits: ["Gynecologic-oncology surveillance"]
+    checkpoints:
+      - "ROCA-based interpretation (Risk of Ovarian Cancer Algorithm) preferable to single-point CA125 cutoff — trend over time"
+      - "Any new pelvic mass / persistent ascites / unintentional weight loss / abdominal bloating → immediate work-up regardless of CA125"
+      - "Counsel: surveillance has NOT been shown to reduce ovarian-cancer mortality — primary recommendation remains RRSO"
+      - "OCP use can reduce ovarian-cancer risk ~50%; weigh against BRCA1 breast-cancer risk"
+
+  - name: post_rrso_surveillance
+    window: "After RRSO — annual gynecologic exam"
+    tests:
+      - TEST-CA125
+    visits: ["Annual gynecologic + survivorship"]
+    checkpoints:
+      - "Residual primary peritoneal cancer risk ~1-4.3% lifetime after RRSO — not zero"
+      - "Surgical pathology must confirm complete fallopian-tube + ovarian removal; SEE-FIM protocol for tube pathology"
+      - "If occult cancer found at RRSO → staging laparotomy + oncology management"
+      - "Hormone-replacement therapy considered short-term symptom-driven; case-by-case in BRCA carriers"
+      - "Continue breast surveillance per separate schedule"
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  NCCN Genetic/Familial High-Risk: Breast, Ovarian, and Pancreatic
+  v3.2025 explicitly states ovarian surveillance with TVUS + CA125
+  has NOT been shown to reduce ovarian-cancer mortality (UKCTOCS
+  Jacobs 2016 Lancet; UKFOCSS Rosenthal 2017 J Clin Oncol).
+  Surveillance is offered as an INTERIM strategy for carriers who
+  have declined or deferred RRSO — not a substitute. NCCN Cat 2B for
+  surveillance; Cat 1 for RRSO at age 35-40 (BRCA1) / 40-45 (BRCA2)
+  after childbearing complete.
+
+  ROCA (Risk of Ovarian Cancer Algorithm, Skates 2003) uses
+  longitudinal CA125 to detect rising trajectory before crossing a
+  cutoff; in UKFOCSS improved sensitivity for early disease vs
+  single-point cutoff but did not change mortality.
+
+  Pancreatic surveillance (BRCA2 carriers with affected first-
+  degree relative) is documented separately — see CAPS Consortium
+  recommendations; not in scope of this schedule.
+
+  Ukrainian context: RRSO surgical pathology with SEE-FIM tube
+  sectioning is performed only at major centers; ensure referral to
+  high-volume gynecologic-oncology unit for risk-reducing surgery.

@@ -1,0 +1,134 @@
+id: MS-CANCER-SURVIVOR-COG-LTFU
+linked_to_regimen: null  # surveillance — cross-disease, no regimen
+
+phases:
+  - name: baseline
+    window: "5 years post-completion of curative-intent therapy — long-term follow-up entry"
+    tests:
+      - TEST-CBC
+      - TEST-CMP
+      - TEST-LFT
+      - TEST-TSH
+      - TEST-ECG
+      - TEST-ECHO
+      - TEST-AUDIOMETRY
+      - TEST-PEDIGREE-FAMILY-HISTORY
+    visits: ["Cancer survivorship clinic — multidisciplinary intake"]
+    checkpoints:
+      - "Document complete treatment summary: chemo agents (cumulative doses — especially anthracycline mg/m², alkylators, platinum, bleomycin), radiation fields + cumulative dose (Gy), surgical resections, transplant history, hormonal therapy"
+      - "Stratify late-effect risk based on Children's Oncology Group Long-Term Follow-Up (COG-LTFU) Guidelines v6.0 — exposure-driven recommendations"
+      - "Establish primary-care coordination + cardio-oncology / endocrine / fertility / psychosocial referrals as indicated"
+      - "Patient receives Survivorship Care Plan (treatment summary + late-effect screening schedule)"
+
+  - name: cardiac_surveillance
+    window: "Cardiotoxic exposures (anthracycline ≥250 mg/m² doxorubicin-equivalent, chest XRT ≥30 Gy, anti-HER2 therapy) — echo or cardiac MRI q2-5y starting 2y post-therapy"
+    tests:
+      - TEST-ECHO
+      - TEST-ECG
+    visits: ["Cardio-oncology clinic"]
+    checkpoints:
+      - "LVEF surveillance — declining LVEF triggers ACE-inhibitor / beta-blocker initiation per cardio-oncology"
+      - "Lower anthracycline doses (100-249 mg/m²) → echo q5y"
+      - "Anthracycline + chest XRT combination — highest risk, tighter cadence q2y"
+      - "Pregnancy in female cardiotoxicity-exposed survivors → pre-conception echo + cardio-oncology consultation"
+      - "Symptomatic cardiomyopathy at any time → expedited cardiology evaluation"
+
+  - name: endocrine_surveillance
+    window: "Endocrine-toxicity exposures — TSH / sex-hormone / growth / metabolic screens at exposure-specific cadence"
+    tests:
+      - TEST-TSH
+      - TEST-CMP
+      - TEST-TESTOSTERONE-SERUM
+    visits: ["Endocrinology + reproductive endocrinology"]
+    checkpoints:
+      - "Cranial / craniospinal / TBI ≥18 Gy → annual TSH, growth-hormone screen, gonadotropin screen"
+      - "Neck XRT → annual TSH + thyroid US (papillary thyroid cancer risk)"
+      - "Alkylator / TBI exposure → annual gonadotropin / sex-hormone screen for hypogonadism; fertility counseling pre-pregnancy"
+      - "Pelvic XRT in female survivors → ovarian reserve assessment + early-menopause counseling"
+      - "Metabolic syndrome screen — fasting glucose / lipids annually (TBI + steroids increase risk)"
+
+  - name: second_malignancy_surveillance
+    window: "Disease-site and radiation-field appropriate — annual or per COG schedule"
+    tests:
+      - TEST-MAMMOGRAPHY
+      - TEST-BREAST-MRI
+      - TEST-COLONOSCOPY-SURVEILLANCE
+      - TEST-DERMATOSCOPY
+      - TEST-PFT-SPIROMETRY-DLCO
+    visits: ["Coordinated screening per exposure profile"]
+    checkpoints:
+      - "Chest XRT in females (Hodgkin survivors etc.) — annual breast MRI + annual mammography starting 8y post-XRT OR age 25 (whichever later)"
+      - "Abdominal / pelvic XRT — colonoscopy q5y starting 10y post-XRT OR age 35 (whichever later)"
+      - "Total-body or wide-field XRT — annual dermatologic exam (skin-cancer risk, especially BCC / squamous)"
+      - "Pelvic XRT — annual gynecologic exam, urinary surveillance"
+      - "Mantle / thoracic XRT — PFT with DLCO baseline at 5y, repeat q5y or symptom-driven (pulmonary fibrosis)"
+      - "Alkylator + topoisomerase-II inhibitor exposure — annual CBC for therapy-related MDS / AML signal (low yield but high-stakes)"
+
+  - name: neurocognitive_audiologic_renal_surveillance
+    window: "Exposure-specific — annual or per COG"
+    tests:
+      - TEST-AUDIOMETRY
+      - TEST-RENAL-FUNCTION-EGFR
+      - TEST-CMP
+    visits: ["Neuropsychology + audiology + nephrology as indicated"]
+    checkpoints:
+      - "Cranial XRT / methotrexate IT / high-dose IV → neuropsychological testing at school-entry transitions, annual academic-/work-functioning screen"
+      - "Cisplatin / carboplatin → annual audiometry; high-frequency-hearing-loss documentation + hearing-aid referral as needed"
+      - "Cisplatin / ifosfamide → annual renal function (creatinine + eGFR + magnesium + phosphate); long-term tubular dysfunction risk"
+      - "Bleomycin → annual symptom screen + PFT baseline; avoid high-FiO2 anesthesia exposures lifelong"
+
+  - name: psychosocial_lifestyle_fertility
+    window: "Annual or visit-driven — primary-care coordinated"
+    tests:
+      - TEST-PEDIGREE-FAMILY-HISTORY
+    visits: ["Survivorship + primary-care comanagement"]
+    checkpoints:
+      - "Annual psychosocial screen (depression / anxiety / PTSD common in survivors)"
+      - "Fertility counseling — fertility-preserving options pre-treatment best, but post-treatment options exist (oocyte cryo, semen banking, ovarian tissue cryo)"
+      - "Lifestyle counseling — tobacco / alcohol / weight / exercise — survivors have elevated cardiovascular + second-malignancy risks; modifiable-risk reduction is high-value"
+      - "Family-cancer-history reassessment q5y — late-onset hereditary syndromes may emerge as relatives age; cascade testing offered if pedigree triggers it"
+      - "Vaccination updates — HPV / pneumococcal / annual flu / COVID per evolving guideline"
+
+sources:
+  - SRC-COG
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Children's Oncology Group Long-Term Follow-Up Guidelines for
+  Survivors of Childhood, Adolescent, and Young Adult Cancers
+  (COG-LTFU) v6.0 (2024). The canonical exposure-driven framework
+  for cancer-survivor late-effects surveillance. Adult-onset cancer
+  survivors lack as comprehensive a single guideline — ASCO survivor
+  guidelines (breast, colorectal, prostate, HL / NHL) cover disease-
+  specific recurrence + late-effect topics but are less unified than
+  COG-LTFU.
+
+  Key COG-LTFU domains in this schedule:
+  - Cardiac (anthracycline, chest XRT, anti-HER2)
+  - Endocrine (cranial / craniospinal / TBI / neck XRT, alkylator)
+  - Second malignancy (radiation-field-driven + secondary-leukemia
+    from alkylator + topoisomerase-II inhibitor)
+  - Neurocognitive (cranial XRT, intrathecal methotrexate)
+  - Auditory (cisplatin / carboplatin)
+  - Renal (cisplatin / ifosfamide)
+  - Pulmonary (bleomycin / chest XRT)
+  - Reproductive / fertility (alkylator / pelvic XRT)
+  - Psychosocial
+
+  This schedule documents the BASELINE framework only — exposure-
+  specific test cadence varies (some sub-schedules elsewhere in KB
+  cover specific tracks). Treatment summary + survivorship-care-plan
+  authoring is the critical handoff document — typically nurse-
+  navigator-mediated. Primary-care coordination is core: most adult
+  survivors return to PCP after 5-10 years post-cancer-completion;
+  embedding survivorship-care-plan into PCP record is the durability
+  mechanism.
+
+  Ukrainian context: dedicated survivorship clinics are sparse — Kyiv
+  + Lviv + Dnipro have pediatric-survivorship programs; adult-cancer
+  survivorship is largely embedded in oncology follow-up clinic. No
+  dedicated NSZU billing pathway for survivorship-care-plan visits;
+  authors of these plans typically deliver them as part of routine
+  oncology follow-up.

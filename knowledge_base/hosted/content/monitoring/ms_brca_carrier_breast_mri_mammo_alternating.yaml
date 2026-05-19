@@ -1,0 +1,82 @@
+id: MS-BRCA-CARRIER-BREAST-MRI-MAMMO-ALTERNATING
+linked_to_regimen: null  # surveillance — no regimen
+
+phases:
+  - name: baseline
+    window: "At BRCA1 / BRCA2 pathogenic-variant confirmation; first screen no later than age 25"
+    tests:
+      - TEST-BREAST-MRI
+      - TEST-PEDIGREE-FAMILY-HISTORY
+      - TEST-TYRER-CUZICK-V8-CALCULATOR
+    visits: ["High-risk breast clinic + genetics counseling"]
+    checkpoints:
+      - "Confirm BRCA1 / BRCA2 pathogenic / likely-pathogenic variant"
+      - "Baseline lifetime breast-cancer risk BRCA1 ~65-72%, BRCA2 ~45-69% (Kuchenbaecker 2017 meta)"
+      - "Discuss risk-reducing options: enhanced surveillance vs bilateral risk-reducing mastectomy (RRM); risk-reducing salpingo-oophorectomy (RRSO) handled separately"
+      - "Chemoprevention discussion: tamoxifen / raloxifene / exemestane considered case-by-case (lower-quality evidence in BRCA1; better in BRCA2 due to ER+ predominance)"
+      - "Avoid combined OCPs in BRCA1 carriers if family history of breast cancer favors breast over ovarian risk; weigh ovarian risk-reduction benefit"
+
+  - name: alternating_imaging_age_25_29
+    window: "Ages 25-29 — annual breast MRI; mammography deferred"
+    tests:
+      - TEST-BREAST-MRI
+    visits: ["High-risk breast surveillance"]
+    checkpoints:
+      - "Breast MRI alone in this age band (mammography lifetime-radiation concerns + denser breast tissue → low yield)"
+      - "Add clinical breast exam q6-12 months"
+      - "Hand-held ultrasound as adjunct if MRI access constrained — NOT substitute"
+
+  - name: alternating_imaging_age_30_plus
+    window: "Ages 30-75 — annual MRI + annual mammography, alternating every 6 months"
+    tests:
+      - TEST-BREAST-MRI
+      - TEST-MAMMOGRAPHY
+    visits: ["High-risk breast surveillance — typical cadence MRI month 0, mammography month 6"]
+    checkpoints:
+      - "MRI sensitivity for early disease in dense breasts substantially higher than mammography alone"
+      - "Mammography adds detection of DCIS / calcifications missed by MRI"
+      - "Alternating cadence reduces single-modality lead-time gaps; some centers use simultaneous q12 months"
+      - "Clinical breast exam q6 months remains adjunct"
+      - "Re-discuss risk-reducing mastectomy / chemoprevention at every annual visit"
+
+  - name: post_surgical_or_age_75_plus
+    window: "After risk-reducing mastectomy OR age >75 (individualized)"
+    tests:
+      - TEST-MAMMOGRAPHY
+    visits: ["Survivorship + ongoing extramammary surveillance"]
+    checkpoints:
+      - "After bilateral RRM — residual breast tissue is minimal; routine imaging surveillance generally stopped, clinical exam continues"
+      - "Age >75 — individualize based on life expectancy + functional status"
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-USPSTF-BREAST-2024
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  NCCN Genetic/Familial High-Risk: Breast, Ovarian, and Pancreatic
+  v3.2025 recommends:
+  - Breast awareness from age 18
+  - Clinical breast exam q6-12 months from age 25
+  - Annual breast MRI age 25-75
+  - Annual mammography (with tomosynthesis) from age 30, alternating
+    with MRI q6 months in typical protocol
+  - Consider risk-reducing mastectomy starting age 25
+  - RRSO age 35-40 (BRCA1) / 40-45 (BRCA2) after childbearing
+    complete — see MS-BRCA-CARRIER-OVARIAN-TVUS-CA125-Q6MO for
+    interim ovarian surveillance
+
+  Imaging discussion: breast MRI sensitivity ~80-90% in BRCA cohorts
+  (Saadatmand 2019 Lancet Oncol FaMRIsc trial), mammography
+  sensitivity ~40-50% in same dense-breast population. Alternating
+  cadence vs simultaneous annual remains center-by-center;
+  alternating reduces interval-cancer lead time but doubles visit
+  burden — discuss preferences with patient.
+
+  Ukrainian context: high-quality breast MRI is concentrated in
+  major centers (Kyiv / Lviv / Dnipro / Odesa); ~15-20 sites
+  capable of high-spatial-resolution surveillance MRI; NSZU does
+  not currently reimburse routine BRCA-carrier MRI — self-pay or
+  international referral typical.

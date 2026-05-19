@@ -1,0 +1,63 @@
+id: MS-LYNCH-CARRIER-CRC-COLONOSCOPY-Q1-2Y
+linked_to_regimen: null  # surveillance — no regimen
+
+phases:
+  - name: baseline
+    window: "At Lynch-syndrome confirmation (germline MLH1 / MSH2 / MSH6 / PMS2 / EPCAM pathogenic variant)"
+    tests:
+      - TEST-COLONOSCOPY-SURVEILLANCE
+      - TEST-PEDIGREE-FAMILY-HISTORY
+    visits: ["Genetics counseling visit + multidisciplinary surveillance plan"]
+    checkpoints:
+      - "Confirm pathogenic / likely-pathogenic germline variant on Lynch panel (not VUS)"
+      - "Document gene-specific risks: MLH1/MSH2 carry highest CRC + endometrial risk; PMS2 / MSH6 lower penetrance"
+      - "Cascade-test first-degree relatives via genetic counseling"
+      - "Discuss aspirin chemoprevention (CAPP2 evidence — 600 mg/day from age 25 reduced CRC ~50% at 10y)"
+      - "Coordinate concurrent endometrial / ovarian surveillance (see MS-LYNCH-CARRIER-ENDOMETRIAL-Q1Y)"
+      - "Coordinate upper-GI + urinary surveillance per gene + family history (MLH1 / MSH2 → urothelial; gastric in selected families)"
+
+  - name: crc_surveillance_active
+    window: "Every 1-2 years from age 20-25 (or 2-5 years younger than earliest CRC in the family — whichever is earlier)"
+    tests:
+      - TEST-COLONOSCOPY-SURVEILLANCE
+    visits: ["Colonoscopy with high-definition white-light + dye-spray / chromoendoscopy where available"]
+    checkpoints:
+      - "Annual interval for MLH1 / MSH2 carriers; q1-2y acceptable for MSH6 / PMS2 carriers"
+      - "Withdrawal time ≥6 min; clear cap-assisted technique improves adenoma detection in Lynch"
+      - "All polyps removed and submitted for histology + MMR / MSI testing if invasive"
+      - "Right-side adenomas and flat lesions are characteristic — meticulous mucosal inspection required"
+      - "If subtotal / total colectomy performed, switch to annual remnant-rectum / pouch endoscopy"
+
+  - name: post_resection_surveillance
+    window: "Lifelong after Lynch-associated CRC resection — annual or per oncologist directive"
+    tests:
+      - TEST-COLONOSCOPY-SURVEILLANCE
+    visits: ["Survivorship + remnant-bowel surveillance"]
+    checkpoints:
+      - "Metachronous CRC risk remains elevated even after segmental colectomy"
+      - "Continue extracolonic surveillance per gene-specific risk panel"
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-ASCO-ACMG-LYNCH-2014
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  NCCN Genetic/Familial High-Risk: Colorectal v3.2025 recommends
+  colonoscopy q1-2y starting age 20-25 (MLH1/MSH2/EPCAM) or 25-30
+  (MSH6/PMS2), or 2-5 years before earliest CRC in family. Annual
+  interval for MLH1/MSH2 carriers; q1-2y acceptable for MSH6/PMS2
+  given lower CRC penetrance.
+
+  Adjuvant aspirin chemoprevention (CAPP2, Burn 2020 Lancet) shows
+  durable ~50% CRC-risk reduction at 10 years for Lynch carriers
+  taking 600 mg/day for ≥2 years from age 25. NCCN Category 2A
+  recommendation; discuss in shared decision-making with bleeding
+  risk weighed.
+
+  Gene-specific upper-GI / urinary surveillance not covered here —
+  see separate schedules. EGD + capsule enteroscopy and urothelial
+  surveillance documented in MS-LYNCH-CARRIER-ENDOMETRIAL-Q1Y
+  notes.

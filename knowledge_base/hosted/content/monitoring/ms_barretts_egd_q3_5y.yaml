@@ -1,0 +1,79 @@
+id: MS-BARRETTS-EGD-Q3-5Y
+linked_to_regimen: null  # surveillance — no regimen
+
+phases:
+  - name: baseline
+    window: "At index Barrett's-esophagus diagnosis — confirmed intestinal metaplasia on biopsy + endoscopically visible columnar-lined epithelium ≥1cm"
+    tests:
+      - TEST-EGD-SURVEILLANCE
+    visits: ["GI surveillance + index EGD with Seattle-protocol biopsies"]
+    checkpoints:
+      - "Confirm intestinal metaplasia histologically (goblet cells with intestinal-type columnar epithelium) — not gastric metaplasia alone"
+      - "Document Prague C+M classification (circumferential + maximal extent)"
+      - "Seattle protocol — 4-quadrant biopsies every 1-2cm of Barrett's segment + targeted biopsies of any visible lesions / nodules"
+      - "Two-pathologist review for any dysplasia (high inter-rater variability for low-grade dysplasia)"
+      - "Confirm no dysplasia at index — if dysplasia present, route to specialized Barrett's program for endoscopic eradication (ER + RFA / cryoablation)"
+      - "Optimize PPI: BID PPI for 8-12 weeks before next EGD to reduce inflammation-related sampling error"
+
+  - name: non_dysplastic_short_segment
+    window: "Non-dysplastic Barrett's, segment <3cm — EGD q5y"
+    tests:
+      - TEST-EGD-SURVEILLANCE
+    visits: ["GI surveillance"]
+    checkpoints:
+      - "Repeat Seattle-protocol biopsies"
+      - "If still non-dysplastic + segment stable → continue q5y"
+      - "If dysplasia detected → upgrade to dysplasia pathway (specialized referral)"
+
+  - name: non_dysplastic_long_segment
+    window: "Non-dysplastic Barrett's, segment ≥3cm — EGD q3y"
+    tests:
+      - TEST-EGD-SURVEILLANCE
+    visits: ["GI surveillance"]
+    checkpoints:
+      - "Repeat Seattle-protocol biopsies"
+      - "Longer segments confer higher cancer risk → tighter cadence"
+      - "Adjunctive imaging modalities (chromoendoscopy, NBI, WATS-3D) considered to improve dysplasia detection"
+
+  - name: dysplasia_or_eac_pathway
+    window: "Any confirmed dysplasia (LGD / HGD) or intramucosal adenocarcinoma — exit surveillance, enter eradication-therapy program"
+    tests:
+      - TEST-EGD-SURVEILLANCE
+    visits: ["Referral to specialized Barrett's center for endoscopic eradication"]
+    checkpoints:
+      - "LGD confirmed by ≥2 pathologists → endoscopic eradication therapy preferred over surveillance (Phoenix-Manchester)"
+      - "HGD or intramucosal EAC → endoscopic resection (EMR / ESD) + ablation (RFA preferred, cryoablation acceptable)"
+      - "Surveillance after eradication — q3 months × 1 year, q6 months × 1 year, then annually"
+      - "Submucosal-invasive EAC → multidisciplinary referral (esophagectomy / chemoradiation / palliative)"
+
+sources:
+  - SRC-AGA-BARRETTS-2022
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  AGA 2022 Barrett's Esophagus Clinical Practice Update (Shaheen et
+  al, Gastroenterology 2022). Replaces 2016 ACG / 2017 BSG cadence;
+  stratifies non-dysplastic surveillance by segment length:
+  - Short segment (<3cm): EGD q5y
+  - Long segment (≥3cm): EGD q3y
+  Discontinue surveillance after age 75 or if life-expectancy <5y
+  (limited benefit from finding HGD / early EAC if not treatment-
+  eligible).
+
+  Annual EAC incidence in non-dysplastic Barrett's ~0.3%/year
+  (Hvid-Jensen 2011 NEJM), substantially lower than historical
+  estimates that drove tight surveillance. Dysplasia-detection
+  yield is the rationale for surveillance, not direct cancer
+  detection.
+
+  Endoscopic eradication therapy (EET) — RFA + EMR — has supplanted
+  esophagectomy for HGD / intramucosal EAC and is increasingly
+  preferred for LGD. Concentrated in tertiary Barrett's programs.
+
+  Ukrainian context: Seattle-protocol EGD with adequate biopsy
+  sampling is variable — quality programs (Kyiv / Lviv / Dnipro)
+  routinely follow protocol; rural / community endoscopy often
+  under-samples. WATS-3D (wide-area transepithelial sampling) is
+  not widely available. EET concentrated in 3-5 specialty centers.

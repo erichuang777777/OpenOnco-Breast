@@ -1,0 +1,96 @@
+id: MS-FAP-COLON-EGD-SURVEILLANCE
+linked_to_regimen: null  # surveillance — no regimen
+
+phases:
+  - name: baseline
+    window: "At familial-adenomatous-polyposis confirmation (germline APC pathogenic variant) — classical FAP onset age 10-15, attenuated FAP later"
+    tests:
+      - TEST-PEDIGREE-FAMILY-HISTORY
+      - TEST-FLEX-SIGMOIDOSCOPY
+      - TEST-COLONOSCOPY-SURVEILLANCE
+    visits: ["GI + colorectal-surgery + genetics multidisciplinary clinic"]
+    checkpoints:
+      - "Confirm germline APC pathogenic / likely-pathogenic variant; distinguish classical FAP (>100 adenomas) vs attenuated FAP (10-99 adenomas, later onset)"
+      - "Cascade-test first-degree relatives — typically children offered testing age 10-12 (allows informed pediatric surveillance start)"
+      - "Counsel on near-certain CRC progression if untreated — colectomy timing depends on polyp burden / symptoms / histology"
+      - "Discuss extracolonic risks: duodenal / periampullary adenocarcinoma (~5-10% lifetime), desmoid tumors, thyroid (papillary), hepatoblastoma in young children, CNS / medulloblastoma (Turcot)"
+      - "Annual thyroid US considered (NCCN Cat 2B)"
+
+  - name: classical_fap_pediatric_surveillance
+    window: "Classical FAP — flexible sigmoidoscopy q1-2y from age 10-15"
+    tests:
+      - TEST-FLEX-SIGMOIDOSCOPY
+    visits: ["Pediatric GI surveillance"]
+    checkpoints:
+      - "Flex sigmoidoscopy preferred over full colonoscopy in early surveillance — adenomas appear distally first; less sedation burden"
+      - "Transition to full colonoscopy once polyps detected → annual"
+      - "Refer for colectomy when polyp burden exceeds endoscopic management — typical late teens to early 20s"
+      - "Counsel patient + family on surgical timing — IPAA (ileal-pouch-anal anastomosis) vs IRA (ileorectal anastomosis) depends on rectal polyp burden"
+
+  - name: attenuated_fap_surveillance
+    window: "Attenuated FAP — colonoscopy q1-2y from age 18-20 (vs early-teen onset in classical FAP)"
+    tests:
+      - TEST-COLONOSCOPY-SURVEILLANCE
+    visits: ["Adult GI surveillance"]
+    checkpoints:
+      - "Annual colonoscopy with full polypectomy of all visible adenomas"
+      - "Colectomy threshold higher than classical FAP — many AFAP carriers managed endoscopically for decades"
+      - "Right-sided + flat adenomas more common in AFAP — chromoendoscopy / dye-spray helpful"
+
+  - name: upper_gi_surveillance_spigelman
+    window: "EGD starting age 25-30 (or at colectomy) — q1-5y by Spigelman stage"
+    tests:
+      - TEST-EGD-SURVEILLANCE
+    visits: ["GI surveillance — Spigelman-staging EGD with side-viewing duodenoscope for ampullary visualization"]
+    checkpoints:
+      - "Spigelman staging: polyp number (1-4 pts) + size (1-3 pts) + histology tubular/tubulovillous/villous (1-3 pts) + dysplasia (1-3 pts) = stage 0-IV"
+      - "Stage 0 → EGD q5y"
+      - "Stage I → EGD q5y"
+      - "Stage II → EGD q3y"
+      - "Stage III → EGD q1-2y + chromoendoscopy + biopsy of all visible polyps"
+      - "Stage IV → consider duodenectomy / Whipple referral (NCCN); EGD q6-12 months in interim"
+      - "Side-viewing duodenoscope to evaluate ampulla at every EGD (separate cap-fitted forward EGD if duodenoscope unavailable)"
+      - "Random biopsies of duodenal mucosa even without visible polyps if Spigelman stage III+"
+
+  - name: post_colectomy_surveillance
+    window: "After colectomy — annual or q6mo pouch endoscopy + lifelong EGD per Spigelman"
+    tests:
+      - TEST-FLEX-SIGMOIDOSCOPY
+      - TEST-EGD-SURVEILLANCE
+    visits: ["Long-term post-colectomy surveillance"]
+    checkpoints:
+      - "If IRA — annual flexible sigmoidoscopy of rectal stump; rectal cancer remains a risk"
+      - "If IPAA — pouchoscopy q1-3y; pouch adenomas possible long-term"
+      - "Continue Spigelman-staged EGD lifelong"
+      - "Annual thyroid US (papillary thyroid risk)"
+      - "Monitor for desmoid — symptoms / palpable mass → CT or MRI abdomen"
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  NCCN Genetic/Familial High-Risk: Colorectal v3.2025 governs FAP +
+  attenuated FAP surveillance.
+
+  Spigelman staging (Spigelman 1989 Lancet, validated through 2020s)
+  is the canonical framework for duodenal-adenoma management in FAP.
+  Stage IV duodenal disease confers ~30% risk of duodenal cancer at
+  10 years if not managed surgically — prophylactic / risk-reducing
+  pancreaticoduodenectomy (Whipple) is morbid and reserved for
+  truly high-risk anatomy.
+
+  Pediatric onset: classical FAP develops adenomas mid-childhood;
+  cascade testing offered age 10-12 to allow informed pediatric
+  surveillance start. Hepatoblastoma surveillance in young children
+  (AFP + abdominal US q3-6 months ages 0-7) is sometimes offered
+  but evidence base is modest; not universally recommended.
+
+  Ukrainian context: pediatric GI endoscopy with appropriate
+  pediatric scope is concentrated in major centers
+  (Kyiv / Lviv / Dnipro); rural pediatric FAP surveillance often
+  requires referral to specialized centers. Side-viewing
+  duodenoscopes are scarce; ampullary surveillance may default to
+  cap-fitted forward EGD with explicit ampullary inspection notes.

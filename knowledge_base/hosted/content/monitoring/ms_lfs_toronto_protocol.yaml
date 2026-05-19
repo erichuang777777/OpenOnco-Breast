@@ -1,0 +1,84 @@
+id: MS-LFS-TORONTO-PROTOCOL
+linked_to_regimen: null  # surveillance — no regimen
+
+phases:
+  - name: baseline
+    window: "At Li-Fraumeni-syndrome confirmation (germline TP53 pathogenic variant) — pediatric onset typical"
+    tests:
+      - TEST-PEDIGREE-FAMILY-HISTORY
+      - TEST-WHOLE-BODY-MRI-LFS
+      - TEST-BRAIN-MRI-CONTRAST
+    visits: ["LFS multidisciplinary clinic + genetics counseling"]
+    checkpoints:
+      - "Confirm germline TP53 pathogenic / likely-pathogenic variant (not VUS)"
+      - "Document full pedigree — Chompret + classic LFS family-history criteria"
+      - "Cumulative cancer risk: men ~70%, women ~95% by age 70 (Mai 2016 Cancer)"
+      - "AVOID diagnostic CT / radiographic surveillance where MRI substitute is feasible — TP53 carriers have markedly elevated radiation-induced second-malignancy risk"
+      - "Cascade-test first-degree relatives via genetics counseling"
+
+  - name: pediatric_intensive_surveillance
+    window: "Birth to age 18 — multiple modality cadence per Toronto Protocol"
+    tests:
+      - TEST-BRAIN-MRI-CONTRAST
+      - TEST-WHOLE-BODY-MRI-LFS
+      - TEST-DERMATOSCOPY
+    visits:
+      - "Pediatric oncology + LFS-experienced radiology team"
+      - "Abdominal + pelvic US q3-4 months from infancy → age 18 (adrenocortical-carcinoma surveillance)"
+      - "24-hour urinary catecholamines / cortisol q3-4 months in youngest children (adrenal screen)"
+    checkpoints:
+      - "Brain MRI with contrast annually from infancy / diagnosis"
+      - "Whole-body MRI annually from age 5 (or earlier if family-specific pattern warrants)"
+      - "Annual dermatologic exam (skin / sarcoma surface signs)"
+      - "Colonoscopy NOT yet required in this band; defer to age 25"
+      - "Standard Toronto Protocol WB-MRI: coronal STIR / T2 + DWI from head to mid-thigh, no IV gadolinium (Gd retention concern over lifetime of repeats)"
+
+  - name: adult_annual_surveillance
+    window: "Age 18+ — annual multimodal Toronto Protocol"
+    tests:
+      - TEST-BRAIN-MRI-CONTRAST
+      - TEST-WHOLE-BODY-MRI-LFS
+      - TEST-BREAST-MRI
+      - TEST-COLONOSCOPY-SURVEILLANCE
+      - TEST-DERMATOSCOPY
+      - TEST-OPHTHALMOLOGIC-EXAM
+    visits: ["LFS adult surveillance clinic — annual coordinated visit"]
+    checkpoints:
+      - "Brain MRI with contrast annually"
+      - "Whole-body MRI annually (no contrast in standard protocol)"
+      - "Breast MRI annually from age 20 (women) — mammography AVOIDED until age 30+, then balanced against MRI cost / capacity; some protocols defer mammography entirely"
+      - "Clinical breast exam q6-12 months from age 20-25"
+      - "Risk-reducing mastectomy is INTENSIFIED-track option, discussed but not standard surveillance"
+      - "Colonoscopy starting age 25, q2-5 years (more frequent if polyps / family pattern)"
+      - "Annual dermatologic exam + annual ophthalmologic exam"
+      - "Symptom screen for sarcoma / leukemia / adrenocortical / brain — early imaging if any concern"
+
+sources:
+  - SRC-VILLANI-LFS-TORONTO-2011
+  - SRC-NCCN-CNS-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Toronto Protocol (Villani 2011 Lancet Oncol cohort + 2016 update +
+  2023 SIOPE consensus). Demonstrated stage-shift toward earlier-
+  stage diagnoses and improved 3-year overall survival vs non-
+  surveilled TP53 cohort (88% vs 49%, p<0.001).
+
+  Limitations: small numbers, single-center initially, confounding
+  by surveillance-eligible vs lost-to-follow-up bias; psychological
+  surveillance burden non-trivial (anxiety, false positives ~50% of
+  patients over 5-year window).
+
+  Key invariant: avoid radiation-based imaging modalities (CT,
+  PET-CT, X-ray) for screening where MRI substitute exists — TP53
+  carriers have ~10-20× radiation-induced second-malignancy risk vs
+  general population (Heymann 2010 Lancet Oncol).
+
+  Ukrainian context: Toronto-protocol WB-MRI capability concentrated
+  in major centers (estimated 5-8 UA sites); subspecialty pediatric /
+  LFS radiology read is limited. Practical pathway often
+  international referral (Germany / Israel / Poland) for index
+  baseline, then local UA acquisition + remote read. No NSZU
+  reimbursement pathway as of 2026-05.

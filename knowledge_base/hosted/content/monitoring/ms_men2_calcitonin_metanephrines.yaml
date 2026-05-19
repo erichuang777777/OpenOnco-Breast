@@ -1,0 +1,89 @@
+id: MS-MEN2-CALCITONIN-METANEPHRINES
+linked_to_regimen: null  # surveillance — no regimen
+
+phases:
+  - name: baseline
+    window: "At MEN2 confirmation (germline RET pathogenic variant) — early-childhood diagnosis preferred"
+    tests:
+      - TEST-PEDIGREE-FAMILY-HISTORY
+      - TEST-CALCITONIN-MTC
+      - TEST-METANEPHRINES-PLASMA-PARAGANGLIOMA
+      - TEST-CMP
+      - TEST-TSH
+    visits: ["Pediatric endocrinology + endocrine-surgery + genetics counseling"]
+    checkpoints:
+      - "Confirm germline RET pathogenic / likely-pathogenic variant; document codon (M918T, C634R/F/G/S/W/Y, etc.)"
+      - "Stratify ATA risk category: HST (highest, M918T → MEN2B), H (high, C634), MOD (moderate, other extracellular cysteine codons + intracellular kinase codons)"
+      - "Counsel on prophylactic thyroidectomy timing — calcitonin level + ATA category drive surgical age"
+      - "HST (M918T / MEN2B) → thyroidectomy in first year of life, ideally before age 1"
+      - "H (C634) → thyroidectomy by age 5 (earlier if calcitonin rising)"
+      - "MOD → thyroidectomy by age 5-10, can be delayed if calcitonin remains normal and no nodules"
+      - "Cascade-test first-degree relatives, including all children"
+
+  - name: pre_thyroidectomy_surveillance
+    window: "Annual until prophylactic thyroidectomy"
+    tests:
+      - TEST-CALCITONIN-MTC
+      - TEST-METANEPHRINES-PLASMA-PARAGANGLIOMA
+      - TEST-CMP
+    visits: ["Pediatric endocrinology surveillance"]
+    checkpoints:
+      - "Calcitonin trend — rising values shorten interval to surgery"
+      - "If calcitonin elevated and / or thyroid nodule present → expedite surgery + cervical-LN dissection planning"
+      - "Plasma metanephrines annually from age 8-11 (HST / H) or age 11-16 (MOD) — depending on codon-specific pheochromocytoma risk"
+      - "Serum calcium / iPTH from age 8-11 (HST) or 11-16 (MOD / H) — primary hyperparathyroidism risk (lower in MEN2B than MEN2A)"
+
+  - name: post_thyroidectomy_lifelong
+    window: "Lifelong post-thyroidectomy surveillance"
+    tests:
+      - TEST-CALCITONIN-MTC
+      - TEST-METANEPHRINES-PLASMA-PARAGANGLIOMA
+      - TEST-CMP
+      - TEST-TSH
+    visits: ["Adult endocrinology surveillance"]
+    checkpoints:
+      - "Calcitonin (and CEA) q6-12 months for first 5 years post-thyroidectomy, then annually"
+      - "Persistent / rising post-op calcitonin → cervical US + structural imaging + possible re-operation"
+      - "Plasma free metanephrines OR 24h urinary fractionated metanephrines annually lifelong — pheochromocytoma can present at any age"
+      - "Serum calcium / iPTH annually — primary hyperparathyroidism may present decades after MTC diagnosis (MEN2A)"
+      - "TSH annually for levothyroxine replacement titration"
+      - "Counsel: ANY hypertensive crisis, panic-attack-like episode, headache, palpitation → expedite pheochromocytoma work-up (not just routine annual screen)"
+      - "Pregnancy planning — pheochromocytoma screen before conception to avoid maternal / fetal mortality"
+
+sources:
+  - SRC-ATA-THYROID-2015
+  - SRC-ENDOCRINE-SOCIETY-MEN-2023
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  ATA 2015 Medullary Thyroid Carcinoma Guidelines (Wells et al,
+  Thyroid 2015) is the principal source for prophylactic
+  thyroidectomy timing by RET codon. ATA classifies risk into HST
+  / H / MOD categories — codon M918T (MEN2B) is highest risk and
+  warrants surgery in infancy; classic C634 codons warrant surgery
+  by age 5; moderate-risk codons (other extracellular cysteine,
+  intracellular kinase) permit surveillance-led timing.
+
+  Endocrine Society 2023 MEN guidelines (Mete et al, J Clin
+  Endocrinol Metab 2023) extends to adult-life surveillance,
+  pheochromocytoma + primary-hyperparathyroidism screening cadence.
+
+  Pheochromocytoma in MEN2: bilateral in 50-80% of cases when
+  detected; surveillance from early childhood enables earlier
+  detection, smaller tumor size at resection, lower perioperative
+  mortality. Plasma free metanephrines preferred over urinary
+  fractionated where assay availability permits (higher sensitivity
+  for small adrenal pheochromocytoma).
+
+  MEN2B-specific findings: mucosal neuromas (lips / tongue), marfanoid
+  habitus, intestinal ganglioneuromatosis — physical-exam findings
+  in infancy that drive early genetic testing.
+
+  Ukrainian context: pediatric endocrine-surgery for prophylactic
+  thyroidectomy is concentrated in major centers — Kyiv / Lviv /
+  Dnipro. Plasma free metanephrines availability is variable — 24h
+  urinary fractionated metanephrines is more widely available
+  alternative. NSZU coverage for germline RET testing exists via
+  oncology genetic panels.

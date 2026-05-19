@@ -1,0 +1,88 @@
+id: MS-HCC-AASLD-Q6MO
+linked_to_regimen: null  # surveillance — no regimen
+
+phases:
+  - name: baseline
+    window: "At identification of HCC-risk substrate — cirrhosis (any etiology), chronic HBV without cirrhosis in high-risk subgroups, post-SVR HCV with advanced fibrosis"
+    tests:
+      - TEST-LIVER-US-AASLD
+      - TEST-AFP
+      - TEST-LFT
+      - TEST-FIB4
+      - TEST-CHILD-PUGH-SCORE
+    visits: ["Hepatology + HCC-screening enrollment"]
+    checkpoints:
+      - "Confirm cirrhosis (any cause) OR chronic HBV in HCC-risk subgroup (Asian male age >40, Asian female age >50, African / African-American age >20, family history of HCC, HDV co-infection)"
+      - "Post-SVR HCV: continue surveillance lifelong if pre-treatment fibrosis F3-F4"
+      - "Child-Pugh A or B is screening-eligible; Child-Pugh C only if transplant candidate (no benefit from screening if not treatment-eligible)"
+      - "AASLD does NOT recommend AFP-alone screening; US + AFP combined preferred"
+      - "Patient education: surveillance reduces HCC mortality (Singal 2020 meta-analysis) — early-stage HCC enables curative therapy (resection / ablation / transplant)"
+
+  - name: routine_surveillance
+    window: "Every 6 months — lifelong while screening-eligible"
+    tests:
+      - TEST-LIVER-US-AASLD
+      - TEST-AFP
+    visits: ["Hepatology surveillance"]
+    checkpoints:
+      - "Liver US per AASLD protocol — qualified sonographer / radiologist familiar with cirrhotic-liver imaging"
+      - "AFP threshold: any new rise (especially >20 ng/mL trending up) triggers further imaging"
+      - "Liver US lesion ≥1cm in cirrhotic liver → multiphasic CT or MRI"
+      - "Liver US lesion <1cm in cirrhotic liver → short-interval (q3mo) repeat US until size resolved / characterized"
+      - "Inadequate US (obesity / steatosis / body habitus / surgical scars) → consider MRI for surveillance, especially in NASH cirrhosis"
+      - "LI-RADS classification applied to all suspicious lesions"
+
+  - name: recall_imaging
+    window: "Within 30 days of any positive surveillance signal"
+    tests:
+      - TEST-CT-CAP
+      - TEST-AFP
+    visits: ["Multiphasic CT or MRI per LI-RADS — abdomen extracellular contrast or hepatobiliary-contrast MRI"]
+    checkpoints:
+      - "LI-RADS 5 lesion → HCC diagnosis without biopsy"
+      - "LI-RADS 4 / 3 → biopsy vs short-interval repeat per multidisciplinary HCC tumor board"
+      - "Refer to HCC tumor board for staging (BCLC) + curative-intent options (resection / ablation / transplant)"
+      - "If diagnosis confirmed → exit surveillance pathway, enter HCC treatment pathway"
+
+  - name: post_curative_surveillance
+    window: "Every 3-6 months after curative-intent treatment (resection / ablation / transplant)"
+    tests:
+      - TEST-CT-CAP
+      - TEST-AFP
+    visits: ["Hepatology + oncology surveillance"]
+    checkpoints:
+      - "Multiphasic CT or MRI q3-6 months for first 2 years (highest recurrence period)"
+      - "Then q6 months years 3-5"
+      - "AFP at every visit"
+      - "Hepatology comanagement for underlying liver disease — CTP score / decompensation events"
+
+sources:
+  - SRC-AASLD-HCC-2023
+  - SRC-NCCN-HCC-2025
+  - SRC-AASLD-HBV-2024
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  AASLD 2023 HCC Practice Guidance (Singal, Llovet et al, Hepatology
+  2023) recommends US + AFP q6 months lifelong for at-risk
+  populations. Updated AFP recommendation: previously AASLD removed
+  AFP, then re-incorporated in 2018 / 2023 based on subsequent
+  meta-analyses showing combined US + AFP improves sensitivity for
+  early-stage detection (~63% vs ~45% for US alone, Tzartzeva 2018).
+  NCCN HCC v3.2025 aligned.
+
+  Cost-effectiveness threshold: surveillance is cost-effective if
+  HCC incidence ≥1.5% per year. Cirrhosis from any cause meets
+  threshold. Chronic HBV without cirrhosis meets threshold in high-
+  risk subgroups (per AASLD HBV 2024). Post-SVR HCV with F3-F4
+  pre-treatment fibrosis meets threshold (residual HCC risk
+  persists despite viral clearance).
+
+  Ukrainian context: liver US widely available; multiphasic CT /
+  MRI for LI-RADS classification concentrated in major centers.
+  NSZU reimburses HCC surveillance imaging in cirrhotic patients;
+  AFP is on the state-funded oncology lab panel. Patient adherence
+  to q6-month cadence is the main quality gap — formal enrollment
+  + nurse-navigator reminder programs improve compliance.

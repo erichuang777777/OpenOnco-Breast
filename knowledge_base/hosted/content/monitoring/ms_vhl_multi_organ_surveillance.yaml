@@ -1,0 +1,82 @@
+id: MS-VHL-MULTI-ORGAN-SURVEILLANCE
+linked_to_regimen: null  # surveillance — no regimen
+
+phases:
+  - name: baseline
+    window: "At von-Hippel-Lindau-syndrome confirmation (germline VHL pathogenic variant)"
+    tests:
+      - TEST-PEDIGREE-FAMILY-HISTORY
+      - TEST-OPHTHALMOLOGIC-EXAM
+      - TEST-MRI-ABDOMEN-RCC
+      - TEST-BRAIN-MRI-CONTRAST
+      - TEST-METANEPHRINES-PLASMA-PARAGANGLIOMA
+      - TEST-AUDIOMETRY
+    visits: ["VHL multidisciplinary clinic + genetics counseling"]
+    checkpoints:
+      - "Confirm germline VHL pathogenic / likely-pathogenic variant"
+      - "Lesion spectrum: retinal hemangioblastomas, CNS hemangioblastomas, clear-cell RCC, pheochromocytoma / paraganglioma, pancreatic NETs / cysts, endolymphatic-sac tumors, epididymal / broad-ligament cystadenomas"
+      - "Subtype 1 (truncating / null VHL) — low pheochromocytoma risk, high RCC / hemangioblastoma risk"
+      - "Subtype 2A/B/C — high pheochromocytoma risk (missense variants); 2A low RCC, 2B high RCC, 2C pheo-only"
+      - "Cascade-test first-degree relatives"
+
+  - name: pediatric_surveillance
+    window: "Birth to age 18 — annual cadence varies by organ system"
+    tests:
+      - TEST-OPHTHALMOLOGIC-EXAM
+      - TEST-METANEPHRINES-PLASMA-PARAGANGLIOMA
+      - TEST-AUDIOMETRY
+    visits: ["Pediatric VHL surveillance"]
+    checkpoints:
+      - "Dilated retinal exam by VHL-experienced ophthalmologist annually from infancy"
+      - "Plasma free metanephrines OR 24h urinary fractionated metanephrines annually from age 5"
+      - "Audiometry q2-3y from age 5 (endolymphatic-sac tumor / hearing loss)"
+      - "Abdominal imaging — initiate MRI from age 15-16 (defer earlier MRI unless symptomatic)"
+      - "AVOID iodinated contrast CT where feasible — cumulative radiation concern"
+
+  - name: adult_annual_surveillance
+    window: "Age 18+ — annual multimodal protocol"
+    tests:
+      - TEST-OPHTHALMOLOGIC-EXAM
+      - TEST-MRI-ABDOMEN-RCC
+      - TEST-BRAIN-MRI-CONTRAST
+      - TEST-METANEPHRINES-PLASMA-PARAGANGLIOMA
+      - TEST-AUDIOMETRY
+    visits: ["Adult VHL multidisciplinary surveillance — annual coordinated visit"]
+    checkpoints:
+      - "Dilated retinal exam annually — laser-photocoagulation or cryotherapy for new hemangioblastomas"
+      - "Brain + total-spine MRI with contrast q2y (or annually if known active lesions); hemangioblastoma surveillance"
+      - "Abdominal MRI annually — RCC + pancreatic NET / cyst + adrenal pheochromocytoma surveillance; 3cm tumor-size threshold guides nephron-sparing surgery for sporadic RCC"
+      - "Plasma free metanephrines OR 24h urinary fractionated metanephrines annually"
+      - "Audiometry q2-3y; symptomatic hearing loss / tinnitus → contrast IAC MRI"
+      - "Belzutifan (HIF-2α inhibitor; FDA-approved 2021 for VHL-associated RCC / CNS hemangioblastoma / pancreatic NET requiring intervention) — discuss for size-progressing lesions in tertiary centers"
+
+sources:
+  - SRC-NCCN-KIDNEY-2025
+  - SRC-NCCN-CNS-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Surveillance cadence aligned with NCCN Kidney v3.2025 (VHL RCC
+  management) + NCCN CNS v3.2025 (hemangioblastoma surveillance) +
+  international VHL Alliance Active Surveillance Guidelines (Binderup
+  2022 J Med Genet). Specific cadence varies modestly between US /
+  European guidelines (e.g., German VHL Group recommends q6 month
+  ophthalmologic exam in adults vs annual in NCCN).
+
+  Belzutifan (Welireg, Merck) FDA-approved 2021 for VHL-associated
+  tumors not requiring immediate surgery — first systemic option that
+  defers organ-preserving surgery for size-progressing RCC, CNS
+  hemangioblastoma, and pancreatic NET. NCCN-recommended at
+  specialty centers; not part of routine surveillance, but mention
+  here because surveillance findings trigger the decision.
+
+  3cm cutoff for VHL-RCC nephron-sparing surgery — observation
+  acceptable below this size, surgical intervention triggered above
+  (Walther 1995, refined by Jonasch 2014 Lancet Oncol).
+
+  Ukrainian context: VHL multidisciplinary clinics limited;
+  surveillance often fragmented across separate gynecology /
+  endocrinology / neurosurgery / ophthalmology / urology
+  appointments. Centralized coordination recommended for compliance.
