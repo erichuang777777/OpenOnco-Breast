@@ -1,0 +1,23 @@
+id: BIO-PTEN-GERMLINE
+names:
+  preferred: "PTEN germline pathogenic variant"
+  ukrainian: "PTEN germline патогенний варіант"
+  english: "PTEN germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: PTEN
+  gene_hugo_id: HGNC:9588
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+last_reviewed: "2026-05-18"
+notes: "PTEN germline — drives PTEN Hamartoma Tumor Syndrome (PHTS), encompassing Cowden syndrome. Cancer spectrum: breast (lifetime ~85%), thyroid (follicular ~35%), endometrial ~28%, RCC ~30%, CRC, melanoma. Non-cancer: macrocephaly, mucocutaneous trichilemmomas, GI hamartomas, Lhermitte-Duclos. NCCN: annual breast MRI from 30, dermatologic + thyroid US + endometrial sampling. STUB pending two-Co-Lead signoff."
+notes_ua: "PTEN germline — драйвер PTEN Hamartoma Tumor Syndrome (включає Cowden syndrome)."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v04_germline_batch2
+draft_revision: 1

@@ -1,0 +1,26 @@
+id: BIO-NF1-GERMLINE
+names:
+  preferred: "NF1 germline pathogenic variant"
+  ukrainian: "NF1 germline патогенний варіант"
+  english: "NF1 germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: NF1
+  gene_hugo_id: HGNC:7765
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements:
+  - "Whole blood or saliva DNA"
+  - "NF1 has high rate of de novo variants (~50%); negative family history does not exclude diagnosis"
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources:
+  - SRC-NF1-CONSORTIUM
+  - SRC-NCCN-CNS-2025
+last_reviewed: "2026-05-18"
+notes: "NF1 germline — drives Neurofibromatosis type 1. Cancer spectrum: malignant peripheral nerve sheath tumor (MPNST, lifetime ~8-13%), optic-pathway glioma (childhood), pheochromocytoma, GIST, juvenile myelomonocytic leukemia, breast (premenopausal women elevated). Plexiform neurofibromas are MPNST precursors. Selumetinib (MEK inhibitor) FDA-approved for symptomatic inoperable plexiform NF in children. STUB pending two-Co-Lead signoff."
+notes_ua: "NF1 germline — драйвер нейрофіброматозу типу 1; спектр: MPNST + оптична гліома + феохромоцитома + GIST + JMML."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v04_germline_batch2
+draft_revision: 1

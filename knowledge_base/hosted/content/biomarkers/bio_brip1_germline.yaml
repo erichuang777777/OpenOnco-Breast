@@ -1,0 +1,24 @@
+id: BIO-BRIP1-GERMLINE
+names:
+  preferred: "BRIP1 germline pathogenic variant"
+  ukrainian: "BRIP1 germline патогенний варіант"
+  english: "BRIP1 germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: BRIP1
+  gene_hugo_id: HGNC:20473
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-NCCN-OVARIAN-2025
+last_reviewed: "2026-05-18"
+notes: "BRIP1 germline (also FANCJ) — ovarian cancer lifetime risk ~5-10% (NCCN: discuss risk-reducing salpingo-oophorectomy age 45-50). Breast risk uncertain, generally not elevated above background. Biallelic LOF causes Fanconi anemia complementation group J. STUB pending two-Co-Lead signoff."
+notes_ua: "BRIP1 germline — ризик яєчників ~5-10%; біалельний LOF → Fanconi anemia FA-J."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v04_germline_batch2
+draft_revision: 1

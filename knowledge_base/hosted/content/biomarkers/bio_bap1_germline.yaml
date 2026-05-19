@@ -1,0 +1,24 @@
+id: BIO-BAP1-GERMLINE
+names:
+  preferred: "BAP1 germline pathogenic variant"
+  ukrainian: "BAP1 germline патогенний варіант"
+  english: "BAP1 germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: BAP1
+  gene_hugo_id: HGNC:950
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources:
+  - SRC-NCCN-MELANOMA-2025
+  - SRC-NCCN-KIDNEY-2025
+last_reviewed: "2026-05-18"
+notes: "BAP1 germline — drives BAP1 Tumor Predisposition Syndrome. Core spectrum: uveal melanoma (lifetime ~30%), malignant mesothelioma (esp. peritoneal), clear-cell RCC, cutaneous melanoma, atypical Spitz tumors. Cutaneous BAP1-inactivated melanocytic tumors (BIMTs) are clinical clue. Surveillance: annual ophthalmologic exam + dermatologic + abdominal imaging. STUB pending two-Co-Lead signoff."
+notes_ua: "BAP1 germline — драйвер BAP1 Tumor Predisposition Syndrome: уве­альна меланома + мезотеліома + RCC + шкірна меланома."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v04_germline_batch2
+draft_revision: 1

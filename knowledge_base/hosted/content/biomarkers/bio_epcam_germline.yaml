@@ -1,0 +1,26 @@
+id: BIO-EPCAM-GERMLINE
+names:
+  preferred: "EPCAM germline 3' deletion (MSH2 silencing)"
+  ukrainian: "EPCAM germline делеція 3' (MSH2 silencing)"
+  english: "EPCAM germline 3' deletion"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: EPCAM
+  gene_hugo_id: HGNC:11529
+  variant_type: large_deletion
+  functional_impact: loss_of_function
+specimen_requirements:
+  - "Whole blood or saliva DNA"
+  - "MLPA / del-dup analysis required — 3' EPCAM deletions are missed by short-read NGS sequencing alone"
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources:
+  - SRC-ESMO-CRC-2024
+  - SRC-ASCO-ACMG-LYNCH-2014
+last_reviewed: "2026-05-18"
+notes: "EPCAM germline 3' deletions cause Lynch syndrome via epigenetic silencing of MSH2 (immediately downstream). CRC penetrance similar to MSH2 (~50-70%); endometrial cancer risk lower than MSH2 because silencing is tissue-restricted. Test required when MSH2-IHC loss is found but no MSH2 sequence variant identified. STUB pending two-Co-Lead signoff."
+notes_ua: "EPCAM germline делеції 3' — спричиняють Lynch syndrome через епігенетичне silencing MSH2."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v04_germline_batch2
+draft_revision: 1

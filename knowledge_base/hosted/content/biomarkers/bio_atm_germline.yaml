@@ -1,0 +1,24 @@
+id: BIO-ATM-GERMLINE
+names:
+  preferred: "ATM germline pathogenic variant"
+  ukrainian: "ATM germline патогенний варіант"
+  english: "ATM germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: ATM
+  gene_hugo_id: HGNC:795
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-NCCN-PANCREATIC-2025
+last_reviewed: "2026-05-18"
+notes: "ATM germline — moderate-penetrance breast cancer risk (~20-30% lifetime), pancreatic ductal adenocarcinoma elevated ~5-9x, prostate cancer elevated. Biallelic = ataxia-telangiectasia (autosomal recessive). PROfound cohort A (with BRCA1/2) showed PARPi benefit in mCRPC. NCCN: enhanced breast screening + pancreatic surveillance if family history. STUB pending two-Co-Lead signoff. Standalone entry complements composite BIO-ATM-CHEK2-CDK12-GERMLINE."
+notes_ua: "ATM germline — помірно-пенетрантний ризик раку молочної залози + панкреатичний + простатний."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v04_germline_batch2
+draft_revision: 1

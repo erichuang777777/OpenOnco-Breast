@@ -1,0 +1,23 @@
+id: BIO-BARD1-GERMLINE
+names:
+  preferred: "BARD1 germline pathogenic variant"
+  ukrainian: "BARD1 germline патогенний варіант"
+  english: "BARD1 germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: BARD1
+  gene_hugo_id: HGNC:952
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+last_reviewed: "2026-05-18"
+notes: "BARD1 germline — BRCA1 heterodimer partner; moderate breast cancer risk (~2-3x baseline, especially triple-negative). Ovarian risk uncertain — NCCN does not currently include for risk-reducing salpingo-oophorectomy discussion. Enhanced breast screening (annual MRI from 40) per NCCN. STUB pending two-Co-Lead signoff."
+notes_ua: "BARD1 germline — партнер BRCA1; помірний ризик грудей (~2-3x базового), особливо ТН."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v04_germline_batch2
+draft_revision: 1

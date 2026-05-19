@@ -1,0 +1,24 @@
+id: BIO-RAD51C-GERMLINE
+names:
+  preferred: "RAD51C germline pathogenic variant"
+  ukrainian: "RAD51C germline патогенний варіант"
+  english: "RAD51C germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: RAD51C
+  gene_hugo_id: HGNC:9820
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-NCCN-OVARIAN-2025
+last_reviewed: "2026-05-18"
+notes: "RAD51C germline — HRR-pathway gene; ovarian cancer lifetime risk ~10-15% (NCCN includes for risk-reducing salpingo-oophorectomy discussion age 45-50); breast cancer (esp. triple-negative) ~15-20%. Biallelic LOF causes Fanconi anemia complementation group O. PARPi consideration in HRR-context tumors. STUB pending two-Co-Lead signoff."
+notes_ua: "RAD51C germline — HRR-ген; ризик яєчників ~10-15%, грудей (особливо ТН) ~15-20%."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v04_germline_batch2
+draft_revision: 1

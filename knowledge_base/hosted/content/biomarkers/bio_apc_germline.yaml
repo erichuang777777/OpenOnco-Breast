@@ -1,0 +1,23 @@
+id: BIO-APC-GERMLINE
+names:
+  preferred: "APC germline pathogenic variant"
+  ukrainian: "APC germline патогенний варіант"
+  english: "APC germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: APC
+  gene_hugo_id: HGNC:583
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+last_reviewed: "2026-05-18"
+notes: "APC germline — drives Familial Adenomatous Polyposis (FAP) and attenuated FAP (AFAP). Near-100% CRC penetrance untreated; classic FAP presents with 100s-1000s of adenomatous polyps adolescence-30s. Prophylactic colectomy is standard. Extracolonic: duodenal/ampullary, desmoid, thyroid, hepatoblastoma (children), CHRPE. STUB pending two-Co-Lead signoff."
+notes_ua: "APC germline — драйвер FAP / AFAP. Профілактична колектомія — стандарт."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v04_germline_batch2
+draft_revision: 1

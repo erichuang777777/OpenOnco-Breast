@@ -1,0 +1,23 @@
+id: BIO-MET-GERMLINE
+names:
+  preferred: "MET germline pathogenic variant"
+  ukrainian: "MET germline патогенний варіант"
+  english: "MET germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: MET
+  gene_hugo_id: HGNC:7029
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources:
+  - SRC-NCCN-KIDNEY-2025
+last_reviewed: "2026-05-18"
+notes: "MET germline activating missense variants — drive Hereditary Papillary Renal Carcinoma (HPRC) type 1. Bilateral multifocal type-1 papillary RCC; lifetime renal-cancer risk ~67%. Surveillance: abdominal MRI q12-24mo; nephron-sparing surgery preferred. Note: germline MET activates rather than ablates (most germline-cancer genes are LOF). MET-targeted TKIs (e.g., crizotinib, savolitinib) are options for advanced HPRC. STUB pending two-Co-Lead signoff."
+notes_ua: "MET germline активуючі варіанти — драйвер HPRC type 1 (двосторонній мультифокальний папілярний RCC type 1)."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v04_germline_batch2
+draft_revision: 1
