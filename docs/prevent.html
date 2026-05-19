@@ -297,6 +297,11 @@
       <label class="prevent-field"><input type="checkbox" data-finding="ebv_dna_pcr" data-value="detectable" id="f-ebv">EBV-DNA detectable + immunocompromise context (post-transplant / HSCT / congenital ID / HIV+)</label>
       <label class="prevent-field"><input type="checkbox" data-finding="post_transplant_immunosuppression" data-value="true" id="f-immunosuppression">Post-transplant immunosuppression (for EBV co-context)</label>
       <label class="prevent-field"><input type="checkbox" data-finding="htlv_1_status" data-value="positive" id="f-htlv1">HTLV-1 positive (endemic region or known carrier)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="hhv8_kshv_serology" data-value="positive" id="f-hhv8">HHV-8 / KSHV seropositive + immunocompromise (Kaposi sarcoma, multicentric Castleman)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="schistosoma_haematobium_exposure_history" data-value="true" id="f-schistosoma">Schistosoma haematobium exposure history (bladder SCC; sub-Saharan / Middle East)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="opisthorchis_viverrini_exposure_history" data-value="true" id="f-opisthorchis">Opisthorchis viverrini history (cholangiocarcinoma; Mekong / Thailand / Laos)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="clonorchis_sinensis_exposure_history" data-value="true" id="f-clonorchis">Clonorchis sinensis history (cholangiocarcinoma; East Asia)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="hcv_hbv_coinfection" data-value="true" id="f-hcv-hbv-co">HCV + HBV concurrent co-infection (HCC risk × DAA+entecavir combination)</label>
     </fieldset>
 
     <fieldset class="prevent-section">
@@ -312,6 +317,31 @@
       <label class="prevent-field"><input type="checkbox" data-finding="family_apc_known_pathogenic_variant" data-value="true" id="f-fap-apc">Family confirmed APC pathogenic variant</label>
       <label class="prevent-field"><input type="checkbox" data-finding="family_chompret_criteria_met" data-value="true" id="f-lfs-chompret">Family meets Chompret criteria (LFS / TP53 suspicion)</label>
       <label class="prevent-field"><input type="checkbox" data-finding="family_men2_phenotype_cluster" data-value="true" id="f-men2-phenotype">Family MEN2 phenotype cluster (MTC + pheo + parathyroid OR mucosal neuromas)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_classic_men1_criteria_met" data-value="true" id="f-men1">Family classic MEN1 (≥2 of: hyperparathyroidism / pituitary adenoma / GEP-NET)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_cowden_clinical_diagnostic_criteria_met" data-value="true" id="f-cowden">Family Cowden phenotype (macrocephaly + mucocutaneous papillomas / GI hamartomas)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_classic_peutz_jeghers_phenotype" data-value="true" id="f-pj">Family Peutz-Jeghers phenotype (perioral pigmentation + GI hamartomas / intussusception)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_bap1_phenotype_cluster" data-value="true" id="f-bap1">Family BAP1 cluster (uveal melanoma + mesothelioma + clear-cell RCC)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_fammm_phenotype_cluster" data-value="true" id="f-fammm">Family FAMMM (multiple melanoma + pancreatic cancer / CDKN2A)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_hprc_papillary_type_1_rcc" data-value="true" id="f-hprc">Family hereditary papillary type-1 RCC (MET)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_sdh_paraganglioma_phenotype" data-value="true" id="f-sdh">Family SDH-deficient paraganglioma / pheochromocytoma cluster</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_ataxia_telangiectasia_phenotype" data-value="true" id="f-at">Family ATM biallelic (ataxia + telangiectasias + radiation sensitivity)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_fanconi_anemia_phenotype" data-value="true" id="f-fanconi">Family Fanconi anemia (short stature + skeletal anomalies + BM failure)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_birt_hogg_dube_phenotype" data-value="true" id="f-bhd">Family Birt-Hogg-Dubé (fibrofolliculomas + lung cysts + chromophobe RCC)</label>
+    </fieldset>
+
+    <fieldset class="prevent-section">
+      <legend>D. Confirmed germline carriers</legend>
+      <p class="prevent-section-desc">For individuals with a known pathogenic variant on prior testing — routes to syndrome-specific carrier surveillance.</p>
+      <label class="prevent-field"><input type="checkbox" data-finding="germline_mlh1_pathogenic_variant_confirmed" data-value="true" id="f-confirmed-lynch-mlh1">Confirmed Lynch — MLH1 / MSH2 / MSH6 / PMS2 / EPCAM</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="germline_brca1_pathogenic_variant_confirmed" data-value="true" id="f-confirmed-brca1">Confirmed BRCA1 pathogenic variant</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="germline_brca2_pathogenic_variant_confirmed" data-value="true" id="f-confirmed-brca2">Confirmed BRCA2 pathogenic variant</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="germline_tp53_pathogenic_variant_confirmed" data-value="true" id="f-confirmed-lfs">Confirmed TP53 (Li-Fraumeni) pathogenic variant → Toronto Protocol</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="germline_apc_pathogenic_variant_confirmed" data-value="true" id="f-confirmed-fap">Confirmed APC pathogenic variant (FAP)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="germline_vhl_pathogenic_variant_confirmed" data-value="true" id="f-confirmed-vhl">Confirmed VHL pathogenic variant → VHL Alliance surveillance protocol</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="germline_fh_pathogenic_variant_confirmed" data-value="true" id="f-confirmed-hlrcc">Confirmed FH (HLRCC) pathogenic variant</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="germline_men1_pathogenic_variant_confirmed" data-value="true" id="f-confirmed-men1">Confirmed MEN1 pathogenic variant</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="germline_ret_pathogenic_variant_confirmed" data-value="true" id="f-confirmed-men2">Confirmed RET pathogenic variant (MEN2) — prophylactic thyroidectomy timing</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="germline_pten_pathogenic_variant_confirmed" data-value="true" id="f-confirmed-cowden">Confirmed PTEN pathogenic variant (Cowden)</label>
     </fieldset>
 
     <fieldset class="prevent-section">
@@ -321,6 +351,14 @@
       <label class="prevent-field"><input type="checkbox" data-finding="bmi_kg_m2" data-value="35" id="f-bmi-obese">BMI ≥ 30 (obesity — cancer-cluster risk)</label>
       <label class="prevent-field"><input type="checkbox" data-finding="residential_radon_exposure_ge_4_pci_per_l" data-value="true" id="f-radon">Residential radon ≥ 4 pCi/L</label>
       <label class="prevent-field"><input type="checkbox" data-finding="residential_pm2_5_annual_average_gt_35" data-value="true" id="f-pm25">Residential PM2.5 &gt; 35 μg/m³ annual average</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="dietary_low_fiber_intake_documented" data-value="true" id="f-low-fiber">Dietary low fiber intake &lt;15 g/day (CRC risk)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="dietary_high_red_processed_meat_documented" data-value="true" id="f-red-meat">High red / processed meat intake (≥500g/wk red OR ≥50g/day processed)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="dietary_low_calcium_vitamin_d_documented" data-value="true" id="f-low-ca-d">Low calcium &lt;800mg/day + Vitamin D deficiency &lt;30 nmol/L</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="dietary_low_mediterranean_adherence" data-value="true" id="f-mediterranean">Low Mediterranean diet adherence score</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="hot_beverages_regular_consumption_ge_65c" data-value="true" id="f-hot-beverages">Regular consumption of beverages ≥65°C (esophageal SCC risk per IARC)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="recreational_uv_exposure_high_documented" data-value="true" id="f-uv-rec">High recreational UV exposure / tanning bed use / sunburn history</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="secondhand_smoke_household_exposure_ge_10y" data-value="true" id="f-ets">Household secondhand smoke exposure ≥10 years</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="drinking_water_arsenic_high_gt_10_ug_per_l" data-value="true" id="f-arsenic-water">Drinking-water arsenic &gt;10 μg/L (WHO threshold; skin/bladder/lung)</label>
     </fieldset>
 
     <fieldset class="prevent-section">
@@ -332,6 +370,16 @@
       <label class="prevent-field"><input type="checkbox" data-finding="occupational_aromatic_amine_exposure_documented" data-value="true" id="f-aromatic">Aromatic amines (dye/rubber/leather industry pre-regulation)</label>
       <label class="prevent-field"><input type="checkbox" data-finding="occupational_silica_exposure_documented" data-value="true" id="f-silica">Crystalline silica (mining, quarrying, sandblasting)</label>
       <label class="prevent-field"><input type="checkbox" data-finding="occupational_firefighter_career_documented" data-value="true" id="f-firefighter">Career firefighter (≥10 years)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_ionizing_radiation_exposure_documented" data-value="true" id="f-ionizing">Occupational ionizing radiation (radiologic technologists, nuclear, uranium mining)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_hexavalent_chromium_exposure_documented" data-value="true" id="f-chromium">Hexavalent chromium VI (chrome plating, stainless steel welding, leather tanning)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_nickel_exposure_documented" data-value="true" id="f-nickel">Nickel compounds (refining, battery, electroplating)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_cadmium_exposure_documented" data-value="true" id="f-cadmium">Cadmium (smelting, batteries, pigments, mining)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_beryllium_exposure_documented" data-value="true" id="f-beryllium">Beryllium (aerospace, electronics, nuclear, dental alloys)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_pah_exposure_documented" data-value="true" id="f-pah">Polycyclic aromatic hydrocarbons / PAH (coke ovens, aluminum smelting, roofing)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_mineral_oils_exposure_documented" data-value="true" id="f-mineral-oils">Mineral oils — untreated/mildly treated (metalworking, machinists)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_soot_exposure_documented" data-value="true" id="f-soot">Soot exposure (chimney sweep, roofing, asphalt — historical Pott's scrotal cancer)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_painters_career_documented" data-value="true" id="f-painters">Industrial / construction painters (≥10 years; IARC Group 1 mixed exposure)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_wood_leather_dust_exposure_documented" data-value="true" id="f-wood-dust">Hardwood + leather dust (cabinetmakers, furniture, leather/shoe; sinonasal adenocarcinoma)</label>
     </fieldset>
 
     <fieldset class="prevent-section">
@@ -343,6 +391,14 @@
       <label class="prevent-field"><input type="checkbox" data-finding="celiac_disease_refractory_type_2" data-value="true" id="f-celiac">Refractory celiac disease type 2</label>
       <label class="prevent-field"><input type="checkbox" data-finding="chronic_pancreatitis_hereditary_pancreatitis_prss1_or_spink1" data-value="true" id="f-pancreatitis">Hereditary pancreatitis (PRSS1 / SPINK1)</label>
       <label class="prevent-field"><input type="checkbox" data-finding="hashimoto_thyroiditis_diagnosis_confirmed" data-value="true" id="f-hashimoto">Hashimoto's thyroiditis</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="achalasia_diagnosis_confirmed" data-value="true" id="f-achalasia">Achalasia (esophageal SCC risk ≥10-15y post-onset)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="chronic_atrophic_gastritis_with_intestinal_metaplasia" data-value="true" id="f-atrophic-gastritis">Chronic atrophic gastritis with intestinal metaplasia</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="sjogren_syndrome_diagnosis_confirmed" data-value="true" id="f-sjogren">Sjögren's syndrome (parotid/lacrimal MALT lymphoma risk)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="systemic_sclerosis_with_ild" data-value="true" id="f-scleroderma">Systemic sclerosis with interstitial lung disease</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="wilsons_disease_cirrhosis" data-value="true" id="f-wilsons">Wilson's disease with cirrhosis (HCC risk)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="hereditary_hemochromatosis_hfe_c282y_homozygous" data-value="true" id="f-hemochromatosis">Hereditary hemochromatosis (HFE C282Y homozygous)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="alpha_1_antitrypsin_deficiency_pizz" data-value="true" id="f-a1at">Alpha-1 antitrypsin deficiency PiZZ</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="myeloproliferative_neoplasm_driver_mutation_positive" data-value="true" id="f-mpn">MPN driver-positive (JAK2/CALR/MPL) — secondary AML risk surveillance</label>
     </fieldset>
 
     <fieldset class="prevent-section">
@@ -353,6 +409,34 @@
       <label class="prevent-field"><input type="checkbox" data-finding="ppi_continuous_use_ge_10y" data-value="true" id="f-ppi-longterm">PPI continuous use ≥10 years (gastric NET risk)</label>
       <label class="prevent-field"><input type="checkbox" data-finding="combined_hrt_continuous_use_ge_5y" data-value="true" id="f-hrt">Combined HRT (estrogen + progestin) use ≥5 years</label>
       <label class="prevent-field"><input type="checkbox" data-finding="tamoxifen_continuous_use_ge_5y" data-value="true" id="f-tamoxifen">Long-term tamoxifen ≥5 years (endometrial cancer surveillance)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="prior_topoisomerase_2_inhibitor_documented" data-value="true" id="f-topo2">Prior topoisomerase-II inhibitor (etoposide / anthracycline) — t-AML risk, earlier latency</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="prior_anthracycline_cumulative_dose_ge_250" data-value="true" id="f-anthra-late">Cancer survivor 5y+ post-anthracycline ≥250 mg/m² (cardio-late surveillance)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="prior_pediatric_pelvic_rt_documented" data-value="true" id="f-pediatric-rt">Pediatric pelvic radiotherapy history (bladder + CRC secondary cancer)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="prior_bleomycin_cumulative_documented" data-value="true" id="f-bleomycin">Prior bleomycin (pulmonary late-effect + lung-cancer interaction with smoking)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="prior_cyclophosphamide_cumulative_ge_7g_per_m2" data-value="true" id="f-cyclophosphamide">Prior cyclophosphamide cumulative ≥7 g/m² (bladder + leukemia late-effect)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="prior_platinum_cumulative_ge_400_mg_per_m2" data-value="true" id="f-platinum">Prior platinum ≥400 mg/m² (cardiovascular + nephropathy + t-AML)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="des_exposure_in_utero" data-value="true" id="f-des">DES exposure in utero (vaginal clear-cell adenocarcinoma; historical 1940-70s)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="long_term_hormonal_contraception_ge_10y" data-value="true" id="f-ocp-longterm">Long-term hormonal contraception ≥10 years (breast + cervical modest risk)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="calcineurin_inhibitor_chronic_ge_5y" data-value="true" id="f-calcineurin">Chronic calcineurin inhibitor (cyclosporine/tacrolimus) ≥5 years</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="azathioprine_chronic_ge_3y" data-value="true" id="f-azathioprine">Chronic azathioprine / 6-MP ≥3 years (lymphoma + NMSC)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="anti_tnf_chronic_pediatric_young_adult" data-value="true" id="f-anti-tnf">Chronic anti-TNF biologic in pediatric/young-adult IBD (HSTCL risk)</label>
+    </fieldset>
+
+    <fieldset class="prevent-section">
+      <legend>H. Reproductive history (hormonal context)</legend>
+      <label class="prevent-field"><input type="checkbox" data-finding="late_first_pregnancy_ge_30_short_breastfeeding" data-value="true" id="f-late-pregnancy">Late first pregnancy ≥30 + breastfeeding &lt;6 months (modest breast risk)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="early_menarche_before_12_late_menopause_after_55" data-value="true" id="f-menarche-menopause">Early menarche &lt;12 + late menopause &gt;55 (hormone-exposure duration)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="nulliparity_no_pregnancy_history" data-value="true" id="f-nulliparity">Nulliparity (no pregnancy history) + age &gt;35</label>
+    </fieldset>
+
+    <fieldset class="prevent-section">
+      <legend>I. Universal cross-cutting flags</legend>
+      <p class="prevent-section-desc">Broad-spectrum risk flags that apply across multiple disease groups — augment disease-specific RFs above.</p>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_first_degree_cancer_any" data-value="true" id="f-fdr-any">≥1 first-degree relative with any cancer (broad pre-triage)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="age_50plus_screening_gap_documented" data-value="true" id="f-screening-gap">Age ≥50 with no documented age-appropriate screening within last 5 years</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="prior_cancer_survivor_post_treatment" data-value="true" id="f-prior-cancer">Prior cancer history, treatment-completed (secondary malignancy + recurrence surveillance)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="chronic_immunosuppression_ge_1y_documented" data-value="true" id="f-chronic-immunosuppression">Chronic immunosuppression ≥1y (HIV/transplant/autoimmune-on-immunosuppressant)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="multiple_iarc_group_1_exposures_documented" data-value="true" id="f-multi-exposure">Multiple IARC Group 1 exposures stacked (e.g., asbestos + smoking, benzene + radon)</label>
     </fieldset>
 
     <div class="prevent-actions">
@@ -458,7 +542,74 @@ const RF_MAP = {
   'prior_alkylator_chemotherapy_documented': 'RF-IATROGENIC-ALKYLATOR-TAML-PREVENTION → CBC q3-6mo for first 10y',
   'ppi_continuous_use_ge_10y': 'RF-IATROGENIC-LONG-TERM-PPI-GASTRIC-NET-PREVENTION → de-prescribing + EGD surveillance',
   'combined_hrt_continuous_use_ge_5y': 'RF-IATROGENIC-COMBINED-HRT-PREVENTION → year-5 shared-decision review',
-  'tamoxifen_continuous_use_ge_5y': 'RF-IATROGENIC-TAMOXIFEN-ENDOMETRIAL-PREVENTION → symptom-prompted evaluation; routine TVUS NOT recommended (ACOG)'
+  'tamoxifen_continuous_use_ge_5y': 'RF-IATROGENIC-TAMOXIFEN-ENDOMETRIAL-PREVENTION → symptom-prompted evaluation; routine TVUS NOT recommended (ACOG)',
+  'hhv8_kshv_serology': 'RF-CHRONIC-HHV8-MALIGNANCY-PREVENTION → KS + multicentric Castleman surveillance in immunocompromised',
+  'schistosoma_haematobium_exposure_history': 'RF-SCHISTOSOMA-HAEMATOBIUM-BLADDER-PREVENTION → urinalysis + cytology + cystoscopy threshold',
+  'opisthorchis_viverrini_exposure_history': 'RF-OPISTHORCHIS-CHOLANGIO-PREVENTION → MRI/MRCP + CA 19-9 q1y',
+  'clonorchis_sinensis_exposure_history': 'RF-CLONORCHIS-CHOLANGIO-PREVENTION → MRI/MRCP + CA 19-9 q1y',
+  'hcv_hbv_coinfection': 'RF-CHRONIC-HCV-HBV-COINFECTION-PREVENTION → intensified HCC surveillance + DAA+entecavir',
+  'family_classic_men1_criteria_met': 'RF-MEN1-FAMILY-HISTORY-SUSPICION → germline MEN1 panel + PTH/Ca/pituitary surveillance',
+  'family_cowden_clinical_diagnostic_criteria_met': 'RF-COWDEN-FAMILY-HISTORY-SUSPICION → germline PTEN panel + breast/thyroid/endometrial surveillance',
+  'family_classic_peutz_jeghers_phenotype': 'RF-PEUTZ-JEGHERS-FAMILY-HISTORY-SUSPICION → germline STK11 + small-bowel surveillance + CAPS pancreatic',
+  'family_bap1_phenotype_cluster': 'RF-BAP1-FAMILY-HISTORY-SUSPICION → germline BAP1 + dermatology + ophthalmology + abdominal MRI',
+  'family_fammm_phenotype_cluster': 'RF-FAMMM-FAMILY-HISTORY-SUSPICION → germline CDKN2A + TBP/dermoscopy + CAPS pancreatic',
+  'family_hprc_papillary_type_1_rcc': 'RF-HPRC-FAMILY-HISTORY-SUSPICION → germline MET + annual abdominal MRI from age 30',
+  'family_sdh_paraganglioma_phenotype': 'RF-SDH-FAMILY-HISTORY-SUSPICION → germline SDHx panel + whole-body MRI from age 6-10',
+  'family_ataxia_telangiectasia_phenotype': 'RF-AT-FAMILY-HISTORY-SUSPICION → germline ATM (biallelic) + radiation avoidance + lymphoma + breast surveillance',
+  'family_fanconi_anemia_phenotype': 'RF-FANCONI-ANEMIA-FAMILY-HISTORY-SUSPICION → germline FA panel + AML + HNSCC surveillance + alkylator avoidance',
+  'family_birt_hogg_dube_phenotype': 'RF-BHD-FAMILY-HISTORY-SUSPICION → germline FLCN + triennial abdominal MRI + lung surveillance',
+  'germline_mlh1_pathogenic_variant_confirmed': 'RF-LYNCH-CONFIRMED-CARRIER → NCCN Lynch surveillance + aspirin per CAPP2',
+  'germline_brca1_pathogenic_variant_confirmed': 'RF-BRCA-CONFIRMED-CARRIER → MRI breast q1y + TVUS+CA125 + RRM/BSO discussion',
+  'germline_brca2_pathogenic_variant_confirmed': 'RF-BRCA-CONFIRMED-CARRIER → MRI breast + male PSA + RRM/BSO discussion',
+  'germline_tp53_pathogenic_variant_confirmed': 'RF-LI-FRAUMENI-CONFIRMED-CARRIER → Toronto Protocol WB-MRI + radiation avoidance',
+  'germline_apc_pathogenic_variant_confirmed': 'RF-FAP-CONFIRMED-CARRIER → annual sigmoidoscopy from 10-12 + prophylactic colectomy decision',
+  'germline_vhl_pathogenic_variant_confirmed': 'RF-VHL-CONFIRMED-CARRIER → VHL Alliance multi-organ surveillance from age 1-16',
+  'germline_fh_pathogenic_variant_confirmed': 'RF-HLRCC-CONFIRMED-CARRIER → annual abdominal MRI from age 8-10 + low-threshold nephrectomy',
+  'germline_men1_pathogenic_variant_confirmed': 'RF-MEN1-CONFIRMED-CARRIER → biochemical + imaging surveillance per ENDOCRINE-SOC',
+  'germline_ret_pathogenic_variant_confirmed': 'RF-MEN2-CONFIRMED-CARRIER → prophylactic thyroidectomy timing per RET classification',
+  'germline_pten_pathogenic_variant_confirmed': 'RF-COWDEN-CONFIRMED-CARRIER → breast/thyroid/endometrial/colon surveillance',
+  'dietary_low_fiber_intake_documented': 'RF-LIFESTYLE-LOW-FIBER-CRC-PREVENTION → dietary counseling + age-appropriate CRC screening',
+  'dietary_high_red_processed_meat_documented': 'RF-LIFESTYLE-HIGH-RED-MEAT-CRC-PREVENTION → dietary reduction counseling',
+  'dietary_low_calcium_vitamin_d_documented': 'RF-LIFESTYLE-LOW-CALCIUM-VIT-D-CRC-PREVENTION → supplementation + dietary review',
+  'dietary_low_mediterranean_adherence': 'RF-LIFESTYLE-LOW-MEDITERRANEAN-DIET-PREVENTION → Mediterranean-pattern adoption counseling',
+  'hot_beverages_regular_consumption_ge_65c': 'RF-LIFESTYLE-HOT-BEVERAGES-PREVENTION → temperature counseling + ENT awareness',
+  'recreational_uv_exposure_high_documented': 'RF-LIFESTYLE-UV-EXPOSURE-PREVENTION → sun-protection + tanning-bed avoidance + dermatology',
+  'secondhand_smoke_household_exposure_ge_10y': 'RF-ENVIRONMENTAL-SECONDHAND-SMOKE-LUNG-PREVENTION → LDCT eligibility evaluation',
+  'drinking_water_arsenic_high_gt_10_ug_per_l': 'RF-ENVIRONMENTAL-ARSENIC-WATER-PREVENTION → water treatment + bladder/skin/lung surveillance',
+  'occupational_ionizing_radiation_exposure_documented': 'RF-OCC-IONIZING-RADIATION-PREVENTION → CBC + thyroid US + lifetime dose tracking',
+  'occupational_hexavalent_chromium_exposure_documented': 'RF-OCC-HEXAVALENT-CHROMIUM-PREVENTION → LDCT + ENT surveillance',
+  'occupational_nickel_exposure_documented': 'RF-OCC-NICKEL-PREVENTION → LDCT + ENT surveillance',
+  'occupational_cadmium_exposure_documented': 'RF-OCC-CADMIUM-PREVENTION → LDCT + PSA shared-decision',
+  'occupational_beryllium_exposure_documented': 'RF-OCC-BERYLLIUM-PREVENTION → CBD evaluation + LDCT',
+  'occupational_pah_exposure_documented': 'RF-OCC-PAH-PREVENTION → LDCT + urinalysis + skin exam',
+  'occupational_mineral_oils_exposure_documented': 'RF-OCC-MINERAL-OILS-PREVENTION → skin exam + occupational dermatology',
+  'occupational_soot_exposure_documented': 'RF-OCC-SOOT-PREVENTION → skin exam + LDCT eligibility',
+  'occupational_painters_career_documented': 'RF-OCC-PAINTERS-PREVENTION → LDCT + urinalysis + CBC',
+  'occupational_wood_leather_dust_exposure_documented': 'RF-OCC-WOOD-LEATHER-DUST-PREVENTION → ENT q1y + CT sinus if symptomatic',
+  'achalasia_diagnosis_confirmed': 'RF-ACHALASIA-ESOPHAGEAL-PREVENTION → EGD q2-3y starting 10-15y after onset',
+  'chronic_atrophic_gastritis_with_intestinal_metaplasia': 'RF-CHRONIC-ATROPHIC-GASTRITIS-PREVENTION → EGD q3-5y + IM management',
+  'sjogren_syndrome_diagnosis_confirmed': 'RF-SJOGREN-MALT-LYMPHOMA-PREVENTION → annual parotid exam + cryoglobulin + C4 monitoring',
+  'systemic_sclerosis_with_ild': 'RF-SCLERODERMA-LUNG-PREVENTION → HRCT chest q1-2y + PFTs q6-12mo',
+  'wilsons_disease_cirrhosis': 'RF-WILSONS-DISEASE-HCC-PREVENTION → AFP + US q6mo (AASLD-HCC) + copper chelation adherence',
+  'hereditary_hemochromatosis_hfe_c282y_homozygous': 'RF-HEMOCHROMATOSIS-HCC-PREVENTION → ferritin/TSAT + phlebotomy + HCC US+AFP if cirrhotic',
+  'alpha_1_antitrypsin_deficiency_pizz': 'RF-A1AT-DEFICIENCY-HCC-LUNG-PREVENTION → AFP+US q6mo if cirrhotic + smoking cessation imperative',
+  'myeloproliferative_neoplasm_driver_mutation_positive': 'RF-MPN-SECONDARY-LEUKEMIA-PREVENTION → CBC q3-6mo + BM eval if blast emergence',
+  'prior_topoisomerase_2_inhibitor_documented': 'RF-IATROGENIC-TOPO2-TAML-PREVENTION → CBC q3mo for first 5y + APL emergency awareness',
+  'prior_pediatric_pelvic_rt_documented': 'RF-IATROGENIC-PEDIATRIC-PELVIC-RT-PREVENTION → annual UA+cytology + earlier CRC screening',
+  'prior_bleomycin_cumulative_documented': 'RF-IATROGENIC-BLEOMYCIN-LATE-PREVENTION → PFTs + chest exam + LDCT if smoker',
+  'prior_cyclophosphamide_cumulative_ge_7g_per_m2': 'RF-IATROGENIC-CYCLOPHOSPHAMIDE-LATE-PREVENTION → annual UA+cytology + CBC q3-6mo',
+  'prior_platinum_cumulative_ge_400_mg_per_m2': 'RF-IATROGENIC-PLATINUM-LATE-PREVENTION → BP+lipid+creatinine+CBC q1y',
+  'des_exposure_in_utero': 'RF-IATROGENIC-DES-EXPOSURE-PREVENTION → vaginal/cervical surveillance + colposcopy if symptomatic',
+  'long_term_hormonal_contraception_ge_10y': 'RF-IATROGENIC-LONG-TERM-HRMNL-CONTRACEPTION-PREVENTION → balanced counseling on breast/cervical vs ovarian/endometrial protective effect',
+  'calcineurin_inhibitor_chronic_ge_5y': 'RF-IATROGENIC-CALCINEURIN-INHIBITOR-LONGTERM-PREVENTION → mTOR-switch discussion + dermatology + KS awareness',
+  'azathioprine_chronic_ge_3y': 'RF-IATROGENIC-AZATHIOPRINE-LONGTERM-PREVENTION → ECCO 2019 EBV-seronegative young men contraindication + lymphoma awareness',
+  'anti_tnf_chronic_pediatric_young_adult': 'RF-IATROGENIC-ANTI-TNF-LYMPHOMA-PREVENTION → HSTCL awareness in combination therapy',
+  'late_first_pregnancy_ge_30_short_breastfeeding': 'RF-REPRODUCTIVE-LATE-FIRST-PREGNANCY-PREVENTION → modest breast risk counseling',
+  'family_first_degree_cancer_any': 'RF-UNIVERSAL-FIRST-DEGREE-CANCER-FAMILY-ANY → broad pre-triage + genetic-counseling referral threshold',
+  'age_50plus_screening_gap_documented': 'RF-UNIVERSAL-AGE-50PLUS-SCREENING-GAP → comprehensive USPSTF catch-up',
+  'prior_cancer_survivor_post_treatment': 'RF-UNIVERSAL-PRIOR-CANCER-SECONDARY-RISK → NCCN survivorship surveillance + COG-LTFU',
+  'chronic_immunosuppression_ge_1y_documented': 'RF-UNIVERSAL-IMMUNOCOMPROMISED-CANCER-RISK → stratified screening per IDSA',
+  'multiple_iarc_group_1_exposures_documented': 'RF-UNIVERSAL-OCCUPATIONAL-EXPOSURE-MULTIPLE → intensified multi-organ surveillance for synergistic risk'
 };
 
 function buildPatient() {

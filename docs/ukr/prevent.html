@@ -282,6 +282,11 @@
       <label class="prevent-field"><input type="checkbox" data-finding="ebv_dna_pcr" data-value="detectable" id="f-ebv">EBV-DNA визначувана + контекст імунокомпрометації (post-transplant / ТГСК / вроджений імунодефіцит / ВІЛ+)</label>
       <label class="prevent-field"><input type="checkbox" data-finding="post_transplant_immunosuppression" data-value="true" id="f-immunosuppression">Імуносупресія post-transplant (для EBV co-контексту)</label>
       <label class="prevent-field"><input type="checkbox" data-finding="htlv_1_status" data-value="positive" id="f-htlv1">HTLV-1 позитивний (ендемічний регіон або відомий носій)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="hhv8_kshv_serology" data-value="positive" id="f-hhv8">HHV-8 / KSHV серопозитивний + імунокомпрометація (саркома Капоші, мультицентричний Кастлеман)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="schistosoma_haematobium_exposure_history" data-value="true" id="f-schistosoma">Schistosoma haematobium експозиція (рак сечового міхура; суб-Сахара / Близький Схід)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="opisthorchis_viverrini_exposure_history" data-value="true" id="f-opisthorchis">Opisthorchis viverrini (холангіокарцинома; Меконг / Таїланд / Лаос)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="clonorchis_sinensis_exposure_history" data-value="true" id="f-clonorchis">Clonorchis sinensis (холангіокарцинома; Східна Азія)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="hcv_hbv_coinfection" data-value="true" id="f-hcv-hbv-co">HCV + HBV одночасна коінфекція (ГЦК ризик × DAA+entecavir комбо)</label>
     </fieldset>
 
     <fieldset class="prevent-section">
@@ -296,7 +301,32 @@
       <label class="prevent-field"><input type="checkbox" data-finding="family_classic_fap_phenotype" data-value="true" id="f-fap-phenotype">Сімейний класичний FAP фенотип (&gt;100 колоректальних аденом)</label>
       <label class="prevent-field"><input type="checkbox" data-finding="family_apc_known_pathogenic_variant" data-value="true" id="f-fap-apc">Сімейний підтверджений патогенний варіант APC</label>
       <label class="prevent-field"><input type="checkbox" data-finding="family_chompret_criteria_met" data-value="true" id="f-lfs-chompret">Сім'я відповідає Chompret критеріям (LFS / TP53 підозра)</label>
-      <label class="prevent-field"><input type="checkbox" data-finding="family_men2_phenotype_cluster" data-value="true" id="f-men2-phenotype">Сімейний кластер MEN2 фенотипу (MTC + феохромоцитома + параthyroid АБО мукозальні невроми)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_men2_phenotype_cluster" data-value="true" id="f-men2-phenotype">Сімейний кластер MEN2 фенотипу (MTC + феохромоцитома + паращитоподібна АБО мукозальні невроми)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_classic_men1_criteria_met" data-value="true" id="f-men1">Сімейний класичний MEN1 (≥2 з: гіперпаратиреоз / пітуітарна аденома / GEP-NET)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_cowden_clinical_diagnostic_criteria_met" data-value="true" id="f-cowden">Сімейний Cowden фенотип (макроцефалія + мукокутанні папіломи / GI гамартоми)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_classic_peutz_jeghers_phenotype" data-value="true" id="f-pj">Сімейний Peutz-Jeghers фенотип (періоральна пігментація + GI гамартоми / інтусуссепція)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_bap1_phenotype_cluster" data-value="true" id="f-bap1">Сімейний BAP1 кластер (увеальна меланома + мезотеліома + clear-cell RCC)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_fammm_phenotype_cluster" data-value="true" id="f-fammm">Сімейний FAMMM (множинна меланома + панкреатичний рак / CDKN2A)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_hprc_papillary_type_1_rcc" data-value="true" id="f-hprc">Сімейний спадковий папілярний type-1 RCC (MET)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_sdh_paraganglioma_phenotype" data-value="true" id="f-sdh">Сімейний SDH-дефіцитний параганглі / феохромоцитома</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_ataxia_telangiectasia_phenotype" data-value="true" id="f-at">Сімейний ATM біалельний (атаксія + телангіектазії + радіо-чутливість)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_fanconi_anemia_phenotype" data-value="true" id="f-fanconi">Сімейна анемія Фанконі (низький зріст + кісткові аномалії + панцитопенія)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_birt_hogg_dube_phenotype" data-value="true" id="f-bhd">Сімейний Birt-Hogg-Dubé (фіброфоллікулома + легеневі кісти + chromophobe RCC)</label>
+    </fieldset>
+
+    <fieldset class="prevent-section">
+      <legend>D. Підтверджені germline-носії</legend>
+      <p class="prevent-section-desc">Для осіб з відомим патогенним варіантом за попереднім тестуванням — маршрутизує до syndrome-специфічного carrier surveillance.</p>
+      <label class="prevent-field"><input type="checkbox" data-finding="germline_mlh1_pathogenic_variant_confirmed" data-value="true" id="f-confirmed-lynch-mlh1">Підтверджений Lynch — MLH1 / MSH2 / MSH6 / PMS2 / EPCAM</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="germline_brca1_pathogenic_variant_confirmed" data-value="true" id="f-confirmed-brca1">Підтверджений патогенний варіант BRCA1</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="germline_brca2_pathogenic_variant_confirmed" data-value="true" id="f-confirmed-brca2">Підтверджений патогенний варіант BRCA2</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="germline_tp53_pathogenic_variant_confirmed" data-value="true" id="f-confirmed-lfs">Підтверджений TP53 (Li-Fraumeni) → Toronto Protocol</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="germline_apc_pathogenic_variant_confirmed" data-value="true" id="f-confirmed-fap">Підтверджений APC (FAP)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="germline_vhl_pathogenic_variant_confirmed" data-value="true" id="f-confirmed-vhl">Підтверджений VHL → VHL Alliance протокол</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="germline_fh_pathogenic_variant_confirmed" data-value="true" id="f-confirmed-hlrcc">Підтверджений FH (HLRCC)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="germline_men1_pathogenic_variant_confirmed" data-value="true" id="f-confirmed-men1">Підтверджений MEN1</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="germline_ret_pathogenic_variant_confirmed" data-value="true" id="f-confirmed-men2">Підтверджений RET (MEN2) — час prophylactic thyroidectomy</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="germline_pten_pathogenic_variant_confirmed" data-value="true" id="f-confirmed-cowden">Підтверджений PTEN (Cowden)</label>
     </fieldset>
 
     <fieldset class="prevent-section">
@@ -306,6 +336,14 @@
       <label class="prevent-field"><input type="checkbox" data-finding="bmi_kg_m2" data-value="35" id="f-bmi-obese">BMI ≥ 30 (ожиріння — cancer-cluster ризик)</label>
       <label class="prevent-field"><input type="checkbox" data-finding="residential_radon_exposure_ge_4_pci_per_l" data-value="true" id="f-radon">Радон у домі ≥ 4 pCi/L</label>
       <label class="prevent-field"><input type="checkbox" data-finding="residential_pm2_5_annual_average_gt_35" data-value="true" id="f-pm25">PM2.5 &gt; 35 μg/m³ річне середнє</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="dietary_low_fiber_intake_documented" data-value="true" id="f-low-fiber">Низьке споживання клітковини &lt;15 г/день (КРР ризик)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="dietary_high_red_processed_meat_documented" data-value="true" id="f-red-meat">Високе споживання червоного / обробленого м'яса (≥500г/тиждень або ≥50г/день обробленого)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="dietary_low_calcium_vitamin_d_documented" data-value="true" id="f-low-ca-d">Низький кальцій &lt;800мг/день + дефіцит вітаміну D &lt;30 нмоль/л</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="dietary_low_mediterranean_adherence" data-value="true" id="f-mediterranean">Низький Mediterranean diet score</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="hot_beverages_regular_consumption_ge_65c" data-value="true" id="f-hot-beverages">Регулярне споживання напоїв ≥65°C (ризик SCC стравоходу за IARC)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="recreational_uv_exposure_high_documented" data-value="true" id="f-uv-rec">Високе рекреаційне УФ-опромінення / солярій / історія опіків</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="secondhand_smoke_household_exposure_ge_10y" data-value="true" id="f-ets">Побутове пасивне куріння ≥10 років</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="drinking_water_arsenic_high_gt_10_ug_per_l" data-value="true" id="f-arsenic-water">Питна вода з миш'яком &gt;10 μг/л (поріг ВООЗ; шкіра/міхур/легені)</label>
     </fieldset>
 
     <fieldset class="prevent-section">
@@ -317,6 +355,16 @@
       <label class="prevent-field"><input type="checkbox" data-finding="occupational_aromatic_amine_exposure_documented" data-value="true" id="f-aromatic">Ароматичні аміни (дойна/гумова/шкіряна промисловість до-регуляційна)</label>
       <label class="prevent-field"><input type="checkbox" data-finding="occupational_silica_exposure_documented" data-value="true" id="f-silica">Кристалічний кремній (видобуток, кар'єри, піскоструминна обробка)</label>
       <label class="prevent-field"><input type="checkbox" data-finding="occupational_firefighter_career_documented" data-value="true" id="f-firefighter">Кар'єрний пожежник (≥10 років)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_ionizing_radiation_exposure_documented" data-value="true" id="f-ionizing">Професійне іонізуюче випромінення (радіотехнологи, ядерна промисловість, уранова шахта)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_hexavalent_chromium_exposure_documented" data-value="true" id="f-chromium">Шестивалентний хром VI (хромування, варіння нержавійки, чинення шкіри)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_nickel_exposure_documented" data-value="true" id="f-nickel">Сполуки нікелю (рафінування, акумулятори, гальваніка)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_cadmium_exposure_documented" data-value="true" id="f-cadmium">Кадмій (плавлення, акумулятори, пігменти, шахти)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_beryllium_exposure_documented" data-value="true" id="f-beryllium">Берилій (авіакосм, електроніка, ядерна, стоматологічні сплави)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_pah_exposure_documented" data-value="true" id="f-pah">Поліциклічні ароматичні вуглеводні / PAH (коксові печі, алюмінієве плавлення, дахи)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_mineral_oils_exposure_documented" data-value="true" id="f-mineral-oils">Мінеральні масла — необроблені/слабо-оброблені (металообробка, машиністи)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_soot_exposure_documented" data-value="true" id="f-soot">Експозиція сажею (сажотруси, дахи, асфальт — історичний скротум-рак Потта)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_painters_career_documented" data-value="true" id="f-painters">Промислові / будівельні маляри (≥10 років; IARC Group 1 mixed exposure)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_wood_leather_dust_exposure_documented" data-value="true" id="f-wood-dust">Пил твердих порід дерева + шкіряний (столярі, меблі, шкіра/взуття; синоназальна аденокарцинома)</label>
     </fieldset>
 
     <fieldset class="prevent-section">
@@ -328,6 +376,14 @@
       <label class="prevent-field"><input type="checkbox" data-finding="celiac_disease_refractory_type_2" data-value="true" id="f-celiac">Рефрактерна целіакія типу 2</label>
       <label class="prevent-field"><input type="checkbox" data-finding="chronic_pancreatitis_hereditary_pancreatitis_prss1_or_spink1" data-value="true" id="f-pancreatitis">Спадковий панкреатит (PRSS1 / SPINK1)</label>
       <label class="prevent-field"><input type="checkbox" data-finding="hashimoto_thyroiditis_diagnosis_confirmed" data-value="true" id="f-hashimoto">Тиреоїдит Хашимото</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="achalasia_diagnosis_confirmed" data-value="true" id="f-achalasia">Ахалазія (SCC стравоходу ризик ≥10-15 років після початку)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="chronic_atrophic_gastritis_with_intestinal_metaplasia" data-value="true" id="f-atrophic-gastritis">Хронічний атрофічний гастрит з кишковою метаплазією</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="sjogren_syndrome_diagnosis_confirmed" data-value="true" id="f-sjogren">Синдром Шегрена (ризик MALT-лімфоми привушних / слізних)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="systemic_sclerosis_with_ild" data-value="true" id="f-scleroderma">Системний склероз з ILD</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="wilsons_disease_cirrhosis" data-value="true" id="f-wilsons">Хвороба Вільсона з цирозом (ГЦК ризик)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="hereditary_hemochromatosis_hfe_c282y_homozygous" data-value="true" id="f-hemochromatosis">Спадковий гемохроматоз (HFE C282Y гомозиготний)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="alpha_1_antitrypsin_deficiency_pizz" data-value="true" id="f-a1at">Дефіцит альфа-1 антитрипсину PiZZ</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="myeloproliferative_neoplasm_driver_mutation_positive" data-value="true" id="f-mpn">МПН драйвер-позитивний (JAK2/CALR/MPL) — secondary AML спостереження</label>
     </fieldset>
 
     <fieldset class="prevent-section">
@@ -338,6 +394,34 @@
       <label class="prevent-field"><input type="checkbox" data-finding="ppi_continuous_use_ge_10y" data-value="true" id="f-ppi-longterm">PPI постійне використання ≥10 років (gastric NET ризик)</label>
       <label class="prevent-field"><input type="checkbox" data-finding="combined_hrt_continuous_use_ge_5y" data-value="true" id="f-hrt">Комбінована HRT (естроген + прогестин) ≥5 років</label>
       <label class="prevent-field"><input type="checkbox" data-finding="tamoxifen_continuous_use_ge_5y" data-value="true" id="f-tamoxifen">Тривалий tamoxifen ≥5 років (endometrial cancer surveillance)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="prior_topoisomerase_2_inhibitor_documented" data-value="true" id="f-topo2">Попередній topo-II інгібітор (etoposide / антрациклін) — ризик t-AML, раніший латентний</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="prior_anthracycline_cumulative_dose_ge_250" data-value="true" id="f-anthra-late">Cancer survivor 5+ років після антрациклінів ≥250 mg/m² (cardio-late спостереження)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="prior_pediatric_pelvic_rt_documented" data-value="true" id="f-pediatric-rt">Педіатрична тазова радіотерапія в анамнезі (сечовий міхур + КРР вторинний рак)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="prior_bleomycin_cumulative_documented" data-value="true" id="f-bleomycin">Попередній bleomycin (легеневий late-effect + lung-cancer взаємодія з курінням)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="prior_cyclophosphamide_cumulative_ge_7g_per_m2" data-value="true" id="f-cyclophosphamide">Попередній cyclophosphamide ≥7 g/m² (сечовий міхур + лейкемія late-effect)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="prior_platinum_cumulative_ge_400_mg_per_m2" data-value="true" id="f-platinum">Попередній платин ≥400 mg/m² (CV + нефропатія + t-AML)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="des_exposure_in_utero" data-value="true" id="f-des">DES експозиція внутрішньоутробно (вагінальна clear-cell аденокарцинома; історично 1940-70)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="long_term_hormonal_contraception_ge_10y" data-value="true" id="f-ocp-longterm">Тривала гормональна контрацепція ≥10 років (помірний breast + cervical ризик)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="calcineurin_inhibitor_chronic_ge_5y" data-value="true" id="f-calcineurin">Хронічні калькіневрин-інгібітори (cyclosporine/tacrolimus) ≥5 років</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="azathioprine_chronic_ge_3y" data-value="true" id="f-azathioprine">Хронічний azathioprine / 6-MP ≥3 років (лімфома + NMSC)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="anti_tnf_chronic_pediatric_young_adult" data-value="true" id="f-anti-tnf">Хронічний anti-TNF біологік в педіатрично-молодому IBD (HSTCL ризик)</label>
+    </fieldset>
+
+    <fieldset class="prevent-section">
+      <legend>H. Репродуктивний анамнез (гормональний контекст)</legend>
+      <label class="prevent-field"><input type="checkbox" data-finding="late_first_pregnancy_ge_30_short_breastfeeding" data-value="true" id="f-late-pregnancy">Пізня перша вагітність ≥30 + грудне вигодовування &lt;6 міс (помірний breast ризик)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="early_menarche_before_12_late_menopause_after_55" data-value="true" id="f-menarche-menopause">Раня менархе &lt;12 + пізня менопауза &gt;55 (тривалість гормональної експозиції)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="nulliparity_no_pregnancy_history" data-value="true" id="f-nulliparity">Безпліддя (відсутність вагітностей) + вік &gt;35</label>
+    </fieldset>
+
+    <fieldset class="prevent-section">
+      <legend>I. Універсальні крос-факторні прапори</legend>
+      <p class="prevent-section-desc">Широкі risk-прапори, що застосовуються через множинні disease-групи — посилюють disease-специфічні RF вище.</p>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_first_degree_cancer_any" data-value="true" id="f-fdr-any">≥1 родич першого ступеня з будь-яким раком (broad pre-triage)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="age_50plus_screening_gap_documented" data-value="true" id="f-screening-gap">Вік ≥50 без задокументованого age-appropriate screening за останні 5 років</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="prior_cancer_survivor_post_treatment" data-value="true" id="f-prior-cancer">Попередня історія раку, лікування завершено (вторинний рак + recurrence surveillance)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="chronic_immunosuppression_ge_1y_documented" data-value="true" id="f-chronic-immunosuppression">Хронічна імуносупресія ≥1 рік (ВІЛ/трансплантація/автоімунно-на-імуносупресанті)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="multiple_iarc_group_1_exposures_documented" data-value="true" id="f-multi-exposure">Множинні стакові IARC Group 1 експозиції (напр., азбест + куріння, бензол + радон)</label>
     </fieldset>
 
     <div class="prevent-actions">
@@ -443,7 +527,74 @@ const RF_MAP = {
   'prior_alkylator_chemotherapy_documented': 'RF-IATROGENIC-ALKYLATOR-TAML-PREVENTION → CBC q3-6mo перші 10 років',
   'ppi_continuous_use_ge_10y': 'RF-IATROGENIC-LONG-TERM-PPI-GASTRIC-NET-PREVENTION → de-prescribing + EGD surveillance',
   'combined_hrt_continuous_use_ge_5y': 'RF-IATROGENIC-COMBINED-HRT-PREVENTION → year-5 shared-decision review',
-  'tamoxifen_continuous_use_ge_5y': 'RF-IATROGENIC-TAMOXIFEN-ENDOMETRIAL-PREVENTION → симптом-prompted evaluation; рутинне TVUS НЕ рекомендується (ACOG)'
+  'tamoxifen_continuous_use_ge_5y': 'RF-IATROGENIC-TAMOXIFEN-ENDOMETRIAL-PREVENTION → симптом-prompted evaluation; рутинне TVUS НЕ рекомендується (ACOG)',
+  'hhv8_kshv_serology': 'RF-CHRONIC-HHV8-MALIGNANCY-PREVENTION → KS + мультицентричний Кастлеман surveillance в імунокомпрометованих',
+  'schistosoma_haematobium_exposure_history': 'RF-SCHISTOSOMA-HAEMATOBIUM-BLADDER-PREVENTION → urinalysis + цитологія + cystoscopy threshold',
+  'opisthorchis_viverrini_exposure_history': 'RF-OPISTHORCHIS-CHOLANGIO-PREVENTION → MRI/MRCP + CA 19-9 q1y',
+  'clonorchis_sinensis_exposure_history': 'RF-CLONORCHIS-CHOLANGIO-PREVENTION → MRI/MRCP + CA 19-9 q1y',
+  'hcv_hbv_coinfection': 'RF-CHRONIC-HCV-HBV-COINFECTION-PREVENTION → інтенсифікований HCC surveillance + DAA+entecavir',
+  'family_classic_men1_criteria_met': 'RF-MEN1-FAMILY-HISTORY-SUSPICION → germline MEN1 панель + PTH/Ca/пітуітарне спостереження',
+  'family_cowden_clinical_diagnostic_criteria_met': 'RF-COWDEN-FAMILY-HISTORY-SUSPICION → germline PTEN панель + breast/thyroid/endometrial surveillance',
+  'family_classic_peutz_jeghers_phenotype': 'RF-PEUTZ-JEGHERS-FAMILY-HISTORY-SUSPICION → germline STK11 + small-bowel surveillance + CAPS pancreatic',
+  'family_bap1_phenotype_cluster': 'RF-BAP1-FAMILY-HISTORY-SUSPICION → germline BAP1 + дерматологія + офтальмологія + абдомінальна MRI',
+  'family_fammm_phenotype_cluster': 'RF-FAMMM-FAMILY-HISTORY-SUSPICION → germline CDKN2A + TBP/dermoscopy + CAPS pancreatic',
+  'family_hprc_papillary_type_1_rcc': 'RF-HPRC-FAMILY-HISTORY-SUSPICION → germline MET + щорічне абдомінальне MRI з 30',
+  'family_sdh_paraganglioma_phenotype': 'RF-SDH-FAMILY-HISTORY-SUSPICION → germline SDHx панель + WB-MRI з 6-10 років',
+  'family_ataxia_telangiectasia_phenotype': 'RF-AT-FAMILY-HISTORY-SUSPICION → germline ATM (біалельний) + уникнення радіації + лімфома + breast surveillance',
+  'family_fanconi_anemia_phenotype': 'RF-FANCONI-ANEMIA-FAMILY-HISTORY-SUSPICION → germline FA панель + AML + HNSCC surveillance + уникнення алкілаторів',
+  'family_birt_hogg_dube_phenotype': 'RF-BHD-FAMILY-HISTORY-SUSPICION → germline FLCN + трирічне абдомінальне MRI + легеневе спостереження',
+  'germline_mlh1_pathogenic_variant_confirmed': 'RF-LYNCH-CONFIRMED-CARRIER → NCCN Lynch surveillance + аспірин per CAPP2',
+  'germline_brca1_pathogenic_variant_confirmed': 'RF-BRCA-CONFIRMED-CARRIER → MRI breast q1y + TVUS+CA125 + RRM/BSO обговорення',
+  'germline_brca2_pathogenic_variant_confirmed': 'RF-BRCA-CONFIRMED-CARRIER → MRI breast + чол PSA + RRM/BSO обговорення',
+  'germline_tp53_pathogenic_variant_confirmed': 'RF-LI-FRAUMENI-CONFIRMED-CARRIER → Toronto Protocol WB-MRI + уникнення радіації',
+  'germline_apc_pathogenic_variant_confirmed': 'RF-FAP-CONFIRMED-CARRIER → щорічна сигмоїдоскопія з 10-12 + prophylactic colectomy decision',
+  'germline_vhl_pathogenic_variant_confirmed': 'RF-VHL-CONFIRMED-CARRIER → VHL Alliance multi-organ surveillance з 1-16 років',
+  'germline_fh_pathogenic_variant_confirmed': 'RF-HLRCC-CONFIRMED-CARRIER → щорічне абдомінальне MRI з 8-10 років + low-threshold нефректомія',
+  'germline_men1_pathogenic_variant_confirmed': 'RF-MEN1-CONFIRMED-CARRIER → біохімічне + imaging surveillance per ENDOCRINE-SOC',
+  'germline_ret_pathogenic_variant_confirmed': 'RF-MEN2-CONFIRMED-CARRIER → prophylactic thyroidectomy timing per RET classification',
+  'germline_pten_pathogenic_variant_confirmed': 'RF-COWDEN-CONFIRMED-CARRIER → breast/thyroid/endometrial/colon surveillance',
+  'dietary_low_fiber_intake_documented': 'RF-LIFESTYLE-LOW-FIBER-CRC-PREVENTION → дієтичне консультування + вік-appropriate CRC скринінг',
+  'dietary_high_red_processed_meat_documented': 'RF-LIFESTYLE-HIGH-RED-MEAT-CRC-PREVENTION → дієтичне зменшення консультування',
+  'dietary_low_calcium_vitamin_d_documented': 'RF-LIFESTYLE-LOW-CALCIUM-VIT-D-CRC-PREVENTION → суплементація + дієтичний review',
+  'dietary_low_mediterranean_adherence': 'RF-LIFESTYLE-LOW-MEDITERRANEAN-DIET-PREVENTION → Mediterranean-pattern adoption консультування',
+  'hot_beverages_regular_consumption_ge_65c': 'RF-LIFESTYLE-HOT-BEVERAGES-PREVENTION → температурне консультування + ENT awareness',
+  'recreational_uv_exposure_high_documented': 'RF-LIFESTYLE-UV-EXPOSURE-PREVENTION → сонцезахист + уникнення солярія + дерматологія',
+  'secondhand_smoke_household_exposure_ge_10y': 'RF-ENVIRONMENTAL-SECONDHAND-SMOKE-LUNG-PREVENTION → LDCT eligibility оцінка',
+  'drinking_water_arsenic_high_gt_10_ug_per_l': 'RF-ENVIRONMENTAL-ARSENIC-WATER-PREVENTION → очистка води + bladder/skin/lung surveillance',
+  'occupational_ionizing_radiation_exposure_documented': 'RF-OCC-IONIZING-RADIATION-PREVENTION → CBC + thyroid US + lifetime dose tracking',
+  'occupational_hexavalent_chromium_exposure_documented': 'RF-OCC-HEXAVALENT-CHROMIUM-PREVENTION → LDCT + ENT surveillance',
+  'occupational_nickel_exposure_documented': 'RF-OCC-NICKEL-PREVENTION → LDCT + ENT surveillance',
+  'occupational_cadmium_exposure_documented': 'RF-OCC-CADMIUM-PREVENTION → LDCT + PSA shared-decision',
+  'occupational_beryllium_exposure_documented': 'RF-OCC-BERYLLIUM-PREVENTION → CBD оцінка + LDCT',
+  'occupational_pah_exposure_documented': 'RF-OCC-PAH-PREVENTION → LDCT + urinalysis + skin exam',
+  'occupational_mineral_oils_exposure_documented': 'RF-OCC-MINERAL-OILS-PREVENTION → skin exam + occupational dermatology',
+  'occupational_soot_exposure_documented': 'RF-OCC-SOOT-PREVENTION → skin exam + LDCT eligibility',
+  'occupational_painters_career_documented': 'RF-OCC-PAINTERS-PREVENTION → LDCT + urinalysis + CBC',
+  'occupational_wood_leather_dust_exposure_documented': 'RF-OCC-WOOD-LEATHER-DUST-PREVENTION → ENT q1y + CT sinus при симптомах',
+  'achalasia_diagnosis_confirmed': 'RF-ACHALASIA-ESOPHAGEAL-PREVENTION → EGD q2-3y з 10-15 років після початку',
+  'chronic_atrophic_gastritis_with_intestinal_metaplasia': 'RF-CHRONIC-ATROPHIC-GASTRITIS-PREVENTION → EGD q3-5y + IM management',
+  'sjogren_syndrome_diagnosis_confirmed': 'RF-SJOGREN-MALT-LYMPHOMA-PREVENTION → щорічний parotid exam + cryoglobulin + C4 моніторинг',
+  'systemic_sclerosis_with_ild': 'RF-SCLERODERMA-LUNG-PREVENTION → HRCT chest q1-2y + PFTs q6-12mo',
+  'wilsons_disease_cirrhosis': 'RF-WILSONS-DISEASE-HCC-PREVENTION → AFP + US q6mo (AASLD-HCC) + копер-хелація adherence',
+  'hereditary_hemochromatosis_hfe_c282y_homozygous': 'RF-HEMOCHROMATOSIS-HCC-PREVENTION → ferritin/TSAT + флеботомія + HCC US+AFP при цирозі',
+  'alpha_1_antitrypsin_deficiency_pizz': 'RF-A1AT-DEFICIENCY-HCC-LUNG-PREVENTION → AFP+US q6mo при цирозі + куріння припинити',
+  'myeloproliferative_neoplasm_driver_mutation_positive': 'RF-MPN-SECONDARY-LEUKEMIA-PREVENTION → CBC q3-6mo + BM оцінка при blast емерженції',
+  'prior_topoisomerase_2_inhibitor_documented': 'RF-IATROGENIC-TOPO2-TAML-PREVENTION → CBC q3mo перші 5 років + APL emergency awareness',
+  'prior_pediatric_pelvic_rt_documented': 'RF-IATROGENIC-PEDIATRIC-PELVIC-RT-PREVENTION → щорічний UA+цитологія + раніший CRC скринінг',
+  'prior_bleomycin_cumulative_documented': 'RF-IATROGENIC-BLEOMYCIN-LATE-PREVENTION → PFTs + chest exam + LDCT при курінні',
+  'prior_cyclophosphamide_cumulative_ge_7g_per_m2': 'RF-IATROGENIC-CYCLOPHOSPHAMIDE-LATE-PREVENTION → щорічний UA+цитологія + CBC q3-6mo',
+  'prior_platinum_cumulative_ge_400_mg_per_m2': 'RF-IATROGENIC-PLATINUM-LATE-PREVENTION → BP+lipid+creatinine+CBC q1y',
+  'des_exposure_in_utero': 'RF-IATROGENIC-DES-EXPOSURE-PREVENTION → вагінальний/cervical surveillance + colposcopy при симптомах',
+  'long_term_hormonal_contraception_ge_10y': 'RF-IATROGENIC-LONG-TERM-HRMNL-CONTRACEPTION-PREVENTION → balanced консультування breast/cervical vs ovarian/endometrial protective',
+  'calcineurin_inhibitor_chronic_ge_5y': 'RF-IATROGENIC-CALCINEURIN-INHIBITOR-LONGTERM-PREVENTION → mTOR-switch + дерматологія + KS awareness',
+  'azathioprine_chronic_ge_3y': 'RF-IATROGENIC-AZATHIOPRINE-LONGTERM-PREVENTION → ECCO 2019 EBV-seroneg young men contraindication + lymphoma awareness',
+  'anti_tnf_chronic_pediatric_young_adult': 'RF-IATROGENIC-ANTI-TNF-LYMPHOMA-PREVENTION → HSTCL awareness при combination терапії',
+  'late_first_pregnancy_ge_30_short_breastfeeding': 'RF-REPRODUCTIVE-LATE-FIRST-PREGNANCY-PREVENTION → помірний breast ризик консультування',
+  'family_first_degree_cancer_any': 'RF-UNIVERSAL-FIRST-DEGREE-CANCER-FAMILY-ANY → broad pre-triage + genetic-counseling referral threshold',
+  'age_50plus_screening_gap_documented': 'RF-UNIVERSAL-AGE-50PLUS-SCREENING-GAP → comprehensive USPSTF catch-up',
+  'prior_cancer_survivor_post_treatment': 'RF-UNIVERSAL-PRIOR-CANCER-SECONDARY-RISK → NCCN survivorship surveillance + COG-LTFU',
+  'chronic_immunosuppression_ge_1y_documented': 'RF-UNIVERSAL-IMMUNOCOMPROMISED-CANCER-RISK → stratified screening per IDSA',
+  'multiple_iarc_group_1_exposures_documented': 'RF-UNIVERSAL-OCCUPATIONAL-EXPOSURE-MULTIPLE → інтенсифіковане multi-organ surveillance для synergistic ризику'
 };
 
 function buildPatient() {
