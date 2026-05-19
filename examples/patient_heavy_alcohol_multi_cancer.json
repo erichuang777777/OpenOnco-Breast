@@ -1,0 +1,12 @@
+{
+  "patient_id": "ALCOHOL-PREV-001",
+  "comment": "58yo male, daily heavy alcohol intake (4-5 standard drinks/day x 15 years, AUDIT-C score 9, no AUD treatment history), no personal cancer diagnosis. IARC 100E Group 1 carcinogen — 7-cancer cluster (UADT, oesophageal SCC, HCC, CRC, female breast; plus WCRF gastric cardia / probable pancreas). Engine fires RF-UNIVERSAL-HEAVY-ALCOHOL-MULTI-CANCER (universal lifestyle flag) → routes to PreventionPlan: cessation counseling (motivational interviewing + naltrexone / acamprosate per DSM-5 AUD severity) + alcohol-related-cancer screening adjustment (UADT exam low-threshold; LFTs / HCC US+AFP q6mo if cirrhosis component; CRC per age-and-modality standards). Validates v0.3 universal lifestyle RF — relevant_diseases=[\"*\"], sidecar documentation only.",
+  "biomarkers": {},
+  "demographics": {"age": 58, "sex": "male", "ecog": 1, "alcohol_drinks_per_day": 4.5, "audit_c_score": 9},
+  "findings": {
+    "heavy_alcohol_use_documented": true,
+    "Daily intake 4-5 standard drinks/day x 15 years": true,
+    "AUDIT-C score 9 (consistent with severe AUD)": true,
+    "No personal cancer diagnosis": true
+  }
+}

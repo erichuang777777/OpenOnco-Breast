@@ -1,0 +1,13 @@
+{
+  "patient_id": "PMS2-PREV-001",
+  "comment": "44yo female, asymptomatic, confirmed germline PMS2 pathogenic variant (c.137G>T, p.Ser46Ile) on cascade panel after father's CRC at 67 (MMR-IHC PMS2-loss, segregation confirmed). Lower-penetrance Lynch phenotype (PMS2 CRC ~25-30% lifetime, endometrial ~15-20%, lower than MLH1/MSH2). Engine fires RF-LYNCH-CONFIRMED-CARRIER → routes to PreventionPlan: standard = IND-LYNCH-CARRIER-SURVEILLANCE (colonoscopy q2-3y from 30-35 per NCCN PMS2-specific cadence; endometrial sampling + TVUS q1-2y from 30-35; annual urinalysis; modified vs MLH1/MSH2 protocol); aggressive = IND-LYNCH-CARRIER-INTENSIFIED (+ CAPP2-style aspirin discussion, prophylactic hysterectomy/BSO post-childbearing). Validates v0.2-B Lynch PMS2 lower-penetrance pathway.",
+  "biomarkers": {},
+  "demographics": {"age": 44, "sex": "female", "ecog": 0},
+  "findings": {
+    "germline_pms2_pathogenic_variant_confirmed": true,
+    "Confirmed PMS2 c.137G>T pathogenic variant on cascade panel": true,
+    "Father CRC age 67 with PMS2 IHC loss": true,
+    "No personal cancer diagnosis": true,
+    "Lower-penetrance Lynch phenotype noted": true
+  }
+}

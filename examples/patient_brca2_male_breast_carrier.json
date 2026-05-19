@@ -1,0 +1,12 @@
+{
+  "patient_id": "BRCA2-MALE-PREV-001",
+  "comment": "47yo male, asymptomatic, confirmed germline BRCA2 pathogenic variant (c.5946delT founder allele) on cascade panel after sister's BRCA2-positive ovarian cancer at 51. No personal cancer diagnosis. Engine fires RF-BRCA-CONFIRMED-CARRIER → routes to PreventionPlan: standard = IND-BRCA-CARRIER-SURVEILLANCE (male breast CBE q6-12mo from 35, baseline mammography 50 and consider repeat per density, PSA + DRE annually from 40, pancreatic surveillance discussion if ≥2 affected first-degree relatives); aggressive = IND-BRCA-CARRIER-INTENSIFIED (annual mpMRI prostate from 40, EUS / MRCP pancreatic surveillance from 50). Validates v0.2-B BRCA2 male-carrier pathway.",
+  "biomarkers": {},
+  "demographics": {"age": 47, "sex": "male", "ecog": 0},
+  "findings": {
+    "germline_brca2_pathogenic_variant_confirmed": true,
+    "Confirmed BRCA2 c.5946delT pathogenic variant on cascade panel": true,
+    "Sister with BRCA2-positive ovarian cancer age 51": true,
+    "No personal cancer diagnosis": true
+  }
+}

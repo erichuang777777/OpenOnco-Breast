@@ -1,0 +1,12 @@
+{
+  "patient_id": "FAM-FDR-PREV-001",
+  "comment": "41yo male, asymptomatic, no personal cancer diagnosis. Father diagnosed with renal cell carcinoma at 64 (no germline testing on file). Single first-degree relative with cancer, pedigree not yet systematically evaluated. Engine fires RF-UNIVERSAL-FIRST-DEGREE-CANCER-FAMILY-ANY (universal pre-triage flag) → routes to PreventionPlan: structured pedigree review (Tyrer-Cuzick / BOADICEA / PREMM5 / MMRpro depending on family profile) + general genetic-counseling referral. Most likely downstream is documentation of negative-pedigree determination rather than disease-specific genetic-RF activation. Validates v0.3 universal pre-triage RF — relevant_diseases=[\"*\"], engine attaches no anchored Indication tracks (sidecar documentation only).",
+  "biomarkers": {},
+  "demographics": {"age": 41, "sex": "male", "ecog": 0},
+  "findings": {
+    "family_first_degree_cancer_any": true,
+    "Father renal cell carcinoma age 64, no germline testing on file": true,
+    "No personal cancer diagnosis": true,
+    "Pedigree not yet systematically evaluated": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "patient_id": "SURVIVOR-ANTHRA-PREV-001",
+  "comment": "26yo female, 10 years post-completion of pediatric Hodgkin lymphoma curative-intent therapy (ABVD x 6 cycles, cumulative doxorubicin ~300 mg/m², no chest RT). No personal cancer recurrence, no current heart failure. Engine fires RF-IATROGENIC-ANTHRACYCLINE-LATE-CARDIO-PREVENTION (anthracycline >=250 mg/m² + >=5y post-treatment + pediatric exposure cohort — COG-LTFU surveillance bin) → routes to PreventionPlan: standard = late-effects cardio surveillance (echocardiogram + GLS q2-5y per COG-LTFU + ASCO Cardio-Oncology Survivorship + ESC 2022 Cardio-Oncology, biomarkers BNP/troponin selectively, BP/lipid/glucose optimization); aggressive = annual echocardiogram + cardio-oncology referral with early ARB/beta-blocker initiation on subclinical LV dysfunction. Validates v0.3 iatrogenic survivor late-effects pilot. Anchored DIS-AML.",
+  "biomarkers": {},
+  "demographics": {"age": 26, "sex": "female", "ecog": 0},
+  "findings": {
+    "survivor_5y_post_anthracycline_cumulative_ge_250_mg_m2": true,
+    "survivor_pediatric_anthracycline_late_effect": true,
+    "Pediatric Hodgkin lymphoma 10y post-treatment, ABVD x 6 cycles, doxorubicin ~300 mg/m^2": true,
+    "No personal cancer recurrence": true,
+    "No current heart failure": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "patient_id": "SCREEN-GAP-PREV-001",
+  "comment": "55yo female, no documented age-appropriate cancer screening within past 5 years (no CRC modality on file, last mammogram >7y ago, no cervical screening on file, never-smoker so LDCT not applicable). No personal cancer diagnosis. Engine fires RF-UNIVERSAL-AGE-50PLUS-SCREENING-GAP (universal demographic flag; composite trigger age>=50 AND age_50plus_screening_gap_documented=true) → routes to PreventionPlan: comprehensive screening catch-up (CRC modality choice per USPSTF 2021, biennial mammography per USPSTF 2024, hr-HPV-primary q5y or co-test per USPSTF 2018), prioritized by highest-yield modality with shared-decision overlay. Validates v0.3 universal demographic RF — relevant_diseases=[\"*\"], sidecar documentation only.",
+  "biomarkers": {},
+  "demographics": {"age": 55, "sex": "female", "ecog": 0, "smoking_status": "never"},
+  "findings": {
+    "age": 55,
+    "age_50plus_screening_gap_documented": true,
+    "No documented CRC screening modality on file": true,
+    "Last mammography >7 years ago": true,
+    "No cervical screening on file": true,
+    "No personal cancer diagnosis": true
+  }
+}

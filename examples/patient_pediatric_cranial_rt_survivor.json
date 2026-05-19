@@ -1,0 +1,14 @@
+{
+  "patient_id": "SURVIVOR-CRANIAL-RT-PREV-001",
+  "comment": "29yo male, 22 years post-completion of pediatric ALL curative-intent therapy at age 7, including 18 Gy prophylactic cranial irradiation. No personal recurrence, no current CNS tumor on imaging, hypothyroidism on stable levothyroxine. Engine fires RF-IATROGENIC-CRANIAL-RT-LATE-PREVENTION (>=5y post cranial RT + pediatric cohort) → routes to PreventionPlan: standard = late-effects surveillance covering 3 domains per COG-LTFU + CCSS + NCCN CNS (annual neuro exam + symptom-prompted brain MRI for secondary CNS tumor risk — meningioma cumulative 1-3% at 30y; annual endocrine panel — TSH, IGF-1, AM cortisol, gonadal; neurocognitive screening); aggressive = surveillance brain MRI q3y from age 30 + endocrinology + neuropsychology baseline. Validates v0.3 iatrogenic survivor cranial-RT late-effects pilot. Anchored DIS-GBM.",
+  "biomarkers": {},
+  "demographics": {"age": 29, "sex": "male", "ecog": 1},
+  "findings": {
+    "survivor_5y_post_cranial_radiotherapy": true,
+    "survivor_pediatric_cranial_rt_late_effect": true,
+    "survivor_prophylactic_cranial_irradiation_late_effect": true,
+    "Pediatric ALL 22y post-treatment, 18 Gy PCI at age 7": true,
+    "Hypothyroidism on stable levothyroxine": true,
+    "No personal cancer recurrence, no current CNS tumor": true
+  }
+}

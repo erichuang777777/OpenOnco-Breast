@@ -1,0 +1,12 @@
+{
+  "patient_id": "SMOKER-PREV-001",
+  "comment": "62yo male, current 1 pack/day cigarette smoker for 30 years (30 pack-years), no personal cancer diagnosis. IARC 100A Group 1 carcinogen — 17-cancer-site risk cluster (lung dominant, plus UADT, bladder, kidney, pancreas, AML). Engine fires RF-UNIVERSAL-CURRENT-SMOKER-MULTI-CANCER (universal lifestyle flag) → routes to PreventionPlan: (1) structured cessation (combined behavioural + varenicline / bupropion / NRT-combination per USPHS / NICE), (2) USPSTF 2021 LDCT eligibility — patient qualifies (age 50-80, ≥20 pack-y, currently smoking) → annual LDCT recommended. Validates v0.3 universal lifestyle RF + LDCT-eligibility cascade. relevant_diseases=[\"*\"], sidecar documentation only.",
+  "biomarkers": {},
+  "demographics": {"age": 62, "sex": "male", "ecog": 1, "smoking_pack_years": 30, "smoking_status": "current"},
+  "findings": {
+    "current_tobacco_use_documented": true,
+    "Current cigarette smoker, 1 pack/day x 30 years (30 pack-years)": true,
+    "USPSTF LDCT eligibility met (age 50-80, >=20 pack-y, current smoker)": true,
+    "No personal cancer diagnosis": true
+  }
+}

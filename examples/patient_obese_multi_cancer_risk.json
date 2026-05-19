@@ -1,0 +1,11 @@
+{
+  "patient_id": "OBESE-PREV-001",
+  "comment": "53yo female, BMI 36 kg/m² (WHO obesity Class II), waist circumference 108 cm (central adiposity), no personal cancer diagnosis. IARC 13-cancer cluster + WCRF/AICR CUP risk profile (CRC, postmenopausal breast, endometrium, kidney, HCC priorities). Engine fires RF-UNIVERSAL-ELEVATED-BMI-CANCER-CLUSTER (universal lifestyle flag) → routes to PreventionPlan: structured weight-loss program (lifestyle + GLP-1 RA / bariatric-surgery discussion per BMI) + cancer-cluster screening cadence modification (CRC adenoma-surveillance individualization, breast supplemental imaging on density, endometrial symptom-prompted TVUS). Validates v0.3 universal lifestyle RF — relevant_diseases=[\"*\"], sidecar documentation only.",
+  "biomarkers": {},
+  "demographics": {"age": 53, "sex": "female", "ecog": 0, "bmi_kg_m2": 36, "waist_circumference_cm": 108},
+  "findings": {
+    "bmi_kg_m2": 36,
+    "Central adiposity, waist circumference 108 cm": true,
+    "No personal cancer diagnosis": true
+  }
+}
