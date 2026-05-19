@@ -1,0 +1,62 @@
+id: DIS-PENILE-SCC
+names:
+  preferred: "Penile squamous cell carcinoma"
+  ukrainian: "Плоскоклітинна карцинома пенісу"
+  english: "Penile squamous cell carcinoma"
+  synonyms: ["Penile SCC", "Penile cancer", "Cancer of the penis", "HPV-associated penile SCC"]
+codes:
+  icd_o_3_morphology: "8070/3"
+  icd_o_3_topography: ["C60"]
+  icd_10: "C60"
+  who_classification: "WHO Urinary and Male Genital Tumours 5th ed (2022): Penile squamous cell carcinoma (HPV-associated + HPV-independent subtypes)"
+archetype: etiologically_driven
+oncotree_code: PEOS
+lineage: "carcinoma"
+etiological_factors:
+  - "HPV (high-risk types 16, 18) — ~50% of penile SCC (basaloid / warty / mixed histologies)"
+  - "Lack of neonatal circumcision (chronic phimosis / smegma irritation)"
+  - "Lichen sclerosus (penile balanitis xerotica obliterans) — HPV-independent pathway"
+  - "Smoking — independent risk factor"
+  - "PUVA therapy (psoriasis)"
+  - "Immunosuppression (HIV+, transplant)"
+related_diseases:
+  - "DIS-ANAL-SCC (shared HPV etiology in MSM populations; same prevention framework)"
+  - "DIS-VULVAR-VAGINAL-SCC (shared HPV etiology and dual HPV-dependent vs HPV-independent biology)"
+key_biomarkers: []
+epidemiology:
+  context: "~36K cases/year globally. Western incidence ~1 per 100K; up to 4-5 per 100K in parts of Brazil, India, Uganda. Median age 60s. Neonatal circumcision is strongly protective (~3x risk reduction). Five-year OS stage I 85%; stage IV <20%; inguinal nodal status is dominant prognostic factor."
+sources:
+  - SRC-NCCN-BLADDER-2025
+  - SRC-IARC-MONO-100B-2012
+last_reviewed: "2026-05-18"
+reviewers: []
+notes: >
+  Two biological subgroups (HPV-driven vs HPV-independent) managed
+  similarly anatomically. Treatment: early-stage (Tis, Ta, T1a) —
+  organ-sparing approaches (topical 5-FU / imiquimod for Tis; CO2-
+  laser or wide local excision for T1a; glansectomy for selected T2);
+  advanced primary (T2-T4) — partial / total penectomy; inguinal
+  nodal management — dynamic sentinel node biopsy or modified inguinal
+  lymphadenectomy per cN0 vs cN+ status (highly morbid, complications
+  common); metastatic — cisplatin + 5-FU OR TIP (paclitaxel +
+  ifosfamide + cisplatin) per EAU; pembrolizumab in MSI-H subset.
+  HPV vaccination of boys (Gardasil-9) is the primary prevention
+  modality alongside neonatal circumcision discussion.
+notes_ua: |
+  Дві біологічні підгрупи (HPV-зумовлена vs HPV-незалежна) — анатомічно
+  подібне ведення. Лікування: рання стадія (Tis, Ta, T1a) —
+  органозберігаючі підходи (топічний 5-FU / іміквімод для Tis; CO2-
+  лазер або широка локальна екцизія для T1a; глансектомія для
+  відібраних T2); поширений primary (T2-T4) — часткова / тотальна
+  пенектомія; ведення ingunalnyh лімфовузлів — dynamic sentinel
+  node biopsy або modified inguinal lymphadenectomy за cN0 vs cN+
+  статусом (висока морбідність); метастатична — cisplatin + 5-FU
+  АБО TIP (paclitaxel + ifosfamide + cisplatin) за EAU; pembrolizumab
+  у MSI-H. HPV-вакцинація хлопчиків (Gardasil-9) — основна prevention
+  модальність разом з обговоренням неонатального обрізання.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+metadata:
+  proposal_status: stub
+  awaiting_proposal: "Full Indications for organ-sparing early stage; penectomy + inguinal nodal management; metastatic (cis-5FU / TIP); HPV vaccination + circumcision prevention pending."

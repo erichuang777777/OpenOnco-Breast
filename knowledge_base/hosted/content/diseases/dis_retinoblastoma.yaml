@@ -1,0 +1,58 @@
+id: DIS-RETINOBLASTOMA
+names:
+  preferred: "Retinoblastoma"
+  ukrainian: "Ретинобластома"
+  english: "Retinoblastoma"
+  synonyms: ["RB", "Pediatric retinoblastoma", "Hereditary retinoblastoma", "Sporadic retinoblastoma", "Trilateral retinoblastoma"]
+codes:
+  icd_o_3_morphology: "9510/3"
+  icd_o_3_topography: ["C69.2"]
+  icd_10: "C69.2"
+  who_classification: "WHO Eye Tumours 5th ed (2024): Retinoblastoma"
+archetype: stage_driven
+oncotree_code: RBL
+lineage: "embryonal_tumor"
+etiological_factors:
+  - "Germline RB1 pathogenic variant (~40% of cases) — bilateral disease almost always hereditary; unilateral ~15% germline"
+  - "Sporadic somatic RB1 biallelic inactivation (~60% — exclusively unilateral)"
+  - "MYCN amplification — rare RB1-wildtype retinoblastoma subset (~1-3%)"
+related_diseases:
+  - "DIS-OSTEOSARCOMA (germline RB1 — second-primary risk in survivors)"
+  - "DIS-LEIOMYOSARCOMA (germline RB1 — second-primary post-radiation risk)"
+  - "DIS-MELANOMA (germline RB1 — modest second-primary risk)"
+key_biomarkers: []
+epidemiology:
+  context: "~8000 cases/year globally. Median diagnosis age <2 years; >95% diagnosed before age 5. Cure rate >95% in high-income settings; ~30% in resource-limited (delayed presentation). Trilateral RB (intracranial PNET) historically devastating; modern incidence reduced with intra-arterial chemo + avoidance of external-beam RT in germline carriers."
+sources:
+  - SRC-COG
+  - SRC-NCCN-PEDIATRIC-SARCOMA
+last_reviewed: "2026-05-18"
+reviewers: []
+notes: >
+  Most common pediatric ocular malignancy. Germline RB1 testing
+  mandatory at diagnosis — drives sibling cascade screening, lifetime
+  second-primary surveillance (osteosarcoma, soft-tissue sarcomas,
+  melanoma; ~50% lifetime risk of second cancer in germline carriers),
+  and treatment choice (avoid external-beam RT in germline carriers
+  because of post-RT sarcoma risk in field). Treatment: intra-arterial
+  melphalan chemo (Group A-B-C eyes) is modern standard with high
+  eye-salvage rates; enucleation for Group D-E or RT-induced cataract /
+  glaucoma; systemic chemo (carboplatin + etoposide + vincristine) for
+  bilateral / disseminated disease.
+notes_ua: |
+  Найпоширеніша педіатрична очна злоякісність. Гермінальне RB1
+  тестування обов'язкове при діагностиці — визначає каскадний скринінг
+  сиблінгів, пожиттєвий нагляд за вторинними раками (остеосаркома,
+  саркоми м'яких тканин, меланома; ~50% пожиттєвий ризик другого раку
+  у носіїв) і вибір лікування (уникати external-beam RT у носіїв
+  через risk of пост-RT саркоми в полі). Лікування: інтра-артеріальна
+  ХТ мельфаланом (Group A-B-C очей) — сучасний стандарт з високим
+  збереженням ока; енуклеація для Group D-E або при ускладненнях RT;
+  системна ХТ (карбоплатин + етопозид + вінкристин) для білатеральної
+  / дисемінованої хвороби.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+metadata:
+  proposal_status: stub
+  awaiting_proposal: "Full Indications for unilateral Group A-D (intra-arterial chemo + focal therapy); enucleation for advanced disease; bilateral disease (systemic chemo + focal therapy); germline RB1 prevention surveillance pending."

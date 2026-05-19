@@ -1,0 +1,78 @@
+id: RF-CHRONIC-HIV-HBV-COINFECTION-PREVENTION
+definition: >-
+  Concurrent HIV + HBV coinfection (HIV-positive AND HBsAg positive
+  ≥6 months OR HBV-DNA detectable ≥6 months) in an individual without
+  a current HCC or AIDS-defining malignancy diagnosis. IARC Group 1
+  carcinogens (HBV, HIV-indirect immunosuppression) — coinfection
+  carries elevated HCC risk and accelerated liver fibrosis vs HBV
+  mono-infection. The ART regimen for HIV+/HBV+ MUST be tenofovir-based
+  (TDF or TAF, paired with FTC or 3TC) — tenofovir has dual activity
+  against HIV and HBV; entecavir is NOT active against HIV and
+  monotherapy in a coinfected patient drives HIV resistance.
+  Surveillance: AASLD HCC US + AFP every 6 months. Prevention-persona
+  RedFlag (§20 ratification 2026-05-18).
+definition_ua: >-
+  Одночасна коінфекція ВІЛ + HBV (ВІЛ-позитивний ТА HBsAg позитивний
+  ≥6 міс АБО HBV-ДНК визначувана ≥6 міс) у пацієнта без поточного
+  діагнозу ГЦК чи AIDS-визначальної злоякісності. HBV + ВІЛ-непряма
+  імуносупресія — обидва канцерогени IARC Group 1; коінфекція
+  супроводжується вищим ризиком ГЦК і прискореним фіброзом печінки
+  vs HBV-моноінфекція. АРТ-режим для ВІЛ+/HBV+ ОБОВ'ЯЗКОВО має бути
+  tenofovir-based (TDF або TAF, у парі з FTC або 3TC) — тенофовір
+  має подвійну активність проти ВІЛ і HBV; entecavir НЕ активний
+  проти ВІЛ, монотерапія у коінфікованого пацієнта призводить до
+  HIV-резистентності. Surveillance: AASLD HCC УЗД + AFP кожні
+  6 міс. RedFlag персони prevention (ратифікація §20, 2026-05-18).
+
+trigger:
+  type: lab_value
+  all_of:
+    - finding: "hiv_status"
+      value: "positive"
+    - finding: "hbsag"
+      value: "positive"
+
+clinical_direction: investigate
+
+severity: critical
+priority: 110
+category: other
+
+risk_category: infectious
+
+relevant_diseases:
+  - DIS-HCC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-AASLD-HBV-2024
+  - SRC-EASL-HBV-2025
+  - SRC-AASLD-HCC-2023
+  - SRC-NIH-AIDS-2024
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag for HIV + HBV coinfection cancer prevention.
+  Higher severity (critical) than mono-infection HBV RF — coinfection
+  carries documented accelerated-fibrosis + elevated HCC risk AND a
+  hard constraint on antiviral selection (tenofovir-based ART
+  mandatory; entecavir monotherapy contraindicated). Engine routes to
+  PreventionPlan recommending tenofovir-based ART (covers both viruses
+  simultaneously) + AASLD HCC surveillance q6mo. STUB pending Co-Lead
+  review.
+
+  Cancer scope: anchored to DIS-HCC. HIV-driven AIDS-defining
+  malignancies (Kaposi sarcoma via HHV-8 reactivation, NHL, cervical)
+  are covered separately via RF-CHRONIC-HIV-MALIGNANCY-PREVENTION and
+  RF-CHRONIC-HHV8-MALIGNANCY-PREVENTION.
+
+  Distinct from RF-CHRONIC-HBV-MALIGNANCY-PREVENTION and
+  RF-CHRONIC-HIV-MALIGNANCY-PREVENTION (individual mono-infection RFs).
+  When coinfection trigger fires, this RF takes precedence (higher
+  priority) and the indication enforces tenofovir-based ART selection.
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1

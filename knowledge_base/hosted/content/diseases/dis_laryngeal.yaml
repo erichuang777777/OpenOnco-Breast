@@ -1,0 +1,56 @@
+id: DIS-LARYNGEAL
+names:
+  preferred: "Laryngeal squamous cell carcinoma"
+  ukrainian: "Плоскоклітинна карцинома гортані"
+  english: "Laryngeal squamous cell carcinoma"
+  synonyms: ["Laryngeal SCC", "Laryngeal cancer", "Cancer of the larynx", "Glottic cancer", "Supraglottic cancer", "Subglottic cancer"]
+codes:
+  icd_o_3_morphology: "8070/3"
+  icd_o_3_topography: ["C32"]
+  icd_10: "C32"
+  who_classification: "WHO Head and Neck Tumours 5th ed (2022): Laryngeal squamous cell carcinoma (glottic / supraglottic / subglottic subsites)"
+archetype: etiologically_driven
+oncotree_code: LRSC
+lineage: "carcinoma"
+etiological_factors:
+  - "Tobacco smoking — dominant; >90% attributable in heavy smokers"
+  - "Alcohol consumption — synergistic with tobacco (multiplicative risk)"
+  - "Occupational asbestos / nickel / wood-dust exposure (smaller incremental risk)"
+  - "HPV — small subset of supraglottic SCC (clinically less relevant than HPV+OPSCC)"
+  - "Prior laryngeal radiation"
+related_diseases:
+  - "DIS-HNSCC (parent head/neck SCC umbrella; laryngeal is anatomically distinct subset)"
+  - "DIS-ESOPHAGEAL (synchronous / metachronous second-primary risk in tobacco-alcohol field)"
+key_biomarkers: []
+epidemiology:
+  context: "~180K cases/year globally. Glottic ~60-65%, supraglottic ~30%, subglottic ~5%. Glottic SCC presents earliest (hoarseness); ~70% 5-yr OS overall (early glottic ~90%, advanced supraglottic ~40%). Strong tobacco-attributable cancer (>90%); incidence falling in regions with tobacco-control progress."
+sources:
+  - SRC-NCCN-HNSCC-2025
+  - SRC-IARC-MONO-100B-2012
+last_reviewed: "2026-05-18"
+reviewers: []
+notes: >
+  Three subsites with distinct biology and treatment patterns. Early
+  glottic (T1-T2N0): radiation OR transoral laser microsurgery (TLM) —
+  both ~90% local control with voice preservation as key endpoint.
+  Locally advanced: larynx-preservation chemoradiation (cisplatin +
+  RT) per RTOG 91-11 / VA-trial paradigm vs total laryngectomy +
+  postoperative RT — patient preference / fitness drives choice.
+  Recurrent / metastatic: pembrolizumab ± chemo per KEYNOTE-048 (same
+  framework as broader HNSCC). Smoking cessation surveillance dominates
+  prevention narrative.
+notes_ua: |
+  Три підсайти з відмінною біологією та лікуванням. Рання глотична
+  (T1-T2N0): променева АБО transoral laser microsurgery (TLM) —
+  обидві ~90% локального контролю; збереження голосу — ключова
+  endpoint. Локально поширена: ларингоп-зберігаюча ХПТ (цисплатин +
+  RT) за RTOG 91-11 / VA-trial парадигмою vs тотальна ларингектомія
+  + post-op RT — вибір залежить від preference / fitness. Рецидивна /
+  метастатична: pembrolizumab ± хіміо за KEYNOTE-048. Cessation
+  тютюну домінує в prevention narrative.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+metadata:
+  proposal_status: stub
+  awaiting_proposal: "Full Indications for early glottic (RT vs TLM); locally advanced (larynx-preservation CRT vs total laryngectomy + post-op RT); recurrent/metastatic (pembro + chemo); tobacco-cessation prevention surveillance pending."

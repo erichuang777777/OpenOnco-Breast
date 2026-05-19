@@ -1,0 +1,57 @@
+id: DIS-NPC
+names:
+  preferred: "Nasopharyngeal carcinoma (NPC)"
+  ukrainian: "Назофарингеальна карцинома"
+  english: "Nasopharyngeal carcinoma"
+  synonyms: ["NPC", "Nasopharynx cancer", "EBV-associated nasopharyngeal carcinoma", "Undifferentiated nasopharyngeal carcinoma"]
+codes:
+  icd_o_3_morphology: "8071/3"
+  icd_o_3_topography: ["C11"]
+  icd_10: "C11"
+  who_classification: "WHO Head and Neck Tumours 5th ed (2022): Non-keratinizing nasopharyngeal carcinoma (EBV-associated) + keratinizing variants"
+archetype: etiologically_driven
+oncotree_code: NPC
+lineage: "carcinoma"
+etiological_factors:
+  - "EBV (Epstein-Barr virus) — IARC Group 1 carcinogen; obligate etiology in non-keratinizing NPC of endemic regions"
+  - "Endemic geography — Southern China (Guangdong), Hong Kong, Taiwan, Southeast Asia, North Africa (Maghreb), Greenland Inuit"
+  - "Salted fish / preserved-food consumption (childhood exposure)"
+  - "Tobacco smoking (keratinizing-variant NPC)"
+  - "Familial clustering (HLA-A2 / HLA-B46 alleles in Chinese cohorts)"
+related_diseases:
+  - "DIS-HNSCC (anatomically adjacent head/neck squamous cell carcinomas; EBV-negative; distinct epidemiology)"
+key_biomarkers: []
+epidemiology:
+  context: "~130K cases/year globally. Endemic Southern China incidence up to 25 per 100K vs <1 per 100K Western. Plasma EBV-DNA is established prognostic and surveillance biomarker."
+sources:
+  - SRC-IARC-MONO-100B-2012
+  - SRC-NCCN-HNSCC-2025
+last_reviewed: "2026-05-18"
+reviewers: []
+notes: >
+  Distinct from other head/neck SCCs: EBV-associated, lymphoepithelial
+  histology, very chemo- and radio-sensitive, distinct anatomic
+  challenges (skull-base proximity, retropharyngeal nodal drainage).
+  Treatment: definitive concurrent chemoradiation for locally advanced
+  disease (cisplatin + IMRT); induction chemo (gemcitabine + cisplatin)
+  showing OS benefit in recent trials. Metastatic 1L: gemcitabine +
+  cisplatin + toripalimab or camrelizumab (PD-1) per recent Chinese
+  Phase 3s. Plasma EBV-DNA used for post-treatment surveillance —
+  rising levels predict relapse months before imaging.
+notes_ua: |
+  Відмінна від інших ПК голови/шиї: EBV-асоційована, лімфоепітеліальна
+  гістологія, дуже хіміо- і радіочутлива, специфічні анатомічні
+  виклики (близькість до основи черепа, ретрофарингеальний лімфовідтік).
+  Лікування: для локально поширеної форми — дефінітивна одночасна
+  ХПТ (цисплатин + IMRT); індукційна ХТ (gemcitabine + cisplatin)
+  показала виграш у OS в нещодавніх дослідженнях. Метастатична форма
+  1L: gemcitabine + cisplatin + toripalimab або camrelizumab (PD-1)
+  за нещодавніми китайськими Phase 3. EBV-ДНК у плазмі — для post-
+  treatment surveillance; зростання передбачає рецидив за місяці до
+  візуалізації.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+metadata:
+  proposal_status: stub
+  awaiting_proposal: "Full Indications for locally advanced (concurrent CRT ± induction); metastatic 1L (gem+cis+PD-1); EBV-DNA-guided surveillance pending."

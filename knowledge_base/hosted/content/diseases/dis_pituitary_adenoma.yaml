@@ -1,0 +1,62 @@
+id: DIS-PITUITARY-ADENOMA
+names:
+  preferred: "Pituitary adenoma"
+  ukrainian: "Аденома гіпофіза"
+  english: "Pituitary adenoma"
+  synonyms: ["Pituitary neuroendocrine tumor", "PitNET", "Prolactinoma", "Somatotroph adenoma", "Corticotroph adenoma", "Nonfunctioning pituitary adenoma", "MEN1-associated pituitary adenoma"]
+codes:
+  icd_o_3_morphology: "8272/0"
+  icd_o_3_topography: ["C75.1"]
+  icd_10: "D35.2"
+  who_classification: "WHO Endocrine and Neuroendocrine Tumours 5th ed (2022) + CNS 5th ed (2021): Pituitary neuroendocrine tumor (PitNET) lineage-based classification — lactotroph / somatotroph / corticotroph / thyrotroph / gonadotroph / null-cell"
+archetype: stage_driven
+oncotree_code: PITAD
+lineage: "neuroendocrine"
+etiological_factors:
+  - "Sporadic (>95%) — somatic GNAS mutations in somatotroph adenomas; USP8 in corticotroph adenomas"
+  - "MEN1 syndrome (germline MEN1) — ~30-40% of MEN1 carriers develop pituitary adenoma; usually prolactinoma"
+  - "Carney complex (germline PRKAR1A) — pituitary + cardiac myxoma + adrenal pathology"
+  - "Familial isolated pituitary adenoma (germline AIP) — young-onset acromegaly / gigantism"
+  - "McCune-Albright (somatic GNAS mosaic) — somatotroph adenomas"
+related_diseases:
+  - "DIS-MTC (MEN1 vs MEN2 distinction; both endocrine syndromes but distinct gene + tumor spectrum)"
+  - "DIS-PNET (MEN1 axis — gastropancreatic NETs; cascade screening overlap)"
+  - "DIS-PARATHYROID-CARCINOMA (MEN1 axis — primary hyperparathyroidism / parathyroid adenoma; rare carcinoma)"
+key_biomarkers: []
+epidemiology:
+  context: "Common — autopsy / incidental MRI prevalence ~10-20%; clinically significant ~0.1% population. Most are functional (prolactinoma ~40%, NFPA ~30%, GH ~15%, ACTH ~5-10%). Vast majority are benign (Grade 1); aggressive pituitary tumors (Grade 2-equivalent invasion behavior) and very rare pituitary carcinoma (CSF / systemic metastasis) require specialized management."
+sources:
+  - SRC-NCCN-CNS-2025
+  - SRC-NCCN-NET-2025
+last_reviewed: "2026-05-18"
+reviewers: []
+notes: >
+  Functional adenomas classified by lineage / hormone hypersecretion;
+  treatment is endocrine-cohort-specific: prolactinoma — dopamine
+  agonists (cabergoline > bromocriptine) first-line, surgery for
+  resistant / intolerant; somatotroph (acromegaly) — transsphenoidal
+  surgery first-line, somatostatin analogs (octreotide LAR, lanreotide,
+  pasireotide LAR), GH-receptor antagonist (pegvisomant) for residual;
+  corticotroph (Cushing disease) — surgery, pasireotide, ketoconazole /
+  metyrapone / osilodrostat for cortisol control; nonfunctioning —
+  surgery for mass effect / visual compromise. MEN1 carriers: cascade
+  screening from age 5 (prolactin + IGF-1 + serum Ca + intact PTH +
+  fasting gastrin + pituitary MRI per protocol).
+notes_ua: |
+  Функціональні аденоми класифіковані за лінією / гормональною
+  гіперсекрецією; лікування — endocrine-cohort-specific: пролактинома
+  — допамін-агоністи (cabergoline > bromocriptine) перша лінія,
+  хірургія при резистентній / непереносимій; somatotroph (acromegaly)
+  — трансфеноідальна хірургія перша лінія, somatostatin analogs
+  (octreotide LAR, lanreotide, pasireotide LAR), GH-receptor antagonist
+  (pegvisomant) для residual; corticotroph (Cushing disease) —
+  хірургія, pasireotide, ketoconazole / metyrapone / osilodrostat
+  для контролю кортизолу; нефункціональні — хірургія при mass effect /
+  визуальному компроментуванні. Носії MEN1: каскадний скринінг з
+  5 років.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+metadata:
+  proposal_status: stub
+  awaiting_proposal: "Full Indications for prolactinoma (DA agonist + surgery for resistant); somatotroph / acromegaly (surgery + SSA + pegvisomant); corticotroph / Cushing; NFPA; MEN1 cascade surveillance pending."

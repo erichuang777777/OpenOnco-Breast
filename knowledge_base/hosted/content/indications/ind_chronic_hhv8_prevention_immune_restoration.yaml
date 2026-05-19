@@ -1,0 +1,114 @@
+id: IND-CHRONIC-HHV8-PREVENTION-IMMUNE-RESTORATION
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-KAPOSI
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-CHRONIC-HHV8-MALIGNANCY-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Primary endpoint: restoration of cellular immunity (CD4 > 200 in
+    HIV+; transplant-immunosuppression rebalance) and prevention of
+    HHV-8-driven Kaposi sarcoma, multicentric Castleman disease (MCD),
+    and primary effusion lymphoma (PEL). ART initiation in HIV+/HHV-8+
+    reduces Kaposi sarcoma incidence by 70-90% across multiple cohorts;
+    transplant-immunosuppression reduction triggers tumor regression in
+    a meaningful fraction of post-transplant Kaposi sarcoma.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+  - TEST-LFT
+desired_tests:
+  - TEST-LDH
+
+rationale: >
+  Standard-track prevention pathway for HHV-8 seropositivity in an
+  immunocompromised host (HIV+, solid-organ-transplant recipient, or
+  other persistent T-cell-immunity deficit). No curative anti-HHV-8
+  agent exists; the etiological prevention modality is restoration /
+  optimization of cellular immunity.
+
+  HIV+ patient: initiate ART regardless of CD4 count (DHHS, WHO,
+  IDSA — universal ART). Kaposi sarcoma incidence drops 70-90% with
+  sustained virological suppression; MCD and PEL similarly less
+  frequent.
+
+  Transplant recipient: review immunosuppression regimen with transplant
+  team. Conversion from calcineurin-inhibitor-based to mTOR-inhibitor-
+  based (sirolimus / everolimus) regimen has documented anti-Kaposi
+  activity (direct anti-angiogenic + restored immune surveillance).
+  Reduction in net immunosuppression where graft-safe.
+
+  Surveillance regardless of intervention: mucocutaneous + oral + GI +
+  lymph-node exam at routine clinic visits; biopsy any new violaceous
+  cutaneous / mucosal lesion. CD4 count + HIV viral load quarterly in
+  HIV+; transplant-team co-management in transplant recipients.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для серопозитивності HHV-8 у
+  імуноскомпрометованого пацієнта (ВІЛ+, реципієнт трансплантації
+  солідного органу, або інший стійкий дефіцит T-клітинного імунітету).
+  Куративного анти-HHV-8 агента немає; етіологічна prevention
+  модальність — відновлення / оптимізація клітинного імунітету.
+
+  Пацієнт ВІЛ+: старт АРТ незалежно від CD4 (DHHS, WHO, IDSA —
+  універсальна АРТ). Захворюваність саркомою Капоші знижується на
+  70-90% при стійкій вірусологічній супресії; MCD і PEL також рідші.
+
+  Реципієнт трансплантату: перегляд режиму імуносупресії з
+  транспланталогічною командою. Конверсія з calcineurin-inhibitor-
+  based до mTOR-inhibitor-based (sirolimus / everolimus) режиму
+  має документовану анти-Kaposi активність (пряма анти-ангіогенна +
+  відновлений імунний нагляд). Зниження сумарної імуносупресії, де
+  graft-safe.
+
+  Surveillance незалежно від втручання: шкіра + ротова порожнина +
+  ШКТ + лімфовузли при рутинних візитах; біопсія будь-якого нового
+  фіолетового шкірного / слизового вогнища. CD4 + HIV viral load
+  щоквартально у ВІЛ+; ко-менеджмент з транспланталогічною командою
+  у реципієнтів.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-IARC-MONO-100B-2012
+    position: supports
+  - source_id: SRC-NIH-AIDS-2024
+    position: supports
+
+do_not_do:
+  - "Не презентувати ART як 'protection from Kaposi' пацієнту — це incidence-reduction інтервенція, не guarantee. Disclaimer per CHARTER §11."
+  - "Не змінювати режим імуносупресії у трансплант-реципієнта самостійно без транспланталогічного консиліуму — risk of allograft rejection."
+  - "Не пропускати огляд шкіри / ротової порожнини при візитах — рання детекція Kaposi sarcoma визначає прогноз."
+
+do_not_do_en:
+  - "Do not present ART to the patient as 'protection from Kaposi' — this is a cancer-incidence-reduction intervention, not a guarantee. Disclaimer per CHARTER §11."
+  - "Do not change transplant-immunosuppression regimen unilaterally without transplant-team consult — risk of allograft rejection."
+  - "Do not skip mucocutaneous / oral exam at routine visits — early Kaposi sarcoma detection drives prognosis."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — HHV-8 prevention anchor. v0.2-A continuation. ART regimen and mTOR-inhibitor conversion regimens not yet authored as REG-* entities.

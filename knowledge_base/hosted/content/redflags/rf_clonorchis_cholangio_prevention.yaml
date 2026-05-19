@@ -1,0 +1,78 @@
+id: RF-CLONORCHIS-CHOLANGIO-PREVENTION
+definition: >-
+  History of Clonorchis sinensis infection (positive stool ova /
+  microscopy, positive serology, or documented endemic-region exposure
+  with raw / undercooked freshwater-fish consumption) in an individual
+  without a current cholangiocarcinoma diagnosis. IARC Group 1
+  carcinogen (C. sinensis) — established etiological driver of
+  intrahepatic cholangiocarcinoma in East Asia (parts of China, Korea,
+  Vietnam, Russian Far East). Praziquantel cures active infection but
+  does NOT reverse chronic biliary-tract inflammation / fibrosis from
+  prior burden; lifelong hepatobiliary surveillance (liver US + CA 19-9
+  every 12 months from age 40 in heavily-exposed cohorts) is the
+  dominant prevention modality. Prevention-persona RedFlag (§20
+  ratification 2026-05-18).
+definition_ua: >-
+  Анамнез інфекції Clonorchis sinensis (позитивні ova / мікроскопія
+  калу, позитивна серологія, або документована експозиція в
+  ендемічному регіоні з вживанням сирої / недостатньо термічно
+  обробленої прісноводної риби) у пацієнта без поточного діагнозу
+  холангіокарциноми. C. sinensis — канцероген IARC Group 1,
+  встановлений етіологічний драйвер внутрішньопечінкової
+  холангіокарциноми в Східній Азії (частини Китаю, Корея, В'єтнам,
+  російський Далекий Схід). Празиквантел виліковує активну інфекцію,
+  але НЕ зворотний щодо хронічного запалення / фіброзу жовчних проток
+  від попереднього навантаження; пожиттєве гепатобіліарне
+  спостереження (УЗД печінки + CA 19-9 кожні 12 міс з 40 років у
+  важко-експонованих когортах) — домінуюча prevention модальність.
+  RedFlag персони prevention (ратифікація §20, 2026-05-18).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "clonorchis_sinensis_history"
+      value: "positive"
+    - finding: "clonorchis_sinensis_ova_stool"
+      value: "positive"
+    - finding: "clonorchis_sinensis_serology"
+      value: "positive"
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: infectious
+
+relevant_diseases:
+  - DIS-CHOLANGIOCARCINOMA
+
+shifts_algorithm: []
+
+sources:
+  - SRC-IARC-MONO-100B-2012
+  - SRC-NCCN-HCC-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag for C. sinensis-driven cholangiocarcinoma
+  prevention. Fires on any documented exposure history with confirmatory
+  testing. Engine routes to PreventionPlan recommending praziquantel
+  (if active infection) + lifelong hepatobiliary surveillance (US + CA
+  19-9 q12mo from age 40 in heavily-exposed cohorts). STUB pending
+  Co-Lead review.
+
+  Cancer scope: anchored to DIS-CHOLANGIOCARCINOMA. East-Asian endemic
+  belt has 10-50x higher cholangiocarcinoma incidence than non-endemic
+  Western populations.
+
+  Geographic context: relevant for East-Asian diaspora, immigrants,
+  refugees, adoptees. Companion to RF-OPISTHORCHIS-CHOLANGIO-PREVENTION
+  (Mekong-region liver-fluke pathway, biologically similar mechanism —
+  identical surveillance protocol).
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1

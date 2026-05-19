@@ -1,0 +1,75 @@
+id: RF-CHRONIC-HHV8-MALIGNANCY-PREVENTION
+definition: >-
+  HHV-8 (Kaposi sarcoma-associated herpesvirus, KSHV) seropositivity in an
+  immunocompromised host (HIV+, solid-organ-transplant recipient on chronic
+  immunosuppression, or other persistent T-cell-immunity deficit) without a
+  current Kaposi sarcoma, multicentric Castleman disease (MCD), or primary
+  effusion lymphoma (PEL) diagnosis. IARC Group 1 carcinogen (HHV-8) —
+  established etiological driver of all three lymphoproliferative outcomes.
+  No curative antiviral exists; the prevention pathway is restoration /
+  optimization of cellular immunity (ART initiation for HIV+; minimization
+  of immunosuppression where transplant-graft-safe) plus mucocutaneous +
+  oral + GI awareness and lymph-node surveillance. Prevention-persona
+  RedFlag (§20 ratification 2026-05-18).
+definition_ua: >-
+  Серопозитивність HHV-8 (Kaposi sarcoma-associated herpesvirus, KSHV) у
+  імуноскомпрометованого пацієнта (ВІЛ+, реципієнт трансплантації
+  солідного органу на хронічній імуносупресії, або інший стійкий дефіцит
+  T-клітинного імунітету) без поточного діагнозу саркоми Капоші,
+  мультицентричної хвороби Кастлмана (MCD) чи первинної ефузійної
+  лімфоми (PEL). HHV-8 — канцероген IARC Group 1, встановлений
+  етіологічний драйвер всіх трьох лімфопроліферативних результатів.
+  Куративної антивірусної терапії немає; шлях профілактики — відновлення
+  / оптимізація клітинного імунітету (старт АРТ при ВІЛ+; мінімізація
+  імуносупресії де graft-safe) + спостереження шкіри, ротової
+  порожнини, ШКТ і лімфовузлів. RedFlag персони prevention
+  (ратифікація §20, 2026-05-18).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "hhv8_serology"
+      value: "positive"
+    - finding: "kshv_serology"
+      value: "positive"
+    - finding: "hhv8_status_in_immunocompromised"
+      value: "positive"
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: infectious
+
+relevant_diseases:
+  - DIS-KAPOSI
+
+shifts_algorithm: []
+
+sources:
+  - SRC-IARC-MONO-100B-2012
+  - SRC-NIH-AIDS-2024
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag for HHV-8-driven malignancy prevention.
+  Fires on HHV-8 seropositivity in HIV+, transplant, or other
+  immunocompromised host without confirmed Kaposi sarcoma / MCD / PEL.
+  Engine routes to PreventionPlan recommending immune restoration
+  (ART for HIV+; transplant-immunosuppression rebalance) + mucocutaneous
+  + oral + GI / lymph-node surveillance. STUB pending Co-Lead review.
+
+  Cancer scope: anchored to DIS-KAPOSI. MCD and PEL are HHV-8-driven
+  but not yet authored as distinct Disease entities — covered via the
+  prose surveillance rationale in the indication for now.
+
+  Distinct from RF-CHRONIC-HIV-MALIGNANCY-PREVENTION (existing) — that
+  is HIV-as-RF; this is HHV-8-positivity-as-RF (the co-factor that turns
+  HIV-related immunocompromise into Kaposi risk specifically).
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1

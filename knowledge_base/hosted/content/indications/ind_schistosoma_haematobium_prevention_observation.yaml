@@ -1,0 +1,81 @@
+id: IND-SCHISTOSOMA-HAEMATOBIUM-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-UROTHELIAL
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-SCHISTOSOMA-HAEMATOBIUM-BLADDER-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Primary endpoint: urinary-surveillance compliance (urinalysis
+    q6-12mo, cytology + cystoscopy for any new hematuria). Does not
+    reduce S. haematobium-driven bladder SCC incidence but improves
+    likelihood of early-stage detection.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to
+  IND-SCHISTOSOMA-HAEMATOBIUM-PREVENTION-TREATMENT. Patient with prior
+  S. haematobium exposure but no active infection on confirmatory
+  testing (ova negative, serology may remain positive long after
+  cure) — surveillance-only without praziquantel. Lifetime urinary
+  surveillance: urinalysis q6-12mo; urine cytology + cystoscopy for
+  any new gross hematuria.
+
+  Also covers patients with active infection who decline praziquantel
+  for any reason — surveillance is still offered (incidence-reduction
+  absent).
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до
+  IND-SCHISTOSOMA-HAEMATOBIUM-PREVENTION-TREATMENT. Пацієнт з
+  попередньою експозицією S. haematobium без активної інфекції на
+  підтверджуючому тестуванні (ova негативні, серологія може
+  залишатися позитивною надовго після cure) — surveillance-only
+  без празиквантелу. Пожиттєва урологічна surveillance: загальний
+  аналіз сечі q6-12мо; цитологія сечі + цистоскопія при будь-якій
+  новій макрогематурії.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BLADDER-2025
+    position: supports
+  - source_id: SRC-IARC-MONO-100B-2012
+    position: context
+
+do_not_do:
+  - "Не пропускати урологічну surveillance — мікрогематурія є основним раннім сигналом SCC."
+
+do_not_do_en:
+  - "Do not skip urinary surveillance — microscopic hematuria is the dominant early signal of bladder SCC."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — alternative-track companion for S. haematobium prevention. §15.2 C4 ≥2-tracks invariant compliance.

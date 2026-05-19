@@ -1,0 +1,82 @@
+id: RF-CHRONIC-HCV-HBV-COINFECTION-PREVENTION
+definition: >-
+  Concurrent chronic HCV + HBV coinfection (HCV-RNA detectable ≥6
+  months AND HBsAg positive ≥6 months) in an individual without a
+  current HCC, fulminant hepatitis, or HCV/HBV-associated lymphoma
+  diagnosis. Coinfection carries higher HCC incidence and a real risk
+  of HBV reactivation / fulminant hepatitis when HCV is cured by DAA
+  monotherapy (HCV historically suppressed HBV replication; DAA cure
+  lifts that suppression). IARC Group 1 carcinogens (HCV + HBV both) —
+  established etiological drivers, synergistic for HCC. Combination
+  pathway: DAA (e.g. sofosbuvir/velpatasvir) for HCV cure plus
+  concurrent nucleos(t)ide analog (entecavir or tenofovir TDF / TAF)
+  for HBV suppression; HCC surveillance more intensive than either
+  mono-infection (US + AFP every 4-6 months per AASLD-modified
+  protocol). Prevention-persona RedFlag (§20 ratification 2026-05-18).
+definition_ua: >-
+  Одночасна хронічна коінфекція HCV + HBV (HCV-РНК визначувана
+  ≥6 міс ТА HBsAg позитивний ≥6 міс) у пацієнта без поточного
+  діагнозу ГЦК, фульмінантного гепатиту чи HCV/HBV-асоційованої
+  лімфоми. Коінфекція супроводжується вищою захворюваністю ГЦК і
+  реальним ризиком реактивації HBV / фульмінантного гепатиту при
+  виліковуванні HCV DAA-монотерапією (HCV історично супресує
+  реплікацію HBV; DAA-cure знімає цю супресію). HCV + HBV — обидва
+  канцерогени IARC Group 1, синергічні для ГЦК. Комбінований шлях:
+  DAA (наприклад sofosbuvir/velpatasvir) для виліковування HCV +
+  одночасний nucleos(t)ide аналог (entecavir або tenofovir TDF / TAF)
+  для супресії HBV; HCC surveillance інтенсивніший ніж при будь-якій
+  моноінфекції (УЗД + AFP кожні 4-6 міс за AASLD-модифікованим
+  протоколом). RedFlag персони prevention (ратифікація §20, 2026-05-18).
+
+trigger:
+  type: lab_value
+  all_of:
+    - finding: "hcv_rna"
+      value: "detectable"
+    - finding: "hbsag"
+      value: "positive"
+
+clinical_direction: investigate
+
+severity: critical
+priority: 110
+category: other
+
+risk_category: infectious
+
+relevant_diseases:
+  - DIS-HCC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-AASLD-HBV-2024
+  - SRC-EASL-HBV-2025
+  - SRC-EASL-HCV-2023
+  - SRC-AASLD-IDSA-HCV-2023
+  - SRC-AASLD-HCC-2023
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag for HCV + HBV coinfection cancer prevention.
+  Higher severity (critical) than either mono-infection RF — coinfection
+  carries documented synergistic HCC risk AND DAA-cure-induced HBV
+  reactivation risk that requires combination antiviral. Engine routes
+  to PreventionPlan recommending concurrent DAA + nucleos(t)ide analog
+  + intensified HCC surveillance (US + AFP q4-6mo, more frequent than
+  the q6mo cadence for either mono-infection). STUB pending Co-Lead
+  review.
+
+  Cancer scope: anchored to DIS-HCC. NHL prevention (HCV-driven)
+  continues to be a secondary benefit; tracked via prose in the
+  combined-antiviral indication rationale.
+
+  Distinct from RF-CHRONIC-HCV-NHL-PREVENTION-OPPORTUNITY and
+  RF-CHRONIC-HBV-MALIGNANCY-PREVENTION (individual mono-infection RFs).
+  When coinfection trigger fires, this RF takes precedence over the
+  two individual RFs (higher priority).
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1

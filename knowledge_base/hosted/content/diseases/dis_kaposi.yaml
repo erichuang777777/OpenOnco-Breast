@@ -1,0 +1,53 @@
+id: DIS-KAPOSI
+names:
+  preferred: "Kaposi sarcoma"
+  ukrainian: "Саркома Капоші"
+  english: "Kaposi sarcoma"
+  synonyms: ["KS", "Kaposi's sarcoma", "AIDS-related Kaposi sarcoma", "Iatrogenic Kaposi sarcoma", "Classic Kaposi sarcoma", "Endemic Kaposi sarcoma"]
+codes:
+  icd_o_3_morphology: "9140/3"
+  icd_o_3_topography: ["C46"]
+  icd_10: "C46"
+  who_classification: "WHO Soft Tissue and Bone Tumours 5th ed (2020): Kaposi sarcoma"
+archetype: etiologically_driven
+oncotree_code: KS
+lineage: "sarcoma"
+etiological_factors:
+  - "HHV-8 / KSHV (Kaposi sarcoma-associated herpesvirus) — IARC Group 1 carcinogen; obligate etiology"
+  - "HIV-related immunocompromise (AIDS-defining malignancy)"
+  - "Iatrogenic immunosuppression (solid-organ transplant recipients; post-transplant tumor regression with mTOR-inhibitor conversion is documented)"
+  - "Classic (Mediterranean / elderly male) form — HHV-8 prevalent regions"
+  - "Endemic (sub-Saharan African) form — HHV-8 prevalent without HIV"
+related_diseases:
+  - "DIS-MM (HHV-8-associated multicentric Castleman disease and PEL are HHV-8-driven lymphoproliferative diseases, modeled in MM context placeholder pending dedicated entities)"
+key_biomarkers: []
+epidemiology:
+  context: "Highly variable by HHV-8 + immune-context. AIDS-related KS incidence dropped >80% post-ART era; classic KS ~0.3 per 100K Western. Endemic KS ~5-10% of malignancies in sub-Saharan Africa."
+sources:
+  - SRC-IARC-MONO-100B-2012
+  - SRC-NIH-AIDS-2024
+  - SRC-NCCN-SKIN-2025
+last_reviewed: "2026-05-18"
+reviewers: []
+notes: >
+  Four epidemiologic forms (classic / endemic / iatrogenic / AIDS-related)
+  share HHV-8 as obligate etiology. Treatment: immune restoration first
+  (ART for AIDS-KS; immunosuppression rebalance for iatrogenic — mTOR-
+  inhibitor conversion has direct anti-Kaposi activity); systemic
+  chemotherapy (liposomal doxorubicin / paclitaxel) for symptomatic /
+  visceral disease. KSHV-driven multicentric Castleman disease (MCD)
+  and primary effusion lymphoma (PEL) are related but distinct entities.
+notes_ua: |
+  Чотири епідеміологічні форми (класична / ендемічна / ятрогенна /
+  AIDS-related) поділяють HHV-8 як облігатну етіологію. Лікування:
+  спочатку відновлення імунітету (АРТ при AIDS-KS; ребаланс
+  імуносупресії при ятрогенній — mTOR-inhibitor конверсія має пряму
+  анти-Kaposi активність); системна хіміотерапія (ліпосомальний
+  доксорубіцин / паклітаксел) при симптоматичній / вісцеральній
+  хворобі. KSHV-зумовлені MCD і PEL — пов'язані, але окремі нозології.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+metadata:
+  proposal_status: stub
+  awaiting_proposal: "Full Indications for AIDS-KS (ART + systemic chemo); iatrogenic KS (immunosuppression rebalance + mTOR conversion); classic / endemic KS; visceral KS — pending v0.3 authoring."

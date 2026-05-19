@@ -1,0 +1,119 @@
+id: IND-CHRONIC-HCV-HBV-COINFECTION-PREVENTION-COMBINATION-ANTIVIRAL
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-HCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-CHRONIC-HCV-HBV-COINFECTION-PREVENTION
+
+recommended_regimen: REG-DAA-SOF-VEL
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    HCV cure (SVR12) >95% with sofosbuvir/velpatasvir 12 weeks;
+    concurrent HBV-DNA suppression to undetectable >95% with entecavir
+    or tenofovir over 12 months. Combined HCC incidence reduction
+    materially greater than either intervention alone — coinfection
+    is the highest-risk HCC profile in non-cirrhotic adults.
+    Intensified surveillance (US + AFP q4-6mo) improves early-stage
+    detection.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+  - TEST-LFT
+  - TEST-HBV-SEROLOGY
+  - TEST-FIB4
+desired_tests:
+  - TEST-LDH
+
+rationale: >
+  Standard-track prevention pathway for chronic HCV + HBV coinfection.
+  The combination is the highest-risk HCC profile in non-cirrhotic
+  adults — DAA-induced HCV cure can trigger HBV reactivation /
+  fulminant hepatitis if HBV is not concurrently suppressed. Therefore
+  combination antiviral is mandatory: DAA (sofosbuvir/velpatasvir
+  12 weeks) for HCV cure PLUS nucleos(t)ide analog (entecavir 0.5 mg
+  PO daily, OR tenofovir TDF 300 mg PO daily, OR tenofovir TAF 25 mg
+  PO daily) for HBV suppression — started before / concurrently with
+  DAA, continued long-term per AASLD/EASL HBV criteria.
+
+  Intensified HCC surveillance: US + AFP every 4-6 months (more
+  frequent than the q6mo cadence for mono-infection) per AASLD-
+  modified protocol for high-risk patients. FibroScan / FIB-4 to assess
+  baseline fibrosis stage; cirrhotic coinfected patients require even
+  more intensive surveillance.
+
+  In Ukraine, SOF/VEL is reimbursed via НСЗУ national HCV programme;
+  entecavir is reimbursed via НСЗУ chronic HBV programme — both
+  access pathways already established (combination is administrative
+  coordination, not a new funding ask).
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для хронічної коінфекції HCV + HBV.
+  Комбінація — найвищий ризик ГЦК у нециротичних дорослих —
+  DAA-індукований cure HCV може спровокувати реактивацію HBV /
+  фульмінантний гепатит якщо HBV не супресований одночасно. Тому
+  комбінований противірусний обов'язковий: DAA
+  (sofosbuvir/velpatasvir 12 тижнів) для HCV-cure + nucleos(t)ide
+  аналог (entecavir 0.5 мг PO щодня, АБО tenofovir TDF 300 мг PO
+  щодня, АБО tenofovir TAF 25 мг PO щодня) для HBV-супресії — старт
+  перед / одночасно з DAA, продовжувати довгостроково за критеріями
+  AASLD/EASL для HBV.
+
+  Інтенсифікований HCC-surveillance: УЗД + AFP кожні 4-6 міс
+  (частіше ніж q6мо для моноінфекції) за AASLD-модифікованим
+  протоколом для пацієнтів високого ризику. FibroScan / FIB-4 для
+  оцінки базового фіброзу; коінфіковані циротики потребують ще
+  інтенсивнішого спостереження.
+
+  В Україні SOF/VEL відшкодовується через НСЗУ національну програму
+  HCV; entecavir — через НСЗУ програму хронічного HBV — обидва шляхи
+  доступу вже встановлені.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-AASLD-HBV-2024
+    position: supports
+  - source_id: SRC-EASL-HBV-2025
+    position: supports
+  - source_id: SRC-EASL-HCV-2023
+    position: supports
+  - source_id: SRC-AASLD-IDSA-HCV-2023
+    position: supports
+  - source_id: SRC-AASLD-HCC-2023
+    position: supports
+
+do_not_do:
+  - "Не призначати DAA monotherapy без concurrent HBV-супресії при коінфекції — ризик HBV-reactivation / фульмінантного гепатиту."
+  - "Не пропускати інтенсифікований HCC-surveillance (US + AFP q4-6mo) — коінфекція є найвищим ризиком ГЦК у нециротичних дорослих."
+  - "Не комбінувати sofosbuvir з аміодароном — ризик важкої брадикардії та зупинки серця."
+
+do_not_do_en:
+  - "Do not prescribe DAA monotherapy without concurrent HBV suppression in coinfection — risk of HBV reactivation / fulminant hepatitis."
+  - "Do not skip intensified HCC surveillance (US + AFP q4-6mo) — coinfection is the highest HCC risk in non-cirrhotic adults."
+  - "Do not combine sofosbuvir with amiodarone — risk of severe bradycardia and cardiac arrest."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — HCV+HBV coinfection prevention anchor. v0.2-A continuation.
