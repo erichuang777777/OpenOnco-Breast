@@ -1,0 +1,140 @@
+id: RF-AUTOIMMUNE-THYROIDITIS-LYMPHOMA-PREVENTION
+definition: >-
+  Hashimoto's thyroiditis (chronic autoimmune lymphocytic thyroiditis,
+  positive anti-TPO and/or anti-thyroglobulin antibodies with diffuse
+  goiter or hypothyroidism) in an individual without a current thyroid
+  malignancy diagnosis. Established risk factor for primary thyroid
+  lymphoma (~67-80x relative risk for thyroid MALT/DLBCL versus general
+  population; absolute incidence still low at ~0.5-3 cases per 100,000
+  Hashimoto patients per year) and modest elevation of papillary thyroid
+  carcinoma (PTC) risk (~2-3x in some cohorts, attenuated after
+  adjustment for surveillance bias). Long-standing autoimmune
+  inflammation drives both intrathyroidal MALT acquisition and
+  Hashimoto-PTC nodule emergence. Routine TSH monitoring with thyroid
+  ultrasound and FNA of dominant or sonographically suspicious nodules
+  enables early detection. Prevention-persona RedFlag (§20 ratification
+  2026-05-18, v0.3 chronic-condition pilot).
+definition_ua: >-
+  Тиреоїдит Хашимото (хронічний автоімунний лімфоцитарний тиреоїдит,
+  позитивні антитіла до ТПО та/або тиреоглобуліну з дифузним зобом або
+  гіпотиреозом) у пацієнта без поточного діагнозу злоякісного
+  новоутворення щитоподібної залози. Встановлений фактор ризику для
+  первинної лімфоми щитоподібної залози (~67-80x відносний ризик для
+  thyroid MALT/DLBCL порівняно з загальною популяцією; абсолютна
+  захворюваність низька ~0,5-3 випадки на 100 000 пацієнтів з Хашимото
+  на рік) та помірне підвищення ризику папілярного раку щитоподібної
+  залози (PTC) (~2-3x у деяких когортах, атенуйовано після корекції на
+  surveillance bias). Тривале автоімунне запалення керує як
+  інтратиреоїдним MALT-набуттям, так і виникненням Хашимото-PTC вузлів.
+  Рутинний моніторинг ТТГ з УЗД щитоподібної залози та FNA домінантних
+  або сонографічно підозрілих вузлів дозволяє раннє виявлення.
+  Prevention-persona RedFlag (ратифікація §20, 2026-05-18, v0.3 пілот
+  chronic-condition).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "hashimoto_thyroiditis_diagnosis_confirmed"
+      value: true
+    - finding: "anti_tpo_antibodies_positive_with_goiter"
+      value: true
+    - finding: "anti_thyroglobulin_antibodies_positive_with_goiter"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+# §20 prevention extension — drives engine routing to PreventionPlan
+# when patient carries this RF and no confirmed Disease (KSS §20.2).
+risk_category: chronic_condition
+
+# Cancers being prevented:
+#   - Primary thyroid lymphoma (most commonly MALT or DLBCL arising in
+#     Hashimoto background) — closest in-KB anchor is DIS-BURKITT (a
+#     B-cell lymphoma; thyroid MALT/DLBCL not yet a separate entity).
+#   - Papillary thyroid carcinoma (DIS-THYROID-PAPILLARY) — modest risk
+#     elevation, primary anchor for the PTC surveillance pathway.
+relevant_diseases:
+  - DIS-THYROID-PAPILLARY
+  - DIS-BURKITT
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-THYROID-2025
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.3 chronic-condition prevention pilot — autoimmune thyroiditis
+  (Hashimoto's). Prevention-persona RedFlag (CHARTER §3 amended
+  2026-05-18 Path A, HCP-mediated). Fires when patient profile shows
+  confirmed Hashimoto's thyroiditis AND no confirmed thyroid malignancy.
+  Engine routes to PreventionPlan with 2 tracks: TSH q6-12mo + thyroid
+  ultrasound q1y with FNA of any dominant or TIRADS-3+ nodule
+  (IND-AUTOIMMUNE-THYROIDITIS-LYMPHOMA-PREVENTION-SURVEILLANCE) as
+  standard; symptom-driven observation with TSH-only follow-up
+  (IND-AUTOIMMUNE-THYROIDITIS-LYMPHOMA-PREVENTION-OBSERVATION) as
+  alternative — clinically below surveillance-best-practice but included
+  per §15.2 C4 and CHARTER §11 patient-autonomy framing.
+
+  Evidence base:
+    - **Thyroid lymphoma risk in Hashimoto's:** SEER + Mayo cohort
+      pooled analyses estimate 67-80x relative risk for primary thyroid
+      lymphoma in Hashimoto patients (Holm et al. NEJM 1985; Pedersen &
+      Pedersen Histopathology 1996); MALT and DLBCL predominate. Sudden
+      rapid goiter enlargement, new compressive symptoms (dysphagia,
+      hoarseness), or B-symptoms in a known Hashimoto patient must
+      prompt urgent core-needle biopsy.
+    - **PTC risk in Hashimoto's:** debated — some series report 2-3x
+      elevation (Lee et al. Eur J Endocrinol 2013 meta-analysis), others
+      attribute apparent association to surveillance bias. Modest absolute
+      effect; does not warrant aggressive ablative or surgical intervention
+      in the absence of a suspicious nodule.
+    - **Thyroid ultrasound surveillance:** ATA 2015 guideline recommends
+      US for any patient with a palpable thyroid nodule, asymmetric or
+      diffuse goiter, or biochemical/symptom features suggesting nodular
+      change. In Hashimoto patients, annual US is a reasonable surveillance
+      cadence given lifelong elevated lymphoma + modest PTC risk.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption. Closest in-KB B-cell lymphoma anchor is DIS-BURKITT; a
+  dedicated DIS-THYROID-LYMPHOMA entity would be a future authoring
+  task once additional thyroid lymphoma regimens are scoped.
+notes_ua: >
+  v0.3 пілот prevention chronic-condition — автоімунний тиреоїдит
+  Хашимото. Prevention-persona RedFlag (CHARTER §3 поправка 2026-05-18,
+  Path A HCP-mediated). Спрацьовує коли профіль пацієнта показує
+  підтверджений тиреоїдит Хашимото ТА відсутній підтверджений діагноз
+  злоякісного новоутворення щитоподібної залози. Engine маршрутизує до
+  PreventionPlan з 2 треками: ТТГ q6-12 міс + УЗД щитоподібної залози
+  q1y з FNA будь-якого домінантного або TIRADS-3+ вузла
+  (IND-AUTOIMMUNE-THYROIDITIS-LYMPHOMA-PREVENTION-SURVEILLANCE) як
+  стандарт; symptom-driven спостереження з лише ТТГ-моніторингом
+  (IND-AUTOIMMUNE-THYROIDITIS-LYMPHOMA-PREVENTION-OBSERVATION) як
+  альтернатива.
+
+  Доказова база:
+    - **Ризик лімфоми щитоподібної залози при Хашимото:** ~67-80x
+      відносний ризик первинної лімфоми (Holm NEJM 1985; Pedersen &
+      Pedersen Histopathology 1996); MALT та DLBCL переважають. Раптове
+      збільшення зоба, нові компресивні симптоми (дисфагія, охриплість)
+      або B-симптоми у відомого Хашимото-пацієнта → негайна core-needle
+      біопсія.
+    - **Ризик PTC при Хашимото:** дискутабельний — 2-3x елевація у
+      деяких серіях (Lee et al. Eur J Endocrinol 2013 meta-analysis),
+      інші пояснюють surveillance bias. Помірний абсолютний ефект.
+    - **УЗД-спостереження:** ATA 2015 рекомендує УЗД для будь-якого
+      пацієнта з пальпованим вузлом, асиметричним або дифузним зобом.
+
+  Це STUB, очікує підпис двох Clinical Co-Lead за §6.1 dev-mode
+  exemption.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+draft: true

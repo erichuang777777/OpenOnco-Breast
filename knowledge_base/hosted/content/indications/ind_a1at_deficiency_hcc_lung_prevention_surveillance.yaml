@@ -1,0 +1,215 @@
+id: IND-A1AT-DEFICIENCY-HCC-LUNG-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-HCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-A1AT-DEFICIENCY-HCC-LUNG-PREVENTION
+
+# No systemic drug regimen — primary interventions are hepatic + lung
+# surveillance + smoking cessation + (in symptomatic emphysema) A1AT
+# augmentation. A1AT augmentation infusion is treatment of underlying
+# A1AT deficiency, managed by pulmonology, not a prevention Regimen FK.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Combined hepatic + pulmonary surveillance + smoking cessation in
+    severe A1AT deficiency:
+      - AASLD HCC surveillance (US ± AFP q6mo) in cirrhotic A1AT
+        shifts HCC stage at diagnosis from advanced to early
+        (within-Milan transplant eligible; ablation/resection 5y OS
+        60-75%).
+      - Lung cancer surveillance via LDCT in USPSTF-eligible smokers/
+        former smokers + symptom-triggered HRCT in non-smokers shifts
+        NSCLC stage and improves 5y OS (60-90% early-stage vs
+        5-15% advanced).
+      - Smoking cessation provides the largest absolute risk reduction
+        for both lung cancer and emphysema progression — typical
+        absolute lung-cancer risk reduction ~50% over 10y post-cessation,
+        additive in A1AT.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for patients with severe alpha-1
+  antitrypsin deficiency (PiZZ or severe serum deficiency). Multi-
+  component standard:
+
+  **Hepatic surveillance:**
+    - LFT panel (AST, ALT, ALP, GGT, bilirubin, albumin, INR) +
+      platelet count q6-12mo
+    - AFP q6-12mo (baseline marker; AFP can be modestly elevated in
+      A1AT cirrhosis without HCC)
+    - Liver elastography (FibroScan or MR elastography) q1-2y; or
+      calculated FIB-4 / APRI
+    - **Cirrhotic A1AT (Child-Pugh A, METAVIR F4 on biopsy/elastography):**
+      AASLD HCC surveillance with abdominal US ± AFP q6mo; suboptimal
+      US visualization → MRI or multiphase CT q6mo per LI-RADS
+    - **Non-cirrhotic A1AT with elevated LFTs or significant fibrosis:**
+      LFT panel + AFP q6mo; consider hepatology referral for biopsy or
+      advanced imaging if synthesis dysfunction or rising fibrosis
+      markers
+
+  **Pulmonary surveillance:**
+    - Baseline PFTs (FEV1, FEV1/FVC ratio, DLCO, lung volumes) at
+      diagnosis; repeat q12mo
+    - HRCT chest baseline at diagnosis (to characterize emphysema
+      distribution — A1AT classically lower-lobe panacinar emphysema);
+      repeat HRCT only when triggered by new respiratory symptoms,
+      accelerated PFT decline, or incidental nodule on prior imaging
+    - **USPSTF-eligible (age 50-80, 20 pack-year smoking history,
+      current or quit <15y):** annual LDCT lung cancer screening per
+      USPSTF 2021 — A1AT deficiency does not by itself qualify for
+      LDCT screening but doubly indicates it when smoking criteria
+      met
+
+  **Smoking cessation (highest-priority intervention):**
+    - Detailed cessation counseling at every visit
+    - Pharmacotherapy (varenicline, bupropion, NRT) per usual cessation
+      guidelines
+    - Avoid second-hand smoke + occupational respiratory irritants
+      (dust, fumes, biomass smoke)
+
+  **A1AT augmentation therapy (symptomatic emphysema, FEV1 35-65%
+  predicted, PiZZ or null genotype):**
+    - Weekly IV infusion (Prolastin-C 60 mg/kg, Aralast NP 60 mg/kg,
+      Zemaira 60 mg/kg, or Glassia 60 mg/kg per chosen product)
+    - Per Chapman Lancet 2015 RAPID trial: slows emphysema progression
+      by lung-density CT but does not reverse established disease
+    - Not indicated for hepatic protection (no evidence) — hepatic
+      transplantation is the disease-modifying option for advanced
+      hepatic disease
+
+  **Vaccination + comorbidity prevention:**
+    - Annual influenza vaccination
+    - Pneumococcal vaccination (PCV20 or PCV15/PPSV23 sequence)
+    - HBV vaccination if not immune
+    - HCV/HIV screening once
+    - Avoid alcohol (synergistic hepatic injury)
+
+  **Family screening:** first-degree relatives (parents, siblings,
+  children >18y) for A1AT genotyping per ATS/ERS 2017; PiZZ and PiSZ
+  relatives enter the same prevention pathway.
+
+  **Transplant evaluation:** decompensated cirrhosis (Child-Pugh C,
+  MELD ≥15) → hepatology consultation. Severe end-stage emphysema →
+  pulmonology consultation for lung transplant. Combined liver-lung
+  transplant rarely needed.
+
+  In Ukraine, A1AT deficiency is markedly under-recognized; genotyping
+  via Institute of Genetics + select private labs. Pulmonology +
+  hepatology care at major centers in Kyiv, Lviv, Odesa, Kharkiv.
+  A1AT augmentation products typically obtained via international
+  pharmacy + clinical-trial channels — limited availability.
+  Smoking cessation pharmacotherapy NSZU-covered when prescribed.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для пацієнтів з тяжким дефіцитом
+  альфа-1 антитрипсину (PiZZ або тяжкий сироватковий дефіцит).
+  Багатокомпонентний стандарт:
+
+  **Hepatic surveillance:**
+    - LFT панель + платіт q6-12 міс
+    - AFP q6-12 міс
+    - Liver elastography q1-2 роки; або FIB-4 / APRI
+    - **Cirrhotic A1AT:** AASLD HCC surveillance US ± AFP q6 міс;
+      suboptimal візуалізація → MRI або CT q6 міс
+    - **Non-cirrhotic з підвищеними LFT або significant фіброзом:**
+      LFT + AFP q6 міс
+
+  **Pulmonary surveillance:**
+    - Baseline PFTs (FEV1, FEV1/FVC, DLCO) при діагнозі; repeat q12 міс
+    - HRCT грудей baseline; repeat лише при триггері
+    - **USPSTF-eligible:** щорічна LDCT lung cancer screening
+
+  **Smoking cessation (найвища-пріоритет інтервенція):**
+    - Детальне cessation counseling на кожному візиті
+    - Фармакотерапія (вареніклін, бупропіон, NRT)
+    - Уникати second-hand smoke
+
+  **A1AT augmentation therapy (symptomatic emphysema, FEV1 35-65%
+  predicted, PiZZ або null):**
+    - Щотижнева IV інфузія (Prolastin-C, Aralast NP, Zemaira, Glassia
+      60 мг/кг)
+    - Per Chapman Lancet 2015 RAPID — слов'янувіе емфізему прогресії
+    - Не показано для hepatic protection
+
+  **Vaccination:** influenza щорічно; pneumococcal; HBV; HCV/HIV
+  скрінінг.
+
+  **Family screening:** first-degree родичі для A1AT-генотипування.
+
+  **Transplant evaluation:** decompensated cirrhosis → hepatology;
+  end-stage emphysema → pulmonology.
+
+  В Україні A1AT під-визнаний; генотипування — Institute of Genetics.
+  Pulmonology + hepatology care у Києві, Львові, Одесі, Харкові.
+  A1AT augmentation продукти — обмежена доступність.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-AASLD-HCC-2023
+    position: supports
+    relevant_quote_paraphrase: >-
+      "HCC surveillance with ultrasound ± AFP every 6 months is
+      recommended for patients with cirrhosis from alpha-1 antitrypsin
+      deficiency. Smoking cessation is mandatory for both hepatic and
+      pulmonary disease modification."
+  - source_id: SRC-NCCN-NSCLC-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "USPSTF-eligible high-risk individuals receive annual low-dose
+      CT lung cancer screening. A1AT deficiency with smoking history
+      compounds risk and reinforces screening eligibility; non-smoking
+      A1AT-deficient patients receive symptom-driven workup."
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не пропускати smoking cessation counseling у A1AT — найвища-impact інтервенція; PiZZ + куріння — multiplicatively-elevated ризик."
+  - "Не використовувати A1AT augmentation для hepatic protection — augmentation схвалена для pulmonary emphysema, не для hepatic disease."
+  - "Не пропускати HCC surveillance у cirrhotic A1AT — incidence ~3-5%/рік перевищує AASLD поріг."
+  - "Не виконувати рутинну HRCT грудей у asymptomatic non-smoking A1AT — низький yield, accumulated radiation; PFTs + LDCT screening (якщо eligible) достатньо."
+  - "Не пропускати family screening — first-degree родичі PiZZ носіїв мають 25% ризик PiZZ або PiSZ."
+
+do_not_do_en:
+  - "Do not skip smoking-cessation counseling in A1AT — the highest-impact intervention; PiZZ + smoking is multiplicatively elevated risk."
+  - "Do not use A1AT augmentation for hepatic protection — augmentation is approved for pulmonary emphysema, not for hepatic disease."
+  - "Do not skip HCC surveillance in cirrhotic A1AT — incidence ~3-5%/year exceeds AASLD threshold."
+  - "Do not perform routine HRCT chest in asymptomatic non-smoking A1AT — low yield, accumulated radiation; PFTs + LDCT screening (if eligible) suffice."
+  - "Do not skip family screening — first-degree relatives of PiZZ carriers have a 25% risk of PiZZ or PiSZ."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — v0.3 chronic-condition prevention pilot (A1AT / HCC + lung).
+  Two-Co-Lead signoff queued. Multi-organ surveillance pathway in one
+  Indication; future enhancement could split into hepatic-anchored vs
+  pulmonary-anchored Indications, but current §15.2 C4 requirements are
+  met by the 2-track shape (this active surveillance + observation
+  alternative).

@@ -1,0 +1,156 @@
+id: IND-CHRONIC-ATROPHIC-GASTRITIS-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-GASTRIC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-CHRONIC-ATROPHIC-GASTRITIS-PREVENTION
+
+# Symptom-driven only — B12 + iron monitoring, no scheduled EGD.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Symptom-driven observation (B12 + iron + CBC q6-12mo; EGD only for
+    new dyspeptic symptoms, weight loss, anemia, or GI bleeding)
+    captures gastric malignancy at later stage than scheduled
+    surveillance. Acceptable as a minimum-intensity default for
+    low-stage atrophy (OLGA/OLGIM 0-II) without family history of
+    gastric cancer; below standard of care for OLGA/OLGIM III-IV.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-CHRONIC-ATROPHIC-GASTRITIS-
+  PREVENTION-SURVEILLANCE. Appropriate for patients with histologically
+  confirmed CAG who fall into a low-stage subgroup AND choose minimum-
+  intensity surveillance for any of: cost / access constraints,
+  procedural anxiety, geographic distance to GI center, advanced age
+  with limited life expectancy, or explicit preference after
+  informed-consent discussion of trade-offs.
+
+  **Cadence:**
+    - CBC + ferritin + iron studies + B12 q6-12mo (baseline endocrine /
+      hematologic care for autoimmune CAG)
+    - Gastrin level annually (rising gastrin may signal ECL-cell
+      hyperplasia / emerging type 1 NET)
+    - EGD only when triggered by:
+      - New or worsening dyspepsia not responding to standard PPI
+      - Unintentional weight loss >5%
+      - New iron-deficiency or B12 deficiency anemia not explained by
+        baseline malabsorption
+      - GI bleeding (overt or occult)
+      - Early satiety, dysphagia, persistent vomiting
+
+  **Not appropriate for:**
+    - OLGA III/IV or OLGIM III/IV (these are above the eligibility
+      threshold for symptom-driven observation; scheduled surveillance
+      is strongly recommended)
+    - Patients with prior dysplasia of any grade
+    - Patients with family history of gastric cancer (especially first-
+      degree relative)
+    - Patients with concomitant H. pylori not yet eradicated (eradicate
+      first, then re-stage atrophy)
+    - Patients with rapidly rising gastrin or new visible NET on prior
+      imaging
+
+  Per CHARTER §11 patient-autonomy framing: low-stage CAG (OLGA 0-II)
+  carries modest absolute cancer risk (<1% over 12 years in Rugge
+  cohort), so symptom-driven observation is a legitimate informed-
+  consent choice. Patient retains option to upgrade to scheduled
+  surveillance at any future visit.
+
+  **Alarm features** route immediately to diagnostic EGD with Sydney
+  biopsies — and if frank malignancy is confirmed, to the treatment-
+  persona algorithm via DIS-GASTRIC or DIS-GI-NET as appropriate.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до
+  IND-CHRONIC-ATROPHIC-GASTRITIS-PREVENTION-SURVEILLANCE. Доречно для
+  пацієнтів з гістологічно підтвердженим CAG, які належать до low-stage
+  підгрупи І обирають мінімальної інтенсивності спостереження з
+  причин: вартість / доступ, процедурна тривога, географічна відстань,
+  похилий вік з обмеженою тривалістю життя, або явна перевага після
+  informed-consent обговорення.
+
+  **Частота:**
+    - CBC + ferritin + iron studies + B12 q6-12 міс
+    - Гастрин рівень щорічно
+    - EGD лише при триггері:
+      - Нова або погіршена диспепсія не реагує на стандартний PPI
+      - Ненавмисне схуднення >5%
+      - Нова ЗДА або B12-дефіцитна анемія не пояснена baseline
+        мальабсорбцією
+      - ШКТ-кровотеча (явна або прихована)
+      - Рання сатиація, дисфагія, persistent блювота
+
+  **Не доречно для:**
+    - OLGA III/IV або OLGIM III/IV — потребують запланованої surveillance
+    - Пацієнтів з попередньою дисплазією будь-якого ступеня
+    - Пацієнтів з сімейним анамнезом раку шлунка
+    - Пацієнтів з coexisting H. pylori не ще ерадикованим
+    - Пацієнтів зі швидко зростаючим гастрином або новим видимим NET
+
+  Per CHARTER §11 framing автономії пацієнта: low-stage CAG несе
+  модерний абсолютний рак-ризик (<1% за 12 років), тому symptom-driven
+  observation — legitimate informed-consent вибір.
+
+  **Alarm features** маршрутизують негайно до діагностичної EGD з
+  Sydney біопсіями.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-GASTRIC-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Symptom-driven workup acceptable for low-stage CAG (OLGA 0-II)
+      without additional risk factors; scheduled EGD strongly
+      recommended for OLGA III/IV."
+  - source_id: SRC-NCCN-NET-2025
+    position: context
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не використовувати цей шлях у пацієнтів з OLGA/OLGIM III-IV — потребують запланованої surveillance EGD q3 роки."
+  - "Не презентувати symptom-driven observation як еквівалент scheduled surveillance — interval-cancer ризик вищий, презентація типово на більш пізній стадії."
+  - "Не ігнорувати alarm features (диспепсія non-responsive до PPI, нова анемія, ШКТ-кровотеча) — імідіат-EGD показана."
+  - "Не використовувати цей шлях у пацієнтів з попередньою дисплазією або сімейним анамнезом раку шлунка."
+  - "Не пропускати періодичне обговорення upgrade — атрофія може прогресувати на surveillance інтервалі."
+
+do_not_do_en:
+  - "Do not use this pathway in patients with OLGA/OLGIM III-IV — they require scheduled surveillance EGD every 3 years."
+  - "Do not present symptom-driven observation as equivalent to scheduled surveillance — interval-cancer risk is higher, presentation typically at later stage."
+  - "Do not ignore alarm features (PPI-non-responsive dyspepsia, new anemia, GI bleeding) — immediate EGD indicated."
+  - "Do not use this pathway in patients with prior dysplasia or family history of gastric cancer."
+  - "Do not skip periodic re-discussion of upgrade — atrophy can progress over the surveillance interval."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — alternative-track companion for CAG prevention. Required for
+  §15.2 C4 ≥2-tracks invariant. Two-Co-Lead signoff queued.

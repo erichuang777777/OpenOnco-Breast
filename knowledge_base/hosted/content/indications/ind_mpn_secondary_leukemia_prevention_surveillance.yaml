@@ -1,0 +1,199 @@
+id: IND-MPN-SECONDARY-LEUKEMIA-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-AML
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-MPN-SECONDARY-LEUKEMIA-PREVENTION
+
+# No systemic drug regimen for prevention — cytoreduction
+# (hydroxyurea, anagrelide, interferon, ruxolitinib) is treatment of
+# MPN once WHO criteria are met, managed by hematology. Prevention
+# Indication scope is monitoring: CBC, smear, bone marrow on trigger,
+# allele-burden surveillance.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Structured hematologic surveillance (CBC + peripheral smear q3-6mo
+    + bone marrow on cytopenia/blast emergence + JAK2/CALR/MPL allele-
+    burden q12mo) in driver-mutation-positive patients without
+    confirmed MPN Disease enables earliest detection of WHO-criteria-
+    meeting MPN (transition to treatment-persona management) and of
+    clonal evolution to MF or sAML. Surveillance does not reduce
+    baseline incidence of leukemic transformation but improves
+    transplant-eligibility window by catching transformation early.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for patients with MPN-driver-
+  mutation positivity (JAK2 V617F, CALR exon 9, MPL W515) without yet-
+  confirmed MPN Disease entity, or with pre-WHO-criteria MPN phenotype
+  still under workup. Multi-component standard:
+
+  **Peripheral blood + clinical surveillance:**
+    - CBC + peripheral smear q3-6mo
+    - Watch for: rising platelet count >450 ×10⁹/L (suggests ET),
+      rising Hb/Hct >16.5/49.5 (men) or >16/48.5 (women) (suggests
+      PV), unexplained leukocytosis with shift, circulating blasts,
+      nucleated RBCs, teardrop cells (suggests MF)
+    - Splenomegaly assessment by examination ± abdominal US q6-12mo
+    - Symptom burden via MPN-SAF-TSS or equivalent score q6-12mo
+      (fatigue, pruritus, splenic discomfort, night sweats, bone pain)
+
+  **Bone marrow evaluation triggers (NOT routine scheduled):**
+    - New cytopenia of any lineage not explained by another cause
+    - Circulating blasts >1% on peripheral smear
+    - Rapidly progressive splenomegaly
+    - New constitutional symptoms (B-symptoms, weight loss >10%)
+    - Allele burden rising >25% over baseline on serial JAK2 V617F
+      measurements
+    - Patient meets WHO MPN criteria on blood-and-clinical findings —
+      bone marrow confirms and assigns disease entity (PV, ET, PMF)
+      which then transitions patient to treatment-persona management
+
+  **Molecular surveillance:**
+    - JAK2 V617F allele burden q12mo for JAK2-positive patients
+    - CALR / MPL — qualitative status established at baseline; quantitative
+      monitoring less standardized
+    - Next-generation panel for additional myeloid-driver mutations
+      (TP53, ASXL1, EZH2, IDH1/2, SRSF2) at diagnosis to refine prognosis
+      and identify high-risk-progression molecular signatures
+
+  **Thrombosis-risk assessment + antiplatelet:**
+    - Stratify thrombosis risk (age >60, prior thrombosis history,
+      cardiovascular risk factors) at every visit
+    - Low-dose aspirin (75-100 mg/day) for asymptomatic JAK2-positive
+      adults without contraindication — per NCCN-MPN 2025 reduces
+      thrombotic events even in pre-WHO-criteria phase
+
+  **Transition triggers:**
+    - WHO-criteria-meeting PV / ET / PMF → transition to treatment-
+      persona MPN algorithm (cytoreduction with hydroxyurea or
+      ruxolitinib, phlebotomy for PV, aspirin continuation,
+      hematology-MDT follow-up)
+    - sAML (≥20% blasts in marrow or peripheral blood) → transition to
+      DIS-AML treatment algorithm; allo-HCT evaluation if fit
+    - Post-MPN MF (transformation from PV/ET) → ruxolitinib for symptom
+      control; allo-HCT evaluation for fit younger patients with
+      adverse prognostic features
+
+  In Ukraine, JAK2/CALR/MPL molecular testing available at major
+  hematology centers (Institute of Hematology in Kyiv, regional
+  cancer centers); allele-burden monitoring less universally available
+  outside reference labs. Bone marrow biopsy widely available; expert
+  hematopathology review at tertiary centers. Allo-HCT performed at
+  Ohmatdyt (pediatric), Shalimov (adult) — limited capacity, requires
+  early referral.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для пацієнтів з MPN-driver-mutation
+  позитивністю (JAK2 V617F, CALR exon 9, MPL W515) без yet-confirmed
+  MPN Disease entity, або з pre-WHO-criteria MPN фенотипом.
+  Багатокомпонентний стандарт:
+
+  **Peripheral blood + клінічне спостереження:**
+    - CBC + peripheral smear q3-6 міс
+    - Wat for: зростаючий platelet count >450 ×10⁹/L (suggests ET),
+      зростаюче Hb/Hct >16.5/49.5 (чоловіки) або >16/48.5 (жінки)
+      (suggests PV), unexplained leukocytosis, circulating blasts,
+      nucleated RBCs, teardrop cells (suggests MF)
+    - Splenomegaly оцінка обстеженням ± абдомінальне УЗД q6-12 міс
+    - Symptom burden через MPN-SAF-TSS q6-12 міс
+
+  **Bone marrow evaluation triggers (НЕ routine scheduled):**
+    - Нова cytopenia будь-якого лінейного класу
+    - Circulating blasts >1%
+    - Швидко прогресуюча splenomegaly
+    - Нові constitutional симптоми
+    - Allele burden зростає >25% над baseline
+    - Пацієнт задовольняє WHO MPN критерії на blood-and-clinical
+
+  **Molecular surveillance:**
+    - JAK2 V617F allele burden q12 міс для JAK2-positive
+    - Next-generation panel для додаткових myeloid-driver мутацій
+      (TP53, ASXL1, EZH2, IDH1/2, SRSF2)
+
+  **Thrombosis-risk + antiplatelet:**
+    - Stratify thrombosis risk
+    - Low-dose аспірин (75-100 мг/день) для asymptomatic JAK2-positive
+      adults
+
+  **Transition triggers:**
+    - WHO-criteria-meeting PV / ET / PMF → treatment-persona MPN
+    - sAML (≥20% blasts) → DIS-AML алгоритм; allo-HCT evaluation
+    - Post-MPN MF → ruxolitinib; allo-HCT для fit younger пацієнтів
+
+  В Україні JAK2/CALR/MPL молекулярне тестування доступне у major
+  hematology центрах. Allo-HCT — Ohmatdyt (педіатричне), Shalimov
+  (доросле).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-MPN-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Patients with MPN driver-mutation positivity but not yet meeting
+      WHO MPN criteria should undergo periodic CBC + peripheral smear
+      monitoring. Bone marrow evaluation is triggered by cytopenia,
+      circulating blasts, splenomegaly progression, or constitutional
+      symptoms — not by scheduled cadence in stable disease."
+  - source_id: SRC-NCCN-AML-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Secondary AML arising from MPN (sAML) carries poor prognosis
+      with conventional chemotherapy. Allogeneic HCT is the only
+      potentially curative modality; early identification of MPN
+      progression preserves transplant eligibility."
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не виконувати рутинне scheduled bone marrow без cytopenia/blast тригера — bone marrow biopsy має procedural ризики, низький yield у стабільному MPN."
+  - "Не призначати empiric cytoreduction (hydroxyurea, ruxolitinib) у driver-positive pre-WHO-criteria пацієнтів — лікування індиковано після підтвердження MPN Disease entity."
+  - "Не пропускати thrombosis-risk assessment + аспірин у JAK2-positive — thrombosis is dominant short-term mortality driver."
+  - "Не покладатися лише на JAK2 allele burden — деякі CALR/MPL-driven MPN мають клінічно meaningful progression без JAK2."
+  - "Не пропускати NGS-панель для додаткових myeloid-driver мутацій — TP53, ASXL1, EZH2, IDH1/2, SRSF2 ідентифікують high-risk-progression молекулярні підгрупи."
+
+do_not_do_en:
+  - "Do not perform routine scheduled bone marrow without cytopenia/blast trigger — bone marrow biopsy has procedural risk and low yield in stable MPN."
+  - "Do not prescribe empiric cytoreduction (hydroxyurea, ruxolitinib) in driver-positive pre-WHO-criteria patients — cytoreduction is indicated after MPN Disease entity is confirmed."
+  - "Do not skip thrombosis-risk assessment + aspirin in JAK2-positive — thrombosis is the dominant short-term mortality driver."
+  - "Do not rely on JAK2 allele burden alone — some CALR/MPL-driven MPN progress meaningfully without JAK2."
+  - "Do not skip NGS panel for additional myeloid-driver mutations — TP53, ASXL1, EZH2, IDH1/2, SRSF2 identify high-risk-progression molecular subgroups."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — v0.3 chronic-condition prevention pilot (MPN / secondary AML).
+  Two-Co-Lead signoff queued. Engine routing logic depends on the
+  trigger firing ONLY when patient has no confirmed DIS-PV / DIS-ET /
+  DIS-PMF — patients with established MPN diagnoses route to
+  treatment-persona management, not §20 prevention. This pilot
+  specifically targets driver-mutation-positive patients in pre-WHO-
+  criteria phase.

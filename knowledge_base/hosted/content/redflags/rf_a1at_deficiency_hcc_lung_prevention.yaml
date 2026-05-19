@@ -1,0 +1,145 @@
+id: RF-A1AT-DEFICIENCY-HCC-LUNG-PREVENTION
+definition: >-
+  Alpha-1 antitrypsin (A1AT) deficiency, particularly homozygous PiZZ
+  genotype (severe deficiency with serum A1AT typically <11 µM /
+  <50 mg/dL), in an individual without a current HCC or lung cancer
+  diagnosis. PiZZ confers elevated HCC risk in cirrhotic subset
+  (~3-5%/year in adult cirrhotic A1AT-deficient cohorts;
+  Pittelkow et al. JAMA 2014; Tanash et al. Gastroenterology 2016) and
+  elevated lung cancer risk in smokers + non-smokers (Pittelkow JAMA
+  2014; observational cohorts SIR ~2-3 for lung cancer, multiplicatively
+  higher with smoking). Underlying pathology: misfolded Z-A1AT
+  polymerizes in hepatocytes (hepatic injury → fibrosis → cirrhosis →
+  HCC) and absent circulating A1AT permits neutrophil-elastase-mediated
+  alveolar destruction (emphysema → field-cancerization-mechanism lung
+  cancer risk). PiSZ heterozygotes carry intermediate risk; PiMZ
+  carriers near-population risk except with concurrent smoking.
+  Smoking cessation is the single highest-impact intervention.
+  AASLD HCC surveillance with US ± AFP q6mo in cirrhotic A1AT.
+  Prevention-persona RedFlag (§20 ratification 2026-05-18, v0.3
+  chronic-condition pilot).
+definition_ua: >-
+  Дефіцит альфа-1 антитрипсину (A1AT), особливо гомозиготний PiZZ
+  генотип (тяжкий дефіцит з сироватковим A1AT типово <11 мкМ / <50
+  мг/дл), у пацієнта без поточного діагнозу HCC або раку легень. PiZZ
+  зумовлює підвищений HCC ризик у cirrhotic підгрупі (~3-5%/рік у
+  adult cirrhotic A1AT-deficient когортах; Pittelkow JAMA 2014;
+  Tanash Gastroenterology 2016) та підвищений lung-cancer ризик у
+  курців + non-смокерів (Pittelkow JAMA 2014; observational cohorts
+  SIR ~2-3 для lung cancer, multiplicatively вищий з курінням).
+  Underlying патологія: misfolded Z-A1AT polymerizes у гепатоцитах
+  (hepatic injury → фіброз → cirrhosis → HCC) і absent circulating
+  A1AT permits neutrophil-elastase-mediated alveolar destruction
+  (емфізема → field-cancerization lung-cancer ризик). PiSZ
+  гетерозиготи — інтермедіарний ризик; PiMZ — near-population ризик
+  крім concurrent куріння. Smoking cessation — найбільш імпактна
+  інтервенція. AASLD HCC surveillance з US ± AFP q6 міс у cirrhotic
+  A1AT. Prevention-persona RedFlag (ратифікація §20, 2026-05-18, v0.3
+  пілот chronic-condition).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "a1at_pizz_genotype_confirmed"
+      value: true
+    - finding: "a1at_serum_level_severely_deficient"
+      value: true
+    - finding: "a1at_deficiency_with_cirrhosis"
+      value: true
+    - finding: "a1at_deficiency_with_copd_emphysema"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: chronic_condition
+
+# Cancers being prevented:
+#   - HCC in cirrhotic A1AT-deficient subset → DIS-HCC
+#   - Lung cancer (NSCLC primarily) → DIS-NSCLC
+relevant_diseases:
+  - DIS-HCC
+  - DIS-NSCLC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-AASLD-HCC-2023
+  - SRC-NCCN-NSCLC-2025
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.3 chronic-condition prevention pilot — alpha-1 antitrypsin
+  deficiency (PiZZ primarily) / HCC + lung cancer. Prevention-persona
+  RedFlag (CHARTER §3 amended 2026-05-18 Path A, HCP-mediated). Fires
+  when patient profile shows confirmed A1AT deficiency (PiZZ or severe
+  serum deficiency) AND no confirmed HCC or lung cancer. Engine routes
+  to PreventionPlan with 2 tracks: liver function + AFP q6-12mo +
+  AASLD HCC surveillance if cirrhotic + smoking cessation imperative
+  + HRCT chest if symptomatic
+  (IND-A1AT-DEFICIENCY-HCC-LUNG-PREVENTION-SURVEILLANCE) as standard;
+  hepatology/pulmonology-driven observation with imaging on symptom
+  trigger only (IND-A1AT-DEFICIENCY-HCC-LUNG-PREVENTION-OBSERVATION)
+  as alternative.
+
+  Evidence base:
+    - **HCC risk in cirrhotic A1AT:** Tanash et al. Gastroenterology
+      2016 (Swedish PiZZ cohort, HCC incidence in cirrhotic subset
+      ~3-5%/year — meets AASLD surveillance threshold); Pittelkow JAMA
+      2014 (US cohort, SIR HCC ~3 overall).
+    - **Lung cancer risk in A1AT:** Pittelkow JAMA 2014 (SIR ~2-3 lung
+      cancer in PiZZ, multiplicatively higher in smokers); mechanism
+      likely emphysema-driven field cancerization rather than direct
+      A1AT-protective role on alveolar epithelium.
+    - **Smoking cessation imperative:** PiZZ smokers develop emphysema
+      decades earlier than non-smokers; smoking cessation is by far
+      the single highest-impact prevention intervention for both lung
+      cancer and emphysema progression.
+    - **A1AT augmentation therapy** (intravenous A1AT, Prolastin, Aralast,
+      Zemaira) is FDA-approved for symptomatic PiZZ emphysema; reduces
+      emphysema progression (Chapman et al. Lancet 2015 RAPID trial).
+      Hepatic protection from augmentation is unproven; not routinely
+      recommended for hepatic prevention.
+    - **Liver transplantation** for decompensated A1AT cirrhosis is
+      curative (donor liver produces normal A1AT); HCC within Milan a
+      co-indication.
+
+  Coexisting HBV, HCV, alcohol use elevate HCC risk further. Family
+  screening (genotyping of first-degree relatives) recommended per
+  ATS/ERS 2017.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption.
+notes_ua: >
+  v0.3 пілот prevention chronic-condition — дефіцит альфа-1
+  антитрипсину (PiZZ переважно) / HCC + рак легень. Prevention-
+  persona RedFlag (CHARTER §3 поправка 2026-05-18). Спрацьовує коли
+  профіль пацієнта показує підтверджений A1AT дефіцит (PiZZ або
+  тяжкий сироватковий дефіцит) ТА відсутній підтверджений HCC або
+  рак легень. Engine маршрутизує до PreventionPlan з 2 треками:
+  liver function + AFP q6-12 міс + AASLD HCC surveillance якщо
+  cirrhotic + smoking cessation imperative + HRCT грудей якщо
+  symptomatic (IND-A1AT-DEFICIENCY-HCC-LUNG-PREVENTION-SURVEILLANCE)
+  як стандарт; hepatology/pulmonology-driven спостереження з imaging
+  на symptom trigger лише (IND-A1AT-DEFICIENCY-HCC-LUNG-PREVENTION-
+  OBSERVATION) як альтернатива.
+
+  Доказова база: HCC incidence ~3-5%/рік у cirrhotic PiZZ (Tanash
+  Gastroenterology 2016) — задовольняє AASLD поріг. Lung cancer SIR
+  ~2-3 (Pittelkow JAMA 2014), multiplicatively з курінням. Smoking
+  cessation — найбільш імпактна інтервенція. A1AT augmentation
+  (intravenous, Prolastin/Aralast/Zemaira) — FDA-схвалено для
+  symptomatic PiZZ emphysema (Chapman Lancet 2015 RAPID).
+
+  Це STUB, очікує підпис двох Clinical Co-Lead за §6.1 dev-mode
+  exemption.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+draft: true

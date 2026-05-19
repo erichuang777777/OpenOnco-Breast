@@ -1,0 +1,175 @@
+id: IND-SCLERODERMA-LUNG-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-SCLERODERMA-LUNG-PREVENTION
+
+# No systemic drug regimen — primary intervention is imaging
+# (HRCT/LDCT), PFTs, and smoking cessation. Rheumatologic SSc-ILD
+# disease-modifying therapy (mycophenolate, nintedanib, tocilizumab,
+# cyclophosphamide) is treatment of the underlying ILD and is captured
+# in rheumatology/pulmonary care, not as a prevention Regimen FK.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Surveillance HRCT chest q1-2y in SSc-ILD subset + PFT q6-12mo +
+    smoking cessation enables detection of incidental pulmonary nodules
+    requiring Lung-RADS / Fleischner-driven workup. Surveillance does
+    not reduce baseline lung-cancer incidence in SSc but enables earlier
+    stage at diagnosis (early-stage NSCLC 5y OS 60-90% vs 5-15% for
+    locally advanced/metastatic). Smoking cessation alone provides the
+    largest absolute risk reduction (~50% over 10 years post-cessation
+    for typical smokers, additive in SSc).
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for patients with confirmed systemic
+  sclerosis, particularly the SSc-ILD subset (the strongest lung-cancer-
+  risk subgroup). Three-component standard:
+
+  **HRCT chest cadence:**
+    - Baseline HRCT at SSc diagnosis to characterize ILD
+      presence/pattern (NSIP > UIP > organizing pneumonia in SSc-ILD).
+    - In established SSc-ILD: surveillance HRCT q1-2y; more frequent
+      (q6-12mo) for progressive ILD or new symptoms.
+    - No SSc-ILD on baseline + asymptomatic + no smoking history:
+      no scheduled HRCT — clinical reassessment and PFT-driven
+      re-imaging cadence.
+    - Incidental pulmonary nodules on surveillance HRCT followed per
+      Fleischner Society 2017 or Lung-RADS criteria; suspicious
+      nodules → diagnostic CT, PET/CT, biopsy as appropriate.
+
+  **PFT cadence:**
+    - Baseline at SSc diagnosis (FVC, DLCO).
+    - SSc-ILD: PFTs q3-6mo during first 2-3 years (highest ILD
+      progression risk) then q6-12mo.
+    - No SSc-ILD: PFTs q12mo.
+    - DLCO declines >15% or FVC declines >10% without obvious cause:
+      flag for repeat HRCT regardless of last imaging date.
+
+  **Smoking cessation:**
+    - Repeat assessment + counseling at every visit for current/former
+      smokers.
+    - Pharmacotherapy (varenicline, bupropion, NRT) per usual cessation
+      guidelines.
+    - LDCT lung cancer screening eligibility (USPSTF: age 50-80, 20
+      pack-year history, currently smoking or quit <15y) evaluated
+      independently of SSc; SSc + smoking is a doubly-indicated
+      population.
+
+  **Concurrent SSc-ILD treatment** (per EULAR 2023 + ACR 2023):
+  mycophenolate first-line for progressive SSc-ILD; nintedanib add-on
+  per SENSCIS for progressive fibrotic ILD; tocilizumab/rituximab
+  considered in early diffuse SSc with progressive ILD. These are
+  pulmonary/rheumatology management decisions, not part of the lung-
+  cancer prevention pathway per se — but the same patients benefit from
+  both ILD management and structured surveillance imaging.
+
+  In Ukraine, HRCT chest is widely available at oncology and pulmonary
+  centers (NSZU partial coverage for indicated imaging; out-of-pocket
+  ~1500-3500 UAH per study). PFTs available at most regional pulmonary
+  centers. SSc rheumatology care concentrated in Kyiv, Lviv, Odesa,
+  Kharkiv. Smoking cessation pharmacotherapy NSZU-covered when
+  prescribed.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для пацієнтів з підтвердженим
+  системним склерозом, особливо SSc-ILD підгрупою. Трикомпонентний
+  стандарт:
+
+  **HRCT грудей частота:**
+    - Baseline HRCT при діагнозі SSc для характеризації ILD
+      присутності/патерну (NSIP > UIP > organizing pneumonia).
+    - У встановленому SSc-ILD: surveillance HRCT q1-2 роки; частіше
+      (q6-12 міс) для прогресуючого ILD або нових симптомів.
+    - Без SSc-ILD на baseline + asymptomatic + без куріння: без
+      запланованого HRCT.
+    - Incidental pulmonary вузли — Fleischner Society 2017 або
+      Lung-RADS.
+
+  **PFT частота:**
+    - Baseline при діагнозі (FVC, DLCO).
+    - SSc-ILD: PFTs q3-6 міс перші 2-3 роки, далі q6-12 міс.
+    - Без SSc-ILD: PFTs q12 міс.
+    - DLCO ↓ >15% або FVC ↓ >10% без очевидної причини — repeat HRCT.
+
+  **Smoking cessation:**
+    - Повторна оцінка + counseling на кожному візиті для
+      курців/колишніх курців.
+    - Фармакотерапія (вареніклін, бупропіон, NRT).
+    - LDCT lung cancer screening eligibility (USPSTF: вік 50-80, 20
+      pack-year, поточно куріння або quit <15 років) оцінюється
+      незалежно від SSc.
+
+  **Concurrent SSc-ILD лікування** (per EULAR 2023 + ACR 2023):
+  мікофенолат first-line; нінтеданіб add-on per SENSCIS; тоцилізумаб/
+  ритуксимаб у ранньому diffuse SSc.
+
+  В Україні HRCT грудей широко доступна в онкологічних та pulmonary
+  центрах (НСЗУ частково покриває; out-of-pocket ~1500-3500 грн).
+  PFTs у більшості регіональних pulmonary центрів. SSc rheumatology
+  care у Києві, Львові, Одесі, Харкові.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-NSCLC-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Lung cancer screening with annual low-dose CT is recommended for
+      eligible high-risk individuals (USPSTF 2021 criteria). In patients
+      with interstitial lung disease, incidental pulmonary nodules on
+      surveillance HRCT are followed per Fleischner Society / Lung-RADS
+      criteria."
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не використовувати HRCT як скрінінг-тест у asymptomatic SSc без ILD — низький yield, accumulated radiation; PFTs + clinical reassessment достатньо."
+  - "Не ігнорувати DLCO ↓ >15% або FVC ↓ >10% — потребують repeat HRCT для виключення ILD прогресії vs нової малігнізації."
+  - "Не пропускати smoking-cessation counseling — найбільш модифікований ризик-фактор у SSc + куріння population."
+  - "Не призначати імуносупресанти (mycophenolate, cyclophosphamide) без рутинного дерматологічного + неоплазійного оглядового спостереження — підвищений ризик неопластій."
+  - "Не відкладати діагностичний workup підозрілого pulmonary вузла per Fleischner/Lung-RADS — early-stage NSCLC має значно кращі outcomes."
+
+do_not_do_en:
+  - "Do not use HRCT as a screening test in asymptomatic SSc without ILD — low yield, accumulated radiation; PFTs + clinical reassessment suffice."
+  - "Do not ignore DLCO decline >15% or FVC decline >10% — these warrant repeat HRCT to distinguish ILD progression from new malignancy."
+  - "Do not skip smoking-cessation counseling — the most modifiable risk factor in the SSc + smoking population."
+  - "Do not prescribe immunosuppressants (mycophenolate, cyclophosphamide) without routine dermatologic + neoplasia surveillance — elevated neoplasia risk."
+  - "Do not delay diagnostic workup of a suspicious pulmonary nodule per Fleischner/Lung-RADS — early-stage NSCLC has materially better outcomes."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — v0.3 chronic-condition prevention pilot (scleroderma / lung
+  cancer). Two-Co-Lead signoff queued. Anti-RNA-polymerase-III
+  paraneoplastic-presentation discussion currently in pilot notes;
+  may warrant a dedicated Indication when anti-RNAP-III screening
+  workflows are added.

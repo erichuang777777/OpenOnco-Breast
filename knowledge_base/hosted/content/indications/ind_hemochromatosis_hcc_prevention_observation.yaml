@@ -1,0 +1,160 @@
+id: IND-HEMOCHROMATOSIS-HCC-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-HCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-HEMOCHROMATOSIS-HCC-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Hepatology/hematology-driven observation (phlebotomy continuation
+    + ferritin + transferrin saturation monitoring; no scheduled
+    US/MRI HCC-surveillance imaging) appropriate for non-cirrhotic
+    iron-controlled HFE-positive patients with stable normalized iron
+    indices. Cirrhotic HH on this pathway is below AASLD best-practice
+    surveillance and warrants explicit informed-consent discussion of
+    trade-offs.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-HEMOCHROMATOSIS-HCC-PREVENTION-
+  SURVEILLANCE. Appropriate primarily for non-cirrhotic
+  iron-controlled HFE-positive patients (where HCC surveillance has
+  very low yield given near-baseline incidence) and for cirrhotic HH
+  patients who choose minimum-intensity surveillance after informed-
+  consent discussion.
+
+  **Cadence:**
+    - Hepatology / hematology follow-up per usual cadence (q6-12mo)
+      with examination, ferritin + transferrin saturation + iron
+      studies, LFT panel, INR, platelets, CBC, fasting glucose, TSH,
+      testosterone in men
+    - Maintenance phlebotomy q2-4mo as needed to keep ferritin
+      50-100 ng/mL
+    - HCC-focused imaging (US, MRI) only when triggered by:
+      - New hepatic decompensation (ascites, encephalopathy, jaundice)
+      - LFT pattern change (rising AFP, new hepatic mass on
+        examination, new RUQ pain)
+      - New thrombocytopenia or worsening synthetic dysfunction
+      - Patient becomes cirrhotic on elastography (transitions to
+        IND-HEMOCHROMATOSIS-HCC-PREVENTION-SURVEILLANCE)
+
+  **Not appropriate for:**
+    - Cirrhotic HH patients with documented synthetic dysfunction or
+      portal hypertension — meet AASLD HCC surveillance criteria;
+      should be on the standard track
+    - HH with concurrent HBV or HCV infection (HCC risk multiplied;
+      separate RF surveillance applies)
+    - HH with poor phlebotomy adherence and ongoing iron overload
+      (high progression risk; needs more intensive engagement)
+    - Patients with prior history of HCC (post-treatment surveillance
+      per DIS-HCC algorithm, not prevention)
+
+  Per CHARTER §11 patient-autonomy framing: non-cirrhotic
+  iron-controlled HH carries near-population HCC risk; symptom-driven
+  observation is a defensible default for this subset. For cirrhotic
+  HH, informed-consent observation is a patient-choice option but the
+  trade-off (missed early-stage HCC, later transplant ineligibility
+  if outside Milan at detection) must be explicitly discussed and
+  documented.
+
+  **Alarm features** route immediately to abdominal imaging (US/MRI/
+  CT) ± biopsy — and if HCC is confirmed, to the treatment-persona
+  algorithm via DIS-HCC.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до
+  IND-HEMOCHROMATOSIS-HCC-PREVENTION-SURVEILLANCE. Доречно переважно
+  для non-cirrhotic iron-controlled HFE-позитивних пацієнтів (де
+  HCC surveillance має дуже низький yield) та для cirrhotic HH
+  пацієнтів, які обирають мінімальної інтенсивності спостереження
+  після informed-consent обговорення.
+
+  **Частота:**
+    - Hepatology / hematology follow-up per usual частотою (q6-12 міс)
+      з обстеженням, ferritin + transferrin saturation + iron studies,
+      LFT, INR, тромбоцити, CBC, fasting glucose, ТТГ, тестостерон
+    - Підтримуюча phlebotomy q2-4 міс (ferritin 50-100 нг/мл)
+    - HCC-focused imaging (US, MRI) лише при триггері:
+      - Нова hepatic decompensation
+      - LFT pattern change (зростаюче AFP, нова hepatic mass)
+      - Нова тромбоцитопенія
+      - Пацієнт стає cirrhotic на elastography (переходить на
+        IND-HEMOCHROMATOSIS-HCC-PREVENTION-SURVEILLANCE)
+
+  **Не доречно для:**
+    - Cirrhotic HH з документованою synthetic dysfunction або
+      портальною гіпертензією — задовольняють AASLD surveillance
+    - HH з coexisting HBV або HCV
+    - HH з поганою phlebotomy adherence
+    - Пацієнтів з попередньою історією HCC
+
+  Per CHARTER §11 framing автономії пацієнта: non-cirrhotic iron-
+  controlled HH несе near-population HCC ризик; symptom-driven
+  observation — defensible default. Для cirrhotic HH informed-consent
+  observation — patient-choice опція з явним обговоренням trade-off.
+
+  **Alarm features** маршрутизують негайно до абдомінального imaging.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-AASLD-HCC-2023
+    position: context
+    relevant_quote_paraphrase: >-
+      "Non-cirrhotic HFE-positive patients with controlled iron stores
+      have HCC incidence near population baseline and do not require
+      scheduled HCC-focused imaging. Cirrhotic HH meets surveillance
+      criteria."
+  - source_id: SRC-NCCN-HCC-2025
+    position: context
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не використовувати цей шлях у cirrhotic HH — потребують AASLD US/AFP q6 міс."
+  - "Не презентувати observation як еквівалент scheduled surveillance у cirrhotic HH — interval-HCC ризик може зсунути за межі Milan."
+  - "Не ігнорувати нову decompensation або incidental hepatic mass — імідіат-imaging."
+  - "Не використовувати цей шлях у HH з coexisting HBV/HCV."
+  - "Не пропускати періодичну elastography — fibrosis progression в HH потребує переходу на standard track."
+
+do_not_do_en:
+  - "Do not use this pathway in cirrhotic HH — they require AASLD US/AFP every 6 months."
+  - "Do not present observation as equivalent to scheduled surveillance in cirrhotic HH — interval HCC risk may push detection beyond Milan."
+  - "Do not ignore new decompensation or incidental hepatic mass — immediate imaging."
+  - "Do not use this pathway in HH with coexisting HBV/HCV."
+  - "Do not skip periodic elastography — fibrosis progression in HH warrants transition to the standard track."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — alternative-track companion for hemochromatosis / HCC
+  prevention. Required for §15.2 C4 ≥2-tracks invariant. Two-Co-Lead
+  signoff queued.

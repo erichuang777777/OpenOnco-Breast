@@ -1,0 +1,165 @@
+id: IND-ACHALASIA-ESOPHAGEAL-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-ESOPHAGEAL
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-ACHALASIA-ESOPHAGEAL-PREVENTION
+
+# No systemic drug regimen — primary intervention is endoscopic
+# surveillance (EGD ± biopsy of suspicious mucosa). PPI co-therapy when
+# post-myotomy reflux develops is supportive, not a Regimen FK.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    EGD surveillance q2-3y starting 10-15y after achalasia onset shifts
+    SCC stage at diagnosis from advanced (T3-T4) to earlier (T1-T2) in
+    surveilled patients (Leeuwenburgh 2010: ~75% early-stage among
+    surveilled vs ~25% among unsurveilled). Surveillance does not
+    reduce SCC incidence but materially improves resectability and
+    5-year OS (early-stage SCC 5y OS ~40-50% vs ~10-15% for locally
+    advanced). Post-myotomy Barrett surveillance overlaps with
+    RF-BARRETTS-ESOPHAGUS-PREVENTION pathway.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for patients with confirmed
+  achalasia. Endoscopic surveillance addresses the chronic-stasis-
+  associated SCC risk that emerges 10-25 years after disease onset.
+
+  **Cadence:** EGD every 2-3 years starting 10-15 years after the
+  initial achalasia diagnosis (per ACG 2013, ASGE 2015). Earlier
+  initiation (5-10 years post-diagnosis) reasonable in patients with
+  any of: megaesophagus (esophageal diameter >6 cm on barium swallow),
+  food retention on prior EGD, history of smoking or heavy alcohol use,
+  or family history of esophageal cancer.
+
+  **Technique:** standard EGD with careful inspection of the entire
+  esophageal mucosa after wash-out of retained food (may require pre-
+  procedural fasting beyond standard NPO + on-table irrigation).
+  Biopsy any suspicious mucosa — friable, ulcerated, plaque-like, or
+  irregular areas. Chromoendoscopy with Lugol's iodine (1-3% solution
+  sprayed onto mucosa) highlights dysplastic and early-SCC areas as
+  pale unstained patches; recommended where available.
+
+  **Post-myotomy Barrett surveillance:** patients ~10y after Heller
+  myotomy or POEM develop reflux + Barrett at ~25-30% rate. Once
+  Barrett is confirmed, the patient transitions to (or runs in parallel
+  with) the RF-BARRETTS-ESOPHAGUS-PREVENTION pathway with Seattle-
+  protocol biopsies and dysplasia-grade-driven cadence.
+
+  **Symptom escalation triggers immediate workup:** new or worsening
+  dysphagia (beyond baseline achalasia dysphagia), regurgitation of
+  blood-tinged material, unintentional weight loss >10%, chest pain not
+  responsive to standard achalasia measures. These features warrant
+  prompt diagnostic EGD with biopsies regardless of last surveillance
+  date.
+
+  In Ukraine, EGD is widely available (NSZU-covered for symptomatic
+  upper-GI investigation; achalasia-surveillance EGD typically
+  out-of-pocket ~2000-5000 UAH). Lugol's chromoendoscopy available in
+  a small number of tertiary centers in Kyiv and Lviv; conventional
+  EGD with mucosal-inspection alone is acceptable if chromoendoscopy
+  not available.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для пацієнтів з підтвердженою
+  ахалазією. Ендоскопічне спостереження адресує chronic-stasis-
+  асоційований SCC ризик, який з'являється через 10-25 років після
+  початку захворювання.
+
+  **Частота:** EGD кожні 2-3 роки починаючи через 10-15 років після
+  початкового діагнозу ахалазії (per ACG 2013, ASGE 2015). Більш
+  раннє початок (5-10 років post-diagnosis) розумне у пацієнтів з:
+  мегаезофагом (діаметр стравоходу >6 см на barium swallow), затримкою
+  їжі на попередній EGD, історією куріння або важкого вживання
+  алкоголю, або сімейним анамнезом раку стравоходу.
+
+  **Техніка:** стандартна EGD з обережним оглядом всієї слизової
+  стравоходу після видалення затриманої їжі (може потребувати
+  передпроцедурного посту понад стандартний NPO + on-table зрошення).
+  Біопсія будь-якої підозрілої слизової — рихла, виразкована,
+  бляшкоподібна або нерівна ділянка. Хромоендоскопія з Lugol-йодом
+  (1-3% розчин, розпилений на слизову) виділяє диспластичні та
+  early-SCC ділянки як бліді нефарбовані ділянки; рекомендовано де
+  доступно.
+
+  **Post-myotomy Barrett surveillance:** пацієнти ~через 10 років після
+  Heller-міотомії або POEM розвивають рефлюкс + Barrett у ~25-30%.
+  Після підтвердження Barrett пацієнт переходить (або паралельно
+  спостерігається) на шлях RF-BARRETTS-ESOPHAGUS-PREVENTION.
+
+  **Ескалація симптомів триггерує негайне обстеження:** нова або
+  погіршена дисфагія (понад baseline дисфагію ахалазії), регургітація
+  blood-tinged матеріалу, ненавмисне схуднення >10%, грудний біль не
+  реагує на стандартні achalasia заходи. Ці ознаки виправдовують
+  prompt діагностичну EGD з біопсіями незалежно від останнього
+  surveillance дату.
+
+  В Україні EGD широко доступна (НСЗУ покриває симптоматичне
+  обстеження верхнього ШКТ; achalasia-surveillance EGD типово
+  out-of-pocket ~2000-5000 грн). Lugol-хромоендоскопія доступна у
+  невеликій кількості третинних центрів у Києві та Львові.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-ESOPHAGEAL-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Long-standing achalasia is an established risk factor for
+      esophageal SCC. Endoscopic surveillance every 2-3 years starting
+      10-15 years after achalasia diagnosis is a reasonable strategy
+      to enable earlier-stage detection."
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "v0.3 prevention pilot project source — chronic-condition
+      precursors of malignancy as a §20 surveillance class."
+
+do_not_do:
+  - "Не починати surveillance EGD у перші 5 років після діагнозу ахалазії без додаткових факторів ризику — SCC латентність 10-25 років, ранній скринінг має низький yield."
+  - "Не використовувати лише barium swallow як заміну EGD — barium виявляє анатомічні зміни, але не дисплазію або ранній SCC."
+  - "Не пропускати огляд GE-junction і тубулярного стравоходу — SCC може виникнути в будь-якій ділянці контактна з застійним болюсом."
+  - "Не виконувати pneumatic dilation або міотомію без обговорення довгострокового Barrett ризику + наступного surveillance plan."
+  - "Не відкладати діагностичну EGD при новій-or-погіршеній дисфагії, regurgitation крові, або втраті ваги — ці ознаки потребують термінового обстеження незалежно від surveillance дату."
+
+do_not_do_en:
+  - "Do not start surveillance EGD in the first 5 years after achalasia diagnosis without additional risk factors — SCC latency is 10-25 years; early screening has low yield."
+  - "Do not use barium swallow alone as a substitute for EGD — barium detects anatomic changes but not dysplasia or early SCC."
+  - "Do not skip inspection of GE junction and tubular esophagus — SCC can arise anywhere in contact with the stagnant food bolus."
+  - "Do not perform pneumatic dilation or myotomy without discussing long-term Barrett risk + subsequent surveillance plan."
+  - "Do not delay diagnostic EGD for new-or-worsening dysphagia, hematemesis, or weight loss — these features warrant urgent workup regardless of surveillance date."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — v0.3 chronic-condition prevention pilot (achalasia). Two-Co-
+  Lead signoff queued. Surveillance benefit rests on cohort evidence
+  (no RCTs feasible given low absolute incidence). Lugol's chromo-
+  endoscopy availability is the major equity constraint.

@@ -1,0 +1,120 @@
+id: RF-SCLERODERMA-LUNG-PREVENTION
+definition: >-
+  Systemic sclerosis (scleroderma) per ACR/EULAR 2013 classification
+  criteria (diffuse cutaneous or limited cutaneous form, characteristic
+  Raynaud's, sclerodactyly, fingertip pitting/ulceration, abnormal
+  nailfold capillaroscopy, ± organ involvement) in an individual
+  without a current lung cancer diagnosis. Established risk factor for
+  lung cancer (~2-3x relative risk overall; further elevated in the
+  scleroderma-associated interstitial lung disease [SSc-ILD] subset to
+  ~5-7x, and in anti-topoisomerase-I-positive patients). Risk
+  attributable to chronic pulmonary inflammation, fibrosis,
+  immunosuppressant exposure, and the underlying scleroderma
+  immunobiology. Smokers with SSc-ILD compound risk multiplicatively.
+  HRCT chest q1-2y in SSc-ILD subset enables detection of incidental
+  pulmonary nodules; PFTs q6-12mo guide ILD management and identify
+  decompensation that may flag malignancy. Prevention-persona RedFlag
+  (§20 ratification 2026-05-18, v0.3 chronic-condition pilot).
+definition_ua: >-
+  Системний склероз (склеродермія) per ACR/EULAR 2013 критеріями
+  класифікації (дифузна шкірна або обмежена шкірна форма, характерний
+  Рейно, склеродактилія, fingertip pitting/ulceration, abnormal
+  nailfold capillaroscopy, ± залучення органів) у пацієнта без
+  поточного діагнозу раку легень. Встановлений фактор ризику раку
+  легень (~2-3x відносний ризик загалом; додатково підвищений у
+  scleroderma-асоційованому interstitial lung disease [SSc-ILD]
+  підгрупі до ~5-7x, та у anti-topoisomerase-I-positive пацієнтів).
+  Ризик пояснюється хронічним pulmonary запаленням, фіброзом,
+  експозицією імуносупресантів та underlying scleroderma
+  імунобіологією. Курці з SSc-ILD multiplicatively compound ризик.
+  HRCT грудей q1-2 роки в SSc-ILD підгрупі дозволяє виявити incidental
+  pulmonary вузли; PFTs q6-12 міс керують ILD-менеджментом та
+  ідентифікують decompensation, що може флагнути малігнізацію.
+  Prevention-persona RedFlag (ратифікація §20, 2026-05-18, v0.3 пілот
+  chronic-condition).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "systemic_sclerosis_diagnosis_confirmed"
+      value: true
+    - finding: "scleroderma_with_interstitial_lung_disease"
+      value: true
+    - finding: "anti_scl70_topoisomerase_positive"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: chronic_condition
+
+# Cancer being prevented: lung cancer (NSCLC primarily; small-cell less
+# common). DIS-NSCLC is the primary anchor in OpenOnco KB.
+relevant_diseases:
+  - DIS-NSCLC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-NSCLC-2025
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.3 chronic-condition prevention pilot — systemic sclerosis / lung
+  cancer. Prevention-persona RedFlag (CHARTER §3 amended 2026-05-18
+  Path A, HCP-mediated). Fires when patient profile shows confirmed
+  systemic sclerosis (especially SSc-ILD or anti-Scl70 subset) AND
+  no confirmed lung cancer. Engine routes to PreventionPlan with 2
+  tracks: HRCT chest q1-2y if ILD present + PFTs q6-12mo + smoking
+  cessation (IND-SCLERODERMA-LUNG-PREVENTION-SURVEILLANCE) as standard;
+  rheumatology-driven observation with chest imaging only on symptom
+  trigger (IND-SCLERODERMA-LUNG-PREVENTION-OBSERVATION) as alternative.
+
+  Evidence base:
+    - **Lung cancer risk magnitude:** Bonifazi et al. Arthritis Care
+      Res 2013 meta-analysis (cancer in SSc, SIR 4.4 for lung); SSc-ILD
+      subset SIR ~5-7. Pearson et al. Arthritis Rheumatol 2018 cohort
+      study showing temporal clustering at SSc onset suggestive of
+      paraneoplastic mechanisms in some cases.
+    - **Autoantibody risk:** anti-RNA polymerase III associated with
+      paraneoplastic-presentation cancers (breast, others) at SSc onset;
+      anti-Scl70 (topoisomerase I) associated with SSc-ILD and elevated
+      lung-cancer risk.
+    - **Surveillance recommendations:** EULAR 2023 update — HRCT
+      baseline at SSc diagnosis to characterize ILD; surveillance HRCT
+      q1-2y in established ILD or progressive disease; PFTs q3-6mo for
+      monitoring ILD trajectory. NCCN LCSP eligibility (low-dose CT
+      screening) applies independently for patients with smoking
+      history; SSc itself is not an NCCN LCSP qualifying criterion.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption.
+notes_ua: >
+  v0.3 пілот prevention chronic-condition — системний склероз / рак
+  легень. Prevention-persona RedFlag (CHARTER §3 поправка 2026-05-18).
+  Спрацьовує коли профіль пацієнта показує підтверджений системний
+  склероз (особливо SSc-ILD або anti-Scl70 підгрупа) ТА відсутній
+  підтверджений рак легень. Engine маршрутизує до PreventionPlan з 2
+  треками: HRCT грудей q1-2 роки якщо ILD присутній + PFTs q6-12 міс +
+  smoking cessation (IND-SCLERODERMA-LUNG-PREVENTION-SURVEILLANCE) як
+  стандарт; rheumatology-driven спостереження з chest imaging лише на
+  symptom trigger (IND-SCLERODERMA-LUNG-PREVENTION-OBSERVATION) як
+  альтернатива.
+
+  Доказова база: SIR ~4.4 загалом, ~5-7 у SSc-ILD підгрупі (Bonifazi
+  Arthritis Care Res 2013). Anti-Scl70 асоційований з SSc-ILD та
+  підвищеним lung-cancer ризиком. EULAR 2023: HRCT baseline при
+  діагнозі, surveillance HRCT q1-2y в ILD; PFTs q3-6 міс.
+
+  Це STUB, очікує підпис двох Clinical Co-Lead за §6.1 dev-mode
+  exemption.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+draft: true

@@ -1,0 +1,134 @@
+id: RF-WILSONS-DISEASE-HCC-PREVENTION
+definition: >-
+  Wilson's disease (autosomal recessive ATP7B-mutated copper-transport
+  disorder with hepatic and/or neuropsychiatric manifestations; Leipzig
+  score ≥4 confirmatory) in an individual without a current HCC
+  diagnosis. Historically considered a low-risk cirrhosis etiology for
+  HCC, but contemporary cohorts (van Meer et al. Liver Int 2015;
+  Pfeiffenberger et al. J Hepatol 2018) report HCC incidence of
+  ~0.5-1%/year in cirrhotic Wilson's — exceeding the AASLD 1.5%/year
+  surveillance-threshold in the cirrhotic subset. Risk concentrated
+  in patients with established cirrhosis (especially decompensated
+  disease) and those with prolonged uncontrolled copper accumulation.
+  Adherent copper-chelation therapy (penicillamine, trientine, zinc)
+  reduces hepatic copper burden but does not eliminate residual HCC
+  risk in patients who already developed cirrhosis. AASLD HCC
+  surveillance with US ± AFP q6mo recommended in cirrhotic Wilson's.
+  Prevention-persona RedFlag (§20 ratification 2026-05-18, v0.3
+  chronic-condition pilot).
+definition_ua: >-
+  Хвороба Вільсона (autosomal recessive ATP7B-мутаційний copper-
+  transport розлад з печінковими та/або нейропсихіатричними
+  проявами; Leipzig score ≥4 підтверджує) у пацієнта без поточного
+  діагнозу HCC. Історично розглядалася як низько-ризикова cirrhosis
+  етіологія для HCC, але сучасні когорти (van Meer Liver Int 2015;
+  Pfeiffenberger J Hepatol 2018) повідомляють HCC incidence ~0.5-1%/рік
+  у cirrhotic Вільсона — перевищує AASLD 1.5%/рік surveillance-поріг
+  у cirrhotic підгрупі. Ризик концентрований у пацієнтів з
+  встановленим цирозом (особливо decompensated) та з тривалим
+  неконтрольованим накопиченням міді. Adherent copper-chelation
+  терапія (пеніциламін, трієнтин, цинк) знижує hepatic copper burden,
+  але не елімінує залишковий HCC ризик у пацієнтів з вже розвиненим
+  цирозом. AASLD HCC surveillance з US ± AFP q6 міс рекомендована в
+  cirrhotic Вільсоні. Prevention-persona RedFlag (ратифікація §20,
+  2026-05-18, v0.3 пілот chronic-condition).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "wilson_disease_diagnosis_confirmed"
+      value: true
+    - finding: "wilson_disease_with_cirrhosis"
+      value: true
+    - finding: "atp7b_mutation_compound_heterozygous_or_homozygous"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: chronic_condition
+
+# Cancer being prevented: hepatocellular carcinoma (HCC) in cirrhotic
+# Wilson's. DIS-HCC is the primary anchor.
+relevant_diseases:
+  - DIS-HCC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-AASLD-HCC-2023
+  - SRC-NCCN-HCC-2025
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.3 chronic-condition prevention pilot — Wilson's disease / HCC.
+  Prevention-persona RedFlag (CHARTER §3 amended 2026-05-18 Path A,
+  HCP-mediated). Fires when patient profile shows confirmed Wilson's
+  disease (especially with cirrhosis) AND no confirmed HCC. Engine
+  routes to PreventionPlan with 2 tracks: AASLD HCC surveillance with
+  US + AFP q6mo if cirrhotic + transplant evaluation for advanced
+  disease (IND-WILSONS-DISEASE-HCC-PREVENTION-SURVEILLANCE) as standard;
+  hepatology-driven observation without scheduled HCC imaging in
+  non-cirrhotic Wilson's (IND-WILSONS-DISEASE-HCC-PREVENTION-
+  OBSERVATION) as alternative.
+
+  Evidence base:
+    - **HCC risk magnitude:** historically rare (case-report literature
+      pre-2000) but contemporary cohorts revise upward — van Meer Liver
+      Int 2015 (Dutch cohort, HCC incidence ~1%/year in cirrhotic
+      Wilson's); Pfeiffenberger J Hepatol 2018 (German multicenter,
+      similar). Non-cirrhotic Wilson's HCC incidence remains very low
+      (<0.1%/year).
+    - **AASLD 2023 guideline:** HCC surveillance with US ± AFP q6mo
+      recommended for any cirrhosis with incidence >1.5%/year. Wilson's
+      cirrhosis crosses this threshold in modern series → surveillance
+      indicated.
+    - **Chelation adherence:** patients with consistent adherence to
+      penicillamine, trientine, or zinc maintenance therapy reach
+      adequate de-coppering and arrest hepatic injury progression; once
+      cirrhosis is established, chelation slows but does not reverse
+      the HCC trajectory.
+    - **Liver transplantation:** indicated for decompensated cirrhosis
+      (Child-Pugh C, MELD ≥15) or acute fulminant Wilson's; HCC within
+      Milan criteria is a co-indication. 5y post-transplant OS ~85%.
+
+  Coexisting HBV, HCV, or alcohol use elevates HCC risk further —
+  patients with these co-factors should receive standard etiology-
+  specific antiviral/abstinence interventions per separate RFs
+  (RF-HBV-HCC-PREVENTION, RF-HCV-BCELL-NHL-PREVENTION).
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption.
+notes_ua: >
+  v0.3 пілот prevention chronic-condition — хвороба Вільсона / HCC.
+  Prevention-persona RedFlag (CHARTER §3 поправка 2026-05-18).
+  Спрацьовує коли профіль пацієнта показує підтверджену хворобу
+  Вільсона (особливо з цирозом) ТА відсутній підтверджений HCC.
+  Engine маршрутизує до PreventionPlan з 2 треками: AASLD HCC
+  surveillance з US + AFP q6 міс якщо cirrhotic + transplant evaluation
+  для advanced захворювання
+  (IND-WILSONS-DISEASE-HCC-PREVENTION-SURVEILLANCE) як стандарт;
+  hepatology-driven спостереження без запланованого HCC imaging в
+  non-cirrhotic Вільсона (IND-WILSONS-DISEASE-HCC-PREVENTION-
+  OBSERVATION) як альтернатива.
+
+  Доказова база: HCC incidence ~1%/рік в cirrhotic Вільсона (van Meer
+  Liver Int 2015; Pfeiffenberger J Hepatol 2018) — перевищує AASLD
+  1.5%/рік поріг для surveillance. Chelation arrest подальшого
+  hepatic injury, але не реверсує встановлену cirrhosis HCC траєкторію.
+  Liver transplantation для decompensated cirrhosis або HCC у Milan.
+
+  Co-існуючі HBV, HCV, або алкоголь додатково підвищують HCC ризик.
+
+  Це STUB, очікує підпис двох Clinical Co-Lead за §6.1 dev-mode
+  exemption.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+draft: true

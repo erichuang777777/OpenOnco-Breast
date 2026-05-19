@@ -1,0 +1,149 @@
+id: IND-SCLERODERMA-LUNG-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-SCLERODERMA-LUNG-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Rheumatology-driven observation (clinical reassessment +
+    pulmonologist-driven imaging on symptom trigger only) without
+    scheduled HRCT cadence detects lung cancer at later stage than
+    structured surveillance. Acceptable as a minimum-intensity default
+    in patients without SSc-ILD, non-smokers, and asymptomatic — below
+    EULAR 2023 best-practice for the SSc-ILD subset.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-SCLERODERMA-LUNG-PREVENTION-
+  SURVEILLANCE. Appropriate for patients with confirmed systemic
+  sclerosis WITHOUT high-risk lung-cancer features who choose minimum-
+  intensity surveillance for any of: no SSc-ILD on baseline imaging,
+  non-smoker without occupational exposures, stable disease for >5
+  years, cost / access constraints, procedural anxiety, geographic
+  distance, or explicit preference after informed-consent discussion.
+
+  **Cadence:**
+    - Rheumatology follow-up per usual cadence (typically q3-6mo) with
+      examination and skin-score tracking
+    - PFTs q12mo (baseline + annual; minimum-intensity ILD monitoring)
+    - HRCT only when triggered by:
+      - New respiratory symptoms (dyspnea, cough, hemoptysis)
+      - DLCO decline >15% or FVC decline >10%
+      - New respiratory crackles or worsening Velcro rales
+      - Unintentional weight loss >5% or B-symptoms
+      - Patient becomes USPSTF LDCT-eligible (age 50-80, 20 pack-year
+        history, currently smoking or quit <15y) — annual LDCT
+        screening then independent of SSc
+
+  **Not appropriate for:**
+    - Patients with confirmed SSc-ILD on any prior HRCT
+    - Patients with anti-Scl70 (topoisomerase I) positivity
+    - Active smokers, regardless of pack-year history
+    - Patients with prior cyclophosphamide exposure
+    - Patients with first-degree relatives with lung cancer
+
+  Per CHARTER §11 patient-autonomy framing: SSc without ILD,
+  non-smoker, asymptomatic carries modest absolute lung-cancer risk
+  in short-term (relative risk ~2-3x but absolute rate still in
+  per-thousand range), so symptom-driven observation is a defensible
+  informed-consent choice. Patient retains option to upgrade to
+  scheduled surveillance at any future visit.
+
+  **Alarm features** route immediately to HRCT (and PET/CT, biopsy as
+  appropriate) — and if NSCLC or other lung cancer confirmed, to the
+  treatment-persona algorithm via DIS-NSCLC.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до
+  IND-SCLERODERMA-LUNG-PREVENTION-SURVEILLANCE. Доречно для пацієнтів
+  з підтвердженим SSc БЕЗ high-risk lung-cancer ознак, які обирають
+  мінімальної інтенсивності спостереження з причин: без SSc-ILD на
+  baseline імиджингу, non-smoker без occupational експозицій,
+  стабільне захворювання >5 років, вартість / доступ, процедурна
+  тривога, географічна відстань.
+
+  **Частота:**
+    - Rheumatology follow-up per usual частотою (q3-6 міс)
+    - PFTs q12 міс (мінімальної інтенсивності ILD моніторинг)
+    - HRCT лише при триггері:
+      - Нові респіраторні симптоми (диспное, кашель, кровохаркання)
+      - DLCO ↓ >15% або FVC ↓ >10%
+      - Нові респіраторні crackles або погіршення Velcro rales
+      - Ненавмисне схуднення >5% або B-симптоми
+      - Пацієнт стає USPSTF LDCT-eligible (вік 50-80, 20 pack-year)
+        — щорічна LDCT screening незалежно від SSc
+
+  **Не доречно для:**
+    - Пацієнтів з підтвердженим SSc-ILD на будь-якому попередньому HRCT
+    - Пацієнтів з anti-Scl70 (topoisomerase I) позитивністю
+    - Активних курців
+    - Пацієнтів з попередньою cyclophosphamide експозицією
+    - Пацієнтів з first-degree родичами з раком легень
+
+  Per CHARTER §11 framing автономії пацієнта: SSc без ILD,
+  non-smoker, asymptomatic — модерний абсолютний lung-cancer ризик у
+  short-term, тому symptom-driven observation — defensible
+  informed-consent вибір.
+
+  **Alarm features** маршрутизують негайно до HRCT.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-NSCLC-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Symptom-driven workup acceptable for low-risk patients; structured
+      surveillance imaging recommended in SSc-ILD or high-risk subsets."
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не використовувати цей шлях у пацієнтів з підтвердженим SSc-ILD — потребують запланованої HRCT q1-2 роки."
+  - "Не презентувати symptom-driven observation як еквівалент structured surveillance — interval-cancer ризик вищий."
+  - "Не ігнорувати alarm features (нові респіраторні симптоми, DLCO ↓ >15%) — імідіат-HRCT показано."
+  - "Не використовувати цей шлях у active smokers — додаткова USPSTF LDCT eligibility."
+  - "Не пропускати періодичне обговорення upgrade — SSc-ILD може емерджувати під час спостереження."
+
+do_not_do_en:
+  - "Do not use this pathway in patients with confirmed SSc-ILD — they require scheduled HRCT every 1-2 years."
+  - "Do not present symptom-driven observation as equivalent to structured surveillance — interval-cancer risk is higher."
+  - "Do not ignore alarm features (new respiratory symptoms, DLCO decline >15%) — immediate HRCT indicated."
+  - "Do not use this pathway in active smokers — additional USPSTF LDCT eligibility applies."
+  - "Do not skip periodic re-discussion of upgrade — SSc-ILD can emerge during observation."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — alternative-track companion for scleroderma / lung cancer
+  prevention. Required for §15.2 C4 ≥2-tracks invariant. Two-Co-Lead
+  signoff queued.

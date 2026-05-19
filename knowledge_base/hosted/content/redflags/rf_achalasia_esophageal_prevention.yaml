@@ -1,0 +1,113 @@
+id: RF-ACHALASIA-ESOPHAGEAL-PREVENTION
+definition: >-
+  Achalasia (primary esophageal motor disorder with impaired LES
+  relaxation and loss of esophageal peristalsis, diagnosed by
+  high-resolution manometry per Chicago classification) in an individual
+  without a current esophageal cancer diagnosis. Long-standing chronic
+  food stasis and esophagitis confer markedly elevated esophageal SCC
+  risk (relative risk ~16-50x population baseline; absolute risk
+  ~0.3-1%/year emerging 10-25 years after achalasia onset). Esophageal
+  adenocarcinoma risk is also elevated in achalasia patients with
+  secondary Barrett's after surgical or pneumatic myotomy. Endoscopic
+  surveillance starting 10-15 years after achalasia diagnosis is the
+  standard secondary-prevention strategy. Prevention-persona RedFlag
+  (§20 ratification 2026-05-18, v0.3 chronic-condition pilot).
+definition_ua: >-
+  Ахалазія (первинне розлад моторики стравоходу з порушенням
+  релаксації нижнього езофагеального сфінктера та втратою перистальтики
+  стравоходу, діагностована high-resolution манометрією per Chicago
+  classification) у пацієнта без поточного діагнозу раку стравоходу.
+  Тривалий хронічний стаз їжі та езофагіт зумовлюють значно підвищений
+  ризик плоскоклітинного раку стравоходу (відносний ризик ~16-50x
+  популяційного базового; абсолютний ризик ~0,3-1%/рік, що з'являється
+  через 10-25 років після початку ахалазії). Ризик аденокарциноми
+  стравоходу також підвищений у пацієнтів з ахалазією з вторинним
+  Barrett після хірургічної або пневматичної міотомії. Ендоскопічне
+  спостереження починаючи через 10-15 років після діагнозу ахалазії —
+  стандартна secondary-prevention стратегія. Prevention-persona RedFlag
+  (ратифікація §20, 2026-05-18, v0.3 пілот chronic-condition).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "achalasia_diagnosis_confirmed"
+      value: true
+    - finding: "achalasia_with_megaesophagus"
+      value: true
+    - finding: "achalasia_post_myotomy_with_barretts"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: chronic_condition
+
+# Cancer being prevented: esophageal SCC (primary) + esophageal
+# adenocarcinoma (in post-myotomy Barrett subset). DIS-ESOPHAGEAL covers
+# both histologies in OpenOnco KB.
+relevant_diseases:
+  - DIS-ESOPHAGEAL
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-ESOPHAGEAL-2025
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.3 chronic-condition prevention pilot — achalasia / esophageal SCC.
+  Prevention-persona RedFlag (CHARTER §3 amended 2026-05-18 Path A,
+  HCP-mediated). Fires when patient profile shows confirmed achalasia
+  AND no confirmed esophageal cancer. Engine routes to PreventionPlan
+  with 2 tracks: EGD q2-3y starting 10-15y after achalasia onset
+  (IND-ACHALASIA-ESOPHAGEAL-PREVENTION-SURVEILLANCE) as standard;
+  symptom-driven observation (IND-ACHALASIA-ESOPHAGEAL-PREVENTION-
+  OBSERVATION) as alternative.
+
+  Evidence base:
+    - **SCC risk magnitude:** Sandler et al. JAMA 1995 (Mayo cohort,
+      RR ~16); Leeuwenburgh et al. Am J Gastroenterol 2010 (Dutch
+      national cohort, RR ~28). Latency 10-25y from achalasia onset to
+      SCC emergence.
+    - **Surveillance evidence:** prospective cohort data limited; ACG
+      2013 + ASGE 2015 recommend EGD surveillance q2-3y starting 10-15y
+      after diagnosis, with biopsy of any suspicious mucosa. Cancer
+      detected at earlier stage when found via surveillance vs symptomatic
+      presentation (Leeuwenburgh 2010 — early-stage detection in 75%
+      of surveilled vs 25% of unsurveilled).
+    - **Post-myotomy Barrett:** ~25-30% develop reflux + Barrett within
+      10y after Heller myotomy or POEM; PPI co-therapy recommended;
+      Barrett emergence triggers separate Barrett's surveillance
+      (RF-BARRETTS-ESOPHAGUS-PREVENTION).
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption. SRC-NCCN-BCELL-2025 cited as the v0.3 chronic-condition
+  pilot project source per task brief; primary clinical guideline is
+  SRC-NCCN-ESOPHAGEAL-2025.
+notes_ua: >
+  v0.3 пілот prevention chronic-condition — ахалазія / SCC стравоходу.
+  Prevention-persona RedFlag (CHARTER §3 поправка 2026-05-18). Спрацьовує
+  коли профіль пацієнта показує підтверджену ахалазію ТА відсутній
+  підтверджений рак стравоходу. Engine маршрутизує до PreventionPlan з
+  2 треками: EGD q2-3 роки починаючи через 10-15 років після початку
+  ахалазії (IND-ACHALASIA-ESOPHAGEAL-PREVENTION-SURVEILLANCE) як
+  стандарт; symptom-driven observation
+  (IND-ACHALASIA-ESOPHAGEAL-PREVENTION-OBSERVATION) як альтернатива.
+
+  Доказова база: відносний ризик SCC ~16-28x (Sandler JAMA 1995;
+  Leeuwenburgh AJG 2010); латентність 10-25 років; рання-стадія
+  детекція у 75% surveilled vs 25% unsurveilled. Post-myotomy Barrett
+  у ~25-30% за 10 років.
+
+  Це STUB, очікує підпис двох Clinical Co-Lead за §6.1 dev-mode
+  exemption.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+draft: true

@@ -1,0 +1,188 @@
+id: IND-CHRONIC-ATROPHIC-GASTRITIS-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-GASTRIC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-CHRONIC-ATROPHIC-GASTRITIS-PREVENTION
+
+# No systemic drug regimen — primary intervention is endoscopic
+# surveillance with topographic biopsies. B12 + iron replacement is
+# supportive endocrine/hematologic care, not a Regimen FK.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    EGD surveillance q3-5y with Sydney-protocol biopsies (q3y for OLGA
+    III/IV or OLGIM III/IV; q5y for OLGA I-II without dysplasia) shifts
+    gastric adenocarcinoma stage at diagnosis from advanced (T3-T4) to
+    earlier (T1-T2), improving 5y OS from ~10-20% (locally advanced) to
+    ~70-90% (early-stage, endoscopic-resection-amenable T1a). Type 1
+    gastric NETs <1 cm are managed with endoscopic resection alone
+    (>95% disease-specific survival). Surveillance does not reverse
+    advanced atrophy/IM but enables early detection.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for patients with histologically
+  confirmed chronic atrophic gastritis. Risk stratification by OLGA /
+  OLGIM stage drives surveillance cadence:
+
+  **Cadence by OLGA/OLGIM stage:**
+    - **OLGA/OLGIM 0-II without dysplasia:** EGD q5y. Many low-stage
+      patients (especially post-H. pylori with limited residual atrophy)
+      may be safely observed at this minimal interval.
+    - **OLGA/OLGIM III-IV without dysplasia:** EGD q3y per MAPS II
+      (Pimentel-Nunes Endoscopy 2019). These patients carry the highest
+      gastric-cancer progression risk (10-15% over 12y in Rugge cohort).
+    - **OLGA/OLGIM III-IV with family history of gastric cancer:** EGD
+      q1-2y per MAPS II.
+    - **Low-grade dysplasia (LGD):** EGD q1y with focused biopsies of
+      previous LGD sites; confirm by expert GI pathologist review (LGD
+      is over-called).
+    - **High-grade dysplasia (HGD) or visible lesions:** endoscopic
+      submucosal dissection (ESD) or endoscopic mucosal resection (EMR)
+      for amenable lesions; surgical consultation for non-amenable
+      lesions.
+
+  **Technique:** Sydney protocol — 2 biopsies from antrum (greater +
+  lesser curvature), 2 from corpus (greater + lesser curvature), 1 from
+  incisura. Targeted biopsies of any visible mucosal irregularity.
+  Optical-enhanced imaging (NBI, BLI) preferred where available;
+  conventional white-light EGD with careful inspection acceptable
+  otherwise.
+
+  **Type 1 gastric NET management:**
+    - Multiple small (<1 cm) polypoid NETs: endoscopic resection of
+      largest lesions, surveillance EGD q6-12mo
+    - Larger or rapidly enlarging NETs: endoscopic ultrasound to assess
+      depth; ESD/EMR for amenable lesions; antrectomy considered for
+      gastrin-source removal in refractory cases (specialist referral)
+    - NET >2 cm, muscularis invasion, or metastatic disease: management
+      transitions to DIS-GI-NET treatment algorithm
+
+  **B12 + iron replacement (autoimmune CAG subset):** lifelong B12
+  (1000 mcg/day PO or 1 mg IM monthly per response); iron supplementation
+  if iron-deficiency anemia present; check ferritin + iron studies
+  annually.
+
+  **Coexisting H. pylori:** test (UBT, stool antigen, or biopsy urease)
+  at diagnosis; if positive, eradicate per current MAPS / Maastricht VI
+  regimens (this transitions the patient briefly to the
+  RF-H-PYLORI-PREVENTION pathway, then back to atrophic-gastritis
+  surveillance).
+
+  In Ukraine, EGD with biopsies is widely available (NSZU-covered for
+  symptomatic upper-GI investigation; out-of-pocket ~2000-5000 UAH for
+  CAG-surveillance EGD). NBI/BLI imaging available in tertiary centers
+  in Kyiv and Lviv. Histopathology with OLGA/OLGIM staging available at
+  regional and tertiary centers; specialized GI pathologist review may
+  require referral.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для пацієнтів з гістологічно
+  підтвердженим хронічним атрофічним гастритом. Стратифікація ризику
+  per OLGA / OLGIM стадією керує частотою спостереження:
+
+  **Частота за OLGA/OLGIM стадією:**
+    - **OLGA/OLGIM 0-II без дисплазії:** EGD q5 років.
+    - **OLGA/OLGIM III-IV без дисплазії:** EGD q3 роки per MAPS II
+      (Pimentel-Nunes Endoscopy 2019). Найвищий ризик прогресії
+      (10-15% за 12 років у Rugge cohort).
+    - **OLGA/OLGIM III-IV з сімейним анамнезом раку шлунка:** EGD
+      q1-2 роки.
+    - **Дисплазія низького ступеня (LGD):** EGD q1y з focused біопсіями
+      попередніх LGD ділянок; підтвердження експертним GI-патологом
+      (LGD — over-called).
+    - **Дисплазія високого ступеня (HGD) або видимі ураження:** ESD
+      або EMR для amenable уражень; хірургічна консультація для
+      non-amenable.
+
+  **Техніка:** Sydney-протокол — 2 біопсії з антрума (greater + lesser
+  curvature), 2 з corpus, 1 з incisura. Цільові біопсії будь-яких
+  видимих нерівностей слизової. NBI/BLI переважно де доступно.
+
+  **Type 1 gastric NET управління:**
+    - Множинні малі (<1 см) поліповидні NET: ендоскопічна резекція
+      найбільших, surveillance EGD q6-12 міс
+    - Більші або швидко зростаючі: EUS для оцінки глибини; ESD/EMR;
+      антректомія для gastrin-source removal у рефрактерних випадках
+    - NET >2 см, інвазія мускулярисa, метастатичне захворювання:
+      управління переходить до DIS-GI-NET алгоритму
+
+  **B12 + iron заміщення (автоімунний CAG):** пожиттєве B12
+  (1000 мкг/день PO або 1 мг IM щомісяця); залізо при ЗДА; ferritin +
+  iron studies щорічно.
+
+  **Coexisting H. pylori:** тестування (UBT, stool antigen, біопсія
+  urease) при діагнозі; ерадикація per MAPS / Maastricht VI.
+
+  В Україні EGD з біопсіями широко доступна (НСЗУ покриває
+  симптоматичне обстеження; out-of-pocket ~2000-5000 грн).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-GASTRIC-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Chronic atrophic gastritis with extensive intestinal metaplasia
+      (OLGA III/IV or OLGIM III/IV) carries elevated gastric cancer
+      risk; EGD surveillance every 3 years with topographic biopsies
+      per the updated Sydney protocol is recommended; annual surveillance
+      for confirmed dysplasia or family history of gastric cancer."
+  - source_id: SRC-NCCN-NET-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Type 1 gastric neuroendocrine tumors arise in the setting of
+      autoimmune atrophic gastritis with hypergastrinemia. Endoscopic
+      resection is sufficient for lesions <1 cm; larger or refractory
+      lesions warrant EUS staging and consideration of antrectomy."
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не використовувати random біопсії замість Sydney-протоколу — топографічно-структуровані біопсії дають OLGA/OLGIM staging; random misses extent."
+  - "Не призначати TSH-супресивну дозу або інші endocrine-active терапії як cancer prevention при CAG — B12 + iron заміщення — стандарт supportive care, не prevention."
+  - "Не виконувати рутинну профілактичну гастректомію — ризик хірургії перевищує абсолютний рак-ризик навіть в OLGA III/IV."
+  - "Не покладатися лише на серологію (anti-parietal/intrinsic-factor antibodies, гастрин) для surveillance — гістологія — необхідна для OLGA/OLGIM staging."
+  - "Не пропускати тест на H. pylori — ерадикація зупиняє прогресію навіть якщо не реверсує встановлену атрофію."
+
+do_not_do_en:
+  - "Do not use random biopsies instead of Sydney protocol — topographically structured biopsies enable OLGA/OLGIM staging; random sampling misses extent."
+  - "Do not prescribe TSH-suppressive or other endocrine-active therapies as cancer prevention in CAG — B12 + iron replacement is supportive care, not prevention."
+  - "Do not perform routine prophylactic gastrectomy — surgical risk exceeds absolute cancer risk even at OLGA III/IV."
+  - "Do not rely on serology alone (anti-parietal/intrinsic-factor antibodies, gastrin) for surveillance — histology is required for OLGA/OLGIM staging."
+  - "Do not skip H. pylori testing — eradication arrests progression even if it does not reverse established atrophy."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — v0.3 chronic-condition prevention pilot (chronic atrophic
+  gastritis). Two-Co-Lead signoff queued. Type 1 gastric NET management
+  may eventually warrant a dedicated Indication on the DIS-GI-NET
+  algorithm; currently nested in this surveillance pathway.

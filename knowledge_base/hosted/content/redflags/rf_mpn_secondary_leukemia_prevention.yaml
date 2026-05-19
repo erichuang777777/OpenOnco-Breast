@@ -1,0 +1,163 @@
+id: RF-MPN-SECONDARY-LEUKEMIA-PREVENTION
+definition: >-
+  Myeloproliferative neoplasm (polycythemia vera [PV], essential
+  thrombocythemia [ET], or primary myelofibrosis [PMF]) per WHO 2022
+  criteria, OR a clinical phenotype suggestive of MPN (driver-mutation
+  positivity — JAK2 V617F, JAK2 exon 12, CALR exon 9, or MPL W515 —
+  with sustained myeloproliferative blood-count abnormality but not yet
+  meeting full WHO criteria) in an individual without a current
+  diagnosis of acute myeloid leukemia (AML) or post-MPN myelofibrosis.
+  MPN clones carry inherent risk of clonal evolution to higher-grade
+  myeloid neoplasia: cumulative risk of leukemic transformation
+  (sAML / blast-phase MPN) ~5% in PV, ~3% in ET, ~10-20% in PMF at
+  10-15 years; cumulative risk of progression from PV/ET to post-PV/
+  post-ET myelofibrosis ~10-15% at 15 years. Standard MPN management
+  reduces thrombosis (the dominant short-term mortality driver) but
+  does not abolish leukemic-transformation risk. Surveillance with CBC
+  + peripheral smear + bone marrow evaluation on cytopenia or blast
+  emergence is the standard secondary-prevention approach.
+  Prevention-persona RedFlag (§20 ratification 2026-05-18, v0.3
+  chronic-condition pilot).
+definition_ua: >-
+  Мієлопроліферативне новоутворення (поліцитемія вера [PV], essential
+  thrombocythemia [ET] або первинний мієлофіброз [PMF]) per WHO 2022
+  критеріями, АБО клінічний фенотип, що suggestive MPN (driver-mutation
+  позитивність — JAK2 V617F, JAK2 exon 12, CALR exon 9 або MPL W515 —
+  з постійною myeloproliferative blood-count абнормальністю, але ще не
+  задовольняє full WHO критерії) у пацієнта без поточного діагнозу
+  гострого мієлоїдного лейкозу (AML) або post-MPN мієлофіброзу. MPN
+  клон-носить inherent ризик clonal evolution до higher-grade myeloid
+  neoplasia: cumulative ризик лейкемічної трансформації (sAML /
+  blast-phase MPN) ~5% у PV, ~3% у ET, ~10-20% у PMF за 10-15 років;
+  cumulative ризик прогресії PV/ET до post-PV/post-ET мієлофіброзу
+  ~10-15% за 15 років. Стандартний MPN менеджмент знижує тромбоз
+  (домінуючий short-term mortality driver) але не abolish
+  leukemic-transformation ризик. Спостереження з CBC + peripheral
+  smear + bone marrow evaluation на cytopenia або blast emergence —
+  стандартний secondary-prevention підхід. Prevention-persona RedFlag
+  (ратифікація §20, 2026-05-18, v0.3 пілот chronic-condition).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "jak2_v617f_positive_without_confirmed_mpn_disease"
+      value: true
+    - finding: "calr_exon9_mutation_positive_without_confirmed_mpn_disease"
+      value: true
+    - finding: "mpl_w515_mutation_positive_without_confirmed_mpn_disease"
+      value: true
+    - finding: "mpn_phenotype_pre_who_criteria"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: chronic_condition
+
+# Cancer being prevented: secondary AML (sAML) arising from MPN clonal
+# evolution. Closest in-KB anchor is DIS-AML.
+# NOTE: this RF intentionally fires only on driver-mutation positivity
+# WITHOUT a confirmed MPN Disease entity in the patient profile.
+# Patients with confirmed DIS-PV / DIS-ET / DIS-PMF are managed via the
+# treatment-persona MPN algorithm; the §20 prevention route routes only
+# patients without a confirmed Disease. This RF therefore covers:
+#   - JAK2/CALR/MPL-positive patients with sustained blood-count
+#     abnormality not yet meeting WHO MPN criteria (pre-clinical MPN)
+#   - Driver-positive patients with concurrent clonal hematopoiesis
+#     features still under workup
+relevant_diseases:
+  - DIS-AML
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-MPN-2025
+  - SRC-NCCN-AML-2025
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.3 chronic-condition prevention pilot — MPN / secondary AML
+  prevention. Prevention-persona RedFlag (CHARTER §3 amended 2026-05-18
+  Path A, HCP-mediated). Fires when patient profile shows MPN-driver-
+  mutation positivity (JAK2 V617F, CALR exon 9, MPL W515) WITHOUT a
+  confirmed MPN Disease entity (DIS-PV, DIS-ET, DIS-PMF) AND no
+  confirmed AML or post-MPN MF. Engine routes to PreventionPlan with
+  2 tracks: CBC + smear q3-6mo + bone marrow on cytopenia/blast
+  emergence + JAK2/CALR/MPL allele-burden monitoring
+  (IND-MPN-SECONDARY-LEUKEMIA-PREVENTION-SURVEILLANCE) as standard;
+  hematology-driven observation with bone marrow only on cytopenia
+  trigger (IND-MPN-SECONDARY-LEUKEMIA-PREVENTION-OBSERVATION) as
+  alternative.
+
+  Engine design note: patients with confirmed DIS-PV / DIS-ET / DIS-PMF
+  are routed via the treatment-persona MPN management algorithm
+  (cytoreduction with hydroxyurea or ruxolitinib, aspirin for
+  thrombosis prevention, phlebotomy for PV, etc.) and do NOT enter the
+  §20 prevention path. This RF therefore covers the narrow set of
+  driver-mutation-positive patients in pre-MPN-criteria phase or those
+  whose MPN status is still under workup but who carry molecular
+  evidence of clonal myeloproliferation. Once a confirmed MPN Disease
+  entity is added to the patient profile, the prevention path
+  deactivates and treatment-persona management takes over per KSS §20.2.
+
+  Evidence base:
+    - **MPN leukemic transformation risk:** Cervantes et al. Blood 2009
+      (PV cohort, 10y sAML cumulative incidence ~3-5%); Tefferi et al.
+      Leukemia 2014 (ET cohort, 15y sAML ~3%); Cervantes et al. Blood
+      2009 (PMF cohort, 10y sAML ~10-20%). Risk factors: advanced age,
+      adverse cytogenetics, high-risk DIPSS / DIPSS-plus score in PMF.
+    - **JAK2 allele burden:** rising JAK2 V617F allele burden over
+      serial measurements correlates with increased risk of progression
+      to MF or sAML; not a routine clinical decision-driver but
+      research-supported surveillance metric.
+    - **Bone marrow surveillance:** indicated for new cytopenia,
+      circulating blasts on peripheral smear, splenomegaly progression,
+      or unexplained constitutional symptoms — NOT routine scheduled
+      bone marrow in stable MPN. NCCN-MPN 2025 emphasizes symptom-
+      and cytopenia-driven bone marrow evaluation.
+    - **Allo-HCT consideration:** post-MPN sAML carries poor prognosis
+      with conventional AML chemotherapy; allogeneic HCT is the only
+      potentially curative option. Early identification of MPN
+      progression enables HCT consideration before frank leukemic
+      transformation.
+
+  Pediatric MPN is rare; adult MPN management framework applies. Family
+  screening (JAK2 V617F testing of first-degree relatives) is NOT
+  routinely indicated — most JAK2 V617F is somatic; familial MPN
+  clusters are rare and managed via hematology-genetics consultation.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption.
+notes_ua: >
+  v0.3 пілот prevention chronic-condition — MPN / secondary AML
+  prevention. Prevention-persona RedFlag (CHARTER §3 поправка
+  2026-05-18). Спрацьовує коли профіль пацієнта показує MPN-driver-
+  mutation позитивність (JAK2 V617F, CALR exon 9, MPL W515) БЕЗ
+  підтвердженого MPN Disease entity (DIS-PV, DIS-ET, DIS-PMF) ТА
+  відсутнього підтвердженого AML або post-MPN MF.
+
+  Engine design note: пацієнти з підтвердженим DIS-PV / DIS-ET /
+  DIS-PMF маршрутизуються через treatment-persona MPN management
+  алгоритм (cytoreduction з hydroxyurea або ruxolitinib, аспірин для
+  thrombosis prevention, phlebotomy для PV, тощо) і НЕ входять у §20
+  prevention path. Цей RF покриває driver-mutation-позитивних
+  пацієнтів у pre-MPN-criteria фазі.
+
+  Доказова база: cumulative sAML incidence ~3-5% у PV (Cervantes Blood
+  2009); ~3% у ET (Tefferi Leukemia 2014); ~10-20% у PMF (Cervantes
+  Blood 2009). Bone marrow surveillance — для нової cytopenia,
+  circulating blasts, splenomegaly progression, не routine. Allo-HCT
+  — єдина potentially curative опція для post-MPN sAML.
+
+  Це STUB, очікує підпис двох Clinical Co-Lead за §6.1 dev-mode
+  exemption.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+draft: true
