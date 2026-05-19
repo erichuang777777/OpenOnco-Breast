@@ -1,0 +1,22 @@
+id: BIO-TSC2-GERMLINE
+names:
+  preferred: "TSC2 (tuberin) germline pathogenic variant"
+  ukrainian: "TSC2 (туберин) germline патогенний варіант"
+  english: "TSC2 germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: TSC2
+  gene_hugo_id: HGNC:12363
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources: [SRC-NCCN-CNS-2025]
+last_reviewed: "2026-05-18"
+notes: "TSC2 germline — drives Tuberous Sclerosis Complex (TSC); typically more severe phenotype than TSC1. Same tumor spectrum: SEGA, renal AML, LAM, cardiac rhabdomyomas, cortical tubers + skin findings (angiofibromas, shagreen patch). mTOR inhibitors (everolimus, sirolimus) active. PKD1 contiguous-gene deletion in some carriers → early-onset polycystic kidney disease. STUB pending two-Co-Lead signoff."
+notes_ua: "TSC2 germline — драйвер туберозного склерозу, зазвичай тяжчий за TSC1. Той самий спектр (SEGA, AML, LAM). mTOR-інгібітори активні."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_germline_batch3
+draft_revision: 1

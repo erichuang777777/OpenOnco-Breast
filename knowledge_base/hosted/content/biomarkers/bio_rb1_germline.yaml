@@ -1,0 +1,23 @@
+id: BIO-RB1-GERMLINE
+names:
+  preferred: "RB1 germline pathogenic variant"
+  ukrainian: "RB1 germline патогенний варіант"
+  english: "RB1 germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: RB1
+  gene_hugo_id: HGNC:9884
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+related_biomarkers: [BIO-RB1]
+sources: [SRC-NCCN-PEDIATRIC-SARCOMA]
+last_reviewed: "2026-05-18"
+notes: "RB1 germline — drives hereditary retinoblastoma (~40% of all retinoblastoma; bilateral/multifocal). Mean age at diagnosis ~1 year. Second-primary risk lifelong: osteosarcoma (especially after radiotherapy), soft-tissue sarcoma, melanoma, SCLC. Avoid external-beam radiation when feasible. Surveillance: ophthalmologic exam under anaesthesia every 1-3 months in infancy; long-term sarcoma surveillance. STUB pending two-Co-Lead signoff."
+notes_ua: "RB1 germline — спадкова ретинобластома (двостороння/мультифокальна, ~1 рік). Довічний ризик вторинних пухлин (остеосаркома, м'якотканинна саркома, меланома, ДРМЛ). Уникати променевої терапії."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_germline_batch3
+draft_revision: 1

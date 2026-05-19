@@ -1,0 +1,22 @@
+id: BIO-MSH3-GERMLINE
+names:
+  preferred: "MSH3 germline biallelic pathogenic variants"
+  ukrainian: "MSH3 germline біалельні патогенні варіанти"
+  english: "MSH3 germline pathogenic variant (biallelic)"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: MSH3
+  gene_hugo_id: HGNC:7326
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources: [SRC-NCCN-GENETIC-FAMILIAL-CRC-2025]
+last_reviewed: "2026-05-18"
+notes: "MSH3 germline biallelic — drives MSH3-associated polyposis (autosomal recessive). MutSbeta mismatch-repair component; biallelic loss → elevated-microsatellite-alterations-at-selected-tetranucleotide-repeats (EMAST) phenotype rather than classic MSI-H. Adenomatous polyposis + CRC (typically attenuated, later-onset than FAP), with reported duodenal adenomas, gastric, and astrocytomas. Distinct from Lynch syndrome (heterozygous MMR genes). Heterozygotes near population risk. Surveillance under NCCN polyposis schedule. STUB pending two-Co-Lead signoff."
+notes_ua: "MSH3 germline біалельний — MSH3-полiпозний синдром (аутосомно-рецесивний). MutSbeta-компонент MMR; EMAST-фенотип. Поліпоз + КРР (атенуйований). Відмінний від Lynch."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_germline_batch3
+draft_revision: 1

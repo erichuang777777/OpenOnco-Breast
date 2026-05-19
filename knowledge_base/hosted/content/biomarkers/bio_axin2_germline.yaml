@@ -1,0 +1,22 @@
+id: BIO-AXIN2-GERMLINE
+names:
+  preferred: "AXIN2 germline pathogenic variant"
+  ukrainian: "AXIN2 germline патогенний варіант"
+  english: "AXIN2 germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: AXIN2
+  gene_hugo_id: HGNC:904
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources: [SRC-NCCN-GENETIC-FAMILIAL-CRC-2025]
+last_reviewed: "2026-05-18"
+notes: "AXIN2 germline — drives familial colorectal cancer with oligodontia (and ectodermal-dysplasia features: sparse hair, nail dysplasia). Wnt-pathway negative regulator; loss → constitutive beta-catenin signaling. Penetrance + spectrum still being defined; reported CRC, breast, gastric. Surveillance under NCCN colonoscopic schedule for high-risk CRC carriers. STUB pending two-Co-Lead signoff."
+notes_ua: "AXIN2 germline — сімейний КРР з олігодонтією (ектодермальна дисплазія). Wnt-сигнальний шлях. Спектр пухлин: КРР, шлунок, РМЗ. Колоноскопічний нагляд за NCCN."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_germline_batch3
+draft_revision: 1

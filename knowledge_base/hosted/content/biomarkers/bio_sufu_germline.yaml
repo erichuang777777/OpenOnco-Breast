@@ -1,0 +1,22 @@
+id: BIO-SUFU-GERMLINE
+names:
+  preferred: "SUFU germline pathogenic variant"
+  ukrainian: "SUFU germline патогенний варіант"
+  english: "SUFU germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: SUFU
+  gene_hugo_id: HGNC:16466
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources: [SRC-NCCN-CNS-2025]
+last_reviewed: "2026-05-18"
+notes: "SUFU germline — drives Gorlin-syndrome variant with markedly higher pediatric medulloblastoma risk (~33%, SHH-subtype, often <3 years) compared with PTCH1-Gorlin (~5%). Lower BCC burden than PTCH1. Other features overlap NBCCS (jaw keratocysts may be less prevalent). AVOID craniospinal radiation when feasible — drives second primaries / treatment-related BCCs. Surveillance: brain MRI every 3-4 months in infants/young children. STUB pending two-Co-Lead signoff."
+notes_ua: "SUFU germline — варіант Gorlin з суттєво вищим ризиком дитячої медулобластоми (~33%, SHH). УНИКАТИ кранiospinal променевої терапії. МРТ головного мозку кожні 3-4 міс у малюків."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_germline_batch3
+draft_revision: 1

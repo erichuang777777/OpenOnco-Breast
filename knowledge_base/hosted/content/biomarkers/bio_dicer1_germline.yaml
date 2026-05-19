@@ -1,0 +1,22 @@
+id: BIO-DICER1-GERMLINE
+names:
+  preferred: "DICER1 germline pathogenic variant"
+  ukrainian: "DICER1 germline патогенний варіант"
+  english: "DICER1 germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: DICER1
+  gene_hugo_id: HGNC:17098
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources: [SRC-NCCN-PEDIATRIC-SARCOMA]
+last_reviewed: "2026-05-18"
+notes: "DICER1 germline — drives DICER1 syndrome. miRNA biogenesis defect. Spectrum: pleuropulmonary blastoma (PPB, type I/II/III pediatric), ovarian Sertoli-Leydig cell tumor, multinodular goitre / differentiated thyroid carcinoma, cystic nephroma, embryonal rhabdomyosarcoma (cervix/uterus), ciliary-body medulloepithelioma, pituitary blastoma, pineoblastoma. Surveillance: chest CT (infancy), thyroid US, pelvic US, eye exams. STUB pending two-Co-Lead signoff."
+notes_ua: "DICER1 germline — драйвер DICER1 syndrome. Спектр: плевропульмональна бластома (дитяча), оваріальна пухлина Sertoli-Leydig, мультинодулярний зоб/диференційований РЩЗ, кістозна нефрома, RMS шийки матки."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_germline_batch3
+draft_revision: 1
