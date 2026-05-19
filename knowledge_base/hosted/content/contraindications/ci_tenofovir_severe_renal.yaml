@@ -1,0 +1,59 @@
+id: CI-TENOFOVIR-SEVERE-RENAL
+severity: relative
+trigger:
+  type: lab_value
+  conditions:
+    - patient_condition: "Estimated creatinine clearance (Cockcroft-Gault) <30 mL/min and not on chronic hemodialysis (for TAF)"
+    - patient_condition: "Estimated creatinine clearance <50 mL/min for TDF (requires dose adjustment); <10 mL/min off-dialysis = avoid"
+    - patient_condition: "Active Fanconi syndrome or proximal renal tubular dysfunction attributable to tenofovir"
+  logic: OR
+
+description: >
+  Tenofovir (TDF and TAF) is renally eliminated; in severe renal impairment
+  it accumulates and may cause or worsen proximal tubular dysfunction,
+  Fanconi syndrome, and acute kidney injury. TDF carries a higher renal-
+  toxicity signal than TAF due to higher systemic exposure. For HBV
+  prevention in patients with severe renal impairment, switching to
+  renally-adjusted entecavir (or accepting TAF with vigilant monitoring
+  if HIV co-infection mandates ART continuity) is generally preferred.
+description_ua: >
+  Тенофовір (TDF і TAF) виводиться нирками; при важкій нирковій
+  недостатності він накопичується і може спричинити або погіршити
+  проксимальну тубулярну дисфункцію, синдром Фанконі та гостре
+  ниркове ушкодження. TDF має вищий сигнал нефротоксичності, ніж TAF.
+  Для профілактики HBV у пацієнтів з важкою нирковою недостатністю
+  переважним є перехід на ентекавір з нирково-корегованою дозою.
+
+alternative_actions:
+  - "Switch to entecavir with CrCl-adjusted dosing (0.25 mg q24h for CrCl 30-49; 0.15 mg q24h for CrCl 10-29; 0.05 mg q24h for CrCl <10 / HD)"
+  - "If HIV co-infection demands tenofovir continuity, prefer TAF over TDF and intensify renal monitoring (serum creatinine + urine ACR + serum phosphate q3 months)"
+  - "Avoid concurrent nephrotoxins (NSAIDs, aminoglycosides, IV contrast); manage hypertension and diabetes aggressively"
+  - "Nephrology consult before initiating tenofovir at CrCl <30; document risk-benefit if tenofovir cannot be avoided"
+
+affects_drugs:
+  - DRUG-TENOFOVIR-DF
+  - DRUG-TENOFOVIR-AF
+  - DRUG-BICTEGRAVIR-EMTRICITABINE-TENOFOVIR-AF
+affects_regimens:
+  - REG-HBV-TENOFOVIR-AF
+  - REG-HIV-BIKTARVY
+affects_indications:
+  - IND-CHRONIC-HBV-PREVENTION-ANTIVIRAL
+  - IND-CHRONIC-HIV-PREVENTION-ART
+  - IND-CHRONIC-HIV-HBV-COINFECTION-PREVENTION-TENOFOVIR-ART
+
+sources:
+  - SRC-AASLD-HBV-2024
+  - SRC-NIH-AIDS-2024
+
+last_reviewed: "2026-05-18"
+notes: >
+  AASLD 2024 + EASL 2025 both endorse entecavir as the preferred HBV
+  antiviral in CrCl <30 (not on HD). TAF retains a renal-safety margin
+  over TDF and is acceptable down to CrCl 15 mL/min per FDA labeling, but
+  not below 15 off-dialysis. Biktarvy is not recommended below CrCl 30
+  (manufacturer + DHHS). "Severe renal impairment" here = CrCl <30 by
+  Cockcroft-Gault, the standard threshold across NRTI labels. Relative
+  severity (not absolute): risk/benefit may still favor tenofovir if no
+  alternative covers both HBV and HIV simultaneously — decide with
+  nephrology + ID input.

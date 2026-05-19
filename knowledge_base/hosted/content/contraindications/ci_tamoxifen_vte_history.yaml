@@ -1,0 +1,61 @@
+id: CI-TAMOXIFEN-VTE-HISTORY
+severity: absolute
+trigger:
+  type: patient_condition
+  conditions:
+    - patient_condition: "Prior deep vein thrombosis (DVT) — unprovoked or provoked, any anatomical site"
+    - patient_condition: "Prior pulmonary embolism (PE)"
+    - patient_condition: "Active VTE on therapeutic anticoagulation"
+    - patient_condition: "Known high-risk thrombophilia (homozygous Factor V Leiden, antiphospholipid syndrome, antithrombin deficiency)"
+  logic: OR
+
+description: >
+  Tamoxifen for breast-cancer chemoprevention is absolutely contraindicated
+  in patients with prior DVT or PE. Tamoxifen raises VTE risk ~2-3× baseline
+  (NSABP P-1, IBIS-I), and in chemoprevention — where the indication is
+  risk-reduction in healthy women, not treatment of cancer — the
+  benefit-harm balance does not justify exposure in prior-VTE patients.
+  Postmenopausal candidates should pivot to an aromatase inhibitor;
+  premenopausal candidates without acceptable alternatives may consider
+  non-pharmacologic risk reduction (enhanced surveillance, risk-reducing
+  surgery in BRCA carriers).
+description_ua: >
+  Тамоксифен для хіміопрофілактики раку молочної залози абсолютно
+  протипоказаний при попередніх DVT або PE. Тамоксифен підвищує ризик
+  VTE у ~2-3 рази (NSABP P-1, IBIS-I), а у профілактиці — де показання
+  є зниженням ризику у здорових жінок — баланс користь-ризик не
+  виправдовує експозицію. Постменопаузним кандидатам слід перейти на
+  ароматазний інгібітор; пременопаузні без альтернатив — розглянути
+  немедикаментозні стратегії (посилений нагляд, профілактична хірургія
+  у носіїв BRCA).
+
+alternative_actions:
+  - "Postmenopausal: switch to anastrozole 1 mg daily × 5 years (IBIS-II) or exemestane 25 mg daily × 5 years (MAP.3) — no VTE excess vs placebo"
+  - "Premenopausal with VTE history: chemoprevention is generally NOT recommended; pivot to enhanced surveillance (annual breast MRI + mammography for BRCA carriers / dense-breast high-risk)"
+  - "BRCA1/2 carriers with VTE history: discuss risk-reducing mastectomy (RRM) and risk-reducing salpingo-oophorectomy (RRSO) with surgical oncology + genetics"
+  - "Document risk-benefit conversation; obtain hematology consult if thrombophilia status uncertain"
+  - "Raloxifene (STAR P-2) is NOT a safe alternative — also a SERM with similar VTE signal"
+
+affects_drugs:
+  - DRUG-TAMOXIFEN
+affects_regimens:
+  - REG-TAMOXIFEN-CHEMOPREVENTION
+affects_indications:
+  - IND-IATROGENIC-TAMOXIFEN-ENDOMETRIAL-PREVENTION-OBSERVATION
+  - IND-IATROGENIC-TAMOXIFEN-ENDOMETRIAL-PREVENTION-SURVEILLANCE
+
+sources:
+  - SRC-NCCN-BREAST-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  NCCN Breast Cancer Risk Reduction (2025) lists prior VTE as an
+  absolute contraindication to SERM chemoprevention (tamoxifen,
+  raloxifene). Same VTE prohibition applies during tamoxifen
+  treatment for established breast cancer when used adjuvantly,
+  though the risk-benefit threshold differs (treatment vs prevention).
+  Distinct from family history of VTE without personal event —
+  thrombophilia panel may be reasonable, but family history alone is
+  not an absolute contraindication. Hormone replacement therapy
+  during chemoprevention is separately contraindicated (additive VTE
+  risk + counters tamoxifen mechanism).

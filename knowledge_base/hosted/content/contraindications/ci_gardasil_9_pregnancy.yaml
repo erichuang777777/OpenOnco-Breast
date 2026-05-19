@@ -1,0 +1,54 @@
+id: CI-GARDASIL-9-PREGNANCY
+severity: relative
+trigger:
+  type: pregnancy
+  conditions:
+    - patient_condition: "Confirmed pregnancy at any gestational age"
+    - patient_condition: "Positive serum/urine β-hCG within scheduled dose window"
+  logic: OR
+
+description: >
+  Gardasil-9 (HPV-9 nonavalent vaccine) is not recommended during pregnancy.
+  This is a precautionary contraindication rather than evidence of harm —
+  pre-licensure trials excluded pregnant participants and post-marketing
+  registries (Merck Pregnancy Registry, VAERS) have not signaled
+  teratogenicity from inadvertent vaccination, but the ACIP/CDC and FDA
+  labeling recommend deferring remaining doses until after pregnancy
+  resolves. Inadvertent vaccination does not require pregnancy termination
+  or intensified prenatal surveillance.
+description_ua: >
+  Gardasil-9 (нонавалентна ВПЛ-вакцина) не рекомендується під час
+  вагітності. Це профілактичне протипоказання, а не доказ шкоди —
+  до-реєстраційні дослідження виключали вагітних, але пост-маркетингові
+  реєстри не виявили сигналу тератогенності. ACIP/CDC та FDA рекомендують
+  відкласти решту доз до завершення вагітності. Випадкове введення не
+  потребує переривання вагітності.
+
+alternative_actions:
+  - "Defer remaining doses of the HPV vaccine series until post-partum; document current dose count for completion later"
+  - "Confirm pregnancy status before each dose in women of reproductive potential (verbal screen ± β-hCG if cycle uncertain)"
+  - "Lactation is NOT a contraindication — vaccination is acceptable in breastfeeding women per ACIP"
+  - "If inadvertent dose given during pregnancy → reassure patient; report to manufacturer pregnancy registry (Merck) and complete the series ≥6 weeks postpartum"
+  - "Maintain cervical-cancer screening per age-appropriate schedule independent of vaccination status"
+
+affects_drugs:
+  - DRUG-GARDASIL-9
+affects_regimens:
+  - REG-HPV-GARDASIL-9
+affects_indications:
+  - IND-CHRONIC-HPV-PREVENTION-VACCINATION-SCREENING
+
+sources:
+  - SRC-NCCN-CERVICAL-2025
+  - SRC-NCCN-ANAL-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  Relative (not absolute) severity reflects ACIP framing: defer rather
+  than prohibit. No teratogenicity signal from Merck Pregnancy Registry
+  data through 2023. Same deferral logic applies to bivalent and
+  quadrivalent HPV vaccines (now discontinued in most markets) and to
+  HPV vaccination in immediate post-partum period — vaccinate as soon as
+  feasible postpartum to close the prevention window. Distinct from
+  immunocompromise, which is NOT a contraindication and may benefit from
+  full 3-dose series even at younger ages.

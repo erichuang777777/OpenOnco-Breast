@@ -1,0 +1,52 @@
+id: CI-ENTECAVIR-HIV-MONOTHERAPY
+severity: absolute
+trigger:
+  type: drug_drug_interaction
+  conditions:
+    - patient_condition: "HIV co-infection (HIV-1 or HIV-2) — known positive serology or detectable HIV RNA"
+    - patient_condition: "Untreated or undisclosed HIV status in patient initiating HBV monotherapy"
+  logic: OR
+
+description: >
+  Entecavir monotherapy is absolutely contraindicated in HBV-HIV co-infected
+  patients. Entecavir has weak intrinsic anti-HIV activity that exerts
+  subtherapeutic selection pressure on HIV-1, driving emergence of M184V
+  resistance in HIV reverse transcriptase and compromising future NRTI-
+  based ART efficacy. HIV status must be confirmed before initiating any
+  HBV monotherapy; co-infected patients require full combination ART
+  (tenofovir + emtricitabine backbone) that covers both viruses.
+description_ua: >
+  Ентекавір у монотерапії абсолютно протипоказаний пацієнтам з HBV-ВІЛ
+  ко-інфекцією. Ентекавір має слабку анти-ВІЛ активність, яка створює
+  субтерапевтичний тиск селекції на ВІЛ-1, призводячи до появи мутації
+  M184V резистентності та компрометації майбутньої NRTI-АРТ. Статус ВІЛ
+  має бути підтверджений до початку будь-якої HBV-монотерапії; ко-
+  інфіковані пацієнти потребують повної комбінованої АРТ (тенофовір +
+  емтрицитабін).
+
+alternative_actions:
+  - "Test HIV (4th-generation Ag/Ab combo + confirmatory) before any chronic HBV monotherapy"
+  - "If HIV co-infection confirmed → switch to TDF-/TAF-based combination ART (e.g., Biktarvy, Symtuza) — covers both HIV and HBV with high genetic barrier"
+  - "Co-manage with infectious-disease specialist; never use entecavir, lamivudine, or telbivudine as HBV-only therapy in HIV-positive patients"
+  - "Monitor HIV-RNA + CD4 + HBV-DNA after ART initiation; watch for hepatic flare during immune reconstitution (first 8-12 weeks)"
+
+affects_drugs:
+  - DRUG-ENTECAVIR
+affects_regimens:
+  - REG-HBV-ENTECAVIR
+affects_indications:
+  - IND-CHRONIC-HBV-PREVENTION-ANTIVIRAL
+
+sources:
+  - SRC-AASLD-HBV-2024
+  - SRC-NIH-AIDS-2024
+
+last_reviewed: "2026-05-18"
+notes: >
+  AASLD 2024 HBV guidance and DHHS/NIH AIDSinfo 2024 ART guidelines both
+  explicitly contraindicate entecavir monotherapy in HIV-positive patients
+  for the resistance-selection reason above. Same prohibition applies to
+  lamivudine and telbivudine monotherapy. TDF and TAF are dual-active
+  against HBV+HIV and acceptable only when given as part of complete ART
+  (≥3 active agents). HIV testing is a prerequisite step in any chronic
+  HBV-prevention workup.

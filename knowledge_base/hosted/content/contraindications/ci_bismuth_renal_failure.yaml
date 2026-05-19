@@ -1,0 +1,56 @@
+id: CI-BISMUTH-RENAL-FAILURE
+severity: relative
+trigger:
+  type: lab_value
+  conditions:
+    - patient_condition: "Estimated creatinine clearance (Cockcroft-Gault) <30 mL/min"
+    - patient_condition: "End-stage renal disease on chronic dialysis"
+    - patient_condition: "Acute kidney injury at workup (baseline serum creatinine elevated and not yet stratified)"
+  logic: OR
+
+description: >
+  Bismuth subcitrate is partially renally excreted; in severe renal
+  impairment bismuth accumulates and may precipitate reversible bismuth
+  encephalopathy (myoclonic ataxia, confusion, dysarthria) typically
+  after weeks of exposure. Because H. pylori eradication regimens are
+  short-course (14 days), absolute risk is low — but in CrCl <30 the
+  margin is narrow and a non-bismuth alternative is preferred when
+  resistance patterns allow.
+description_ua: >
+  Бісмуту субцитрат частково виводиться нирками; при важкій нирковій
+  недостатності бісмут накопичується і може спричинити зворотну
+  бісмутову енцефалопатію (міоклонічну атаксію, сплутаність, дизартрію)
+  після кількох тижнів експозиції. Оскільки ерадикація H. pylori —
+  короткий курс (14 днів), абсолютний ризик низький, але при CrCl <30
+  переважно використати небісмутову альтернативу.
+
+alternative_actions:
+  - "If clarithromycin resistance <15% locally → use clarithromycin triple (PPI + amoxicillin + clarithromycin × 14 d) — no bismuth"
+  - "If clarithromycin resistance ≥15% (most of Eastern Europe, Ukraine included) → use levofloxacin triple (PPI + amoxicillin + levofloxacin × 14 d) or rifabutin triple — avoid in severe renal impairment too"
+  - "If bismuth regimen is the only option → consult nephrology, ensure no AKI, monitor for neurologic symptoms daily, ensure adequate hydration"
+  - "Confirm eradication by urea-breath test or stool antigen ≥4 weeks after completion, ≥2 weeks off PPI"
+  - "Avoid extending bismuth course beyond 14 days; never combine with other bismuth-containing OTC products (Pepto-Bismol)"
+
+affects_drugs:
+  - DRUG-BISMUTH-SUBCITRATE
+affects_regimens:
+  - REG-HP-BISMUTH-QUADRUPLE
+affects_indications:
+  - IND-H-PYLORI-PREVENTION-ERADICATION
+
+sources:
+  - SRC-MAASTRICHT-VI-FLORENCE-2022
+  - SRC-AGA-H-PYLORI-2024
+  - SRC-ACG-H-PYLORI-2024
+
+last_reviewed: "2026-05-18"
+notes: >
+  Maastricht VI / Florence Consensus 2022 and ACG 2024 both flag severe
+  renal impairment as a relative contraindication for bismuth-quadruple
+  therapy. Bismuth subcitrate is the formulation used in most European
+  bismuth-quadruple regimens; bismuth subsalicylate (Pepto-Bismol) is
+  more common in North American formulations with similar accumulation
+  risk. Encephalopathy is reversible after discontinuation — symptoms
+  resolve over weeks. Distinct from tetracycline component, which is
+  also renally cleared and warrants dose adjustment but is not the
+  primary driver of this contraindication.

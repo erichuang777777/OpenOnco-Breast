@@ -1,0 +1,61 @@
+id: CI-VARENICLINE-PSYCHIATRIC-HISTORY
+severity: relative
+trigger:
+  type: patient_condition
+  conditions:
+    - patient_condition: "Active major depressive disorder with current suicidal ideation"
+    - patient_condition: "Prior suicide attempt within the past 12 months"
+    - patient_condition: "Active uncontrolled psychotic disorder (schizophrenia, schizoaffective, bipolar I in mood-incongruent state)"
+    - patient_condition: "Psychiatric hospitalization in the past 6 months for self-harm or severe mood instability"
+  logic: OR
+
+description: >
+  Varenicline historically carried an FDA boxed warning for serious
+  neuropsychiatric events (mood change, suicidal ideation/behavior,
+  agitation, homicidal ideation), removed in 2016 after the EAGLES trial
+  showed no excess vs placebo in patients with stable psychiatric
+  conditions. The warning remains in the product label as a precaution.
+  In patients with ACTIVE, unstable, or recently decompensated psychiatric
+  conditions — distinct from stable disease on treatment — varenicline is
+  a relative contraindication: defer until psychiatric stabilization or
+  select a different smoking-cessation pharmacotherapy.
+description_ua: >
+  Варенікліну історично мав FDA boxed warning щодо серйозних
+  нейропсихіатричних подій (зміни настрою, суїцидальні думки/поведінка),
+  знятий у 2016 році після дослідження EAGLES, яке не показало
+  надлишку у пацієнтів зі стабільною психіатричною патологією.
+  Попередження залишається в інструкції як обережність. У пацієнтів з
+  АКТИВНИМИ, нестабільними або нещодавно декомпенсованими психіатричними
+  станами — на відміну від стабільних — варенікліну є відносним
+  протипоказанням: відкласти до стабілізації або обрати іншу
+  фармакотерапію.
+
+alternative_actions:
+  - "Stabilize psychiatric condition first (4-8 weeks of stable mood/treatment); reassess varenicline eligibility with psychiatry input"
+  - "Alternative cessation pharmacotherapy: nicotine replacement therapy (patch + short-acting NRT combo) — no neuropsychiatric signal, first-line in this population"
+  - "Alternative: bupropion SR (with same psychiatric-stability caveat; class effect on seizure threshold, contraindicated in eating disorders / seizure history)"
+  - "Combine pharmacotherapy with structured behavioral support: motivational interviewing + quitline referral + brief weekly check-ins during first 4 weeks"
+  - "If varenicline used in stable psychiatric patient → weekly mood checks (PHQ-9 ± C-SSRS) for first 8 weeks; explicit safety plan with psychiatric provider before initiation"
+
+affects_drugs:
+  - DRUG-VARENICLINE
+affects_regimens:
+  - REG-VARENICLINE-12W
+affects_indications:
+  - IND-LIFESTYLE-TOBACCO-PREVENTION-CESSATION
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  EAGLES (Anthenelli 2016, NEJM) re-evaluated varenicline + bupropion vs
+  NRT + placebo in patients with and without psychiatric history and
+  found no significant excess of neuropsychiatric events; this drove
+  the 2016 FDA boxed-warning removal. The label still includes a
+  warning section, and clinical practice retains relative caution in
+  unstable disease. Distinct from active suicidal ideation, where any
+  smoking-cessation pharmacotherapy should be deferred and crisis
+  intervention prioritized. Patients with stable depression on
+  effective antidepressant therapy are NOT excluded — they may be
+  treated with standard monitoring.
