@@ -1,0 +1,137 @@
+id: ALGO-BRCAPRO
+applicable_to_disease: DIS-BREAST
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention. Anchored to DIS-BREAST because BRCA1/2
+# carrier-probability prediction is dominated by breast-cancer pedigree
+# input + breast-cancer output. Reach extends to DIS-OVARIAN, DIS-PDAC,
+# DIS-PROSTATE (HBOC spectrum).
+purpose: >
+  BRCAPRO Bayesian carrier-probability calculator (Berry, Parmigiani et
+  al. CancerGene / BayesMendel suite). Computes posterior probability
+  that an individual carries a BRCA1 or BRCA2 germline pathogenic
+  variant, given their pedigree of breast / ovarian / pancreatic /
+  prostate cancer cases + their ages-at-diagnosis. Uses published
+  BRCA1 + BRCA2 penetrance functions + Mendelian inheritance probabilities
+  + allele-frequency priors (Ashkenazi Jewish + non-Ashkenazi separately
+  calibrated).
+
+  Threshold of ≥10% carrier probability is the NCCN testing-recommendation
+  cutoff; ≥2.5% is the broader ASCO / ACMG suggested-testing threshold.
+  Continuous score allows finer stratification than the binary Manchester
+  ≥15 / NCCN bright-line / Amsterdam-style criteria.
+
+  BRCAPRO uses only family pedigree as input (no PRS, no density, no
+  hormonal/reproductive factors); for integrated risk including non-
+  genetic factors use BOADICEA v6 (ALGO-BOADICEA-V6-BREAST-OVARIAN) or
+  Tyrer-Cuzick v8 (ALGO-TYRER-CUZICK-V8-BREAST).
+
+output_indications:
+  - IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Genetic counseling + germline BRCA1/2 panel referral is the first
+# action within the surveillance pathway. Algorithm routes only to the
+# surveillance Indication to satisfy the algorithm-routing contract.
+
+decision_tree:
+  - step: 1
+    # High-confidence carrier threshold ≥20% — strongly elevated
+    # posterior probability. Common in pedigrees with multiple
+    # early-onset breast + ovarian + Ashkenazi ancestry signal.
+    evaluate:
+      any_of:
+        - condition: "BRCAPRO combined BRCA1 + BRCA2 carrier probability ≥20%"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "BRCAPRO ≥20% — strong indication for germline BRCA1/2 testing + extended HBOC panel (PALB2/CHEK2/ATM/RAD51C/RAD51D/BARD1). Genetic counseling. Diagnostic yield ~30-40% at this threshold."
+    if_false:
+      next_step: 2
+  - step: 2
+    # NCCN testing-recommendation threshold ≥10%.
+    evaluate:
+      any_of:
+        - condition: "BRCAPRO combined BRCA1 + BRCA2 carrier probability ≥10%"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "BRCAPRO ≥10% — NCCN testing-recommendation threshold met. Refer for genetic counseling + germline BRCA1/2 (or extended HBOC panel) testing. Diagnostic yield ~15-20% at this threshold."
+    if_false:
+      next_step: 3
+  - step: 3
+    # ASCO / ACMG broader-suggested threshold ≥2.5% — modern guidelines
+    # increasingly support panel testing at this lower bar given
+    # falling lab costs.
+    evaluate:
+      any_of:
+        - condition: "BRCAPRO combined BRCA1 + BRCA2 carrier probability ≥2.5%"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "BRCAPRO ≥2.5% — broader testing-suggested threshold (ASCO / ACMG 2018+). Genetic counseling for shared-decision testing. Diagnostic yield ~5-10% at this threshold. Patient preference + cost considerations weigh into shared-decision. Default-route to enhanced empirical-surveillance pathway if testing declined."
+    if_false:
+      result: false
+      notes: "BRCAPRO <2.5% — low-to-average BRCA carrier probability. General-population screening per USPSTF (mammography q2y age 50-74 per 2024 update). Re-evaluate with BRCAPRO if new family-history events occur. Consider Tyrer-Cuzick v8 (general-population breast risk) or BOADICEA v6 (integrated risk + PRS) for broader risk stratification independent of BRCA-carrier probability."
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-NCCN-BREAST-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding BRCAPRO Bayesian
+  carrier-probability calculator (Berry DA, Parmigiani G et al.
+  Probability of carrying a mutation of breast-ovarian cancer gene
+  BRCA1 based on family history. J Natl Cancer Inst 1997;89:227-238.
+  PMID 9017003; Parmigiani G, Berry DA et al. Determining carrier
+  probabilities for breast cancer-susceptibility genes BRCA1 and
+  BRCA2. Am J Hum Genet 1998;62:145-158. PMID 9443863 for the
+  foundational Bayesian framework; Mazzola E et al. Recent BRCAPRO
+  upgrades significantly improve risk prediction. Cancer Epidemiol
+  Biomarkers Prev 2014;23:1689-1695. PMID 24895407 for the BRCAPRO
+  v6 upgrade including age-specific allele-frequency penetrance and
+  ovarian-cancer modeling). Primary-paper Source entities (SRC-BERRY-
+  1997-BRCAPRO, SRC-PARMIGIANI-1998-BAYESMENDEL, SRC-MAZZOLA-2014-
+  BRCAPRO-V6) are v0.2-B authoring backlog.
+
+  Anchored to DIS-BREAST; reach: DIS-OVARIAN, DIS-PDAC, DIS-PROSTATE.
+
+  Performance characteristics (Mazzola 2014 validation):
+    - AUC ~0.69 for BRCA1/2 carrier-detection
+    - Sensitivity at ≥10% threshold: ~75%
+    - Specificity at ≥10% threshold: ~70%
+    - Calibration excellent in Ashkenazi Jewish populations + good
+      in non-Ashkenazi European; less reliable in non-European
+      ancestry (BayesMendel team publishes ancestry-specific
+      calibration updates)
+
+  Model availability:
+    - Part of the CancerGene suite (CagneR, BayesMendel) —
+      academic free use from https://projects.iq.harvard.edu/bayesmendel/
+    - Open-source R package (`BayesMendel`) — algorithmic
+      transparency advantage over BOADICEA closed-source delivery
+    - No public REST API; algorithm here is a declarative scoring
+      rule referencing standardized BRCAPRO outputs, not the
+      calculator itself
+
+  Comparison vs other BRCA models:
+    - vs Manchester (ALGO-MANCHESTER-BRCA): BRCAPRO is fully
+      probabilistic vs Manchester's points-based discrete scoring.
+      Manchester is faster to compute by hand; BRCAPRO needs the
+      software.
+    - vs BOADICEA v6 (ALGO-BOADICEA-V6-BREAST-OVARIAN): BOADICEA
+      v6 integrates PRS + density + hormonal/reproductive factors;
+      BRCAPRO is pedigree-only. BOADICEA generally outperforms in
+      contemporary cohorts; BRCAPRO retains advantage in pure-
+      pedigree scenarios (limited or missing non-genetic data).
+    - vs Tyrer-Cuzick v8: T-C is breast-cancer-risk-focused; BRCAPRO
+      is carrier-probability-focused. T-C also outputs BRCA-carrier
+      probability as a side product; BRCAPRO does not output
+      general-population breast risk.
+
+  Many high-volume HBOC clinics compute MULTIPLE models (BOADICEA +
+  BRCAPRO + Manchester) and use the maximum or ensemble — published
+  cross-validation shows ensemble outperforms any single model.
+
+  Cited from RF-BRCA-HBOC-FAMILY-HISTORY-SUSPICION trigger
+  `family_brcapro_score_ge_10pct`.
+draft: true

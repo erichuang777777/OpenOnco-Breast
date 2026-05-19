@@ -1,0 +1,174 @@
+id: ALGO-CARRIER-CASCADE-LYNCH
+applicable_to_disease: DIS-CRC
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention. Anchored to DIS-CRC because Lynch
+# syndrome's pathognomonic cancer is CRC. Reach extends to all Lynch-
+# spectrum diseases (DIS-ENDOMETRIAL, DIS-GASTRIC, DIS-OVARIAN,
+# DIS-UROTHELIAL, DIS-PROSTATE, DIS-PDAC) — applies to relatives
+# confirmed via cascade testing as Lynch carriers.
+purpose: >
+  Syndrome-specific cascade testing flow for confirmed Lynch syndrome
+  index patient (MLH1, MSH2, MSH6, PMS2, or EPCAM germline pathogenic /
+  likely-pathogenic variant). Specializes ALGO-CASCADE-FAMILY-TESTING
+  with Lynch-syndrome-specific testing ages, counseling cadences, and
+  carrier-surveillance entry timing.
+
+  Lynch differs from BRCA cascade in two important ways:
+    1. Adult-onset only — no pediatric testing indication (vs FAP /
+       LFS / VHL / MEN2 which DO have pediatric testing). FDR testing
+       deferred to age 18, surveillance entry begins age 20-25.
+    2. Per-gene phenotype differences (MLH1/MSH2 high penetrance ~70-
+       80% lifetime CRC; MSH6 ~25-50%; PMS2 ~15-30%; EPCAM mimics
+       MSH2). Surveillance cadence adjusts per gene.
+
+  This algorithm encodes the relative-relationship → testing → counseling
+  → surveillance chain specifically for Lynch carriers, with gene-
+  specific timing.
+
+output_indications:
+  - IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Cascade testing routes confirmed carriers to syndrome-specific
+# carrier surveillance pathway and confirmed non-carriers to general-
+# population screening. Algorithm routes only to the suspicion-
+# prevention-enhanced-surveillance Indication to satisfy the algorithm-
+# routing contract; carrier-vs-noncarrier branching is documented in
+# Indication rationale + handled at engine routing layer.
+
+decision_tree:
+  - step: 1
+    # Index patient is confirmed Lynch carrier (germline MLH1 / MSH2 /
+    # MSH6 / PMS2 / EPCAM P/LP variant). VUS proband does NOT trigger
+    # Lynch-specific cascade.
+    evaluate:
+      all_of:
+        - condition: "Index patient (proband) has confirmed Lynch syndrome germline pathogenic or likely-pathogenic (ACMG class 4/5) variant in MLH1, MSH2, MSH6, PMS2, or EPCAM"
+    if_true:
+      next_step: 2
+    if_false:
+      result: false
+      notes: "Index patient not confirmed Lynch carrier — apply general ALGO-CASCADE-FAMILY-TESTING or syndrome-specific cascade for the actual confirmed syndrome. Lynch-specific cascade not indicated."
+  - step: 2
+    # Identify all first-degree relatives (FDRs). For Lynch (adult-
+    # onset only), age threshold is 18 — no pediatric testing.
+    evaluate:
+      any_of:
+        - condition: "Index patient has living first-degree relatives (parents, full siblings, biological children) age ≥18"
+    if_true:
+      next_step: 3
+    if_false:
+      next_step: 4
+      notes: "No adult FDRs available — proceed to second-degree relatives (aunts/uncles/grandparents/grandchildren/half-siblings, ≥18) for cascade; lower expected yield (25% a priori carrier probability)."
+  - step: 3
+    # Per-relative pre-test counseling + single-site Lynch variant
+    # testing. Lynch single-site is straightforward sequencing of the
+    # known family variant; ~$250-500 typical cost.
+    evaluate:
+      all_of:
+        - condition: "Each adult FDR offered pre-test genetic counseling (informed consent, implications, GINA/EU GDPR considerations)"
+        - condition: "Targeted single-site testing for the known family variant ordered (NOT full Lynch panel — wasteful when family variant is documented)"
+    if_true:
+      next_step: 5
+    if_false:
+      result: false
+      notes: "Cascade not yet completed — refer FDRs to certified genetic counselor + single-site test ordering. Outreach to relatives is patient-driven (HIPAA / GDPR constraints); registry-supported outreach where ethically permitted improves uptake."
+  - step: 4
+    # SDR / TDR fallback when adult FDRs unavailable.
+    evaluate:
+      any_of:
+        - condition: "Second- or third-degree relative is available (≥18), eligible (consent + counseling), and motivated to test"
+    if_true:
+      next_step: 5
+    if_false:
+      result: false
+      notes: "No testable adult relatives available — document outreach in family chart. Re-contact periodically (annually or every 2-3 years) per ACMG; FDR availability can change with life events (new births, contact restoration)."
+  - step: 5
+    # Post-test routing per carrier status. Lynch positive → carrier
+    # surveillance; Lynch negative → general-population CRC screening
+    # (no enhanced cadence indicated for true-negative cascade
+    # relatives of confirmed carriers).
+    evaluate:
+      all_of:
+        - condition: "Single-site test result available + post-test disclosure counseling completed"
+    if_true:
+      result: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Lynch cascade complete. CARRIER-POSITIVE FDRs → route to Lynch carrier surveillance. Gene-specific surveillance entry: MLH1/MSH2 colonoscopy q1y from 20-25 (or 5y younger than youngest family CRC); MSH6 colonoscopy q1-2y from 25-30; PMS2 colonoscopy q1-2y from 30-35; EPCAM colonoscopy q1y from 25 (mimics MSH2). Women: discuss risk-reducing hysterectomy + BSO at age 40-45 (or post-childbearing). Annual aspirin 600 mg discussion (CAPP2 trial: ~50% CRC risk reduction; v0.2 dedicated chemoprevention Indication pending). CARRIER-NEGATIVE FDRs → reassure (general-population risk), CRC screening per USPSTF (colonoscopy q10y from 45), no need for Lynch cascade in their descendants. NEXT-WAVE CASCADE: confirmed-carrier FDRs' children become eligible at age 18 — trigger next cascade wave. Indication routes to SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE pending v0.2 authoring of dedicated post-cascade Lynch-carrier-confirmed Indication."
+    if_false:
+      result: false
+      notes: "Post-test counseling pending — schedule disclosure visit + written results delivery; do not communicate results without counseling per ACMG."
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-ESMO-CRC-2024
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding Lynch-syndrome-
+  specific cascade flow. Specializes the general ALGO-CASCADE-FAMILY-
+  TESTING algorithm with Lynch-specific testing ages + counseling
+  cadences + per-gene surveillance entry timing per NCCN Genetic/
+  Familial High-Risk Colorectal V.2.2025 + ESMO Lynch Syndrome
+  Guidelines + International Mismatch Repair Consortium (IMRC) 2020
+  per-gene penetrance estimates (Dominguez-Valentin M et al.
+  Cancer risks by gene, age, and gender in 6350 carriers of
+  pathogenic mismatch repair variants. Genet Med 2020;22:15-25.
+  PMID 31337882). Primary-paper Source entity (SRC-DOMINGUEZ-VALENTIN-
+  2020-IMRC-LYNCH-PENETRANCE) is v0.2-B authoring backlog.
+
+  Anchored to DIS-CRC; reach: all Lynch-spectrum diseases.
+
+  Per-gene Lynch surveillance entry timing (IMRC 2020 + NCCN 2025):
+    - MLH1: colonoscopy q1y from age 20-25 (or 5y younger than
+      youngest family CRC). Lifetime CRC ~50-80% males, ~40-60%
+      females; lifetime endometrial ~40-50%; lifetime ovarian ~10-
+      20%.
+    - MSH2: as MLH1 (mirrors MLH1 penetrance). Lifetime urothelial
+      ~20% (MSH2 has stronger urothelial signal than MLH1).
+    - MSH6: colonoscopy q1-2y from 25-30. Lifetime CRC ~20-50%;
+      lifetime endometrial ~30-50% (MSH6 endometrial signal stronger
+      than CRC).
+    - PMS2: colonoscopy q1-2y from 30-35. Lifetime CRC ~15-30%;
+      attenuated phenotype overall; ovarian + urothelial low.
+    - EPCAM: as MSH2 (mimics MSH2 because EPCAM deletion silences
+      MSH2 promoter). Some EPCAM 3' deletions confer attenuated
+      phenotype — discuss with molecular pathologist.
+
+  Aspirin chemoprevention (CAPP2 trial, Burn 2011/2020 follow-up
+  PMID 32339108):
+    - 600 mg/day for ≥2 years → ~50% CRC risk reduction at 10-year
+      follow-up
+    - Trial extension (CAPP3) testing lower doses (100 mg vs 300 mg
+      vs 600 mg) — ongoing
+    - NCCN 2025 supports daily aspirin discussion in Lynch carriers
+    - OpenOnco v0.2 dedicated IND-LYNCH-ASPIRIN-CHEMOPREVENTION
+      pending authoring
+
+  Risk-reducing surgery considerations:
+    - Risk-reducing hysterectomy + bilateral salpingo-oophorectomy
+      (RR-H-BSO) at age 40-45 (or post-childbearing): reduces
+      endometrial + ovarian cancer to near-baseline; counseling +
+      timing is gene-specific
+    - Risk-reducing colectomy (subtotal or total proctocolectomy)
+      is NOT routinely recommended in Lynch (vs FAP); surveillance
+      colonoscopy effectively prevents CRC via polyp removal.
+      Exceptions: extensive polyposis phenotype, post-CRC index
+      patient with synchronous neoplasia, polyposis refractory to
+      surveillance.
+
+  Cascade-vs-non-cascade-relative distinction:
+    - Confirmed-Lynch-carrier FDR (positive single-site): full Lynch
+      carrier surveillance schedule (above)
+    - Confirmed-NON-carrier FDR (negative single-site): general-
+      population CRC screening (USPSTF q10y from 45); NO Lynch
+      enhanced cadence
+    - Untested-but-at-risk FDR (refused testing): default to
+      enhanced empirical Lynch surveillance (50% a priori risk
+      remains) — colonoscopy q1-2y from 20-25 until tested or
+      surveillance declined per shared-decision
+
+  Cited from RF-LYNCH-CONFIRMED-CARRIER + RF-LYNCH-FAMILY-HISTORY-
+  SUSPICION trigger logic.
+draft: true
