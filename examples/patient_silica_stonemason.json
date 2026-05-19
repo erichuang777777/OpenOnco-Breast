@@ -1,0 +1,12 @@
+{
+  "patient_id": "SILICA-PREV-001",
+  "comment": "55yo male, stonemason / engineered-quartz fabricator with 25 years documented respirable crystalline silica (RCS) exposure. Established radiographic silicosis on HRCT (small rounded opacities, ILO 1/1). No personal silica-attributable malignancy diagnosis. IARC Group 1 carcinogen (Monograph 100C, 2012) — lung cancer primary endpoint, risk further elevated with clinically-apparent silicosis. Smoking-modified (additive-to-multiplicative). Engine fires RF-OCC-SILICA-PREVENTION → routes to 2-track PreventionPlan: standard = smoking-cessation counseling, risk-adjusted LDCT lung screening (USPSTF-modified for silicosis cohort), pulmonology co-management for silicosis; aggressive = annual LDCT + sputum cytology consideration + earlier-cohort entry. Validates v0.3 occupational batch-2 pilot. Anchored DIS-NSCLC + DIS-SCLC.",
+  "biomarkers": {},
+  "demographics": {"age": 55, "sex": "male", "ecog": 1, "smoking_status": "current_smoker"},
+  "findings": {
+    "occupational_silica_exposure_documented": true,
+    "occupational_silica_exposure_years_ge_10": true,
+    "Stonemason 25y RCS exposure, established silicosis ILO 1/1 on HRCT": true,
+    "No personal silica-attributable malignancy diagnosis": true
+  }
+}

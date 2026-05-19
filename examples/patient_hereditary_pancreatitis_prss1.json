@@ -1,0 +1,12 @@
+{
+  "patient_id": "PRSS1-PREV-001",
+  "comment": "35yo male with established hereditary chronic pancreatitis since adolescence — recurrent acute pancreatitis episodes from age 12, parenchymal atrophy + ductal irregularities on MRCP, confirmed germline PRSS1 pathogenic variant (autosomal dominant; father + paternal uncle affected, paternal grandfather died of PDAC age 58). No personal PDAC diagnosis. EUROPAC: lifetime PDAC risk ~40-50% by age 70 in hereditary pancreatitis (vs ~5% in alcoholic chronic pancreatitis). Engine fires RF-CHRONIC-PANCREATITIS-PDAC-PREVENTION → routes to PreventionPlan: CAPS-consortium PDAC surveillance (annual EUS ± MRCP starting age 40 OR 20y after pancreatitis onset, whichever earlier — already eligible at 35), aggressive smoking-cessation (multiplies risk), genetic counseling for first-degree relatives + cascade testing, alcohol minimization, diabetes screening (new-onset DM is paraneoplastic risk-marker). Validates v0.3 hereditary-pancreatitis pilot. Anchored DIS-PDAC.",
+  "biomarkers": {"BIO-PRSS1": "pathogenic_variant"},
+  "demographics": {"age": 35, "sex": "male", "ecog": 0, "smoking_status": "never_smoker"},
+  "findings": {
+    "chronic_pancreatitis_hereditary_pancreatitis_prss1_or_spink1": true,
+    "Hereditary chronic pancreatitis since age 12, confirmed PRSS1 pathogenic variant": true,
+    "Father + paternal uncle affected; paternal grandfather PDAC age 58": true,
+    "No personal PDAC diagnosis": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "patient_id": "ARSENIC-PREV-001",
+  "comment": "50yo male, lifelong resident of rural area with documented private-well inorganic-arsenic contamination >50 µg/L (well above WHO + US EPA 10 µg/L guideline since 2006). Endemic high-arsenic groundwater region. Urinary inorganic arsenic elevated on screening. No personal arsenic-attributable malignancy diagnosis. Inorganic arsenic IARC Group 1 (Monograph 100C, 2012) — urothelial / bladder cancer, lung cancer (smoking-independent), non-melanoma skin (BCC + SCC + Bowen's). Latency 10-40y from exposure onset. Engine fires RF-ENVIRONMENTAL-ARSENIC-WATER-PREVENTION → routes to 2-track PreventionPlan: standard = water-source remediation (POU filtration / municipal connection / alternative source), urinalysis + cytology q1-2y for bladder surveillance, dermatologic exam annually, smoking-cessation reinforcement, lung-symptom awareness; aggressive = annual cystoscopy consideration + earlier LDCT. Validates v0.3 environmental pilot. Anchored DIS-UROTHELIAL + DIS-NSCLC + DIS-BCC.",
+  "biomarkers": {},
+  "demographics": {"age": 50, "sex": "male", "ecog": 0, "smoking_status": "never_smoker"},
+  "findings": {
+    "drinking_water_arsenic_gt_10_ug_per_l": true,
+    "private_well_arsenic_untested": false,
+    "urinary_inorganic_arsenic_elevated": true,
+    "endemic_arsenic_region_residence_history": true,
+    "Lifelong rural resident, private-well arsenic >50 ug/L documented": true,
+    "No personal arsenic-attributable malignancy diagnosis": true
+  }
+}

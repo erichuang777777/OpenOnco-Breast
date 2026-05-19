@@ -1,0 +1,12 @@
+{
+  "patient_id": "FIREFIGHTER-PREV-001",
+  "comment": "48yo male, career municipal structural firefighter, 22 years active fire-suppression / overhaul service, no firefighter-attributable malignancy diagnosis. IARC re-classified occupational exposure as a firefighter Group 1 carcinogen (Monograph 132, 2022) — sufficient evidence bladder + mesothelioma; limited-suggestive prostate, colon, melanoma, NHL, testicular. Mixed-exposure hazards: combustion products (PAHs, benzene, formaldehyde, particulate), asbestos during pre-regulation overhaul, diesel-exhaust from apparatus. Engine fires RF-OCC-FIREFIGHTER-PREVENTION → routes to 2-track PreventionPlan: standard = SCBA compliance + post-fire decontamination + gear-laundering, USPSTF-modified LDCT lung screening, dermatologic exam, earlier-age colorectal screening (45y), urinalysis q1-2y bladder surveillance; aggressive = annual full-body skin exam + earlier colonoscopy cadence + low-threshold PSA / urinalysis. Validates v0.3 occupational batch-2 pilot.",
+  "biomarkers": {},
+  "demographics": {"age": 48, "sex": "male", "ecog": 0, "smoking_status": "never_smoker"},
+  "findings": {
+    "occupational_firefighter_career_documented": true,
+    "occupational_firefighter_years_ge_10": true,
+    "Career municipal structural firefighter 22y active service": true,
+    "No firefighter-attributable malignancy diagnosis": true
+  }
+}

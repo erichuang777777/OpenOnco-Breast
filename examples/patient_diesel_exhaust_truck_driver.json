@@ -1,0 +1,12 @@
+{
+  "patient_id": "DIESEL-PREV-001",
+  "comment": "58yo male, retired long-haul truck driver with 25 years documented occupational diesel-exhaust (DEE) exposure (1995-2020). No personal diesel-attributable malignancy diagnosis. IARC Group 1 carcinogen (Monograph 105, 2012) — lung-cancer primary endpoint with smoking-modified additive-to-multiplicative interaction; bladder cancer limited-suggestive. Engine fires RF-OCC-DIESEL-EXHAUST-PREVENTION → routes to 2-track PreventionPlan: (a) IND-OCC-DIESEL-EXHAUST-PREVENTION-INTENSIFIED-SURVEILLANCE — risk-adjusted LDCT chest (USPSTF-modified for cumulative DEE), smoking-cessation counseling, urinalysis q1-2y bladder surveillance; (b) IND-OCC-DIESEL-EXHAUST-PREVENTION-OBSERVATION — general-population USPSTF only. Validates v0.3 occupational batch-2 pilot. Anchored DIS-NSCLC + DIS-SCLC + DIS-UROTHELIAL.",
+  "biomarkers": {},
+  "demographics": {"age": 58, "sex": "male", "ecog": 1, "smoking_status": "former_smoker"},
+  "findings": {
+    "occupational_diesel_exhaust_exposure_documented": true,
+    "occupational_diesel_exhaust_exposure_years_ge_10": true,
+    "Retired long-haul truck driver 1995-2020, 25 years DEE exposure": true,
+    "No personal diesel-attributable malignancy diagnosis": true
+  }
+}

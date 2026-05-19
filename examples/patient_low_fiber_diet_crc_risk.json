@@ -1,0 +1,13 @@
+{
+  "patient_id": "LOWFIBER-PREV-001",
+  "comment": "45yo male, habitual Western-pattern diet — estimated total dietary fibre intake ~10 g/day (well below WCRF/AICR ≥30 g/day convincing-evidence threshold and IOM adequate intake 38 g/day male). Low whole-grain + low vegetable/fruit intake by 24h recall. No personal CRC diagnosis. WCRF/AICR Continuous Update Project rates dietary fibre convincing-protective for CRC — each 10 g/day total-fibre reduces CRC risk ~10% (RR ~0.90). Mechanisms: faecal bulking + microbiota-derived butyrate + carcinogen dilution. Engine fires RF-LIFESTYLE-LOW-FIBER-CRC-PREVENTION → routes to PreventionPlan: dietary counseling (whole-grain / vegetable / fruit / pulse upshift to ≥30 g/day target) + USPSTF-cadence CRC screening (colonoscopy 45y baseline + interval per findings). Validates v0.3 diet pilot. Anchored DIS-CRC.",
+  "biomarkers": {},
+  "demographics": {"age": 45, "sex": "male", "ecog": 0},
+  "findings": {
+    "dietary_fiber_intake_lt_15g_per_day": true,
+    "low_whole_grain_intake": true,
+    "low_vegetable_fruit_intake": true,
+    "Habitual Western-pattern diet, estimated total fibre ~10 g/day": true,
+    "No personal CRC diagnosis": true
+  }
+}

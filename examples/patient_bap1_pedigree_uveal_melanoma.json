@@ -1,0 +1,15 @@
+{
+  "patient_id": "BAP1-FAM-PREV-001",
+  "comment": "33yo female, asymptomatic, no personal cancer diagnosis. Pedigree suggestive of BAP1 tumor predisposition syndrome: father diagnosed with uveal melanoma age 52 (first-degree relative); mother diagnosed with pleural mesothelioma age 60 (first-degree relative). Cluster of BAP1-spectrum tumors (uveal melanoma + mesothelioma) across two first-degree relatives. Germline BAP1 testing not yet performed in proband. Engine fires RF-BAP1-FAMILY-HISTORY-SUSPICION → routes to PreventionPlan: genetic-counseling referral + germline BAP1 testing of proband; if pathogenic-variant-carrier → cascade to anchored carrier-surveillance RFs (annual dilated ophthalmoscopy / OCT for uveal melanoma + dermatologic exam for cutaneous melanoma + abdominal MRI for ccRCC + mesothelioma symptom-awareness with low-threshold chest imaging). Validates v0.2-B hereditary pedigree-suspicion pilot. Anchored DIS-RCC + DIS-MESOTHELIOMA.",
+  "biomarkers": {},
+  "demographics": {"age": 33, "sex": "female", "ecog": 0},
+  "findings": {
+    "family_uveal_melanoma_first_or_second_degree": true,
+    "family_bap1_spectrum_cluster": true,
+    "family_bap1_known_pathogenic_variant": false,
+    "Father uveal melanoma age 52 (first-degree)": true,
+    "Mother pleural mesothelioma age 60 (first-degree)": true,
+    "Germline BAP1 testing of proband not yet performed": true,
+    "No personal cancer diagnosis": true
+  }
+}
