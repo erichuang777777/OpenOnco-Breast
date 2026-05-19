@@ -1,0 +1,125 @@
+# PROC-PROPHYLACTIC-MASTECTOMY-BRCA — Risk-reducing bilateral mastectomy
+# in BRCA1/BRCA2 carriers. §20 prevention-persona procedure
+# (RATIFIED 2026-05-18). `intent: curative` per §17.1 enum (carrier-state
+# framing — no `preventive` enum value in v0.1).
+id: PROC-PROPHYLACTIC-MASTECTOMY-BRCA
+names:
+  preferred: "Risk-reducing bilateral mastectomy for BRCA1/2 carriers"
+  ukrainian: "Профілактична двобічна мастектомія у носіїв BRCA1/2"
+  english: "Risk-reducing bilateral mastectomy for BRCA1/2 carriers"
+  synonyms:
+    - "Bilateral prophylactic mastectomy (BPM)"
+    - "Risk-reducing mastectomy (RRM)"
+    - "Bilateral risk-reducing mastectomy"
+    - "Nipple-sparing prophylactic mastectomy"
+    - "Skin-sparing prophylactic mastectomy"
+
+type: risk_reducing_mastectomy
+intent: curative
+
+target_organ: breast
+applicable_diseases:
+  - DIS-BREAST
+
+# Mortality from prophylactic mastectomy series in young healthy carriers
+# is very low; older Mayo/Rotterdam cohorts (Hartmann, Meijers-Heijboer)
+# and modern NCCN summaries report <0.5% perioperative mortality.
+operative_mortality_pct: "<0.5% in young (<45 yr) otherwise-healthy BRCA carriers; comparable to elective reconstructive surgery"
+
+common_complications:
+  - name: "Wound infection / cellulitis"
+    frequency: "5-15%"
+  - name: "Hematoma / seroma requiring drainage"
+    frequency: "5-15%"
+  - name: "Skin / nipple-areolar complex necrosis (nipple-sparing technique)"
+    frequency: "5-15% partial; 1-5% full thickness"
+  - name: "Implant-based reconstruction complication (capsular contracture, malposition, rupture)"
+    frequency: "10-30% lifetime"
+  - name: "Autologous flap complications (DIEP/TRAM — partial flap loss, fat necrosis)"
+    frequency: "5-15%"
+  - name: "Chronic post-mastectomy pain syndrome"
+    frequency: "20-40% (any chronic pain); 5-10% severe"
+  - name: "Loss of nipple/breast sensation"
+    frequency: "Near-universal for skin-sparing; partial preservation possible with nipple-sparing"
+  - name: "Psychological distress / body-image change"
+    frequency: "Variable; pre-op counseling reduces but does not eliminate"
+  - name: "Residual breast tissue with ongoing (small) breast cancer risk"
+    frequency: "Risk reduction ~90-95%; not 100% (residual ductal tissue near NAC and axilla)"
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-NCCN-BREAST-2025
+  - SRC-EVANS-MANCHESTER-BRCA-2017
+
+last_reviewed: "2026-05-18"
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_agent_aac98192634228af3
+draft_revision: 1
+
+patient_facing_summary:
+  english: >
+    BRCA1 and BRCA2 carriers have markedly elevated lifetime breast cancer
+    risk (roughly 60-72% for BRCA1, 55-69% for BRCA2 by age 80 per pooled
+    cohort data). Risk-reducing bilateral mastectomy removes most of the
+    breast tissue and reduces breast cancer risk by about 90-95% — it
+    does not eliminate risk because small amounts of breast tissue
+    remain near the nipple and chest wall. This is a major elective
+    surgery with reconstruction options (implant-based or autologous
+    tissue flap) discussed in advance. Shared decision-making is
+    essential — the alternative is intensive surveillance (annual MRI
+    + annual mammography starting age 25-30). Decisions usually happen
+    in the late 20s through the 30s; there is no universally "right"
+    age. Reproductive plans, family history, and personal values weigh
+    heavily.
+  ukrainian: >
+    Носії патогенних варіантів BRCA1 та BRCA2 мають значно підвищений
+    довічний ризик раку молочної залози (приблизно 60–72% для BRCA1,
+    55–69% для BRCA2 до 80 років за об’єднаними когортними даними).
+    Профілактична двобічна мастектомія видаляє більшу частину тканини
+    молочних залоз і знижує ризик раку приблизно на 90–95% — повністю
+    ризик не зникає, оскільки невелика кількість залозистої тканини
+    залишається біля соска та грудної стінки. Це велике планове
+    хірургічне втручання; варіанти реконструкції (з імплантами або
+    автологічним клаптем) обговорюються заздалегідь. Спільне
+    прийняття рішення є обов’язковим — альтернативою є інтенсивне
+    спостереження (щорічна МРТ + щорічна мамографія з 25–30 років).
+    Рішення зазвичай приймається у віці 25–35+ років; універсально
+    «правильного» віку не існує. Репродуктивні плани, сімейний
+    анамнез та особисті цінності мають істотну вагу.
+
+notes: >
+  Bilateral risk-reducing mastectomy (RRM) is the single most effective
+  primary-prevention intervention for BRCA1/BRCA2 carriers, reducing
+  breast cancer risk ~90-95% (NCCN Genetic/Familial Breast/Ovarian
+  v3.2025; pooled cohort data — Hartmann 2001, Meijers-Heijboer 2001,
+  Evans 2017 Manchester registry). Critically, RRM does NOT eliminate
+  risk — residual ductal tissue near the nipple-areolar complex (NAC),
+  axillary tail, and inframammary fold means small breast cancers can
+  still arise (~0.5-1% incidence per decade post-RRM in long-term
+  cohorts). Risk reduction has not been shown to translate into a clear
+  all-cause mortality benefit in randomized trials because mortality from
+  BRCA-associated breast cancer can be substantially mitigated by MRI +
+  mammography surveillance + early-stage treatment.
+
+  Technique choices:
+    - Nipple-sparing mastectomy (NSM): preserves NAC; oncologically
+      acceptable per multiple cohort series when NAC margin is negative;
+      ~5-15% partial NAC necrosis.
+    - Skin-sparing mastectomy (SSM): NAC removed, skin envelope
+      preserved for immediate reconstruction.
+    - Total mastectomy: classical option; usually reserved for very
+      high local risk or technical considerations.
+
+  Reconstruction: immediate implant-based vs delayed; autologous DIEP /
+  TRAM / latissimus flaps. Patient preference, body habitus, prior
+  radiation, smoking, and BMI drive technique. RRM with reconstruction
+  is typically a multi-stage path over 6-12+ months.
+
+  Timing: NCCN suggests age 25-30+ as the earliest reasonable age for
+  shared decision-making; no upper bound but risk reduction utility
+  diminishes after age ~50-60 as the lifetime risk plateaus and competing
+  causes of death rise.
+
+  `intent: curative` per §17.1 enum — risk-reducing surgery in carriers
+  is curative-intent in the carrier-state framing. The schema does not
+  define a `preventive` intent in v0.1.

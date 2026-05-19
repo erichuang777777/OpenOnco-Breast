@@ -1,0 +1,144 @@
+# PROC-NEPHRON-SPARING-PARTIAL-NEPHRECTOMY-VHL — Nephron-sparing partial
+# nephrectomy for VHL renal lesion at ≥3 cm threshold. §20 prevention /
+# surveillance procedure (RATIFIED 2026-05-18). `intent: curative` per
+# §17.1 enum — partial nephrectomy resects the index lesion before
+# metastatic potential develops, preserving kidney function for the
+# inevitable sequential lesions characteristic of VHL.
+id: PROC-NEPHRON-SPARING-PARTIAL-NEPHRECTOMY-VHL
+names:
+  preferred: "Nephron-sparing partial nephrectomy for VHL renal lesion (≥3 cm threshold)"
+  ukrainian: "Нефрон-зберігаюча часткова нефректомія при нирковому ураженні у VHL (поріг ≥3 см)"
+  english: "Nephron-sparing partial nephrectomy for VHL renal lesion (≥3 cm threshold)"
+  synonyms:
+    - "Partial nephrectomy for VHL"
+    - "Nephron-sparing surgery (NSS)"
+    - "VHL 3-cm threshold renal resection"
+    - "Enucleation of VHL renal lesion"
+
+type: partial_nephrectomy
+intent: curative
+
+target_organ: kidney
+applicable_diseases:
+  - DIS-RCC
+
+# Modern partial nephrectomy (open / laparoscopic / robotic) at high-
+# volume centers in young VHL patients (median age 30-50s); mortality
+# is low (NCCN Kidney v3.2025).
+operative_mortality_pct: "<1% in high-volume centers; risk rises with multifocal disease and previously-operated kidney"
+
+common_complications:
+  - name: "Acute kidney injury (resected-side ischemia)"
+    frequency: "5-15% — usually transient if warm-ischemia time <20-25 min"
+  - name: "Urine leak from collecting system"
+    frequency: "1-5%"
+  - name: "Postoperative hemorrhage / pseudoaneurysm requiring angioembolization"
+    frequency: "1-5%"
+  - name: "Wound infection / port-site issues"
+    frequency: "2-5%"
+  - name: "Need for completion radical nephrectomy in same operation"
+    frequency: "1-5% for unfavorable intra-op anatomy"
+  - name: "Long-term reduction in GFR proportional to volume of nephrons removed"
+    frequency: "Universal; magnitude proportional to resected volume and ischemia time"
+  - name: "Local recurrence (sequential VHL biology)"
+    frequency: "Lifelong — repeat surveillance imaging at 1-2 yr intervals; risk of new tumors elsewhere in kidney"
+
+sources:
+  - SRC-NCCN-KIDNEY-2025
+  - SRC-ENDOCRINE-SOCIETY-MEN-2023
+
+last_reviewed: "2026-05-18"
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_agent_aac98192634228af3
+draft_revision: 1
+
+patient_facing_summary:
+  english: >
+    Von Hippel-Lindau disease (VHL) causes recurrent kidney tumors over
+    a lifetime — most are clear-cell renal cell carcinomas, and patients
+    typically develop multiple tumors in both kidneys at different
+    times. The longstanding NIH-driven approach is to watch tumors
+    until they reach about 3 cm before operating, because below this
+    size the risk of metastasis is very low and operating early would
+    waste kidney function that the patient will need for future tumors.
+    Partial nephrectomy (also called "nephron-sparing surgery") removes
+    just the tumor with a thin margin of normal kidney, preserving as
+    much of the kidney as possible. The operation is done open,
+    laparoscopically, or robotically, and at expert centers the
+    operative risks are low. New tumors will eventually appear, so
+    lifelong imaging surveillance (typically every 1-2 years) and
+    repeat partial nephrectomies are part of long-term care. Recently,
+    the HIF-2α inhibitor belzutifan has been added as a systemic
+    treatment option that can shrink VHL-associated tumors and delay
+    or avoid surgery in selected cases.
+  ukrainian: >
+    Хвороба фон Гіппеля-Ліндау (VHL) спричиняє рекурентні пухлини
+    нирок протягом життя — більшість є світлоклітинною нирково-
+    клітинною карциномою, і у пацієнтів зазвичай розвиваються
+    численні пухлини в обох нирках у різний час. Давній підхід NIH
+    полягає у спостереженні за пухлинами до досягнення приблизно 3
+    см і лише потім — операції, оскільки нижче цього розміру
+    ризик метастазування дуже низький, а раннє оперативне втручання
+    марно витрачає функцію нирок, яка буде потрібна для майбутніх
+    пухлин. Часткова нефректомія (також «нефрон-зберігаюча хірургія»)
+    видаляє лише пухлину з тонким краєм нормальної тканини нирки,
+    максимально зберігаючи її. Операція може бути відкритою,
+    лапароскопічною або робот-асистованою, у досвідчених центрах
+    ризики операції низькі. Нові пухлини з часом з’являтимуться,
+    тому довічне візуалізаційне спостереження (зазвичай кожні 1–2
+    роки) і повторні часткові нефректомії є частиною
+    довгострокового ведення. Останнім часом інгібітор HIF-2α
+    белзутифан додано як системний терапевтичний варіант, що може
+    зменшувати VHL-асоційовані пухлини та відстрочити або уникнути
+    операції у вибраних пацієнтів.
+
+notes: >
+  Von Hippel-Lindau disease (VHL) carriers develop sequential bilateral
+  clear-cell renal cell carcinomas; lifetime risk approaches 50-70%
+  with multifocality the rule. The longstanding NIH-derived management
+  paradigm is "3-cm rule" (Walther / Linehan, 1995 onward): defer
+  surgery until the index lesion reaches ~3 cm because metastatic risk
+  below that threshold is very low (<1-2%) and earlier surgery
+  sacrifices nephrons needed for the inevitable sequential lesions.
+  Patients undergoing repeated partial nephrectomies face cumulative
+  renal-function loss over decades — preservation of nephron mass is
+  therefore central.
+
+  Recent shift: belzutifan (HIF-2α inhibitor, MK-6482-004 / LITESPARK
+  trials) is now approved for VHL-associated RCC and can shrink lesions
+  systemically, deferring or avoiding surgery for selected patients
+  (NCCN Kidney v3.2025 incorporates this).
+
+  Surgical considerations:
+    - Approach: minimally invasive (laparoscopic / robotic) preferred
+      when anatomy permits; open for complex / hilar / repeat-surgery
+      cases.
+    - Warm-ischemia time matters: <20-25 min limits AKI; selective
+      clamping or off-clamp enucleation in expert hands further
+      reduces functional impact.
+    - Multifocal lesions on the same kidney: simultaneous resection
+      where feasible.
+    - Avoid unnecessary radical nephrectomy: cumulative bilateral
+      resections over decades make any nephron-preserving margin
+      valuable.
+
+  Surveillance after partial nephrectomy:
+    - Cross-sectional imaging (CT or MRI) every 1-2 years.
+    - Concurrent surveillance for other VHL manifestations:
+      hemangioblastoma (CNS, retina), pheochromocytoma /
+      paraganglioma (annual catecholamines), pancreatic NETs,
+      endolymphatic-sac tumors.
+
+  applicable_diseases includes DIS-RCC (kidney is the index organ for
+  this procedure). VHL also affects DIS-PNET, DIS-PHEOCHROMOCYTOMA,
+  and CNS hemangioblastoma — those are addressed by separate procedures
+  / surveillance pathways outside the scope of this Procedure entity.
+
+  `intent: curative` per §17.1 enum — partial nephrectomy in VHL
+  carriers is curative-intent for the resected lesion. The schema does
+  not define a `preventive` intent in v0.1.
+
+  Source-coverage gap: VHL Alliance / NIH-VHL specific surveillance
+  guideline is not yet represented as a dedicated SRC-* entity.
+  SRC-NCCN-KIDNEY-2025 and SRC-ENDOCRINE-SOCIETY-MEN-2023 provide the
+  cited evidence base until a VHL-specific source stub lands.

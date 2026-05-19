@@ -1,0 +1,130 @@
+# PROC-ERCP-BRUSH-CYTOLOGY — Endoscopic retrograde cholangiopancreatography
+# (ERCP) with biliary brush cytology (± FISH / fluorescence in-situ
+# hybridization) for evaluation of PSC dominant biliary stricture. §20
+# prevention-persona / surveillance procedure (RATIFIED 2026-05-18).
+# `intent: diagnostic` per §17.1 enum — ERCP-brush is diagnostic /
+# surveillance, not curative; therapeutic stent placement is concurrent
+# but not the primary endpoint here.
+id: PROC-ERCP-BRUSH-CYTOLOGY
+names:
+  preferred: "ERCP with biliary brush cytology (± FISH) for PSC dominant stricture surveillance"
+  ukrainian: "ЕРХПГ із цитологічним щіткуванням жовчних шляхів (± FISH) для нагляду за домінантною стриктурою при ПСХ"
+  english: "ERCP with biliary brush cytology (± FISH) for PSC dominant stricture surveillance"
+  synonyms:
+    - "ERCP with brushings"
+    - "Biliary brush cytology"
+    - "ERCP cholangiocarcinoma surveillance brushings"
+    - "PSC dominant-stricture ERCP brushings"
+
+type: endoscopic_cholangiography_with_brush_cytology
+intent: diagnostic
+
+target_organ: biliary_tree
+applicable_diseases:
+  - DIS-CHOLANGIOCARCINOMA
+
+# Diagnostic ERCP with brushings is performed by advanced endoscopy; the
+# overall ERCP mortality at expert centers is ~0.1-0.5%, driven by
+# severe pancreatitis or perforation rather than the brushings.
+operative_mortality_pct: "0.1-0.5% overall ERCP-related mortality at high-volume advanced-endoscopy centers"
+
+common_complications:
+  - name: "Post-ERCP pancreatitis"
+    frequency: "5-15% overall; lower (3-5%) with rectal indomethacin + pancreatic stenting in high-risk patients"
+  - name: "Post-ERCP cholangitis"
+    frequency: "1-5%; higher in PSC due to limited biliary drainage"
+  - name: "Bleeding after sphincterotomy"
+    frequency: "1-3%"
+  - name: "Perforation (duodenal / biliary)"
+    frequency: "<1%"
+  - name: "Sedation-related adverse events"
+    frequency: "1-5%"
+  - name: "False-negative brush cytology (low sensitivity ~30-60% for cholangiocarcinoma)"
+    frequency: "Sensitivity 30-60% standalone; rises to 50-70% with FISH polysomy"
+  - name: "Wire / stent migration when therapeutic component added"
+    frequency: "1-5%"
+
+sources:
+  - SRC-NCCN-HEPATOBILIARY
+  - SRC-AASLD-HCC-2023
+
+last_reviewed: "2026-05-18"
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_agent_aac98192634228af3
+draft_revision: 1
+
+patient_facing_summary:
+  english: >
+    Primary sclerosing cholangitis (PSC) is a chronic bile-duct disease
+    that markedly raises the lifetime risk of cholangiocarcinoma (bile-
+    duct cancer) — around 10-15% lifetime, with most cancers diagnosed
+    in the first decade after PSC diagnosis. When imaging (MRI/MRCP)
+    or symptoms suggest a "dominant stricture" (a focal narrowing of
+    the bile duct), the next step is usually endoscopic retrograde
+    cholangiopancreatography (ERCP) with biliary brushings — a thin
+    brush is passed across the stricture to collect cells for cytology
+    and FISH testing. The procedure is performed under sedation /
+    anesthesia and lasts about 30-60 minutes. The most important risk
+    is post-procedure pancreatitis (5-15%), and people with PSC have
+    extra risk of post-procedure infection of the biliary tree
+    (cholangitis); prophylactic antibiotics are usually given.
+    Brushing sensitivity for cancer is moderate (30-60%); FISH on the
+    same sample raises it. Negative results do not fully exclude
+    cancer — repeat brushing or cross-sectional imaging may be needed.
+  ukrainian: >
+    Первинний склерозуючий холангіт (ПСХ) є хронічним захворюванням
+    жовчних проток, що значно підвищує довічний ризик
+    холангіокарциноми (раку жовчних проток) — близько 10–15%, причому
+    більшість випадків діагностується у перші десять років після
+    встановлення діагнозу ПСХ. Коли візуалізація (МРТ/МРХПГ) або
+    симптоми вказують на «домінантну стриктуру» (вогнищеве звуження
+    жовчної протоки), наступним кроком зазвичай є ендоскопічна
+    ретроградна холангіопанкреатографія (ЕРХПГ) з біліарним
+    щіткуванням — тонка щітка проводиться через стриктуру для
+    збору клітин для цитологічного дослідження та FISH-аналізу.
+    Процедура виконується під седацією / анестезією і триває
+    приблизно 30–60 хвилин. Найважливішим ризиком є
+    постпроцедурний панкреатит (5–15%), а у пацієнтів із ПСХ також
+    підвищений ризик інфекції жовчних шляхів після процедури
+    (холангіт); зазвичай призначають профілактичні антибіотики.
+    Чутливість щіткувань для діагностики раку є помірною (30–60%);
+    додавання FISH-аналізу на тому ж зразку її підвищує. Негативний
+    результат не повністю виключає рак — може знадобитися повторне
+    щіткування або візуалізація.
+
+notes: >
+  Primary sclerosing cholangitis (PSC) carries a ~10-15% lifetime
+  cholangiocarcinoma (CCA) risk, concentrated in the first decade post-
+  PSC diagnosis (NCCN Hepatobiliary; AASLD guidance). MRI / MRCP is the
+  preferred non-invasive surveillance modality; ERCP with brushings is
+  reserved for evaluation of suspected dominant strictures (focal high-
+  grade narrowing with upstream dilation, new jaundice / pruritus /
+  cholangitis, or rising serum CA-19-9).
+
+  Sensitivity of standalone brush cytology for CCA is modest (~30-60%)
+  due to dense desmoplastic stroma and pauci-cellular sampling. Adjunct
+  FISH analysis (polysomy in ≥5 cells of ≥2 chromosomes) raises
+  sensitivity to ~50-70% and specificity remains high. Combined cytology
+  + FISH is the current standard for PSC stricture evaluation.
+
+  Cholangioscopy with directed biopsy (e.g., SpyGlass) is increasingly
+  performed when initial brushings are negative but clinical suspicion
+  persists.
+
+  Procedural prophylaxis in PSC: prophylactic antibiotics (covering
+  enteric Gram-negatives + enterococci), rectal indomethacin and
+  selective prophylactic pancreatic stenting to mitigate post-ERCP
+  pancreatitis (Elmunzer 2012 NEJM, US Multi-Society Task Force
+  recommendations).
+
+  `intent: diagnostic` per §17.1 enum — the brushings phase is
+  diagnostic/surveillance. Concurrent therapeutic stenting of an
+  obstructing stricture is a separate clinical decision and is
+  documented narratively rather than as a separate Procedure entity in
+  v0.1.
+
+  Source-coverage gap: a dedicated PSC / cholangiocarcinoma-surveillance
+  guideline (e.g., AASLD PSC 2010 / EASL PSC 2022) is not yet
+  represented as a SRC-* entity. SRC-NCCN-HEPATOBILIARY +
+  SRC-AASLD-HCC-2023 provide the closest cited guidance until a
+  dedicated PSC source stub lands.

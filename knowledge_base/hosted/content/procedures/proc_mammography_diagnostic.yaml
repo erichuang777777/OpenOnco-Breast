@@ -1,0 +1,120 @@
+# PROC-MAMMOGRAPHY-DIAGNOSTIC — Diagnostic mammography for evaluation of
+# breast finding (palpable lump, nipple discharge, focal pain, recall
+# from screening, follow-up of probably-benign lesion). §20 prevention /
+# early-diagnosis procedure (RATIFIED 2026-05-18). Distinct from
+# screening mammography in indication, technique, and interpretation
+# pathway. `intent: diagnostic` per §17.1 enum.
+id: PROC-MAMMOGRAPHY-DIAGNOSTIC
+names:
+  preferred: "Diagnostic mammography for evaluation of breast finding"
+  ukrainian: "Діагностична мамографія для оцінки знахідки в молочній залозі"
+  english: "Diagnostic mammography for evaluation of breast finding"
+  synonyms:
+    - "Diagnostic mammogram"
+    - "Symptomatic mammography"
+    - "Workup mammography"
+    - "Targeted mammography with spot compression / magnification views"
+
+type: imaging_diagnostic_examination
+intent: diagnostic
+
+target_organ: breast
+applicable_diseases:
+  - DIS-BREAST
+
+# Mammography is an imaging examination; mortality is effectively zero.
+# Omit `operative_mortality_pct`.
+
+common_complications:
+  - name: "Compression discomfort / transient pain"
+    frequency: "30-70% transient (compression required for image quality)"
+  - name: "Minor skin bruising / micro-injury (rare in pregnant or anticoagulated patients)"
+    frequency: "<1%"
+  - name: "Ionizing radiation dose (low — average mean glandular dose ~1.6 mGy / view)"
+    frequency: "Universal; cumulative dose tracked in young / repeat-imaging patients"
+  - name: "Vasovagal reaction during procedure"
+    frequency: "<1%"
+  - name: "False-positive recall requiring additional imaging or biopsy"
+    frequency: "Workup-mammography false-positive rate lower than screening; <10% in well-defined indication"
+  - name: "False-negative for malignancy (dense-breast limitation)"
+    frequency: "Dense-breast tissue reduces sensitivity 60-70% — supplementary ultrasound / MRI may be indicated"
+
+sources:
+  - SRC-USPSTF-BREAST-2024
+  - SRC-NCCN-BREAST-2025
+
+last_reviewed: "2026-05-18"
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_agent_aac98192634228af3
+draft_revision: 1
+
+patient_facing_summary:
+  english: >
+    Diagnostic mammography differs from screening mammography. It is
+    performed when a problem has already been noticed — for example, a
+    palpable lump, nipple discharge, focal pain, or a finding flagged
+    on a screening study that needs a closer look. Compared with the
+    two-view screening study, a diagnostic mammogram includes extra
+    views (spot compression, magnification, or rolled views) and is
+    interpreted by the radiologist while the patient is still in the
+    department, so additional imaging — usually targeted ultrasound —
+    can be added in the same visit. The exam takes longer than screening
+    (typically 30-45 minutes total) and may be combined with a same-day
+    ultrasound and, if needed, a same-day or next-day biopsy
+    consultation. Breast compression is uncomfortable but brief.
+    Radiation dose is low. Results are typically given on the same day.
+  ukrainian: >
+    Діагностична мамографія відрізняється від скринінгової. Вона
+    виконується, коли вже з’явилася проблема — наприклад,
+    пальпована маса, виділення з соска, локальний біль або знахідка,
+    яка потребує подальшого уточнення після скринінгового
+    дослідження. Порівняно з двопроєкційним скринінговим знімком,
+    діагностична мамографія включає додаткові проєкції (точкова
+    компресія, збільшення, ротовані проєкції) і інтерпретується
+    радіологом, поки пацієнт ще перебуває у відділенні, тому
+    додаткове дообстеження — зазвичай прицільне УЗД — може бути
+    виконане одразу. Процедура триває довше за скринінг (зазвичай
+    30–45 хвилин), і за потреби може бути доповнена ультразвуком та
+    консультацією щодо біопсії того ж дня або наступного. Компресія
+    молочної залози є некомфортною, але короткочасною. Доза
+    випромінювання низька. Результати зазвичай повідомляють того ж
+    дня.
+
+notes: >
+  Diagnostic (problem-solving / workup) mammography differs from
+  screening (asymptomatic-population) mammography in three concrete
+  ways:
+    - Indication: palpable mass, focal pain, nipple discharge, BIRADS-0
+      screening recall, follow-up of probably-benign BIRADS-3 lesion,
+      or follow-up of treated breast cancer.
+    - Technique: standard CC/MLO views + targeted spot compression,
+      magnification, rolled or true lateral views as indicated.
+    - Interpretation: same-day reading by radiologist with patient
+      present; supplementary ultrasound or MRI may be added; same-day
+      biopsy planning is common.
+
+  Critical adjuncts:
+    - Dense-breast tissue (BIRADS density C/D) reduces mammographic
+      sensitivity to ~60-70%; supplementary ultrasound or MRI improves
+      detection.
+    - In BRCA1/2 carriers and other high-risk groups, MRI is the
+      primary high-sensitivity modality alongside annual mammography.
+    - Tomosynthesis (3D mammography) increases cancer detection and
+      reduces recall rates vs 2D digital alone; recommended where
+      available.
+
+  Radiation considerations:
+    - Mean glandular dose ~1.6 mGy per view; cumulative dose
+      considerations apply in patients undergoing frequent
+      surveillance (e.g., post-treatment cohorts, BRCA carriers).
+
+  Pregnancy: diagnostic mammography is appropriate in pregnant
+  patients with breast findings — fetal-dose considerations are
+  minimal compared with the risk of delayed cancer diagnosis. Lead
+  abdominal shielding is standard.
+
+  `intent: diagnostic` per §17.1 enum.
+
+  ID prefix `PROC-*` per §20 prevention-persona allowlist; the
+  Surgery schema accepts both `PROC-*` and `SUR-*` via the same
+  loader pathway.

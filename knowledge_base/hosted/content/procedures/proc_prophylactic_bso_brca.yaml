@@ -1,0 +1,130 @@
+# PROC-PROPHYLACTIC-BSO-BRCA — Risk-reducing bilateral salpingo-
+# oophorectomy in BRCA1/BRCA2 carriers. §20 prevention-persona procedure
+# (RATIFIED 2026-05-18). `intent: curative` per §17.1 enum (carrier-state
+# framing — no `preventive` enum value in v0.1).
+id: PROC-PROPHYLACTIC-BSO-BRCA
+names:
+  preferred: "Risk-reducing bilateral salpingo-oophorectomy in BRCA1/2 carriers"
+  ukrainian: "Профілактична двобічна сальпінго-оофоректомія у носіїв BRCA1/2"
+  english: "Risk-reducing bilateral salpingo-oophorectomy in BRCA1/2 carriers"
+  synonyms:
+    - "RRSO"
+    - "Risk-reducing salpingo-oophorectomy"
+    - "Prophylactic BSO"
+    - "Bilateral salpingo-oophorectomy for cancer risk reduction"
+
+type: risk_reducing_salpingo_oophorectomy
+intent: curative
+
+target_organ: ovary_fallopian_tube
+applicable_diseases:
+  - DIS-OVARIAN
+  - DIS-BREAST
+
+# Modern laparoscopic RRSO in young healthy carriers carries very low
+# perioperative mortality (Kauff 2002 NEJM, Rebbeck 2009 JNCI meta-analysis;
+# NCCN Genetic/Familial Breast/Ovarian v3.2025).
+operative_mortality_pct: "<0.2% in laparoscopic RRSO in young (<50 yr) otherwise-healthy BRCA carriers at high-volume gynecologic-oncology centers"
+
+common_complications:
+  - name: "Surgical-menopause symptoms (vasomotor, sleep, mood)"
+    frequency: "70-90% if premenopausal at RRSO; HRT mitigates"
+  - name: "Accelerated bone loss / osteoporosis (untreated surgical menopause)"
+    frequency: "10-20% over 10 yr without HRT"
+  - name: "Increased cardiovascular risk (premenopausal RRSO without HRT)"
+    frequency: "Population-attributable; cohort-dependent"
+  - name: "Sexual dysfunction (dyspareunia, decreased libido)"
+    frequency: "30-60% if premenopausal at RRSO; vaginal estrogen mitigates"
+  - name: "Cognitive concerns (post-premature menopause)"
+    frequency: "Reported in cohort studies; magnitude uncertain"
+  - name: "Bowel / bladder injury (laparoscopic dissection)"
+    frequency: "1-3%"
+  - name: "Wound infection / port-site issues"
+    frequency: "2-5%"
+  - name: "Occult occult tubal/ovarian carcinoma found at RRSO (STIC)"
+    frequency: "2-10% — drives mandatory SEE-FIM pathology protocol"
+  - name: "Residual primary peritoneal carcinoma risk"
+    frequency: "~1-4% lifetime post-RRSO (not eliminated)"
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-NCCN-OVARIAN-2025
+
+last_reviewed: "2026-05-18"
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_agent_aac98192634228af3
+draft_revision: 1
+
+patient_facing_summary:
+  english: >
+    BRCA1 carriers face a lifetime ovarian/fallopian-tube cancer risk of
+    roughly 39-58% (BRCA2: ~13-29%), with disease tending to present at
+    advanced stage with poor prognosis. Ovarian cancer surveillance
+    (transvaginal ultrasound + CA-125) has poor sensitivity for early
+    disease, so risk-reducing removal of both ovaries and both fallopian
+    tubes (RRSO) is the most effective prevention. Recommended timing is
+    age 35-40 for BRCA1 (after childbearing) and 40-45 for BRCA2. RRSO
+    induces immediate surgical menopause if performed premenopausally —
+    discussion of hormone replacement, bone health, cardiovascular and
+    cognitive considerations is part of pre-operative counseling. RRSO
+    is usually laparoscopic and is performed by a gynecologic oncologist
+    so any unsuspected early cancer (~2-10% chance) is staged correctly.
+    Risk is reduced ~80-90% but a small (1-4%) risk of primary peritoneal
+    cancer remains.
+  ukrainian: >
+    Носії BRCA1 мають довічний ризик раку яєчників / маткових труб
+    приблизно 39–58% (BRCA2: близько 13–29%), причому хвороба
+    зазвичай проявляється на пізніх стадіях із поганим прогнозом.
+    Скринінг раку яєчників (трансвагінальне УЗД + CA-125) має низьку
+    чутливість для ранніх форм, тому профілактичне видалення обох
+    яєчників та обох маткових труб (RRSO) є найефективнішою
+    профілактикою. Рекомендовані терміни: 35–40 років для BRCA1
+    (після завершення дітородіння) та 40–45 років для BRCA2. Якщо
+    RRSO виконується у пременопаузі, настає негайна хірургічна
+    менопауза — обговорення замісної гормональної терапії, стану
+    кісток, серцево-судинних і когнітивних аспектів є частиною
+    передопераційного консультування. RRSO зазвичай виконується
+    лапароскопічно гінекологом-онкологом, щоб у разі несподіваного
+    виявлення раннього раку (близько 2–10%) було проведено коректне
+    стадіювання. Ризик знижується приблизно на 80–90%, проте
+    зберігається невеликий (1–4%) ризик первинного раку очеревини.
+
+notes: >
+  Risk-reducing bilateral salpingo-oophorectomy (RRSO) is the most
+  effective primary-prevention intervention for ovarian/fallopian-tube
+  carcinoma in BRCA1/BRCA2 carriers — ~80-90% risk reduction (Kauff 2002
+  NEJM; Rebbeck 2009 JNCI meta-analysis; NCCN Genetic/Familial
+  Breast/Ovarian v3.2025). Recommended timing:
+    - BRCA1: age 35-40, after completion of childbearing.
+    - BRCA2: age 40-45 (ovarian cancer in BRCA2 carriers typically
+      presents later than BRCA1).
+    - Risk-reducing salpingectomy with delayed oophorectomy is an
+      ongoing investigational option (TUBA / SOROCk trials) — not yet
+      standard.
+
+  RRSO is performed by gynecologic oncology with SEE-FIM (sectioning and
+  extensively examining the fimbriated end) pathology protocol because
+  ~2-10% of seemingly normal specimens harbor occult STIC (serous tubal
+  intraepithelial carcinoma) or early invasive disease. If invasive
+  cancer is identified, staging is completed at the same operation.
+
+  Surgical menopause: premenopausal RRSO induces immediate menopause
+  with vasomotor, bone-loss, cardiovascular, sexual-function, and
+  cognitive sequelae. Hormone replacement therapy (HRT) up to the age
+  of natural menopause (~51) is endorsed for BRCA1 carriers without
+  contraindication (does not appear to abrogate breast-cancer risk
+  reduction observed with RRSO per NCCN summary). For BRCA2 carriers
+  with retained breasts, HRT requires individualized risk discussion.
+
+  RRSO also reduces breast cancer risk (~50% if performed
+  premenopausally in BRCA1; less clear-cut in BRCA2) — though this
+  observation is being re-examined in modern cohorts and may be
+  smaller than older estimates.
+
+  Residual primary peritoneal carcinoma risk persists ~1-4% lifetime
+  because peritoneal mesothelium shares embryologic origin with ovarian
+  surface epithelium and cannot be surgically removed.
+
+  `intent: curative` per §17.1 enum — risk-reducing surgery in carriers
+  is curative-intent in the carrier-state framing. The schema does not
+  define a `preventive` intent in v0.1.

@@ -1,0 +1,122 @@
+# PROC-PROPHYLACTIC-THYROIDECTOMY-MEN2 — Prophylactic thyroidectomy in
+# RET-mutation MEN2 carriers, timed by ATA risk category. §20 prevention-
+# persona procedure (RATIFIED 2026-05-18). `intent: curative` per §17.1
+# enum (carrier-state framing — no `preventive` enum value in v0.1).
+id: PROC-PROPHYLACTIC-THYROIDECTOMY-MEN2
+names:
+  preferred: "Prophylactic total thyroidectomy in MEN2 / RET-mutation carriers"
+  ukrainian: "Профілактична тотальна тиреоїдектомія у носіїв MEN2 / мутації RET"
+  english: "Prophylactic total thyroidectomy in MEN2 / RET-mutation carriers"
+  synonyms:
+    - "Prophylactic thyroidectomy in MEN2A / MEN2B"
+    - "RET-mutation prophylactic thyroidectomy"
+    - "Risk-reducing thyroidectomy for hereditary MTC"
+
+type: prophylactic_thyroidectomy
+intent: curative
+
+target_organ: thyroid
+applicable_diseases:
+  - DIS-MTC
+  - DIS-PHEOCHROMOCYTOMA
+
+# Pediatric / adolescent thyroidectomy at high-volume centers carries low
+# perioperative mortality (Wells 2015 ATA; Endocrine Society MEN 2023).
+operative_mortality_pct: "<0.5% in pediatric / adolescent thyroidectomy at high-volume centers; comparable to elective benign-thyroid surgery"
+
+common_complications:
+  - name: "Permanent hypoparathyroidism (requires lifelong calcium / calcitriol)"
+    frequency: "1-5% at high-volume pediatric centers; up to 10-15% at lower volume / younger age"
+  - name: "Transient hypocalcemia (postoperative)"
+    frequency: "20-30%"
+  - name: "Recurrent laryngeal nerve injury — temporary"
+    frequency: "3-5%"
+  - name: "Recurrent laryngeal nerve injury — permanent"
+    frequency: "<1-2% at high-volume centers"
+  - name: "Wound infection / hematoma requiring intervention"
+    frequency: "1-2%"
+  - name: "Lifelong levothyroxine dependence"
+    frequency: "Universal (intended consequence of total thyroidectomy)"
+  - name: "Growth / psychosocial impact of early-childhood major surgery"
+    frequency: "Family-counseling required — long-term outcomes generally good with expert pediatric endocrine follow-up"
+
+sources:
+  - SRC-ATA-THYROID-2015
+  - SRC-ENDOCRINE-SOCIETY-MEN-2023
+  - SRC-NCCN-THYROID-2025
+
+last_reviewed: "2026-05-18"
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_agent_aac98192634228af3
+draft_revision: 1
+
+patient_facing_summary:
+  english: >
+    Multiple Endocrine Neoplasia type 2 (MEN2) is caused by inherited
+    mutations in the RET gene and confers near-100% lifetime risk of
+    medullary thyroid cancer (MTC). Prophylactic total thyroidectomy
+    before MTC develops is the standard preventive intervention.
+    Recommended timing is stratified by the specific RET mutation
+    (American Thyroid Association risk categorization):
+    "highest risk" (HST, e.g., RET M918T / classic MEN2B) — surgery in
+    the first year of life; "high risk" (H, classic MEN2A C634
+    variants) — by age 5; "moderate risk" (MOD, other MEN2A variants) —
+    typically age 5-10 with calcitonin-guided timing. The operation
+    is total thyroidectomy with central-neck node dissection in
+    higher-risk categories. The child will require lifelong thyroid
+    hormone replacement. Risk of pheochromocytoma (adrenal tumor)
+    requires lifelong biochemical surveillance starting before any
+    future anesthesia. Hyperparathyroidism surveillance applies to
+    MEN2A only.
+  ukrainian: >
+    Синдром множинної ендокринної неоплазії 2 типу (MEN2) спричинений
+    спадковими мутаціями гена RET і має майже 100% довічний ризик
+    медулярного раку щитоподібної залози (МРЩЗ). Профілактична
+    тотальна тиреоїдектомія до розвитку МРЩЗ є стандартним
+    профілактичним втручанням. Рекомендовані терміни стратифікуються
+    за конкретною мутацією RET (категоризація Американської
+    тиреоїдної асоціації): «найвищий ризик» (HST, наприклад RET M918T
+    / класичний MEN2B) — операція у першому році життя; «високий
+    ризик» (H, класичні варіанти MEN2A C634) — до 5 років; «помірний
+    ризик» (MOD, інші варіанти MEN2A) — зазвичай у віці 5–10 років
+    із керованим рівнем кальцитоніну. Операція — тотальна
+    тиреоїдектомія з центральною шийною лімфодисекцією у категоріях
+    вищого ризику. Дитина потребуватиме довічної замісної терапії
+    тироксином. Ризик феохромоцитоми (пухлини надниркової залози)
+    вимагає довічного біохімічного спостереження до будь-яких
+    майбутніх анестезіологічних втручань. Спостереження за
+    гіперпаратиреозом стосується лише MEN2A.
+
+notes: >
+  RET-mutation MEN2 confers near-100% lifetime risk of medullary
+  thyroid carcinoma (MTC); prophylactic thyroidectomy is the only
+  effective primary-prevention intervention (Wells 2015 ATA Hereditary
+  MTC guideline; Endocrine Society MEN 2023; NCCN Thyroid v3.2025).
+
+  Mutation-stratified timing (ATA 2015 risk categories):
+    - HST ("highest risk"): RET M918T (classic MEN2B). Total
+      thyroidectomy in the first year of life — ideally first months
+      because MTC has been documented within the first year.
+    - H ("high risk"): RET C634R/F/G/S/W/Y (classic MEN2A) and
+      A883F. Total thyroidectomy by age 5, or earlier if calcitonin
+      is elevated; central-neck dissection if calcitonin >40 pg/mL or
+      imaging suggests nodal disease.
+    - MOD ("moderate risk"): other MEN2A variants (e.g., 609, 611,
+      618, 620, 630, 768, 790, 791, 804, 891). Surgery typically
+      between age 5-10 — calcitonin-guided: rising calcitonin or
+      ultrasound-detected disease accelerates timing.
+
+  Concurrent and lifelong endocrine surveillance:
+    - Pheochromocytoma: starting age 11-16 depending on category;
+      annual plasma / 24-hr urine fractionated metanephrines.
+      Critical screen before any anesthesia, pregnancy.
+    - Primary hyperparathyroidism: MEN2A only — annual calcium / PTH
+      starting age 11.
+
+  applicable_diseases includes DIS-MTC (primary endpoint) and
+  DIS-PHEOCHROMOCYTOMA (linked syndromic risk that drives the same
+  surveillance pathway).
+
+  `intent: curative` per §17.1 enum — risk-reducing surgery in carriers
+  is curative-intent in the carrier-state framing. The schema does not
+  define a `preventive` intent in v0.1.
