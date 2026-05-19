@@ -1,0 +1,112 @@
+id: DRUG-ASPIRIN-LOW-DOSE-CHEMOPREVENTION
+names:
+  preferred: "Aspirin low-dose (cancer chemoprevention context)"
+  ukrainian: "Ацетилсаліцилова кислота низькодозова (хіміопрофілактика раку)"
+  english: "Aspirin low-dose (cancer chemoprevention)"
+  synonyms: ["Low-dose ASA", "Acetylsalicylic acid 81 mg", "Baby aspirin"]
+  brand_names: ["Bayer Aspirin (81 mg)", "Cardiomagnyl"]
+atc_code: B01AC06
+rxnorm_id: "243670"
+drug_class: "Non-selective cyclooxygenase (COX-1/COX-2) inhibitor; antiplatelet at low dose"
+mechanism: >
+  Irreversibly acetylates serine-530 of platelet COX-1, blocking
+  thromboxane A2 synthesis for the platelet's lifespan (~7-10 days).
+  Cancer-prevention rationale: COX-2 suppression in colonic mucosa
+  reduces prostaglandin-driven adenoma growth; long-term low-dose
+  aspirin reduces CRC incidence and mortality in Lynch syndrome
+  (CAPP2 RCT, 10-year follow-up: ~50% reduction in colorectal
+  cancers with 600 mg/day, durable benefit; subsequent dosing
+  studies favor 100 mg/day for risk/benefit).
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 1899  # over-the-counter; reaffirmed antiplatelet 1980s
+    indications_brief:
+      - "Secondary CV prevention"
+      - "Acute coronary syndrome / stroke"
+      - "NOT FDA-labeled for cancer chemoprevention"
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: true
+    registration_number: "OTC"
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "OTC — широко доступний; не входить у реімбурсаційну програму НСЗУ як хіміопрофілактика раку. Out-of-pocket для цього показання."
+typical_dosing: >
+  Cancer chemoprevention (Lynch syndrome / hereditary CRC risk reduction):
+  81-100 mg PO daily ongoing (CAPP2 used 600 mg/day; CaPP3 ongoing
+  dose-comparison trial supports 100 mg as effective with lower
+  bleeding risk). Duration: ≥2 years to begin, ≥5-10 years for full
+  benefit. Take with food. Note USPSTF 2022 withdrew prior CRC-
+  prevention recommendation for general population (net benefit
+  uncertain); Lynch-specific recommendation retained by InSiGHT/NCCN.
+formulations:
+  - "Tablet 75 / 81 / 100 mg (enteric-coated and uncoated)"
+  - "Chewable 81 mg"
+
+absolute_contraindications:
+  - "Active GI bleeding or peptic ulcer disease"
+  - "Hypersensitivity / aspirin-exacerbated respiratory disease (AERD)"
+  - "Severe thrombocytopenia (platelets <50K) or coagulopathy"
+  - "Hemophilia"
+  - "Age <16 with viral illness (Reye syndrome risk — not relevant in adult oncology)"
+black_box_warnings: []
+major_interactions:
+  - "Anticoagulants (warfarin, DOACs, heparin) — additive bleeding risk"
+  - "Other NSAIDs (ibuprofen, naproxen) — diminish antiplatelet effect; increased GI bleeding"
+  - "Methotrexate (high dose) — increased toxicity"
+  - "Selective serotonin reuptake inhibitors (SSRIs) — increased GI bleeding risk"
+  - "Corticosteroids — increased GI bleeding risk"
+common_adverse_events:
+  - "Dyspepsia (~5-10%)"
+  - "Minor bleeding (epistaxis, easy bruising) (~2-5%)"
+  - "Nausea (~2-3%)"
+serious_adverse_events:
+  - "Major GI bleeding (~0.5-1% per year on chronic low-dose ASA)"
+  - "Intracranial hemorrhage (rare at antiplatelet doses; absolute risk ~0.05-0.1% per year)"
+  - "Severe hypersensitivity / anaphylaxis (rare)"
+  - "Tinnitus / salicylate toxicity (very rare at chemoprevention dose)"
+
+pharmacology: {half_life_hours: 0.3, clearance: "Hepatic esterase + glucuronidation; salicylate metabolite t1/2 2-3 h at low doses, dose-dependent kinetics at higher doses; renal excretion"}
+
+sources:
+  - SRC-USPSTF-CRC-2021
+  - SRC-NCCN-COLON-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 chemoprevention-workstream authoring; pending two-Clinical-
+  Co-Lead signoff per CHARTER §6.1 dev-mode. CHEMOPREVENTION CONTEXT —
+  separate entity from DRUG-ASPIRIN (which carries oncology supportive-
+  care indications, e.g., VTE prophylaxis in lenalidomide MM). Use here
+  reflects long-term low-dose ASA for colorectal cancer (and possibly
+  other GI/breast/prostate) risk reduction. Strongest evidence in
+  Lynch syndrome (CAPP2, NCT00188266; 10-year follow-up in Lancet 2020).
+  USPSTF 2022 reversed prior 2016 grade B and now reports insufficient
+  evidence (I statement) for routine general-population CRC chemoprevention
+  due to bleeding-risk re-weighting (ASPREE trial). Engine should not
+  auto-recommend without (a) confirmed Lynch / hereditary CRC risk,
+  (b) bleeding-risk assessment, (c) shared decision-making documented.
+  Dual cardiovascular benefit may justify use in higher-CV-risk patients
+  with hereditary CRC.
+
+notes_ua: >
+  Ацетилсаліцилова кислота низькодозова — хіміопрофілактика
+  колоректального раку. Найсильніша доказова база — синдром Лінча
+  (дослідження CAPP2, 10-річне спостереження в Lancet 2020 показало
+  ~50% зниження КРР). Доза 81-100 mg/день перорально щодня
+  тривало (≥2 років для початку, ≥5-10 років для повного ефекту).
+  USPSTF 2022 відкликав попередню рекомендацію для загальної
+  популяції через перерахунок ризику кровотечі (дослідження ASPREE).
+  Двигун НЕ повинен автоматично рекомендувати без (а) підтвердженого
+  Лінч-синдрому/спадкового ризику КРР, (б) оцінки ризику кровотечі,
+  (в) задокументованого спільного прийняття рішень. Подвійна користь
+  для серцево-судинної профілактики може виправдати застосування
+  у пацієнтів з вищим серцево-судинним ризиком та спадковим КРР.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_chemoprevention_drugs_2026-05-18
+draft_revision: 1

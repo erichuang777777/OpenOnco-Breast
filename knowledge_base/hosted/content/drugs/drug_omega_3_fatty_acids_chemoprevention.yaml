@@ -1,0 +1,115 @@
+id: DRUG-OMEGA-3-FATTY-ACIDS-CHEMOPREVENTION
+names:
+  preferred: "Omega-3 fatty acids EPA+DHA (general-population cancer chemoprevention research context)"
+  ukrainian: "Омега-3 жирні кислоти EPA+DHA (хіміопрофілактика раку — дослідницький контекст)"
+  english: "Omega-3 fatty acids EPA+DHA (cancer chemoprevention)"
+  synonyms: ["n-3 PUFA", "Fish oil EPA+DHA", "Marine omega-3"]
+  brand_names: ["Lovaza (EPA+DHA ethyl esters)", "Omacor", "many OTC fish-oil supplements"]
+atc_code: C10AX06
+rxnorm_id: "352573"
+drug_class: "Omega-3 polyunsaturated fatty acids (marine origin) — combination EPA + DHA"
+mechanism: >
+  EPA (eicosapentaenoic acid) and DHA (docosahexaenoic acid) are long-
+  chain n-3 polyunsaturated fatty acids that compete with arachidonic
+  acid as substrates for cyclooxygenase and lipoxygenase, shifting
+  eicosanoid production toward less inflammatory 3-series prostaglandins
+  and 5-series leukotrienes; they also modulate membrane fluidity,
+  PPAR-α/γ signaling, and resolvin / protectin lipid mediators that
+  resolve inflammation. Cancer-prevention rationale: lower inflammation,
+  reduced PGE2-driven epithelial proliferation, and altered membrane
+  composition. Distinct from DRUG-OMEGA-3-EPA (FAP-specific high-dose
+  EPA monotherapy entity); this entity captures general-population
+  EPA+DHA chemoprevention. VITAL omega-3 arm (Manson NEJM 2019,
+  NCT01169259): 1 g/day EPA+DHA (840 mg EPA+DHA, Omacor) did NOT
+  reduce total invasive cancer or cancer mortality vs. placebo over
+  ~5 years.
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 2004  # Lovaza (Omacor) for hypertriglyceridemia
+    indications_brief:
+      - "Severe hypertriglyceridemia (TG ≥500 mg/dL)"
+      - "Dietary supplement / general supplementation (OTC)"
+      - "NOT FDA-labeled for cancer chemoprevention"
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Lovaza/Omacor можуть бути доступні через імпорт; широко доступні OTC fish-oil препарати (якість варіює). Реімбурсація НСЗУ — не для хіміопрофілактики; out-of-pocket."
+typical_dosing: >
+  Cancer-prevention research context (VITAL protocol):
+  1 g/day EPA+DHA ethyl-ester capsule (Omacor; ~460 mg EPA + 380 mg DHA).
+  Most epidemiologic-based recommendations: 1-2 g/day total EPA+DHA from
+  fish or supplements.
+  Hypertriglyceridemia (on-label): 4 g/day.
+  Take with food. Some advocate split BID dosing for tolerability.
+  No specific cancer-prevention dose has been validated outside
+  VITAL (null result).
+formulations:
+  - "Capsule 1 g Omacor / Lovaza (~460 mg EPA + 380 mg DHA ethyl esters)"
+  - "OTC fish-oil capsules — variable EPA/DHA content per capsule (check label)"
+  - "Liquid fish oil (variable concentration)"
+
+absolute_contraindications:
+  - "Hypersensitivity to fish, shellfish, or any component"
+black_box_warnings: []
+major_interactions:
+  - "Antiplatelet / anticoagulant drugs (aspirin, clopidogrel, warfarin, DOACs) — theoretical additive bleeding risk; clinically small at 1-4 g/day"
+  - "Antihypertensives — modest BP lowering may be additive"
+common_adverse_events:
+  - "Fishy aftertaste / belching (~5-10%)"
+  - "Dyspepsia / GERD (~5-10%)"
+  - "Diarrhea, loose stools (~5-10%)"
+  - "Nausea (~2-5%)"
+serious_adverse_events:
+  - "Atrial fibrillation signal (REDUCE-IT / STRENGTH / VITAL-Rhythm — modest increase, mostly at 4 g/day)"
+  - "Increased bleeding (theoretical; clinically rare at standard doses)"
+  - "Severe hypersensitivity (rare)"
+
+pharmacology: {half_life_hours: 60, clearance: "Hepatic β-oxidation and incorporation into phospholipid membranes; no significant CYP metabolism; effective tissue half-life weeks to months."}
+
+sources:
+  - SRC-USPSTF-CRC-2021
+  - SRC-WCRF-AICR-CUP-2018
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 chemoprevention-workstream authoring; pending two-Clinical-
+  Co-Lead signoff per CHARTER §6.1 dev-mode. RESEARCH-ONLY chemoprevention.
+  Distinct from DRUG-OMEGA-3-EPA (which captures purified high-dose EPA
+  monotherapy for FAP duodenal polyposis). VITAL primary outcome NULL:
+  1 g/day EPA+DHA over ~5 years did not reduce total invasive cancer
+  (HR 1.03) or cancer mortality. seAFOod (UK polyp prevention with
+  EPA + aspirin) — primary endpoint negative. Some subgroup signals
+  (African American participants in VITAL had nominally lower CRC
+  incidence — exploratory). Cardiac-rhythm signal: AF risk modestly
+  increased at higher doses. USPSTF / WCRF: omega-3 supplementation
+  NOT recommended for cancer prevention (insufficient or null
+  evidence). Engine should NOT auto-recommend for cancer prevention;
+  may be reasonable for hypertriglyceridemia (on-label) or general
+  dietary supplementation per patient preference.
+
+notes_ua: >
+  Омега-3 жирні кислоти EPA+DHA — основні FDA-показання: тяжка
+  гіпертригліцеридемія, дієтична добавка. ХІМІОПРОФІЛАКТИКА РАКУ —
+  лише в межах досліджень. Відрізняється від DRUG-OMEGA-3-EPA
+  (високодозове EPA-монотерапія для FAP-дуоденального поліпозу).
+  Дослідження VITAL (Manson NEJM 2019, ~25,000 дорослих США, 1 г/день
+  EPA+DHA vs. плацебо ~5 років): первинний endpoint негативний — не
+  знижено загальної інвазивної онкозахворюваності чи смертності.
+  Дослідження seAFOod (Велика Британія, EPA + аспірин для профілактики
+  поліпів) — первинний endpoint негативний. USPSTF / WCRF — омега-3
+  добавки НЕ рекомендуються для профілактики раку. Двигун НЕ повинен
+  автоматично рекомендувати для профілактики раку; може бути доречно
+  для гіпертригліцеридемії (on-label) або як загальна дієтична
+  добавка за уподобанням пацієнта. Сигнал збільшення частоти
+  фібриляції передсердь — переважно при дозах 4 г/день.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_chemoprevention_drugs_2026-05-18
+draft_revision: 1

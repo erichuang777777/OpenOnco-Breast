@@ -1,0 +1,101 @@
+id: DRUG-METFORMIN-CHEMOPREVENTION
+names:
+  preferred: "Metformin (cancer chemoprevention context)"
+  ukrainian: "Метформін (хіміопрофілактика раку)"
+  english: "Metformin (cancer chemoprevention)"
+  synonyms: ["Dimethylbiguanide"]
+  brand_names: ["Glucophage", "Diaformin", "Siofor"]
+atc_code: A10BA02
+rxnorm_id: "6809"
+drug_class: "Biguanide oral antihyperglycemic"
+mechanism: >
+  Activates AMP-activated protein kinase (AMPK) and inhibits hepatic
+  gluconeogenesis (mitochondrial complex I inhibition); also lowers
+  circulating insulin and IGF-1, which is the leading cancer-prevention
+  hypothesis. Observational studies in type 2 diabetics show reduced
+  incidence of colorectal, hepatocellular, pancreatic, and breast
+  cancers vs. sulfonylureas. RCT evidence for cancer chemoprevention
+  remains mixed (MA.32 adjuvant breast trial: no DFS benefit;
+  ongoing prevention trials).
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 1994
+    indications_brief:
+      - "Type 2 diabetes mellitus"
+      - "NOT FDA-labeled for cancer chemoprevention"
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: true
+    reimbursement_indications:
+      - "Цукровий діабет 2 типу (НЕ рак-профілактика)"
+    last_verified: "2026-05-18"
+    notes: "Реімбурсується для діабету 2 типу; для хіміопрофілактики раку — out-of-pocket / off-label."
+typical_dosing: >
+  Cancer chemoprevention (research/off-label):
+  500 mg PO daily start, titrate to 500-1500 mg/day (often 850 mg BID).
+  Take with food to minimize GI side effects. Renal function check
+  before initiation and annually. Withhold if eGFR <30 mL/min/1.73m²;
+  caution at eGFR 30-45 (max dose typically 1000 mg/day).
+formulations:
+  - "Tablet 500 mg, 850 mg, 1000 mg (immediate release)"
+  - "Extended-release 500 mg, 750 mg, 1000 mg"
+
+absolute_contraindications:
+  - "eGFR <30 mL/min/1.73m² (severe renal impairment — lactic acidosis risk)"
+  - "Acute or unstable heart failure with hypoperfusion"
+  - "Acute illness with hypoxia, dehydration, sepsis"
+  - "Hypersensitivity to metformin"
+black_box_warnings:
+  - "Lactic acidosis — rare but potentially fatal; risk factors include renal impairment, hypoxic states, alcohol abuse, hepatic insufficiency, IV contrast administration"
+major_interactions:
+  - "Iodinated IV contrast — hold 48 h before/after if eGFR <60 or unstable; lactic acidosis risk"
+  - "Alcohol (chronic, heavy) — increased lactic acidosis risk"
+  - "Cimetidine, dolutegravir — increased metformin levels (modest)"
+  - "Carbonic anhydrase inhibitors (topiramate, acetazolamide) — increased lactic acidosis risk"
+common_adverse_events:
+  - "Diarrhea (~10-30%; often improves over weeks)"
+  - "Nausea, abdominal discomfort (~5-15%)"
+  - "Metallic taste (~3-5%)"
+  - "Vitamin B12 deficiency on long-term use (~10-30% after 5+ years; check periodically)"
+serious_adverse_events:
+  - "Lactic acidosis (rare; ~3-9 cases per 100,000 patient-years)"
+  - "B12 deficiency with anemia / neuropathy"
+  - "Severe hypoglycemia (very rare as monotherapy; risk with combo agents)"
+
+pharmacology: {half_life_hours: 6.5, clearance: "Not metabolized; ~90% excreted unchanged in urine via active tubular secretion (OCT2). No CYP metabolism."}
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-WCRF-AICR-CUP-2018
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 chemoprevention-workstream authoring; pending two-Clinical-
+  Co-Lead signoff per CHARTER §6.1 dev-mode. CANCER-CHEMOPREVENTION
+  CONTEXT — distinct entity from a generic DRUG-METFORMIN for diabetes
+  management. Evidence base: observational signals strong (T2DM cohorts
+  show ~20-40% reduced cancer incidence), RCT evidence mixed/negative
+  in adjuvant settings (MA.32: no benefit). NOT NCCN/ESMO/USPSTF
+  guideline-recommended as standalone chemoprevention intervention.
+  Reasonable adjunct in T2DM patients with hereditary cancer risk
+  (Lynch, etc.) for combined glycemic + theoretical cancer benefit.
+  Engine should NOT auto-recommend for cancer prevention alone.
+
+notes_ua: >
+  Метформін — біггуанід; основне FDA-показання — цукровий діабет
+  2 типу. У контексті хіміопрофілактики раку: спостережні дані
+  свідчать про ~20-40% зниження захворюваності у T2DM-пацієнтів,
+  але РКД-докази обмежені/негативні (наприклад, MA.32 в ад'юванті
+  РМЗ — без користі). НЕ є стандартом NCCN/ESMO/USPSTF як самостійна
+  інтервенція хіміопрофілактики. Розумний додатковий вибір у пацієнтів
+  з T2DM + спадковим ризиком раку (синдром Лінча тощо). Двигун
+  НЕ повинен автоматично рекомендувати лише для профілактики раку.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_chemoprevention_drugs_2026-05-18
+draft_revision: 1

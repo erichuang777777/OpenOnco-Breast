@@ -1,0 +1,119 @@
+id: DRUG-VITAMIN-D3-CHEMOPREVENTION
+names:
+  preferred: "Vitamin D3 / cholecalciferol (cancer chemoprevention research context)"
+  ukrainian: "Вітамін D3 / холекальциферол (хіміопрофілактика раку — дослідницький контекст)"
+  english: "Vitamin D3 / cholecalciferol (cancer chemoprevention)"
+  synonyms: ["Cholecalciferol", "Vit D3", "25-OH-D3 precursor"]
+  brand_names: ["D3 Aquadetrim", "Drisdol (D2)", "many OTC supplements"]
+atc_code: A11CC05
+rxnorm_id: "1602"
+drug_class: "Fat-soluble vitamin — secosteroid hormone precursor"
+mechanism: >
+  Cholecalciferol (D3) is hepatically hydroxylated to 25-hydroxyvitamin
+  D (calcidiol), the storage form measured clinically, then renally
+  hydroxylated to 1,25-dihydroxyvitamin D (calcitriol), the active
+  hormone. Calcitriol binds the nuclear vitamin D receptor (VDR),
+  modulating ~1000+ genes including those involved in cell-cycle
+  arrest (p21, p27), apoptosis, differentiation, and innate immunity.
+  Cancer-prevention rationale: observational ecological gradients
+  (latitude, sunlight) and large cohort 25-OH-D associations suggest
+  reduced incidence of colorectal, breast, and possibly other cancers
+  at higher serum levels. VITAL RCT (Manson NEJM 2019, NCT01169259):
+  2000 IU/day for ~5 years did NOT reduce total invasive cancer
+  incidence (primary endpoint), with a non-significant 17% reduction
+  in cancer mortality.
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 1971  # as a dietary ingredient
+    indications_brief:
+      - "Vitamin D deficiency / insufficiency"
+      - "Osteoporosis adjunct (with calcium)"
+      - "Hypoparathyroidism, renal osteodystrophy (calcitriol form)"
+      - "NOT FDA-labeled for cancer chemoprevention"
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Широко доступний OTC (Аквадетрим, Vigantol, generics). Реімбурсація НСЗУ — для конкретних показань (остеопороз, гіпопаратиреоз) у складі комбінованих програм; як хіміопрофілактика — out-of-pocket."
+typical_dosing: >
+  Cancer-prevention research context (VITAL, AMATERASU):
+  1000-4000 IU PO daily. Most cancer-prevention trials used 1000-2000
+  IU/day (VITAL: 2000 IU/day) or 2000 IU/day with calcium 1000 mg.
+  Repletion of deficiency (25-OH-D <20 ng/mL): 50,000 IU weekly for
+  6-8 weeks then maintenance.
+  Maintenance / general supplementation: 800-2000 IU/day.
+  Goal serum 25-OH-D: 30-50 ng/mL (75-125 nmol/L); avoid >100 ng/mL
+  (hypervitaminosis risk).
+formulations:
+  - "Tablet / capsule 400, 800, 1000, 2000, 5000, 10,000, 50,000 IU"
+  - "Oral solution 5000 IU/mL or per drop"
+  - "Chewables, gummies (OTC)"
+
+absolute_contraindications:
+  - "Hypercalcemia"
+  - "Hypervitaminosis D"
+  - "Granulomatous disease with hypercalcemia (sarcoidosis, TB, lymphoma) — extra-renal 1-hydroxylation can cause severe hypercalcemia"
+  - "Hypersensitivity to vitamin D"
+black_box_warnings: []
+major_interactions:
+  - "Thiazide diuretics — increased hypercalcemia risk with high-dose D"
+  - "Digoxin — hypercalcemia potentiates digoxin toxicity"
+  - "CYP3A4 inducers (rifampin, phenytoin, phenobarbital, carbamazepine) — accelerated vitamin D inactivation; higher doses may be needed"
+  - "Cholestyramine, orlistat — reduced absorption"
+  - "Aluminum-containing antacids — risk of aluminum toxicity in renal failure"
+common_adverse_events:
+  - "Generally well-tolerated at supplementation doses"
+  - "GI upset (rare)"
+  - "Headache (rare)"
+serious_adverse_events:
+  - "Hypervitaminosis D / toxicity — hypercalcemia, hypercalciuria, nephrocalcinosis, nephrolithiasis (typically with intake >10,000 IU/day for months or single megadoses)"
+  - "Falls / fractures (paradoxical — large bolus doses, e.g., 500,000 IU yearly, increased falls in some trials)"
+
+pharmacology: {half_life_hours: 360, clearance: "Hepatic CYP2R1 → 25-OH-D; renal CYP27B1 → 1,25-OH₂-D (active); CYP24A1 inactivation. Storage half-life ~15 days for 25-OH-D; effective body store t1/2 ~2 months."}
+
+sources:
+  - SRC-USPSTF-BREAST-2024
+  - SRC-WCRF-AICR-CUP-2018
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 chemoprevention-workstream authoring; pending two-Clinical-
+  Co-Lead signoff per CHARTER §6.1 dev-mode. CANCER-CHEMOPREVENTION
+  CONTEXT — distinct from generic supplementation for bone health /
+  deficiency repletion. EVIDENCE LIMITED. VITAL RCT (Manson NEJM 2019,
+  ~25,000 US adults, 2000 IU/day vs. placebo over ~5.3 years): no
+  reduction in total invasive cancer (primary endpoint, HR 0.96);
+  secondary signal of 17% reduction in cancer mortality (HR 0.83,
+  NS at primary analysis, significant after excluding first 1-2
+  years). AMATERASU (Akiba JAMA 2019, Japan, adjuvant 2000 IU/day
+  in digestive-tract cancer): no DFS improvement; subgroup p53-mutant
+  benefit. Subgroup signals (lower BMI, Black participants, baseline
+  D-deficient) suggest patient-selection may matter. USPSTF 2024: no
+  recommendation for vitamin D supplementation for cancer prevention
+  (insufficient evidence). Engine should NOT auto-recommend vitamin D
+  for cancer prevention alone; appropriate for deficiency repletion
+  and bone health.
+
+notes_ua: >
+  Вітамін D3 (холекальциферол) — основні показання: профілактика та
+  лікування дефіциту вітаміну D, остеопороз (адʼюнкт із кальцієм).
+  ХІМІОПРОФІЛАКТИКА РАКУ — обмежена доказова база. Дослідження VITAL
+  (Manson NEJM 2019, ~25,000 дорослих США, 2000 МО/день vs. плацебо
+  ~5,3 роки): не показало зниження загальної інвазивної онкозахворюваності
+  (первинний endpoint); вторинний сигнал 17% зниження онкосмертності
+  (не значущий первинно, значущий після виключення перших 1-2 років).
+  USPSTF 2024 — без рекомендації для профілактики раку. Двигун НЕ
+  повинен автоматично рекомендувати для профілактики раку; підходить
+  для усунення дефіциту та підтримки кісткового здоров'я. Уникати
+  у пацієнтів з гіпервітамінозом D, гіперкальціємією, гранулематозними
+  захворюваннями.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_chemoprevention_drugs_2026-05-18
+draft_revision: 1

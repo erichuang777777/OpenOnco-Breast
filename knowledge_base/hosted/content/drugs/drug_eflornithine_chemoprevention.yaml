@@ -1,0 +1,111 @@
+id: DRUG-EFLORNITHINE-CHEMOPREVENTION
+names:
+  preferred: "Eflornithine (cancer chemoprevention research context)"
+  ukrainian: "Ефлорнітин (хіміопрофілактика раку — дослідницький контекст)"
+  english: "Eflornithine (cancer chemoprevention)"
+  synonyms: ["DFMO", "Difluoromethylornithine", "alpha-DFMO"]
+  brand_names: ["Vaniqa (topical, hirsutism)", "Iwilfin (oral, neuroblastoma)", "Ornidyl (IV, trypanosomiasis — discontinued in US)"]
+atc_code: P51AX08  # eflornithine (trypanosomiasis ATC); oral oncology repurposed
+rxnorm_id: "4036"
+drug_class: "Irreversible ornithine decarboxylase (ODC) inhibitor — polyamine biosynthesis inhibitor"
+mechanism: >
+  Suicide enzyme-activated irreversible inhibitor of ornithine
+  decarboxylase (ODC), the first and rate-limiting enzyme in polyamine
+  (putrescine → spermidine → spermine) biosynthesis. Depletion of
+  polyamines suppresses cell proliferation. Cancer-prevention rationale:
+  ODC is a c-Myc target; polyamines are elevated in colorectal adenomas
+  and many cancers. PACES (Phase III, Meyskens et al.): eflornithine
+  500 mg + sulindac 150 mg PO daily reduced metachronous adenomas by
+  ~70% over 36 months in patients with prior sporadic colon adenomas
+  (Cancer Prev Res 2008); ongoing follow-up. FDA-approved (Iwilfin,
+  2024) for maintenance therapy of high-risk neuroblastoma — first
+  oncology indication for the agent.
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 2024  # Iwilfin oral for high-risk neuroblastoma
+    indications_brief:
+      - "Maintenance therapy for high-risk neuroblastoma in adult and pediatric patients with ≥partial response to prior multiagent therapy (Iwilfin)"
+      - "Hirsutism — topical (Vaniqa)"
+      - "NOT FDA-labeled for colon cancer chemoprevention"
+  ema:
+    approved: false
+    notes: "Iwilfin oral oncology — not yet EMA-approved as of 2026-05; topical Vaniqa approved in EU."
+  ukraine_registration:
+    registered: false
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Не зареєстровано в Україні для онкологічного застосування (Iwilfin). Vaniqa (топічна) — обмежена доступність. Хіміопрофілактика — лише дослідницький контекст."
+typical_dosing: >
+  Cancer-prevention research context (PACES protocol):
+  Eflornithine 500 mg PO daily + sulindac 150 mg PO daily (combination,
+  not monotherapy).
+  Neuroblastoma maintenance (Iwilfin, on-label, separate context):
+  Weight-based; ~750-1500 mg/m² PO BID — see Iwilfin label.
+  Audiometric monitoring: ototoxicity risk; baseline + periodic
+  audiogram. CBC + LFTs periodically.
+formulations:
+  - "Tablet (Iwilfin) 192 mg"
+  - "Topical cream 13.9% (Vaniqa — hirsutism, not chemoprevention)"
+  - "Injectable (Ornidyl — discontinued)"
+
+absolute_contraindications:
+  - "Hypersensitivity to eflornithine"
+  - "Pregnancy / lactation"
+  - "Severe myelosuppression"
+black_box_warnings: []
+major_interactions:
+  - "Limited published interaction data — primarily renal excretion, no major CYP metabolism"
+  - "Nephrotoxic agents — caution with combined use (renal accumulation)"
+common_adverse_events:
+  - "Reversible ototoxicity (hearing loss) — dose-related, often subclinical (~5-30%)"
+  - "Diarrhea (~10-20%)"
+  - "Nausea, vomiting (~10-15%)"
+  - "Headache (~5-10%)"
+  - "Thrombocytopenia, anemia (~10-20%, often mild)"
+  - "Alopecia (~3-5%, reversible)"
+serious_adverse_events:
+  - "Severe / permanent ototoxicity (rare at chemoprevention doses; more common at trypanosomiasis IV dosing)"
+  - "Severe myelosuppression (rare)"
+  - "Seizures (rare)"
+  - "Hepatotoxicity (rare)"
+  - "Severe hypersensitivity (rare)"
+
+pharmacology: {half_life_hours: 4, clearance: "Renal excretion ~80% unchanged in urine; no significant hepatic metabolism. Dose adjustment in renal impairment per Iwilfin label."}
+
+sources:
+  - SRC-NCCN-COLON-2025
+  - SRC-USPSTF-CRC-2021
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 chemoprevention-workstream authoring; pending two-Clinical-
+  Co-Lead signoff per CHARTER §6.1 dev-mode. RESEARCH / LIMITED-ACCESS
+  agent. CRC chemoprevention is OFF-LABEL and based on Meyskens PACES
+  trial (Cancer Prev Res 2008): combination with sulindac reduced
+  metachronous adenoma recurrence by ~70% in patients with prior
+  sporadic adenomas; ongoing follow-up in NCI Cancer Prevention Network.
+  Iwilfin (2024 FDA approval) is for high-risk neuroblastoma maintenance,
+  not CRC chemoprevention. Engine should NOT auto-recommend for CRC
+  chemoprevention; reserved for clinical-trial enrollment via NCI CPN
+  or specialized hereditary-CRC centers. Audiometric monitoring
+  required. UA-access very limited.
+
+notes_ua: >
+  Ефлорнітин (DFMO) — необоротний інгібітор орнітиндекарбоксилази,
+  блокує біосинтез поліамінів. ХІМІОПРОФІЛАКТИКА — лише в межах
+  досліджень (дослідження PACES — комбінація ефлорнітину 500 мг
+  + sulindac 150 мг знизила рецидив поліпів на ~70% за 36 місяців).
+  FDA-схвалення (Iwilfin, 2024) — для підтримуючої терапії
+  високо-ризикованої нейробластоми, НЕ для хіміопрофілактики раку
+  кишечника. Двигун НЕ повинен автоматично рекомендувати; доступне
+  лише в межах клінічних досліджень NCI CPN або у спеціалізованих
+  hereditary-CRC центрах. Контроль ототоксичності (аудіометрія)
+  обов'язковий. Доступність в Україні — дуже обмежена.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_chemoprevention_drugs_2026-05-18
+draft_revision: 1

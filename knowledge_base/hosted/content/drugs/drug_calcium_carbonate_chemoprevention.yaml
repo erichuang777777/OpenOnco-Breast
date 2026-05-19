@@ -1,0 +1,122 @@
+id: DRUG-CALCIUM-CARBONATE-CHEMOPREVENTION
+names:
+  preferred: "Calcium carbonate (colorectal adenoma chemoprevention research context)"
+  ukrainian: "Кальцію карбонат (хіміопрофілактика рецидиву колоректальних аденом — дослідницький контекст)"
+  english: "Calcium carbonate (colorectal adenoma chemoprevention)"
+  synonyms: ["Calcium supplement", "CaCO3", "Elemental calcium"]
+  brand_names: ["Caltrate 600", "Os-Cal", "Tums", "Calcichew"]
+atc_code: A12AA04
+rxnorm_id: "1895"
+drug_class: "Mineral / calcium salt supplement"
+mechanism: >
+  Provides supplemental elemental calcium (~40% by mass of calcium
+  carbonate). Absorbed in proximal small bowel via active vitamin-D-
+  dependent transcellular transport (saturable at low calcium intake)
+  and passive paracellular diffusion (linear with concentration).
+  Cancer-prevention rationale: intraluminal calcium binds free bile
+  acids and free fatty acids in the colon, reducing their proliferative
+  and pro-inflammatory effect on colonic mucosa; additionally
+  calcium modulates epithelial cell proliferation/differentiation via
+  the calcium-sensing receptor. Calcium Polyp Prevention Study
+  (Baron NEJM 1999) and follow-on trials: 1200 mg/day elemental
+  calcium reduced metachronous adenoma recurrence by ~15-20%.
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 1938  # as a dietary mineral
+    indications_brief:
+      - "Calcium deficiency / dietary supplementation"
+      - "Osteoporosis adjunct (with vitamin D)"
+      - "Antacid (gastric acid neutralization)"
+      - "Hyperphosphatemia (in CKD/dialysis)"
+      - "NOT FDA-labeled for cancer chemoprevention"
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "OTC; широко доступний (Calcichew, Кальцій-Д3 Нікомед, generics). Реімбурсація — для конкретних показань (остеопороз) у складі програм; як хіміопрофілактика — out-of-pocket."
+typical_dosing: >
+  Cancer-prevention research context (CPPS protocol):
+  Calcium carbonate ~3000 mg/day = 1200 mg/day elemental calcium,
+  divided BID-TID with meals. Frequently combined with vitamin D
+  (400-1000 IU/day) in trials.
+  Recommended dietary allowance (RDA) for adults: ~1000-1200 mg/day
+  total elemental calcium (diet + supplements). Avoid exceeding
+  2000-2500 mg/day total (UL — upper level).
+  Take with food (acid required for absorption); separate from
+  iron, thyroid hormone, bisphosphonates, tetracycline / fluoroquinolone
+  antibiotics by ≥2 hours.
+formulations:
+  - "Tablet 500, 600, 750, 1250 mg calcium carbonate (= 200, 240, 300, 500 mg elemental Ca)"
+  - "Chewable tablets, gummies"
+  - "Liquid suspension"
+
+absolute_contraindications:
+  - "Hypercalcemia"
+  - "Hypercalciuria with active nephrolithiasis"
+  - "Hypersensitivity"
+  - "Severe hypophosphatemia"
+black_box_warnings: []
+major_interactions:
+  - "Iron salts — reduced iron absorption; separate by ≥2 hours"
+  - "Levothyroxine — reduced thyroid hormone absorption; separate by ≥4 hours"
+  - "Bisphosphonates (oral) — reduced absorption; separate by ≥30 min (alendronate) / ≥1 h"
+  - "Tetracyclines, fluoroquinolones — chelation reduces antibiotic absorption; separate by ≥2 hours"
+  - "Thiazide diuretics — increased hypercalcemia risk with high-dose calcium"
+  - "Cardiac glycosides (digoxin) — hypercalcemia potentiates digoxin toxicity"
+  - "Proton pump inhibitors / H2 blockers — slightly reduce carbonate absorption (use citrate form if acid-suppressed)"
+common_adverse_events:
+  - "Constipation (~5-15%)"
+  - "Bloating, gas (~5-10%)"
+  - "Dyspepsia / belching (~3-5%)"
+  - "Mild nausea (~2-3%)"
+serious_adverse_events:
+  - "Hypercalcemia / milk-alkali syndrome (high-dose, especially with CaCO3 antacid + thiazide / renal impairment)"
+  - "Nephrolithiasis (modest increase with supplement >1000 mg/day in some cohorts)"
+  - "Cardiovascular events — debated signal from WHI / meta-analyses of supplement use without dietary context; magnitude small if present"
+
+pharmacology: {half_life_hours: 8, clearance: "Calcium homeostasis controlled by PTH / calcitriol / calcitonin / CaSR feedback; ~30-40% of ingested elemental Ca absorbed; renal excretion regulated."}
+
+sources:
+  - SRC-NCCN-COLON-2025
+  - SRC-USPSTF-CRC-2021
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 chemoprevention-workstream authoring; pending two-Clinical-
+  Co-Lead signoff per CHARTER §6.1 dev-mode. CANCER-CHEMOPREVENTION
+  CONTEXT — distinct entity from generic calcium supplementation /
+  osteoporosis adjunct. EVIDENCE moderate but historic. Calcium Polyp
+  Prevention Study (Baron NEJM 1999, ~930 patients with prior adenoma,
+  1200 mg/day elemental Ca × 4 years): ~15-20% reduction in metachronous
+  adenoma recurrence. Confirmed in pooled meta-analyses but magnitude
+  modest. Subsequent CaD trial (CaD + vit D) showed no incremental
+  benefit beyond calcium alone for adenoma; large WHI did not see
+  CRC reduction in older women. USPSTF 2018/2021 — no recommendation
+  for calcium supplementation for cancer prevention (insufficient
+  evidence). Engine should NOT auto-recommend for cancer prevention;
+  appropriate when osteoporosis or dietary-deficiency indications
+  justify use. Avoid exceeding RDA / UL.
+
+notes_ua: >
+  Кальцію карбонат — мінеральна добавка кальцію (~40% елементарного
+  Са). Основні показання: профілактика дефіциту кальцію, остеопороз
+  (адʼюнкт із вітаміном D), антацид, гіперфосфатемія при ХХН.
+  ХІМІОПРОФІЛАКТИКА КОЛОРЕКТАЛЬНИХ АДЕНОМ — дослідницький контекст.
+  Calcium Polyp Prevention Study (Baron NEJM 1999, 1200 мг/день
+  елементарного Ca × 4 роки): ~15-20% зниження рецидиву метахронних
+  аденом. USPSTF 2018/2021 — без рекомендації для профілактики
+  раку. Двигун НЕ повинен автоматично рекомендувати для профілактики
+  раку; підходить, коли є показання щодо остеопорозу чи дієтичного
+  дефіциту. Не перевищувати RDA / UL. Прийом з їжею; розділяти з
+  залізом, левотироксином, бісфосфонатами, тетрациклінами /
+  фторхінолонами щонайменше на 2 години.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_chemoprevention_drugs_2026-05-18
+draft_revision: 1

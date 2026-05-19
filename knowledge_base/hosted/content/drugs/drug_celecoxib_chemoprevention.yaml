@@ -1,0 +1,121 @@
+id: DRUG-CELECOXIB-CHEMOPREVENTION
+names:
+  preferred: "Celecoxib (cancer chemoprevention context — APC duodenal polyposis)"
+  ukrainian: "Целекоксиб (хіміопрофілактика раку — поліпоз APC)"
+  english: "Celecoxib (cancer chemoprevention)"
+  brand_names: ["Celebrex"]
+atc_code: M01AH01
+rxnorm_id: "140587"
+drug_class: "COX-2 selective non-steroidal anti-inflammatory drug (coxib)"
+mechanism: >
+  Selective inhibitor of cyclooxygenase-2 (COX-2; ~10-20-fold selectivity
+  over COX-1 at therapeutic concentrations), suppressing prostaglandin-
+  driven inflammation, proliferation, and angiogenesis with relatively
+  spared platelet COX-1 (no antiplatelet effect at standard doses) and
+  reduced gastric mucosal COX-1 (less GI bleeding than non-selective
+  NSAIDs). Cancer-prevention rationale: COX-2 is upregulated in
+  adenomas and many tumors; inhibition reduces PGE2-driven proliferation
+  and immune escape. In FAP, celecoxib reduced duodenal polyp burden
+  (Steinbach NEJM 2000) — formerly FDA-approved for FAP-related
+  polyposis (orphan designation), withdrawn 2011 by sponsor after
+  post-marketing study did not confirm benefit.
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 1998
+    indications_brief:
+      - "Osteoarthritis, rheumatoid arthritis, ankylosing spondylitis"
+      - "Acute pain, dysmenorrhea"
+      - "Familial adenomatous polyposis — orphan indication withdrawn 2011"
+      - "NOT currently FDA-labeled for cancer chemoprevention"
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Реімбурсація — переважно ревматологічна; для APC-поліпозу — позамедичне, out-of-pocket. Особлива обережність через серцево-судинні попередження."
+typical_dosing: >
+  FAP duodenal polyposis chemoprevention (historical FDA indication
+  pre-2011): 400 mg PO BID (= 800 mg/day). Adjunct to surveillance
+  endoscopy and polypectomy — not a replacement.
+  General CV-risk caveat: lowest effective dose for shortest duration.
+  Take with food; avoid in CrCl <30 mL/min, severe hepatic impairment.
+  CYP2C9 poor metabolizers — consider half dose.
+formulations:
+  - "Capsule 50 mg, 100 mg, 200 mg, 400 mg"
+
+absolute_contraindications:
+  - "Hypersensitivity to celecoxib, sulfonamides, NSAIDs, aspirin (AERD)"
+  - "Active GI bleeding or peptic ulcer"
+  - "Severe heart failure (NYHA III-IV)"
+  - "Pregnancy ≥30 weeks (premature closure of ductus arteriosus)"
+  - "Perioperative coronary artery bypass graft surgery"
+  - "Severe hepatic impairment (Child-Pugh C)"
+  - "Severe renal impairment (CrCl <30 mL/min)"
+black_box_warnings:
+  - "Cardiovascular thrombotic events (MI, stroke) — increased risk with all NSAIDs including COX-2 selective; contraindicated in CABG perioperative period"
+  - "GI bleeding, ulceration, perforation — risk lower than non-selective NSAIDs but not absent; can occur without warning"
+major_interactions:
+  - "Anticoagulants (warfarin, DOACs) — increased bleeding"
+  - "Aspirin — additive GI bleeding; concurrent low-dose ASA negates COX-2 GI advantage"
+  - "ACE inhibitors / ARBs / diuretics — diminished antihypertensive effect, increased AKI risk"
+  - "Lithium — increased levels"
+  - "Methotrexate (high dose) — increased toxicity"
+  - "Fluconazole (CYP2C9 inhibitor) — double celecoxib levels; halve dose"
+common_adverse_events:
+  - "Dyspepsia (~7-10%)"
+  - "Headache (~5-15%)"
+  - "Upper respiratory tract infection (~5-8%)"
+  - "Diarrhea (~5%)"
+  - "Hypertension (~3-5%)"
+  - "Peripheral edema (~3-5%)"
+serious_adverse_events:
+  - "Cardiovascular thrombotic events (MI, stroke) — class effect"
+  - "GI bleeding / ulceration / perforation"
+  - "Renal failure / acute kidney injury"
+  - "Severe skin reactions (SJS / TEN — rare; sulfonamide moiety)"
+  - "Hepatotoxicity (rare)"
+  - "Severe hypersensitivity / anaphylaxis"
+
+pharmacology: {half_life_hours: 11, clearance: "Hepatic CYP2C9 metabolism (primary); CYP3A4 minor; metabolites excreted via bile and urine; CYP2C9 poor metabolizers (~3% of Caucasians) — exposure ~7-fold higher, halve dose."}
+
+sources:
+  - SRC-NCCN-COLON-2025
+  - SRC-USPSTF-CRC-2021
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 chemoprevention-workstream authoring; pending two-Clinical-
+  Co-Lead signoff per CHARTER §6.1 dev-mode. ORPHAN / HISTORICAL FAP
+  indication. Celecoxib was FDA-approved (1999) for reducing duodenal
+  polyp number in FAP based on Steinbach NEJM 2000 (6-month, 28% polyp
+  burden reduction at 400 mg BID); approval withdrawn at sponsor request
+  in 2011 after PreSAP/APC trials showed CV-risk signal outweighed
+  benefit in adenoma-prevention populations. NCCN Genetic Familial
+  High-Risk Assessment guidelines retain celecoxib as adjunct option
+  in selected FAP patients (post-colectomy surveillance, retained
+  rectum, duodenal disease) under specialist hereditary-CRC team.
+  Engine should NOT auto-recommend; reserved for specialist hereditary-
+  cancer center management with explicit CV risk discussion. Strict
+  ASA / sulfa allergy screen.
+
+notes_ua: >
+  Целекоксиб — селективний COX-2 інгібітор; основні FDA-показання —
+  ревматологічні. ОРФАННЕ / ІСТОРИЧНЕ показання при FAP (сімейний
+  аденоматозний поліпоз) для зменшення дуоденальних поліпів —
+  схвалене FDA 1999, відкликане 2011 через серцево-судинний сигнал.
+  NCCN Genetic Familial High-Risk Assessment залишає celecoxib як
+  додатковий варіант у вибраних FAP-пацієнтів (після колектомії,
+  залишковий ректум, дуоденальна хвороба) в умовах спеціалізованого
+  центру. Двигун НЕ повинен автоматично рекомендувати; призначається
+  лише у спеціалізованому hereditary-cancer центрі з явним обговоренням
+  серцево-судинного ризику. Перевірка алергії на ASA/сульфонаміди
+  обов'язкова.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_chemoprevention_drugs_2026-05-18
+draft_revision: 1
