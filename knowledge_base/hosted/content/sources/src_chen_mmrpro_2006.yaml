@@ -1,0 +1,62 @@
+id: SRC-CHEN-MMRPRO-2006
+source_type: methodology_paper
+title: Prediction of germline mutations and cancer risk in the Lynch syndrome (MMRpro)
+version: '2006'
+authors:
+- Chen S
+- Wang W
+- Lee S
+- Nafa K
+- Lee J
+- Romans K
+- Watson P
+- Gruber SB
+- Euhus D
+- Kinzler KW
+- Jass J
+- Gallinger S
+- Lindor NM
+- Casey G
+- Ellis N
+- Giardiello FM
+- Offit K
+- Parmigiani G
+journal: Journal of the American Medical Association
+doi: 10.1001/jama.296.12.1479
+pmid: '16636356'
+url: https://pubmed.ncbi.nlm.nih.gov/16636356
+access_level: subscription_required
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 2
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources_batch4
+license:
+  name: American Medical Association / JAMA (subscription)
+  spdx_id: null
+attribution:
+  required: true
+  text: Chen S et al., JAMA 2006 — MMRpro Lynch syndrome risk model
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+legal_review:
+  status: pending
+  notes: Subscription publication; abstract open access. (Note PMID 16636356 — title
+    published in JAMA rather than Gastroenterology per brief.)
+relates_to_diseases:
+- DIS-CRC
+- DIS-ENDOMETRIAL
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. MMRpro Bayesian model for MLH1 / MSH2 /
+  MSH6 carrier probability + Lynch-associated cancer risk from family history. Sister
+  model to BRCAPRO in the BayesMendel suite. Listed by NCCN Genetic/Familial High-Risk
+  Colorectal v2025 among acceptable Mendelian models for MMR-gene testing thresholds.
+
+  '
+pages_count: 9
+references_count: 30
+corpus_role: methodology_paper

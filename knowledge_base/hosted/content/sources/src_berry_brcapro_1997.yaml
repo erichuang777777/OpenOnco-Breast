@@ -1,0 +1,51 @@
+id: SRC-BERRY-BRCAPRO-1997
+source_type: methodology_paper
+title: Probability of carrying a mutation of breast-ovarian cancer gene BRCA1 based
+  on family history — the BRCAPRO Bayesian model
+version: '1997'
+authors:
+- Berry DA
+- Parmigiani G
+- Sanchez J
+- Schildkraut J
+- Winer E
+journal: Journal of the National Cancer Institute
+doi: 10.1093/jnci/89.3.227
+url: https://academic.oup.com/jnci/article/89/3/227/2526978
+access_level: subscription_required
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 2
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources_batch4
+license:
+  name: Oxford University Press / JNCI (subscription)
+  spdx_id: null
+attribution:
+  required: true
+  text: Berry DA et al., J Natl Cancer Inst 1997 — BRCAPRO Bayesian risk model
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+legal_review:
+  status: pending
+  notes: Subscription publication; abstract open access. BRCAPRO software is separately
+    distributed via the CancerGene / BayesMendel suite.
+relates_to_diseases:
+- DIS-BREAST
+- DIS-OVARIAN
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Foundational paper for BRCAPRO, a Mendelian
+  Bayesian model that estimates BRCA1/2 carrier probability and breast/ovarian cancer
+  risk from pedigree data. Embedded in CancerGene and BayesMendel R package; widely
+  used in cancer genetics clinics before BOADICEA / Tyrer-Cuzick adoption. NCCN Genetic/Familial
+  High-Risk v2025 lists BRCAPRO among acceptable Mendelian models for BRCA testing
+  thresholds.
+
+  '
+pages_count: 8
+references_count: 25
+corpus_role: methodology_paper

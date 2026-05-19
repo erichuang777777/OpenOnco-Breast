@@ -1,0 +1,70 @@
+id: SRC-STAR-TAMOXIFEN-RALOXIFENE-2006
+source_type: rct_publication
+title: Effects of tamoxifen vs raloxifene on the risk of developing invasive breast
+  cancer and other disease outcomes — the NSABP Study of Tamoxifen and Raloxifene
+  (STAR) P-2 trial
+version: '2006'
+authors:
+- Vogel VG
+- Costantino JP
+- Wickerham DL
+- Cronin WM
+- Cecchini RS
+- Atkins JN
+- Bevers TB
+- Fehrenbacher L
+- Pajon ER
+- Wade JL
+- Robidoux A
+- Margolese RG
+- James J
+- Lippman SM
+- Runowicz CD
+- Ganz PA
+- Reis SE
+- McCaskill-Stevens W
+- Ford LG
+- Jordan VC
+- Wolmark N
+journal: Journal of the American Medical Association
+doi: 10.1001/jama.295.23.joc60074
+url: https://jamanetwork.com/journals/jama/fullarticle/203021
+access_level: subscription_required
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 1
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources_batch4
+license:
+  name: American Medical Association / JAMA (subscription)
+  spdx_id: null
+attribution:
+  required: true
+  text: Vogel VG et al., JAMA 2006 — NSABP STAR P-2 tamoxifen vs raloxifene chemoprevention
+    RCT
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+legal_review:
+  status: pending
+  notes: Subscription publication; abstract open access. Long-term update Vogel JNCI
+    2010 is a separate publication.
+relates_to_diseases:
+- DIS-BREAST
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. NSABP STAR P-2 — double-blind RCT randomising
+  19,747 postmenopausal women at elevated breast cancer risk to tamoxifen 20 mg/day
+  vs raloxifene 60 mg/day for 5 years. Primary result: raloxifene was as effective
+  as tamoxifen in reducing invasive breast cancer (RR 1.02 in initial report; long-term
+  update showed raloxifene retained ~76% of tamoxifen efficacy) with significantly
+  lower rates of uterine cancer, thromboembolic events, and cataracts. Basis for FDA
+  raloxifene risk-reduction indication and ASCO / NCCN chemoprevention algorithms
+  in postmenopausal patients.
+
+  '
+pages_count: 14
+references_count: 40
+corpus_role: rct_publication

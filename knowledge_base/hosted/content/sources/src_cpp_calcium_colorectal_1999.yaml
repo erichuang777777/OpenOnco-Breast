@@ -1,0 +1,57 @@
+id: SRC-CPP-CALCIUM-COLORECTAL-1999
+source_type: rct_publication
+title: Calcium supplements for the prevention of colorectal adenomas (Calcium Polyp
+  Prevention Study Group)
+version: '1999'
+authors:
+- Baron JA
+- Beach M
+- Mandel JS
+- van Stolk RU
+- Haile RW
+- Sandler RS
+- Rothstein R
+- Summers RW
+- Snover DC
+- Beck GJ
+- Bond JH
+- Greenberg ER
+journal: New England Journal of Medicine
+doi: 10.1056/NEJM199901143400204
+url: https://www.nejm.org/doi/10.1056/NEJM199901143400204
+access_level: subscription_required
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 1
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources_batch4
+license:
+  name: Massachusetts Medical Society / NEJM (subscription)
+  spdx_id: null
+attribution:
+  required: true
+  text: Baron JA et al., NEJM 1999 — Calcium Polyp Prevention Study Group RCT
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+legal_review:
+  status: pending
+  notes: Subscription publication; abstract open access.
+relates_to_diseases:
+- DIS-CRC
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Calcium Polyp Prevention Study Group —
+  double-blind RCT randomising 930 adults with recent colorectal adenoma to elemental
+  calcium 1,200 mg/day vs placebo for 4 years. Result: 19% adjusted relative reduction
+  in adenoma recurrence (RR 0.85, 95% CI 0.74–0.98). Cited by older ACG / USPSTF colorectal
+  chemoprevention reviews. Subsequent calcium-vitamin-D adenoma-prevention trial (Baron
+  NEJM 2015) showed null effect; calcium chemoprevention now largely deprioritised
+  in favour of aspirin in average-risk populations.
+
+  '
+pages_count: 8
+references_count: 25
+corpus_role: rct_publication

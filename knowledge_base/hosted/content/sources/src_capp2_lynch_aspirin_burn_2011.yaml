@@ -1,0 +1,78 @@
+id: SRC-CAPP2-LYNCH-ASPIRIN-BURN-2011
+source_type: rct_publication
+title: Long-term effect of aspirin on cancer risk in carriers of hereditary colorectal
+  cancer (Lynch syndrome) — analysis from the CAPP2 randomised controlled trial
+version: '2011'
+authors:
+- Burn J
+- Gerdes AM
+- Macrae F
+- Mecklin JP
+- Moeslein G
+- Olschwang S
+- Eccles D
+- Evans DG
+- Maher ER
+- Bertario L
+- Bisgaard ML
+- Dunlop MG
+- Ho JW
+- Hodgson SV
+- Lindblom A
+- Lubinski J
+- Morrison PJ
+- Murday V
+- Ramesar R
+- Side L
+- Scott RJ
+- Thomas HJ
+- Vasen HF
+- Barker G
+- Crawford G
+- Elliott F
+- Movahedi M
+- Pylvanainen K
+- Wijnen JT
+- Fodde R
+- Lynch HT
+- Mathers JC
+- Bishop DT
+journal: The Lancet
+doi: 10.1016/S0140-6736(11)61049-0
+pmid: '22137798'
+url: https://pubmed.ncbi.nlm.nih.gov/22137798
+access_level: subscription_required
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 1
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources_batch4
+license:
+  name: Elsevier / The Lancet (subscription)
+  spdx_id: null
+attribution:
+  required: true
+  text: Burn J et al., Lancet 2011 — CAPP2 aspirin chemoprevention in Lynch syndrome
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+legal_review:
+  status: pending
+  notes: Subscription publication; abstract open access.
+relates_to_diseases:
+- DIS-CRC
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. CAPP2 (Colorectal Adenoma/carcinoma Prevention
+  Programme 2) — international, double-blind RCT randomising 861 Lynch syndrome carriers
+  to aspirin 600 mg/day vs placebo, mean treatment 25 months, planned 10-year follow-up.
+  2011 primary analysis: HR 0.41 (95% CI 0.19–0.86, p=0.02) for CRC after aspirin.
+  Basis for NCCN / ESMO / Mallorca group recommendations on aspirin chemoprevention
+  in Lynch syndrome. Long-term follow-up CAPP2 Lancet 2020 confirmed durable benefit.
+
+  '
+pages_count: 9
+references_count: 30
+corpus_role: rct_publication

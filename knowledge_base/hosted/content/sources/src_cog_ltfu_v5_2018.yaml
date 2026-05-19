@@ -1,0 +1,50 @@
+id: SRC-COG-LTFU-V5-2018
+source_type: guideline
+title: Long-Term Follow-Up Guidelines for Survivors of Childhood, Adolescent, and
+  Young Adult Cancers (Children's Oncology Group), version 5.0
+version: '5.0'
+authors:
+- Landier W
+- Bhatia S
+- Eshelman DA
+- et al. (Children's Oncology Group Late Effects Committee + Nursing Discipline)
+url: https://www.survivorshipguidelines.org/
+access_level: open_access
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 1
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources_batch4
+license:
+  name: Children's Oncology Group LTFU reuse policy (academic / non-commercial)
+  spdx_id: null
+attribution:
+  required: true
+  text: Children's Oncology Group — Long-Term Follow-Up Guidelines for Survivors of
+    Childhood, Adolescent, and Young Adult Cancers v5.0, 2018
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+legal_review:
+  status: pending
+  notes: COG LTFU document freely accessible at survivorshipguidelines.org; reuse
+    / derivative-work permissions to be confirmed. v6.0 anticipated.
+relates_to_diseases: []
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Children''s Oncology Group Long-Term Follow-Up
+  Guidelines v5.0 (October 2018) — consensus, evidence-graded surveillance recommendations
+  for late-effects screening in childhood / adolescent / young-adult cancer survivors,
+  indexed by treatment exposure (anthracyclines, alkylators, platinum, bleomycin,
+  topoisomerase II inhibitors, chest / abdominal / cranial / pelvic radiation, HSCT,
+  surgery). Cited across all paediatric cancer survivor late-effects surveillance
+  pilots (cardiomyopathy, ototoxicity, second-cancer screening, gonadal / endocrine
+  / pulmonary / neurocognitive surveillance). Companion to IGHG harmonised paediatric
+  survivor guidelines.
+
+  '
+pages_count: 250
+references_count: 800
+corpus_role: primary_guideline

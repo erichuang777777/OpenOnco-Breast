@@ -1,0 +1,68 @@
+id: SRC-MAP3-EXEMESTANE-CHEMOPREVENTION-2011
+source_type: rct_publication
+title: Exemestane for breast-cancer prevention in postmenopausal women (NCIC CTG MAP.3
+  / ExCel)
+version: '2011'
+authors:
+- Goss PE
+- Ingle JN
+- Alés-Martínez JE
+- Cheung AM
+- Chlebowski RT
+- Wactawski-Wende J
+- McTiernan A
+- Robbins J
+- Johnson KC
+- Martin LW
+- Winquist E
+- Sarto GE
+- Garber JE
+- Fabian CJ
+- Pujol P
+- Maunsell E
+- Farmer P
+- Gelmon KA
+- Tu D
+- Richardson H
+journal: New England Journal of Medicine
+doi: 10.1056/NEJMoa1103507
+pmid: '21639806'
+url: https://pubmed.ncbi.nlm.nih.gov/21639806
+access_level: subscription_required
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 1
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources_batch4
+license:
+  name: Massachusetts Medical Society / NEJM (subscription)
+  spdx_id: null
+attribution:
+  required: true
+  text: Goss PE et al., NEJM 2011 — MAP.3 exemestane breast cancer chemoprevention
+    RCT
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+legal_review:
+  status: pending
+  notes: Subscription publication; abstract open access.
+relates_to_diseases:
+- DIS-BREAST
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. NCIC CTG MAP.3 — double-blind RCT randomising
+  4,560 postmenopausal women at elevated breast cancer risk (>=60 years OR Gail score
+  >1.66% OR prior LCIS / atypical hyperplasia / DCIS post-mastectomy) to exemestane
+  25 mg/day vs placebo for up to 5 years. Median follow-up 35 months: 65% relative
+  reduction in invasive breast cancer (HR 0.35, 95% CI 0.18–0.70, p=0.002). Bone /
+  joint AE excess but no excess fracture / cardiovascular events. Basis for ASCO 2013
+  / NICE / NCCN 2025 breast chemoprevention recommendations alongside tamoxifen +
+  raloxifene.
+
+  '
+pages_count: 11
+references_count: 35
+corpus_role: rct_publication

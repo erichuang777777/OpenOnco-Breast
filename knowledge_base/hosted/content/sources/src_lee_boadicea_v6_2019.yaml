@@ -1,0 +1,64 @@
+id: SRC-LEE-BOADICEA-V6-2019
+source_type: methodology_paper
+title: BOADICEA — a comprehensive breast cancer risk-prediction model incorporating
+  genetic and non-genetic risk factors (version 6)
+version: '2019'
+authors:
+- Lee A
+- Mavaddat N
+- Wilcox AN
+- Cunningham AP
+- Carver T
+- Hartley S
+- Babb de Villiers C
+- Izquierdo A
+- Simard J
+- Schmidt MK
+- Walter FM
+- Chatterjee N
+- Garcia-Closas M
+- Tischkowitz M
+- Pharoah P
+- Easton DF
+- Antoniou AC
+journal: Genetics in Medicine
+doi: 10.1038/s41436-018-0406-9
+pmid: '30787465'
+url: https://pubmed.ncbi.nlm.nih.gov/30787465
+access_level: open_access
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 2
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources_batch4
+license:
+  name: Springer Nature / Genetics in Medicine (CC BY 4.0)
+  spdx_id: CC-BY-4.0
+attribution:
+  required: true
+  text: Lee A et al., Genetics in Medicine 2019 — BOADICEA v6 breast cancer risk model
+commercial_use_allowed: true
+redistribution_allowed: true
+modifications_allowed: true
+legal_review:
+  status: pending
+  notes: Open-access CC BY 4.0; tool itself (CanRisk) is separately licensed.
+relates_to_diseases:
+- DIS-BREAST
+- DIS-OVARIAN
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Primary methodology paper for BOADICEA v6
+  (Breast and Ovarian Analysis of Disease Incidence and Carrier Estimation Algorithm),
+  delivered to clinicians via the CanRisk tool (canrisk.org). Combines pathogenic-variant
+  carrier status (BRCA1/2, PALB2, CHEK2, ATM), polygenic risk score (313-SNP PRS),
+  family history, mammographic density, and lifestyle/reproductive factors into 10-year
+  and lifetime breast cancer risk estimates. Endorsed by NICE CG164 and NCCN Breast/Ovarian
+  v2025 for risk-stratified screening + chemoprevention discussion thresholds.
+
+  '
+pages_count: 11
+references_count: 60
+corpus_role: methodology_paper

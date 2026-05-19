@@ -1,0 +1,51 @@
+id: SRC-TICE-BCSC-2008
+source_type: methodology_paper
+title: Using clinical factors and mammographic breast density to estimate breast cancer
+  risk — development and validation of a new predictive model (BCSC)
+version: '2008'
+authors:
+- Tice JA
+- Cummings SR
+- Smith-Bindman R
+- Ichikawa L
+- Barlow WE
+- Kerlikowske K
+journal: Annals of Internal Medicine
+doi: 10.7326/0003-4819-148-5-200803040-00004
+pmid: '18316753'
+url: https://pubmed.ncbi.nlm.nih.gov/18316753
+access_level: subscription_required
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 2
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources_batch4
+license:
+  name: American College of Physicians / Annals of Internal Medicine (subscription)
+  spdx_id: null
+attribution:
+  required: true
+  text: Tice JA et al., Ann Intern Med 2008 — BCSC breast cancer risk model
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+legal_review:
+  status: pending
+  notes: Subscription publication; abstract open access. BCSC calculator hosted by
+    UCSF / Breast Cancer Surveillance Consortium.
+relates_to_diseases:
+- DIS-BREAST
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Derivation of the Breast Cancer Surveillance
+  Consortium (BCSC) 5-year and 10-year risk model from >1 million screening mammograms
+  in 7 US registries. Adds BI-RADS mammographic density to age, race/ethnicity, family
+  history, and prior biopsy. Used by ACR / SBI to identify women who may benefit from
+  supplemental screening MRI / ultrasound; included in NCCN Breast Screening v2025.
+
+  '
+pages_count: 10
+references_count: 35
+corpus_role: methodology_paper
