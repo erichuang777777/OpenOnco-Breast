@@ -1,0 +1,45 @@
+id: SRC-IARC-100C-SILICA
+source_type: monograph
+title: 'IARC Monographs Volume 100C — A Review of Human Carcinogens. Part C: Arsenic,
+  Metals, Fibres, and Dusts — Crystalline silica (quartz, cristobalite)'
+version: Volume 100C (2012)
+authors:
+- International Agency for Research on Cancer
+- World Health Organization
+url: https://publications.iarc.fr/120
+access_level: open_access
+currency_status: current
+current_as_of: '2012'
+evidence_tier: 1
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources
+license:
+  name: CC-BY-NC-SA 3.0 IGO (IARC / WHO Intergovernmental Organization licence)
+  url: https://creativecommons.org/licenses/by-nc-sa/3.0/igo/
+  spdx_id: CC-BY-NC-SA-3.0-IGO
+attribution:
+  required: true
+  text: 'IARC Monographs on the Evaluation of Carcinogenic Risks to Humans, Volume
+    100C. Lyon: International Agency for Research on Cancer; 2012.'
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+sharealike_required: true
+legal_review:
+  status: pending
+  notes: Verify IARC/WHO CC-BY-NC-SA-3.0-IGO scope for non-profit clinical decision-support use.
+relates_to_diseases: []
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Cited by prevention RFs / Indications for
+  occupational crystalline-silica exposure → lung cancer. IARC Group 1 carcinogen
+  (inhaled crystalline silica in the form of quartz or cristobalite from occupational
+  sources). Affected workers: stone-cutting, mining (esp. hard-rock), quarrying, sandblasting,
+  foundry work, tunnel construction, ceramics, glass-making, engineered-stone fabrication.
+
+  '
+pages_count: 70
+references_count: 350
+corpus_role: primary_guideline

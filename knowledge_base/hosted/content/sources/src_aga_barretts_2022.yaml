@@ -1,0 +1,50 @@
+id: SRC-AGA-BARRETTS-2022
+source_type: guideline
+title: 'AGA Clinical Practice Update on New Technology and Innovation for Surveillance
+  and Screening in Barrett''s Esophagus: Expert Review (2022)'
+version: '2022'
+authors:
+- Muthusamy VR
+- Wani S
+- Gyawali CP
+- Komanduri S
+- CGIT Barrett's Esophagus Consensus Conference Participants
+journal: Clinical Gastroenterology and Hepatology
+doi: 10.1016/j.cgh.2022.06.003
+pmid: '35738724'
+url: https://gastro.org/clinical-guidance/
+access_level: open_access
+currency_status: current
+current_as_of: '2022'
+evidence_tier: 1
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources
+license:
+  name: AGA / Elsevier — publisher copyright; abstract open access
+  url: https://gastro.org/about/copyright-permissions/
+  spdx_id: null
+attribution:
+  required: true
+  text: Muthusamy VR et al., AGA Clinical Practice Update on Barrett's Esophagus surveillance
+    and screening. Clin Gastroenterol Hepatol 2022.
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+legal_review:
+  status: pending
+  notes: Verify exact DOI / PMID; AGA Clinical Practice Updates have varied open-access status.
+relates_to_diseases: []
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Cited by Barrett''s esophagus surveillance
+  Indications (oesophageal adenocarcinoma prevention). Endorses high-quality endoscopy
+  with chromoendoscopy and biopsy protocols; surveillance intervals stratified by
+  dysplasia grade; endoscopic eradication therapy for confirmed dysplasia. Used together
+  with ACG Barrett''s guidelines for surveillance cadence.
+
+  '
+pages_count: 18
+references_count: 100
+corpus_role: primary_guideline

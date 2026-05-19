@@ -1,0 +1,45 @@
+id: SRC-IARC-100F-VINYL-CHLORIDE
+source_type: monograph
+title: 'IARC Monographs Volume 100F — A Review of Human Carcinogens. Part F: Chemical
+  Agents and Related Occupations — Vinyl chloride'
+version: Volume 100F (2012)
+authors:
+- International Agency for Research on Cancer
+- World Health Organization
+url: https://publications.iarc.fr/123
+access_level: open_access
+currency_status: current
+current_as_of: '2012'
+evidence_tier: 1
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources
+license:
+  name: CC-BY-NC-SA 3.0 IGO (IARC / WHO Intergovernmental Organization licence)
+  url: https://creativecommons.org/licenses/by-nc-sa/3.0/igo/
+  spdx_id: CC-BY-NC-SA-3.0-IGO
+attribution:
+  required: true
+  text: 'IARC Monographs on the Evaluation of Carcinogenic Risks to Humans, Volume
+    100F. Lyon: International Agency for Research on Cancer; 2012.'
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+sharealike_required: true
+legal_review:
+  status: pending
+  notes: Verify IARC/WHO CC-BY-NC-SA-3.0-IGO scope for non-profit clinical decision-support use.
+relates_to_diseases: []
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Cited by prevention RFs / Indications for
+  occupational vinyl-chloride monomer exposure → hepatic angiosarcoma + hepatocellular
+  carcinoma. IARC Group 1 carcinogen. Affected workers: PVC polymerization plants,
+  PVC fabrication, certain refrigerant manufacturing. Classic occupational hepatic-angiosarcoma
+  signal.
+
+  '
+pages_count: 40
+references_count: 200
+corpus_role: primary_guideline

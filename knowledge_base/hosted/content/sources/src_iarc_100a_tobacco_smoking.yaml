@@ -1,0 +1,49 @@
+id: SRC-IARC-100A-TOBACCO-SMOKING
+source_type: monograph
+title: 'IARC Monographs Volume 100 — A Review of Human Carcinogens — Tobacco smoking
+  [VERIFY volume code: tobacco smoking is catalogued under Vol 100E (Personal Habits
+  and Indoor Combustions); ID prefix retained per task brief]'
+version: Volume 100E (2012)
+authors:
+- International Agency for Research on Cancer
+- World Health Organization
+url: https://publications.iarc.fr/122
+access_level: open_access
+currency_status: current
+current_as_of: '2012'
+evidence_tier: 1
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources
+license:
+  name: CC-BY-NC-SA 3.0 IGO (IARC / WHO Intergovernmental Organization licence)
+  url: https://creativecommons.org/licenses/by-nc-sa/3.0/igo/
+  spdx_id: CC-BY-NC-SA-3.0-IGO
+attribution:
+  required: true
+  text: 'IARC Monographs on the Evaluation of Carcinogenic Risks to Humans, Volume
+    100E — Personal Habits and Indoor Combustions. Lyon: International Agency for
+    Research on Cancer; 2012.'
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+sharealike_required: true
+legal_review:
+  status: pending
+  notes: 'Brief specified ID prefix 100A but tobacco smoking is catalogued under IARC
+    Vol 100E (Personal Habits and Indoor Combustions, 2012); URL routes to 100E. Maintainers
+    may rename ID to SRC-IARC-100E-TOBACCO-SMOKING.'
+relates_to_diseases: []
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Cited by prevention RFs / Indications for
+  tobacco smoking → 16+ cancer sites: lung, larynx, oral cavity, pharynx, oesophagus,
+  stomach, pancreas, liver, kidney, ureter, bladder, cervix, ovary (mucinous), bone
+  marrow (AML), nasal cavity, colorectal. IARC Group 1 carcinogen. Foundational reference
+  for lung-cancer screening (USPSTF LDCT) eligibility and smoking-cessation Indications.
+
+  '
+pages_count: 130
+references_count: 1000
+corpus_role: primary_guideline

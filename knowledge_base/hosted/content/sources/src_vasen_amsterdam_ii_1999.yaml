@@ -1,0 +1,50 @@
+id: SRC-VASEN-AMSTERDAM-II-1999
+source_type: cohort_study
+title: New clinical criteria for hereditary nonpolyposis colorectal cancer (HNPCC,
+  Lynch syndrome) proposed by the International Collaborative Group on HNPCC — Amsterdam
+  II criteria
+version: '1999'
+authors:
+- Vasen HF
+- Watson P
+- Mecklin JP
+- Lynch HT
+journal: Gastroenterology
+doi: 10.1016/S0016-5085(99)70510-X
+pmid: '10348829'
+url: https://pubmed.ncbi.nlm.nih.gov/10348829
+access_level: subscription_required
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 2
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources
+license:
+  name: Elsevier / Gastroenterology (subscription)
+  spdx_id: null
+attribution:
+  required: true
+  text: Vasen HF et al., Gastroenterology 1999 — Amsterdam II criteria for HNPCC /
+    Lynch syndrome.
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+legal_review:
+  status: pending
+  notes: Subscription publication; abstract open access.
+relates_to_diseases: []
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Cited by Lynch syndrome risk-assessment
+  algorithms and prevention RFs. Amsterdam II criteria expand original Amsterdam I
+  to include extracolonic HNPCC-associated cancers (endometrium, small bowel, ureter,
+  renal pelvis). Foundational clinical criteria still used (alongside Bethesda guidelines
+  and PREMM5) for Lynch-syndrome suspicion before universal MMR-IHC tumour testing
+  became standard.
+
+  '
+pages_count: 4
+references_count: 25
+corpus_role: rct_publication

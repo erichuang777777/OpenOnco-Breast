@@ -1,0 +1,65 @@
+id: SRC-KASTRINOS-PREMM5-2017
+source_type: cohort_study
+title: Development and validation of the PREMM5 model for comprehensive risk assessment
+  of Lynch syndrome
+version: '2017'
+authors:
+- Kastrinos F
+- Uno H
+- Ukaegbu C
+- Alvero C
+- McFarland A
+- Yurgelun MB
+- Kraft P
+- Newcomb PA
+- Gallinger S
+- Lindor NM
+- Le Marchand L
+- Hopper J
+- Win AK
+- Buchanan DD
+- Rosty C
+- Casey G
+- Haile R
+- Lemmens VEPP
+- Hampel H
+- Hutter CM
+- Peters U
+- Syngal S
+journal: Journal of Clinical Oncology
+doi: 10.1200/JCO.2016.69.6120
+pmid: '28489507'
+url: https://pubmed.ncbi.nlm.nih.gov/28489507
+access_level: subscription_required
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 2
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources
+license:
+  name: ASCO / Journal of Clinical Oncology (subscription)
+  spdx_id: null
+attribution:
+  required: true
+  text: Kastrinos F et al., JCO 2017 — PREMM5 Lynch-syndrome risk-prediction model.
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+legal_review:
+  status: pending
+  notes: Subscription publication; abstract open access. Calculator tool also free at premm.dfci.harvard.edu.
+relates_to_diseases: []
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Cited by Lynch syndrome risk-prediction
+  algorithms (ALG-PREMM5 / ALG-LYNCH-RISK). PREMM5 estimates the probability of carrying
+  a pathogenic variant in MLH1, MSH2, MSH6, PMS2, or EPCAM based on personal and family
+  cancer history. Replaces PREMM(1,2,6). Threshold ≥2.5% triggers germline testing
+  per NCCN Genetic/Familial High-Risk Assessment. Free calculator at premm.dfci.harvard.edu.
+
+  '
+pages_count: 11
+references_count: 50
+corpus_role: rct_publication

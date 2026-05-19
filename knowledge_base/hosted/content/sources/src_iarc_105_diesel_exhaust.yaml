@@ -1,0 +1,45 @@
+id: SRC-IARC-105-DIESEL-EXHAUST
+source_type: monograph
+title: 'IARC Monographs Volume 105 — Diesel and Gasoline Engine Exhausts and Some
+  Nitroarenes'
+version: Volume 105 (2014; evaluation 2012)
+authors:
+- International Agency for Research on Cancer
+- World Health Organization
+url: https://publications.iarc.fr/129
+access_level: open_access
+currency_status: current
+current_as_of: '2014'
+evidence_tier: 1
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources
+license:
+  name: CC-BY-NC-SA 3.0 IGO (IARC / WHO Intergovernmental Organization licence)
+  url: https://creativecommons.org/licenses/by-nc-sa/3.0/igo/
+  spdx_id: CC-BY-NC-SA-3.0-IGO
+attribution:
+  required: true
+  text: 'IARC Monographs on the Evaluation of Carcinogenic Risks to Humans, Volume
+    105. Lyon: International Agency for Research on Cancer; 2014.'
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+sharealike_required: true
+legal_review:
+  status: pending
+  notes: Verify IARC/WHO CC-BY-NC-SA-3.0-IGO scope for non-profit clinical decision-support use.
+relates_to_diseases: []
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Cited by prevention RFs / Indications for
+  occupational diesel-exhaust exposure → lung cancer (sufficient evidence) + bladder
+  cancer (limited evidence). IARC reclassified diesel exhaust from Group 2A to Group
+  1 in June 2012. Affected workers: miners (esp. underground), railroad workers, trucking,
+  bus drivers, dock workers, heavy-equipment operators.
+
+  '
+pages_count: 700
+references_count: 1500
+corpus_role: primary_guideline

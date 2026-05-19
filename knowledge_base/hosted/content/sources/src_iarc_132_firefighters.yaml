@@ -1,0 +1,45 @@
+id: SRC-IARC-132-FIREFIGHTERS
+source_type: monograph
+title: 'IARC Monographs Volume 132 — Occupational Exposure as a Firefighter'
+version: Volume 132 (2023; evaluation 2022)
+authors:
+- International Agency for Research on Cancer
+- World Health Organization
+url: https://publications.iarc.fr/615
+access_level: open_access
+currency_status: current
+current_as_of: '2023'
+evidence_tier: 1
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources
+license:
+  name: CC-BY-NC-SA 3.0 IGO (IARC / WHO Intergovernmental Organization licence)
+  url: https://creativecommons.org/licenses/by-nc-sa/3.0/igo/
+  spdx_id: CC-BY-NC-SA-3.0-IGO
+attribution:
+  required: true
+  text: 'IARC Monographs on the Identification of Carcinogenic Hazards to Humans,
+    Volume 132 — Occupational Exposure as a Firefighter. Lyon: International Agency
+    for Research on Cancer; 2023.'
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+sharealike_required: true
+legal_review:
+  status: pending
+  notes: Verify IARC/WHO CC-BY-NC-SA-3.0-IGO scope for non-profit clinical decision-support use.
+relates_to_diseases: []
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Cited by prevention RFs / Indications for
+  firefighter occupational exposure → bladder cancer + mesothelioma (sufficient evidence)
+  + colon, prostate, testicular, melanoma, non-Hodgkin lymphoma (limited evidence).
+  IARC upgraded firefighting from Group 2B to Group 1 in June 2022. Mixed exposures:
+  PAHs, asbestos, benzene, diesel exhaust, PFAS, flame retardants, combustion products.
+
+  '
+pages_count: 800
+references_count: 1800
+corpus_role: primary_guideline

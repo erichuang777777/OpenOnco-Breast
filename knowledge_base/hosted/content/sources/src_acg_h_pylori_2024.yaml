@@ -1,0 +1,50 @@
+id: SRC-ACG-H-PYLORI-2024
+source_type: guideline
+title: 'ACG Clinical Guideline: Treatment of Helicobacter pylori Infection (2024)'
+version: '2024'
+authors:
+- Chey WD
+- Howden CW
+- Moss SF
+- Morgan DR
+- Greer KB
+- Grover S
+- Shah SC
+journal: American Journal of Gastroenterology
+doi: 10.14309/ajg.0000000000002968
+url: https://gi.org/guidelines/
+access_level: subscription_required
+currency_status: current
+current_as_of: '2024'
+evidence_tier: 1
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources
+license:
+  name: ACG / Wolters Kluwer — publisher copyright; abstract open access
+  url: https://journals.lww.com/ajg/pages/default.aspx
+  spdx_id: null
+attribution:
+  required: true
+  text: Chey WD et al., ACG Clinical Guideline for the Treatment of Helicobacter pylori
+    Infection. Am J Gastroenterol 2024.
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+legal_review:
+  status: pending
+  notes: Verify exact DOI / PMID / publication date for 2024 ACG H. pylori treatment guideline.
+relates_to_diseases: []
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Cited by prevention RFs / Indications for
+  H. pylori eradication pathway (gastric adenocarcinoma + MALT lymphoma prevention).
+  Emphasizes bismuth quadruple therapy first-line, optimized PPI dosing, and salvage
+  regimens after failure. NOTE: there is a pre-existing src_aga_h_pylori_2024.yaml
+  whose content also describes the ACG document — surface this duplication to maintainers.
+
+  '
+pages_count: 40
+references_count: 400
+corpus_role: primary_guideline
