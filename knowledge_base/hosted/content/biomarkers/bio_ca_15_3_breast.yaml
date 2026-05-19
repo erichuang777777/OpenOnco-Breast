@@ -1,0 +1,44 @@
+id: BIO-CA-15-3-BREAST
+names:
+  preferred: "CA 15-3 (breast cancer surveillance marker)"
+  ukrainian: "CA 15-3 (маркер нагляду при раку молочної залози)"
+  english: "Cancer Antigen 15-3"
+  synonyms: ["CA15-3", "MUC1 serum marker", "CA 15.3"]
+biomarker_type: serum_marker
+measurement:
+  method: "Serum immunoassay (ECLIA, CLIA)"
+  units: "U/mL"
+  typical_range: [0, 30]
+specimen_requirements:
+  - "Serum (5 mL clotted blood)"
+  - "LOINC 6875-9 (CA 15-3)"
+clinical_context: [screening_surveillance]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: tumor_marker
+external_ids:
+  hgnc_symbol: MUC1
+  loinc: "6875-9"
+sources:
+  - SRC-NCCN-BREAST-2025
+  - SRC-ESMO-BREAST-METASTATIC-2024
+last_reviewed: "2026-05-18"
+notes: >
+  Serum tumor marker (MUC1 epitope) used for breast cancer follow-up;
+  ASCO and NCCN do NOT recommend CA 15-3 for screening of asymptomatic
+  individuals (insufficient sensitivity/specificity, no mortality benefit
+  shown). Limited role in surveillance after curative-intent treatment of
+  early-stage breast cancer — most guidelines (ASCO 2013, NCCN 2025) advise
+  against routine serial measurement in non-metastatic survivors. Primary
+  utility: response monitoring in established metastatic disease (rising
+  trend may precede imaging progression by weeks to months). Can be falsely
+  elevated in benign breast disease, liver disease, ovarian cancer, and
+  some lung cancers. STUB pending two-Co-Lead signoff.
+notes_ua: >
+  Сироватковий пухлинний маркер (епітоп MUC1), що використовується для
+  спостереження після РМЗ; ASCO та NCCN НЕ рекомендують CA 15-3 для
+  скринінгу безсимптомних осіб. Основне застосування: моніторинг
+  відповіді при встановленому метастатичному захворюванні. STUB pending
+  two-Co-Lead signoff.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_surveillance_2026_05_18
+draft_revision: 1

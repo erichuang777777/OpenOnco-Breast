@@ -1,0 +1,55 @@
+id: BIO-HCV-RNA-QUANTITATIVE-MONITORING
+names:
+  preferred: "HCV RNA quantitative — viral-load monitoring during direct-acting antiviral (DAA) therapy"
+  ukrainian: "HCV РНК кількісна — моніторинг вірусного навантаження під час DAA-терапії"
+  english: "HCV RNA quantitative monitoring"
+  synonyms: ["HCV viral load monitoring", "HCV PCR quantitative", "SVR12 assessment"]
+biomarker_type: viral_load
+measurement:
+  method: "Real-time quantitative PCR (HCV RNA, IU/mL); high-sensitivity assay (LOD ≤15 IU/mL) required for SVR12"
+  units: "IU/mL"
+  typical_range: [0, 100000000]
+specimen_requirements:
+  - "Serum or EDTA plasma; processed within 2 h or frozen"
+  - "LOINC 11011-4 (HCV RNA quantitation)"
+clinical_context: [screening_surveillance, predictive]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: viral_load
+external_ids:
+  loinc: "11011-4"
+related_biomarkers: [BIO-HCV-RNA, BIO-HCV-STATUS]
+sources:
+  - SRC-EASL-HCV-2023
+  - SRC-AASLD-IDSA-HCV-2023
+last_reviewed: "2026-05-18"
+notes: >
+  Quantitative HCV RNA used to TRACK response over time during 8-12 week
+  course of direct-acting antiviral (DAA) regimens (glecaprevir/
+  pibrentasvir, sofosbuvir/velpatasvir, sofosbuvir/velpatasvir/voxilaprevir,
+  ledipasvir/sofosbuvir). Distinct from BIO-HCV-RNA which captures the
+  single-timepoint quantitative result; this entry captures the
+  serial-monitoring concept for HCC prevention pathway. AASLD-IDSA /
+  EASL minimum testing protocol: baseline HCV RNA + genotype + cirrhosis
+  staging; on-treatment HCV RNA at week 4 (optional, evaluates
+  adherence/response — undetectable at week 4 = rapid virologic
+  response, RVR; not a stopping rule for modern DAAs); end-of-treatment
+  HCV RNA at completion (week 8 or 12); SVR12 — undetectable HCV RNA
+  12 weeks after treatment completion = virologic cure (>95% achievable
+  with current DAAs, durable in >99%). SVR12 = primary efficacy endpoint
+  for HCV cure; SVR24 essentially equivalent. Post-SVR HCC surveillance
+  remains REQUIRED in cirrhotic patients (cumulative HCC risk reduced
+  but not eliminated by cure; AASLD recommends ongoing q6-month US ±
+  AFP for cirrhotics regardless of SVR status). Quantitative monitoring
+  also informs reinfection detection (any HCV RNA detectable post-SVR
+  warrants reinfection workup and genotype reassessment). STUB pending
+  two-Co-Lead signoff.
+notes_ua: >
+  Кількісна HCV РНК для ВІДСТЕЖЕННЯ відповіді протягом 8-12-тижневого
+  курсу DAA. Протокол AASLD-IDSA / EASL: базовий рівень → тиждень 4
+  (опційно, RVR) → кінець лікування → SVR12 (через 12 тижнів після
+  закінчення, основна точка вірусологічного лікування — >95% з сучасними
+  DAA). Після SVR — нагляд HCC ОБОВ'ЯЗКОВИЙ при цирозі (ризик зменшено,
+  але не усунено). STUB pending two-Co-Lead signoff.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_surveillance_2026_05_18
+draft_revision: 1

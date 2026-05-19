@@ -1,0 +1,53 @@
+id: BIO-TP53-CHEK2-COMPOSITE
+names:
+  preferred: "TP53 + CHEK2 composite germline risk panel"
+  ukrainian: "TP53 + CHEK2 — композитна панель ризику зародкової лінії"
+  english: "TP53 + CHEK2 composite germline panel"
+  synonyms: ["LFS-CHEK2 composite", "p53-pathway germline panel"]
+biomarker_type: composite_score
+mutation_details:
+  gene: "TP53, CHEK2"
+  variant_type: "germline pathogenic variants in either or both genes"
+  functional_impact: "loss_of_function (p53-pathway disruption)"
+specimen_requirements:
+  - "Whole blood EDTA or saliva — germline DNA"
+  - "Multi-gene NGS panel covering at minimum TP53 (full coding region + intronic splice sites + del/dup CNV) and CHEK2 (1100delC + full coding region)"
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: clinical_composite
+external_ids:
+  hgnc_symbol: "TP53"
+related_biomarkers: [BIO-TP53-GERMLINE, BIO-CHEK2-GERMLINE]
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-NCCN-BREAST-2025
+last_reviewed: "2026-05-18"
+notes: >
+  Composite-panel concept used for risk-stratification when a multi-gene
+  germline panel returns pathogenic variants in BOTH TP53 (Li-Fraumeni
+  syndrome) and CHEK2 (moderate-risk breast/CRC predisposition), or to
+  reflect joint p53-pathway disruption risk modeling. TP53 dominates the
+  composite — Li-Fraumeni penetrance is high (lifetime cancer risk
+  ~70-90% by age 70, with sarcoma, breast, brain, adrenocortical, leukemia
+  spectrum), so management follows TP53 protocol (Toronto / Chompret /
+  modified-Chompret criteria; annual whole-body MRI + breast MRI from
+  age 20-25; AVOID ionizing radiation as therapeutic adjuvant whenever
+  oncologically feasible). CHEK2 (1100delC most common pathogenic
+  variant; carrier frequency ~1% European populations) confers moderate
+  breast cancer risk (~2-3x baseline, lifetime ~28-37%) and modest CRC
+  risk. Co-occurrence is rare but described — surveillance follows the
+  HIGHER-risk gene (TP53 dominates). Counseling note: many panels also
+  return CHEK2 variants of uncertain significance; clinical action requires
+  ACMG/AMP-classified pathogenic or likely-pathogenic call. Composite
+  entry exists to support panel-result aggregation in algorithm logic
+  (not a single-variant lookup). STUB pending two-Co-Lead signoff.
+notes_ua: >
+  Композитний концепт для стратифікації ризику, коли мульти-генна
+  панель повертає патогенні варіанти і TP53 (синдром Лі-Фраумені), і
+  CHEK2. TP53 домінує — нагляд за протоколом LFS (щорічна МРТ всього
+  тіла + МРТ молочних залоз з 20-25 років; уникати іонізуючої радіації).
+  CHEK2 1100delC: помірний ризик РМЗ (~2-3x). Спільне виявлення — рідко;
+  нагляд за вищим ризиком (TP53). STUB pending two-Co-Lead signoff.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_surveillance_2026_05_18
+draft_revision: 1

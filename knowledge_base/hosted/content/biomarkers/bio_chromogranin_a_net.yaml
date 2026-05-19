@@ -1,0 +1,47 @@
+id: BIO-CHROMOGRANIN-A-NET
+names:
+  preferred: "Chromogranin A (GEP-NET surveillance, MEN1)"
+  ukrainian: "Хромогранін A (нагляд GEP-NET, MEN1)"
+  english: "Chromogranin A"
+  synonyms: ["CgA", "CHGA"]
+biomarker_type: serum_marker
+measurement:
+  method: "Serum immunoassay (RIA or ELISA); assay-dependent reference ranges"
+  units: "ng/mL"
+  typical_range: [0, 100]
+specimen_requirements:
+  - "Serum (5 mL clotted blood)"
+  - "Fasting 8 h preferred; hold PPI ≥2 weeks before draw (PPI causes secondary hypergastrinemia → CgA elevation)"
+clinical_context: [screening_surveillance]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: tumor_marker
+external_ids:
+  hgnc_symbol: CHGA
+sources:
+  - SRC-NCCN-NET-2025
+  - SRC-ENDOCRINE-SOCIETY-MEN-2023
+last_reviewed: "2026-05-18"
+notes: >
+  Granin-family secretory protein, ubiquitously expressed in neuroendocrine
+  cells. Used as a non-specific biomarker for GEP-NET (gastroenteropancreatic
+  neuroendocrine tumors), MEN1-associated NETs (pancreatic, foregut),
+  and pheochromocytoma (but plasma metanephrines preferred for pheo). NCCN
+  recommends CgA as ADJUNCT, not standalone — annual surveillance in MEN1
+  carriers (pancreatic NET screening) typically combined with cross-sectional
+  imaging (MRI or EUS) and gastrin/insulin/glucagon/VIP/PP panels per
+  symptoms. Major confounders driving false-positive elevations: proton-pump
+  inhibitor use (most common cause of elevation in clinical practice),
+  atrophic gastritis, renal impairment, heart failure, chronic hepatitis,
+  IBD. Less sensitive than gut-hormone panel for functional NETs.
+  Limited utility for non-functioning small NETs. STUB pending two-Co-Lead
+  signoff.
+notes_ua: >
+  Гранін-сімейний секреторний білок з нейроендокринних клітин. Допоміжний
+  біомаркер для GEP-NET, MEN1-асоційованих НЕТ, феохромоцитоми
+  (але метанефрини плазми кращі для феохромоцитоми). NCCN рекомендує
+  як ДОПОМІЖНИЙ, не самостійний — щорічний нагляд носіїв MEN1 у поєднанні
+  з МРТ/ЕУС. Основні хибно-позитивні: ІПП, атрофічний гастрит, ниркова
+  недостатність. STUB pending two-Co-Lead signoff.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_surveillance_2026_05_18
+draft_revision: 1

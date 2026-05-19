@@ -1,0 +1,50 @@
+id: BIO-AMH-OVARIAN-RESERVE
+names:
+  preferred: "Anti-Müllerian Hormone (ovarian reserve — BSO timing in BRCA carriers)"
+  ukrainian: "Антимюллерів гормон (оваріальний резерв — час BSO у носіїв BRCA)"
+  english: "Anti-Müllerian Hormone"
+  synonyms: ["AMH", "MIS", "Müllerian inhibiting substance"]
+biomarker_type: serum_marker
+measurement:
+  method: "Serum immunoassay (ECLIA, CLIA); cycle-day-independent"
+  units: "ng/mL (or pmol/L; conversion 1 ng/mL ≈ 7.14 pmol/L)"
+  typical_range: [0.5, 5.0]
+specimen_requirements:
+  - "Serum (5 mL clotted blood), any cycle day"
+  - "LOINC 38476-7 (AMH, serum)"
+clinical_context: [screening_surveillance]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: tumor_marker
+external_ids:
+  hgnc_symbol: AMH
+  loinc: "38476-7"
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+last_reviewed: "2026-05-18"
+notes: >
+  Granulosa-cell-derived hormone reflecting primordial follicle pool;
+  best single biomarker of ovarian reserve. Adjunct to risk-reducing
+  bilateral salpingo-oophorectomy (RRSO) counseling in BRCA1/BRCA2
+  germline carriers and other HBOC syndromes (BRIP1, RAD51C, RAD51D,
+  PALB2). NCCN 2025 (Genetic/Familial High-Risk: Breast/Ovarian):
+  BRCA1 RRSO recommended at age 35-40 (after completion of childbearing);
+  BRCA2 at age 40-45. AMH supports timing discussion — declining AMH
+  (<1.0 ng/mL = diminished reserve) helps quantify remaining reproductive
+  window and informs fertility-preservation referral (oocyte/embryo
+  cryopreservation) before RRSO. NOT a screening test for ovarian cancer
+  (CA-125 + TVUS combination has been evaluated and is NOT recommended
+  for screening per UKCTOCS — no mortality benefit). Used in pediatric
+  ovarian function monitoring after gonadotoxic chemotherapy (childhood
+  cancer survivors). Falsely elevated in granulosa-cell tumors and
+  PCOS; falsely suppressed by hormonal contraceptives. STUB pending
+  two-Co-Lead signoff.
+notes_ua: >
+  Гормон з гранульозних клітин, що відображає пул примордіальних
+  фолікулів; найкращий одинарний біомаркер оваріального резерву.
+  Допоміжний для консультування щодо профілактичної BSO у носіїв
+  BRCA1/2 та HBOC. NCCN 2025: BRCA1 — BSO у 35-40 років, BRCA2 — у
+  40-45. AMH підтримує обговорення часу. НЕ скринінговий тест на рак
+  яєчників. STUB pending two-Co-Lead signoff.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_surveillance_2026_05_18
+draft_revision: 1
