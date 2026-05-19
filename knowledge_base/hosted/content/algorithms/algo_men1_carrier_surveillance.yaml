@@ -1,0 +1,162 @@
+id: ALGO-MEN1-CARRIER-SURVEILLANCE
+applicable_to_disease: DIS-PNET
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention. Anchored to DIS-PNET (pancreatic
+# neuroendocrine tumor) because MEN1-associated pNETs are the leading
+# cause of MEN1-related mortality and the most aggressive surveillance
+# target. Reach extends to DIS-PITUITARY-ADENOMA (anterior pituitary
+# adenomas — most common MEN1 feature), DIS-PARATHYROID-CARCINOMA
+# (parathyroid hyperplasia / adenoma — most prevalent MEN1 endocrine
+# feature, ~95% lifetime), DIS-ADRENOCORTICAL-CARCINOMA (adrenal
+# tumors — modest MEN1 association), DIS-GI-NET (gastrinoma /
+# duodenopancreatic NETs).
+purpose: >
+  Biochemical + imaging surveillance cadence for confirmed MEN1
+  germline pathogenic / likely-pathogenic carriers per Endocrine
+  Society Clinical Practice Guidelines (Thakker RV et al. Clinical
+  practice guidelines for multiple endocrine neoplasia type 1
+  (MEN1). J Clin Endocrinol Metab 2012;97:2990-3011. PMID 22723327)
+  + Endocrine Society 2023 update + NCCN Neuroendocrine and Adrenal
+  Tumors V.1.2025.
+
+  MEN1 phenotype: parathyroid hyperplasia (~95% lifetime), anterior
+  pituitary adenomas (~30-40%), duodenopancreatic NETs (~30-80% —
+  highest mortality), adrenal cortical tumors (~20-40%), thymic /
+  bronchial NETs (rare but high-mortality), foregut NETs. Penetrance
+  high; surveillance entry per gene panel + clinical features begins
+  in childhood (5-10).
+
+output_indications:
+  - IND-MEN1-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-MEN1-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Routes to the prevention-surveillance Indication
+# (plan_track: surveillance, recommended_regimen: null per current KB
+# schema). Engine layer should select MEN1-CARRIER-SURVEILLANCE
+# (standard) / MEN1-CARRIER-INTENSIFIED (aggressive) sibling Indications
+# for confirmed carriers; those Indications carry treatment-pathway
+# plan_track values (standard / aggressive) intended for active-disease
+# routing and so cannot be referenced as algorithm direct-route targets
+# in current schema. This routing-contract pattern matches algo_carrier_
+# cascade_lynch's behaviour for the confirmed-carrier branch.
+
+decision_tree:
+  - step: 1
+    # Confirmed-carrier gate — MEN1 germline P/LP variant or
+    # phenocopy CDKN1B (MEN4) variant.
+    evaluate:
+      any_of:
+        - condition: "Confirmed MEN1 germline pathogenic / likely-pathogenic (ACMG class 4/5) variant"
+        - condition: "Confirmed CDKN1B (p27Kip1) germline pathogenic variant (MEN4 — clinical phenocopy with overlapping surveillance protocol)"
+    if_true:
+      next_step: 2
+    if_false:
+      result: false
+      notes: "Not a confirmed MEN1 / MEN4 carrier — apply syndrome-specific suspicion criteria via Endocrine Society / NCCN MEN1 clinical pattern: ≥2 of three principal MEN1 tumors (parathyroid + pituitary + duodenopancreatic NET), or first-degree relative of confirmed MEN1 carrier, or proband meeting biochemical features in absence of confirmed gene. Route via IND-MEN1-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE for suspicion / cascade-testing pathway."
+  - step: 2
+    # Age + pediatric-onset surveillance entry gate. MEN1 pediatric
+    # surveillance starts at age 5 (parathyroid biochemistry) and age
+    # 10 (pituitary biochemistry + imaging). pNET surveillance starts
+    # earlier in carriers with family-history of childhood-onset pNET.
+    evaluate:
+      all_of:
+        - condition: "Carrier is age ≥5 (pediatric pediatric entry) OR pediatric carrier under family-history-modified entry (e.g., proband sibling with onset <10) — see notes"
+    if_true:
+      next_step: 3
+    if_false:
+      result: false
+      notes: "Pediatric carrier <5 years — surveillance not yet initiated. Document re-contact plan with pediatric endocrinology at age 5 for parathyroid biochemistry + at age 10 for pituitary / pNET imaging. Family-history-modified entry (e.g., proband sibling with childhood-onset pNET): consider biochemistry from age 3-4."
+  - step: 3
+    # Biochemistry-only screening for early carriers (age 5-10) and
+    # ongoing throughout life. Annual fasting calcium + PTH + glucose +
+    # insulin + gastrin + pancreatic polypeptide + glucagon + VIP +
+    # chromogranin A + IGF-1 + prolactin (Endocrine Society 2012/2023).
+    evaluate:
+      all_of:
+        - condition: "Annual biochemical surveillance ordered: calcium, ionised calcium, PTH (parathyroid); fasting glucose, insulin, proinsulin (insulinoma); gastrin, chromogranin A (gastrinoma); pancreatic polypeptide, glucagon, VIP, somatostatin (other functional NETs); prolactin, IGF-1 (pituitary); ACTH / cortisol / DHEA-S (adrenal — every 1-3 years per imaging findings)"
+    if_true:
+      next_step: 4
+    if_false:
+      result: false
+      notes: "Annual MEN1 biochemistry panel not completed — refer to endocrinology for structured carrier-surveillance plan. The annual biochemistry panel is the foundation of MEN1 surveillance; abnormalities trigger targeted imaging."
+  - step: 4
+    # Imaging surveillance cadence per Endocrine Society 2012/2023:
+    # pituitary MRI q3y from age 5-10, abdominal MRI (or EUS) q1-3y
+    # from age 10 for pNET, neck US q1-3y from age 8-10 for
+    # parathyroid.
+    evaluate:
+      all_of:
+        - condition: "Pituitary MRI ordered: baseline at age 5-10, then q3y (more frequent if symptoms or biochemical abnormality)"
+        - condition: "Abdominal MRI (with pancreatic protocol) ordered: from age 10 q1-3y; or EUS q1-3y as preferred high-sensitivity modality for small pNETs (≤1cm)"
+        - condition: "Thymic / bronchial imaging: chest CT (low-dose) or MRI q1-2y from age 15-20 — thymic NETs in MEN1 are high-mortality (median 9.5y survival per Goudet 2015 PMID 25646800)"
+    if_true:
+      result: IND-MEN1-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Standard MEN1 carrier surveillance protocol — biochemistry + imaging per Endocrine Society / NCCN cadence. Carriers with aggressive-phenotype MEN1 mutations (specific JunD-binding-loss codons per Thevenon 2013 PMID 23348160) or family-history of childhood-onset pNET / thymic NET may benefit from intensified cadence. pNET >1-2 cm typically prompts surgical evaluation; insulinoma is the most surgical-indication-triggering functional MEN1 pNET. Cascade testing required for all first-degree relatives at age 5 (parathyroid biochemistry) / age 10 (full panel + imaging). Indication routes to MEN1-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE (proper non-regimen plan_track); engine should select sibling IND-MEN1-CARRIER-SURVEILLANCE / IND-MEN1-CARRIER-INTENSIFIED Indications at downstream layer for confirmed-carrier routing."
+    if_false:
+      result: false
+      notes: "Imaging cadence not yet completed — schedule baseline pituitary MRI, abdominal MRI or EUS, neck US, chest imaging per Endocrine Society 2012/2023 cadence. Engage multidisciplinary team (endocrinology + endocrine surgery + radiology + medical oncology) for shared-decision planning."
+
+sources:
+  - SRC-ENDOCRINE-SOCIETY-MEN-2023
+  - SRC-NCCN-NET-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding MEN1 confirmed-carrier
+  surveillance per Endocrine Society Clinical Practice Guidelines
+  (Thakker RV et al. Clinical practice guidelines for multiple
+  endocrine neoplasia type 1 (MEN1). J Clin Endocrinol Metab
+  2012;97:2990-3011. PMID 22723327) + Endocrine Society 2023 update
+  + NCCN Neuroendocrine and Adrenal Tumors V.1.2025. Primary-paper
+  Source entity (SRC-THAKKER-2012-MEN1-ENDOCRINE-SOCIETY) is v0.2-B
+  authoring backlog.
+
+  Anchored to DIS-PNET (highest-mortality MEN1 feature). Reach:
+  DIS-PITUITARY-ADENOMA (most common MEN1 imaging finding), DIS-
+  PARATHYROID-CARCINOMA (most prevalent MEN1 endocrine — ~95%
+  lifetime), DIS-ADRENOCORTICAL-CARCINOMA, DIS-GI-NET, foregut /
+  bronchial / thymic NETs.
+
+  MEN1 lifetime tumor risk (Endocrine Society 2012 + 2023 update):
+    - Primary hyperparathyroidism: ~95% by age 50
+    - Anterior pituitary adenoma: 30-40% (prolactinoma most common)
+    - Duodenopancreatic NETs: 30-80% (gastrinoma + insulinoma +
+      non-functioning pNET most common; gastrinoma is largest
+      mortality contributor in modern era)
+    - Adrenal cortical tumors (functional + non-functional): 20-40%
+    - Foregut carcinoids (thymic / bronchial / gastric ECL): 5-15%
+    - Less common: meningioma, ependymoma, lipoma, angiofibroma,
+      collagenoma (cutaneous), leiomyoma
+
+  Surveillance cadence detail (per Endocrine Society 2012/2023):
+    - Pediatric entry (parathyroid biochemistry): from age 5 q1y
+    - Pediatric entry (pituitary + pNET): from age 10 q1y
+      biochemistry + q1-3y imaging
+    - Thymic / bronchial imaging: from age 15-20 q1-2y (chest CT
+      low-dose preferred)
+    - Adrenal imaging: typically incidental on abdominal MRI; no
+      separate cadence required unless biochemistry abnormal
+
+  Aggressive-phenotype MEN1 mutations (Thevenon 2013): specific MEN1
+  codons (JunD-binding-loss exon variants) correlate with earlier-
+  onset + larger + more aggressive pNETs — intensified surveillance
+  cadence appropriate.
+
+  MEN4 (CDKN1B) phenocopy: clinical features overlap MEN1 but
+  generally milder; surveillance per MEN1 protocol with shared-
+  decision adjustments.
+
+  Cited from RF-MEN1-CONFIRMED-CARRIER + RF-MEN4-CONFIRMED-CARRIER
+  trigger logic.
+
+  Decision-tree semantics: `result: false` means surveillance not yet
+  initiated (pediatric age, panel pending, etc.); `result: IND-MEN1-
+  SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE` routes to the prevention-
+  surveillance pathway (plan_track: surveillance — proper non-regimen
+  routing per current KB schema). Engine selects sibling
+  IND-MEN1-CARRIER-SURVEILLANCE / IND-MEN1-CARRIER-INTENSIFIED
+  Indications at downstream layer based on aggressive-mutation flag
+  or family-history-modifier.
+draft: true

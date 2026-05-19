@@ -1,0 +1,193 @@
+id: ALGO-VHL-CARRIER-SURVEILLANCE-VHL-ALLIANCE
+applicable_to_disease: DIS-RCC
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention. Anchored to DIS-RCC (clear-cell
+# renal cell carcinoma) because RCC is the most common adult VHL
+# malignancy (~40-70% lifetime). Reach extends to DIS-PHEOCHROMOCYTOMA
+# (~10-20% lifetime — bilateral / multifocal pattern), DIS-PNET
+# (pancreatic NETs ~17% — non-functioning), CNS hemangioblastomas
+# (cerebellar / spinal cord — no Disease entity), retinal
+# hemangioblastomas (no Disease entity), endolymphatic sac tumors,
+# papillary cystadenomas of the epididymis / broad ligament.
+purpose: >
+  Active Surveillance Protocol for confirmed von Hippel-Lindau (VHL)
+  germline pathogenic / likely-pathogenic carriers per VHL Alliance
+  Active Surveillance Guidelines 2020 (Binderup ML et al. von Hippel-
+  Lindau disease: updated guideline for diagnosis and surveillance.
+  Eur J Med Genet 2022;65:104538. PMID 35780949 — represents 2020
+  consensus update) + NCCN Kidney Cancer V.4.2025 (VHL section) +
+  Endocrine Society pheochromocytoma surveillance.
+
+  VHL is an autosomal-dominant tumor-suppressor syndrome with near-
+  complete penetrance for some VHL feature by age 65. Surveillance
+  begins in early childhood (ophthalmologic from infancy; biochemical
+  + imaging from age 5-10). Modality + cadence is highly age-stratified
+  and lifelong.
+
+output_indications:
+  - IND-VHL-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-VHL-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Routes to the prevention-surveillance Indication (plan_track:
+# surveillance, recommended_regimen: null per current KB schema).
+# Engine layer should select sibling IND-VHL-CARRIER-SURVEILLANCE
+# (standard VHL Alliance cadence) / IND-VHL-CARRIER-INTENSIFIED
+# (aggressive cadence for personal history of RCC / pheochromocytoma,
+# family-history of early-onset RCC, type 2C VHL, or active
+# hemangioblastoma growth) at downstream routing. Those Indications
+# carry treatment-pathway plan_track values (standard / aggressive)
+# intended for active-disease routing and so cannot be referenced
+# as algorithm direct-route targets in current schema.
+
+decision_tree:
+  - step: 1
+    # Confirmed-carrier gate — VHL germline P/LP variant.
+    evaluate:
+      all_of:
+        - condition: "Confirmed VHL germline pathogenic / likely-pathogenic (ACMG class 4/5) variant"
+    if_true:
+      next_step: 2
+    if_false:
+      result: false
+      notes: "Not a confirmed VHL carrier — apply clinical suspicion criteria (≥2 of VHL-defining tumors: cerebellar / spinal hemangioblastoma, retinal hemangioblastoma, clear-cell RCC, pheochromocytoma, pancreatic NET / cyst, endolymphatic sac tumor, papillary cystadenoma — OR single VHL-defining tumor + family-history). Route via IND-VHL-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE for suspicion / cascade pathway."
+  - step: 2
+    # Infancy / early-childhood entry — ophthalmologic exam from
+    # infancy (retinal hemangioblastoma — can occur in first year of
+    # life; untreated → vision loss).
+    evaluate:
+      all_of:
+        - condition: "Carrier is age ≥1 — ophthalmologic surveillance entry"
+    if_true:
+      next_step: 3
+    if_false:
+      result: false
+      notes: "Confirmed VHL carrier <1 year — ophthalmologic exam from infancy (dilated fundus exam q6-12 months). Document re-contact for full multi-organ schedule entry by age 5."
+  - step: 3
+    # Ophthalmologic + audiology + neurology imaging — pediatric.
+    evaluate:
+      all_of:
+        - condition: "Dilated fundus exam (ophthalmologist with retinal expertise) q6-12 months in childhood; q1y from adolescence — retinal hemangioblastoma surveillance"
+        - condition: "Audiology q1-2y from age 5 — endolymphatic sac tumor surveillance (hearing loss is sentinel feature)"
+        - condition: "Brain + spinal cord MRI with contrast (gadolinium) q2y from age 11-15 — cerebellar / brainstem / spinal cord hemangioblastoma surveillance; from age 30 q1y or based on growth"
+    if_true:
+      next_step: 4
+    if_false:
+      result: false
+      notes: "Ophthalmologic / audiology / CNS imaging schedule not complete — refer to multidisciplinary VHL clinic. Retinal hemangioblastoma can present in first decade; CNS hemangioblastomas typically present age 25-40 but earlier in some families."
+  - step: 4
+    # Biochemical + abdominal imaging — pheochromocytoma + RCC + pNET.
+    evaluate:
+      all_of:
+        - condition: "Plasma OR urinary fractionated metanephrines q1y from age 5 — pheochromocytoma surveillance (bilateral / multifocal pattern typical of VHL); plasma free metanephrines preferred"
+        - condition: "Abdominal MRI with contrast q2y from age 15 — RCC + pancreatic NET / cyst + adrenal pheochromocytoma surveillance; from age 30 alternate q1y MRI / q1y US or maintain q2y MRI"
+        - condition: "BP measurement q1y (symptomatic pheochromocytoma may present with hypertension)"
+    if_true:
+      next_step: 5
+    if_false:
+      result: false
+      notes: "Biochemical + abdominal imaging schedule not complete — refer to multidisciplinary VHL clinic for full surveillance protocol initiation."
+  - step: 5
+    # Surgical thresholds + cascade testing.
+    evaluate:
+      all_of:
+        - condition: "RCC surgical threshold: tumor diameter ≥3 cm typically triggers partial nephrectomy / nephron-sparing surgery (delayed surgery for tumors <3 cm preserves renal function across lifetime per VHL Alliance — active surveillance with q6-12 month imaging is acceptable for sub-3-cm tumors)"
+        - condition: "Pheochromocytoma surgical threshold: any functional pheochromocytoma + asymptomatic adrenal lesion >3 cm OR with biochemical elevation"
+        - condition: "Cascade testing offered to all first-degree relatives at any age (pediatric appropriate — surveillance entry from age 1)"
+    if_true:
+      result: IND-VHL-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Standard VHL carrier surveillance — Active Surveillance Protocol per VHL Alliance 2020 + NCCN Kidney V.4.2025. Ophthalmology: dilated fundus q6-12mo from infancy. Audiology: q1-2y from age 5. CNS MRI: q2y from age 11-15. Pheochromocytoma biochemistry: q1y from age 5. Abdominal MRI: q2y from age 15. RCC delayed-surgery threshold: 3 cm (nephron-sparing partial nephrectomy preferred; total nephrectomy is last resort given lifelong dialysis risk in young VHL carriers). Pheochromocytoma: any functional or >3 cm. Cascade testing: from age 1 (pediatric appropriate). Belzutifan (HIF-2α inhibitor) FDA-approved for VHL-associated RCC / hemangioblastoma / pNET not requiring immediate surgery — coordinate with VHL specialist for systemic-therapy decisions in unresectable / multifocal disease. Engine should re-route to IND-VHL-CARRIER-SURVEILLANCE (standard) or IND-VHL-CARRIER-INTENSIFIED (aggressive) at downstream layer."
+    if_false:
+      result: false
+      notes: "Surveillance protocol elements incomplete — refer to multidisciplinary VHL clinic. VHL Alliance maintains certified specialist directory; coordinated care substantially improves outcomes vs ad-hoc surveillance."
+
+sources:
+  - SRC-NCCN-KIDNEY-2025
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-ENDOCRINE-SOCIETY-MEN-2023
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding VHL Alliance Active
+  Surveillance Guidelines 2020 (published 2022 as Binderup ML et al.
+  von Hippel-Lindau disease: updated guideline for diagnosis and
+  surveillance. Eur J Med Genet 2022;65:104538. PMID 35780949) + NCCN
+  Kidney Cancer V.4.2025 (VHL section) + NCI VHL Disease guidelines
+  (Lonser RR et al. von Hippel-Lindau disease. Lancet 2003;361:2059-
+  2067. PMID 12814730). Primary-paper Source entities (SRC-BINDERUP-
+  2022-VHL-GUIDELINE, SRC-VHL-ALLIANCE-2020-ACTIVE-SURVEILLANCE) are
+  v0.2-B authoring backlog.
+
+  Anchored to DIS-RCC. Reach: DIS-PHEOCHROMOCYTOMA, DIS-PNET (VHL
+  pancreatic NETs are non-functioning, can be locally aggressive),
+  CNS hemangioblastoma (cerebellar / brainstem / spinal cord — no
+  Disease entity), retinal hemangioblastoma (no Disease entity),
+  endolymphatic sac tumor (no Disease entity), papillary cystadenoma
+  of epididymis (male) / broad ligament (female) — typically benign
+  but require monitoring.
+
+  VHL lifetime tumor risk (Binderup 2022 + Lonser 2003):
+    - Retinal hemangioblastoma: ~25-60% by age 65 (often multifocal /
+      bilateral)
+    - CNS hemangioblastoma (cerebellar + brainstem + spinal cord):
+      ~60-80% by age 65
+    - Clear-cell RCC: ~40-70% by age 65 (often bilateral /
+      multifocal — preservation of renal function is key
+      surveillance objective)
+    - Pheochromocytoma: ~10-20% by age 65 (bilateral / multifocal
+      pattern; VHL-PCC is hallmark distinguishing feature in
+      Type 2 VHL families)
+    - Pancreatic NET (non-functioning): ~17% lifetime
+    - Pancreatic cysts (benign): ~30-65%
+    - Endolymphatic sac tumor: ~10-15% (sentinel: hearing loss /
+      tinnitus / vertigo)
+    - Papillary cystadenoma of epididymis / broad ligament:
+      common (~25-60%) — usually benign
+
+  VHL Type classification (genotype-phenotype):
+    - Type 1: no pheochromocytoma (most missense + truncating
+      mutations; deletions). Predominantly RCC / CNS / retinal
+      phenotype.
+    - Type 2A: pheochromocytoma + RCC + CNS / retinal (low RCC
+      risk)
+    - Type 2B: pheochromocytoma + RCC (high RCC risk) + CNS /
+      retinal — most severe Type 2
+    - Type 2C: pheochromocytoma only (rare — specific missense at
+      certain residues)
+
+  Surveillance cadence summary (VHL Alliance 2020):
+    - Dilated fundus exam: q6-12mo from infancy
+    - Audiology: q1-2y from age 5
+    - Plasma / urinary fractionated metanephrines: q1y from age 5
+    - Brain + spinal MRI: q2y from age 11-15 (or earlier with
+      family-history of childhood-onset hemangioblastoma)
+    - Abdominal MRI: q2y from age 15
+    - BP measurement: q1y
+
+  Surgical thresholds (VHL Alliance 2020):
+    - RCC: 3 cm (nephron-sparing preferred — partial nephrectomy,
+      cryoablation, RFA acceptable; preservation of bilateral renal
+      function is core objective)
+    - Pheochromocytoma: any functional + asymptomatic >3 cm
+    - Hemangioblastoma (CNS or retinal): symptomatic OR rapid
+      growth (≥1 mm / year on serial imaging)
+
+  Belzutifan (HIF-2α inhibitor): FDA-approved 2021 for VHL-associated
+  RCC / CNS hemangioblastoma / pNET not requiring immediate surgery
+  (LITESPARK-004). Engages with IND-RCC-VHL-DISEASE-BELZUTIFAN for
+  active-disease pathway; surveillance algorithm routes to standard
+  carrier-surveillance for pre-active-disease carriers.
+
+  Cited from RF-VHL-CONFIRMED-CARRIER + RF-VHL-SUSPICION trigger
+  logic.
+
+  Decision-tree semantics: `result: false` means surveillance not
+  yet initiated (pediatric / panel-pending / schedule incomplete);
+  `result: IND-VHL-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE`
+  routes to prevention-surveillance pathway (plan_track:
+  surveillance — proper non-regimen routing per current KB schema).
+  Engine selects sibling IND-VHL-CARRIER-SURVEILLANCE (standard) /
+  IND-VHL-CARRIER-INTENSIFIED (aggressive) Indications at downstream
+  layer for accelerated cadence scenarios.
+draft: true

@@ -1,0 +1,151 @@
+id: ALGO-HEREDITARY-MELANOMA-SURVEILLANCE
+applicable_to_disease: DIS-MELANOMA
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention. Anchored to DIS-MELANOMA (cutaneous
+# melanoma, the principal target cancer being surveilled). Reach extends
+# to pancreatic adenocarcinoma (DIS-PDAC — CAPS arm for CDKN2A) and to
+# uveal melanoma + mesothelioma + RCC (BAP1-TPDS — handled separately by
+# BAP1 carrier algorithms).
+purpose: >
+  Familial melanoma surveillance for CDKN2A (FAMMM) carriers and
+  related familial melanoma kindreds (CDK4, MITF E318K, BAP1, POT1,
+  TERT-promoter, TERF2IP). Whole-body skin exam + total body
+  photography + dermoscopy from childhood (age 10-12) per NCCN
+  Genetic / Familial High-Risk: Melanoma + Goldstein consensus +
+  AAD / AAFP melanoma surveillance guidance.
+
+  Cutaneous melanoma is the principal target. Concurrent pancreatic
+  surveillance for CDKN2A carriers is handled by ALGO-NCCN-PANCREATIC-
+  CAPS-SURVEILLANCE; concurrent eye exams for BAP1 carriers (uveal
+  melanoma) are handled by syndrome-specific BAP1 surveillance.
+
+output_indications:
+  - IND-FAMMM-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-FAMMM-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Default Indication is FAMMM (CDKN2A) — most common familial melanoma
+# syndrome (~20-40% of familial melanoma kindreds carry CDKN2A; the
+# remainder are CDK4 / MITF / BAP1 / POT1 / TERT-promoter / unidentified).
+# Cross-syndrome generalization for BAP1 / CDK4 / MITF carriers is
+# documented in notes; engine routes confirmed BAP1 carriers via
+# RF-BAP1-CONFIRMED-CARRIER → IND-BAP1-SUSPICION-PREVENTION-ENHANCED-
+# SURVEILLANCE.
+
+decision_tree:
+  - step: 1
+    # Confirmed-carrier gate — CDKN2A / CDK4 / MITF E318K / POT1.
+    evaluate:
+      any_of:
+        - condition: "Confirmed CDKN2A germline pathogenic / likely-pathogenic (ACMG class 4/5) variant"
+        - condition: "Confirmed CDK4 germline pathogenic / likely-pathogenic variant (codon 24 R24H / R24C — gain-of-function)"
+        - condition: "Confirmed MITF E318K germline variant (modest melanoma + RCC risk)"
+        - condition: "Confirmed POT1 germline pathogenic variant (familial melanoma + glioma)"
+    if_true:
+      next_step: 2
+    if_false:
+      next_step: 3
+  - step: 2
+    # Carrier identified — surveillance entry timing depends on syndrome.
+    # CDKN2A / CDK4 carriers: from age 10-12 (childhood UV exposure is
+    # dominant modifiable risk factor; family melanoma history justifies
+    # pediatric surveillance entry). MITF / POT1: from age 18-20 (later
+    # onset, lower absolute pediatric risk).
+    evaluate:
+      all_of:
+        - condition: "Confirmed CDKN2A or CDK4 or MITF or POT1 carrier identified at step 1"
+    if_true:
+      result: IND-FAMMM-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Familial melanoma carrier surveillance — annual whole-body skin examination by dermatologist + total body photography (digital baseline + annual comparison) + dermoscopy for atypical nevi. CDKN2A / CDK4: entry from age 10-12 (parental-supervised pediatric exam acceptable; family education re: sun-protection, tanning bed prohibition). MITF / POT1: entry from age 18-20. Sun-protection counseling: broad-spectrum SPF 30+ daily, protective clothing, avoidance of peak-UV hours, categorical tanning-bed prohibition. Self-examination education with mirror / partner technique. Lower threshold for excisional biopsy of any changing / atypical lesion. CDKN2A carriers: concurrent pancreatic surveillance per ALGO-NCCN-PANCREATIC-CAPS-SURVEILLANCE from age 40. Indication routes to FAMMM-SUSPICION (most common familial-melanoma syndrome); engine should route MITF / POT1 / CDK4 carriers via RF-* into the syndrome-specific Indication if authored (v0.2 backlog)."
+    if_false:
+      result: false
+      notes: "Step 2 logic inconsistency — should not be reachable. Route to next_step: 3."
+  - step: 3
+    # Clinical familial melanoma kindred without identified gene
+    # (Goldstein criteria): ≥3 melanoma cases in a family, including
+    # ≥1 with pancreatic cancer, OR ≥2 first-degree relatives with
+    # melanoma, OR proband with ≥3 primary melanomas, OR proband with
+    # melanoma + pancreatic cancer. Comprehensive familial-melanoma
+    # panel typically negative but ~20% remain genetically unexplained.
+    evaluate:
+      any_of:
+        - condition: "≥3 confirmed melanoma cases (cutaneous or uveal) in a single family across any generations, including ≥1 with pancreatic adenocarcinoma"
+        - condition: "≥2 first-degree relatives with cutaneous melanoma"
+        - condition: "Proband with ≥3 primary cutaneous melanomas"
+        - condition: "Proband with cutaneous melanoma + pancreatic adenocarcinoma at any age"
+    if_true:
+      result: IND-FAMMM-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Familial melanoma kindred meeting Goldstein criteria — refer for germline panel testing (CDKN2A, CDK4, MITF, POT1, BAP1, TERT-promoter, TERF2IP, ACD; comprehensive hereditary cancer panel may capture more). Enter surveillance even if panel-negative — empirical-surveillance pathway based on family-history risk. Surveillance entry: age 18-20 for proband relatives without confirmed gene; relatives of CDKN2A-confirmed proband can enter pediatric age range pending cascade testing."
+    if_false:
+      next_step: 4
+  - step: 4
+    # Atypical-mole syndrome (clinically suspect — dysplastic nevus
+    # syndrome) without confirmed gene + with multiple primaries. Not
+    # CDKN2A but clinical pattern justifies enhanced surveillance.
+    evaluate:
+      all_of:
+        - condition: "≥50 atypical / dysplastic nevi on whole-body exam"
+        - condition: "Personal history of cutaneous melanoma OR ≥1 first-degree relative with melanoma"
+    if_true:
+      result: IND-FAMMM-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Atypical-mole syndrome (dysplastic nevus syndrome) phenotype — enhanced empirical surveillance. Annual whole-body skin exam + total body photography + dermoscopy from time of identification (typically adolescence / young adulthood). Familial-melanoma panel testing reasonable but yield variable; clinical surveillance is the priority intervention. Indication routes to FAMMM-SUSPICION as the empirical-surveillance pathway pending v0.2 dedicated IND-DYSPLASTIC-NEVUS-SYNDROME-SURVEILLANCE."
+    if_false:
+      result: false
+      notes: "No confirmed familial-melanoma gene, no Goldstein kindred pattern, no atypical-mole syndrome phenotype. Counsel re: general-population melanoma absolute risk (~2% lifetime US Caucasian baseline), sun-protection (SPF 30+, protective clothing, peak-UV avoidance), tanning-bed prohibition. Self-examination education + general-population dermatology q1-3y per fair-skin / personal-melanoma-risk-factor profile."
+
+sources:
+  - SRC-NCCN-MELANOMA-2025
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-ESMO-MELANOMA-2024
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding familial melanoma
+  surveillance entry per NCCN Cutaneous Melanoma V.3.2025 + NCCN
+  Genetic / Familial High-Risk: Breast, Ovarian, Pancreatic V.3.2025
+  (covers FAMMM melanoma + pancreatic surveillance arms) + Goldstein
+  / Bishop / Curiel-Lewandrowski familial melanoma consensus
+  (Goldstein AM et al. Features associated with germline CDKN2A
+  mutations: a GenoMEL study of melanoma-prone families from three
+  continents. J Med Genet 2007;44:99-106. PMID 16905682). Primary-
+  paper Source entity (SRC-GOLDSTEIN-2007-GENOMEL-CDKN2A) is v0.2-B
+  authoring backlog.
+
+  Anchored to DIS-MELANOMA; reach: DIS-PDAC (CAPS arm for CDKN2A),
+  DIS-RCC (MITF E318K modest RCC risk), DIS-MESOTHELIOMA + uveal
+  melanoma (BAP1-TPDS — handled separately).
+
+  Familial melanoma syndromes + lifetime cutaneous melanoma risk:
+    - CDKN2A (FAMMM, classical): ~60-80% by age 80; often multiple
+      primaries; concurrent pancreatic risk ~15-25%
+    - CDK4 (R24H / R24C gain-of-function): ~70% — phenotypically
+      indistinguishable from CDKN2A FAMMM
+    - MITF E318K: modest ~2-5x population baseline; also confers RCC
+      risk (~3-5x baseline)
+    - POT1: high melanoma risk + glioma risk; pediatric onset
+      uncommon
+    - BAP1 (BAP1-TPDS): uveal + cutaneous melanoma + mesothelioma +
+      RCC — handled by syndrome-specific algorithm + carrier-
+      surveillance Indication
+
+  Surveillance entry rationale:
+    - CDKN2A / CDK4: from age 10-12. Childhood UV exposure is the
+      dominant modifiable melanoma risk; family-history justifies
+      pediatric surveillance entry despite low absolute pediatric
+      melanoma incidence. Parental-supervised exam acceptable;
+      transition to self-exam + dermatology by adolescence.
+    - MITF / POT1: from age 18-20.
+
+  Sun-protection counseling (all carriers + at-risk kindred):
+    - Broad-spectrum SPF 30+ daily
+    - Protective clothing (long sleeves, broad-brim hats, sun-
+      protective fabrics)
+    - Avoidance of peak-UV hours (10am-4pm)
+    - CATEGORICAL tanning-bed prohibition (any tanning bed use in
+      CDKN2A / familial melanoma kindred is contraindicated;
+      indoor-tanning carcinogen IARC group 1)
+
+  Cited from RF-FAMMM-CONFIRMED-CARRIER + RF-FAMILIAL-MELANOMA-
+  KINDRED + RF-DYSPLASTIC-NEVUS-SYNDROME trigger logic.
+draft: true

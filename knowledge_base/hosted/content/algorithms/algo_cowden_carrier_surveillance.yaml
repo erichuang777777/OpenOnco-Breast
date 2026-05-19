@@ -1,0 +1,173 @@
+id: ALGO-COWDEN-CARRIER-SURVEILLANCE
+applicable_to_disease: DIS-BREAST
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention. Anchored to DIS-BREAST because breast
+# cancer is the most common malignant cancer in Cowden syndrome (lifetime
+# ~85% per Bubien 2013). Reach extends to DIS-ENDOMETRIAL (lifetime
+# ~28%), DIS-THYROID-PAPILLARY (lifetime ~35%), DIS-RCC (lifetime ~33%),
+# DIS-CRC (lifetime ~9% — modest but real), DIS-MELANOMA (modest), and
+# the rare Lhermitte-Duclos cerebellar dysplastic gangliocytoma feature.
+purpose: >
+  Multi-organ surveillance cadence for confirmed Cowden syndrome (PTEN
+  hamartoma tumor syndrome — PHTS) carriers per NCCN Genetic / Familial
+  High-Risk: Breast, Ovarian, Pancreatic V.3.2025 (Cowden-PTEN section)
+  + Tan / Eng / Bubien penetrance estimates (Tan MH et al. Lifetime
+  cancer risks in individuals with germline PTEN mutations. Clin
+  Cancer Res 2012;18:400-407. PMID 22252256).
+
+  Cowden / PHTS encompasses Cowden syndrome (CS), Bannayan-Riley-
+  Ruvalcaba syndrome (BRRS), PTEN-related Proteus / Proteus-like
+  syndrome, and autism spectrum disorder with macrocephaly. PTEN
+  germline pathogenic variants confer high lifetime cancer risk
+  across breast, thyroid, endometrial, RCC, CRC, and melanoma —
+  with elevated baseline relative to all other hereditary cancer
+  syndromes for thyroid + endometrial.
+
+output_indications:
+  - IND-COWDEN-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-COWDEN-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Routes to the prevention-surveillance Indication (plan_track:
+# surveillance, recommended_regimen: null per current KB schema).
+# Engine layer should select sibling IND-COWDEN-CARRIER-SURVEILLANCE
+# (standard NCCN cadence) / IND-COWDEN-CARRIER-INTENSIFIED (aggressive
+# cadence for PTEN phosphatase-domain mutations, personal cancer history,
+# or family-history-of-early-onset) at downstream routing. Those
+# Indications carry treatment-pathway plan_track values (standard /
+# aggressive) intended for active-disease routing and so cannot be
+# referenced as algorithm direct-route targets in current schema.
+
+decision_tree:
+  - step: 1
+    # Confirmed-carrier gate — PTEN germline P/LP variant or PHTS
+    # clinical diagnosis without confirmed gene.
+    evaluate:
+      any_of:
+        - condition: "Confirmed PTEN germline pathogenic / likely-pathogenic (ACMG class 4/5) variant"
+        - condition: "Clinical PHTS / Cowden syndrome (NCCN Cowden / PHTS major + minor criteria met) without confirmed PTEN variant — empirical-surveillance pathway"
+    if_true:
+      next_step: 2
+    if_false:
+      result: false
+      notes: "Not a confirmed PTEN carrier and Cowden clinical criteria not met — apply Cowden / PHTS clinical scoring (NCCN PTEN clinical scoring; alternately Cleveland Clinic PTEN risk calculator https://www.lerner.ccf.org/gmi/ccscore/) for suspicion. Route via IND-COWDEN-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE for suspicion / cascade-testing pathway."
+  - step: 2
+    # Age-stratified entry gate. Cowden surveillance entry begins in
+    # childhood for thyroid (highest pediatric cancer risk feature)
+    # and adolescence / early adulthood for breast.
+    evaluate:
+      all_of:
+        - condition: "Carrier is age ≥7 (thyroid surveillance entry) — pediatric thyroid US recommended from age 7-10 per NCCN PHTS"
+    if_true:
+      next_step: 3
+    if_false:
+      result: false
+      notes: "Pediatric carrier <7 years — surveillance not yet initiated. Annual physical exam + dermatologic assessment from time of identification (mucocutaneous features, macrocephaly). Document re-contact plan with pediatric endocrinology / oncology at age 7 for thyroid US."
+  - step: 3
+    # Breast surveillance — Cowden carries near-highest breast risk
+    # among hereditary syndromes (~85% lifetime). Surveillance entry
+    # age 30 for breast MRI + mammography per NCCN PHTS.
+    evaluate:
+      all_of:
+        - condition: "Carrier is female age ≥30 OR carrier of any sex with personal history of Cowden-spectrum cancer"
+        - condition: "Annual breast MRI from age 30 + annual mammography from age 30-35 (alternating q6 mo cadence acceptable per NCCN); clinical breast exam q6 mo from age 25; breast self-awareness counseling"
+    if_true:
+      next_step: 4
+    if_false:
+      # Female <30 or male carrier — partial surveillance with thyroid
+      # focus.
+      next_step: 4
+      notes: "Female carrier <30 years OR male carrier — breast surveillance not yet entered for female (clinical breast exam q6mo from age 25; MRI + mammography from age 30). Male carriers: clinical breast exam q1y from age 30 (modest male-breast risk per Cowden). Proceed to thyroid + endometrial + RCC + CRC surveillance per step 4."
+  - step: 4
+    # Multi-organ surveillance — thyroid US q1y, endometrial sampling
+    # q1y from age 30-35, colonoscopy from age 35, RCC imaging from
+    # age 40, dermatologic exam q1y.
+    evaluate:
+      all_of:
+        - condition: "Thyroid US q1y from age 7 (pediatric entry) or from identification if adult — entry irrespective of carrier sex"
+        - condition: "Endometrial sampling (transvaginal US ± endometrial biopsy) q1y from age 30-35 in female carriers; alternately patient education on early-symptom reporting (abnormal uterine bleeding) — sampling q1y is conservative cadence; some centers defer to symptom-driven evaluation per NCCN PHTS"
+        - condition: "Colonoscopy q5y from age 35 (NCCN PHTS — earlier cadence q1-3y if hamartomatous polyposis identified)"
+        - condition: "Renal imaging (US or MRI) q2y from age 40"
+        - condition: "Annual whole-body dermatologic exam (mucocutaneous features + melanoma surveillance)"
+    if_true:
+      result: IND-COWDEN-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Standard Cowden / PHTS carrier surveillance — multi-organ cadence per NCCN PHTS V.3.2025. Breast: MRI + mammography q1y from age 30. Thyroid: US q1y from age 7. Endometrial: TVUS + sampling q1y from age 30-35 (or symptom-driven). CRC: colonoscopy q5y from age 35. RCC: imaging q2y from age 40. Dermatology: q1y. Risk-reducing mastectomy + hysterectomy + BSO discussions appropriate at age 35-40 for high-anxiety / personal-cancer-history carriers. Cascade testing for all first-degree relatives. Engine should re-route to IND-COWDEN-CARRIER-SURVEILLANCE (standard) or IND-COWDEN-CARRIER-INTENSIFIED (aggressive) at downstream layer based on PTEN domain + personal-cancer-history + family-history modifiers."
+    if_false:
+      result: false
+      notes: "Multi-organ surveillance schedule not yet complete — refer to multidisciplinary Cowden / PHTS clinic (medical genetics + breast oncology + endocrinology + gynecology + dermatology + gastroenterology + urology). Penetrance is high; complete surveillance schedule is foundation of cancer prevention in Cowden / PHTS."
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-NCCN-THYROID-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding Cowden / PHTS confirmed-
+  carrier surveillance per NCCN Genetic / Familial High-Risk: Breast,
+  Ovarian, Pancreatic V.3.2025 (PTEN / Cowden section) + Tan / Eng /
+  Bubien penetrance estimates (Tan MH et al. Lifetime cancer risks in
+  individuals with germline PTEN mutations. Clin Cancer Res
+  2012;18:400-407. PMID 22252256; Bubien V et al. High cumulative
+  risks of cancer in patients with PTEN hamartoma tumour syndrome.
+  J Med Genet 2013;50:255-263. PMID 23335809). Primary-paper Source
+  entities (SRC-TAN-2012-PTEN-PENETRANCE, SRC-BUBIEN-2013-PHTS-
+  PENETRANCE, SRC-PILARSKI-PTEN-CLINICAL-CRITERIA) are v0.2-B
+  authoring backlog.
+
+  Anchored to DIS-BREAST. Reach: DIS-ENDOMETRIAL, DIS-THYROID-
+  PAPILLARY (Cowden thyroid cancer is overwhelmingly papillary
+  histology — follicular variant less common; medullary not a Cowden
+  feature), DIS-RCC, DIS-CRC, DIS-MELANOMA.
+
+  Cowden / PHTS lifetime cancer risk (Tan 2012; Bubien 2013):
+    - Breast (female): ~85% lifetime — highest among hereditary
+      breast syndromes including BRCA1/2 at certain age strata
+    - Thyroid (papillary / follicular): ~35% lifetime (vs 1% general
+      population) — highest thyroid risk of any hereditary syndrome
+    - Endometrial: ~28% lifetime
+    - Renal cell carcinoma: ~33% lifetime
+    - Colorectal cancer: ~9% lifetime (modest but real elevation;
+      polyposis when present is mixed hamartomatous +
+      adenomatous)
+    - Melanoma: ~6% lifetime (modest elevation; full surveillance
+      via dermatology q1y)
+
+  NCCN PHTS surveillance cadence:
+    - Breast: clinical exam q6mo from age 25; MRI + mammography
+      q1y from age 30; risk-reducing mastectomy discussion at age
+      30-35
+    - Thyroid: US q1y from age 7 (pediatric entry per NCCN PHTS)
+    - Endometrial: TVUS + sampling q1y from age 30-35 OR symptom-
+      driven; risk-reducing hysterectomy discussion at age 35-40
+    - CRC: colonoscopy q5y from age 35 (q1-3y if hamartomatous
+      polyposis identified)
+    - Renal: US or MRI q2y from age 40
+    - Dermatology: whole-body skin exam q1y (Cowden mucocutaneous
+      features + melanoma surveillance)
+    - Lhermitte-Duclos: brain MRI for symptomatic carriers only
+      (dysplastic gangliocytoma of cerebellum)
+
+  Cowden major + minor criteria (NCCN PHTS clinical scoring):
+    Major: breast cancer, endometrial cancer, follicular thyroid
+    cancer, multiple GI hamartomas, Cowden mucocutaneous features
+    (papillomatous lip / oral / palmar-plantar keratosis,
+    acral keratoses, multifocal facial trichilemmomas),
+    Lhermitte-Duclos (adult onset), macrocephaly (≥97th percentile)
+    Minor: autism spectrum, single GI hamartoma, thyroid lesion
+    (adenoma / multinodular goiter), papillary thyroid cancer,
+    fibrocystic disease of breast, lipoma, fibroma, RCC, testicular
+    lipomatosis, VKL grade 1
+
+  Cited from RF-COWDEN-CONFIRMED-CARRIER + RF-COWDEN-SUSPICION
+  trigger logic.
+
+  Decision-tree semantics: `result: false` means surveillance not
+  yet initiated (pediatric, panel pending); `result: IND-COWDEN-
+  SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE` routes to prevention-
+  surveillance pathway (plan_track: surveillance — proper non-regimen
+  routing per current KB schema). Engine selects sibling IND-COWDEN-
+  CARRIER-SURVEILLANCE (standard) / IND-COWDEN-CARRIER-INTENSIFIED
+  (aggressive) Indications at downstream layer based on PTEN domain +
+  personal-cancer-history + family-history modifiers.
+draft: true

@@ -1,0 +1,164 @@
+id: ALGO-MEN2-CARRIER-PROPHYLACTIC-THYROIDECTOMY-TIMING
+applicable_to_disease: DIS-MTC
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention. Anchored to DIS-MTC (medullary thyroid
+# carcinoma) — the cancer being prevented by prophylactic thyroidectomy.
+# Reach extends to DIS-PHEOCHROMOCYTOMA (concurrent MEN2 phenotype),
+# DIS-PARATHYROID-CARCINOMA (parathyroid hyperplasia / adenoma in MEN2A).
+purpose: >
+  RET-mutation-stratified timing of prophylactic thyroidectomy in
+  confirmed MEN2 carriers per American Thyroid Association (ATA)
+  Medullary Thyroid Cancer Guidelines (Wells SA Jr et al. Revised
+  American Thyroid Association guidelines for the management of
+  medullary thyroid carcinoma. Thyroid 2015;25:567-610. PMID
+  25810047) — Highest Risk (HST) → infancy, High Risk (H) → ≤5,
+  Moderate Risk (MOD) → 5-10.
+
+  MEN2 is autosomal-dominant RET germline mutation; near-complete
+  penetrance for medullary thyroid carcinoma (MTC) without
+  intervention. Prophylactic total thyroidectomy is the single most
+  effective cancer-prevention intervention in clinical genetics —
+  performed before MTC develops, eliminates the cancer risk entirely
+  for the thyroid. Timing per RET codon classification.
+
+output_indications:
+  - IND-MEN2-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-MEN2-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Routes to the prevention-surveillance Indication (plan_track:
+# surveillance, recommended_regimen: null per current KB schema).
+# Engine layer should select sibling IND-MEN2-CARRIER-SURVEILLANCE
+# (standard ATA-H + ATA-MOD routing) / IND-MEN2-CARRIER-INTENSIFIED
+# (ATA-HST / MEN2B + aggressive scenarios) at downstream routing.
+# Those Indications carry treatment-pathway plan_track values
+# (standard / aggressive) intended for active-disease routing and so
+# cannot be referenced as algorithm direct-route targets in current
+# schema. This routing-contract pattern matches algo_carrier_cascade_
+# lynch's behaviour for the confirmed-carrier branch.
+
+decision_tree:
+  - step: 1
+    # Confirmed-carrier gate — RET germline P/LP variant.
+    evaluate:
+      all_of:
+        - condition: "Confirmed RET germline pathogenic / likely-pathogenic (ACMG class 4/5) variant"
+    if_true:
+      next_step: 2
+    if_false:
+      result: false
+      notes: "Not a confirmed MEN2 carrier — apply clinical suspicion criteria for MEN2 (familial MTC ≥2 relatives, sporadic MTC + family pheochromocytoma, sporadic MTC + parathyroid hyperplasia, MEN2B clinical phenotype: mucosal neuromas + marfanoid habitus + ganglioneuromatosis). Route via IND-MEN2-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE for suspicion / cascade-testing pathway."
+  - step: 2
+    # ATA Highest Risk (HST) — RET codon M918T (MEN2B). Most aggressive
+    # phenotype, MTC onset in infancy / first year of life. ATA 2015:
+    # thyroidectomy within first year of life, ideally first 6 months.
+    evaluate:
+      any_of:
+        - condition: "RET codon M918T (MEN2B classical mutation)"
+        - condition: "Clinical MEN2B phenotype: mucosal neuromas (lips, tongue, GI tract) + marfanoid habitus + ganglioneuromatosis + corneal nerve thickening + slipped capital femoral epiphysis"
+    if_true:
+      result: IND-MEN2-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "ATA HST (M918T / MEN2B) — prophylactic total thyroidectomy within first year of life, ideally first 6 months. Concurrent central neck lymph node dissection (level VI) recommended even at this age given near-100% MTC penetrance + earliest reported MTC by age 2 months. Concurrent surveillance for pheochromocytoma (plasma / urinary fractionated metanephrines from age 8). Engine should re-route to IND-MEN2-CARRIER-INTENSIFIED (aggressive plan) given accelerated timing and aggressive surgical commitment. Family-history-modifier: pediatric MEN2B carriers benefit from coordinated multidisciplinary care (pediatric endocrinology + pediatric endocrine surgery + medical genetics)."
+    if_false:
+      next_step: 3
+  - step: 3
+    # ATA High Risk (H) — RET codon C634 (any substitution at C634,
+    # most commonly C634R / C634Y / C634F / C634S — classical MEN2A
+    # severe phenotype) + codon A883F. ATA 2015: thyroidectomy by age
+    # 5 (ideally before age 5).
+    evaluate:
+      any_of:
+        - condition: "RET codon C634 substitution (C634R, C634Y, C634F, C634G, C634S, C634W — classical MEN2A severe)"
+        - condition: "RET codon A883F"
+    if_true:
+      result: IND-MEN2-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "ATA High Risk (C634 / A883F) — prophylactic total thyroidectomy by age 5 (ideally before age 5). Central neck lymph node dissection (level VI) at the time of thyroidectomy if calcitonin ≥40 pg/mL or imaging-evidence of nodal involvement. Concurrent surveillance for pheochromocytoma (plasma / urinary fractionated metanephrines from age 11) + primary hyperparathyroidism (calcium + PTH from age 11). Engine should re-route to IND-MEN2-CARRIER-SURVEILLANCE (standard plan) at downstream layer."
+    if_false:
+      next_step: 4
+  - step: 4
+    # ATA Moderate Risk (MOD) — all other RET pathogenic variants
+    # (most common: V804M, V804L, codon 533, codon 609, codon 611,
+    # codon 618, codon 620, codon 630, codon 666, codon 768, codon
+    # 790, codon 791, codon 804 V804L/V804M, codon 891). ATA 2015:
+    # thyroidectomy between age 5 and 10 (timing modulated by serum
+    # calcitonin trajectory; some Mod-Risk carriers can defer to
+    # adulthood with normal serial calcitonin).
+    evaluate:
+      any_of:
+        - condition: "RET pathogenic variant at codons 533, 609, 611, 618, 620, 630, 666, 768, 790, 791, 804 (V804M / V804L), 891, or other RET P/LP variants not classified as HST or H"
+    if_true:
+      result: IND-MEN2-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "ATA Moderate Risk — prophylactic total thyroidectomy between age 5 and 10. Some Mod-Risk carriers (especially V804M, V804L) demonstrate slower MTC progression — annual serum basal + stimulated calcitonin from age 3-5; if calcitonin remains <10 pg/mL through age 5, can defer thyroidectomy to age 5-10 (or later in select families with documented late-onset MTC). Concurrent surveillance for pheochromocytoma (from age 16) + primary hyperparathyroidism (from age 16) at lower cadence than ATA-H. Engine should re-route to IND-MEN2-CARRIER-SURVEILLANCE (standard plan) at downstream layer."
+    if_false:
+      result: false
+      notes: "RET variant classification ambiguous — refer to specialist medical genetics + ATA RET-classification database. Carrier-surveillance pending classification; do not defer thyroidectomy planning beyond age 5 without explicit ATA classification."
+
+sources:
+  - SRC-ATA-THYROID-2015
+  - SRC-NCCN-THYROID-2025
+  - SRC-ENDOCRINE-SOCIETY-MEN-2023
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding ATA Medullary Thyroid
+  Cancer Guidelines RET-stratified prophylactic thyroidectomy timing
+  (Wells SA Jr et al. Revised American Thyroid Association guidelines
+  for the management of medullary thyroid carcinoma. Thyroid
+  2015;25:567-610. PMID 25810047). Primary-paper Source entity
+  (SRC-WELLS-2015-ATA-MTC) is v0.2-B authoring backlog.
+
+  Anchored to DIS-MTC. Reach: DIS-PHEOCHROMOCYTOMA (MEN2A + MEN2B
+  pheochromocytoma component), DIS-PARATHYROID-CARCINOMA (MEN2A
+  parathyroid hyperplasia / adenoma).
+
+  ATA 2015 RET risk-classification + thyroidectomy timing:
+    - ATA HST (Highest Risk): M918T (MEN2B) → within 1 year of life
+      (ideally first 6 months). Central neck dissection at time of
+      thyroidectomy.
+    - ATA H (High Risk): C634 substitutions, A883F → by age 5
+      (ideally before age 5). Central neck dissection if calcitonin
+      ≥40 pg/mL or nodal evidence.
+    - ATA MOD (Moderate Risk): all other RET P/LP variants
+      (V804M / V804L, codons 533, 609, 611, 618, 620, 630, 666,
+      768, 790, 791, 891) → between age 5 and 10. Some Mod-Risk
+      can defer with serial normal calcitonin.
+
+  Concurrent surveillance for pheochromocytoma + primary
+  hyperparathyroidism per ATA 2015 codon-stratified cadence:
+    - HST (M918T / MEN2B): pheochromocytoma from age 8;
+      hyperparathyroidism not a major MEN2B feature
+    - H (C634 / A883F): pheochromocytoma from age 11;
+      hyperparathyroidism from age 11
+    - MOD (other): pheochromocytoma from age 16;
+      hyperparathyroidism from age 16
+
+  Pre-operative biochemical workup at thyroidectomy:
+    - Basal + pentagastrin-stimulated calcitonin (or
+      calcium-stimulated calcitonin)
+    - CEA (baseline for post-op surveillance)
+    - Plasma / urinary fractionated metanephrines (rule out
+      pheochromocytoma before any surgery — pheochromocytoma
+      surgery first if present)
+    - Calcium + PTH
+
+  Surgical principles:
+    - Total thyroidectomy is the standard procedure
+    - Central neck (level VI) lymph node dissection at time of
+      thyroidectomy if pre-op calcitonin elevated or imaging-evidence
+      of nodal involvement
+    - Lateral neck dissection (levels II-V) only if imaging or
+      biochemistry suggests lateral involvement
+    - Lifelong levothyroxine replacement post-thyroidectomy
+
+  Cited from RF-MEN2-CONFIRMED-CARRIER + RF-MEN2B-CONFIRMED-CARRIER
+  trigger logic.
+
+  Decision-tree semantics: routes to IND-MEN2-SUSPICION-PREVENTION-
+  ENHANCED-SURVEILLANCE (plan_track: surveillance — proper non-regimen
+  routing per current KB schema) for all ATA-classification branches.
+  Engine selects sibling Indications at downstream layer — IND-MEN2-
+  CARRIER-SURVEILLANCE for ATA-H + ATA-MOD; IND-MEN2-CARRIER-
+  INTENSIFIED for ATA-HST (MEN2B) given the accelerated infancy
+  timing.
+draft: true

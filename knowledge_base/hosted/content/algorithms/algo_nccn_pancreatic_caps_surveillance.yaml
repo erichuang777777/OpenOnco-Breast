@@ -1,0 +1,192 @@
+id: ALGO-NCCN-PANCREATIC-CAPS-SURVEILLANCE
+applicable_to_disease: DIS-PDAC
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention. Anchored to DIS-PDAC because PDAC is the
+# target cancer being surveilled. Reach covers Peutz-Jeghers (STK11),
+# FAMMM (CDKN2A), hereditary pancreatitis (PRSS1/SPINK1/CTRC/CFTR — no
+# Disease entity in KB, criterion handled by pedigree pattern),
+# BRCA1/BRCA2 carriers with family history, PALB2, ATM, Lynch (MMR with
+# pancreatic pedigree) per CAPS Consortium 2020 consensus.
+purpose: >
+  Pancreatic cancer surveillance entry criteria for high-risk individuals
+  per CAPS Consortium 2020 consensus (Goggins M et al. Management of
+  patients with increased risk for familial pancreatic cancer:
+  updated recommendations from the International Cancer of the Pancreas
+  Screening (CAPS) Consortium. Gut 2020;69:7-17. PMID 31672839) and
+  NCCN Genetic / Familial High-Risk Breast, Ovarian, Pancreatic V.3.2025.
+
+  CAPS-eligible syndromes carry sufficient absolute pancreatic-cancer
+  risk (lifetime ≥5%) to justify EUS / MRI surveillance. Routes
+  identified patients to the syndrome-specific suspicion-prevention-
+  enhanced-surveillance Indication where pancreatic surveillance is
+  one component of the multi-organ plan. Engine selects the
+  syndrome-specific Indication based on the underlying genetic /
+  family-history trigger; algorithm routes by default to the most
+  common CAPS-eligible setting (FAMMM / CDKN2A carriers, which have
+  the highest published yield).
+
+output_indications:
+  - IND-FAMMM-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+  - IND-PEUTZ-JEGHERS-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+  - IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+  - IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-FAMMM-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Default Indication anchor is FAMMM (CDKN2A) — CAPS-eligible carrier
+# group with the highest published surveillance yield (lifetime PDAC
+# risk ~15-25%, well above the ≥5% CAPS threshold). Engine should
+# select the syndrome-specific Indication matching the trigger
+# (Peutz-Jeghers, HBOC with PDAC pedigree, Lynch with PDAC pedigree,
+# etc.). Cross-syndrome generalization is encoded in output_indications.
+
+decision_tree:
+  - step: 1
+    # Peutz-Jeghers (STK11) — highest lifetime PDAC risk among CAPS-
+    # eligible syndromes (~36% by age 70 per Hearle 2006). Surveillance
+    # entry: age 30-35 per CAPS 2020.
+    evaluate:
+      any_of:
+        - condition: "Confirmed STK11 germline pathogenic / likely-pathogenic (ACMG class 4/5) variant"
+        - condition: "Clinical Peutz-Jeghers syndrome (mucocutaneous pigmentation + hamartomatous polyposis + family pattern) without confirmed STK11 variant"
+    if_true:
+      result: IND-PEUTZ-JEGHERS-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Peutz-Jeghers CAPS-eligible — annual EUS or MRI/MRCP from age 30-35. Lifetime PDAC risk ~36% (Hearle 2006 PMID 16707622). Continuous surveillance regardless of family-history of pancreatic cancer (PJ alone is sufficient given absolute risk)."
+    if_false:
+      next_step: 2
+  - step: 2
+    # FAMMM (CDKN2A) — CAPS-eligible regardless of family pancreatic
+    # history. Lifetime PDAC risk ~15-25% (Vasen 2000; Goldstein
+    # population estimates). Surveillance entry: age 40 per CAPS 2020.
+    evaluate:
+      any_of:
+        - condition: "Confirmed CDKN2A germline pathogenic / likely-pathogenic variant (FAMMM)"
+    if_true:
+      result: IND-FAMMM-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "FAMMM CAPS-eligible — annual EUS or MRI/MRCP from age 40 (or 10y younger than youngest family PDAC). Smoking cessation essential — smoking multiplicatively raises CDKN2A pancreatic risk. Whole-body dermatology + total body photography + dermoscopy q1y is the concurrent melanoma-surveillance arm."
+    if_false:
+      next_step: 3
+  - step: 3
+    # Hereditary pancreatitis (PRSS1 / SPINK1 / CTRC / CFTR biallelic).
+    # Lifetime PDAC risk ~40-55% (Lowenfels 1997 PMID 9008853). No
+    # dedicated Disease entity in KB for hereditary pancreatitis;
+    # reaches PDAC suspicion pathway via family-history-pattern routing.
+    evaluate:
+      any_of:
+        - condition: "Confirmed PRSS1 germline pathogenic variant (hereditary pancreatitis, autosomal dominant)"
+        - condition: "Biallelic SPINK1 / CTRC / CFTR pathogenic variants with chronic pancreatitis phenotype"
+        - condition: "Clinical hereditary pancreatitis (≥2 family members with chronic pancreatitis, onset <30, AD pattern) without confirmed gene"
+    if_true:
+      result: IND-FAMMM-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Hereditary pancreatitis CAPS-eligible — annual EUS or MRI/MRCP from age 40 (CAPS 2020) or 20y after pancreatitis onset, whichever earlier. Lifetime PDAC risk ~40-55% (highest among CAPS-eligible) but surveillance entry deferred to age 40 because earlier scans are confounded by chronic-pancreatitis parenchymal changes. Smoking cessation critical (multiplicative risk). Indication routes to FAMMM-SUSPICION pending v0.2 dedicated IND-HEREDITARY-PANCREATITIS-CAPS-SURVEILLANCE."
+    if_false:
+      next_step: 4
+  - step: 4
+    # BRCA2 carrier with family history of pancreatic cancer. CAPS-
+    # eligible — BRCA2 carriers without family pancreatic history are
+    # NOT CAPS-eligible per 2020 consensus (absolute risk insufficient).
+    # BRCA1 carriers with family pancreatic history have weaker
+    # evidence but reasonable per CAPS 2020 inclusive interpretation.
+    evaluate:
+      all_of:
+        - condition: "Confirmed BRCA2 OR BRCA1 OR PALB2 germline pathogenic / likely-pathogenic variant"
+        - condition: "≥1 first-degree or second-degree relative with pancreatic adenocarcinoma at any age"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "BRCA2 / BRCA1 / PALB2 carrier with family-history of PDAC — CAPS-eligible. Annual EUS or MRI/MRCP from age 45-50 (or 10y younger than youngest family PDAC). Lifetime PDAC risk BRCA2 ~5-7%, BRCA1 ~2-3%, PALB2 ~5%. BRCA carriers WITHOUT family-history of PDAC are NOT CAPS-eligible per 2020 consensus — counsel re: absolute risk + smoking cessation but no imaging surveillance."
+    if_false:
+      next_step: 5
+  - step: 5
+    # ATM carrier with family history of pancreatic cancer. Modest
+    # PDAC risk (~5-10% lifetime per Hu 2018 / Roberts 2012); CAPS 2020
+    # inclusive interpretation.
+    evaluate:
+      all_of:
+        - condition: "Confirmed ATM germline pathogenic / likely-pathogenic variant"
+        - condition: "≥1 first-degree relative with pancreatic adenocarcinoma at any age"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "ATM carrier with family-history of PDAC — CAPS-eligible per 2020 inclusive interpretation. Annual EUS or MRI/MRCP from age 50 (or 10y younger than youngest family PDAC). Lifetime PDAC risk ~5-10%. Indication routes to BRCA-HBOC-SUSPICION (encompasses ATM in modern HBOC panel) pending v0.2 dedicated IND-ATM-PDAC-CAPS-SURVEILLANCE."
+    if_false:
+      next_step: 6
+  - step: 6
+    # Lynch syndrome with family history of pancreatic cancer. Lifetime
+    # PDAC risk MLH1/MSH2 ~3-4%, MSH6 ~2%, PMS2 minimal. CAPS-eligible
+    # only with confirmed family PDAC per 2020 consensus.
+    evaluate:
+      all_of:
+        - condition: "Confirmed MLH1 / MSH2 / MSH6 / PMS2 / EPCAM germline pathogenic / likely-pathogenic variant (Lynch syndrome)"
+        - condition: "≥1 first-degree relative with pancreatic adenocarcinoma at any age"
+    if_true:
+      result: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Lynch carrier with family-history of PDAC — CAPS-eligible. Annual EUS or MRI/MRCP from age 50 (or 10y younger than youngest family PDAC). Lifetime PDAC risk modest (~3-4% MLH1/MSH2). Surveillance is in addition to the standard Lynch CRC / endometrial / urothelial protocol."
+    if_false:
+      next_step: 7
+  - step: 7
+    # Familial pancreatic cancer (FPC) without identified gene — ≥2
+    # first-degree relatives with PDAC. CAPS-eligible per 2020 consensus.
+    evaluate:
+      all_of:
+        - condition: "≥2 first-degree relatives with pancreatic adenocarcinoma"
+        - condition: "Comprehensive hereditary cancer panel performed and negative for known PDAC-risk genes (BRCA1/2, PALB2, ATM, CDKN2A, STK11, MMR, TP53, etc.)"
+    if_true:
+      result: IND-FAMMM-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Familial pancreatic cancer kindred (FPC, ≥2 FDRs with PDAC, panel-negative) — CAPS-eligible. Annual EUS or MRI/MRCP from age 50 (or 10y younger than youngest family PDAC). Lifetime PDAC risk in FPC kindreds ~8-12% (Klein 2004 PMID 15375080). Indication routes to FAMMM-SUSPICION pending v0.2 dedicated IND-FPC-CAPS-SURVEILLANCE."
+    if_false:
+      result: false
+      notes: "Not CAPS-eligible — no qualifying syndrome and no qualifying family pattern. Counsel re: general-population PDAC absolute risk (~1.5% lifetime), smoking cessation, alcohol moderation, diabetes / obesity management. No imaging surveillance indicated. Re-evaluate family history every 3-5 years."
+
+sources:
+  - SRC-NCCN-PANCREATIC-2025
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-ESMO-PANCREATIC-2024
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding pancreatic cancer
+  surveillance entry criteria per CAPS Consortium 2020 consensus
+  (Goggins M et al. Management of patients with increased risk for
+  familial pancreatic cancer: updated recommendations from the
+  International Cancer of the Pancreas Screening (CAPS) Consortium.
+  Gut 2020;69:7-17. PMID 31672839) + NCCN Genetic / Familial
+  High-Risk Breast, Ovarian, Pancreatic V.3.2025. Primary-paper Source
+  entity (SRC-GOGGINS-2020-CAPS-CONSORTIUM) is v0.2-B authoring backlog.
+
+  Anchored to DIS-PDAC. Reach covers all CAPS-eligible hereditary
+  syndromes (Peutz-Jeghers / FAMMM / hereditary pancreatitis / BRCA2 /
+  BRCA1 / PALB2 / ATM / Lynch / FPC kindreds).
+
+  CAPS 2020 inclusion criteria summary (lifetime PDAC risk ≥5% as
+  surveillance gate):
+    - Peutz-Jeghers (STK11): from age 30-35; lifetime risk ~36%
+    - FAMMM (CDKN2A): from age 40; lifetime ~15-25%
+    - Hereditary pancreatitis (PRSS1 / SPINK1 / CTRC / CFTR biallelic):
+      from age 40 (or 20y post-pancreatitis-onset); ~40-55%
+    - BRCA2 / BRCA1 / PALB2 carrier WITH FDR PDAC: from 45-50; ~5-7%
+    - ATM carrier WITH FDR PDAC: from 50; ~5-10%
+    - Lynch (MMR) carrier WITH FDR PDAC: from 50; ~3-4%
+    - FPC kindred (≥2 FDR PDAC, panel-negative): from 50 (or 10y
+      younger than youngest family PDAC); ~8-12%
+
+  Modality: EUS or MRI/MRCP; either acceptable per CAPS 2020. EUS has
+  higher sensitivity for small lesions (≤1 cm) and main-duct IPMN;
+  MRI/MRCP non-invasive + monitors entire pancreas. Many centers
+  alternate annual EUS / annual MRI.
+
+  Cited from RF-FAMMM-CONFIRMED-CARRIER, RF-PEUTZ-JEGHERS-CONFIRMED-
+  CARRIER, RF-BRCA-CONFIRMED-CARRIER, RF-LYNCH-CONFIRMED-CARRIER, and
+  RF-HEREDITARY-PANCREATITIS-* trigger logic.
+
+  Decision-tree semantics: a step returning `result: false` means
+  CAPS criteria not met (no surveillance indicated); `result: IND-*`
+  routes to the syndrome-specific suspicion-prevention-enhanced-
+  surveillance Indication.
+
+  Open issue: BRCA carriers without family PDAC history — CAPS 2020
+  consensus excluded them but real-world practice increasingly
+  includes them given falling MRI costs + carrier preference for
+  surveillance. NCCN 2025 leaves the decision to shared-decision
+  with carrier. Encoded as not-eligible here per CAPS 2020 letter;
+  v0.2 may re-evaluate.
+draft: true
