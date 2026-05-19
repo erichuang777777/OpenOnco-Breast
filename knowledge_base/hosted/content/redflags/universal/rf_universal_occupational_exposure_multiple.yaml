@@ -1,0 +1,86 @@
+id: RF-UNIVERSAL-OCCUPATIONAL-EXPOSURE-MULTIPLE
+definition: >-
+  Patient with documented ≥2 distinct IARC Group 1 occupational
+  carcinogen exposures during working life. Examples of synergistic
+  paired exposures: asbestos + tobacco smoking (lung-cancer relative
+  risk ~50-90 in combined cohort vs ~5 for tobacco alone, ~5 for
+  asbestos alone — supra-multiplicative interaction at low asbestos
+  doses); benzene + radon; polycyclic-aromatic-hydrocarbon (PAH)
+  exposure + tobacco; diesel-exhaust + silica; formaldehyde + wood-
+  dust in joinery / cabinetmaking; ionizing-radiation + tobacco
+  (lung carcinogenesis); painter / coke-oven / aluminum-smelter
+  worker + tobacco. IARC Monographs Volumes 100A-F + 105 (diesel)
+  + 132 (firefighting) document the individual Group 1 status and
+  the WHO REACH database documents the synergistic combinations.
+  Universal RedFlag (relevant_diseases ["*"]) — fires only when the
+  occupational-history questionnaire documents ≥2 distinct Group 1
+  exposures over a working lifetime; routes to intensified
+  multi-organ surveillance covering lung (annual LDCT if combined
+  pack-year + asbestos + radon profile reaches USPSTF / NCCN
+  high-risk criteria — explicit eligibility broadening per NCCN
+  high-risk nodule and lung-cancer-screening pathway), urinary
+  bladder (urine cytology + cystoscopy in benzene / aniline-dye /
+  rubber-industry cohort), skin (low-threshold dermatology for
+  PAH / coal-tar / arsenic), oropharynx (annual ENT exam for
+  combined PAH / tobacco / alcohol). Distinct from single-exposure
+  occupational RFs (RF-OCCUPATIONAL-ASBESTOS-PREVENTION, RF-
+  OCCUPATIONAL-DIESEL-PREVENTION, etc.) which encode individual
+  carcinogen-organ pairs — this RF is the synergy / multi-exposure
+  catchment.
+definition_ua: >-
+  Пацієнт з задокументованими ≥2 distinct IARC Group 1
+  occupational carcinogen exposures протягом working life. Приклади
+  synergistic парних exposures: asbestos + tobacco smoking (lung-
+  cancer relative risk ~50-90 у combined cohort vs ~5 для tobacco
+  alone, ~5 для asbestos alone — supra-multiplicative interaction
+  на low asbestos дозах); benzene + radon; PAH exposure + tobacco;
+  diesel-exhaust + silica; formaldehyde + wood-dust у joinery /
+  cabinetmaking; ionizing-radiation + tobacco (lung carcinogenesis);
+  painter / coke-oven / aluminum-smelter worker + tobacco. IARC
+  Monographs Volumes 100A-F + 105 (diesel) + 132 (firefighting)
+  документують individual Group 1 статус і WHO REACH database
+  документує synergistic combinations. Universal RedFlag
+  (relevant_diseases ["*"]) — fires лише коли occupational-history
+  questionnaire документує ≥2 distinct Group 1 exposures за
+  working lifetime; routes до intensified multi-organ surveillance:
+  лёгкі (annual LDCT якщо combined pack-year + asbestos + radon
+  profile reaches USPSTF / NCCN high-risk criteria), сечовий
+  міхур (urine cytology + cystoscopy у benzene / aniline-dye /
+  rubber-industry cohort), шкіра (low-threshold dermatology для
+  PAH / coal-tar / arsenic), oropharynx (annual ENT exam для
+  combined PAH / tobacco / alcohol). Відмінний від single-exposure
+  occupational RFs — цей RF — synergy / multi-exposure catchment.
+
+trigger:
+  type: composite_score
+  any_of:
+    - finding: "multiple_iarc_group1_occupational_exposures_documented"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: occupational
+
+relevant_diseases:
+  - "*"
+
+shifts_algorithm: []
+
+sources:
+  - SRC-IARC-100C-ASBESTOS
+  - SRC-IARC-100F-BENZENE
+  - SRC-IARC-105-DIESEL-EXHAUST
+  - SRC-IARC-100D-RADON
+  - SRC-USPSTF-LUNG-LDCT-2021
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Pre-triage universal RedFlag — multi-exposure occupational cancer risk per IARC Monographs 100A-F + 105 + 132 (synergistic combinations). Trigger uses explicit positive finding `multiple_iarc_group1_occupational_exposures_documented: true`. With relevant_diseases=[\"*\"], engine does NOT attach Indication tracks via prevention path (plan.py:297 excludes \"*\") — universal Indications anchored to DIS-NSCLC (lung is the dominant multi-organ surveillance target for occupational synergies) are documentation / sidecar candidates pending future engine extension. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1

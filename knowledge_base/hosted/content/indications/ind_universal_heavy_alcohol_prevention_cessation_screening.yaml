@@ -1,0 +1,176 @@
+id: IND-UNIVERSAL-HEAVY-ALCOHOL-PREVENTION-CESSATION-SCREENING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-HCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-UNIVERSAL-HEAVY-ALCOHOL-MULTI-CANCER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Structured cessation counseling (motivational interviewing,
+    cognitive-behavioural therapy, mutual-support groups including
+    AA / SMART Recovery) + alcohol-use-disorder (AUD) pharmacotherapy
+    (naltrexone 50 mg/d or extended-release injection 380 mg q4wk;
+    acamprosate 666 mg TID; disulfiram 250-500 mg/d when fully
+    abstinent + supervised; off-label gabapentin / topiramate for
+    AUD) achieves 12-month abstinence or low-risk drinking in
+    ~25-40% of engaged participants per COMBINE study + Cochrane
+    meta-analyses. Alcohol-related-cancer screening adjustment
+    yields: HCC US + AFP q6mo in cirrhosis cohort (Markov-modeled
+    benefit shows median 1.4y survival gain vs no screening per
+    AASLD); UADT (upper aerodigestive) symptom-prompted ENT exam
+    surfaces early-stage cancers; breast / CRC standard cadence
+    maintained. Combined effect: cessation + screening reduces
+    incident UADT + HCC mortality substantially in compliant
+    cohort.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for heavy alcohol use. Two
+  parallel pathways: cessation counseling + AUD pharmacotherapy +
+  alcohol-related-cancer screening adjustment.
+
+  **(1) AUDIT-C / DSM-5 AUD severity stratification.** Brief
+  screening with AUDIT-C (0-12 score; ≥4 men / ≥3 women indicates
+  hazardous drinking); full AUDIT (0-40; ≥8 indicates AUD); DSM-5
+  AUD criteria (2-3 mild / 4-5 moderate / ≥6 severe). Severity
+  drives intervention intensity.
+
+  **(2) Structured cessation counseling.** Motivational interviewing
+  + cognitive-behavioural therapy ≥4 sessions; mutual-support
+  groups (Alcoholics Anonymous, SMART Recovery, refuge.RU
+  equivalent in Ukraine) recommended as adjunct. SBIRT (Screening,
+  Brief Intervention, Referral to Treatment) framework — USPSTF
+  Grade B recommendation for AUD-screening + brief intervention
+  in adults including pregnant women.
+
+  **(3) AUD pharmacotherapy.** First-line agents per APA + ASAM
+  guidelines:
+  - Naltrexone 50 mg PO daily OR 380 mg IM monthly extended-release
+    (Vivitrol). Opioid-receptor antagonist; reduces craving and
+    reinforcement. AVOID in opioid users (precipitated withdrawal).
+  - Acamprosate 666 mg PO TID. Glutamate-receptor modulator; best
+    for maintenance of abstinence post-detoxification. Renal
+    dose-adjust.
+  - Disulfiram 250-500 mg PO daily. Aldehyde-dehydrogenase
+    inhibitor; produces unpleasant reaction with any alcohol
+    intake. Only for fully-abstinent supervised patients.
+  Off-label / second-line: gabapentin 600-1200 mg/d, topiramate
+  100-300 mg/d (less robust evidence but useful when first-line
+  not tolerated).
+
+  **(4) Alcohol-related-cancer screening adjustment.**
+  - HCC: US + AFP q6mo if cirrhosis documented (FIB-4 score,
+    elastography, or biopsy) per AASLD / EASL guidelines. Without
+    cirrhosis, no routine HCC surveillance even with heavy
+    alcohol exposure.
+  - Upper aerodigestive (UADT — oral, pharyngeal, laryngeal,
+    oesophageal SCC): low-threshold ENT exam at any persistent
+    symptom (dysphagia, odynophagia, hoarseness, oral lesion,
+    palpable neck mass). NO routine asymptomatic UADT screening
+    per USPSTF; symptom-prompted pathway is highest-yield.
+  - Breast: USPSTF biennial mammography 40-74; alcohol-attributable
+    breast cancer dose-response is real but no alcohol-driven
+    cadence change.
+  - CRC: USPSTF q10y colonoscopy 45-75 per baseline; no alcohol-
+    driven cadence change.
+  - Pancreas: NO routine asymptomatic screening; symptom-prompted
+    evaluation (new-onset diabetes, weight loss + back pain,
+    jaundice).
+
+  **(5) Hepatology / addiction-medicine referral** for AUD severity
+  ≥moderate or cirrhosis component.
+
+  **Anchor disease:** HCC chosen as canonical anchor because (a)
+  alcohol is the dominant non-viral non-MASH HCC risk factor,
+  (b) HCC US + AFP surveillance is the most actionable screening
+  modification for the heavy-alcohol cohort (q6mo cadence when
+  cirrhosis present), (c) AASLD / EASL guidelines explicitly
+  identify alcohol-attributable cirrhosis as a Grade A HCC-
+  surveillance indication. Other alcohol-attributable cancers
+  (UADT, CRC, breast) covered in rationale but anchor through
+  their disease-specific pathways or symptom-prompted evaluation.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для heavy alcohol use. Два
+  паралельні шляхи: cessation counseling + AUD pharmacotherapy +
+  alcohol-related-cancer screening adjustment.
+
+  **(1) AUDIT-C / DSM-5 AUD severity stratification.** AUDIT-C
+  (0-12; ≥4 чоловіки / ≥3 жінки = hazardous); full AUDIT (0-40;
+  ≥8 = AUD); DSM-5 AUD (2-3 mild / 4-5 moderate / ≥6 severe).
+
+  **(2) Structured cessation counseling.** Motivational interviewing
+  + CBT ≥4 sessions; mutual-support groups (AA, SMART Recovery)
+  recommended as adjunct. SBIRT framework — USPSTF Grade B.
+
+  **(3) AUD pharmacotherapy** per APA + ASAM:
+  - Naltrexone 50 мг PO 1 раз АБО 380 мг IM 1 раз/міс extended-
+    release. AVOID при opioid users.
+  - Acamprosate 666 мг PO TID. Best для maintenance post-detox.
+  - Disulfiram 250-500 мг PO 1 раз. Only для fully-abstinent
+    supervised patients.
+
+  **(4) Alcohol-related-cancer screening adjustment.**
+  - HCC: US + AFP q6 міс при cirrhosis documented per AASLD / EASL.
+  - UADT: low-threshold ENT exam при будь-якому persistent symptom.
+  - Breast: USPSTF q2р мамографія 40-74.
+  - CRC: USPSTF q10р колоноскопія 45-75.
+
+  **(5) Hepatology / addiction-medicine referral** для AUD severity
+  ≥moderate або cirrhosis компонент.
+
+  **Анкор-захворювання:** HCC — alcohol є dominant non-viral
+  non-MASH HCC risk factor; HCC US + AFP surveillance — найбільш
+  actionable screening modification.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1
+
+sources:
+  - source_id: SRC-IARC-100E-ALCOHOL
+    position: supports
+  - source_id: SRC-WCRF-AICR-CUP-2018
+    position: supports
+
+do_not_do:
+  - "Не призначати disulfiram коли patient не fully abstinent — produces severe reaction з alcohol intake; medical emergency potential."
+  - "Не пропускати hepatology referral при cirrhosis suspect — FIB-4 + elastography низькокоштовні і вирішують HCC-surveillance pathway."
+  - "Не використовувати asymptomatic UADT screening на основі alcohol use alone — false-positive harm >> incremental detection; symptom-prompted ENT exam є highest-yield."
+  - "Не призначати naltrexone у opioid-using patient без opioid-clearance pathway — precipitated opioid withdrawal — medical emergency."
+  - "Не нормалізувати dysphagia / odynophagia / hoarseness / oral lesion як 'minor' у heavy-alcohol cohort — alarm symptoms warrant immediate evaluation."
+
+do_not_do_en:
+  - "Do not prescribe disulfiram when the patient is not fully abstinent — produces a severe reaction with alcohol intake; medical emergency potential."
+  - "Do not skip hepatology referral when cirrhosis is suspected — FIB-4 + elastography are low-cost and decide the HCC-surveillance pathway."
+  - "Do not use asymptomatic UADT screening on the basis of alcohol use alone — false-positive harm >> incremental detection; symptom-prompted ENT exam is highest yield."
+  - "Do not prescribe naltrexone in an opioid-using patient without an opioid-clearance pathway — precipitated opioid withdrawal is a medical emergency."
+  - "Do not normalize dysphagia / odynophagia / hoarseness / oral lesion as 'minor' in the heavy-alcohol cohort — alarm symptoms warrant immediate evaluation."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — universal heavy-alcohol prevention. Anchor DIS-HCC (alcohol-cirrhosis-HCC pathway is most actionable screening axis). Two-Clinical-Co-Lead signoff queued."

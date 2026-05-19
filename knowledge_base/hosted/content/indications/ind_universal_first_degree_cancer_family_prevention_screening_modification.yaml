@@ -1,0 +1,165 @@
+id: IND-UNIVERSAL-FIRST-DEGREE-CANCER-FAMILY-PREVENTION-SCREENING-MODIFICATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-UNIVERSAL-FIRST-DEGREE-CANCER-FAMILY-ANY
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Alternative-track companion. Patient declines or defers
+    structured pedigree review + genetic-counseling referral
+    (cost, access barriers, anxiety / surveillance fatigue,
+    declining intent for downstream interventions) — instead
+    receives family-history-aware modification of age-and-modality
+    screening cadence: site-specific screening starting age
+    typically 10 years earlier than youngest affected family member
+    or USPSTF baseline (whichever is earlier), with modality
+    intensification (e.g., supplemental breast MRI in dense-breast
+    + family-history cohort meeting Tyrer-Cuzick ≥20% lifetime risk;
+    colonoscopy starting age 40 or 10y before youngest CRC-affected
+    relative whichever is earlier). Outcomes intermediate between
+    full-pedigree-review pathway and population-baseline screening
+    — captures the patient who is unwilling to engage with germline
+    testing but who benefits from the family-history-aware screening
+    cadence modification. Per CHARTER §11 patient-autonomy framing
+    — declining genetic counseling is legitimate but framed as
+    suboptimal vs structured-review comparator.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-UNIVERSAL-FIRST-DEGREE-CANCER-
+  FAMILY-PREVENTION-COUNSELING. Patient declines or defers
+  structured pedigree review + genetic-counseling referral — gives
+  family-history-aware screening modification within general-practice
+  scope. Components:
+
+  **(1) Empirical risk modeling without germline testing.** Apply
+  Tyrer-Cuzick / BOADICEA breast risk model or Gail / Claus
+  alternatives (less site-comprehensive but tabulated) to estimate
+  lifetime breast risk; PREMM5 for Lynch-suspicion; family-history-
+  weighted Harvard Cancer Risk Index for general-population
+  estimation. Results stratify into population-risk / moderate-risk
+  / high-risk tiers without requiring germline testing.
+
+  **(2) Site-specific starting-age shift.** Per NCCN / ACG / ACS
+  consensus: screening starts 10 years earlier than the youngest
+  affected first-degree relative (or USPSTF baseline, whichever is
+  earlier). For breast: mammography at age 40 instead of 50, with
+  supplemental MRI consideration if dense breast + family history;
+  for colorectal: colonoscopy at age 40 or 10y before youngest
+  affected relative diagnosis, repeat q5y instead of q10y; for
+  prostate: PSA discussion at age 40 (BRCA2 family-history cohort
+  high priority); for pancreatic: high-risk-surveillance program
+  referral if ≥2 affected first-degree relatives with PDAC.
+
+  **(3) Modality intensification thresholds.** Breast supplemental
+  MRI when Tyrer-Cuzick lifetime risk ≥20%; CRC colonoscopy
+  preference over FIT in moderate-risk family-history cohort;
+  EUS / MRCP for pancreatic surveillance in PDAC-family cohort
+  with documented ≥1 affected first-degree relative.
+
+  **(4) Re-engagement opportunity.** Document the declined-counseling
+  determination explicitly + offer re-engagement at each annual
+  visit. Most patients who initially decline genetic counseling
+  eventually engage when a family member is newly diagnosed or when
+  reproductive-planning concerns shift priorities. Re-review
+  pedigree at 5-year intervals.
+
+  **(5) Symptom-vigilance education.** Heightened pattern-recognition
+  for site-specific early-warning features in the family-history
+  cohort (e.g., breast lump / nipple discharge in HBOC-family
+  pre-menopausal cohort, change in bowel habits in CRC-family
+  cohort, melanoma-suspicious lesion in melanoma-family cohort).
+
+  Per CHARTER §11 patient-autonomy framing — declining structured
+  genetic counseling is legitimate but framed as suboptimal vs
+  structured-review comparator.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється або
+  defers структурованого pedigree review + genetic-counseling
+  referral — отримує family-history-aware screening modification
+  у scope сімейної медицини. Components:
+
+  **(1) Empirical risk modeling без germline testing.** Tyrer-Cuzick
+  / BOADICEA для breast risk; PREMM5 для Lynch-suspicion; family-
+  history-weighted Harvard Cancer Risk Index. Stratify у
+  population-risk / moderate-risk / high-risk tiers.
+
+  **(2) Site-specific starting-age shift.** Per NCCN / ACG / ACS:
+  скринінг starts на 10р раніше за youngest affected first-degree
+  relative (або USPSTF baseline, що раніше). Breast: мамографія в
+  40 замість 50, supplemental MRI consideration при dense breast +
+  family history; CRC: колоноскопія в 40 або 10р до diagnosis
+  youngest affected, repeat q5р замість q10р; prostate: PSA
+  discussion в 40 (BRCA2 family-history cohort high priority);
+  pancreatic: high-risk-surveillance program referral при ≥2
+  affected first-degree relatives з PDAC.
+
+  **(3) Modality intensification thresholds.** Breast supplemental
+  MRI коли Tyrer-Cuzick lifetime risk ≥20%; CRC колоноскопія
+  preference над FIT у moderate-risk cohort; EUS / MRCP для
+  pancreatic surveillance у PDAC-family cohort.
+
+  **(4) Re-engagement opportunity.** Document declined-counseling
+  determination explicitly + offer re-engagement при кожному
+  annual visit.
+
+  **(5) Symptom-vigilance education.** Heightened pattern-recognition
+  для site-specific early-warning features.
+
+  Per CHARTER §11 patient-autonomy framing — declining structured
+  genetic counseling — legitimate але framed як suboptimal vs
+  structured-review comparator.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+    position: context
+  - source_id: SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+    position: context
+
+do_not_do:
+  - "Не презентувати family-history-aware screening modification як еквівалент germline testing — diagnostic yield для high-penetrance carrier identification значно нижчий."
+  - "Не пропускати symptom-vigilance education — pattern-recognition критична коли пацієнт не engages з germline pathway."
+  - "Не закривати door на re-engagement — пацієнт може повернутися до genetic-counseling pathway при нових family cancer events або reproductive-planning shift."
+  - "Не нормалізувати site-specific symptoms (breast lump, change у bowel habits, melanoma-suspicious lesion) як 'minor' у family-history cohort — every alarm symptom warrants immediate evaluation."
+  - "Не ігнорувати pedigree re-review — pedigree dynamic; pedigree з 5 років тому може бути obsolete через нові family events."
+
+do_not_do_en:
+  - "Do not present family-history-aware screening modification as equivalent to germline testing — diagnostic yield for high-penetrance carrier identification is substantially lower."
+  - "Do not skip symptom-vigilance education — pattern recognition is critical when the patient does not engage with the germline pathway."
+  - "Do not close the door on re-engagement — patient may return to genetic-counseling pathway upon new family cancer events or reproductive-planning shifts."
+  - "Do not normalize site-specific symptoms (breast lump, change in bowel habits, melanoma-suspicious lesion) as 'minor' in family-history cohort — every alarm symptom warrants immediate evaluation."
+  - "Do not ignore pedigree re-review — pedigree is dynamic; a pedigree from 5 years ago may be obsolete due to new family events."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for universal first-degree family-cancer flag. §15.2 C4 ≥2-tracks invariant. Two-Clinical-Co-Lead signoff queued."

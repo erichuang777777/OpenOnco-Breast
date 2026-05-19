@@ -1,0 +1,192 @@
+id: IND-UNIVERSAL-PRIOR-CANCER-PREVENTION-SURVIVORSHIP-PROGRAM
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-UNIVERSAL-PRIOR-CANCER-SECONDARY-RISK
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Structured survivorship surveillance program enrollment (NCCN
+    Survivorship 2025 + COG-LTFU v5.0 treatment-summary-driven
+    cadence) achieves: (1) cardiotoxicity surveillance per
+    anthracycline / chest-RT exposure (echocardiogram baseline +
+    q5y for low-exposure, q1-2y for high-exposure per ASE / EACVI
+    + ESMO cardio-oncology); (2) secondary-malignancy screening
+    intensification per exposure profile (breast MRI q1y for
+    chest-RT-exposed female Hodgkin survivors starting age 25 or
+    8y post-RT whichever later, per NCCN; CRC colonoscopy starting
+    age 35 or 5y after abdominal/pelvic-RT whichever earlier);
+    (3) late-effects endocrine surveillance (TSH q1y for neck-RT-
+    exposed, ovarian-function assessment for alkylator + TBI-
+    exposed pre-menopausal women, bone-density DEXA at age-
+    appropriate cadence); (4) psychosocial + reproductive-health
+    surveillance. Per CCSS + COG-LTFU long-term cohort studies:
+    structured-program engagement reduces late-effect-related
+    mortality ~30-40% vs ad-hoc primary-care follow-up.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for any cancer survivor with
+  treatment completed. Structured survivorship surveillance
+  program enrollment per NCCN Survivorship 2025 + COG-LTFU v5.0
+  Guidelines (children + young-adult survivors) treatment-summary-
+  driven cadence.
+
+  **(1) Treatment summary + survivorship care plan.** Document
+  primary cancer (site, histology, stage, year of diagnosis);
+  treatment exposures (chemotherapy agents + cumulative doses,
+  radiation fields + cumulative doses, surgical procedures,
+  hematologic-stem-cell-transplant if applicable); late-effect
+  risk-stratification matrix per COG-LTFU / NCCN. This document
+  drives subsequent surveillance cadence.
+
+  **(2) Cardiotoxicity surveillance.**
+  - Anthracycline cumulative dose ≥250 mg/m² doxorubicin
+    equivalent OR chest-RT ≥30 Gy: echocardiogram baseline +
+    q5y for asymptomatic; q1-2y if high-exposure (anthracycline
+    >300 + chest-RT) OR if ejection-fraction declining.
+  - HER2-targeted therapy (trastuzumab) exposure: echocardiogram
+    baseline + q3-6mo during therapy + q1y post-therapy ×5y.
+  - Per ASE / EACVI + ESMO cardio-oncology guidelines.
+
+  **(3) Secondary-malignancy screening intensification.**
+  - Chest-RT (≥30 Gy): breast MRI q1y starting age 25 or 8y
+    post-RT whichever later, alternating with mammogram q6mo
+    from age 30. CCSS + Hodgkin survivor cohort: breast-cancer
+    SIR ~6-12 in chest-RT-exposed survivors.
+  - Abdominal / pelvic RT: colonoscopy starting age 35 or 5y
+    after RT whichever earlier; cadence q5y.
+  - Neck RT: thyroid US baseline + q3y; thyroid-cancer SIR ~2-4
+    in neck-RT-exposed survivors.
+  - Cranial RT: brain MRI symptom-prompted only (no routine
+    asymptomatic screening); CNS-malignancy SIR ~5-10 in
+    cranial-RT-exposed survivors.
+  - Cyclophosphamide cumulative dose ≥50 g: urine cytology
+    annually + cystoscopy symptom-prompted (urothelial-bladder-
+    cancer SIR ~7-10).
+  - Alkylator + topoisomerase-II inhibitor + TBI exposure: CBC
+    + smear q6-12mo (t-MDS / AML risk).
+
+  **(4) Late-effects endocrine + bone-mineral-density
+  surveillance.**
+  - Neck RT: TSH q1y; thyroid-function tests; thyroid US.
+  - Cranial RT or TBI: pituitary axis evaluation q1y (growth-
+    hormone deficiency, hypogonadism, secondary adrenal
+    insufficiency, central hypothyroidism).
+  - Alkylator + TBI pre-menopausal women: ovarian-function
+    assessment (AMH, FSH, estradiol) for premature ovarian
+    insufficiency.
+  - Alkylator-exposed men: semen analysis pre-fatherhood;
+    discuss sperm cryopreservation pre-treatment (this is
+    pre-treatment counseling, not survivorship).
+  - DEXA at age-appropriate cadence + earlier in cohort with
+    hypogonadism, hypothyroidism, prolonged steroid exposure,
+    or TBI.
+
+  **(5) Psychosocial + reproductive-health surveillance.**
+  Annual screening for depression / anxiety / cancer-related
+  PTSD; sexual-function evaluation; reproductive-counseling
+  for those of reproductive age; financial-toxicity assessment.
+
+  **(6) Lifestyle counseling.** WCRF / AICR survivor-specific
+  recommendations (similar to primary-prevention recommendations:
+  body weight, physical activity, dietary pattern, alcohol
+  moderation, no tobacco) — observational evidence supports
+  improved survival in cohort adherence to these recommendations.
+
+  **Anchor disease:** colorectal cancer chosen as canonical
+  anchor because (a) CRC surveillance is the most-commonly-
+  modified screening cadence in cancer survivors (abdominal /
+  pelvic RT exposure cohort), (b) USPSTF baseline (q10y
+  colonoscopy) is a familiar cadence for individualization,
+  (c) secondary CRC is a documented late-effect in pediatric
+  cancer survivors + adult abdominal RT survivors. Cardiotoxicity,
+  breast secondary-malignancy, thyroid, urothelial, hematologic
+  surveillance covered in the rationale.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для будь-якого cancer survivor
+  з treatment completed. Structured survivorship surveillance
+  program enrollment per NCCN Survivorship 2025 + COG-LTFU v5.0.
+
+  **(1) Treatment summary + survivorship care plan.** Document
+  primary cancer (site, histology, stage); treatment exposures
+  (chemo agents + cumulative doses, radiation fields + doses,
+  surgery, HSCT); late-effect risk-stratification per COG-LTFU /
+  NCCN.
+
+  **(2) Cardiotoxicity surveillance** per anthracycline / chest-RT
+  exposure.
+
+  **(3) Secondary-malignancy screening intensification:**
+  - Chest-RT (≥30 Gy): breast MRI q1р з 25 років або 8р post-RT.
+  - Abdominal / pelvic RT: колоноскопія з 35 років або 5р post-RT.
+  - Neck RT: thyroid US baseline + q3р.
+  - Cranial RT: brain MRI symptom-prompted only.
+  - Cyclophosphamide ≥50 г cumulative: urine cytology q1р.
+  - Alkylator + topoisomerase-II + TBI: CBC + smear q6-12 міс.
+
+  **(4) Late-effects endocrine + bone-mineral-density
+  surveillance** per neck RT / cranial RT / TBI / alkylator
+  exposure.
+
+  **(5) Psychosocial + reproductive-health surveillance.**
+
+  **(6) Lifestyle counseling** WCRF / AICR survivor-specific.
+
+  **Анкор-захворювання:** colorectal cancer — найчастіше-modified
+  screening cadence у survivors (abdominal / pelvic RT cohort).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1
+
+sources:
+  - source_id: SRC-COG
+    position: supports
+  - source_id: SRC-NCCN-BREAST-2025
+    position: supports
+  - source_id: SRC-NCCN-COLON-2025
+    position: supports
+
+do_not_do:
+  - "Не пропускати treatment summary document — це foundation для exposure-driven survivorship cadence."
+  - "Не використовувати general-population screening cadence для exposed survivors — chest-RT-exposed female потребує breast MRI з 25 років, не q2р мамографію з 40."
+  - "Не deny survivorship-program access на основі primary-cancer-cured framing — late-effect mortality є substantial axis окрема від primary-cancer recurrence."
+  - "Не пропускати psychosocial / reproductive-health surveillance — депресія / anxiety / cancer-related PTSD subjective але quantifiable harms у survivor cohort."
+  - "Не нормалізувати cardiotoxicity symptoms (dyspnea, exercise intolerance, edema) у anthracycline / chest-RT-exposed cohort — late-onset cardiomyopathy може maніфестувати десятиліттями post-treatment."
+
+do_not_do_en:
+  - "Do not skip the treatment summary document — it is the foundation for exposure-driven survivorship cadence."
+  - "Do not use general-population screening cadence for exposed survivors — chest-RT-exposed females need breast MRI from age 25, not q2y mammography from 40."
+  - "Do not deny survivorship-program access on the basis of primary-cancer-cured framing — late-effect mortality is a substantial axis separate from primary-cancer recurrence."
+  - "Do not skip psychosocial / reproductive-health surveillance — depression / anxiety / cancer-related PTSD are subjective but quantifiable harms in the survivor cohort."
+  - "Do not normalize cardiotoxicity symptoms (dyspnea, exercise intolerance, edema) in the anthracycline / chest-RT-exposed cohort — late-onset cardiomyopathy can manifest decades post-treatment."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — universal prior-cancer survivor pre-triage. Anchor DIS-CRC (most-modified screening cadence axis in abdominal-RT-exposed cohort). Two-Clinical-Co-Lead signoff queued."

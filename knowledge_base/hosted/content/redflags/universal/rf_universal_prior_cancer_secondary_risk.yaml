@@ -1,0 +1,85 @@
+id: RF-UNIVERSAL-PRIOR-CANCER-SECONDARY-RISK
+definition: >-
+  Any prior cancer history (any site, treatment completed, currently
+  no evidence of active recurrent disease — survivor cohort).
+  Secondary-malignancy risk in cancer survivors is well-characterized
+  in two cohorts: (1) Childhood Cancer Survivor Study (CCSS) +
+  Children's Oncology Group Long-Term Follow-Up (COG-LTFU)
+  Guidelines v5.0 — survivors of pediatric cancers face cumulative
+  incidence of second neoplasm reaching 20-25% at 30 years post-
+  diagnosis, dominated by therapy-related solid tumors (breast in
+  chest-RT survivors, CNS in cranial-RT, thyroid in neck-RT,
+  sarcoma and gastrointestinal in TBI / alkylator survivors) and
+  therapy-related myeloid neoplasms; (2) NCCN Survivorship 2025
+  guidelines for adult-cancer survivors — second-primary-cancer
+  risk is elevated 1.5-3× general-population baseline depending on
+  treatment exposures (anthracycline + chest-RT for Hodgkin and
+  breast survivors carries documented late-onset breast-cancer +
+  cardiotoxicity risk; alkylator + TBI exposure carries t-MDS / AML
+  risk; cyclophosphamide carries urothelial-bladder-cancer risk).
+  Universal RedFlag (relevant_diseases ["*"]) — routes to enrollment
+  in a structured survivorship surveillance program (NCCN
+  Survivorship + COG-LTFU treatment-summary-driven cadence) covering
+  cardiotoxicity, secondary-malignancy screening, late-effects
+  endocrine / psychosocial / fertility surveillance. Distinct from
+  disease-specific survivorship RFs (some authored — e.g.,
+  chest-RT-survivor breast surveillance) — this RF is the upstream
+  catchment for the universal "prior cancer" claim.
+definition_ua: >-
+  Будь-який prior cancer (any site, treatment completed, currently
+  no evidence of active recurrent disease — survivor когорта).
+  Secondary-malignancy ризик у cancer survivors well-characterized
+  у двох когортах: (1) Childhood Cancer Survivor Study (CCSS) +
+  Children's Oncology Group Long-Term Follow-Up (COG-LTFU)
+  Guidelines v5.0 — survivors педіатричних раків мають cumulative
+  incidence другої neoplasm досягаючи 20-25% на 30 років після
+  diagnosis, dominated by therapy-related solid tumors (breast у
+  chest-RT survivors, CNS у cranial-RT, thyroid у neck-RT,
+  sarcoma і GI у TBI / alkylator survivors) та therapy-related
+  myeloid neoplasms; (2) NCCN Survivorship 2025 guidelines для
+  adult-cancer survivors — second-primary-cancer ризик підвищений
+  1.5-3× general-population baseline залежно від treatment
+  exposures (anthracycline + chest-RT для Hodgkin і breast
+  survivors несе documented late-onset breast-cancer +
+  cardiotoxicity ризик; alkylator + TBI несе t-MDS / AML ризик;
+  cyclophosphamide несе urothelial-bladder-cancer ризик).
+  Universal RedFlag (relevant_diseases ["*"]) — routes до
+  enrollment у structured survivorship surveillance program
+  (NCCN Survivorship + COG-LTFU treatment-summary-driven cadence)
+  cardiotoxicity, secondary-malignancy screening, late-effects
+  endocrine / psychosocial / fertility surveillance. Відмінний
+  від disease-specific survivorship RFs (деякі authored — напр.,
+  chest-RT-survivor breast surveillance) — цей RF — upstream
+  catchment для universal "prior cancer" claim.
+
+trigger:
+  type: composite_score
+  any_of:
+    - finding: "prior_cancer_history_completed"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: iatrogenic
+
+relevant_diseases:
+  - "*"
+
+shifts_algorithm: []
+
+sources:
+  - SRC-COG
+  - SRC-NCCN-BREAST-2025
+  - SRC-NCCN-COLON-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Pre-triage universal RedFlag — any prior-cancer survivor with treatment completed. Authoring intent: route to structured survivorship surveillance (NCCN Survivorship 2025 + COG-LTFU v5.0 treatment-summary-driven cadence). risk_category=iatrogenic reflects that the elevated secondary-malignancy risk is therapy-related rather than tumor-biology-intrinsic. With relevant_diseases=[\"*\"], engine does NOT attach Indication tracks via prevention path (plan.py:297 excludes \"*\") — universal Indications anchored to DIS-CRC (heterogeneous survivor surveillance defaults to CRC + breast cadence individualization) are documentation / sidecar candidates pending future engine extension. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1

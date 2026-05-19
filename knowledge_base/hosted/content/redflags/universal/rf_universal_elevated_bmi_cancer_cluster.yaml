@@ -1,0 +1,69 @@
+id: RF-UNIVERSAL-ELEVATED-BMI-CANCER-CLUSTER
+definition: >-
+  BMI ≥30 kg/m² (WHO obesity Class I or higher). IARC Working Group
+  on Obesity (Lauby-Secretan 2016, NEJM) catalogued sufficient
+  evidence for a causal association between excess body fatness and
+  ≥13 cancer types: oesophagus (adenocarcinoma), gastric cardia,
+  colon and rectum, liver, gallbladder, pancreas, postmenopausal
+  breast, corpus uteri, ovary, kidney (renal cell carcinoma),
+  meningioma, thyroid, multiple myeloma. WCRF / AICR Continuous
+  Update Project (2018) corroborates with additional probable
+  evidence for advanced prostate, oral cavity / pharynx / larynx,
+  and provides dose-response curves (HR per 5 kg/m² increase
+  typically 1.1-1.5 across the cluster). Universal RedFlag
+  (relevant_diseases ["*"]) — routes to a structured weight-loss
+  program + cancer-cluster screening cadence modification (priority
+  CRC + breast + endometrial + HCC where USPSTF / NCCN screening
+  is age-and-modality defined). Distinct from disease-specific
+  obesity RFs (rare; not currently authored) — this RF is the
+  upstream catchment.
+definition_ua: >-
+  BMI ≥30 кг/м² (WHO obesity Class I або вище). IARC Working Group
+  on Obesity (Lauby-Secretan 2016, NEJM) задокументувала достатні
+  докази причинного зв'язку між надлишковим body fatness і ≥13
+  типами раку: стравохід (аденокарцинома), gastric cardia, товста
+  і пряма кишка, печінка, жовчний міхур, підшлункова, постменопаузальна
+  молочна залоза, тіло матки, яєчник, нирка (RCC), meningioma,
+  щитоподібна, multiple myeloma. WCRF / AICR Continuous Update
+  Project (2018) підтверджує з додатковими probable доказами для
+  advanced prostate, oral cavity / pharynx / larynx, та надає
+  dose-response криві (HR per 5 кг/м² зазвичай 1.1-1.5 в межах
+  cluster). Universal RedFlag (relevant_diseases ["*"]) — routes
+  до structured weight-loss program + cancer-cluster screening
+  cadence modification (priority CRC + breast + endometrial + HCC
+  де USPSTF / NCCN screening є age-and-modality defined).
+  Відмінний від disease-specific obesity RFs (рідкі; не authored
+  наразі) — цей RF — upstream catchment.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "bmi_kg_m2"
+      threshold: 30
+      comparator: ">="
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: lifestyle
+
+relevant_diseases:
+  - "*"
+
+shifts_algorithm: []
+
+sources:
+  - SRC-WCRF-AICR-CUP-2018
+  - SRC-USPSTF-CRC-2021
+  - SRC-USPSTF-BREAST-2024
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Pre-triage universal RedFlag — obesity (BMI≥30) per IARC 13-cancer cluster + WCRF/AICR CUP. Authoring intent: route to structured weight-loss program + cancer-cluster screening modification (CRC priority — adenoma surveillance interval and starting-age individualization; breast supplemental imaging on density; endometrial symptom-prompted TVUS; HCC US+AFP q6mo if NAFLD/MASH-cirrhosis component). With relevant_diseases=[\"*\"], the engine does NOT attach Indication tracks via the prevention path (engine excludes \"*\" at plan.py:297) — universal Indications anchored to DIS-CRC are documentation / sidecar candidates pending future engine extension. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1

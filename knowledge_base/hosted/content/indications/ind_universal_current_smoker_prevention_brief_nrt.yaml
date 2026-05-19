@@ -1,0 +1,150 @@
+id: IND-UNIVERSAL-CURRENT-SMOKER-PREVENTION-BRIEF-NRT
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-UNIVERSAL-CURRENT-SMOKER-MULTI-CANCER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Alternative-track companion. Patient declines structured
+    multi-session cessation program enrollment (geographic access,
+    insurance, prior unsuccessful attempts, autonomy preference) —
+    receives brief-intervention 5As counseling + take-home nicotine
+    replacement therapy (NRT) starter kit + symptom-vigilance
+    education + optional self-paced LDCT eligibility self-evaluation.
+    Cumulative 6-month abstinence with brief-intervention + NRT only:
+    ~10-18% per Cochrane brief-intervention meta-analysis (lower than
+    intensive-program ~20-35% but higher than no-intervention ~5-8%
+    spontaneous quit rate). Re-engagement opportunity preserved.
+    LDCT uptake lower without active program coordination but
+    eligibility self-evaluation surfaces the screening opportunity.
+    Per CHARTER §11 patient-autonomy framing — declining structured
+    program is legitimate but framed as suboptimal vs intervention-
+    arm comparator.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-UNIVERSAL-CURRENT-SMOKER-
+  PREVENTION-CESSATION-LDCT. Patient declines structured multi-
+  session cessation program enrollment — receives brief intervention
+  within routine-visit scope.
+
+  **(1) 5As brief intervention at each routine visit.** Ask
+  (current smoking, quantity, quit attempts); Advise (link tobacco
+  to ≥17-cancer cluster + cardiovascular + COPD risk in plain
+  language); Assess (readiness to change per Prochaska stages);
+  Assist (provide written resources, quit-line telephone number,
+  smartphone-app referrals); Arrange (follow-up at 3-6 month
+  interval, offer structured-program referral at each touch).
+
+  **(2) Take-home nicotine replacement therapy (NRT) starter kit.**
+  Combination NRT (long-acting patch 14-21 mg + short-acting gum
+  / lozenge 2-4 mg PRN) provided directly OR via prescription /
+  voucher / OTC voucher per local accessibility. Patient-self-
+  administered without active program scaffolding; abstinence
+  rates lower than structured-program comparator but exceed
+  no-intervention baseline. Pharmacotherapy with varenicline /
+  bupropion offered with clear-warning of need for active
+  monitoring (depression / agitation flag, dose-titration); patient
+  may decline prescription pharmacotherapy in favor of OTC NRT
+  only.
+
+  **(3) USPSTF LDCT lung-cancer screening eligibility self-
+  evaluation.** Provide written eligibility criteria + clinician
+  pathway for those who choose to enroll. Without active program
+  coordination, uptake is lower (~20-30% of eligible) vs structured
+  pathway (~50-60% of eligible); document patient determination.
+
+  **(4) Symptom-vigilance education.** Heightened pattern-
+  recognition for site-specific early-warning features in the
+  smoker cohort: persistent cough / hemoptysis (lung), dysphagia
+  (oesophageal / oropharyngeal), oral lesion (oral / laryngeal),
+  unexplained hematuria (bladder / kidney), unintended weight loss
+  + epigastric pain (pancreas / gastric). Every alarm symptom
+  warrants prompt diagnostic workup.
+
+  **(5) Re-engagement pathway.** Document quit-attempts at each
+  visit. Each relapse is data; offer structured-program referral
+  at each touch.
+
+  Per CHARTER §11 patient-autonomy framing.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від
+  structured cessation program — отримує brief intervention у
+  routine-visit scope.
+
+  **(1) 5As brief intervention при кожному routine visit.** Ask /
+  Advise / Assess / Assist / Arrange. Quit-line телефон, smartphone-
+  apps. Follow-up на 3-6 місяців.
+
+  **(2) Take-home NRT starter kit.** Combination NRT (long-acting
+  патч 14-21 мг + short-acting gum / lozenge 2-4 мг PRN). Patient-
+  self-administered. Pharmacotherapy varenicline / bupropion
+  offered з clear warning щодо need for active monitoring.
+
+  **(3) USPSTF LDCT lung-cancer screening eligibility self-
+  evaluation.** Письмові критерії + clinician pathway.
+
+  **(4) Symptom-vigilance education.** Heightened pattern-
+  recognition: persistent cough / hemoptysis (легені), dysphagia
+  (стравохід / oropharynx), oral lesion, unexplained hematuria,
+  unintended weight loss + epigastric pain.
+
+  **(5) Re-engagement pathway.** Document quit-attempts при кожному
+  visit. Each relapse is data; offer structured-program referral
+  при кожному touch.
+
+  Per CHARTER §11 patient-autonomy framing.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1
+
+sources:
+  - source_id: SRC-IARC-100A-TOBACCO-SMOKING
+    position: context
+  - source_id: SRC-USPSTF-LUNG-LDCT-2021
+    position: context
+
+do_not_do:
+  - "Не презентувати brief intervention як еквівалент structured cessation program — outcomes inferior, framing critical."
+  - "Не disable LDCT access на основі declined-program — eligibility evaluation окрема axis."
+  - "Не пропускати symptom-vigilance education — patient у smoker cohort часто delay alarm symptom presentation."
+  - "Не уникати re-engagement opportunity — кожний relapse є data; пацієнт може engage при шостій спробі after шостого relapse."
+  - "Не призначати prescription varenicline / bupropion без depression / agitation flag explicitly framed — black-box warning withdrawn але patient education залишається важливим."
+
+do_not_do_en:
+  - "Do not present brief intervention as equivalent to structured cessation program — outcomes are inferior; framing is critical."
+  - "Do not disable LDCT access on the basis of declined-program — eligibility evaluation is a separate axis."
+  - "Do not skip symptom-vigilance education — patients in the smoker cohort often delay alarm-symptom presentation."
+  - "Do not avoid re-engagement opportunity — every relapse is data; a patient may engage at the sixth attempt after the sixth relapse."
+  - "Do not prescribe varenicline / bupropion without depression / agitation flag explicitly framed — black-box warning was withdrawn but patient education remains important."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for universal current-smoker flag. §15.2 C4 ≥2-tracks invariant. Two-Clinical-Co-Lead signoff queued."

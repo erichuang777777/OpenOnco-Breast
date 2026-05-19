@@ -1,0 +1,146 @@
+id: IND-UNIVERSAL-HEAVY-ALCOHOL-PREVENTION-BRIEF-INTERVENTION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-HCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-UNIVERSAL-HEAVY-ALCOHOL-MULTI-CANCER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Alternative-track companion. Patient declines structured
+    cessation program + AUD pharmacotherapy (autonomy preference,
+    stigma, prior unsuccessful attempts, declining intent for
+    formal addiction-medicine engagement) — receives brief-
+    intervention 5As + SBIRT counseling at each routine visit
+    + symptom-vigilance education + cirrhosis-evaluation
+    pathway. Brief intervention alone achieves clinically
+    meaningful reduction in alcohol consumption in ~10-15% of
+    AUDIT-C-positive patients at 12 months per USPSTF SBIRT
+    meta-analysis. Lower than structured-program / pharmacotherapy
+    comparator (~25-40%) but higher than no-intervention. HCC
+    surveillance pathway preserved if cirrhosis component identified
+    via FIB-4 / elastography. Per CHARTER §11 patient-autonomy
+    framing — declining structured program is legitimate but framed
+    as suboptimal vs intervention-arm comparator.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-UNIVERSAL-HEAVY-ALCOHOL-
+  PREVENTION-CESSATION-SCREENING. Patient declines structured
+  cessation program + AUD pharmacotherapy — receives brief
+  intervention within routine-visit scope.
+
+  **(1) SBIRT brief intervention at each routine visit.**
+  Screening (AUDIT-C), Brief Intervention (5-15 min motivational
+  feedback per FRAMES — Feedback, Responsibility, Advice, Menu,
+  Empathy, Self-efficacy), Referral to Treatment (offer
+  structured-program referral at each visit). USPSTF Grade B
+  recommendation.
+
+  **(2) Cirrhosis-evaluation pathway.** Low-cost FIB-4 score
+  (AST + ALT + platelets + age) at baseline; ≥1.45 prompts
+  hepatology referral + elastography (FibroScan or MR-elastography).
+  Cirrhosis confirmation routes to HCC surveillance regardless of
+  cessation engagement. Without cirrhosis component, no routine
+  HCC surveillance.
+
+  **(3) Symptom-vigilance education.** Heightened pattern-
+  recognition for alcohol-related-cancer-cluster early-warning
+  features: persistent dysphagia (oesophageal SCC), persistent
+  hoarseness (laryngeal), oral lesion not healing within 2 weeks
+  (oral SCC), unintended weight loss + abdominal mass (HCC,
+  pancreatic), change in bowel habits (CRC), painless breast lump.
+  Every alarm symptom warrants prompt diagnostic workup.
+
+  **(4) Re-engagement pathway.** Document declined-program
+  determination explicitly + offer re-engagement at each annual
+  visit. Most patients who initially decline structured AUD
+  treatment eventually engage after cardiometabolic / hepatic /
+  social motivational trigger; never frame prior failures as
+  terminal.
+
+  **(5) Self-administered NRT-equivalent for alcohol (limited
+  evidence).** Patient may choose to engage with AA / SMART
+  Recovery mutual-support groups without formal addiction-
+  medicine referral. Document the determination.
+
+  Per CHARTER §11 patient-autonomy framing.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від
+  structured cessation program + AUD pharmacotherapy — отримує
+  brief intervention у routine-visit scope.
+
+  **(1) SBIRT brief intervention при кожному routine visit.**
+  Screening (AUDIT-C), Brief Intervention (5-15 хв motivational
+  feedback per FRAMES), Referral to Treatment. USPSTF Grade B.
+
+  **(2) Cirrhosis-evaluation pathway.** Низькокоштовний FIB-4 score
+  на baseline; ≥1.45 prompts hepatology referral + elastography.
+  Cirrhosis confirmation routes до HCC surveillance regardless
+  of cessation engagement.
+
+  **(3) Symptom-vigilance education.** Heightened pattern-
+  recognition: persistent dysphagia (oesophageal SCC), persistent
+  hoarseness (laryngeal), oral lesion не healing within 2 weeks
+  (oral SCC), unintended weight loss + abdominal mass (HCC,
+  pancreatic), change у bowel habits (CRC), painless breast lump.
+
+  **(4) Re-engagement pathway.** Document declined-program
+  determination explicitly + offer re-engagement при кожному
+  annual visit.
+
+  **(5) Self-administered mutual-support engagement** (AA / SMART
+  Recovery) без formal addiction-medicine referral. Document
+  determination.
+
+  Per CHARTER §11 patient-autonomy framing.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1
+
+sources:
+  - source_id: SRC-IARC-100E-ALCOHOL
+    position: context
+
+do_not_do:
+  - "Не презентувати brief intervention як еквівалент structured cessation + pharmacotherapy — outcomes inferior, framing critical."
+  - "Не пропускати FIB-4 / elastography при heavy alcohol — cirrhosis-evaluation pathway вирішує HCC surveillance залежно від AUD-engagement status."
+  - "Не уникати re-engagement opportunity — більшість патієнтів eventually engage коли motivational triggers shift."
+  - "Не нормалізувати alarm symptoms (dysphagia, hoarseness, oral lesion, weight loss) у heavy-alcohol cohort — symptom-prompted evaluation є highest-yield."
+  - "Не deny mutual-support group engagement (AA, SMART Recovery) на основі лікарського preference — це окрема ефективна axis."
+
+do_not_do_en:
+  - "Do not present brief intervention as equivalent to structured cessation + pharmacotherapy — outcomes are inferior; framing is critical."
+  - "Do not skip FIB-4 / elastography in heavy alcohol use — cirrhosis-evaluation pathway decides HCC surveillance regardless of AUD-engagement status."
+  - "Do not avoid re-engagement opportunity — most patients eventually engage when motivational triggers shift."
+  - "Do not normalize alarm symptoms (dysphagia, hoarseness, oral lesion, weight loss) in the heavy-alcohol cohort — symptom-prompted evaluation is highest yield."
+  - "Do not deny mutual-support group engagement (AA, SMART Recovery) on the basis of physician preference — it is a separate effective axis."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for universal heavy-alcohol flag. §15.2 C4 ≥2-tracks invariant. Two-Clinical-Co-Lead signoff queued."

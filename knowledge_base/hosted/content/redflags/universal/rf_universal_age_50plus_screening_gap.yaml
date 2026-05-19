@@ -1,0 +1,77 @@
+id: RF-UNIVERSAL-AGE-50PLUS-SCREENING-GAP
+definition: >-
+  Adult patient aged ≥50 years WITHOUT documented age-appropriate
+  cancer screening completed within the past 5 years. Captures the
+  cohort whose pre-clinical malignancy detection is below USPSTF /
+  NCCN / NCI population-screening cadence. Age-appropriate
+  screening at the ≥50 cohort includes: colorectal cancer
+  (colonoscopy q10y / FIT q1y / CTC q5y / FIT-DNA q3y per USPSTF
+  2021; ages 45-75 with extension to 76-85 individualized), breast
+  cancer (biennial mammography ages 40-74 per USPSTF 2024), cervical
+  cancer (hr-HPV-primary q5y or co-test q5y or cytology q3y per
+  USPSTF 2018, age cessation at 65 with adequate prior screening),
+  lung cancer (annual LDCT for ages 50-80 with ≥20 pack-year history
+  who currently smoke or quit ≤15y per USPSTF 2021). Universal
+  RedFlag (relevant_diseases ["*"]) — routes to a comprehensive
+  screening catch-up plan (CRC + breast + cervical + LDCT-if-
+  eligible) prioritized by highest-yield modality, with shared-
+  decision overlay for individuals with limited life expectancy or
+  competing comorbidities. Trigger uses an explicit positive
+  finding (`age_50plus_screening_gap_documented: true`) rather than
+  "absence of recent screening" to avoid spurious firing on test
+  patients without an explicit gap claim.
+definition_ua: >-
+  Дорослий пацієнт у віці ≥50 років БЕЗ задокументованого age-
+  appropriate скринінгу, завершеного протягом останніх 5 років.
+  Охоплює когорту, чий pre-clinical malignancy detection нижче
+  USPSTF / NCCN / NCI population-screening cadence. Age-appropriate
+  скринінг у ≥50 когорті: colorectal (colonoscopy q10р / FIT q1р /
+  CTC q5р / FIT-DNA q3р per USPSTF 2021; 45-75р з indiv extension
+  до 76-85), breast (двостор. мамографія q2р 40-74 per USPSTF 2024),
+  cervical (hr-HPV-primary q5р або co-test q5р або cytology q3р
+  per USPSTF 2018, припинення в 65р при достатньому prior screening),
+  lung (щорічний LDCT для 50-80 з ≥20 pack-year поточних курців
+  або quit ≤15р per USPSTF 2021). Universal RedFlag
+  (relevant_diseases ["*"]) — routes до comprehensive screening
+  catch-up plan (CRC + breast + cervical + LDCT-if-eligible)
+  prioritized за highest-yield modality, з shared-decision overlay
+  для individuals з limited life expectancy або competing
+  comorbidities. Trigger uses an explicit positive finding
+  (`age_50plus_screening_gap_documented: true`) щоб уникнути
+  spurious firing на test patients без явної gap claim.
+
+trigger:
+  type: composite_score
+  all_of:
+    - finding: "age"
+      threshold: 50
+      comparator: ">="
+    - finding: "age_50plus_screening_gap_documented"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: lifestyle
+
+relevant_diseases:
+  - "*"
+
+shifts_algorithm: []
+
+sources:
+  - SRC-USPSTF-CRC-2021
+  - SRC-USPSTF-BREAST-2024
+  - SRC-USPSTF-CERVICAL-2018
+  - SRC-USPSTF-LUNG-LDCT-2021
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Pre-triage universal RedFlag — age ≥50 + documented gap in age-appropriate screening within past 5y. risk_category=lifestyle is the closest 7-category match for a demographic-screening flag; reproductive / occupational / iatrogenic / genetic / infectious / chronic_condition do not fit. Trigger uses explicit positive `age_50plus_screening_gap_documented: true` ALONGSIDE `age>=50` to avoid spurious firing on the negative-test patient (PREV-NEG-001, age 50, ecog 0, no findings) and the HCV-prevention patient (HCV-PREV-001, age 52). With relevant_diseases=[\"*\"], engine does NOT attach Indication tracks via prevention path (plan.py:297 excludes \"*\") — universal Indications anchored to DIS-CRC are documentation / sidecar candidates pending future engine extension. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1

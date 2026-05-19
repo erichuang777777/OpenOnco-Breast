@@ -1,0 +1,175 @@
+id: IND-UNIVERSAL-FIRST-DEGREE-CANCER-FAMILY-PREVENTION-COUNSELING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-UNIVERSAL-FIRST-DEGREE-CANCER-FAMILY-ANY
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Structured pedigree review (Tyrer-Cuzick / BOADICEA / PREMM5 /
+    MMRpro depending on family profile) reclassifies the cohort:
+    ~5-15% trigger downstream disease-specific genetic-counseling
+    referrals (HBOC, Lynch, Cowden, Li-Fraumeni, etc.) where
+    multi-gene germline panels carry diagnostic yield 10-25%
+    depending on pedigree-criterion stringency. The majority
+    (~85-95%) receive a documented negative-pedigree determination
+    and continue age-appropriate population-screening cadence.
+    Cumulative impact across the cohort: incremental high-penetrance
+    carrier identification rate ~1-3% (population-level), with
+    each identified carrier routing to confirmed-carrier
+    surveillance pathways with documented mortality benefit
+    (e.g., risk-reducing BSO in BRCA carriers reduces ovarian-
+    cancer-specific mortality ~80%).
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for any patient with at least
+  one first-degree relative (parent, full sibling, biological child)
+  with any cancer history. Universal pre-triage anchor; routes to:
+
+  **(1) Structured pedigree review.** Three-generation pedigree
+  with age at diagnosis, cancer type, treatment, vital status for
+  each affected and unaffected relative. Pedigree assessed against
+  syndrome-specific criteria — NCCN Genetic / Familial High-Risk
+  Assessment Breast / Ovarian / Pancreatic (HBOC, BRCA1/2, PALB2,
+  CHEK2, ATM, RAD51C/D, BRIP1); NCCN Genetic / Familial High-Risk
+  Assessment Colorectal (Lynch syndrome — MLH1/MSH2/MSH6/PMS2/EPCAM
+  per Amsterdam II + Bethesda; FAP/AFAP per APC; MUTYH-associated
+  polyposis per MUTYH; Cowden/PHTS per PTEN; Li-Fraumeni per TP53;
+  Peutz-Jeghers per STK11; juvenile polyposis per SMAD4/BMPR1A);
+  AFI / multi-syndrome quantitative models (Tyrer-Cuzick for breast,
+  PREMM5 for Lynch, MMRpro for Lynch, BOADICEA for breast / ovarian).
+
+  **(2) Risk-tier classification.** Population-baseline (no syndrome
+  trigger) → continue USPSTF / NCCN age-and-modality screening
+  unchanged. Moderate-risk pedigree (single affected first-degree
+  relative <50y, or single second-degree with strong family-history
+  hint) → empirical risk modeling (Tyrer-Cuzick lifetime breast risk
+  ≥20% → enhanced breast surveillance; PREMM5 ≥5% → Lynch panel
+  consideration). High-risk pedigree meeting syndrome-specific
+  criteria → referral to certified genetic counselor for pre-test
+  counseling + germline panel.
+
+  **(3) Cascade testing of relatives** upon carrier identification.
+  Confirmed BRCA / Lynch / familial-cancer-syndrome variants
+  inheritance follow-up: first-degree relatives (siblings, children
+  ≥18, parents) offered targeted single-variant testing. Lifetime
+  cascade-yield from one positive index case typically identifies
+  5-10 additional family carriers across two generations.
+
+  **(4) Negative-pedigree determination.** When the pedigree does
+  not meet syndrome-specific criteria, document the determination
+  explicitly (avoid leaving the family-history flag as a perpetual
+  uncertainty) and route to age-appropriate population-screening
+  cadence. Re-review pedigree at 5-year intervals or upon new
+  family cancer events.
+
+  **Anchor disease:** breast cancer chosen as the canonical anchor
+  because (a) it is the highest-prevalence cancer in the population,
+  (b) family-history hereditary breast / ovarian cancer (HBOC) is
+  the most common syndrome trigger, and (c) NCCN Genetic / Familial
+  High-Risk Breast / Ovarian / Pancreatic is the most-cited
+  reference for the universal pedigree-review pathway. Lynch / FAP /
+  Cowden / Li-Fraumeni / other syndromes route through their own
+  disease-specific RFs (Lynch via RF-LYNCH-FAMILY-HISTORY-SUSPICION,
+  HBOC via RF-BRCA-HBOC-FAMILY-HISTORY-SUSPICION) when the pedigree
+  triggers them. This Indication is the upstream catchment.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для будь-якого пацієнта з
+  щонайменше одним родичем першого ступеня (батько, мати, рідний
+  сиблінг, біологічна дитина) з онкологічним анамнезом. Universal
+  pre-triage anchor; routes до:
+
+  **(1) Структурований pedigree review.** Три-генеційна родовід з
+  age at diagnosis, cancer type, treatment, vital status для
+  кожного affected і unaffected родича. Pedigree оцінюється проти
+  syndrome-specific criteria — NCCN Genetic / Familial High-Risk
+  Breast / Ovarian / Pancreatic (HBOC, BRCA1/2, PALB2, CHEK2, ATM,
+  RAD51C/D, BRIP1); NCCN Genetic / Familial High-Risk Colorectal
+  (Lynch — MLH1/MSH2/MSH6/PMS2/EPCAM per Amsterdam II + Bethesda;
+  FAP/AFAP per APC; MAP per MUTYH; Cowden/PHTS per PTEN;
+  Li-Fraumeni per TP53); AFI / multi-syndrome quantitative моделі
+  (Tyrer-Cuzick для breast, PREMM5 для Lynch, MMRpro для Lynch,
+  BOADICEA для breast / ovarian).
+
+  **(2) Risk-tier classification.** Population-baseline (без
+  syndrome trigger) → продовжити USPSTF / NCCN age-and-modality
+  скринінг без змін. Moderate-risk pedigree → empirical risk
+  modeling (Tyrer-Cuzick lifetime breast risk ≥20% → enhanced
+  breast surveillance; PREMM5 ≥5% → Lynch panel consideration).
+  High-risk pedigree → направлення до сертифікованого генетичного
+  консультанта для pre-test counseling + germline panel.
+
+  **(3) Cascade testing родичів** при carrier identification.
+  Confirmed BRCA / Lynch варіанти inheritance follow-up: родичі
+  першого ступеня (сиблінги, діти ≥18, батьки) offered targeted
+  single-variant testing.
+
+  **(4) Negative-pedigree determination.** Коли pedigree не
+  відповідає syndrome-specific criteria, документувати determination
+  explicitly + routing до age-appropriate population-screening.
+  Re-review pedigree з 5-річними інтервалами або при нових family
+  cancer events.
+
+  **Анкор-захворювання:** breast cancer обрано як canonical anchor:
+  (а) найвища prevalence cancer у популяції, (б) family-history
+  HBOC — найчастіший syndrome trigger, (в) NCCN Genetic / Familial
+  High-Risk Breast / Ovarian / Pancreatic — найцитованіша reference
+  для universal pedigree-review pathway. Lynch / FAP / Cowden /
+  Li-Fraumeni / інші syndromes routes через власні disease-specific
+  RFs коли pedigree їх тригерить. Ця Indication — upstream catchment.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+    position: supports
+  - source_id: SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+    position: supports
+  - source_id: SRC-WCRF-AICR-CUP-2018
+    position: context
+
+do_not_do:
+  - "Не пропускати structured pedigree review при наявності будь-якого first-degree relative cancer — поверхневий 'family-history positive' без три-генеційного pedigree упускає syndrome-specific тригери."
+  - "Не призначати germline тестування на основі однієї first-degree relative cancer без pedigree-criterion трігера — clinically низькоdiagnostic-yield + recreates VUS-driven anxiety."
+  - "Не презентувати negative-pedigree determination як zero-risk — deep intronic / regulatory variants, mosaic disease, та limited-pedigree-information сценарії залишають residual epidemiologic uncertainty."
+  - "Не блокувати pedigree-review on the basis of insurance / payer — pre-test counseling часто covered або low-cost; cost barrier для panel testing може бути addressed через cascade pathway для index-case relatives."
+  - "Не перепризначати pedigree-review без перевірки нових family cancer events — pedigree dynamic; re-review кожні 5 років або при нових подіях."
+
+do_not_do_en:
+  - "Do not skip structured pedigree review in the presence of any first-degree relative cancer — superficial 'family-history positive' without three-generation pedigree misses syndrome-specific triggers."
+  - "Do not order germline testing on the basis of a single first-degree relative cancer without a pedigree-criterion trigger — clinically low diagnostic yield + recreates VUS-driven anxiety."
+  - "Do not present a negative-pedigree determination as zero-risk — deep intronic / regulatory variants, mosaic disease, and limited-pedigree-information scenarios leave residual epidemiologic uncertainty."
+  - "Do not block pedigree review on the basis of insurance / payer — pre-test counseling is often covered or low-cost; panel-testing cost barrier may be addressed through the cascade pathway for index-case relatives."
+  - "Do not re-defer pedigree review without checking for new family cancer events — pedigree is dynamic; re-review every 5 years or upon new events."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — universal first-degree family-cancer pre-triage. Anchor DIS-BREAST chosen for canonical pedigree-review pathway (NCCN Genetic / Familial High-Risk Breast / Ovarian / Pancreatic is the most-referenced syndrome catchment). Two-Clinical-Co-Lead signoff queued. With relevant_diseases=[\"*\"] on the RF, engine prevention path currently does NOT attach this Indication via plan.py:297 — engine extension to surface universal Indications as sidecar tracks is v0.2-C scope."

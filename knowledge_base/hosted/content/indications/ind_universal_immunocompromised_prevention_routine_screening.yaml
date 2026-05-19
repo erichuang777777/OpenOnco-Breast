@@ -1,0 +1,158 @@
+id: IND-UNIVERSAL-IMMUNOCOMPROMISED-PREVENTION-ROUTINE-SCREENING
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-KAPOSI
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-UNIVERSAL-IMMUNOCOMPROMISED-CANCER-RISK
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Alternative-track companion. Patient declines stratified
+    immunocompromised-specific screening cadence (HRA / annual
+    cervical / q6-12mo dermatology / EBV-VL monitoring) —
+    receives routine general-population screening cadence per
+    USPSTF / NCCN baseline + symptom-vigilance education +
+    re-engagement opportunity at each annual visit. Outcomes
+    inferior to stratified-program comparator: anal cancer
+    detection later, cervical CIN missed at accelerated cadence,
+    skin SCC at later stage, EBV-PTLD precursor states missed.
+    Per CHARTER §11 patient-autonomy framing — declining stratified
+    cadence is legitimate but framed as suboptimal vs intervention-
+    arm comparator.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-UNIVERSAL-IMMUNOCOMPROMISED-
+  PREVENTION-STRATIFIED-SCREENING. Patient declines stratified
+  immunocompromised-specific cadence — receives routine general-
+  population screening + symptom-vigilance education.
+
+  **(1) Routine general-population screening per USPSTF / NCCN.**
+  CRC q10y colonoscopy 45-75, breast q2y mammography 40-74,
+  cervical hr-HPV / co-test q5y modality-appropriate (NOT
+  accelerated annual cadence), LDCT if USPSTF-eligible, prostate
+  PSA shared-decision 55-69. Patient retains right to engage
+  with selective enhanced surveillance subsequently (e.g.,
+  consent to dermatology referral as opportunistic skin-cancer
+  evaluation even if declining q6-12mo cadence).
+
+  **(2) Symptom-vigilance education for immunocompromised-cohort
+  cancers.**
+  - Anal canal symptoms (pain, bleeding, mass) → anoscopy +
+    biopsy referral regardless of routine cadence.
+  - Cervical / vaginal symptoms (abnormal bleeding, persistent
+    discharge, post-coital bleeding) → colposcopy referral
+    regardless of routine cadence.
+  - Skin lesion change (new mole, growing nodule, non-healing
+    sore) → dermatology referral with low-threshold biopsy.
+  - Mucocutaneous lesions in HIV+ cohort (Kaposi-suspicious
+    purple-blue cutaneous / oral lesions) → biopsy +
+    histopathology.
+  - Lymphadenopathy + B-symptoms in post-transplant cohort →
+    EBV-VL + nodal biopsy (PTLD workup).
+  - Skin SCC / BCC pattern recognition (non-healing erosion,
+    irregular pigmentation, rapidly growing nodule).
+
+  **(3) Vaccination as feasible.** HPV vaccine catch-up to age
+  45 per ACIP (immunocompromised cohort accelerated cadence);
+  hepatitis B vaccination; PCV13 / PPSV23 per ACIP; influenza /
+  COVID per immunocompromised guidance.
+
+  **(4) Re-engagement pathway.** Document declined-stratified-
+  cadence determination explicitly + offer re-engagement at each
+  annual visit. Many patients who initially decline stratified
+  cadence eventually engage when symptoms emerge or when peer /
+  family experience shifts priorities.
+
+  **(5) Underlying-immunosuppression management coordination.**
+  Patient's primary immunosuppression management (HIV-ART,
+  transplant immunosuppression, autoimmune immunosuppression)
+  remains under specialty-care coordination; the prevention-
+  persona surveillance is supplementary, not a replacement
+  for the primary management.
+
+  Per CHARTER §11 patient-autonomy framing.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від
+  stratified immunocompromised-specific cadence — отримує routine
+  general-population screening + symptom-vigilance education.
+
+  **(1) Routine general-population screening per USPSTF / NCCN.**
+  CRC q10р колоноскопія, breast q2р мамографія, cervical
+  baseline cadence (НЕ accelerated annual). Patient retains
+  right to selective enhanced surveillance.
+
+  **(2) Symptom-vigilance education для immunocompromised-cohort
+  cancers:**
+  - Anal canal симптоми → anoscopy + biopsy referral.
+  - Cervical / vaginal symptoms → colposcopy referral.
+  - Skin lesion change → dermatology з low-threshold biopsy.
+  - Mucocutaneous lesions у HIV+ cohort (Kaposi-suspicious) →
+    biopsy.
+  - Lymphadenopathy + B-symptoms у post-transplant cohort →
+    EBV-VL + nodal biopsy (PTLD workup).
+  - Skin SCC / BCC pattern recognition.
+
+  **(3) Vaccination as feasible** — HPV catch-up до 45 років;
+  HepB; PCV13 / PPSV23.
+
+  **(4) Re-engagement pathway.** Document declined-cadence
+  determination explicitly + offer re-engagement.
+
+  **(5) Underlying-immunosuppression management coordination**
+  remains under specialty-care; prevention-persona surveillance
+  є supplementary.
+
+  Per CHARTER §11 patient-autonomy framing.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NIH-AIDS-2024
+    position: context
+  - source_id: SRC-IDSA-EBV-2019
+    position: context
+
+do_not_do:
+  - "Не презентувати routine general-population screening як еквівалент immunocompromised-specific cadence — outcomes inferior."
+  - "Не пропускати symptom-vigilance education — у immunocompromised cohort alarm symptoms warrant prompt evaluation."
+  - "Не deny dermatology / anoscopy / colposcopy access at symptom presentation — symptom-prompted access є backup для declined-cadence pathway."
+  - "Не закривати door на re-engagement — більшість патієнтів eventually engage при emerging symptoms."
+  - "Не deny vaccination на основі declined-screening — vaccination axis окрема від surveillance cadence."
+
+do_not_do_en:
+  - "Do not present routine general-population screening as equivalent to immunocompromised-specific cadence — outcomes are inferior."
+  - "Do not skip symptom-vigilance education — in the immunocompromised cohort, alarm symptoms warrant prompt evaluation."
+  - "Do not deny dermatology / anoscopy / colposcopy access at symptom presentation — symptom-prompted access is the backup for the declined-cadence pathway."
+  - "Do not close the door on re-engagement — most patients eventually engage when symptoms emerge."
+  - "Do not deny vaccination on the basis of declined-screening — vaccination axis is separate from surveillance cadence."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for universal immunocompromised flag. §15.2 C4 ≥2-tracks invariant. Two-Clinical-Co-Lead signoff queued."

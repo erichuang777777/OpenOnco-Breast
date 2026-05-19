@@ -1,0 +1,171 @@
+id: IND-UNIVERSAL-ELEVATED-BMI-PREVENTION-WEIGHT-LOSS-SCREENING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-UNIVERSAL-ELEVATED-BMI-CANCER-CLUSTER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Structured weight-loss program (USPSTF-recommended intensive
+    behavioural counseling — ≥12 contacts over 12 months delivered
+    by dietician / lifestyle coach / multidisciplinary clinic ±
+    pharmacotherapy ± bariatric surgery referral if BMI ≥35 +
+    comorbidity or BMI ≥40) achieves clinically meaningful weight
+    loss (≥5% baseline) in ~40-60% of engaged participants per Look
+    AHEAD / DPP-style intervention literature. Cancer-cluster
+    screening cadence modification per IARC 13-cancer cluster
+    priorities — CRC colonoscopy interval individualization
+    (q10y baseline; consider q5y if obesity + adenoma history),
+    biennial mammography per USPSTF (no obesity-driven cadence
+    change; supplemental imaging individualized on density),
+    symptom-prompted endometrial evaluation (TVUS + biopsy on any
+    abnormal bleeding in postmenopausal cohort), HCC US+AFP q6mo
+    if NAFLD / MASH-cirrhosis component. Weight-loss-attributable
+    cancer-incidence reduction is documented in bariatric-surgery
+    cohort studies (SOS / Utah Bariatric — 20-40% relative reduction
+    across obesity-cluster sites including breast, endometrial, CRC,
+    HCC at 10y follow-up) but causality from behavioural-only weight
+    loss is less robustly demonstrated.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for any adult with BMI ≥30.
+  Two parallel pathways: structured weight-loss intervention +
+  cancer-cluster screening cadence modification.
+
+  **(1) Structured weight-loss intervention.** USPSTF Grade B
+  recommendation for intensive behavioural counseling (≥12 contacts
+  over 12 months) in adults with BMI ≥30. Multi-disciplinary
+  approach: dietician (caloric deficit 500-750 kcal/d, Mediterranean
+  / DASH dietary pattern), exercise specialist (≥150 min/wk
+  moderate intensity per WCRF / AICR), behavioural therapist
+  (cognitive-behavioural modification for eating behaviour).
+  Pharmacotherapy candidates per AACE / Endocrine Society
+  guidelines: GLP-1 agonists (semaglutide, liraglutide, tirzepatide
+  — 10-22% weight loss at year 1), orlistat, naltrexone-bupropion,
+  phentermine-topiramate; weighed against side-effect profile +
+  cost + sustainability. Bariatric surgery referral threshold:
+  BMI ≥40 OR BMI ≥35 + obesity-related comorbidity (T2DM,
+  hypertension, dyslipidemia, OSA, NAFLD) per ASMBS / IFSO
+  guidelines.
+
+  **(2) Cancer-cluster screening cadence modification.** Priority
+  modifications across the IARC 13-cancer cluster:
+  - CRC: colonoscopy q10y baseline; individualize interval to q5y
+    if obesity + adenoma history + family history (additive risk
+    factors).
+  - Breast: USPSTF biennial mammography 40-74; no obesity-specific
+    cadence change but supplemental imaging individualized on
+    breast density (dense breast + obesity cohort discussed for
+    supplemental MRI / US in shared-decision frame).
+  - Endometrial: NO routine asymptomatic screening — symptom-
+    prompted TVUS + endometrial biopsy on any postmenopausal
+    bleeding (high sensitivity for early-stage endometrial cancer
+    detection; obesity is the dominant non-Lynch risk factor).
+  - HCC: US + AFP q6mo if NAFLD / MASH cirrhosis documented (FIB-4,
+    elastography, or biopsy); without cirrhosis component, no
+    routine HCC surveillance.
+  - Renal: no routine asymptomatic screening; opportunistic
+    detection on imaging performed for other indications.
+  - Thyroid: no routine asymptomatic screening; palpate at annual
+    physical.
+  - Multiple myeloma: no routine asymptomatic screening; SPEP /
+    UPEP on symptom-prompted indication (bone pain, hypercalcemia,
+    renal insufficiency, anemia).
+
+  **Anchor disease:** colorectal cancer chosen as canonical anchor
+  because (a) it is the largest screening-eligible cohort affected
+  by obesity (q10y colonoscopy is universal age 45-75), (b) the
+  obesity-CRC dose-response is robust (HR ~1.3 per 5 kg/m² in WCRF
+  / AICR CUP), (c) screening cadence modification is most clinically
+  actionable for CRC (interval shortening + adenoma surveillance).
+  Breast, endometrial, HCC, renal, and other cluster cancers are
+  covered in the rationale but anchor through their disease-specific
+  screening pathways.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для будь-якого дорослого з
+  BMI ≥30. Два паралельні шляхи: structured weight-loss
+  intervention + cancer-cluster screening cadence modification.
+
+  **(1) Structured weight-loss intervention.** USPSTF Grade B
+  recommendation для intensive behavioural counseling (≥12
+  contacts протягом 12 місяців). Multi-disciplinary: dietician
+  (caloric deficit 500-750 kcal/добу, Mediterranean / DASH),
+  exercise specialist (≥150 хв/тиждень moderate intensity per
+  WCRF / AICR), behavioural therapist. Pharmacotherapy кандидати
+  per AACE / Endocrine Society: GLP-1 agonists (semaglutide,
+  liraglutide, tirzepatide — 10-22% weight loss за рік), orlistat,
+  naltrexone-bupropion. Bariatric surgery threshold: BMI ≥40 АБО
+  BMI ≥35 + obesity-related comorbidity per ASMBS / IFSO.
+
+  **(2) Cancer-cluster screening cadence modification.** Priority
+  modifications:
+  - CRC: q10р колоноскопія baseline; individualize до q5р при
+    obesity + adenoma history + family history.
+  - Breast: USPSTF q2р мамографія 40-74; supplemental imaging
+    individualized на density.
+  - Endometrial: НЕ рутинний asymptomatic screening — symptom-
+    prompted TVUS + endometrial biopsy при any postmenopausal
+    bleeding.
+  - HCC: US + AFP q6 міс при NAFLD / MASH cirrhosis documented.
+  - Renal: opportunistic detection на imaging для інших indications.
+  - Thyroid: palpate при annual physical.
+
+  **Анкор-захворювання:** colorectal cancer — найбільша screening-
+  eligible cohort affected by obesity; obesity-CRC dose-response
+  robust per WCRF / AICR CUP.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1
+
+sources:
+  - source_id: SRC-WCRF-AICR-CUP-2018
+    position: supports
+  - source_id: SRC-USPSTF-CRC-2021
+    position: supports
+  - source_id: SRC-USPSTF-BREAST-2024
+    position: supports
+
+do_not_do:
+  - "Не презентувати weight-loss counseling без specific structured intervention referral — generic 'eat less, move more' has marginal effectiveness."
+  - "Не призначати pharmacotherapy weight-loss без поваги до contraindications (GLP-1 у history of medullary thyroid / MEN2; orlistat у malabsorption)."
+  - "Не intensify CRC colonoscopy interval suddenly without adenoma-history або family-history co-factor — single risk factor (obesity alone) does not change baseline q10y interval per USPSTF / NCCN."
+  - "Не пропускати NAFLD / MASH evaluation при BMI ≥30 з metabolic syndrome — FIB-4 score або elastography низькокоштовні і вирішують HCC-surveillance pathway."
+  - "Не використовувати asymptomatic endometrial / thyroid / renal / pancreatic screening на основі обезності alone — false-positive harm >> incremental detection benefit."
+
+do_not_do_en:
+  - "Do not present weight-loss counseling without specific structured intervention referral — generic 'eat less, move more' has marginal effectiveness."
+  - "Do not prescribe pharmacotherapy weight loss without respecting contraindications (GLP-1 in history of medullary thyroid / MEN2; orlistat in malabsorption)."
+  - "Do not intensify CRC colonoscopy interval suddenly without an adenoma-history or family-history co-factor — single risk factor (obesity alone) does not change baseline q10y interval per USPSTF / NCCN."
+  - "Do not skip NAFLD / MASH evaluation at BMI ≥30 with metabolic syndrome — FIB-4 score or elastography is low-cost and decides the HCC-surveillance pathway."
+  - "Do not use asymptomatic endometrial / thyroid / renal / pancreatic screening on the basis of obesity alone — false-positive harm >> incremental detection benefit."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — universal elevated-BMI cancer-cluster pre-triage. Anchor DIS-CRC chosen (largest screening-eligible cohort + robust obesity-CRC dose-response). Two-Clinical-Co-Lead signoff queued."

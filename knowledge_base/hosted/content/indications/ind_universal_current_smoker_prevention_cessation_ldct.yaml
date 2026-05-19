@@ -1,0 +1,177 @@
+id: IND-UNIVERSAL-CURRENT-SMOKER-PREVENTION-CESSATION-LDCT
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-UNIVERSAL-CURRENT-SMOKER-MULTI-CANCER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Combined behavioural-counseling + first-line pharmacotherapy
+    cessation programs achieve 6-month abstinence in 20-35% of
+    motivated participants per USPHS 2008 + Cochrane meta-analyses
+    (varenicline OR ~2.3 vs placebo; combination NRT OR ~1.9;
+    bupropion OR ~1.6; combined pharmacotherapy + behavioural
+    intervention OR ~3.6 vs no treatment). Lung-cancer-specific
+    risk reduction from cessation accrues over time — by year 5
+    relative risk falls to ~50% of continuing smoker, by year 15
+    to ~10-15%; never returns fully to never-smoker baseline.
+    USPSTF 2021 LDCT screening (50-80 yo with ≥20 pack-year history,
+    currently smoke OR quit within 15 years): NLST evidence shows
+    20% relative reduction in lung-cancer mortality (NNS ~320 over
+    6.5 years); NELSON corroborates. Overall: structured-cessation
+    + LDCT-eligibility pathway is the highest-yield prevention
+    intervention in cancer medicine for the current-smoker cohort.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for current tobacco users.
+  Two parallel pathways: structured cessation + USPSTF lung-cancer
+  screening eligibility evaluation.
+
+  **(1) Structured cessation intervention.** USPHS 2008 + NICE +
+  NCCN-cessation guidelines: combined behavioural counseling
+  (motivational interviewing, cognitive-behavioural therapy,
+  smoking-cessation telephone quit-line referral, ≥4 sessions over
+  12 weeks) + first-line pharmacotherapy. First-line agents
+  ranked by efficacy:
+  - Varenicline 0.5 mg daily ×3d → 0.5 mg BID ×4d → 1 mg BID ×12wk
+    (taper as appropriate). OR ~2.3 vs placebo; black-box
+    neuropsychiatric warning withdrawn 2016 per FDA EAGLES trial
+    safety data.
+  - Combination NRT — long-acting (21mg / 14mg / 7mg patch) +
+    short-acting (gum / lozenge / inhaler / nasal spray as needed
+    for breakthrough cravings) — superior to monotherapy NRT.
+  - Bupropion SR 150 mg daily ×3d → 150 mg BID ×8-12wk; OR ~1.6
+    vs placebo; useful when depression is comorbid.
+  E-cigarettes / vaping: NOT first-line per WHO / FDA; high-quality
+  evidence for cessation utility remains limited and addiction
+  substitution is a documented downside.
+
+  **(2) USPSTF LDCT lung-cancer screening eligibility evaluation.**
+  Eligibility criteria (USPSTF 2021 Grade B):
+  - Age 50-80
+  - ≥20 pack-year smoking history
+  - Currently smoke OR quit within past 15 years
+  - No symptoms suggesting active lung cancer (otherwise diagnostic
+    workup, not screening)
+  - No conditions limiting life expectancy or making curative
+    treatment for screen-detected cancer infeasible
+  If eligible: annual low-dose CT chest with Lung-RADS reporting
+  + structured-followup pathway for indeterminate findings.
+  If not eligible (insufficient pack-years, age <50 or >80, quit
+  >15y): document determination; do not perform LDCT (false-
+  positive harm + radiation exposure exceed benefit outside
+  eligibility window).
+
+  **(3) Multi-cancer screening cadence per USPSTF baseline.** No
+  smoking-specific cadence modification for breast / cervical /
+  prostate / CRC; however, bladder cancer surveillance threshold
+  is lowered (any unexplained hematuria → urology referral; routine
+  asymptomatic screening NOT recommended per USPSTF).
+
+  **(4) Re-engagement pathway.** Document quit-attempts and
+  pharmacotherapy trials at each visit. Most successful quitters
+  required 5-10 attempts on average; never frame prior failures
+  as terminal. Each relapse is data for the next attempt
+  (identify trigger contexts, dose-titrate pharmacotherapy,
+  consider combination strategy).
+
+  **Anchor disease:** NSCLC chosen as canonical anchor because (a)
+  lung cancer is the dominant smoking-attributable cancer at
+  ~85% of US lung cancers, (b) USPSTF LDCT is the only smoking-
+  specific cancer-screening test with documented mortality benefit,
+  (c) cessation pharmacotherapy is most studied in the lung-cancer
+  prevention context. Other smoking-attributable cancers (oral /
+  pharyngeal / laryngeal, oesophageal, bladder, kidney, pancreas,
+  cervical, AML) covered in the rationale but anchor through their
+  disease-specific screening pathways or symptom-prompted
+  evaluation.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для current tobacco users.
+  Два паралельні шляхи: structured cessation + USPSTF lung-cancer
+  screening eligibility evaluation.
+
+  **(1) Structured cessation intervention.** USPHS 2008 + NICE +
+  NCCN-cessation: combined behavioural counseling + first-line
+  pharmacotherapy:
+  - Varenicline 0.5 мг 1 раз ×3д → 0.5 мг BID ×4д → 1 мг BID ×12 тиж.
+    OR ~2.3 vs placebo.
+  - Combination NRT — long-acting (21мг / 14мг / 7мг патч) +
+    short-acting (gum / lozenge / inhaler / nasal spray) — superior
+    to monotherapy NRT.
+  - Bupropion SR 150 мг 1 раз ×3д → 150 мг BID ×8-12 тиж; OR ~1.6
+    vs placebo; useful при depression comorbid.
+
+  **(2) USPSTF LDCT lung-cancer screening eligibility evaluation.**
+  Критерії (USPSTF 2021 Grade B):
+  - Вік 50-80
+  - ≥20 pack-year smoking history
+  - Поточний курець АБО quit within 15 років
+  - Без симптомів активного раку
+  - Без conditions limiting life expectancy
+  Якщо eligible: annual low-dose CT chest з Lung-RADS reporting.
+
+  **(3) Multi-cancer screening cadence per USPSTF baseline.**
+  Bladder cancer surveillance threshold знижений (any unexplained
+  hematuria → urology referral).
+
+  **(4) Re-engagement pathway.** Document quit-attempts і
+  pharmacotherapy trials при кожному visit. Most successful
+  quitters required 5-10 attempts on average.
+
+  **Анкор-захворювання:** NSCLC обраний як canonical anchor.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1
+
+sources:
+  - source_id: SRC-IARC-100A-TOBACCO-SMOKING
+    position: supports
+  - source_id: SRC-USPSTF-LUNG-LDCT-2021
+    position: supports
+  - source_id: SRC-WCRF-AICR-CUP-2018
+    position: context
+
+do_not_do:
+  - "Не призначати LDCT без USPSTF-eligibility verification — false-positive harm + radiation exceed benefit поза eligibility window."
+  - "Не пропускати pharmacotherapy при behavioural-only counseling — combined-modality cessation 3-5× ефективніший."
+  - "Не frame prior quit-attempts as terminal failures — кожний relapse є data для next attempt."
+  - "Не презентувати e-cigarettes / vaping як first-line cessation — high-quality evidence limited; addiction substitution documented."
+  - "Не deny LDCT access на основі socioeconomic / insurance барʼєрів без active referral до Medicare / NHS / NSZU equivalent coverage pathway."
+
+do_not_do_en:
+  - "Do not order LDCT without USPSTF-eligibility verification — false-positive harm + radiation exceed benefit outside the eligibility window."
+  - "Do not skip pharmacotherapy in favor of behavioural-only counseling — combined-modality cessation is 3-5× more effective."
+  - "Do not frame prior quit-attempts as terminal failures — each relapse is data for the next attempt."
+  - "Do not present e-cigarettes / vaping as first-line cessation — high-quality evidence remains limited; addiction substitution is documented."
+  - "Do not deny LDCT access on socioeconomic / insurance grounds without an active referral to Medicare / NHS / NSZU equivalent coverage pathway."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — universal current-smoker prevention. Anchor DIS-NSCLC. Highest-yield single prevention intervention. Two-Clinical-Co-Lead signoff queued."
