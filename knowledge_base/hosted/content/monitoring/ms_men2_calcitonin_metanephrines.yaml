@@ -4,6 +4,7 @@ linked_to_regimen: null  # surveillance — no regimen
 phases:
   - name: baseline
     window: "At MEN2 confirmation (germline RET pathogenic variant) — early-childhood diagnosis preferred"
+    window_ua: "На момент підтвердження MEN2 (гермінальний патогенний варіант RET) — переважно ранній дитячий діагноз"
     tests:
       - TEST-PEDIGREE-FAMILY-HISTORY
       - TEST-CALCITONIN-MTC
@@ -19,9 +20,18 @@ phases:
       - "H (C634) → thyroidectomy by age 5 (earlier if calcitonin rising)"
       - "MOD → thyroidectomy by age 5-10, can be delayed if calcitonin remains normal and no nodules"
       - "Cascade-test first-degree relatives, including all children"
+    checkpoints_ua:
+      - "Підтвердити гермінальний патогенний / ймовірно патогенний варіант RET; документувати кодон (M918T, C634R/F/G/S/W/Y, тощо)"
+      - "Стратифікувати за категорією ризику ATA: HST (найвищий, M918T → MEN2B), H (високий, C634), MOD (помірний, інші екстрацелюлярні цистеїнові кодони + внутрішньоклітинні кіназні кодони)"
+      - "Консультувати щодо часу профілактичної тиреоїдектомії — рівень кальцитоніну + категорія ATA визначають хірургічний вік"
+      - "HST (M918T / MEN2B) → тиреоїдектомія у перший рік життя, ідеально до 1 року"
+      - "H (C634) → тиреоїдектомія до 5 років (раніше, якщо кальцитонін зростає)"
+      - "MOD → тиреоїдектомія до 5–10 років, може бути відкладена, якщо кальцитонін залишається нормальним і немає вузлів"
+      - "Каскадне тестування родичів першого ступеня, включаючи всіх дітей"
 
   - name: pre_thyroidectomy_surveillance
     window: "Annual until prophylactic thyroidectomy"
+    window_ua: "Щорічно до профілактичної тиреоїдектомії"
     tests:
       - TEST-CALCITONIN-MTC
       - TEST-METANEPHRINES-PLASMA-PARAGANGLIOMA
@@ -32,9 +42,15 @@ phases:
       - "If calcitonin elevated and / or thyroid nodule present → expedite surgery + cervical-LN dissection planning"
       - "Plasma metanephrines annually from age 8-11 (HST / H) or age 11-16 (MOD) — depending on codon-specific pheochromocytoma risk"
       - "Serum calcium / iPTH from age 8-11 (HST) or 11-16 (MOD / H) — primary hyperparathyroidism risk (lower in MEN2B than MEN2A)"
+    checkpoints_ua:
+      - "Тренд кальцитоніну — зростання значень скорочує інтервал до операції"
+      - "Якщо кальцитонін підвищений та / або наявний вузол щитоподібної залози → прискорити операцію + планування дисекції шийних лімфовузлів"
+      - "Плазмові метанефрини щорічно з 8–11 років (HST / H) або 11–16 років (MOD) — залежно від кодон-специфічного ризику феохромоцитоми"
+      - "Сироватковий кальцій / iPTH з 8–11 років (HST) або 11–16 років (MOD / H) — ризик первинного гіперпаратиреозу (нижчий при MEN2B, ніж при MEN2A)"
 
   - name: post_thyroidectomy_lifelong
     window: "Lifelong post-thyroidectomy surveillance"
+    window_ua: "Пожиттєве спостереження після тиреоїдектомії"
     tests:
       - TEST-CALCITONIN-MTC
       - TEST-METANEPHRINES-PLASMA-PARAGANGLIOMA
@@ -49,12 +65,21 @@ phases:
       - "TSH annually for levothyroxine replacement titration"
       - "Counsel: ANY hypertensive crisis, panic-attack-like episode, headache, palpitation → expedite pheochromocytoma work-up (not just routine annual screen)"
       - "Pregnancy planning — pheochromocytoma screen before conception to avoid maternal / fetal mortality"
+    checkpoints_ua:
+      - "Кальцитонін (та CEA) кожні 6–12 місяців перші 5 років після тиреоїдектомії, потім щорічно"
+      - "Персистуючий / зростаючий післяопераційний кальцитонін → УЗД шиї + структурна візуалізація + можлива повторна операція"
+      - "Вільні плазмові метанефрини АБО 24-годинні фракційовані сечові метанефрини щорічно пожиттєво — феохромоцитома може проявитися у будь-якому віці"
+      - "Сироватковий кальцій / iPTH щорічно — первинний гіперпаратиреоз може проявитися через десятиліття після діагнозу MTC (MEN2A)"
+      - "TSH щорічно для титрування дози левотироксину"
+      - "Консультування: БУДЬ-ЯКА гіпертонічна криза, епізод за типом панічної атаки, головний біль, відчуття серцебиття → прискорити обстеження на феохромоцитому (а не лише плановий щорічний скринінг)"
+      - "Планування вагітності — скринінг на феохромоцитому до зачаття для уникнення материнської / фетальної смертності"
 
 sources:
   - SRC-ATA-THYROID-2015
   - SRC-ENDOCRINE-SOCIETY-MEN-2023
 
 last_reviewed: "2026-05-18"
+machine_translated_review_pending: true
 notes: >
   STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
 
@@ -87,3 +112,6 @@ notes: >
   urinary fractionated metanephrines is more widely available
   alternative. NSZU coverage for germline RET testing exists via
   oncology genetic panels.
+
+  UA translations of window / checkpoints added 2026-05-19 under CHARTER
+  §8.3 dev-mode exemption; awaiting Clinical Co-Lead sign-off.

@@ -4,6 +4,7 @@ linked_to_regimen: null  # surveillance — no regimen
 phases:
   - name: baseline
     window: "At BRCA1 / BRCA2 pathogenic-variant confirmation in a person with ovaries"
+    window_ua: "На момент підтвердження патогенного варіанту BRCA1 / BRCA2 в особи з яєчниками"
     tests:
       - TEST-PEDIGREE-FAMILY-HISTORY
       - TEST-TRANSVAGINAL-US
@@ -16,9 +17,17 @@ phases:
       - "Recommended RRSO age: BRCA1 age 35-40 after childbearing; BRCA2 age 40-45"
       - "Surveillance is INTERIM strategy only — sensitivity poor for early-stage disease (UKFOCSS 2017 cohort)"
       - "Concurrent breast surveillance — see MS-BRCA-CARRIER-BREAST-MRI-MAMMO-ALTERNATING"
+    checkpoints_ua:
+      - "Підтвердити патогенний / ймовірно патогенний варіант BRCA1 / BRCA2"
+      - "Довічний ризик раку яєчників / маткових труб / очеревини BRCA1 ~39–46%, BRCA2 ~10–27%"
+      - "RRSO (профілактична сальпінго-оофоректомія) — єдине втручання з доведеною користю щодо зниження смертності (Domchek 2010 JAMA) — обговорювати на кожному візиті"
+      - "Рекомендований вік RRSO: BRCA1 — 35–40 років після завершення дітородження; BRCA2 — 40–45 років"
+      - "Спостереження — лише ТИМЧАСОВА стратегія; чутливість низька для ранніх стадій захворювання (когорта UKFOCSS 2017)"
+      - "Одночасне спостереження молочних залоз — див. MS-BRCA-CARRIER-BREAST-MRI-MAMMO-ALTERNATING"
 
   - name: interim_surveillance
     window: "Every 6 months from age 30-35 until RRSO (or age limit if RRSO declined)"
+    window_ua: "Кожні 6 місяців з 30–35 років до RRSO (або до вікового ліміту, якщо RRSO відхилено)"
     tests:
       - TEST-TRANSVAGINAL-US
       - TEST-CA125
@@ -28,9 +37,15 @@ phases:
       - "Any new pelvic mass / persistent ascites / unintentional weight loss / abdominal bloating → immediate work-up regardless of CA125"
       - "Counsel: surveillance has NOT been shown to reduce ovarian-cancer mortality — primary recommendation remains RRSO"
       - "OCP use can reduce ovarian-cancer risk ~50%; weigh against BRCA1 breast-cancer risk"
+    checkpoints_ua:
+      - "Інтерпретація на основі ROCA (Risk of Ovarian Cancer Algorithm) переважна над одноразовим cutoff CA125 — тренд у часі"
+      - "Будь-яка нова утворення в малому тазу / стійкий асцит / ненавмисна втрата ваги / здуття живота → негайне обстеження незалежно від CA125"
+      - "Консультування: спостереження НЕ доведено знижує смертність від раку яєчників — основна рекомендація залишається RRSO"
+      - "Прийом ОК може знизити ризик раку яєчників на ~50%; зважити проти ризику раку молочної залози при BRCA1"
 
   - name: post_rrso_surveillance
     window: "After RRSO — annual gynecologic exam"
+    window_ua: "Після RRSO — щорічне гінекологічне обстеження"
     tests:
       - TEST-CA125
     visits: ["Annual gynecologic + survivorship"]
@@ -40,11 +55,18 @@ phases:
       - "If occult cancer found at RRSO → staging laparotomy + oncology management"
       - "Hormone-replacement therapy considered short-term symptom-driven; case-by-case in BRCA carriers"
       - "Continue breast surveillance per separate schedule"
+    checkpoints_ua:
+      - "Залишковий довічний ризик первинного раку очеревини ~1–4,3% після RRSO — не нульовий"
+      - "Хірургічна патологія має підтвердити повне видалення маткових труб + яєчників; SEE-FIM-протокол для патології труб"
+      - "Якщо при RRSO виявлено окультний рак → стадіювальна лапаротомія + онкологічне ведення"
+      - "Замісна гормональна терапія розглядається короткостроково за симптомами; індивідуально для носіїв BRCA"
+      - "Продовжити спостереження молочних залоз за окремим графіком"
 
 sources:
   - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
 
 last_reviewed: "2026-05-18"
+machine_translated_review_pending: true
 notes: >
   STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
 
@@ -69,3 +91,6 @@ notes: >
   Ukrainian context: RRSO surgical pathology with SEE-FIM tube
   sectioning is performed only at major centers; ensure referral to
   high-volume gynecologic-oncology unit for risk-reducing surgery.
+
+  UA translations of window / checkpoints added 2026-05-19 under CHARTER
+  §8.3 dev-mode exemption; awaiting Clinical Co-Lead sign-off.

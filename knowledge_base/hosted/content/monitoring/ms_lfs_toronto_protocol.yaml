@@ -4,6 +4,7 @@ linked_to_regimen: null  # surveillance — no regimen
 phases:
   - name: baseline
     window: "At Li-Fraumeni-syndrome confirmation (germline TP53 pathogenic variant) — pediatric onset typical"
+    window_ua: "На момент підтвердження синдрому Лі-Фраумені (гермінальний патогенний варіант TP53) — типово педіатричний початок"
     tests:
       - TEST-PEDIGREE-FAMILY-HISTORY
       - TEST-WHOLE-BODY-MRI-LFS
@@ -15,9 +16,16 @@ phases:
       - "Cumulative cancer risk: men ~70%, women ~95% by age 70 (Mai 2016 Cancer)"
       - "AVOID diagnostic CT / radiographic surveillance where MRI substitute is feasible — TP53 carriers have markedly elevated radiation-induced second-malignancy risk"
       - "Cascade-test first-degree relatives via genetics counseling"
+    checkpoints_ua:
+      - "Підтвердити гермінальний патогенний / ймовірно патогенний варіант TP53 (не VUS)"
+      - "Документувати повний родовід — критерії Chompret + класичний сімейний анамнез LFS"
+      - "Кумулятивний ризик раку: чоловіки ~70%, жінки ~95% до 70 років (Mai 2016 Cancer)"
+      - "УНИКАТИ діагностичних CT / радіографічних методів спостереження, коли можлива заміна на МРТ — носії TP53 мають значно підвищений ризик радіаційно-індукованого другого раку"
+      - "Каскадне тестування родичів першого ступеня через генетичне консультування"
 
   - name: pediatric_intensive_surveillance
     window: "Birth to age 18 — multiple modality cadence per Toronto Protocol"
+    window_ua: "Від народження до 18 років — мультимодальний інтервал за Toronto Protocol"
     tests:
       - TEST-BRAIN-MRI-CONTRAST
       - TEST-WHOLE-BODY-MRI-LFS
@@ -32,9 +40,16 @@ phases:
       - "Annual dermatologic exam (skin / sarcoma surface signs)"
       - "Colonoscopy NOT yet required in this band; defer to age 25"
       - "Standard Toronto Protocol WB-MRI: coronal STIR / T2 + DWI from head to mid-thigh, no IV gadolinium (Gd retention concern over lifetime of repeats)"
+    checkpoints_ua:
+      - "МРТ головного мозку з контрастом щорічно з немовлячого віку / з моменту діагнозу"
+      - "Whole-body MRI щорічно з 5 років (або раніше при сімейно-специфічному патерні)"
+      - "Щорічне дерматологічне обстеження (шкіра / поверхневі ознаки саркоми)"
+      - "Колоноскопія НЕ потрібна у цій віковій групі; відкласти до 25 років"
+      - "Стандартний WB-MRI за Toronto Protocol: коронарне STIR / T2 + DWI від голови до середини стегна, без IV гадолінію (занепокоєння щодо ретенції Gd при довічних повторах)"
 
   - name: adult_annual_surveillance
     window: "Age 18+ — annual multimodal Toronto Protocol"
+    window_ua: "Від 18 років — щорічний мультимодальний Toronto Protocol"
     tests:
       - TEST-BRAIN-MRI-CONTRAST
       - TEST-WHOLE-BODY-MRI-LFS
@@ -52,12 +67,22 @@ phases:
       - "Colonoscopy starting age 25, q2-5 years (more frequent if polyps / family pattern)"
       - "Annual dermatologic exam + annual ophthalmologic exam"
       - "Symptom screen for sarcoma / leukemia / adrenocortical / brain — early imaging if any concern"
+    checkpoints_ua:
+      - "МРТ головного мозку з контрастом щорічно"
+      - "Whole-body MRI щорічно (без контрасту у стандартному протоколі)"
+      - "МРТ молочних залоз щорічно з 20 років (жінки) — мамографію УНИКАТИ до 30+ років, потім балансувати з вартістю / можливостями МРТ; деякі протоколи взагалі відкладають мамографію"
+      - "Клінічне обстеження молочних залоз кожні 6–12 місяців з 20–25 років"
+      - "Профілактична мастектомія — опція треку INTENSIFIED, обговорюється, але не є стандартом спостереження"
+      - "Колоноскопія з 25 років, кожні 2–5 років (частіше при поліпах / сімейному патерні)"
+      - "Щорічне дерматологічне обстеження + щорічне офтальмологічне обстеження"
+      - "Скринінг симптомів саркоми / лейкозу / адренокортикального / мозкового раку — рання візуалізація при будь-яких підозрах"
 
 sources:
   - SRC-VILLANI-LFS-TORONTO-2011
   - SRC-NCCN-CNS-2025
 
 last_reviewed: "2026-05-18"
+machine_translated_review_pending: true
 notes: >
   STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
 
@@ -82,3 +107,6 @@ notes: >
   international referral (Germany / Israel / Poland) for index
   baseline, then local UA acquisition + remote read. No NSZU
   reimbursement pathway as of 2026-05.
+
+  UA translations of window / checkpoints added 2026-05-19 under CHARTER
+  §8.3 dev-mode exemption; awaiting Clinical Co-Lead sign-off.

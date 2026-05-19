@@ -4,6 +4,7 @@ linked_to_regimen: null  # surveillance — no regimen
 phases:
   - name: baseline
     window: "At BRCA1 / BRCA2 pathogenic-variant confirmation; first screen no later than age 25"
+    window_ua: "На момент підтвердження патогенного варіанту BRCA1 / BRCA2; перший скринінг не пізніше 25 років"
     tests:
       - TEST-BREAST-MRI
       - TEST-PEDIGREE-FAMILY-HISTORY
@@ -15,9 +16,16 @@ phases:
       - "Discuss risk-reducing options: enhanced surveillance vs bilateral risk-reducing mastectomy (RRM); risk-reducing salpingo-oophorectomy (RRSO) handled separately"
       - "Chemoprevention discussion: tamoxifen / raloxifene / exemestane considered case-by-case (lower-quality evidence in BRCA1; better in BRCA2 due to ER+ predominance)"
       - "Avoid combined OCPs in BRCA1 carriers if family history of breast cancer favors breast over ovarian risk; weigh ovarian risk-reduction benefit"
+    checkpoints_ua:
+      - "Підтвердити патогенний / ймовірно патогенний варіант BRCA1 / BRCA2"
+      - "Базовий довічний ризик раку молочної залози BRCA1 ~65–72%, BRCA2 ~45–69% (Kuchenbaecker 2017, мета-аналіз)"
+      - "Обговорити опції зниження ризику: посилене спостереження проти двосторонньої профілактичної мастектомії (RRM); профілактична сальпінго-оофоректомія (RRSO) розглядається окремо"
+      - "Обговорення хіміопрофілактики: тамоксифен / ралоксифен / екземестан розглядаються індивідуально (нижчий рівень доказів для BRCA1; кращі дані для BRCA2 через переважання ER+)"
+      - "Уникати комбінованих ОК у носіїв BRCA1, якщо сімейний анамнез вказує на більший ризик раку молочної залози, ніж яєчників; зважити користь від зниження ризику раку яєчників"
 
   - name: alternating_imaging_age_25_29
     window: "Ages 25-29 — annual breast MRI; mammography deferred"
+    window_ua: "Вік 25–29 років — щорічна МРТ молочних залоз; мамографія відкладена"
     tests:
       - TEST-BREAST-MRI
     visits: ["High-risk breast surveillance"]
@@ -25,9 +33,14 @@ phases:
       - "Breast MRI alone in this age band (mammography lifetime-radiation concerns + denser breast tissue → low yield)"
       - "Add clinical breast exam q6-12 months"
       - "Hand-held ultrasound as adjunct if MRI access constrained — NOT substitute"
+    checkpoints_ua:
+      - "Лише МРТ молочних залоз у цій віковій групі (довічна доза опромінення від мамографії + щільніша тканина молочної залози → низька діагностична цінність)"
+      - "Додати клінічне обстеження молочних залоз кожні 6–12 місяців"
+      - "Ручне УЗД як допоміжний метод при обмеженому доступі до МРТ — НЕ заміна"
 
   - name: alternating_imaging_age_30_plus
     window: "Ages 30-75 — annual MRI + annual mammography, alternating every 6 months"
+    window_ua: "Вік 30–75 років — щорічна МРТ + щорічна мамографія, з чергуванням кожні 6 місяців"
     tests:
       - TEST-BREAST-MRI
       - TEST-MAMMOGRAPHY
@@ -38,21 +51,32 @@ phases:
       - "Alternating cadence reduces single-modality lead-time gaps; some centers use simultaneous q12 months"
       - "Clinical breast exam q6 months remains adjunct"
       - "Re-discuss risk-reducing mastectomy / chemoprevention at every annual visit"
+    checkpoints_ua:
+      - "Чутливість МРТ до раннього захворювання у щільних молочних залозах суттєво вища, ніж у мамографії"
+      - "Мамографія додатково виявляє DCIS / кальцинати, які пропускає МРТ"
+      - "Чергування зменшує проміжки часу при контролі лише одним методом; деякі центри проводять обидва методи одночасно щороку"
+      - "Клінічне обстеження молочних залоз кожні 6 місяців залишається допоміжним"
+      - "Повторно обговорювати профілактичну мастектомію / хіміопрофілактику на кожному щорічному візиті"
 
   - name: post_surgical_or_age_75_plus
     window: "After risk-reducing mastectomy OR age >75 (individualized)"
+    window_ua: "Після профілактичної мастектомії АБО вік >75 років (індивідуалізовано)"
     tests:
       - TEST-MAMMOGRAPHY
     visits: ["Survivorship + ongoing extramammary surveillance"]
     checkpoints:
       - "After bilateral RRM — residual breast tissue is minimal; routine imaging surveillance generally stopped, clinical exam continues"
       - "Age >75 — individualize based on life expectancy + functional status"
+    checkpoints_ua:
+      - "Після двосторонньої RRM — залишкова тканина молочної залози мінімальна; рутинна візуалізація зазвичай припиняється, клінічне обстеження триває"
+      - "Вік >75 — індивідуалізувати на основі очікуваної тривалості життя та функціонального статусу"
 
 sources:
   - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
   - SRC-USPSTF-BREAST-2024
 
 last_reviewed: "2026-05-18"
+machine_translated_review_pending: true
 notes: >
   STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
 
@@ -80,3 +104,6 @@ notes: >
   capable of high-spatial-resolution surveillance MRI; NSZU does
   not currently reimburse routine BRCA-carrier MRI — self-pay or
   international referral typical.
+
+  UA translations of window / checkpoints added 2026-05-19 under CHARTER
+  §8.3 dev-mode exemption; awaiting Clinical Co-Lead sign-off.

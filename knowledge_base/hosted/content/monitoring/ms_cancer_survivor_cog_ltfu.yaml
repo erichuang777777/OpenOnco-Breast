@@ -4,6 +4,7 @@ linked_to_regimen: null  # surveillance — cross-disease, no regimen
 phases:
   - name: baseline
     window: "5 years post-completion of curative-intent therapy — long-term follow-up entry"
+    window_ua: "5 років після завершення радикального лікування — вхід у довгострокове спостереження"
     tests:
       - TEST-CBC
       - TEST-CMP
@@ -19,9 +20,15 @@ phases:
       - "Stratify late-effect risk based on Children's Oncology Group Long-Term Follow-Up (COG-LTFU) Guidelines v6.0 — exposure-driven recommendations"
       - "Establish primary-care coordination + cardio-oncology / endocrine / fertility / psychosocial referrals as indicated"
       - "Patient receives Survivorship Care Plan (treatment summary + late-effect screening schedule)"
+    checkpoints_ua:
+      - "Документувати повний підсумок лікування: хіміотерапевтичні препарати (кумулятивні дози — особливо антрациклін у мг/м², алкілатори, платина, блеоміцин), поля опромінення + кумулятивна доза (Гр), хірургічні резекції, історія трансплантації, гормональна терапія"
+      - "Стратифікувати ризик пізніх ефектів за керівництвом Children's Oncology Group Long-Term Follow-Up (COG-LTFU) v6.0 — рекомендації, керовані експозицією"
+      - "Налагодити координацію з первинною медициною + кардіоонкологічні / ендокринологічні / фертильні / психосоціальні направлення за показаннями"
+      - "Пацієнт отримує Survivorship Care Plan (підсумок лікування + графік скринінгу пізніх ефектів)"
 
   - name: cardiac_surveillance
     window: "Cardiotoxic exposures (anthracycline ≥250 mg/m² doxorubicin-equivalent, chest XRT ≥30 Gy, anti-HER2 therapy) — echo or cardiac MRI q2-5y starting 2y post-therapy"
+    window_ua: "Кардіотоксичні експозиції (антрациклін ≥250 мг/м² у доксорубіцин-еквіваленті, XRT грудної клітки ≥30 Гр, anti-HER2-терапія) — ехокардіографія або МРТ серця кожні 2–5 років, починаючи з 2 років після завершення терапії"
     tests:
       - TEST-ECHO
       - TEST-ECG
@@ -32,9 +39,16 @@ phases:
       - "Anthracycline + chest XRT combination — highest risk, tighter cadence q2y"
       - "Pregnancy in female cardiotoxicity-exposed survivors → pre-conception echo + cardio-oncology consultation"
       - "Symptomatic cardiomyopathy at any time → expedited cardiology evaluation"
+    checkpoints_ua:
+      - "Спостереження LVEF — зниження LVEF викликає старт ACE-інгібітора / бета-блокатора за рекомендацією кардіоонкології"
+      - "Нижчі дози антрацикліну (100–249 мг/м²) → ехокардіографія кожні 5 років"
+      - "Комбінація антрацикліну + XRT грудної клітки — найвищий ризик, тісніший інтервал кожні 2 роки"
+      - "Вагітність у жінок-survivors з кардіотоксичною експозицією → ехокардіографія до зачаття + консультація кардіоонколога"
+      - "Симптоматична кардіоміопатія у будь-який час → прискорена кардіологічна оцінка"
 
   - name: endocrine_surveillance
     window: "Endocrine-toxicity exposures — TSH / sex-hormone / growth / metabolic screens at exposure-specific cadence"
+    window_ua: "Експозиції з ендокринною токсичністю — скринінги TSH / статевих гормонів / гормону росту / метаболічні з інтервалом залежно від експозиції"
     tests:
       - TEST-TSH
       - TEST-CMP
@@ -46,9 +60,16 @@ phases:
       - "Alkylator / TBI exposure → annual gonadotropin / sex-hormone screen for hypogonadism; fertility counseling pre-pregnancy"
       - "Pelvic XRT in female survivors → ovarian reserve assessment + early-menopause counseling"
       - "Metabolic syndrome screen — fasting glucose / lipids annually (TBI + steroids increase risk)"
+    checkpoints_ua:
+      - "Краніальне / краніоспінальне опромінення / TBI ≥18 Гр → щорічний TSH, скринінг гормону росту, скринінг гонадотропінів"
+      - "XRT шиї → щорічний TSH + УЗД щитоподібної залози (ризик папілярного раку щитоподібної залози)"
+      - "Експозиція алкілаторами / TBI → щорічний скринінг гонадотропінів / статевих гормонів на гіпогонадизм; консультування з фертильності до вагітності"
+      - "XRT тазу в жінок-survivors → оцінка оваріального резерву + консультування щодо ранньої менопаузи"
+      - "Скринінг метаболічного синдрому — глюкоза натще / ліпіди щорічно (TBI + стероїди підвищують ризик)"
 
   - name: second_malignancy_surveillance
     window: "Disease-site and radiation-field appropriate — annual or per COG schedule"
+    window_ua: "Залежно від локалізації хвороби та полів опромінення — щорічно або за графіком COG"
     tests:
       - TEST-MAMMOGRAPHY
       - TEST-BREAST-MRI
@@ -63,9 +84,17 @@ phases:
       - "Pelvic XRT — annual gynecologic exam, urinary surveillance"
       - "Mantle / thoracic XRT — PFT with DLCO baseline at 5y, repeat q5y or symptom-driven (pulmonary fibrosis)"
       - "Alkylator + topoisomerase-II inhibitor exposure — annual CBC for therapy-related MDS / AML signal (low yield but high-stakes)"
+    checkpoints_ua:
+      - "XRT грудної клітки у жінок (survivors лімфоми Ходжкіна тощо) — щорічна МРТ молочних залоз + щорічна мамографія починаючи з 8 років після XRT АБО з 25 років (що пізніше)"
+      - "Абдомінальне / тазове XRT — колоноскопія кожні 5 років починаючи з 10 років після XRT АБО з 35 років (що пізніше)"
+      - "Тотальне або широкопольне XRT — щорічне дерматологічне обстеження (ризик раку шкіри, особливо BCC / плоскоклітинний)"
+      - "Тазове XRT — щорічне гінекологічне обстеження, моніторинг сечовидільної системи"
+      - "Mantle / торакальне XRT — PFT з DLCO базово через 5 років, повторювати кожні 5 років або за симптомами (легеневий фіброз)"
+      - "Експозиція алкілаторами + інгібітором топоізомерази II — щорічний CBC для виявлення therapy-related MDS / AML (низька діагностична цінність, але високі ставки)"
 
   - name: neurocognitive_audiologic_renal_surveillance
     window: "Exposure-specific — annual or per COG"
+    window_ua: "Залежно від експозиції — щорічно або за графіком COG"
     tests:
       - TEST-AUDIOMETRY
       - TEST-RENAL-FUNCTION-EGFR
@@ -76,9 +105,15 @@ phases:
       - "Cisplatin / carboplatin → annual audiometry; high-frequency-hearing-loss documentation + hearing-aid referral as needed"
       - "Cisplatin / ifosfamide → annual renal function (creatinine + eGFR + magnesium + phosphate); long-term tubular dysfunction risk"
       - "Bleomycin → annual symptom screen + PFT baseline; avoid high-FiO2 anesthesia exposures lifelong"
+    checkpoints_ua:
+      - "Краніальне XRT / метотрексат IT / високодозовий IV → нейропсихологічне тестування у переходах між шкільними рівнями, щорічний скринінг академічної / робочої функції"
+      - "Цисплатин / карбоплатин → щорічна аудіометрія; документування високочастотної втрати слуху + направлення на слуховий апарат за потреби"
+      - "Цисплатин / іфосфамід → щорічна функція нирок (креатинін + eGFR + магній + фосфат); довгостроковий ризик тубулярної дисфункції"
+      - "Блеоміцин → щорічний скринінг симптомів + базовий PFT; уникати анестезії з високим FiO2 пожиттєво"
 
   - name: psychosocial_lifestyle_fertility
     window: "Annual or visit-driven — primary-care coordinated"
+    window_ua: "Щорічно або при візиті — координується через первинну медицину"
     tests:
       - TEST-PEDIGREE-FAMILY-HISTORY
     visits: ["Survivorship + primary-care comanagement"]
@@ -88,11 +123,18 @@ phases:
       - "Lifestyle counseling — tobacco / alcohol / weight / exercise — survivors have elevated cardiovascular + second-malignancy risks; modifiable-risk reduction is high-value"
       - "Family-cancer-history reassessment q5y — late-onset hereditary syndromes may emerge as relatives age; cascade testing offered if pedigree triggers it"
       - "Vaccination updates — HPV / pneumococcal / annual flu / COVID per evolving guideline"
+    checkpoints_ua:
+      - "Щорічний психосоціальний скринінг (депресія / тривога / PTSD поширені у survivors)"
+      - "Консультування з фертильності — методи збереження фертильності до лікування є оптимальними, проте є опції після лікування (кріоконсервація ооцитів, банкінг сперми, кріоконсервація тканини яєчників)"
+      - "Консультування зі способу життя — тютюн / алкоголь / вага / фізична активність — survivors мають підвищений серцево-судинний ризик та ризик другого раку; модифікація факторів ризику дає високу користь"
+      - "Переоцінка сімейного онкологічного анамнезу кожні 5 років — спадкові синдроми з пізнім початком можуть з'явитися з віком родичів; каскадне тестування пропонується при тригерах у родоводі"
+      - "Оновлення вакцинації — HPV / пневмокок / щорічна вакцина проти грипу / COVID за актуальними рекомендаціями"
 
 sources:
   - SRC-COG
 
 last_reviewed: "2026-05-18"
+machine_translated_review_pending: true
 notes: >
   STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
 
@@ -132,3 +174,6 @@ notes: >
   dedicated NSZU billing pathway for survivorship-care-plan visits;
   authors of these plans typically deliver them as part of routine
   oncology follow-up.
+
+  UA translations of window / checkpoints added 2026-05-19 under CHARTER
+  §8.3 dev-mode exemption; awaiting Clinical Co-Lead sign-off.

@@ -4,6 +4,7 @@ linked_to_regimen: null  # surveillance — no regimen
 phases:
   - name: baseline
     window: "At identification of HCC-risk substrate — cirrhosis (any etiology), chronic HBV without cirrhosis in high-risk subgroups, post-SVR HCV with advanced fibrosis"
+    window_ua: "При виявленні субстрату ризику HCC — цироз будь-якої етіології, хронічний HBV без цирозу у групах високого ризику, post-SVR HCV з вираженим фіброзом"
     tests:
       - TEST-LIVER-US-AASLD
       - TEST-AFP
@@ -17,9 +18,16 @@ phases:
       - "Child-Pugh A or B is screening-eligible; Child-Pugh C only if transplant candidate (no benefit from screening if not treatment-eligible)"
       - "AASLD does NOT recommend AFP-alone screening; US + AFP combined preferred"
       - "Patient education: surveillance reduces HCC mortality (Singal 2020 meta-analysis) — early-stage HCC enables curative therapy (resection / ablation / transplant)"
+    checkpoints_ua:
+      - "Підтвердити цироз (будь-якої етіології) АБО хронічний HBV у HCC-групі ризику (азійські чоловіки >40 років, азійські жінки >50 років, африканці / афроамериканці >20 років, сімейний анамнез HCC, ко-інфекція HDV)"
+      - "Post-SVR HCV: продовжувати спостереження пожиттєво при пре-лікувальному фіброзі F3–F4"
+      - "Child-Pugh A або B — придатні для скринінгу; Child-Pugh C — лише якщо кандидат на трансплантацію (немає користі від скринінгу, якщо не придатні до лікування)"
+      - "AASLD НЕ рекомендує скринінг лише за AFP; УЗД + AFP у комбінації переважні"
+      - "Освіта пацієнта: спостереження знижує смертність від HCC (Singal 2020, мета-аналіз) — рання стадія HCC дозволяє радикальну терапію (резекція / абляція / трансплантація)"
 
   - name: routine_surveillance
     window: "Every 6 months — lifelong while screening-eligible"
+    window_ua: "Кожні 6 місяців — пожиттєво, поки пацієнт придатний до скринінгу"
     tests:
       - TEST-LIVER-US-AASLD
       - TEST-AFP
@@ -31,9 +39,17 @@ phases:
       - "Liver US lesion <1cm in cirrhotic liver → short-interval (q3mo) repeat US until size resolved / characterized"
       - "Inadequate US (obesity / steatosis / body habitus / surgical scars) → consider MRI for surveillance, especially in NASH cirrhosis"
       - "LI-RADS classification applied to all suspicious lesions"
+    checkpoints_ua:
+      - "УЗД печінки за протоколом AASLD — кваліфікований сонографіст / радіолог, знайомий з візуалізацією цирозу"
+      - "Поріг AFP: будь-яке нове зростання (особливо >20 нг/мл з висхідним трендом) запускає подальшу візуалізацію"
+      - "Вогнище на УЗД ≥1 см у цирозній печінці → багатофазне CT або МРТ"
+      - "Вогнище на УЗД <1 см у цирозній печінці → короткоінтервальне повторне УЗД (кожні 3 місяці) до зникнення / характеризації"
+      - "Неадекватне УЗД (ожиріння / стеатоз / тілобудова / післяопераційні рубці) → розглянути МРТ для спостереження, особливо при NASH-цирозі"
+      - "Класифікація LI-RADS застосовується до всіх підозрілих вогнищ"
 
   - name: recall_imaging
     window: "Within 30 days of any positive surveillance signal"
+    window_ua: "Протягом 30 днів після будь-якого позитивного сигналу при спостереженні"
     tests:
       - TEST-CT-CAP
       - TEST-AFP
@@ -43,9 +59,15 @@ phases:
       - "LI-RADS 4 / 3 → biopsy vs short-interval repeat per multidisciplinary HCC tumor board"
       - "Refer to HCC tumor board for staging (BCLC) + curative-intent options (resection / ablation / transplant)"
       - "If diagnosis confirmed → exit surveillance pathway, enter HCC treatment pathway"
+    checkpoints_ua:
+      - "Вогнище LI-RADS 5 → діагноз HCC без біопсії"
+      - "LI-RADS 4 / 3 → біопсія або короткоінтервальне повторення за рішенням мультидисциплінарного HCC tumor board"
+      - "Направлення на HCC tumor board для стадіювання (BCLC) + опції з радикальним наміром (резекція / абляція / трансплантація)"
+      - "При підтвердженні діагнозу → вихід зі шляху спостереження, вхід у шлях лікування HCC"
 
   - name: post_curative_surveillance
     window: "Every 3-6 months after curative-intent treatment (resection / ablation / transplant)"
+    window_ua: "Кожні 3–6 місяців після радикального лікування (резекція / абляція / трансплантація)"
     tests:
       - TEST-CT-CAP
       - TEST-AFP
@@ -55,6 +77,11 @@ phases:
       - "Then q6 months years 3-5"
       - "AFP at every visit"
       - "Hepatology comanagement for underlying liver disease — CTP score / decompensation events"
+    checkpoints_ua:
+      - "Багатофазне CT або МРТ кожні 3–6 місяців протягом перших 2 років (період найвищого ризику рецидиву)"
+      - "Потім кожні 6 місяців у роки 3–5"
+      - "AFP на кожному візиті"
+      - "Спільне ведення з гепатологом основного захворювання печінки — оцінка за CTP / події декомпенсації"
 
 sources:
   - SRC-AASLD-HCC-2023
@@ -62,6 +89,7 @@ sources:
   - SRC-AASLD-HBV-2024
 
 last_reviewed: "2026-05-18"
+machine_translated_review_pending: true
 notes: >
   STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
 
@@ -86,3 +114,6 @@ notes: >
   AFP is on the state-funded oncology lab panel. Patient adherence
   to q6-month cadence is the main quality gap — formal enrollment
   + nurse-navigator reminder programs improve compliance.
+
+  UA translations of window / checkpoints added 2026-05-19 under CHARTER
+  §8.3 dev-mode exemption; awaiting Clinical Co-Lead sign-off.

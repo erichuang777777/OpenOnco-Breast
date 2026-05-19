@@ -4,6 +4,7 @@ linked_to_regimen: null  # surveillance — no regimen
 phases:
   - name: baseline
     window: "At Lynch-syndrome confirmation (germline MLH1 / MSH2 / MSH6 / PMS2 / EPCAM pathogenic variant)"
+    window_ua: "На момент підтвердження синдрому Лінча (гермінальний патогенний варіант MLH1 / MSH2 / MSH6 / PMS2 / EPCAM)"
     tests:
       - TEST-COLONOSCOPY-SURVEILLANCE
       - TEST-PEDIGREE-FAMILY-HISTORY
@@ -15,9 +16,17 @@ phases:
       - "Discuss aspirin chemoprevention (CAPP2 evidence — 600 mg/day from age 25 reduced CRC ~50% at 10y)"
       - "Coordinate concurrent endometrial / ovarian surveillance (see MS-LYNCH-CARRIER-ENDOMETRIAL-Q1Y)"
       - "Coordinate upper-GI + urinary surveillance per gene + family history (MLH1 / MSH2 → urothelial; gastric in selected families)"
+    checkpoints_ua:
+      - "Підтвердити патогенний / ймовірно патогенний гермінальний варіант на Lynch-панелі (не VUS)"
+      - "Документувати ген-специфічні ризики: MLH1/MSH2 — найвищий ризик CRC + раку ендометрія; PMS2 / MSH6 — нижча пенетрантність"
+      - "Каскадне тестування родичів першого ступеня через генетичне консультування"
+      - "Обговорити хіміопрофілактику аспірином (дані CAPP2 — 600 мг/добу з 25 років знижували ризик CRC на ~50% за 10 років)"
+      - "Координація одночасного спостереження ендометрія / яєчників (див. MS-LYNCH-CARRIER-ENDOMETRIAL-Q1Y)"
+      - "Координація моніторингу верхнього GI + сечовидільної системи за геном + сімейним анамнезом (MLH1 / MSH2 → уротеліальний рак; рак шлунка в окремих сім'ях)"
 
   - name: crc_surveillance_active
     window: "Every 1-2 years from age 20-25 (or 2-5 years younger than earliest CRC in the family — whichever is earlier)"
+    window_ua: "Кожні 1–2 роки з 20–25 років (або на 2–5 років молодше за найраніший CRC у сім'ї — що раніше)"
     tests:
       - TEST-COLONOSCOPY-SURVEILLANCE
     visits: ["Colonoscopy with high-definition white-light + dye-spray / chromoendoscopy where available"]
@@ -27,21 +36,32 @@ phases:
       - "All polyps removed and submitted for histology + MMR / MSI testing if invasive"
       - "Right-side adenomas and flat lesions are characteristic — meticulous mucosal inspection required"
       - "If subtotal / total colectomy performed, switch to annual remnant-rectum / pouch endoscopy"
+    checkpoints_ua:
+      - "Щорічний інтервал для носіїв MLH1 / MSH2; кожні 1–2 роки допустимо для носіїв MSH6 / PMS2"
+      - "Час виходу скопу ≥6 хв; cap-assisted техніка покращує виявлення аденом при Lynch"
+      - "Всі поліпи видалити та направити на гістологію + MMR / MSI-тестування при інвазивній знахідці"
+      - "Правосторонні аденоми та плоскі вогнища є характерними — потрібен ретельний огляд слизової"
+      - "Якщо виконано субтотальну / тотальну колектомію — перейти на щорічну ендоскопію залишкової прямої кишки / резервуара"
 
   - name: post_resection_surveillance
     window: "Lifelong after Lynch-associated CRC resection — annual or per oncologist directive"
+    window_ua: "Пожиттєво після резекції Lynch-асоційованого CRC — щорічно або за вказівкою онколога"
     tests:
       - TEST-COLONOSCOPY-SURVEILLANCE
     visits: ["Survivorship + remnant-bowel surveillance"]
     checkpoints:
       - "Metachronous CRC risk remains elevated even after segmental colectomy"
       - "Continue extracolonic surveillance per gene-specific risk panel"
+    checkpoints_ua:
+      - "Ризик метахронного CRC залишається підвищеним навіть після сегментарної колектомії"
+      - "Продовжити позакишкове спостереження за ген-специфічним панелем ризику"
 
 sources:
   - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
   - SRC-ASCO-ACMG-LYNCH-2014
 
 last_reviewed: "2026-05-18"
+machine_translated_review_pending: true
 notes: >
   STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
 
@@ -61,3 +81,6 @@ notes: >
   see separate schedules. EGD + capsule enteroscopy and urothelial
   surveillance documented in MS-LYNCH-CARRIER-ENDOMETRIAL-Q1Y
   notes.
+
+  UA translations of window / checkpoints added 2026-05-19 under CHARTER
+  §8.3 dev-mode exemption; awaiting Clinical Co-Lead sign-off.
