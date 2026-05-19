@@ -1,0 +1,60 @@
+id: BMA-AXIN2-GERMLINE-CRC-OLIGODONTIA
+biomarker_id: BIO-AXIN2-GERMLINE
+variant_qualifier: AXIN2 germline pathogenic (oligodontia–colorectal cancer syndrome)
+disease_id: DIS-CRC
+escat_tier: IIA
+evidence_summary: >
+  AXIN2 germline pathogenic variants cause a Lynch-like attenuated polyposis +
+  oligodontia syndrome (Lammi et al. 2004) — characterized by congenital
+  absence of multiple permanent teeth (oligodontia, often >6 teeth), early-
+  onset adenomas, attenuated polyposis (typically <100 adenomas), and
+  elevated colorectal cancer risk. AXIN2 is a WNT-pathway tumor suppressor;
+  loss stabilizes β-catenin. Confirmed-carrier surveillance protocol follows
+  attenuated FAP / Lynch-like template: colonoscopy q1-2y starting age 25
+  (or 10y before earliest family CRC), with polypectomy of all detected
+  adenomas; if adenoma burden grows beyond endoscopic management, surgical
+  consultation. Cascade testing to first-degree relatives. Oligodontia is
+  a useful clinical flag — dental record review may identify undiagnosed
+  carriers. ESCAT IIA.
+evidence_summary_ua: >
+  Герміногенні патогенні варіанти AXIN2 — Lynch-подібний синдром атенюйованого
+  поліпозу + олігодонтії (вроджена відсутність >6 постійних зубів). Ранні
+  аденоми, <100 поліпів, підвищений ризик КРР. AXIN2 — супресор у WNT-каскаді;
+  втрата стабілізує β-катенін. Протокол нагляду: колоноскопія q1-2 роки з 25
+  років (або 10 років до наймолодшого випадку КРР у сім'ї) з поліпектомією
+  всіх аденом; хірургічна консультація при невпинному рості числа поліпів.
+  Каскадне тестування першого ступеня. Олігодонтія — клінічний прапор для
+  виявлення непов'язаних носіїв (огляд стоматологічного запису). ESCAT IIA.
+regulatory_approval:
+  fda: []
+  ema: []
+  ukraine: []
+recommended_combinations:
+  - "colonoscopy q1-2y starting age 25 (or 10y before earliest family CRC), polypectomy of all adenomas"
+  - "consider EGD q3-5y from age 40 (mixed evidence — duodenal adenomas reported but rarer than FAP)"
+  - "dental record review at intake — oligodontia + family CRC = AXIN2 workup"
+  - "cascade testing to first-degree relatives"
+contraindicated_monotherapy: []
+primary_sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+last_verified: "2026-05-18"
+evidence_sources: []
+actionability_review_required: true
+linked_indications:
+  - IND-LYNCH-CARRIER-SURVEILLANCE
+notes: >
+  STUB — Wave A+B germline expansion. Linked Indication: IND-LYNCH-CARRIER-
+  SURVEILLANCE used as closest-fit surveillance template (Lynch-like
+  cadence, no AXIN2-specific Indication exists yet). Two-Clinical-Co-Lead
+  signoff queued. AXIN2 syndrome is rare (~25 families reported) — penetrance
+  + cancer spectrum estimates remain provisional; treat surveillance as
+  attenuated-FAP / Lynch-overlap pragmatic protocol pending more data.
+notes_ua: >
+  STUB — Wave A+B розширення. Прив'язка до IND-LYNCH-CARRIER-SURVEILLANCE
+  як найближчого шаблону (AXIN2-специфічної Indication немає). Синдром
+  AXIN2 рідкісний (~25 родин у літературі); оцінки пенетрантності
+  попередні; нагляд як прагматичний протокол attenuated-FAP / Lynch overlap.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_bma_batch3
+draft_revision: 1
+last_reviewed: "2026-05-18"

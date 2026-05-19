@@ -1,0 +1,59 @@
+id: BMA-TSC2-GERMLINE-TUBEROUS-SCLEROSIS
+biomarker_id: BIO-TSC2-GERMLINE
+variant_qualifier: TSC2 germline pathogenic (tuberin loss-of-function)
+disease_id: DIS-RCC
+escat_tier: IIA
+evidence_summary: >
+  TSC2 germline pathogenic variants drive Tuberous Sclerosis Complex (TSC) —
+  the more clinically severe of the two TSC genotypes (TSC2 carriers have
+  earlier onset and broader phenotype than TSC1). Same multi-organ tumor
+  spectrum as TSC1: SEGA, renal AML (typically more numerous and earlier in
+  TSC2), LAM, cardiac rhabdomyoma, cortical tubers. Confirmed-carrier
+  surveillance protocol identical to TSC1 (per TSC Consensus Conference 2012
+  + 2021 update / NCCN CNS): brain MRI q1-3y through age 25 for SEGA, renal
+  MRI/US q1-3y lifelong, PFT + HRCT chest q5-10y in adult females, baseline
+  echocardiogram, annual dermatology + ophthalmology exam. Contiguous-gene
+  TSC2/PKD1 deletions present with severe polycystic kidney disease in
+  addition to AML and require nephrology co-management. mTOR inhibitors
+  (everolimus, sirolimus) active across SEGA, renal AML ≥3 cm, and LAM.
+  ESCAT IIA.
+evidence_summary_ua: >
+  Герміногенні патогенні варіанти TSC2 — клінічно тяжчий генотип TSC
+  (раніший вік маніфестації і ширший фенотип, ніж TSC1). Спектр пухлин той
+  самий: SEGA, ниркові AML (часто чисельніші у TSC2), LAM, кардіальна
+  рабдоміома. Протокол спостереження ідентичний TSC1. Контигуозна делеція
+  TSC2/PKD1 проявляється важкою полікистозною хворобою нирок додатково.
+  mTOR-інгібітори (еверолімус) — активні. ESCAT IIA.
+regulatory_approval:
+  fda:
+    - "everolimus — SEGA, renal AML in TSC (FDA approved)"
+  ema:
+    - "everolimus — SEGA, renal AML in TSC (EMA approved)"
+  ukraine: []
+recommended_combinations:
+  - "everolimus 10 mg PO daily — TSC-associated SEGA or renal AML ≥3 cm"
+  - "sirolimus — LAM with FEV1 decline (off-label)"
+  - "multidisciplinary surveillance per TSC Consensus Conference"
+  - "nephrology co-management for contiguous-gene TSC2/PKD1 deletion carriers"
+contraindicated_monotherapy: []
+primary_sources:
+  - SRC-NCCN-CNS-2025
+last_verified: "2026-05-18"
+evidence_sources: []
+actionability_review_required: true
+notes: >
+  STUB — Wave A+B germline expansion. Linked Indication: none (no
+  TSC-specific Indication entity exists yet). Two-Clinical-Co-Lead signoff
+  queued. TSC2 is functionally interchangeable with TSC1 for treatment
+  selection (both upstream mTOR pathway), but TSC2 carriers warrant earlier
+  surveillance entry (renal MRI from infancy) and screening for PKD1
+  contiguous-gene deletion.
+notes_ua: >
+  STUB — Wave A+B розширення герміногенних маркерів. Пов'язана Indication
+  відсутня. TSC2 функціонально аналогічний TSC1 для вибору терапії, але
+  носії TSC2 потребують ранішого старту нагляду + скринінгу на контигуозну
+  делецію PKD1.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_bma_batch3
+draft_revision: 1
+last_reviewed: "2026-05-18"

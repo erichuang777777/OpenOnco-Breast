@@ -1,0 +1,66 @@
+id: BMA-RB1-GERMLINE-RETINOBLASTOMA
+biomarker_id: BIO-RB1-GERMLINE
+variant_qualifier: RB1 germline pathogenic (heritable retinoblastoma)
+disease_id: DIS-RETINOBLASTOMA
+escat_tier: IIA
+evidence_summary: >
+  RB1 germline pathogenic variants cause heritable retinoblastoma (~40% of
+  retinoblastoma cases) — bilateral / multifocal disease in 80% of carriers,
+  median age at diagnosis ~12 months. Carriers face lifetime ~50% risk of
+  secondary primary cancers (osteosarcoma, soft-tissue sarcoma, melanoma,
+  lung, bladder); cumulative risk markedly elevated after external-beam
+  radiation therapy (EBRT) — modern protocols avoid EBRT to mitigate.
+  Confirmed-carrier surveillance protocol (per COG / Children's Oncology
+  Group + International Retinoblastoma Consortium): pediatric ophthalmology
+  with EUA (examination under anesthesia) starting in newborn period —
+  every 2-4 weeks until age 1, then progressive lengthening to monthly →
+  q3mo → q6mo through age 7, annual through adolescence. Cascade testing
+  to all first-degree relatives mandatory. Lifelong secondary-cancer
+  surveillance: annual skin exam, attentiveness to bone pain (osteosarcoma
+  in adolescence/young adulthood), avoidance of unnecessary diagnostic
+  ionizing radiation. ESCAT IIA.
+evidence_summary_ua: >
+  Герміногенні патогенні варіанти RB1 спричиняють спадкову ретинобластому
+  (~40% випадків), двостороння у 80% носіїв, медіана діагнозу — 12 міс.
+  Довічний ризик вторинних пухлин ~50% (остеосаркома, м'якотканинні саркоми,
+  меланома, легені, сечовий міхур); підвищується після зовнішнього
+  опромінення (EBRT — сучасні протоколи його уникають). Протокол нагляду:
+  педіатрична офтальмологія з EUA з періоду новонародженості, кожні 2-4 тиж
+  до 1 року, далі поступове подовження інтервалу до 1 раз на рік до
+  підліткового віку. Каскадне тестування першого ступеня. Довічний нагляд
+  вторинних пухлин: щорічний дерматологічний огляд, уникнення непотрібного
+  іонізуючого опромінення. ESCAT IIA.
+regulatory_approval:
+  fda: []
+  ema: []
+  ukraine: []
+recommended_combinations:
+  - "pediatric ocular oncology referral immediately on positive RB1 result or family history"
+  - "EUA pediatric ophthalmology q2-4 weeks newborn-12 mo, lengthening to q3mo / q6mo / annual"
+  - "intra-arterial chemotherapy (melphalan ± topotecan ± carboplatin) — focal vision-sparing therapy where appropriate"
+  - "systemic chemotherapy (vincristine + carboplatin + etoposide) for advanced disease per COG"
+  - "avoid external-beam radiation when feasible (secondary-cancer risk in RB1 carriers)"
+  - "lifelong secondary-cancer surveillance (annual dermatology, low-threshold imaging for bone pain in adolescence)"
+contraindicated_monotherapy:
+  - "external-beam radiation therapy — relative contraindication in RB1 germline carriers due to secondary-cancer induction; prefer brachytherapy / intra-arterial chemotherapy / enucleation"
+primary_sources:
+  - SRC-NCCN-PEDIATRIC-SARCOMA
+last_verified: "2026-05-18"
+evidence_sources: []
+actionability_review_required: true
+notes: >
+  STUB — Wave A+B germline expansion. Linked Indication: none (no
+  retinoblastoma-specific surveillance Indication exists yet). Two-Clinical-
+  Co-Lead signoff queued. Pediatric ocular oncology is highly subspecialized;
+  ophthalmology-genetics-oncology MDT is required at a designated center.
+  Cascade testing of siblings before birth (cord-blood / amniotic-fluid)
+  enables immediate post-natal screening protocol activation.
+notes_ua: >
+  STUB — Wave A+B розширення. Indication: відсутня. Педіатрична офтальмологія
+  + генетика + онкологія — MDT у спеціалізованому центрі. Каскадне тестування
+  братів/сестер до народження (пуповинна кров / амніон) дозволяє розпочати
+  скринінг одразу після народження.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_bma_batch3
+draft_revision: 1
+last_reviewed: "2026-05-18"

@@ -1,0 +1,70 @@
+id: BMA-POLE-GERMLINE-POLYMERASE-PROOFREADING
+biomarker_id: BIO-POLE-GERMLINE
+variant_qualifier: POLE germline exonuclease-domain pathogenic (PPAP — polymerase proofreading–associated polyposis)
+disease_id: DIS-CRC
+escat_tier: IIA
+evidence_summary: >
+  POLE germline pathogenic variants in the exonuclease (proofreading) domain
+  cause polymerase proofreading–associated polyposis (PPAP) — characterized
+  by attenuated/oligo-polyposis (typically <100 adenomas), early-onset
+  colorectal cancer, elevated endometrial cancer risk in women, and
+  characteristic ultramutator tumor phenotype (TMB >100 mut/Mb) with
+  potential immunotherapy responsiveness. Confirmed-carrier surveillance
+  protocol (Lynch-like; per NCCN Genetic/Familial CRC 2025): colonoscopy
+  q1-2y starting age 20-25, EGD q3y from age 30, endometrial sampling +
+  TVUS q1-2y from age 30-35 in women, urinalysis annual from 30 (overlap
+  with Lynch organ spectrum). The ultramutator phenotype in POLE-mutant
+  tumors predicts immunotherapy benefit (high TMB) — pembrolizumab is FDA-
+  approved for TMB-high (≥10 mut/Mb) advanced solid tumors regardless of
+  tissue; POLE-mutant CRC and endometrial benefit appears substantial in
+  small series. ESCAT IIA (predisposition + tumor-phenotype actionability).
+evidence_summary_ua: >
+  Герміногенні патогенні варіанти POLE в екзонуклеазному (proofreading) домені
+  спричиняють PPAP: атенюйований поліпоз (<100 поліпів), ранній КРР, підвищений
+  ризик ендометріального раку у жінок, ультрамутаторний фенотип пухлин
+  (TMB >100 mut/Mb) з потенційною чутливістю до імунотерапії. Протокол
+  нагляду (Lynch-подібний): колоноскопія q1-2 роки з 20-25, ЕГДС q3 роки з 30,
+  ендометріальна біопсія + TVUS q1-2 роки з 30-35 у жінок, аналіз сечі q1 рік
+  з 30. Ультрамутаторний фенотип POLE-mut пухлин прогнозує користь
+  імунотерапії (TMB-high); пембролізумаб затверджений для TMB-high солідних
+  пухлин. ESCAT IIA.
+regulatory_approval:
+  fda:
+    - "pembrolizumab — TMB-H (≥10 mut/Mb) advanced solid tumors (FDA pan-tumor approval, KEYNOTE-158)"
+  ema: []
+  ukraine: []
+recommended_combinations:
+  - "colonoscopy q1-2y starting age 20-25 with polypectomy"
+  - "EGD q3y from age 30"
+  - "endometrial sampling + TVUS q1-2y from age 30-35 (women)"
+  - "annual urinalysis from age 30"
+  - "for POLE-mutant advanced CRC / endometrial: pembrolizumab 200 mg q3w — high response rate in ultramutator setting (NCCN Category 1 for TMB-H or MSI-H)"
+  - "cascade testing to first-degree relatives; specific to exonuclease-domain variants (Pro286Arg, Val411Leu most common)"
+contraindicated_monotherapy: []
+primary_sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+last_verified: "2026-05-18"
+evidence_sources: []
+actionability_review_required: true
+linked_indications:
+  - IND-LYNCH-CARRIER-SURVEILLANCE
+notes: >
+  STUB — Wave A+B germline expansion. Linked Indication: IND-LYNCH-CARRIER-
+  SURVEILLANCE used as closest-fit (POLE-specific Indication does not yet
+  exist; PPAP overlaps Lynch surveillance for CRC + endometrial). Note that
+  IND-ENDOMETRIAL-STAGE-I-POLE-OBSERVATION exists for the somatic-POLE
+  endometrial-treatment context — distinct from germline-carrier
+  surveillance handled here. Two-Clinical-Co-Lead signoff queued. Variant
+  classification matters: only exonuclease-domain variants (Pro286Arg,
+  Val411Leu, Ser297Phe) drive PPAP — non-exonuclease variants are usually
+  uncertain significance.
+notes_ua: >
+  STUB — Wave A+B розширення. Прив'язка до IND-LYNCH-CARRIER-SURVEILLANCE.
+  Існує IND-ENDOMETRIAL-STAGE-I-POLE-OBSERVATION для соматичного контексту
+  лікування — відрізняти від нагляду носія тут. Класифікація варіанта
+  критична: тільки екзонуклеазний домен (Pro286Arg, Val411Leu, Ser297Phe)
+  спричиняє PPAP.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_bma_batch3
+draft_revision: 1
+last_reviewed: "2026-05-18"

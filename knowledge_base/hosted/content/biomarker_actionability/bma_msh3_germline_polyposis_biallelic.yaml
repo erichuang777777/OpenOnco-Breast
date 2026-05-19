@@ -1,0 +1,66 @@
+id: BMA-MSH3-GERMLINE-POLYPOSIS-BIALLELIC
+biomarker_id: BIO-MSH3-GERMLINE
+variant_qualifier: MSH3 germline biallelic pathogenic (MSH3-associated polyposis)
+disease_id: DIS-CRC
+escat_tier: IIA
+evidence_summary: >
+  MSH3 germline biallelic pathogenic variants cause MSH3-associated polyposis
+  (Adam et al. 2016) — autosomal-recessive, attenuated adenomatous and
+  serrated polyposis with elevated colorectal-cancer risk. Tumors show
+  elevated microsatellite instability at di- and tetra-nucleotide repeats
+  (EMAST — elevated microsatellite alterations at selected tetranucleotide
+  repeats) rather than classical mono-/dinucleotide MSI-H, so standard
+  MSI-H IHC and PCR panels may MISS MSH3-deficient tumors. Phenotype:
+  CRC, gastroduodenal polyps, possibly other Lynch-spectrum tumors.
+  Confirmed-carrier (biallelic) surveillance protocol follows attenuated
+  polyposis / Lynch-like template: colonoscopy q1-2y from age 25-30 with
+  polypectomy of all adenomas + serrated lesions, EGD q3-5y from age 30,
+  consider endometrial sampling + TVUS in women per family-history context.
+  Monoallelic (heterozygous) MSH3 carriers are not currently risk-elevated.
+  ESCAT IIA.
+evidence_summary_ua: >
+  Біалельні герміногенні патогенні варіанти MSH3 спричиняють MSH3-асоційований
+  поліпоз (Adam et al. 2016) — аутосомно-рецесивний атенюйований аденоматозний
+  і serrated поліпоз з підвищеним ризиком КРР. Пухлини мають EMAST (нестабільність
+  на ди- та тетра-нуклеотидних повторах), а не класичний MSI-H — стандартні
+  IHC і PCR-панелі можуть НЕ виявити MSH3-дефіцитну пухлину. Фенотип: КРР,
+  гастродуоденальні поліпи, ймовірно інші пухлини Lynch-спектру. Протокол
+  нагляду біалельного носія: колоноскопія q1-2 роки з 25-30; ЕГДС q3-5 роки з 30;
+  ендометріальна біопсія за сімейним контекстом. Моноалельні гетерозиготи —
+  без підвищеного ризику. ESCAT IIA.
+regulatory_approval:
+  fda: []
+  ema: []
+  ukraine: []
+recommended_combinations:
+  - "colonoscopy q1-2y from age 25-30 with polypectomy (adenomas + serrated lesions)"
+  - "EGD q3-5y from age 30"
+  - "endometrial sampling + TVUS in women per family-history risk profile"
+  - "use NGS-based MSI assay or tetranucleotide-repeat assay if MSH3-deficiency suspected (standard MSI panels miss EMAST)"
+  - "partner-carrier reproductive counseling (autosomal-recessive)"
+contraindicated_monotherapy: []
+primary_sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+last_verified: "2026-05-18"
+evidence_sources: []
+actionability_review_required: true
+linked_indications:
+  - IND-LYNCH-CARRIER-SURVEILLANCE
+notes: >
+  STUB — Wave A+B germline expansion. Linked Indication: IND-LYNCH-CARRIER-
+  SURVEILLANCE used as closest-fit Lynch-like template (no MSH3-specific
+  Indication exists yet). Two-Clinical-Co-Lead signoff queued. Critical:
+  MSH3-deficient tumors exhibit EMAST not classical MSI-H — standard MSI
+  assays may miss them; this matters both for predisposition diagnosis
+  and for potential pembrolizumab eligibility in advanced disease. MSH3
+  syndrome is rare; published cohorts small (<25 families); penetrance
+  estimates provisional.
+notes_ua: >
+  STUB — Wave A+B розширення. Прив'язка до IND-LYNCH-CARRIER-SURVEILLANCE.
+  Критично: MSH3-дефіцитні пухлини мають EMAST, не класичний MSI-H —
+  стандартні MSI-аналізи можуть їх не виявити; це важливо для діагностики
+  схильності і для відбору пембролізумабу при поширених стадіях.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_bma_batch3
+draft_revision: 1
+last_reviewed: "2026-05-18"

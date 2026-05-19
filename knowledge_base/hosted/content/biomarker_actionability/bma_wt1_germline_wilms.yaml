@@ -1,0 +1,71 @@
+id: BMA-WT1-GERMLINE-WILMS
+biomarker_id: BIO-WT1-GERMLINE
+variant_qualifier: WT1 germline pathogenic (WAGR / Denys-Drash / Frasier syndromes)
+disease_id: DIS-WILMS
+escat_tier: IIA
+evidence_summary: >
+  WT1 germline pathogenic variants drive a spectrum of pediatric kidney
+  predispositions: WAGR syndrome (11p13 contiguous-gene deletion — Wilms
+  tumor, aniridia, genitourinary anomalies, range of intellectual
+  disability; Wilms risk ~30-50%), Denys-Drash syndrome (missense in zinc-
+  finger domain — pseudohermaphroditism + diffuse mesangial sclerosis +
+  Wilms tumor; risk ~50-90%), and Frasier syndrome (intron-9 splice
+  variants — 46,XY gonadal dysgenesis + focal segmental glomerulosclerosis;
+  gonadoblastoma risk). Confirmed-carrier surveillance protocol (per
+  International Society of Paediatric Oncology / SIOP-RTSG + COG Renal
+  Tumor Committee Consensus / Kalish et al. 2017): renal ultrasound every
+  3 months from diagnosis through age 7-8 (Wilms incidence peaks before
+  age 5 and falls steeply after age 7), urinalysis at each visit, blood
+  pressure monitoring. Multi-disciplinary involvement: pediatric oncology
+  + nephrology (renal function + proteinuria) + endocrinology (gonadal
+  dysgenesis management) + genetics. Prophylactic gonadectomy is
+  recommended in Frasier syndrome to prevent gonadoblastoma. Surveillance
+  duration may extend in Denys-Drash given higher Wilms risk and
+  bilateral disease frequency. ESCAT IIA.
+evidence_summary_ua: >
+  Герміногенні патогенні варіанти WT1 спричиняють спектр педіатричних
+  ниркових схильностей: WAGR (делеція 11p13 — Wilms + аніридія + GU-аномалії
+  + інтелектуальні порушення; ризик Wilms ~30-50%), Denys-Drash
+  (missense у zinc-finger — псевдогермафродитизм + дифузний мезангіальний
+  склероз + Wilms; ризик ~50-90%), Frasier (інтрон-9 splice — 46,XY
+  гонадальна дисгенезія + FSGS; гонадобластома). Протокол нагляду: УЗД
+  нирок кожні 3 міс до 7-8 років (пік Wilms до 5 років, різко падає
+  після 7), аналіз сечі при кожному візиті, контроль АТ. MDT: педіатрична
+  онкологія + нефрологія + ендокринологія + генетика. Профілактична
+  гонадектомія при Frasier — для попередження гонадобластоми. ESCAT IIA.
+regulatory_approval:
+  fda: []
+  ema: []
+  ukraine: []
+recommended_combinations:
+  - "renal ultrasound every 3-4 months from diagnosis through age 7-8"
+  - "urinalysis + blood pressure at each visit (Denys-Drash glomerular surveillance)"
+  - "multi-disciplinary clinic: pediatric oncology + nephrology + endocrinology + genetics"
+  - "prophylactic gonadectomy in Frasier syndrome (46,XY) — gonadoblastoma prevention"
+  - "renal function monitoring + proteinuria (Denys-Drash diffuse mesangial sclerosis often presents in infancy)"
+  - "COG / SIOP-RTSG Wilms protocols for any detected nephroblastoma"
+contraindicated_monotherapy: []
+primary_sources:
+  - SRC-NCCN-PEDIATRIC-SARCOMA
+last_verified: "2026-05-18"
+evidence_sources: []
+actionability_review_required: true
+notes: >
+  STUB — Wave A+B germline expansion. Linked Indication: none (no WT1-
+  specific Indication exists yet). Two-Clinical-Co-Lead signoff queued.
+  Surveillance is age-bounded: cadence drops markedly after age 7-8 when
+  Wilms incidence falls. Variant location largely predicts syndrome
+  subtype: contiguous-gene deletions → WAGR; zinc-finger missense → Denys-
+  Drash; intron-9 splice variants → Frasier. Other 11p13 contiguous-gene
+  deletion phenotypes (e.g. simultaneous involvement of PAX6) explain
+  aniridia and warrant ophthalmology follow-up.
+notes_ua: >
+  STUB — Wave A+B розширення. Indication: відсутня. Нагляд обмежений віком:
+  частота різко падає після 7-8 років. Локалізація варіанта прогнозує
+  підтип: контигуозна делеція → WAGR; zinc-finger missense → Denys-Drash;
+  intron-9 splice → Frasier. Аніридія при WAGR пов'язана з делецією PAX6 —
+  офтальмологічний follow-up.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_bma_batch3
+draft_revision: 1
+last_reviewed: "2026-05-18"

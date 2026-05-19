@@ -1,0 +1,60 @@
+id: BMA-TSC1-GERMLINE-TUBEROUS-SCLEROSIS
+biomarker_id: BIO-TSC1-GERMLINE
+variant_qualifier: TSC1 germline pathogenic (hamartin loss-of-function)
+disease_id: DIS-RCC
+escat_tier: IIA
+evidence_summary: >
+  TSC1 germline pathogenic variants drive Tuberous Sclerosis Complex (TSC) — an
+  mTOR-pathway hyperactivation syndrome with multi-organ tumor predisposition:
+  subependymal giant cell astrocytoma (SEGA), renal angiomyolipomas (AML),
+  lymphangioleiomyomatosis (LAM, females), cardiac rhabdomyomas, and cortical
+  tubers. Confirmed-carrier surveillance protocol (per Tuberous Sclerosis
+  Complex Consensus Conference / NCCN CNS): brain MRI q1-3y through age 25
+  for SEGA, renal MRI/US q1-3y from diagnosis (lifelong) for AML, pulmonary
+  function tests + HRCT chest q5-10y in adult females for LAM, baseline
+  echocardiogram + ECG, dermatology and ophthalmology exam annually. mTOR
+  inhibitors (everolimus, sirolimus) are active across SEGA, growing renal
+  AMLs (≥3 cm), and LAM — these are surveillance-triggered interventions,
+  not prophylactic. ESCAT IIA (predisposition with established surveillance
+  + targeted therapy on progression).
+evidence_summary_ua: >
+  Герміногенні патогенні варіанти TSC1 — драйвер туберозного склерозу:
+  субепендимальна гігантоклітинна астроцитома (SEGA), ниркові ангіоміоліпоми
+  (AML), лімфангіолейоміоматоз (LAM, жінки), кардіальні рабдоміоми. Протокол
+  спостереження носія: МРТ головного мозку q1-3 роки до 25 років, МРТ/УЗД
+  нирок q1-3 роки довічно, FVC + HRCT грудної клітки q5-10 років у дорослих
+  жінок, ехокардіографія + дерматологічний/офтальмологічний огляд щорічно.
+  mTOR-інгібітори (еверолімус, сиролімус) активні при SEGA, прогресуючих AML
+  (≥3 см) і LAM. ESCAT IIA.
+regulatory_approval:
+  fda:
+    - "everolimus — SEGA, renal AML in TSC (FDA approved)"
+  ema:
+    - "everolimus — SEGA, renal AML in TSC (EMA approved)"
+  ukraine: []
+recommended_combinations:
+  - "everolimus 10 mg PO daily — TSC-associated SEGA (not amenable to resection) or renal AML ≥3 cm"
+  - "sirolimus — LAM (off-label TSC variant) with FEV1 decline"
+  - "multidisciplinary surveillance per TSC Consensus Conference 2012/2021"
+contraindicated_monotherapy: []
+primary_sources:
+  - SRC-NCCN-CNS-2025
+last_verified: "2026-05-18"
+evidence_sources: []
+actionability_review_required: true
+notes: >
+  STUB — Wave A+B germline expansion. Linked Indication: none (no
+  TSC-specific Indication entity exists yet; surveillance triggered via
+  RF / Algorithm layer). Two-Clinical-Co-Lead signoff queued. mTOR
+  inhibitor activity is well-established (EXIST-1/2/3 trials) — TSC1 and
+  TSC2 are functionally equivalent for treatment indication; TSC2 carriers
+  tend to have more severe phenotype but the same surveillance/treatment
+  protocol applies.
+notes_ua: >
+  STUB — Wave A+B розширення герміногенних маркерів. Пов'язана Indication
+  відсутня (TSC-специфічної Indication-сутності ще немає; нагляд через
+  RF / Algorithm шар). Два підписи Clinical Co-Lead — у черзі.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_bma_batch3
+draft_revision: 1
+last_reviewed: "2026-05-18"
