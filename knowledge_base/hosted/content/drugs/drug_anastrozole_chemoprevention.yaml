@@ -1,0 +1,131 @@
+id: DRUG-ANASTROZOLE-CHEMOPREVENTION
+names:
+  preferred: "Anastrozole (breast-cancer chemoprevention context)"
+  ukrainian: "Анастрозол (хіміопрофілактика раку молочної залози)"
+  english: "Anastrozole (breast-cancer chemoprevention)"
+  synonyms: ["AI chemoprevention — anastrozole"]
+  brand_names: ["Arimidex"]
+atc_code: L02BG03
+rxnorm_id: "84857"
+drug_class: "Aromatase inhibitor (non-steroidal, third-generation)"
+mechanism: >
+  Reversible non-steroidal inhibitor of cytochrome P450 aromatase
+  (CYP19A1), reducing peripheral conversion of androgens to estrogens
+  (estradiol, estrone). In postmenopausal women aromatase activity in
+  adipose, breast, and other peripheral tissue is the dominant
+  estrogen source — anastrozole 1 mg/day suppresses circulating
+  estradiol by ~80-95%. Cancer-prevention rationale: estrogen exposure
+  is the dominant driver of HR-positive breast carcinogenesis, and
+  near-complete suppression of postmenopausal estrogen production
+  reduces incidence of ER-positive breast cancer (and DCIS). IBIS-II
+  RCT (Cuzick Lancet 2014, 12-year follow-up Lancet 2020): in 3,864
+  postmenopausal high-risk women, anastrozole 1 mg/day for 5 years
+  reduced breast-cancer incidence by ~49% vs. placebo (HR 0.51) with
+  durable benefit out to 12 years.
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 1995  # for breast-cancer treatment
+    indications_brief:
+      - "Adjuvant treatment of postmenopausal HR-positive early breast cancer"
+      - "First-line treatment of postmenopausal HR-positive advanced breast cancer"
+      - "NOT FDA-labeled for chemoprevention (used off-label per NCCN-Breast 2025 / IBIS-II)"
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: true
+    reimbursement_indications:
+      - "Ад'ювантна терапія HR+ раку молочної залози у постменопаузі (НЕ хіміопрофілактика)"
+    last_verified: "2026-05-18"
+    notes: "Реімбурсується НСЗУ для ЛІКУВАННЯ HR+ РМЗ; для хіміопрофілактики — off-label, out-of-pocket."
+typical_dosing: >
+  Breast-cancer chemoprevention (off-label, NCCN Breast / NICE):
+    1 mg PO once daily for 5 years.
+  Indicated for POSTMENOPAUSAL women at increased breast-cancer risk
+  (e.g., 5-year IBIS/Tyrer-Cuzick ≥3%, or ≥1.7% Gail; LCIS, atypical
+  hyperplasia, BRCA carriers not pursuing surgery, prior thoracic RT).
+  Baseline DEXA + lipid panel; supplement vitamin D + calcium per
+  bone-health protocol. Re-image bone density every 1-2 years.
+  Discontinue and refer to endocrinology if osteoporotic fracture
+  develops. Avoid in premenopausal women (ineffective; ovarian
+  aromatase escape).
+formulations:
+  - "Tablet 1 mg"
+
+absolute_contraindications:
+  - "Premenopausal status (ineffective and contraindicated)"
+  - "Pregnancy, breastfeeding"
+  - "Hypersensitivity to anastrozole"
+  - "Severe hepatic impairment (Child-Pugh C — limited data)"
+black_box_warnings: []
+major_interactions:
+  - "Tamoxifen — concurrent use abolishes anastrozole benefit (do NOT combine)"
+  - "Estrogen-containing products (HRT, vaginal estrogen) — pharmacodynamic antagonism; avoid systemic estrogen, vaginal preparations under specialist guidance"
+  - "Phenytoin, carbamazepine, rifampin (strong CYP3A4 inducers) — modest reduction in anastrozole levels; clinical significance debated"
+common_adverse_events:
+  - "Hot flushes / vasomotor symptoms (~25-40%)"
+  - "Arthralgia / musculoskeletal pain (~30-35%)"
+  - "Vaginal dryness, dyspareunia (~15-20%)"
+  - "Fatigue (~15-20%)"
+  - "Headache (~10-15%)"
+  - "Mood changes / depression (~5-10%)"
+  - "Reduced bone mineral density (~5-10% over 5 years)"
+serious_adverse_events:
+  - "Osteoporotic fracture (~3-5% over 5 years vs. ~2% placebo — relative ↑)"
+  - "Cardiovascular events (small absolute ↑; meta-analytic signal — monitor lipid panel)"
+  - "Severe hepatic dysfunction (rare)"
+  - "Carpal tunnel syndrome (~2-3%)"
+
+pharmacology: {half_life_hours: 50, clearance: "Hepatic metabolism (N-dealkylation, hydroxylation, glucuronidation); ~10% excreted unchanged in urine. Minor CYP3A4 substrate; no significant CYP inhibition at therapeutic doses."}
+
+sources:
+  - SRC-USPSTF-BREAST-2024
+  - SRC-NCCN-BREAST-2025
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 chemoprevention-workstream authoring (batch 2); pending
+  two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode. BREAST-CANCER
+  CHEMOPREVENTION CONTEXT — distinct from generic DRUG-ANASTROZOLE
+  (treatment indications for postmenopausal HR+ early/metastatic breast).
+  Alternative to exemestane (DRUG-EXEMESTANE-CHEMOPREVENTION not yet
+  authored; MAP.3 trial — exemestane 25 mg/day, 65% reduction in
+  invasive breast cancer at 3 years). Anastrozole evidence: IBIS-II
+  (Cuzick Lancet 2014/2020) — 5-year course, ~49% reduction sustained
+  at 12-year follow-up. USPSTF 2024 (Grade B) supports offering risk-
+  reducing medication to postmenopausal women ≥35 y with ≥3% 5-year
+  Tyrer-Cuzick or ≥1.7% Gail risk. NCCN Breast 2025 lists tamoxifen,
+  raloxifene, exemestane, anastrozole as options; AI agents preferred
+  in postmenopausal women without contraindication due to lower VTE
+  and endometrial-cancer risk than tamoxifen. Engine should surface
+  this option only when (a) postmenopausal confirmed, (b) high-risk
+  calculator met, (c) baseline bone-health assessment done, (d)
+  patient declined or completed prophylactic mastectomy. Primary IBIS-
+  II RCT not yet ingested as standalone SRC-* — cited sources cover
+  the umbrella USPSTF/NCCN recommendation. Two-Clinical-Co-Lead signoff
+  required before clinical surfacing.
+
+notes_ua: >
+  Анастрозол — нестероїдний інгібітор ароматази 3-го покоління;
+  основне FDA-показання — лікування HR+ РМЗ у постменопаузі. У
+  контексті ХІМІОПРОФІЛАКТИКИ (off-label, але рекомендовано USPSTF
+  Grade B 2024 / NCCN Breast 2025): 1 mg/день перорально 5 років для
+  ПОСТМЕНОПАУЗНИХ жінок з підвищеним ризиком (5-річний Tyrer-Cuzick
+  ≥3% або Gail ≥1.7%; LCIS, атипова гіперплазія, BRCA-носії, які
+  не хочуть редукційної мастектомії). Дослідження IBIS-II (Cuzick
+  Lancet 2014/2020): ~49% зниження інвазивного РМЗ, ефект тримається
+  12 років. ОБОВ'ЯЗКОВО: DEXA на початку та кожні 1-2 роки, вітамін
+  D + кальцій, моніторинг ліпідів. НЕ застосовувати у пременопаузі.
+  Альтернатива до екземестану (MAP.3). НСЗУ реімбурсує ЛІКУВАННЯ
+  РМЗ; хіміопрофілактика — out-of-pocket. Двигун має пропонувати
+  лише при підтвердженій постменопаузі + високому ризику + базовій
+  оцінці кісткового здоров'я + після обговорення альтернатив (тамоксифен/
+  ралоксифен/екземестан/редукційна мастектомія).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_chemoprevention_drugs_batch2_2026-05-18
+draft_revision: 1

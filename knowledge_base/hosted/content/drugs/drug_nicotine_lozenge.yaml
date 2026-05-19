@@ -1,0 +1,122 @@
+id: DRUG-NICOTINE-LOZENGE
+names:
+  preferred: "Nicotine lozenge (NRT)"
+  ukrainian: "Нікотинові льодяники (NRT)"
+  english: "Nicotine lozenge"
+  synonyms: ["NRT lozenge", "Nicotine replacement therapy — lozenge", "Nicotine mini-lozenge"]
+  brand_names: ["Nicorette Lozenge", "Commit", "Nicotinell Lozenge", "Niquitin Mini"]
+atc_code: N07BA01
+rxnorm_id: "1041573"
+drug_class: "Nicotine replacement therapy (NRT) — buccal/sublingual short-acting"
+mechanism: >
+  Slowly dissolving lozenge releases nicotine across oral mucosa,
+  producing a peak plasma level over ~20-30 minutes that blunts
+  acute craving and withdrawal symptoms. Pharmacokinetics avoid
+  the rapid arterial bolus that drives reinforcement from inhaled
+  smoking. Cancer-prevention rationale: tobacco cessation reduces
+  incidence of lung, head-and-neck, bladder, esophageal, pancreatic,
+  cervical, kidney, AML, and other tobacco-attributable cancers
+  (IARC Monograph 100E — Personal Habits and Indoor Combustions).
+  NRT roughly doubles 6-month abstinence vs. placebo (Cochrane);
+  combining a long-acting patch with a short-acting form (lozenge
+  or gum) PRN improves quit rates over monotherapy. USPSTF Grade A
+  for adult tobacco-cessation pharmacotherapy.
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 2002
+    indications_brief:
+      - "Aid to smoking cessation"
+      - "Indicated for relief of nicotine withdrawal symptoms"
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "OTC у формі льодяників (Nicorette Lozenge, Nicotinell); не входить у пакет НСЗУ для відмови від куріння — out-of-pocket. Регулярні аптеки + онлайн-доступ."
+typical_dosing: >
+  Strength selection by time-to-first-cigarette (TTFC) of the day:
+    - TTFC ≤30 min OR ≥20 cig/d: start 4 mg lozenge
+    - TTFC >30 min OR <20 cig/d: start 2 mg lozenge
+  Cadence (10-12 week course typical):
+    - Weeks 1-6: 1 lozenge every 1-2 h (≥9 lozenges/day at start)
+    - Weeks 7-9: 1 lozenge every 2-4 h
+    - Weeks 10-12: 1 lozenge every 4-8 h
+  Maximum 20 lozenges/day. Allow 20-30 min to dissolve; do NOT chew
+  or swallow whole. Avoid food/drink (especially acidic — coffee,
+  juice, soft drinks) for 15 minutes before/during use — acidic pH
+  in mouth dramatically reduces buccal absorption. PRN dosing
+  acceptable for breakthrough craving when used as add-on to patch.
+formulations:
+  - "Lozenge 2 mg (regular and mini)"
+  - "Lozenge 4 mg (regular and mini)"
+
+absolute_contraindications:
+  - "Hypersensitivity to nicotine or lozenge excipients (menthol, mint, sweetener variants)"
+  - "Severe arrhythmia, recent (<2 weeks) MI, unstable/worsening angina, severe vasospastic disease (relative — net benefit usually favors NRT vs. continued smoking)"
+  - "Children — accidental pediatric exposure is severe (avoid where small children present; secure storage)"
+black_box_warnings: []
+major_interactions:
+  - "Smoking cessation reduces CYP1A2 induction — clearance of clozapine, olanzapine, theophylline, ropinirole, caffeine increases ~30-50% within 1-2 weeks of cessation; reduce doses and monitor"
+  - "Insulin requirements may decrease modestly with cessation"
+  - "Concurrent acidic beverages reduce buccal nicotine absorption (mechanism only — no toxic interaction)"
+common_adverse_events:
+  - "Mouth/throat irritation, soreness (~10-20%)"
+  - "Hiccups (~5-10%)"
+  - "Heartburn / dyspepsia if swallowed too quickly (~5-10%)"
+  - "Nausea (~5-10%)"
+  - "Headache (~5-10%)"
+  - "Cough (~3-5%)"
+serious_adverse_events:
+  - "Severe hypersensitivity reaction (rare)"
+  - "Nicotine toxicity from over-use or pediatric ingestion (pallor, sweating, vomiting, dizziness, seizures in large doses)"
+  - "Cardiovascular events (very rare; observational signal not robust)"
+
+pharmacology: {half_life_hours: 2, clearance: "Hepatic CYP2A6 (primary) and CYP2B6; ~10% renal unchanged. Buccal absorption — peak plasma ~20-30 min after lozenge dissolves; ~25-27% bioavailability swallowed (first-pass) so do not chew/swallow."}
+
+sources:
+  - SRC-IARC-100A-TOBACCO-SMOKING
+  - SRC-USPSTF-LUNG-LDCT-2021
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 prevention-workstream authoring (batch 2); pending two-
+  Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode. NRT lozenge is
+  a first-line tobacco-cessation pharmacotherapy (USPSTF Grade A for
+  adults; insufficient evidence in pregnancy). PARTNER to DRUG-NICOTINE-
+  PATCH (long-acting baseline) — combination patch + PRN lozenge or
+  gum is preferred over either monotherapy (Cochrane Stead 2012).
+  TOBACCO CESSATION is the highest-yield modifiable cancer-prevention
+  intervention in adults — IARC class 1 for ≥17 cancer sites. Primary
+  cessation RCTs (e.g., Shiffman 2002, West 2008) not yet ingested as
+  standalone SRC-* entities; cited sources cover (a) the tobacco-cancer
+  causal relationship (IARC-100A) and (b) the lung-cancer screening
+  context where cessation is integrated (USPSTF-LUNG-LDCT-2021). Engine
+  should surface cessation NRT options when prevention pilots flag
+  current tobacco use; choice of patch vs lozenge vs gum vs varenicline
+  vs bupropion belongs to the patient/clinician dialogue, not the
+  algorithm.
+
+notes_ua: >
+  Нікотинові льодяники — короткодіюча форма NRT (нікотин-замісна
+  терапія) для відмови від куріння. Перша лінія за USPSTF (Grade A
+  для дорослих). Дозування 2 mg або 4 mg залежить від часу до першої
+  сигарети дня (≤30 хв або ≥20 цигарок/добу → 4 mg; інакше 2 mg).
+  Курс 10-12 тижнів. Не жувати, не ковтати цілком — давати розчинитися
+  у роті 20-30 хв. Уникати кави/соків за 15 хв до/під час застосування
+  (кислий pH знижує всмоктування). КОМБІНАЦІЯ з пластирем (DRUG-
+  NICOTINE-PATCH) як базою + льодяник PRN при тязі — краще за
+  монотерапію (Cochrane). ВІДМОВА ВІД КУРІННЯ — це найрезультативніша
+  модифікована профілактика раку: IARC клас 1 для ≥17 локалізацій.
+  В Україні OTC, не реімбурсується НСЗУ — out-of-pocket. Двигун має
+  пропонувати варіанти NRT, коли prevention-pilots сигналізують про
+  поточне куріння; вибір конкретної форми (пластир/льодяник/жуйка/
+  варенікмін/бупропіон) — діалог пацієнт+лікар, не алгоритм.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_chemoprevention_drugs_batch2_2026-05-18
+draft_revision: 1

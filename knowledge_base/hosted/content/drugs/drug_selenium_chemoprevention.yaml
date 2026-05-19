@@ -1,0 +1,128 @@
+id: DRUG-SELENIUM-CHEMOPREVENTION
+names:
+  preferred: "Selenium (cancer chemoprevention — research-noted; not standard-of-care)"
+  ukrainian: "Селен (хіміопрофілактика раку — дослідницький контекст, НЕ стандарт)"
+  english: "Selenium chemoprevention"
+  synonyms: ["L-selenomethionine", "Sodium selenite", "Selenized yeast", "Se supplementation"]
+  brand_names: ["various OTC supplements"]
+atc_code: A12CE
+rxnorm_id: "9785"
+drug_class: "Trace-element micronutrient supplement (essential cofactor for selenoproteins, including glutathione peroxidases)"
+mechanism: >
+  Essential trace element; incorporated into ~25 human selenoproteins
+  including the glutathione peroxidases (GPx1-4), thioredoxin reductases
+  (TXNRD1-3), and selenoprotein P. Cancer-prevention rationale: GPx
+  isoenzymes detoxify peroxides; reduced selenium status was hypothesised
+  to increase oxidative DNA damage and carcinogenesis. Observational
+  studies (Nutritional Prevention of Cancer / NPC trial — Clark JAMA
+  1996) suggested ~50% reduction in prostate, lung, and colon cancers
+  with 200 µg/day selenized yeast; this drove the SELECT trial.
+  SELECT (Selenium and Vitamin E Cancer Prevention Trial — Lippman
+  JAMA 2009, Klein JAMA 2011) — 35,533 men, 200 µg/d L-selenomethionine
+  (± vitamin E) vs. placebo: NULL for prostate cancer incidence (HR 1.04
+  with selenium alone) and SIGNAL of HARM for selenium + vitamin E.
+  Subsequent Cochrane review concluded selenium supplementation does
+  NOT reduce overall cancer risk and MAY INCREASE risk of type 2
+  diabetes and non-melanoma skin cancer.
+
+regulatory_status:
+  fda:
+    approved: true  # as dietary supplement / nutritional product
+    first_approval_year: null
+    indications_brief:
+      - "Recognized essential trace element / RDA 55 µg/day adults"
+      - "NOT FDA-labeled for cancer chemoprevention"
+      - "Selenium-deficiency repletion (Keshan disease, parenteral nutrition)"
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Селен — добавка / БАД, OTC. Не реімбурсується НСЗУ як хіміопрофілактика. Доступний у формах селеноцистину, селенометіоніну, селеніту натрію."
+typical_dosing: >
+  RESEARCH-ONLY context (SELECT historical):
+    L-selenomethionine 200 µg PO daily.
+  RDA / DRI (Institute of Medicine):
+    Adults: 55 µg/day; pregnancy 60 µg/d; lactation 70 µg/d.
+  Upper limit (UL): 400 µg/day adults — chronic intake above UL
+  associated with selenosis (hair/nail brittleness, GI upset,
+  garlicky breath, neuropathy, hepatotoxicity).
+  IF deficient (rare in non-Keshan-belt regions, possible in long-
+  term parenteral nutrition) — repletion under specialist supervision.
+formulations:
+  - "Tablet / capsule 50, 100, 200 µg (L-selenomethionine, sodium selenite, or selenized yeast)"
+  - "Liquid drops / multivitamin combinations (variable)"
+
+absolute_contraindications:
+  - "Hypersensitivity to selenium compounds"
+  - "Selenium toxicity / selenosis"
+  - "High baseline selenium status (serum >150 µg/L) — additional supplementation increases harm signal in SELECT subgroup analyses"
+black_box_warnings: []
+major_interactions:
+  - "Vitamin E (≥400 IU/day) — combination with selenium associated with prostate-cancer harm signal in SELECT (avoid combining)"
+  - "Antiplatelet/anticoagulant drugs — high-dose selenium may potentiate bleeding (small effect)"
+  - "Cisplatin — selenium may modestly reduce nephrotoxicity (research only)"
+  - "Statins — selenium may interfere with statin-mediated selenoprotein synthesis (mechanism only)"
+common_adverse_events:
+  - "Generally well-tolerated at RDA doses"
+  - "Mild GI upset (~3-5%) at 200 µg/d"
+  - "Garlicky breath / metallic taste (idiosyncratic, ~1-3%)"
+  - "Brittle nails / hair changes with chronic high doses"
+serious_adverse_events:
+  - "Selenosis / chronic toxicity — peripheral neuropathy, hepatotoxicity, alopecia (typically >800 µg/d for months)"
+  - "Increased type 2 diabetes risk (~7-10% relative ↑ in SELECT secondary endpoint)"
+  - "Increased non-melanoma skin cancer (suggested in some sub-analyses)"
+  - "Acute selenium toxicity (rare; large bolus doses → hypotension, respiratory failure)"
+
+pharmacology: {half_life_hours: 65, clearance: "Renal + fecal excretion of methylated selenide metabolites; tissue half-life depends on form — selenomethionine incorporates into general protein pool with prolonged retention, sodium selenite cleared faster. Whole-body t1/2 weeks to months."}
+
+sources:
+  - SRC-WCRF-AICR-CUP-2018
+  - SRC-VITAL-VITAMIN-D-OMEGA3-2019
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 chemoprevention-workstream authoring (batch 2); pending
+  two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode. SELENIUM IS
+  NOT STANDARD-OF-CARE CHEMOPREVENTION (research-noted only). PRIMARY
+  EVIDENCE STATE: SELECT trial (Lippman JAMA 2009 / Klein JAMA 2011 /
+  long-term follow-up) — 35,533 men, L-selenomethionine 200 µg/d ±
+  vitamin E vs. placebo — NULL for prostate-cancer incidence and a
+  SIGNAL OF HARM (selenium + vitamin E arm) at 7-year follow-up.
+  Subsequent Cochrane systematic review (Vinceti 2018): no evidence
+  of benefit for any cancer; possible increased risk of T2DM and
+  non-melanoma skin cancer at supplemental doses. NCCN / USPSTF /
+  WCRF-AICR Continuous Update Project (2018) — no recommendation for
+  selenium supplementation for cancer prevention; WCRF explicitly
+  advises against. Engine MUST NOT recommend selenium supplementation
+  for cancer prevention. Document presence here only for completeness
+  of supplement-class enumeration and for explicitly counseling
+  patients away from over-the-counter selenium chemoprevention
+  marketing. Selenium-DEFICIENT individuals (rare; chronic TPN, Keshan-
+  belt regions) may benefit from repletion under specialist supervision,
+  but that is deficiency repletion, not chemoprevention. Primary SELECT
+  trial (Klein 2011) not yet ingested as standalone SRC-* entity;
+  cited sources cover the umbrella WCRF position + an analogous
+  supplement-trial reference (VITAL).
+
+notes_ua: >
+  Селен — есенціальний мікроелемент, кофактор глутатіонпероксидаз.
+  В контексті ХІМІОПРОФІЛАКТИКИ РАКУ — НЕ Є СТАНДАРТОМ ДОПОМОГИ
+  (тільки дослідницький контекст). КЛЮЧОВЕ ДОСЛІДЖЕННЯ: SELECT
+  (Lippman JAMA 2009 / Klein JAMA 2011) — 35,533 чоловіки, L-селенометіонін
+  200 µg/добу — НЕ показало зниження раку простати + СИГНАЛ ШКОДИ
+  у комбінації з вітаміном E. Cochrane review Vinceti 2018 — селен НЕ
+  знижує загальний онкоризик, МОЖЕ ПІДВИЩИТИ ризик T2D та неменомеланомного
+  раку шкіри. WCRF-AICR 2018 — рекомендація ПРОТИ застосування для
+  профілактики раку. RDA 55 µg/добу; верхня межа 400 µg/добу. Двигун
+  НЕ ПОВИНЕН рекомендувати селен для профілактики раку; запис існує
+  для повноти каталогу та для активного відраджування пацієнтів від
+  ОТС-маркетингу. ПРИ ДЕФІЦИТІ (рідко: тривале парентеральне харчування,
+  Кешан-ендемічні зони) — корекція дефіциту лише під наглядом фахівця.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_chemoprevention_drugs_batch2_2026-05-18
+draft_revision: 1

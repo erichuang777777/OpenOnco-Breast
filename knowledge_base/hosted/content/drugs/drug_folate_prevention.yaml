@@ -1,0 +1,147 @@
+id: DRUG-FOLATE-PREVENTION
+names:
+  preferred: "Folic acid / folate (cancer-prevention context — context-dependent risk/benefit)"
+  ukrainian: "Фолієва кислота / фолати (контекст профілактики раку — суперечлива користь)"
+  english: "Folate / folic acid prevention"
+  synonyms: ["Folic acid", "Vitamin B9", "L-methylfolate (5-MTHF)", "Folinic acid (leucovorin — separate entity for chemo rescue)"]
+  brand_names: ["various OTC supplements", "Folicin", "Folacin"]
+atc_code: B03BB01
+rxnorm_id: "4511"
+drug_class: "Water-soluble B-vitamin — one-carbon metabolism cofactor"
+mechanism: >
+  Folate (tetrahydrofolate, THF) is the active cofactor for one-carbon
+  transfer reactions in DNA synthesis (thymidylate synthesis from dUMP
+  to dTMP), purine biosynthesis, and methionine cycle / S-adenosyl-
+  methionine (SAM) generation for DNA methylation. Folic acid is the
+  synthetic / fortified form; 5-MTHF is the dominant circulating form.
+  Cancer-prevention rationale (LOW INTAKE → RISK): chronic folate
+  deficiency disrupts DNA methylation and impairs dTMP synthesis (→
+  uracil misincorporation, double-strand breaks); ecological and
+  observational data link low folate intake / status to increased
+  colorectal cancer risk and possibly breast, pancreatic, esophageal.
+  CONTROVERSY: HIGH INTAKE in patients with EXISTING adenomas or
+  preneoplastic lesions may PROMOTE progression — the "dual-effect"
+  hypothesis (Mason 2007). RCT evidence in CRC chemoprevention
+  (Aspirin/Folate Polyp Prevention Study — Cole JAMA 2007): folic
+  acid 1 mg/d in patients with prior adenomas DID NOT reduce recurrence
+  and showed a non-significant trend toward MORE advanced adenomas
+  and more cancers at non-colorectal sites. Periconceptional folate
+  supplementation for neural-tube-defect prevention is unrelated to
+  this profile and is established standard of care.
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 1973
+    indications_brief:
+      - "Treatment of folate-deficiency anemia (megaloblastic)"
+      - "Periconceptional supplementation for neural-tube-defect prevention (400-800 µg/d preconception through first trimester)"
+      - "Adjunct to methotrexate to reduce mucositis / cytopenia"
+      - "NOT FDA-labeled for cancer chemoprevention"
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Фолієва кислота широко доступна OTC + у мульти-вітамінах + у фортифікованому борошні (в Україні фортифікація не уніфікована). Реімбурсація НСЗУ для специфічних показань (вагітність, антифолатна терапія МТХ); для хіміопрофілактики раку — out-of-pocket. ПЕРЕВАГА — підвищення харчового фолату (зелені овочі, бобові, цитрусові) перед супра-фізіологічними дозами добавок."
+typical_dosing: >
+  Periconceptional NTD prevention (NOT cancer chemoprevention):
+    400-800 µg PO daily, start ≥1 month before conception through
+    first trimester (4 mg/d if prior NTD-affected pregnancy or on
+    valproate / carbamazepine).
+  Methotrexate rescue (NOT cancer chemoprevention):
+    1 mg PO daily (for chronic low-dose MTX in rheumatology); leucovorin
+    is used for high-dose MTX in oncology — separate entity.
+  Cancer-PREVENTION dosing: NO accepted dose. Population-level CRC
+  observational signal is for adequate dietary folate intake (DFE 400
+  µg/d equivalents); SUPRA-PHYSIOLOGICAL DOSES (e.g., 1 mg/d folic
+  acid supplements) lacking benefit and potentially harmful in
+  patients with established adenomas (Cole JAMA 2007). Recommended
+  approach: encourage DIETARY folate sufficiency (leafy greens,
+  legumes, citrus) rather than high-dose supplementation. Avoid >1
+  mg/d in patients with prior adenomas absent other indication
+  (e.g., NTD or MTX context).
+formulations:
+  - "Tablet 400 µg, 800 µg, 1 mg, 5 mg"
+  - "Combined with B12 / B6 (multi-vitamins)"
+  - "L-methylfolate (5-MTHF) formulations 1-15 mg (for MTHFR-variant carriers)"
+
+absolute_contraindications:
+  - "Hypersensitivity to folic acid / folate"
+  - "Untreated vitamin B12 deficiency (folate can mask hematologic features while neurologic disease progresses) — coadminister B12 or test before high-dose folate"
+  - "Active CRC adenoma surveillance with personal preference for not supplementing — see CRC-specific note"
+black_box_warnings: []
+major_interactions:
+  - "Methotrexate (high dose) — folic acid may reduce efficacy; leucovorin rescue is the specific reversal agent in oncology"
+  - "Pyrimethamine, trimethoprim — antifolate effect; supplement leucovorin instead of folic acid in high-dose contexts"
+  - "Antiepileptics (phenytoin, carbamazepine, phenobarbital) — chronic AED use depletes folate; reciprocal reduction of AED levels with high-dose folate (seizure risk)"
+  - "Sulfasalazine — reduces folate absorption"
+  - "Fluorouracil (5-FU) — folate increases 5-FU cytotoxicity (rationale for leucovorin in CRC chemo regimens, NOT a chemoprevention interaction)"
+common_adverse_events:
+  - "Generally well-tolerated"
+  - "GI upset (rare, ~1-2%)"
+  - "Allergic rash (rare, ~0.5-1%)"
+  - "Sleep disturbance at high doses (rare)"
+serious_adverse_events:
+  - "Masking of B12-deficiency neurologic features (clinically important — co-supplement B12 if folate >800 µg/d chronically)"
+  - "Severe hypersensitivity (rare)"
+  - "Possible promotion of established colorectal adenomas at supra-physiological doses (Cole JAMA 2007 — non-significant trend; mechanistic concern)"
+
+pharmacology: {half_life_hours: 1, clearance: "Folic acid (synthetic) — reduced via DHFR to THF; saturable hepatic metabolism above ~200 µg → circulating unmetabolized folic acid (UMFA); 5-MTHF is the dominant plasma form. Renal excretion; total body stores ~5-20 mg."}
+
+sources:
+  - SRC-WCRF-AICR-CUP-2018
+  - SRC-USPSTF-CRC-2021
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 chemoprevention-workstream authoring (batch 2); pending
+  two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode. FOLATE-
+  CANCER ASSOCIATION IS COMPLEX. (1) LOW DIETARY FOLATE → modest
+  INCREASED CRC risk in long-term cohorts (and possibly breast,
+  pancreatic, esophageal). (2) PERICONCEPTIONAL FOLIC ACID SUPPLEMENTATION
+  for NTD prevention is unequivocal benefit — NOT a chemoprevention
+  indication, but every authoring should preserve this distinction.
+  (3) HIGH-DOSE FOLATE in patients with EXISTING adenomas may PROMOTE
+  progression (Mason 2007 dual-effect hypothesis; Cole JAMA 2007
+  Aspirin/Folate Polyp Prevention Study — folic acid 1 mg/d in prior-
+  adenoma patients did NOT reduce recurrence, with non-significant
+  signals of more advanced lesions and more non-colorectal cancers).
+  CURRENT GUIDELINES: WCRF-AICR 2018 — do NOT recommend high-dose
+  folate supplementation for cancer prevention; encourage adequate
+  dietary intake. USPSTF / NCCN — no chemoprevention recommendation
+  for high-dose folate. ENGINE should NOT auto-recommend folate
+  supplementation for cancer prevention. Patients with prior adenomas
+  + already on chronic >1 mg/d folate (e.g., for NTD prophylaxis or
+  MTX rescue) require specialist review and shared decision-making.
+  Population-level fortification (Ukraine fortification status not
+  uniform — verify if relevant to risk model). Primary Cole 2007
+  paper not yet ingested as standalone SRC-*; cited sources cover
+  the umbrella WCRF/USPSTF position.
+
+notes_ua: >
+  Фолієва кислота / фолати — вітамін B9, кофактор одновуглецевого
+  обміну (синтез ДНК, метилювання). КОНТЕКСТ ПРОФІЛАКТИКИ РАКУ
+  СКЛАДНИЙ:
+    (1) НИЗЬКИЙ ХАРЧОВИЙ ФОЛАТ → помірне підвищення ризику КРР (і
+        можливо РМЗ, підшлункова, стравохід).
+    (2) ПЕРИКОНЦЕПЦІЙНА ФОЛІЄВА КИСЛОТА для профілактики дефектів
+        нервової трубки (NTD) — однозначна користь (НЕ онкопрофілактика).
+    (3) ВИСОКА ДОЗА у пацієнтів з НАЯВНИМИ АДЕНОМАМИ може ПРОМОВАТИ
+        прогресію (Mason 2007, Cole JAMA 2007 — фолієва кислота 1 mg/добу
+        у пацієнтів з попередніми аденомами НЕ знизила рецидив, з
+        тенденцією до більш просунутих уражень + більше неколоректальних
+        раків). НАСТАНОВИ: WCRF-AICR 2018 — НЕ рекомендує високодозову
+        фолієву кислоту для онкопрофілактики; перевага — адекватний
+        ХАРЧОВИЙ фолат (зелені овочі, бобові, цитрусові). Двигун НЕ
+        повинен рекомендувати фолат як онкопрофілактику. Пацієнти з
+        попередніми аденомами + на хронічно >1 mg/добу (через NTD або
+        MTX) — направлення на спеціалізований огляд + спільне рішення.
+        ПЕРЕВАГА: B12-дефіцит виключити перед хронічно високими дозами.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_chemoprevention_drugs_batch2_2026-05-18
+draft_revision: 1

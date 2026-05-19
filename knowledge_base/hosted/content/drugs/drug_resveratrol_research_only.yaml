@@ -1,0 +1,120 @@
+id: DRUG-RESVERATROL-RESEARCH-ONLY
+names:
+  preferred: "Resveratrol (research-only chemoprevention candidate — NOT standard-of-care)"
+  ukrainian: "Ресвератрол (дослідницький кандидат — НЕ стандарт допомоги)"
+  english: "Resveratrol research-only"
+  synonyms: ["trans-Resveratrol", "3,5,4'-trihydroxy-trans-stilbene"]
+  brand_names: ["various OTC supplements — Longevinex, Resvitrol, Resveratrol extract"]
+atc_code: null
+rxnorm_id: null
+drug_class: "Polyphenol / stilbenoid — dietary supplement (food-grade phytochemical from grape skins, peanuts, berries)"
+mechanism: >
+  Naturally occurring stilbenoid polyphenol; activates SIRT1 (NAD+-
+  dependent deacetylase) and modulates AMPK signaling, mTOR, NF-κB,
+  and estrogen-receptor pathways in preclinical models. Cancer-
+  prevention rationale (preclinical): induces cell-cycle arrest and
+  apoptosis in tumor cell lines, inhibits inflammation, suppresses
+  COX-2, modulates ER signaling. Animal models show reduction in
+  chemically induced skin, mammary, colorectal, and prostate tumors.
+  CRITICAL LIMITATION FOR CLINICAL TRANSLATION: oral bioavailability
+  is ~1% (extensive sulfation/glucuronidation), and human plasma
+  concentrations achieved with supplements are 10-100× lower than
+  active concentrations in preclinical models. No clinical trial of
+  any size has demonstrated cancer-preventive efficacy in humans.
+
+regulatory_status:
+  fda:
+    approved: true  # as dietary supplement / GRAS food component
+    first_approval_year: null
+    indications_brief:
+      - "GRAS food component (present naturally in grape/peanut/berry foods)"
+      - "NOT FDA-labeled as a drug for any indication"
+      - "NOT FDA-labeled for cancer chemoprevention"
+  ema:
+    approved: true  # as dietary supplement / botanical
+  ukraine_registration:
+    registered: true  # widely available as БАД / dietary supplement
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Ресвератрол — харчова добавка / БАД, OTC. Не реімбурсується НСЗУ. Якість продукту дуже варіабельна — стандартизація вмісту trans-ресвератролу неуніфікована."
+typical_dosing: >
+  RESEARCH-ONLY context — NO accepted clinical-use dose:
+    Trial-level dosing ranged 150 mg to 5 g/day in small pilot studies
+    (mostly metabolic / cardiovascular endpoints, not oncology).
+  Most commercial supplements 250-500 mg/day standardized to
+  trans-resveratrol; no evidence this dose achieves meaningful
+  systemic exposure due to extensive first-pass metabolism.
+  No regulatory body recommends resveratrol for cancer chemoprevention.
+formulations:
+  - "Capsule / tablet 100, 250, 500 mg trans-resveratrol"
+  - "Combined with quercetin / pterostilbene in some products"
+  - "Liposomal / micronized forms claiming improved bioavailability"
+
+absolute_contraindications:
+  - "Hypersensitivity to resveratrol or stilbenoid compounds"
+  - "Active estrogen-sensitive malignancy (ER+ breast cancer — resveratrol has phytoestrogenic activity in vitro; clinical relevance debated but caution warranted)"
+  - "Pregnancy / breastfeeding at supplemental doses (insufficient safety data)"
+black_box_warnings: []
+major_interactions:
+  - "Anticoagulants / antiplatelets — possible additive bleeding (in vitro antiplatelet effect)"
+  - "Hepatically metabolized drugs — CYP3A4, CYP2C9, CYP1A2 inhibition at high doses; tamoxifen, warfarin, statins — theoretical, limited clinical data"
+  - "P-glycoprotein substrates — possible interaction"
+  - "Tamoxifen — phytoestrogen + endoxifen pathway interactions; AVOID in ER+ breast-cancer survivors on adjuvant tamoxifen"
+common_adverse_events:
+  - "Generally well-tolerated at typical supplement doses"
+  - "GI upset, diarrhea (~5-10% at >1 g/day)"
+  - "Headache (~3-5%)"
+  - "Flushing (~3-5%)"
+serious_adverse_events:
+  - "Rare hepatotoxicity reported in high-dose pilot studies (≥2.5 g/d)"
+  - "Renal dysfunction reported with chronic high doses in multiple myeloma trial (SRT501 — Popat 2013 stopped early due to renal AEs)"
+  - "Severe hypersensitivity (rare)"
+
+pharmacology: {half_life_hours: 9, clearance: "Hepatic and intestinal sulfation (SULT1A1) + glucuronidation (UGT1A1, UGT1A9) → trans-resveratrol-3-O-sulfate, trans-resveratrol-3-O-glucuronide; aglycone bioavailability ~1%. Most circulating species are conjugates; biological activity of conjugates vs. parent compound debated."}
+
+sources:
+  - SRC-WCRF-AICR-CUP-2018
+  - SRC-NCCN-BREAST-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 chemoprevention-workstream authoring (batch 2); pending
+  two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode. RESVERATROL
+  IS NOT STANDARD-OF-CARE CHEMOPREVENTION (research-only context).
+  Preclinical signal is well-documented but clinical translation is
+  fundamentally limited by very poor bioavailability. No completed
+  phase-III primary-prevention oncology RCT exists. SRT501 myeloma
+  trial (Popat 2013) stopped early due to nephrotoxicity in patients
+  who received 5 g/d for 20 days. NCCN / USPSTF / WCRF-AICR / ASCO —
+  no recommendation for resveratrol supplementation for cancer
+  prevention or in cancer survivorship. EXPLICIT CAUTION: phytoestrogen
+  activity → avoid in ER+ breast-cancer survivors on adjuvant tamoxifen
+  or AI (theoretical antagonism / interference). ENGINE MUST NOT
+  recommend resveratrol for cancer prevention; entity exists for
+  catalog completeness and for explicit counseling away from OTC
+  chemoprevention marketing. Product quality and standardization are
+  highly variable. No primary resveratrol prevention RCT exists; cited
+  sources cover the umbrella WCRF + NCCN Breast guidelines (which do
+  NOT include resveratrol).
+
+notes_ua: >
+  Ресвератрол — поліфенол / стилбеноїд з шкірок винограду, арахісу,
+  ягід. У контексті ХІМІОПРОФІЛАКТИКИ РАКУ — НЕ Є СТАНДАРТОМ
+  ДОПОМОГИ (тільки дослідницький контекст). Преклінічний сигнал
+  достатньо вивчений, але клінічна трансляція обмежена дуже низькою
+  біодоступністю (~1%). КЛІНІЧНІ РКД, ЩО ПІДТРИМУЮТЬ РУТИННЕ
+  ВИКОРИСТАННЯ — ВІДСУТНІ. ВАЖЛИВО: SRT501 (Popat 2013, мієлома) —
+  раннє припинення через нефротоксичність при 5 г/добу. НСЗУ —
+  без реімбурсації; OTC БАД, якість варіабельна. ПОПЕРЕДЖЕННЯ:
+  фітоестрогенна активність — уникати при ER+ РМЗ на ад'ювантному
+  тамоксифені/AI (теоретична антагоністична взаємодія). ЖОДНА
+  авторитетна настанова (FDA, EMA, USPSTF, NCCN, ASCO, WCRF-AICR)
+  НЕ рекомендує ресвератрол для онкопрофілактики. Двигун НЕ повинен
+  рекомендувати; запис існує для каталогу та для активного відраджування
+  від ОТС-маркетингу.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_chemoprevention_drugs_batch2_2026-05-18
+draft_revision: 1

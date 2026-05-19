@@ -1,0 +1,137 @@
+id: DRUG-SULINDAC-CHEMOPREVENTION
+names:
+  preferred: "Sulindac (FAP duodenal/rectal polyposis chemoprevention — off-label)"
+  ukrainian: "Сулиндак (хіміопрофілактика поліпозу при FAP — off-label)"
+  english: "Sulindac (FAP polyposis chemoprevention)"
+  synonyms: ["Sulindac chemoprevention"]
+  brand_names: ["Clinoril"]
+atc_code: M01AB02
+rxnorm_id: "10146"
+drug_class: "Non-selective cyclooxygenase (COX-1/COX-2) inhibitor — prodrug NSAID (arylalkanoic acid)"
+mechanism: >
+  Sulfoxide prodrug reduced by gut microbiota and hepatic enzymes to
+  active sulindac sulfide, which non-selectively inhibits COX-1 and
+  COX-2, suppressing prostaglandin (especially PGE2) synthesis. Cancer-
+  prevention rationale: COX-2 is upregulated in FAP adenomas; sulindac
+  reduces polyp number and size in FAP (Giardiello NEJM 1993 RCT —
+  150 mg BID for 9 months, ~56% reduction in polyp number, ~65% in
+  size; pooled trials in retained rectum post-colectomy show similar
+  effect). PACES RCT (Meyskens 2008) combined eflornithine + sulindac
+  reduced sporadic colorectal adenoma recurrence by ~70%. NOT FDA-
+  labeled for chemoprevention; used off-label per NCCN Genetic Familial
+  Colorectal 2025 in selected FAP patients (e.g., retained rectum,
+  duodenal disease) under specialist hereditary-CRC team supervision.
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 1978
+    indications_brief:
+      - "Osteoarthritis, rheumatoid arthritis, ankylosing spondylitis"
+      - "Acute painful shoulder, acute gouty arthritis"
+      - "NOT FDA-labeled for cancer chemoprevention"
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: false
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Сулиндак не зареєстровано в Україні (станом на 2026-05-18) — доступ переважно через імпорт або заміна на інший NSAID. Перевірити Державний реєстр лікарських засобів МОЗ України перед призначенням. Для хіміопрофілактики при FAP — суто спеціалізовані центри hereditary-CRC."
+typical_dosing: >
+  FAP duodenal / retained-rectum polyposis chemoprevention
+  (off-label, NCCN Genetic Familial CRC 2025):
+    150 mg PO BID (= 300 mg/day) ongoing, with food.
+  Some specialist regimens go to 200 mg BID short-term during active
+  polyp regression phase. Used as ADJUNCT to surveillance endoscopy
+  and polypectomy — does not replace surveillance. Renal function and
+  GI symptom monitoring at 1 month, 3 months, then every 6 months.
+  Hold for elective surgery 1 week prior. Withhold or switch agent
+  if CrCl <30 mL/min, peptic ulcer, GI bleed, severe HF, hyperkalemia.
+formulations:
+  - "Tablet 150 mg, 200 mg"
+
+absolute_contraindications:
+  - "Hypersensitivity to sulindac, aspirin, other NSAIDs (AERD)"
+  - "Active GI bleeding or peptic ulcer"
+  - "Severe heart failure (NYHA III-IV)"
+  - "Pregnancy ≥30 weeks (premature closure of ductus arteriosus)"
+  - "Perioperative coronary artery bypass graft surgery"
+  - "Severe renal impairment (CrCl <30 mL/min)"
+  - "Severe hepatic impairment (Child-Pugh C — sulindac-associated hepatotoxicity higher than other NSAIDs)"
+  - "History of sulindac-induced pancreatitis or hepatotoxicity"
+black_box_warnings:
+  - "Cardiovascular thrombotic events (MI, stroke) — NSAID class effect; contraindicated in CABG perioperative period"
+  - "GI bleeding, ulceration, perforation — can occur without warning, especially in elderly"
+major_interactions:
+  - "Anticoagulants (warfarin, DOACs) — additive bleeding"
+  - "Aspirin — additive GI bleeding; sulindac may also blunt cardioprotective aspirin effect"
+  - "ACE inhibitors / ARBs / diuretics — diminished antihypertensive effect, increased AKI risk"
+  - "Lithium — increased lithium levels"
+  - "Methotrexate (high dose) — increased toxicity"
+  - "Cyclosporine — nephrotoxicity"
+  - "DMSO — concurrent use reduces sulindac efficacy + peripheral neuropathy reported"
+common_adverse_events:
+  - "Dyspepsia (~10-20%)"
+  - "Abdominal pain, nausea (~5-15%)"
+  - "Headache (~5-10%)"
+  - "Dizziness (~3-5%)"
+  - "Rash (~3-5%)"
+  - "Tinnitus (~2-5%)"
+serious_adverse_events:
+  - "GI bleeding / ulceration / perforation"
+  - "Cardiovascular thrombotic events (MI, stroke) — NSAID class effect"
+  - "Renal failure / acute kidney injury / interstitial nephritis"
+  - "Severe skin reactions (SJS / TEN — rare but disproportionately reported with sulindac vs. other NSAIDs)"
+  - "Hepatotoxicity — sulindac has higher reported rate than most NSAIDs (cholestatic and hepatocellular patterns)"
+  - "Pancreatitis (rare but specifically reported with sulindac — distinguishing AE)"
+  - "Aseptic meningitis (very rare; SLE association)"
+
+pharmacology: {half_life_hours: 16, clearance: "Sulfoxide prodrug reduced to active sulindac sulfide (t1/2 ~16 h) by gut microbiota and hepatic methionine sulfoxide reductase; also oxidized to inactive sulfone. Enterohepatic recirculation. Renal + biliary excretion."}
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-BISGAARD-FAP-2006
+  - SRC-PACES-EFLORNITHINE-SULINDAC-2008
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 chemoprevention-workstream authoring (batch 2); pending
+  two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode. OFF-LABEL
+  FAP CHEMOPREVENTION. Primary supporting trial: Giardiello NEJM 1993
+  (sulindac 150 mg BID × 9 months → ~56% polyp-number reduction in
+  FAP); subsequent retained-rectum and duodenal studies confirm effect.
+  PACES (Meyskens NEJM 2008) — DFMO (eflornithine) + sulindac
+  combination reduced sporadic adenoma recurrence ~70%. NCCN Genetic
+  Familial Colorectal 2025: sulindac retained as off-label adjunct
+  option in selected FAP patients (retained rectum after IRA, duodenal
+  disease) under specialist hereditary-CRC team. Engine should NOT
+  auto-recommend; reserved for specialist hereditary-cancer center
+  decision-making. SAFETY CONCERNS distinguishing sulindac from other
+  NSAIDs: (a) higher rate of pancreatitis, (b) higher rate of
+  hepatotoxicity, (c) reported SJS/TEN cluster (Stevens-Johnson),
+  (d) lithium interaction. Ukraine availability is limited — confirm
+  registration status before prescribing or substitute with another
+  NSAID under specialist guidance. Primary RCT (Giardiello NEJM 1993)
+  not yet ingested as standalone SRC-*; cited sources cover the NCCN
+  guideline + PACES combination evidence + a FAP-cohort context source.
+
+notes_ua: >
+  Сулиндак — неселективний NSAID (проліки сульфоксиду → активний
+  сульфід). У контексті ХІМІОПРОФІЛАКТИКИ при FAP (сімейний аденоматозний
+  поліпоз) — off-label, тільки у спеціалізованих hereditary-CRC центрах.
+  Доза 150 mg перорально 2 р/день з їжею, безперервно. Адʼюнкт до
+  ендоскопічного нагляду + поліпектомії — НЕ заміна спостереження.
+  Дослідження Giardiello NEJM 1993 — ~56% зниження кількості поліпів;
+  PACES (Meyskens NEJM 2008) — комбінація DFMO + сулиндак знижує
+  рецидив спорадичних аденом ~70%. ОСОБЛИВІ РИЗИКИ сулиндаку відносно
+  інших NSAID: панкреатит, гепатотоксичність (вища, ніж у класі),
+  тяжкі шкірні реакції (SJS/TEN), взаємодія з літієм. В Україні сулиндак
+  НЕ зареєстровано — доступ через імпорт або заміна на інший NSAID.
+  Двигун НЕ повинен автоматично рекомендувати; рішення приймається
+  лише hereditary-CRC командою.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_chemoprevention_drugs_batch2_2026-05-18
+draft_revision: 1

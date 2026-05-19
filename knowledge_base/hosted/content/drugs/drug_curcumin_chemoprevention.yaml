@@ -1,0 +1,133 @@
+id: DRUG-CURCUMIN-CHEMOPREVENTION
+names:
+  preferred: "Curcumin (research-only chemoprevention candidate — not standard-of-care)"
+  ukrainian: "Куркумін (дослідницький кандидат для хіміопрофілактики — НЕ стандарт)"
+  english: "Curcumin chemoprevention"
+  synonyms: ["Diferuloylmethane", "Turmeric extract (Curcuma longa) — standardized curcuminoids"]
+  brand_names: ["various OTC supplements — Meriva, Theracurmin, BCM-95, Longvida (lipidic / phytosomal forms)"]
+atc_code: null  # no ATC for non-medicinal supplement
+rxnorm_id: null
+drug_class: "Polyphenol / curcuminoid — dietary supplement (food-grade phytochemical)"
+mechanism: >
+  Hydrophobic polyphenol from Curcuma longa rhizome (turmeric).
+  In vitro and animal studies report pleiotropic anti-inflammatory,
+  antioxidant, and antiproliferative activity: inhibition of NF-κB,
+  STAT3, AP-1, COX-2, and 5-LOX signaling; induction of apoptosis
+  in cancer cell lines; modulation of Wnt/β-catenin, Notch, and
+  Hedgehog pathways. Cancer-prevention rationale: rich preclinical
+  signal across colorectal, breast, pancreatic, prostate, and skin
+  cancer models. Translation to human prevention is severely limited
+  by very poor oral bioavailability (~1% as native curcumin; rapid
+  glucuronidation/sulfation). Most clinical trials are small (n<100),
+  short, and use surrogate endpoints (e.g., aberrant crypt foci in
+  FAP — Cruz-Correa 2018 showed no benefit on polyp number at 12
+  months vs. placebo). No completed phase-III primary-prevention
+  RCT supports routine use.
+
+regulatory_status:
+  fda:
+    approved: true  # GRAS — Generally Recognized As Safe as a food/spice ingredient
+    first_approval_year: null
+    indications_brief:
+      - "GRAS food ingredient (turmeric spice, curcuminoids)"
+      - "NOT FDA-labeled as a drug for any indication"
+      - "NOT FDA-labeled for cancer chemoprevention"
+  ema:
+    approved: true  # as a botanical food / food supplement; EFSA published opinions on safety
+  ukraine_registration:
+    registered: true  # widely available as dietary supplement / БАД
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Куркумін — харчова добавка / БАД у формі стандартизованого екстракту куркумиоідів; OTC. Не реімбурсується НСЗУ. Якість продукту дуже варіабельна — стандартизація вмісту куркуміноїдів не уніфікована."
+typical_dosing: >
+  RESEARCH-ONLY / NOT GUIDELINE-RECOMMENDED:
+    Standardized curcuminoid extract 500-2000 mg PO daily, often as
+    divided doses with food and lipid (improves absorption ~3-fold).
+    Bioavailability-enhanced formulations (phytosomal / liposomal /
+    nano-particulate) at lower mg-equivalents have been tested in
+    small trials.
+  No accepted "chemoprevention dose" — no clinical trial network has
+  established a regimen suitable for routine use.
+  Maximum reasonable supplemental dose generally <8 g/day per EFSA
+  acceptable daily intake.
+formulations:
+  - "Capsule / tablet standardized curcuminoid extract 250, 500, 1000 mg"
+  - "Phytosomal / liposomal / nano formulations (variable mg-equivalents)"
+  - "Powder / dietary inclusion (turmeric spice — much lower curcumin content)"
+
+absolute_contraindications:
+  - "Hypersensitivity to curcumin or turmeric"
+  - "Active biliary obstruction (curcumin stimulates bile flow — relative contraindication)"
+  - "Active GI bleeding or peptic ulcer (high-dose extracts; possible antiplatelet effect)"
+  - "Iron-deficiency anemia (curcumin chelates iron — relative)"
+  - "Pregnancy at supplemental doses (food-grade turmeric culinary intake acceptable; high-dose supplements not recommended)"
+black_box_warnings: []
+major_interactions:
+  - "Anticoagulants / antiplatelets — possible additive bleeding risk (in vitro antiplatelet activity)"
+  - "Hepatically metabolized drugs — CYP3A4 / CYP2C9 inhibition at high doses (paclitaxel, docetaxel, warfarin, statins — limited clinical data, theoretical)"
+  - "P-glycoprotein substrates (digoxin, tacrolimus, cyclosporine) — possible increased exposure"
+  - "Iron supplements — curcumin chelates iron; separate by 2-4 h"
+  - "Chemotherapy — concurrent high-dose curcumin generally discouraged in active oncology treatment unless on protocol"
+common_adverse_events:
+  - "Generally well-tolerated"
+  - "GI upset, diarrhea, nausea (~5-10% at higher doses)"
+  - "Headache (~3-5%)"
+  - "Skin rash (~1-3%)"
+serious_adverse_events:
+  - "Hepatotoxicity — case reports of acute hepatitis (especially with high-dose phytosomal / piperine-enhanced products); FDA MedWatch + EMA pharmacovigilance signals 2022-2024"
+  - "Severe hypersensitivity (rare)"
+  - "Bleeding (case reports with antiplatelet/anticoagulant coadministration)"
+
+pharmacology: {half_life_hours: 2, clearance: "Hepatic and intestinal glucuronidation + sulfation (UGT1A1, UGT1A8, SULT1A1) is rapid and extensive → oral bioavailability ~1% for native curcumin; phytosomal/liposomal formulations report 5-30-fold bioavailability increases; piperine (BioPerine) co-administration inhibits UGT and may increase exposure 20-fold but also raises hepatotoxicity concern."}
+
+sources:
+  - SRC-WCRF-AICR-CUP-2018
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 chemoprevention-workstream authoring (batch 2); pending
+  two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode. CURCUMIN IS
+  NOT STANDARD-OF-CARE CHEMOPREVENTION (research-only context).
+  Preclinical signal is broad and consistent across cell-line and
+  rodent models, but clinical translation is severely limited by poor
+  oral bioavailability and lack of phase-III prevention RCTs. CRUZ-
+  CORREA 2018 — FAP RCT, curcumin 3 g/day vs. placebo × 1 year, NO
+  effect on duodenal polyp number/size. Other small RCTs report
+  inconsistent surrogate-endpoint results in colorectal aberrant-crypt-
+  foci, breast biomarkers, prostate PSA kinetics. PHARMACOVIGILANCE
+  CONCERN: rising case reports of curcumin/turmeric-supplement-
+  associated acute hepatitis 2022-2024 (particularly bioavailability-
+  enhanced formulations and piperine-combined products). NO regulatory
+  body (FDA, EMA, USPSTF, NCCN, ASCO, WCRF-AICR) recommends curcumin
+  supplementation for cancer prevention. ENGINE MUST NOT recommend
+  curcumin chemoprevention; entity exists to (a) document non-standard-
+  of-care status in the catalog and (b) support active counseling away
+  from OTC chemoprevention marketing claims. Standardized curcuminoid
+  product quality is highly variable. No primary curcumin chemoprevention
+  RCTs yet ingested as standalone SRC-* entities; cited sources cover
+  the umbrella WCRF + NCCN Genetic Familial CRC guideline (which does
+  NOT include curcumin).
+
+notes_ua: >
+  Куркумін — поліфенол з куркуми (Curcuma longa). У контексті
+  ХІМІОПРОФІЛАКТИКИ РАКУ — НЕ Є СТАНДАРТОМ ДОПОМОГИ (тільки
+  дослідницький контекст). Преклінічний сигнал широкий, але клінічна
+  трансляція обмежена дуже низькою біодоступністю (~1%) та відсутністю
+  завершених фаз III досліджень профілактики. КЛЮЧОВЕ КЛІНІЧНЕ
+  ДОСЛІДЖЕННЯ: Cruz-Correa 2018 — РКД FAP, куркумін 3 г/добу vs.
+  плацебо × 1 рік — БЕЗ ефекту на кількість/розмір дуоденальних
+  поліпів. ВАЖЛИВЕ ПОПЕРЕДЖЕННЯ БЕЗПЕКИ: зростаюча кількість випадків
+  куркумін-асоційованого гострого гепатиту 2022-2024 (особливо з
+  препаратами підвищеної біодоступності + піперин). ЖОДНА авторитетна
+  настанова (FDA, EMA, USPSTF, NCCN, ASCO, WCRF-AICR) НЕ рекомендує
+  куркумін для профілактики раку. ДВИГУН НЕ ПОВИНЕН рекомендувати
+  куркумін; запис існує для каталогу та для активного відраджування
+  пацієнтів від ОТС-маркетингу. Якість стандартизованих продуктів
+  дуже варіабельна. В Україні — БАД, OTC, без реімбурсації.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_chemoprevention_drugs_batch2_2026-05-18
+draft_revision: 1
