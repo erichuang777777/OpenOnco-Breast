@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenOnco · Prevention Risk Assessment</title>
+<meta name="description" content="Structured prevention/early-diagnosis risk assessment form. HCP-mediated. Generates a patient profile compatible with OpenOnco's PreventionPlan engine.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://openonco.info/prevent.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="/style.css" rel="stylesheet">
+<style>
+  /* Prevention questionnaire specific styles */
+  .prevent-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 1rem auto 4rem;
+    padding: 0 1.5rem;
+  }
+  @media (max-width: 1024px) {
+    .prevent-layout { grid-template-columns: 1fr; }
+  }
+  .prevent-form-col h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin: 0 0 0.5rem;
+    color: #0a2e1a;
+  }
+  .prevent-intro {
+    background: #f0f7f3;
+    border-left: 3px solid #0a2e1a;
+    padding: 0.85rem 1.1rem;
+    margin-bottom: 1.25rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: #1f3f2e;
+  }
+  .prevent-intro strong { color: #0a2e1a; }
+  fieldset.prevent-section {
+    border: 1px solid #d5e0d8;
+    border-radius: 8px;
+    padding: 1rem 1.2rem 1.2rem;
+    margin: 0 0 1.1rem;
+    background: #fff;
+  }
+  fieldset.prevent-section legend {
+    font-weight: 600;
+    padding: 0 0.5rem;
+    color: #0a2e1a;
+    font-size: 1.05rem;
+  }
+  .prevent-section-desc {
+    font-size: 0.85rem;
+    color: #556;
+    margin: 0 0 0.7rem;
+  }
+  .prevent-field {
+    display: block;
+    margin: 0.35rem 0;
+    line-height: 1.45;
+    font-size: 0.93rem;
+  }
+  .prevent-field input[type="checkbox"] {
+    margin-right: 0.5rem;
+    transform: translateY(2px);
+  }
+  .prevent-field input[type="number"],
+  .prevent-field input[type="text"],
+  .prevent-field select {
+    margin-left: 0.3rem;
+    padding: 0.2rem 0.4rem;
+    border: 1px solid #c8d1cb;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.92rem;
+  }
+  .prevent-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.2rem;
+    flex-wrap: wrap;
+  }
+  .prevent-actions button {
+    cursor: pointer;
+    border: 1px solid #0a2e1a;
+    background: #0a2e1a;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.65rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+  }
+  .prevent-actions button:hover { background: #144527; }
+  .prevent-actions button.secondary {
+    background: #fff;
+    color: #0a2e1a;
+  }
+  .prevent-actions button.secondary:hover { background: #f0f7f3; }
+  .prevent-output-col {
+    position: sticky;
+    top: 1rem;
+    align-self: flex-start;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+  }
+  .prevent-output-col h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    margin: 0 0 0.7rem;
+    color: #0a2e1a;
+  }
+  .prevent-preview {
+    background: #1a2128;
+    color: #e8e8e8;
+    padding: 1rem;
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    max-height: 380px;
+    overflow-y: auto;
+  }
+  .prevent-fired-rfs {
+    background: #fff8eb;
+    border: 1px solid #e0c890;
+    border-radius: 6px;
+    padding: 0.7rem 0.95rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+  .prevent-fired-rfs h3 {
+    margin: 0 0 0.4rem;
+    font-size: 0.95rem;
+    color: #6b4f00;
+  }
+  .prevent-fired-rfs ul { margin: 0; padding-left: 1.2rem; }
+  .prevent-fired-rfs li { margin: 0.15rem 0; }
+  .prevent-fired-rfs li code {
+    background: #f0e3b8;
+    padding: 0 0.3rem;
+    border-radius: 3px;
+    font-size: 0.83rem;
+  }
+  .prevent-charter-note {
+    font-size: 0.78rem;
+    color: #667;
+    background: #fafbfa;
+    padding: 0.7rem 0.95rem;
+    border-radius: 6px;
+    border: 1px solid #e0e5e2;
+    line-height: 1.5;
+  }
+  .prevent-charter-note strong { color: #0a2e1a; }
+  .prevent-quick-scenarios {
+    margin-bottom: 1.2rem;
+  }
+  .prevent-quick-scenarios label {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #0a2e1a;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+  .prevent-quick-scenarios select {
+    width: 100%;
+    padding: 0.45rem 0.6rem;
+    border: 1px solid #c8d1cb;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 0.92rem;
+  }
+  .small {
+    font-size: 0.82rem;
+    color: #666;
+  }
+</style>
+</head>
+<body>
+<header class="top-bar">
+  <div class="brand-line">
+    <a href="/" class="brand-mini">OpenOnco</a>
+  </div>
+  <nav class="top-nav">
+    <a href="/">Home</a>
+    <a href="/capabilities.html">Capabilities</a>
+    <a href="/try.html">Plan Builder</a>
+    <a href="/about.html">About</a>
+  </nav>
+  <div class="top-right">
+    <div class="top-cta-group">
+      <a href="/prevent.html" class="btn-cta-top btn-cta-try" aria-current="page">Prevention</a>
+      <a href="/try.html" class="btn-cta-top btn-cta-secondary">Plan Builder</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="prevent-layout">
+
+<!-- LEFT: Questionnaire form -->
+<section class="prevent-form-col">
+  <h1>Prevention / Early-Diagnosis Risk Assessment</h1>
+  <p class="prevent-intro">
+    <strong>HCP-mediated tool.</strong> Fill in the at-risk individual's profile below. The system identifies prevention-eligible risk factors (IARC Group 1 infectious carcinogens, hereditary pedigree red flags, occupational exposures, chronic conditions, iatrogenic + lifestyle) and generates a structured Prevention Plan with two tracks (standard intervention + observation alternative) per CHARTER §15.2 C4. Not a medical device; always verify with treating clinician.
+  </p>
+
+  <div class="prevent-quick-scenarios">
+    <label for="quick-scenario">Quick-load a pre-built scenario:</label>
+    <select id="quick-scenario" onchange="loadScenario(this.value)">
+      <option value="">— Empty form —</option>
+      <optgroup label="Infectious (IARC Group 1)">
+        <option value="hcv">Chronic HCV (no current lymphoma) → DAA prevention pathway</option>
+        <option value="hbv">Chronic HBV (no current HCC) → antiviral + surveillance</option>
+        <option value="hpv">Persistent HPV-16+, unvaccinated → Gardasil-9 + screening</option>
+        <option value="hpylori">H. pylori positive (no current malignancy) → PBMT eradication</option>
+        <option value="hiv">Newly-dx HIV → ART + cancer screening cadence</option>
+      </optgroup>
+      <optgroup label="Hereditary suspicion (germline panel candidate)">
+        <option value="lynch">Family meets Amsterdam II criteria → Lynch panel</option>
+        <option value="brca">Family BRCA pedigree + Ashkenazi → BRCA1/2 panel</option>
+        <option value="vhl">Family with hemangioblastoma + pheo → VHL panel</option>
+        <option value="lfs">Family Chompret criteria → TP53 panel</option>
+        <option value="fap">Father with confirmed APC + classic FAP phenotype</option>
+      </optgroup>
+      <optgroup label="Occupational / environmental (IARC Group 1)">
+        <option value="asbestos">Career asbestos exposure + smoker → mesothelioma surveillance</option>
+        <option value="benzene">Petroleum refining benzene exposure → AML/MDS surveillance</option>
+        <option value="radon">High residential radon + former smoker → LDCT</option>
+      </optgroup>
+      <optgroup label="Chronic conditions">
+        <option value="barretts">Long-segment Barrett's esophagus → EGD surveillance</option>
+        <option value="ibd">UC ×22 years extensive colitis → CRC surveillance</option>
+        <option value="psc">PSC + concurrent IBD (highest-risk subgroup)</option>
+      </optgroup>
+    </select>
+  </div>
+
+  <form id="prevent-form">
+
+    <fieldset class="prevent-section">
+      <legend>A. Patient demographics</legend>
+      <label class="prevent-field">Age (years): <input type="number" name="age" min="0" max="120" id="f-age" placeholder="e.g. 45"></label>
+      <label class="prevent-field">Sex:
+        <select name="sex" id="f-sex">
+          <option value="">—</option>
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+        </select>
+      </label>
+      <label class="prevent-field">ECOG performance status: <input type="number" name="ecog" min="0" max="4" id="f-ecog" placeholder="0-4"></label>
+    </fieldset>
+
+    <fieldset class="prevent-section">
+      <legend>B. Chronic infections (IARC Group 1)</legend>
+      <p class="prevent-section-desc">Each elevates risk of specific cancers; intervention is curative or risk-reducing antiviral / antibiotic / vaccine therapy.</p>
+      <label class="prevent-field"><input type="checkbox" data-finding="hcv_rna" data-value="detectable" id="f-hcv">Chronic Hepatitis C (HCV-RNA detectable) — fires DAA prevention pathway</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="hbsag" data-value="positive" id="f-hbv">Chronic Hepatitis B (HBsAg+ ≥6 months OR HBV-DNA detectable)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="hpv_high_risk_status" data-value="positive" id="f-hpv">Persistent high-risk HPV positive (HPV-16/18/etc on co-test)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="hpv_vaccine_status" data-value="unvaccinated" id="f-hpv-unvax">HPV-vaccination not completed (age-eligible 9-45)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="h_pylori_status" data-value="positive" id="f-hpylori">Helicobacter pylori positive (UBT / stool antigen / biopsy)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="hiv_status" data-value="positive" id="f-hiv">HIV-positive (any stage)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="ebv_dna_pcr" data-value="detectable" id="f-ebv">EBV-DNA detectable + immunocompromise context (post-transplant / HSCT / congenital ID / HIV+)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="post_transplant_immunosuppression" data-value="true" id="f-immunosuppression">Post-transplant immunosuppression (for EBV co-context)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="htlv_1_status" data-value="positive" id="f-htlv1">HTLV-1 positive (endemic region or known carrier)</label>
+    </fieldset>
+
+    <fieldset class="prevent-section">
+      <legend>C. Family pedigree (hereditary cancer red flags)</legend>
+      <p class="prevent-section-desc">Computed flags. Pedigree-to-criteria evaluator is a v0.2-C engine extension (currently expects flags pre-computed by clinician).</p>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_amsterdam_ii_criteria_met" data-value="true" id="f-lynch-amsterdam">Family meets Amsterdam II criteria (Lynch suspicion: ≥3 Lynch-spectrum cancers, ≥2 generations, ≥1 first-degree, ≥1 dx &lt;50)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_breast_cancer_under_50" data-value="true" id="f-brca-breast">First-degree relative with breast cancer &lt;50 (BRCA suspicion)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_ovarian_cancer_any_age" data-value="true" id="f-brca-ovarian">First-degree relative with high-grade serous ovarian cancer (any age)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_ashkenazi_jewish_ancestry_with_breast_or_ovarian" data-value="true" id="f-brca-ashkenazi">Ashkenazi-Jewish ancestry + family breast/ovarian (founder mutations)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_hemangioblastoma_cns_or_retinal" data-value="true" id="f-vhl-hemangioblastoma">Family CNS/retinal hemangioblastoma (VHL suspicion)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_pheochromocytoma_paraganglioma_with_rcc_or_hemangioblastoma" data-value="true" id="f-vhl-pheo">Family pheochromocytoma + RCC/hemangioblastoma cluster</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_classic_fap_phenotype" data-value="true" id="f-fap-phenotype">Family classic FAP phenotype (&gt;100 colorectal adenomas)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_apc_known_pathogenic_variant" data-value="true" id="f-fap-apc">Family confirmed APC pathogenic variant</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_chompret_criteria_met" data-value="true" id="f-lfs-chompret">Family meets Chompret criteria (LFS / TP53 suspicion)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="family_men2_phenotype_cluster" data-value="true" id="f-men2-phenotype">Family MEN2 phenotype cluster (MTC + pheo + parathyroid OR mucosal neuromas)</label>
+    </fieldset>
+
+    <fieldset class="prevent-section">
+      <legend>D. Lifestyle &amp; environmental risk factors</legend>
+      <label class="prevent-field"><input type="checkbox" data-finding="current_tobacco_use_documented" data-value="true" id="f-smoker">Current tobacco use (any quantity ≥3 months)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="heavy_alcohol_use_documented" data-value="true" id="f-alcohol">Heavy alcohol use (≥3 drinks/day men, ≥2/day women)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="bmi_kg_m2" data-value="35" id="f-bmi-obese">BMI ≥ 30 (obesity — cancer-cluster risk)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="residential_radon_exposure_ge_4_pci_per_l" data-value="true" id="f-radon">Residential radon ≥ 4 pCi/L</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="residential_pm2_5_annual_average_gt_35" data-value="true" id="f-pm25">Residential PM2.5 &gt; 35 μg/m³ annual average</label>
+    </fieldset>
+
+    <fieldset class="prevent-section">
+      <legend>E. Occupational exposures (IARC Group 1)</legend>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_asbestos_exposure_documented" data-value="true" id="f-asbestos">Occupational asbestos exposure (shipyard, insulator, demolition)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_benzene_exposure_documented" data-value="true" id="f-benzene">Occupational benzene (petroleum refining, solvent industries)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_diesel_exhaust_exposure_documented" data-value="true" id="f-diesel">Diesel exhaust (truck drivers, miners, heavy equipment)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_formaldehyde_exposure_documented" data-value="true" id="f-formaldehyde">Formaldehyde (pathology, embalmers, particleboard)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_aromatic_amine_exposure_documented" data-value="true" id="f-aromatic">Aromatic amines (dye/rubber/leather industry pre-regulation)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_silica_exposure_documented" data-value="true" id="f-silica">Crystalline silica (mining, quarrying, sandblasting)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="occupational_firefighter_career_documented" data-value="true" id="f-firefighter">Career firefighter (≥10 years)</label>
+    </fieldset>
+
+    <fieldset class="prevent-section">
+      <legend>F. Chronic medical conditions</legend>
+      <label class="prevent-field"><input type="checkbox" data-finding="barretts_esophagus_diagnosis_confirmed" data-value="true" id="f-barretts">Confirmed Barrett's esophagus</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="inflammatory_bowel_disease_uc_diagnosis_ge_8y" data-value="true" id="f-ibd-uc">Ulcerative colitis ≥ 8 years duration</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="primary_sclerosing_cholangitis_diagnosis_confirmed" data-value="true" id="f-psc">Primary sclerosing cholangitis (PSC)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="primary_sclerosing_cholangitis_with_ibd" data-value="true" id="f-psc-ibd">PSC with concurrent IBD (highest-risk subgroup)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="celiac_disease_refractory_type_2" data-value="true" id="f-celiac">Refractory celiac disease type 2</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="chronic_pancreatitis_hereditary_pancreatitis_prss1_or_spink1" data-value="true" id="f-pancreatitis">Hereditary pancreatitis (PRSS1 / SPINK1)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="hashimoto_thyroiditis_diagnosis_confirmed" data-value="true" id="f-hashimoto">Hashimoto's thyroiditis</label>
+    </fieldset>
+
+    <fieldset class="prevent-section">
+      <legend>G. Iatrogenic risk factors (prior treatment exposures)</legend>
+      <label class="prevent-field"><input type="checkbox" data-finding="prior_anthracycline_cumulative_dose_ge_250" data-value="true" id="f-anthracycline">Prior anthracycline cumulative dose ≥250 mg/m² (cardio-late-effect)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="prior_cranial_radiotherapy_documented" data-value="true" id="f-cranial-rt">Prior cranial radiotherapy (secondary brain tumor / endocrine)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="prior_alkylator_chemotherapy_documented" data-value="true" id="f-alkylator">Prior alkylator chemotherapy (therapy-related AML risk)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="ppi_continuous_use_ge_10y" data-value="true" id="f-ppi-longterm">PPI continuous use ≥10 years (gastric NET risk)</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="combined_hrt_continuous_use_ge_5y" data-value="true" id="f-hrt">Combined HRT (estrogen + progestin) use ≥5 years</label>
+      <label class="prevent-field"><input type="checkbox" data-finding="tamoxifen_continuous_use_ge_5y" data-value="true" id="f-tamoxifen">Long-term tamoxifen ≥5 years (endometrial cancer surveillance)</label>
+    </fieldset>
+
+    <div class="prevent-actions">
+      <button type="button" onclick="updatePreview()">Generate Prevention Plan →</button>
+      <button type="button" class="secondary" onclick="copyJSON()">Copy patient JSON</button>
+      <button type="button" class="secondary" onclick="openInTryBuilder()">Open in Plan Builder →</button>
+      <button type="button" class="secondary" onclick="resetForm()">Reset form</button>
+    </div>
+  </form>
+</section>
+
+<!-- RIGHT: Output preview -->
+<aside class="prevent-output-col">
+  <h2>Patient profile preview</h2>
+  <pre class="prevent-preview" id="json-preview">{
+  "patient_id": "PREVENT-WEB-001",
+  "comment": "Fill in the form on the left, then click Generate Prevention Plan",
+  "biomarkers": {},
+  "demographics": {},
+  "findings": {}
+}</pre>
+
+  <div class="prevent-fired-rfs" id="fired-rfs-block" style="display:none;">
+    <h3>Prevention RedFlags that will fire:</h3>
+    <ul id="fired-rfs-list"></ul>
+    <p class="small" style="margin-top: 0.5rem;">Each fired RF routes to a 2-track Prevention Plan (intervention + observation per CHARTER §15.2 C4). Click <strong>Open in Plan Builder</strong> to run the engine and see the full output.</p>
+  </div>
+
+  <div class="prevent-charter-note">
+    <strong>CHARTER §15 C1 invariant:</strong> OpenOnco is an HCP-mediated tool, not a patient-direct medical device. This questionnaire is for clinician-led prevention consultations. All content is STUB pending two-Clinical-Co-Lead signoff per §6.1 dev-mode exemption.
+    <br><br>
+    <strong>Data:</strong> nothing here is sent to a server. All processing happens client-side once you click <em>Open in Plan Builder</em> (which embeds the OpenOnco engine via Pyodide).
+    <br><br>
+    <strong>Coverage:</strong> 50+ prevention pilots across 7 risk-factor categories (infectious / hereditary / chronic-condition / occupational / iatrogenic / lifestyle / reproductive) per IARC Monographs + USPSTF + NCCN Genetic/Familial High-Risk + AGA + AASLD.
+  </div>
+</aside>
+
+</div>
+</main>
+
+<script>
+// Pre-built scenarios — each is a snapshot of finding-keys that fire specific prevention RFs
+const SCENARIOS = {
+  hcv: { age: 52, sex: 'male', ecog: 1, checks: ['f-hcv'] },
+  hbv: { age: 42, sex: 'female', ecog: 0, checks: ['f-hbv'] },
+  hpv: { age: 29, sex: 'female', ecog: 0, checks: ['f-hpv', 'f-hpv-unvax'] },
+  hpylori: { age: 48, sex: 'male', ecog: 1, checks: ['f-hpylori'] },
+  hiv: { age: 35, sex: 'male', ecog: 0, checks: ['f-hiv'] },
+  lynch: { age: 38, sex: 'female', ecog: 0, checks: ['f-lynch-amsterdam'] },
+  brca: { age: 32, sex: 'female', ecog: 0, checks: ['f-brca-breast', 'f-brca-ovarian', 'f-brca-ashkenazi'] },
+  vhl: { age: 24, sex: 'male', ecog: 0, checks: ['f-vhl-hemangioblastoma', 'f-vhl-pheo'] },
+  lfs: { age: 28, sex: 'female', ecog: 0, checks: ['f-lfs-chompret'] },
+  fap: { age: 16, sex: 'male', ecog: 0, checks: ['f-fap-phenotype', 'f-fap-apc'] },
+  asbestos: { age: 62, sex: 'male', ecog: 1, checks: ['f-asbestos', 'f-smoker'] },
+  benzene: { age: 55, sex: 'male', ecog: 0, checks: ['f-benzene'] },
+  radon: { age: 58, sex: 'female', ecog: 0, checks: ['f-radon'] },
+  barretts: { age: 54, sex: 'male', ecog: 0, checks: ['f-barretts'] },
+  ibd: { age: 44, sex: 'female', ecog: 0, checks: ['f-ibd-uc'] },
+  psc: { age: 39, sex: 'male', ecog: 1, checks: ['f-psc', 'f-psc-ibd'] }
+};
+
+// RF mapping: which fired-finding-key activates which RF (for the preview panel)
+const RF_MAP = {
+  'hcv_rna': 'RF-CHRONIC-HCV-NHL-PREVENTION-OPPORTUNITY → DAA antiviral pathway',
+  'hbsag': 'RF-CHRONIC-HBV-MALIGNANCY-PREVENTION → entecavir/TAF + HCC surveillance',
+  'hpv_high_risk_status': 'RF-CHRONIC-HPV-MALIGNANCY-PREVENTION → Gardasil-9 + Pap/anal screening',
+  'hpv_vaccine_status': 'RF-CHRONIC-HPV-MALIGNANCY-PREVENTION → vaccination + screening',
+  'h_pylori_status': 'RF-CHRONIC-H-PYLORI-MALIGNANCY-PREVENTION → PBMT eradication (Ukraine preferred)',
+  'hiv_status': 'RF-CHRONIC-HIV-MALIGNANCY-PREVENTION → ART + cancer-screening cadence',
+  'ebv_dna_pcr': 'RF-CHRONIC-EBV-MALIGNANCY-PREVENTION → active EBV-DNA surveillance + preemptive rituximab if titer rising',
+  'htlv_1_status': 'RF-CHRONIC-HTLV-1-MALIGNANCY-PREVENTION → hematologic surveillance + transmission counseling',
+  'family_amsterdam_ii_criteria_met': 'RF-LYNCH-FAMILY-HISTORY-SUSPICION → germline MMR/EPCAM panel',
+  'family_breast_cancer_under_50': 'RF-BRCA-HBOC-FAMILY-HISTORY-SUSPICION → BRCA1/2 + extended panel',
+  'family_ovarian_cancer_any_age': 'RF-BRCA-HBOC-FAMILY-HISTORY-SUSPICION → BRCA1/2 + extended panel',
+  'family_ashkenazi_jewish_ancestry_with_breast_or_ovarian': 'RF-BRCA-HBOC-FAMILY-HISTORY-SUSPICION → BRCA1/2 founder mutation testing',
+  'family_hemangioblastoma_cns_or_retinal': 'RF-VHL-FAMILY-HISTORY-SUSPICION → germline VHL panel + VHL Alliance surveillance protocol',
+  'family_pheochromocytoma_paraganglioma_with_rcc_or_hemangioblastoma': 'RF-VHL-FAMILY-HISTORY-SUSPICION → germline VHL panel',
+  'family_classic_fap_phenotype': 'RF-FAP-FAMILY-HISTORY-SUSPICION → germline APC panel + sigmoidoscopy from 10-12',
+  'family_apc_known_pathogenic_variant': 'RF-FAP-FAMILY-HISTORY-SUSPICION → germline APC panel',
+  'family_chompret_criteria_met': 'RF-LI-FRAUMENI-FAMILY-HISTORY-SUSPICION → germline TP53 panel + Toronto Protocol',
+  'family_men2_phenotype_cluster': 'RF-MEN2-FAMILY-HISTORY-SUSPICION → germline RET panel + prophylactic thyroidectomy planning',
+  'current_tobacco_use_documented': 'RF-UNIVERSAL-CURRENT-SMOKER-MULTI-CANCER → cessation + LDCT eligibility',
+  'heavy_alcohol_use_documented': 'RF-UNIVERSAL-HEAVY-ALCOHOL-MULTI-CANCER → AUD counseling + cancer-screening adjustment',
+  'bmi_kg_m2': 'RF-UNIVERSAL-ELEVATED-BMI-CANCER-CLUSTER → structured weight-loss program (+13 IARC cancers)',
+  'residential_radon_exposure_ge_4_pci_per_l': 'RF-ENVIRONMENTAL-AIR-POLLUTION-LUNG-PREVENTION → mitigation + LDCT',
+  'residential_pm2_5_annual_average_gt_35': 'RF-ENVIRONMENTAL-AIR-POLLUTION-LUNG-PREVENTION',
+  'occupational_asbestos_exposure_documented': 'RF-OCC-ASBESTOS-MALIGNANCY-PREVENTION → LDCT + smoking cessation + pleural surveillance',
+  'occupational_benzene_exposure_documented': 'RF-OCC-BENZENE-MALIGNANCY-PREVENTION → CBC q6-12mo + low-threshold BM eval',
+  'occupational_diesel_exhaust_exposure_documented': 'RF-OCC-DIESEL-EXHAUST-PREVENTION → LDCT + cessation',
+  'occupational_formaldehyde_exposure_documented': 'RF-OCC-FORMALDEHYDE-PREVENTION → CBC + ENT symptom awareness',
+  'occupational_aromatic_amine_exposure_documented': 'RF-OCC-AROMATIC-AMINES-MALIGNANCY-PREVENTION → urinalysis + cytology + cystoscopy threshold',
+  'occupational_silica_exposure_documented': 'RF-OCC-SILICA-PREVENTION → HRCT + LDCT + smoking cessation',
+  'occupational_firefighter_career_documented': 'RF-OCC-FIREFIGHTER-PREVENTION → multi-cancer-screening (LDCT, dermatology, GI)',
+  'barretts_esophagus_diagnosis_confirmed': 'RF-BARRETTS-ESOPHAGUS-PREVENTION → EGD q3-5y + high-dose PPI',
+  'inflammatory_bowel_disease_uc_diagnosis_ge_8y': 'RF-IBD-CRC-PREVENTION → colonoscopy q1-2y + chromoendoscopy',
+  'primary_sclerosing_cholangitis_diagnosis_confirmed': 'RF-PSC-CHOLANGIOCARCINOMA-PREVENTION → MRI/MRCP + CA 19-9 annual',
+  'primary_sclerosing_cholangitis_with_ibd': 'PSC-IBD highest-risk subgroup → annual colonoscopy from PSC dx',
+  'celiac_disease_refractory_type_2': 'RF-CELIAC-EATL-PREVENTION → strict GFD + small-bowel imaging q1-2y',
+  'chronic_pancreatitis_hereditary_pancreatitis_prss1_or_spink1': 'RF-CHRONIC-PANCREATITIS-PDAC-PREVENTION → MRI/MRCP + EUS surveillance',
+  'hashimoto_thyroiditis_diagnosis_confirmed': 'RF-AUTOIMMUNE-THYROIDITIS-LYMPHOMA-PREVENTION → TSH + thyroid US q6-12mo',
+  'prior_anthracycline_cumulative_dose_ge_250': 'RF-IATROGENIC-ANTHRACYCLINE-LATE-CARDIO-PREVENTION → echo q1-5y',
+  'prior_cranial_radiotherapy_documented': 'RF-IATROGENIC-CRANIAL-RT-LATE-PREVENTION → neuro exam + endocrine panel + brain MRI if symptomatic',
+  'prior_alkylator_chemotherapy_documented': 'RF-IATROGENIC-ALKYLATOR-TAML-PREVENTION → CBC q3-6mo for first 10y',
+  'ppi_continuous_use_ge_10y': 'RF-IATROGENIC-LONG-TERM-PPI-GASTRIC-NET-PREVENTION → de-prescribing + EGD surveillance',
+  'combined_hrt_continuous_use_ge_5y': 'RF-IATROGENIC-COMBINED-HRT-PREVENTION → year-5 shared-decision review',
+  'tamoxifen_continuous_use_ge_5y': 'RF-IATROGENIC-TAMOXIFEN-ENDOMETRIAL-PREVENTION → symptom-prompted evaluation; routine TVUS NOT recommended (ACOG)'
+};
+
+function buildPatient() {
+  const ageEl = document.getElementById('f-age');
+  const sexEl = document.getElementById('f-sex');
+  const ecogEl = document.getElementById('f-ecog');
+  const age = ageEl.value ? parseInt(ageEl.value, 10) : null;
+  const sex = sexEl.value || null;
+  const ecog = ecogEl.value !== '' ? parseInt(ecogEl.value, 10) : null;
+
+  const demographics = {};
+  if (age !== null) demographics.age = age;
+  if (sex) demographics.sex = sex;
+  if (ecog !== null) demographics.ecog = ecog;
+
+  const findings = {};
+  const firedRFs = [];
+  document.querySelectorAll('#prevent-form input[type="checkbox"][data-finding]').forEach(cb => {
+    if (cb.checked) {
+      const key = cb.dataset.finding;
+      let value = cb.dataset.value;
+      // Coerce booleans + numbers
+      if (value === 'true') value = true;
+      else if (value === 'false') value = false;
+      else if (!isNaN(value) && value !== '') value = parseFloat(value);
+      findings[key] = value;
+      if (RF_MAP[key]) firedRFs.push(RF_MAP[key]);
+    }
+  });
+
+  const summary = describePatient(demographics, findings);
+  const patient = {
+    patient_id: 'PREVENT-WEB-' + Date.now().toString().slice(-4),
+    comment: summary,
+    biomarkers: {},
+    demographics,
+    findings
+  };
+  return { patient, firedRFs };
+}
+
+function describePatient(demo, findings) {
+  const parts = [];
+  if (demo.age) parts.push(`${demo.age}yo`);
+  if (demo.sex) parts.push(demo.sex);
+  if (Object.keys(findings).length) parts.push(`with ${Object.keys(findings).length} prevention-eligible flag(s)`);
+  return parts.length ? `Prevention assessment: ${parts.join(' ')}` : 'Empty prevention profile';
+}
+
+function updatePreview() {
+  const { patient, firedRFs } = buildPatient();
+  document.getElementById('json-preview').textContent = JSON.stringify(patient, null, 2);
+  const block = document.getElementById('fired-rfs-block');
+  const list = document.getElementById('fired-rfs-list');
+  list.innerHTML = '';
+  if (firedRFs.length === 0) {
+    block.style.display = 'none';
+  } else {
+    block.style.display = 'block';
+    // Dedupe
+    [...new Set(firedRFs)].forEach(rf => {
+      const li = document.createElement('li');
+      li.textContent = rf;
+      list.appendChild(li);
+    });
+  }
+}
+
+function copyJSON() {
+  const { patient } = buildPatient();
+  navigator.clipboard.writeText(JSON.stringify(patient, null, 2)).then(() => {
+    alert('Patient JSON copied to clipboard. Paste into /try.html textarea to run the engine.');
+  }).catch(() => {
+    alert('Clipboard API not available. Copy from the preview panel instead.');
+  });
+}
+
+function openInTryBuilder() {
+  const { patient } = buildPatient();
+  // Pass via URL fragment (try.html can be enhanced to read this)
+  const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(patient))));
+  window.open('/try.html#prefill=' + encoded, '_blank');
+}
+
+function loadScenario(key) {
+  if (!key) return;
+  const s = SCENARIOS[key];
+  if (!s) return;
+  resetForm();
+  document.getElementById('f-age').value = s.age;
+  document.getElementById('f-sex').value = s.sex;
+  document.getElementById('f-ecog').value = s.ecog;
+  s.checks.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.checked = true;
+  });
+  updatePreview();
+}
+
+function resetForm() {
+  document.getElementById('prevent-form').reset();
+  document.getElementById('json-preview').textContent = JSON.stringify({
+    patient_id: 'PREVENT-WEB-001',
+    comment: 'Fill in the form on the left, then click Generate Prevention Plan',
+    biomarkers: {},
+    demographics: {},
+    findings: {}
+  }, null, 2);
+  document.getElementById('fired-rfs-block').style.display = 'none';
+}
+
+// Wire up live preview on every change
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('#prevent-form input, #prevent-form select').forEach(el => {
+    el.addEventListener('change', updatePreview);
+  });
+});
+</script>
+
+</body>
+</html>
