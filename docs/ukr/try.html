@@ -226,7 +226,7 @@
           <span id="pwaInstallState" class="build-state">Браузер</span>
         </div>
         <dl class="build-meta">
-          <div><dt>Core</dt><dd id="coreVersion">vfded99068033</dd></div>
+          <div><dt>Core</dt><dd id="coreVersion">vbb9c00cbeb6f</dd></div>
           <div><dt>Хвороба</dt><dd id="diseaseVersion">—</dd></div>
           <div><dt>Кеш</dt><dd id="cacheState">Перевіряю…</dd></div>
           <div><dt>Offline</dt><dd id="offlineState">Мережа потрібна для першого запуску</dd></div>
@@ -565,7 +565,7 @@ async function refreshBuildPanel(diseaseId = null) {
     : 'Браузер');
 
   if (bundleIndex) {
-    setText(coreVersionEl, 'v' + (bundleIndex.core_version || 'fded99068033'));
+    setText(coreVersionEl, 'v' + (bundleIndex.core_version || 'bb9c00cbeb6f'));
     if (offlineCacheTotal <= 0) {
       const total = offlineBundleUrls().length;
       setOfflineCacheProgress(0, total, 0);

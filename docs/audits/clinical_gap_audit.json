@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-05-18T11:14:56Z",
+  "generated_at_utc": "2026-05-19T10:49:02Z",
   "kb_root": "/home/runner/work/OpenOnco/OpenOnco/knowledge_base/hosted/content",
   "entity_counts": {
     "diseases": 78,
@@ -14,7 +14,7 @@
     "tests": 115,
     "supportive_care": 13,
     "monitoring": 8,
-    "sources": 388,
+    "sources": 392,
     "workups": 24,
     "questionnaires": 78,
     "mdt_skills": 16,
