@@ -1,0 +1,14 @@
+{
+  "patient_id": "OCC-PAH-PREV-001",
+  "comment": "56yo male, 20 years as coke-oven worker (integrated steelmaking, Soviet-era plant 1990-2010), no current malignancy. PAH-rich occupational exposure (IARC Group 1 Monograph 100F). Engine routes to PreventionPlan: standard = IND-OCC-PAH-PREVENTION-INTENSIFIED-SURVEILLANCE (LDCT chest + urinalysis q1-2y + annual dermatologic exam + smoking-cessation counseling); alternative = IND-OCC-PAH-PREVENTION-OBSERVATION. Validates v0.3 RF-OCC-PAH-PREVENTION pilot (lung/bladder/skin risk).",
+  "biomarkers": {},
+  "demographics": {"age": 56, "sex": "male", "ecog": 1},
+  "findings": {
+    "occupational_pah_exposure_documented": true,
+    "occupational_pah_exposure_years_ge_10": true,
+    "Coke-oven worker 1990-2010 (20 years), steelmaking plant": true,
+    "Former smoker 25 pack-years, quit 2015": true,
+    "Skin exam baseline unremarkable, no suspicious lesions": true,
+    "No current PAH-attributable malignancy": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "patient_id": "CHRONIC-ATROPHIC-GASTRITIS-PREV-001",
+  "comment": "60yo female with chronic atrophic gastritis (histologically confirmed on EGD topographic biopsies — Sydney protocol 2 antrum + 2 corpus + incisura), advanced intestinal metaplasia at OLGIM stage III, autoimmune mechanism (anti-parietal-cell + anti-IF antibodies positive, B12 deficiency on replacement, elevated gastrin), no current gastric malignancy. ~5-10x lifetime RR for intestinal-type gastric adenocarcinoma + risk for type 1 gastric NET. Engine routes to PreventionPlan: standard = IND-CHRONIC-ATROPHIC-GASTRITIS-PREVENTION-SURVEILLANCE (EGD q3y with Sydney-protocol biopsies + B12/iron monitoring); alternative = IND-CHRONIC-ATROPHIC-GASTRITIS-PREVENTION-OBSERVATION (symptom-driven, B12 + iron only). Validates v0.3 RF-CHRONIC-ATROPHIC-GASTRITIS-PREVENTION pilot (gastric adenocarcinoma + gastric NET risk).",
+  "biomarkers": {"BIO-ANTI-PARIETAL-CELL": "positive", "BIO-ANTI-INTRINSIC-FACTOR": "positive"},
+  "demographics": {"age": 60, "sex": "female", "ecog": 1},
+  "findings": {
+    "chronic_atrophic_gastritis_histology_confirmed": true,
+    "autoimmune_metaplastic_atrophic_gastritis": true,
+    "olgim_stage_3_or_4": true,
+    "B12 deficiency on IM replacement, iron repletion in progress": true,
+    "Elevated serum gastrin consistent with achlorhydria": true,
+    "No current gastric adenocarcinoma or NET on most recent EGD": true
+  }
+}
