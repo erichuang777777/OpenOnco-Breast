@@ -1,0 +1,87 @@
+id: RF-FAMMM-CONFIRMED-CARRIER
+definition: >-
+  Confirmed germline pathogenic / likely-pathogenic variant in the
+  CDKN2A (p16-INK4a) gene — Familial Atypical Multiple Mole Melanoma
+  syndrome (FAMMM). Patient has had germline CDKN2A testing returned
+  positive; the pedigree-suspicion question is settled. No current
+  personal cancer diagnosis in the carrier being assessed. Mandates
+  structured surveillance: lifetime melanoma risk ~60-80% (cutaneous,
+  occasionally ocular) and pancreatic adenocarcinoma risk ~15-25%
+  (CDKN2A is one of few hereditary syndromes with sufficient absolute
+  pancreatic-cancer risk to justify CAPS Consortium-eligible
+  surveillance). Prevention-persona RedFlag (§20, v0.2-B confirmed-
+  carrier surveillance pathway — distinct from RF-FAMMM-FAMILY-HISTORY-
+  SUSPICION which fires before testing).
+definition_ua: >-
+  Підтверджений гермінативний патогенний / ймовірно-патогенний варіант у
+  гені CDKN2A (p16-INK4a) — синдром Familial Atypical Multiple Mole
+  Melanoma (FAMMM). Пацієнт пройшов germline CDKN2A-тестування з
+  позитивним результатом; питання родовідної підозри вирішене. Поточний
+  особистий діагноз раку відсутній. Mandates структуроване спостереження:
+  lifetime melanoma ризик ~60-80% (шкірна, occasionally ocular) та
+  pancreatic adenocarcinoma ризик ~15-25% (CDKN2A — один з небагатьох
+  спадкових синдромів зі sufficient absolute pancreatic-cancer ризиком
+  для CAPS Consortium-eligible surveillance). Prevention-persona RedFlag
+  (§20, v0.2-B шлях спостереження підтверджених носіїв).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "germline_cdkn2a_pathogenic_variant_confirmed"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+risk_category: genetic
+
+# FAMMM-spectrum: melanoma ~60-80% (DIS-MELANOMA), pancreatic ~15-25%
+# (DIS-PDAC).
+relevant_diseases:
+  - DIS-MELANOMA
+  - DIS-PDAC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.2-B confirmed-carrier surveillance pathway — FAMMM / CDKN2A. Fires
+  on documented germline CDKN2A pathogenic variant positivity. Engine
+  routes to PreventionPlan recommending:
+    (a) IND-FAMMM-CARRIER-SURVEILLANCE (standard) — annual whole-body
+        skin exam by dermatologist + total body photography + dermoscopy;
+        pancreatic surveillance EUS / MRI q1-2y from age 40 (CAPS
+        Consortium-eligible); sun-protection counseling; family cascade
+        testing offered.
+    (b) IND-FAMMM-CARRIER-INTENSIFIED (aggressive) — standard PLUS
+        earlier pancreatic surveillance initiation (age 30-35 if smoker
+        or family pancreatic cancer < 50) + intensified sun-avoidance
+        program (avoidance + structural barriers + chemoprotection
+        adjuncts).
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption. Source-set TODO: dedicated CDKN2A surveillance source —
+  Goldstein et al. melanoma-pancreas family registry recommendations;
+  CAPS Consortium pancreatic-cancer surveillance consensus (Goggins
+  et al. Gut 2020).
+
+  Lifetime cancer risk in confirmed CDKN2A carriers (Goldstein et al.
+  J Med Genet 2007; updated estimates):
+    - Cutaneous melanoma: ~60-80% lifetime; often multiple primaries
+      across lifetime
+    - Pancreatic adenocarcinoma: ~15-25% lifetime; smoking is the
+      strongest modifiable cofactor (multiplicatively elevates risk)
+    - Uveal melanoma: modest elevation (smaller than BAP1-TPDS)
+    - Squamous-cell carcinoma + basal-cell carcinoma: elevated via
+      chronic sun damage in atypical-nevus phenotype carriers
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02b_confirmed_carriers_additional
+draft_revision: 1

@@ -1,0 +1,146 @@
+id: IND-MEN2-CARRIER-INTENSIFIED
+plan_track: aggressive
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-MTC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-MEN2-CONFIRMED-CARRIER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Intensified track layers two options on top of standard MEN2
+    surveillance: (1) earlier thyroidectomy than ATA-class default in
+    families with severe-phenotype index (e.g., metastatic MTC in
+    teen-aged relative); (2) bilateral cortical-sparing adrenalectomy
+    discussion if bilateral pheochromocytoma emerges — preserves
+    glucocorticoid function and avoids lifelong Addisonian replacement.
+    Trade-off: surgical morbidity and adrenal-remnant pheochromocytoma
+    recurrence (~10-30% over decades) — both shared-decision-making
+    points.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Aggressive-track confirmed-carrier pathway layered on top of the
+  IND-MEN2-CARRIER-SURVEILLANCE standard protocol.
+
+  **Foundation:** All standard surveillance from IND-MEN2-CARRIER-
+  SURVEILLANCE applies (ATA-class-driven thyroidectomy timing,
+  calcitonin q6mo, metanephrines q1y, PTH/Ca q1y in MEN2A).
+
+  **Intensification 1 — Earlier thyroidectomy than ATA-class default:**
+  In moderate-risk RET kindreds with a severe-phenotype index case
+  (e.g., metastatic MTC in a teen-aged relative or unexpectedly early
+  calcitonin rise in the proband), advancing thyroidectomy timing
+  beyond the standard ATA-class recommendation is a shared-decision
+  option. Trade-off: surgical morbidity in a younger child (recurrent
+  laryngeal nerve injury ~1-2%, permanent hypoparathyroidism if all
+  parathyroids removed without autograft, lifelong levothyroxine
+  replacement).
+
+  **Intensification 2 — Bilateral cortical-sparing adrenalectomy
+  discussion:** When bilateral pheochromocytomas emerge sequentially or
+  synchronously, complete bilateral adrenalectomy commits the patient to
+  lifelong glucocorticoid + mineralocorticoid replacement with
+  ever-present Addisonian-crisis risk. Cortical-sparing partial
+  adrenalectomy preserves a viable adrenal cortical remnant (~30% of
+  one gland adequate) — patient avoids primary adrenal insufficiency
+  but accepts ~10-30% lifetime adrenal-remnant pheochromocytoma
+  recurrence over decades. Shared decision; surgical expertise required.
+
+  **Other intensification considerations (discussed at HCP discretion):**
+    - Annual whole-body 18F-DOPA or 68Ga-DOTATATE PET surveillance is
+      NOT routine — high cost, low pre-test probability, frequent
+      incidentalomas.
+    - Prophylactic parathyroidectomy in MEN2A without biochemical
+      hyperparathyroidism is NOT standard — wait for biochemical
+      signal.
+
+  **Cascade testing continuous:** every visit re-confirms family
+  testing status; particularly time-sensitive for pediatric kindred.
+
+  Per CHARTER §11: intensified surgical and surveillance decisions are
+  shared-decision-making; standard-track ATA-class default remains the
+  floor.
+
+rationale_ua: >
+  Aggressive-трекова Indication: накладена поверх IND-MEN2-CARRIER-
+  SURVEILLANCE.
+
+  **Foundation:** Усе standard з IND-MEN2-CARRIER-SURVEILLANCE.
+
+  **Інтенсифікація 1 — Рання тиреоїдектомія раніше ATA-class default:**
+  У moderate-risk RET кіндредах із severe-phenotype index — advancing
+  timing beyond ATA recommendation. Trade-off: surgical morbidity у
+  молодшої дитини, lifelong levothyroxine.
+
+  **Інтенсифікація 2 — Bilateral cortical-sparing adrenalectomy:** При
+  bilateral pheochromocytomas — complete bilateral adrenalectomy
+  commits до lifelong glucocorticoid + mineralocorticoid replacement
+  + Addisonian-crisis risk. Cortical-sparing partial — preserves adrenal
+  cortical remnant; ~10-30% recurrence over decades. Shared decision.
+
+  **Інші міркування:**
+    - Annual whole-body 18F-DOPA / 68Ga-DOTATATE PET surveillance — NOT
+      routine.
+    - Prophylactic parathyroidectomy у MEN2A без biochemical signal — NOT
+      standard.
+
+  **Cascade тестування continuous;** time-sensitive для pediatric
+  кіндредів.
+
+  Per CHARTER §11: shared-decision-making домен.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02b_confirmed_carriers_additional
+draft_revision: 1
+
+sources:
+  - source_id: SRC-ATA-THYROID-2015
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Earlier thyroidectomy and cortical-sparing adrenalectomy are
+      appropriate options in MEN2 carriers with severe-phenotype
+      kindreds or bilateral pheochromocytoma, following individualized
+      shared decision-making."
+  - source_id: SRC-NCCN-THYROID-2025
+    position: context
+
+do_not_do:
+  - "Не advanceувати thyroidectomy раніше ATA-class default без severe-phenotype index чи rising calcitonin — surgical morbidity у дитини не виправдана."
+  - "Не виконувати bilateral cortical-sparing adrenalectomy у low-volume center — adrenal remnant viability technique-dependent."
+  - "Не призначати empirical lifelong glucocorticoid после cortical-sparing surgery — assessment of remnant cortical function (ACTH stimulation) визначає необхідність."
+  - "Не використовувати 18F-DOPA / 68Ga-DOTATATE PET як routine surveillance — резерв для staging of confirmed disease."
+
+do_not_do_en:
+  - "Do not advance thyroidectomy earlier than ATA-class default without severe-phenotype index or rising calcitonin — surgical morbidity in a child is not justified otherwise."
+  - "Do not perform bilateral cortical-sparing adrenalectomy in a low-volume center — adrenal-remnant viability is technique-dependent."
+  - "Do not prescribe empirical lifelong glucocorticoid after cortical-sparing surgery — remnant function assessment (ACTH stimulation) determines need."
+  - "Do not use 18F-DOPA / 68Ga-DOTATATE PET as routine surveillance — reserve for staging of confirmed disease."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B confirmed-carrier intensified track (MEN2). Sibling — IND-MEN2-CARRIER-SURVEILLANCE. §15.2 C4 ≥2-tracks invariant."

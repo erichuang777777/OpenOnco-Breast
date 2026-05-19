@@ -1,0 +1,161 @@
+id: IND-COWDEN-CARRIER-INTENSIFIED
+plan_track: aggressive
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-COWDEN-CONFIRMED-CARRIER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Intensified track layers risk-reducing surgery discussions on top of
+    the standard NCCN multi-organ surveillance protocol. (1) Bilateral
+    risk-reducing mastectomy reduces breast cancer incidence to
+    near-zero in confirmed PTEN carriers (NCCN Category 2A; no OS
+    benefit shown in RCTs, but cancer-specific incidence reduction is
+    well documented). (2) Risk-reducing hysterectomy + BSO
+    post-childbearing reduces endometrial cancer incidence to near-zero
+    and modestly addresses the small Cowden ovarian-cancer risk.
+    Neither intervention is mandated; both are shared-decision-making.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Aggressive-track confirmed-carrier pathway layered on top of the
+  IND-COWDEN-CARRIER-SURVEILLANCE standard protocol with two
+  intensification options.
+
+  **Foundation:** All standard surveillance from IND-COWDEN-CARRIER-
+  SURVEILLANCE applies (breast MRI + mammography annually from 30,
+  annual thyroid US, endometrial sampling / TVUS from 35-40, colonoscopy
+  from 35, annual dermatology, renal US / MRI from 40).
+
+  **Intensification 1 — Risk-reducing bilateral mastectomy (women,
+  post-childbearing):** Bilateral mastectomy with or without immediate
+  reconstruction reduces breast cancer incidence in PTEN carriers to
+  near-zero (NCCN Category 2A). Shared-decision-making must cover:
+    - Surgical risk (anesthesia, infection, reconstruction-specific
+      complications)
+    - Psychological impact (body-image, sensation loss, sexual function)
+    - Reconstructive options (implant vs autologous; immediate vs
+      delayed; nipple-sparing eligibility)
+    - Alternative: continued annual breast MRI + mammography surveillance
+      with explicit framing of cumulative interval-cancer risk vs
+      surgical morbidity
+    - Fertility / breastfeeding planning (must precede surgery)
+
+  **Intensification 2 — Risk-reducing hysterectomy + BSO
+  (post-childbearing):** Reduces endometrial cancer incidence to
+  near-zero. Cowden ovarian cancer risk is modest (not BRCA-level), so
+  BSO addresses a smaller absolute risk than in BRCA carriers — but
+  combined hysterectomy + BSO is the standard surgical package when
+  hysterectomy is undertaken. Shared-decision-making must cover:
+    - Surgical risk
+    - Surgical menopause sequelae (vasomotor symptoms, bone density,
+      cardiovascular) — managed with HRT when not contraindicated;
+      HRT in Cowden post-BSO is generally appropriate (PTEN-driven
+      breast cancer risk is not exclusively hormone-driven in the way
+      BRCA-related breast cancer is)
+    - Fertility planning (must precede surgery)
+    - Alternative: continued endometrial sampling + TVUS surveillance
+
+  **Other intensification considerations (not core to this track):**
+    - mTOR-pathway chemoprevention (rapalogs) is investigational — do
+      NOT prescribe outside trial.
+    - Pediatric prophylactic thyroidectomy is NOT standard (Cowden
+      thyroid cancer is most often slow-growing follicular-variant
+      papillary; surveillance suffices in most kindreds).
+
+  **Cascade testing remains continuous:** every visit re-confirms
+  family testing status.
+
+  Per CHARTER §11: prophylactic surgery and chemoprevention are
+  shared-decision-making domains. Patient autonomy is paramount;
+  neither intervention is mandated, and continued surveillance from
+  IND-COWDEN-CARRIER-SURVEILLANCE remains the floor.
+
+rationale_ua: >
+  Aggressive-трекова Indication: накладена поверх IND-COWDEN-CARRIER-
+  SURVEILLANCE.
+
+  **Foundation:** Усе standard з IND-COWDEN-CARRIER-SURVEILLANCE.
+
+  **Інтенсифікація 1 — Risk-reducing bilateral mastectomy (жінки,
+  post-childbearing):** Reduces breast cancer incidence до near-zero
+  (NCCN Category 2A). Shared-decision-making: surgical risk,
+  psychological impact (body-image, sensation loss, sexual function),
+  reconstructive options, alternative continued surveillance, fertility
+  / breastfeeding planning.
+
+  **Інтенсифікація 2 — Risk-reducing гістеректомія + BSO
+  (post-childbearing):** Reduces endometrial cancer incidence до
+  near-zero; Cowden ovarian risk modest. Shared-decision-making:
+  surgical risk, surgical menopause sequelae (HRT appropriate у Cowden
+  post-BSO — PTEN-driven breast cancer не exclusively hormone-driven як
+  BRCA), fertility planning, alternative continued surveillance.
+
+  **Інші міркування:**
+    - mTOR-pathway chemoprevention (rapalogs) — investigational, NOT
+      prescribe outside trial.
+    - Pediatric prophylactic тиреоїдектомія — NOT standard.
+
+  **Cascade тестування continuous.**
+
+  Per CHARTER §11: shared-decision-making домен.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02b_confirmed_carriers_additional
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Risk-reducing bilateral mastectomy and risk-reducing hysterectomy
+      + BSO should be discussed with confirmed PTEN-carrier women who
+      have completed childbearing; both are acceptable options following
+      shared decision-making and have well-documented incidence
+      reduction."
+  - source_id: SRC-NCCN-BREAST-2025
+    position: supports
+
+do_not_do:
+  - "Не презентувати risk-reducing хірургію як обов'язкову — це shared-decision-making, з повним обговоренням опцій continued surveillance."
+  - "Не пропонувати risk-reducing хірургію без fertility / breastfeeding planning та menopausal-sequelae management discussion — HRT post-RRSO у Cowden generally appropriate."
+  - "Не використовувати mTOR-pathway chemoprevention (rapalogs) поза clinical trial — currently investigational."
+  - "Не виконувати pediatric prophylactic тиреоїдектомію — Cowden thyroid cancer переважно slow-growing follicular-variant; surveillance суфіцит."
+  - "Не пропускати re-discussion intensification options з пацієнтами, чий initial decline був motivated тривогою."
+
+do_not_do_en:
+  - "Do not present risk-reducing surgery as mandatory — shared-decision-making with full discussion of continued surveillance alternative."
+  - "Do not offer risk-reducing surgery without fertility / breastfeeding planning and menopausal-sequelae management discussion — HRT post-RRSO in Cowden is generally appropriate."
+  - "Do not use mTOR-pathway chemoprevention (rapalogs) outside a clinical trial — currently investigational."
+  - "Do not perform pediatric prophylactic thyroidectomy — Cowden thyroid cancer is predominantly slow-growing follicular-variant; surveillance suffices."
+  - "Do not skip re-discussion of intensification options with patients whose initial decline was motivated by anxiety."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B confirmed-carrier intensified track (Cowden / PHTS). Sibling — IND-COWDEN-CARRIER-SURVEILLANCE. §15.2 C4 ≥2-tracks invariant."

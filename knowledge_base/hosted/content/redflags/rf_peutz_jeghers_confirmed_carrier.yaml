@@ -1,0 +1,94 @@
+id: RF-PEUTZ-JEGHERS-CONFIRMED-CARRIER
+definition: >-
+  Confirmed germline pathogenic / likely-pathogenic variant in the STK11
+  (LKB1) gene — Peutz-Jeghers syndrome (PJS). Patient has had germline
+  STK11 testing returned positive; the pedigree-suspicion question is
+  settled. No current personal cancer diagnosis in the carrier being
+  assessed (current cancer routes to treatment-track plan with PJS
+  status recorded). Mandates structured multi-organ surveillance from
+  childhood given small-bowel intussusception risk (~50% by age 20 in
+  untreated PJS) and the highest hereditary small-bowel-cancer and
+  pancreatic-cancer risks of any syndrome. Prevention-persona RedFlag
+  (§20, v0.2-B confirmed-carrier surveillance pathway — distinct from
+  RF-PEUTZ-JEGHERS-FAMILY-HISTORY-SUSPICION which fires before testing).
+definition_ua: >-
+  Підтверджений гермінативний патогенний / ймовірно-патогенний варіант у
+  гені STK11 (LKB1) — синдром Peutz-Jeghers (PJS). Пацієнт пройшов
+  germline STK11-тестування з позитивним результатом; питання родовідної
+  підозри вирішене. Поточний особистий діагноз раку відсутній. Mandates
+  структуроване мульти-органне спостереження з дитячого віку через ризик
+  тонкокишкової інвагінації (~50% до 20 років при нелікованому PJS) та
+  найвищі hereditary small-bowel + pancreatic cancer ризики серед будь-
+  яких синдромів. Prevention-persona RedFlag (§20, v0.2-B шлях
+  спостереження підтверджених носіїв).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "germline_stk11_pathogenic_variant_confirmed"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+risk_category: genetic
+
+# PJS-spectrum: CRC (~39%), pancreatic (~11-36% — highest hereditary
+# pancreatic-cancer risk), breast (~32-54%, BRCA-comparable), gastric
+# (~29%), ovarian SCTAT (~8-21%), cervical adenoma malignum (~10%),
+# small-bowel (~13%, highest hereditary) — small-bowel mapped under
+# DIS-CRC notes (no dedicated entity).
+relevant_diseases:
+  - DIS-CRC
+  - DIS-PDAC
+  - DIS-BREAST
+  - DIS-GASTRIC
+  - DIS-OVARIAN
+  - DIS-CERVICAL
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-NCCN-COLON-2025
+  - SRC-ESMO-CRC-2024
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.2-B confirmed-carrier surveillance pathway — Peutz-Jeghers / STK11.
+  Fires on documented germline STK11 pathogenic variant positivity.
+  Engine routes to PreventionPlan recommending:
+    (a) IND-PEUTZ-JEGHERS-CARRIER-SURVEILLANCE (standard) — small-bowel
+        VCE / MR enterography q2-3y from age 8-10; colonoscopy q2-3y
+        from age 18; EGD q2-3y from age 8-10; breast MRI from age 30
+        (women); pancreatic EUS / MRI q1-2y from age 30-35; cervical
+        Pap with adenoma-malignum awareness; testicular exam (men).
+    (b) IND-PEUTZ-JEGHERS-CARRIER-INTENSIFIED (aggressive) — standard
+        PLUS earlier pancreatic surveillance initiation + breast risk-
+        reducing options discussion.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption.
+
+  Lifetime cancer risk in confirmed STK11 carriers (Hearle et al. Clin
+  Cancer Res 2006; ACG 2015):
+    - Colorectal: ~39% lifetime
+    - Pancreatic adenocarcinoma: ~11-36% lifetime (highest hereditary
+      pancreatic-cancer risk of any syndrome)
+    - Breast (women): ~32-54% lifetime (comparable to BRCA1/2)
+    - Gastric: ~29% lifetime
+    - Small-bowel adenocarcinoma: ~13% lifetime (highest hereditary)
+    - Ovarian SCTAT (women): ~8-21%
+    - Cervical adenoma malignum (minimal-deviation adenocarcinoma):
+      ~10%
+    - Lung: modest elevation (~7-17%)
+    - Testicular Sertoli-cell (large-cell calcifying variant): ~9% in
+      men; usually pre-pubertal, benign-acting but hormonally active
+    - Childhood intussusception: ~50% by age 20 in untreated PJS
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02b_confirmed_carriers_additional
+draft_revision: 1

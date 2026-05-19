@@ -1,0 +1,155 @@
+id: IND-FAMMM-CARRIER-INTENSIFIED
+plan_track: aggressive
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-MELANOMA
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-FAMMM-CONFIRMED-CARRIER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Intensified track layers two options on top of standard FAMMM
+    surveillance: (1) earlier pancreatic surveillance initiation
+    (age 30-35 vs. age 40 standard) for carriers with smoking history
+    or family pancreatic cancer < age 50; (2) intensified sun-avoidance
+    program (structured occupational / lifestyle counseling, UV-
+    protective clothing prescription, photoprotection adjuncts like
+    nicotinamide). Goal: maximize melanoma detection lead time + reduce
+    pancreatic-cancer absolute risk through cofactor modification.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Aggressive-track confirmed-carrier pathway layered on top of the
+  IND-FAMMM-CARRIER-SURVEILLANCE standard protocol.
+
+  **Foundation:** All standard surveillance from IND-FAMMM-CARRIER-
+  SURVEILLANCE applies (annual whole-body dermatology, total body
+  photography + dermoscopy, pancreatic EUS / MRI q1-2y from 40,
+  sun-protection counseling).
+
+  **Intensification 1 — Earlier pancreatic surveillance initiation:**
+  In CDKN2A carriers with active smoking history or family pancreatic
+  cancer onset < age 50, advance pancreatic surveillance start from
+  age 40 to age 30-35. Trade-off: more lifetime EUS / MRI studies +
+  earlier exposure to false-positive findings (small cystic lesions
+  near-universal in young adults — IPMN differential complex).
+  Center must be experienced in CAPS-style pancreatic surveillance to
+  avoid harm from unnecessary biopsies / resections.
+
+  **Intensification 2 — Intensified sun-avoidance program:**
+    - Structured occupational counseling (outdoor work modification —
+      indoor reassignment, shade structures, sun-protective uniform)
+    - UV-protective clothing prescription (UPF 50+) for daily wear,
+      not just recreational
+    - Window film for vehicle and home (UV-A exposure through glass)
+    - Photoprotection adjuncts: nicotinamide (vitamin B3, 500 mg BID
+      — modest reduction in non-melanoma skin cancer per ONTRAC trial,
+      no melanoma-specific evidence; conservative discussion as
+      shared-decision-making rather than mandate)
+    - Vitamin D monitoring + supplementation if avoidance regimen
+      lowers endogenous synthesis
+
+  **Other intensification considerations (not core to this track):**
+    - Empirical pre-emptive nevus excision is NOT recommended — even
+      in dense atypical nevus phenotype, excision-only-on-change is
+      the standard of care; pre-emptive excision of clinically benign
+      nevi creates excessive scarring without melanoma-specific benefit.
+    - mTOR-pathway / CDK4/6 inhibitor chemoprevention — investigational
+      despite mechanistic rationale (CDKN2A regulates CDK4/6); do NOT
+      prescribe outside trial setting.
+
+  **Cascade testing remains continuous:** every visit re-confirms
+  family testing status.
+
+  Per CHARTER §11: intensified surveillance and lifestyle counseling
+  are shared-decision-making.
+
+rationale_ua: >
+  Aggressive-трекова Indication: накладена поверх IND-FAMMM-CARRIER-
+  SURVEILLANCE.
+
+  **Foundation:** Усе standard з IND-FAMMM-CARRIER-SURVEILLANCE.
+
+  **Інтенсифікація 1 — Рання pancreatic surveillance initiation:** У
+  carriers зі smoking history або family pancreatic cancer < 50 —
+  advance з 40 до 30-35 років. Trade-off: more lifetime EUS / MRI +
+  earlier false-positive (small cystic lesions near-universal у young
+  adults — IPMN diff dx complex).
+
+  **Інтенсифікація 2 — Intensified sun-avoidance program:**
+    - Structured occupational counseling (outdoor work modification —
+      indoor reassignment, shade structures, sun-protective uniform)
+    - UV-protective clothing (UPF 50+) для daily wear
+    - Window film для vehicle / home (UV-A exposure через скло)
+    - Photoprotection adjuncts: ніацинамід (vitamin B3 500 мг BID —
+      modest reduction non-melanoma skin cancer per ONTRAC trial; no
+      melanoma-specific evidence; shared-decision-making, не mandate)
+    - Vitamin D monitoring + supplementation if avoidance lowers
+      endogenous synthesis
+
+  **Інші міркування:**
+    - Empirical pre-emptive nevus excision — NOT recommended; excision-
+      only-on-change standard of care.
+    - mTOR-pathway / CDK4/6 inhibitor chemoprevention — investigational;
+      NOT prescribe outside trial.
+
+  **Cascade тестування continuous.**
+
+  Per CHARTER §11: shared-decision-making домен.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02b_confirmed_carriers_additional
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Earlier pancreatic surveillance initiation in CDKN2A carriers
+      with active smoking or family pancreatic cancer onset < age 50,
+      and intensified sun-avoidance programs are appropriate
+      intensifications following shared decision-making."
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не advanceувати pancreatic surveillance раніше 30-35 без smoking history або family early-onset cancer — false-positive burden + early imaging exposure не виправдані."
+  - "Не виконувати empirical pre-emptive nevus excision у dense atypical phenotype — excision-only-on-change standard."
+  - "Не використовувати mTOR / CDK4/6 inhibitor chemoprevention поза clinical trial — investigational despite CDKN2A-CDK4/6 mechanistic rationale."
+  - "Не презентувати nicotinamide як melanoma chemoprevention — evidence base тільки non-melanoma skin cancer (ONTRAC), не melanoma-specific."
+  - "Не пропускати vitamin D monitoring при intensified sun-avoidance — deficiency може emerge при strict avoidance regimen."
+
+do_not_do_en:
+  - "Do not advance pancreatic surveillance earlier than age 30-35 without smoking history or family early-onset cancer — false-positive burden and early imaging exposure are not justified otherwise."
+  - "Do not perform empirical pre-emptive nevus excision in dense atypical phenotype — excision-only-on-change is the standard of care."
+  - "Do not use mTOR / CDK4/6 inhibitor chemoprevention outside a clinical trial — investigational despite the CDKN2A-CDK4/6 mechanistic rationale."
+  - "Do not present nicotinamide as melanoma chemoprevention — evidence base is only for non-melanoma skin cancer (ONTRAC), not melanoma-specific."
+  - "Do not skip vitamin D monitoring with intensified sun-avoidance — deficiency can emerge with a strict avoidance regimen."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B confirmed-carrier intensified track (FAMMM / CDKN2A). Sibling — IND-FAMMM-CARRIER-SURVEILLANCE. §15.2 C4 ≥2-tracks invariant."

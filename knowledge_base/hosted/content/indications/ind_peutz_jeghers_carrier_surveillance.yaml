@@ -1,0 +1,176 @@
+id: IND-PEUTZ-JEGHERS-CARRIER-SURVEILLANCE
+plan_track: standard
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-PEUTZ-JEGHERS-CONFIRMED-CARRIER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Structured multi-organ surveillance per ACG 2015 / NCCN Genetic
+    Familial High-Risk: Colorectal reduces CRC, gastric, and
+    small-bowel cancer incidence through pre-malignant polyp removal;
+    detects pancreatic adenocarcinoma at smaller, more resectable stage
+    via EUS / MRCP; detects breast cancer earlier via MRI. Most
+    importantly, small-bowel surveillance with VCE / MR enterography
+    enables clearance of large polyps before intussusception or
+    malignant transformation — preventing the acute pediatric emergency
+    that historically defined PJS clinical presentation.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track confirmed-carrier surveillance pathway for STK11-
+  positive carriers per ACG 2015 / NCCN Genetic Familial High-Risk:
+  Colorectal.
+
+  **Small-bowel (~13% lifetime cancer; ~50% childhood intussusception
+  if untreated):** Video capsule endoscopy (VCE) OR MR enterography
+  q2-3y starting age 8-10. Symptomatic episodes (abdominal pain,
+  obstruction) trigger immediate imaging. Polyps >1.5 cm or rapidly
+  growing → push enteroscopy or surgical resection to prevent
+  intussusception. This is the most distinctive PJS surveillance
+  intervention.
+
+  **Colorectal (~39% lifetime):** Colonoscopy q2-3y starting age 18
+  (earlier if polyps detected on imaging). Polypectomy of all hamartomas
+  > 5 mm. Pan-colonic distribution typical.
+
+  **Upper GI (~29% gastric, plus duodenal):** EGD q2-3y starting age
+  8-10 — paired with VCE / MR enterography scheduling to consolidate
+  anesthesia exposures in children.
+
+  **Breast (women, ~32-54% lifetime — BRCA-comparable):** Annual breast
+  MRI starting age 30 (or earlier per family-cluster age-of-onset);
+  add mammography from age 30-35. Clinical breast exam q6mo.
+
+  **Pancreatic (~11-36% lifetime — highest hereditary risk):** EUS or
+  MRI / MRCP q1-2y starting age 30-35 (PJS is one of the few hereditary
+  syndromes with sufficient absolute risk to justify pancreatic
+  surveillance per CAPS consortium consensus). HbA1c q1y as adjunctive
+  early-diabetes signal.
+
+  **Cervical (women, ~10% lifetime adenoma malignum — rare but
+  pathognomonic):** Annual Pap with explicit cytopathology awareness
+  of minimal-deviation adenocarcinoma (adenoma malignum) — easily missed
+  on routine cytology. Pelvic exam q1y.
+
+  **Ovarian / sex-cord (women, ~8-21% SCTAT):** TVUS q1y from age 25-30
+  with awareness of sex-cord tumor with annular tubules (SCTAT) — often
+  estrogen-secreting, may present with abnormal bleeding or precocious
+  puberty in pediatric carriers.
+
+  **Testicular (men, ~9% Sertoli-cell large-cell calcifying variant):**
+  Annual testicular exam from infancy with US for any mass, gynecomastia,
+  or short stature. Pre-pubertal Sertoli-cell tumors hormonally active
+  (estrogen) → can cause precocious puberty.
+
+  **Mucocutaneous pigmentation:** No surveillance intervention, but
+  serves as visible reminder of carrier status at every visit.
+
+  **Cascade testing:** Mandates offer to all first-degree relatives;
+  pediatric testing for at-risk children appropriate given the
+  childhood-onset surveillance window (age 8-10 starting VCE).
+
+  Per CHARTER §11 patient-autonomy framing; pediatric surveillance
+  requires extensive family counseling and age-appropriate consent
+  framework.
+
+rationale_ua: >
+  Стандартний-трек confirmed-carrier surveillance per ACG 2015 / NCCN.
+
+  **Тонка кишка (~13% lifetime cancer; ~50% childhood intussusception
+  untreated):** VCE АБО MR enterography q2-3y з 8-10 років.
+  Symptomatic → immediate imaging. Polyps >1.5 см → push enteroscopy
+  або surgical resection для prevention intussusception.
+
+  **Колоректальний (~39%):** Колоноскопія q2-3y з 18 років.
+  Polypectomy всіх hamartomas >5 мм.
+
+  **Upper GI (~29%):** EGD q2-3y з 8-10 років — paired з VCE / MR
+  enterography для consolidation anesthesia exposures у дітей.
+
+  **Молочна залоза (жінки, ~32-54% — BRCA-comparable):** Annual breast
+  MRI з 30 років; mammography з 30-35. CBE q6mo.
+
+  **Підшлункова (~11-36% — highest hereditary):** EUS або МРТ / MRCP
+  q1-2y з 30-35 років (PJS — один з небагатьох синдромів зі sufficient
+  absolute risk per CAPS consensus). HbA1c q1y.
+
+  **Шийка (жінки, ~10% adenoma malignum):** Annual Pap з awareness
+  minimal-deviation adenocarcinoma.
+
+  **Яєчники / sex-cord (жінки, ~8-21% SCTAT):** TVUS q1y з 25-30 років.
+
+  **Яєчко (чоловіки, ~9% Sertoli-cell large-cell calcifying):** Annual
+  testicular exam з інфантильного віку; US для будь-якої маси /
+  гінекомастії / short stature.
+
+  **Мукокутанна пігментація:** No surveillance intervention, але
+  visible reminder.
+
+  **Cascade тестування:** mandates пропонування first-degree родичам;
+  pediatric тестування appropriate.
+
+  Per CHARTER §11 framing автономії пацієнта.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02b_confirmed_carriers_additional
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Confirmed STK11 / Peutz-Jeghers carriers should enter
+      multi-organ surveillance starting in childhood: VCE or MR
+      enterography q2-3y from age 8-10, EGD q2-3y from age 8-10,
+      colonoscopy q2-3y from age 18, breast MRI from age 30 (women),
+      pancreatic EUS / MRI q1-2y from age 30-35, annual cervical Pap
+      with adenoma-malignum awareness, and annual testicular exam (men)."
+  - source_id: SRC-NCCN-COLON-2025
+    position: supports
+  - source_id: SRC-ESMO-CRC-2024
+    position: supports
+
+do_not_do:
+  - "Не пропускати pediatric small-bowel surveillance — symptomatic intussusception у нелікованому PJS ~50% до 20 років, потенційно life-threatening та operation-dependent."
+  - "Не resectувати тонку кишку без planning консультації — multiple recurrent резекції ведуть до short-bowel syndrome; goal — polypectomy via push enteroscopy / spiral enteroscopy where possible."
+  - "Не використовувати тільки routine Pap cytology для cervical surveillance — adenoma malignum (minimal-deviation adenocarcinoma) easily missed; explicit cytopathology awareness потрібна."
+  - "Не пропускати pre-pubertal testicular exam у boys — large-cell calcifying Sertoli-cell tumor hormonally active може cause precocious puberty / gynecomastia."
+  - "Не пропускати cascade-тестування first-degree родичів — кожен візит має документувати family testing status."
+
+do_not_do_en:
+  - "Do not skip pediatric small-bowel surveillance — symptomatic intussusception in untreated PJS occurs in ~50% by age 20 and is potentially life-threatening and operation-dependent."
+  - "Do not resect small bowel without planning consultation — multiple recurrent resections lead to short-bowel syndrome; goal is polypectomy via push enteroscopy or spiral enteroscopy where possible."
+  - "Do not use routine Pap cytology alone for cervical surveillance — adenoma malignum (minimal-deviation adenocarcinoma) is easily missed; explicit cytopathology awareness is required."
+  - "Do not skip pre-pubertal testicular exam in boys — large-cell calcifying Sertoli-cell tumor is hormonally active and can cause precocious puberty / gynecomastia."
+  - "Do not skip cascade testing of first-degree relatives — every surveillance visit should document family testing status."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B confirmed-carrier surveillance pathway (Peutz-Jeghers / STK11). Sibling — IND-PEUTZ-JEGHERS-CARRIER-INTENSIFIED (aggressive plan_track)."

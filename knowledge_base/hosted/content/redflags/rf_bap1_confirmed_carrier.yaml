@@ -1,0 +1,90 @@
+id: RF-BAP1-CONFIRMED-CARRIER
+definition: >-
+  Confirmed germline pathogenic / likely-pathogenic variant in the BAP1
+  gene — BAP1 tumor predisposition syndrome (BAP1-TPDS). Patient has had
+  germline BAP1 testing returned positive; the pedigree-suspicion
+  question is settled. No current personal cancer diagnosis in the
+  carrier being assessed. Mandates structured surveillance for the
+  BAP1-spectrum cancers: uveal melanoma, cutaneous melanoma, malignant
+  mesothelioma (pleural + peritoneal), clear-cell RCC, and atypical
+  Spitz tumors (often as childhood / adolescent sentinels). Prevention-
+  persona RedFlag (§20, v0.2-B confirmed-carrier surveillance pathway
+  — distinct from RF-BAP1-FAMILY-HISTORY-SUSPICION which fires before
+  testing).
+definition_ua: >-
+  Підтверджений гермінативний патогенний / ймовірно-патогенний варіант у
+  гені BAP1 — BAP1 tumor predisposition syndrome (BAP1-TPDS). Пацієнт
+  пройшов germline BAP1-тестування з позитивним результатом; питання
+  родовідної підозри вирішене. Поточний особистий діагноз раку
+  відсутній. Mandates структуроване спостереження для BAP1-spectrum
+  раків: увеальна меланома, шкірна меланома, малігнантна мезотеліома
+  (плевральна + перитонеальна), світлоклітинний RCC та atypical Spitz
+  tumors (часто як childhood / adolescent sentinels). Prevention-persona
+  RedFlag (§20, v0.2-B шлях спостереження підтверджених носіїв).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "germline_bap1_pathogenic_variant_confirmed"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+risk_category: genetic
+
+# BAP1-spectrum: uveal melanoma + cutaneous melanoma (no dedicated DIS-
+# UVEAL entity — anchored via DIS-MELANOMA and dermatology notes),
+# mesothelioma (DIS-MESOTHELIOMA), clear-cell RCC (DIS-RCC).
+relevant_diseases:
+  - DIS-RCC
+  - DIS-MESOTHELIOMA
+  - DIS-MELANOMA
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-ASCO-ACMG-LYNCH-2014
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.2-B confirmed-carrier surveillance pathway — BAP1-TPDS. Fires on
+  documented germline BAP1 pathogenic variant positivity. Engine routes
+  to PreventionPlan recommending:
+    (a) IND-BAP1-CARRIER-SURVEILLANCE (standard) — annual whole-body
+        skin exam by dermatologist; annual ophthalmologic exam with
+        dilated fundoscopy for uveal melanoma; annual abdominal MRI
+        for clear-cell RCC; chest CT q1-3y for mesothelioma surveillance;
+        explicit awareness of atypical Spitz tumors as sentinel lesions.
+    (b) IND-BAP1-CARRIER-INTENSIFIED (aggressive) — standard PLUS
+        asbestos-avoidance counseling (most important modifiable
+        cofactor for BAP1-associated mesothelioma) + earlier
+        mesothelioma surveillance (chest CT q1y in occupational /
+        environmental asbestos exposure).
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption. Source-set TODO: dedicated BAP1-TPDS sources — Pilarski
+  et al. surveillance recommendations (J Med Genet 2020); Carbone et
+  al. mechanistic + clinical reviews — v0.2-B authoring backlog new
+  SRC entities.
+
+  Lifetime cancer risk in confirmed BAP1 carriers (Pilarski J Med Genet
+  2020; Walpole et al. JNCI 2018):
+    - Uveal melanoma: ~25-30% lifetime — BAP1-TPDS is the only major
+      hereditary cause of uveal melanoma; dilated fundoscopy required.
+    - Cutaneous melanoma: ~15-30% lifetime; atypical Spitz tumors
+      (especially in children) are pathognomonic sentinels.
+    - Mesothelioma (pleural + peritoneal): ~15-25% lifetime; strongest
+      modifiable cofactor is asbestos exposure (occupational, environ-
+      mental, or take-home).
+    - Clear-cell RCC: ~10% lifetime.
+    - Multiple meningiomas, basal cell carcinoma, cholangiocarcinoma:
+      modest elevations; no dedicated surveillance.
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02b_confirmed_carriers_additional
+draft_revision: 1

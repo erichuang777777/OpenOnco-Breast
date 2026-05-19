@@ -1,0 +1,149 @@
+id: IND-HPRC-CARRIER-SURVEILLANCE
+plan_track: standard
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-RCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-HPRC-CONFIRMED-CARRIER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Annual abdominal MRI surveillance in confirmed MET carriers detects
+    HPRC type-1-papillary RCC at small (sub-3-cm) lesion size in most
+    cases — enabling nephron-sparing partial nephrectomy or enucleation
+    with preservation of renal parenchyma. Active surveillance of
+    sub-3-cm lesions (Linehan / NCI 3-cm threshold) is acceptable given
+    indolent HPRC biology — metastasis risk is meaningfully lower than
+    HLRCC FH-driven type-2-papillary tumors. Lifelong avoidance of
+    bilateral nephrectomy + dialysis dependency is the practical
+    surveillance goal.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track confirmed-carrier surveillance pathway for MET-positive
+  HPRC carriers per Linehan / NCI Urologic Oncology Branch experience
+  and Schmidt et al. clinical-genetics framework.
+
+  **Annual abdominal MRI:** Starting age 30 (or 10 years before
+  youngest family RCC). MRI preferred over contrast-enhanced CT for
+  cumulative-radiation reasons given lifelong surveillance interval.
+  T1-weighted + T2-weighted + DWI + multi-phase gadolinium-enhanced
+  protocol. Comparison with prior studies at every interval.
+
+  **Surgical threshold (3-cm rule):** Lesions ≥3 cm — nephron-sparing
+  partial nephrectomy (or enucleation when anatomically feasible given
+  lesion biology). Sub-3-cm lesions — active surveillance acceptable
+  in shared decision-making with the patient. Threshold is Linehan /
+  NCI-derived and reflects HPRC-specific indolent biology; not
+  appropriate to transfer to other hereditary RCC syndromes (VHL,
+  HLRCC use different thresholds).
+
+  **Surgical philosophy:** Nephron-sparing is paramount in HPRC carriers
+  because bilateral multifocal tumors will recur — preserving renal
+  parenchyma across multiple lifetime surgeries is the long-term goal.
+  Enucleation (rather than wedge resection) often feasible for
+  HPRC tumors given pseudo-capsule. Total nephrectomy reserved for
+  large, central, or radical-margin-required tumors.
+
+  **Active surveillance protocol (for sub-3-cm lesions):** Confirmed
+  HPRC carrier with sub-3-cm enhancing renal mass on annual MRI —
+  shorten interval to q6mo for the first 1-2 years to establish growth
+  kinetics; resume annual if growth slow / absent. Cross to surgical
+  resection if (a) lesion crosses 3-cm threshold, (b) growth rate
+  exceeds 5 mm/year, (c) morphologic change (e.g., new cystic
+  component, central necrosis suggesting higher-grade biology).
+
+  **Cascade testing:** Mandates offer to all first-degree relatives.
+
+  **Smoking cessation:** General-population RCC risk modifier — relevant
+  but not HPRC-specific.
+
+  Per CHARTER §11 patient-autonomy framing; active surveillance vs
+  intervention is the classic shared-decision-making domain.
+
+rationale_ua: >
+  Стандартний-трек confirmed-carrier surveillance per Linehan / NCI +
+  Schmidt et al.
+
+  **Annual abdominal MRI:** З 30 років (або 10 років до наймолодшого
+  family RCC). МРТ preferred над contrast-enhanced CT через cumulative
+  radiation. T1 + T2 + DWI + multi-phase gadolinium-enhanced. Comparison
+  з prior studies кожний інтервал.
+
+  **Surgical threshold (3-cm rule):** Lesions ≥3 см — nephron-sparing
+  partial nephrectomy (або enucleation). Sub-3-cm — active surveillance
+  acceptable у shared decision-making. Threshold — Linehan / NCI-
+  derived; не transferable до інших hereditary RCC syndromes.
+
+  **Surgical philosophy:** Nephron-sparing paramount у HPRC carriers
+  через bilateral multifocal recurrence. Enucleation often feasible
+  через pseudo-capsule. Total nephrectomy реверв для great / central /
+  radical-margin-required tumors.
+
+  **Active surveillance протокол (для sub-3-cm):** Shorten interval до
+  q6mo перші 1-2 роки для growth kinetics; resume annual if growth
+  slow / absent. Cross до surgical resection if (a) >3 см, (b) growth
+  >5 мм/рік, (c) morphologic change.
+
+  **Cascade тестування:** mandates пропонування first-degree родичам.
+
+  **Smoking cessation:** general-population RCC modifier.
+
+  Per CHARTER §11 framing автономії пацієнта; active surveillance vs
+  intervention — classic shared-decision-making.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02b_confirmed_carriers_additional
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Confirmed HPRC / MET carriers should enter structured renal
+      surveillance with annual abdominal MRI from age 30, with
+      nephron-sparing surgery for lesions ≥3 cm and active surveillance
+      permissible for smaller lesions given the indolent HPRC type-1-
+      papillary biology (less aggressive than HLRCC type-2-papillary)."
+
+do_not_do:
+  - "Не використовувати contrast-enhanced CT як primary surveillance modality — cumulative radiation burden lifelong; МРТ preferred."
+  - "Не виконувати total nephrectomy при HPRC якщо partial / nephron-sparing feasible — bilateral multifocal recurrence inevitable; preserving parenchyma critical."
+  - "Не transferувати 3-cm threshold до інших hereditary RCC syndromes — VHL та HLRCC мають різні surgical thresholds (lower через more aggressive biology)."
+  - "Не пропускати q6mo interval перші 1-2 роки active surveillance — growth kinetics треба встановити перед annualування."
+  - "Не пропускати cascade-тестування first-degree родичів."
+
+do_not_do_en:
+  - "Do not use contrast-enhanced CT as the primary surveillance modality — lifelong cumulative radiation burden; MRI preferred."
+  - "Do not perform total nephrectomy in HPRC if partial / nephron-sparing is feasible — bilateral multifocal recurrence is inevitable; preserving parenchyma is critical."
+  - "Do not transfer the 3-cm threshold to other hereditary RCC syndromes — VHL and HLRCC have different surgical thresholds (lower because of more aggressive biology)."
+  - "Do not skip q6mo interval for the first 1-2 years of active surveillance — growth kinetics must be established before annualizing."
+  - "Do not skip cascade testing of first-degree relatives."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B confirmed-carrier surveillance pathway (HPRC / MET). Sibling — IND-HPRC-CARRIER-INTENSIFIED (aggressive plan_track)."

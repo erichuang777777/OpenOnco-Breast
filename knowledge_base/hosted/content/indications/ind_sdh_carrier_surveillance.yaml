@@ -1,0 +1,182 @@
+id: IND-SDH-CARRIER-SURVEILLANCE
+plan_track: standard
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-PHEOCHROMOCYTOMA
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-SDH-CONFIRMED-CARRIER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Structured SDHx surveillance per Endocrine Society International
+    PPGL Guideline + international PPGL registry experience detects
+    paragangliomas / pheochromocytomas at smaller, biochemically-quiet
+    pre-symptomatic stage — amenable to cortical-sparing adrenalectomy
+    and complete surgical resection with low operative mortality.
+    Metastatic risk (particularly SDHB) is the leading mortality driver
+    and is reduced by early-stage diagnosis. SDH-deficient RCC detected
+    at small T1 stage allows nephron-sparing surgery. SDH-deficient
+    GIST detected indolently allows surgical or watchful management
+    (rather than the empirical imatinib of c-KIT-mutated GIST, which
+    is ineffective in SDH-deficient GIST).
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track confirmed-carrier surveillance pathway for SDHx-
+  positive carriers per Endocrine Society International PPGL Guideline
+  (Lenders et al. JCEM 2014, 2024 update) + Andrews et al. JCEM 2018
+  international registry-based risk stratification.
+
+  **Risk stratification by SDHx subunit:**
+    - **SDHB:** highest aggregate + most aggressive (sympathetic
+      abdominal paraganglioma + pheochromocytoma + high metastatic
+      rate + RCC). Pediatric onset documented — baseline whole-body
+      MRI from age 6-10.
+    - **SDHD:** second-highest aggregate, parasympathetic head + neck
+      predominant; PATERNALLY-INHERITED variants only are penetrant
+      (genomic imprinting — maternal inheritance is non-penetrant);
+      this is a critical pre-test counseling point. Surveillance from
+      age 10-15.
+    - **SDHC:** lower aggregate (~25%); head + neck parasympathetic
+      predominant. Surveillance from age 10-15.
+    - **SDHA:** lowest aggregate (~10%); rare; surveillance from age
+      15-20.
+    - **SDHAF2:** very rare; head + neck paragangliomas; PATERNALLY-
+      INHERITED only (like SDHD).
+
+  **Biochemistry — plasma free metanephrines + methoxytyramine
+  (3-MT):** Annual measurement in seated-rest plasma sample. The
+  inclusion of 3-MT is critical for SDHx-associated paragangliomas
+  (frequently dopaminergic / non-norepinephrine-secreting; standard
+  metanephrine panel without 3-MT misses these). Urinary 24-hour
+  metanephrines + catecholamines as alternative when plasma 3-MT
+  unavailable. Pre-analytic preparation: 30-min seated rest, avoid
+  food / caffeine / tricyclics / sympathomimetics 8-12 hours prior.
+
+  **Imaging:**
+    - Whole-body MRI annually starting age 6-10 in SDHB (extends to
+      brain, neck, chest, abdomen, pelvis; some programs add limbs).
+      Other SDHx subunits start at age 10-20 by subunit-risk.
+    - Head + neck MRI q2-3y for parasympathetic paragangliomas
+      (skull base, carotid body, vagal, jugulo-tympanic).
+    - Abdominal MRI annually for sympathetic paraganglioma +
+      SDH-deficient RCC + SDH-deficient GIST (consolidated with
+      whole-body MRI when applicable).
+    - 68Ga-DOTATATE PET reserved for staging confirmed lesions —
+      not routine surveillance.
+
+  **Cascade testing:** Mandates offer to all first-degree relatives;
+  for SDHD / SDHAF2 — particularly important to identify paternal-
+  line at-risk relatives (maternal-line carriers are unaffected but
+  can transmit). Pediatric testing appropriate given SDHB onset.
+
+  **Pre-operative alpha-blockade:** When pheochromocytoma /
+  paraganglioma resection planned, mandatory ≥7-14 days alpha-
+  blockade (phenoxybenzamine or doxazosin) with crystalloid loading
+  to prevent intra-operative hypertensive crisis and post-resection
+  hypotension.
+
+  Per CHARTER §11 patient-autonomy framing; pediatric SDHB
+  surveillance protocol requires age-appropriate counseling.
+
+rationale_ua: >
+  Стандартний-трек confirmed-carrier surveillance per Endocrine Society
+  International PPGL Guideline + Andrews et al. JCEM 2018.
+
+  **Risk stratification за SDHx subunit:**
+    - **SDHB:** highest aggregate + most aggressive (sympathetic
+      abdominal PGL + pheochromocytoma + high metastatic + RCC).
+      Pediatric onset — baseline whole-body MRI з 6-10 років.
+    - **SDHD:** парасимпатичні head + neck predominant; PATERNALLY-
+      INHERITED variants only penetrant (genomic imprinting). Critical
+      pre-test counseling point. Surveillance з 10-15 років.
+    - **SDHC:** lower aggregate (~25%); head + neck predominant.
+      Surveillance з 10-15 років.
+    - **SDHA:** lowest aggregate (~10%); rare; surveillance з 15-20
+      років.
+    - **SDHAF2:** very rare; PATERNALLY-INHERITED only (як SDHD).
+
+  **Біохімія — plasma free метанефрини + methoxytyramine (3-MT):**
+  Annual plasma sample. Inclusion 3-MT critical для SDHx-associated
+  PGL (frequently dopaminergic; standard metanephrine panel without
+  3-MT misses these). Urinary 24-hour метанефрини + катехоламіни як
+  alternative. Pre-analytic: 30-min seated rest, avoid food / caffeine
+  / tricyclics 8-12 hours.
+
+  **Imaging:**
+    - Whole-body MRI annually з 6-10 років у SDHB (brain, neck, chest,
+      abdomen, pelvis).
+    - Head + neck MRI q2-3y для парасимпатичних PGL.
+    - Abdominal MRI annually для sympathetic PGL + SDH-deficient RCC
+      + GIST.
+    - 68Ga-DOTATATE PET — staging confirmed lesions, не routine.
+
+  **Cascade тестування:** mandates first-degree родичам; для SDHD /
+  SDHAF2 — particularly important paternal-line at-risk identification
+  (maternal-line carriers unaffected але можуть transmit). Pediatric
+  тестування appropriate.
+
+  **Pre-operative alpha-blockade:** При PPGL resection — mandatory
+  ≥7-14 days alpha-blockade (phenoxybenzamine або doxazosin) +
+  crystalloid loading.
+
+  Per CHARTER §11 framing автономії пацієнта; pediatric SDHB
+  surveillance потребує age-appropriate counseling.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02b_confirmed_carriers_additional
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Confirmed SDHx carriers should enter structured multi-organ
+      surveillance with annual whole-body MRI from age 6-10 in SDHB,
+      annual plasma metanephrines + methoxytyramine, head + neck MRI
+      q2-3y for parasympathetic paragangliomas, abdominal MRI for
+      sympathetic paraganglioma + SDH-deficient RCC and GIST. Risk
+      stratification SDHB > SDHD > SDHC > SDHA. SDHD and SDHAF2 follow
+      paternal-inheritance / maternal-imprinting transmission pattern."
+
+do_not_do:
+  - "Не використовувати тільки standard метанефриновий panel без methoxytyramine — SDHx-associated paragangliomas frequently dopaminergic; 3-MT необхідний для adequate biochemistry."
+  - "Не виконувати adrenalectomy / PGL resection без preoperative alpha-blockade — intra-operative hypertensive crisis ризик life-threatening; mandatory ≥7-14 днів."
+  - "Не пропускати SDHB pediatric surveillance — whole-body MRI baseline age 6-10 (younger якщо family-specific early-onset proband)."
+  - "Не пропускати paternal-inheritance counseling у SDHD / SDHAF2 — maternal-line carriers unaffected але можуть transmit; family-tree counseling critical."
+  - "Не використовувати imatinib empirically для SDH-deficient GIST — c-KIT та PDGFRA wild-type; ineffective; surveillance / surgical management appropriate."
+
+do_not_do_en:
+  - "Do not use standard metanephrine panel alone without methoxytyramine — SDHx-associated paragangliomas are frequently dopaminergic; 3-MT is necessary for adequate biochemistry."
+  - "Do not perform adrenalectomy / PGL resection without preoperative alpha-blockade — intraoperative hypertensive crisis risk is life-threatening; mandatory ≥7-14 days."
+  - "Do not skip SDHB pediatric surveillance — whole-body MRI baseline age 6-10 (younger if family-specific early-onset proband)."
+  - "Do not skip paternal-inheritance counseling in SDHD / SDHAF2 — maternal-line carriers are unaffected but can transmit; family-tree counseling is critical."
+  - "Do not use imatinib empirically for SDH-deficient GIST — c-KIT and PDGFRA wild-type; ineffective; surveillance / surgical management appropriate."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B confirmed-carrier surveillance pathway (SDH-deficiency syndromes). Sibling — IND-SDH-CARRIER-INTENSIFIED (aggressive plan_track)."

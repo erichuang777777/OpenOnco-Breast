@@ -1,0 +1,153 @@
+id: IND-COWDEN-CARRIER-SURVEILLANCE
+plan_track: standard
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-COWDEN-CONFIRMED-CARRIER
+
+# No drug regimen — multi-organ surveillance per NCCN Cowden protocol.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Multi-organ surveillance in confirmed PTEN carriers per NCCN
+    Genetic / Familial High-Risk: Breast, Ovarian, Pancreatic detects
+    Cowden-spectrum cancers at earlier, more curable stages. Breast
+    cancer screening with combined mammography + MRI annually from
+    age 30 (women) has sensitivity > mammography alone for early-onset
+    aggressive subtypes; risk-reducing mastectomy discussion deferred
+    to the INTENSIFIED track. Thyroid US surveillance detects
+    follicular-variant papillary thyroid cancer at smaller, lower-stage
+    presentation. Renal imaging surveillance (US or MRI) detects
+    papillary / chromophobe RCC at earlier stage.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track confirmed-carrier surveillance pathway for PTEN-positive
+  carriers per NCCN Genetic / Familial High-Risk: Breast, Ovarian,
+  Pancreatic.
+
+  **Breast (women, ~85% lifetime risk):** Annual mammography + breast
+  MRI starting age 30 (or 5-10 years before earliest family case).
+  Clinical breast exam q6mo. Self-exam education. Risk-reducing
+  mastectomy discussion is the INTENSIFIED-track option, not surfaced
+  as standard-protocol routine.
+
+  **Endometrial (women, ~28% lifetime):** Annual endometrial sampling
+  + TVUS starting age 35-40 (NCCN protocol; evidence base modest but
+  recommended). Patient education on abnormal uterine bleeding — early
+  presentation is the strongest factor in mortality reduction.
+
+  **Thyroid (~35% lifetime, follicular > papillary > Hürthle):** Annual
+  thyroid US from time of diagnosis (childhood-onset surveillance is
+  appropriate given near-universal multinodular goiter and the
+  follicular-variant predominance). Calcitonin testing NOT routine —
+  Cowden is not associated with medullary thyroid carcinoma.
+
+  **Renal (~34% lifetime, papillary / chromophobe predominant):** Annual
+  renal US or MRI starting age 40; cross-sectional imaging (MRI)
+  preferred over CT for cumulative-radiation reasons. Functional renal
+  testing (eGFR, urinalysis) annually.
+
+  **Colorectal (~9% lifetime):** Colonoscopy starting age 35 (or 5-10
+  years before earliest family case); interval q2-5y depending on
+  polyp burden — ganglioneuromatous and hyperplastic polyps are
+  near-universal but the adenoma fraction is modest, so surveillance
+  interval can be less intense than Lynch / FAP carriers.
+
+  **Skin (Cowden-typical mucocutaneous papules, trichilemmomas, acral
+  keratoses; melanoma ~6% lifetime):** Annual dermatology examination.
+
+  **Cascade testing:** Mandates offer to all first-degree relatives;
+  pediatric testing for at-risk children appropriate given the
+  childhood-onset thyroid surveillance window.
+
+  Per CHARTER §11 patient-autonomy framing: surveillance intervals are
+  shared-decision-making.
+
+rationale_ua: >
+  Стандартний-трек confirmed-carrier surveillance per NCCN.
+
+  **Молочна залоза (жінки, ~85%):** Annual mammography + breast MRI з
+  30 років. CBE q6mo.
+
+  **Ендометрій (жінки, ~28%):** Annual endometrial sampling + TVUS з
+  35-40 років. Освіта пацієнтки щодо аномальної маткової кровотечі.
+
+  **Щитоподібна (~35%, follicular > papillary > Hürthle):** Annual
+  thyroid US з діагнозу (childhood-onset appropriate). Калцитонін NOT
+  routine (Cowden не associated з MTC).
+
+  **Нирки (~34%, papillary / chromophobe):** Annual renal US або МРТ
+  з 40 років (preferred over CT через cumulative radiation).
+
+  **Колоректальний (~9%):** Колоноскопія з 35 років; interval q2-5y
+  залежно від polyp burden — ганглионевроматозні / гіперпластичні
+  поліпи near-universal, але adenoma fraction modest.
+
+  **Шкіра (~6% меланома + Cowden-typical mucocutaneous lesions):**
+  Annual дерматологія.
+
+  **Cascade тестування:** mandates пропонування first-degree родичам;
+  pediatric тестування appropriate для at-risk дітей.
+
+  Per CHARTER §11 framing автономії пацієнта.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02b_confirmed_carriers_additional
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Confirmed PTEN carriers should enter multi-organ surveillance:
+      annual breast MRI + mammography from age 30 (women), endometrial
+      sampling + TVUS from age 35-40, annual thyroid ultrasound from
+      diagnosis, colonoscopy from age 35, dermatologic examination
+      annually, and renal imaging from age 40."
+  - source_id: SRC-NCCN-BREAST-2025
+    position: supports
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не використовувати mammography alone у носія PTEN — combined MRI + mammography має superior sensitivity для early-onset aggressive subtypes."
+  - "Не пропускати pediatric thyroid US — Cowden multinodular goiter near-universal; follicular-variant papillary thyroid cancer presents у дитячому віці у деяких kindreds."
+  - "Не використовувати CT як primary renal surveillance modality — cumulative radiation burden lifelong; МРТ preferred."
+  - "Не виконувати empirical risk-reducing mastectomy без shared-decision-making з обговоренням опцій (continued surveillance, fertility planning, post-mastectomy reconstruction)."
+  - "Не пропускати cascade-тестування first-degree родичів — кожен візит має документувати family testing status."
+
+do_not_do_en:
+  - "Do not use mammography alone in a PTEN carrier — combined MRI + mammography has superior sensitivity for early-onset aggressive subtypes."
+  - "Do not skip pediatric thyroid US — Cowden multinodular goiter is near-universal and follicular-variant papillary thyroid cancer presents in childhood in some kindreds."
+  - "Do not use CT as the primary renal surveillance modality — lifelong cumulative radiation burden; MRI preferred."
+  - "Do not perform empirical risk-reducing mastectomy without shared-decision-making covering options (continued surveillance, fertility planning, post-mastectomy reconstruction)."
+  - "Do not skip cascade testing of first-degree relatives — every surveillance visit should document family testing status."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B confirmed-carrier surveillance pathway (Cowden / PHTS). Sibling — IND-COWDEN-CARRIER-INTENSIFIED (aggressive plan_track)."
