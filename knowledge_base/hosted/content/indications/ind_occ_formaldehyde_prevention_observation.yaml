@@ -1,0 +1,137 @@
+id: IND-OCC-FORMALDEHYDE-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-AML
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-OCC-FORMALDEHYDE-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Primary endpoint: avoidance of structured CBC + ENT-symptom-tracking
+    surveillance when patient declines the intensified pathway. No
+    reduction in formaldehyde-attributable AML / nasopharyngeal /
+    sinonasal cancer incidence beyond what routine general-population
+    care provides. Patient receives only symptom-triggered evaluation
+    if alarm features develop.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-OCC-FORMALDEHYDE-PREVENTION-
+  INTENSIFIED-SURVEILLANCE. Patient with documented prior occupational
+  formaldehyde exposure who declines structured CBC + ENT-symptom-
+  tracking surveillance — for any reason (cost, anxiety from frequent
+  bloodwork, geographic access, preference, life expectancy) — is
+  offered routine general-population care only:
+
+  **Hematologic surveillance:** None scheduled; CBC obtained only in
+  the context of routine primary-care visits or symptomatic
+  presentation. Patient is explicitly informed that formaldehyde-
+  attributable AML risk is unaddressed by structured surveillance.
+
+  **ENT surveillance:** None scheduled; patient counseled to report
+  unilateral epistaxis, persistent nasal obstruction, anosmia, or
+  facial pain — but without proactive symptom-review cadence.
+
+  **Exposure cessation:** Still offered if active exposure persists;
+  cessation is the only lever with clear forward-looking benefit
+  regardless of imaging / lab-track choice.
+
+  **Symptom-triggered evaluation:** Low threshold for diagnostic
+  workup if alarm features develop (cytopenia on incidental CBC,
+  unilateral epistaxis, persistent unilateral sinusitis, anosmia,
+  fatigue out of proportion to comorbidities).
+
+  Routing reconsiderations: patient may revisit intensified-surveillance
+  pathway at any subsequent visit. Per CHARTER §11 patient-autonomy
+  framing: structured surveillance is a shared-decision-making domain
+  where modest incidence-detection benefit must be weighed against
+  patient preference and access constraints.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до IND-OCC-FORMALDEHYDE-
+  PREVENTION-INTENSIFIED-SURVEILLANCE. Пацієнт з документованим
+  попереднім професійним впливом формальдегіду, який відмовляється від
+  структурованого CBC + ENT-symptom-tracking спостереження (вартість,
+  тривога, географічні обмеження, перевага), отримує тільки рутинний
+  загальнопопуляційний догляд:
+
+  **Гематологічне спостереження:** Не заплановане; CBC отримується
+  тільки в контексті рутинних візитів до первинної медичної допомоги
+  або симптоматичної презентації.
+
+  **ENT-спостереження:** Не заплановане; пацієнту радять повідомляти
+  про однобічну епістаксис, persistent назальну обструкцію, аносмію
+  або лицевий біль — але без проактивної symptom-review частоти.
+
+  **Припинення впливу:** Все ще пропонується, якщо активний вплив
+  зберігається — це єдиний важіль з чіткою forward-looking вигодою.
+
+  **Symptom-triggered оцінка:** Низький поріг для діагностичного
+  workup при появі alarm features.
+
+  Reroute: пацієнт може повернутися до інтенсифікованого спостереження
+  на будь-якому подальшому візиті. Per CHARTER §11 — shared-decision-
+  making domain.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Patients declining structured surveillance for occupational
+      hematologic-cancer risk continue to receive symptom-triggered
+      evaluation and standard-of-care general-population follow-up."
+  - source_id: SRC-NCCN-AML-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Hematologic surveillance in occupational-exposure cohorts is a
+      shared-decision-making process; declining structured CBC does not
+      preclude symptom-triggered evaluation."
+
+do_not_do:
+  - "Не презентувати observation як еквівалент структурованого нагляду — formaldehyde-attributable ризик AML / NPC не адресується."
+  - "Не ігнорувати alarm features (цитопенія, однобічна епістаксис, persistent обструкція, аносмія) — immediate діагностична оцінка + multidisciplinary review."
+  - "Не використовувати цей шлях як стандарт першої лінії — intensified-surveillance трек залишається preferred для formaldehyde-exposed cohort."
+  - "Не пропускати exposure-cessation counseling якщо активний вплив зберігається — forward-looking benefit зберігається."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to structured surveillance — formaldehyde-attributable AML / NPC risk is unaddressed."
+  - "Do not ignore alarm features (cytopenia, unilateral epistaxis, persistent obstruction, anosmia) — immediate diagnostic evaluation + multidisciplinary review."
+  - "Do not use this pathway as a first-line standard — the intensified-surveillance track remains the preferred recommendation for the formaldehyde-exposed cohort."
+  - "Do not skip exposure-cessation counseling if active exposure persists — forward-looking benefit is preserved."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — alternative-track companion for formaldehyde occupational
+  prevention pilot. §15.2 C4 ≥2-tracks invariant compliance.
+  Two-Clinical-Co-Lead signoff queued per CHARTER §6.1 dev-mode
+  exemption.

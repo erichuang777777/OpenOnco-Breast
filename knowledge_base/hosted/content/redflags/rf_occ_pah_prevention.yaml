@@ -1,0 +1,128 @@
+id: RF-OCC-PAH-PREVENTION
+definition: >-
+  Documented historical occupational exposure to polycyclic aromatic
+  hydrocarbons (PAHs) — typical high-risk occupations include coke-oven
+  workers (steelmaking), coal-gasification workers, aluminum-smelting
+  workers (Söderberg-process pot rooms), iron / steel founders, roofing
+  / asphalt-paving workers (coal-tar pitch exposure), and chimney
+  sweeps — in an individual without a current PAH-associated malignancy
+  diagnosis. Several PAH-rich occupational exposures are IARC Group 1
+  (Monograph 100F, 2012): coal-tar pitch (skin + lung + bladder), coke
+  production (lung), coal gasification (lung + skin + bladder),
+  aluminum production (lung + bladder), iron / steel founding (lung).
+  Latency to lung / bladder cancer is typically 20-40 years; latency
+  to skin cancer (squamous-cell carcinoma on hands / face from
+  cutaneous PAH contact) can be shorter (10-30 years). There is NO
+  curative intervention for prior exposure — exposure cessation (PPE
+  if active), smoking-cessation counseling (synergy for lung), LDCT
+  lung screening, urinalysis for bladder surveillance, and dermatologic
+  exam for skin surveillance are the levers. Prevention-persona RedFlag
+  (§20 ratification 2026-05-18, v0.3 occupational batch-2 pilot).
+definition_ua: >-
+  Документоване історичне професійне впливу поліциклічних ароматичних
+  вуглеводнів (PAHs) — типові високоризикові професії: працівники
+  коксових печей (металургія), працівники газифікації вугілля,
+  працівники алюмінієвої виплавки (Söderberg-процес pot-rooms),
+  ливарники чавуну / сталі, працівники з покрівлею / асфальтуванням
+  (вплив коксового дьогтю), сажотруси — у пацієнта без поточного
+  діагнозу PAH-асоційованої малігнізації. Декілька PAH-багатих
+  професійних впливів — IARC Group 1 (Monograph 100F, 2012): коксовий
+  дьоготь (шкіра + легені + сечовий міхур), коксове виробництво
+  (легені), газифікація вугілля (легені + шкіра + сечовий міхур),
+  алюмінієве виробництво (легені + сечовий міхур), ливарство
+  чавуну / сталі (легені). Латентність до раку легень / сечового
+  міхура — 20-40 років; до раку шкіри (плоскоклітинна карцинома на
+  руках / обличчі від cutaneous PAH-контакту) може бути коротша
+  (10-30 років). КУРАТИВНОГО втручання для попереднього впливу
+  НЕМАЄ — припинення впливу (PPE при активному), counseling щодо
+  припинення куріння (синергія для легень), LDCT скринінг легень,
+  urinalysis для спостереження за сечовим міхуром, дерматологічний
+  огляд для спостереження за шкірою — наявні важелі. Prevention-
+  persona RedFlag (§20 ратифікація 2026-05-18, v0.3 occupational
+  batch-2 пілот).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "occupational_pah_exposure_documented"
+      value: true
+    - finding: "occupational_pah_exposure_years_ge_10"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: occupational
+
+# PAH-associated cancers (in-KB Disease entities):
+# - DIS-NSCLC + DIS-SCLC (lung cancer; primary endpoint).
+# - DIS-UROTHELIAL (bladder; IARC Group 1 for several PAH-rich
+#   occupations).
+# - DIS-BCC (skin; non-melanoma cutaneous SCC is more strongly PAH-
+#   associated but DIS-CUTANEOUS-SCC not a separate entity —
+#   DIS-BCC is the closest in-KB cutaneous anchor).
+relevant_diseases:
+  - DIS-NSCLC
+  - DIS-SCLC
+  - DIS-UROTHELIAL
+  - DIS-BCC
+
+shifts_algorithm: []
+
+# Source caveat: IARC Monograph 100F (2012) is canonical for
+# occupational-PAH Group-1 status; NOT yet a separate SRC entity.
+# v0.3 source-authoring backlog.
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-NSCLC-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag — v0.3 occupational batch-2 pilot. Fires
+  when patient profile carries documented prior occupational PAH-rich
+  exposure AND no confirmed PAH-attributable malignancy diagnosis.
+  Engine routes to 2-track PreventionPlan:
+    (a) IND-OCC-PAH-PREVENTION-INTENSIFIED-SURVEILLANCE (standard)
+        — risk-adjusted annual LDCT chest (PAH-modified USPSTF);
+        urinalysis q1-2y for bladder surveillance; annual dermatology
+        consultation with full-skin exam (focus on PAH-contact areas:
+        face, neck, hands, forearms, scrotum); smoking-cessation
+        counseling.
+    (b) IND-OCC-PAH-PREVENTION-OBSERVATION (surveillance) — routine
+        general-population USPSTF screening only; patient declines
+        PAH-modified intensified surveillance but receives symptom-
+        triggered evaluation.
+
+  Trigger findings are computed booleans from occupational-history
+  intake at the patient-profile layer.
+
+  Evidence base: IARC Monograph 100F (2012); coke-oven worker cohorts
+  (Costantino 1995; Lloyd 1971); aluminum-smelter cohorts (Spinelli
+  2006). Lung-cancer SMR ~2-4x in heavily-exposed coke-oven workers;
+  bladder-cancer SMR ~1.5-3x in aluminum-smelter cohorts; cutaneous
+  SCC excess well-documented historically (chimney sweeps — Pott
+  1775, foundational occupational-carcinogenesis observation).
+
+  Sources TODO: IARC Monograph 100F (2012) as a new SRC entity. v0.3
+  source-authoring backlog.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption.
+notes_ua: >
+  Prevention-persona RedFlag — v0.3 occupational batch-2 пілот.
+  Спрацьовує при документованому попередньому професійному впливі
+  PAH-rich occupations без підтвердженого діагнозу. Engine маршрутизує
+  до 2-track PreventionPlan: (а) intensified — LDCT + urinalysis +
+  дерматологічний огляд + припинення куріння; (б) observation —
+  symptom-triggered тільки. STUB — очікує підпис двох Clinical Co-Lead
+  за §6.1 dev-mode exemption.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_batch2
+draft_revision: 1
+
+draft: true

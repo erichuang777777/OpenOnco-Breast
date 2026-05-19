@@ -1,0 +1,124 @@
+id: RF-OCC-SILICA-PREVENTION
+definition: >-
+  Documented historical occupational exposure to respirable crystalline
+  silica (RCS; α-quartz, cristobalite, tridymite) — typical high-risk
+  occupations include underground / surface miners and quarry workers,
+  stone-cutting and stone-fabrication workers (especially engineered-
+  stone / quartz-surface fabrication), sandblasters, foundry workers,
+  ceramic / pottery / glass manufacturing workers, tunnel construction,
+  and concrete / masonry workers — in an individual without a current
+  silica-associated malignancy diagnosis. RCS is an IARC Group 1
+  carcinogen (Monograph 100C, 2012) — established etiologic driver of
+  lung cancer (primary endpoint), with risk elevated further in the
+  context of clinically-apparent silicosis (radiographic / functional
+  pneumoconiosis). Latency to lung cancer is typically 20-40 years
+  from first exposure and is smoking-modified (additive-to-
+  multiplicative interaction). There is NO curative intervention for
+  prior exposure — exposure cessation (PPE if active), smoking-cessation
+  counseling, HRCT chest if silicosis suspected, and risk-adjusted LDCT
+  for lung-cancer surveillance are the levers. Prevention-persona
+  RedFlag (§20 ratification 2026-05-18, v0.3 occupational batch-2
+  pilot).
+definition_ua: >-
+  Документоване історичне професійне впливу респірабельного
+  кристалічного силіцію (RCS; α-кварц, кристобаліт, тридиміт) —
+  типові високоризикові професії: підземні / поверхневі шахтарі та
+  кар'єрні робітники, працівники з нарізання та обробки каменю
+  (особливо виробництво інженерного / кварцового каменю),
+  піскоструйники, ливарники, працівники керамічного / гончарного /
+  скляного виробництва, тунельне будівництво, муляри / бетонярі —
+  у пацієнта без поточного діагнозу силіцій-асоційованої малігнізації.
+  RCS — канцероген IARC Group 1 (Monograph 100C, 2012), встановлений
+  етіологічний драйвер раку легень (первинна кінцева точка), з
+  ризиком, додатково підвищеним у контексті клінічно-апарентного
+  силікозу (рентгенологічний / функціональний пневмоконіоз).
+  Латентність до раку легень — 20-40 років від першого впливу,
+  модифікується курінням (адитивно-мультиплікативна взаємодія).
+  КУРАТИВНОГО втручання для попереднього впливу НЕМАЄ — припинення
+  впливу (PPE при активному), counseling щодо припинення куріння,
+  HRCT грудної клітки при підозрі на силікоз, та risk-adjusted LDCT
+  для спостереження за раком легень — наявні важелі. Prevention-
+  persona RedFlag (§20 ратифікація 2026-05-18, v0.3 occupational
+  batch-2 пілот).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "occupational_silica_exposure_documented"
+      value: true
+    - finding: "occupational_silica_exposure_years_ge_10"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: occupational
+
+# Silica-associated cancers (in-KB Disease entities):
+# - DIS-NSCLC + DIS-SCLC (lung cancer; IARC Group 1 since 1997 /
+#   reaffirmed 100C 2012).
+relevant_diseases:
+  - DIS-NSCLC
+  - DIS-SCLC
+
+shifts_algorithm: []
+
+# Source caveat: IARC Monograph 100C (2012) is canonical for silica
+# Group-1 status; NOT yet a separate SRC entity. v0.3 source-authoring
+# backlog.
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-NSCLC-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag — v0.3 occupational batch-2 pilot. Fires
+  when patient profile carries documented prior occupational respirable
+  crystalline silica exposure AND no confirmed silica-attributable
+  malignancy diagnosis. Engine routes to 2-track PreventionPlan:
+    (a) IND-OCC-SILICA-PREVENTION-INTENSIFIED-SURVEILLANCE (standard)
+        — HRCT chest if silicosis suspected (functional / symptomatic /
+        baseline CXR abnormality); risk-adjusted annual LDCT chest
+        for lung-cancer screening (USPSTF-modified for silica
+        cumulative exposure); smoking-cessation counseling
+        (imperative); exposure-cessation / PPE counseling if active
+        exposure persists (note: engineered-stone fabrication is an
+        emerging high-exposure occupation worldwide).
+    (b) IND-OCC-SILICA-PREVENTION-OBSERVATION (surveillance) —
+        routine general-population USPSTF screening only; patient
+        declines silica-modified intensified imaging surveillance.
+
+  Trigger findings are computed booleans from occupational-history
+  intake at the patient-profile layer.
+
+  Evidence base: IARC Monograph 100C (2012); Steenland et al. 2001
+  (pooled silica-exposed cohort meta-analysis — lung-cancer SMR
+  ~1.3-1.5 in silica-only, higher with silicosis); Vida et al. 2010
+  (Quebec cohort, silicosis × smoking interaction analysis).
+  Lung-cancer SMR ~2-3x with silicosis context; <1.5x in silica-
+  exposed-without-silicosis.
+
+  Sources TODO: IARC Monograph 100C (2012) as a new SRC entity. v0.3
+  source-authoring backlog.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption.
+notes_ua: >
+  Prevention-persona RedFlag — v0.3 occupational batch-2 пілот.
+  Спрацьовує при документованому попередньому професійному впливі
+  респірабельного кристалічного силіцію без підтвердженого діагнозу.
+  Engine маршрутизує до 2-track PreventionPlan: (а) intensified —
+  HRCT грудної клітки при підозрі на силікоз + risk-adjusted LDCT +
+  припинення куріння (першочергове); (б) observation — рутинний
+  USPSTF тільки. STUB — очікує підпис двох Clinical Co-Lead за §6.1
+  dev-mode exemption.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_batch2
+draft_revision: 1
+
+draft: true

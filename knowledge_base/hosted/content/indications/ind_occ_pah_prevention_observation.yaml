@@ -1,0 +1,144 @@
+id: IND-OCC-PAH-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-OCC-PAH-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Primary endpoint: avoidance of multi-modality intensified surveillance
+    (LDCT + urinalysis + dermatology) when patient declines structured
+    pathway. No reduction in PAH-attributable lung / bladder / cutaneous
+    cancer incidence beyond what routine general-population care
+    provides. Smoking-cessation counseling remains appropriate regardless
+    of surveillance-track choice.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-OCC-PAH-PREVENTION-INTENSIFIED-
+  SURVEILLANCE. Patient with documented prior occupational PAH-rich
+  exposure who declines multi-modality intensified surveillance — for
+  any reason (cost across multiple surveillance modalities, anxiety
+  from layered surveillance burden, preference, geographic access
+  constraints to dermatology + LDCT centers, life expectancy) — is
+  offered routine general-population screening only:
+
+  **Lung-cancer screening:** Apply USPSTF 2021 criteria unmodified.
+  Patient is explicitly informed that PAH-attributable excess risk is
+  unaddressed.
+
+  **Bladder-cancer screening:** None scheduled — no validated general-
+  population modality; urinalysis obtained only on routine primary-
+  care visit or symptomatic presentation.
+
+  **Skin-cancer screening:** None scheduled — patient counseled to
+  perform monthly self-skin-checks and to report new / changing
+  lesions, but without proactive professional dermatology cadence.
+
+  **Smoking cessation:** Still offered — PAH × tobacco interaction
+  remains clinically substantive.
+
+  **Symptom-triggered evaluation:** Low threshold for diagnostic
+  workup if alarm features develop (chest symptoms; gross / microscopic
+  hematuria; non-healing skin lesion or hyperkeratotic plaque on PAH-
+  contact area).
+
+  Routing reconsiderations: patient may revisit intensified-surveillance
+  pathway at any subsequent visit, in whole or in part (e.g., agree
+  to dermatology alone). Per CHARTER §11 patient-autonomy framing:
+  multi-modality surveillance is a shared-decision-making domain.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до IND-OCC-PAH-
+  PREVENTION-INTENSIFIED-SURVEILLANCE. Пацієнт з документованим
+  попереднім професійним PAH-rich впливом, який відмовляється від
+  multi-modality intensified surveillance (вартість через декілька
+  surveillance modalities, тривога від layered surveillance burden,
+  перевага, географічні обмеження до dermatology + LDCT центрів),
+  отримує тільки рутинний загальнопопуляційний скринінг:
+
+  **Скринінг раку легень:** Застосовувати USPSTF 2021 без модифікації.
+  Пацієнт явно інформований, що PAH-attributable excess ризик не
+  адресується.
+
+  **Скринінг раку сечового міхура:** Не запланований — валідованої
+  загальнопопуляційної модальності немає; urinalysis отримується тільки
+  на рутинному візиті до первинної медичної допомоги або при
+  симптоматичній презентації.
+
+  **Скринінг раку шкіри:** Не запланований — пацієнту радять виконувати
+  щомісячні self-skin-checks та повідомляти про нові / змінювальні
+  ураження, але без проактивної професійної dermatology частоти.
+
+  **Припинення куріння:** Все ще пропонується — PAH × тютюн взаємодія
+  залишається клінічно суттєвою.
+
+  **Symptom-triggered оцінка:** Низький поріг для діагностичного
+  workup при появі alarm features.
+
+  Reroute: пацієнт може повернутися до інтенсифікованого спостереження
+  на будь-якому подальшому візиті, в цілому або частково. Per CHARTER
+  §11 — shared-decision-making domain.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Patients declining intensified surveillance for occupational
+      carcinogen cohorts continue to receive symptom-triggered evaluation
+      and standard-of-care general-population screening."
+  - source_id: SRC-NCCN-NSCLC-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Multi-modality surveillance pathways are subject to patient-
+      autonomy and shared-decision-making considerations; partial
+      acceptance (e.g., dermatology without LDCT) is acceptable."
+
+do_not_do:
+  - "Не презентувати observation як еквівалент multi-modality surveillance — PAH-attributable excess ризик не адресується."
+  - "Не ігнорувати alarm features (chest симптоми, гематурія, неcicатризуючі ураження шкіри на PAH-контактних ділянках) — immediate evaluation."
+  - "Не використовувати цей шлях як стандарт першої лінії — intensified-surveillance трек залишається preferred."
+  - "Не пропускати counseling щодо припинення куріння — рекомендація актуальна незалежно від surveillance-track вибору."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to multi-modality surveillance — PAH-attributable excess risk is unaddressed."
+  - "Do not ignore alarm features (chest symptoms, hematuria, non-healing skin lesions on PAH-contact areas) — immediate evaluation."
+  - "Do not use this pathway as a first-line standard — the intensified-surveillance track remains the preferred recommendation."
+  - "Do not skip smoking-cessation counseling — the recommendation is relevant regardless of surveillance-track choice."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — alternative-track companion for PAH occupational prevention
+  pilot. §15.2 C4 ≥2-tracks invariant compliance. Two-Clinical-Co-Lead
+  signoff queued per CHARTER §6.1 dev-mode exemption.

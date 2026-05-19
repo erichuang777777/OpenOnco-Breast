@@ -1,0 +1,115 @@
+id: RF-OCC-FORMALDEHYDE-PREVENTION
+definition: >-
+  Documented historical occupational exposure to formaldehyde (gaseous
+  HCHO and aqueous formalin) — typical high-risk occupations include
+  anatomical pathologists, autopsy technicians, embalmers / funeral-
+  service workers, histology laboratory personnel, particleboard /
+  plywood / MDF manufacturing workers, textile / garment workers handling
+  formaldehyde-treated fabrics, and resin / plastics industry workers —
+  in an individual without a current formaldehyde-associated malignancy
+  diagnosis. Formaldehyde is an IARC Group 1 carcinogen (Monograph 100F,
+  2012) — established etiologic driver of nasopharyngeal carcinoma
+  (primary endpoint) and myeloid leukemia (AML; sinonasal cancer is also
+  Group-1-associated). Latency from first exposure to nasopharyngeal
+  carcinoma is typically 20-40 years; latency to AML is shorter (5-15
+  years). There is NO curative intervention for prior exposure —
+  exposure cessation (PPE, respiratory protection if active), routine CBC
+  for leukemia surveillance, and ENT symptom awareness are the levers.
+  Prevention-persona RedFlag (§20 ratification 2026-05-18, v0.3
+  occupational batch-2 pilot).
+definition_ua: >-
+  Документоване історичне професійне впливу формальдегіду (газоподібний
+  HCHO та водний формалін) — типові високоризикові професії:
+  анатомічні патологи, лабораторні техніки автопсії, бальзамувальники /
+  працівники похоронних служб, персонал гістологічних лабораторій,
+  виробництво ДСП / фанери / MDF, текстильні / швейні робітники з
+  формальдегід-обробленими тканинами, працівники смолопластикової
+  промисловості — у пацієнта без поточного діагнозу
+  формальдегід-асоційованої малігнізації. Формальдегід — канцероген
+  IARC Group 1 (Monograph 100F, 2012), встановлений етіологічний драйвер
+  назофарингеальної карциноми (первинна кінцева точка) та мієлоїдної
+  лейкемії (AML; синоназальний рак також Group-1-асоційований).
+  Латентність до назофарингеальної карциноми — 20-40 років; до AML
+  коротша — 5-15 років. КУРАТИВНОГО втручання для попереднього впливу
+  НЕМАЄ — припинення впливу (PPE, респіраторний захист при активному
+  впливі), рутинна CBC для лейкемійного спостереження та обізнаність
+  щодо ENT-симптомів — наявні важелі. Prevention-persona RedFlag
+  (§20 ратифікація 2026-05-18, v0.3 occupational batch-2 пілот).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "occupational_formaldehyde_exposure_documented"
+      value: true
+    - finding: "occupational_formaldehyde_exposure_years_ge_10"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: occupational
+
+# Formaldehyde-associated cancers (in-KB Disease entities):
+# - DIS-AML (myeloid leukemia; IARC Group 1 since 2012).
+# - DIS-HNSCC (closest in-KB anchor for nasopharyngeal / sinonasal —
+#   DIS-NASOPHARYNGEAL not a separate entity; HNSCC covers head & neck
+#   squamous cell carcinomas including nasopharyngeal).
+relevant_diseases:
+  - DIS-AML
+  - DIS-HNSCC
+
+shifts_algorithm: []
+
+# Source caveat: IARC Monograph 100F (Chemical Agents and Related
+# Occupations, 2012) is canonical for formaldehyde Group-1 status;
+# NOT yet a separate SRC entity. v0.3 source-authoring backlog.
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-AML-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag — v0.3 occupational batch-2 pilot. Fires
+  when patient profile carries documented prior occupational formaldehyde
+  exposure AND no confirmed formaldehyde-attributable malignancy
+  diagnosis. Engine routes to 2-track PreventionPlan:
+    (a) IND-OCC-FORMALDEHYDE-PREVENTION-INTENSIFIED-SURVEILLANCE
+        (standard) — CBC q1y for leukemia surveillance; ENT symptom-
+        awareness counseling (epistaxis, unilateral nasal obstruction,
+        recurrent sinusitis, anosmia) with low-threshold ENT referral
+        if symptoms develop; PPE counseling if active exposure persists.
+    (b) IND-OCC-FORMALDEHYDE-PREVENTION-OBSERVATION (surveillance) —
+        routine general-population care; patient declines structured
+        CBC + ENT surveillance.
+
+  Trigger findings are computed booleans from occupational-history
+  intake at the patient-profile layer.
+
+  Evidence base: IARC Monograph 100F (2012); Hauptmann et al. 2009
+  (NCI formaldehyde-exposed industry cohort — nasopharyngeal +
+  leukemia excess); Beane Freeman et al. 2009 (NCI mortality
+  follow-up). Nasopharyngeal RR ~1.8-2.1 in high-exposure cohorts;
+  AML RR ~1.3-2.0.
+
+  Sources TODO: IARC Monograph 100F (2012) as a new SRC entity. v0.3
+  source-authoring backlog.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption.
+notes_ua: >
+  Prevention-persona RedFlag — v0.3 occupational batch-2 пілот.
+  Спрацьовує при документованому попередньому професійному впливі
+  формальдегіду без підтвердженого діагнозу. Engine маршрутизує до
+  2-track PreventionPlan: (а) intensified — CBC q1y + ENT-обізнаність;
+  (б) observation — рутинний загальнопопуляційний догляд.
+  STUB — очікує підпис двох Clinical Co-Lead за §6.1 dev-mode exemption.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_batch2
+draft_revision: 1
+
+draft: true

@@ -1,0 +1,149 @@
+id: IND-OCC-PAINTERS-PREVENTION-INTENSIFIED-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-OCC-PAINTERS-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Primary endpoint: detection of incident paint-occupation-attributable
+    malignancy (lung, bladder, AML) at earliest treatable stage via
+    multi-modality surveillance. Pooled painter-cohort meta-analysis
+    (Guha 2010) shows lung-cancer RR ~1.35 and bladder-cancer RR
+    ~1.25. Heterogeneity of historical paint formulations drives
+    multi-organ pattern. Smoking-cessation has largest single-
+    intervention impact on lung component.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for individuals with documented
+  ≥10 years occupational painting exposure who do not have a current
+  paint-occupation-associated malignancy diagnosis. Four parallel
+  interventions:
+
+  **(1) Risk-adjusted annual LDCT chest screening (smoker-eligible).**
+  USPSTF 2021 criteria are the baseline. Painter-cohort RR for lung
+  cancer (~1.35) is below the asbestos / silica magnitude — extension
+  to never-smoker painters is not standard practice. Smoker-painters
+  meeting USPSTF receive annual LDCT.
+
+  **(2) Urinalysis q1-2y for bladder-cancer surveillance.** Painter
+  bladder-cancer RR (~1.25) supports adjunctive surveillance with
+  non-invasive urinalysis (microscopy for hematuria). Cystoscopy
+  reserved for persistent / unexplained hematuria. Urinary cytology
+  not recommended as standalone screening.
+
+  **(3) CBC q1y for hematologic surveillance.** Benzene-solvent
+  exposure component of historical paint formulations supports
+  hematologic surveillance for AML / MDS. Cytopenia patterns
+  (unexplained anemia, leukopenia, thrombocytopenia, or progressive
+  monocytosis) prompt referral to hematology. Frequency q1y for
+  active / recent exposure; may extend to q2y after 20 years post-
+  exposure for asymptomatic patients with prior normal trends.
+
+  **(4) Smoking-cessation counseling.** Highest-impact single
+  intervention for lung component. Behavioral counseling +
+  pharmacotherapy (varenicline, bupropion, NRT) per USPSTF / ATS /
+  AAFP.
+
+  Resource access in Ukraine: LDCT chest (~1500-3500 UAH); urinalysis
+  (~150-400 UAH); CBC (~150-300 UAH); smoking-cessation pharmacotherapy
+  pharmacy-accessible.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для осіб з документованим ≥10
+  років професійним малярським впливом без поточного діагнозу
+  paint-occupation-асоційованої малігнізації. Чотири паралельні
+  втручання:
+
+  **(1) Risk-adjusted щорічна LDCT грудної клітки (smoker-eligible).**
+  USPSTF 2021 критерії — baseline. Painter-cohort RR для раку легень
+  (~1.35) нижче за asbestos / silica magnitude — розширення на
+  некурців-малярів не є стандартною практикою. Smoker-painters, що
+  відповідають USPSTF, отримують щорічну LDCT.
+
+  **(2) Urinalysis q1-2y для спостереження за сечовим міхуром.**
+  Painter bladder-cancer RR (~1.25) підтримує адʼюнктивне
+  спостереження з неінвазивним urinalysis (мікроскопія для гематурії).
+
+  **(3) CBC q1y для гематологічного спостереження.** Benzene-solvent
+  компонент historical paint formulations підтримує гематологічне
+  спостереження для AML / MDS. Цитопенії (необʼяснена анемія,
+  лейкопенія, тромбоцитопенія, прогресуючий моноцитоз) спонукають
+  направлення до гематолога. Частота q1y для активного /
+  нещодавнього впливу; може бути продовжена до q2y після 20 років
+  post-exposure для асимптомних пацієнтів з попередньою нормальною
+  динамікою.
+
+  **(4) Counseling щодо припинення куріння.** Найвпливовіше одиничне
+  втручання для легеневого компоненту.
+
+  Доступ до ресурсів в Україні: LDCT грудної клітки (~1500-3500 грн);
+  urinalysis (~150-400 грн); CBC (~150-300 грн); pharmacotherapy для
+  припинення куріння аптечно доступна.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Occupational mixed-exposure cohorts (painters, firefighters) with
+      heterogeneous carcinogen burden warrant multi-modality surveillance
+      reflecting the spectrum of cancer endpoints identified
+      epidemiologically."
+  - source_id: SRC-NCCN-NSCLC-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Annual low-dose CT lung-cancer screening is recommended for
+      individuals at elevated lung-cancer risk by age, smoking history,
+      and (per Clinical Practice Guidelines extension) occupational
+      carcinogen exposure including paint-trades exposure."
+
+do_not_do:
+  - "Не екстраполювати LDCT на некурців-малярів — RR ~1.35 не виправдовує LDCT-extension у never-smoker cohort."
+  - "Не використовувати urinary cytology як standalone screening — низька чутливість."
+  - "Не призначати рутинну біопсію кісткового мозку асимптомним пацієнтам — резервується для тривожних цитопеній."
+  - "Не пропускати counseling щодо припинення куріння — лeгеневий компонент залишається первинним."
+
+do_not_do_en:
+  - "Do not extrapolate LDCT to never-smoker painters — an RR of ~1.35 does not justify LDCT extension in the never-smoker cohort."
+  - "Do not use urinary cytology as standalone screening — low sensitivity."
+  - "Do not order routine bone-marrow biopsy in asymptomatic patients — reserve for alarm cytopenias."
+  - "Do not skip smoking-cessation counseling — the lung component remains primary."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — v0.3 occupational batch-2 pilot (painters).
+  Two-Clinical-Co-Lead signoff queued per CHARTER §6.1 dev-mode
+  exemption. IARC Monograph 100F (2012) is canonical evidence anchor;
+  v0.3 source-authoring backlog.

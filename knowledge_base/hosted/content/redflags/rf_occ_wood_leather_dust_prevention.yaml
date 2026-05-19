@@ -1,0 +1,115 @@
+id: RF-OCC-WOOD-LEATHER-DUST-PREVENTION
+definition: >-
+  Documented historical occupational exposure to hardwood dust (oak,
+  beech, mahogany, walnut, teak) or leather dust — typical high-risk
+  occupations include cabinetmakers, furniture manufacturing /
+  woodworking-shop workers, parquet flooring installers, sawmill workers
+  in hardwood operations, and leather / shoe / boot manufacturing
+  workers (tanning, cutting, finishing) — in an individual without a
+  current dust-associated malignancy diagnosis. Hardwood dust and
+  leather dust are IARC Group 1 carcinogens (Monograph 100C, 2012),
+  with the strongest epidemiologic association being sinonasal
+  adenocarcinoma (a rare histologic subtype of head & neck cancer with
+  near-pathognomonic association in heavily-exposed woodworkers).
+  Latency is typically ≥30-40 years from first exposure; the rarity of
+  sinonasal adenocarcinoma at general-population baseline means
+  occupational attribution is particularly clean. There is NO validated
+  imaging screening modality — symptom-triggered ENT evaluation with
+  low threshold for nasal endoscopy and CT sinus is the operational
+  standard. Prevention-persona RedFlag (§20 ratification 2026-05-18,
+  v0.3 occupational batch-2 pilot).
+definition_ua: >-
+  Документоване історичне професійне впливу пилу твердих порід деревини
+  (дуб, бук, червоне дерево, горіх, тик) або шкіряного пилу — типові
+  високоризикові професії: меблярі, працівники меблевого виробництва /
+  деревообробних цехів, монтажники паркетної підлоги, працівники
+  лісопилок у твердопородному виробництві, працівники виробництва
+  шкіри / взуття (дублення, різання, оздоблення) — у пацієнта без
+  поточного діагнозу пил-асоційованої малігнізації. Пил твердої
+  деревини та шкіряний пил — канцерогени IARC Group 1
+  (Monograph 100C, 2012), найсильніша епідеміологічна асоціація —
+  синоназальна аденокарцинома (рідкісний гістологічний підтип
+  головно-шийного раку з майже-патогномонічною асоціацією у
+  важко-експонованих деревообробників). Латентність зазвичай ≥30-40
+  років від першого впливу; рідкісність синоназальної аденокарциноми у
+  загальній популяції робить професійну атрибуцію особливо чистою.
+  Валідованої модальності imaging-скринінгу НЕМАЄ — symptom-triggered
+  ENT-оцінка з низьким порогом для назальної ендоскопії та CT синусів
+  — operational standard. Prevention-persona RedFlag (§20 ратифікація
+  2026-05-18, v0.3 occupational batch-2 пілот).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "occupational_hardwood_dust_exposure_documented"
+      value: true
+    - finding: "occupational_leather_dust_exposure_documented"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: occupational
+
+# Hardwood / leather-dust-associated cancers (in-KB Disease entities):
+# - DIS-HNSCC (closest in-KB anchor for sinonasal adenocarcinoma —
+#   DIS-SINONASAL-ADENOCARCINOMA not a separate entity).
+relevant_diseases:
+  - DIS-HNSCC
+
+shifts_algorithm: []
+
+# Source caveat: IARC Monograph 100C (2012) is canonical for wood-dust /
+# leather-dust Group-1 status; NOT yet a separate SRC entity. v0.3
+# source-authoring backlog.
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-HNSCC-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag — v0.3 occupational batch-2 pilot. Fires
+  when patient profile carries documented prior occupational hardwood
+  or leather-dust exposure AND no confirmed dust-attributable malignancy
+  diagnosis. Engine routes to 2-track PreventionPlan:
+    (a) IND-OCC-WOOD-LEATHER-DUST-PREVENTION-INTENSIFIED-SURVEILLANCE
+        (standard) — annual ENT consultation with symptom-review
+        (unilateral nasal obstruction, epistaxis, anosmia, facial
+        pain); low-threshold CT sinus if persistent unilateral
+        symptoms develop; PPE counseling if active exposure persists.
+    (b) IND-OCC-WOOD-LEATHER-DUST-PREVENTION-OBSERVATION (surveillance)
+        — routine general-population care; patient declines annual ENT
+        consultation but receives symptom-triggered evaluation.
+
+  Trigger findings are computed booleans from occupational-history
+  intake at the patient-profile layer.
+
+  Evidence base: IARC Monograph 100C (2012); Hayes et al. 1986
+  (Netherlands woodworkers cohort); Demers et al. 1995 (international
+  pooled woodworker analysis). Sinonasal adenocarcinoma SMR ~50-900x
+  baseline in heavily-exposed cohorts depending on cumulative dose
+  and species (hardwood >> softwood).
+
+  Sources TODO: IARC Monograph 100C (2012) as a new SRC entity. v0.3
+  source-authoring backlog.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption.
+notes_ua: >
+  Prevention-persona RedFlag — v0.3 occupational batch-2 пілот.
+  Спрацьовує при документованому попередньому професійному впливі пилу
+  твердих порід деревини або шкіри без підтвердженого діагнозу. Engine
+  маршрутизує до 2-track PreventionPlan: (а) intensified — щорічна
+  ENT-консультація + low-threshold CT синусів; (б) observation —
+  symptom-triggered тільки. STUB — очікує підпис двох Clinical Co-Lead
+  за §6.1 dev-mode exemption.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_batch2
+draft_revision: 1
+
+draft: true

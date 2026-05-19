@@ -1,0 +1,132 @@
+id: RF-OCC-DIESEL-EXHAUST-PREVENTION
+definition: >-
+  Documented historical occupational exposure to diesel-engine exhaust
+  (DEE) — typical high-risk occupations include long-haul truck drivers,
+  underground / surface miners using diesel equipment, railroad workers
+  (engineers, conductors, yard hostlers), heavy-equipment operators,
+  bus / heavy-vehicle mechanics, dockworkers, and forklift operators in
+  enclosed warehouse settings — in an individual without a current
+  diesel-exhaust-associated malignancy diagnosis. Diesel exhaust is an
+  IARC Group 1 carcinogen (Monograph 105, 2012) — established etiologic
+  driver of lung cancer (primary endpoint; cumulative-exposure-response
+  documented) with limited but suggestive evidence for bladder cancer.
+  Latency from first exposure to lung cancer is 10-30 years and is
+  smoking-modified (synergy not fully multiplicative, but additive-to-
+  multiplicative depending on cumulative dose). There is NO curative
+  intervention for prior exposure — exposure cessation (typically not
+  applicable to retired workers), smoking-cessation counseling, and
+  risk-adjusted LDCT lung surveillance are the levers. Prevention-persona
+  RedFlag (§20 ratification 2026-05-18, v0.3 occupational batch-2 pilot).
+definition_ua: >-
+  Документоване історичне професійне впливу вихлопу дизельних двигунів
+  (DEE) — типові високоризикові професії: водії-дальнобійники,
+  підземні / поверхневі шахтарі з дизельною технікою, залізничники
+  (машиністи, кондуктори, працівники сортувальних станцій), оператори
+  важкої техніки, механіки автобусів / важкого транспорту, докери та
+  оператори навантажувачів у закритих складських приміщеннях — у
+  пацієнта без поточного діагнозу діз-асоційованої малігнізації. Вихлоп
+  дизельних двигунів — канцероген IARC Group 1 (Monograph 105, 2012),
+  встановлений етіологічний драйвер раку легень (первинна кінцева точка;
+  доказова експозиційно-відповідна залежність) з обмеженими, але
+  суггестивними даними щодо раку сечового міхура. Латентність від
+  першого впливу до раку легень — 10-30 років, модифікується курінням
+  (синергія не повністю мультиплікативна, але адитивно-мультиплікативна
+  залежно від кумулятивної дози). КУРАТИВНОГО втручання для попереднього
+  впливу НЕМАЄ — припинення впливу (зазвичай не актуально для пенсіонерів),
+  counseling щодо припинення куріння та LDCT-спостереження з поправкою на
+  ризик — наявні важелі. Prevention-persona RedFlag (§20 ратифікація
+  2026-05-18, v0.3 occupational batch-2 пілот).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "occupational_diesel_exhaust_exposure_documented"
+      value: true
+    - finding: "occupational_diesel_exhaust_exposure_years_ge_10"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+# §20 prevention extension — drives engine routing to PreventionPlan
+# when patient carries this RF and no confirmed Disease (KSS §20.2).
+risk_category: occupational
+
+# Diesel-exhaust-associated cancers (in-KB Disease entities):
+# - DIS-NSCLC + DIS-SCLC (primary endpoint; IARC Group 1 since 2012).
+# - DIS-UROTHELIAL (bladder; IARC limited-evidence but suggestive;
+#   surveillance via urinalysis included on standard track).
+relevant_diseases:
+  - DIS-NSCLC
+  - DIS-SCLC
+  - DIS-UROTHELIAL
+
+shifts_algorithm: []
+
+# Source caveat: IARC Monograph 105 (Diesel and Gasoline Engine Exhausts
+# and Some Nitroarenes) is the canonical Group-1 classification for diesel
+# exhaust and is NOT yet a separate SRC entity in KB. NCCN B-Cell + lung
+# guidelines are the most clinically relevant in-KB anchors; IARC 105 as
+# SRC entity is in the v0.3 source-authoring backlog.
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-NSCLC-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag — v0.3 occupational batch-2 pilot. Fires
+  when patient profile carries documented prior occupational diesel-exhaust
+  exposure AND no confirmed diesel-attributable malignancy diagnosis.
+  Engine routes to 2-track PreventionPlan:
+    (a) IND-OCC-DIESEL-EXHAUST-PREVENTION-INTENSIFIED-SURVEILLANCE
+        (standard) — risk-adjusted LDCT chest screening (USPSTF-modified
+        criteria for cumulative DEE exposure), smoking-cessation
+        counseling (paramount), urinalysis q1-2y for bladder surveillance.
+    (b) IND-OCC-DIESEL-EXHAUST-PREVENTION-OBSERVATION (surveillance) —
+        routine general-population USPSTF screening only; patient declines
+        DEE-modified intensified imaging surveillance.
+
+  Trigger findings are computed booleans from occupational-history intake
+  at the patient-profile layer (FHIR Patient + Observation / Condition
+  extensions; computation pipeline downstream of KB and not yet
+  implemented).
+
+  Evidence base: IARC Monograph 105 (2012); Silverman et al. 2012
+  (Diesel Exhaust in Miners Study — exposure-response gradient for
+  lung-cancer mortality); Garshick et al. 2012 (trucking-industry cohort).
+  Lung-cancer SMR ~1.3-3x depending on cumulative respirable elemental
+  carbon dose; smoker × DEE interaction is additive-to-multiplicative
+  but not formally multiplicative as in asbestos.
+
+  Sources TODO: IARC Monograph 105 (2012) as a new SRC entity. v0.3
+  source-authoring backlog.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption.
+notes_ua: >
+  Prevention-persona RedFlag — v0.3 occupational batch-2 пілот.
+  Спрацьовує коли профіль пацієнта містить документований попередній
+  професійний вплив вихлопу дизельних двигунів ТА відсутній підтверджений
+  діагноз діз-асоційованої малігнізації. Engine маршрутизує до 2-track
+  PreventionPlan:
+    (а) IND-OCC-DIESEL-EXHAUST-PREVENTION-INTENSIFIED-SURVEILLANCE
+        (стандартний) — risk-adjusted LDCT грудної клітки
+        (USPSTF-модифіковані критерії для кумулятивного DEE-впливу),
+        counseling щодо припинення куріння (першочергове), urinalysis
+        q1-2y для спостереження за сечовим міхуром.
+    (б) IND-OCC-DIESEL-EXHAUST-PREVENTION-OBSERVATION (surveillance) —
+        тільки рутинний загальнопопуляційний USPSTF-скринінг; пацієнт
+        відмовляється від DEE-модифікованого інтенсифікованого imaging-
+        спостереження.
+
+  STUB — очікує підпис двох Clinical Co-Lead за §6.1 dev-mode exemption.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_batch2
+draft_revision: 1
+
+draft: true

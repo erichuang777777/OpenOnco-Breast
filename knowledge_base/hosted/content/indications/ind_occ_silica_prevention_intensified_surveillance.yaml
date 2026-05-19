@@ -1,0 +1,164 @@
+id: IND-OCC-SILICA-PREVENTION-INTENSIFIED-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-OCC-SILICA-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Primary endpoint: detection of incident silica-attributable lung
+    cancer at earliest treatable stage via LDCT, with HRCT-mediated
+    detection of silicosis (itself a marker of substantially elevated
+    lung-cancer risk). Lung-cancer SMR is ~2-3x in silicosis-affected
+    workers and ~1.3-1.5x in silica-exposed-without-silicosis (per
+    IARC 100C / Steenland 2001 / Vida 2010). Smoking cessation is the
+    single highest-impact lever — silicosis × smoking interaction is
+    additive-to-multiplicative.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for individuals with documented
+  prior occupational respirable crystalline silica exposure who do not
+  have a current silica-associated malignancy diagnosis. Four parallel
+  interventions:
+
+  **(1) HRCT chest if silicosis suspected.** Functional findings
+  (declining FVC / DLCO on spirometry), symptomatic findings (dyspnea
+  on exertion, chronic cough out of proportion to comorbidities), or
+  baseline chest-radiograph abnormalities (small rounded opacities,
+  hilar / mediastinal lymph-node calcification) warrant HRCT chest
+  to confirm / characterize silicosis. Silicosis itself is a marker
+  of substantially elevated lung-cancer risk and shifts the LDCT-
+  threshold lower.
+
+  **(2) Risk-adjusted annual LDCT chest screening.** USPSTF 2021
+  criteria are the baseline. Silica-exposed cohorts extend
+  consideration:
+    - With silicosis: LDCT consideration regardless of smoking history
+      from ≥10 years post first exposure given elevated lung-cancer
+      SMR.
+    - Without silicosis: USPSTF criteria for smokers; consider LDCT
+      for never-smokers with ≥20 years of high-cumulative-exposure
+      occupations (engineered-stone fabrication, sandblasting) from
+      ≥20 years post first exposure.
+    - Annual cadence; Lung-RADS reporting.
+
+  **(3) Smoking-cessation counseling.** Highest-impact single
+  intervention. Silica × tobacco interaction is additive-to-
+  multiplicative. Behavioral counseling + pharmacotherapy
+  (varenicline, bupropion, NRT) per USPSTF / ATS / AAFP.
+
+  **(4) Exposure-cessation / PPE counseling.** Engineered-stone /
+  quartz-surface fabrication has become a globally-emerging high-
+  exposure occupation (rapid progressive silicosis in young workers
+  documented in Australia, Spain, Israel, and increasingly US /
+  Ukraine). Where active exposure persists, counsel on wet-method
+  cutting (essential), LEV (local exhaust ventilation), supplied-air
+  respirators for high-exposure tasks (P100 minimum for moderate
+  exposure), and adherence to OSHA / NSZU PEL.
+
+  Resource access in Ukraine: HRCT chest (~2000-4000 UAH); LDCT chest
+  (~1500-3500 UAH); spirometry widely available. Smoking-cessation
+  pharmacotherapy pharmacy-accessible without НСЗУ.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для осіб з документованим
+  попереднім професійним впливом респірабельного кристалічного
+  силіцію без поточного діагнозу силіцій-асоційованої малігнізації.
+  Чотири паралельні втручання:
+
+  **(1) HRCT грудної клітки при підозрі на силікоз.** Функціональні
+  знахідки (зниження FVC / DLCO на спірометрії), симптоматичні
+  знахідки (диспное при навантаженні, хронічний кашель не
+  пропорційно до коморбідностей) або baseline-аномалії на
+  рентгенограмі грудної клітки (малі заокруглені opacities, кальцинати
+  hilar / mediastinal лімфовузлів) потребують HRCT грудної клітки для
+  підтвердження / характеристики силікозу. Силікоз сам по собі —
+  маркер суттєво підвищеного ризику раку легень.
+
+  **(2) Risk-adjusted щорічна LDCT грудної клітки.** USPSTF 2021
+  критерії — baseline. Силіцій-експоновані когорти розширюють
+  розгляд: із силікозом — LDCT-розгляд незалежно від smoking history
+  з ≥10 років post first exposure; без силікозу — USPSTF для курців;
+  розгляд LDCT для некурців з ≥20 років high-cumulative-exposure
+  професій з ≥20 років post first exposure.
+
+  **(3) Counseling щодо припинення куріння.** Найвпливовіше одиничне
+  втручання. Силіцій × тютюн взаємодія — адитивно-мультиплікативна.
+
+  **(4) Exposure-cessation / PPE counseling.** Виробництво
+  інженерного / кварцового каменю стало глобально-emerging
+  high-exposure професією (rapid progressive силікоз у молодих
+  робітників задокументований в Австралії, Іспанії, Ізраїлі, дедалі
+  в США / Україні). Де активний вплив зберігається, counseling щодо
+  wet-method різання (essential), LEV (local exhaust ventilation),
+  supplied-air респіратори для high-exposure задач (P100 мінімум для
+  помірного впливу).
+
+  Доступ до ресурсів в Україні: HRCT грудної клітки (~2000-4000 грн);
+  LDCT грудної клітки (~1500-3500 грн); спірометрія широко доступна.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Occupational carcinogen-exposure cohorts at elevated lung-cancer
+      risk warrant risk-adjusted LDCT surveillance distinct from
+      general-population USPSTF criteria."
+  - source_id: SRC-NCCN-NSCLC-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Annual low-dose CT lung-cancer screening is recommended for
+      individuals at elevated lung-cancer risk by age, smoking history,
+      and (per Clinical Practice Guidelines extension) occupational
+      carcinogen exposure including respirable crystalline silica."
+
+do_not_do:
+  - "Не пропускати HRCT при функціональних / симптоматичних знахідках, узгоджених із силікозом — силікоз сам по собі — маркер підвищеного ризику."
+  - "Не екстраполювати USPSTF без модифікації для silicosis-affected пацієнтів — нижчий поріг LDCT обґрунтований."
+  - "Не пропускати counseling щодо припинення куріння — silica × тютюн взаємодія — адитивно-мультиплікативна."
+  - "Не нехтувати engineered-stone професіями — це emerging high-exposure категорія з rapid progressive силікозом у молодих робітників."
+
+do_not_do_en:
+  - "Do not skip HRCT for functional / symptomatic findings consistent with silicosis — silicosis itself is a risk-elevation marker."
+  - "Do not extrapolate USPSTF unmodified for silicosis-affected patients — a lower LDCT threshold is justified."
+  - "Do not skip smoking-cessation counseling — the silica × tobacco interaction is additive-to-multiplicative."
+  - "Do not overlook engineered-stone occupations — this is an emerging high-exposure category with rapid progressive silicosis in young workers."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — v0.3 occupational batch-2 pilot (crystalline silica).
+  Two-Clinical-Co-Lead signoff queued per CHARTER §6.1 dev-mode
+  exemption. IARC Monograph 100C (2012) is canonical evidence anchor;
+  v0.3 source-authoring backlog.

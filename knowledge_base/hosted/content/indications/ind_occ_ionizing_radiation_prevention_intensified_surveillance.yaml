@@ -1,0 +1,175 @@
+id: IND-OCC-IONIZING-RADIATION-PREVENTION-INTENSIFIED-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  # Primary anchor: AML (foundational IARC evidence — Life Span Study).
+  disease_id: DIS-AML
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-OCC-IONIZING-RADIATION-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Primary endpoint: detection of incident radiation-attributable
+    malignancy (myeloid leukemia, thyroid cancer, breast cancer in
+    female workers) at earliest treatable stage via structured multi-
+    modality surveillance. Foundational evidence from Life Span Study
+    (atomic-bomb survivors), UK NRRW (Muirhead 2009), and INWORKS
+    (Richardson 2015) pooled cohorts establishes dose-response across
+    multiple endpoints. AML excess relative risk per Gy ~1-4 (linear-
+    no-threshold baseline). Lifetime dose tracking provides
+    individualized risk-stratification anchor.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for individuals with documented
+  ≥10 years occupational ionizing-radiation exposure who do not have
+  a current radiation-attributable malignancy diagnosis. Five
+  parallel interventions:
+
+  **(1) Annual CBC for hematologic surveillance.** Ionizing radiation
+  is the foundational occupational AML carcinogen. Cytopenia patterns
+  (unexplained anemia, leukopenia, thrombocytopenia, or progressive
+  monocytosis) on annual CBC prompt referral to hematology for
+  peripheral-smear review and consideration of bone-marrow biopsy.
+  Frequency q1y for active workers and within 15 years of cessation;
+  may extend to q2y for asymptomatic patients with prior normal
+  trends 15+ years post-cessation.
+
+  **(2) Thyroid ultrasound q3-5y.** Papillary-thyroid-cancer dose-
+  response is strongest for young-age exposure but supports
+  surveillance ultrasound across the cohort. Frequency q3-5y;
+  suspicious nodules per TI-RADS prompt FNA per ATA / NCCN.
+  Higher-frequency surveillance (q2-3y) considered for workers with
+  documented high cumulative thyroid-equivalent dose (>100 mSv).
+
+  **(3) Lifetime dose-equivalent tracking.** Review of dosimetry
+  records (whole-body, thyroid, breast — by ring-badge / TLD / OSL
+  badge) provides individualized risk-stratification. Cumulative
+  whole-body dose >50-100 mSv supports higher-intensity surveillance;
+  doses approaching 1 Sv historic context (early radiologists, atomic-
+  bomb survivors) require multidisciplinary review.
+
+  **(4) Breast-cancer screening (female workers).** Apply NCCN
+  average-risk screening guidelines (mammography from age 40-50 per
+  patient-shared-decision) with consideration of earlier initiation
+  per high-cumulative-dose cohort guidance. Patient with documented
+  young-age (≤30) high-dose breast exposure (>0.5 Gy) merits
+  multidisciplinary referral for individualized surveillance plan
+  potentially including MRI breast.
+
+  **(5) ALARA / PPE counseling for active workers.** Lead apron +
+  thyroid shield + leaded eyewear for fluoroscopic / interventional
+  procedures; time-distance-shielding principles; rotation of staff
+  through high-dose tasks; verification that dosimetry badges are
+  worn consistently and read on schedule.
+
+  Resource access in Ukraine: CBC (~150-300 UAH); thyroid ultrasound
+  (~400-1000 UAH); dosimetry records typically held by employer;
+  mammography availability varies by region.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для осіб з документованим ≥10
+  років occupational ionizing-radiation впливом без поточного діагнозу
+  radiation-атрибутованої малігнізації. Пʼять паралельних втручань:
+
+  **(1) Щорічна CBC для гематологічного спостереження.** Іонізуюче
+  випромінювання — foundational occupational AML carcinogen.
+  Цитопенії (необʼяснена анемія, лейкопенія, тромбоцитопенія,
+  прогресуючий моноцитоз) на щорічній CBC спонукають направлення до
+  гематолога для перегляду периферійного мазка та розгляду біопсії
+  кісткового мозку. Частота q1y для активних робітників та в межах
+  15 років після припинення; може бути продовжена до q2y для
+  асимптомних пацієнтів через 15+ років post-cessation.
+
+  **(2) Thyroid ultrasound q3-5y.** Papillary-thyroid-cancer
+  dose-response найсильніша для young-age exposure, але підтримує
+  surveillance ultrasound across cohort. Частота q3-5y; підозрілі
+  вузли per TI-RADS спонукають FNA per ATA / NCCN. Higher-frequency
+  surveillance (q2-3y) розглядається для робітників з документованою
+  high cumulative thyroid-equivalent дозою (>100 мЗв).
+
+  **(3) Lifetime dose-equivalent tracking.** Перегляд dosimetry
+  records (whole-body, thyroid, breast — за ring-badge / TLD / OSL
+  badge) забезпечує individualized risk-stratification. Cumulative
+  whole-body доза >50-100 мЗв підтримує higher-intensity
+  surveillance.
+
+  **(4) Скринінг раку молочної залози (жіночі робітниці).**
+  Застосовувати NCCN average-risk screening guidelines (мамографія
+  з 40-50 per patient-shared-decision) з розглядом earlier
+  initiation per high-cumulative-dose cohort guidance. Пацієнтка з
+  документованим young-age (≤30) high-dose breast впливом (>0.5 Gy)
+  заслуговує на multidisciplinary referral.
+
+  **(5) ALARA / PPE counseling для активних робітників.** Свинцевий
+  фартух + thyroid shield + leaded eyewear для fluoroscopic /
+  interventional процедур; time-distance-shielding принципи;
+  ротація персоналу через high-dose задачі; верифікація, що
+  dosimetry badges носяться послідовно та читаються в графіку.
+
+  Доступ до ресурсів в Україні: CBC (~150-300 грн); thyroid
+  ultrasound (~400-1000 грн); dosimetry records зазвичай тримаються
+  роботодавцем.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Occupational ionizing-radiation cohorts at elevated hematologic
+      and solid-tumor risk warrant structured multi-modality
+      surveillance and individualized risk-stratification by lifetime
+      dose-equivalent tracking."
+  - source_id: SRC-NCCN-AML-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Patients with documented occupational ionizing-radiation exposure
+      carry elevated AML risk; CBC surveillance and cytopenia-triggered
+      marrow evaluation form the operational surveillance standard."
+
+do_not_do:
+  - "Не пропускати lifetime dose tracking — це foundational до individualized risk-stratification."
+  - "Не екстраполювати thyroid US q3-5y до асимптомної загальної популяції — підтримується тільки для documented occupational cohort."
+  - "Не призначати рутинну біопсію кісткового мозку асимптомним пацієнтам — резервується для тривожних цитопеній."
+  - "Не пропускати ALARA / PPE counseling для активних робітників — forward-looking benefit зберігається."
+
+do_not_do_en:
+  - "Do not skip lifetime dose tracking — it is foundational to individualized risk-stratification."
+  - "Do not extrapolate thyroid US q3-5y to the asymptomatic general population — supported only for the documented occupational cohort."
+  - "Do not order routine bone-marrow biopsy in asymptomatic patients — reserve for alarm cytopenias."
+  - "Do not skip ALARA / PPE counseling for active workers — forward-looking benefit is preserved."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — v0.3 occupational batch-2 pilot (occupational ionizing
+  radiation). Two-Clinical-Co-Lead signoff queued per CHARTER §6.1
+  dev-mode exemption. IARC Monograph 100D (2012) is canonical evidence
+  anchor; v0.3 source-authoring backlog.

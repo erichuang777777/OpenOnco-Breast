@@ -1,0 +1,162 @@
+id: IND-OCC-FIREFIGHTER-PREVENTION-INTENSIFIED-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-OCC-FIREFIGHTER-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Primary endpoint: detection of incident firefighter-attributable
+    malignancy at earliest treatable stage via structured multi-organ
+    surveillance. Bladder-cancer SMR ~1.3-1.5; mesothelioma SMR ~2x;
+    melanoma RR ~1.3-1.4; colorectal-cancer RR ~1.2-1.3 with earlier
+    mean age at diagnosis in some cohorts (Daniels 2014 NIOSH).
+    Multi-modality structured surveillance is supported by IAFF /
+    NIOSH / NCCN cohort guidance.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for individuals with documented
+  ≥10 years career firefighter exposure who do not have a current
+  firefighter-attributable malignancy diagnosis. Five parallel
+  interventions:
+
+  **(1) USPSTF-modified LDCT chest screening.** Baseline USPSTF
+  criteria are extended for career-firefighter cohort:
+    - First LDCT at ≥10 years from active-duty start for firefighters
+      with cumulative inhalation-exposure exposure consistent with
+      structural fire-suppression (PAH + benzene + asbestos-overhaul
+      composite).
+    - Lower pack-years threshold (≥10 pack-years for ever-smokers)
+      per firefighter-cohort guidance.
+    - Annual cadence; Lung-RADS reporting.
+
+  **(2) Annual dermatology consultation with full-skin exam.** Melanoma
+  RR ~1.3-1.4 in firefighter cohorts supports structured cutaneous
+  surveillance. Monthly self-skin-checks counseled between visits.
+
+  **(3) GI screening with earlier initiation consideration.** NCCN /
+  USPSTF average-risk guideline starts colorectal screening at age
+  45. Firefighter-cohort guidance supports consideration of earlier
+  initiation (age 40-45) given the modest RR elevation and earlier
+  mean age at colorectal-cancer diagnosis in some cohorts. Modality
+  per patient preference: colonoscopy q10y (gold standard), FIT
+  annually, FIT-DNA (Cologuard) q3y, or CT colonography q5y.
+
+  **(4) Urinalysis q1-2y for bladder-cancer surveillance.** Bladder
+  cancer is the highest-RR endpoint (SMR ~1.3-1.5) and IARC sufficient
+  evidence. Non-invasive urinalysis with microscopy for hematuria;
+  cystoscopy reserved for persistent / unexplained hematuria.
+
+  **(5) PPE / post-fire decontamination counseling for active
+  firefighters.** SCBA throughout overhaul (not only fire-suppression
+  phase — most carcinogen-exposure occurs during overhaul of smoldering
+  structures), post-fire decontamination protocols (on-scene gross
+  decon with wipes, transport-back-to-station decon, shower before
+  departure), gear-laundering after every fire (not seasonal /
+  annual), and station-level diesel-exhaust capture systems.
+
+  Resource access in Ukraine: LDCT chest (~1500-3500 UAH); urinalysis
+  (~150-400 UAH); dermatology accessible at regional centers; FIT
+  / Cologuard / colonoscopy availability varies by region.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для осіб з документованим ≥10
+  років career-firefighter впливом без поточного діагнозу
+  firefighter-атрибутованої малігнізації. Пʼять паралельних втручань:
+
+  **(1) USPSTF-модифікований LDCT грудної клітки.** Baseline USPSTF
+  розширюється для career-firefighter когорти: перша LDCT при ≥10
+  років від активного-duty початку; нижчий pack-years поріг
+  (≥10 pack-years для ever-smokers).
+
+  **(2) Щорічна дерматологічна консультація з повним оглядом шкіри.**
+  Melanoma RR ~1.3-1.4 у firefighter cohorts.
+
+  **(3) GI-скринінг з earlier-initiation розглядом.** NCCN / USPSTF
+  average-risk guideline починає colorectal screening з 45 років.
+  Firefighter-cohort guidance підтримує розгляд earlier initiation
+  (40-45 років) з огляду на помірне підвищення RR та earlier mean
+  age у деяких cohorts. Модальність за патієнтською перевагою:
+  колоноскопія q10y (gold standard), FIT щорічно, FIT-DNA
+  (Cologuard) q3y, або CT colonography q5y.
+
+  **(4) Urinalysis q1-2y для спостереження за сечовим міхуром.**
+  Рак сечового міхура — highest-RR endpoint (SMR ~1.3-1.5) та IARC
+  sufficient evidence.
+
+  **(5) PPE / post-fire decontamination counseling для активних
+  пожежників.** SCBA протягом overhaul (не тільки fire-suppression
+  phase — більшість carcinogen-exposure відбувається під час
+  overhaul тліючих структур), post-fire decontamination protocols,
+  gear-laundering після кожної пожежі, station-level diesel-exhaust
+  capture systems.
+
+  Доступ до ресурсів в Україні: LDCT грудної клітки (~1500-3500 грн);
+  urinalysis (~150-400 грн); дерматологія доступна в регіональних
+  центрах.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Occupational mixed-exposure cohorts (firefighters) with multi-
+      organ cancer-endpoint excess warrant multi-modality structured
+      surveillance reflecting the spectrum of established endpoints."
+  - source_id: SRC-NCCN-NSCLC-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Annual low-dose CT lung-cancer screening is recommended for
+      individuals at elevated lung-cancer risk by age, smoking history,
+      and (per Clinical Practice Guidelines extension) occupational
+      mixed-exposure cohorts including career firefighters."
+
+do_not_do:
+  - "Не обмежувати PPE counseling fire-suppression фазою — більшість carcinogen-exposure відбувається під час overhaul."
+  - "Не пропускати щорічну дерматологію — melanoma RR ~1.3-1.4 у firefighter cohorts."
+  - "Не відкладати GI-скринінг до 50 років — firefighter-cohort guidance підтримує розгляд earlier initiation з 40-45."
+  - "Не призначати cystoscopy рутинно — резервується для persistent / нез'ясованої гематурії."
+
+do_not_do_en:
+  - "Do not limit PPE counseling to the fire-suppression phase — most carcinogen exposure occurs during overhaul."
+  - "Do not skip annual dermatology — melanoma RR ~1.3-1.4 in firefighter cohorts."
+  - "Do not delay GI screening to age 50 — firefighter-cohort guidance supports consideration of earlier initiation at age 40-45."
+  - "Do not order cystoscopy routinely — reserve for persistent / unexplained hematuria."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — v0.3 occupational batch-2 pilot (career firefighter).
+  Two-Clinical-Co-Lead signoff queued per CHARTER §6.1 dev-mode
+  exemption. IARC Monograph 132 (2022) is canonical evidence anchor;
+  v0.3 source-authoring backlog.

@@ -1,0 +1,132 @@
+id: RF-OCC-FIREFIGHTER-PREVENTION
+definition: >-
+  Documented historical occupational exposure as a career firefighter
+  (≥10 years in active fire-suppression / overhaul roles) — including
+  municipal / structural firefighters, wildland firefighters, military
+  / industrial / airport-rescue firefighters — in an individual without
+  a current firefighter-attributable malignancy diagnosis. IARC
+  re-classified "Occupational exposure as a firefighter" as a Group 1
+  carcinogen (Monograph 132, 2022) based on sufficient evidence for
+  bladder cancer and mesothelioma and limited / suggestive evidence
+  for prostate cancer, colon cancer, melanoma, non-Hodgkin lymphoma,
+  and testicular cancer. Mixed-exposure hazards include products of
+  combustion (PAHs, benzene, formaldehyde, particulate matter),
+  asbestos exposure during overhaul of pre-regulation structures, and
+  diesel-exhaust exposure from apparatus / station ventilation. There
+  is NO curative intervention for prior exposure — exposure cessation /
+  PPE compliance for active firefighters (SCBA throughout overhaul,
+  post-fire decontamination protocols, gear-laundering after every
+  fire), USPSTF-modified LDCT lung screening, dermatologic exam, and
+  earlier-age colorectal screening are the levers. Prevention-persona
+  RedFlag (§20 ratification 2026-05-18, v0.3 occupational batch-2
+  pilot).
+definition_ua: >-
+  Документоване історичне професійне впливу як кар'єрний пожежник
+  (≥10 років в активних fire-suppression / overhaul ролях) —
+  включаючи муніципальних / структурних пожежників, wildland
+  пожежників, військових / промислових / аеропортових rescue
+  пожежників — у пацієнта без поточного діагнозу firefighter-
+  атрибутованої малігнізації. IARC реклассифікував "Occupational
+  exposure as a firefighter" як Group 1 канцероген (Monograph 132,
+  2022) на основі sufficient evidence для раку сечового міхура та
+  мезотеліоми, та limited / suggestive evidence для раку
+  простати, товстої кишки, меланоми, NHL та testicular cancer.
+  Mixed-exposure небезпеки: продукти горіння (PAHs, бензен,
+  формальдегід, particulate matter), азбест-вплив під час overhaul
+  pre-regulation structures, дизель-вплив від apparatus / station
+  ventilation. КУРАТИВНОГО втручання для попереднього впливу НЕМАЄ —
+  припинення впливу / дотримання PPE для активних пожежників (SCBA
+  протягом overhaul, post-fire decontamination protocols,
+  gear-laundering після кожного пожежі), USPSTF-модифікований LDCT
+  скринінг легень, дерматологічний огляд та earlier-age колоректальний
+  скринінг — наявні важелі. Prevention-persona RedFlag (§20
+  ратифікація 2026-05-18, v0.3 occupational batch-2 пілот).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "occupational_firefighter_career_documented"
+      value: true
+    - finding: "occupational_firefighter_years_ge_10"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: occupational
+
+# Firefighter-occupation-associated cancers (in-KB Disease entities):
+# - DIS-NSCLC + DIS-SCLC (lung; products-of-combustion-driven).
+# - DIS-UROTHELIAL (bladder; IARC sufficient evidence).
+# - DIS-MESOTHELIOMA (asbestos-overhaul-attributable).
+# - DIS-MELANOMA (cutaneous; limited evidence).
+# - DIS-CRC (colorectal; limited evidence; supports earlier screening
+#   age extrapolation per cohort guidance).
+relevant_diseases:
+  - DIS-NSCLC
+  - DIS-SCLC
+  - DIS-UROTHELIAL
+  - DIS-MESOTHELIOMA
+  - DIS-MELANOMA
+  - DIS-CRC
+
+shifts_algorithm: []
+
+# Source caveat: IARC Monograph 132 (2022) is canonical for
+# firefighter-occupation Group-1 classification; NOT yet a separate
+# SRC entity. v0.3 source-authoring backlog.
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-NSCLC-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag — v0.3 occupational batch-2 pilot. Fires
+  when patient profile carries documented ≥10 years career-firefighter
+  exposure AND no confirmed firefighter-attributable malignancy
+  diagnosis. Engine routes to 2-track PreventionPlan:
+    (a) IND-OCC-FIREFIGHTER-PREVENTION-INTENSIFIED-SURVEILLANCE
+        (standard) — USPSTF-modified LDCT chest screening
+        (career-firefighter extension to lower pack-year threshold);
+        annual dermatology consultation with full-skin exam; GI
+        screening eligibility from age 45 (NCCN average-risk
+        guideline) with consideration of earlier initiation per
+        firefighter-cohort guidance; urinalysis q1-2y; PPE / post-
+        fire decontamination counseling for active firefighters.
+    (b) IND-OCC-FIREFIGHTER-PREVENTION-OBSERVATION (surveillance) —
+        routine general-population screening only; patient declines
+        firefighter-specific intensified surveillance.
+
+  Trigger findings are computed booleans from occupational-history
+  intake at the patient-profile layer.
+
+  Evidence base: IARC Monograph 132 (2022); LeMasters et al. 2006
+  meta-analysis; Daniels et al. 2014 NIOSH career-firefighter cohort.
+  Bladder cancer SMR ~1.3-1.5; mesothelioma SMR ~2x (asbestos-
+  overhaul-attributable); melanoma RR ~1.3-1.4; colorectal cancer RR
+  ~1.2-1.3 with earlier mean age at diagnosis in some cohorts.
+
+  Sources TODO: IARC Monograph 132 (2022) as a new SRC entity. v0.3
+  source-authoring backlog.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption.
+notes_ua: >
+  Prevention-persona RedFlag — v0.3 occupational batch-2 пілот.
+  Спрацьовує при документованому ≥10 років career-firefighter впливі
+  без підтвердженого діагнозу. Engine маршрутизує до 2-track
+  PreventionPlan: (а) intensified — USPSTF-модифікований LDCT +
+  щорічна дерматологія + GI-скринінг від 45 (з розглядом earlier
+  initiation) + urinalysis + PPE counseling; (б) observation —
+  загальнопопуляційний тільки. STUB — очікує підпис двох Clinical
+  Co-Lead за §6.1 dev-mode exemption.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_batch2
+draft_revision: 1
+
+draft: true

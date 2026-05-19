@@ -1,0 +1,149 @@
+id: RF-OCC-IONIZING-RADIATION-PREVENTION
+definition: >-
+  Documented historical occupational exposure to ionizing radiation —
+  typical high-risk occupations include radiologic technologists,
+  interventional-radiology / interventional-cardiology staff, nuclear-
+  industry workers (reactor operations, fuel-cycle, decommissioning),
+  uranium miners (in a separate category from radon-only exposure;
+  uranium miners receive mixed alpha + gamma exposure), industrial-
+  radiography workers, medical-physics personnel, and military
+  personnel with documented occupational radiation exposure — in an
+  individual without a current radiation-attributable malignancy
+  diagnosis. Ionizing radiation is an IARC Group 1 carcinogen
+  (Monograph 100D, 2012) with cancer endpoints spanning multiple
+  hematologic and solid-tumor sites: myeloid leukemia (AML; primary
+  evidence anchor from Life Span Study + radiologist cohorts),
+  thyroid cancer (papillary, dose-dependent — strongest in young-age
+  exposure), breast cancer (in female workers; latency-dependent),
+  lung cancer (mining cohorts; partially radon-attributable), CLL has
+  limited evidence at typical occupational doses. Latency 5-15 years
+  for AML; 10-40 years for solid tumors. There is NO curative
+  intervention for prior exposure — exposure cessation / ALARA dose
+  optimization for active workers, lifetime dose tracking, CBC for
+  hematologic surveillance, and thyroid ultrasound q3-5y are the
+  levers. Prevention-persona RedFlag (§20 ratification 2026-05-18,
+  v0.3 occupational batch-2 pilot).
+definition_ua: >-
+  Документоване історичне професійне впливу іонізуючого випромінювання —
+  типові високоризикові професії: радіологічні технологи, персонал
+  інтервенційної радіології / інтервенційної кардіології, працівники
+  ядерної промисловості (реакторні операції, fuel-cycle, decommissioning),
+  уранові шахтарі (окрема категорія від radon-only впливу; уранові
+  шахтарі отримують mixed alpha + gamma вплив), працівники industrial-
+  radiography, персонал медичної фізики, військовий персонал з
+  документованим occupational radiation exposure — у пацієнта без
+  поточного діагнозу radiation-атрибутованої малігнізації. Іонізуюче
+  випромінювання — канцероген IARC Group 1 (Monograph 100D, 2012) з
+  cancer endpoints, що охоплюють декілька гематологічних та solid-tumor
+  сайтів: мієлоїдна лейкемія (AML; первинний evidence-anchor з
+  Life Span Study + radiologist cohorts), рак щитоподібної залози
+  (papillary, dose-dependent — найсильніший при young-age exposure),
+  рак молочної залози (у жіночих робітниць; latency-dependent), рак
+  легень (mining cohorts; частково radon-атрибутований), CLL має
+  обмежені дані при типових occupational доз. Латентність 5-15 років
+  для AML; 10-40 років для solid tumors. КУРАТИВНОГО втручання для
+  попереднього впливу НЕМАЄ — припинення впливу / ALARA dose
+  оптимізація для активних робітників, lifetime dose tracking, CBC
+  для гематологічного спостереження та thyroid ultrasound q3-5y —
+  наявні важелі. Prevention-persona RedFlag (§20 ратифікація 2026-05-18,
+  v0.3 occupational batch-2 пілот).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "occupational_ionizing_radiation_exposure_documented"
+      value: true
+    - finding: "occupational_ionizing_radiation_years_ge_10"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: occupational
+
+# Ionizing-radiation-associated cancers (in-KB Disease entities):
+# - DIS-AML (myeloid leukemia; primary IARC anchor).
+# - DIS-THYROID-PAPILLARY (dose-dependent; strongest at young-age
+#   exposure).
+# - DIS-BREAST (in female workers).
+# - DIS-NSCLC + DIS-SCLC (uranium-miner cohorts; mixed-exposure).
+relevant_diseases:
+  - DIS-AML
+  - DIS-THYROID-PAPILLARY
+  - DIS-BREAST
+  - DIS-NSCLC
+  - DIS-SCLC
+
+shifts_algorithm: []
+
+# Source caveat: IARC Monograph 100D (2012) is canonical for ionizing-
+# radiation Group-1 status; NOT yet a separate SRC entity. v0.3
+# source-authoring backlog.
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-AML-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag — v0.3 occupational batch-2 pilot. Fires
+  when patient profile carries documented ≥10 years occupational
+  ionizing-radiation exposure AND no confirmed radiation-attributable
+  malignancy diagnosis. Engine routes to 2-track PreventionPlan:
+    (a) IND-OCC-IONIZING-RADIATION-PREVENTION-INTENSIFIED-SURVEILLANCE
+        (standard) — CBC q1y for hematologic surveillance; thyroid
+        ultrasound q3-5y; lifetime dose-equivalent tracking (review
+        of dosimetry records); ALARA / PPE counseling for active
+        workers; breast-cancer screening at standard guideline-onset
+        in female workers with consideration of earlier initiation
+        per high-dose cohort guidance.
+    (b) IND-OCC-IONIZING-RADIATION-PREVENTION-OBSERVATION (surveillance)
+        — routine general-population screening only; patient declines
+        structured CBC + thyroid surveillance.
+
+  Trigger findings are computed booleans from occupational-history
+  intake at the patient-profile layer.
+
+  Evidence base: IARC Monograph 100D (2012); Life Span Study (atomic-
+  bomb survivors — foundational dose-response evidence); UK NRRW
+  pooled cohort (Muirhead 2009); INWORKS pooled cohort (Richardson
+  2015). AML excess relative risk per Gy ~1-4 (linear-no-threshold
+  baseline assumption); thyroid cancer dose-response strongest at
+  young-age exposure.
+
+  Sources TODO: IARC Monograph 100D (2012) as a new SRC entity. v0.3
+  source-authoring backlog.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption.
+
+  Note: Radon-only exposure (uranium-mining radon component, residential
+  radon) is covered by a separate prevention pilot
+  (RF-OCC-RADON-MALIGNANCY-PREVENTION — v0.3 backlog) — this RF
+  specifically covers mixed alpha + gamma + X-ray ionizing-radiation
+  exposure typical of medical / nuclear-industry / industrial-radiography
+  occupations.
+notes_ua: >
+  Prevention-persona RedFlag — v0.3 occupational batch-2 пілот.
+  Спрацьовує при документованому ≥10 років occupational ionizing-
+  radiation впливі без підтвердженого діагнозу. Engine маршрутизує
+  до 2-track PreventionPlan: (а) intensified — CBC q1y + thyroid US
+  q3-5y + lifetime dose tracking + ALARA counseling; (б) observation —
+  загальнопопуляційний тільки. STUB — очікує підпис двох Clinical
+  Co-Lead за §6.1 dev-mode exemption.
+
+  Примітка: radon-only exposure (uranium-mining radon component,
+  residential radon) покрита окремим prevention пілотом
+  (RF-OCC-RADON-MALIGNANCY-PREVENTION — v0.3 backlog); цей RF
+  специфічно покриває mixed alpha + gamma + X-ray ionizing-radiation
+  exposure типовий для medical / nuclear-industry / industrial-
+  radiography occupations.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_batch2
+draft_revision: 1
+
+draft: true
