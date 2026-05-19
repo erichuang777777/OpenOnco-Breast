@@ -1,0 +1,86 @@
+id: DRUG-NICOTINE-PATCH
+names:
+  preferred: "Nicotine transdermal patch"
+  ukrainian: "Нікотиновий трансдермальний пластир"
+  english: "Nicotine transdermal patch"
+  synonyms: ["NRT patch", "Nicotine replacement therapy — patch"]
+  brand_names: ["NicoDerm CQ", "Habitrol", "Nicorette patch", "Niquitin"]
+atc_code: N07BA01
+rxnorm_id: "1041568"
+drug_class: "Nicotine replacement therapy (NRT) — transdermal nicotine"
+mechanism: >
+  Delivers controlled-release nicotine via skin absorption, producing
+  steady plasma levels (~one-third to one-half of typical cigarette
+  smoking) that substantially relieve craving and withdrawal symptoms
+  while avoiding the rapid pulse + peak of inhaled smoking that drives
+  reinforcement. First-line for tobacco cessation per USPSTF / AHCPR;
+  combination with short-acting NRT (lozenge or gum) further improves
+  quit rates vs. monotherapy.
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 1991
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Registered in Ukraine (Niquitin, Nicorette patches). OTC; not on НСЗУ tobacco-cessation package — out-of-pocket."
+typical_dosing: >
+  Patch-strength laddered to baseline cigarette exposure:
+    - >10 cig/d: 21 mg/24h × 4-6 weeks, then 14 mg/24h × 2 weeks, then 7 mg/24h × 2 weeks (total 8-10 weeks)
+    - ≤10 cig/d: start at 14 mg/24h
+  Apply to clean, non-hairy upper-body skin; rotate site daily.
+  Patch worn 24 h (or 16 h if vivid dreams problematic).
+  Combination NRT (patch + short-acting lozenge or gum PRN cravings) preferred over monotherapy.
+formulations:
+  - "Transdermal patch 7 mg/24h, 14 mg/24h, 21 mg/24h"
+
+absolute_contraindications:
+  - "Hypersensitivity to nicotine or patch adhesive components"
+  - "Severe arrhythmia, recent (<2 weeks) MI, unstable/worsening angina (relative — risk vs. continued smoking generally favors NRT)"
+common_adverse_events:
+  - "Local skin irritation, erythema at patch site (~20-50%)"
+  - "Headache (~10-20%)"
+  - "Vivid/disturbing dreams (~10-15% if worn overnight)"
+  - "Insomnia (~10%)"
+  - "Mild nausea (~5-10%)"
+  - "Dyspepsia (~5%)"
+serious_adverse_events:
+  - "Severe local hypersensitivity reaction (rare)"
+  - "Cardiovascular events (very rare; observational signal not robust)"
+  - "Nicotine toxicity if multiple patches applied or accidental ingestion (pediatric exposure — keep out of reach)"
+
+major_interactions:
+  - "Smoking cessation itself reduces CYP1A2 induction — clearance of clozapine, olanzapine, theophylline, caffeine increases ~30-50% within 1-2 weeks of cessation; monitor levels and reduce doses as needed"
+  - "Insulin requirements may decrease modestly with cessation"
+
+pharmacology: {half_life_hours: 4, clearance: "Hepatic CYP2A6 (and CYP2B6); ~10% renal unchanged. Patch achieves steady state by ~10 h after first application"}
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. First-line tobacco-cessation NRT;
+  USPSTF Grade A. Combination NRT (patch as baseline + lozenge/gum PRN)
+  improves abstinence vs. monotherapy. Safer than continued smoking even
+  in cardiovascular disease — net benefit favors NRT in all but the most
+  unstable cardiac patients. Source cited (SRC-NCCN-BCELL-2025) is
+  closest in-KB until dedicated USPSTF/AHCPR/Cochrane NRT sources land
+  in source-stub workstream.
+
+notes_ua: >
+  Нікотиновий пластир — перша лінія NRT для припинення куріння
+  (USPSTF Grade A). Комбінація з леденцями/жуйками PRN покращує
+  результати порівняно з монотерапією. Безпечніше за продовження
+  куріння навіть при ССЗ.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_drugs_batch2
+draft_revision: 1

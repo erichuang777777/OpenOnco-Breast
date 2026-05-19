@@ -1,0 +1,101 @@
+id: REG-SEMAGLUTIDE-OBESITY
+name: "Semaglutide 2.4 mg weekly for chronic obesity management"
+name_ua: "Семаглутид 2.4 мг щотижня для хронічного управління ожирінням"
+alternate_names:
+  - "Wegovy obesity dose"
+  - "Semaglutide chronic-weight-management"
+
+components:
+  - drug_id: DRUG-SEMAGLUTIDE-2-4MG
+    dose: "0.25 → 0.5 → 1.0 → 1.7 → 2.4 mg SC (4-week steps); maintenance 2.4 mg weekly"
+    schedule: "once weekly SC; dose escalation every 4 weeks over 16 weeks to maintenance"
+    route: SC
+    duration: "ongoing — chronic obesity management; sustained ≥68 weeks per STEP trials"
+
+cycle_length_days: 7
+total_cycles: "ongoing — chronic management"
+
+toxicity_profile: moderate
+
+premedication: []
+mandatory_supportive_care: []
+monitoring_schedule_id:
+
+dose_adjustments:
+  - condition: "Severe GI intolerance during escalation (persistent nausea/vomiting at given dose)"
+    modification: "Hold escalation; reduce to prior tolerated dose × 4 weeks; resume escalation if symptoms abate"
+    rationale: "Slower titration limits dropout"
+    source_refs:
+      - SRC-NCCN-BCELL-2025
+  - condition: "Maintenance 2.4 mg not tolerated"
+    modification: "Maintain at 1.7 mg weekly (off-label, lower efficacy)"
+    rationale: "Balance tolerability vs efficacy"
+    source_refs:
+      - SRC-NCCN-BCELL-2025
+  - condition: "Pregnancy planning"
+    modification: "Discontinue ≥2 months before planned conception (long half-life ~1 week, accumulation)"
+    rationale: "Animal teratogenicity signals"
+    source_refs:
+      - SRC-NCCN-BCELL-2025
+  - condition: "Severe renal impairment (eGFR <15 mL/min/1.73 m²)"
+    modification: "Cautious use; monitor renal function (dehydration from GI AE risk)"
+    rationale: "Limited safety data"
+    source_refs:
+      - SRC-NCCN-BCELL-2025
+
+ukraine_availability:
+  all_components_registered: true
+  all_components_reimbursed: false
+  notes: "Ozempic (semaglutide 0.5/1 mg, T2DM) registered in Ukraine. Wegovy (2.4 mg obesity) limited availability as of 2026-05; not on НСЗУ obesity package. Out-of-pocket."
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+between_visit_watchpoints:
+  - trigger_ua: "Нудота, блювота, діарея у перші 4-8 тижнів"
+    action_ua: "Поширений ефект — їжте малими порціями, уникайте жирної їжі; зазвичай зменшується; занотуйте на візиті"
+    urgency: log_at_next_visit
+    sources:
+      - SRC-NCCN-BCELL-2025
+  - trigger_ua: "Раптовий сильний біль у животі (особливо з блюванням)"
+    action_ua: "Зверніться до лікарні негайно — можливий гострий панкреатит"
+    urgency: er_now
+    sources:
+      - SRC-NCCN-BCELL-2025
+  - trigger_ua: "Сильний біль у правому підребер'ї, жовтяниця"
+    action_ua: "Подзвоніть у клініку того ж дня — можливий жовчнокам'яний симптом (3% при швидкому зниженні ваги)"
+    urgency: call_clinic_same_day
+    sources:
+      - SRC-NCCN-BCELL-2025
+  - trigger_ua: "Гіпоглікемія (тремор, пітливість, плутанина) — якщо паралельно інсулін / сульфонілсечовина"
+    action_ua: "Подзвоніть у клініку того ж дня для перегляду доз цукрознижувальних"
+    urgency: call_clinic_same_day
+    sources:
+      - SRC-NCCN-BCELL-2025
+  - trigger_ua: "Зміни настрою, думки про самоушкодження"
+    action_ua: "Подзвоніть у клініку того ж дня — label warning щодо суїцидальних думок"
+    urgency: call_clinic_same_day
+    sources:
+      - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  Wegovy (semaglutide 2.4 mg weekly) is first-in-class GLP-1 RA approved
+  for chronic obesity management. ~12-15% mean weight loss in STEP trials,
+  sustained ≥68 weeks. Contraindicated in personal/family history of MTC
+  or MEN2. Discontinue ≥2 months before pregnancy. Most weight loss is
+  regained on discontinuation — long-term continuation expected.
+  Obesity is associated with 13+ cancers (IARC/WCRF).
+
+notes_ua: >
+  Wegovy (семаглутид 2.4 мг щотижня) — перший у класі GLP-1 RA,
+  схвалений для хронічного управління ожирінням. ~12-15% середнього
+  зниження ваги у STEP, стійко ≥68 тижнів. Протипоказаний при
+  особистій/сімейній історії MTC або MEN2. Припинити ≥2 місяців
+  до планованої вагітності. Більшість ваги відновлюється після
+  припинення — очікується тривалий курс. Ожиріння асоціюється з
+  13+ типами раку (IARC/WCRF).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_drugs_batch2
+draft_revision: 1

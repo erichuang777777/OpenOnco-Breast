@@ -1,0 +1,88 @@
+id: REG-VARENICLINE-12W
+name: "Varenicline 12-week tobacco-cessation course"
+name_ua: "12-тижневий курс варенікліну для припинення куріння"
+alternate_names:
+  - "Chantix 12w"
+  - "Champix standard course"
+
+components:
+  - drug_id: DRUG-VARENICLINE
+    dose: "0.5 mg (days 1-3) → 0.5 mg BID (days 4-7) → 1 mg BID (weeks 2-12)"
+    schedule: "titration days 1-7, then BID maintenance weeks 2-12"
+    route: PO
+    duration: "12 weeks (may extend additional 12 weeks if abstinent at week 12)"
+
+cycle_length_days: 84
+total_cycles: "1 course (optional 2nd 12-week extension)"
+
+toxicity_profile: low
+
+premedication: []
+mandatory_supportive_care: []
+monitoring_schedule_id:
+
+dose_adjustments:
+  - condition: "Renal impairment (CrCl <30 mL/min)"
+    modification: "Reduce maintenance to 0.5 mg BID (not 1 mg BID)"
+    rationale: "Varenicline is primarily renally cleared — accumulation increases nausea + neuropsychiatric AE risk"
+    source_refs:
+      - SRC-NCCN-BCELL-2025
+  - condition: "End-stage renal disease / hemodialysis"
+    modification: "0.5 mg once daily maximum"
+    rationale: "Severe renal impairment further restricts clearance"
+    source_refs:
+      - SRC-NCCN-BCELL-2025
+
+ukraine_availability:
+  all_components_registered: true
+  all_components_reimbursed: false
+  notes: "Varenicline (Champix) registered in Ukraine; out-of-pocket — not on НСЗУ tobacco-cessation package as of 2026-05."
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+between_visit_watchpoints:
+  - trigger_ua: "Легка нудота у перші 1-2 тижні"
+    action_ua: "Зазвичай минає — приймайте з їжею і водою; занотуйте на наступному візиті"
+    urgency: log_at_next_visit
+    sources:
+      - SRC-NCCN-BCELL-2025
+  - trigger_ua: "Незвичні сни / безсоння"
+    action_ua: "Поширений побічний ефект — спробуйте приймати вечірню дозу раніше; занотуйте на візиті"
+    urgency: log_at_next_visit
+    sources:
+      - SRC-NCCN-BCELL-2025
+  - trigger_ua: "Зміни настрою — депресія, тривожність, агресивність"
+    action_ua: "Подзвоніть у клініку того ж дня — black-box warning щодо психоневрологічних подій"
+    urgency: call_clinic_same_day
+    sources:
+      - SRC-NCCN-BCELL-2025
+  - trigger_ua: "Думки про самоушкодження або суїцид"
+    action_ua: "Зверніться до невідкладної допомоги негайно — припиніть препарат"
+    urgency: er_now
+    sources:
+      - SRC-NCCN-BCELL-2025
+  - trigger_ua: "Біль у грудях, задишка, набряк ніг"
+    action_ua: "Зверніться до лікарні негайно — рідкісний СС-сигнал"
+    urgency: er_now
+    sources:
+      - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  Standard 12-week varenicline course is the most effective single-agent
+  tobacco-cessation pharmacotherapy (USPSTF + AHCPR). Set quit date day 8 of
+  treatment (~end of titration). Extension to 24 weeks improves long-term
+  abstinence in patients abstinent at 12 weeks. Counsel patients on
+  neuropsychiatric monitoring (EAGLES 2016 reassured but residual caution).
+
+notes_ua: >
+  Стандартний 12-тижневий курс варенікліну — найефективніша
+  монотерапія для припинення куріння (USPSTF + AHCPR). Дата
+  припинення куріння — день 8 (приблизно кінець титрації). Подовження
+  до 24 тижнів покращує довгострокову абстиненцію у пацієнтів,
+  абстинентних на 12-му тижні.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_drugs_batch2
+draft_revision: 1

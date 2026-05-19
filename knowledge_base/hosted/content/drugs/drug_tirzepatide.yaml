@@ -1,0 +1,100 @@
+id: DRUG-TIRZEPATIDE
+names:
+  preferred: "Tirzepatide"
+  ukrainian: "Тирзепатид"
+  english: "Tirzepatide"
+  brand_names: ["Zepbound", "Mounjaro"]
+atc_code: A10BX16
+rxnorm_id: "2601762"
+drug_class: "Dual GIP and GLP-1 receptor agonist (once-weekly)"
+mechanism: >
+  Synthetic 39-amino-acid peptide that activates both glucose-dependent
+  insulinotropic polypeptide (GIP) and GLP-1 receptors. Dual agonism
+  produces greater glycemic control and weight loss than GLP-1 monoagonism.
+  At obesity dose (max 15 mg weekly), SURMOUNT-1 trial demonstrated
+  ~21% mean weight loss vs ~3% on placebo — superior to semaglutide
+  2.4 mg. Obesity is associated with 13+ cancers (IARC/WCRF) — sustained
+  weight loss is a cancer-prevention intervention.
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 2023  # Zepbound obesity indication; Mounjaro T2DM since 2022
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: false
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Mounjaro (T2DM) limited availability in Ukraine; Zepbound (obesity) not yet registered as of 2026-05. Out-of-pocket / international pharmacy."
+typical_dosing: >
+  SC: dose escalation over ≥20 weeks to maximize tolerability:
+    Week 1-4: 2.5 mg SC weekly
+    Week 5-8: 5 mg SC weekly
+    Week 9-12: 7.5 mg SC weekly
+    Week 13-16: 10 mg SC weekly
+    Week 17-20: 12.5 mg SC weekly
+    Week 21 onward: 15 mg SC weekly (maximum obesity dose)
+  Inject SC abdomen / thigh / upper arm any day of the week; rotate sites.
+  Lower maintenance doses (5, 10, 15 mg) acceptable based on response/tolerance.
+formulations:
+  - "SC pen 2.5 / 5 / 7.5 / 10 / 12.5 / 15 mg per injection (single-use)"
+
+absolute_contraindications:
+  - "Personal or family history of medullary thyroid carcinoma (MTC)"
+  - "Multiple endocrine neoplasia type 2 (MEN2)"
+  - "Hypersensitivity to tirzepatide"
+  - "Pregnancy (discontinue ≥1 month before planned conception)"
+black_box_warnings:
+  - "Risk of thyroid C-cell tumors — rodent carcinogenicity studies showed dose-dependent MTC and C-cell hyperplasia (class effect with GLP-1 RAs)"
+major_interactions:
+  - "Delayed gastric emptying — affects oral medication absorption (especially levothyroxine, oral contraceptives; women on COCs should add barrier method × 4 weeks after each dose escalation)"
+  - "Other glucose-lowering agents — hypoglycemia risk; reduce sulfonylurea/insulin doses"
+  - "Warfarin — monitor INR"
+common_adverse_events:
+  - "Nausea (~33%)"
+  - "Diarrhea (~21%)"
+  - "Vomiting (~18%)"
+  - "Constipation (~17%)"
+  - "Abdominal pain (~10%)"
+  - "Dyspepsia (~9%)"
+  - "Decreased appetite (~9%)"
+  - "Fatigue (~7%)"
+  - "Injection-site reactions (~7%)"
+serious_adverse_events:
+  - "Acute pancreatitis (rare; discontinue and evaluate)"
+  - "Acute kidney injury (from dehydration / severe vomiting)"
+  - "Gallbladder disease, cholelithiasis"
+  - "Severe hypoglycemia (with sulfonylurea/insulin)"
+  - "Hypersensitivity, anaphylaxis"
+  - "Suicidal ideation (label warning; rare)"
+  - "Diabetic retinopathy worsening in T2DM"
+  - "Possible thyroid C-cell tumors (unproven in humans)"
+
+pharmacology: {half_life_hours: 120, clearance: "Proteolytic degradation; renal and biliary excretion of metabolites"}
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. Zepbound (tirzepatide 15 mg max)
+  is the most effective approved obesity pharmacotherapy as of 2026
+  (~21% weight loss SURMOUNT-1). Dual GIP+GLP-1 mechanism. Obesity is
+  associated with 13+ cancers per IARC/WCRF — pharmacotherapy is a
+  recognized component of weight-loss strategy when behavioral approaches
+  fail. Source cited is closest in-KB until USPSTF/AACE/WCRF obesity-
+  pharmacotherapy sources land in source-stub workstream.
+
+notes_ua: >
+  Zepbound (тирзепатид, макс 15 мг/тиждень) — найефективніша
+  схвалена фармакотерапія ожиріння станом на 2026 (~21% зниження
+  ваги, SURMOUNT-1). Подвійний механізм GIP+GLP-1. Ожиріння
+  асоціюється з 13+ типами раку (IARC/WCRF).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_drugs_batch2
+draft_revision: 1

@@ -1,0 +1,101 @@
+id: DRUG-LAMIVUDINE
+names:
+  preferred: "Lamivudine"
+  ukrainian: "Ламівудин"
+  english: "Lamivudine"
+  synonyms: ["3TC"]
+  brand_names: ["Epivir", "Zeffix", "Heptodin"]
+atc_code: J05AF05
+rxnorm_id: "68244"
+drug_class: "Nucleoside reverse transcriptase inhibitor (NRTI); HBV polymerase inhibitor"
+mechanism: >
+  Cytosine analog phosphorylated intracellularly to lamivudine
+  triphosphate, which competes with dCTP for incorporation into HBV
+  DNA / HIV RNA — leading to chain termination. Active against both
+  HIV and HBV. For HBV: lamivudine has been largely supplanted by
+  entecavir, tenofovir DF, and tenofovir AF due to high rates of
+  resistance (~70% at 5 years). Retains role in resource-limited
+  settings, post-transplant prophylaxis, and as part of HIV ART.
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 1995  # HIV; 1998 HBV (Epivir HBV)
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: true
+    reimbursement_indications:
+      - "ВІЛ-інфекція (компонент ART за програмою центру СНІДу)"
+      - "Хронічний гепатит B (історично; зараз entecavir/tenofovir перевага)"
+    last_verified: "2026-05-18"
+    notes: "Reimbursed for HIV via НСЗУ / Center for AIDS. HBV indication: largely superseded by entecavir/tenofovir but still on essential medicines list."
+typical_dosing: >
+  HBV: 100 mg PO once daily.
+  HIV (as part of ART): 150 mg PO BID OR 300 mg PO once daily (always
+  combined with other antiretrovirals).
+  Renal adjustment:
+    CrCl 30-49: 100 mg first dose, then 50 mg daily (HBV)
+    CrCl 15-29: 100 mg first, then 25 mg daily
+    CrCl 5-14: 35 mg first, then 15 mg daily
+    CrCl <5 / dialysis: 35 mg first, then 10 mg daily
+formulations:
+  - "Tablet 100 mg (HBV), 150 mg, 300 mg (HIV)"
+  - "Oral solution 5 mg/mL (HBV), 10 mg/mL (HIV)"
+
+absolute_contraindications:
+  - "Hypersensitivity to lamivudine"
+  - "Severe hepatic decompensation (caution; reduce frequency)"
+black_box_warnings:
+  - "Lactic acidosis and severe hepatomegaly with steatosis (class effect of NRTIs)"
+  - "Post-treatment exacerbations of hepatitis B if discontinued — monitor LFTs and HBV-DNA closely after stopping"
+  - "Different formulations for HIV vs HBV — risk of HIV resistance if HBV-strength lamivudine used as HIV monotherapy in unrecognized HIV-HBV coinfection (always screen HIV before HBV monotherapy)"
+major_interactions:
+  - "Trimethoprim-sulfamethoxazole — increased lamivudine exposure (no dose adjustment typically needed at 160/800 mg BID)"
+  - "Sorbitol-containing oral medications — reduce lamivudine AUC (avoid coadministration)"
+  - "Other NRTIs (especially emtricitabine) — overlapping mechanism, do not coadminister (FTC + 3TC redundant)"
+common_adverse_events:
+  - "Headache (~10-30% in trials)"
+  - "Nausea / abdominal pain (~5-20%)"
+  - "Fatigue, malaise (~5-25%)"
+  - "Cough, nasal symptoms (~5-15%)"
+  - "Mild transaminitis (~5%)"
+  - "Insomnia (~5-10%)"
+serious_adverse_events:
+  - "Lactic acidosis with hepatic steatosis (rare; class effect)"
+  - "Severe HBV reactivation upon discontinuation (especially decompensated cirrhosis — can be fatal)"
+  - "Pancreatitis (rare)"
+  - "Peripheral neuropathy"
+  - "Hepatic decompensation"
+  - "Severe hypersensitivity"
+
+pharmacology: {half_life_hours: 9, clearance: "Primarily renal (~70% unchanged); minimal hepatic metabolism"}
+
+sources:
+  - SRC-AASLD-HBV-2024
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. Older HBV antiviral largely
+  superseded by entecavir and tenofovir AF/DF due to high resistance
+  rates (~70% at 5 years monotherapy). Retains role in: HIV ART
+  (combined with other agents), post-liver-transplant HBV prophylaxis
+  (combined with HBIg, then often switched to entecavir/tenofovir),
+  resource-limited settings. NEVER use lamivudine monotherapy for HIV
+  (rapid resistance). HBV reactivation prophylaxis: prefer entecavir
+  or tenofovir AF over lamivudine for rituximab/anti-CD20 use.
+
+notes_ua: >
+  Ламівудин — старіший препарат для HBV, значно витіснений
+  ентекавіром і тенофовіром AF/DF через високу частоту резистентності
+  (~70% за 5 років монотерапії). Зберігає роль у: ВІЛ-ART (у
+  поєднанні з іншими агентами), post-transplant HBV-профілактиці
+  (з HBIg), у країнах з обмеженими ресурсами. НЕ використовувати
+  як монотерапію при ВІЛ.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_drugs_batch2
+draft_revision: 1

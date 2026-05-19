@@ -1,0 +1,94 @@
+id: DRUG-BUPROPION-SR
+names:
+  preferred: "Bupropion SR"
+  ukrainian: "Бупропіон SR"
+  english: "Bupropion sustained-release"
+  synonyms: ["Bupropion HCl SR"]
+  brand_names: ["Zyban", "Wellbutrin SR"]
+atc_code: N06AX12
+rxnorm_id: "42347"
+drug_class: "Norepinephrine-dopamine reuptake inhibitor (NDRI); also nicotinic antagonist"
+mechanism: >
+  Weak inhibitor of norepinephrine and dopamine reuptake; non-competitive
+  antagonist at nicotinic acetylcholine receptors. Mechanism in tobacco
+  cessation: dopaminergic effects partially substitute for nicotine's
+  reward signal; nicotinic antagonism reduces reinforcement.
+  Second-line monotherapy for tobacco cessation (USPSTF; lower efficacy
+  than varenicline but similar to NRT).
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 1997  # Zyban tobacco-cessation indication
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Registered in Ukraine (Wellbutrin and generics). Not on НСЗУ tobacco-cessation package — out-of-pocket."
+typical_dosing: >
+  PO: 150 mg once daily × days 1-3, then 150 mg BID (start ≥1 week
+  before target quit date). Total course 7-12 weeks; extend to 6 months
+  if successful at week 12. Use SR formulation specifically (IR has higher
+  seizure risk; XL is alternative once-daily option). Renal/hepatic
+  impairment: reduce frequency to once daily or every 2 days.
+formulations:
+  - "Tablet SR 100 mg, 150 mg, 200 mg"
+
+absolute_contraindications:
+  - "Seizure disorder (active or history)"
+  - "Current or prior diagnosis of bulimia / anorexia nervosa"
+  - "Abrupt discontinuation of alcohol, benzodiazepines, barbiturates, antiepileptics (seizure risk)"
+  - "Concurrent MAOI (within 14 days)"
+  - "Hypersensitivity to bupropion"
+black_box_warnings:
+  - "Suicidal thoughts and behaviors in pediatric and young adult patients with depression (class warning for antidepressants; bupropion is also an antidepressant)"
+major_interactions:
+  - "MAOIs — contraindicated (hypertensive crisis)"
+  - "CYP2B6 substrates — bupropion is metabolized via 2B6; CYP2B6 inducers (rifampin, carbamazepine, efavirenz) reduce exposure"
+  - "Bupropion is strong CYP2D6 inhibitor — increases exposure of metoprolol, dextromethorphan, many SSRIs, tamoxifen (avoid combo with tamoxifen if alternative cessation agent available)"
+  - "Drugs lowering seizure threshold — additive risk (tramadol, theophylline, antipsychotics, antimalarials, systemic steroids)"
+common_adverse_events:
+  - "Dry mouth (~10-15%)"
+  - "Insomnia (~15-20%)"
+  - "Headache (~10%)"
+  - "Nausea (~10%)"
+  - "Agitation/anxiety (~5-10%)"
+  - "Constipation (~5-10%)"
+  - "Tremor (~5%)"
+serious_adverse_events:
+  - "Seizure — dose-related (0.1% at ≤300 mg/d SR; ~0.4% at 400 mg/d)"
+  - "Severe hypertension (rare)"
+  - "Severe hypersensitivity / serum sickness / SJS (rare)"
+  - "Suicidal ideation, behavioral changes (class warning)"
+  - "Activation of mania in bipolar disorder"
+
+pharmacology: {half_life_hours: 21, clearance: "Hepatic CYP2B6 to active hydroxybupropion (longer t1/2); renal excretion of metabolites"}
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. Bupropion SR (Zyban indication) is
+  USPSTF/AHCPR-recommended for tobacco cessation; second-line after
+  varenicline due to lower efficacy and seizure-risk contraindications.
+  Particularly useful when comorbid depression or weight-gain concerns.
+  AVOID in patients also taking tamoxifen (CYP2D6 inhibition reduces
+  active metabolite endoxifen). Source cited (SRC-NCCN-BCELL-2025) is
+  closest in-KB until USPSTF/AHCPR sources land in source-stub workstream.
+
+notes_ua: >
+  Бупропіон SR (Zyban-показання) — рекомендований USPSTF/AHCPR засіб
+  для припинення куріння. Друга лінія після варенікліну. Особливо
+  корисний при супутній депресії або занепокоєнні щодо набору ваги.
+  Уникати у пацієнток на тамоксифені (CYP2D6-інгібіція знижує активний
+  метаболіт endoxifen).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_drugs_batch2
+draft_revision: 1

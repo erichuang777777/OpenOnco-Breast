@@ -1,0 +1,90 @@
+id: REG-NICOTINE-REPLACEMENT-COMBO
+name: "Combination NRT — patch + short-acting lozenge or gum PRN"
+name_ua: "Комбінована NRT — пластир + короткодіюча леденець/жуйка PRN"
+alternate_names:
+  - "Combination NRT"
+  - "Patch + lozenge / gum NRT"
+
+components:
+  - drug_id: DRUG-NICOTINE-PATCH
+    dose: "21 mg/24h (>10 cig/d baseline) — taper to 14 mg, then 7 mg"
+    schedule: "21 mg × 4-6 weeks → 14 mg × 2 weeks → 7 mg × 2 weeks"
+    route: transdermal
+    duration: "8-10 weeks total patch course (combine with short-acting NRT PRN throughout)"
+
+cycle_length_days: 70
+total_cycles: "1 course (extend per response)"
+
+toxicity_profile: low
+
+premedication: []
+mandatory_supportive_care: []
+monitoring_schedule_id:
+
+dose_adjustments:
+  - condition: "≤10 cigarettes/day at baseline"
+    modification: "Start at 14 mg/24h patch (skip 21 mg step)"
+    rationale: "Lower baseline nicotine exposure — reduce starting dose to limit nausea"
+    source_refs:
+      - SRC-NCCN-BCELL-2025
+  - condition: "Vivid dreams / disturbing sleep on overnight patch"
+    modification: "Remove patch at bedtime, replace on waking (16-h wear)"
+    rationale: "Reduce nocturnal nicotine exposure"
+    source_refs:
+      - SRC-NCCN-BCELL-2025
+  - condition: "Severe local skin reaction"
+    modification: "Rotate site daily; consider short-acting NRT only (gum/lozenge/inhaler)"
+    rationale: "Patch adhesive / nicotine local reaction"
+    source_refs:
+      - SRC-NCCN-BCELL-2025
+
+ukraine_availability:
+  all_components_registered: true
+  all_components_reimbursed: false
+  notes: "Nicotine patches (Niquitin, Nicorette) OTC in Ukraine. Lozenge and gum forms available OTC. Out-of-pocket — not on НСЗУ tobacco-cessation package."
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+between_visit_watchpoints:
+  - trigger_ua: "Подразнення / почервоніння шкіри під пластирем"
+    action_ua: "Поширений ефект — змінюйте місце наклеювання щодня; занотуйте на наступному візиті"
+    urgency: log_at_next_visit
+    sources:
+      - SRC-NCCN-BCELL-2025
+  - trigger_ua: "Незвичні сни / поверхневий сон"
+    action_ua: "Знімайте пластир на ніч і наклеюйте вранці (16-годинне носіння)"
+    urgency: log_at_next_visit
+    sources:
+      - SRC-NCCN-BCELL-2025
+  - trigger_ua: "Сильна нудота / тахікардія / тремор"
+    action_ua: "Подзвоніть у клініку того ж дня — можливе передозування нікотином (особливо якщо паралельно курите)"
+    urgency: call_clinic_same_day
+    sources:
+      - SRC-NCCN-BCELL-2025
+  - trigger_ua: "Біль у грудях, задишка, сильна слабкість"
+    action_ua: "Зверніться до лікарні негайно — рідкісний СС-сигнал, гостра нікотинова токсичність"
+    urgency: er_now
+    sources:
+      - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  Combination NRT (long-acting patch as baseline + short-acting form PRN
+  for cravings/breakthrough urges) is preferred over monotherapy NRT per
+  USPSTF + AHCPR — adds ~50-70% to abstinence vs. patch alone. Short-acting
+  options: lozenge (2-4 mg q1-2h PRN, max 20/day), gum (2 mg if <25 cig/d,
+  4 mg if ≥25 cig/d — chew + park technique), inhaler. OTC and inexpensive.
+  Safer than continued smoking even in CV disease.
+
+notes_ua: >
+  Комбінована NRT (пластир як базова терапія + короткодіюча форма
+  PRN для жадоби / зриву) переважна над монотерапією NRT за USPSTF +
+  AHCPR — додає ~50-70% до абстиненції порівняно з самим пластирем.
+  Короткодіючі форми: леденець (2-4 мг кожні 1-2 год PRN, макс 20/день),
+  жуйка (2 мг якщо <25 цигарок/день, 4 мг якщо ≥25), інгалятор. OTC
+  і недорого. Безпечніше за продовження куріння навіть при ССЗ.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_drugs_batch2
+draft_revision: 1

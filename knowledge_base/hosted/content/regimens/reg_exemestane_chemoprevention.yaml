@@ -1,0 +1,97 @@
+id: REG-EXEMESTANE-CHEMOPREVENTION
+name: "Exemestane 25 mg daily × 5 years for postmenopausal breast-cancer chemoprevention"
+name_ua: "Екземестан 25 мг щодня × 5 років для хіміопрофілактики РМЗ у постменопаузі"
+alternate_names:
+  - "Exemestane chemoprevention"
+  - "MAP.3 chemoprevention regimen"
+
+components:
+  - drug_id: DRUG-EXEMESTANE
+    dose: "25 mg PO"
+    schedule: "once daily, with food"
+    route: PO
+    duration: "5 years"
+
+cycle_length_days: 30
+total_cycles: "60 months (5 years)"
+
+toxicity_profile: moderate
+
+premedication: []
+mandatory_supportive_care: []
+monitoring_schedule_id:
+
+dose_adjustments:
+  - condition: "Severe arthralgia limiting function"
+    modification: "Trial drug holiday × 2-4 weeks; rechallenge; switch to anastrozole or letrozole (cross-class swap may help)"
+    rationale: "Class-effect AI arthralgia; switching within class sometimes helps"
+    source_refs:
+      - SRC-NCCN-BREAST-2025
+  - condition: "BMD T-score below -2.0 OR ≥1 osteoporotic fracture during treatment"
+    modification: "Add bone-protective therapy — bisphosphonate (zoledronic acid 5 mg IV annual or alendronate PO) or denosumab; ensure adequate calcium + vitamin D"
+    rationale: "AIs accelerate bone loss; chemoprevention benefit reduced if fragility fracture occurs"
+    source_refs:
+      - SRC-NCCN-BREAST-2025
+  - condition: "Severe vasomotor symptoms unresponsive to lifestyle measures"
+    modification: "Consider non-hormonal options (gabapentin, venlafaxine, oxybutynin) — AVOID estrogen replacement"
+    rationale: "Vasomotor symptoms common ~30-40%; estrogen would defeat purpose of AI"
+    source_refs:
+      - SRC-NCCN-BREAST-2025
+
+ukraine_availability:
+  all_components_registered: true
+  all_components_reimbursed: true
+  notes: "Exemestane (Aromasin and generics) registered and reimbursed via НСЗУ in Ukraine. Chemoprevention-specific indication may require oncologist documentation."
+
+sources:
+  - SRC-NCCN-BREAST-2025
+
+between_visit_watchpoints:
+  - trigger_ua: "Припливи, нічна пітливість, сухість піхви"
+    action_ua: "Поширений ефект — занотуйте на наступному візиті; розгляньте місцеві засоби, негормональні системні опції"
+    urgency: log_at_next_visit
+    sources:
+      - SRC-NCCN-BREAST-2025
+  - trigger_ua: "Артралгії, скутість суглобів"
+    action_ua: "Поширений ефект (~30-40%) — спробуйте регулярні вправи; занотуйте на візиті; розгляньте перемикання AI"
+    urgency: log_at_next_visit
+    sources:
+      - SRC-NCCN-BREAST-2025
+  - trigger_ua: "Біль у спині, болі в кістках"
+    action_ua: "Подзвоніть у клініку того ж дня — оцінка BMD; розгляньте кістково-захисну терапію"
+    urgency: call_clinic_same_day
+    sources:
+      - SRC-NCCN-BREAST-2025
+  - trigger_ua: "Перелом при незначній травмі (низькоенергетичний)"
+    action_ua: "Подзвоніть у клініку того ж дня — крихкий перелом потребує DXA + bisphosphonate/denosumab"
+    urgency: call_clinic_same_day
+    sources:
+      - SRC-NCCN-BREAST-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  Exemestane 25 mg PO daily × 5 years for breast-cancer chemoprevention
+  in POSTMENOPAUSAL women only per MAP.3 (Goss 2011, NEJM). ~65% reduction
+  in invasive breast cancer with lower endometrial/VTE risk than tamoxifen.
+  IBIS-II (Cuzick 2014) established similar efficacy for anastrozole.
+  Both AIs are NCCN-endorsed first-line chemoprevention options for
+  postmenopausal high-risk women. Bone health monitoring (DXA at baseline
+  + q2 years) is critical — adverse impact on BMD is the main downside
+  vs. raloxifene (which preserves BMD). NOT for premenopausal use
+  (requires functioning postmenopausal ovary; would not block premenopausal
+  estrogen production).
+
+notes_ua: >
+  Екземестан 25 мг PO щодня × 5 років для хіміопрофілактики РМЗ
+  ТІЛЬКИ у постменопаузних жінок (MAP.3, Goss 2011, NEJM). ~65%
+  зниження інвазивного РМЗ з нижчим ризиком ендометрія/VTE ніж
+  тамоксифен. IBIS-II (Cuzick 2014) встановило подібну ефективність
+  для анастрозолу. Обидва АІ — перша лінія NCCN-схвалених опцій
+  хіміопрофілактики для постменопаузних жінок з високим ризиком.
+  Критичний моніторинг здоров'я кісток (DXA на старті + q2 роки) —
+  негативний вплив на BMD є головним мінусом порівняно з ралоксифеном.
+  НЕ для пременопаузи.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_drugs_batch2
+draft_revision: 1

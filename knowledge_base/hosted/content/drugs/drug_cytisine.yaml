@@ -1,0 +1,89 @@
+id: DRUG-CYTISINE
+names:
+  preferred: "Cytisine"
+  ukrainian: "Цитизин"
+  english: "Cytisine"
+  synonyms: ["Cytisinicline"]
+  brand_names: ["Tabex", "Desmoxan"]
+atc_code: N07BA04
+rxnorm_id: null
+drug_class: "α4β2 nicotinic acetylcholine receptor partial agonist (plant alkaloid from Cytisus laburnum)"
+mechanism: >
+  Naturally-occurring plant alkaloid; partial agonist at α4β2 nicotinic
+  acetylcholine receptor (same target as varenicline, of which it is the
+  structural prototype). Produces modest dopaminergic activation
+  (relieving craving/withdrawal) while blocking nicotine binding. Has
+  been used as tobacco-cessation pharmacotherapy in Eastern Europe since
+  the 1960s; comparative trials (e.g., RAUORA 2021, CASCAID) suggest
+  efficacy comparable to varenicline at lower cost.
+
+regulatory_status:
+  fda:
+    approved: false
+    indications_brief: ["Not FDA approved as of 2026-05; investigational (Achieve Life Sciences cytisinicline pending FDA action)"]
+  ema:
+    approved: false
+    indications_brief: ["Not centrally EMA-approved; nationally approved in many EU member states"]
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Registered in Ukraine (Tabex — historically widely available; Desmoxan). Not on НСЗУ tobacco-cessation package — out-of-pocket but inexpensive."
+typical_dosing: >
+  PO: tapered 25-day course (standard Tabex protocol):
+    Days 1-3:   1 tablet (1.5 mg) every 2 h (max 6/day)
+    Days 4-12:  1 tablet every 2.5 h (max 5/day)
+    Days 13-16: 1 tablet every 3 h (max 4/day)
+    Days 17-20: 1 tablet every 5 h (max 3/day)
+    Days 21-25: 1-2 tablets/day
+  Quit date typically by day 5. Reducing-frequency dosing limits adherence.
+formulations:
+  - "Tablet 1.5 mg"
+
+absolute_contraindications:
+  - "Hypersensitivity to cytisine or Cytisus alkaloids"
+  - "Severe / unstable cardiovascular disease (recent MI, severe arrhythmia, uncontrolled hypertension) — limited data"
+  - "Pregnancy / lactation"
+  - "Phenylketonuria (some formulations contain phenylalanine)"
+common_adverse_events:
+  - "Nausea (~20-30%)"
+  - "Dry mouth (~10-15%)"
+  - "Headache (~10%)"
+  - "Dizziness, sleep disturbance (~5-10%)"
+  - "Gastrointestinal upset / dyspepsia (~5-10%)"
+serious_adverse_events:
+  - "Limited safety data vs. varenicline (smaller trial base)"
+  - "Hypertensive episodes (rare)"
+  - "Tachycardia, arrhythmia (rare)"
+
+major_interactions:
+  - "Limited interaction data; theoretical: cessation itself reduces CYP1A2 induction (caffeine, theophylline, clozapine, olanzapine clearance increases)"
+
+pharmacology: {half_life_hours: 5, clearance: "Renal — primarily unchanged via urine; minimal hepatic metabolism"}
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. Alternative to varenicline,
+  primarily used outside USA. Originating compound for varenicline
+  development. Tabex widely available + inexpensive in Ukraine and
+  Central/Eastern Europe. Tapered 25-day dosing limits real-world
+  adherence vs. simpler varenicline regimen. Source cited
+  (SRC-NCCN-BCELL-2025) is closest in-KB until cytisine-specific
+  (RAUORA, CASCAID, Cochrane) sources land in source-stub workstream.
+
+notes_ua: >
+  Цитизин (Tabex, Desmoxan) — альтернатива варенікліну, переважно
+  використовується поза США. Природний алкалоїд із Cytisus laburnum;
+  є структурним прообразом варенікліну. Широко доступний і
+  недорогий в Україні. Складна 25-денна схема знижує реальну
+  прихильність порівняно з варенікліном.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_drugs_batch2
+draft_revision: 1

@@ -1,0 +1,94 @@
+id: DRUG-OMEGA-3-EPA
+names:
+  preferred: "Eicosapentaenoic acid (EPA, omega-3 free fatty acid)"
+  ukrainian: "Ейкозапентаєнова кислота (EPA, омега-3)"
+  english: "Eicosapentaenoic acid (EPA)"
+  synonyms: ["EPA", "Icosapent ethyl", "Omega-3 EPA"]
+  brand_names: ["Vascepa (icosapent ethyl)", "Epadel"]
+atc_code: C10AX06  # icosapent ethyl
+rxnorm_id: "1366145"
+drug_class: "Omega-3 polyunsaturated fatty acid (purified EPA ester)"
+mechanism: >
+  Long-chain omega-3 polyunsaturated fatty acid that competes with
+  arachidonic acid as substrate for cyclooxygenase and lipoxygenase
+  enzymes, shifting eicosanoid production toward less inflammatory
+  3-series prostaglandins and 5-series leukotrienes; modulates
+  membrane fluidity and signaling. In familial adenomatous polyposis
+  (FAP), small RCTs (e.g., West 2010 — Cancer Prevention Research)
+  suggest EPA reduces duodenal-polyp burden. Cancer-prevention evidence
+  outside FAP is limited and inconsistent (no benefit in colon polyp
+  prevention per VITAL or seAFOod trials).
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 2012  # Vascepa for severe hypertriglyceridemia; 2019 CV risk reduction
+    indications_brief:
+      - "Severe hypertriglyceridemia (TG ≥500 mg/dL)"
+      - "CV risk reduction in patients on statins with elevated TG (REDUCE-IT)"
+      - "NOT FDA-approved for cancer prevention"
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: false
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Vascepa (icosapent ethyl) not registered in Ukraine as of 2026-05; generic OTC fish-oil EPA preparations widely available out-of-pocket — quality variable."
+typical_dosing: >
+  Cancer-prevention research context (FAP duodenal polyposis):
+  ~4 g/day EPA (typically as 2 g BID free fatty acid or icosapent ethyl).
+  Hypertriglyceridemia: 4 g/day (2 capsules BID 1 g each, icosapent ethyl).
+  Take with food. Note FAP cancer-prevention dose has only RCT-trial
+  support, not FDA labeling.
+formulations:
+  - "Icosapent ethyl capsule 0.5 g, 1 g"
+  - "EPA + DHA combination fish-oil capsules (OTC; quality variable)"
+
+absolute_contraindications:
+  - "Hypersensitivity to fish, shellfish, or any product component"
+common_adverse_events:
+  - "Fishy aftertaste / belching / dyspepsia (~5-10%)"
+  - "Diarrhea, loose stools (~5-10%)"
+  - "Nausea (~3-5%)"
+  - "Joint pain / arthralgia (~2-5%)"
+  - "Peripheral edema (~3-5%)"
+serious_adverse_events:
+  - "Increased bleeding (theoretical; modest antiplatelet effect — clinically rare at standard doses)"
+  - "Atrial fibrillation signal (REDUCE-IT and STRENGTH trials; modest increase)"
+  - "Severe hypersensitivity (rare)"
+
+major_interactions:
+  - "Antiplatelet / anticoagulant drugs (aspirin, clopidogrel, warfarin, DOACs) — theoretical additive bleeding risk; clinical impact small at 4 g/day"
+
+pharmacology: {half_life_hours: 90, clearance: "Hepatic β-oxidation and incorporation into phospholipid membranes; no significant CYP metabolism"}
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. RESEARCH-CONTEXT cancer-prevention
+  use only. In FAP, small RCTs suggest EPA reduces duodenal-polyp burden
+  but does not replace surveillance endoscopy + polypectomy or
+  prophylactic surgery decisions. No proven benefit in general-population
+  colon polyp prevention (VITAL, seAFOod). Not currently NCCN/ESMO/InSiGHT
+  guideline-recommended as standard FAP intervention — adjunct only
+  under specialist hereditary-cancer center management. Source cited
+  (SRC-NCCN-BCELL-2025) is closest in-KB until dedicated FAP-EPA-trial
+  source (West 2010 et al.) lands in source-stub workstream.
+
+notes_ua: >
+  Омега-3 EPA — використання в науково-дослідницькому контексті
+  для FAP-дуоденального поліпозу. Малі РКД свідчать про зменшення
+  обсягу поліпів, але не замінює спостережну ендоскопію + поліпектомію
+  чи рішення щодо профілактичної хірургії. У загальній популяції
+  для профілактики поліпів товстої кишки користь не доведена.
+  Наразі не є стандартом NCCN/ESMO/InSiGHT для FAP — лише як
+  додаткова терапія у спеціалізованих hereditary-cancer центрах.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_drugs_batch2
+draft_revision: 1
