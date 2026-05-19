@@ -1,0 +1,15 @@
+{
+  "patient_id": "MULTI-EXPOSURE-001",
+  "comment": "65yo male active current smoker (30 pack-years cumulative, current ~1 ppd) with documented elevated residential radon exposure (home measurement 7.2 pCi/L, above EPA 4 pCi/L action threshold) in a geographic high-risk area (granite-bedrock region). No current lung-cancer diagnosis. Stacks two upstream universal/environmental RFs: (1) RF-UNIVERSAL-CURRENT-SMOKER-MULTI-CANCER via current_tobacco_use_documented → structured cessation (combined behavioural + varenicline / bupropion / NRT) + USPSTF LDCT eligibility (annual LDCT 50-80y / ≥20 pack-y / current or quit ≤15y — patient eligible); (2) RF-RADON-MALIGNANCY-PREVENTION via residential ≥4 pCi/L + documented high with smoking-hx branches → radon mitigation (sub-slab depressurization) + smoking-cessation amplification (radon-smoking synergy ~10-25x background lung-cancer risk per high cumulative exposure) + annual LDCT per modified USPSTF criteria. The radon-smoking interaction is greater-than-additive but submultiplicative on log-additive scale — cessation meaningfully attenuates radon component. Validates v0.3 multi-exposure stacking on the radon+tobacco synergy axis.",
+  "biomarkers": {},
+  "demographics": {"age": 65, "sex": "male", "ecog": 1},
+  "findings": {
+    "current_tobacco_use_documented": true,
+    "residential_radon_exposure_ge_4_pci_per_l": true,
+    "residential_radon_exposure_documented_high_with_smoking_hx": true,
+    "Active current smoker, 30 pack-years cumulative, ~1 ppd": true,
+    "Home radon test 7.2 pCi/L (granite-bedrock region, basement bedroom)": true,
+    "USPSTF LDCT-eligible (age 65, ≥20 pack-y, current smoker)": true,
+    "No current lung cancer diagnosis": true
+  }
+}

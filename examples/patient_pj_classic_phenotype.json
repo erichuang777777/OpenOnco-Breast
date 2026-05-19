@@ -1,0 +1,15 @@
+{
+  "patient_id": "PJ-PHENOTYPE-001",
+  "comment": "12yo female with classic Peutz-Jeghers mucocutaneous phenotype — prominent perioral and buccal mucosal melanin macules (lentiginous pigmentation) since early childhood + digital-tip pigmentation. Index small-bowel intussusception age 9 requiring emergency surgical reduction (histopathology: jejunal hamartomatous polyp consistent with PJS). Sibling and paternal aunt with similar perioral pigmentation, untested. No current cancer diagnosis. Engine fires RF-PEUTZ-JEGHERS-FAMILY-HISTORY-SUSPICION via classic phenotype + intussusception-history branches and routes to PreventionPlan: standard = IND-PEUTZ-JEGHERS-SUSPICION-PREVENTION-GENETIC-COUNSELING (pre-test counseling + germline STK11 panel); alternative = IND-PEUTZ-JEGHERS-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE (empirical multi-organ PJS surveillance). Distinct from PEUTZ-JEGHERS-PREV-001 (14yo + parent affected) — sibling/aunt second-degree pattern instead of first-degree.",
+  "biomarkers": {},
+  "demographics": {"age": 12, "sex": "female", "ecog": 0},
+  "findings": {
+    "family_classic_peutz_jeghers_phenotype": true,
+    "family_first_degree_peutz_jeghers_with_intussusception_history": true,
+    "Perioral + buccal mucosal melanin macules since early childhood": true,
+    "Digital-tip pigmentation": true,
+    "Small-bowel intussusception age 9 — jejunal hamartomatous polyp histology (consistent with PJS)": true,
+    "Sibling + paternal aunt with similar perioral pigmentation (untested)": true,
+    "No personal cancer diagnosis": true
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "patient_id": "OCC-NICKEL-001",
+  "comment": "58yo male, 28 years occupational exposure as nickel-refining-plant worker (sulfide-ore smelting + electrolytic refining process, mixed nickel sulfide / oxide / soluble-nickel dust inhalation). Nickel compounds (sulfides, oxides, soluble salts) are IARC Group 1 carcinogens (Monograph 100C, 2012) — established lung-cancer + paranasal-sinus / nasal-cavity-cancer endpoints, with strongest evidence from Welsh / Norwegian / Canadian nickel-refinery cohorts. No current nickel-attributable malignancy. Engine routing pending RF-OCC-NICKEL-COMPOUNDS-PREVENTION authoring (v0.3 Wave I occupational backlog) — when that RF lands, expected fire branches: documented exposure + ≥10-years. Forward-compatible findings keys used following established occupational-RF pattern. Until RF lands, patient profile carries narrative findings only. Validates the v0.3 nickel-refining occupational pilot scaffolding.",
+  "biomarkers": {},
+  "demographics": {"age": 58, "sex": "male", "ecog": 1},
+  "findings": {
+    "occupational_nickel_compounds_exposure_documented": true,
+    "occupational_nickel_compounds_years_ge_10": true,
+    "Nickel-refining-plant worker 1990-2018 (28 years), sulfide-ore smelting": true,
+    "Mixed nickel sulfide / oxide / soluble-nickel dust inhalation": true,
+    "Former smoker 15 pack-years, quit 2010": true,
+    "Baseline chest CT + ENT exam (paranasal sinuses, nasal cavity) unremarkable": true,
+    "No current nickel-attributable malignancy": true
+  }
+}

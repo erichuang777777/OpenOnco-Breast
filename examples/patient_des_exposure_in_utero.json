@@ -1,0 +1,14 @@
+{
+  "patient_id": "DES-PREV-001",
+  "comment": "60yo female ('DES daughter') born 1965 with documented maternal DES use during pregnancy (mother took DES 1964-65 for prior pregnancy losses, per US peak DES-prescribing era). No current cancer diagnosis. Lifelong DES-cohort surveillance — vaginal clear-cell adenocarcinoma (CCA) cumulative risk ~1 per 1000 with bimodal age distribution (peak 15-25y + second elevated-risk window persisting past age 40 — patient now in second window). Cervical CIN and modestly elevated breast cancer risk after age 40 also apply. Engine fires RF-IATROGENIC-DES-EXPOSURE-PREVENTION and routes to PreventionPlan: standard = annual gynecologic exam with DES-specific technique (speculum + bimanual + careful palpation of vaginal walls per ACOG), colposcopy with vaginal + cervical iodine staining, cervical cytology / HPV co-test on routine cadence, breast surveillance per age-appropriate USPSTF cadence; alternative = routine general-population gynecologic screening only. Validates v0.3 iatrogenic DES pilot. Cohort surveillance does NOT stop at any age cutoff.",
+  "biomarkers": {},
+  "demographics": {"age": 60, "sex": "female", "ecog": 0},
+  "findings": {
+    "in_utero_des_exposure_documented": true,
+    "des_daughter_history": true,
+    "maternal_pregnancy_des_use": true,
+    "Born 1965, mother on DES 1964-65 for prior pregnancy losses": true,
+    "Müllerian-tract anomalies absent on prior imaging": true,
+    "No current cancer diagnosis": true
+  }
+}

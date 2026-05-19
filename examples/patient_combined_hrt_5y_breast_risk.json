@@ -1,0 +1,14 @@
+{
+  "patient_id": "HRT-PREV-001",
+  "comment": "58yo perimenopausal female on continuous-combined HRT (estradiol 1 mg + medroxyprogesterone 2.5 mg daily) for 6 years for severe vasomotor symptoms after surgical menopause. Intact uterus. No current cancer diagnosis. IARC Group 1 carcinogen (combined menopausal therapy) — duration ≥5y triggers prevention surveillance. Engine fires RF-IATROGENIC-COMBINED-HRT-PREVENTION via continuous-combined ≥5y branch and routes to PreventionPlan: standard = shared-decision review of risk-benefit (vasomotor benefit vs +1.2-1.7x breast cancer signal + VTE / cardiovascular axis), lowest-effective-dose + shortest-duration principle per NAMS / ACOG, USPSTF breast screening cadence, symptom-prompted endometrial workup; alternative = guideline-driven taper-and-discontinue plan with non-hormonal vasomotor management (SSRIs, gabapentin, lifestyle). Validates v0.3 iatrogenic HRT prevention pilot.",
+  "biomarkers": {},
+  "demographics": {"age": 58, "sex": "female", "ecog": 0},
+  "findings": {
+    "combined_hrt_continuous_use_ge_5y": true,
+    "Continuous-combined estradiol 1 mg + medroxyprogesterone 2.5 mg daily x 6 years": true,
+    "Severe vasomotor symptoms post-surgical menopause": true,
+    "Intact uterus": true,
+    "Baseline mammography negative": true,
+    "No current cancer diagnosis": true
+  }
+}
