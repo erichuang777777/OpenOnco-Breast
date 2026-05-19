@@ -1,0 +1,155 @@
+id: DIS-PHEOCHROMOCYTOMA
+names:
+  preferred: "Pheochromocytoma and paraganglioma (PPGL)"
+  ukrainian: "Феохромоцитома та парагангліома (PPGL)"
+  english: "Pheochromocytoma"
+  synonyms:
+    - "Pheochromocytoma"
+    - "Paraganglioma"
+    - "PPGL"
+    - "Catecholamine-secreting tumor"
+    - "Adrenal medullary tumor"
+
+codes:
+  icd_o_3_morphology: "8700/0"  # Pheochromocytoma NOS; malignant forms use 8700/3
+  icd_o_3_topography: ["C74.1"]  # Adrenal medulla (paraganglioma sites differ — head/neck, thoracic, abdominal)
+  icd_10: "D35.0"  # Benign neoplasm of adrenal gland; C74.1 used for malignant pheochromocytoma
+  who_classification: "WHO Endocrine and Neuroendocrine Tumours 5th ed (2022): Pheochromocytoma and extra-adrenal paragangliomas"
+
+archetype: etiologically_driven  # 30-40% germline-driven — etiological workup (genetic panel) is part of management
+oncotree_code: PHC
+lineage: "neuroendocrine"
+
+etiological_factors:
+  - "Sporadic (~60–70%)"
+  - "VHL (von Hippel-Lindau) syndrome — bilateral adrenal pheochromocytoma; norepinephrine-secreting"
+  - "MEN2A / MEN2B (germline RET — M918T highest risk) — bilateral adrenal medullary disease, often preceded by medullary thyroid carcinoma"
+  - "Neurofibromatosis type 1 (germline NF1)"
+  - "Hereditary paraganglioma–pheochromocytoma syndromes — germline SDHB, SDHC, SDHD, SDHAF2 (SDHB highest malignancy risk; SDHD parent-of-origin paternal transmission)"
+  - "TMEM127 / MAX germline mutations (rare familial forms)"
+  - "FH (HLRCC) — rare paraganglioma association"
+
+related_diseases:
+  - DIS-RCC                    # VHL syndrome overlap (clear-cell RCC)
+  - DIS-MEDULLARY-THYROID      # MEN2 axis (if entity exists; reference for cross-syndrome surveillance)
+
+key_biomarkers:
+  - BIO-VHL-STATUS             # germline VHL pathogenic variants drive bilateral adrenal disease
+  - BIO-RET                    # MEN2 axis; M918T highest medullary-thyroid + pheo risk
+  - BIO-RET-M918T              # specific high-risk allele
+
+epidemiology:
+  global_incidence: "~0.6–0.8 per 100K/year overall (PPGL); pheochromocytomas comprise ~80–85%, paragangliomas ~15–20%"
+  hereditary_proportion: "30–40% of PPGL cases harbour a germline pathogenic variant — highest known hereditary fraction of any human cancer"
+  malignant_proportion: "~10% pheochromocytoma, up to 30–40% extra-adrenal paraganglioma; SDHB carriers have markedly elevated metastatic risk"
+  age_distribution: "Most diagnoses 40–50 years (sporadic); hereditary forms typically present earlier (often <40)"
+
+sources:
+  - SRC-NCCN-NET-2025                                  # NCCN Neuroendocrine and Adrenal Tumors (nearest in-KB source)
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025      # framework for germline-panel cascade testing (analogue, not pheo-specific)
+
+last_reviewed: "2026-05-19"
+reviewers: []
+reviewer_signoffs: 0
+
+metadata:
+  proposal_status: partial
+  awaiting_proposal: >
+    Source gap: PPGL-specific guidelines not yet ingested (Endocrine
+    Society Clinical Practice Guideline 2014, ESE 2023 paraganglioma /
+    pheochromocytoma guidelines, NANETS 2021 pheo/paraganglioma consensus).
+    Treatment workflow (preoperative alpha-blockade with phenoxybenzamine
+    / doxazosin → adrenalectomy; metastatic disease MIBG-positive
+    → I-131 MIBG or radiopharmaceutical Lu-177 DOTATATE; sunitinib /
+    cabozantinib for refractory disease) is referenced in prose pending
+    a guideline-anchored Indication tree. Genetic-testing pathway
+    cross-references prevention-track v0.2-B (VHL, MEN2, SDHx
+    surveillance Indications).
+
+notes: >
+  Pheochromocytoma is a catecholamine-secreting neuroendocrine tumor of
+  adrenal medullary origin; extra-adrenal counterparts (paragangliomas)
+  arise from sympathetic / parasympathetic ganglia (head/neck,
+  thoracic, abdominal). They are biologically and clinically a single
+  spectrum (PPGL); this entity is anchored to the adrenal subset for
+  ICD-10 cleanliness but cross-references SDHx-driven extra-adrenal
+  paragangliomas in prevention workstream notes.
+
+  Hereditary fraction is the highest known among adult cancers
+  (~30–40%). NCCN and Endocrine Society recommend germline panel
+  testing (RET, VHL, SDHB/C/D/AF2, NF1, TMEM127, MAX, FH) for ALL
+  patients with PPGL — not restricted by family history. This makes
+  PPGL a sentinel disease for hereditary cancer surveillance pathways
+  (RET → MEN2 prophylactic thyroidectomy; VHL → multi-organ
+  surveillance; SDHB → lifetime PPGL + RCC surveillance).
+
+  Classical clinical triad: headache + palpitations + sweating; many
+  patients present with paroxysmal or sustained hypertension.
+  Biochemical diagnosis: plasma free metanephrines or 24-h urinary
+  fractionated metanephrines (preferred over catecholamines).
+  Functional imaging (MIBG, Ga-68 DOTATATE PET) for staging and
+  metastatic disease.
+
+  Treatment fundamentals (referenced for context — full Indications
+  pending): adequate preoperative alpha-blockade is mandatory before
+  surgery to prevent intraoperative hypertensive crisis. Laparoscopic
+  adrenalectomy for unilateral adrenal tumors; cortical-sparing
+  adrenalectomy considered in bilateral / hereditary cases. Metastatic
+  disease: I-131 MIBG (MIBG-avid), Lu-177 DOTATATE (somatostatin-
+  receptor avid), sunitinib, cabozantinib (FIRSTMAPPP demonstrated PFS
+  benefit). No high-quality cytotoxic regimen; CVD (cyclophosphamide
+  + vincristine + dacarbazine) still used historically.
+
+  Relationship to prevention workstream: SDHB / SDHD carriers identified
+  by germline panel testing trigger lifetime biochemical (annual plasma
+  metanephrines) + imaging (q2–3y whole-body MRI) surveillance — a
+  primary use-case for v0.2-B genetic-syndrome prevention pilots.
+notes_ua: |
+  Феохромоцитома — катехоламін-продукуюча нейроендокринна пухлина
+  мозкової речовини надниркової залози; екстра-адренальні аналоги
+  (парагангліоми) походять із симпатичних / парасимпатичних гангліїв
+  (голова/шия, грудна клітка, черевна порожнина). Біологічно та
+  клінічно вони є єдиним спектром (PPGL); ця нозологія прив'язана до
+  адренального підтипу для коректності ICD-10, проте у профілактичних
+  нотатках перехресно посилається на SDHx-керовані екстра-адренальні
+  парагангліоми.
+
+  Спадкова частка є найвищою серед усіх відомих дорослих онкологічних
+  захворювань (~30–40%). NCCN та Endocrine Society рекомендують
+  гермінальне панельне тестування (RET, VHL, SDHB/C/D/AF2, NF1,
+  TMEM127, MAX, FH) для ВСІХ пацієнтів з PPGL — без обмеження за
+  родинним анамнезом. Це робить PPGL ключовим захворюванням для
+  програм спостереження за носіями спадкових онкосиндромів (RET →
+  профілактична тиреоїдектомія при MEN2; VHL → мультиорганне
+  спостереження; SDHB → пожиттєвий нагляд PPGL + RCC).
+
+  Класична клінічна тріада: головний біль + серцебиття + пітливість;
+  значна частина пацієнтів має пароксизмальну або стійку артеріальну
+  гіпертензію. Біохімічна діагностика: визначення метанефринів у
+  плазмі або 24-годинній сечі (метанефрини переважно над
+  катехоламінами). Функціональна візуалізація (MIBG-сцинтиграфія,
+  Ga-68 DOTATATE PET) — для стадіювання та метастатичної хвороби.
+
+  Принципи лікування (контекст; повний набір Indications очікується):
+  обов'язкова адекватна передопераційна альфа-блокада для
+  попередження інтраопераційного гіпертензивного кризу.
+  Лапароскопічна адреналектомія для однобічних надниркових пухлин;
+  кортикозберігаюча адреналектомія розглядається при двобічних /
+  спадкових випадках. Метастатична хвороба: I-131 MIBG (MIBG-
+  позитивна), Lu-177 DOTATATE (соматостатин-рецептор-позитивна),
+  сунітиніб, кабозантиніб (FIRSTMAPPP — доведений виграш у PFS).
+  Високоякісного цитотоксичного режиму немає; історично
+  застосовується CVD (циклофосфамід + вінкристин + дакарбазин).
+
+  Зв'язок із профілактичною лінією робіт: носії SDHB / SDHD,
+  виявлені під час гермінального панельного тестування, підлягають
+  пожиттєвому біохімічному (щорічні плазмові метанефрини) та
+  візуалізаційному (МРТ всього тіла раз на 2–3 роки) спостереженню —
+  основний сценарій застосування v0.2-B профілактичних пілотів
+  спадкових синдромів.
+
+review_status: pending_clinical_signoff
+drafted_by: claude_extraction
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_ua_01
+draft_revision: 1

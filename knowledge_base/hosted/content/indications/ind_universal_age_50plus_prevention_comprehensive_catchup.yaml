@@ -1,0 +1,185 @@
+id: IND-UNIVERSAL-AGE-50PLUS-PREVENTION-COMPREHENSIVE-CATCHUP
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-UNIVERSAL-AGE-50PLUS-SCREENING-GAP
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Comprehensive screening catch-up plan covering all USPSTF /
+    NCCN-recommended modalities for the ≥50 adult age cohort
+    (CRC + breast + cervical + lung-LDCT-if-eligible) detects
+    early-stage cancers in the cohort with documented screening
+    gap. Per USPSTF / NCCN published modeling: NLST shows 20%
+    relative reduction in lung-cancer mortality from LDCT (NNS
+    ~320); Cochrane mammography meta-analyses show ~20% breast-
+    cancer mortality reduction from biennial mammography (NNS
+    ~1000 over 10y); colonoscopy reduces CRC mortality ~40-60%
+    in screening-cohort observational + Polish RCT data;
+    cervical screening (Pap or hr-HPV) reduces cervical-cancer
+    mortality ≥70% in compliant cohort. Catch-up screening also
+    identifies premalignant lesions (adenomas at colonoscopy,
+    CIN at cervical screening) addressable in the screening-
+    detection window.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for adult age ≥50 without
+  documented age-appropriate cancer screening in past 5 years.
+  Comprehensive screening catch-up plan covering all USPSTF /
+  NCCN-recommended modalities for the cohort, prioritized by
+  highest-yield modality.
+
+  **(1) Colorectal cancer screening.** USPSTF Grade A
+  recommendation (ages 45-75; individualized 76-85). First-choice
+  modalities: colonoscopy q10y (highest sensitivity, polypectomy
+  in same procedure, gold-standard); flexible sigmoidoscopy q5y
+  + FIT q1y; FIT-DNA stool test q3y; FIT q1y; CT colonography
+  q5y. Decision driven by patient preference, prior-procedure
+  experience, comorbidity, family history. Adenoma surveillance
+  per US Multi-Society Task Force on Colorectal Cancer guideline
+  if findings on initial colonoscopy.
+
+  **(2) Breast cancer screening.** USPSTF 2024 Grade B
+  recommendation (biennial mammography ages 40-74). Supplemental
+  imaging (US, MRI, contrast-enhanced mammography) individualized
+  on breast density + family history + Tyrer-Cuzick lifetime risk.
+  In Ukraine: state-funded mammography accessible through Family
+  Doctor referral; private digital mammography ~500-1500 UAH per
+  exam.
+
+  **(3) Cervical cancer screening.** USPSTF 2018 Grade A
+  recommendation (ages 21-65; modalities vary). For age 30-65:
+  primary hr-HPV testing q5y, OR co-testing (cytology + hr-HPV)
+  q5y, OR cytology alone q3y. For age 21-29: cytology alone q3y
+  (HPV testing not recommended in this age group). Cessation at
+  age 65 with adequate prior screening history (≥3 consecutive
+  negative cytology or ≥2 consecutive negative hr-HPV in past 10y,
+  most recent within past 5y) per USPSTF + ACS / ASCCP 2020.
+
+  **(4) Lung cancer screening (eligibility-gated).** USPSTF 2021
+  Grade B (ages 50-80, ≥20 pack-year, current smoker OR quit ≤15y).
+  Annual low-dose CT with Lung-RADS reporting + structured-followup
+  pathway for indeterminate findings. If NOT eligible: document
+  determination; do NOT perform LDCT.
+
+  **(5) Prostate cancer screening (shared-decision).** USPSTF 2018
+  Grade C (ages 55-69 — individualized SDM based on patient
+  preference; Grade D ≥70 except very-fit individuals). PSA-based
+  screening only after explicit informed-consent discussion
+  covering benefits (modest 20% mortality reduction per ERSPC) +
+  harms (overdiagnosis, false-positives, biopsy complications,
+  overtreatment).
+
+  **(6) Skin cancer screening.** USPSTF Grade I (insufficient
+  evidence for population screening). However, opportunistic skin
+  exam at annual physical + low-threshold dermatology referral
+  for new / changing lesions is standard of care + recommended
+  for any patient with ≥1 ABCDE-positive lesion.
+
+  **(7) Other cancer screening.** USPSTF does NOT recommend
+  routine asymptomatic screening for thyroid (Grade D), oral
+  (Grade I), pancreatic (Grade D except in syndromic high-risk
+  cohort), ovarian (Grade D), endometrial (Grade D), bladder
+  (Grade I), renal (Grade I) cancers; document explicitly that
+  these are NOT part of the catch-up plan in average-risk cohort.
+
+  **Anchor disease:** colorectal cancer chosen as canonical anchor
+  because (a) CRC screening is the highest-yield single modality
+  in the catch-up plan (largest absolute risk reduction at
+  population level), (b) USPSTF Grade A recommendation, (c)
+  colonoscopy in particular identifies premalignant adenomas
+  with polypectomy in same procedure — both screening + prevention.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для дорослого віком ≥50 без
+  задокументованого age-appropriate cancer screening протягом
+  останніх 5 років. Comprehensive screening catch-up plan по
+  всім USPSTF / NCCN-recommended modalities.
+
+  **(1) Colorectal cancer screening.** USPSTF Grade A (45-75).
+  Колоноскопія q10р (highest sensitivity, polypectomy у same
+  procedure); flexible sigmoidoscopy q5р + FIT q1р; FIT-DNA stool
+  test q3р; FIT q1р; CT colonography q5р.
+
+  **(2) Breast cancer screening.** USPSTF 2024 Grade B (q2р
+  мамографія 40-74). Supplemental imaging individualized.
+
+  **(3) Cervical cancer screening.** USPSTF 2018 Grade A (21-65).
+  Для 30-65: primary hr-HPV q5р, АБО co-testing q5р, АБО
+  cytology q3р.
+
+  **(4) Lung cancer screening (eligibility-gated).** USPSTF 2021
+  Grade B (50-80, ≥20 pack-year, поточний курець АБО quit ≤15р).
+
+  **(5) Prostate cancer screening (shared-decision).** USPSTF 2018
+  Grade C (55-69 SDM); PSA лише після explicit informed-consent.
+
+  **(6) Skin cancer screening.** USPSTF Grade I; однак
+  opportunistic skin exam + dermatology referral для new /
+  changing lesions — standard of care.
+
+  **(7) Other cancer screening.** USPSTF НЕ рекомендує routine
+  asymptomatic screening для thyroid, oral, pancreatic, ovarian,
+  endometrial, bladder, renal.
+
+  **Анкор-захворювання:** colorectal cancer — найвища-yield single
+  modality у catch-up plan.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1
+
+sources:
+  - source_id: SRC-USPSTF-CRC-2021
+    position: supports
+  - source_id: SRC-USPSTF-BREAST-2024
+    position: supports
+  - source_id: SRC-USPSTF-CERVICAL-2018
+    position: supports
+  - source_id: SRC-USPSTF-LUNG-LDCT-2021
+    position: supports
+  - source_id: SRC-USPSTF-PROSTATE-2018
+    position: context
+
+do_not_do:
+  - "Не призначати asymptomatic screening поза USPSTF / NCCN-recommended modalities (thyroid, oral, pancreatic, ovarian, endometrial, bladder, renal) — false-positive harm >> incremental detection benefit у average-risk cohort."
+  - "Не пропускати life-expectancy / comorbidity overlay у ≥75 cohort — catch-up screening може harms outweigh benefits у very-frail patient."
+  - "Не призначати LDCT без USPSTF-eligibility verification (≥20 pack-year + current smoker або quit ≤15р) — false-positive + radiation exceed benefit."
+  - "Не пропускати informed-consent для PSA screening — overdiagnosis / overtreatment harms significant; shared-decision-making mandatory."
+  - "Не deny catch-up screening на основі socioeconomic / insurance барʼєрів — більшість modalities accessible через NSZU / Medicare / NHS coverage; document determination + actively coordinate access."
+
+do_not_do_en:
+  - "Do not order asymptomatic screening outside USPSTF / NCCN-recommended modalities (thyroid, oral, pancreatic, ovarian, endometrial, bladder, renal) — false-positive harm >> incremental detection benefit in average-risk cohort."
+  - "Do not skip life-expectancy / comorbidity overlay in the ≥75 cohort — catch-up screening may have harms outweigh benefits in very-frail patients."
+  - "Do not order LDCT without USPSTF-eligibility verification (≥20 pack-year + current smoker or quit ≤15y) — false-positives + radiation exceed benefit."
+  - "Do not skip informed-consent for PSA screening — overdiagnosis / overtreatment harms are significant; shared-decision-making is mandatory."
+  - "Do not deny catch-up screening on socioeconomic / insurance grounds — most modalities are accessible through NSZU / Medicare / NHS coverage; document determination + actively coordinate access."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — universal age ≥50 + screening gap. Anchor DIS-CRC (highest-yield single modality + USPSTF Grade A). Two-Clinical-Co-Lead signoff queued."

@@ -1,0 +1,189 @@
+id: IND-COWDEN-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-COWDEN-FAMILY-HISTORY-SUSPICION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Empirical multi-organ Cowden-style surveillance (annual mammography
+    + breast MRI from age 30; annual thyroid US; endometrial
+    surveillance from 35-40; colonoscopy q5y from age 35; annual
+    dermatologic evaluation; baseline renal imaging): expected to
+    capture clinically actionable lesions at earliest detectable stage
+    in the subset who are actual PTEN carriers (~25-90% of pedigree-
+    suspicion individuals depending on phenotype stringency). Does
+    NOT carry the diagnostic certainty of genetic testing — non-
+    carriers receive a substantial surveillance burden that could
+    have been safely declined, risk-reducing surgical decisions
+    cannot be made without genetic confirmation, and cascade-testing
+    benefit for relatives is lost.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-COWDEN-SUSPICION-PREVENTION-
+  GENETIC-COUNSELING. Patient with pedigree suspicion of Cowden /
+  PHTS who declines genetic counseling and/or germline PTEN testing
+  — for any reason (cost, insurance concerns, psychological / anxiety
+  considerations, family privacy, geographic access constraints) — is
+  offered empirical multi-organ surveillance applied as if Cowden
+  were confirmed:
+
+  **Breast (women):** Annual mammography starting age 30 + annual
+  breast MRI (alternating Q6 months); clinical breast exam q6-12
+  months. Match-confirmed-carrier protocol because breast-cancer
+  surveillance has the strongest mortality-benefit evidence base in
+  high-risk populations and empirical screening is well-tolerated.
+
+  **Endometrial / uterine (women):** Annual transvaginal ultrasound
+  from age 35; endometrial sampling at lower threshold than general-
+  population symptoms-driven workup (e.g., any post-menopausal
+  bleeding, irregular intermenstrual bleeding, abnormal US findings).
+  Lower-intensity than confirmed-carrier protocol (endometrial
+  sampling q1-2 years) because evidence base for empirical sampling
+  is modest.
+
+  **Thyroid:** Baseline thyroid ultrasound at pedigree-suspicion
+  diagnosis (any age); annual thyroid US lifelong. Inexpensive,
+  high-yield, low-burden — appropriate for empirical surveillance.
+
+  **Colorectal:** Colonoscopy q5 years starting age 40 (lower-
+  intensity than confirmed-carrier protocol starting age 35 because
+  pre-test probability is lower and Cowden-CRC absolute risk is
+  modest compared to Lynch / FAP).
+
+  **Renal:** Baseline renal ultrasound at pedigree-suspicion
+  diagnosis; repeat renal imaging q3-5 years thereafter. Lower-
+  intensity than confirmed-carrier MRI protocol because of
+  cumulative cost / burden considerations.
+
+  **Dermatologic:** Annual dermatologic evaluation — appropriate
+  for empirical surveillance because skin findings are diagnostic
+  signals (presence of trichilemmomas, oral papillomas, acral
+  keratoses elevates Cowden-criteria-met probability and can re-
+  prompt genetic testing discussion). Plus melanoma surveillance.
+
+  **CNS:** No routine CNS imaging unless symptoms of cerebellar
+  Lhermitte-Duclos disease emerge.
+
+  Per CHARTER §11 patient-autonomy framing: genetic testing is a
+  shared-decision-making domain. Patients who decline testing retain
+  access to surveillance benefit, with the caveat that empirical
+  surveillance lacks the diagnostic precision of confirmed genetic
+  status — and risk-reducing surgical decisions (mastectomy /
+  hysterectomy) require genetic confirmation. Periodic re-discussion
+  of testing is appropriate; the high lifetime breast-cancer risk
+  (~85% in confirmed PTEN carriers) makes the testing discussion
+  particularly weighty in Cowden-suspicion patients.
+
+  Routing reconsiderations: if patient eventually accepts germline
+  testing, results reroute to (a) confirmed-carrier pathway, (b)
+  general-population pathway, or (c) continued pedigree-suspicion if
+  VUS.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до IND-COWDEN-
+  SUSPICION-PREVENTION-GENETIC-COUNSELING. Пацієнт з родовідною
+  підозрою на Cowden / PHTS, який відмовляється від генетичного
+  консультування та/або germline PTEN-тестування — отримує empіричне
+  мульти-органне спостереження як якщо б Cowden був підтверджений:
+
+  **Молочна залоза (жінки):** Щорічна мамографія з 30 років +
+  щорічне MRI грудей (alternating Q6 months); клінічний огляд грудей
+  q6-12 місяців. Match-confirmed-carrier протокол, оскільки
+  surveillance молочної залози має найсильнішу mortality-benefit
+  доказову базу у високо-ризикових популяціях і empіричний скринінг
+  добре переноситься.
+
+  **Ендометрій / матка (жінки):** Щорічне трансвагінальне УЗД з 35
+  років; біопсія ендометрію на нижчому порозі ніж за загальною-
+  популяцією-симптомів-driven workup (post-menopausal кровотеча,
+  нерегулярна intermenstrual кровотеча, аномальні US-знахідки).
+  Менш інтенсивно ніж протокол при підтвердженому носійстві (біопсія
+  ендометрію q1-2 роки).
+
+  **Щитоподібна залоза:** Базове УЗД щитоподібної залози при
+  pedigree-підозрі (будь-який вік); щорічне УЗД пожиттєво.
+  Недороге, високо-виходне, низько-тягарне — підходить для
+  empіричного спостереження.
+
+  **Колоректальне:** Колоноскопія q5 років з 40 років (менш
+  інтенсивно ніж протокол при підтвердженому носійстві з 35 років,
+  бо pre-test probability нижча і Cowden-CRC абсолютний ризик
+  помірний порівняно з Lynch / FAP).
+
+  **Нирки:** Базове УЗД нирок при pedigree-підозрі; повторне
+  ниркове візуалізаційне обстеження q3-5 років після. Менш
+  інтенсивно ніж confirmed-carrier MRI протокол.
+
+  **Шкіра:** Щорічне дерматологічне обстеження — підходить для
+  empіричного спостереження, бо шкірні знахідки є діагностичними
+  сигналами (трихілеммоми, оральні папіломи, акральні кератози
+  підвищують Cowden-criteria-met probability і можуть re-prompt
+  genetic testing discussion). Плюс melanoma-surveillance.
+
+  **ЦНС:** Без рутинного ЦНС-візуалізаційного обстеження якщо
+  не виникають симптоми мозочкового Lhermitte-Duclos захворювання.
+
+  Per CHARTER §11 framing автономії пацієнта. Високий пожиттєвий
+  ризик раку грудей (~85% у підтверджених PTEN-носіїв) робить
+  testing-discussion особливо важливою у Cowden-suspicion пацієнтів.
+
+  Reroute: якщо пацієнт врешті приймає germline тестування,
+  результати маршрутизуються до (а) confirmed-carrier шлях, (б)
+  general-population шлях, або (в) продовжена pedigree-підозра при VUS.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_hereditary_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+    position: supports
+  - source_id: SRC-NCCN-BREAST-2025
+    position: supports
+
+do_not_do:
+  - "Не презентувати enhanced surveillance як еквівалент genetic confirmation — diagnostic precision відсутня; cascade-testing benefit для родичів втрачається."
+  - "Не рекомендувати risk-reducing мастектомію або гістеректомію в empіричному спостереженні без PTEN-підтвердження — ці інтервенції вимагають confirmed carrier діагнозу."
+  - "Не пропускати periodic re-discussion про genetic testing — більшість пацієнтів врешті приймають тестування; високий ризик раку грудей у Cowden особливо мотивує testing-acceptance."
+  - "Не починати щорічне breast MRI до 30 років у emp​іричному спостереженні без сильної сімейної історії дуже-раннього раку грудей — кумулятивна вартість і false-positive rate переважують benefit у молодшій age-bracket."
+  - "Не пропускати baseline thyroid US у pedigree-suspicion випадках — це найдешевший і найвищо-виходний empіричний-скринінг-крок; thyroid pathology у Cowden часто рано і легко детектована."
+  - "Не виконувати empіричну ендометріальну біопсію без симптомів або US-відхилень — це інвазивна процедура з ризиками; обмежити symptom-driven або US-driven індикаціями у emp​іричному спостереженні."
+
+do_not_do_en:
+  - "Do not present enhanced surveillance as equivalent to genetic confirmation — diagnostic precision is absent; cascade-testing benefit for relatives is lost."
+  - "Do not recommend risk-reducing mastectomy or hysterectomy in empirical surveillance without PTEN confirmation — these interventions require a confirmed carrier diagnosis."
+  - "Do not skip periodic re-discussion of genetic testing — most patients eventually accept testing; the high lifetime breast-cancer risk in Cowden specifically motivates testing acceptance."
+  - "Do not start annual breast MRI before age 30 in empirical surveillance without a strong family history of very-early-onset breast cancer — cumulative cost and false-positive rate outweigh benefit in the younger age bracket."
+  - "Do not skip baseline thyroid US in pedigree-suspicion cases — this is the cheapest, highest-yield empirical screening step; thyroid pathology in Cowden is often early and easily detected."
+  - "Do not perform empirical endometrial biopsy without symptoms or US abnormalities — this is an invasive procedure with risks; limit to symptom-driven or US-driven indications in empirical surveillance."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — alternative-track companion for Cowden hereditary prevention pilot. §15.2 C4 ≥2-tracks invariant compliance.

@@ -1,0 +1,124 @@
+id: IND-LIFESTYLE-UV-EXPOSURE-PREVENTION-PROTECTION
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-MELANOMA
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-LIFESTYLE-UV-EXPOSURE-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: "Australian Nambour trial (regular sunscreen): ~50% reduction in invasive melanoma over 10-15y follow-up; durable SCC + BCC reduction. Tanning-bed cessation eliminates the ~75% melanoma risk increment associated with under-35 use. Skin self-exam + clinical skin exam shift stage at diagnosis toward early/curable lesions."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for high UV exposure. Components per
+  USPSTF Behavioral Counseling for Skin Cancer Prevention (2018, Grade B
+  for 6mo-24y; Grade C ages 25+ with risk factors) + AAD + NCCN Melanoma
+  + NCCN Skin Cancer:
+
+  **(1) UV-protection counseling (5 components)** —
+  - Shade-seeking 10am-4pm
+  - Broad-spectrum SPF ≥30 sunscreen, reapplied q2h + after water/sweat
+  - Protective clothing (long sleeves, wide-brim hat, UPF-rated fabric)
+  - UV-blocking sunglasses
+  - Avoid intentional tanning (sun OR indoor tanning beds — both Group 1
+    carcinogens)
+
+  **(2) Tanning-bed cessation** — Absolute recommendation; no safe-tanning
+  exposure level. Counsel patients about ~75% melanoma risk increment with
+  under-35 tanning-bed use.
+
+  **(3) Skin self-examination (SSE)** — Monthly, full-body, with ABCDE
+  criteria for moles (Asymmetry, Border, Color, Diameter, Evolution).
+  Partner-assisted exam for hard-to-see areas.
+
+  **(4) Clinical full-body skin examination** — Cadence per risk:
+  - Average risk + UV exposure: every 1-3 years from age 40
+  - High risk (multiple risk factors, family hx, prior actinic damage):
+    every 6-12 months by dermatologist
+  - Personal history of NMSC or melanoma: per NCCN Melanoma /
+    NCCN Skin survivorship cadence
+
+  **(5) Dermoscopy / total-body photography** for patients with multiple
+  atypical nevi or strong family history.
+
+  Combined UV-protection + skin-surveillance significantly reduces invasive
+  melanoma + NMSC incidence + mortality. Sunscreen does NOT reduce vitamin
+  D status meaningfully in real-world use — counsel against vitamin D
+  pretext for foregoing sun protection.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для високої UV exposure. Components per
+  USPSTF Behavioral Counseling (2018) + AAD + NCCN Melanoma + NCCN Skin:
+
+  **(1) UV-protection counseling (5 components)** —
+  - Shade-seeking 10:00-16:00
+  - Broad-spectrum SPF ≥30 sunscreen, reapply q2год + після води/поту
+  - Protective clothing (довгі рукави, wide-brim hat, UPF-rated fabric)
+  - UV-blocking sunglasses
+  - Уникнення intentional tanning (sun АБО tanning beds)
+
+  **(2) Tanning-bed cessation** — Absolute recommendation; немає safe
+  exposure level. Counsel ~75% melanoma risk increment з under-35 use.
+
+  **(3) Skin self-examination (SSE)** — Щомісяця, full-body, ABCDE
+  criteria. Partner-assisted exam для hard-to-see areas.
+
+  **(4) Clinical full-body skin examination** — Cadence per risk:
+  - Average + UV exposure: кожні 1-3 роки з 40 років
+  - High risk: кожні 6-12 місяців by dermatologist
+  - Personal history of NMSC або melanoma: per NCCN survivorship
+
+  **(5) Dermoscopy / total-body photography** для пацієнтів з multiple
+  atypical nevi або strong family history.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-MELANOMA-2025
+    position: supports
+  - source_id: SRC-NCCN-SKIN-2025
+    position: supports
+
+do_not_do:
+  - "Не виправдовувати UV exposure for vitamin D — supplementation безпечніша і ефективніша."
+  - "Не використовувати спрей-санскрін без adequate coverage assessment — frequently under-applied."
+  - "Не презентувати tanning beds як safer alternative до natural sun — both IARC Group 1 carcinogens."
+  - "Не делегувати skin exam non-dermatologist for high-risk patients (multiple atypical nevi, family history) — dermoscopy training matters."
+  - "Не пропускати ABCDE counseling — SSE without criteria має поганий yield."
+
+do_not_do_en:
+  - "Do not justify UV exposure for vitamin D — supplementation is safer and more effective."
+  - "Do not use spray sunscreen without adequate coverage assessment — frequently under-applied."
+  - "Do not present tanning beds as a safer alternative to natural sun — both are IARC Group 1 carcinogens."
+  - "Do not delegate skin exam to a non-dermatologist for high-risk patients (multiple atypical nevi, family history) — dermoscopy training matters."
+  - "Do not skip ABCDE counseling — SSE without criteria has poor yield."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 lifestyle prevention pilot (UV exposure). Two-Clinical-Co-Lead signoff queued."

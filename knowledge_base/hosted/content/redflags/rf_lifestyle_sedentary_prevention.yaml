@@ -1,0 +1,61 @@
+id: RF-LIFESTYLE-SEDENTARY-PREVENTION
+definition: >-
+  Low physical activity / sedentary lifestyle — defined as <150 min/week
+  moderate-intensity OR <75 min/week vigorous-intensity aerobic activity
+  per WHO + US DHHS Physical Activity Guidelines, OR cumulative sedentary
+  time ≥8h/day. Inverse association with multiple cancers — strongest
+  evidence for colorectal cancer (~20-25% risk reduction with adequate
+  activity per WCRF/AICR convincing-evidence rating), endometrial cancer
+  (~20%), postmenopausal breast cancer (~10-15%). Probable additional
+  protection for esophageal adenocarcinoma, kidney, bladder, gastric-
+  cardia, lung. Mechanisms: insulin/IGF-1 axis, sex hormones, chronic
+  inflammation, body fatness mediation. Prevention-persona RedFlag (§20
+  v0.3 lifestyle pilot).
+definition_ua: >-
+  Низька фізична активність / sedentary lifestyle — визначається як
+  <150 хв/тиждень moderate-intensity АБО <75 хв/тиждень vigorous-
+  intensity aerobic activity per WHO + US DHHS Physical Activity
+  Guidelines, АБО кумулятивний sedentary time ≥8год/день. Inverse
+  association з кількома видами раку — найсильніші докази для
+  колоректального раку (~20-25% reduction per WCRF/AICR convincing-
+  evidence rating), endometrial cancer (~20%), postmenopausal breast
+  cancer (~10-15%). Probable additional protection для esophageal
+  adenocarcinoma, нирки, бладдер, gastric-cardia, легень.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "physical_activity_below_who_threshold"
+      value: true
+    - finding: "moderate_activity_lt_150min_per_week"
+      value: true
+    - finding: "sedentary_time_ge_8h_per_day"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: lifestyle
+
+# Anchor DIS-CRC (strongest WCRF evidence); engine surfaces all relevant_diseases
+relevant_diseases:
+  - DIS-CRC
+  - DIS-BREAST
+  - DIS-ENDOMETRIAL
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-COLON-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for sedentary lifestyle / low physical activity. WCRF/AICR convincing-evidence rating for CRC + endometrial + postmenopausal breast cancer protection. Engine routes to PreventionPlan recommending structured physical-activity counseling per HHS + ACS guidelines. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1

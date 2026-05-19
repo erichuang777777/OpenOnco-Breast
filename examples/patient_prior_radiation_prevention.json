@@ -1,0 +1,12 @@
+{
+  "patient_id": "RAD-SURVIVOR-PREV-001",
+  "comment": "33yo woman, mantle field radiotherapy for Hodgkin lymphoma at age 18 (15y ago). Cured of lymphoma; no current cancer. Engine routes to PreventionPlan: standard = COG-LTFU protocol (annual breast MRI from 25 / 8y post-RT; alternating mammogram from 30; LDCT eligibility; thyroid US; secondary leukemia CBC); alternative = general USPSTF cadence.",
+  "biomarkers": {},
+  "demographics": {"age": 33, "sex": "female", "ecog": 0},
+  "findings": {
+    "history_therapeutic_radiation_ge_5y_ago": true,
+    "history_mantle_field_radiotherapy": true,
+    "Hodgkin lymphoma 2011, mantle RT age 18": true,
+    "No current malignancy": true
+  }
+}

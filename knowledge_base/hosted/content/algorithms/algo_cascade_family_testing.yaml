@@ -1,0 +1,182 @@
+id: ALGO-CASCADE-FAMILY-TESTING
+applicable_to_disease: DIS-CRC
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention. `applicable_to_disease` is broad-scope:
+# anchored to DIS-CRC because CRC is the most common index cancer in
+# hereditary cascades (Lynch + FAP families account for ~60% of clinical
+# cascade-testing volume per Sharaf 2013 / Hampel 2018 modelling). The
+# reach extends to any confirmed-carrier hereditary syndrome — DIS-BREAST
+# (BRCA/HBOC), DIS-OVARIAN (BRCA/HBOC/Lynch), DIS-PDAC (BRCA/Lynch/FAMMM),
+# DIS-RCC (VHL/HLRCC/BHD), DIS-SOFT-TISSUE-SARCOMA (LFS), DIS-PARAGANGLIOMA
+# (SDHx), DIS-MELANOMA (FAMMM/BAP1), DIS-MEDULLARY-THYROID (RET/MEN2),
+# DIS-PARATHYROID (MEN1) — engine layer should treat the anchor as a
+# routing default, not an exclusive scope.
+purpose: >
+  Cascade testing flow for first-degree relatives (FDRs) of a confirmed-
+  carrier index patient identified through any hereditary cancer
+  syndrome germline panel (Lynch MMR/EPCAM, FAP APC/MUTYH, HBOC BRCA1/2/
+  PALB2/CHEK2/ATM, LFS TP53, VHL, MEN1/2 RET, BAP1, FAMMM CDKN2A/CDK4,
+  HLRCC FH, BHD FLCN, SDHx, NF1, PTEN, etc.).
+
+  Cascade testing is the highest-value downstream activity in clinical
+  genetics: average yield ~50% per FDR (autosomal-dominant 50% inheritance),
+  with each newly-identified carrier preventing a median ~1.5 future
+  cancers via enhanced surveillance + risk-reducing surgery. NCCN /
+  ESMO / ACMG recommend systematic cascade outreach for every confirmed
+  proband.
+
+  Decision tree gates by relative-relationship + testing eligibility +
+  counseling cadence + follow-up surveillance plan.
+
+output_indications:
+  - IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+  - IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+  - IND-FAP-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+  - IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+  - IND-VHL-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Default Indication anchor mirrors `applicable_to_disease`: Lynch is the
+# most common cascade-testing target. The engine should route to the
+# syndrome-specific SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE Indication
+# matching the index proband's confirmed gene (Lynch / FAP / HBOC / LFS /
+# VHL / etc.). Cross-syndrome generalization is encoded in
+# output_indications.
+
+decision_tree:
+  - step: 1
+    # Gate 1: index patient is a confirmed pathogenic / likely-pathogenic
+    # variant carrier. VUS results do NOT trigger cascade testing per
+    # ACMG / NCCN — VUS-only families remain in periodic re-evaluation
+    # pending reclassification.
+    evaluate:
+      all_of:
+        - condition: "Index patient (proband) has confirmed germline pathogenic or likely-pathogenic (ACMG class 4/5) variant in any hereditary cancer syndrome gene"
+    if_true:
+      next_step: 2
+    if_false:
+      result: false
+      notes: "No confirmed pathogenic / likely-pathogenic variant in index — cascade testing not indicated. VUS-only or negative panel results route to syndrome-specific empirical-surveillance pathway if pedigree warrants, otherwise general-population screening. Reclassify VUS periodically (e.g., annually) per ClinVar / lab updates."
+  - step: 2
+    # Identify first-degree relatives (FDRs) — 50% a priori carrier
+    # probability under autosomal-dominant inheritance.
+    evaluate:
+      any_of:
+        - condition: "Index patient has living first-degree relatives (parents, full siblings, biological children)"
+    if_true:
+      next_step: 3
+    if_false:
+      next_step: 4
+      notes: "No living FDRs — proceed to second-degree relatives (SDRs: aunts/uncles, grandparents, grandchildren, half-siblings, nieces/nephews); 25% a priori carrier probability."
+  - step: 3
+    # FDR testing eligibility — age, capacity, informed consent.
+    evaluate:
+      all_of:
+        - condition: "FDR is age ≥18 OR is a minor with confirmed pediatric-onset syndrome (FAP / LFS / VHL / MEN2 / DICER1 / Beckwith-Wiedemann / retinoblastoma — testing from age of clinical surveillance initiation, typically 5-12 depending on syndrome)"
+        - condition: "FDR has decision-making capacity OR a legal surrogate consents (for minors / cognitively impaired adults)"
+    if_true:
+      next_step: 5
+    if_false:
+      result: false
+      notes: "FDR not yet age-eligible (adult-onset syndrome, FDR <18) — defer testing until age of clinical surveillance initiation. Document plan for re-contact at age threshold. For LFS / FAP / VHL / MEN2 / DICER1 / retinoblastoma, testing is appropriate in pediatric / early-adolescent timeframe; coordinate with pediatric genetics."
+  - step: 4
+    # SDR / third-degree fallback — used when FDRs unavailable
+    # (deceased, lost contact, declined). Yield ~25% (SDR) or ~12.5%
+    # (TDR) per generation.
+    evaluate:
+      any_of:
+        - condition: "Second- or third-degree relative is available, eligible (age + consent + counseling), and motivated to test"
+    if_true:
+      next_step: 5
+    if_false:
+      result: false
+      notes: "No testable relatives available — document outreach attempts in the family chart. Re-contact periodically (e.g., every 2-3 years) per ACMG cascade-testing guidance; FDR availability can change with life events."
+  - step: 5
+    # Pre-test counseling + targeted single-site analysis.
+    evaluate:
+      all_of:
+        - condition: "Relative completes pre-test genetic counseling (informed consent, implications discussion, insurance/GINA considerations)"
+        - condition: "Targeted single-site (or family-variant-specific) germline test ordered — NOT full panel (faster, cheaper ~$250-500, higher analytic specificity for the known variant)"
+    if_true:
+      next_step: 6
+    if_false:
+      result: false
+      notes: "Pre-test counseling or single-site analysis not completed — refer to certified genetic counselor (board-certified per ABGC/ABMGG/ESHG); single-site cost is typically reimbursed by insurance / national-health schemes when proband variant is documented."
+  - step: 6
+    # Post-test routing based on carrier status.
+    evaluate:
+      all_of:
+        - condition: "Single-site germline test result available + post-test counseling completed"
+    if_true:
+      result: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Cascade testing complete. CARRIER-POSITIVE relatives → route to the syndrome-specific carrier-surveillance pathway (Lynch / FAP / BRCA / LFS / VHL / etc.) — annual surveillance schedule + discussion of risk-reducing surgery where applicable. CARRIER-NEGATIVE relatives → reassure (general-population risk), reduce surveillance to population baseline, NO need for cascade in their own descendants. Document outcome in the family pedigree, update the family-history record across the clinic / national hereditary cancer registry, and trigger the next cascade wave (children of newly-confirmed carriers reach testing eligibility in 18-25 years). Indication routing is to the SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE family pending v0.2 authoring of dedicated post-cascade-confirmation Indications (carrier-confirmed routing is v0.2 follow-up backlog)."
+    if_false:
+      result: false
+      notes: "Post-test counseling not completed — schedule follow-up disclosure visit + written results delivery; do not communicate results without counseling per ACMG."
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-ESMO-CRC-2024
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding the cascade-testing
+  workflow for first-degree (and fallback second-/third-degree)
+  relatives of a confirmed hereditary cancer syndrome carrier. Aligned
+  with NCCN Genetic/Familial High-Risk Assessment Guidelines (Colorectal
+  V.2.2025; Breast, Ovarian, Pancreatic V.3.2025) cascade-outreach
+  recommendations, ACMG cascade-testing position statement (Hampel H et
+  al. Genet Med 2020;22:1437-1448 PMID 32636506), and ESMO Clinical
+  Practice Guidelines for hereditary CRC / HBOC. Primary-paper Source
+  entities (SRC-HAMPEL-2020-ACMG-CASCADE, SRC-SHARAF-2013-CASCADE-YIELD)
+  are v0.2-B authoring backlog.
+
+  Anchored to DIS-CRC (most common index cancer in hereditary cascades);
+  reach extends to all hereditary cancer syndromes — see comment block
+  on applicable_to_disease for the full disease list.
+
+  Cascade-testing economics + yield:
+    - Average carrier-detection yield in FDRs: ~50% (autosomal-dominant
+      inheritance baseline)
+    - Cost-effectiveness ratio: $14,000-$25,000 per QALY gained for
+      Lynch + HBOC cascade vs no cascade (Snowsill 2014; Manchanda 2018)
+    - Variant-specific (single-site) test cost: typically $250-500
+      vs $1,500-3,000 for full multi-gene panel — substantial savings
+      driven by known proband variant
+    - Penetrance-weighted prevention impact: each newly-identified
+      Lynch carrier averts ~1.5 cancers (CRC + endometrial + other
+      Lynch-spectrum) over lifetime with annual surveillance +
+      risk-reducing surgery uptake at population rates
+
+  Outreach gaps + barriers:
+    - Most centers report 20-40% FDR participation in cascade testing
+      despite ACMG / NCCN recommendations — limited by patient-driven
+      outreach (HIPAA / GDPR constrain direct clinician-to-relative
+      contact), distance/geography, insurance coverage uncertainty,
+      psychological burden
+    - Registry-supported cascade outreach + direct mailing to relatives
+      (where ethically + legally permitted) improves uptake to ~60-70%
+      (Norway HUNT, Iceland deCODE, US Geisinger MyCode)
+    - Ukrainian context: no national hereditary cancer registry as of
+      2026-05-18; per-centre tracking; outreach yield estimated <20%
+
+  Special cascade scenarios:
+    - Pediatric-onset syndromes (FAP, LFS, VHL, MEN2, retinoblastoma,
+      DICER1, Beckwith-Wiedemann): test at age of surveillance entry
+      (5-12 depending on syndrome) — NOT at 18
+    - X-linked / autosomal-recessive syndromes (MUTYH biallelic):
+      cascade requires testing for BOTH alleles; carrier-vs-affected
+      distinction matters
+    - Mosaicism: ~5% of de novo APC / TP53 mutations are mosaic in
+      proband; cascade yield in offspring depends on germline penetrance
+      of the mosaic clone
+    - Anticipated cascade waves: every newly-identified carrier
+      generates ~3-5 future FDR cascades over their lifetime as
+      children + nieces/nephews reach testing age
+
+  Cited from RF-CONFIRMED-CARRIER-* RedFlag family + syndrome-specific
+  RF-* trigger logic for cascade routing.
+draft: true

@@ -1,0 +1,51 @@
+id: BIO-CALCITONIN-MTC
+names:
+  preferred: "Calcitonin (medullary thyroid carcinoma surveillance — MEN2 carriers)"
+  ukrainian: "Кальцитонін (нагляд медулярного раку щитоподібної залози — носії MEN2)"
+  english: "Calcitonin"
+  synonyms: ["serum calcitonin", "CTN"]
+biomarker_type: serum_marker
+measurement:
+  method: "Serum two-site immunometric assay (calibrated against IRP 89/620 or equivalent)"
+  units: "pg/mL"
+  typical_range: [0, 10]
+specimen_requirements:
+  - "Serum (5 mL clotted blood); fasting morning preferred"
+  - "LOINC 1992-7 (calcitonin)"
+  - "Gender-specific cutoffs (female <5, male <10 pg/mL typical)"
+clinical_context: [screening_surveillance]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: tumor_marker
+external_ids:
+  hgnc_symbol: CALCA
+  loinc: "1992-7"
+sources:
+  - SRC-NCCN-THYROID-2025
+  - SRC-ENDOCRINE-SOCIETY-MEN-2023
+last_reviewed: "2026-05-18"
+notes: >
+  Parafollicular C-cell secretory product — highly specific biomarker for
+  medullary thyroid carcinoma (MTC) and C-cell hyperplasia. ATA 2015 / NCCN
+  2025 surveillance for MEN2A/MEN2B carriers who DEFER prophylactic
+  thyroidectomy (rare, high-risk-codon discussion only): annual basal
+  calcitonin + neck US starting at age 3-5 (MEN2B) or 5 (MEN2A high-risk
+  codon) or 5-10 (MEN2A intermediate/low). Pentagastrin/calcium-stimulated
+  calcitonin historically used; pentagastrin no longer manufactured in
+  many regions. Basal calcitonin >10 pg/mL in MEN2 carrier → strong
+  indication for prophylactic thyroidectomy. After thyroidectomy
+  (prophylactic or therapeutic): post-operative calcitonin used to assess
+  cure (<2 pg/mL = biochemical cure) and detect recurrence (q6-12 month
+  surveillance). Calcitonin doubling time <6 months = aggressive
+  recurrence (worst prognosis). Procalcitonin can replace if assay
+  available. Falsely elevated in renal failure, pregnancy, autoimmune
+  thyroiditis. STUB pending two-Co-Lead signoff.
+notes_ua: >
+  Секреторний продукт парафолікулярних C-клітин — високо-специфічний
+  біомаркер медулярного раку щитоподібної залози. ATA 2015 / NCCN 2025:
+  щорічний базальний кальцитонін + УЗД шиї у носіїв MEN2A/MEN2B, що
+  відкладають профілактичну тиреоїдектомію. Кальцитонін >10 пг/мл у
+  носія MEN2 → сильне показання до тиреоїдектомії. STUB pending two-Co-Lead
+  signoff.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_surveillance_2026_05_18
+draft_revision: 1

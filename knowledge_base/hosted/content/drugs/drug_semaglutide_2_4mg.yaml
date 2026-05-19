@@ -1,0 +1,102 @@
+id: DRUG-SEMAGLUTIDE-2-4MG
+names:
+  preferred: "Semaglutide (2.4 mg obesity dose)"
+  ukrainian: "Семаглутид (2.4 мг — обезіта-доза)"
+  english: "Semaglutide (2.4 mg)"
+  brand_names: ["Wegovy"]
+atc_code: A10BJ06
+rxnorm_id: "1991302"
+drug_class: "GLP-1 receptor agonist (long-acting, once-weekly)"
+mechanism: >
+  Human glucagon-like peptide-1 analog (94% homology) with albumin-
+  binding sidechain extending half-life to ~1 week. Activates GLP-1
+  receptors in pancreas (glucose-dependent insulin secretion + glucagon
+  suppression), GI tract (delayed gastric emptying), and CNS
+  (hypothalamic satiety signaling, reward-circuit modulation).
+  At obesity dose (2.4 mg weekly), produces ~12-15% mean weight loss
+  vs ~2-3% on placebo (STEP trials). Obesity is associated with ~13
+  cancers (IARC/WCRF) — sustained weight loss is a cancer-prevention
+  intervention.
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 2021  # Wegovy obesity indication; Ozempic T2DM since 2017
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Ozempic (semaglutide 0.5/1 mg) registered in Ukraine for T2DM. Wegovy (2.4 mg obesity dose) limited availability as of 2026-05; not on НСЗУ. Out-of-pocket."
+typical_dosing: >
+  SC: dose escalation over 16-20 weeks to limit GI side effects:
+    Week 1-4: 0.25 mg SC weekly
+    Week 5-8: 0.5 mg SC weekly
+    Week 9-12: 1.0 mg SC weekly
+    Week 13-16: 1.7 mg SC weekly
+    Week 17 onward: 2.4 mg SC weekly (maintenance)
+  Inject SC abdomen / thigh / upper arm any day of the week; rotate sites.
+formulations:
+  - "SC pen 0.25 mg / 0.5 mg / 1 mg / 1.7 mg / 2.4 mg per injection (single-use Wegovy pens)"
+
+absolute_contraindications:
+  - "Personal or family history of medullary thyroid carcinoma (MTC)"
+  - "Multiple endocrine neoplasia type 2 (MEN2)"
+  - "Hypersensitivity to semaglutide"
+  - "Pregnancy (discontinue ≥2 months before planned conception due to long half-life)"
+black_box_warnings:
+  - "Risk of thyroid C-cell tumors — rodent carcinogenicity studies showed dose-dependent MTC and C-cell hyperplasia; human relevance unknown but precautionary contraindication for MTC/MEN2"
+major_interactions:
+  - "Delayed gastric emptying — may affect oral medication absorption (especially levothyroxine, narrow-therapeutic-index drugs); monitor and time apart"
+  - "Other glucose-lowering agents (insulin, sulfonylureas) — hypoglycemia risk; reduce sulfonylurea/insulin doses when initiating"
+  - "Warfarin — monitor INR for transient changes"
+common_adverse_events:
+  - "Nausea (~44%; usually mild-moderate; titration limits)"
+  - "Diarrhea (~30%)"
+  - "Constipation (~24%)"
+  - "Vomiting (~24%)"
+  - "Abdominal pain (~20%)"
+  - "Headache (~14%)"
+  - "Fatigue (~11%)"
+  - "Dyspepsia (~9%)"
+  - "Injection-site reactions (~6%)"
+serious_adverse_events:
+  - "Acute pancreatitis (rare; discontinue and evaluate)"
+  - "Acute kidney injury (from dehydration / severe vomiting)"
+  - "Gallbladder disease, cholelithiasis (~3% — accelerated weight loss + GLP-1 effect)"
+  - "Diabetic retinopathy worsening in T2DM (SUSTAIN-6 signal)"
+  - "Severe hypoglycemia (with sulfonylurea/insulin)"
+  - "Hypersensitivity, anaphylaxis"
+  - "Suicidal ideation (label warning; rare)"
+  - "Possible thyroid C-cell tumors (unproven in humans)"
+
+pharmacology: {half_life_hours: 168, clearance: "Proteolytic degradation; renal and biliary excretion of metabolites; albumin-bound (~99%)"}
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. Wegovy (semaglutide 2.4 mg) is
+  first-in-class GLP-1 RA approved specifically for chronic obesity
+  management. ~12-15% sustained weight loss in STEP trials. Obesity is
+  associated with 13+ cancers per IARC/WCRF — pharmacotherapy is a
+  recognized component of weight-loss strategy when behavioral approaches
+  fail. Source cited is closest in-KB until USPSTF/AACE/WCRF obesity-
+  pharmacotherapy sources land in source-stub workstream.
+
+notes_ua: >
+  Wegovy (семаглутид 2.4 мг) — перший у класі GLP-1 RA, схвалений
+  спеціально для хронічного управління ожирінням. У дослідженнях
+  STEP досягнуто ~12-15% стійкого зниження ваги. Ожиріння асоціюється
+  з 13+ типами раку (IARC/WCRF) — фармакотерапія є визнаним
+  компонентом стратегії зниження ваги при неефективності поведінкового
+  підходу.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_drugs_batch2
+draft_revision: 1

@@ -1,0 +1,140 @@
+id: ALGO-MMRPRO
+applicable_to_disease: DIS-CRC
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention. Anchored to DIS-CRC because Lynch
+# syndrome (MMR carrier prediction) is dominated by CRC pedigree input
+# + CRC output. Reach extends to DIS-ENDOMETRIAL, DIS-GASTRIC, DIS-
+# OVARIAN, DIS-UROTHELIAL, DIS-PROSTATE, DIS-PDAC (Lynch spectrum).
+purpose: >
+  MMRPRO Bayesian carrier-probability calculator (Chen et al. JAMA
+  2006). Computes posterior probability that an individual carries a
+  germline pathogenic variant in any of MLH1, MSH2, MSH6 (later
+  extended to PMS2 + EPCAM in updates), given their pedigree of
+  Lynch-spectrum cancers + ages-at-diagnosis. Bayesian framework
+  parallel to BRCAPRO (BayesMendel suite, Berry / Parmigiani /
+  Chen group at Dana-Farber / Harvard).
+
+  Threshold of ≥5% carrier probability is the NCCN testing-
+  recommendation cutoff; ≥2.5% is the broader testing-suggested
+  threshold matching PREMM5 conventions. Performance comparable to
+  PREMM5 (ALGO-PREMM5-LYNCH) and MMRPredict, but Bayesian framework
+  gives finer family-history dependence than PREMM's regression-based
+  weights.
+
+output_indications:
+  - IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Genetic counseling + germline MMR/EPCAM panel referral is the first
+# action within the surveillance pathway. Algorithm routes only to the
+# surveillance Indication to satisfy the algorithm-routing contract.
+
+decision_tree:
+  - step: 1
+    # High-confidence carrier threshold ≥15-20%. Pedigrees with
+    # multiple Lynch-spectrum cancers + early-onset CRC + endometrial.
+    evaluate:
+      any_of:
+        - condition: "MMRPRO combined MLH1 + MSH2 + MSH6 + PMS2 carrier probability ≥20%"
+    if_true:
+      result: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "MMRPRO ≥20% — strong indication for germline MMR/EPCAM panel testing + genetic counseling. Diagnostic yield ~40-50% at this threshold. Order tumor MMR-IHC / MSI on proband tissue if available + germline panel concurrently for maximum diagnostic efficiency."
+    if_false:
+      next_step: 2
+  - step: 2
+    # NCCN testing-recommendation threshold ≥5%.
+    evaluate:
+      any_of:
+        - condition: "MMRPRO combined MLH1 + MSH2 + MSH6 + PMS2 carrier probability ≥5%"
+    if_true:
+      result: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "MMRPRO ≥5% — NCCN testing-recommendation threshold met. Refer for genetic counseling + germline MMR/EPCAM panel. Diagnostic yield ~15-20% at this threshold."
+    if_false:
+      next_step: 3
+  - step: 3
+    # PREMM5-aligned broader threshold ≥2.5%.
+    evaluate:
+      any_of:
+        - condition: "MMRPRO combined MLH1 + MSH2 + MSH6 + PMS2 carrier probability ≥2.5%"
+    if_true:
+      result: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "MMRPRO ≥2.5% — broader testing-suggested threshold (parallel to PREMM5 cutoff). Genetic counseling for shared decision; many programs offer testing at this range given falling cost + high impact. Default-route to enhanced empirical-surveillance pathway if testing declined."
+    if_false:
+      result: false
+      notes: "MMRPRO <2.5% — low-to-average Lynch carrier probability. General-population CRC screening per USPSTF (colonoscopy q10y from 45, or per personal risk-stratification) unless other risk factors present. Re-evaluate MMRPRO with new family-history events. Consider PREMM5 (ALGO-PREMM5-LYNCH) as cross-check; modern Dana-Farber practice computes both."
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-ESMO-CRC-2024
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding MMRPRO Bayesian
+  carrier-probability calculator (Chen S, Wang W, Lee S et al.
+  Prediction of germline mutations and cancer risk in the Lynch
+  syndrome. JAMA 2006;296:1479-1487. PMID 17003396 for the original
+  MLH1+MSH2+MSH6 model; updates extending to PMS2 + EPCAM published
+  in Mercado RC, Hampel H et al. Performance of PREMM(1,2,6),
+  MMRpredict, and MMRPro in detecting Lynch syndrome among
+  endometrial cancer cases. Genet Med 2012;14:670-680. PMID 22481131
+  for validation comparison). Primary-paper Source entities (SRC-CHEN-
+  2006-MMRPRO, SRC-MERCADO-2012-MMRPRO-VALIDATION) are v0.2-B
+  authoring backlog.
+
+  Anchored to DIS-CRC; reach extends to all Lynch-spectrum
+  diseases — see ALGO-PREMM5-LYNCH notes for the disease list.
+
+  Performance characteristics (Chen 2006 + Mercado 2012 validation):
+    - AUC ~0.83 for combined MMR mutation detection
+    - Sensitivity at ≥5% threshold: ~70%
+    - Specificity at ≥5% threshold: ~80%
+    - Calibration good in CRC + endometrial cancer pedigrees;
+      less validated in extracolonic Lynch-spectrum (urothelial,
+      gastric, hepatobiliary, brain, sebaceous skin)
+    - Performance comparable to PREMM5 in head-to-head Mercado 2012
+      comparison; ensemble (MMRPRO + PREMM5 max) marginally
+      outperforms either alone
+
+  Model availability:
+    - Part of BayesMendel R package (open-source, academic free use)
+      https://projects.iq.harvard.edu/bayesmendel/
+    - Web-tool delivery via CancerGene at Dana-Farber (free academic
+      use; commercial requires license)
+    - No public REST API; algorithm here is a declarative scoring
+      rule referencing standardized MMRPRO outputs, not the
+      calculator itself
+
+  Tumor-tissue-first vs germline-first:
+    - MSI / MMR-IHC on proband tumor (when available) is the standard
+      first-line workup in CRC + endometrial cancer (NCCN universal
+      Lynch screening) — yields ~95% sensitivity for Lynch carriers
+    - MMRPRO is most useful when proband-tumor tissue is unavailable
+      (decedent proband, archival sampling not possible, screening
+      in unaffected relative) OR for cascade-counseling stratification
+      ahead of single-site testing
+    - In modern practice: tumor MMR-IHC → if deficient, BRAF + MLH1
+      methylation reflex → if still suspicious, germline panel.
+      MMRPRO + PREMM5 carrier-probability tools are pre-tumor or
+      pedigree-only-input use cases.
+
+  Comparison vs PREMM5:
+    - Both target the same gene set
+    - PREMM5: continuous regression-based; faster to interpret;
+      requires fewer pedigree fields
+    - MMRPRO: Bayesian-pedigree; more pedigree fields = better
+      output; transparent allele-frequency + penetrance assumptions
+    - Mercado 2012: head-to-head AUC ~0.80 (PREMM5) vs ~0.81
+      (MMRPRO) — statistically equivalent; Dana-Farber practice
+      uses both
+    - Modern centers increasingly default to PREMM5 for ease + use
+      MMRPRO when family pedigree is complex or PREMM5 borderline
+
+  Cited from RF-LYNCH-FAMILY-HISTORY-SUSPICION trigger
+  `family_mmrpro_score_ge_5pct`. ALGO-AMSTERDAM-II-LYNCH + ALGO-
+  REVISED-BETHESDA-LYNCH + ALGO-PREMM5-LYNCH are the parallel
+  approaches; modern NCCN consensus uses Lynch-tumor-screening
+  (MSI/IHC) as the primary first-line + carrier-probability tools
+  as adjunct.
+draft: true

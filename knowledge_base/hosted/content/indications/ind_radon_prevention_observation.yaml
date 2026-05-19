@@ -1,0 +1,69 @@
+id: IND-RADON-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-RADON-MALIGNANCY-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Without radon mitigation: continued elevated lung cancer risk. Routine general-population USPSTF screening (no radon-adjustment) captures some early-stage cases but lower sensitivity than radon-adjusted LDCT schedule."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-RADON-PREVENTION-MITIGATION-AND-SCREENING.
+  Patient declines radon mitigation (cost, rental status, structural constraints)
+  but accepts routine general-population USPSTF lung screening cadence. Smoking
+  cessation counseling continues. Per CHARTER §11 patient-autonomy framing.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до IND-RADON-PREVENTION-
+  MITIGATION-AND-SCREENING. Пацієнт відмовляється від radon mitigation (вартість,
+  rental статус, структурні обмеження), але приймає routine general-population
+  USPSTF lung screening cadence. Smoking cessation counseling продовжується.
+  Per CHARTER §11 framing автономії пацієнта.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_completion
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не презентувати observation як еквівалент mitigation + LDCT — incidence-reduction відсутній."
+  - "Не пропускати smoking cessation counseling — це найбільш впливова інтервенція незалежно від mitigation статусу."
+  - "Не використовувати цей шлях у occupational uranium miners — їх ризик значно вищий, потрібна агресивна surveillance."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to mitigation + LDCT — incidence-reduction is absent."
+  - "Do not skip smoking cessation counseling — it is the most impactful intervention regardless of mitigation status."
+  - "Do not use this pathway in occupational uranium miners — their risk is substantially higher, aggressive surveillance is needed."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track companion for radon prevention. §15.2 C4 ≥2-tracks invariant compliance."

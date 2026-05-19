@@ -1,0 +1,56 @@
+id: BMA-CFDNA-MCED-MULTI-CANCER-SCREENING
+biomarker_id: BIO-CFDNA-METHYLATION-MCED
+variant_qualifier: Cell-free DNA methylation signature — multi-cancer signal
+disease_id: DIS-CRC
+escat_tier: IIIA
+evidence_summary: >
+  Plasma cell-free DNA methylation classifiers (Galleri-style multi-cancer
+  early detection / MCED) detect a cancer signal across 50+ tumour types
+  with tissue-of-origin prediction. PATHFINDER (Schrag 2023) prospectively
+  demonstrated feasibility (specificity ~99.5%, PPV ~38%) but MCED is NOT
+  yet endorsed by USPSTF, NCCN, or ESMO as screening. SYMPLIFY (NHS, 2023)
+  evaluated symptomatic-patient triage. DIS-CRC anchor reflects the
+  best-characterized signal class; the assay is intentionally multi-cancer
+  and not disease-specific. Research-level evidence (ESCAT IIIA / CIViC C);
+  cannot replace established screening (FIT, colonoscopy, mammography,
+  LDCT) per current guidance.
+regulatory_approval:
+  fda:
+  - Galleri — LDT (CLIA), not FDA-approved as of 2026-05; FDA modernisation
+    pathway pending
+  ema: []
+  ukraine: []
+recommended_combinations: []
+contraindicated_monotherapy: []
+primary_sources:
+- SRC-CIVIC
+last_verified: '2026-05-18'
+evidence_sources:
+- source: SRC-CIVIC
+  level: C
+  evidence_ids: []
+  evidence_lane: trial_research_option
+  note: >
+    MCED is currently a research/early-adopter category. CIViC does not yet
+    track an MCED-specific record; placeholder C-level entry to reflect
+    research-only actionability lane. Update when CIViC adds MCED entries
+    or a guideline endorsement lands.
+actionability_review_required: true
+indications: []
+notes: |
+  STUB pending two-Co-Lead signoff. MCED (Grail Galleri, Exact Sciences
+  Cancerguard, others) is positioned as an ADJUNCT to USPSTF-endorsed
+  screening, NOT a replacement. Outside CHARTER §2 non-commercial scope
+  to recommend any specific brand; render layer must surface
+  "investigational / research-only" framing.
+
+  No surveillance/screening Indication entity exists yet that ingests an
+  MCED-positive signal — pending a future
+  IND-MCED-POSITIVE-WORKUP entity scoped to coordinate tissue-of-origin
+  workup (PET/CT, site-directed endoscopy/imaging) after a positive MCED
+  call. Until that exists, indications: [] is intentional.
+
+  Anchor disease set to DIS-CRC because GRAIL CCGA sub-study reported
+  strong signal in CRC and CRC is the most clinically-tractable post-MCED
+  workup target; the underlying assay is multi-cancer and a future
+  multi-tumor index entity may be appropriate.

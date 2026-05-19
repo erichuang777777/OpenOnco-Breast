@@ -1,0 +1,224 @@
+id: IND-BRCA-CARRIER-INTENSIFIED
+plan_track: aggressive
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-BRCA-CONFIRMED-CARRIER
+
+# Surgical interventions (RRM, RRSO) are not Regimen entities;
+# discussed in rationale + do_not_do, not encoded as recommended_regimen.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Intensified track layers two evidence-supported risk-reducing
+    surgical options on top of the standard NCCN surveillance
+    protocol. (1) Risk-reducing mastectomy (RRM) reduces breast
+    cancer incidence by ~90% in confirmed BRCA carriers (Hartmann
+    1999, Rebbeck 2004, Domchek 2010 meta-analyses). Mortality
+    benefit demonstrated in cohort follow-up. (2) Risk-reducing
+    bilateral salpingo-oophorectomy (RRSO) reduces ovarian cancer
+    incidence by ~80-90% and all-cause mortality by ~30-40% in
+    confirmed BRCA carriers (Domchek 2010). Pre-menopausal RRSO
+    additionally reduces breast cancer incidence by ~50%
+    (controversial — magnitude debated post-WHI). Both surgeries
+    are appropriate for shared-decision discussion; neither is
+    mandated.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Aggressive-track confirmed-carrier pathway: layered on top of the
+  IND-BRCA-CARRIER-SURVEILLANCE standard protocol with two
+  evidence-based risk-reducing surgical options that escalate beyond
+  surveillance alone.
+
+  **Foundation:** All standard surveillance from IND-BRCA-CARRIER-
+  SURVEILLANCE applies (annual breast MRI from 25 / 30 alternating
+  with mammogram from 30; CBE q6mo; TVUS + CA-125 q6mo from 30-35
+  framed honestly; PSA + DRE for BRCA2 men from 40; pancreatic
+  surveillance per CAPS criteria).
+
+  **Intensification 1 — Risk-reducing mastectomy (RRM, women,
+  age 25-30+):** RRM reduces breast cancer incidence by ~90% in
+  confirmed BRCA carriers — strongest documented risk-reduction
+  intervention available. Timing: age 25-30 for BRCA1 (earlier
+  median onset); age 30-35 for BRCA2. Shared-decision-making must
+  cover:
+    - Surgical risk (multi-stage reconstruction, complications,
+      revision rate)
+    - Sensation loss / body image / sexual function impact
+    - Reconstruction options (implant vs autologous DIEP / TRAM;
+      nipple-sparing vs simple); each with distinct cosmetic /
+      functional / oncologic trade-offs
+    - Residual risk (~5-10% residual breast tissue at axilla / chest
+      wall — surveillance continues at reduced cadence post-RRM)
+    - Reversibility: NONE — RRM is irreversible
+    - Alternative: continued intensive surveillance with annual MRI
+      (next-strongest risk reduction; no incidence reduction but
+      stage-shift on detection)
+  Urgency differs: BRCA1 carriers face earlier-median breast cancer
+  diagnosis (~40), motivating earlier RRM discussion. BRCA2
+  carriers (median ~45) have more flexibility for surveillance-
+  first deferral.
+
+  **Intensification 2 — Risk-reducing BSO (RRSO, women,
+  post-childbearing):** RRSO is the canonical BRCA-spectrum
+  prophylactic surgery. Reduces ovarian cancer incidence by
+  ~80-90% and all-cause mortality by ~30-40%. Timing:
+    - BRCA1: age 35-40 (or upon completion of childbearing,
+      whichever later) — earlier age reflects earlier-median
+      ovarian cancer onset in BRCA1 (~50) vs BRCA2 (~60).
+    - BRCA2: age 40-45 (post-childbearing).
+  Shared-decision-making must cover:
+    - Surgical menopause sequelae (vasomotor symptoms, bone
+      density, cardiovascular risk)
+    - Hormone replacement therapy (HRT) — in BRCA carriers
+      WITHOUT prior breast cancer, short-course estrogen-only HRT
+      (post-RRSO) to natural menopause age (~50) is generally
+      considered acceptable and does NOT meaningfully increase
+      breast cancer risk (REBECCA, Rebbeck 2004). Combined
+      estrogen-progestin HRT is more nuanced — discussed
+      individually. This contrasts with Lynch BSO where HRT
+      tolerance is straightforward; in BRCA carriers, the
+      decision is more complex but not categorically forbidden.
+    - Fertility planning (must precede surgery; preserve oocytes /
+      embryos if future fertility desired)
+    - Salpingectomy-alone option (interval RRSO; oophorectomy
+      delayed) is investigational; not standard of care.
+    - Alternative: continued TVUS + CA-125 surveillance with
+      honest framing of poor sensitivity for early-stage disease
+
+  **Intensification 3 — Chemoprevention (limited role):** Tamoxifen
+  or raloxifene chemoprevention has documented breast cancer
+  incidence reduction in moderate-risk populations (NSABP P-1,
+  STAR); in BRCA carriers specifically, evidence is conflicting and
+  effect smaller than RRM. Tamoxifen may reduce risk in BRCA2 but
+  not BRCA1. Discussed individually; not standard recommendation.
+
+  **Other intensification considerations:**
+    - Empirical PARP inhibitor chemoprevention is investigational;
+      not licensed; do NOT prescribe outside trial setting.
+    - Cascade testing remains continuous responsibility — every
+      visit re-confirms family's testing status, especially male
+      relatives.
+
+  Per CHARTER §11: prophylactic surgery is a classic shared-
+  decision-making domain. Patient autonomy is paramount; neither
+  RRM nor RRSO is mandated, and both have legitimate decline
+  options (standard surveillance from IND-BRCA-CARRIER-
+  SURVEILLANCE remains the floor).
+
+rationale_ua: >
+  Aggressive-трекова Indication: накладена поверх IND-BRCA-CARRIER-
+  SURVEILLANCE стандартного протоколу з двома evidence-based risk-
+  reducing хірургічними опціями.
+
+  **Foundation:** Усе стандартне спостереження з IND-BRCA-CARRIER-
+  SURVEILLANCE застосовується.
+
+  **Інтенсифікація 1 — Risk-reducing мастектомія (RRM, жінки,
+  вік 25-30+):** RRM зменшує захворюваність breast cancer на ~90%
+  у підтверджених BRCA-носіїв — найсильніше задокументоване
+  risk-reduction втручання. Час: вік 25-30 для BRCA1 (earlier
+  median onset); вік 30-35 для BRCA2. Shared-decision-making має
+  охоплювати: хірургічний ризик, втрата чутливості / body image /
+  сексуальна функція, опції реконструкції, residual ризик
+  (~5-10% residual breast tissue — surveillance continues at
+  reduced cadence post-RRM), незворотність, альтернативу
+  intensive surveillance.
+
+  **Інтенсифікація 2 — Risk-reducing BSO (RRSO, жінки,
+  post-childbearing):** RRSO зменшує захворюваність ovarian cancer
+  на ~80-90% та all-cause mortality на ~30-40%. Час: BRCA1 — вік
+  35-40 post-childbearing; BRCA2 — вік 40-45 post-childbearing.
+  Shared-decision-making має охоплювати: surgical menopause
+  sequelae, HRT (у BRCA-носіїв WITHOUT prior breast cancer,
+  short-course estrogen-only HRT post-RRSO до natural menopause
+  age ~50 generally considered acceptable та НЕ meaningfully
+  increases breast cancer ризик; combined estrogen-progestin
+  more nuanced), fertility planning, salpingectomy-alone option
+  investigational, альтернативу.
+
+  **Інтенсифікація 3 — Chemoprevention (обмежена роль):** Tamoxifen
+  або raloxifene chemoprevention має задокументоване incidence
+  reduction у moderate-risk populations; у BRCA-носіях evidence
+  conflicting та ефект менший за RRM. Tamoxifen може зменшити
+  ризик у BRCA2, але не BRCA1. Обговорюється індивідуально.
+
+  **Інші міркування інтенсифікації:** empirical PARP inhibitor
+  chemoprevention investigational; cascade testing continuous
+  responsibility.
+
+  Per CHARTER §11: prophylactic хірургія — класичний shared-
+  decision-making домен. Жодне з втручань не є обов'язковим.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_confirmed_carrier
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Risk-reducing mastectomy reduces breast cancer incidence by
+      approximately 90% in BRCA1 / BRCA2 carriers; risk-reducing
+      bilateral salpingo-oophorectomy is recommended between ages
+      35-40 (BRCA1) or 40-45 (BRCA2) after completion of
+      childbearing, with documented reduction in ovarian cancer
+      incidence and all-cause mortality."
+  - source_id: SRC-NCCN-BREAST-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Risk-reducing mastectomy is an acceptable option for confirmed
+      BRCA carriers, with shared decision-making covering surgical
+      risk, reconstruction options, and the alternative of intensive
+      MRI-based surveillance."
+  - source_id: SRC-NCCN-OVARIAN-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Risk-reducing bilateral salpingo-oophorectomy is the
+      evidence-based intervention for ovarian cancer risk reduction
+      in BRCA carriers; surveillance with TVUS + CA-125 has poor
+      sensitivity for early-stage disease and is offered only as
+      bridge to RRSO."
+
+do_not_do:
+  - "Не призначати risk-reducing хірургію як обов'язкову — це shared-decision-making домен, з повним обговоренням ризику / користі / альтернатив / незворотності."
+  - "Не використовувати estrogen-progestin HRT routinely post-RRSO у BRCA-носіїв без individualized оцінки — combined HRT може скромно підвищувати breast cancer ризик; estrogen-only до natural menopause age generally acceptable."
+  - "Не використовувати empirical PARP inhibitor chemoprevention поза clinical trial — currently investigational, not licensed."
+  - "Не пропускати fertility planning перед RRSO — preserve oocytes / embryos якщо future fertility desired; це часто опускається у urgent scheduling."
+  - "Не презентувати salpingectomy-alone (interval RRSO) як standard of care — investigational; oophorectomy лишається стандартним RRSO компонентом."
+
+do_not_do_en:
+  - "Do not present risk-reducing surgery as mandatory — shared-decision-making with full discussion of risk / benefit / alternatives / irreversibility."
+  - "Do not use combined estrogen-progestin HRT routinely post-RRSO in BRCA carriers without individualized assessment — combined HRT may modestly increase breast cancer risk; estrogen-only to natural-menopause age is generally acceptable."
+  - "Do not use empirical PARP inhibitor chemoprevention outside a clinical trial — currently investigational and not licensed."
+  - "Do not skip fertility planning before RRSO — preserve oocytes / embryos if future fertility is desired; this is often missed in urgent scheduling."
+  - "Do not present salpingectomy-alone (interval RRSO) as standard of care — investigational; oophorectomy remains the standard RRSO component."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B confirmed-carrier intensified track (BRCA). Sibling — IND-BRCA-CARRIER-SURVEILLANCE (standard plan_track). §15.2 C4 ≥2-tracks invariant compliance."

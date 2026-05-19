@@ -1,0 +1,158 @@
+id: IND-IATROGENIC-COMBINED-HRT-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-COMBINED-HRT-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: "Age-appropriate USPSTF mammographic screening (q2y women 40-74) + prompt symptom-prompted endometrial evaluation (TVUS + biopsy on any abnormal bleeding) achieves stage I detection in the vast majority of cases where HRT-attributable breast or endometrial cancer develops. WHI follow-up: combined HRT-attributable breast cancers tend to present at similar stage-distribution to spontaneous cancers when screening adherence maintained; endometrial cancers in HRT-exposed women on sequential / cyclic regimens present with bleeding ~95% of the time — symptom-prompted pathway is highly sensitive. Shared-decision review at year-5 of HRT use with discussion of step-down options."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Standard-track surveillance for combined HRT (estrogen + progestin)
+  ≥5 years. Components per NCCN Breast / Uterine + NAMS Position
+  Statement 2022 + ACOG + USPSTF:
+
+  **(1) Shared-decision discussion of risk-benefit** — review at
+  year 5 and annually thereafter. Benefits: vasomotor symptom
+  relief, GU symptom relief (if systemic vs vaginal-local
+  separated — vaginal estrogen is a distinct safer modality),
+  bone-mineral density preservation in select cohort. Risks:
+  breast cancer (+~8 cases per 10,000 woman-years at year 5;
+  attenuating after stop), VTE / stroke / coronary events in
+  women >60 or >10y post-menopause initiation, gallbladder
+  disease. Lowest effective dose + shortest duration principle.
+  Switch to vaginal estrogen for GU-symptom-only cohort.
+
+  **(2) Mammographic screening per USPSTF** — q2y ages 40-74.
+  Supplemental MRI / US NOT recommended on HRT exposure alone
+  (density-related supplemental imaging is a separate axis;
+  HRT can increase mammographic density, which independently
+  triggers state-level supplemental-screening laws).
+
+  **(3) Symptom-prompted endometrial workup** for women with
+  intact uterus on any HRT regimen — postmenopausal bleeding,
+  unexpected bleeding outside the planned progestin-withdrawal
+  bleed pattern (sequential regimens) → TVUS + endometrial
+  biopsy without delay. Persistent or recurrent bleeding despite
+  initial workup → hysteroscopy with directed biopsy. Routine
+  asymptomatic TVUS NOT recommended (false-positive rate;
+  no proven survival benefit).
+
+  **(4) Annual gynecologic exam** with pelvic exam + symptom
+  inquiry + breast clinical exam.
+
+  **(5) Sequential vs continuous combined regimen review** —
+  continuous combined (daily estrogen + daily progestin) has
+  the lowest endometrial-cancer signal; sequential / cyclic
+  regimens carry slightly higher risk. Discussion of switch
+  if patient is on sequential and remains amenorrhoeic naturally
+  ≥1 year post-menopause.
+
+  **(6) Estrogen-alone HRT contraindication in intact-uterus
+  women** — REPEATED at every annual review; if prescribed
+  estrogen-alone with intact uterus discovered, immediate
+  addition of progestin or transition off.
+
+  **(7) Cardiovascular + VTE risk factor review** — smoking,
+  hypertension, dyslipidemia, prior VTE/stroke history,
+  hypercoagulability — periodic reassessment because HRT
+  benefit-risk profile shifts with age and CV-risk evolution.
+
+  **(8) BMD assessment + alternative bone-protection options**
+  (bisphosphonates, denosumab if HRT-non-candidate) — bone-only
+  indication is rarely justification for ongoing HRT alone.
+
+  Goal: ensure shared decision-making is active, not default-
+  continuation; keep mammography on cadence; respond promptly
+  to bleeding.
+
+rationale_ua: >
+  Стандартний-трек surveillance для combined HRT (estrogen +
+  progestin) ≥5 років. Components per NCCN Breast / Uterine
+  + NAMS 2022 + ACOG + USPSTF:
+
+  **(1) Shared-decision discussion risk-benefit** — review
+  на 5р і щорічно. Benefits: vasomotor symptom relief, GU
+  symptom relief, BMD preservation. Risks: breast cancer
+  (+~8 випадків на 10,000 woman-years на 5р), VTE / stroke /
+  coronary events у жінок >60 або >10р post-menopause initiation,
+  gallbladder disease. Lowest effective dose + shortest duration.
+
+  **(2) Mammographic screening per USPSTF** — q2р у 40-74.
+  Supplemental MRI / US НЕ recommended на HRT exposure alone.
+
+  **(3) Symptom-prompted endometrial workup** для intact-
+  uterus жінок на будь-якому HRT regimen — postmenopausal
+  bleeding, unexpected bleeding поза planned withdrawal-pattern
+  (sequential regimens) → TVUS + endometrial biopsy без delay.
+
+  **(4) Annual gynecologic exam** з pelvic exam + symptom
+  inquiry + breast clinical exam.
+
+  **(5) Sequential vs continuous combined regimen review** —
+  continuous combined найменший endometrial signal.
+
+  **(6) Estrogen-alone HRT contraindication у intact-uterus
+  women** — REPEATED на кожному annual review.
+
+  **(7) Cardiovascular + VTE risk factor review** — smoking,
+  hypertension, dyslipidemia, prior VTE/stroke history.
+
+  **(8) BMD assessment + alternative bone-protection options.**
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_iatrogenic_batch3
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BREAST-2025
+    position: supports
+  - source_id: SRC-NCCN-UTERINE-2025
+    position: supports
+  - source_id: SRC-USPSTF-BREAST-2024
+    position: supports
+
+do_not_do:
+  - "Не призначати estrogen-alone HRT жінці з intact uterus — marked endometrial cancer ризик; завжди combined."
+  - "Не продовжувати HRT за default без shared-decision review на 5р + щорічно."
+  - "Не призначати рутинну asymptomatic TVUS screening — false-positive rate; no proven survival benefit; ACOG/NCCN against."
+  - "Не зупиняти HRT abruptly у симптоматичній жінці без обговорення step-down — vasomotor rebound."
+  - "Не нормалізувати unexpected або postmenopausal bleeding — TVUS + biopsy negotiable."
+  - "Не використовувати systemic HRT для GU-symptom-only — vaginal estrogen є safer modality."
+
+do_not_do_en:
+  - "Do not prescribe estrogen-alone HRT in a woman with intact uterus — marked endometrial-cancer risk; always pair with progestin."
+  - "Do not continue HRT by default without shared-decision review at year 5 and annually."
+  - "Do not order routine asymptomatic TVUS screening — false-positive rate, no proven survival benefit; ACOG/NCCN advise against."
+  - "Do not stop HRT abruptly in a symptomatic woman without discussing step-down — vasomotor rebound."
+  - "Do not normalize unexpected or postmenopausal bleeding — TVUS + biopsy non-negotiable."
+  - "Do not use systemic HRT for GU-symptom-only indication — vaginal estrogen is a safer modality."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 iatrogenic pilot (combined HRT ≥5y → breast + endometrial). Two-Clinical-Co-Lead signoff queued. Critical: estrogen-alone HRT in intact-uterus woman is contraindicated (not surveillance — prohibition). Surveillance pathway is for the combined-regimen cohort."

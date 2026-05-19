@@ -1,0 +1,129 @@
+# PROC-PROPHYLACTIC-COLECTOMY-FAP — Prophylactic total/subtotal colectomy
+# in classic FAP. §20 prevention-persona procedure (RATIFIED 2026-05-18).
+# `intent: curative` per §17.1 enum (no `preventive` value); risk-reducing
+# surgery in carriers is curative-intent removal of the at-risk organ to
+# eliminate near-100% lifetime CRC penetrance of unchecked classic FAP.
+id: PROC-PROPHYLACTIC-COLECTOMY-FAP
+names:
+  preferred: "Prophylactic total/subtotal colectomy for classic FAP"
+  ukrainian: "Профілактична тотальна/субтотальна колектомія при класичному САП"
+  english: "Prophylactic total/subtotal colectomy for classic FAP"
+  synonyms:
+    - "Risk-reducing proctocolectomy with IPAA"
+    - "Risk-reducing total abdominal colectomy with IRA"
+    - "Prophylactic colectomy in FAP"
+    - "RRC-FAP"
+
+# §17.1 free-string taxonomy; "preventive" is intent-domain, not type.
+type: risk_reducing_colectomy
+# §17.1 enum: curative | palliative | diagnostic | salvage. `curative`
+# captures risk-reducing surgery in carriers (organ removed before
+# malignancy emerges). The carrier-state framing is documented in `notes`.
+intent: curative
+
+target_organ: colon
+applicable_diseases:
+  - DIS-CRC
+
+# Mortality from large case series of risk-reducing colectomy in FAP
+# carriers; lower than therapeutic colectomy because patients are young
+# and otherwise healthy (Bisgaard 2006; NCCN Genetic/Familial CRC v3.2025).
+operative_mortality_pct: "<1% in young (<30 yr) otherwise-healthy FAP carriers at high-volume centers"
+
+common_complications:
+  - name: "Anastomotic leak (ileorectal or ileal pouch-anal anastomosis)"
+    frequency: "5-10% IPAA; 2-5% IRA"
+  - name: "Pouchitis (IPAA only — recurrent inflammation of ileal reservoir)"
+    frequency: "20-50% lifetime after IPAA"
+  - name: "Small bowel obstruction (adhesive)"
+    frequency: "10-25% lifetime"
+  - name: "Pelvic sepsis / abscess (IPAA)"
+    frequency: "5-15%"
+  - name: "Sexual / urinary dysfunction (pelvic dissection, IPAA)"
+    frequency: "5-20% transient; 1-5% persistent"
+  - name: "Female fecundity reduction (IPAA, pelvic adhesions)"
+    frequency: "30-50% reduction vs population baseline"
+  - name: "Stoma-related issues (when ileostomy required)"
+    frequency: "5-15%"
+  - name: "Rectal cancer in retained rectal stump (IRA pathway)"
+    frequency: "Cumulative risk 10-25% at 20+ yr post-IRA — lifelong stump surveillance mandatory"
+
+sources:
+  - SRC-BISGAARD-FAP-2006
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-NCCN-COLON-2025
+
+last_reviewed: "2026-05-18"
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_agent_aac98192634228af3
+draft_revision: 1
+
+patient_facing_summary:
+  english: >
+    In classic familial adenomatous polyposis (FAP), the colon develops
+    hundreds to thousands of polyps starting in adolescence and the
+    lifetime risk of colorectal cancer approaches 100% if the colon is
+    not removed. Surgical removal of the colon (colectomy) before cancer
+    develops is the standard of care, typically in the late teens or
+    early 20s after polyp burden, family preferences, and quality-of-life
+    trade-offs have been discussed. Two main operations are offered:
+    total proctocolectomy with ileal pouch-anal anastomosis (IPAA — the
+    rectum is also removed) or total abdominal colectomy with ileorectal
+    anastomosis (IRA — the rectum is kept and watched lifelong with
+    endoscopy). The choice depends on rectal polyp burden, the patient's
+    age, family-planning considerations, and preference. Both operations
+    are major abdominal surgery; recovery takes several weeks. Lifelong
+    surveillance of the remaining gastrointestinal tract (rectal stump
+    if IRA, ileal pouch, duodenum/ampulla) is required.
+  ukrainian: >
+    При класичному сімейному аденоматозному поліпозі (САП) у товстій
+    кишці з підліткового віку утворюються сотні–тисячі поліпів, і
+    довічний ризик колоректального раку наближається до 100%, якщо
+    кишку не видалити. Хірургічне видалення товстої кишки (колектомія)
+    до розвитку раку є стандартом медичної допомоги; зазвичай
+    виконується наприкінці підліткового або на початку 20-річного
+    віку після обговорення кількості поліпів, сімейних побажань та
+    компромісів щодо якості життя. Пропонуються дві основні операції:
+    тотальна проктоколектомія з ілео-анальним резервуарним
+    анастомозом (IPAA — видаляється і пряма кишка) або тотальна
+    абдомінальна колектомія з ілеоректальним анастомозом (IRA —
+    пряма кишка зберігається й пожиттєво спостерігається
+    ендоскопічно). Вибір залежить від кількості поліпів у прямій
+    кишці, віку, репродуктивних планів та преференцій пацієнта. Обидві
+    операції є великим абдомінальним втручанням; відновлення триває
+    кілька тижнів. Необхідне довічне спостереження за рештою
+    шлунково-кишкового тракту (куксою прямої кишки при IRA, ілеальним
+    резервуаром, дванадцятипалою кишкою та ампулою Фатера).
+
+notes: >
+  Classic FAP (APC pathogenic variant; ≥100 colorectal adenomas) carries
+  near-100% lifetime CRC risk if the colon is not removed (Bisgaard 2006,
+  Fam Cancer; NCCN Genetic/Familial CRC v3.2025). Timing is individualized
+  to polyp burden, polyp histology (any HGD or invasive), symptoms, and
+  patient readiness — typically late teens / early 20s. Two principal
+  operations:
+    - Total proctocolectomy with ileal pouch-anal anastomosis (IPAA):
+      removes colon + rectum; functional outcome generally good but
+      pouchitis (20-50% lifetime), pelvic dissection morbidity (sexual,
+      urinary, female fecundity), and pouch dysplasia surveillance are
+      lifelong issues.
+    - Total abdominal colectomy with ileorectal anastomosis (IRA):
+      preserves rectum; lower acute morbidity but mandatory lifelong
+      rectal-stump endoscopic surveillance and cumulative 10-25% rectal
+      cancer risk by 20+ yr requires consideration of completion
+      proctectomy in surveillance failures or high rectal polyp burden.
+
+  Risk-reducing colectomy in FAP carriers is `intent: curative` per the
+  §17.1 enum (curative | palliative | diagnostic | salvage). The schema
+  does not yet define a `preventive` intent; the carrier-state framing
+  applies — surgery removes the at-risk organ before malignancy develops.
+
+  Lifelong upper-GI surveillance (duodenum/ampulla per Spigelman staging)
+  continues post-colectomy because FAP also carries elevated duodenal /
+  ampullary, thyroid, and desmoid risk that surgery does not address.
+
+  ID prefix is `PROC-*` per §20 prevention-persona file allowlist
+  (chunk procedures-prevention-2026-05-18) rather than the legacy
+  `SUR-*` used by treatment-time surgical entities; both prefixes
+  resolve through the same loader pathway and engine integration is
+  deferred to v0.2.

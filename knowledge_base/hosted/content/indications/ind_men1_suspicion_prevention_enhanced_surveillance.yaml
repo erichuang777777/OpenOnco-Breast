@@ -1,0 +1,165 @@
+id: IND-MEN1-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-PNET
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-MEN1-FAMILY-HISTORY-SUSPICION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Empirical multi-organ MEN1 surveillance (parathyroid biochemistry
+    q1y from age 5; pituitary biochemistry q1y from age 5; pituitary
+    MRI q3y from age 5; GEP-NET biochemistry + abdominal MRI q1y from
+    age 10; chest CT q1-2y from age 20): expected to capture clinically
+    actionable lesions at earliest detectable stage in the subset who
+    are actual MEN1 carriers (~30-90% of pedigree-suspicion individuals
+    depending on phenotype stringency). Does NOT carry the diagnostic
+    certainty of genetic testing — non-carriers receive a substantial
+    surveillance burden that could have been safely declined (including
+    cumulative MRI / CT exposure), and cascade-testing benefit for
+    relatives is lost.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-MEN1-SUSPICION-PREVENTION-GENETIC-
+  COUNSELING. Patient with pedigree suspicion of MEN1 who declines
+  genetic counseling and/or germline MEN1 testing — for any reason
+  (cost, insurance concerns, psychological / anxiety considerations,
+  family privacy, geographic access constraints) — is offered
+  empirical multi-organ surveillance applied as if MEN1 were
+  confirmed:
+
+  **Parathyroid:** Annual serum calcium + intact PTH starting age 5
+  (or earlier in known-pathogenic-variant families where confirmed
+  testing was declined). Primary hyperparathyroidism is the earliest
+  and most penetrant MEN1 manifestation; biochemistry-only screening
+  is inexpensive and high-yield.
+
+  **Pituitary:** Annual prolactin + IGF-1 starting age 5; pituitary
+  MRI q3-5 years starting age 5 (lower-intensity than the carrier-
+  confirmation q3y protocol because pre-test probability is lower).
+  Symptom-driven imaging escalation (headache, visual change, growth
+  acceleration, galactorrhea, amenorrhea).
+
+  **GEP-NETs:** Annual chromogranin-A + fasting gastrin + fasting
+  glucose / insulin + pancreatic-polypeptide starting age 10. Annual
+  abdominal MRI starting age 15 (lower-intensity than the carrier-
+  confirmation age-10 start because pre-test probability is lower and
+  cumulative MRI burden warrants more caution). EUS as adjunct if
+  MRI ambiguous.
+
+  **Chest CT:** Q1-2 years from age 25 in adolescent / young-adult
+  men with pedigree suspicion of MEN1 (thymic NET surveillance —
+  this is the highest-stakes empirical recommendation because thymic
+  NETs are aggressive in male MEN1 carriers and mortality benefit
+  of pre-symptomatic detection is documented). Discuss radiation
+  burden in shared decision-making.
+
+  **Adrenal:** Captured incidentally on abdominal MRI; biochemistry
+  only if mass detected.
+
+  Per CHARTER §11 patient-autonomy framing: genetic testing is a
+  shared-decision-making domain. Patients who decline testing retain
+  access to surveillance benefit, with the caveat that empirical
+  surveillance lacks the diagnostic precision of confirmed genetic
+  status — and the cascade-testing benefit for relatives is lost.
+  Periodic re-discussion of testing is appropriate; this pathway does
+  not preclude future genetic testing.
+
+  Routing reconsiderations: if patient eventually accepts germline
+  testing, results reroute to (a) confirmed-carrier pathway, (b)
+  general-population pathway, or (c) continued pedigree-suspicion if
+  VUS.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до IND-MEN1-SUSPICION-
+  PREVENTION-GENETIC-COUNSELING. Пацієнт з родовідною підозрою на
+  MEN1, який відмовляється від генетичного консультування та/або
+  germline MEN1-тестування — з будь-якої причини (вартість, страхові
+  міркування, психологічні / тривожні міркування, сімейна приватність,
+  географічні обмеження доступу) — отримує empіричне мульти-органне
+  спостереження як якщо б MEN1 був підтверджений:
+
+  **Паращитоподібні залози:** Щорічний сироватковий кальцій + інтактний
+  PTH з 5 років. Первинний гіперпаратиреоз — найраніший і найбільш
+  пенетрантний прояв MEN1; біохімічний-only скринінг недорогий і
+  високо-виходний.
+
+  **Гіпофіз:** Щорічні пролактин + IGF-1 з 5 років; MRI гіпофіза
+  q3-5 років з 5 років (менш інтенсивно ніж протокол при підтвердженому
+  носійстві q3y, бо pre-test probability нижча). Symptom-driven
+  ескалація візуалізації (головний біль, зміна зору, прискорення
+  росту, галакторея, аменорея).
+
+  **GEP-NET:** Щорічні хромогранін-A + натще гастрин + натще глюкоза /
+  інсулін + панкреатичний поліпептид з 10 років. Щорічне MRI абдомену
+  з 15 років (менш інтенсивно ніж протокол при підтвердженому носійстві
+  з 10 років, бо pre-test probability нижча, і кумулятивний MRI тягар
+  виправдовує більшу обережність). EUS як ад'ювант якщо MRI
+  неоднозначна.
+
+  **CT грудної клітки:** Q1-2 роки з 25 років у юнаків / молодих
+  чоловіків з родовідною підозрою на MEN1 (тимічне NET спостереження
+  — це highest-stakes empіричне рекомендація, бо тимічні NET агресивні
+  у чоловіків-носіїв MEN1 і mortality benefit pre-symptomatic
+  detection документовано). Обговорення радіаційного тягаря в
+  shared decision-making.
+
+  **Наднирники:** Фіксуються інцидентально на MRI абдомену; біохімія
+  лише при виявленні утворення.
+
+  Per CHARTER §11 framing автономії пацієнта.
+
+  Reroute: якщо пацієнт врешті приймає germline тестування,
+  результати маршрутизуються до (а) confirmed-carrier шлях, (б)
+  general-population шлях, або (в) продовжена pedigree-підозра при VUS.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_hereditary_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-NET-2025
+    position: supports
+
+do_not_do:
+  - "Не презентувати enhanced surveillance як еквівалент genetic confirmation — diagnostic precision відсутня; cascade-testing benefit для родичів втрачається."
+  - "Не починати дитячий MRI-протокол (пітуітарний / абдомінальний) у emp​іричному спостереженні без підтвердженого носійства або сильного біохімічного сигналу — кумулятивний MRI тягар + ризик седації у дитини мають бути збалансовані."
+  - "Не пропускати periodic re-discussion про genetic testing — більшість пацієнтів врешті приймають тестування після додаткових візитів та зменшення тривоги."
+  - "Не використовувати 68Ga-DOTATATE PET / CT рутинно у emp​іричному спостереженні — це staging-tool для виявленої пухлини, не скринінг-tool у asymptomatic родовідно-підозрюваних."
+  - "Не пропускати щорічний кальцій + PTH у дітей з 5 років — це єдиний дешевий, безпечний і високо-виходний empіричний-скринінг-крок; уникати його дезавальо лише на підставі відмови від genetic testing."
+
+do_not_do_en:
+  - "Do not present enhanced surveillance as equivalent to genetic confirmation — diagnostic precision is absent; cascade-testing benefit for relatives is lost."
+  - "Do not initiate the pediatric MRI protocol (pituitary / abdominal) in empirical surveillance without confirmed carriage or a strong biochemical signal — cumulative MRI burden + sedation risk in a child must be balanced."
+  - "Do not skip periodic re-discussion of genetic testing — most patients eventually accept testing after additional visits and reduced anxiety."
+  - "Do not use 68Ga-DOTATATE PET / CT routinely in empirical surveillance — this is a staging tool for a detected tumor, not a screening tool in asymptomatic pedigree-suspicion."
+  - "Do not skip annual calcium + PTH in children from age 5 — this is the single cheap, safe, high-yield empirical screening step; declining it solely because the family declined genetic testing is not warranted."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — alternative-track companion for MEN1 hereditary prevention pilot. §15.2 C4 ≥2-tracks invariant compliance.

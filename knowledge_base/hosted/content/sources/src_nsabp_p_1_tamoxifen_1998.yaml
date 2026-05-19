@@ -1,0 +1,61 @@
+id: SRC-NSABP-P-1-TAMOXIFEN-1998
+source_type: rct_publication
+title: Tamoxifen for prevention of breast cancer — report of the National Surgical
+  Adjuvant Breast and Bowel Project P-1 Study (NSABP P-1)
+version: '1998'
+authors:
+- Fisher B
+- Costantino JP
+- Wickerham DL
+- Redmond CK
+- Kavanah M
+- Cronin WM
+- Vogel V
+- Robidoux A
+- Dimitrov N
+- Atkins J
+- Daly M
+- Wieand S
+- Tan-Chiu E
+- Ford L
+- Wolmark N
+journal: Journal of the National Cancer Institute
+doi: 10.1093/jnci/90.18.1371
+url: https://academic.oup.com/jnci/article/90/18/1371/2521987
+access_level: subscription_required
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 1
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources_batch4
+license:
+  name: Oxford University Press / JNCI (subscription)
+  spdx_id: null
+attribution:
+  required: true
+  text: Fisher B et al., J Natl Cancer Inst 1998 — NSABP P-1 tamoxifen breast cancer
+    prevention trial
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+legal_review:
+  status: pending
+  notes: Subscription publication; abstract open access.
+relates_to_diseases:
+- DIS-BREAST
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. NSABP P-1 — double-blind RCT randomising
+  13,388 women at elevated breast cancer risk (Gail 5-year >=1.67%, age >=60, LCIS,
+  atypical hyperplasia) to tamoxifen 20 mg/day vs placebo for 5 years. Primary result:
+  49% relative reduction in invasive breast cancer (RR 0.51, 95% CI 0.39–0.66) and
+  50% reduction in non-invasive. Excess endometrial cancer (RR 2.53) and thromboembolic
+  events. Basis for FDA tamoxifen risk-reduction indication and ASCO / NCCN breast
+  chemoprevention frameworks.
+
+  '
+pages_count: 18
+references_count: 50
+corpus_role: rct_publication

@@ -1,0 +1,94 @@
+id: DRUG-MISOPROSTOL
+names:
+  preferred: "Misoprostol"
+  ukrainian: "Мізопростол"
+  english: "Misoprostol"
+  brand_names: ["Cytotec"]
+atc_code: A02BB01
+rxnorm_id: "7019"
+drug_class: "Synthetic prostaglandin E1 analog"
+mechanism: >
+  Synthetic prostaglandin E1 analog with gastric mucosal protective
+  effects (mucus + bicarbonate secretion, decreased gastric acid via
+  enterochromaffin-like cell inhibition) and uterotonic activity.
+  In oncology / cancer-prevention context: investigated as endometrial
+  protection in tamoxifen users (theoretical rationale — endometrial
+  PGE pathways). Evidence base is limited and inconsistent; not
+  guideline-recommended for routine tamoxifen-associated endometrial
+  protection. Primary FDA indications are NSAID-induced peptic ulcer
+  prophylaxis and (off-label) obstetric uses.
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 1988  # NSAID-induced ulcer prevention
+    indications_brief:
+      - "Prevention of NSAID-induced gastric ulcers in high-risk patients"
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Registered in Ukraine (Cytotec and generics). Out-of-pocket; no НСЗУ tamoxifen-protection indication."
+typical_dosing: >
+  NSAID ulcer prevention: 200 mcg PO QID with food and at bedtime
+  (alternative: 200 mcg BID-TID for tolerability).
+  Tamoxifen endometrial protection (off-label, research context only):
+  200 mcg PO regimens have been studied — NOT a guideline-supported
+  use; clinician judgment + IRB if pursued.
+formulations:
+  - "Tablet 100 mcg, 200 mcg"
+
+absolute_contraindications:
+  - "Pregnancy — uterotonic, abortifacient (CATEGORY X for ulcer indication)"
+  - "Hypersensitivity to prostaglandins or misoprostol"
+  - "Women of childbearing potential without reliable contraception (and negative pregnancy test before initiation)"
+black_box_warnings:
+  - "Misoprostol can cause uterine rupture, abortion, premature birth, or birth defects — use in pregnancy can lead to pregnancy loss; women must have negative pregnancy test before initiation and use effective contraception"
+major_interactions:
+  - "Magnesium-containing antacids — increase diarrhea (avoid combination)"
+  - "Oxytocin — additive uterotonic effect"
+common_adverse_events:
+  - "Diarrhea (~13-40%; dose-related, typically improves over 1-2 weeks)"
+  - "Abdominal pain (~7-20%)"
+  - "Nausea (~3-8%)"
+  - "Flatulence, dyspepsia (~3-6%)"
+  - "Headache (~2-5%)"
+  - "Menstrual irregularity, spotting (~4-9% in women)"
+serious_adverse_events:
+  - "Pregnancy loss / fetal harm (Category X)"
+  - "Uterine rupture (especially with prior C-section, obstetric use)"
+  - "Severe diarrhea with dehydration"
+  - "Severe abdominal pain"
+
+pharmacology: {half_life_hours: 0.5, clearance: "Rapidly de-esterified to active misoprostol acid (t1/2 ~20-40 min); renal excretion of metabolites"}
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. PRIMARY indication is NSAID-induced
+  peptic ulcer prevention. CONTROVERSIAL alternative-only use for
+  tamoxifen-associated endometrial protection — NOT NCCN/ESMO recommended;
+  small studies have not shown clear benefit. Engine should NOT auto-
+  recommend; reserved as clinician-judgment alternative pending dedicated
+  guideline. Strict pregnancy exclusion mandatory. Source cited
+  (SRC-NCCN-BCELL-2025) is closest in-KB until dedicated peptic-ulcer-
+  prevention or tamoxifen-endometrium sources land.
+
+notes_ua: >
+  Мізопростол — синтетичний аналог PGE1. Основне показання: профілактика
+  NSAID-індукованих виразок. СУПЕРЕЧЛИВЕ застосування як альтернатива
+  для tamoxifen-асоційованого захисту ендометрія — НЕ рекомендується
+  NCCN/ESMO; малі дослідження не довели чіткої користі. Двигун НЕ
+  повинен рекомендувати автоматично; призначається лише за рішенням
+  клініциста за відсутності альтернативи. Сувора виключна вагітність.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_drugs_batch2
+draft_revision: 1

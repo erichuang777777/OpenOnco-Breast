@@ -1,0 +1,155 @@
+id: IND-LIFESTYLE-LOW-CALCIUM-VIT-D-CRC-PREVENTION-REPLETION
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-LIFESTYLE-LOW-CALCIUM-VIT-D-CRC-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Repletion of dietary calcium to RDA target (1000-1200 mg/day) + vitamin D to ≥50 nmol/L circulating 25-OH-D is associated with modest CRC-incidence reduction in observational cohorts (~8-15% per WCRF/AICR meta-analysis for calcium; ~30% highest-vs-lowest quartile for vitamin D status). RCT data for supplementation are mixed at population doses — adequate-intake repletion is favored over high-dose pharmacologic supplementation. Skeletal health + cardiovascular co-benefits are well-established."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for combined low calcium + vitamin
+  D deficiency. Components per WCRF/AICR Continuous Update Project +
+  IOM Dietary Reference Intakes + Endocrine Society 2024 Vitamin D
+  Guideline + NCCN Colon Cancer screening:
+
+  **(1) Dietary calcium counseling** — Target RDA 1000-1200 mg/day
+  (age + sex dependent). Preferred sources:
+  - Dairy (milk, yogurt, cheese) — 1 cup milk ~300 mg calcium
+  - Fortified plant milks (soy, almond, oat) — typically 300 mg/cup
+  - Leafy greens (kale, collards, bok choy) — modest but bioavailable
+  - Tofu set with calcium sulfate — 250-350 mg per ½ cup
+  - Sardines + canned salmon with bones — high-density source
+  - Calcium-fortified orange juice, cereals
+
+  **(2) Vitamin D status repletion** — Target serum 25-OH-D ≥50 nmol/L
+  (Endocrine Society) or ≥30 nmol/L (IOM minimum). For documented
+  deficiency:
+  - Vitamin D3 (cholecalciferol) 1000-2000 IU/day standard maintenance
+  - Repletion dose 4000-5000 IU/day x 8-12 weeks for severe deficiency
+    (<25 nmol/L) per Endocrine Society
+  - Recheck 25-OH-D at 8-12 weeks; adjust dose to target range
+  - Avoid supraphysiologic dosing (>4000 IU/day chronic) — no
+    incremental cancer-prevention benefit + potential harm (hypercalcemia,
+    nephrolithiasis)
+
+  **(3) Calcium supplementation — conditional** — If dietary intake
+  cannot reach RDA via food, calcium carbonate (with food) or citrate
+  (anytime) 500-600 mg elemental BID. Do NOT exceed 1500 mg/day from
+  supplements (potential cardiovascular signal in some meta-analyses).
+  Prefer food sources where feasible.
+
+  **(4) USPSTF-cadence CRC screening** — Colonoscopy q10y from age 45
+  (or stool-based screening: FIT q1y, FIT-DNA q3y as alternatives).
+  Calcium/vitamin D status does not change screening cadence.
+
+  **(5) Sunlight exposure counseling** — Modest sun exposure (10-30
+  min midday, arms + legs, 2-3x/week) supports endogenous vitamin D
+  synthesis. Balance with UV-skin-cancer risk (see RF-LIFESTYLE-UV-
+  EXPOSURE-PREVENTION). For latitudes >40°N (most of Ukraine),
+  endogenous synthesis is unreliable Oct-April — dietary +
+  supplementation is the primary repletion lever.
+
+  Repletion + age-appropriate screening additive for CRC incidence
+  reduction. Skeletal + cardiovascular co-benefits independent of
+  cancer.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для combined low calcium + vitamin
+  D deficiency. Components per WCRF/AICR + IOM DRIs + Endocrine Society
+  2024 + NCCN Colon framework:
+
+  **(1) Dietary calcium counseling** — Ціль RDA 1000-1200 мг/день
+  (age + sex dependent). Preferred sources:
+  - Dairy (milk, yogurt, cheese) — 1 cup ~300 мг calcium
+  - Fortified plant milks (соя, мигдаль, oat) — ~300 мг/cup
+  - Leafy greens (кейл, бок чой) — modest but bioavailable
+  - Tofu set з calcium sulfate — 250-350 мг per ½ cup
+  - Sardines + canned salmon з кістками
+  - Calcium-fortified orange juice, cereals
+
+  **(2) Vitamin D status repletion** — Ціль 25-OH-D ≥50 нмоль/л
+  (Endocrine Society) або ≥30 нмоль/л (IOM minimum). При документованій
+  deficiency:
+  - Vitamin D3 1000-2000 IU/день standard maintenance
+  - Repletion 4000-5000 IU/день x 8-12 тижнів при severe deficiency
+    (<25 нмоль/л) per Endocrine Society
+  - Recheck 25-OH-D на 8-12 тижні; adjust dose до target range
+  - Уникати supraphysiologic dosing (>4000 IU/день chronic) — нема
+    incremental cancer-prevention benefit + potential harm (hypercalcemia,
+    nephrolithiasis)
+
+  **(3) Calcium supplementation — conditional** — Якщо dietary intake
+  не досягає RDA via food, calcium carbonate (з їжею) або citrate
+  (anytime) 500-600 мг elemental BID. Не перевищувати 1500 мг/день з
+  supplements. Prefer food sources where feasible.
+
+  **(4) USPSTF-cadence CRC screening** — Colonoscopy q10y з 45 років.
+
+  **(5) Sunlight exposure counseling** — Помірне exposure (10-30 хв
+  midday, arms + legs, 2-3x/тиждень) підтримує endogenous vitamin D
+  synthesis. Balance з UV-skin-cancer risk. Для latitudes >40°N
+  (більшість України), endogenous synthesis unreliable Oct-April —
+  dietary + supplementation primary repletion lever.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_diet_environmental
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-COLON-2025
+    position: supports
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не призначати supraphysiologic vitamin D dosing (>4000 IU/день chronic) — нема CRC-prevention benefit, є risk of hypercalcemia / nephrolithiasis."
+  - "Не покладатися виключно на calcium supplements при reachable dietary intake — food sources favored через cardiovascular signal в meta-analyses високих supplement доз."
+  - "Не презентувати vitamin D як monotherapy для CRC prevention — RCT evidence (VITAL, ViDA) negative для primary incidence reduction at population doses."
+  - "Не пропускати CRC screening — base-rate USPSTF cadence indicated незалежно від repletion status."
+  - "Не ігнорувати UV-skin-cancer risk при sunlight counseling — balance потрібен; high-Fitzpatrick types отримують більший Vit D yield з shorter exposures."
+
+do_not_do_en:
+  - "Do not prescribe supraphysiologic vitamin D dosing (>4000 IU/day chronic) — no CRC-prevention benefit; risk of hypercalcemia / nephrolithiasis."
+  - "Do not rely exclusively on calcium supplements when dietary intake is reachable — food sources are favored given cardiovascular signal in meta-analyses of high supplement doses."
+  - "Do not present vitamin D as monotherapy for CRC prevention — RCT evidence (VITAL, ViDA) is negative for primary incidence reduction at population doses."
+  - "Do not skip CRC screening — base-rate USPSTF cadence is indicated regardless of repletion status."
+  - "Do not ignore UV-skin-cancer risk in sunlight counseling — balance is needed; high-Fitzpatrick types achieve greater Vit D yield from shorter exposures."
+
+known_controversies:
+  - topic: "Vitamin D supplementation efficacy for primary CRC-incidence prevention"
+    positions:
+      - position: "Observational + IARC pooled signal supports protective association (~30% incidence reduction in highest vs lowest 25-OH-D quartile)"
+      - position: "RCT supplementation evidence (VITAL, ViDA) negative for primary CRC-incidence reduction at population doses (~2000 IU/day); modest signal for CRC mortality reduction"
+    our_default: "Targeted repletion in documented deficiency (25-OH-D <30 nmol/L per IOM) is favored over high-dose pharmacologic supplementation for cancer-prevention purposes."
+    rationale: "Reconciles observational + RCT divergence by limiting intervention to repletion of confirmed deficiency rather than universal supplementation."
+
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 diet prevention pilot (low Ca/Vit D → CRC). Two-Clinical-Co-Lead signoff queued."

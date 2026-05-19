@@ -1,0 +1,159 @@
+id: IND-IATROGENIC-CYCLOPHOSPHAMIDE-LATE-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-UROTHELIAL
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-CYCLOPHOSPHAMIDE-LATE-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "High-cumulative-dose cyclophosphamide survivor cohorts (Hyper-CVAD, pediatric ALL induction, BMT conditioning): bladder cancer SIR 4-7× population baseline with cumulative incidence 3-5% at 25y, latency 10-20y; t-AML/MDS cumulative ~1-3% at 10y with peak 5-10y post-exposure. Annual urinalysis + cytology detects urothelial carcinoma at earlier (often non-muscle-invasive, TURBT-curable) stage vs. symptom-driven late presentation. CBC q3-6mo for first 5y catches t-MDS at cytopenic phase enabling early allogeneic HSCT evaluation in fit candidates."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-URINE-CYTOLOGY
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track late-effects surveillance for cancer survivors with
+  prior cumulative cyclophosphamide ≥7 g/m². Components per NCCN
+  Bladder Cancer + NCCN AML Survivorship + Childhood Cancer Survivor
+  Study (CCSS) + COG-LTFU:
+
+  **(1) Annual urinalysis + urine cytology** —
+  - Both modalities together (complementary detection sensitivity)
+  - Annual cadence lifelong post-exposure (highest risk window
+    10-20y post-treatment but does not plateau)
+  - Any unexplained microscopic or gross hematuria → cystoscopy +
+    CT urography preferred
+  - Particularly important in survivors who received cyclophosphamide
+    without MESNA uroprotection (legacy regimens) or with documented
+    hemorrhagic cystitis during primary treatment
+
+  **(2) CBC with differential q3-6 months for first 5 years post-
+  chemotherapy** — Then q12mo lifelong. Median t-AML latency 5-7y
+  post-alkylator exposure; risk plateaus after 10y but does not
+  return to baseline.
+
+  **(3) Low-threshold bone marrow evaluation** for any of:
+  - New unexplained cytopenia (anemia, neutropenia, thrombocytopenia)
+  - Persistent macrocytosis (MCV >100)
+  - Dysplastic changes on peripheral smear
+  - Unexplained monocytosis
+  Bone marrow aspirate + biopsy + cytogenetics + flow cytometry +
+  NGS panel (TP53, ASXL1, RUNX1, -7/-5/del5q signal).
+
+  **(4) Bladder symptom education** —
+  - Survivor self-reporting: any new urgency / frequency / dysuria
+    / hematuria → urgent UA + urology evaluation
+  - Lower threshold for cystoscopy in this cohort (general PCP-level
+    "rule out UTI" approach can delay diagnosis by months)
+
+  **(5) Avoid additional bone-marrow-toxic + bladder-toxic
+  exposures** —
+  - Avoid additional alkylator-based therapy for benign indications
+    (autoimmune disease) when alternatives exist (e.g., rituximab,
+    mycophenolate)
+  - Counsel about benzene exposure (refer to RF-OCC-BENZENE if
+    occupational risk)
+  - Smoking cessation (compounds bladder cancer risk independently)
+
+  **(6) Patient education re: symptoms** —
+  - t-MDS / t-AML: easy bruising, prolonged bleeding, persistent
+    fatigue, recurrent infections, fever — report immediately
+  - Bladder cancer: hematuria (any episode), persistent voiding
+    symptoms — report immediately
+
+  **(7) Co-fired surveillance** — high-cumulative-dose cyclophosphamide
+  may also meet RF-IATROGENIC-ALKYLATOR-TAML-PREVENTION trigger; both
+  RFs can fire on same patient and engine builds combined
+  PreventionPlan covering bladder + leukemia surveillance dimensions.
+
+rationale_ua: >
+  Стандартний-трек late-effects surveillance для виживачів раку з
+  prior cumulative cyclophosphamide ≥7 г/м². Components per NCCN
+  Bladder + NCCN AML Survivorship + CCSS + COG-LTFU:
+
+  **(1) Щорічний urinalysis + urine cytology** —
+  - Обидві modalities разом (complementary detection sensitivity)
+  - Annual cadence lifelong
+  - Будь-яка hematuria → cystoscopy + CT urography
+  - Particularly important у survivors без MESNA uroprotection
+    (legacy regimens) або з documented hemorrhagic cystitis
+
+  **(2) CBC з diff q3-6 міс перші 5 років** — потім q12mo lifelong.
+  Median t-AML latency 5-7р post-alkylator.
+
+  **(3) Low-threshold bone marrow evaluation** при:
+  - New unexplained cytopenia
+  - Persistent macrocytosis (MCV >100)
+  - Dysplastic changes на peripheral smear
+  - Unexplained monocytosis
+  BM aspirate + biopsy + cytogenetics + flow + NGS panel.
+
+  **(4) Bladder symptom education** — будь-яка нова urgency /
+  frequency / dysuria / hematuria → urgent UA + urology.
+
+  **(5) Уникати additional bone-marrow-toxic + bladder-toxic exposures**
+  — alternative therapy для autoimmune (rituximab, mycophenolate);
+  smoking cessation; benzene counseling.
+
+  **(6) Patient education re: symptoms** — t-MDS / t-AML: easy
+  bruising, fatigue, infections; bladder cancer: hematuria, voiding
+  symptoms.
+
+  **(7) Co-fired surveillance** — high-cumulative-dose cyclophosphamide
+  може спрацьовувати з RF-IATROGENIC-ALKYLATOR-TAML-PREVENTION;
+  combined PreventionPlan.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_aya_survivor_2026_05_18
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+  - source_id: SRC-NCCN-BLADDER-2025
+    position: supports
+  - source_id: SRC-NCCN-AML-2025
+    position: supports
+  - source_id: SRC-COG
+    position: supports
+
+do_not_do:
+  - "Не пропускати urine cytology у annual screening — urinalysis alone has lower sensitivity для urothelial carcinoma in situ, особливо у cyclophosphamide-exposed cohort."
+  - "Не нормалізувати microscopic hematuria як 'UTI' без cystoscopic evaluation у cyclophosphamide survivors — diagnostic delay frequent."
+  - "Не виконувати routine prophylactic marrow biopsies у asymptomatic patients з normal CBC — yield poor."
+  - "Не призначати additional alkylator-based therapy для benign indications якщо alternatives exist — rituximab + mycophenolate для autoimmune disease."
+  - "Не вважати t-MDS / t-AML always fatal — early-detected t-MDS amenable до allogeneic HSCT з meaningful long-term survival."
+
+do_not_do_en:
+  - "Do not skip urine cytology in annual screening — urinalysis alone has lower sensitivity for urothelial carcinoma in situ, especially in a cyclophosphamide-exposed cohort."
+  - "Do not normalize microscopic hematuria as 'UTI' without cystoscopic evaluation in cyclophosphamide survivors — diagnostic delay is frequent."
+  - "Do not perform routine prophylactic marrow biopsies in asymptomatic patients with a normal CBC — yield is poor."
+  - "Do not prescribe additional alkylator-based therapy for benign indications when alternatives exist — rituximab + mycophenolate for autoimmune disease."
+  - "Do not consider t-MDS / t-AML always fatal — early-detected t-MDS is amenable to allogeneic HSCT with meaningful long-term survival."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — cancer-survivor late-effects pilot (cyclophosphamide). Two surveillance domains: bladder cancer (primary anchor DIS-UROTHELIAL — acrolein-driven urothelial damage), t-AML/MDS (CBC q3-6mo for first 5y, co-managed with RF-IATROGENIC-ALKYLATOR-TAML-PREVENTION). Two-Clinical-Co-Lead signoff queued."

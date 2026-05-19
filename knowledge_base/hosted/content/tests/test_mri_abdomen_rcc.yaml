@@ -1,0 +1,100 @@
+id: TEST-MRI-ABDOMEN-RCC
+names:
+  preferred: "Abdominal MRI with contrast (renal-cancer surveillance protocol)"
+  ukrainian: "МРТ органів черевної порожнини з контрастом (нагляд раку нирки)"
+  english: "Renal-surveillance abdominal MRI"
+  synonyms: ["VHL renal MRI", "HLRCC renal MRI", "HPRC renal MRI"]
+loinc_codes: ["24628-5"]
+category: imaging
+purpose: >
+  Renal-mass surveillance MRI in hereditary kidney-cancer syndromes
+  where ionizing-radiation exposure must be minimized (lifelong q1–2y
+  imaging starting in childhood / young adulthood). OpenOnco
+  prevention indications: von Hippel-Lindau (VHL — multifocal clear-
+  cell RCC + RAS hemangioblastomas + pancreatic NETs + pheochromo-
+  cytoma), hereditary leiomyomatosis and renal-cell carcinoma
+  (HLRCC, FH carriers — aggressive type-2 papillary RCC, low
+  threshold for nephrectomy), hereditary papillary renal carcinoma
+  (HPRC, MET carriers), Birt-Hogg-Dubé (FLCN — chromophobe / oncocytic
+  hybrid), tuberous sclerosis complex (TSC1 / TSC2 — angiomyolipoma
+  + RCC), succinate-dehydrogenase-deficient RCC (SDHB / SDHC /
+  SDHD). Distinct from diagnostic abdominal MRI — uses renal-
+  protocol sequences (T2, in/out-of-phase chemical shift, dynamic
+  multiphase post-gadolinium).
+
+specimen: "Imaging procedure (no specimen) — IV gadolinium-based contrast"
+turnaround_time: "Acquisition 30–45 min; report 1–3 days; multi-comparison growth-kinetics assessment 3–7 days"
+priority_class: standard
+
+availability_ukraine:
+  state_funded: false
+  typical_cost_uah: 5500.0
+  typical_availability: "Major academic and private MR centers; dedicated renal-protocol acquisition at ~10–15 UA sites; longitudinal-comparison workflow (volume metric on prior studies) limited"
+  notes: >
+    Standard 1.5T or 3T MR systems support the renal-surveillance
+    protocol; the procedural challenge is longitudinal continuity
+    (same site, same protocol, comparison to all priors) — essential
+    for the 3-cm-threshold growth-kinetics decision rule that drives
+    nephron-sparing surgery timing.
+
+sources:
+  - SRC-NCCN-KIDNEY-2025
+  - SRC-ESMO-RCC-2024
+
+last_reviewed: "2026-05-18"
+review_status: pending_clinical_signoff
+drafted_by: claude_extraction
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Surveillance regimens by syndrome (NCCN-Kidney 2025 + syndrome-
+  specific consensus):
+
+  Von Hippel-Lindau (VHL):
+  - Abdominal MRI q1–2y from age 16 (some protocols start age 10–12
+    for adrenal pheochromocytoma surveillance if early-onset family
+    history)
+  - 3-cm rule: solid renal mass crossing 3 cm threshold triggers
+    nephron-sparing partial nephrectomy
+  - Adjuncts: catecholamine / metanephrine screening
+    (TEST-METANEPHRINES-PLASMA-PARAGANGLIOMA) annually for pheo,
+    pancreatic / NET monitoring within same MRI
+
+  Hereditary leiomyomatosis and renal-cell cancer (HLRCC, FH):
+  - Abdominal MRI q1y from age 8–10 — much more aggressive than
+    VHL because HLRCC RCC is biologically aggressive (type-2
+    papillary, often metastasizes <3 cm)
+  - LOW threshold for nephrectomy — radical or wide-margin
+    partial; do NOT apply 3-cm-watchful-waiting rule
+
+  Hereditary papillary renal carcinoma (HPRC, MET):
+  - Abdominal MRI q1–2y from age 30 — typically multifocal,
+    bilateral, slow-growing type-1 papillary; 3-cm rule generally
+    applies
+
+  Birt-Hogg-Dubé (FLCN):
+  - Abdominal MRI q1–3y from age 21 — chromophobe / oncocytic
+    hybrid tumors; 3-cm rule generally applies; also pulmonary-
+    cyst / pneumothorax counseling
+
+  Tuberous sclerosis complex (TSC1 / TSC2):
+  - Abdominal MRI q1–3y from diagnosis — distinguish angiomyolipoma
+    (fat-containing benign, may need embolization if >4 cm or
+    growing) from RCC; mTOR inhibitor (everolimus, sirolimus) is
+    accepted for symptomatic / growing AMLs
+
+  SDH-deficient RCC (SDHB / SDHC / SDHD):
+  - Abdominal MRI q1y from age 18 (or 10 years before earliest
+    family case); paired with whole-body MRI for paraganglioma
+    surveillance
+
+  Reporting expectations:
+  - Lesion list with size, location, segmental anatomy, comparison
+    to prior; growth-rate documentation; clear flag of any new
+    or accelerating lesion
+  - Multidisciplinary review (urology + oncology + genetics) for
+    any new solid lesion ≥2 cm or accelerating-growth lesion
+
+  Engineering note: referenced by v0.2-B prevention Indications for
+  VHL, HLRCC, HPRC, BHD, TSC, and SDH-deficient RCC carrier
+  surveillance pathways.

@@ -1,0 +1,12 @@
+{
+  "patient_id": "LYNCH-CARRIER-PREV-001",
+  "comment": "29yo female, recently confirmed MSH2 germline pathogenic variant (cascade testing after mother's CRC diagnosis revealed Lynch syndrome). No personal cancer. Engine routes to PreventionPlan (after Agent I Wave 2 confirmed-carrier pathway lands): standard = NCCN Genetic/Familial High-Risk Colorectal carrier surveillance — colonoscopy q1-2y from 25 (or 10y before youngest family CRC), endometrial sampling + TVUS q1-2y from 30-35, urinalysis annual, upper endoscopy q3-5y from 40; alternative = intensified track with risk-reducing hysterectomy/BSO discussion post-childbearing + aspirin per CAPP2 trial.",
+  "biomarkers": {},
+  "demographics": {"age": 29, "sex": "female", "ecog": 0},
+  "findings": {
+    "germline_msh2_pathogenic_variant_confirmed": true,
+    "Cascade testing positive after mother CRC diagnosis": true,
+    "MSH2 c.942+3A>T splice variant (classified pathogenic)": true,
+    "No personal cancer diagnosis": true
+  }
+}

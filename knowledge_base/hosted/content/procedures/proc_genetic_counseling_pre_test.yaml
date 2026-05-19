@@ -1,0 +1,147 @@
+# PROC-GENETIC-COUNSELING-PRE-TEST — Pre-test genetic counseling
+# encounter (germline panel discussion). §20 prevention-persona /
+# screening-eligibility procedure (RATIFIED 2026-05-18). `intent:
+# diagnostic` per §17.1 enum — counseling is a clinical-decision-support
+# encounter without an operative procedure; the schema does not yet
+# define a `counseling` intent.
+id: PROC-GENETIC-COUNSELING-PRE-TEST
+names:
+  preferred: "Pre-test genetic counseling encounter for germline cancer-susceptibility testing"
+  ukrainian: "Передтестове генетичне консультування щодо зародкового тестування на спадкову схильність до раку"
+  english: "Pre-test genetic counseling encounter for germline cancer-susceptibility testing"
+  synonyms:
+    - "Pre-test genetic counseling"
+    - "Germline panel pre-test counseling"
+    - "Hereditary cancer pre-test consultation"
+    - "Cancer-genetics intake visit"
+
+type: counseling_encounter
+intent: diagnostic
+
+# Counseling is cross-syndrome — it precedes testing for breast,
+# ovarian, colorectal, endometrial, pancreatic, prostate, thyroid,
+# and other hereditary tumor syndromes. Listed are the diseases for
+# which germline testing is most commonly offered through this
+# pathway in the OpenOnco scope; the entity remains intentionally
+# broad. `applicable_diseases` may be filtered downstream by the
+# render layer to match an individual carrier's panel.
+applicable_diseases:
+  - DIS-BREAST
+  - DIS-OVARIAN
+  - DIS-CRC
+  - DIS-ENDOMETRIAL
+
+# Counseling is a non-operative clinical encounter; mortality is zero.
+# Omit `operative_mortality_pct`.
+
+common_complications:
+  - name: "Psychological distress at learning of carrier risk (anticipatory)"
+    frequency: "Variable; brief counseling reduces but does not eliminate"
+  - name: "Family-relationship strain (cascade-testing discussions)"
+    frequency: "Reported in qualitative studies; usually manageable with longitudinal support"
+  - name: "Insurance / employment-discrimination concerns"
+    frequency: "Jurisdiction-dependent; GINA covers some scenarios in the US"
+  - name: "Information overload / decisional regret"
+    frequency: "Higher in patients receiving rushed or non-counselor-led testing"
+  - name: "Test-result misinterpretation (without post-test counseling follow-through)"
+    frequency: "Risk mitigated by mandatory paired post-test counseling visit"
+
+sources:
+  - SRC-ASCO-ACMG-LYNCH-2014
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+
+last_reviewed: "2026-05-18"
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_agent_aac98192634228af3
+draft_revision: 1
+
+patient_facing_summary:
+  english: >
+    Before any inherited (germline) genetic test, a counseling visit
+    with a certified genetic counselor, medical geneticist, or
+    qualified physician is the standard of care. The visit usually
+    lasts 45-60 minutes. The counselor (1) takes a detailed personal
+    and family cancer history (typically three generations) and draws
+    a pedigree; (2) explains what the proposed panel test can and
+    cannot answer — what genes are included, what kinds of results
+    are possible (positive, negative, variant of uncertain
+    significance), and how each would change your medical plan and
+    your relatives' options; (3) discusses the emotional, family-
+    communication, and insurance considerations; (4) helps decide
+    whether to proceed, and which panel to use; and (5) obtains
+    informed consent. A second visit follows the test to interpret
+    results and plan next steps. Pre-test counseling is a clinical
+    visit, not a procedure — no preparation or recovery is needed.
+  ukrainian: >
+    Перед будь-яким спадковим (зародковим) генетичним тестуванням
+    візит до сертифікованого генетичного консультанта, медичного
+    генетика або кваліфікованого лікаря є стандартом медичної
+    допомоги. Візит зазвичай триває 45–60 хвилин. Консультант
+    (1) збирає детальний особистий та сімейний онкологічний анамнез
+    (зазвичай три покоління) та складає родовід; (2) пояснює, на які
+    запитання може й не може відповісти запропонована панель — які
+    гени включені, які типи результатів можливі (позитивний,
+    негативний, варіант невизначеного значення) та як кожен з них
+    вплине на ваш медичний план і можливості ваших родичів;
+    (3) обговорює емоційні аспекти, комунікацію в родині та
+    страхові питання; (4) допомагає прийняти рішення про проведення
+    тестування і вибрати конкретну панель; та (5) отримує
+    інформовану згоду. Після тесту слідує другий візит для
+    інтерпретації результатів і планування подальших дій.
+    Передтестове консультування є клінічним візитом, а не
+    процедурою — підготовки чи відновлення не потрібно.
+
+notes: >
+  Pre-test genetic counseling is the entry point for any germline
+  hereditary-cancer testing pathway. ASCO/ACMG (Lynch syndrome 2014)
+  and NCCN Genetic/Familial Breast/Ovarian + CRC v3.2025 both endorse
+  pre- and post-test counseling by trained personnel as a standard of
+  care; direct-to-consumer or unguided panel testing carries
+  documented harms (misinterpretation, family-cascade gaps, decisional
+  regret).
+
+  Core competencies of the pre-test encounter:
+    - Pedigree construction (3+ generations, including paternal &
+      maternal lineages; document cancer types, ages at diagnosis,
+      ethnicity, consanguinity).
+    - Risk assessment: using validated models (e.g., BRCAPRO,
+      Tyrer-Cuzick, Manchester score, PREMM5, MMRpro) — see
+      ALG-BRCA-RISK-MODEL and adjacent risk-model algorithms.
+    - Panel selection: syndrome-specific vs broad multi-gene panel
+      vs whole-exome / whole-genome; cost, insurance coverage,
+      yield trade-offs.
+    - Discussion of possible result types (pathogenic / likely
+      pathogenic / VUS / likely benign / benign) and their
+      clinical implications.
+    - Cascade-testing implications for first-degree relatives;
+      duty to inform; family communication strategies.
+    - Reproductive considerations (PGT-M / prenatal options).
+    - Psychosocial assessment + referral when indicated.
+    - Insurance / legal context (e.g., GINA in the US; jurisdiction-
+      specific elsewhere).
+    - Informed consent.
+
+  Post-test counseling (separate encounter, not covered here): result
+  delivery, medical-management plan, cascade-testing coordination,
+  longitudinal follow-up.
+
+  Telegenetics / virtual-counseling models are non-inferior to in-
+  person delivery for most knowledge-based outcomes (multiple RCTs,
+  COVID-era acceleration); choice depends on patient access and
+  preference.
+
+  `intent: diagnostic` per §17.1 enum — counseling drives a diagnostic
+  pathway. The schema does not yet define a `counseling` intent or a
+  separate non-operative encounter type; the current entity uses
+  `type: counseling_encounter` (§17.1 free-string) as a forward-
+  compatible label.
+
+  applicable_diseases lists four common indication categories; in
+  practice this encounter precedes panel testing that can resolve to
+  ~20+ hereditary-cancer syndromes — render layer should treat the
+  list as illustrative, not exhaustive.
+
+  ID prefix `PROC-*` per §20 prevention-persona file allowlist
+  (chunk procedures-prevention-2026-05-18); the Surgery schema
+  accepts both prefixes via the same loader pathway.

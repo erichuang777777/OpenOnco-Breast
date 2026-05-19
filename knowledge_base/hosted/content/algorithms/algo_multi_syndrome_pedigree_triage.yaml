@@ -1,0 +1,167 @@
+id: ALGO-MULTI-SYNDROME-PEDIGREE-TRIAGE
+applicable_to_disease: DIS-CRC
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention. Anchored to DIS-CRC because Lynch (CRC
+# + endometrial + others) is the most common multi-syndrome differential
+# trigger — mixed-cancer pedigrees often present as suspected Lynch
+# vs HBOC vs LFS vs Cowden. Reach is cross-disease (DIS-BREAST, DIS-
+# OVARIAN, DIS-ENDOMETRIAL, DIS-PDAC, DIS-SOFT-TISSUE-SARCOMA, DIS-RCC,
+# DIS-MELANOMA, DIS-MEDULLARY-THYROID, DIS-PARATHYROID).
+purpose: >
+  Phenotype-weighted triage algorithm for pedigrees that suggest more
+  than one hereditary cancer syndrome possibility (e.g., a pedigree with
+  early-onset breast + young CRC + endometrial cluster, or breast +
+  ovarian + pancreatic + prostate cluster, or sarcoma + breast + brain
+  tumor + adrenocortical carcinoma cluster). Selects which germline
+  multi-gene panel to order as the highest-yield first test.
+
+  Decision tree is weighted by tumor-spectrum phenotype features +
+  age-at-diagnosis patterns. Modern practice (NCCN 2024-2025; Beitsch
+  2019) increasingly uses comprehensive multi-syndrome panels (50-80
+  genes) as the first-line investigation for ambiguous pedigrees,
+  given falling costs ($250-500). This algorithm encodes the routing
+  for when more targeted panel ordering is preferred (Ukrainian /
+  resource-limited settings; or when a specific syndrome has very
+  high prior probability).
+
+output_indications:
+  - IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+  - IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+  - IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+  - IND-FAP-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+  - IND-VHL-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Default routes to Lynch suspicion (highest mixed-cancer prior in CRC-
+# anchored pedigrees). Engine should select the syndrome-specific
+# SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE Indication matching the
+# triage outcome.
+
+decision_tree:
+  - step: 1
+    # Lynch-spectrum cluster gate — CRC + endometrial + Lynch-spectrum
+    # tumors take priority because Lynch is the most common +
+    # actionable mixed-cancer hereditary syndrome (~3% of all CRC,
+    # ~5% of all endometrial cancer).
+    evaluate:
+      all_of:
+        - condition: "Pedigree includes ≥2 Lynch-spectrum cancers (CRC, endometrial, ovarian, small bowel, urothelial / renal pelvis / ureter, gastric, hepatobiliary, brain, sebaceous skin) across first- or second-degree relatives"
+        - condition: "At least one Lynch-spectrum cancer diagnosed at age <50"
+    if_true:
+      result: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Lynch-spectrum cluster identified — order germline MMR/EPCAM panel (MLH1, MSH2, MSH6, PMS2, EPCAM) as first-line. If panel negative + suspicion remains, expand to comprehensive hereditary cancer panel (50-80 genes covering Lynch / HBOC / LFS / FAP / Cowden / Peutz-Jeghers / juvenile polyposis). Tumor MSI/MMR-IHC on the proband's tumor is the cost-effective first step if proband-tumor tissue is available."
+    if_false:
+      next_step: 2
+  - step: 2
+    # HBOC-spectrum cluster — breast + ovarian + pancreatic + prostate
+    # cluster. BRCA1/2/PALB2/CHEK2/ATM/PALB2 panel.
+    evaluate:
+      all_of:
+        - condition: "Pedigree includes ≥2 HBOC-spectrum cancers (female breast <50, ovarian / fallopian / primary peritoneal at any age, male breast at any age, pancreatic adenocarcinoma at any age, metastatic / Gleason ≥7 prostate cancer at any age, triple-negative breast cancer)"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "HBOC-spectrum cluster identified — order germline HBOC panel (BRCA1, BRCA2, PALB2, CHEK2, ATM, RAD51C, RAD51D, BARD1, BRIP1, TP53, PTEN, CDH1, STK11) as first-line. Ashkenazi Jewish ancestry: founder mutation panel (BRCA1 185delAG, 5382insC; BRCA2 6174delT) is faster + cheaper if ancestry confirmed."
+    if_false:
+      next_step: 3
+  - step: 3
+    # LFS-spectrum cluster — sarcoma + breast + brain + adrenocortical +
+    # leukemia. TP53 germline panel.
+    evaluate:
+      any_of:
+        - condition: "Pedigree includes ≥2 LFS-spectrum cancers (soft-tissue or bone sarcoma at any age, breast <31, brain tumor / choroid plexus carcinoma / medulloblastoma, adrenocortical carcinoma at any age, leukemia, lung adenocarcinoma <46)"
+        - condition: "Proband has multiple primary cancers at age <46, with ≥1 LFS-spectrum"
+        - condition: "Proband has childhood adrenocortical carcinoma OR choroid plexus carcinoma"
+    if_true:
+      result: IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "LFS-spectrum cluster identified — order germline TP53 single-gene OR comprehensive hereditary cancer panel (TP53 ± CHEK2 ± PALB2 — phenocopies). LFS testing carries unique counseling burden (lifetime cancer risk near 100%, surveillance includes whole-body MRI + brain MRI + breast MRI in adult women); pre-test counseling essential. Chompret 2015 criteria (ALGO-CHOMPRET-2015-LFS) or classic LFS criteria (ALGO-CLASSIC-LFS-CRITERIA) used to confirm clinical suspicion before / instead of panel."
+    if_false:
+      next_step: 4
+  - step: 4
+    # FAP / juvenile polyposis / Peutz-Jeghers polyposis cluster —
+    # APC / MUTYH / SMAD4 / BMPR1A / STK11.
+    evaluate:
+      any_of:
+        - condition: "Pedigree includes hamartomatous / adenomatous polyposis (≥10 adenomatous polyps + family pattern OR juvenile polyps + family pattern OR Peutz-Jeghers hamartomas / mucocutaneous pigmentation + family pattern)"
+    if_true:
+      result: IND-FAP-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Polyposis cluster identified — order polyposis-focused panel (APC, MUTYH biallelic — MAP, SMAD4, BMPR1A — juvenile polyposis, STK11 — Peutz-Jeghers, PTEN — Cowden). Histology of polyps (adenomatous vs juvenile vs hamartomatous) helps narrow but does not gate the panel. Apply ALGO-CLASSIC-FAP-CRITERIA to confirm clinical FAP suspicion."
+    if_false:
+      next_step: 5
+  - step: 5
+    # VHL / SDHx / paraganglioma-pheochromocytoma cluster.
+    evaluate:
+      any_of:
+        - condition: "Pedigree or proband includes hemangioblastoma + RCC + pheochromocytoma cluster (VHL pattern)"
+        - condition: "Pedigree or proband includes paraganglioma + pheochromocytoma + GIST cluster (SDHx pattern)"
+        - condition: "Proband has bilateral / multifocal pheochromocytoma OR paraganglioma at any age"
+    if_true:
+      result: IND-VHL-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "VHL or SDHx-spectrum cluster — order syndrome panel (VHL single-gene if VHL phenotype dominant; otherwise pheochromocytoma-paraganglioma panel: VHL, RET, NF1, SDHA, SDHB, SDHC, SDHD, SDHAF2, TMEM127, MAX, FH, MDH2). Catecholamine biochemistry (plasma/urinary fractionated metanephrines) is the first-line proband workup, not the panel — but cascade family-testing depends on the germline result."
+    if_false:
+      next_step: 6
+  - step: 6
+    # Ambiguous mixed-cancer pedigree — comprehensive multi-syndrome
+    # panel is the modern default when no single-syndrome cluster
+    # dominates. Beitsch 2019: comprehensive panel detects ~6% more
+    # carriers than syndrome-targeted testing.
+    evaluate:
+      all_of:
+        - condition: "Pedigree shows ≥3 cancers across ≥2 generations without a single-syndrome dominant pattern (mixed cluster)"
+    if_true:
+      result: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Ambiguous mixed-cancer pedigree — order comprehensive hereditary cancer panel (50-80 genes covering all common syndromes). Variant-of-uncertain-significance (VUS) rate ~30-40% at this breadth; pre-test counseling must address VUS implications. Cost-equivalent to syndrome-targeted panel at modern lab pricing ($250-500). Indication routes to Lynch suspicion as the most common positive yield; engine should re-route based on panel result. v0.2 follow-up: dedicated IND-MULTI-SYNDROME-PANEL-ROUTING."
+    if_false:
+      result: false
+      notes: "No clear single-syndrome or mixed-cluster pattern + <3 cancers / 2 generations — re-evaluate with single-syndrome screening tools (PREMM5 for Lynch, Manchester / Tyrer-Cuzick for HBOC, Chompret for LFS); general-population screening per USPSTF + family-history re-evaluation every 3-5 years."
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding multi-syndrome pedigree
+  triage. Reflects modern NCCN Genetic/Familial guidelines (Colorectal
+  V.2.2025; Breast, Ovarian, Pancreatic V.3.2025) which increasingly
+  recommend comprehensive multi-gene panels for any patient meeting
+  criteria for ANY hereditary cancer syndrome, given falling costs and
+  improved VUS reclassification rates. Primary-paper Source entities
+  (SRC-BEITSCH-2019-MULTI-GENE-PANEL, SRC-LACAZE-2022-PANEL-VS-TARGETED)
+  are v0.2-B authoring backlog.
+
+  Anchored to DIS-CRC; reach is cross-disease (the algorithm's input is
+  a pedigree, not a single tumor type).
+
+  Triage hierarchy rationale:
+    Step 1 (Lynch) before Step 2 (HBOC): Lynch is the most common +
+    most actionable mixed-cancer hereditary syndrome population-wide,
+    especially in CRC-anchored pedigrees (~3% of all CRC). Step 2
+    HBOC is highest-yield when the pedigree is breast-anchored.
+
+    Step 3 (LFS) before Step 4 (polyposis): LFS-spectrum is more
+    pathognomonic for TP53 than polyposis is for APC (polyposis can
+    be MUTYH-AR, SMAD4, BMPR1A, STK11, PTEN — multi-gene panel
+    necessary; LFS-spectrum is overwhelmingly TP53).
+
+    Step 5 (VHL/SDHx) gates on phenotype rarity — these syndromes are
+    sufficiently distinct that VHL or SDHx testing as first-line is
+    higher-yield than comprehensive panel even at modern prices.
+
+    Step 6 (comprehensive panel) is the modern default when no single
+    cluster dominates. Falling lab costs + higher VUS reclassification
+    rates favor comprehensive over targeted.
+
+  Tumor-tissue-first vs germline-first:
+    - CRC + Lynch suspicion: MSI / MMR-IHC on proband tumor first
+      (cheap, fast, ~95% sensitivity for Lynch); germline follow if
+      MMR-deficient
+    - Breast + HBOC suspicion: germline panel direct; tumor-based
+      pre-screen (e.g., somatic-only testing) not Lynch-equivalent
+    - Adrenocortical carcinoma + LFS suspicion: germline TP53 in
+      every proband (~50% positivity per LFS Consortium 2019)
+
+  Cited from RF-MULTI-CANCER-PEDIGREE + RF-HEREDITARY-PANEL-TRIAGE
+  trigger logic.
+draft: true

@@ -1,0 +1,10 @@
+{
+  "patient_id": "HCV-PREV-001",
+  "comment": "Chronic HCV-positive adult, no confirmed B-cell NHL. Engine should NOT find a Disease and SHOULD route to the §20 PreventionPlan path: 2 prevention tracks (DAA standard + observation alternative). Validates v0.2-A infectious-etiology anchor (CHARTER §3 prevention scope, ratified 2026-05-18).",
+  "biomarkers": {"BIO-HCV-RNA": "detectable"},
+  "demographics": {"age": 52, "sex": "male", "ecog": 1, "decompensated_cirrhosis": false},
+  "findings": {
+    "HCV RNA detectable": true,
+    "No confirmed lymphoma": true
+  }
+}

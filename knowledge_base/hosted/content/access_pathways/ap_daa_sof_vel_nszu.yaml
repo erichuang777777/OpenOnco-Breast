@@ -1,0 +1,77 @@
+id: AP-DAA-SOF-VEL-NSZU
+name: "Sofosbuvir/velpatasvir DAA via НСЗУ HCV programme (fully reimbursed)"
+name_ua: "Софосбувір/велпатасвір (ПППД) через програму НСЗУ з лікування HCV (повне відшкодування)"
+
+applies_to_drug_ids:
+  - DRUG-SOFOSBUVIR-VELPATASVIR
+applies_to_regimen_ids:
+  - REG-DAA-SOF-VEL
+
+pathway_type: nszu_program
+# Канонічний enum-набір у схемі (foundation / compassionate_use /
+# international_referral / humanitarian_import / self_pay /
+# clinical_trial) не охоплює державну НСЗУ-програму. Тест-докстрінг
+# `test_pathway_type_is_freeform_but_documented` дозволяє розширення
+# вперед-сумісним значенням. Використовуємо `nszu_program` як єдиний
+# маркер державного-програмного відшкодування.
+
+country_options: ["UA"]
+
+cost_orientation:
+  currency: UAH
+  min: 0
+  max: 0
+  per_unit: course
+  notes: >
+    Pacient out-of-pocket cost: 0 UAH for the standard 12-week course
+    when enrolled in the НСЗУ "Антивірусна терапія хворих на хронічний
+    вірусний гепатит" programme. Outside-programme retail price for
+    Sofosbuvir 400 mg / Velpatasvir 100 mg (Epclusa, Gilead) — приблизно
+    35 000-55 000 UAH/month courseproxy in private pharmacies станом
+    на 2026-05; підтверджується розписом drlz.com.ua.
+
+typical_lead_time_weeks: [1, 4]
+
+contact_pattern: >
+  Сімейний лікар або інфекціоніст за місцем декларації НСЗУ →
+  скеровує до закладу-надавача послуги "Антивірусна терапія
+  хворих на хронічний вірусний гепатит" (пакет 5004
+  на договорі з НСЗУ — перелік на nszu.gov.ua). Заклад верифікує
+  HCV-РНК позитивний результат, призначає ПППД-режим і безкоштовно
+  видає курс препарату.
+
+eligibility_caveats:
+  - "HCV-РНК позитивна (підтверджений активний вірусологічний статус)"
+  - "Громадянство України або легальне постійне проживання (для НСЗУ-декларації)"
+  - "Активна декларація з лікарем ПМД у системі ЕСОЗ"
+  - "Декомпенсований цироз — терапія допускається, але потребує переоцінки режиму (sof/vel/voxilaprevir vs sof/vel + ribavirin per AASLD/EASL); затримка ПППД не виправдана навіть при ESLD"
+
+requires_documentation:
+  - "Анти-HCV ELISA позитивний"
+  - "HCV-РНК ПЛР якісна або кількісна позитивна"
+  - "FibroScan або фіброз-маркер (APRI/FIB-4) для стратифікації стадії"
+  - "Декларація НСЗУ підтверджена"
+  - "Скринінг на HBV-коінфекцію (HBsAg) — black-box попередження щодо HBV-реактивації"
+
+verified_by: null
+last_verified: "2026-05-18"
+
+sources:
+  - SRC-AASLD-IDSA-HCV-2023
+  - SRC-EASL-HCV-2023
+
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Україна підписала Глобальну стратегію ВООЗ з ліквідації вірусних
+  гепатитів до 2030. Програма НСЗУ "Антивірусна терапія хворих на
+  хронічний вірусний гепатит" (пакет 5004) забезпечує безкоштовне
+  лікування HCV для пацієнтів з підтвердженою декларацією. Sofosbuvir/
+  velpatasvir — пангенотиповий стандарт-першої-лінії (12 тижнів,
+  treatment-naive, без цирозу або компенсований; додавання
+  voxilaprevir 4 тижні для re-treatment або частина sof/vel/vox FDC
+  для важких випадків). SVR12 >95% у переважній більшості когорт.
+
+  AccessPathway — render-time-only метадані; не використовується
+  engine'ом як signal вибору терапії (CHARTER §8.3 + ua-ingestion
+  plan §0).

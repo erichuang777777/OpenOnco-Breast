@@ -1,0 +1,11 @@
+{
+  "patient_id": "LIFESTYLE-TOBACCO-PREV-001",
+  "comment": "57yo male, current smoker, 30 pack-years, no current cancer. Engine routes to PreventionPlan: standard = 5A structured cessation counseling + varenicline/NRT pharmacotherapy + USPSTF LDCT lung cancer screening eligibility; alternative = brief intervention only.",
+  "biomarkers": {},
+  "demographics": {"age": 57, "sex": "male", "ecog": 0},
+  "findings": {
+    "tobacco_status_current_smoker": true,
+    "tobacco_pack_years_ge_20": true,
+    "No current malignancy on baseline workup": true
+  }
+}

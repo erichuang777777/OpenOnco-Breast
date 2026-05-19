@@ -1,0 +1,47 @@
+id: RF-FAMMM-FAMILY-HISTORY-SUSPICION
+definition: >-
+  Family pedigree suggestive of FAMMM (Familial Atypical Multiple Mole
+  Melanoma) syndrome / CDKN2A (p16-INK4a) hereditary predisposition —
+  ≥2 first/second-degree relatives with melanoma OR multiple atypical
+  nevi (≥50) + family melanoma history OR family with melanoma +
+  pancreatic adenocarcinoma cluster. CDKN2A carriers have lifetime
+  melanoma risk ~60-80% + pancreatic adenocarcinoma risk ~15-25%.
+  Prevention-persona RedFlag (§20 v0.2-B).
+definition_ua: >-
+  Сімейний родовід, підозрілий на FAMMM syndrome / CDKN2A hereditary
+  predisposition — ≥2 first/second-degree родичів з меланомою АБО
+  multiple atypical nevi (≥50) + family melanoma history АБО кластер
+  меланоми + панкреатичної аденокарциноми. CDKN2A carriers мають
+  lifetime melanoma risk ~60-80% + pancreatic adenocarcinoma ~15-25%.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "family_cdkn2a_known_pathogenic_variant"
+      value: true
+    - finding: "family_melanoma_two_or_more_first_second_degree"
+      value: true
+    - finding: "family_melanoma_pancreatic_cluster"
+      value: true
+    - finding: "proband_multiple_atypical_nevi_ge_50_with_family_melanoma"
+      value: true
+
+clinical_direction: investigate
+severity: major
+priority: 100
+category: other
+risk_category: genetic
+
+relevant_diseases:
+  - DIS-PDAC
+
+shifts_algorithm: []
+sources: [SRC-NCCN-BCELL-2025, SRC-ASCO-ACMG-LYNCH-2014]
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for FAMMM / CDKN2A. STUB pending two-Co-Lead signoff."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_more_hereditary
+draft_revision: 1

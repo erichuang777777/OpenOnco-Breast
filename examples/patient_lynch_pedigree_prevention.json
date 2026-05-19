@@ -1,0 +1,14 @@
+{
+  "patient_id": "LYNCH-PREV-001",
+  "comment": "38yo female, family history meeting Amsterdam II criteria: mother CRC age 42, maternal grandfather CRC age 56, maternal aunt endometrial cancer age 48 (three Lynch-spectrum cancers across two generations, one first-degree relative, one diagnosis <50). No personal cancer diagnosis. Engine routes to PreventionPlan: standard = genetic counseling + germline MMR/EPCAM panel; alternative = empirical enhanced surveillance (colonoscopy q1-2y from 25, endometrial surveillance from 30-35). Validates v0.2-B Lynch hereditary pilot.",
+  "biomarkers": {},
+  "demographics": {"age": 38, "sex": "female", "ecog": 0},
+  "findings": {
+    "family_amsterdam_ii_criteria_met": true,
+    "family_first_degree_lynch_spectrum_under_50": true,
+    "Mother CRC age 42": true,
+    "Maternal grandfather CRC age 56": true,
+    "Maternal aunt endometrial cancer age 48": true,
+    "No personal cancer diagnosis": true
+  }
+}

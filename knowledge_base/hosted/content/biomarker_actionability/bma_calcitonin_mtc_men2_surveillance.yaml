@@ -1,0 +1,77 @@
+id: BMA-CALCITONIN-MTC-MEN2-SURVEILLANCE
+biomarker_id: BIO-CALCITONIN-MTC
+variant_qualifier: Calcitonin — MTC surveillance in MEN2 carriers (RET codon-stratified)
+disease_id: DIS-MTC
+escat_tier: IIIA
+evidence_summary: >
+  Serum calcitonin is a highly specific biomarker for medullary thyroid
+  carcinoma (MTC) — produced by parafollicular C-cells. In MEN2 RET
+  germline carriers, calcitonin trends inform timing of prophylactic
+  thyroidectomy (RET codon-stratified per ATA Thyroid 2015 + Endocrine
+  Society MEN 2023):
+  - MEN2B (M918T): prophylactic thyroidectomy <1 year, before calcitonin
+    rise becomes detectable
+  - MEN2A high-risk codons (634, 883): thyroidectomy by age 5
+  - MEN2A moderate-risk codons (609, 611, 618, 620, 630, 631): may delay
+    until calcitonin becomes detectable on stimulation testing
+  Basal + stimulated (pentagastrin / calcium-stimulated where available)
+  calcitonin tracks residual disease post-thyroidectomy. CEA is a
+  complementary marker. Doubling time of calcitonin post-resection is a
+  strong prognostic indicator (<6 mo = aggressive). ESCAT IIIA —
+  calcitonin directs prophylactic surgery timing and post-operative
+  monitoring.
+regulatory_approval:
+  fda:
+  - Calcitonin immunoassays — multiple FDA-cleared (Roche, DiaSorin,
+    Immulite); two-site sandwich immunoassays preferred
+  - Pentagastrin (Peptavlon) — no longer marketed in US since 2002;
+    calcium-stimulated calcitonin used as substitute
+  ema: []
+  ukraine:
+  - Calcitonin — widely available; pentagastrin not available
+recommended_combinations:
+- 'MEN2 carrier: annual basal calcitonin from age determined by RET codon
+  risk stratification; prophylactic thyroidectomy timing per
+  ATA Thyroid 2015 + Endocrine Society MEN 2023'
+- 'Post-thyroidectomy MTC: serial basal calcitonin + CEA; doubling time
+  <6 mo prompts restaging'
+contraindicated_monotherapy:
+- 'PPI use causes mild calcitonin elevation — withhold ≥1 week before
+  draw or interpret with PPI status known'
+primary_sources:
+- SRC-NCCN-THYROID-2025
+- SRC-ENDOCRINE-SOCIETY-MEN-2023
+- SRC-ATA-THYROID-2015
+last_verified: '2026-05-18'
+evidence_sources:
+- source: SRC-ATA-THYROID-2015
+  level: Strong / Moderate certainty
+  evidence_lane: standard_care
+  note: >
+    ATA Thyroid 2015 (MTC component) — RET codon-stratified prophylactic
+    thyroidectomy timing. Calcitonin used to confirm absence of pre-existing
+    MTC at surgery and post-operatively as response/recurrence marker.
+- source: SRC-ENDOCRINE-SOCIETY-MEN-2023
+  level: Strong / Moderate certainty
+  evidence_lane: standard_care
+  note: >
+    Endocrine Society MEN 2023 — annual basal calcitonin in MEN2A
+    moderate-risk codons starting age 3-5; stimulated calcitonin where
+    available for early MTC detection before basal elevation.
+- source: SRC-NCCN-THYROID-2025
+  level: Category 2A
+  evidence_lane: standard_care
+  note: >
+    NCCN Thyroid 2025 — calcitonin doubling time is the strongest
+    prognostic marker post-thyroidectomy.
+actionability_review_required: true
+indications:
+- IND-MEN2-CARRIER-SURVEILLANCE
+- IND-MEN2-CARRIER-INTENSIFIED
+notes: |
+  STUB pending two-Co-Lead signoff. RET codon-specific stratification is
+  the key engine input; a future IND-MEN2-CARRIER-PROPHYLACTIC-THYROIDECTOMY
+  Indication entity (or equivalent procedure trigger) is appropriate. CEA
+  parallel monitoring covered separately under BIO-CEA. Render layer
+  must always present calcitonin alongside RET codon (when known) and
+  thyroidectomy status.

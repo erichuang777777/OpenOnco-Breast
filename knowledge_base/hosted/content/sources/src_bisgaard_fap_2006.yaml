@@ -1,0 +1,46 @@
+id: SRC-BISGAARD-FAP-2006
+source_type: cohort_study
+title: Familial adenomatous polyposis (FAP) — genotype correlation to FAP phenotype
+  with osteomas and the desmoid-tumour spectrum
+version: '2006'
+authors:
+- Bisgaard ML
+- Bülow S
+journal: Hereditary Cancer in Clinical Practice
+doi: 10.1186/1897-4287-4-3-149
+url: https://hccpjournal.biomedcentral.com/articles/10.1186/1897-4287-4-3-149
+access_level: open_access
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 3
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources_batch4
+license:
+  name: BioMed Central / Hereditary Cancer in Clinical Practice (CC BY 2.0)
+  spdx_id: CC-BY-2.0
+attribution:
+  required: true
+  text: Bisgaard ML, Bülow S — Hered Cancer Clin Pract 2006 — Danish FAP registry
+    genotype-phenotype
+commercial_use_allowed: true
+redistribution_allowed: true
+modifications_allowed: true
+legal_review:
+  status: pending
+  notes: Open-access CC BY 2.0 (BioMed Central).
+relates_to_diseases:
+- DIS-CRC
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Danish FAP registry analysis correlating
+  APC genotype with phenotype (classic FAP, attenuated FAP, Gardner syndrome — osteomas,
+  desmoids, CHRPE). Provides natural-history data underpinning risk-stratified surveillance
+  + timing of prophylactic colectomy / proctocolectomy. Cited by ESGE / ASCO / NCCN
+  Colorectal v2025 FAP surveillance recommendations.
+
+  '
+pages_count: 12
+references_count: 40
+corpus_role: cohort_study

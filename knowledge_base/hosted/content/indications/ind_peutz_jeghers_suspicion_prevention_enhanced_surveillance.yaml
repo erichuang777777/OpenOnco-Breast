@@ -1,0 +1,72 @@
+id: IND-PEUTZ-JEGHERS-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-PEUTZ-JEGHERS-FAMILY-HISTORY-SUSPICION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Empirical PJ-protocol surveillance without genetic confirmation captures small-bowel intussusception + GI cancers at earlier stages. Diagnostic precision lower than confirmed-carrier comparator; non-carriers receive unnecessary intensive surveillance."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-PEUTZ-JEGHERS-SUSPICION-PREVENTION-GENETIC-
+  COUNSELING. Patient with Peutz-Jeghers family history suspicion (classic
+  phenotype in proband or first-degree relative) who declines germline STK11
+  testing receives empirical PJ-protocol surveillance: small-bowel VCE/MR
+  enterography q2-3y from age 8-10, colonoscopy q2-3y from 18, EGD q2-3y from
+  8-10, breast MRI from 30 (women). Per CHARTER §11 patient-autonomy framing.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до IND-PEUTZ-JEGHERS-SUSPICION-
+  PREVENTION-GENETIC-COUNSELING. Пацієнт з родовідною підозрою на Peutz-Jeghers
+  (класичний фенотип у пробанда чи родича першого ступеня), який відмовляється
+  від germline STK11 тестування, отримує empirical PJ-protocol surveillance:
+  small-bowel VCE/MR enterography q2-3y з 8-10 років, колоноскопія q2-3y з 18,
+  EGD q2-3y з 8-10, breast MRI з 30 (жінки). Per CHARTER §11 framing.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_completion
+draft_revision: 1
+
+sources:
+  - source_id: SRC-ESMO-CRC-2024
+    position: supports
+
+do_not_do:
+  - "Не презентувати empirical surveillance як еквівалент genetic confirmation."
+  - "Не пропускати periodic re-discussion про genetic testing — більшість пацієнтів врешті приймають."
+  - "Не використовувати empirical pancreatic screening (EUS/MRI) у dec-testing PJ-suspicion — recommendation для confirmed carriers."
+
+do_not_do_en:
+  - "Do not present empirical surveillance as equivalent to genetic confirmation."
+  - "Do not skip periodic re-discussion of genetic testing — most patients eventually accept."
+  - "Do not use empirical pancreatic screening (EUS/MRI) in decline-testing PJ-suspicion — recommendation is for confirmed carriers."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track companion for Peutz-Jeghers prevention. §15.2 C4 ≥2-tracks invariant compliance."

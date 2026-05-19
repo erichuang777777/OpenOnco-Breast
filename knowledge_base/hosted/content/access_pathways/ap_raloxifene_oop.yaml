@@ -1,0 +1,79 @@
+id: AP-RALOXIFENE-OOP
+name: "Raloxifene for postmenopausal breast chemoprevention — out-of-pocket"
+name_ua: "Ралоксифен для хіміопрофілактики РМЗ у постменопаузі — оплата з кишені"
+
+applies_to_drug_ids:
+  - DRUG-RALOXIFENE
+applies_to_regimen_ids:
+  - REG-RALOXIFENE-CHEMOPREVENTION
+
+pathway_type: self_pay
+# Per drug_raloxifene.yaml (commit 09c64e87c9): registered у Україні
+# (Evista і генерики), не входить до НСЗУ chemoprevention-пакета.
+# Osteoporosis indication потенційно має окрему реімбурсацію, але
+# chemoprevention-показання — повністю out-of-pocket.
+
+country_options: ["UA"]
+
+cost_orientation:
+  currency: UAH
+  min: 800
+  max: 2500
+  per_unit: month
+  notes: >
+    Raloxifene 60 mg PO daily generic / Evista retail price у приватних
+    аптеках України станом на 2026-05 — приблизно 800-2500 UAH/місяць.
+    5-річний chemoprevention course — приблизно 48 000-150 000 UAH
+    total OOP. Дорожчий за tamoxifen (~10×), але дешевший за
+    aromatase-inhibitor-based chemoprevention (exemestane MAP.3).
+    Перевірено drlz.com.ua.
+
+typical_lead_time_weeks: [0, 2]
+
+contact_pattern: >
+  Онколог-мамолог або гінеколог-ендокринолог призначає raloxifene
+  60 mg PO daily × 5 років постменопаузній жінці з ризиком РМЗ
+  ≥1.7% Gail / ≥20% Tyrer-Cuzick АБО супутньою остеопоренією-без-
+  переломів. Pacient купує у приватній аптеці. Деякі ендокринологи
+  виписують для osteoporosis-показань (T-score ≤-2.5 без переломів,
+  inappropriate-for-bisphosphonates) — у такому контексті теоретично
+  потенційна реімбурсація через окремі програми (рідко
+  застосовується), але chemoprevention-користь — додаткова benefit.
+
+eligibility_caveats:
+  - "ТІЛЬКИ postmenopausal жінки (NSABP STAR P-2 cohort)"
+  - "Анамнез або поточний VTE / DVT / PE — АБСОЛЮТНА КП"
+  - "Анамнез CHD / CHD-equivalent risk — RUTH-стрibал fatal stroke signal — обережно"
+  - "Plan для анестезії / іммобілізації >4 год — призупинити ≥72 год до іммобілізації"
+  - "Pregnancy / premenopausal — НЕ показано (категорія X)"
+
+requires_documentation:
+  - "Постменопаузний статус (вік + FSH/E2 АБО документована аменорея ≥12 міс після останньої менструації)"
+  - "Risk-score (Gail / Tyrer-Cuzick v8 — TEST-TYRER-CUZICK-V8-CALCULATOR)"
+  - "Скринінг на VTE-ризик (особистий + сімейний анамнез thrombophilia)"
+  - "Bone-density DXA (опціонально, для подвійної osteoporosis-benefit-документації)"
+  - "Інформована згода щодо RUTH-сигналу + VTE / стрibал-ризику"
+
+verified_by: null
+last_verified: "2026-05-18"
+
+sources:
+  - SRC-NCCN-BREAST-2025
+  - SRC-USPSTF-BREAST-2024
+
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Raloxifene STAR P-2 trial (Vogel 2006) показав ~38% зниження
+  invasive breast cancer (≈76% relativeВ efficacy tamoxifenu) з
+  нижчим VTE / ендометріальним ризиком. Preferred у постменопаузі
+  з інтактною маткою або VTE-ризиком. Додаткова osteoporosis-benefit.
+  USPSTF Grade B + NCCN Breast v3.2025.
+
+  Ukrainian context: не покривається НСЗУ за жодним показанням
+  (osteoporosis-резимбурсація — нечасто, через окремі грантові
+  програми регіональних МОЗ). Out-of-pocket cost 800-2500 UAH/міс
+  залишає бар'єр середньої ваги — нижче за aromatase-inhibitor-OOP,
+  але вище за tamoxifen.
+
+  AccessPathway render-time-only.

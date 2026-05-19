@@ -1,0 +1,107 @@
+id: MS-BARRETTS-EGD-Q3-5Y
+linked_to_regimen: null  # surveillance — no regimen
+
+phases:
+  - name: baseline
+    window: "At index Barrett's-esophagus diagnosis — confirmed intestinal metaplasia on biopsy + endoscopically visible columnar-lined epithelium ≥1cm"
+    window_ua: "На момент індексного діагнозу стравоходу Барретта — підтверджена кишкова метаплазія в біопсії + ендоскопічно видимий стовпчастий епітелій ≥1 см"
+    tests:
+      - TEST-EGD-SURVEILLANCE
+    visits: ["GI surveillance + index EGD with Seattle-protocol biopsies"]
+    checkpoints:
+      - "Confirm intestinal metaplasia histologically (goblet cells with intestinal-type columnar epithelium) — not gastric metaplasia alone"
+      - "Document Prague C+M classification (circumferential + maximal extent)"
+      - "Seattle protocol — 4-quadrant biopsies every 1-2cm of Barrett's segment + targeted biopsies of any visible lesions / nodules"
+      - "Two-pathologist review for any dysplasia (high inter-rater variability for low-grade dysplasia)"
+      - "Confirm no dysplasia at index — if dysplasia present, route to specialized Barrett's program for endoscopic eradication (ER + RFA / cryoablation)"
+      - "Optimize PPI: BID PPI for 8-12 weeks before next EGD to reduce inflammation-related sampling error"
+    checkpoints_ua:
+      - "Гістологічно підтвердити кишкову метаплазію (келихоподібні клітини з кишковим типом стовпчастого епітелію) — не тільки шлункова метаплазія"
+      - "Документувати класифікацію за Prague C+M (циркулярна довжина + максимальна протяжність)"
+      - "Seattle-протокол — біопсії з 4 квадрантів кожні 1–2 см сегмента Барретта + прицільні біопсії всіх видимих вогнищ / вузликів"
+      - "Перегляд двома патологами для будь-якої дисплазії (висока міжспостерігачева варіабельність для дисплазії низького ступеня)"
+      - "Підтвердити відсутність дисплазії на момент індексу — за наявності дисплазії направити в спеціалізовану програму Барретта для ендоскопічної ерадикації (ER + RFA / кріоабляція)"
+      - "Оптимізувати PPI: BID PPI протягом 8–12 тижнів перед наступним EGD, щоб зменшити похибку відбору, пов'язану з запаленням"
+
+  - name: non_dysplastic_short_segment
+    window: "Non-dysplastic Barrett's, segment <3cm — EGD q5y"
+    window_ua: "Без дисплазії, сегмент <3 см — EGD кожні 5 років"
+    tests:
+      - TEST-EGD-SURVEILLANCE
+    visits: ["GI surveillance"]
+    checkpoints:
+      - "Repeat Seattle-protocol biopsies"
+      - "If still non-dysplastic + segment stable → continue q5y"
+      - "If dysplasia detected → upgrade to dysplasia pathway (specialized referral)"
+    checkpoints_ua:
+      - "Повторні біопсії за Seattle-протоколом"
+      - "Якщо й надалі без дисплазії + сегмент стабільний → продовжити кожні 5 років"
+      - "Якщо виявлено дисплазію → перейти на шлях дисплазії (направлення в спеціалізований центр)"
+
+  - name: non_dysplastic_long_segment
+    window: "Non-dysplastic Barrett's, segment ≥3cm — EGD q3y"
+    window_ua: "Без дисплазії, сегмент ≥3 см — EGD кожні 3 роки"
+    tests:
+      - TEST-EGD-SURVEILLANCE
+    visits: ["GI surveillance"]
+    checkpoints:
+      - "Repeat Seattle-protocol biopsies"
+      - "Longer segments confer higher cancer risk → tighter cadence"
+      - "Adjunctive imaging modalities (chromoendoscopy, NBI, WATS-3D) considered to improve dysplasia detection"
+    checkpoints_ua:
+      - "Повторні біопсії за Seattle-протоколом"
+      - "Довші сегменти підвищують ризик раку → коротший інтервал нагляду"
+      - "Допоміжні методи візуалізації (хромоендоскопія, NBI, WATS-3D) розглядаються для підвищення виявлення дисплазії"
+
+  - name: dysplasia_or_eac_pathway
+    window: "Any confirmed dysplasia (LGD / HGD) or intramucosal adenocarcinoma — exit surveillance, enter eradication-therapy program"
+    window_ua: "Будь-яка підтверджена дисплазія (LGD / HGD) або інтрамукозна аденокарцинома — вихід зі спостереження, вхід у програму ерадикаційної терапії"
+    tests:
+      - TEST-EGD-SURVEILLANCE
+    visits: ["Referral to specialized Barrett's center for endoscopic eradication"]
+    checkpoints:
+      - "LGD confirmed by ≥2 pathologists → endoscopic eradication therapy preferred over surveillance (Phoenix-Manchester)"
+      - "HGD or intramucosal EAC → endoscopic resection (EMR / ESD) + ablation (RFA preferred, cryoablation acceptable)"
+      - "Surveillance after eradication — q3 months × 1 year, q6 months × 1 year, then annually"
+      - "Submucosal-invasive EAC → multidisciplinary referral (esophagectomy / chemoradiation / palliative)"
+    checkpoints_ua:
+      - "LGD, підтверджена ≥2 патологами → ендоскопічна ерадикаційна терапія переважна над спостереженням (Phoenix-Manchester)"
+      - "HGD або інтрамукозна EAC → ендоскопічна резекція (EMR / ESD) + абляція (RFA переважна, кріоабляція допустима)"
+      - "Спостереження після ерадикації — кожні 3 місяці протягом 1 року, кожні 6 місяців протягом 1 року, потім щорічно"
+      - "Підслизово-інвазивна EAC → мультидисциплінарне направлення (езофагектомія / хіміопроменева / паліативна терапія)"
+
+sources:
+  - SRC-AGA-BARRETTS-2022
+
+last_reviewed: "2026-05-18"
+machine_translated_review_pending: true
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  AGA 2022 Barrett's Esophagus Clinical Practice Update (Shaheen et
+  al, Gastroenterology 2022). Replaces 2016 ACG / 2017 BSG cadence;
+  stratifies non-dysplastic surveillance by segment length:
+  - Short segment (<3cm): EGD q5y
+  - Long segment (≥3cm): EGD q3y
+  Discontinue surveillance after age 75 or if life-expectancy <5y
+  (limited benefit from finding HGD / early EAC if not treatment-
+  eligible).
+
+  Annual EAC incidence in non-dysplastic Barrett's ~0.3%/year
+  (Hvid-Jensen 2011 NEJM), substantially lower than historical
+  estimates that drove tight surveillance. Dysplasia-detection
+  yield is the rationale for surveillance, not direct cancer
+  detection.
+
+  Endoscopic eradication therapy (EET) — RFA + EMR — has supplanted
+  esophagectomy for HGD / intramucosal EAC and is increasingly
+  preferred for LGD. Concentrated in tertiary Barrett's programs.
+
+  Ukrainian context: Seattle-protocol EGD with adequate biopsy
+  sampling is variable — quality programs (Kyiv / Lviv / Dnipro)
+  routinely follow protocol; rural / community endoscopy often
+  under-samples. WATS-3D (wide-area transepithelial sampling) is
+  not widely available. EET concentrated in 3-5 specialty centers.
+
+  UA translations of window / checkpoints added 2026-05-19 under CHARTER
+  §8.3 dev-mode exemption; awaiting Clinical Co-Lead sign-off.

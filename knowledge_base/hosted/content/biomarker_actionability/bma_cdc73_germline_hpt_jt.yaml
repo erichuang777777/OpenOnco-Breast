@@ -1,0 +1,74 @@
+id: BMA-CDC73-GERMLINE-HPT-JT
+biomarker_id: BIO-CDC73-GERMLINE
+variant_qualifier: CDC73 (HRPT2) germline pathogenic (Hyperparathyroidism–Jaw Tumor syndrome)
+disease_id: DIS-PARATHYROID-CARCINOMA
+escat_tier: IIA
+evidence_summary: >
+  CDC73 (HRPT2) germline pathogenic variants drive Hyperparathyroidism–Jaw
+  Tumor (HPT-JT) syndrome — primary hyperparathyroidism (often single-gland
+  adenoma but with ~15% lifetime parathyroid carcinoma risk, much higher
+  than sporadic PHPT where carcinoma is <1%), ossifying fibromas of mandible/
+  maxilla, uterine tumors (adenofibroma, adenomyomatous polyps, carcinoma),
+  renal cysts, and Wilms-like renal tumors. Familial isolated
+  hyperparathyroidism (FIHP) is an overlapping presentation with attenuated
+  extra-parathyroid features. Confirmed-carrier surveillance protocol (per
+  Endocrine Society Hereditary Endocrine Tumor Guideline + Marx et al.):
+  annual serum calcium + parathyroid hormone (PTH) + neck physical exam
+  starting age 5-10; jaw imaging (panoramic / CT) periodically from age 10
+  for ossifying fibroma; renal imaging (US ± MRI) every 5 years; pelvic
+  imaging in women per uterine-tumor concern. On parathyroid surgery in
+  HPT-JT carriers, en-bloc resection with thyroidectomy + lifelong follow-up
+  is preferred over minimally invasive parathyroidectomy due to elevated
+  carcinoma risk and recurrence pattern. ESCAT IIA.
+evidence_summary_ua: >
+  Герміногенні патогенні варіанти CDC73 (HRPT2) — драйвер синдрому HPT-JT:
+  первинний гіперпаратиреоз (часто single-gland adenoma, але з ~15%
+  довічним ризиком паратиреоїдної карциноми, на відміну від <1% при
+  спорадичному PHPT), оссифікуючі фіброми щелеп, маткові пухлини
+  (аденофіброма, аденоміоматозні поліпи, карцинома), ниркові кісти,
+  Wilms-подібні пухлини. Familial isolated hyperparathyroidism — overlap.
+  Протокол нагляду: щорічно — сироватковий кальцій + ПТГ + огляд шиї з 5-10
+  років; OPG/CT щелеп періодично з 10 років; УЗД нирок q5 років; pelvic
+  imaging у жінок. При хірургії носія HPT-JT — en-bloc резекція з
+  тиреоїдектомією та довічним follow-up через підвищений ризик карциноми.
+  ESCAT IIA.
+regulatory_approval:
+  fda: []
+  ema: []
+  ukraine: []
+recommended_combinations:
+  - "annual serum calcium + PTH + neck exam from age 5-10"
+  - "panoramic radiograph or jaw CT periodically from age 10 (ossifying fibroma)"
+  - "renal imaging (US ± MRI) every 5 years"
+  - "pelvic imaging in women per uterine-tumor risk"
+  - "en-bloc parathyroidectomy + ipsilateral thyroid lobectomy at first parathyroid surgery (avoid focused minimally-invasive parathyroidectomy in CDC73 carriers — high carcinoma + recurrence risk)"
+  - "cinacalcet considered for medical control of hypercalcemia in unresectable parathyroid carcinoma"
+  - "denosumab for hypercalcemia of parathyroid carcinoma refractory to other measures"
+contraindicated_monotherapy:
+  - "focused minimally-invasive parathyroidectomy as default in CDC73 carriers — preferred approach is en-bloc resection with ipsilateral thyroidectomy given carcinoma risk"
+primary_sources:
+  - SRC-NCCN-THYROID-2025
+  - SRC-ENDOCRINE-SOCIETY-MEN-2023
+last_verified: "2026-05-18"
+evidence_sources: []
+actionability_review_required: true
+notes: >
+  STUB — Wave A+B germline expansion. Linked Indication: none (no HPT-JT-
+  specific Indication exists yet). Two-Clinical-Co-Lead signoff queued. The
+  parent biomarker entity uses SRC-NCCN-BCELL-2025 as a placeholder source
+  (apparent mis-anchor in BIO-CDC73-GERMLINE); this BMA uses SRC-NCCN-
+  THYROID-2025 + SRC-ENDOCRINE-SOCIETY-MEN-2023 as more clinically
+  appropriate. CDC73 inactivation also occurs somatically in a high fraction
+  of sporadic parathyroid carcinomas — a sporadic parathyroid carcinoma
+  case should prompt CDC73 germline testing per current guidelines.
+notes_ua: >
+  STUB — Wave A+B розширення. Indication: відсутня. Батьківський біомаркер
+  BIO-CDC73-GERMLINE містить SRC-NCCN-BCELL-2025 як placeholder (хибна
+  прив'язка); тут використано SRC-NCCN-THYROID-2025 + SRC-ENDOCRINE-SOCIETY-
+  MEN-2023 як більш клінічно адекватні. Соматична інактивація CDC73 —
+  у значній частці спорадичних паратиреоїдних карцином; випадок такого
+  спорадичного раку — показання до герміногенного тестування CDC73.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_bma_batch3
+draft_revision: 1
+last_reviewed: "2026-05-18"

@@ -1,0 +1,13 @@
+{
+  "patient_id": "PM25-PREV-001",
+  "comment": "42yo female non-smoker, lifelong resident of high-PM2.5 industrial-adjacent urban district (annual PM2.5 average ~48 µg/m³, well above WHO 2021 Interim Target 1 of 35 µg/m³ and far above WHO Guideline 5 µg/m³). High-traffic-density residence on arterial roadway. No personal lung-cancer or pulmonary diagnosis. Outdoor air pollution IARC Group 1 (Monograph 109, 2013) — each 10 µg/m³ PM2.5 increment raises lung-cancer incidence ~9% (Hamra 2014; Pope 2020); KRAS/EGFR enrichment in non-smoker adenocarcinoma cohorts (Hill 2023). Engine fires RF-ENVIRONMENTAL-AIR-POLLUTION-LUNG-PREVENTION → routes to 2-track PreventionPlan: standard = exposure-mitigation counseling (indoor HEPA, N95 on high-AQI days, advocacy/relocation discussion), USPSTF lung screening eligibility review even at non-smoker baseline; aggressive = consideration of non-smoker LDCT enrollment in research protocols. Validates v0.3 environmental pilot. Anchored DIS-NSCLC.",
+  "biomarkers": {},
+  "demographics": {"age": 42, "sex": "female", "ecog": 0, "smoking_status": "never_smoker"},
+  "findings": {
+    "residential_pm2_5_annual_average_gt_35": true,
+    "high_traffic_density_residence": true,
+    "industrial_air_pollution_zone_residence": true,
+    "Annual PM2.5 average ~48 ug/m^3, lifelong urban high-pollution resident": true,
+    "No personal lung-cancer diagnosis": true
+  }
+}

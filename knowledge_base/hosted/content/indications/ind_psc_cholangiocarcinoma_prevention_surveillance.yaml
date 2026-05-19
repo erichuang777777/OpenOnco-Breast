@@ -1,0 +1,99 @@
+id: IND-PSC-CHOLANGIOCARCINOMA-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-HCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-PSC-CHOLANGIOCARCINOMA-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Surveillance MRI/MRCP + CA 19-9 q1y captures cholangiocarcinoma at earlier stage in ~30-50% of cases; PSC-IBD subgroup faces ~10-15% lifetime CRC risk vs ~5% in general population — annual colonoscopy from PSC diagnosis substantially improves early-stage CRC detection."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  - TEST-LFT
+desired_tests:
+  - TEST-LDH
+
+rationale: >
+  Standard-track surveillance for PSC patients without current hepatobiliary or
+  colorectal malignancy. Three components per AASLD / EASL PSC guidelines:
+
+  **(1) Annual MRI/MRCP + CA 19-9** for cholangiocarcinoma surveillance. CA 19-9 alone
+  has limited specificity (raised in cholestasis); MRCP detects dominant strictures
+  and biliary masses earlier than US.
+
+  **(2) ERCP with brushings + biliary biopsy** when dominant biliary stricture is
+  identified on MRCP. Early-stage cholangiocarcinoma detected via brush cytology has
+  better resectability and outcomes.
+
+  **(3) Annual colonoscopy from PSC diagnosis** in PSC-IBD subgroup (highest-risk —
+  10-15% lifetime CRC risk). Surveillance via chromoendoscopy or random + targeted
+  biopsies; dysplasia management per AGA.
+
+  Liver transplant evaluation as advanced PSC develops (cirrhosis, recurrent
+  cholangitis, intractable pruritus, dominant stricture progression).
+
+rationale_ua: >
+  Стандартний-трек спостереження для пацієнтів з PSC без поточної гепатобіліарної
+  чи колоректальної малігнізації. Три компоненти за настановами AASLD / EASL PSC:
+
+  **(1) Щорічна MRI/MRCP + CA 19-9** для скринінгу холангіокарциноми. MRCP виявляє
+  домінантні стриктури та біліарні маси раніше ніж УЗ.
+
+  **(2) ERCP з brushings + біліарна біопсія** при ідентифікації домінантної біліарної
+  стриктури на MRCP. Рання стадія холангіокарциноми має кращу resectability.
+
+  **(3) Щорічна колоноскопія з моменту діагнозу PSC** у підгрупі PSC-IBD (найвищий
+  ризик — 10-15% lifetime CRC risk). Спостереження через хромоендоскопію або
+  random+targeted біопсії; dysplasia management per AGA.
+
+  Liver transplant evaluation при прогресуванні PSC (цироз, рецидивний холангіт,
+  стійкий свербіж, прогресія домінантної стриктури).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_completion
+draft_revision: 1
+
+sources:
+  - source_id: SRC-AASLD-HCC-2023
+    position: context
+  - source_id: SRC-ESMO-CRC-2024
+    position: supports
+
+do_not_do:
+  - "Не пропускати annual MRI/MRCP у патієнтів з PSC — холангіокарцинома часто розвивається в перші 2-3 роки після діагнозу."
+  - "Не використовувати CA 19-9 ізольовано — низька специфічність при холестазі; завжди в комбінації з imaging."
+  - "Не ігнорувати alarm features (jaundice, weight loss, fevers, dominant stricture) — immediate ERCP + brushings."
+  - "Не пропускати q1y колоноскопію в PSC-IBD підгрупі — навіть якщо IBD контрольоване."
+
+do_not_do_en:
+  - "Do not skip annual MRI/MRCP in PSC patients — cholangiocarcinoma often develops in the first 2-3 years after diagnosis."
+  - "Do not use CA 19-9 alone — low specificity in cholestasis; always combined with imaging."
+  - "Do not ignore alarm features (jaundice, weight loss, fevers, dominant stricture) — immediate ERCP + brushings."
+  - "Do not skip q1y colonoscopy in PSC-IBD subgroup — even if IBD is well-controlled."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 chronic-condition prevention pilot. Two-Clinical-Co-Lead signoff queued per CHARTER §6.1 dev-mode."

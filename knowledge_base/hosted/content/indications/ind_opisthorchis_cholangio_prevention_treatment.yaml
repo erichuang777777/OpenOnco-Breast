@@ -1,0 +1,97 @@
+id: IND-OPISTHORCHIS-CHOLANGIO-PREVENTION-TREATMENT
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CHOLANGIOCARCINOMA
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-OPISTHORCHIS-CHOLANGIO-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Praziquantel cure of active O. viverrini infection: 80-95% single
+    dose 25 mg/kg PO three times in one day (WHO standard). Cancer-
+    prevention endpoint: population-level praziquantel programmes in
+    endemic Mekong-basin regions associated with reduced
+    cholangiocarcinoma incidence in successor cohorts, BUT praziquantel
+    does NOT reverse chronic biliary-tract inflammation / fibrosis from
+    prior burden — lifelong hepatobiliary surveillance remains mandatory
+    in high-risk individuals.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+  - TEST-LFT
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for prior or active O. viverrini
+  infection. Eradicate active infection with praziquantel 25 mg/kg PO
+  three times in one day (WHO standard regimen). Then transition to
+  lifelong hepatobiliary surveillance for heavily-exposed cohorts
+  (chronic / repeated infection history, endemic-region residence into
+  adulthood): liver ultrasound + serum CA 19-9 every 12 months from
+  age 40.
+
+  Caveat on CA 19-9: not specific to cholangiocarcinoma; elevated
+  values warrant cross-sectional imaging (MRI / MRCP) for further
+  characterization. Negative CA 19-9 does NOT exclude
+  cholangiocarcinoma — Lewis-antigen-negative individuals (~5-10% of
+  population) cannot produce the antigen.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для попередньої або активної
+  інфекції O. viverrini. Ерадикація активної інфекції празиквантелом
+  25 мг/кг PO тричі за один день (стандарт ВООЗ). Потім перехід до
+  пожиттєвого гепатобіліарного спостереження для важко-експонованих
+  когорт (хронічна / повторна інфекція, проживання в ендемічному
+  регіоні до зрілого віку): УЗД печінки + сироватковий CA 19-9 кожні
+  12 міс з 40 років.
+
+  Застереження щодо CA 19-9: не специфічний для
+  холангіокарциноми; підвищені значення вимагають крос-секційної
+  візуалізації (МРТ / MRCP) для подальшої характеристики. Негативний
+  CA 19-9 НЕ виключає холангіокарциному — Lewis-антиген-негативні
+  особи (~5-10% популяції) не можуть продукувати антиген.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-IARC-MONO-100B-2012
+    position: supports
+  - source_id: SRC-NCCN-HCC-2025
+    position: context
+
+do_not_do:
+  - "Не вважати празиквантел повноцінним cancer-prevention інтервенцією — хронічний фіброз від попереднього навантаження зберігає ризик cholangiocarcinoma."
+  - "Не презентувати празиквантел як 'protection from cancer' пацієнту. Disclaimer per CHARTER §11."
+  - "Не покладатися на CA 19-9 як sole screening test — Lewis-antigen-negative особи не продукують антиген."
+
+do_not_do_en:
+  - "Do not consider praziquantel a complete cancer-prevention intervention — chronic fibrosis from prior burden preserves cholangiocarcinoma risk."
+  - "Do not present praziquantel to the patient as 'protection from cancer'. Disclaimer per CHARTER §11."
+  - "Do not rely on CA 19-9 as a sole screening test — Lewis-antigen-negative individuals cannot produce the antigen."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — O. viverrini prevention anchor. v0.2-A continuation. Praziquantel REG-* and TEST-CA19-9 / TEST-LIVER-US pending.

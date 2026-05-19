@@ -1,0 +1,166 @@
+id: IND-A1AT-DEFICIENCY-HCC-LUNG-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-HCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-A1AT-DEFICIENCY-HCC-LUNG-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Hepatology/pulmonology-driven observation (clinical reassessment +
+    smoking-cessation counseling + LFTs + PFTs at baseline visits;
+    imaging only on symptom trigger) without scheduled HCC or lung-
+    cancer surveillance imaging detects malignancy at later stage than
+    structured surveillance. Acceptable as a minimum-intensity default
+    for non-cirrhotic non-smoking PiZZ patients with stable function;
+    below AASLD / NCCN best-practice for cirrhotic A1AT or smokers.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-A1AT-DEFICIENCY-HCC-LUNG-
+  PREVENTION-SURVEILLANCE. Appropriate primarily for non-cirrhotic
+  non-smoking A1AT-deficient patients with stable hepatic and
+  pulmonary function who choose minimum-intensity surveillance for
+  any of: cost / access constraints, procedural anxiety, geographic
+  distance, severe comorbidity limiting life expectancy, or explicit
+  preference after informed-consent discussion.
+
+  **Cadence:**
+    - Hepatology / pulmonology follow-up per usual cadence (q6-12mo)
+      with examination, LFT panel, AFP, INR, platelet count, basic
+      PFTs (FEV1, FEV1/FVC, DLCO), smoking status, second-hand smoke
+      exposure
+    - Smoking cessation counseling at every visit if applicable
+    - Vaccinations (influenza annually; pneumococcal per schedule;
+      HBV if not immune)
+    - Imaging only when triggered by:
+      - New hepatic decompensation (ascites, encephalopathy, jaundice)
+      - LFT pattern change (rising AFP, new hepatic mass on
+        examination, new RUQ pain)
+      - New respiratory symptoms (dyspnea, hemoptysis, persistent
+        cough, recurrent pneumonia)
+      - PFT decline (FEV1 ≥10% absolute drop or DLCO ≥15% drop on
+        repeat measurement)
+      - B-symptoms (fever, night sweats, unintentional weight loss)
+      - Patient becomes USPSTF LDCT-eligible
+
+  **Not appropriate for:**
+    - Cirrhotic A1AT (Child-Pugh A through C) — these meet AASLD
+      surveillance criteria; should be on the standard track
+    - Current smokers regardless of pack-year history
+    - PiZZ patients with established emphysema (FEV1 <80% or DLCO
+      <70% predicted) — these meet symptomatic-disease threshold and
+      benefit from active monitoring
+    - A1AT with concurrent HBV/HCV (HCC risk multiplied)
+    - Patients with prior HCC, lung cancer, or other A1AT-related
+      cancer
+
+  Per CHARTER §11 patient-autonomy framing: non-cirrhotic non-smoking
+  A1AT carries modest absolute cancer risk (HCC near-baseline without
+  cirrhosis; lung-cancer SIR ~2 in non-smoking PiZZ but absolute
+  incidence still low). Informed-consent observation is defensible
+  for this subset. Patient retains option to upgrade at any visit;
+  emerging cirrhosis or new emphysema mandates transition.
+
+  **Alarm features** route immediately to abdominal imaging (US/MRI)
+  or HRCT chest as appropriate — and if HCC or lung cancer confirmed,
+  to the treatment-persona algorithm via DIS-HCC or DIS-NSCLC.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до
+  IND-A1AT-DEFICIENCY-HCC-LUNG-PREVENTION-SURVEILLANCE. Доречно
+  переважно для non-cirrhotic non-smoking A1AT-deficient пацієнтів
+  зі стабільною hepatic та pulmonary функцією, які обирають мінімальної
+  інтенсивності спостереження з причин: вартість / доступ, процедурна
+  тривога, географічна відстань, важка коморбідність з обмеженою
+  тривалістю життя.
+
+  **Частота:**
+    - Hepatology / pulmonology follow-up per usual частотою (q6-12 міс)
+      з обстеженням, LFT, AFP, INR, тромбоцитами, базовими PFTs (FEV1,
+      FEV1/FVC, DLCO), smoking status
+    - Smoking cessation counseling на кожному візиті
+    - Vaccinations (influenza, pneumococcal, HBV)
+    - Imaging лише при триггері:
+      - Нова hepatic decompensation
+      - LFT pattern change (зростаюче AFP, нова hepatic mass)
+      - Нові респіраторні симптоми (диспное, кровохаркання, persistent
+        кашель)
+      - PFT decline (FEV1 ↓ ≥10% або DLCO ↓ ≥15%)
+      - B-симптоми
+      - Пацієнт стає USPSTF LDCT-eligible
+
+  **Не доречно для:**
+    - Cirrhotic A1AT — задовольняють AASLD surveillance
+    - Активних курців
+    - PiZZ з встановленою емфіземою (FEV1 <80% або DLCO <70%)
+    - A1AT з coexisting HBV/HCV
+    - Пацієнтів з попереднім HCC, lung cancer
+
+  Per CHARTER §11 framing автономії пацієнта: non-cirrhotic
+  non-smoking A1AT — модерний абсолютний ризик. Informed-consent
+  observation defensible.
+
+  **Alarm features** маршрутизують негайно до абдомінального imaging
+  або HRCT грудей.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-AASLD-HCC-2023
+    position: context
+    relevant_quote_paraphrase: >-
+      "Non-cirrhotic A1AT-deficient patients without iron-overload-
+      analogue accumulation have HCC incidence near population
+      baseline; cirrhotic A1AT meets surveillance threshold."
+  - source_id: SRC-NCCN-NSCLC-2025
+    position: context
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не використовувати цей шлях у cirrhotic A1AT — потребують AASLD US/AFP q6 міс."
+  - "Не використовувати цей шлях у active smokers — потребують активного cessation + LDCT screening eligibility."
+  - "Не презентувати observation як еквівалент structured surveillance — interval-cancer ризик вищий."
+  - "Не ігнорувати нову decompensation, респіраторну симптоматику, або PFT-decline — імідіат-imaging."
+  - "Не пропускати періодичну elastography / PFTs — fibrosis або emphysema progression потребує переходу на standard track."
+
+do_not_do_en:
+  - "Do not use this pathway in cirrhotic A1AT — they require AASLD US/AFP every 6 months."
+  - "Do not use this pathway in active smokers — they require active cessation + LDCT screening eligibility."
+  - "Do not present observation as equivalent to structured surveillance — interval-cancer risk is higher."
+  - "Do not ignore new decompensation, respiratory symptoms, or PFT decline — immediate imaging."
+  - "Do not skip periodic elastography / PFTs — fibrosis or emphysema progression warrants transition to the standard track."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — alternative-track companion for A1AT / HCC + lung prevention.
+  Required for §15.2 C4 ≥2-tracks invariant. Two-Co-Lead signoff queued.

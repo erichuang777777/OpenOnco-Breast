@@ -1,0 +1,184 @@
+id: RF-OCC-BENZENE-MALIGNANCY-PREVENTION
+definition: >-
+  Documented historical occupational exposure to benzene in an
+  individual without a current myeloid neoplasm diagnosis. Classic
+  high-exposure occupations: petroleum refining, petrochemical
+  manufacturing, rubber / tire industry, shoemaking (cement /
+  adhesive use pre-regulation), printing / lithography (solvent use),
+  pharmaceutical manufacturing, coke / coal-tar industry, motor-
+  vehicle service (fuel-pump / gasoline exposure pre-vapor-recovery),
+  laboratory work with benzene solvent (largely historical). Benzene
+  is an IARC Group 1 carcinogen with the strongest hematopoietic-
+  malignancy linkage of any non-radiation occupational exposure —
+  established etiological driver of acute myeloid leukemia (especially
+  AML with cytogenetic abnormalities of chromosomes 5, 7, 8;
+  monosomy 7), myelodysplastic syndromes (low- and high-risk
+  MDS subtypes both elevated), and acute lymphoblastic leukemia
+  (smaller magnitude). Latency from first exposure to AML / MDS is
+  typically 5-15 years; some cohorts show persistent elevation
+  decades after exposure cessation. Chronic high-dose benzene also
+  causes aplastic anemia (often a precursor to MDS / AML transformation)
+  and pancytopenia. There is NO curative intervention for prior
+  exposure — exposure-cessation (if active), longitudinal CBC
+  surveillance for cytopenia emergence, and low-threshold marrow
+  evaluation if persistent cytopenia are the levers. Prevention-
+  persona RedFlag (§20 ratification 2026-05-18, v0.3 occupational
+  pilot starter).
+definition_ua: >-
+  Документоване історичне професійне впливу бензолу у пацієнта без
+  поточного діагнозу мієлоїдної неоплазії. Класичні високоризикові
+  професії: нафтопереробка, нафтохімічне виробництво, гумова /
+  шинна промисловість, взуттєве виробництво (цемент / клеї до
+  регулювання), друк / літографія (використання розчинників),
+  фармацевтичне виробництво, коксохімічна / коксова промисловість,
+  обслуговування автотранспорту (вплив паливо-насосу / бензину до
+  системи vapor-recovery), лабораторна робота з бензолом як
+  розчинником (переважно історично). Бензол — канцероген IARC
+  Group 1 з найсильнішим зв'язком з гематопоетичною малігнізацією
+  серед будь-якого нерадіаційного професійного впливу — встановлений
+  етіологічний драйвер гострої мієлоїдної лейкемії (особливо AML з
+  цитогенетичними аномаліями хромосом 5, 7, 8; моносомія 7),
+  мієлодиспластичних синдромів (низько- та високоризикові MDS
+  підтипи обидва підвищені) та гострої лімфобластної лейкемії
+  (менша величина). Латентність від першого впливу до AML / MDS
+  зазвичай 5-15 років; деякі когорти показують стійке elevation
+  десятиліттями після припинення впливу. Хронічний high-dose бензол
+  також спричиняє апластичну анемію (часто прекурсор трансформації
+  до MDS / AML) і панцитопенію. КУРАТИВНОГО втручання для
+  попереднього впливу НЕМАЄ — припинення впливу (за активної
+  експозиції), longitudinal CBC спостереження за появою цитопеній
+  та low-threshold marrow оцінка при persistent цитопенії — це
+  наявні важелі. Prevention-persona RedFlag (ратифікація §20,
+  2026-05-18, v0.3 пілот occupational — starter).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "occupational_benzene_exposure_documented"
+      value: true
+    - finding: "occupational_benzene_exposure_years_ge_5"
+      value: true
+    - finding: "occupational_petroleum_refining_or_solvent_industry"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: occupational
+
+# Benzene-attributable hematopoietic malignancies (existing KB
+# Disease entities):
+# - DIS-AML: strongest association; benzene-induced AML enriched for
+#   complex karyotype, -5/del(5q), -7/del(7q), trisomy 8, TP53
+#   mutation, and prior MDS history. Treatment-resistant subtype.
+# - DIS-MDS-LR / DIS-MDS-HR: both lower- and higher-risk MDS subtypes
+#   show elevated incidence in benzene cohorts; t-MDS / benzene-MDS
+#   often carries adverse cytogenetics overlapping with t-AML.
+# ALL is also benzene-associated but with smaller effect size; not
+# enumerated here to keep RF tight and aligned with the primary
+# AML / MDS prevention focus.
+relevant_diseases:
+  - DIS-AML
+  - DIS-MDS-LR
+  - DIS-MDS-HR
+
+shifts_algorithm: []
+
+# Source caveat: IARC Monograph 100F (Chemical Agents and Related
+# Occupations, 2012) is the canonical Group-1 classification for
+# benzene and is NOT yet a separate SRC entity in KB. In-KB AML / MDS
+# guideline sources are cited as the most clinically relevant
+# available references; addition of IARC 100F as a v0.3 follow-up
+# SRC entity is in the v0.3 source-authoring backlog.
+sources:
+  - SRC-NCCN-AML-2025
+  - SRC-ELN-AML-2022
+  - SRC-ESMO-MDS-2021
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag — v0.3 occupational pilot starter.
+  Fires when patient profile carries documented prior occupational
+  benzene exposure AND no confirmed myeloid neoplasm diagnosis.
+  Engine routes such patients to a 2-track PreventionPlan:
+    (a) IND-OCC-BENZENE-PREVENTION-INTENSIFIED-SURVEILLANCE
+        (standard) — exposure-cessation counseling (if active),
+        CBC q6-12 months with peripheral smear review for cytopenias,
+        low-threshold bone marrow evaluation for persistent
+        cytopenia (>3-6 months) or unexplained macrocytic anemia,
+        co-management with hematology if any abnormality emerges.
+    (b) IND-OCC-BENZENE-PREVENTION-OBSERVATION (surveillance) —
+        symptom-triggered evaluation only; patient declines routine
+        CBC surveillance for any reason.
+
+  Evidence base (IARC Monograph 100F 2012; Vlaanderen et al. 2011
+  systematic review; Khalade et al. 2010 meta-analysis; Pulmonary
+  Industry cohort studies eg, Pliofilm cohort Rinsky et al. 1987;
+  Chinese cohort Hayes et al. 1997):
+    - AML SMR ~2-3x in moderately exposed cohorts (cumulative dose
+      ~40 ppm-years); ~10x in heavily exposed cohorts. Dose-response
+      established at exposures >40 ppm-years.
+    - MDS SMR ~2-4x; benzene-attributable MDS frequently progresses
+      to AML.
+    - Latency: typically 5-15 years; persistent excess risk noted
+      ≥20 years post-exposure-cessation in some cohorts.
+    - No threshold below which risk is demonstrably zero; OSHA PEL
+      1 ppm 8-hr TWA + 5 ppm STEL acts as a regulatory threshold,
+      not a biological no-effect level.
+
+  Sources TODO: IARC Monograph 100F (2012) as a new SRC entity for
+  authoritative Group-1 classification; ATSDR Benzene Toxicological
+  Profile (2007 + 2024 update) as a new SRC entity; NIOSH benzene
+  bulletin / OSHA benzene standard as regulatory references.
+  v0.3 source-authoring backlog.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1
+  dev-mode exemption.
+notes_ua: >
+  Prevention-persona RedFlag — v0.3 occupational пілот starter.
+  Спрацьовує коли профіль пацієнта містить документований
+  попередній професійний вплив бензолу ТА відсутній підтверджений
+  діагноз мієлоїдної неоплазії. Engine маршрутизує таких пацієнтів
+  до 2-track PreventionPlan:
+    (а) IND-OCC-BENZENE-PREVENTION-INTENSIFIED-SURVEILLANCE
+        (стандартний) — counseling щодо припинення впливу (за
+        активної експозиції), CBC q6-12 місяців з оглядом
+        периферичного мазка для цитопеній, low-threshold кістковий
+        мозок при persistent цитопенії (>3-6 місяців) або
+        нез'ясованій макроцитарній анемії, co-management з
+        гематологією при появі будь-якої аномалії.
+    (б) IND-OCC-BENZENE-PREVENTION-OBSERVATION (surveillance) —
+        тільки symptom-triggered оцінка; пацієнт відмовляється від
+        рутинного CBC спостереження з будь-якої причини.
+
+  Доказова база (IARC Monograph 100F 2012; Vlaanderen et al. 2011
+  systematic review; Khalade et al. 2010 meta-analysis; Pliofilm
+  когорта Rinsky et al. 1987; Китайська когорта Hayes et al. 1997):
+    - AML SMR ~2-3x у помірно експонованих когортах (кумулятивна
+      доза ~40 ppm-років); ~10x у важко експонованих когортах.
+      Dose-response встановлено при експозиції >40 ppm-років.
+    - MDS SMR ~2-4x; benzene-attributable MDS часто прогресує до
+      AML.
+    - Латентність: зазвичай 5-15 років; persistent excess ризик
+      відмічається ≥20 років після припинення впливу у деяких
+      когортах.
+
+  Source caveat: IARC Monograph 100F (Chemical Agents and Related
+  Occupations, 2012) — канонічна Group-1 класифікація для бензолу,
+  але ще НЕ є окремою SRC entity у KB. Замість цього цитуються
+  KB-присутні AML / MDS guideline-джерела як найбільш клінічно
+  релевантні; додавання IARC 100F як v0.3 follow-up SRC — у
+  backlog v0.3 source-authoring.
+
+  Це STUB, очікує підпис двох Clinical Co-Lead за §6.1 dev-mode
+  exemption.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_pilot
+draft_revision: 1
+
+draft: true

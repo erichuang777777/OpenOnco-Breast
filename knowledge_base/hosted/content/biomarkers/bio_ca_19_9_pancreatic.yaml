@@ -1,0 +1,46 @@
+id: BIO-CA-19-9-PANCREATIC
+names:
+  preferred: "CA 19-9 (pancreatic + cholangiocarcinoma surveillance)"
+  ukrainian: "CA 19-9 (нагляд при раку підшлункової залози та холангіокарциномі)"
+  english: "Cancer Antigen 19-9"
+  synonyms: ["CA19-9", "sialyl Lewis-a antigen"]
+biomarker_type: serum_marker
+measurement:
+  method: "Serum immunoassay (ECLIA, CLIA)"
+  units: "U/mL"
+  typical_range: [0, 37]
+specimen_requirements:
+  - "Serum (5 mL clotted blood)"
+  - "LOINC 24108-3 (CA 19-9)"
+  - "Note: ~5-7% of individuals are Lewis-negative (FUT3 null) and cannot produce CA 19-9 — marker is uninformative in this subgroup"
+clinical_context: [screening_surveillance]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: tumor_marker
+external_ids:
+  loinc: "24108-3"
+sources:
+  - SRC-NCCN-PANCREATIC-2025
+  - SRC-ESMO-PANCREATIC-2024
+  - SRC-ASCO-BTC-2023
+last_reviewed: "2026-05-18"
+notes: >
+  Serum tumor marker (sialyl Lewis-a). NOT a screening test for the
+  general population (low PPV — elevated in cholangitis, benign biliary
+  obstruction, cirrhosis, pancreatitis, smoking). CAPS Consortium
+  surveillance protocol for high-risk individuals (CAPS-eligible: BRCA1/2 +
+  family history, PALB2 + family history, ATM + family history, CDKN2A
+  carriers, Peutz-Jeghers, Lynch with FDR PDAC, FAMMM, HNPCC) uses CA 19-9
+  as an adjunct to annual MRI/MRCP or EUS — not as standalone screening.
+  Also used in cholangiocarcinoma surveillance in PSC (rising trend
+  prompts MRI/MRCP). Useful for monitoring known PDAC during treatment
+  (rising trend correlates with progression in Lewis-positive patients).
+  STUB pending two-Co-Lead signoff.
+notes_ua: >
+  Сироватковий пухлинний маркер (sialyl Lewis-a). НЕ скринінговий тест
+  для загальної популяції. У протоколі CAPS Consortium для осіб з високим
+  ризиком використовується як доповнення до щорічної МРТ/MRCP або ЕУС.
+  ~5-7% Lewis-негативних осіб не виробляють CA 19-9. STUB pending two-Co-Lead
+  signoff.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_surveillance_2026_05_18
+draft_revision: 1

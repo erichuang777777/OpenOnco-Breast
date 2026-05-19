@@ -1,0 +1,64 @@
+id: IND-LI-FRAUMENI-CARRIER-INTENSIFIED
+plan_track: aggressive
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-LI-FRAUMENI-CONFIRMED-CARRIER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Intensified surveillance with q6mo WB-MRI + discussion of risk-reducing mastectomy (RRM) in TP53 carriers entering reproductive age: RRM eliminates ~95% of breast cancer incidence. Trade-off vs. body-image / fertility / pregnancy considerations."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-LI-FRAUMENI-CARRIER-SURVEILLANCE. Intensified
+  surveillance with q6 month WB-MRI + risk-reducing mastectomy (RRM) discussion
+  for women at reproductive milestone. Per CHARTER §11 — aggressive intervention
+  requires shared decision-making.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Інтенсифіковане спостереження з q6 міс WB-MRI
+  + discussion risk-reducing mastectomy (RRM) для жінок. Per CHARTER §11.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_carrier_completion
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не рекомендувати RRM без psychological + fertility consultation."
+  - "Не використовувати q6mo WB-MRI без access to LFS-experienced radiology — interpretation потребує expertise."
+
+do_not_do_en:
+  - "Do not recommend RRM without psychological + fertility consultation."
+  - "Do not use q6mo WB-MRI without access to LFS-experienced radiology — interpretation requires expertise."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B LFS intensified-track. §15.2 C4 ≥2-tracks invariant."

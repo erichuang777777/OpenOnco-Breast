@@ -1,0 +1,22 @@
+id: BIO-SDHB-GERMLINE
+names:
+  preferred: "SDHB germline pathogenic variant"
+  ukrainian: "SDHB germline патогенний варіант"
+  english: "SDHB germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: SDHB
+  gene_hugo_id: HGNC:10681
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources: [SRC-NCCN-BCELL-2025]
+last_reviewed: "2026-05-18"
+notes: "SDHB germline — highest malignancy risk among SDH subtypes (paraganglioma + pheo + RCC + GIST). STUB."
+notes_ua: "SDHB germline — найвищий ризик malignancy серед SDH."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_germline
+draft_revision: 1

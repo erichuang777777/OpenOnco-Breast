@@ -1,0 +1,149 @@
+id: IND-HPRC-CARRIER-INTENSIFIED
+plan_track: aggressive
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-RCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-HPRC-CONFIRMED-CARRIER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Intensified track layers two options on top of standard HPRC
+    surveillance: (1) earlier surveillance initiation (age 20-25 vs.
+    age 30 standard) in families with very-early-onset RCC (proband
+    or first-degree relative < age 30) or for carriers with rapidly
+    growing index lesion; (2) lower surgical threshold (2 cm vs.
+    3 cm standard) for atypical / rapidly growing or central / hilum-
+    adjacent lesions where waiting incurs disproportionate technical
+    surgical complexity. Trade-off: more frequent intervention, more
+    lifetime surgery-related morbidity, potential over-treatment of
+    biologically indolent disease.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Aggressive-track confirmed-carrier pathway layered on top of the
+  IND-HPRC-CARRIER-SURVEILLANCE standard protocol.
+
+  **Foundation:** All standard surveillance from IND-HPRC-CARRIER-
+  SURVEILLANCE applies (annual abdominal MRI from age 30, 3-cm
+  surgical threshold, nephron-sparing primacy, active surveillance
+  permissible for sub-3-cm lesions).
+
+  **Intensification 1 — Earlier surveillance initiation:** In families
+  with very-early-onset RCC (proband or first-degree relative diagnosed
+  before age 30) — advance baseline MRI from age 30 to age 20-25.
+  Trade-off: more lifetime imaging studies + earlier exposure to
+  false-positive findings.
+
+  **Intensification 2 — Lower surgical threshold (2-cm vs 3-cm):** For
+  HPRC lesions with atypical features (rapid growth > 5 mm/year, new
+  cystic component, central necrosis, or central / hilum-adjacent
+  location where waiting will compromise surgical technique), advance
+  surgical intervention from 3-cm to 2-cm threshold. Trade-off:
+  potential over-treatment of biologically indolent disease + earlier
+  cumulative nephron loss across lifetime.
+
+  **Other intensification considerations (not core to this track):**
+    - Empirical MET-inhibitor chemoprevention (tivantinib, crizotinib,
+      savolitinib, cabozantinib) is NOT indicated — investigational
+      at best despite the MET-driven mechanism; trials in metastatic
+      / advanced disease ongoing.
+    - Bilateral total nephrectomy + dialysis-dependent state in
+      asymptomatic carrier is NOT routine — preserves option-value of
+      nephron-sparing across lifetime.
+    - Transplant after bilateral nephrectomy — discussed only after
+      surveillance failure (multiple bilateral recurrences exhausting
+      nephron-sparing options).
+
+  **Cascade testing remains continuous:** every visit re-confirms
+  family testing status.
+
+  Per CHARTER §11: intensified surveillance and lower surgical
+  threshold are shared-decision-making. Patient autonomy is paramount;
+  standard-track 3-cm Linehan / NCI protocol remains the floor.
+
+rationale_ua: >
+  Aggressive-трекова Indication: накладена поверх IND-HPRC-CARRIER-
+  SURVEILLANCE.
+
+  **Foundation:** Усе standard з IND-HPRC-CARRIER-SURVEILLANCE.
+
+  **Інтенсифікація 1 — Рання surveillance initiation:** У сім'ях з
+  very-early-onset RCC (< 30 років) — advance baseline MRI з 30 до
+  20-25 років. Trade-off: more lifetime imaging + earlier false-
+  positive exposure.
+
+  **Інтенсифікація 2 — Lower surgical threshold (2-cm vs 3-cm):** Для
+  HPRC lesions з atypical features (rapid growth > 5 мм/рік, new
+  cystic component, central necrosis, central / hilum-adjacent location)
+  — advance з 3-cm до 2-cm threshold. Trade-off: over-treatment
+  indolent disease + earlier cumulative nephron loss.
+
+  **Інші міркування:**
+    - Empirical MET-inhibitor chemoprevention (tivantinib, crizotinib,
+      savolitinib, cabozantinib) — NOT indicated; investigational
+      despite MET-driven mechanism.
+    - Bilateral total nephrectomy + dialysis у asymptomatic carrier —
+      NOT routine; preserves option-value nephron-sparing.
+    - Transplant after bilateral nephrectomy — only after surveillance
+      failure (multiple bilateral recurrences exhausting nephron-
+      sparing options).
+
+  **Cascade тестування continuous.**
+
+  Per CHARTER §11: shared-decision-making домен.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02b_confirmed_carriers_additional
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Earlier surveillance initiation and lower surgical threshold
+      are appropriate intensifications for HPRC carriers with very-
+      early-onset family RCC or atypical / rapidly growing index
+      lesions, following shared decision-making."
+
+do_not_do:
+  - "Не advanceувати baseline imaging раніше 20-25 без very-early-onset family RCC — false-positive burden + early imaging exposure не виправдані."
+  - "Не lowerувати surgical threshold у typical HPRC lesion (slow growth, peripheral, no atypia) — 3-cm Linehan threshold validated."
+  - "Не використовувати MET-inhibitor chemoprevention поза clinical trial — investigational."
+  - "Не виконувати bilateral total nephrectomy у asymptomatic carrier — preserves option-value nephron-sparing."
+  - "Не transferувати threshold логіку до VHL / HLRCC carriers — більш aggressive biology вимагає different surgical algorithms."
+
+do_not_do_en:
+  - "Do not advance baseline imaging earlier than age 20-25 without very-early-onset family RCC — false-positive burden and early imaging exposure are not justified otherwise."
+  - "Do not lower the surgical threshold in a typical HPRC lesion (slow growth, peripheral, no atypia) — the 3-cm Linehan threshold is validated."
+  - "Do not use MET-inhibitor chemoprevention outside a clinical trial — investigational."
+  - "Do not perform bilateral total nephrectomy in an asymptomatic carrier — preserves the option-value of nephron-sparing."
+  - "Do not transfer threshold logic to VHL / HLRCC carriers — more aggressive biology requires different surgical algorithms."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B confirmed-carrier intensified track (HPRC / MET). Sibling — IND-HPRC-CARRIER-SURVEILLANCE. §15.2 C4 ≥2-tracks invariant."

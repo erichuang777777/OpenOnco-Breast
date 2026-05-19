@@ -1,0 +1,46 @@
+id: SRC-AGA-IBD-CRC-2024
+source_type: guideline
+title: 'AGA Clinical Practice Guideline on Surveillance for Colorectal Neoplasia in
+  Patients with Inflammatory Bowel Disease (2024) [VERIFY exact title / publication
+  year; may be 2025 Clinical Practice Update]'
+version: '2024'
+authors:
+- American Gastroenterological Association Institute
+journal: Gastroenterology
+doi: null
+url: https://gastro.org/clinical-guidance/
+access_level: subscription_required
+currency_status: current
+current_as_of: '2024'
+evidence_tier: 1
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources
+license:
+  name: AGA / Elsevier — publisher copyright; abstract open access
+  url: https://gastro.org/about/copyright-permissions/
+  spdx_id: null
+attribution:
+  required: true
+  text: AGA Clinical Practice Guideline on Surveillance for Colorectal Neoplasia in
+    IBD. Gastroenterology 2024.
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+legal_review:
+  status: pending
+  notes: Verify exact title, DOI, PMID, and publication date for AGA IBD-CRC surveillance guidance.
+relates_to_diseases: []
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Cited by prevention Indications for colorectal-cancer
+  surveillance in long-standing ulcerative colitis and Crohn''s colitis. Recommends
+  chromoendoscopy or high-definition white-light endoscopy starting 8-10 years after
+  IBD onset, then risk-stratified intervals (1-5 years) per disease extent, PSC co-existence,
+  family history, prior dysplasia history.
+
+  '
+pages_count: 30
+references_count: 200
+corpus_role: primary_guideline

@@ -1,0 +1,116 @@
+id: IND-CHRONIC-HBV-PREVENTION-ANTIVIRAL
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-HCC
+  stage_requirements: []
+  biomarker_requirements_required:
+    - biomarker_id: BIO-HBV-SEROLOGY
+      required: true
+      value_constraint: "HBsAg positive OR HBV-DNA detectable"
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-CHRONIC-HBV-MALIGNANCY-PREVENTION
+
+# Standard antiviral suppression regimen: entecavir 0.5mg PO daily. Alternative
+# REG-HBV-TENOFOVIR-AF (Vemlidy 25mg PO daily) preferred in patients with
+# renal/bone comorbidity. Both are reimbursed via НСЗУ national HBV programme.
+recommended_regimen: REG-HBV-ENTECAVIR
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    HBV-DNA suppression to undetectable: >95% on entecavir or tenofovir
+    over 12 months. HCC incidence reduction: ~50% (HR 0.5, 95% CI
+    0.3-0.7) over 5-10 years of suppression in cohorts.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  - TEST-LFT
+  - TEST-FIB4
+desired_tests:
+  - TEST-LDH
+
+rationale: >
+  Standard-track prevention pathway for chronic HBV (HBsAg+ ≥6mo OR
+  HBV-DNA detectable ≥6mo) without confirmed HCC. Long-term nucleos(t)ide
+  analog suppression — entecavir 0.5mg PO daily OR tenofovir disoproxil
+  fumarate (TDF) 300mg PO daily OR tenofovir alafenamide (TAF) 25mg PO
+  daily — achieves HBV-DNA suppression >95% and reduces HCC incidence
+  by ~50% over 5-10 years (AASLD 2024, EASL 2025).
+
+  HCC surveillance per AASLD: ultrasound + AFP q6mo for all chronic HBV
+  patients regardless of antiviral status — surveillance compliance is
+  the strongest predictor of early-stage detection. In Ukraine,
+  entecavir is reimbursed via НСЗУ chronic HBV programme.
+
+  Drug selection: TDF preferred in young patients without renal/bone
+  comorbidity (lower cost); TAF preferred when CrCl <60 or osteoporosis;
+  entecavir alternative when tenofovir contraindicated. NEVER monotherapy
+  in HIV co-infection (use full ART; entecavir not active vs HIV;
+  tenofovir-based ART covers both).
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для хронічного HBV (HBsAg+ ≥6 міс АБО
+  HBV-ДНК визначувана ≥6 міс) без підтвердженого ГЦК. Тривала супресія
+  nucleos(t)ide аналогами — entecavir 0.5 мг PO щодня АБО tenofovir
+  disoproxil fumarate (TDF) 300 мг PO щодня АБО tenofovir alafenamide
+  (TAF) 25 мг PO щодня — досягає HBV-ДНК супресії >95% і знижує
+  захворюваність ГЦК на ~50% за 5-10 років (AASLD 2024, EASL 2025).
+
+  HCC-surveillance за AASLD: ультразвук + AFP q6mo для всіх пацієнтів з
+  хронічним HBV незалежно від антивірусного статусу — комплаєнс
+  surveillance — найсильніший предиктор раннього виявлення. В Україні
+  entecavir відшкодовується через програму НСЗУ хронічного HBV.
+
+  Вибір препарату: TDF переважний у молодих пацієнтів без ниркової/
+  кісткової коморбідності (нижча вартість); TAF переважний при CrCl <60
+  або остеопорозі; entecavir — альтернатива при протипоказаннях до
+  тенофовіру. НІКОЛИ не монотерапія при коінфекції ВІЛ (використовуйте
+  повну АРТ; entecavir не активний vs ВІЛ; tenofovir-base АРТ покриває
+  обидва).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-AASLD-HBV-2024
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Long-term nucleos(t)ide analog therapy in chronic HBV reduces
+      HCC incidence; surveillance ultrasound + AFP q6mo recommended for
+      all chronic HBV patients."
+  - source_id: SRC-EASL-HBV-2025
+    position: supports
+  - source_id: SRC-AASLD-HCC-2023
+    position: supports
+
+do_not_do:
+  - "Не призначати entecavir monotherapy при коінфекції ВІЛ — використовуйте повну АРТ."
+  - "Не пропускати q6mo HCC surveillance ультразвуком + AFP — це основний предиктор раннього виявлення."
+  - "Не припиняти антивірусну терапію без hepatologist consult — risk of severe HBV reactivation."
+
+do_not_do_en:
+  - "Do not prescribe entecavir monotherapy in HIV coinfection — use full ART."
+  - "Do not skip q6mo HCC surveillance ultrasound + AFP — this is the strongest predictor of early-stage detection."
+  - "Do not discontinue antiviral therapy without a hepatology consult — risk of severe HBV reactivation."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — v0.2-A continuation. Antiviral Regimen authoring (entecavir / tenofovir) is v0.2-A backlog.

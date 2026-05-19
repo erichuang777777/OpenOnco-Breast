@@ -1,0 +1,78 @@
+id: AP-HP-ERADICATION-PHARMACY-OOP
+name: "H. pylori eradication (PPI + amox/clarithromycin / bismuth quadruple) — pharmacy out-of-pocket"
+name_ua: "Ерадикація H. pylori (ІПП + амоксицилін/кларитроміцин / вісмут квадротерапія) — оплата з кишені в аптеці"
+
+applies_to_drug_ids:
+  - DRUG-OMEPRAZOLE
+  - DRUG-AMOXICILLIN
+  - DRUG-CLARITHROMYCIN
+  - DRUG-BISMUTH-SUBCITRATE
+  - DRUG-METRONIDAZOLE
+  - DRUG-TETRACYCLINE
+applies_to_regimen_ids:
+  - REG-HP-PPI-CLAR-AMOX
+  - REG-HP-BISMUTH-QUADRUPLE
+
+pathway_type: self_pay
+
+country_options: ["UA"]
+
+cost_orientation:
+  currency: UAH
+  min: 600
+  max: 2500
+  per_unit: course
+  notes: >
+    Pacient out-of-pocket cost для 14-денного курсу станом на 2026-05:
+    - Triple-therapy (PPI + clarithromycin + amoxicillin):
+      ~600-1500 UAH/14d (генерики у мережевих аптеках; PPI компонент
+      ~150-400 UAH, кларитроміцин ~250-600, амоксицилін ~150-300).
+    - Bismuth quadruple (PPI + bismuth subcitrate + tetracycline +
+      metronidazole): ~900-2500 UAH/14d (bismuth-вмісні препарати
+      типу De-Nol/Bismofalk ~400-800; tetracycline відносно дешевий
+      ~150-300; metronidazole ~100-200). Bismuth-vmist бренди частіше
+      переплачуються — переважно імпорт. Retail-перевірено drlz.com.ua
+      та сайти Apteka.ua, Aptechna Kasa.
+
+typical_lead_time_weeks: [0, 1]
+
+contact_pattern: >
+  Сімейний лікар або гастроентеролог призначає eradication-режим
+  після підтвердження HP-інфекції (UBT, stool antigen, або
+  histology). Pacient купує препарати у будь-якій приватній аптеці.
+  Жоден з компонентів не входить до Доступних ліків НСЗУ (програма
+  реімбурсації Affordable Medicines покриває переважно
+  ССЗ / діабет / астму).
+
+eligibility_caveats:
+  - "Підтверджена HP-інфекція (UBT АБО stool antigen АБО гастробіопсія+CLO/Hp-IHC)"
+  - "Penicillin allergy — використовуйте clarithromycin-based або bismuth quadruple БЕЗ amoxicillin"
+  - "Macrolide-resistance area (UA — клінічно >15% за останні дослідження) — bismuth quadruple preferred per Maastricht VI / ACG 2024"
+  - "Pregnancy — clarithromycin категорія C, tetracycline протипоказаний; розглядати після пологів якщо можливо, інакше — bismuth + amoxicillin + metronidazole за консультацією акушера-гінеколога"
+  - "Pediatric — pediatric-формуляр + спеціалізовані дозування; tetracycline протипоказаний <8 років (зубна емаль)"
+
+requires_documentation:
+  - "Тест підтвердження HP (UBT / stool antigen / histology)"
+  - "Рецепт від сімейного лікаря або гастроентеролога"
+  - "Тест post-eradication (UBT або stool antigen, не раніше 4 тижнів після завершення антибіотика і 2 тижнів після PPI)"
+
+verified_by: null
+last_verified: "2026-05-18"
+
+sources:
+  - SRC-ACG-H-PYLORI-2024
+
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  HP-ерадикація — найважливіша evidence-based профілактика gastric
+  adenocarcinoma та MALT lymphoma (IARC group 1 carcinogen). В Україні
+  жоден з ерадикаційних режимів не реімбурсується НСЗУ —
+  pacient оплачує курс повністю. Загальна ціна 600-2500 UAH є
+  доступною відносно інших prevention-курсів, але створює бар'єр для
+  економічно вразливих верств. Local antibiogram-data щодо
+  clarithromycin / metronidazole resistance в українських когортах
+  обмежені — Maastricht VI default-рекомендація bismuth quadruple
+  у регіонах з >15% clarithromycin-резистентністю.
+
+  AccessPathway render-time-only.

@@ -1,0 +1,82 @@
+id: IND-RADON-PREVENTION-MITIGATION-AND-SCREENING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-RADON-MALIGNANCY-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: "Radon mitigation (sub-slab depressurization, ventilation) reduces indoor radon by ~50-80% (EPA). Lung cancer attributable risk from residential radon: ~10-15% in non-smokers and ~50% multiplicative interaction with smoking. Combined mitigation + smoking cessation + LDCT screening produces meaningful incidence + mortality reduction in elevated-radon residential settings."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests:
+  - TEST-LDH
+
+rationale: >
+  Standard-track prevention pathway for radon-elevated residential exposure. Three components:
+
+  **(1) Radon mitigation** — sub-slab depressurization (the EPA standard), sealing of foundation cracks, increased ventilation. Re-test 24 months post-mitigation to confirm radon levels <4 pCi/L (EPA action threshold).
+
+  **(2) Smoking cessation counseling** — radon-smoking synergy is multiplicative (not additive); smokers with radon-elevated homes carry the highest lung cancer risk. Tobacco cessation is the single most impactful intervention.
+
+  **(3) Annual low-dose CT (LDCT) screening** per USPSTF lung cancer screening criteria adjusted for radon-elevated risk. Standard USPSTF criteria: ages 50-80, ≥20 pack-years smoking history, quit ≤15y. Radon-elevated patients may benefit from screening even with lower pack-year thresholds (individualized).
+
+  Occupational uranium mining or processing exposure carries even higher lung cancer risk — ensure occupational history is captured.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для radon-elevated residential exposure. Три компоненти:
+
+  **(1) Митигація радону** — sub-slab depressurization (EPA стандарт), герметизація тріщин фундаменту, посилена вентиляція. Повторне тестування через 24 місяці після митигації для підтвердження рівнів радону <4 pCi/L (EPA action threshold).
+
+  **(2) Консультування з припинення куріння** — radon-smoking синергія мультиплікативна (не адитивна); курці з radon-elevated помешканнями мають найвищий ризик раку легень. Припинення тютюнопаління — найбільш впливова інтервенція.
+
+  **(3) Щорічний LDCT скринінг** за критеріями USPSTF lung cancer screening, скорегованими для radon-elevated risk. Стандартні USPSTF критерії: вік 50-80, ≥20 пачко-років тютюнопаління, кинули ≤15р. Radon-elevated пацієнти можуть отримати користь зі скринінгу навіть з нижчими pack-year thresholds (індивідуалізовано).
+
+  Occupational uranium mining або processing exposure має ще вищий ризик раку легень.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_completion
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не пропускати radon re-test через 24 місяці після митигації — митигація може бути неповною."
+  - "Не вважати tobacco cessation і radon mitigation альтернативами — обидві потрібні."
+  - "Не використовувати chest X-ray замість LDCT для lung cancer screening — LDCT має значно вищу sensitivity."
+  - "Не починати LDCT screening без обговорення incidental-findings ризику (50% LDCT мають incidental finding, що потребує follow-up)."
+
+do_not_do_en:
+  - "Do not skip radon re-testing 24 months post-mitigation — mitigation may be incomplete."
+  - "Do not treat tobacco cessation and radon mitigation as alternatives — both are needed."
+  - "Do not use chest X-ray instead of LDCT for lung cancer screening — LDCT has significantly higher sensitivity."
+  - "Do not start LDCT screening without discussing incidental-findings risk (50% of LDCTs have an incidental finding requiring follow-up)."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 occupational/environmental prevention pilot. Two-Clinical-Co-Lead signoff queued per CHARTER §6.1 dev-mode."

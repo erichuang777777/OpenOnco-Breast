@@ -1,0 +1,124 @@
+id: RF-OCC-PAINTERS-PREVENTION
+definition: >-
+  Documented historical occupational exposure as a painter — typical
+  high-risk roles include industrial / construction painters, ship
+  painters, automotive painters, and tradespeople with ≥10 years
+  continuous painting work — in an individual without a current
+  paint-occupation-associated malignancy diagnosis. IARC classifies
+  "Occupational exposure as a painter" as a Group 1 carcinogen
+  (Monograph 100F, 2012) based on the heterogeneous solvent / pigment /
+  binder mixture historically encountered (benzene-containing solvents,
+  toluene, xylene, lead-based and chromium-based pigments, asbestos
+  fillers in older formulations). Cancer endpoints with established
+  occupational excess: lung cancer (consistent across cohorts),
+  bladder cancer (consistent), childhood leukemia in offspring of
+  exposed parents (perinatal-exposure window), and adult AML / NHL
+  (less consistent but elevated). Latency 10-40 years. There is NO
+  curative intervention for prior exposure — exposure cessation /
+  PPE if active (modern water-based paint reformulations have
+  substantially reduced solvent burden), smoking-cessation counseling,
+  LDCT lung screening if smoker-eligible, urinalysis for bladder
+  surveillance, and CBC for hematologic surveillance are the levers.
+  Prevention-persona RedFlag (§20 ratification 2026-05-18, v0.3
+  occupational batch-2 pilot).
+definition_ua: >-
+  Документоване історичне професійне впливу як маляр — типові
+  високоризикові ролі: промислові / будівельні маляри, малярі
+  суднобудування, автомобільні малярі та tradespeople з ≥10 роками
+  безперервної малярської роботи — у пацієнта без поточного діагнозу
+  paint-occupation-асоційованої малігнізації. IARC класифікує
+  "Occupational exposure as a painter" як Group 1 канцероген
+  (Monograph 100F, 2012) на основі гетерогенної суміші розчинників /
+  пігментів / зв'язувачів, історично зустрічуваної (бензен-вмісні
+  розчинники, толуол, ксилол, свинцевий та хромовий пігменти, азбестові
+  наповнювачі у старіших формуляціях). Cancer endpoints з встановленим
+  професійним надлишком: рак легень (consistent across cohorts), рак
+  сечового міхура (consistent), childhood leukemia у нащадків
+  експонованих батьків (перинатальне вікно впливу), adult AML / NHL
+  (менш consistent, але підвищений). Латентність 10-40 років.
+  КУРАТИВНОГО втручання для попереднього впливу НЕМАЄ — припинення
+  впливу / PPE при активному (сучасні water-based reformulations
+  суттєво знизили solvent burden), counseling щодо припинення куріння,
+  LDCT-скринінг легень при smoker-eligibility, urinalysis для
+  спостереження за сечовим міхуром, CBC для гематологічного
+  спостереження — наявні важелі. Prevention-persona RedFlag
+  (§20 ратифікація 2026-05-18, v0.3 occupational batch-2 пілот).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "occupational_painter_exposure_documented"
+      value: true
+    - finding: "occupational_painter_years_ge_10"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: occupational
+
+# Painter-occupation-associated cancers (in-KB Disease entities):
+# - DIS-NSCLC + DIS-SCLC (lung; primary endpoint).
+# - DIS-UROTHELIAL (bladder; consistent excess).
+# - DIS-AML (adult hematologic; benzene-solvent-attributable).
+relevant_diseases:
+  - DIS-NSCLC
+  - DIS-SCLC
+  - DIS-UROTHELIAL
+  - DIS-AML
+
+shifts_algorithm: []
+
+# Source caveat: IARC Monograph 100F (2012) is canonical for
+# painter-occupation Group-1 status; NOT yet a separate SRC entity.
+# v0.3 source-authoring backlog.
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-NSCLC-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag — v0.3 occupational batch-2 pilot. Fires
+  when patient profile carries documented ≥10 years occupational
+  exposure as a painter AND no confirmed paint-occupation-attributable
+  malignancy diagnosis. Engine routes to 2-track PreventionPlan:
+    (a) IND-OCC-PAINTERS-PREVENTION-INTENSIFIED-SURVEILLANCE (standard)
+        — risk-adjusted annual LDCT chest if smoker-eligible per
+        USPSTF; urinalysis q1-2y for bladder surveillance; CBC q1y
+        for hematologic surveillance; smoking-cessation counseling.
+    (b) IND-OCC-PAINTERS-PREVENTION-OBSERVATION (surveillance) —
+        routine general-population USPSTF screening only; patient
+        declines intensified multi-modality surveillance.
+
+  Trigger findings are computed booleans from occupational-history
+  intake at the patient-profile layer.
+
+  Evidence base: IARC Monograph 100F (2012); Guha et al. 2010 (pooled
+  painter-cohort meta-analysis — lung-cancer RR ~1.35, bladder-cancer
+  RR ~1.25). Heterogeneity of historical paint formulations
+  (benzene-containing solvents, lead chromate pigments, asbestos
+  fillers) drives multi-organ risk pattern.
+
+  Sources TODO: IARC Monograph 100F (2012) as a new SRC entity. v0.3
+  source-authoring backlog.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption.
+notes_ua: >
+  Prevention-persona RedFlag — v0.3 occupational batch-2 пілот.
+  Спрацьовує при документованому ≥10 років професійному впливі як
+  маляр без підтвердженого діагнозу. Engine маршрутизує до 2-track
+  PreventionPlan: (а) intensified — LDCT (smoker-eligible) +
+  urinalysis + CBC + припинення куріння; (б) observation — USPSTF
+  тільки. STUB — очікує підпис двох Clinical Co-Lead за §6.1 dev-mode
+  exemption.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_batch2
+draft_revision: 1
+
+draft: true

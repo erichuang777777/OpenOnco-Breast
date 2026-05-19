@@ -1,0 +1,115 @@
+id: IND-LIFESTYLE-HOT-BEVERAGES-PREVENTION-COOLING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-ESOPHAGEAL
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-LIFESTYLE-HOT-BEVERAGES-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Lowering beverage consumption temperature below 60°C eliminates the thermal-injury component of ESCC risk per IARC analysis. Magnitude of risk reduction depends on baseline regional ESCC incidence — meaningful in high-incidence regions, modest in low-incidence Western populations. Co-modification of alcohol + tobacco use compounds protection."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for very hot beverage consumption.
+  Components per IARC Monograph 116 + NCCN Esophageal Cancer screening
+  guidance:
+
+  **(1) Beverage-temperature counseling** — Cool beverages to <60°C
+  before drinking. Practical rules:
+  - Allow tea/coffee to cool ≥5 min after pouring
+  - Avoid sipping immediately after boiling
+  - Mate, mursik, traditional hot-beverage cultures: same temperature
+    target applies
+  - Use of straws for very hot drinks NOT a safe workaround (concentrates
+    thermal injury at posterior pharynx/upper esophagus)
+
+  **(2) Co-modifiable risk factor assessment** — ESCC risk multiplied by
+  concurrent alcohol use, tobacco use, low fruit/vegetable intake,
+  achalasia, prior caustic ingestion, tylosis. Address each
+  independently; engine routes through respective RF prevention indications
+  if concurrently flagged.
+
+  **(3) Targeted endoscopic surveillance** — Routine endoscopic screening
+  NOT recommended for hot-beverage exposure alone in low-incidence
+  populations. In high-incidence regions (Iran "esophageal cancer belt",
+  Linxian China, parts of South America) OR with concurrent ESCC risk
+  factors (heavy alcohol + tobacco + family hx) — consider endoscopic
+  surveillance per regional guideline / NCCN Esophageal.
+
+  **(4) Symptom-prompted evaluation** — Dysphagia, odynophagia,
+  unexplained weight loss, hematemesis → immediate upper endoscopy.
+  Do not delay workup for "minor" dysphagia in hot-beverage-exposed +
+  alcohol-/tobacco-exposed patients.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для very hot beverage consumption.
+  Components per IARC Monograph 116 + NCCN Esophageal:
+
+  **(1) Beverage-temperature counseling** — Охолоджувати напої до <60°C
+  before drinking:
+  - Дати чаю/каві охолонути ≥5 хв після заварювання
+  - Уникати sipping immediately after boiling
+  - Mate, mursik, traditional hot-beverage культури: той самий target
+  - Соломинки для very hot drinks НЕ safe workaround
+
+  **(2) Co-modifiable risk factor assessment** — ESCC risk компромісний
+  concurrent alcohol use, tobacco use, low fruit/vegetable intake,
+  achalasia, prior caustic ingestion, tylosis.
+
+  **(3) Targeted endoscopic surveillance** — Routine endoscopic screening
+  НЕ recommended для hot-beverage exposure alone у low-incidence
+  populations. У high-incidence regions (Iran, Linxian China) АБО з
+  concurrent ESCC risk factors — consider per regional guideline.
+
+  **(4) Symptom-prompted evaluation** — Дисфагія, odynophagia,
+  unexplained weight loss, hematemesis → immediate upper endoscopy.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-ESOPHAGEAL-2025
+    position: supports
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не презентувати чай/каву per se як carcinogenic — лише температура має значення; типові Western temperatures не associated."
+  - "Не використовувати straws для very hot drinks — концентрує thermal injury."
+  - "Не призначати routine endoscopy всім hot-beverage consumers у low-incidence populations — yield poor."
+  - "Не затримувати endoscopic workup при early dysphagia у hot-beverage + alcohol/tobacco-exposed patients."
+
+do_not_do_en:
+  - "Do not present tea/coffee per se as carcinogenic — only the temperature matters; typical Western temperatures are not associated."
+  - "Do not use straws for very hot drinks — they concentrate thermal injury at posterior pharynx/upper esophagus."
+  - "Do not order routine endoscopy for all hot-beverage consumers in low-incidence populations — yield is poor."
+  - "Do not delay endoscopic workup for early dysphagia in hot-beverage + alcohol/tobacco-exposed patients."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 lifestyle prevention pilot (hot beverages). Two-Clinical-Co-Lead signoff queued."

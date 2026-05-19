@@ -1,0 +1,142 @@
+id: IND-OCC-PAINTERS-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-OCC-PAINTERS-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Primary endpoint: avoidance of multi-modality intensified surveillance
+    when patient declines structured pathway. Routine USPSTF screening
+    alone leaves paint-occupation-attributable excess across lung /
+    bladder / hematologic compartments unaddressed. Modest RR magnitudes
+    (~1.25-1.35) mean the absolute-risk reduction from intensified
+    surveillance is correspondingly modest.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-OCC-PAINTERS-PREVENTION-INTENSIFIED-
+  SURVEILLANCE. Patient with documented ≥10 years occupational
+  painting exposure who declines multi-modality intensified surveillance —
+  for any reason (cost across modalities, anxiety from layered
+  surveillance burden, preference, life expectancy / competing
+  illness) — is offered routine general-population screening only:
+
+  **Lung-cancer screening:** Apply USPSTF 2021 criteria unmodified.
+  Patient is explicitly informed that paint-occupation-attributable
+  excess risk is unaddressed.
+
+  **Bladder-cancer screening:** None scheduled — urinalysis obtained
+  only on routine primary-care visit or symptomatic presentation.
+
+  **Hematologic surveillance:** None scheduled — CBC obtained only
+  routinely or on symptomatic presentation.
+
+  **Smoking cessation:** Still offered — lung component remains
+  primary.
+
+  **Symptom-triggered evaluation:** Low threshold for diagnostic
+  workup if alarm features develop (chest symptoms; gross / microscopic
+  hematuria; unexplained fatigue with cytopenia on incidental CBC).
+
+  Routing reconsiderations: patient may revisit intensified-surveillance
+  pathway at any subsequent visit, in whole or in part. Per CHARTER
+  §11 patient-autonomy framing: multi-modality surveillance is a
+  shared-decision-making domain. Given the modest RR magnitudes
+  underlying painter-occupation-cancer association, declining the
+  intensified pathway is a more clinically reasonable choice than
+  for asbestos- or silica-exposed cohorts.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до IND-OCC-PAINTERS-
+  PREVENTION-INTENSIFIED-SURVEILLANCE. Пацієнт з документованим ≥10
+  років професійним малярським впливом, який відмовляється від
+  multi-modality intensified surveillance (вартість через декілька
+  модальностей, тривога від layered surveillance burden, перевага,
+  очікувана тривалість життя), отримує тільки рутинний
+  загальнопопуляційний скринінг:
+
+  **Скринінг раку легень:** Застосовувати USPSTF 2021 без модифікації.
+
+  **Скринінг раку сечового міхура:** Не запланований — urinalysis
+  отримується тільки на рутинному візиті.
+
+  **Гематологічне спостереження:** Не заплановане — CBC отримується
+  тільки рутинно або при симптоматичній презентації.
+
+  **Припинення куріння:** Все ще пропонується — лeгеневий компонент
+  залишається первинним.
+
+  **Symptom-triggered оцінка:** Низький поріг для діагностичного
+  workup при появі alarm features.
+
+  Reroute: пацієнт може повернутися до інтенсифікованого спостереження
+  на будь-якому подальшому візиті. Per CHARTER §11 — shared-decision-
+  making domain. З урахуванням помірних magnitudes RR, що лежать в
+  основі painter-occupation-cancer association, відмова від
+  intensified pathway — більш клінічно розумний вибір, ніж для
+  asbestos- або silica-exposed когорт.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Patients declining multi-modality surveillance for occupational
+      mixed-exposure cohorts continue to receive symptom-triggered
+      evaluation and standard-of-care general-population follow-up."
+  - source_id: SRC-NCCN-NSCLC-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Multi-modality surveillance pathways for moderate-RR occupational
+      cohorts are subject to patient-autonomy and shared-decision-
+      making considerations."
+
+do_not_do:
+  - "Не презентувати observation як еквівалент multi-modality surveillance — paint-occupation-attributable excess ризик не адресується."
+  - "Не ігнорувати alarm features (chest симптоми, гематурія, цитопенія) — immediate evaluation."
+  - "Не використовувати цей шлях як стандарт першої лінії — intensified-surveillance трек залишається preferred."
+  - "Не пропускати counseling щодо припинення куріння — рекомендація актуальна незалежно від surveillance-track вибору."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to multi-modality surveillance — paint-occupation-attributable excess risk is unaddressed."
+  - "Do not ignore alarm features (chest symptoms, hematuria, cytopenia) — immediate evaluation."
+  - "Do not use this pathway as a first-line standard — the intensified-surveillance track remains the preferred recommendation."
+  - "Do not skip smoking-cessation counseling — the recommendation is relevant regardless of surveillance-track choice."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — alternative-track companion for painter occupational prevention
+  pilot. §15.2 C4 ≥2-tracks invariant compliance.
+  Two-Clinical-Co-Lead signoff queued per CHARTER §6.1 dev-mode
+  exemption.

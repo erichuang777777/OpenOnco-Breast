@@ -1,0 +1,139 @@
+id: IND-IATROGENIC-TAMOXIFEN-ENDOMETRIAL-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-ENDOMETRIAL
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-TAMOXIFEN-ENDOMETRIAL-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: "Symptom-prompted evaluation (postmenopausal bleeding → immediate TVUS + endometrial biopsy) achieves early-stage endometrial cancer detection in tamoxifen-exposed cohort. Stage I disease at diagnosis: >90% 5-year survival per NCCN Uterine. Routine asymptomatic TVUS screening has been studied + found to NOT improve outcomes — false-positive rate elevated by tamoxifen-related subepithelial cystic changes; leads to unnecessary biopsies + diagnostic D&C without survival benefit (ACOG Committee Opinion + NCCN Breast Survivorship)."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Standard-track surveillance for tamoxifen exposure ≥5y in women with
+  intact uterus. Components per ACOG Committee Opinion + NCCN Breast
+  Survivorship + NCCN Uterine:
+
+  **(1) Patient counseling about symptoms requiring evaluation** —
+  ANY of the following → immediate gynecology referral:
+  - Postmenopausal bleeding (most-sensitive symptom; ~90% endometrial
+    cancers in tamoxifen-exposed cohort present with bleeding)
+  - Abnormal pre-menopausal bleeding (menorrhagia, intermenstrual
+    bleeding, post-coital bleeding)
+  - Vaginal discharge / spotting
+  - Pelvic pain or pressure
+
+  **(2) Prompt diagnostic workup of any reported symptom** —
+  Transvaginal ultrasound (TVUS) + endometrial biopsy (pipelle or
+  hysteroscopy with directed biopsy). Do NOT defer biopsy based on
+  TVUS endometrial thickness alone in tamoxifen-exposed women —
+  tamoxifen-related changes (subepithelial cysts, thickening) can mask
+  or mimic pathology; tissue diagnosis required.
+
+  **(3) Annual gynecologic exam** with pelvic exam + symptom inquiry.
+  Routine asymptomatic TVUS screening NOT recommended (ACOG, NCCN,
+  ASCO) — high false-positive rate, unnecessary biopsies, no proven
+  survival benefit. Annual exam suffices.
+
+  **(4) Tamoxifen duration optimization** — Standard adjuvant
+  endocrine therapy is 5y; extended to 10y in selected high-risk
+  ER+ breast cancer per ATLAS/aTTom trials. Risk-benefit re-assessment
+  at year 5 vs. continued endometrial risk + thromboembolic risk.
+  Aromatase inhibitor (post-menopausal) is alternative without
+  endometrial risk if switch appropriate.
+
+  **(5) Concurrent risk-factor screening** — Obesity, hypertension,
+  diabetes, Lynch syndrome (independent endometrial cancer risks)
+  compound tamoxifen-related risk; address per separate pathways.
+
+  **(6) Hormone replacement therapy contraindicated** in this
+  population — defer non-hormonal vasomotor + GU-symptom management.
+
+  Outcome: women on tamoxifen who report bleeding promptly + receive
+  prompt workup have endometrial cancer detected at curable stage in
+  vast majority of cases. Goal of surveillance pathway is NOT screening
+  asymptomatic women — it is rapid response to any bleeding/symptom.
+
+rationale_ua: >
+  Стандартний-трек surveillance для tamoxifen exposure ≥5р у жінок з
+  intact uterus. Components per ACOG Committee Opinion + NCCN Breast
+  Survivorship + NCCN Uterine:
+
+  **(1) Patient counseling про симптоми requiring evaluation** —
+  БУДЬ-ЯКИЙ з наступних → immediate gynecology referral:
+  - Postmenopausal bleeding (most-sensitive симптом; ~90% endometrial
+    cancers у tamoxifen-exposed cohort present з bleeding)
+  - Abnormal pre-menopausal bleeding (menorrhagia, intermenstrual
+    bleeding, post-coital bleeding)
+  - Vaginal discharge / spotting
+  - Pelvic pain або pressure
+
+  **(2) Prompt diagnostic workup будь-якого reported симптому** —
+  Transvaginal ultrasound (TVUS) + endometrial biopsy (pipelle або
+  hysteroscopy з directed biopsy). НЕ defer biopsy на основі TVUS
+  endometrial thickness alone у tamoxifen-exposed жінок.
+
+  **(3) Annual gynecologic exam** з pelvic exam + symptom inquiry.
+  Routine asymptomatic TVUS screening НЕ recommended (ACOG, NCCN, ASCO).
+
+  **(4) Tamoxifen duration optimization** — Standard adjuvant
+  endocrine therapy 5р; extended до 10р у selected high-risk ER+
+  breast cancer per ATLAS/aTTom trials. Aromatase inhibitor (post-
+  menopausal) — alternative без endometrial risk.
+
+  **(5) Concurrent risk-factor screening** — Obesity, hypertension,
+  diabetes, Lynch syndrome.
+
+  **(6) Hormone replacement therapy contraindicated** у цій population.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BREAST-2025
+    position: supports
+  - source_id: SRC-NCCN-UTERINE-2025
+    position: supports
+
+do_not_do:
+  - "Не призначати routine asymptomatic TVUS screening — false-positive rate elevated від tamoxifen-related subepithelial changes; ACOG/NCCN against."
+  - "Не defer endometrial biopsy у symptomatic woman через 'thin' TVUS endometrium — tamoxifen-related changes can mask pathology; biopsy required."
+  - "Не призначати hormone replacement therapy у tamoxifen-exposed women — contraindicated. Non-hormonal vasomotor management."
+  - "Не нормалізувати postmenopausal bleeding — навіть мінімальне spotting requires evaluation."
+  - "Не deprioritize Lynch syndrome assessment у тих кому endometrial cancer розвивається на tamoxifen — concurrent germline risk альтерує management."
+
+do_not_do_en:
+  - "Do not order routine asymptomatic TVUS screening — false-positive rate is elevated by tamoxifen-related subepithelial changes; ACOG/NCCN advise against."
+  - "Do not defer endometrial biopsy in a symptomatic woman based on a 'thin' TVUS endometrium — tamoxifen-related changes can mask pathology; biopsy is required."
+  - "Do not prescribe hormone replacement therapy in tamoxifen-exposed women — contraindicated. Use non-hormonal vasomotor management."
+  - "Do not normalize postmenopausal bleeding — even minimal spotting requires evaluation."
+  - "Do not deprioritize Lynch syndrome assessment in those who develop endometrial cancer on tamoxifen — concurrent germline risk alters management."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 iatrogenic prevention pilot (tamoxifen endometrial). Two-Clinical-Co-Lead signoff queued. Critical: routine TVUS screening NOT recommended; symptom-prompted evaluation is the standard."

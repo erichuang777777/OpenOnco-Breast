@@ -1,0 +1,175 @@
+id: ALGO-PREVENTION-RISK-TRIAGE-OVERVIEW
+applicable_to_disease: DIS-CRC
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention. Anchored to DIS-CRC because CRC has
+# the densest prevention RF coverage in OpenOnco (hereditary + chronic
+# IBD + lifestyle + family-history pathways). However, this is a HIGH-
+# LEVEL TRIAGE algorithm — input is the entire set of fired prevention
+# RFs for the patient, output is the routing decision for which sub-
+# pathway to enter first (testing / surveillance / lifestyle / multi-
+# track). Reach is cross-disease.
+purpose: >
+  High-level triage algorithm for the prevention persona. Determines
+  which of four prevention sub-pathways is the PRIMARY routing target
+  for a patient with any fired prevention RedFlags:
+
+    A. TESTING — genetic counseling + germline panel (when hereditary
+       suspicion fires)
+    B. SURVEILLANCE — cancer-screening cadence escalation (when
+       confirmed-carrier or chronic-condition RF fires)
+    C. LIFESTYLE — modifiable-RF intervention (when lifestyle /
+       obesity / tobacco / alcohol RF fires)
+    D. MULTI-TRACK — meta-routing for multi-bucket integrated risk
+       profile (delegates to ALGO-INTEGRATED-RISK-FROM-MULTIPLE-RFS)
+
+  This is the TOP-OF-FUNNEL prevention routing decision. Sub-pathway-
+  specific algorithms (ALGO-AMSTERDAM-II-LYNCH / ALGO-BOADICEA-V6 /
+  etc.) handle the within-pathway decision logic.
+
+output_indications:
+  - IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+  - IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+  - IND-FAP-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+  - IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+  - IND-VHL-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Default routes to Lynch suspicion as the highest-prior hereditary
+# routing target. Engine should re-route based on triage outcome:
+# - Pathway A (testing) → syndrome-specific SUSPICION-PREVENTION-
+#   ENHANCED-SURVEILLANCE (Lynch / HBOC / FAP / LFS / VHL)
+# - Pathway B (surveillance) → carrier-specific surveillance Indication
+# - Pathway C (lifestyle) → modifiable-RF-specific Indication (HCV DAA,
+#   HBV antiviral, tobacco cessation, weight management — these are
+#   v0.2 dedicated authoring)
+# - Pathway D (multi-track) → ALGO-INTEGRATED-RISK-FROM-MULTIPLE-RFS
+
+decision_tree:
+  - step: 1
+    # Multi-bucket gate — if RFs span ≥2 risk-category buckets, delegate
+    # to integrated-risk meta-routing.
+    evaluate:
+      all_of:
+        - condition: "Patient has ≥2 fired prevention RedFlags spanning ≥2 PreventionRiskCategory buckets (genetic / infectious / chronic_condition / occupational / iatrogenic / lifestyle / reproductive)"
+    if_true:
+      result: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Multi-bucket prevention RFs fired — delegate to ALGO-INTEGRATED-RISK-FROM-MULTIPLE-RFS meta-routing. Pathway D selected. Engine should invoke integrated-risk algorithm + produce consolidated multi-track prevention plan. Indication route placeholder; final routing determined by integrated-risk output."
+    if_false:
+      next_step: 2
+  - step: 2
+    # Pathway A: hereditary-testing suspicion fires (BUT no confirmed
+    # carrier status yet). Family-history + pedigree-suspicion RFs.
+    evaluate:
+      any_of:
+        - condition: "Family history of hereditary cancer syndrome fires (RF-LYNCH-FAMILY-HISTORY-SUSPICION / RF-BRCA-HBOC-FAMILY-HISTORY-SUSPICION / RF-FAP-FAMILY-HISTORY-SUSPICION / RF-LI-FRAUMENI-FAMILY-HISTORY-SUSPICION / RF-VHL-FAMILY-HISTORY-SUSPICION / RF-HEREDITARY-PEDIGREE-SUSPICION) AND no confirmed-carrier status"
+    if_true:
+      result: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Pathway A — TESTING. Refer to syndrome-specific carrier-probability algorithm (Manchester / BRCAPRO / BOADICEA v6 for HBOC; PREMM5 / MMRPRO / Amsterdam II / Revised Bethesda for Lynch; classic FAP / AFAP criteria; Chompret / classic LFS criteria; etc.) → if threshold met → germline panel testing + genetic counseling. Algorithm routes to syndrome-suspicion Indication; engine should select the syndrome-specific Indication matching the firing RF."
+    if_false:
+      next_step: 3
+  - step: 3
+    # Pathway B: confirmed-carrier surveillance. Confirmed hereditary
+    # carriers OR confirmed chronic-condition-driven surveillance
+    # eligibility (BE, chronic atrophic gastritis, chronic HBV / HCV,
+    # cirrhosis, etc.).
+    evaluate:
+      any_of:
+        - condition: "Confirmed hereditary cancer syndrome carrier fires (RF-LYNCH-CONFIRMED-CARRIER / RF-BRCA-CONFIRMED-CARRIER / RF-FAP-CONFIRMED-CARRIER / RF-LI-FRAUMENI-CONFIRMED-CARRIER / RF-VHL-CONFIRMED-CARRIER / etc.)"
+        - condition: "Confirmed chronic-condition surveillance eligibility fires (RF-BARRETTS-ESOPHAGUS / RF-CHRONIC-ATROPHIC-GASTRITIS / RF-CHRONIC-HBV / RF-CHRONIC-HCV / RF-CIRRHOSIS / RF-IBD-DURATION-RISK / etc.)"
+    if_true:
+      result: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Pathway B — SURVEILLANCE. Route to carrier-specific or chronic-condition-specific enhanced-surveillance Indication. For confirmed carriers: trigger ALGO-CARRIER-CASCADE-LYNCH (or analogous syndrome-specific cascade) AND syndrome-specific surveillance schedule. For chronic-condition RFs: route to condition-specific surveillance Indication (e.g., IND-BARRETTS-ESOPHAGUS-PREVENTION-SURVEILLANCE, IND-CHRONIC-HCV-PREVENTION-DAA). Algorithm routes placeholder; engine selects actual Indication."
+    if_false:
+      next_step: 4
+  - step: 4
+    # Pathway C: modifiable-lifestyle-RF only. No genetic + no chronic-
+    # condition surveillance — pure lifestyle modification routing.
+    evaluate:
+      any_of:
+        - condition: "Lifestyle-RF only fires (RF-TOBACCO / RF-OBESITY / RF-ALCOHOL / RF-PHYSICAL-INACTIVITY / RF-LOW-FIBER-DIET / RF-HRT-USE / RF-OCCUPATIONAL-EXPOSURE / RF-IATROGENIC-IMMUNOSUPPRESSION / RF-IATROGENIC-RADIATION-HISTORY / etc.) with no other prevention bucket firing"
+    if_true:
+      result: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Pathway C — LIFESTYLE / OCCUPATIONAL / IATROGENIC. Route to modifiable-RF-specific Indication: tobacco cessation, weight management + physical activity counseling, alcohol reduction, sun-protection counseling (occupational UV / outdoor work), occupational-exposure removal + medical-surveillance referral, post-radiation late-effects surveillance, post-transplant immunosuppression-driven cancer screening. Lifestyle-only patients receive shorter / less intensive prevention plans than hereditary or chronic-condition patients. Indication route placeholder; engine selects RF-specific Indication. v0.2 dedicated lifestyle Indications pending authoring."
+    if_false:
+      result: false
+      notes: "No prevention RFs fired — patient receives general-population USPSTF screening recommendations (mammography q2y from 50, colonoscopy q10y from 45, cervical cytology q3-5y per ASCCP, lung CT screening for ever-smokers per USPSTF 2021, etc.) per age + sex. No prevention plan needed beyond standard screening."
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-ESMO-CRC-2024
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding the top-of-funnel
+  prevention routing decision. No single primary-paper reference; built
+  on the integrated prevention frameworks from NCCN Genetic/Familial
+  + ACS Cancer Prevention & Early Detection + USPSTF Recommendations
+  + WCRF/AICR Continuous Update Project + ESMO Cancer Prevention
+  Guidelines. The four-pathway routing principle (Testing / Surveillance /
+  Lifestyle / Multi-track) is OpenOnco's structuring of the prevention
+  problem domain — sub-algorithms (Manchester / PREMM5 / Chompret /
+  cascade / integrated-risk) fill in the within-pathway decision logic.
+
+  Anchored to DIS-CRC; reach is cross-disease (top-of-funnel triage).
+
+  Routing decision dependencies:
+    Step 1 (multi-bucket gate) FIRST so that patients with multiple
+    converging RFs do not silo into a single pathway. Once
+    integrated-risk fires, the meta-algorithm produces a consolidated
+    plan that addresses each fired RF.
+
+    Step 2 (testing) BEFORE Step 3 (surveillance) so that hereditary-
+    suspicion patients enter genetic counseling + germline testing
+    BEFORE empirical surveillance. Carrier-confirmation changes the
+    surveillance schedule + risk-reducing surgery decisions
+    materially.
+
+    Step 3 (surveillance) BEFORE Step 4 (lifestyle) so that confirmed-
+    carrier and chronic-condition surveillance is prioritized over
+    modifiable-lifestyle counseling — surveillance is mortality-impact
+    higher and time-critical (cancers progress on a clinical
+    timeline; lifestyle modification is cumulative).
+
+  Sub-pathway algorithm registry:
+    Pathway A (TESTING):
+      - ALGO-AMSTERDAM-II-LYNCH
+      - ALGO-REVISED-BETHESDA-LYNCH
+      - ALGO-PREMM5-LYNCH
+      - ALGO-MMRPRO
+      - ALGO-BRCAPRO
+      - ALGO-MANCHESTER-BRCA
+      - ALGO-BOADICEA-V6-BREAST-OVARIAN
+      - ALGO-TYRER-CUZICK-V8-BREAST
+      - ALGO-BCSC-BREAST
+      - ALGO-GAIL-BREAST
+      - ALGO-CLASSIC-FAP-CRITERIA
+      - ALGO-CLASSIC-LFS-CRITERIA
+      - ALGO-CHOMPRET-2015-LFS
+      - ALGO-MULTI-SYNDROME-PEDIGREE-TRIAGE
+    Pathway B (SURVEILLANCE):
+      - ALGO-CASCADE-FAMILY-TESTING
+      - ALGO-CARRIER-CASCADE-LYNCH
+      - syndrome-specific carrier-surveillance algorithms (v0.2)
+      - chronic-condition surveillance algorithms (v0.2)
+    Pathway C (LIFESTYLE):
+      - v0.2 lifestyle-RF Indication routing
+    Pathway D (MULTI-TRACK):
+      - ALGO-INTEGRATED-RISK-FROM-MULTIPLE-RFS
+
+  Implementation status:
+    - This algorithm is a DECLARATIVE top-of-funnel reference.
+    - Engine integration: prevention-engine evaluates all prevention
+      RFs concurrently and routes to ALL applicable sub-pathway
+      Indications (current §20 design — multi-track plan). This
+      algorithm formalizes the top-of-funnel triage logic that the
+      engine implements implicitly.
+    - Render-layer impact: patient sees a SINGLE prevention plan
+      with sections for each fired sub-pathway, ordered by
+      mortality-impact priority.
+
+  Cited from prevention-engine top-of-funnel + RF-PREVENTION-PROFILE-
+  TRIAGE coordinating logic (v0.2 RF authoring backlog).
+draft: true

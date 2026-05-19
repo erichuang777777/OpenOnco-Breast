@@ -1,0 +1,67 @@
+id: IND-LIFESTYLE-ALCOHOL-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-HCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-LIFESTYLE-ALCOHOL-CANCER-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Continued heavy alcohol use: cumulative cancer incidence + cirrhosis + cardiovascular morbidity continues to rise. Targeted cancer screening (HCC surveillance via US + AFP q6mo in cirrhotics) captures earlier-stage disease but does not reduce incidence."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+  - TEST-LFT
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-LIFESTYLE-ALCOHOL-PREVENTION-CESSATION.
+  Patient declines structured cessation / pharmacotherapy — receives liver
+  disease monitoring (FIB-4 q1y, transient elastography q1-2y), HCC surveillance
+  in cirrhotics, brief intervention + readiness-to-change assessment at each
+  clinical contact. Per CHARTER §11 patient-autonomy framing.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від structured
+  cessation — отримує liver disease monitoring + HCC surveillance + brief
+  intervention. Per CHARTER §11.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle
+draft_revision: 1
+
+sources:
+  - source_id: SRC-AASLD-HCC-2023
+    position: context
+
+do_not_do:
+  - "Не пропускати liver disease monitoring у heavy drinkers навіть якщо vidmovlyaiut cessation."
+  - "Не виключати breast cancer surveillance у жінок-користувачок alcohol — це окрема indication."
+
+do_not_do_en:
+  - "Do not skip liver disease monitoring in heavy drinkers even if they decline cessation."
+  - "Do not exclude breast cancer surveillance in women who use alcohol — that is a separate indication."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for alcohol prevention. §15.2 C4 ≥2-tracks invariant."

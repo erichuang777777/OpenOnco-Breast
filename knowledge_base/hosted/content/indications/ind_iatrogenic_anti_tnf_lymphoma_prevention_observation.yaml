@@ -1,0 +1,100 @@
+id: IND-IATROGENIC-ANTI-TNF-LYMPHOMA-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-DLBCL-NOS
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-ANTI-TNF-LYMPHOMA-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Patient declines structured combination-therapy step-down discussion + annual dermatologic surveillance — receives baseline B-symptom + lymphadenopathy education, sun-protection counseling, and reminder of HSTCL combination-therapy Boxed Warning. The rare HSTCL / DLBCL events may present at advanced stage; outcomes worse than with active surveillance arm. Most population-attributable cancer signal in anti-TNF monotherapy is at background — the meaningful clinical-impact difference between the two arms is structured combination-step-down review, which the observation arm passively skips."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-IATROGENIC-ANTI-TNF-
+  LYMPHOMA-PREVENTION-SURVEILLANCE. Patient declines structured
+  year-1 / year-3 / year-5 combination-therapy step-down review
+  + annual dermatologic surveillance (stable IBD on current
+  regimen, surveillance fatigue, preference) — receives explicit
+  B-symptom + lymphadenopathy vigilance education (unexplained
+  fevers, drenching night sweats, weight loss, persistent
+  lymphadenopathy, hepatosplenomegaly outside IBD flare context,
+  cytopenias → immediate hematology referral, with HSTCL specifically
+  in differential for young patients on combination anti-TNF +
+  thiopurine) + sun-protection counseling (broad-spectrum SPF 30+
+  daily, peak UV avoidance) + skin-self-examination instruction +
+  vaccination reminder (HPV catch-up, HBV / pneumococcal / shingrix
+  / annual influenza). Per CHARTER §11 patient-autonomy framing —
+  declining the structured pathway is legitimate but framed as
+  suboptimal vs. active-review comparator. Particular framing
+  note: anti-TNF monotherapy cancer signal is at population
+  background; observation arm primarily misses the combination-
+  therapy step-down conversation rather than introducing acute
+  daily-life risk.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від
+  structured year-1 / year-3 / year-5 combination-therapy step-
+  down review + annual dermatologic surveillance — отримує
+  explicit B-symptom + lymphadenopathy vigilance education
+  (unexplained fevers, drenching night sweats, weight loss,
+  persistent lymphadenopathy, hepatosplenomegaly поза IBD flare
+  context, cytopenias → immediate hematology referral, з HSTCL
+  specifically у differential для young patients на combination
+  anti-TNF + thiopurine) + sun-protection counseling +
+  skin-self-examination instruction + vaccination reminder.
+  Per CHARTER §11. Particular framing: anti-TNF monotherapy
+  cancer signal у population background; observation arm
+  primarily misses combination-step-down conversation.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_iatrogenic_batch3
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+  - source_id: SRC-NCCN-SKIN-2025
+    position: context
+
+do_not_do:
+  - "Не презентувати observation як еквівалент structured combination-step-down review — meaningful difference у combination-therapy axis."
+  - "Не пропускати explicit B-symptom + lymphadenopathy education — HSTCL has distinctive presentation."
+  - "Не виключати patient зі hematology access — навіть при declining routine surveillance."
+  - "Не нормалізувати hepatosplenomegaly без IBD flare у young patient на combination — HSTCL workup."
+  - "Не використовувати live vaccines під час active biologic therapy."
+  - "Не over-stating anti-TNF monotherapy cancer signal — population background."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to structured combination-step-down review — the meaningful difference is in the combination-therapy axis."
+  - "Do not skip explicit B-symptom + lymphadenopathy education — HSTCL has a distinctive presentation."
+  - "Do not deny the patient hematology access — even if routine surveillance is declined."
+  - "Do not normalize hepatosplenomegaly without IBD flare in a young patient on combination — HSTCL workup."
+  - "Do not use live vaccines during active biologic therapy."
+  - "Do not overstate anti-TNF monotherapy cancer signal — at population background."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for anti-TNF chronic-exposure prevention. §15.2 C4 ≥2-tracks invariant."

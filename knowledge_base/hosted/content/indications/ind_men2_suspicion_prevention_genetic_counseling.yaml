@@ -1,0 +1,225 @@
+id: IND-MEN2-SUSPICION-PREVENTION-GENETIC-COUNSELING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-MTC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-MEN2-FAMILY-HISTORY-SUSPICION
+
+# No drug regimen — intervention is referral + germline-test ordering +
+# pre/post-test counseling + a RET-class-driven prophylactic thyroidectomy
+# decision + structured multi-organ surveillance (not a Regimen entity).
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Diagnostic yield of germline RET panel testing in pedigree-
+    suspicion populations: ~95-100% positive carrier identification
+    in known-pathogenic-variant families on cascade testing; ~25%
+    in single-MTC-in-relative pedigrees (this is the hereditary
+    fraction of all MTC, which is why ATA 2015 recommends RET testing
+    for every MTC patient). Confirmed RET carrier routes to the
+    central MEN2 clinical decision — prophylactic thyroidectomy at
+    RET-class-specific age, which has near-curative effect for MTC
+    when performed before biochemical / structural progression.
+    MEN2B M918T carriers undergoing thyroidectomy in infancy (before
+    age 1) have ~90% biochemical cure rates; classic MEN2A C634
+    carriers undergoing thyroidectomy by age 5 have ~95% biochemical
+    cure rates. Pheochromocytoma surveillance prevents hypertensive-
+    crisis mortality.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  # Germline panel test entity not yet authored as a TEST-* — v0.2-B
+  # follow-up. Calcitonin (serum) is the key MEN2 surveillance
+  # biomarker but does not have a TEST-* entity yet.
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for individuals with pedigree
+  suspicion of MEN2A or MEN2B. Three parallel referrals:
+
+  **(1) Genetic counseling referral.** Pre-test counseling covers:
+  inheritance pattern (autosomal dominant, near-complete penetrance
+  for MTC ~95-100% by adulthood), implications for family members
+  (cascade testing if positive — siblings at 50% risk; children at
+  50% risk; preimplantation genetic diagnosis available with strong
+  uptake in MEN2 families historically given the severity of MEN2B
+  and the requirement for infant prophylactic surgery; the childhood
+  surveillance + surgical-timing protocols mean early carrier
+  identification is uniquely impactful in MEN2), insurance / GINA
+  considerations, psychological aspects (decision to undergo
+  prophylactic thyroidectomy in a child is high-stakes and emotionally
+  complex for parents). Per ACMG / ASCO / ATA / Endocrine Society
+  guidelines, pre-test counseling is the standard of care before
+  germline testing.
+
+  **(2) Germline RET gene panel testing.** Modern hereditary endocrine-
+  cancer panels (e.g., Invitae endocrine-tumor panel, Color hereditary
+  cancer panel) cover RET (full sequencing of exons 8, 10, 11, 13-16
+  where the vast majority of MEN2 pathogenic variants cluster; some
+  panels additionally cover exons 5, 9, 17 and the entire gene).
+  Variant classification per ACMG framework plus ATA 2015 RET-class
+  stratification:
+    - **HST (highest risk):** M918T (codon 918) — defines MEN2B;
+      prophylactic thyroidectomy before age 1.
+    - **H (high risk):** C634 codons (C634R, C634Y, C634F, C634G,
+      C634S, C634W), A883F — classic MEN2A; prophylactic
+      thyroidectomy at age ≤5 (or sooner if calcitonin elevated).
+    - **MOD (moderate risk):** All other MEN2-associated RET
+      variants — prophylactic thyroidectomy at age 5 OR delayed
+      with annual biochemical surveillance (basal calcitonin,
+      neck ultrasound) and surgery driven by calcitonin elevation
+      or structural disease.
+
+  **(3) Carrier-confirmation surveillance plan (sequel pathway).**
+    Positive RET carrier → structured multi-organ surveillance per
+    ATA 2015:
+    - **Thyroid:** Prophylactic thyroidectomy at RET-class-specific
+      age (above) with central lymph-node dissection. Annual serum
+      calcitonin + neck ultrasound thereafter to detect MTC recurrence.
+    - **Pheochromocytoma:** Plasma free metanephrines or 24-hour
+      urine metanephrines q1 year from age 8 (HST / H risk) or age
+      11-16 (MOD risk). Adrenal imaging (MRI or CT) if metanephrines
+      elevated. Pre-operative alpha-blockade required before
+      pheochromocytoma resection.
+    - **Parathyroid (MEN2A only):** Serum calcium + PTH q1 year
+      from age 11. Hyperparathyroidism in MEN2A is multi-glandular
+      hyperplasia — subtotal vs total parathyroidectomy decision
+      similar to MEN1.
+    - **Mucosal neuromas + marfanoid features (MEN2B only):**
+      Recognized on examination; no specific surveillance protocol
+      because they are non-malignant.
+    - **Hirschsprung disease (RET C620 / C618 only):** Pediatric
+      surgical surveillance for chronic constipation / megacolon
+      in infancy.
+
+  Negative result → re-stratify residual family-history risk; if
+  family history is very strong but RET-negative, sporadic MTC
+  must be considered. VUS result → managed as pedigree suspicion
+  (this Indication).
+
+  Genetic counseling and germline RET testing are typically covered
+  by insurance in the US/EU when pedigree criteria are met; in
+  Ukraine, germline testing is available through private labs at
+  out-of-pocket cost (~5000-15000 UAH for multi-gene panel).
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для осіб з родовідною підозрою на
+  MEN2A або MEN2B. Три паралельні направлення:
+
+  **(1) Направлення на генетичне консультування.** Pre-test
+  консультування охоплює: спадкування (аутосомно-домінантне, near-
+  complete пенетрантність для MTC ~95-100% до зрілого віку),
+  наслідки для членів сім'ї (cascade тестування при позитиві — сібси
+  з ризиком 50%; діти з ризиком 50%; преімплантаційна генетична
+  діагностика доступна; протоколи дитячого спостереження + хірургічного
+  timing'у означають, що рання ідентифікація носія унікально
+  impactful у MEN2), страхові / GINA-міркування, психологічні аспекти
+  (рішення про профілактичну тиреоїдектомію у дитини high-stakes і
+  емоційно складне для батьків). За ACMG / ASCO / ATA / Endocrine
+  Society настановами, pre-test консультування — standard of care
+  перед germline тестуванням.
+
+  **(2) Germline RET панельне тестування.** Сучасні панелі
+  спадкових ендокринних пухлин (напр., Invitae endocrine-tumor panel,
+  Color hereditary cancer panel) покривають RET (повне секвенування
+  екзонів 8, 10, 11, 13-16, де кластеризується більшість MEN2
+  патогенних варіантів). Класифікація варіантів за рамкою ACMG плюс
+  ATA 2015 RET-стратифікація:
+    - **HST (найвищий ризик):** M918T (кодон 918) — визначає MEN2B;
+      профілактична тиреоїдектомія до 1 року.
+    - **H (високий ризик):** Кодони C634 (C634R, C634Y, C634F,
+      C634G, C634S, C634W), A883F — класичний MEN2A; профілактична
+      тиреоїдектомія у віці ≤5 років.
+    - **MOD (помірний ризик):** Усі інші MEN2-асоційовані RET
+      варіанти — профілактична тиреоїдектомія у 5 років АБО
+      відтермінована з щорічним біохімічним спостереженням.
+
+  **(3) План спостереження при підтвердженому носійстві (sequel).**
+    Позитивний RET носій → структуроване мульти-органне спостереження
+    per ATA 2015:
+    - **Щитоподібна залоза:** Профілактична тиреоїдектомія у
+      RET-клас-specific вік з центральною лімфодисекцією. Щорічний
+      сироватковий кальцитонін + УЗД шиї після цього.
+    - **Феохромоцитома:** Плазмові вільні метанефрини q1 рік з 8
+      років (HST / H ризик) або 11-16 років (MOD ризик). Adrenal
+      візуалізація при елевації. Pre-operative альфа-блокада
+      обов'язкова перед резекцією.
+    - **Паращитоподібні залози (MEN2A лише):** Сироватковий кальцій
+      + PTH q1 рік з 11 років.
+    - **Слизові невроми + марфаноподібна будова (MEN2B лише):**
+      Розпізнаються на огляді; немає специфічного протоколу
+      спостереження.
+    - **Хвороба Гіршпрунга (RET C620 / C618 лише):** Педіатричне
+      хірургічне спостереження.
+
+  Негативний результат → ре-стратифікація залишкового ризику. VUS →
+  ведеться як родовідна підозра.
+
+  Генетичне консультування та germline RET тестування зазвичай
+  покриваються страхуванням у США/ЄС при відповідності критеріям; в
+  Україні germline тестування доступне через приватні лабораторії за
+  out-of-pocket вартість (~5000-15000 грн за мультигенну панель).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_hereditary_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-ATA-THYROID-2015
+    position: supports
+    relevant_quote_paraphrase: >-
+      "All patients with medullary thyroid carcinoma should undergo
+      germline RET testing. Confirmed RET carriers are stratified into
+      HST / H / MOD risk classes that determine the recommended age
+      for prophylactic thyroidectomy: HST (M918T) before age 1; H
+      (C634 codons, A883F) by age 5; MOD on biochemical surveillance
+      with thyroidectomy at age 5 or earlier if calcitonin elevated.
+      Cascade testing of first-degree relatives is recommended."
+  - source_id: SRC-NCCN-THYROID-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Patients with suspected hereditary MTC / MEN2 should receive
+      germline RET panel testing. Carriers enter structured multi-organ
+      surveillance including prophylactic thyroidectomy at ATA-class-
+      specific age, annual plasma / urine metanephrines for
+      pheochromocytoma, and (in MEN2A) annual calcium / PTH for
+      parathyroid surveillance."
+
+do_not_do:
+  - "Не призначати germline тестування без pre-test консультування — інформована згода + обговорення хірургії у дитячому віці обов'язкові."
+  - "Не treter VUS RET-результат як патогенний — не виконувати профілактичну тиреоїдектомію на підставі VUS; управляйте як родовідну підозру."
+  - "Не пропускати pre-operative альфа-блокаду перед резекцією феохромоцитоми — гіпертензивний криз під час хірургії може бути фатальним."
+  - "Не виконувати total parathyroidectomy без передової реімплантації паращитоподібної тканини у MEN2A — pre-operative гіпопаратиреоз пожиттєвий і важко керований."
+  - "Не пропускати оглядову розпізнавання MEN2B-стигматів (слизові невроми, марфаноподібна будова, потовщення корнеальних нервів) у дитини з сімейною історією — діагноз MEN2B часто пропускається в дитячому віці, а затримка хірургії за межі першого року життя суттєво погіршує MTC-прогноз."
+
+do_not_do_en:
+  - "Do not order germline testing without pre-test counseling — informed consent and discussion of childhood surgery are mandatory."
+  - "Do not treat a VUS RET result as pathogenic — do not perform prophylactic thyroidectomy based on a VUS; manage as pedigree suspicion."
+  - "Do not skip pre-operative alpha-blockade before pheochromocytoma resection — intraoperative hypertensive crisis can be fatal."
+  - "Do not perform total parathyroidectomy without forearm autotransplantation in MEN2A — post-operative hypoparathyroidism is lifelong and difficult to manage."
+  - "Do not miss bedside recognition of MEN2B stigmata (mucosal neuromas, marfanoid habitus, corneal nerve thickening) in a child with family history — MEN2B is often missed in childhood and delay of surgery beyond the first year of life substantially worsens MTC prognosis."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — v0.2-B hereditary pilot (MEN2, additional). ATA 2015 Revised Guidelines for the Management of MTC (Wells et al., Thyroid 2015) is the central source for RET-class-driven prophylactic thyroidectomy timing. Two-Co-Lead signoff queued.

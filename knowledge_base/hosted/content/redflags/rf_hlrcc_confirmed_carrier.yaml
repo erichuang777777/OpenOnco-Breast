@@ -1,0 +1,41 @@
+id: RF-HLRCC-CONFIRMED-CARRIER
+definition: >-
+  Patient has a confirmed germline FH (fumarate hydratase) pathogenic variant
+  (Hereditary Leiomyomatosis and Renal Cell Cancer — HLRCC). HLRCC-RCC is
+  aggressive (papillary type 2 / collecting-duct morphology) — surveillance
+  starts in childhood + low-threshold for surgical resection. Confirmed-carrier
+  RedFlag (§20 v0.2-B).
+definition_ua: >-
+  Пацієнт має підтверджений germline FH (fumarate hydratase) патогенний варіант
+  (HLRCC). HLRCC-RCC агресивний (papillary type 2 / collecting-duct) —
+  спостереження з дитинства + низький поріг для хірургічної резекції.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "germline_fh_pathogenic_variant_confirmed"
+      value: true
+
+clinical_direction: investigate
+
+severity: critical
+priority: 90
+category: other
+risk_category: genetic
+
+relevant_diseases:
+  - DIS-RCC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-ASCO-ACMG-LYNCH-2014
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona confirmed-carrier RedFlag for HLRCC. Severity=critical because HLRCC-RCC is aggressive and can metastasize from small tumors — do NOT 'watch and wait' for small renal masses as in sporadic RCC."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_carrier_completion
+draft_revision: 1

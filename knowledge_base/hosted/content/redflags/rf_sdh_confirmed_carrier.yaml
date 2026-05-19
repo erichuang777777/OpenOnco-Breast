@@ -1,0 +1,120 @@
+id: RF-SDH-CONFIRMED-CARRIER
+definition: >-
+  Confirmed germline pathogenic / likely-pathogenic variant in one of
+  the SDHx genes — SDHB, SDHD, SDHC, SDHA, or SDHAF2 (succinate
+  dehydrogenase complex deficiency syndromes). Patient has had germline
+  SDHx testing returned positive; the pedigree-suspicion question is
+  settled. No current personal cancer diagnosis in the carrier being
+  assessed. Mandates structured multi-organ surveillance with risk
+  stratification by SDHx subunit: SDHB > SDHD > SDHC > SDHA risk
+  gradient, plus the autosomal-dominant paternal-inheritance / maternal-
+  imprinting pattern unique to SDHD and SDHAF2 (only paternally
+  inherited variants are penetrant). Tumor spectrum: pheochromocytoma +
+  paraganglioma (sympathetic abdominal and parasympathetic head/neck) +
+  SDH-deficient RCC (often aggressive type-2-papillary morphology) +
+  SDH-deficient GIST. SDHB pediatric onset and aggressive
+  paraganglioma-pheochromocytoma + RCC burden justify CRITICAL
+  severity classification. Prevention-persona RedFlag (§20, v0.2-B
+  confirmed-carrier surveillance pathway — distinct from
+  RF-SDH-FAMILY-HISTORY-SUSPICION which fires before testing).
+definition_ua: >-
+  Підтверджений гермінативний патогенний / ймовірно-патогенний варіант у
+  одному з SDHx генів — SDHB, SDHD, SDHC, SDHA або SDHAF2 (succinate
+  dehydrogenase complex deficiency syndromes). Пацієнт пройшов germline
+  SDHx-тестування з позитивним результатом; питання родовідної підозри
+  вирішене. Поточний особистий діагноз раку відсутній. Mandates
+  структуроване мульти-органне спостереження з ризик-стратифікацією за
+  SDHx субодиницею: SDHB > SDHD > SDHC > SDHA градієнт; плюс autosomal-
+  dominant paternal-inheritance / maternal-imprinting pattern унікальний
+  для SDHD та SDHAF2 (penetrant тільки paternally-inherited варіанти).
+  Tumor spectrum: феохромоцитома + парагангліома (sympathetic abdominal
+  + parasympathetic head/neck) + SDH-deficient RCC (часто aggressive
+  type-2-papillary morphology) + SDH-deficient GIST. Pediatric onset
+  SDHB та aggressive paraganglioma + RCC burden виправдовують CRITICAL
+  severity. Prevention-persona RedFlag (§20, v0.2-B шлях спостереження
+  підтверджених носіїв).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "germline_sdhb_pathogenic_variant_confirmed"
+      value: true
+    - finding: "germline_sdhc_pathogenic_variant_confirmed"
+      value: true
+    - finding: "germline_sdhd_pathogenic_variant_confirmed"
+      value: true
+    - finding: "germline_sdha_pathogenic_variant_confirmed"
+      value: true
+    - finding: "germline_sdhaf2_pathogenic_variant_confirmed"
+      value: true
+
+clinical_direction: investigate
+
+# CRITICAL per task brief — SDHB carriers begin whole-body MRI age 6-10
+# given pediatric-onset aggressive paraganglioma + RCC risk.
+severity: critical
+priority: 100
+category: other
+risk_category: genetic
+
+# SDH-spectrum: pheochromocytoma + paraganglioma (DIS-PHEOCHROMOCYTOMA),
+# SDH-deficient RCC (DIS-RCC). SDH-deficient GIST not anchored to a
+# dedicated DIS-* entity in OpenOnco KB (managed via DIS-RCC
+# surveillance abdominal MRI which also covers GIST detection).
+relevant_diseases:
+  - DIS-PHEOCHROMOCYTOMA
+  - DIS-RCC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.2-B confirmed-carrier surveillance pathway — SDH-deficiency
+  syndromes. Fires on documented germline SDHB / SDHC / SDHD / SDHA /
+  SDHAF2 pathogenic variant positivity in an asymptomatic individual.
+  Engine routes to PreventionPlan recommending:
+    (a) IND-SDH-CARRIER-SURVEILLANCE (standard) — annual whole-body MRI
+        from age 6-10 in SDHB carriers (highest risk); annual plasma
+        free metanephrines + methoxytyramine (3-MT — preferred for
+        SDHx-associated parasympathetic / dopaminergic paragangliomas);
+        head + neck MRI q2-3y for parasympathetic paragangliomas;
+        abdominal MRI for sympathetic paraganglioma + SDH-deficient RCC
+        + GIST; risk gradient SDHB > SDHD > SDHC > SDHA; paternal-
+        inheritance imprinting pattern for SDHD / SDHAF2.
+    (b) IND-SDH-CARRIER-INTENSIFIED (aggressive) — standard PLUS
+        earlier baseline (age 5 in SDHB pediatric kindreds) + closer
+        interval (q6mo biochemistry in highest-risk subset) + functional
+        imaging (68Ga-DOTATATE PET) for staging confirmed lesions.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption. Source-set TODO: dedicated SDH-deficiency syndromes
+  source — International Pheochromocytoma / Paraganglioma Endocrine
+  Society Guideline (Lenders et al. JCEM 2014, 2024 update); Else
+  et al. SDHx-genetic-counseling review — v0.2-B authoring backlog
+  new SRC entities.
+
+  Lifetime tumor risk in confirmed SDHx carriers (Andrews et al. JCEM
+  2018; international PPGL registry data):
+    - SDHB: aggregate ~50% lifetime PPGL risk; mostly sympathetic
+      abdominal paraganglioma + pheochromocytoma; high metastatic
+      rate (~30-70% of PPGL events); ~14% lifetime RCC risk; some
+      pediatric onset.
+    - SDHD: aggregate ~80% lifetime PPGL risk (paternally inherited
+      variants only); predominantly head + neck parasympathetic
+      paragangliomas; lower metastatic rate than SDHB; modest RCC.
+    - SDHC: lower aggregate PPGL risk (~25%); head + neck
+      paragangliomas predominant.
+    - SDHA: lowest aggregate risk (~10%); rare; SDH-deficient GIST
+      + pituitary adenoma + PPGL spectrum.
+    - SDHAF2: very rare; head + neck paragangliomas; paternally
+      inherited variants only (like SDHD).
+    - SDH-deficient GIST: indolent, multifocal, wild-type c-KIT and
+      PDGFRA — characteristic imatinib-non-responsive biology.
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02b_confirmed_carriers_additional
+draft_revision: 1

@@ -1,0 +1,58 @@
+id: CI-TAMOXIFEN-ENDOMETRIAL-HYPERPLASIA
+severity: absolute
+trigger:
+  type: patient_condition
+  conditions:
+    - patient_condition: "Biopsy-confirmed atypical endometrial hyperplasia (complex hyperplasia with atypia / endometrial intraepithelial neoplasia)"
+    - patient_condition: "History of endometrial carcinoma (any stage, any time since diagnosis)"
+    - patient_condition: "Unexplained postmenopausal bleeding pending histologic evaluation"
+  logic: OR
+
+description: >
+  Tamoxifen chemoprevention is absolutely contraindicated in patients with
+  atypical endometrial hyperplasia or prior endometrial carcinoma. Tamoxifen
+  exerts estrogenic activity on the endometrium (partial agonist) and raises
+  endometrial cancer incidence ~2-3× in postmenopausal women (NSABP P-1).
+  In a patient already carrying a premalignant endometrial lesion, the
+  promotional risk is unacceptable for a preventive indication. Active
+  postmenopausal bleeding must be worked up histologically before
+  initiation; unexplained bleeding is itself an indication for endometrial
+  sampling.
+description_ua: >
+  Тамоксифен у хіміопрофілактиці абсолютно протипоказаний при біопсійно
+  підтвердженій атиповій гіперплазії ендометрія або попередньому раку
+  ендометрія. Тамоксифен має естрогенну активність на ендометрій і
+  підвищує ризик раку ендометрія у ~2-3 рази у постменопаузі (NSABP P-1).
+  При вже існуючому передраковому ураженні ендометрія промоторний ризик
+  неприйнятний для профілактичного показання. Постменопаузна кровотеча
+  потребує гістологічної оцінки до початку терапії.
+
+alternative_actions:
+  - "Refer to gynecologic oncology for endometrial-lesion management before any breast chemoprevention decision"
+  - "Postmenopausal candidates: switch to aromatase inhibitor (anastrozole or exemestane) — these reduce circulating estrogen and lower endometrial cancer risk"
+  - "Pre-treatment baseline: transvaginal ultrasound + endometrial sampling for any abnormal bleeding; routine TVUS screening in asymptomatic women on tamoxifen is NOT recommended (NCCN — high false-positive rate)"
+  - "On-treatment surveillance: any new postmenopausal bleeding → urgent gynecologic evaluation + endometrial biopsy; do not wait for next scheduled visit"
+  - "Document baseline endometrial status before initiating tamoxifen in all postmenopausal candidates"
+
+affects_drugs:
+  - DRUG-TAMOXIFEN
+affects_regimens:
+  - REG-TAMOXIFEN-CHEMOPREVENTION
+affects_indications:
+  - IND-IATROGENIC-TAMOXIFEN-ENDOMETRIAL-PREVENTION-OBSERVATION
+  - IND-IATROGENIC-TAMOXIFEN-ENDOMETRIAL-PREVENTION-SURVEILLANCE
+
+sources:
+  - SRC-NCCN-BREAST-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  NCCN Breast Cancer Risk Reduction (2025) flags personal history of
+  endometrial carcinoma and atypical hyperplasia as absolute
+  contraindications to tamoxifen chemoprevention. Premenopausal women
+  on tamoxifen retain ovarian estrogen output, so the endometrial-
+  cancer signal is concentrated in postmenopausal use; nonetheless,
+  premenopausal patients with active atypical hyperplasia should also
+  avoid tamoxifen until lesion is resolved. Distinct from simple
+  hyperplasia without atypia, which is a relative — not absolute —
+  contraindication requiring multidisciplinary review.

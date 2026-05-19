@@ -1,0 +1,75 @@
+id: IND-IATROGENIC-TOPO2-TAML-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-AML
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-TOPO2-TAML-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Patient declines structured CBC surveillance schedule — receives symptom-prompted evaluation only. APL-like t-AML presentations (DIC, bleeding) may progress rapidly to fatal coagulopathy if not recognized promptly. Outcomes worse than with surveillance-detected disease, particularly for emergent APL presentations."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-IATROGENIC-TOPO2-TAML-PREVENTION-
+  SURVEILLANCE. Patient declines structured q3mo CBC surveillance —
+  receives symptom-vigilance education (focus on APL-emergency awareness:
+  unexplained bleeding/bruising, persistent fatigue, fever, bone pain →
+  immediate ED evaluation) + low-threshold evaluation for any cytopenic
+  symptom. Per CHARTER §11 patient-autonomy framing — surveillance refusal
+  is a legitimate choice but framed as suboptimal vs. scheduled-surveillance
+  comparator, with special emphasis on APL-emergency awareness given
+  topo2-inhibitor t-APL mortality risk.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від structured
+  q3mo CBC surveillance — отримує symptom-vigilance education з фокусом на
+  APL-emergency awareness (unexplained bleeding/bruising, persistent fatigue,
+  fever, bone pain → immediate ED evaluation) + low-threshold evaluation
+  при будь-якому cytopenic symptom. Per CHARTER §11.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-AML-2025
+    position: context
+
+do_not_do:
+  - "Не презентувати observation як еквівалент surveillance — APL-emergent presentations особливо delay-sensitive."
+  - "Не пропускати APL emergency education — DIC + bleeding fatal без immediate ATRA."
+  - "Не затримувати workup при any new cytopenia, навіть без structured surveillance schedule."
+  - "Не нормалізувати surveillance refusal — counsel що CBC q3mo low-burden + потенційно life-saving."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to surveillance — APL-emergent presentations are particularly delay-sensitive."
+  - "Do not skip APL emergency education — DIC + bleeding is fatal without immediate ATRA."
+  - "Do not delay workup for any new cytopenia, even without a structured surveillance schedule."
+  - "Do not normalize surveillance refusal — counsel that CBC q3mo is low-burden and potentially life-saving."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for topo2 t-AML prevention. §15.2 C4 ≥2-tracks invariant."

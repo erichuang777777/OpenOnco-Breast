@@ -1,0 +1,14 @@
+{
+  "patient_id": "OCC-RADIOLOGIST-001",
+  "comment": "50yo male diagnostic + interventional radiologist with 25 years of occupational ionizing-radiation exposure (mixed fluoroscopy + CT-guided procedures), lifetime cumulative dose tracked per ALARA dosimetry records. No current radiation-attributable malignancy. Engine fires RF-OCC-IONIZING-RADIATION-PREVENTION via documented + ≥10-years branches and routes to PreventionPlan: standard = IND-OCC-IONIZING-RADIATION-PREVENTION-INTENSIFIED-SURVEILLANCE (CBC q1y for hematologic surveillance; thyroid ultrasound q3-5y; lifetime dose-equivalent review; ALARA / PPE counseling for active worker); alternative = IND-OCC-IONIZING-RADIATION-PREVENTION-OBSERVATION (routine general-population screening). Distinct from existing OCC-IONIZING-RADIATION-PREV-001 (48yo female technologist 22y) — different demographic, longer-duration, physician-occupation cohort.",
+  "biomarkers": {},
+  "demographics": {"age": 50, "sex": "male", "ecog": 0},
+  "findings": {
+    "occupational_ionizing_radiation_exposure_documented": true,
+    "occupational_ionizing_radiation_years_ge_10": true,
+    "Radiologist 2001-present (25 years), diagnostic + interventional practice": true,
+    "Dosimetry records on file, cumulative dose within ALARA limits": true,
+    "Baseline CBC + thyroid US unremarkable": true,
+    "No current radiation-attributable malignancy": true
+  }
+}

@@ -1,0 +1,62 @@
+id: CI-SEMAGLUTIDE-MEN2-MTC
+severity: absolute
+trigger:
+  type: patient_condition
+  conditions:
+    - patient_condition: "Personal history of medullary thyroid carcinoma (MTC, any stage, any time since diagnosis)"
+    - patient_condition: "Personal history of multiple endocrine neoplasia type 2 (MEN2A or MEN2B) — confirmed RET germline pathogenic variant or clinical phenotype"
+    - patient_condition: "First-degree family history of MTC or MEN2 — including untested at-risk relatives of confirmed carriers"
+  logic: OR
+
+description: >
+  GLP-1 receptor agonists (semaglutide, tirzepatide) carry an FDA boxed
+  warning for thyroid C-cell tumors based on rodent carcinogenicity studies.
+  Despite no causal signal in human pharmacovigilance to date, the boxed
+  warning makes personal or family history of MTC, and personal history
+  of MEN2 (which carries near-100% lifetime MTC risk), absolute
+  contraindications. RET mutation carriers — even those who have undergone
+  prophylactic thyroidectomy — should be presumed in this category unless
+  multidisciplinary endocrine genetics review concludes otherwise.
+description_ua: >
+  Агоністи рецептора GLP-1 (семаглутид, тирзепатид) мають FDA boxed
+  warning щодо пухлин C-клітин щитоподібної залози на основі досліджень
+  канцерогенності у гризунів. Незважаючи на відсутність каузального
+  сигналу в людській фармаконагляді, boxed warning робить особисту або
+  сімейну історію MTC та особисту історію MEN2 абсолютними протипоказаннями.
+  Носії RET-мутацій — навіть після профілактичної тиреоїдектомії —
+  потрапляють у цю категорію, якщо мультидисциплінарна команда не
+  висновує інакше.
+
+alternative_actions:
+  - "Use non-GLP-1 weight-loss pharmacotherapy if pharmacoprevention is required: phentermine-topiramate, naltrexone-bupropion, or orlistat (none carry the MTC signal)"
+  - "Intensify non-pharmacologic obesity management: structured lifestyle program (DPP-style), nutritionist referral, behavioral therapy"
+  - "Bariatric surgery referral for class III obesity (BMI ≥40) or class II obesity (BMI ≥35) with metabolic comorbidity — MEN2/MTC history is not a surgical contraindication"
+  - "If patient is RET-carrier with thyroidectomy → endocrine genetics + oncology review before any GLP-1 RA; document rationale if eventually used off-label"
+  - "Document family history with three-generation pedigree at intake for all GLP-1 RA candidates"
+
+affects_drugs:
+  - DRUG-SEMAGLUTIDE-2-4MG
+  - DRUG-TIRZEPATIDE
+affects_regimens:
+  - REG-SEMAGLUTIDE-OBESITY
+  - REG-TIRZEPATIDE-OBESITY
+affects_indications:
+  - IND-LIFESTYLE-OBESITY-PREVENTION-WEIGHT-LOSS
+
+sources:
+  - SRC-ENDOCRINE-SOCIETY-MEN-2023
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  Boxed warning applies to all GLP-1 RAs (semaglutide, liraglutide,
+  dulaglutide, exenatide, tirzepatide) and is class-wide. Tirzepatide
+  is a dual GIP/GLP-1 agonist and inherits the GLP-1 component
+  warning. Endocrine Society MEN guidance (2023) reaffirms avoidance.
+  Mechanistically, rodent C-cells express GLP-1 receptors and show
+  hyperplasia/neoplasia after long GLP-1 RA exposure; human C-cells
+  express GLP-1R at much lower density, which likely explains the
+  absent human signal — but the boxed warning is conservative and
+  remains in force as of 2026-05. Three-generation pedigree is the
+  practical screening tool; calcitonin is NOT recommended as
+  routine pre-GLP-1 screening (low yield, high false-positive cost).

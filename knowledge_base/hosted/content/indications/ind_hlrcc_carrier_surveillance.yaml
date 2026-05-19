@@ -1,0 +1,99 @@
+id: IND-HLRCC-CARRIER-SURVEILLANCE
+plan_track: standard
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-RCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-HLRCC-CONFIRMED-CARRIER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "HLRCC-Family-Alliance and NCCN Genetic/Familial High-Risk: Kidney protocols: annual abdominal MRI from age 8-10 in confirmed FH carriers detects HLRCC-RCC at early resectable stage. HLRCC-RCC is aggressive (collecting-duct or papillary type 2 histology) — even sub-centimeter tumors can metastasize, so any solid renal mass warrants prompt nephron-sparing surgery rather than active surveillance."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  - TEST-LFT
+desired_tests: []
+
+rationale: >
+  Per HLRCC Family Alliance + NCCN Genetic/Familial High-Risk: Kidney:
+
+  **(1) Annual abdominal MRI** from age 8-10 in confirmed FH carriers — yes,
+  childhood; HLRCC-RCC has been reported in children. MRI preferred over CT
+  to minimize cumulative radiation exposure across decades.
+
+  **(2) Low-threshold surgical resection** for any solid renal mass — HLRCC-RCC
+  is aggressive collecting-duct / papillary type 2 histology that can
+  metastasize from small primary tumors. Do NOT use the sporadic RCC paradigm
+  of active surveillance for ≤4cm masses; instead, partial nephrectomy or
+  radical nephrectomy as anatomically appropriate.
+
+  **(3) Cutaneous leiomyoma surveillance** — annual dermatology exam; treat
+  symptomatic lesions (excision / laser) but cosmetic-only treatment is
+  individualized.
+
+  **(4) Gynecologic counseling for women** — uterine leiomyomas (fibroids)
+  occur in nearly all HLRCC women; aggressive symptom management +
+  reproductive planning + consideration of post-childbearing hysterectomy
+  given accelerated fibroid burden and rare uterine leiomyosarcoma risk.
+
+  **(5) Cascade testing** of first-degree relatives — autosomal dominant
+  inheritance; ~50% offspring carrier risk.
+
+rationale_ua: >
+  Per HLRCC Family Alliance + NCCN Genetic/Familial High-Risk: Kidney:
+
+  **(1) Щорічна abdominal MRI** з 8-10 років.
+
+  **(2) Низький поріг для хірургічної резекції** будь-якої solid renal mass —
+  HLRCC-RCC агресивна collecting-duct / papillary type 2 histology; може
+  метастазувати з невеликих первинних пухлин. НЕ використовувати sporadic RCC
+  paradigm active surveillance.
+
+  **(3) Спостереження cutaneous leiomyomas** — щорічний dermatology exam.
+
+  **(4) Гінекологічне consulting для жінок** — uterine leiomyomas (фіброми).
+
+  **(5) Cascade testing** родичів першого ступеня.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_carrier_completion
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не використовувати sporadic RCC active-surveillance paradigm у HLRCC carriers — HLRCC-RCC агресивна."
+  - "Не покладатися на CT — cumulative radiation exposure protocol-incompatible; MRI preferred."
+  - "Не пропускати pediatric surveillance — HLRCC-RCC reported in childhood."
+
+do_not_do_en:
+  - "Do not use the sporadic RCC active-surveillance paradigm in HLRCC carriers — HLRCC-RCC is aggressive."
+  - "Do not rely on CT — cumulative radiation exposure is protocol-incompatible; MRI preferred."
+  - "Do not skip pediatric surveillance — HLRCC-RCC has been reported in childhood."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B HLRCC confirmed-carrier surveillance pathway."

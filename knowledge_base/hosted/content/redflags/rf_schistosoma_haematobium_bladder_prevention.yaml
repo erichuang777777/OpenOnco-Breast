@@ -1,0 +1,79 @@
+id: RF-SCHISTOSOMA-HAEMATOBIUM-BLADDER-PREVENTION
+definition: >-
+  History of Schistosoma haematobium infection (positive ova in urine,
+  positive serology, or documented endemic-region exposure with
+  suggestive urinary tract symptoms) in an individual without a current
+  bladder cancer diagnosis. IARC Group 1 carcinogen (S. haematobium) —
+  established etiological driver of bladder squamous cell carcinoma
+  (SCC), the dominant histology in endemic regions (sub-Saharan Africa,
+  Middle East, parts of South America). Praziquantel cures active
+  infection but does NOT reverse chronic urothelial inflammation /
+  squamous metaplasia from prior burden; surveillance (urinalysis,
+  cytology, cystoscopy for any new hematuria) is the dominant
+  prevention modality. Prevention-persona RedFlag (§20 ratification
+  2026-05-18).
+definition_ua: >-
+  Анамнез інфекції Schistosoma haematobium (позитивні ova у сечі,
+  позитивна серологія, або документована експозиція в ендемічному
+  регіоні з відповідними урологічними симптомами) у пацієнта без
+  поточного діагнозу раку сечового міхура. S. haematobium — канцероген
+  IARC Group 1, встановлений етіологічний драйвер плоскоклітинного
+  раку (SCC) сечового міхура, що є домінуючою гістологією в ендемічних
+  регіонах (Африка південніше Сахари, Близький Схід, частини Південної
+  Америки). Празиквантел виліковує активну інфекцію, але НЕ зворотний
+  щодо хронічного запалення / плоскоклітинної метаплазії від
+  попереднього навантаження; surveillance (загальний аналіз сечі,
+  цитологія, цистоскопія при будь-якій новій гематурії) — домінуюча
+  prevention модальність. RedFlag персони prevention (ратифікація §20,
+  2026-05-18).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "schistosoma_haematobium_history"
+      value: "positive"
+    - finding: "schistosoma_haematobium_ova_urine"
+      value: "positive"
+    - finding: "schistosoma_haematobium_serology"
+      value: "positive"
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: infectious
+
+relevant_diseases:
+  - DIS-UROTHELIAL
+
+shifts_algorithm: []
+
+sources:
+  - SRC-IARC-MONO-100B-2012
+  - SRC-NCCN-BLADDER-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag for S. haematobium-driven bladder SCC
+  prevention. Fires on any documented exposure history with confirmatory
+  testing. Engine routes to PreventionPlan recommending praziquantel
+  (if active infection) + lifetime urinary surveillance (urinalysis q6-12mo,
+  cytology + cystoscopy for any new hematuria). STUB pending Co-Lead
+  review.
+
+  Cancer scope: anchored to DIS-UROTHELIAL. S. haematobium-driven
+  bladder cancers are predominantly SCC histology (distinct from
+  urothelial / transitional cell carcinoma that dominates Western
+  cohorts) — engine surfaces this distinction in the prevention
+  rationale prose.
+
+  Geographic context: Ukraine is non-endemic; this RF is relevant for
+  patients with diaspora / refugee / travel / origin history from
+  sub-Saharan Africa, Egypt, Sudan, Yemen, parts of South America.
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1

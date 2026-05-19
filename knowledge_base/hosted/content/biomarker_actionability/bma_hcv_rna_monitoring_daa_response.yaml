@@ -1,0 +1,64 @@
+id: BMA-HCV-RNA-MONITORING-DAA-RESPONSE
+biomarker_id: BIO-HCV-RNA-QUANTITATIVE-MONITORING
+variant_qualifier: Quantitative HCV RNA — viral-load monitoring during DAA therapy
+disease_id: DIS-HCV-MZL
+escat_tier: IIIA
+evidence_summary: >
+  Quantitative HCV RNA monitoring during direct-acting antiviral (DAA)
+  therapy: pretreatment viral load (baseline), end-of-treatment (EOT), and
+  Sustained Virological Response at 12 weeks (SVR12) are the standard
+  treatment-response milestones (AASLD-IDSA 2023; EASL 2023). SVR12 is the
+  evidence-based cure surrogate. Persistent viraemia after week 4 / EOT or
+  detectable viraemia at SVR12 → relapse; switch to a salvage regimen
+  containing sofosbuvir-velpatasvir-voxilaprevir (POLARIS-1). In
+  HCV-associated MZL, lymphoma-response correlates with virologic
+  response (Arcaini 2014; Hermine 2002); HCV eradication itself is
+  first-line MZL therapy for indolent disease per ESMO MZL 2024.
+  ESCAT IIIA — biomarker directs DAA regimen selection / continuation
+  decisions and (in HCV-MZL) drives the primary cancer-directed therapy.
+regulatory_approval:
+  fda:
+  - HCV RNA quantitative assays — multiple FDA-cleared (Abbott RealTime
+    HCV, Roche cobas HCV, others); used per AASLD-IDSA guidance
+  ema: []
+  ukraine:
+  - HCV RNA quantitative — CE-marked assays available in UA reference labs
+recommended_combinations:
+- 'SVR12-confirmed (cure): no further DAA; surveillance per IND-HCV-MZL-POST-DAA-SURVEILLANCE'
+- 'Treatment failure / relapse: sofosbuvir + velpatasvir + voxilaprevir (POLARIS-1) salvage'
+contraindicated_monotherapy: []
+primary_sources:
+- SRC-EASL-HCV-2023
+- SRC-AASLD-IDSA-HCV-2023
+last_verified: '2026-05-18'
+evidence_sources:
+- source: SRC-AASLD-IDSA-HCV-2023
+  level: Class I / Level A
+  evidence_lane: standard_care
+  note: >
+    AASLD-IDSA HCV Guidance — quantitative HCV RNA at baseline, week 4,
+    EOT, and post-treatment week 12 (SVR12). SVR12 is the recommended
+    treatment-response endpoint.
+- source: SRC-EASL-HCV-2023
+  level: A1
+  evidence_lane: standard_care
+  note: >
+    EASL HCV CPG — SVR12 ≡ cure; treatment failure defined by detectable
+    HCV RNA at SVR12.
+actionability_review_required: true
+indications:
+- IND-CHRONIC-HCV-PREVENTION-DAA
+- IND-HCV-MZL-POST-DAA-SURVEILLANCE
+notes: |
+  STUB pending two-Co-Lead signoff. In the HCV-MZL anchor disease, viral
+  eradication is the first-line cancer-directed intervention for
+  indolent disease (ESMO MZL 2024). The Indication entities listed cover
+  (a) the prevention-time DAA decision and (b) post-cure cancer
+  surveillance. A future treatment-time IND-HCV-MZL-1L-ANTIVIRAL
+  Indication is also linked (already present:
+  ind_hcv_mzl_1l_antiviral.yaml).
+
+  Note: SVR12 logic is the same across genotypes 1-6; this BMA is
+  HCV-MZL-anchored because that is the directly relevant oncology
+  disease for this KB. Hepatocellular surveillance after SVR is tracked
+  separately under BMA-AFP-HCC-AASLD-SURVEILLANCE.

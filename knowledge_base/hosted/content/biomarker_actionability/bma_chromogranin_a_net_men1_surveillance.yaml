@@ -1,0 +1,65 @@
+id: BMA-CHROMOGRANIN-A-NET-MEN1-SURVEILLANCE
+biomarker_id: BIO-CHROMOGRANIN-A-NET
+variant_qualifier: Chromogranin A — neuroendocrine tumour surveillance / MEN1
+  carrier
+disease_id: DIS-PNET
+escat_tier: X
+evidence_summary: >
+  Chromogranin A (CgA) is a granin-family secretory protein expressed
+  ubiquitously in neuroendocrine cells. Serum CgA is used as a
+  biomarker of GEP-NET tumour bulk and treatment response, and as an
+  adjunct in MEN1 carrier surveillance alongside disease-specific
+  hormones (gastrin, insulin, glucagon, VIP). Specificity is LOW —
+  PPI use (massive false-positive elevation), renal impairment,
+  heart failure, atrophic gastritis, and assay-platform variability
+  all confound interpretation. Sensitivity ~60-90% across NET subtypes
+  (highest in functional small-bowel NET, lowest in pNET / insulinoma).
+  ESCAT X — CgA does not drive treatment selection independently; it
+  is a trend-monitoring tool only. NCCN NET 2025 and Endocrine Society
+  MEN 2023 acknowledge CgA but emphasise its limitations.
+regulatory_approval:
+  fda:
+  - CgA immunoassays — multiple FDA-cleared (CISbio, Inova, DiaSorin);
+    assay-platform variability is clinically meaningful — track results
+    from a single assay over time
+  ema: []
+  ukraine:
+  - CgA — limited availability; reference labs in Kyiv / Lviv
+recommended_combinations:
+- 'MEN1 carrier surveillance: CgA + disease-specific hormone panels
+  (gastrin, insulin/proinsulin/C-peptide, glucagon, VIP) per
+  Endocrine Society MEN 2023'
+- 'GEP-NET follow-up: CgA trend alongside imaging (CT/MRI or 68Ga-DOTATATE
+  PET); discordant rising CgA without imaging change → restage'
+contraindicated_monotherapy:
+- 'Do not interpret CgA in isolation — PPI/H2-blocker withdrawal ≥2 weeks
+  before draw or interpret with PPI status known'
+primary_sources:
+- SRC-NCCN-NET-2025
+- SRC-ENDOCRINE-SOCIETY-MEN-2023
+last_verified: '2026-05-18'
+evidence_sources:
+- source: SRC-ENDOCRINE-SOCIETY-MEN-2023
+  level: Conditional / Low certainty
+  evidence_lane: molecular_evidence_option
+  note: >
+    Endocrine Society MEN 2023 — CgA is adjunctive in MEN1 surveillance;
+    sensitivity and specificity insufficient as a stand-alone screen.
+    Primary screens are disease-specific hormones + axial imaging.
+- source: SRC-NCCN-NET-2025
+  level: Category 2B
+  evidence_lane: molecular_evidence_option
+  note: >
+    NCCN NET 2025 — CgA may be considered as a tumour marker in
+    well-differentiated NET follow-up; not required.
+actionability_review_required: true
+indications:
+- IND-MEN1-CARRIER-SURVEILLANCE
+- IND-MEN1-CARRIER-INTENSIFIED
+notes: |
+  STUB pending two-Co-Lead signoff. CgA's chief value is trend-monitoring
+  in a known-NET patient on stable PPI status — absolute single-time-point
+  values are not interpretable. Render layer should display CgA
+  alongside PPI / renal-function status. Disease-specific hormones
+  (gastrin, insulin, glucagon, VIP, PP) are the primary functional NET
+  biomarkers and should be requested in parallel.

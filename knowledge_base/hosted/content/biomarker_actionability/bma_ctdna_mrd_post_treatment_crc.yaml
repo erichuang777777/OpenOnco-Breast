@@ -1,0 +1,57 @@
+id: BMA-CTDNA-MRD-POST-TREATMENT-CRC
+biomarker_id: BIO-CTDNA-MRD-POST-TREATMENT
+variant_qualifier: ctDNA minimal residual disease — post-resection / post-adjuvant CRC
+disease_id: DIS-CRC
+escat_tier: IIIA
+evidence_summary: >
+  Post-resection ctDNA-MRD positivity in stage II/III colorectal cancer
+  identifies patients at very high recurrence risk (DYNAMIC trial — Tie
+  2022; GALAXY/CIRCULATE-Japan — Kotani 2023). Persistently negative ctDNA
+  in stage II low-risk patients allowed adjuvant-chemotherapy de-escalation
+  in DYNAMIC without an OS detriment. ctDNA-MRD-guided escalation
+  (post-positive intensification) is being tested prospectively (BESPOKE,
+  COBRA, CIRCULATE-US, ALTAIR). NCCN Colon 2025 acknowledges ctDNA-MRD as
+  emerging/optional; not yet a category-1 trigger. ESCAT IIIA — evidence
+  base substantial but not yet level-A actionability.
+regulatory_approval:
+  fda:
+  - Signatera — Breakthrough Designation; Medicare coverage for CRC MRD
+    (LCD L38779)
+  - Guardant Reveal — Medicare coverage for CRC MRD
+  ema: []
+  ukraine: []
+recommended_combinations: []
+contraindicated_monotherapy: []
+primary_sources:
+- SRC-NCCN-COLON-2025
+- SRC-ESMO-CRC-2024
+last_verified: '2026-05-18'
+evidence_sources:
+- source: SRC-NCCN-COLON-2025
+  level: Category 2B
+  evidence_lane: molecular_evidence_option
+  note: >
+    NCCN Colon v2.2025 — ctDNA assays "may be considered" for post-treatment
+    surveillance in stage II/III; insufficient evidence for routine
+    de-escalation outside trials.
+- source: SRC-CIVIC
+  level: D
+  evidence_ids: []
+  evidence_lane: trial_research_option
+  note: >
+    CIViC does not yet track a ctDNA-MRD record. Placeholder pending
+    BESPOKE / CIRCULATE-US readouts.
+actionability_review_required: true
+indications: []
+notes: |
+  STUB pending two-Co-Lead signoff. No post-treatment CRC surveillance
+  Indication entity exists yet that ingests ctDNA-MRD status as a trigger
+  (closest: future IND-CRC-POST-RESECTION-CTDNA-MRD-MONITORING). Until
+  authored, indications: [] is intentional.
+
+  Clinical use today: post-curative-resection serial draws at landmark
+  (week 4-6) + every 3-6 months for 2-3 years. MRD-positive → multidisciplinary
+  imaging re-evaluation; MRD-negative low-risk stage II → eligibility for
+  chemo de-escalation per DYNAMIC paradigm (still trial-protocoled in most
+  institutions). Engine must not auto-recommend adjuvant chemotherapy on
+  ctDNA-MRD alone outside trial context — CHARTER §8.3.

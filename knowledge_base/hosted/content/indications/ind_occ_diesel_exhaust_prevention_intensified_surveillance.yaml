@@ -1,0 +1,159 @@
+id: IND-OCC-DIESEL-EXHAUST-PREVENTION-INTENSIFIED-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  # Primary anchor: lung cancer (numerically dominant DEE-attributable
+  # malignancy with validated screening modality). Bladder surveillance
+  # via urinalysis is discussed in rationale.
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-OCC-DIESEL-EXHAUST-PREVENTION
+
+# No drug regimen — intervention is counseling + LDCT surveillance +
+# urinalysis bladder surveillance.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Primary endpoint: detection of incident DEE-attributable malignancy
+    at earliest treatable stage. NLST + NELSON data show annual LDCT in
+    high-risk smokers reduces lung-cancer mortality ~20-26%; DEE-exposed
+    cohorts are not formally enrolled but mechanistic inference supports
+    extension. Smoking cessation in DEE-exposed workers reduces the
+    smoking-attributable component over 10-15 years. Bladder-cancer
+    surveillance via urinalysis has low sensitivity (~30-50%) as
+    standalone screening but is non-invasive and supported by NCCN
+    risk-stratified guidance for occupational chemical-exposure cohorts.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for individuals with documented
+  prior occupational diesel-exhaust (DEE) exposure who do not have a
+  current DEE-associated malignancy diagnosis. Three parallel interventions:
+
+  **(1) Smoking-cessation counseling.** Highest-impact single
+  intervention for residual lung-cancer risk reduction. Asbestos-style
+  multiplicative synergy is not fully established for DEE × tobacco,
+  but additive-to-multiplicative interaction is consistent across
+  cohort studies (Silverman 2012 mining; Garshick 2012 trucking).
+  Behavioral counseling + pharmacotherapy (varenicline, bupropion,
+  NRT) per USPSTF / ATS / AAFP.
+
+  **(2) Risk-adjusted annual LDCT chest screening.** USPSTF 2021
+  criteria (age 50-80, ≥20 pack-years, current smoker or quit within
+  15 years) form the baseline. For DEE-exposed workers, NCCN and ACR
+  extend consideration based on cumulative exposure:
+    - First LDCT at ≥10-15 years from first DEE exposure for
+      current / ex-smokers, ≥15-20 years for never-smokers with
+      ≥10 years cumulative DEE exposure in enclosed-environment
+      occupations (mining, enclosed warehouses).
+    - Annual cadence; Lung-RADS reporting for nodule classification.
+    - Continue annually as long as the patient remains a candidate for
+      curative-intent treatment (typically age <85, life expectancy
+      >5 years, ECOG ≤2).
+
+  **(3) Urinalysis q1-2y for bladder-cancer surveillance.** IARC
+  evidence for DEE → bladder cancer is limited-but-suggestive (Group 1
+  Monograph 105). Non-invasive urinalysis with microscopy for hematuria
+  is supported as low-cost adjunctive surveillance in cohort guidance;
+  cystoscopy reserved for persistent / unexplained hematuria. Urinary
+  cytology is not recommended as standalone screening (low sensitivity
+  for low-grade disease).
+
+  Resource access in Ukraine: LDCT chest available at large regional /
+  private centers (~1500-3500 UAH per scan); urinalysis is widely
+  available (~150-400 UAH). Smoking-cessation pharmacotherapy
+  (varenicline, bupropion) is pharmacy-accessible without НСЗУ
+  reimbursement.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для осіб з документованим попереднім
+  професійним впливом вихлопу дизельних двигунів (DEE), які не мають
+  поточного діагнозу DEE-асоційованої малігнізації. Три паралельні
+  втручання:
+
+  **(1) Counseling щодо припинення куріння.** Найвпливовіше одиничне
+  втручання для зниження залишкового ризику раку легень.
+  Мультиплікативна синергія, як для азбесту × тютюну, для DEE × тютюну
+  повністю не встановлена, але адитивно-мультиплікативна взаємодія
+  узгоджується з cohort studies. Поведінкове counseling +
+  pharmacotherapy (варенiклін, бупропіон, NRT) за USPSTF / ATS / AAFP.
+
+  **(2) Risk-adjusted щорічна LDCT грудної клітки.** USPSTF 2021
+  критерії — baseline. Для DEE-експонованих NCCN / ACR розширюють
+  розгляд: перша LDCT при ≥10-15 років від першого DEE-впливу для
+  поточних / ex-курців, ≥15-20 років для некурців з ≥10 років
+  кумулятивного DEE-впливу в enclosed-environment професіях.
+
+  **(3) Urinalysis q1-2y для спостереження за сечовим міхуром.**
+  IARC-evidence DEE → рак сечового міхура — обмежено-суггестивна.
+  Неінвазивний urinalysis з мікроскопією для гематурії підтримується
+  як низьковартісне адʼюнктивне спостереження; цистоскопія резервується
+  для persistent / нез'ясованої гематурії.
+
+  Доступ до ресурсів в Україні: LDCT грудної клітки (~1500-3500 грн);
+  urinalysis (~150-400 грн). Pharmacotherapy припинення куріння
+  аптечно-доступна без НСЗУ.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Occupational carcinogen-exposure cohorts require risk-adjusted
+      surveillance recommendations distinct from general-population
+      screening; multidisciplinary review at large academic centers
+      is the operational reference standard."
+  - source_id: SRC-NCCN-NSCLC-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Annual low-dose CT lung-cancer screening is recommended for
+      individuals at elevated lung-cancer risk by age, smoking history,
+      and (per Clinical Practice Guidelines extension) occupational
+      carcinogen exposure including diesel exhaust."
+
+do_not_do:
+  - "Не презентувати DEE-modified LDCT як eвідентно-rівноцінне USPSTF-стандарту — extension опирається на mechanistic-rationale, не на RCT-дані."
+  - "Не пропускати counseling щодо припинення куріння — DEE × тютюн взаємодія залишається клінічно суттєвою."
+  - "Не використовувати urinary cytology як standalone screening — низька чутливість для low-grade захворювання; urinalysis з мікроскопією переважно."
+  - "Не призначати cystoscopy рутинно — резервується для persistent / нез'ясованої гематурії."
+
+do_not_do_en:
+  - "Do not present DEE-modified LDCT as evidentiarily equivalent to the USPSTF standard — the extension rests on mechanistic rationale, not RCT data."
+  - "Do not skip smoking-cessation counseling — the DEE × tobacco interaction remains clinically substantive."
+  - "Do not use urinary cytology as standalone screening — low sensitivity for low-grade disease; urinalysis with microscopy preferred."
+  - "Do not order cystoscopy routinely — reserve for persistent / unexplained hematuria."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — v0.3 occupational batch-2 pilot (diesel exhaust).
+  Two-Clinical-Co-Lead signoff queued per CHARTER §6.1 dev-mode
+  exemption. No drug regimen — intervention is counseling + surveillance
+  imaging + urinalysis. IARC Monograph 105 (2012) is canonical evidence
+  anchor; v0.3 source-authoring backlog as new SRC entity.

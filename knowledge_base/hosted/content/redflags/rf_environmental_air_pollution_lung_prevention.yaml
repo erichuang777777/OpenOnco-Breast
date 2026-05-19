@@ -1,0 +1,74 @@
+id: RF-ENVIRONMENTAL-AIR-POLLUTION-LUNG-PREVENTION
+definition: >-
+  Chronic residential ambient air-pollution exposure with PM2.5 annual
+  average >35 µg/m³ (WHO 2021 Interim Target 1; WHO Guideline target
+  5 µg/m³ annual mean is the long-term benchmark). Outdoor air
+  pollution (specifically PM2.5 + diesel exhaust components) is an
+  IARC Group 1 carcinogen (Monograph 109, 2013; reaffirmed Monograph
+  133 process) — established etiologic driver of lung cancer (both
+  NSCLC adenocarcinoma + squamous-cell), with population-attributable
+  fraction estimated 3-5% globally + higher in high-exposure regions.
+  Meta-analyses (Hamra 2014; Pope 2020): each 10 µg/m³ increment in
+  PM2.5 raises lung-cancer incidence by ~9% (RR ~1.09). Mechanisms:
+  carbonaceous particle deposition in alveolar / small-airway epithelium;
+  oxidative + inflammatory injury; transition-metal + PAH content as
+  direct mutagens; KRAS/EGFR mutation enrichment in PM2.5-exposed
+  non-smoker adenocarcinoma cohorts (Hill 2023 Nature paper —
+  pollution promotes EGFR-mutant clones). Prevention-persona RedFlag
+  (§20 v0.3 environmental pilot, 2026-05-18). risk_category=occupational
+  is the closest enum match for ambient environmental exposures.
+definition_ua: >-
+  Хронічна residential ambient air-pollution exposure з PM2.5 annual
+  average >35 мкг/м³ (WHO 2021 Interim Target 1; WHO Guideline target
+  5 мкг/м³ annual mean — long-term benchmark). Outdoor air pollution
+  (specifically PM2.5 + diesel exhaust components) — IARC Group 1
+  канцероген (Monograph 109, 2013) — встановлений етіологічний драйвер
+  раку легень (NSCLC adenocarcinoma + squamous-cell), з population-
+  attributable fraction 3-5% глобально + вище у high-exposure regions.
+  Meta-analyses (Hamra 2014; Pope 2020): кожне 10 мкг/м³ increment
+  PM2.5 — lung-cancer incidence +~9% (RR ~1.09). Механізми: carbonaceous
+  particle deposition в alveolar epithelium; oxidative + inflammatory
+  injury; transition-metal + PAH content як direct mutagens; KRAS/EGFR
+  mutation enrichment у PM2.5-exposed non-smoker adenocarcinoma cohorts
+  (Hill 2023 Nature — pollution promotes EGFR-mutant clones).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "residential_pm2_5_annual_average_gt_35"
+      value: true
+    - finding: "high_traffic_density_residence"
+      value: true
+    - finding: "industrial_air_pollution_zone_residence"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+# Closest enum match per task brief — ambient environmental exposures
+# slot under occupational pending §20 schema extension.
+risk_category: occupational
+
+# Anchor — NSCLC (most-attributable lung-cancer subtype). Engine
+# surfaces all relevant_diseases in render. Air pollution affects
+# bladder + breast risk at smaller effect sizes per IARC Mono 109
+# but those are not anchored here to keep the RF focused.
+relevant_diseases:
+  - DIS-NSCLC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-NSCLC-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for chronic residential PM2.5 >35 µg/m³ annual average (WHO 2021 IT-1). IARC Group 1 outdoor air pollution + PM. Population-attributable fraction modest individually but large absolute burden in high-exposure regions including industrial Ukraine + during war-related fire / debris events. risk_category=occupational is the closest enum match — schema lacks an explicit 'environmental' enum (§20 ratification pending). Engine routes to PreventionPlan recommending exposure reduction + USPSTF lung-cancer screening eligibility + symptom-triggered evaluation. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_diet_environmental
+draft_revision: 1

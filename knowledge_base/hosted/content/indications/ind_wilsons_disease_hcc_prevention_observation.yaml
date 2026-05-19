@@ -1,0 +1,156 @@
+id: IND-WILSONS-DISEASE-HCC-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-HCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-WILSONS-DISEASE-HCC-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Hepatology-driven observation (chelation continuation + LFT
+    monitoring; no scheduled US/MRI HCC-surveillance imaging) is
+    appropriate for non-cirrhotic Wilson's where HCC incidence remains
+    very low (<0.1%/year). For cirrhotic Wilson's, this pathway falls
+    below AASLD best-practice (~1%/year HCC incidence meets q6mo
+    surveillance threshold); included only as informed-consent
+    minimum-intensity option for patients who decline imaging.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-WILSONS-DISEASE-HCC-PREVENTION-
+  SURVEILLANCE. Appropriate primarily for non-cirrhotic Wilson's
+  patients (where HCC surveillance has very low yield) and for
+  cirrhotic Wilson's patients who choose minimum-intensity surveillance
+  for any of: cost / access constraints, severe procedural anxiety,
+  geographic distance to imaging center, very advanced age or
+  comorbidity with limited life expectancy, or explicit preference
+  after informed-consent discussion of trade-offs.
+
+  **Cadence:**
+    - Hepatology follow-up per usual cadence (q6-12mo) with examination,
+      LFT panel, INR, platelets, ceruloplasmin/serum copper, 24h
+      urinary copper (every 6-12mo for chelation adherence)
+    - HCC-focused imaging (US, MRI) only when triggered by:
+      - New hepatic decompensation (ascites, encephalopathy, jaundice)
+      - LFT pattern change (rising AFP, new hepatic mass on abdominal
+        examination, new RUQ pain)
+      - New thrombocytopenia or worsening synthetic dysfunction
+      - Patient elects to upgrade to scheduled surveillance
+
+  **Not appropriate for:**
+    - Cirrhotic Wilson's patients with documented synthetic
+      dysfunction or portal hypertension (these meet AASLD HCC
+      surveillance criteria)
+    - Wilson's with concurrent HBV or HCV infection (HCC risk
+      multiplied; separate RF surveillance applies)
+    - Wilson's with prior history of HCC (post-treatment surveillance
+      per DIS-HCC algorithm, not prevention)
+    - Wilson's with poor chelation adherence and ongoing hepatic
+      injury (high progression risk)
+
+  Per CHARTER §11 patient-autonomy framing: non-cirrhotic Wilson's
+  patients carry very low absolute HCC risk and are reasonable
+  candidates for symptom-driven observation. For cirrhotic Wilson's
+  patients, informed-consent observation is defensible as a
+  patient-choice option but the trade-off (missed early-stage HCC,
+  later transplant ineligibility if outside Milan at detection) must
+  be explicitly discussed.
+
+  **Alarm features** route immediately to abdominal imaging (US/MRI/CT)
+  ± biopsy — and if HCC is confirmed, to the treatment-persona
+  algorithm via DIS-HCC.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до
+  IND-WILSONS-DISEASE-HCC-PREVENTION-SURVEILLANCE. Доречно переважно
+  для non-cirrhotic Вільсон-пацієнтів (де HCC surveillance має дуже
+  низький yield) та для cirrhotic Вільсон-пацієнтів, які обирають
+  мінімальної інтенсивності спостереження з причин: вартість / доступ,
+  важка процедурна тривога, географічна відстань, дуже похилий вік
+  або коморбідність з обмеженою тривалістю життя.
+
+  **Частота:**
+    - Hepatology follow-up per usual частотою (q6-12 міс) з
+      обстеженням, LFT, INR, тромбоцитами, ceruloplasmin/serum copper,
+      24-год urinary copper
+    - HCC-focused imaging (US, MRI) лише при триггері:
+      - Нова hepatic decompensation (асцит, encephalopathy, жовтяниця)
+      - LFT pattern change (зростаюче AFP, нова hepatic mass на
+        абдомінальному обстеженні, новий RUQ біль)
+      - Нова тромбоцитопенія або погіршення synthetic dysfunction
+      - Пацієнт обирає upgrade до scheduled surveillance
+
+  **Не доречно для:**
+    - Cirrhotic Вільсон-пацієнтів з документованою synthetic dysfunction
+      або портальною гіпертензією — задовольняють AASLD HCC surveillance
+    - Вільсон з coexisting HBV або HCV
+    - Вільсон з попередньою історією HCC
+    - Вільсон з поганою chelation adherence
+
+  Per CHARTER §11 framing автономії пацієнта: non-cirrhotic Вільсон —
+  дуже низький абсолютний HCC ризик. Для cirrhotic Вільсон —
+  informed-consent observation defensible як patient-choice опція з
+  явним обговоренням trade-off (пропущений early-stage HCC).
+
+  **Alarm features** маршрутизують негайно до абдомінального imaging.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-AASLD-HCC-2023
+    position: context
+    relevant_quote_paraphrase: >-
+      "Non-cirrhotic Wilson's disease has very low HCC incidence and
+      does not require scheduled HCC-focused imaging. Cirrhotic
+      Wilson's meets AASLD surveillance criteria."
+  - source_id: SRC-NCCN-HCC-2025
+    position: context
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не використовувати цей шлях у cirrhotic Wilson — потребують запланованої US/AFP q6 міс."
+  - "Не презентувати observation як еквівалент scheduled surveillance у cirrhotic Wilson — interval-HCC ризик може зсунути за межі Milan з втратою transplant eligibility."
+  - "Не ігнорувати нову decompensation або incidental hepatic mass — імідіат-imaging."
+  - "Не використовувати цей шлях у Wilson з coexisting HBV/HCV — HCC ризик multiplicatively підвищений."
+  - "Не пропускати періодичне обговорення upgrade — cirrhotic Wilson на даному шляху повинен переглядатися щорічно."
+
+do_not_do_en:
+  - "Do not use this pathway in cirrhotic Wilson's — they require scheduled US/AFP every 6 months."
+  - "Do not present observation as equivalent to scheduled surveillance in cirrhotic Wilson's — interval HCC risk may push detection beyond Milan with loss of transplant eligibility."
+  - "Do not ignore new decompensation or incidental hepatic mass — immediate imaging."
+  - "Do not use this pathway in Wilson's with coexisting HBV/HCV — HCC risk is multiplicatively elevated."
+  - "Do not skip periodic re-discussion of upgrade — cirrhotic Wilson's on this pathway should be revisited annually."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — alternative-track companion for Wilson's / HCC prevention.
+  Required for §15.2 C4 ≥2-tracks invariant. Two-Co-Lead signoff queued.

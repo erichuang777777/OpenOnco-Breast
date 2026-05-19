@@ -1,0 +1,169 @@
+id: IND-UNIVERSAL-OCCUPATIONAL-EXPOSURE-PREVENTION-STANDARD-SCREENING
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-UNIVERSAL-OCCUPATIONAL-EXPOSURE-MULTIPLE
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Alternative-track companion. Patient declines intensified
+    multi-organ surveillance (geographic access, surveillance
+    fatigue, declining intent for invasive procedures, ongoing
+    employment in same exposure environment) — receives standard
+    occupational-exposure screening (USPSTF / NCCN baseline
+    cadence with single-exposure-driven modifications: LDCT if
+    USPSTF-eligible from tobacco component, no broadening per
+    NCCN High-Risk; opportunistic skin / ENT exam at annual
+    physical; symptom-prompted cystoscopy / dermatology / ENT
+    pathways) + symptom-vigilance education + re-engagement
+    opportunity. Outcomes inferior to intensified-surveillance
+    comparator: exposure-attributable cancers detected later;
+    medico-legal documentation less detailed; mesothelioma
+    surveillance gap. Per CHARTER §11 patient-autonomy framing —
+    declining intensified surveillance is legitimate but framed
+    as suboptimal vs intervention-arm comparator.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-UNIVERSAL-OCCUPATIONAL-
+  EXPOSURE-PREVENTION-INTENSIFIED-SURVEILLANCE. Patient declines
+  intensified multi-organ surveillance — receives standard
+  occupational-exposure screening within routine-physical scope.
+
+  **(1) Standard occupational-exposure screening.**
+  - LDCT only if USPSTF-eligible (≥20 pack-year + current smoker
+    or quit ≤15y, age 50-80) — NO broadening per NCCN High-Risk
+    pathway. Without USPSTF eligibility, no asymptomatic chest
+    imaging.
+  - Opportunistic skin exam at annual physical (no q6-12mo
+    dermatology cadence; symptom-prompted dermatology referral
+    only for new / changing lesion).
+  - Opportunistic ENT / oral exam at annual physical (no q1y
+    laryngoscopy; symptom-prompted ENT referral only for
+    persistent throat / voice symptom).
+  - Standard CRC q10y colonoscopy + breast q2y mammography +
+    cervical hr-HPV / cytology per general-population cadence.
+
+  **(2) Symptom-vigilance education for occupational-exposure
+  cancers.** Heightened pattern-recognition for exposure-driven
+  early-warning features:
+  - Lung: persistent cough / hemoptysis / dyspnea / unintended
+    weight loss → chest imaging.
+  - Mesothelioma: new pleural effusion / persistent chest pain →
+    chest CT + PET if effusion + biopsy.
+  - Bladder / urothelial: any unexplained hematuria → urology
+    referral.
+  - Skin: non-healing erosion / irregular pigmentation / rapidly
+    growing nodule → dermatology + biopsy.
+  - UADT: persistent dysphagia / odynophagia / hoarseness / oral
+    lesion → ENT.
+  - Hematopoietic: persistent cytopenia / unexplained bleeding /
+    fatigue → CBC + smear + hematology referral.
+
+  **(3) Workers-compensation + medico-legal documentation
+  (baseline only).** Document occupational-exposure history at
+  baseline visit but without cadenced re-documentation; patient
+  retains right to formal medico-legal documentation if needed
+  for claims.
+
+  **(4) Workplace-modification consultation if ongoing exposure.**
+  Even in declined-intensified-surveillance pathway, refer to
+  occupational-health for PPE adequacy + exposure-monitoring +
+  job-modification consultation if patient still actively
+  exposed.
+
+  **(5) Re-engagement pathway.** Document declined-intensified-
+  surveillance determination explicitly + offer re-engagement at
+  each annual visit. Many patients who initially decline
+  intensified surveillance engage when exposure-attributable
+  symptoms emerge or when peer cancer diagnosis shifts priorities.
+
+  Per CHARTER §11 patient-autonomy framing.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від
+  intensified multi-organ surveillance — отримує standard
+  occupational-exposure screening у routine-physical scope.
+
+  **(1) Standard occupational-exposure screening:**
+  - LDCT лише при USPSTF eligibility (≥20 pack-year + поточний
+    курець або quit ≤15р) — НЕ broadening per NCCN High-Risk.
+  - Opportunistic skin exam при annual physical.
+  - Opportunistic ENT / oral exam при annual physical.
+  - Standard CRC q10р + breast q2р + cervical per general-
+    population cadence.
+
+  **(2) Symptom-vigilance education для occupational-exposure
+  cancers:**
+  - Lung: persistent cough / hemoptysis / dyspnea → chest imaging.
+  - Mesothelioma: new pleural effusion → chest CT + biopsy.
+  - Bladder: unexplained hematuria → urology.
+  - Skin: non-healing erosion → dermatology.
+  - UADT: persistent dysphagia / hoarseness → ENT.
+  - Hematopoietic: persistent cytopenia → CBC + smear.
+
+  **(3) Workers-compensation + medico-legal documentation
+  (baseline only).** Document occupational-exposure history.
+
+  **(4) Workplace-modification consultation if ongoing exposure.**
+  Occupational-health referral для PPE + exposure-monitoring +
+  job-modification.
+
+  **(5) Re-engagement pathway.** Document declined-intensified-
+  surveillance determination + offer re-engagement.
+
+  Per CHARTER §11 patient-autonomy framing.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1
+
+sources:
+  - source_id: SRC-IARC-100C-ASBESTOS
+    position: context
+  - source_id: SRC-IARC-100F-BENZENE
+    position: context
+  - source_id: SRC-USPSTF-LUNG-LDCT-2021
+    position: context
+
+do_not_do:
+  - "Не презентувати standard screening як еквівалент intensified surveillance у multi-exposure cohort — outcomes inferior."
+  - "Не пропускати symptom-vigilance education — symptom-prompted evaluation є backup для declined-cadence pathway."
+  - "Не deny workplace-modification consultation якщо patient ongoing exposed — PPE / exposure-monitoring axis окрема від surveillance engagement."
+  - "Не нормалізувати alarm symptoms (persistent cough, unexplained hematuria, non-healing skin lesion, new pleural effusion) у exposed cohort — symptom-prompted evaluation primary."
+  - "Не deny formal medico-legal documentation якщо patient potentially eligible для workers-compensation / IIDB — exposure documentation cross-cuts з legal + public-health surveillance."
+
+do_not_do_en:
+  - "Do not present standard screening as equivalent to intensified surveillance in the multi-exposure cohort — outcomes are inferior."
+  - "Do not skip symptom-vigilance education — symptom-prompted evaluation is the backup for the declined-cadence pathway."
+  - "Do not deny workplace-modification consultation if the patient is ongoing exposed — PPE / exposure-monitoring axis is separate from surveillance engagement."
+  - "Do not normalize alarm symptoms (persistent cough, unexplained hematuria, non-healing skin lesion, new pleural effusion) in the exposed cohort — symptom-prompted evaluation is primary."
+  - "Do not deny formal medico-legal documentation if the patient is potentially eligible for workers-compensation / IIDB — exposure documentation cross-cuts with legal + public-health surveillance."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for universal multi-IARC-Group-1 occupational exposure flag. §15.2 C4 ≥2-tracks invariant. Two-Clinical-Co-Lead signoff queued."

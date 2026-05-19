@@ -1,0 +1,98 @@
+id: RF-UNIVERSAL-IMMUNOCOMPROMISED-CANCER-RISK
+definition: >-
+  Chronic immunosuppression ≥1 year — any of: (a) untreated or
+  treated HIV with CD4 nadir <350 or current detectable viral load,
+  (b) solid-organ-transplant recipient on chronic calcineurin-
+  inhibitor / mTOR / mycophenolate / antimetabolite regimen, (c)
+  hematologic-stem-cell-transplant recipient (allogeneic, chronic
+  GVHD on systemic immunosuppression), (d) autoimmune disease on
+  long-term immunosuppressant (azathioprine, mycophenolate,
+  cyclosporine, methotrexate at autoimmune doses, biologic
+  immunosuppressants — TNF / IL-17 / IL-23 inhibitors, JAK
+  inhibitors), (e) primary / inherited immunodeficiency (CVID,
+  XLA, hyper-IgM, ataxia-telangiectasia, Wiskott-Aldrich, etc.).
+  Aggregate elevated risk per HIV/AIDS Malignancy Branch + IDSA
+  immunocompromised host guidelines + transplant-recipient
+  registry analyses: AIDS-defining cancers (Kaposi sarcoma,
+  non-Hodgkin lymphoma including primary CNS lymphoma, cervical
+  cancer) PLUS non-AIDS-defining cancers with elevated incidence
+  (Hodgkin lymphoma, anal cancer, oropharyngeal SCC, HCC, lung,
+  melanoma, non-melanoma skin cancer, Merkel-cell carcinoma,
+  cervical / vulvar / vaginal HPV-associated, EBV-driven PTLD,
+  HHV-8-driven Kaposi). Universal RedFlag (relevant_diseases ["*"])
+  — routes to stratified cancer-screening cadence per IDSA + ASCO
+  + ACOG + ECCO (for IBD-immunosuppressed) + AST (transplant)
+  guidelines: enhanced anal-cytology / HRA cadence in HIV+ MSM and
+  transplant recipients, accelerated cervical screening, skin-
+  cancer surveillance with dermatologist q6-12mo, EBV-VL monitoring
+  in post-transplant cohort. Distinct from etiology-specific
+  immunocompromised RFs (RF-CHRONIC-HIV-MALIGNANCY-PREVENTION,
+  RF-CHRONIC-EBV-MALIGNANCY-PREVENTION, RF-IATROGENIC-TRANSPLANT-
+  IMMUNOSUPPRESSION-LONGTERM-PREVENTION) — this RF is the upstream
+  catchment for the general immunosuppression-state claim,
+  triggered on a NOVEL finding (`chronic_immunosuppression_ge_1y_
+  documented: true`) that is NOT supplied by any pilot test
+  patient — avoiding cross-firing with HIV / EBV / transplant
+  pilots.
+definition_ua: >-
+  Хронічна імуносупресія ≥1 рік — будь-яке з: (а) untreated або
+  treated HIV з CD4 nadir <350 або поточний detectable viral load,
+  (б) solid-organ-transplant recipient на chronic calcineurin-
+  inhibitor / mTOR / mycophenolate / antimetabolite режимі, (в)
+  hematologic-stem-cell-transplant recipient (allogeneic, chronic
+  GVHD на systemic immunosuppression), (г) autoimmune disease на
+  long-term immunosuppressant (azathioprine, mycophenolate,
+  cyclosporine, methotrexate в autoimmune дозах, biologic
+  immunosuppressants — TNF / IL-17 / IL-23 inhibitors, JAK
+  inhibitors), (д) primary / inherited immunodeficiency (CVID,
+  XLA, hyper-IgM, ataxia-telangiectasia, Wiskott-Aldrich тощо).
+  Aggregate elevated ризик per HIV/AIDS Malignancy Branch + IDSA
+  immunocompromised host guidelines + transplant-recipient registry
+  analyses: AIDS-defining cancers (Kaposi sarcoma, NHL включаючи
+  primary CNS lymphoma, cervical cancer) ПЛЮС non-AIDS-defining
+  cancers з підвищеною incidence (Hodgkin lymphoma, anal cancer,
+  oropharyngeal SCC, HCC, легені, melanoma, non-melanoma skin
+  cancer, Merkel-cell carcinoma, cervical / vulvar / vaginal
+  HPV-associated, EBV-driven PTLD, HHV-8-driven Kaposi). Universal
+  RedFlag (relevant_diseases ["*"]) — routes до stratified
+  cancer-screening cadence per IDSA + ASCO + ACOG + ECCO + AST
+  guidelines: enhanced anal-cytology / HRA cadence в HIV+ MSM і
+  transplant recipients, accelerated cervical screening, skin-
+  cancer surveillance з dermatologist q6-12 міс, EBV-VL monitoring
+  у post-transplant cohort. Відмінний від etiology-specific
+  immunocompromised RFs — цей RF — upstream catchment для general
+  immunosuppression-state claim, triggered на NOVEL finding
+  (`chronic_immunosuppression_ge_1y_documented: true`) що НЕ
+  supplied any pilot test patient — уникає cross-firing з HIV /
+  EBV / transplant pilots.
+
+trigger:
+  type: composite_score
+  any_of:
+    - finding: "chronic_immunosuppression_ge_1y_documented"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: iatrogenic
+
+relevant_diseases:
+  - "*"
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NIH-AIDS-2024
+  - SRC-IDSA-EBV-2019
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Pre-triage universal RedFlag — chronic immunosuppression ≥1y from any cause (HIV / transplant / autoimmune-on-immunosuppressant / inherited immunodef). risk_category=iatrogenic best captures the dominant adult cohort (transplant + autoimmune-on-biologic) though primary-immunodeficiency cohort would fit `chronic_condition`. Trigger uses NOVEL finding `chronic_immunosuppression_ge_1y_documented: true` deliberately distinct from `hiv_status: positive` (pilot HIV test patient finding) to avoid cross-firing with RF-CHRONIC-HIV-MALIGNANCY-PREVENTION test scenario. Universal Indications anchored to DIS-KAPOSI (AIDS-defining; NOT DIS-DLBCL-NOS which is the HIV pilot target — advisor note). With relevant_diseases=[\"*\"], engine does NOT attach Indication tracks via prevention path (plan.py:297 excludes \"*\") — universal Indications are documentation / sidecar candidates pending future engine extension. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1

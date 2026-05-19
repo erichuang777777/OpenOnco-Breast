@@ -1,0 +1,128 @@
+# PROC-HRA-HIGH-RES-ANOSCOPY — High-resolution anoscopy (HRA) for
+# surveillance of anal high-grade squamous intraepithelial lesion (HSIL)
+# in HIV+ MSM, HIV+ women, and post-transplant populations. §20
+# prevention-persona procedure (RATIFIED 2026-05-18).
+# `intent: diagnostic` per §17.1 enum — HRA is a diagnostic / surveillance
+# colposcopy-analog procedure, not a therapeutic resection.
+id: PROC-HRA-HIGH-RES-ANOSCOPY
+names:
+  preferred: "High-resolution anoscopy (HRA) for anal HSIL surveillance"
+  ukrainian: "Аноскопія високої роздільної здатності (HRA) для нагляду за анальною HSIL"
+  english: "High-resolution anoscopy (HRA) for anal HSIL surveillance"
+  synonyms:
+    - "HRA"
+    - "Anal colposcopy"
+    - "High-resolution anoscopy with biopsy"
+    - "Anal canal magnified examination"
+
+# §17.1 free-string type; HRA is an endoscopic / outpatient examination.
+type: endoscopic_examination_with_biopsy
+intent: diagnostic
+
+target_organ: anal_canal
+applicable_diseases:
+  - DIS-ANAL-SCC
+
+# HRA is an outpatient endoscopic exam; mortality is effectively zero.
+# Omit `operative_mortality_pct` (Optional in schema).
+
+common_complications:
+  - name: "Mild bleeding from biopsy site"
+    frequency: "5-15% (self-limited)"
+  - name: "Pain / discomfort during or after biopsy"
+    frequency: "20-40% transient"
+  - name: "Acetic-acid related local discomfort"
+    frequency: "Common; transient"
+  - name: "Vasovagal reaction"
+    frequency: "1-3%"
+  - name: "Infection at biopsy site"
+    frequency: "<1%"
+  - name: "False-negative for HSIL (sampling / operator dependence)"
+    frequency: "Highly operator-dependent — quality-assurance metrics (case volume, certification) are required"
+
+sources:
+  - SRC-NCCN-ANAL-2025
+  - SRC-ACT2-JAMES-2013
+
+last_reviewed: "2026-05-18"
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_agent_aac98192634228af3
+draft_revision: 1
+
+patient_facing_summary:
+  english: >
+    People at elevated risk for anal cancer — most importantly people
+    living with HIV (particularly men who have sex with men), post-
+    transplant patients, and people with prior cervical / vulvar HPV-
+    related disease — are now offered surveillance for the precursor
+    lesion called anal high-grade squamous intraepithelial lesion
+    (HSIL). High-resolution anoscopy (HRA) is the procedure for finding
+    and biopsying these lesions. It is performed in an outpatient
+    clinic: a small anoscope is inserted, acetic acid (and Lugol
+    iodine) is applied to highlight abnormal areas, and any suspicious
+    region is biopsied through a magnified view. The procedure takes
+    about 20-40 minutes; patients usually return to normal activity the
+    same day. Minor bleeding or discomfort for 1-2 days is common.
+    Detection of HSIL leads to ablative treatment (heat, cryotherapy,
+    or topical agents) to prevent progression to invasive anal cancer.
+  ukrainian: >
+    Особам із підвищеним ризиком раку анального каналу — насамперед
+    ВІЛ-позитивним (особливо чоловікам, які мають секс із чоловіками),
+    реципієнтам трансплантації солідних органів, а також тим, хто мав
+    ВПЛ-асоційовані ураження шийки матки чи вульви — наразі
+    пропонується нагляд за передраковим ураженням, яке називається
+    анальна плоскоклітинна інтраепітеліальна неоплазія високого
+    ступеня (HSIL). Аноскопія високої роздільної здатності (HRA) є
+    процедурою для виявлення та біопсії таких уражень. Виконується
+    амбулаторно: вводиться невеликий аноскоп, наноситься оцтова
+    кислота (і розчин Люголя) для виділення патологічних ділянок, а
+    будь-яка підозріла зона біопсується під збільшенням. Процедура
+    триває близько 20–40 хвилин; пацієнт зазвичай повертається до
+    звичної активності того ж дня. Незначна кровотеча або
+    дискомфорт упродовж 1–2 днів є поширеними. Виявлення HSIL веде
+    до абляційного лікування (термокоагуляція, кріотерапія або
+    топічні препарати) для запобігання прогресу в інвазивний
+    анальний рак.
+
+notes: >
+  High-resolution anoscopy (HRA) is the analog of cervical colposcopy
+  applied to the anal canal. The ANCHOR trial (Palefsky 2022 NEJM)
+  established that treatment of HSIL detected by HRA reduces progression
+  to invasive anal cancer in people living with HIV by ~57%. This
+  evidence underpins the surveillance pathway endorsed by NCCN Anal
+  v3.2025 and emerging society guidelines.
+
+  Indication (NCCN Anal v3.2025; HIV-society guidance):
+    - People with HIV (regardless of MSM status), especially CD4 history
+      and age-related thresholds per current recommendations.
+    - Post solid-organ transplant.
+    - History of high-grade cervical / vulvar / vaginal HPV-related
+      disease.
+    - History of anogenital warts (selective use case-by-case).
+
+  Technique:
+    - Anoscope insertion in left lateral or knee-chest position.
+    - Application of 3-5% acetic acid (white-stain HSIL areas) followed
+      by Lugol iodine (HSIL areas iodine-negative).
+    - Targeted biopsy of acetowhite + iodine-negative lesions, mosaic
+      vessel pattern, or atypical vasculature.
+    - Photographic documentation per quality-assurance standards.
+
+  Operator competency:
+    - HRA detection sensitivity is heavily operator-dependent. ASCCP /
+      international anal-neoplasia societies recommend ≥50 supervised
+      cases for proficiency. Quality-assurance metrics: HSIL detection
+      rate, photographic documentation rate, biopsy yield.
+
+  Treatment of detected HSIL (NOT covered by this Procedure entity):
+    - Office-based ablation: infrared coagulation, electrocautery,
+      cryotherapy, topical imiquimod / 5-FU.
+    - Operating-room electrocautery for larger / multifocal disease.
+
+  `intent: diagnostic` per §17.1 enum — HRA is a colposcopy-analog
+  examination with biopsy, not a definitive resection. Treatment of
+  the HSIL detected is a separate intervention.
+
+  ID prefix is `PROC-*` (non-surgical procedure) per §20 prevention-
+  persona file allowlist (chunk procedures-prevention-2026-05-18); the
+  Surgery schema accepts both prefixes via the same loader pathway.

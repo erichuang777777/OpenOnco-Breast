@@ -1,0 +1,198 @@
+id: IND-UNIVERSAL-OCCUPATIONAL-EXPOSURE-PREVENTION-INTENSIFIED-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-UNIVERSAL-OCCUPATIONAL-EXPOSURE-MULTIPLE
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Intensified multi-organ surveillance per IARC Monograph
+    exposure-organ pairings + ACOEM (American College of
+    Occupational and Environmental Medicine) + NIOSH guidance
+    detects exposure-attributable cancers earlier than general-
+    population screening cadence. Per IARC + WHO REACH synergistic-
+    exposure literature: asbestos + tobacco lung-cancer SIR ~50-90
+    in combined-exposure cohort (vs 5 for either alone);
+    benzene + radon hematopoietic + lung composite SIR elevated
+    further; PAH + tobacco UADT + lung composite SIR elevated.
+    Annual LDCT (often broader USPSTF eligibility criteria per
+    NCCN high-risk pathway for occupational-exposure cohort);
+    urine cytology + cystoscopy in benzene / aniline-dye / rubber-
+    industry cohort; low-threshold ENT + dermatology + symptom-
+    prompted skin biopsy in PAH / coal-tar / arsenic cohort;
+    ENT exam in combined PAH / tobacco / alcohol cohort.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for documented multiple IARC
+  Group 1 occupational exposures. Intensified multi-organ
+  surveillance per IARC Monograph exposure-organ pairings +
+  ACOEM + NIOSH guidance.
+
+  **(1) Lung-cancer screening.** Combined-exposure cohort (asbestos +
+  tobacco, asbestos + radon, silica + tobacco, diesel + tobacco,
+  PAH + tobacco) — USPSTF 2021 LDCT eligibility may be met
+  through tobacco component alone; consider broadening per NCCN
+  Lung-Cancer Screening High-Risk pathway for asbestos / silica /
+  radon exposure (NCCN ≥20 pack-year + occupational-exposure
+  history may qualify even outside strict USPSTF criteria).
+  Annual LDCT with Lung-RADS reporting. Asbestos-specific:
+  baseline chest CT (not LDCT) at ≥10y post-first-exposure for
+  pleural-plaque + mesothelioma surveillance (no formal screening
+  modality; CT documents pleural changes for medico-legal +
+  workers-compensation purposes).
+
+  **(2) Urothelial bladder cancer surveillance.** Benzene + aniline-
+  dye + rubber-industry + aromatic-amine cohort: urine cytology
+  q1y + symptom-prompted cystoscopy (gross hematuria,
+  microhematuria persistent after infection-rule-out). Per ACOEM
+  + EAU occupational-exposure-specific guidance. NOT routine
+  USPSTF — Grade I (insufficient evidence) for general population;
+  occupational-cohort warrants surveillance.
+
+  **(3) Skin cancer surveillance.** PAH + coal-tar + arsenic +
+  prolonged UV-exposure occupational cohort: dermatology q6-12mo
+  with low-threshold biopsy. Particular vigilance for
+  occupational-attributable arsenic-keratosis lesions in
+  arsenic-exposed workers.
+
+  **(4) Upper aerodigestive tract (UADT) cancer surveillance.**
+  Combined PAH + tobacco + alcohol cohort + nickel + chromium +
+  formaldehyde + wood-dust cohort: ENT exam q1y + low-threshold
+  laryngoscopy / fiber-optic exam for any persistent throat /
+  voice symptom. NO routine asymptomatic screening per USPSTF;
+  symptom-prompted pathway in occupational cohort is highest
+  yield.
+
+  **(5) Hematopoietic malignancy surveillance.** Benzene +
+  formaldehyde + ionizing-radiation cohort: CBC + smear q1y;
+  symptom-prompted bone-marrow biopsy at any persistent cytopenia
+  / fatigue / easy bruising.
+
+  **(6) Mesothelioma + asbestos-related disease.** Asbestos cohort:
+  no formal mesothelioma screening modality; baseline chest CT
+  at ≥10y post-first-exposure documents pleural plaques /
+  thickening; symptom-prompted PET-CT for new pleural effusion /
+  persistent chest pain / dyspnea / palpable chest-wall mass.
+
+  **(7) Workers-compensation + medico-legal documentation.**
+  Detailed occupational-exposure history at each visit (employer,
+  job description, dates, IARC monograph reference, exposure
+  intensity / duration where feasible); document for potential
+  workers-compensation / IIDB / industrial-injury claims.
+
+  **(8) Cessation of ongoing exposure.** Workplace-modification
+  consultation when patient still actively exposed (PPE adequacy,
+  exposure-monitoring, occupational-health referral). NIOSH /
+  HSE / OSHA-equivalent local-jurisdiction occupational-health
+  pathways.
+
+  **Anchor disease:** non-small-cell lung cancer chosen as
+  canonical anchor because (a) lung cancer is the dominant
+  multi-organ surveillance target for occupational synergies
+  (asbestos / tobacco / silica / radon / diesel converge on
+  lung), (b) USPSTF / NCCN LDCT screening is the most
+  actionable screening modality for the cohort, (c) NIOSH +
+  HSE + WHO REACH document the synergistic-exposure literature
+  primarily on lung-cancer outcomes.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для documented ≥2 distinct
+  IARC Group 1 occupational exposures. Intensified multi-organ
+  surveillance per IARC Monograph exposure-organ pairings +
+  ACOEM + NIOSH.
+
+  **(1) Lung-cancer screening.** USPSTF 2021 LDCT eligibility +
+  NCCN Lung-Cancer Screening High-Risk pathway broadening для
+  asbestos / silica / radon exposure. Annual LDCT з Lung-RADS.
+  Asbestos-specific: baseline chest CT (не LDCT) ≥10р post-first-
+  exposure для pleural plaques + mesothelioma surveillance.
+
+  **(2) Urothelial bladder cancer surveillance.** Benzene +
+  aniline-dye + rubber-industry cohort: urine cytology q1р +
+  symptom-prompted cystoscopy. NOT routine USPSTF (Grade I);
+  occupational-cohort warrants surveillance.
+
+  **(3) Skin cancer surveillance.** PAH + coal-tar + arsenic +
+  prolonged UV: dermatology q6-12 міс з low-threshold biopsy.
+
+  **(4) UADT cancer surveillance.** Combined PAH + tobacco +
+  alcohol cohort + nickel + chromium + formaldehyde + wood-dust:
+  ENT exam q1р + low-threshold laryngoscopy.
+
+  **(5) Hematopoietic malignancy surveillance.** Benzene +
+  formaldehyde + ionizing-radiation: CBC + smear q1р;
+  symptom-prompted bone-marrow biopsy.
+
+  **(6) Mesothelioma + asbestos-related disease.** Baseline chest
+  CT ≥10р post-first-exposure; symptom-prompted PET-CT для нової
+  pleural effusion / persistent chest pain / dyspnea.
+
+  **(7) Workers-compensation + medico-legal documentation.**
+  Detailed occupational-exposure history.
+
+  **(8) Cessation of ongoing exposure.** Workplace-modification
+  consultation; NIOSH / HSE / OSHA-equivalent occupational-health
+  pathways.
+
+  **Анкор-захворювання:** NSCLC — dominant multi-organ surveillance
+  target для occupational synergies; USPSTF / NCCN LDCT —
+  найбільш actionable modality.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1
+
+sources:
+  - source_id: SRC-IARC-100C-ASBESTOS
+    position: supports
+  - source_id: SRC-IARC-100F-BENZENE
+    position: supports
+  - source_id: SRC-IARC-105-DIESEL-EXHAUST
+    position: supports
+  - source_id: SRC-IARC-100D-RADON
+    position: supports
+  - source_id: SRC-USPSTF-LUNG-LDCT-2021
+    position: supports
+
+do_not_do:
+  - "Не використовувати general-population screening cadence у multi-exposure cohort — synergistic-exposure SIR substantially elevated."
+  - "Не призначати LDCT без documented exposure profile + ≥10y latency post-first-exposure — false-positive harm exceed benefit без adequate latency."
+  - "Не пропускати workers-compensation / medico-legal documentation — clinical documentation крос-cuts з legal claims та public-health surveillance."
+  - "Не нормалізувати ongoing exposure без workplace-modification consultation — PPE adequacy + exposure-monitoring + occupational-health referral primary."
+  - "Не deny mesothelioma evaluation у asbestos-exposed cohort при нових pleural symptoms — PET-CT + biopsy симптом-prompted, не routine cadence."
+
+do_not_do_en:
+  - "Do not use general-population screening cadence in the multi-exposure cohort — synergistic-exposure SIR is substantially elevated."
+  - "Do not order LDCT without a documented exposure profile + ≥10y latency post-first-exposure — false-positive harm exceeds benefit without adequate latency."
+  - "Do not skip workers-compensation / medico-legal documentation — clinical documentation cross-cuts with legal claims and public-health surveillance."
+  - "Do not normalize ongoing exposure without workplace-modification consultation — PPE adequacy + exposure monitoring + occupational-health referral are primary."
+  - "Do not deny mesothelioma evaluation in the asbestos-exposed cohort at new pleural symptoms — PET-CT + biopsy is symptom-prompted, not routine cadence."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — universal multi-IARC-Group-1 occupational exposure pre-triage. Anchor DIS-NSCLC (lung is dominant multi-organ surveillance target). Two-Clinical-Co-Lead signoff queued."

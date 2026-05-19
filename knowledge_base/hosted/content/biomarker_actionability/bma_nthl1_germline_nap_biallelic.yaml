@@ -1,0 +1,69 @@
+id: BMA-NTHL1-GERMLINE-NAP-BIALLELIC
+biomarker_id: BIO-NTHL1-GERMLINE
+variant_qualifier: NTHL1 germline biallelic pathogenic (NTHL1-associated polyposis, NAP)
+disease_id: DIS-CRC
+escat_tier: IIA
+evidence_summary: >
+  NTHL1 germline biallelic (homozygous or compound heterozygous) pathogenic
+  variants cause NTHL1-associated polyposis (NAP) — autosomal-recessive,
+  attenuated/oligo-polyposis with early-onset colorectal cancer plus a
+  broad multi-tumor spectrum: breast (~60% lifetime in women), endometrial,
+  duodenal, urothelial, brain tumors, basal-cell carcinomas, and hematologic
+  malignancies. Tumors carry the characteristic NTHL1 mutational signature
+  (SBS30 — C>T at NCG and NCT contexts) from defective base-excision repair.
+  Confirmed-carrier (biallelic) surveillance protocol (per Grolleman et al.
+  2019 / NCCN Genetic CRC): colonoscopy q1-2y from age 25-30 with
+  polypectomy, EGD q3-5y from age 30, breast MRI + mammography annual from
+  age 30-35 (women), endometrial sampling + TVUS q1-2y from 35-40,
+  urinalysis annual, skin exam annual. Heterozygous (monoallelic) NTHL1
+  carriers are not currently considered at materially elevated cancer risk
+  and do not enter surveillance — only biallelic carriers qualify. ESCAT IIA.
+evidence_summary_ua: >
+  Біалельні (гомозиготні або compound heterozygous) герміногенні патогенні
+  варіанти NTHL1 спричиняють NTHL1-асоційований поліпоз (NAP) —
+  аутосомно-рецесивний, атенюйований поліпоз з раннім КРР та широким спектром:
+  молочна залоза (~60% довічно), ендометрій, дуоденум, уротелій, мозок, БКР,
+  гемобластози. Пухлини мають характерну сигнатуру NTHL1 (SBS30 — C>T у NCG/NCT
+  контекстах) через дефект BER. Протокол нагляду біалельного носія: колоноскопія
+  q1-2 роки з 25-30; ЕГДС q3-5 роки з 30; МРТ молочних залоз + мамографія q1 рік
+  з 30-35 (жінки); ендометріальна біопсія + TVUS q1-2 роки з 35-40; аналіз сечі
+  щорічно; дерматологічний огляд щорічно. Гетерозиготи (моноалельні) — БЕЗ
+  підвищеного ризику; нагляд не активується. ESCAT IIA.
+regulatory_approval:
+  fda: []
+  ema: []
+  ukraine: []
+recommended_combinations:
+  - "colonoscopy q1-2y from age 25-30 with polypectomy"
+  - "EGD q3-5y from age 30"
+  - "breast MRI + mammography annual from age 30-35 (women)"
+  - "endometrial sampling + TVUS q1-2y from age 35-40"
+  - "annual urinalysis + skin exam"
+  - "cascade testing — partner carrier screening for couples planning children (autosomal-recessive transmission)"
+contraindicated_monotherapy: []
+primary_sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+last_verified: "2026-05-18"
+evidence_sources: []
+actionability_review_required: true
+linked_indications:
+  - IND-LYNCH-CARRIER-SURVEILLANCE
+notes: >
+  STUB — Wave A+B germline expansion. Linked Indication: IND-LYNCH-CARRIER-
+  SURVEILLANCE used as closest-fit multi-organ surveillance template (no
+  NAP-specific Indication exists yet). Two-Clinical-Co-Lead signoff queued.
+  Critical: only biallelic NTHL1 carriers enter this protocol; monoallelic
+  heterozygotes do not (autosomal-recessive). Partner-carrier testing for
+  cascade reproductive counseling. Tumor mutational signature SBS30 in a
+  CRC without explicit germline result is a strong NTHL1 case-finding
+  signal.
+notes_ua: >
+  STUB — Wave A+B розширення. Прив'язка до IND-LYNCH-CARRIER-SURVEILLANCE.
+  Тільки біалельні носії NTHL1 входять у протокол; моноалельні гетерозиготи —
+  ні (аутосомно-рецесивно). Каскадне тестування включає партнера.
+  Сигнатура SBS30 у КРР без герміногенного результату — сильний сигнал для
+  пошуку NTHL1.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_bma_batch3
+draft_revision: 1
+last_reviewed: "2026-05-18"

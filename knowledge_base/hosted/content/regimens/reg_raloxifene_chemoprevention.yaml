@@ -1,0 +1,99 @@
+id: REG-RALOXIFENE-CHEMOPREVENTION
+name: "Raloxifene 60 mg daily × 5 years for postmenopausal breast-cancer chemoprevention"
+name_ua: "Ралоксифен 60 мг щодня × 5 років для хіміопрофілактики РМЗ у постменопаузі"
+alternate_names:
+  - "Raloxifene chemoprevention"
+  - "STAR P-2 chemoprevention regimen"
+
+components:
+  - drug_id: DRUG-RALOXIFENE
+    dose: "60 mg PO"
+    schedule: "once daily"
+    route: PO
+    duration: "5 years"
+
+cycle_length_days: 30
+total_cycles: "60 months (5 years)"
+
+toxicity_profile: moderate
+
+premedication: []
+mandatory_supportive_care: []
+monitoring_schedule_id:
+
+dose_adjustments:
+  - condition: "VTE event during treatment (DVT, PE)"
+    modification: "Discontinue raloxifene; switch to AI-based chemoprevention (exemestane MAP.3) or risk-management without pharmacoprevention"
+    rationale: "Raloxifene ~2× baseline VTE risk; recurrence high"
+    source_refs:
+      - SRC-NCCN-BREAST-2025
+  - condition: "History of CHD or CHD-equivalent risk"
+    modification: "Discuss RUTH-trial stroke signal; consider AI alternative"
+    rationale: "Increased fatal stroke risk in postmenopausal women with documented CHD per RUTH"
+    source_refs:
+      - SRC-NCCN-BREAST-2025
+  - condition: "Anticipated prolonged immobility (surgery, travel >4 h)"
+    modification: "Hold raloxifene ≥72 h pre-immobilization and resume after full mobilization"
+    rationale: "VTE risk during periods of stasis"
+    source_refs:
+      - SRC-NCCN-BREAST-2025
+
+ukraine_availability:
+  all_components_registered: true
+  all_components_reimbursed: false
+  notes: "Raloxifene (Evista and generics) registered in Ukraine. Not on НСЗУ chemoprevention package — out-of-pocket. Osteoporosis indication may have separate reimbursement pathway."
+
+sources:
+  - SRC-NCCN-BREAST-2025
+
+between_visit_watchpoints:
+  - trigger_ua: "Припливи, нічна пітливість"
+    action_ua: "Поширений ефект — занотуйте на наступному візиті; обговоріть симптоматичне лікування за потреби"
+    urgency: log_at_next_visit
+    sources:
+      - SRC-NCCN-BREAST-2025
+  - trigger_ua: "Судоми ніг, набряк ніг"
+    action_ua: "Поширений ефект — занотуйте на візиті; пийте достатньо рідини"
+    urgency: log_at_next_visit
+    sources:
+      - SRC-NCCN-BREAST-2025
+  - trigger_ua: "Біль, набряк, почервоніння однієї ноги"
+    action_ua: "Зверніться до лікарні негайно — підозра на DVT"
+    urgency: er_now
+    sources:
+      - SRC-NCCN-BREAST-2025
+  - trigger_ua: "Раптова задишка, біль у грудях, кровохаркання"
+    action_ua: "Зверніться до лікарні негайно — підозра на легеневу емболію"
+    urgency: er_now
+    sources:
+      - SRC-NCCN-BREAST-2025
+  - trigger_ua: "Раптова слабкість обличчя/руки, порушення мови — підозра на інсульт"
+    action_ua: "Зверніться до лікарні негайно — RUTH-сигнал щодо фатального інсульту у жінок з ССЗ"
+    urgency: er_now
+    sources:
+      - SRC-NCCN-BREAST-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  Raloxifene 60 mg PO daily × 5 years for breast-cancer chemoprevention
+  in POSTMENOPAUSAL women only per STAR P-2 (NSABP-P2, Vogel 2006).
+  ~38% reduction in invasive breast cancer (vs ~50% for tamoxifen) with
+  lower endometrial-cancer (no agonism) and lower VTE rates than tamoxifen.
+  Preferred over tamoxifen in postmenopausal women with intact uterus or
+  VTE-risk profile. Adds osteoporosis benefit. NOT for premenopausal
+  use or DCIS prevention. Counsel on RUTH stroke signal in patients with
+  documented CHD.
+
+notes_ua: >
+  Ралоксифен 60 мг PO щодня × 5 років для хіміопрофілактики РМЗ
+  ТІЛЬКИ у постменопаузних жінок (STAR P-2, NSABP-P2, Vogel 2006).
+  ~38% зниження інвазивного РМЗ (vs ~50% для тамоксифену) з нижчим
+  ризиком раку ендометрія (немає агонізму) і нижчим VTE. Перевага
+  над тамоксифеном у постменопаузі при інтактній матці або
+  VTE-профілі ризику. Додає бонус щодо остеопорозу. НЕ для
+  пременопаузи або профілактики DCIS. Консультуйте щодо RUTH-сигналу
+  про фатальний інсульт у пацієнток з документованим ССЗ.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_drugs_batch2
+draft_revision: 1

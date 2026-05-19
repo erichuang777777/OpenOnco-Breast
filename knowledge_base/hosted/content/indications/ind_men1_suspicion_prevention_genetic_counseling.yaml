@@ -1,0 +1,217 @@
+id: IND-MEN1-SUSPICION-PREVENTION-GENETIC-COUNSELING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-PNET
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-MEN1-FAMILY-HISTORY-SUSPICION
+
+# No drug regimen — intervention is referral + germline-test ordering +
+# pre/post-test counseling + a structured carrier-confirmation multi-
+# organ surveillance protocol (not a Regimen entity).
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Diagnostic yield of germline MEN1 panel testing in pedigree-
+    suspicion populations: ~70-90% positive carrier identification
+    when classic clinical MEN1 criteria are met in the family; ~30-40%
+    in single-tumor MEN1-spectrum pedigrees without the classic
+    ≥2-of-3 phenotype cluster. Confirmed carrier routes to structured
+    multi-organ surveillance starting in early childhood — biochemistry
+    (PTH/Ca, prolactin, IGF-1, fasting gastrin/glucose/insulin,
+    chromogranin-A) from age 5; pituitary MRI from age 5; abdominal
+    MRI from age 10. Early detection benefit is strongest for
+    GEP-NETs where malignant transformation is the dominant MEN1
+    mortality driver — early-stage pancreatic NET resection
+    substantially improves survival vs metastatic-presentation disease.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  # Germline panel test entity not yet authored as a TEST-* — v0.2-B
+  # follow-up.
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for individuals with pedigree
+  suspicion of MEN1. Three parallel referrals:
+
+  **(1) Genetic counseling referral.** Pre-test counseling covers:
+  inheritance pattern (autosomal dominant, high penetrance — primary
+  hyperparathyroidism approaches ~95% by age 50), implications for
+  family members (cascade testing if positive — siblings at 50% risk;
+  children at 50% risk; preimplantation genetic diagnosis available;
+  importantly, the childhood surveillance protocol means early
+  identification of carrier-children enables timely intervention before
+  symptomatic GEP-NETs or pituitary disease emerge), insurance / GINA
+  considerations, psychological aspects of lifelong multi-organ
+  surveillance burden. Per ACMG / ASCO / Endocrine Society guidelines,
+  pre-test counseling is the standard of care before germline testing.
+
+  **(2) Germline MEN1 gene panel testing.** Modern hereditary endocrine
+  panels (e.g., Invitae endocrine-tumor panel, GeneDx OncoGene
+  comprehensive) cover MEN1 (full sequencing + large-deletion / MLPA
+  analysis; deletions / duplications account for ~5-10% of MEN1
+  pathogenic variants), plus differential genes for MEN1-phenocopies
+  (CDKN1B for MEN4 — clinically MEN1-like but milder; RET for MEN2
+  differential; CDC73 for hyperparathyroidism-jaw-tumor syndrome;
+  AIP for familial isolated pituitary adenoma). Variant classification
+  per ACMG framework: pathogenic / likely pathogenic / VUS / likely
+  benign / benign.
+
+  **(3) Carrier-confirmation surveillance plan (sequel pathway).**
+    Positive MEN1 carrier → structured multi-organ surveillance per
+    Thakker JCEM Clinical Practice Guidelines for MEN1 (2012):
+    - **Parathyroid:** Serum calcium + intact PTH q1 year from age 5
+      (or earlier in known-pathogenic-variant families). Primary
+      hyperparathyroidism is the earliest MEN1 manifestation;
+      subtotal vs total parathyroidectomy decision in symptomatic
+      / biochemically significant disease.
+    - **Pituitary:** Prolactin + IGF-1 q1 year from age 5;
+      pituitary MRI q3 years from age 5 (or sooner if biochemistry
+      suggests). Prolactinoma is the most common MEN1 pituitary
+      tumor; treatment with dopamine agonist (cabergoline) first-
+      line for prolactinoma; transsphenoidal surgery for non-
+      functioning / GH / ACTH adenomas.
+    - **GEP-NETs:** Chromogranin-A + fasting gastrin + fasting
+      glucose / insulin + glucagon + pancreatic polypeptide q1 year
+      from age 10. Abdominal MRI or CT (MRI preferred to limit
+      cumulative radiation exposure across lifelong surveillance)
+      q1 year from age 10. EUS as adjunct if MRI ambiguous.
+      68Ga-DOTATATE PET selectively for staging suspected malignant
+      progression.
+    - **Adrenal:** Captured in abdominal MRI; biochemistry only if
+      mass detected.
+    - **Bronchial / thymic carcinoid:** CT chest q1-2 years from
+      age 20 — particularly important in male MEN1 carriers (thymic
+      NETs are aggressive and male-predominant).
+
+  Negative result (no pathogenic / likely-pathogenic variant on a
+  high-quality panel including large-deletion analysis) → re-stratify
+  residual family-history risk; consider MEN4 (CDKN1B) if classic
+  MEN1 phenotype but MEN1-negative; pursue endocrine consultation
+  for biochemistry-driven workup. VUS result → managed as pedigree
+  suspicion (this Indication) until segregation analysis or
+  functional studies clarify.
+
+  Genetic counseling and germline MEN1 testing are typically covered
+  by insurance in the US/EU when pedigree criteria are met; in
+  Ukraine, germline testing is available through private labs at
+  out-of-pocket cost (~5000-15000 UAH for multi-gene panel; large-
+  deletion analysis may be a separate charge).
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для осіб з родовідною підозрою на
+  MEN1. Три паралельні направлення:
+
+  **(1) Направлення на генетичне консультування.** Pre-test
+  консультування охоплює: спадкування (аутосомно-домінантне, висока
+  пенетрантність — первинний гіперпаратиреоз сягає ~95% до 50 років),
+  наслідки для членів сім'ї (cascade тестування при позитиві — сібси з
+  ризиком 50%; діти з ризиком 50%; преімплантаційна генетична
+  діагностика доступна; важливо: дитячий протокол спостереження
+  означає, що рання ідентифікація дітей-носіїв уможливлює своєчасну
+  інтервенцію до появи симптомних GEP-NET або захворювання гіпофіза),
+  страхові / GINA-міркування, психологічні аспекти пожиттєвого
+  тягаря мульти-органного спостереження. За ACMG / ASCO / Endocrine
+  Society настановами, pre-test консультування — standard of care
+  перед germline тестуванням.
+
+  **(2) Germline MEN1 панельне тестування.** Сучасні панелі
+  спадкових ендокринних пухлин (напр., Invitae endocrine-tumor panel,
+  GeneDx OncoGene comprehensive) покривають MEN1 (повне секвенування
+  + large-deletion / MLPA аналіз; делеції / дуплікації становлять
+  ~5-10% MEN1-патогенних варіантів), плюс гени диференційного
+  діагнозу для MEN1-фенокопій (CDKN1B для MEN4 — клінічно
+  MEN1-подібний але м'якший; RET для MEN2-диференціалу; CDC73 для
+  hyperparathyroidism-jaw-tumor синдрому; AIP для сімейної ізольованої
+  аденоми гіпофіза). Класифікація варіантів за рамкою ACMG.
+
+  **(3) План спостереження при підтвердженому носійстві (sequel).**
+    Позитивний MEN1 носій → структуроване мульти-органне спостереження
+    per Thakker JCEM 2012:
+    - **Паращитоподібні залози:** Сироватковий кальцій + інтактний
+      PTH q1 рік з 5 років. Первинний гіперпаратиреоз — найраніший
+      MEN1-прояв; рішення про субтотальну vs тотальну
+      паратиреоїдектомію при симптомному / біохімічно значущому
+      захворюванні.
+    - **Гіпофіз:** Пролактин + IGF-1 q1 рік з 5 років; MRI гіпофіза
+      q3 роки з 5 років. Пролактинома — найчастіша MEN1-пухлина
+      гіпофіза; лікування агоністом дофаміну (каберголін) — перша
+      лінія для пролактиноми; транссфеноїдальна хірургія для
+      нефункціонуючих / GH / ACTH-аденом.
+    - **GEP-NET:** Хромогранін-A + натще гастрин + натще глюкоза /
+      інсулін + глюкагон + панкреатичний поліпептид q1 рік з 10
+      років. MRI абдомену q1 рік з 10 років (MRI preferred для
+      обмеження кумулятивної радіаційної експозиції пожиттєвого
+      спостереження). EUS як ад'ювант якщо MRI неоднозначна.
+      68Ga-DOTATATE PET вибірково для стадіювання підозрюваної
+      малігнізації.
+    - **Наднирники:** Фіксуються MRI абдомену; біохімія лише при
+      виявленні утворення.
+    - **Бронхіальний / тимічний карциноїд:** CT грудної клітки
+      q1-2 роки з 20 років — особливо важливо у чоловіків-носіїв
+      MEN1 (тимічні NET агресивні і чоловіко-домінантні).
+
+  Негативний результат → ре-стратифікація залишкового ризику;
+  розгляньте MEN4 (CDKN1B) при класичному MEN1-фенотипі. VUS →
+  ведеться як родовідна підозра.
+
+  Генетичне консультування та germline MEN1 тестування зазвичай
+  покриваються страхуванням у США/ЄС при відповідності критеріям; в
+  Україні germline тестування доступне через приватні лабораторії за
+  out-of-pocket вартість (~5000-15000 грн за мультигенну панель).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_hereditary_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-NET-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "MEN1 should be considered in patients with gastrinoma, multifocal
+      pancreatic NETs, or any GEP-NET with personal or family history of
+      primary hyperparathyroidism / pituitary adenoma. Germline MEN1
+      testing and family-cascade testing are recommended; carriers
+      enter structured multi-organ surveillance with biochemistry from
+      age 5 and imaging from age 10."
+
+do_not_do:
+  - "Не призначати germline тестування без pre-test консультування — інформована згода + обговорення дитячого скринінг-тягаря обов'язкові."
+  - "Не treter VUS результат як патогенний — управляйте як родовідну підозру до подальших даних; не починайте дитячий скринінг-протокол на підставі VUS."
+  - "Не пропускати MLPA / large-deletion аналіз — ~5-10% патогенних MEN1 варіантів — великі делеції, пропущені sequencing-only тестуванням."
+  - "Не презентувати negative-panel результат як zero-risk — MEN4 (CDKN1B) є MEN1-фенокопією, клінічно схожою, але часто пропущеною стандартними MEN1-only панелями."
+  - "Не пропускати CT грудної клітки у підтверджених MEN1-чоловіків — тимічні NET агресивні, чоловіко-домінантні і є основною причиною смерті у MEN1 поза GEP-NET."
+  - "Не починати дитячий пітуітарний MRI протокол на підставі сімейної історії без підтвердженого носійства або сильної біохімічної підстави — седація для MRI у дитини несе ризик, що має бути збалансований проти діагностичної вигоди."
+
+do_not_do_en:
+  - "Do not order germline testing without pre-test counseling — informed consent and discussion of the childhood surveillance burden are mandatory."
+  - "Do not treat a VUS result as pathogenic — manage as pedigree suspicion pending further data; do not initiate the childhood surveillance protocol based on a VUS."
+  - "Do not skip MLPA / large-deletion analysis — ~5-10% of pathogenic MEN1 variants are large deletions missed by sequencing-only testing."
+  - "Do not present a negative-panel result as zero-risk — MEN4 (CDKN1B) is a MEN1 phenocopy clinically similar but often missed on standard MEN1-only panels."
+  - "Do not skip chest CT in confirmed MEN1 men — thymic NETs are aggressive, male-predominant, and a leading cause of death in MEN1 outside GEP-NETs."
+  - "Do not initiate the pediatric pituitary MRI protocol based on family history without confirmed carriage or strong biochemical grounds — MRI sedation in a child carries risk that must be balanced against diagnostic yield."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — v0.2-B hereditary pilot (MEN1, additional). Thakker JCEM 2012 Clinical Practice Guidelines for MEN1 + ESE-2024 MEN1 update as new SRC entities are v0.2-B authoring backlog. Two-Co-Lead signoff queued.

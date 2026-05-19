@@ -1,0 +1,14 @@
+{
+  "patient_id": "ENV-ETS-PREV-001",
+  "comment": "45yo female lifelong non-smoker with sustained household ETS exposure — childhood (both parents smokers indoors 1980s-90s) + adult cohabitation with active-smoker spouse for 20 years. IARC Group 1 + US Surgeon General-confirmed cause of lung cancer in non-smokers (~20-25% increased RR). Engine routes to PreventionPlan recommending cohabitant smoking-cessation support + workplace smoke-free environment + USPSTF screening eligibility check (likely ineligible for LDCT given no personal smoking) + symptom-triggered evaluation. Validates v0.3 RF-ENVIRONMENTAL-SECONDHAND-SMOKE-LUNG-PREVENTION pilot.",
+  "biomarkers": {},
+  "demographics": {"age": 45, "sex": "female", "ecog": 0},
+  "findings": {
+    "household_ets_exposure_ge_10y": true,
+    "spouse_active_smoker": true,
+    "in_utero_or_childhood_ets_exposure": true,
+    "Lifelong personal non-smoker": true,
+    "No respiratory symptoms": true,
+    "No current lung cancer diagnosis": true
+  }
+}

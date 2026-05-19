@@ -1,0 +1,161 @@
+id: IND-BAP1-CARRIER-INTENSIFIED
+plan_track: aggressive
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-MESOTHELIOMA
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-BAP1-CONFIRMED-CARRIER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Intensified track layers two options on top of standard BAP1
+    surveillance: (1) intensified asbestos-avoidance counseling
+    (occupational change, household decontamination, take-home exposure
+    elimination); (2) earlier mesothelioma surveillance — chest CT
+    annually (vs q1-3y standard) for carriers with known occupational,
+    environmental, or take-home asbestos history. Goal: detect
+    mesothelioma at smaller, more resectable stage (or screen out from
+    surgical candidacy if metastatic, sparing futile multimodality
+    burden). Evidence base is consensus-driven (BAP1-TPDS rarity).
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Aggressive-track confirmed-carrier pathway layered on top of the
+  IND-BAP1-CARRIER-SURVEILLANCE standard protocol.
+
+  **Foundation:** All standard surveillance from IND-BAP1-CARRIER-
+  SURVEILLANCE applies (annual whole-body skin exam, annual dilated
+  fundoscopy, annual abdominal MRI, chest CT q1-3y, asbestos-avoidance
+  counseling).
+
+  **Intensification 1 — Intensified asbestos-avoidance counseling:**
+  Active occupational-history review at each visit. Identify and
+  intervene on:
+    - Direct occupational exposure (construction, shipyard, military
+      bases, asbestos abatement, brake repair, insulators, boilermakers)
+    - Environmental exposure (proximity to asbestos mining, processing,
+      contaminated soil)
+    - Take-home exposure (family member bringing dust from worksite)
+    - Recreational exposure (DIY home renovation, vehicle restoration,
+      hobby ceramics with vermiculite)
+
+  For documented exposure, refer for occupational-medicine consultation
+  (baseline pulmonary function, chest imaging, exposure quantification,
+  legal-rights counseling where applicable in Ukraine / EU framework).
+
+  **Intensification 2 — Earlier mesothelioma surveillance — chest CT
+  annually (vs q1-3y standard):** For carriers with any documented
+  asbestos history (occupational, environmental, or take-home),
+  advance chest CT cadence to annual. Low-dose CT acceptable for
+  surveillance; standard CT for any new abnormality. Mesothelioma
+  early-detection lead time is the rate-limiting factor in
+  multimodality cure feasibility.
+
+  **Other intensification considerations (not core to this track):**
+    - Prophylactic pleurodesis is NOT routine — performed only for
+      symptomatic recurrent effusion.
+    - Empirical anti-asbestos chemoprevention does not exist; no
+      pharmacotherapy reduces BAP1-mesothelioma risk.
+    - Genetic counseling for reproductive planning (preimplantation
+      genetic testing, donor sperm / egg considerations) is appropriate
+      for carriers of childbearing age; presented as one autonomy-
+      preserving option among many.
+
+  **Cascade testing remains continuous:** every visit re-confirms
+  family testing status; particularly important given childhood-onset
+  atypical Spitz tumors that may herald family BAP1-TPDS.
+
+  Per CHARTER §11: intensified surveillance and lifestyle counseling
+  are shared-decision-making. Patient autonomy paramount.
+
+rationale_ua: >
+  Aggressive-трекова Indication: накладена поверх IND-BAP1-CARRIER-
+  SURVEILLANCE.
+
+  **Foundation:** Усе standard з IND-BAP1-CARRIER-SURVEILLANCE.
+
+  **Інтенсифікація 1 — Intensified asbestos-avoidance counseling:**
+  Active occupational-history review кожного візиту. Identify і
+  intervene:
+    - Direct occupational (construction, shipyard, military bases,
+      asbestos abatement, brake repair, insulators, boilermakers)
+    - Environmental (proximity до asbestos mining / processing /
+      contaminated soil)
+    - Take-home (family member bringing dust)
+    - Recreational (DIY home renovation, vehicle restoration,
+      hobby ceramics з vermiculite)
+
+  Для documented exposure — направлення occupational medicine
+  (baseline PFT, chest imaging, exposure quantification).
+
+  **Інтенсифікація 2 — Earlier mesothelioma surveillance — chest CT
+  annually (vs q1-3y standard):** Для carriers з будь-якою documented
+  asbestos history — advance chest CT до annual. Low-dose CT acceptable.
+
+  **Інші міркування:**
+    - Prophylactic pleurodesis — NOT routine.
+    - Empirical anti-asbestos chemoprevention does not exist.
+    - Genetic counseling для reproductive planning (PGT, donor
+      gametes) appropriate.
+
+  **Cascade тестування continuous;** pediatric atypical Spitz tumors
+  можуть herald family BAP1-TPDS.
+
+  Per CHARTER §11: shared-decision-making домен.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02b_confirmed_carriers_additional
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+  - source_id: SRC-ASCO-ACMG-LYNCH-2014
+    position: context
+    relevant_quote_paraphrase: >-
+      "Intensified asbestos-avoidance counseling and more frequent
+      chest CT surveillance are appropriate intensifications for
+      confirmed BAP1 carriers with documented occupational or
+      environmental asbestos history, following shared decision-making."
+
+do_not_do:
+  - "Не intensifyувати chest CT cadence без documented asbestos exposure history — radiation burden lifelong; reserve annual cadence для high-risk subset."
+  - "Не виконувати prophylactic pleurodesis у asymptomatic carrier — реверв для symptomatic recurrent effusion."
+  - "Не пропускати occupational-medicine consultation для documented exposure — legal-rights + workplace decontamination implications беyond medical."
+  - "Не презентувати genetic reproductive counseling як обов'язкову — autonomy-preserving option серед багатьох, не imperative."
+  - "Не використовувати empirical anti-asbestos chemoprevention — does not exist; будь-який supplement / herbal marketed як такий — pseudoscience."
+
+do_not_do_en:
+  - "Do not intensify chest CT cadence without documented asbestos exposure history — lifelong radiation burden; reserve annual cadence for the high-risk subset."
+  - "Do not perform prophylactic pleurodesis in an asymptomatic carrier — reserve for symptomatic recurrent effusion."
+  - "Do not skip occupational-medicine consultation for documented exposure — legal-rights and workplace-decontamination implications go beyond medical."
+  - "Do not present genetic reproductive counseling as mandatory — autonomy-preserving option among many, not imperative."
+  - "Do not use empirical anti-asbestos chemoprevention — does not exist; any supplement or herbal marketed as such is pseudoscience."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B confirmed-carrier intensified track (BAP1-TPDS). Sibling — IND-BAP1-CARRIER-SURVEILLANCE. §15.2 C4 ≥2-tracks invariant."

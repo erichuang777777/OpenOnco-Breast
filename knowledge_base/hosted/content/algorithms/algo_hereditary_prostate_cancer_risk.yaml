@@ -1,0 +1,205 @@
+id: ALGO-HEREDITARY-PROSTATE-CANCER-RISK
+applicable_to_disease: DIS-PROSTATE
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention. Anchored to DIS-PROSTATE — the cancer
+# being surveilled. Reach is BRCA2 / BRCA1 / HOXB13 / Lynch (MMR) /
+# other HBOC-spectrum carriers who derive elevated prostate cancer
+# risk + benefit from earlier prostate-specific surveillance.
+purpose: >
+  Prostate cancer surveillance for confirmed hereditary-prostate-
+  cancer-risk germline carriers, principally BRCA2 (lifetime risk
+  ~27-60% per IMPACT 2022 / Page 2019), with reach to BRCA1 (~21%),
+  HOXB13 G84E (~33%), Lynch syndrome MMR carriers (~5-30%
+  variable per gene), ATM (modest elevation per recent ProSTOP /
+  PROFILE data). Surveillance entry: PSA + DRE from age 40 per
+  NCCN Genetic / Familial High-Risk: Breast, Ovarian, Pancreatic
+  V.3.2025 (BRCA prostate section) + IMPACT trial 2022 evidence.
+
+  The Hereditary Prostate Cancer surveillance protocol is younger-
+  entry (age 40 vs USPSTF age 55) + more sensitive (lower PSA
+  thresholds + DRE) than general-population screening. Driven by
+  IMPACT (Bancroft 2014 / Page 2019 / Castro 2022) demonstrating
+  BRCA2 carriers have higher-grade + earlier-onset prostate cancer
+  vs sporadic.
+
+output_indications:
+  - IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Routes to the prevention-surveillance Indication (plan_track:
+# surveillance, recommended_regimen: null per current KB schema).
+# Engine layer should select sibling IND-BRCA-CARRIER-SURVEILLANCE
+# (standard NCCN PSA + DRE from age 40 cadence) / IND-BRCA-CARRIER-
+# INTENSIFIED (aggressive cadence with mpMRI inclusion / earlier
+# entry for BRCA2 + family-history-of-high-grade-prostate-cancer) at
+# downstream routing. Those Indications carry treatment-pathway
+# plan_track values (standard / aggressive) intended for active-
+# disease routing and so cannot be referenced as algorithm direct-
+# route targets in current schema. Lynch MMR carriers routing
+# handled separately via Lynch surveillance pathway.
+
+decision_tree:
+  - step: 1
+    # Confirmed-carrier gate — BRCA1 / BRCA2 / HOXB13 / Lynch MMR /
+    # other prostate-risk gene.
+    evaluate:
+      any_of:
+        - condition: "Confirmed BRCA2 germline pathogenic / likely-pathogenic (ACMG class 4/5) variant"
+        - condition: "Confirmed BRCA1 germline pathogenic / likely-pathogenic variant"
+        - condition: "Confirmed HOXB13 G84E (or other HOXB13 P/LP) germline variant"
+        - condition: "Confirmed MLH1 / MSH2 / MSH6 / PMS2 / EPCAM germline pathogenic / likely-pathogenic variant (Lynch syndrome)"
+        - condition: "Confirmed ATM / PALB2 / CHEK2 (modest-risk) germline variant in male carrier with family-history of high-grade prostate cancer"
+    if_true:
+      next_step: 2
+    if_false:
+      result: false
+      notes: "Not a confirmed hereditary prostate-cancer-risk carrier — apply family-history-based suspicion (≥2 first-degree relatives with prostate cancer including ≥1 with onset <60 OR Gleason ≥7 OR metastatic disease). Route via IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE for cascade-testing pathway. Note: clinical-only HPC suspicion (without confirmed gene) → enhanced empirical surveillance still appropriate."
+  - step: 2
+    # BRCA2 — highest absolute risk; aggressive phenotype. Entry: age 40.
+    evaluate:
+      all_of:
+        - condition: "Male carrier with confirmed BRCA2 P/LP variant"
+        - condition: "Carrier age ≥40"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "BRCA2 male carrier age ≥40 — standard hereditary prostate-cancer surveillance: annual PSA + annual DRE from age 40 (NCCN Genetic / Familial V.3.2025; IMPACT 2022 evidence-based). PSA threshold for prostate biopsy lower than USPSTF general-population (typical: ≥3.0 ng/mL or any rising PSA velocity above age-adjusted norm; some centers use ≥1.5 ng/mL with shared-decision). Multiparametric prostate MRI (mpMRI) before any biopsy decision for elevated PSA OR abnormal DRE — BRCA2 cancers are biologically aggressive + higher Gleason at diagnosis. Engine should re-route to IND-BRCA-CARRIER-SURVEILLANCE (standard) or IND-BRCA-CARRIER-INTENSIFIED (aggressive — mpMRI inclusion, family-history-of-high-grade) at downstream layer."
+    if_false:
+      next_step: 3
+  - step: 3
+    # BRCA2 carrier <40 — pre-surveillance counseling + baseline.
+    evaluate:
+      all_of:
+        - condition: "Male carrier with confirmed BRCA2 P/LP variant"
+        - condition: "Carrier age <40"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "BRCA2 male carrier age <40 — counseling re: future prostate surveillance entry at age 40; some centers obtain baseline PSA + DRE at age 35-40 for trajectory baselining. No imaging surveillance indicated <40 unless symptomatic. Cascade testing for at-risk male siblings + sons. Engine should re-route to IND-BRCA-CARRIER-SURVEILLANCE at downstream layer for confirmed-carrier routing."
+    if_false:
+      next_step: 4
+  - step: 4
+    # BRCA1 carrier — modest elevation (~21% lifetime per IMPACT 2022).
+    # Entry: age 40 with NCCN; some centers defer to age 45 for BRCA1
+    # given lower absolute risk vs BRCA2.
+    evaluate:
+      all_of:
+        - condition: "Male carrier with confirmed BRCA1 P/LP variant"
+        - condition: "Carrier age ≥40"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "BRCA1 male carrier age ≥40 — annual PSA + annual DRE from age 40 per NCCN Genetic / Familial V.3.2025. BRCA1 absolute prostate-cancer risk ~21% lifetime — lower than BRCA2 (~27-60%) but still meaningfully elevated; aggressive-phenotype evidence less robust than BRCA2. PSA threshold + mpMRI principles as for BRCA2 (shared-decision). Engine should re-route to IND-BRCA-CARRIER-SURVEILLANCE (standard) at downstream layer."
+    if_false:
+      next_step: 5
+  - step: 5
+    # HOXB13 G84E — moderate elevation (~33% lifetime per Ewing 2012 /
+    # Stott-Miller 2013 mostly Northern European founder).
+    evaluate:
+      all_of:
+        - condition: "Male carrier with confirmed HOXB13 G84E (or other HOXB13 P/LP) variant"
+        - condition: "Carrier age ≥40"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "HOXB13 G84E male carrier age ≥40 — annual PSA + annual DRE from age 40. Lifetime prostate cancer risk ~33% (Ewing NJ et al. N Engl J Med 2012;366:141-149 PMID 22236224). Modal earlier onset than sporadic prostate cancer. Engine routes to BRCA-CARRIER-SURVEILLANCE (HPC umbrella) at downstream layer pending v0.2 authoring of dedicated IND-HOXB13-CARRIER-SURVEILLANCE."
+    if_false:
+      next_step: 6
+  - step: 6
+    # Lynch MMR carrier — gene-specific elevation. MSH2 highest
+    # (~30% lifetime); MLH1 moderate (~15%); MSH6 / PMS2 modest.
+    evaluate:
+      all_of:
+        - condition: "Male carrier with confirmed MLH1 / MSH2 / MSH6 / PMS2 / EPCAM germline P/LP variant"
+        - condition: "Carrier age ≥40"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Lynch MMR male carrier age ≥40 — annual PSA + annual DRE from age 40 (or age 50 for PMS2 / MSH6 with lower absolute risk). Most pathogenic for MSH2 (lifetime risk up to ~30% per Win 2017 PMID 28837799). MMR-deficient prostate cancers are more responsive to ICI (PD-1 / CTLA-4) at advanced stages — biomarker testing should include MSI / MMR-IHC at biopsy. Engine routes to BRCA-CARRIER-SURVEILLANCE (HPC umbrella) at downstream layer. Concurrent Lynch CRC / endometrial / urothelial surveillance per ALGO-CARRIER-CASCADE-LYNCH."
+    if_false:
+      result: false
+      notes: "Carrier identified but age <40 OR gene combination ambiguous — counsel re: future surveillance entry; defer imaging surveillance until guideline-recommended age. Some centers obtain baseline PSA at age 35-40 in highest-risk carriers (BRCA2). Cascade testing for at-risk male relatives."
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-NCCN-PROSTATE-2025
+  - SRC-EAU-PROSTATE-2024
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding hereditary prostate
+  cancer surveillance entry per NCCN Genetic / Familial High-Risk:
+  Breast, Ovarian, Pancreatic V.3.2025 (BRCA prostate section) +
+  NCCN Prostate V.4.2025 + EAU Prostate Cancer Guidelines 2024 +
+  IMPACT trial data (Bancroft EK et al. Targeted prostate cancer
+  screening in BRCA1 and BRCA2 mutation carriers: results from the
+  initial screening round of the IMPACT study. Eur Urol 2014;
+  Page EC et al. Interim Results from the IMPACT Study. Eur Urol
+  2019;76:831-842 PMID 31537406; Castro E et al. Eur Urol Oncol
+  2022). Primary-paper Source entities (SRC-PAGE-2019-IMPACT-INTERIM,
+  SRC-CASTRO-2022-IMPACT-FINAL, SRC-EWING-2012-HOXB13) are v0.2-B
+  authoring backlog.
+
+  Anchored to DIS-PROSTATE. Reach: BRCA2 carriers (highest hereditary
+  prostate risk + concurrent breast / pancreatic / melanoma /
+  HBOC-spectrum surveillance), BRCA1 carriers (modest elevation),
+  HOXB13 G84E carriers (founder-mutation predominantly Northern
+  European), Lynch MMR carriers (gene-specific elevation), ATM /
+  PALB2 / CHEK2 carriers (emerging — modest risk per ProSTOP /
+  PROFILE 2024 data).
+
+  Hereditary prostate cancer lifetime risk + phenotype:
+    - BRCA2: 27-60% (highest among single-gene carriers); modal
+      earlier onset (median 60 vs 67 sporadic); higher Gleason at
+      diagnosis (Gleason ≥7 in ~50% of BRCA2 vs ~30% sporadic);
+      more frequent metastatic presentation; reduced response to
+      AR-targeted therapy but sensitive to PARP inhibitors at
+      mCRPC stage (TALAPRO-2, PROfound)
+    - BRCA1: ~21% lifetime per IMPACT 2019 (lower than BRCA2)
+    - HOXB13 G84E: ~33% lifetime (Ewing 2012); modal earlier onset
+    - Lynch MMR: gene-specific (MSH2 ~30%, MLH1 ~15%, MSH6 ~10%,
+      PMS2 modest) — MMR-deficient prostate cancers respond to
+      ICI at advanced stages
+    - ATM / PALB2 / CHEK2: modest elevation per ProSTOP / PROFILE
+      data; not yet NCCN-supported as standalone surveillance gates
+
+  IMPACT trial key findings (Bancroft 2014 / Page 2019):
+    - PSA threshold ≥3.0 ng/mL detects clinically significant
+      cancers at higher rate in BRCA2 vs population baseline
+    - Annual PSA + DRE from age 40 in BRCA2 detects more high-
+      grade cancers than annual PSA in BRCA1 or population
+    - mpMRI before biopsy in elevated-PSA BRCA2 carriers reduces
+      unnecessary biopsies + improves detection of clinically
+      significant disease
+
+  Surveillance cadence:
+    - PSA + DRE q1y from age 40 (BRCA2 / BRCA1 / HOXB13 / Lynch
+      MSH2 / MLH1)
+    - PSA + DRE q1y from age 45-50 (PMS2 / MSH6 — lower absolute
+      risk)
+    - mpMRI: BRCA2 carriers with elevated PSA OR abnormal DRE
+      (any rise above age-adjusted norm, or PSA velocity >0.35-
+      0.75 ng/mL/y per shared-decision threshold)
+
+  Treatment-stage biomarker relevance:
+    - BRCA1/2 / HRR-pathway carriers: PARP-inhibitor candidate at
+      mCRPC stage (olaparib / talazoparib / rucaparib /
+      niraparib)
+    - Lynch MMR carriers: ICI candidate at advanced stages
+      (pembrolizumab MSI-H tumor-agnostic indication)
+    - These connections are downstream of surveillance — handled
+      by treatment-pathway Indications (IND-BREAST-BRCA-MET-*,
+      ind_prostate_mcrpc_*)
+
+  Cited from RF-BRCA-CONFIRMED-CARRIER + RF-LYNCH-CONFIRMED-CARRIER
+  + RF-HOXB13-CONFIRMED-CARRIER + RF-HEREDITARY-PROSTATE-CANCER-
+  RISK trigger logic.
+
+  Decision-tree semantics: routes to IND-BRCA-HBOC-SUSPICION-
+  PREVENTION-ENHANCED-SURVEILLANCE (plan_track: surveillance —
+  proper non-regimen routing per current KB schema) for all
+  confirmed-carrier scenarios meeting surveillance-entry age. Engine
+  selects sibling IND-BRCA-CARRIER-SURVEILLANCE (standard) /
+  IND-BRCA-CARRIER-INTENSIFIED (aggressive — mpMRI inclusion,
+  family-history-of-high-grade modifier) at downstream layer. Risk-
+  reducing prostatectomy is NOT a standard recommendation — no
+  current evidence supports it; appears in research / individual
+  shared-decision only.
+draft: true

@@ -1,0 +1,66 @@
+id: SRC-VITAL-VITAMIN-D-OMEGA3-2019
+source_type: rct_publication
+title: Vitamin D supplements and prevention of cancer and cardiovascular disease (VITAL
+  — Vitamin D and Omega-3 Trial)
+version: '2019'
+authors:
+- Manson JE
+- Cook NR
+- Lee IM
+- Christen W
+- Bassuk SS
+- Mora S
+- Gibson H
+- Gordon D
+- Copeland T
+- D'Agostino D
+- Friedenberg G
+- Ridge C
+- Bubes V
+- Giovannucci EL
+- Willett WC
+- Buring JE
+journal: New England Journal of Medicine
+doi: 10.1056/NEJMoa1809944
+pmid: '30415629'
+url: https://pubmed.ncbi.nlm.nih.gov/30415629
+access_level: subscription_required
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 1
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources_batch4
+license:
+  name: Massachusetts Medical Society / NEJM (subscription)
+  spdx_id: null
+attribution:
+  required: true
+  text: Manson JE et al., NEJM 2019 — VITAL vitamin D / omega-3 cancer + cardiovascular
+    primary-prevention RCT
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+legal_review:
+  status: pending
+  notes: Subscription publication; abstract open access. Companion omega-3 paper (Manson
+    NEJM 2019, PMID 30415637) is a separate publication.
+relates_to_diseases:
+- DIS-BREAST
+- DIS-CRC
+- DIS-PROSTATE
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. VITAL — 2x2 factorial primary-prevention
+  RCT in 25,871 US adults (men >=50, women >=55) randomised to vitamin D3 2,000 IU/day
+  vs placebo and marine n-3 fatty acids 1 g/day vs placebo, median 5.3 years. Primary
+  cancer endpoint (invasive cancer of any type): HR 0.96 (95% CI 0.88–1.06, NS). Pre-specified
+  secondary endpoint of cancer mortality showed signal of benefit in sensitivity analyses
+  excluding early follow-up. Underpins USPSTF "I" statement on routine vitamin D supplementation
+  for cancer prevention.
+
+  '
+pages_count: 13
+references_count: 40
+corpus_role: rct_publication

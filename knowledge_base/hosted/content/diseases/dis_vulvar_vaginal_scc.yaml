@@ -1,0 +1,63 @@
+id: DIS-VULVAR-VAGINAL-SCC
+names:
+  preferred: "Vulvar and vaginal squamous cell carcinoma"
+  ukrainian: "Плоскоклітинна карцинома вульви та піхви"
+  english: "Vulvar and vaginal squamous cell carcinoma"
+  synonyms: ["Vulvar SCC", "Vaginal SCC", "VIN-derived SCC", "Lichen-sclerosus-derived SCC", "HPV-associated vulvar SCC"]
+codes:
+  icd_o_3_morphology: "8070/3"
+  icd_o_3_topography: ["C51", "C52"]
+  icd_10: "C51, C52"
+  who_classification: "WHO Female Genital Tumours 5th ed (2020): Vulvar SCC (HPV-associated + HPV-independent) and Vaginal SCC"
+archetype: etiologically_driven
+oncotree_code: VSC
+lineage: "carcinoma"
+etiological_factors:
+  - "HPV (high-risk types 16, 18) — dominant in HPV-associated vulvar/vaginal SCC (younger women, basaloid/warty morphology)"
+  - "Lichen sclerosus — dominant precursor in HPV-independent vulvar SCC (older women, differentiated VIN morphology, worse prognosis)"
+  - "Smoking — synergistic with HPV; independent risk factor"
+  - "Immunosuppression (HIV+, transplant)"
+  - "Prior pelvic radiation (vaginal SCC, decades latency)"
+related_diseases:
+  - "DIS-CERVICAL (shared HPV etiology; field-cancerization)"
+  - "DIS-ANAL-SCC (shared HPV etiology; same vaccination + screening framework)"
+key_biomarkers: []
+epidemiology:
+  context: "Vulvar SCC ~45K cases/year globally, vaginal SCC ~17K (most vaginal cancers are SCC; adenocarcinoma minority). Two biological pathways with different demographics: HPV-driven (median 50s, frequent CIN/VIN field) vs HPV-independent / lichen sclerosus (median 70s+, more aggressive). Five-year OS stage I 90%; stage IV <20%."
+sources:
+  - SRC-NCCN-CERVICAL-2025
+  - SRC-IARC-MONO-100B-2012
+last_reviewed: "2026-05-18"
+reviewers: []
+notes: >
+  Two biological subgroups managed similarly anatomically but with
+  distinct prevention implications: HPV-driven (vaccination prevents
+  precursor lesions; screening with vulvar exam + biopsy of any
+  persistent lesion) vs HPV-independent (lichen sclerosus surveillance
+  is the dominant prevention modality; topical clobetasol may reduce
+  malignant transformation in select cohorts). Treatment: early-stage
+  — wide local excision ± inguinal sentinel node biopsy (GROINSS-V
+  paradigm replacing routine complete inguinofemoral lymphadenectomy);
+  locally advanced — definitive chemoradiation (cisplatin + RT);
+  metastatic — pembrolizumab if PD-L1+ (KEYNOTE-158 cohort). Vaginal
+  SCC managed similarly with RT-based approaches (anatomic constraints
+  limit surgical options).
+notes_ua: |
+  Дві біологічні підгрупи, анатомічно подібне ведення, але з
+  відмінними prevention implications: HPV-зумовлена (вакцинація
+  попереджує precursor lesions; скринінг — огляд вульви + біопсія
+  будь-якого стійкого вогнища) vs HPV-незалежна (нагляд lichen
+  sclerosus — домінуюча prevention модальність; топічний клобетазол
+  може знижувати малігнізацію у відібраних когортах). Лікування:
+  рання стадія — широка локальна екцизія ± inguinal sentinel node
+  biopsy (парадигма GROINSS-V замінює рутинну повну
+  inguinofemoral lymphadenectomy); локально поширена — дефінітивна
+  ХПТ (cisplatin + RT); метастатична — pembrolizumab при PD-L1+
+  (когорта KEYNOTE-158). Вагінальна SCC — подібно з RT-base
+  підходами.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+metadata:
+  proposal_status: stub
+  awaiting_proposal: "Full Indications for early-stage (wide local excision + sentinel node); locally advanced (cis + RT); metastatic (pembro PD-L1+); HPV vaccination + lichen sclerosus surveillance prevention pending."

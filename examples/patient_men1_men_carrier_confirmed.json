@@ -1,0 +1,12 @@
+{
+  "patient_id": "MEN1-PREV-001",
+  "comment": "32yo female, asymptomatic, confirmed germline MEN1 pathogenic variant (c.249_252delGTCT, p.Ile85Serfs*33) on family-cascade panel after sister's diagnosis of insulinoma at 28. No personal cancer diagnosis, no current biochemical evidence of MEN1-spectrum tumor. Engine fires RF-MEN1-CONFIRMED-CARRIER → routes to PreventionPlan: standard = IND-MEN1-CARRIER-SURVEILLANCE (annual PTH/Ca/prolactin/IGF-1/CgA, pituitary MRI q3y, abdominal MRI q1y); aggressive = IND-MEN1-CARRIER-INTENSIFIED (+ Zollinger-Ellison surveillance, prophylactic-parathyroidectomy shared decision). Validates v0.2-B MEN1 confirmed-carrier pilot.",
+  "biomarkers": {},
+  "demographics": {"age": 32, "sex": "female", "ecog": 0},
+  "findings": {
+    "germline_men1_pathogenic_variant_confirmed": true,
+    "Confirmed MEN1 c.249_252delGTCT pathogenic variant on family-cascade panel": true,
+    "No personal cancer diagnosis": true,
+    "No current MEN1-spectrum tumor biochemical evidence": true
+  }
+}

@@ -20,7 +20,17 @@ specimen_requirements:
 sources:
   - SRC-EASL-HCV-2023
 
-last_reviewed: "2026-04-24"
+# §20 prevention extension (RATIFIED 2026-05-18) — HCV-RNA serves both
+# the treatment-time pathway (driving IND-HCV-MZL-1L-ANTIVIRAL response
+# assessment via SVR12) AND the prevention-time pathway (asymptomatic
+# chronic-HCV individual without confirmed lymphoma → DAA prevention via
+# IND-CHRONIC-HCV-PREVENTION-DAA).
+clinical_context:
+  - screening_surveillance
+  - predictive
+applicable_in_asymptomatic: true
+
+last_reviewed: "2026-05-18"
 oncokb_skip_reason: viral_load
 external_ids:
   loinc: "11011-4"  # HCV RNA quantitation

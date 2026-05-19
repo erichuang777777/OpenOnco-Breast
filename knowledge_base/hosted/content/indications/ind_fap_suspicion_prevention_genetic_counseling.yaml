@@ -1,0 +1,240 @@
+id: IND-FAP-SUSPICION-PREVENTION-GENETIC-COUNSELING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-FAP-FAMILY-HISTORY-SUSPICION
+
+# No drug regimen — intervention is referral + germline-test ordering +
+# pre/post-test counseling + a structured carrier-confirmation surveillance
+# plan that may culminate in prophylactic colectomy (surgical, not a
+# Regimen entity). recommended_regimen: null is appropriate.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Diagnostic yield of germline APC / MUTYH panel testing in pedigree-
+    suspicion populations: ~30-90% positive carrier identification
+    (varies by criterion stringency — classic-FAP phenotype family
+    ~80-90% APC-positive; attenuated-FAP phenotype ~30-50% APC- or
+    MUTYH-positive; single-relative suspicion ~10-20%). Confirmed
+    carrier routes to enhanced surveillance with documented mortality
+    benefit: in classic FAP, prophylactic colectomy in late teens /
+    early 20s reduces CRC mortality from near-100% to near-0%; in
+    attenuated FAP, intensive colonoscopy q1-2y with low-threshold
+    colectomy on emergence of polyposis is similarly protective.
+    Upper-GI EGD surveillance with Spigelman staging detects duodenal
+    polyposis at a manageable stage in ~90% of cases.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  # Germline panel test entity not yet authored as a TEST-* — v0.2-B
+  # follow-up. Currently referenced in rationale.
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for individuals with pedigree
+  suspicion of FAP / attenuated FAP (AFAP) / Gardner-variant. Three
+  parallel referrals:
+
+  **(1) Genetic counseling referral.** Pre-test counseling covers:
+  inheritance pattern (FAP — autosomal dominant; MUTYH-associated
+  polyposis [MAP] — autosomal recessive, included on modern panels
+  as the principal differential), penetrance (~100% for classic FAP
+  by age 40; variable in AFAP), implications for family members
+  (cascade testing if positive — siblings at 50% risk for autosomal-
+  dominant FAP; children at 50% risk; reproductive planning options
+  including preimplantation genetic diagnosis), insurance / GINA
+  considerations, psychological aspects. Per ACMG / ASCO guidelines,
+  pre-test counseling is the standard of care before germline testing.
+
+  **(2) Germline APC / MUTYH panel testing.** Modern multi-gene panels
+  (e.g., Invitae hereditary CRC panel, Color hereditary cancer panel,
+  GeneDx OncoGene Comprehensive) cover APC (full sequencing +
+  deletion / duplication analysis), MUTYH (biallelic carrier
+  detection for MAP differential), and the broader hereditary CRC
+  gene set (Lynch genes, STK11 for Peutz-Jeghers, SMAD4 / BMPR1A for
+  juvenile polyposis, PTEN for Cowden / PHTS). Variant classification
+  per ACMG framework: pathogenic / likely pathogenic / VUS / likely
+  benign / benign.
+
+  **(3) Carrier-confirmation surveillance plan (sequel pathway).**
+    Positive APC carrier → enhanced surveillance per NCCN Genetic/
+    Familial High-Risk: Colorectal:
+    - **Classic FAP (APC + classic phenotype expected):** Annual or
+      biennial flexible sigmoidoscopy from age 10-12, escalating to
+      colonoscopy when polyps emerge. **Prophylactic colectomy
+      (total proctocolectomy with ileal pouch-anal anastomosis [IPAA]
+      or total colectomy with ileorectal anastomosis [IRA]) in late
+      teens or early twenties** — this is the canonical FAP
+      intervention; timing is individualized based on polyp burden,
+      patient preference, and quality-of-life trade-offs.
+    - **Attenuated FAP (APC + AFAP phenotype, or MUTYH biallelic):**
+      Colonoscopy q1-2 years starting age 18-20 (or 5-10 years before
+      youngest family diagnosis). Colectomy when polyp burden exceeds
+      endoscopic management capacity (typically >20-30 adenomas not
+      amenable to polypectomy).
+    - **Upper-GI surveillance (all confirmed carriers):** EGD q1-3
+      years starting age 25-30, with duodenal-polyp **Spigelman
+      staging** (size, number, histology, dysplasia → stage 0-IV);
+      stage IV duodenal polyposis routes to duodenectomy or pancreas-
+      sparing duodenectomy.
+    - **Gastric fundic-gland polyposis monitoring** is part of routine
+      EGD; biopsy any focal dysplasia.
+    - **Desmoid surveillance:** annual abdominal exam ± MRI for
+      patients with prior abdominal surgery or family history of
+      desmoid tumors (desmoid tumors are a leading cause of FAP
+      mortality after CRC).
+    - **Thyroid US** q1-2 years starting age 25 — papillary
+      cribriform-morular variant FAP-associated thyroid cancer is
+      uncommon but actionable when detected.
+    - **Hepatoblastoma screening in children:** AFP + abdominal US
+      every 3-6 months from birth to age 5 in confirmed-carrier
+      kindreds.
+
+  Negative result (no pathogenic / likely-pathogenic variant on a
+  high-quality panel) → general-population CRC screening cadence
+  (USPSTF) + re-stratification of any residual family-history risk.
+  VUS result → managed as pedigree suspicion (this Indication) until
+  segregation analysis or functional studies clarify.
+
+  Genetic counseling and germline testing are typically covered by
+  insurance in the US/EU when pedigree criteria are met; in Ukraine,
+  germline testing is available through private labs at out-of-pocket
+  cost (~5000-15000 UAH for multi-gene panel; APC single-gene tests
+  cheaper but miss MUTYH / Lynch differentials).
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для осіб з родовідною підозрою на
+  FAP / attenuated FAP (AFAP) / Gardner-варіант. Три паралельні
+  направлення:
+
+  **(1) Направлення на генетичне консультування.** Pre-test
+  консультування охоплює: спадкування (FAP — аутосомно-домінантне;
+  MUTYH-асоційований поліпоз [MAP] — аутосомно-рецесивне, включене
+  до сучасних панелей як головна диференціальна діагностика),
+  пенетрантність (~100% для класичного FAP до 40 років; варіабельна
+  при AFAP), наслідки для членів сім'ї (cascade тестування при
+  позитиві — сібси з ризиком 50% при аутосомно-домінантному FAP; діти
+  з ризиком 50%; репродуктивні опції, включно з преімплантаційною
+  генетичною діагностикою), страхові / GINA-міркування, психологічні
+  аспекти. За ACMG / ASCO настановами, pre-test консультування —
+  standard of care перед germline тестуванням.
+
+  **(2) Germline APC / MUTYH панельне тестування.** Сучасні
+  мультигенні панелі (напр., Invitae hereditary CRC panel, Color
+  hereditary cancer panel, GeneDx OncoGene Comprehensive) покривають
+  APC (повне секвенування + аналіз делецій / дуплікацій), MUTYH
+  (детекція біалельного носійства для MAP-диференціації) та ширший
+  набір генів спадкового КРР (Lynch-гени, STK11 для Peutz-Jeghers,
+  SMAD4 / BMPR1A для ювенільного поліпозу, PTEN для Cowden / PHTS).
+  Класифікація варіантів за рамкою ACMG: патогенний / ймовірно
+  патогенний / VUS / ймовірно доброякісний / доброякісний.
+
+  **(3) План спостереження при підтвердженому носійстві (sequel).**
+    Позитивний APC носій → посилене спостереження per NCCN Genetic/
+    Familial High-Risk: Colorectal:
+    - **Класичний FAP (APC + класичний фенотип очікувано):**
+      Щорічна або біеннальна гнучка сигмоїдоскопія з 10-12 років,
+      ескалація до колоноскопії при появі поліпів. **Профілактична
+      колектомія (тотальна проктоколектомія з ілеоанальним резерваром
+      [IPAA] або тотальна колектомія з ілеоректальним анастомозом
+      [IRA]) у пізньому підлітковому або ранньому дорослому віці** —
+      це канонічна FAP інтервенція; час визначається індивідуально
+      залежно від обтяженості поліпами, переваг пацієнта та
+      компромісів щодо якості життя.
+    - **Attenuated FAP (APC + AFAP фенотип, або MUTYH біалельний):**
+      Колоноскопія q1-2 роки з 18-20 років (або 5-10 років до
+      наймолодшого сімейного діагнозу). Колектомія коли обтяженість
+      поліпами перевищує можливості ендоскопічного управління
+      (зазвичай >20-30 аденом, що не піддаються поліпектомії).
+    - **Верхньо-ШКТ спостереження (всі підтверджені носії):** EGD
+      q1-3 роки з 25-30 років, з **Spigelman стадіюванням**
+      дуоденальних поліпів (розмір, кількість, гістологія, дисплазія
+      → стадія 0-IV); IV стадія дуоденального поліпозу маршрутизує
+      до дуоденектомії або підшлунково-зберігаючої дуоденектомії.
+    - **Моніторинг фундального полипозу шлунка** — частина рутинного
+      EGD; біопсія будь-якої фокальної дисплазії.
+    - **Десмоїд-спостереження:** щорічний абдомінальний огляд ± MRI
+      у пацієнтів з попередньою абдомінальною хірургією або сімейною
+      історією десмоїдних пухлин (десмоїдні пухлини — провідна
+      причина смертності при FAP після КРР).
+    - **УЗД щитоподібної залози** q1-2 роки з 25 років —
+      FAP-асоційований папілярний cribriform-morular варіант раку
+      щитоподібної залози не частий, але дієвий при виявленні.
+    - **Скринінг гепатобластоми у дітей:** AFP + абдомінальне УЗД
+      кожні 3-6 місяців від народження до 5 років у сім'ях
+      підтверджених носіїв.
+
+  Негативний результат (без патогенного / ймовірно-патогенного
+  варіанту на високоякісній панелі) → general-population частота КРР
+  скринінгу (USPSTF) + ре-стратифікація залишкового сімейно-
+  історичного ризику. VUS результат → ведеться як родовідна підозра
+  (ця Indication) до segregation analysis або functional studies.
+
+  Генетичне консультування та germline тестування зазвичай покриваються
+  страхуванням у США/ЄС при відповідності критеріям; в Україні
+  germline тестування доступне через приватні лабораторії за
+  out-of-pocket вартість (~5000-15000 грн за мультигенну панель;
+  APC single-gene тести дешевші, але втрачають MUTYH / Lynch
+  диференціали).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_hereditary_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-ESMO-CRC-2024
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Germline testing for hereditary CRC syndromes including FAP is
+      recommended for individuals with classic FAP phenotype, AFAP
+      phenotype, or family history of confirmed FAP. Pre-test
+      counseling required."
+  - source_id: SRC-NCCN-COLON-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Patients with known or suspected FAP / AFAP should receive
+      germline APC + MUTYH testing; confirmed carriers enter intensive
+      colorectal and upper-GI surveillance with prophylactic colectomy
+      timing individualized per phenotype."
+
+do_not_do:
+  - "Не призначати germline тестування без pre-test консультування — інформована згода, психологічна підготовка, repro-планування обов'язкові."
+  - "Не treter VUS результат як патогенний — управляйте як родовідну підозру до подальших даних; не пропонуйте профілактичну колектомію на підставі VUS."
+  - "Не пропонувати профілактичну колектомію у підлітків / молодих дорослих без підтвердженого носійства та обговорення альтернативних хірургічних опцій (IPAA vs IRA) + впливу на якість життя (фекальна частота / нетримання, фертильність у IPAA)."
+  - "Не презентувати negative-panel результат як zero-risk — residual сімейно-історичний ризик може зберігатися (deep intronic варіанти, mosaicism, rare non-FAP / non-Lynch синдроми)."
+  - "Не пропускати скринінг гепатобластоми (AFP + УЗД) у дітей підтверджених FAP-сімей — інтервал q3-6 місяців від народження до 5 років обов'язковий."
+  - "Не використовувати MUTYH-monoallelic carrier status як еквівалент FAP — biallelic MUTYH = MAP (autosomal recessive); monoallelic MUTYH несе тільки модестний ризик і не потребує посиленого спостереження."
+
+do_not_do_en:
+  - "Do not order germline testing without pre-test counseling — informed consent, psychological preparation, and reproductive planning are mandatory."
+  - "Do not treat a VUS result as pathogenic — manage as pedigree suspicion pending further data; do not offer prophylactic colectomy on a VUS."
+  - "Do not offer prophylactic colectomy in adolescents / young adults without confirmed carrier status and discussion of alternative surgical options (IPAA vs IRA) plus quality-of-life impact (stool frequency / incontinence, fertility in IPAA)."
+  - "Do not present a negative-panel result as zero-risk — residual family-history risk may persist (deep intronic variants, mosaicism, rare non-FAP / non-Lynch syndromes)."
+  - "Do not skip hepatoblastoma screening (AFP + ultrasound) in children of confirmed FAP families — q3-6 month interval birth to age 5 is mandatory."
+  - "Do not equate MUTYH-monoallelic carrier status with FAP — biallelic MUTYH = MAP (autosomal recessive); monoallelic MUTYH carries only modest risk and does not require enhanced surveillance."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — v0.2-B hereditary pilot (FAP). NCCN Genetic/Familial High-Risk Colorectal as a new SRC entity is v0.2-B authoring backlog. Two-Co-Lead signoff queued.

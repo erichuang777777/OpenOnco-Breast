@@ -1,0 +1,26 @@
+id: BIO-PMS2-GERMLINE
+names:
+  preferred: "PMS2 germline pathogenic variant"
+  ukrainian: "PMS2 germline патогенний варіант"
+  english: "PMS2 germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: PMS2
+  gene_hugo_id: HGNC:9122
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements:
+  - "Whole blood or saliva DNA"
+  - "Note: PMS2 has pseudogene PMS2CL — sequencing requires PMS2-specific assays"
+clinical_context:
+  - germline_susceptibility
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources:
+  - SRC-ESMO-CRC-2024
+last_reviewed: "2026-05-18"
+notes: "PMS2 germline — lowest-penetrance Lynch gene. CRC ~15-20%, endometrial ~15%. Pseudogene PMS2CL makes sequencing technically challenging. STUB."
+notes_ua: "PMS2 germline — найнижчо-пенетрантний Lynch ген. PMS2CL псевдоген ускладнює sequencing."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_germline
+draft_revision: 1

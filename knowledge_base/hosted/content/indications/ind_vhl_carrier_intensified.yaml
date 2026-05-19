@@ -1,0 +1,99 @@
+id: IND-VHL-CARRIER-INTENSIFIED
+plan_track: aggressive
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-HCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-VHL-CONFIRMED-CARRIER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Intensified surveillance with belzutifan (HIF-2α inhibitor) consideration in confirmed carriers with developing lesions: FDA-approved 2021 for VHL-associated RCC, CNS hemangioblastomas, pancreatic NETs based on LITESPARK-004 trial — durable responses + tumor shrinkage. Surgical thresholds may be deferred when belzutifan response is robust."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  - TEST-LFT
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-VHL-CARRIER-SURVEILLANCE. For VHL carriers
+  with active surveillance findings (developing renal/CNS/pancreatic lesions
+  below resection threshold), this track adds:
+
+  **Consideration of belzutifan (HIF-2α inhibitor)** — FDA-approved 2021 (Welireg)
+  for adults with VHL-associated RCC, CNS hemangioblastomas, and pancreatic NETs
+  not requiring immediate surgery. Based on LITESPARK-004 single-arm trial:
+  ORR ~49% RCC / ~30% CNS hemangioblastoma / ~83% pancreatic NET. Durable responses;
+  side effects include anemia and hypoxia (HIF-2α mediates erythropoietin
+  regulation).
+
+  **Reduced surgical thresholds for renal lesions** — nephron-sparing surgery at
+  lesion ≥3cm remains standard, but earlier intervention may be considered when
+  growth kinetics are rapid (≥0.5cm/year).
+
+  **CNS hemangioblastoma resection threshold** — symptomatic OR rapidly enlarging
+  lesions; small asymptomatic lesions can be observed with closer interval imaging.
+
+  Per CHARTER §11 patient-autonomy framing: aggressive intervention requires
+  shared decision-making about quality-of-life and side-effect profile vs.
+  surveillance burden.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до IND-VHL-CARRIER-SURVEILLANCE.
+  Для VHL носіїв з active surveillance findings (розвиваючі renal/CNS/pancreatic
+  lesions під resection threshold), цей трек додає:
+
+  **Розгляд белзутіфана (HIF-2α інгібітор)** — FDA-схвалено 2021 (Welireg) для
+  дорослих з VHL-асоційованою RCC, CNS гемангіобластомами та pancreatic NETs,
+  що не потребують негайної хірургії. На основі LITESPARK-004 single-arm trial:
+  ORR ~49% RCC / ~30% CNS hemangioblastoma / ~83% pancreatic NET. Тривалі
+  відповіді; побічні ефекти включають анемію та гіпоксію.
+
+  **Знижені хірургічні пороги для renal lesions** — nephron-sparing surgery
+  при ≥3см залишається стандартом, але раніше втручання може розглядатися при
+  rapid growth kinetics (≥0.5см/рік).
+
+  Per CHARTER §11 framing — aggressive intervention потребує shared
+  decision-making про quality-of-life та side-effect profile vs. surveillance.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_completion
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не призначати белзутіфан без consultation з VHL-experienced специалістом."
+  - "Не використовувати белзутіфан як заміну surveillance — додаткова інтервенція, не альтернатива."
+  - "Не оперувати маленькі асимптоматичні CNS hemangioblastomas — observation prefered для невеликих стабільних lesions."
+
+do_not_do_en:
+  - "Do not prescribe belzutifan without consultation with a VHL-experienced specialist."
+  - "Do not use belzutifan as a replacement for surveillance — additive intervention, not an alternative."
+  - "Do not operate on small asymptomatic CNS hemangioblastomas — observation is preferred for small stable lesions."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B VHL confirmed-carrier intensified-track pathway. §15.2 C4 ≥2-tracks invariant compliance. Two-Clinical-Co-Lead signoff queued per CHARTER §6.1 dev-mode."

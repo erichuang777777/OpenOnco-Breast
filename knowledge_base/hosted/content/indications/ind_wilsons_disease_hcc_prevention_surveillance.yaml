@@ -1,0 +1,179 @@
+id: IND-WILSONS-DISEASE-HCC-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-HCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-WILSONS-DISEASE-HCC-PREVENTION
+
+# No systemic drug regimen — primary intervention is HCC surveillance
+# imaging + chelation-adherence reinforcement + transplant evaluation.
+# Copper-chelation pharmacotherapy (penicillamine, trientine, zinc) is
+# treatment of the underlying Wilson's, managed by hepatology, not as
+# a prevention Regimen FK.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    AASLD HCC surveillance (US ± AFP q6mo) in cirrhotic Wilson's shifts
+    HCC stage at diagnosis from advanced/multifocal to early (BCLC 0/A,
+    typically within Milan criteria for transplant or amenable to
+    ablation/resection). Early-stage HCC 5y OS 60-75% post-transplant
+    or ablation/resection, vs <15% for BCLC C/D presenting symptomatically.
+    Surveillance does not reduce HCC incidence; addresses stage-shift
+    and access to curative intervention (transplant in particular for
+    Wilson's-cirrhotic-with-HCC).
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for patients with Wilson's disease,
+  particularly cirrhotic subset. Three-component standard:
+
+  **HCC surveillance imaging (cirrhotic Wilson's only):**
+    - Abdominal ultrasound q6mo (AASLD 2023) with operator focus on
+      complete liver visualization; AFP measured simultaneously
+      (sensitivity boost when combined with US per AASLD ≥0.5
+      sensitivity gain vs US alone).
+    - Suboptimal US visualization (obese, hepatic steatosis, prior
+      surgery, advanced cirrhosis with nodular contour) → switch to
+      MRI or multiphase CT q6mo (LI-RADS reporting framework).
+    - LR-3 (intermediate probability) → repeat imaging in 3-6mo;
+      LR-4 (probably HCC) → biopsy or close surveillance per
+      multidisciplinary discussion; LR-5 (definitely HCC) →
+      transition to HCC treatment algorithm (DIS-HCC).
+
+  **Chelation adherence reinforcement:**
+    - Confirm continued chelation (penicillamine 750-1500 mg/day, OR
+      trientine 750-1500 mg/day, OR zinc 75-150 mg/day elemental
+      depending on phase of treatment and adherence profile)
+    - 24h urinary copper q6-12mo to assess de-coppering adequacy and
+      adherence (target: 200-500 mcg/24h during maintenance)
+    - Ceruloplasmin + serum copper q6-12mo (typically remain low — they
+      track Wilson's pathophysiology rather than treatment response)
+    - LFT panel + INR + platelet count q6-12mo to monitor hepatic
+      synthetic function
+
+  **Liver transplantation evaluation:**
+    - Hepatology referral for: decompensated cirrhosis (Child-Pugh C,
+      MELD ≥15), recurrent variceal bleeding despite endoscopic
+      management, refractory ascites, hepatic encephalopathy
+    - Acute fulminant Wilson's (severe acute liver failure presentation,
+      often in adolescents) — emergency transplant evaluation
+    - HCC within Milan criteria (single ≤5 cm, or up to 3 nodules each
+      ≤3 cm, no vascular invasion, no extrahepatic spread) — transplant
+      remains highly favorable in Wilson's recipients given de-novo
+      ATP7B-corrected liver
+
+  **Co-factor management:** abstain from alcohol; HBV vaccination if
+  not immune; HCV treatment per standard DAA regimens if co-infected;
+  PrEP per separate RFs.
+
+  In Ukraine, Wilson's disease care concentrated in hepatology centers
+  in Kyiv, Lviv, Odesa, Kharkiv; ATP7B genetic testing available at
+  Institute of Genetics + select private labs. Penicillamine and
+  trientine availability variable (penicillamine widely available;
+  trientine via tertiary specialist prescription or international
+  import). Liver transplantation performed at Shalimov Institute
+  (Kyiv); HCC-within-Milan adult recipients accepted.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для пацієнтів з хворобою Вільсона,
+  особливо cirrhotic підгрупою. Трикомпонентний стандарт:
+
+  **HCC surveillance imaging (лише cirrhotic Вільсона):**
+    - Абдомінальне УЗД q6 міс (AASLD 2023); AFP одночасно
+    - Subтimal візуалізація → MRI або багатофазний CT q6 міс
+      (LI-RADS reporting)
+    - LR-3 → repeat 3-6 міс; LR-4 → біопсія або close surveillance;
+      LR-5 → HCC treatment algorithm (DIS-HCC)
+
+  **Chelation adherence:**
+    - Пеніциламін 750-1500 мг/день, АБО трієнтин 750-1500 мг/день,
+      АБО цинк 75-150 мг/день elemental
+    - 24-год urinary copper q6-12 міс (target 200-500 мкг/24г maintenance)
+    - Ceruloplasmin + serum copper q6-12 міс
+    - LFT + INR + platelets q6-12 міс
+
+  **Liver transplantation evaluation:**
+    - Hepatology referral: decompensated cirrhosis (Child-Pugh C,
+      MELD ≥15), recurrent variceal bleeding, refractory ascites,
+      hepatic encephalopathy
+    - Гострий fulminant Вільсон — emergency transplant
+    - HCC у Milan — favorable transplant outcomes (de-novo ATP7B-
+      corrected liver)
+
+  **Co-factor management:** abstain від алкоголю; HBV вакцинація;
+  HCV treatment.
+
+  В Україні Wilson care концентрована в hepatology центрах у Києві,
+  Львові, Одесі, Харкові; ATP7B-генетичне тестування — Institute of
+  Genetics. Пеніциламін широко доступний; трієнтин — third-tier
+  specialist prescription. Liver transplantation — Shalimov Institute.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-AASLD-HCC-2023
+    position: supports
+    relevant_quote_paraphrase: >-
+      "HCC surveillance with ultrasound ± AFP every 6 months is
+      recommended for all patients with cirrhosis from any etiology
+      with annual HCC incidence ≥1.5%. Wilson's cirrhosis meets this
+      threshold in contemporary cohorts."
+  - source_id: SRC-NCCN-HCC-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Patients with cirrhosis of any etiology (including Wilson's
+      disease, hemochromatosis, alpha-1 antitrypsin deficiency) are
+      candidates for HCC surveillance per AASLD criteria. Curative
+      treatment (resection, ablation, transplantation) requires
+      early-stage detection."
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не пропускати HCC surveillance у cirrhotic Wilson — historic perception 'низького ризику' застаріла; contemporary cohorts показують HCC incidence ~1%/рік."
+  - "Не використовувати лише AFP для surveillance — низька sensitivity isolated; AFP як adjunct до US/MRI."
+  - "Не покладатися на ceruloplasmin/serum copper для tracking treatment adequacy — 24-год urinary copper більш інформативний для adherence."
+  - "Не призначати пеніциламін без B6 (піридоксину) supplementation — penicillamine indused B6 deficiency."
+  - "Не пропускати transplant evaluation для decompensated cirrhosis — Wilson's-cirrhotic-with-HCC рецепієнти мають сприятливі outcomes given ATP7B-corrected donor liver."
+
+do_not_do_en:
+  - "Do not skip HCC surveillance in cirrhotic Wilson's — the historic 'low risk' perception is outdated; contemporary cohorts show HCC incidence ~1%/year."
+  - "Do not use AFP alone for surveillance — low sensitivity in isolation; AFP serves as adjunct to US/MRI."
+  - "Do not rely on ceruloplasmin/serum copper to track treatment adequacy — 24h urinary copper is more informative for adherence."
+  - "Do not prescribe penicillamine without B6 (pyridoxine) supplementation — penicillamine-induced B6 deficiency."
+  - "Do not skip transplant evaluation for decompensated cirrhosis — Wilson's-cirrhotic-with-HCC recipients have favorable outcomes given ATP7B-corrected donor liver."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — v0.3 chronic-condition prevention pilot (Wilson's / HCC).
+  Two-Co-Lead signoff queued. AASLD 1.5%/year surveillance threshold
+  in Wilson's cirrhosis is well-supported in contemporary cohorts;
+  older literature suggesting near-zero HCC risk in Wilson's reflects
+  pre-transplant-era short-follow-up bias.

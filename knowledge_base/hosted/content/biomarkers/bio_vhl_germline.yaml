@@ -1,0 +1,23 @@
+id: BIO-VHL-GERMLINE
+names:
+  preferred: "VHL germline pathogenic variant"
+  ukrainian: "VHL germline патогенний варіант"
+  english: "VHL germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: VHL
+  gene_hugo_id: HGNC:12687
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources:
+  - SRC-NCCN-KIDNEY-2025
+last_reviewed: "2026-05-18"
+notes: "VHL germline — drives von Hippel-Lindau syndrome. Spectrum: clear-cell RCC (lifetime ~70%), CNS hemangioblastomas (cerebellar/spinal), retinal hemangioblastomas, pheochromocytoma, pancreatic NETs / cysts, endolymphatic-sac tumors, epididymal cystadenomas. Lifelong surveillance (annual abdominal MRI, ophthalmologic exam, plasma metanephrines). STUB pending two-Co-Lead signoff."
+notes_ua: "VHL germline — драйвер von Hippel-Lindau syndrome. Довічний нагляд (щорічна МРТ черевної порожнини, офтальмологічний огляд, метанефрини плазми)."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v04_germline_batch2
+draft_revision: 1

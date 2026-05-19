@@ -1,0 +1,13 @@
+{
+  "patient_id": "PPI-LONGTERM-PREV-001",
+  "comment": "66yo male, on omeprazole 20 mg daily for 12 years (continuous use) for chronic GERD, no current upper-GI symptoms, no prior EGD on file, no personal cancer diagnosis. Engine fires RF-IATROGENIC-LONG-TERM-PPI-GASTRIC-NET-PREVENTION (continuous PPI use >=10 years) → routes to PreventionPlan: standard = indication-review + de-prescription attempt (step-down to H2 blocker or on-demand PPI if symptoms resolved); fasting gastrin + chromogranin A baseline; EGD with body/fundus biopsies if persistent indication or elevated gastrin/CgA — surveillance EGD q3-5y if atrophic gastritis or ECL hyperplasia documented; aggressive = baseline EGD with biopsy mapping + EUS for any ECL nodule >5mm + endocrinology referral if hypergastrinemia confirmed. Validates v0.3 iatrogenic drug-induced prevention pilot. Anchored DIS-GASTRIC.",
+  "biomarkers": {},
+  "demographics": {"age": 66, "sex": "male", "ecog": 0},
+  "findings": {
+    "ppi_continuous_use_ge_10y": true,
+    "Omeprazole 20 mg daily x 12 years continuous": true,
+    "Chronic GERD, no current upper-GI symptoms": true,
+    "No prior EGD on file": true,
+    "No personal cancer diagnosis": true
+  }
+}

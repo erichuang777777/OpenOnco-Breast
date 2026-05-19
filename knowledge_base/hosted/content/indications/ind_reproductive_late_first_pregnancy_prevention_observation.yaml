@@ -1,0 +1,70 @@
+id: IND-REPRODUCTIVE-LATE-FIRST-PREGNANCY-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-REPRODUCTIVE-LATE-FIRST-PREGNANCY-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Patient declines structured counseling — receives baseline USPSTF breast cancer screening per age + family-history risk assessment + symptom-prompted evaluation pathway. Reproductive-history RF cluster persists but is non-modifiable retroactively; only screening cadence + lifestyle factors remain actionable."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-REPRODUCTIVE-LATE-FIRST-PREGNANCY-
+  PREVENTION-COUNSELING. Patient declines structured lifestyle + breastfeeding
+  promotion intervention — receives baseline USPSTF breast cancer screening
+  per age, with family-history risk assessment to determine if Gail / Tyrer-
+  Cuzick / BOADICEA risk stratification + risk-reducing medication discussion
+  applies. Per CHARTER §11 patient-autonomy framing.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від structured
+  lifestyle + breastfeeding promotion intervention — отримує baseline USPSTF
+  breast cancer screening per age, з family-history risk assessment для
+  визначення Gail / Tyrer-Cuzick / BOADICEA risk stratification. Per
+  CHARTER §11.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BREAST-2025
+    position: context
+
+do_not_do:
+  - "Не пропускати USPSTF breast cancer screening — base-rate cadence залишається indicated незалежно від counseling status."
+  - "Не пропускати family-history assessment — у families з multi-generational young breast cancer, this RF cluster часто overlaps з germline susceptibility (BRCA1/2, Cowden, Li-Fraumeni)."
+  - "Не повторювати presure про lifestyle модифікації на every visit, якщо пацієнт чітко declined — counsel respectfully but do not undermine autonomy."
+
+do_not_do_en:
+  - "Do not skip USPSTF breast cancer screening — base-rate cadence remains indicated regardless of counseling status."
+  - "Do not skip family-history assessment — in families with multi-generational young breast cancer, this RF cluster often overlaps with germline susceptibility (BRCA1/2, Cowden, Li-Fraumeni)."
+  - "Do not repeat pressure about lifestyle modifications at every visit if the patient has clearly declined — counsel respectfully but do not undermine autonomy."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for late-first-pregnancy reproductive prevention. §15.2 C4 ≥2-tracks invariant."

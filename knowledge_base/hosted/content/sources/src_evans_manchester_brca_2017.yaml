@@ -1,0 +1,53 @@
+id: SRC-EVANS-MANCHESTER-BRCA-2017
+source_type: methodology_paper
+title: The Manchester scoring system for predicting BRCA1 / BRCA2 mutation likelihood
+  — refined for the modern testing era
+version: '2017'
+authors:
+- Evans DG
+- Harkness EF
+- Plaskocinska I
+- Wallace AJ
+- Clancy T
+- Woodward ER
+- Howell TA
+- Tischkowitz M
+- Lalloo F
+journal: British Journal of Cancer
+doi: 10.1038/bjc.2017.83
+url: https://www.nature.com/articles/bjc201783
+access_level: open_access
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 3
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources_batch4
+license:
+  name: Springer Nature / British Journal of Cancer (CC BY 4.0)
+  spdx_id: CC-BY-4.0
+attribution:
+  required: true
+  text: Evans DG et al., Br J Cancer 2017 — Manchester scoring system update for BRCA1/2
+commercial_use_allowed: true
+redistribution_allowed: true
+modifications_allowed: true
+legal_review:
+  status: pending
+  notes: Open-access CC BY 4.0.
+relates_to_diseases:
+- DIS-BREAST
+- DIS-OVARIAN
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Refined Manchester score — a simple point-based
+  family-history score for BRCA1 / BRCA2 carrier probability, used in UK genetics
+  clinics alongside BOADICEA. Threshold >=15 points historically triggered BRCA testing
+  (10% prior). Update reflects modern panel-testing era and ovarian-cancer pathology
+  contributions. Endorsed by NICE CG164 alongside BOADICEA / BRCAPRO.
+
+  '
+pages_count: 7
+references_count: 28
+corpus_role: methodology_paper

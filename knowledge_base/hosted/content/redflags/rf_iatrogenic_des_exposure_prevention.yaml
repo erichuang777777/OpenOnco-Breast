@@ -1,0 +1,99 @@
+id: RF-IATROGENIC-DES-EXPOSURE-PREVENTION
+definition: >-
+  In-utero exposure to diethylstilbestrol (DES), a synthetic non-
+  steroidal estrogen prescribed to pregnant women 1940s-1970s to
+  prevent miscarriage and pregnancy complications (US peak 1947-1971;
+  withdrawn for this indication 1971; smaller cohorts in Europe used
+  through the late 1970s). Daughters of women who took DES during
+  pregnancy ("DES daughters") have a markedly elevated risk of clear-
+  cell adenocarcinoma of the vagina and cervix (CCA) — a rare cancer
+  with a clear bimodal age distribution: peak at 15-25 years
+  (historically detected during the first DES surveillance era) and
+  a second elevated-risk window persisting through age 40+; cumulative
+  lifetime CCA risk in DES-exposed cohort approximately 1 per 1000
+  (vs ~1 per million in unexposed) — IARC Group 1 carcinogen for
+  this exact exposure. Additionally elevated: cervical intraepithelial
+  neoplasia / carcinoma in situ (CIS), structural Müllerian-tract
+  anomalies (T-shaped uterus, cervical hood / ridge), modestly
+  elevated breast cancer risk after age 40. DES granddaughters
+  (third generation) have limited but inconclusive data signals.
+  Cohort is aging (DES daughters born 1940-1971 are now 55-86 years
+  old in 2026) — still benefits from clinical-exam surveillance
+  given prolonged CCA-risk window. Prevention-persona RedFlag
+  (§20 v0.3 iatrogenic pilot).
+definition_ua: >-
+  Внутрішньоутробна експозиція до diethylstilbestrol (DES) —
+  синтетичного нестероїдного естрогену, що призначався вагітним
+  жінкам у 1940-1970х для запобігання miscarriage та pregnancy
+  complications (US peak 1947-1971; withdrawn 1971; менші когорти
+  Європи використовували до кінця 1970х). Дочки жінок, що приймали
+  DES ("DES daughters"), мають виражено підвищений ризик clear-cell
+  adenocarcinoma vagina та cervix (CCA) — рідкісного раку з чітким
+  bimodal age distribution: peak 15-25 років і другий вікно
+  підвищеного ризику до 40+ років; кумулятивний lifetime CCA
+  ризик у когорті ~1 на 1000 (vs ~1 на million у unexposed) —
+  IARC Group 1 канцероген для цієї експозиції. Додатково
+  підвищені: cervical intraepithelial neoplasia / carcinoma in
+  situ (CIS), структурні аномалії Müllerian tract, модерне
+  підвищення breast cancer risk після 40р. Когорта старіє
+  (DES daughters народжені 1940-1971, зараз 55-86 років у 2026)
+  — все ще benefits від clinical-exam surveillance враховуючи
+  prolonged CCA-risk window. RedFlag персони prevention.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "in_utero_des_exposure_documented"
+      value: true
+    - finding: "des_daughter_history"
+      value: true
+    - finding: "maternal_pregnancy_des_use"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: iatrogenic
+
+relevant_diseases:
+  - DIS-VULVAR-VAGINAL-SCC
+  - DIS-CERVICAL
+
+shifts_algorithm: []
+
+sources:
+  - SRC-IARC-MONO-100B-2012
+  - SRC-NCCN-CERVICAL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag for in-utero DES exposure. Engine routes
+  to PreventionPlan recommending annual gynecologic exam with
+  speculum + bimanual + careful palpation of vaginal walls (specific
+  technique for DES daughters per ACOG), colposcopy with vaginal
+  + cervical staining for early detection of CCA, cervical cytology
+  / HPV co-test on routine cadence, breast surveillance per age-
+  appropriate USPSTF cadence. Cohort is aging — bimodal-risk window
+  extends past 40y; surveillance does NOT stop at any age cutoff.
+
+  Cancer scope: anchored to DIS-VULVAR-VAGINAL-SCC (closest existing
+  Disease entity for vaginal-tract anchor) + DIS-CERVICAL. DES-
+  associated cancer is histologically clear-cell adenocarcinoma —
+  NOT yet authored as a distinct DIS-VAGINAL-CLEAR-CELL entity;
+  histology-specific surveillance considerations carried via the
+  indication prose. Future authoring of DIS-VAGINAL-CLEAR-CELL
+  recommended.
+
+  Distinct from RF-IATROGENIC-LONG-TERM-HRMNL-CONTRACEPTION-
+  PREVENTION (post-natal hormonal exposure, exposure-as-cofactor).
+  This is a one-time in-utero developmental exposure — surveillance
+  cohort is closed (no new DES daughters); known existing cohort
+  remains at lifelong elevated risk.
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_iatrogenic_batch3
+draft_revision: 1

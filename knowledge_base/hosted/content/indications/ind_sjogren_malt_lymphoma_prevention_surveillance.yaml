@@ -1,0 +1,176 @@
+id: IND-SJOGREN-MALT-LYMPHOMA-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-HCV-MZL
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-SJOGREN-MALT-LYMPHOMA-PREVENTION
+
+# No systemic drug regimen — primary intervention is annual physical
+# examination + lab monitoring + imaging-on-trigger. Rheumatologic
+# disease-modifying therapy (hydroxychloroquine, methotrexate, B-cell
+# depletion) is treatment of the underlying syndrome and is captured
+# in rheumatology care, not as a prevention Regimen FK.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Annual clinical assessment + targeted lab monitoring (cryoglobulins,
+    C4, SPEP, immunoglobulins, CBC) + parotid US-on-trigger captures
+    salivary/lacrimal MALT lymphoma at earliest detectable stage
+    (typically stage IE — localized, amenable to gland-preserving
+    radiation or rituximab monotherapy with excellent disease-specific
+    survival >90%). Surveillance does not reduce baseline incidence
+    but materially shifts stage at diagnosis (stage IE detection rate
+    much higher in EULAR-screened cohorts vs symptom-only presentation).
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for patients with confirmed primary
+  Sjögren's syndrome. Annual structured assessment combines physical
+  examination, lab monitoring, and on-demand imaging:
+
+  **Physical examination (annually):** parotid and lacrimal glands
+  (bilateral palpation, asymmetry, persistent enlargement, hardness,
+  fixation); cervical and axillary lymph nodes; spleen/liver; skin
+  (palpable purpura, livedo, ulcerations from cryoglobulinemic
+  vasculitis).
+
+  **Laboratory monitoring (annually, or q6mo for high-risk subgroup):**
+    - CBC with differential (cytopenias may herald lymphoma involvement
+      of marrow)
+    - SPEP + serum immunoglobulins (IgM, IgG, IgA) — monoclonal protein
+      detection
+    - Cryoglobulins, C3, C4 (hypocomplementemia is a strong predictor)
+    - LDH, β2-microglobulin (elevated in lymphoma progression)
+    - Anti-Ro/SSA, anti-La/SSB titers (baseline only; titer doesn't
+      track lymphoma risk)
+
+  **Imaging-on-trigger:**
+    - **Parotid US** for any new or persistent unilateral parotid
+      swelling >2 weeks. Sjögren-associated salivary lymphoma has
+      characteristic US features (hypoechoic nodules with cystic
+      change, "honeycomb" pattern); US-guided core-needle biopsy if
+      lymphoid-lesion-suspicious findings.
+    - **Lacrimal gland US/MRI** for orbital swelling or proptosis
+    - **CT neck/chest/abdomen/pelvis** for B-symptoms, new
+      lymphadenopathy, or splenomegaly
+
+  **Risk stratification (Brito-Zerón ESSDAI predictors):** count
+  predictors (persistent salivary swelling, low C4, cryoglobulinemia,
+  palpable purpura, monoclonal gammopathy, splenomegaly, lymphadenopathy,
+  pulmonary involvement). Patients with ≥3 predictors should be
+  considered for q6mo monitoring and lower threshold for diagnostic
+  workup.
+
+  **Treatment of underlying Sjögren's** (hydroxychloroquine for fatigue
+  / arthralgias, sialogogues for sicca, ophthalmology referral for
+  ocular involvement, rituximab for cryoglobulinemic vasculitis or
+  severe extraglandular disease per EULAR 2020) is rheumatology's
+  domain. Hydroxychloroquine has been hypothesized to reduce lymphoma
+  risk but evidence remains observational; no formal prevention claim.
+
+  In Ukraine, Sjögren's care is provided by rheumatology specialists at
+  regional and tertiary centers (Kyiv, Lviv, Odesa, Kharkiv). Parotid
+  US widely available; core-needle biopsy and flow cytometry at
+  oncology and lymphoma-specialist centers. Cryoglobulin testing
+  requires specific transport/processing protocols (warm transport,
+  37 °C centrifugation) — confirm laboratory capability before sending.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для пацієнтів з підтвердженим
+  первинним синдромом Шегрена. Щорічна структурована оцінка поєднує
+  фізикальне обстеження, лабораторний моніторинг та on-demand
+  імиджинг:
+
+  **Фізикальне обстеження (щорічно):** привушні та слізні залози
+  (білатеральна пальпація, асиметрія, persistent збільшення, твердість,
+  фіксація); шийні та аксилярні лімфовузли; селезінка/печінка; шкіра
+  (palpable purpura, livedo, виразки від кріоглобулінемічного
+  vasculitis).
+
+  **Лабораторний моніторинг (щорічно або q6 міс для high-risk):**
+    - CBC з диференціалом
+    - SPEP + сироваткові імуноглобуліни
+    - Кріоглобуліни, C3, C4
+    - LDH, β2-мікроглобулін
+    - Anti-Ro/SSA, anti-La/SSB титри (baseline лише)
+
+  **Imaging-on-trigger:**
+    - **Parotid US** для будь-якого нового/persistent unilateral
+      привушного набряку >2 тижні. Sjögren-асоційована салівна
+      лімфома має характерні US ознаки; US-guided core-needle
+      біопсія при lymphoid-lesion-suspicious знахідках.
+    - **Слізна залоза US/MRI** для орбітального набряку
+    - **CT шия/груди/живіт/таз** для B-симптомів
+
+  **Стратифікація ризику (Brito-Zerón ESSDAI предиктори):** persistent
+  слиновий набряк, низький C4, кріоглобулінемія, palpable purpura,
+  моноклональна гаммапатія, спленомегалія, лімфаденопатія. ≥3
+  предиктори — q6 міс моніторинг.
+
+  **Лікування underlying Sjögren's** (гідроксихлорохін, sialogogues,
+  ofthalmology, ритуксимаб per EULAR 2020) — rheumatology домен.
+
+  В Україні Sjögren's care надається rheumatology фахівцями у
+  регіональних та третинних центрах. Cryoglobulin testing потребує
+  specific transport/processing протоколів (теплий транспорт, 37 °C
+  центрифугування).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Primary Sjögren's syndrome confers the highest lymphoma risk
+      among rheumatic diseases (relative risk ~15-20). Annual clinical
+      and laboratory surveillance for lymphoma predictors (persistent
+      parotid swelling, low C4, cryoglobulinemia, monoclonal gammopathy)
+      enables earlier MALT lymphoma detection."
+
+do_not_do:
+  - "Не покладатися лише на anti-Ro/SSA титри для lymphoma surveillance — титри не корелюють з emerging лімфомою."
+  - "Не лікувати persistent parotid swelling як просту salivary obstruction без EUS/US + цитологічного або core-needle обстеження."
+  - "Не призначати empiric ритуксимаб без діагнозу лімфоми або задокументованої cryoglobulinemic vasculitis — рекомендації EULAR 2020 не включають prophylactic anti-CD20."
+  - "Не пропускати тестування кріоглобулінів — низький C4 + кріоглобулінемія — потужні lymphoma предиктори."
+  - "Не пропускати періодичну оцінку селезінки + лімфовузлів — extraglandular лімфома може презентувати без salivary знахідок."
+
+do_not_do_en:
+  - "Do not rely solely on anti-Ro/SSA titers for lymphoma surveillance — titers do not correlate with emerging lymphoma."
+  - "Do not treat persistent parotid swelling as simple salivary obstruction without US + cytologic or core-needle workup."
+  - "Do not prescribe empiric rituximab without a lymphoma diagnosis or documented cryoglobulinemic vasculitis — EULAR 2020 does not endorse prophylactic anti-CD20."
+  - "Do not omit cryoglobulin testing — low C4 + cryoglobulinemia are strong lymphoma predictors."
+  - "Do not skip periodic evaluation of spleen + lymph nodes — extraglandular lymphoma can present without salivary findings."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — v0.3 chronic-condition prevention pilot (Sjögren's / MALT).
+  Two-Co-Lead signoff queued. Disease anchor (DIS-HCV-MZL) is the
+  closest in-KB MZL entity; a dedicated DIS-SALIVARY-MALT entity
+  would be a future authoring task.

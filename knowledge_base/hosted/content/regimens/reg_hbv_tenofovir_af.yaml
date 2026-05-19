@@ -1,0 +1,64 @@
+id: REG-HBV-TENOFOVIR-AF
+name: "Tenofovir alafenamide (TAF) — chronic HBV antiviral suppression"
+name_ua: "Тенофовір алафенамід (TAF) — антивірусна супресія хронічного HBV"
+alternate_names:
+  - "TAF mono"
+  - "Vemlidy"
+
+components:
+  - drug_id: DRUG-TENOFOVIR-AF
+    dose: "25 mg PO"
+    schedule: "once daily with food"
+    route: PO
+    duration: "ongoing — chronic suppression (typically indefinite or until HBsAg seroconversion + 12 months)"
+
+cycle_length_days: 30
+total_cycles: "ongoing — long-term suppression"
+
+toxicity_profile: low
+
+premedication: []
+mandatory_supportive_care: []
+monitoring_schedule_id:
+
+dose_adjustments:
+  - condition: "Severe renal impairment (CrCl <15 mL/min and not on hemodialysis)"
+    modification: "TAF not recommended; switch to entecavir with renal-adjusted dosing"
+    rationale: "TAF safety data in severe renal impairment limited"
+    source_refs:
+      - SRC-AASLD-HBV-2024
+
+ukraine_availability:
+  all_components_registered: true
+  all_components_reimbursed: true
+  notes: "TAF (Vemlidy) registered in Ukraine and reimbursed via НСЗУ national HBV treatment programme. Often preferred over TDF in patients with renal/bone comorbidity."
+
+sources:
+  - SRC-AASLD-HBV-2024
+  - SRC-EASL-HBV-2025
+
+between_visit_watchpoints:
+  - trigger_ua: "Легка нудота або біль у животі"
+    action_ua: "Поширений ефект — приймайте з їжею; занотуйте на наступному візиті"
+    urgency: log_at_next_visit
+    sources:
+      - SRC-AASLD-HBV-2024
+  - trigger_ua: "Жовтяниця або потемніння сечі"
+    action_ua: "Подзвоніть у клініку того ж дня — ознака погіршення функції печінки"
+    urgency: call_clinic_same_day
+    sources:
+      - SRC-AASLD-HBV-2024
+  - trigger_ua: "Раптова сильна слабкість м'язів, болі"
+    action_ua: "Звертайтесь у лікарню негайно — рідкісна лактоацидоз"
+    urgency: er_now
+    sources:
+      - SRC-AASLD-HBV-2024
+
+last_reviewed: "2026-05-18"
+notes: >
+  Tenofovir alafenamide (TAF) is an alternative to entecavir for first-line chronic HBV suppression. Preferred over TDF in patients with renal impairment (CrCl <60), bone comorbidity, or osteoporosis — TAF has lower plasma tenofovir exposure with better renal/bone safety profile. Same anti-HBV efficacy as TDF.
+notes_ua: >
+  Тенофовір алафенамід (TAF) — альтернатива ентекавіру для першої лінії супресії хронічного HBV. Переважний над TDF у пацієнтів з нирковою недостатністю (CrCl <60), кістковою коморбідністю або остеопорозом — TAF має нижчу плазмову експозицію тенофовіру з кращим нирковим/кістковим safety profile. Та сама anti-HBV ефективність як TDF.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_authoring
+draft_revision: 1

@@ -1,0 +1,150 @@
+id: IND-OCC-WOOD-LEATHER-DUST-PREVENTION-INTENSIFIED-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  # Anchor: DIS-HNSCC (closest in-KB for sinonasal adenocarcinoma).
+  disease_id: DIS-HNSCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-OCC-WOOD-LEATHER-DUST-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Primary endpoint: early detection of incident sinonasal
+    adenocarcinoma via annual ENT symptom-review + low-threshold CT
+    sinus on persistent unilateral symptoms. No validated imaging
+    screening modality exists for asymptomatic sinonasal cancer; the
+    rarity of sinonasal adenocarcinoma at baseline means even a low-
+    sensitivity symptom-triggered pathway provides meaningful early-
+    detection benefit given the highly elevated occupational baseline
+    (SMR ~50-900x in heavily-exposed cohorts per IARC 100C / Demers
+    1995).
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for individuals with documented
+  prior occupational hardwood or leather-dust exposure who do not have
+  a current dust-associated malignancy diagnosis. Three parallel
+  interventions:
+
+  **(1) Annual ENT consultation with structured symptom review.**
+  Clinician asks specifically about unilateral nasal obstruction,
+  unilateral epistaxis, anosmia, facial pain / pressure, recurrent
+  unilateral sinusitis, and any persistent nasal discharge. Visual
+  anterior rhinoscopy at each visit. Nasal endoscopy reserved for
+  any persistent unilateral finding.
+
+  **(2) Low-threshold CT sinus imaging on persistent unilateral
+  symptoms.** Any unilateral nasal obstruction, recurrent unilateral
+  epistaxis, or unexplained facial pain persisting >3-4 weeks warrants
+  CT sinus with contrast (or MRI sinus if contrast contraindicated).
+  Findings of soft-tissue mass, bony erosion, or paranasal sinus
+  opacification with mass effect prompt urgent ENT-oncology referral
+  and biopsy.
+
+  **(3) Exposure-cessation / PPE counseling.** Most dust-exposed
+  individuals may be active workers (woodworking and leather
+  industries remain ongoing). Counsel on dust-collection ventilation
+  (LEV — local exhaust ventilation at source), N95+/half-face
+  respirators with appropriate cartridges during cutting / sanding /
+  finishing, wet-method cutting where feasible, and end-of-shift
+  workplace cleaning (HEPA vacuum, not dry sweeping).
+
+  Resource access in Ukraine: ENT consultation accessible at regional
+  centers; CT sinus (~1500-3000 UAH) where indicated; nasal endoscopy
+  available at large urban / private ENT centers.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для осіб з документованим попереднім
+  професійним впливом пилу твердих порід деревини або шкіри без
+  поточного діагнозу пил-асоційованої малігнізації. Три паралельні
+  втручання:
+
+  **(1) Щорічна ENT-консультація зі структурованим переглядом
+  симптомів.** Клініцист питає специфічно про однобічну назальну
+  обструкцію, однобічну епістаксис, аносмію, лицевий біль / тиск,
+  рецидивуючий однобічний синусит, persistent назальні виділення.
+  Візуальна передня рино скопія при кожному візиті. Назальна
+  ендоскопія резервується для будь-якої persistent однобічної знахідки.
+
+  **(2) Low-threshold CT синусів при persistent однобічних симптомах.**
+  Будь-яка однобічна назальна обструкція, рецидивуюча однобічна
+  епістаксис або нез'ясований лицевий біль, persistent >3-4 тижнів,
+  потребує CT синусів з контрастом (або MRI синусів, якщо контраст
+  протипоказаний).
+
+  **(3) Exposure-cessation / PPE counseling.** Багато
+  пил-експонованих осіб можуть бути активними працівниками
+  (деревообробка та шкіряна промисловість залишаються активними).
+  Counseling щодо dust-collection вентиляції (LEV — local exhaust
+  ventilation біля джерела), N95+/half-face респіратори з
+  відповідними картриджами при різанні / шліфуванні / оздобленні,
+  wet-method різання де можливо, end-of-shift workplace cleaning
+  (HEPA-пилосос, не суха підмітка).
+
+  Доступ до ресурсів в Україні: ENT-консультація доступна в
+  регіональних центрах; CT синусів (~1500-3000 грн) де показано;
+  назальна ендоскопія доступна у великих міських / приватних ENT-
+  центрах.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Occupational dust-exposure cohorts at elevated rare-histology
+      cancer risk warrant structured symptom-review surveillance and
+      low-threshold imaging on persistent unilateral findings."
+  - source_id: SRC-NCCN-HNSCC-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Patients with documented occupational hardwood / leather-dust
+      exposure carry markedly elevated sinonasal adenocarcinoma risk;
+      symptom-triggered ENT evaluation with low-threshold imaging is
+      the operational surveillance standard."
+
+do_not_do:
+  - "Не призначати CT синусів рутинно асимптомним пацієнтам — резервується для persistent однобічних симптомів."
+  - "Не ігнорувати однобічні симптоми як 'просто синусит' — однобічність — це alarm feature для синоназальної патології."
+  - "Не пропускати exposure-cessation / PPE counseling — багато експонованих осіб залишаються активними працівниками."
+  - "Не відкладати ENT-onkology referral при знахідках масі / костяної ерозії на CT — потрібна оперативна біопсія."
+
+do_not_do_en:
+  - "Do not order CT sinus routinely in asymptomatic patients — reserve for persistent unilateral symptoms."
+  - "Do not dismiss unilateral symptoms as 'just sinusitis' — unilaterality is an alarm feature for sinonasal pathology."
+  - "Do not skip exposure-cessation / PPE counseling — many exposed individuals remain active workers."
+  - "Do not delay ENT-oncology referral for findings of mass / bony erosion on CT — prompt biopsy is required."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — v0.3 occupational batch-2 pilot (hardwood / leather dust).
+  Two-Clinical-Co-Lead signoff queued per CHARTER §6.1 dev-mode
+  exemption. IARC Monograph 100C (2012) is canonical evidence anchor;
+  v0.3 source-authoring backlog.

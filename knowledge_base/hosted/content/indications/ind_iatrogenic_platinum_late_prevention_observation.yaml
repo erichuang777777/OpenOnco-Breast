@@ -1,0 +1,85 @@
+id: IND-IATROGENIC-PLATINUM-LATE-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-AML
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-PLATINUM-LATE-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Survivor declines structured BP + lipid + creatinine + CBC q1y surveillance schedule — receives general primary-care preventive cadence only. Modifiable CV risk factors may go uncontrolled until first CV event (MI, stroke), foreclosing window for risk reduction; CKD may progress silently with magnesium wasting unrecognized; t-MDS may evolve to overt t-AML before cytopenias addressed. Outcomes substantially worse with general-population cadence vs. survivor-specific schedule given documented elevated absolute risks."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-IATROGENIC-PLATINUM-LATE-
+  PREVENTION-SURVEILLANCE. Cancer survivor declines structured annual
+  BP + lipid + creatinine + CBC surveillance schedule (surveillance
+  fatigue post-curative treatment, no perceived symptoms, financial
+  / access barrier, geographic distance from survivorship clinic,
+  preference for general primary-care management without survivor-
+  specific intensification) — receives symptom-vigilance education
+  (chest pain / dyspnea on exertion → urgent CV evaluation; unexplained
+  fatigue / easy bruising / recurrent infections → urgent CBC) +
+  cardiovascular risk modification counseling (smoking cessation,
+  physical activity, weight, Mediterranean / DASH dietary pattern).
+  Per CHARTER §11 patient-autonomy framing — surveillance refusal is
+  a legitimate choice but framed as suboptimal vs. scheduled-
+  surveillance comparator.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Виживач відмовляється від
+  structured annual BP + lipid + creatinine + CBC surveillance —
+  отримує symptom-vigilance education (chest pain / dyspnea →
+  urgent CV evaluation; fatigue / easy bruising / infections →
+  urgent CBC) + cardiovascular risk modification counseling
+  (smoking cessation, physical activity, weight, Mediterranean
+  / DASH діета). Per CHARTER §11.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_aya_survivor_2026_05_18
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+  - source_id: SRC-COG
+    position: context
+
+do_not_do:
+  - "Не презентувати observation як еквівалент structured surveillance — late-presentation MACE + CKD + t-AML substantially гірші outcomes."
+  - "Не пропускати CV risk modification counseling — навіть на observation track це highest-yield late-effect інтервенція."
+  - "Не нормалізувати progressive fatigue як 'normal aging' у platinum survivors — може бути silent CKD або t-MDS."
+  - "Не вважати magnesium replacement 'optional' у symptomatic survivors з documented cisplatin Mg wasting — supplementation often required lifelong."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to structured surveillance — late-presentation MACE + CKD + t-AML have substantially worse outcomes."
+  - "Do not skip CV risk modification counseling — even on the observation track this is the highest-yield late-effect intervention."
+  - "Do not normalize progressive fatigue as 'normal aging' in platinum survivors — may be silent CKD or t-MDS."
+  - "Do not treat magnesium replacement as 'optional' in symptomatic survivors with documented cisplatin Mg wasting — supplementation is often required lifelong."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for cancer-survivor platinum late effects. §15.2 C4 ≥2-tracks invariant."

@@ -1,0 +1,101 @@
+id: IND-CHRONIC-HTLV-1-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-ATLL
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-CHRONIC-HTLV-1-MALIGNANCY-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    No curative anti-HTLV-1 therapy exists. Surveillance enables earlier
+    detection of ATLL transition (lymphocytosis with characteristic
+    flower cells; clonality on TCR rearrangement; rising HTLV-1
+    proviral load). Earlier-stage smoldering / chronic ATLL has
+    superior outcomes than acute-type at diagnosis.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+  - TEST-LDH
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for HTLV-1 carriers. Three
+  components:
+
+  **(1) Hematologic surveillance q6-12 months** — CBC with differential,
+  LDH, blood smear review for characteristic flower cells / atypical
+  lymphocytes. If lymphocytosis develops: TCR clonality testing.
+
+  **(2) Transmission-prevention counseling** — avoid blood donation
+  (HTLV-1 universally screened in blood banks in endemic regions);
+  breast-milk substitution where formula is feasible (vertical
+  transmission risk ~20% via breastfeeding; alternative feeding reduces
+  to ~3-5%); sexual transmission counseling.
+
+  **(3) Proviral load monitoring** in research-capable settings — high
+  proviral load (>4 copies / 100 PBMC) is a recognized risk factor for
+  progression to ATLL.
+
+  No curative antiviral exists. Zidovudine + interferon-alpha is used
+  for some active ATLL subtypes (treatment-persona territory) but is
+  not prevention.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для HTLV-1 носіїв. Три компоненти:
+
+  **(1) Гематологічне спостереження q6-12 міс** — CBC з диференційним,
+  LDH, перегляд мазка крові на характерні квіткові клітини / атипові
+  лімфоцити. При розвитку лімфоцитозу: тестування клональності TCR.
+
+  **(2) Консультування з prevention передачі** — уникнення донорства
+  крові (HTLV-1 універсально скринується в банках крові в ендемічних
+  регіонах); заміна грудного молока де формула можлива (ризик
+  вертикальної передачі ~20% через грудне вигодовування; альтернативне
+  вигодовування знижує до ~3-5%); консультування про статеву передачу.
+
+  **(3) Моніторинг proviral load** в research-capable налаштуваннях —
+  високе proviral навантаження (>4 копії / 100 PBMC) — визнаний фактор
+  ризику прогресії до ATLL.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: supports
+
+do_not_do:
+  - "Не дозволяти HTLV-1+ пацієнту donate blood — universally screened в endemic regions."
+  - "Не пропускати breast-milk counseling у вагітних HTLV-1+ матерів."
+  - "Не plyutaty активне ATLL з carrier-state — ATLL потребує treatment-persona Indication, не prevention."
+
+do_not_do_en:
+  - "Do not allow an HTLV-1+ patient to donate blood — universally screened in endemic regions."
+  - "Do not skip breast-milk counseling in pregnant HTLV-1+ mothers."
+  - "Do not conflate active ATLL with carrier-state — ATLL requires a treatment-persona Indication, not prevention."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — v0.2-A continuation.

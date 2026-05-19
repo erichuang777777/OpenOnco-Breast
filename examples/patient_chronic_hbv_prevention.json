@@ -1,0 +1,12 @@
+{
+  "patient_id": "HBV-PREV-001",
+  "comment": "42yo female, chronic HBV (HBsAg+ >6 months, HBV-DNA detectable). No current HCC. Engine routes to PreventionPlan: standard = entecavir 0.5mg daily + q6mo HCC surveillance (US + AFP); alternative = HCC surveillance alone. Validates v0.2-A HBV → HCC prevention pathway. Reimbursed via НСЗУ.",
+  "biomarkers": {},
+  "demographics": {"age": 42, "sex": "female", "ecog": 0, "decompensated_cirrhosis": false},
+  "findings": {
+    "hbsag": "positive",
+    "hbv_dna": "detectable",
+    "Chronic HBV >6 months confirmed": true,
+    "No HCC on baseline imaging": true
+  }
+}

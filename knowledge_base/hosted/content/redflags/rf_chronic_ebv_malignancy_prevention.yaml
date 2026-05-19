@@ -1,0 +1,85 @@
+id: RF-CHRONIC-EBV-MALIGNANCY-PREVENTION
+definition: >-
+  Documented chronic EBV infection (positive EBV-PCR with persistently
+  detectable viremia >3 months) AND a context of elevated EBV-associated
+  malignancy risk (post-solid-organ-transplant or post-HSCT
+  immunosuppression, congenital immunodeficiency, or HIV co-infection).
+  IARC Group 1 carcinogen (EBV) — established etiological driver of
+  Burkitt lymphoma, post-transplant lymphoproliferative disorder (PTLD),
+  nasopharyngeal carcinoma, EBV-positive DLBCL of the elderly,
+  Hodgkin lymphoma (subset), gastric carcinoma (subset). Population-wide
+  prevention is impractical (>90% adults seropositive globally), so the
+  RF is gated by an additional immunocompromise context — that is where
+  EBV viremia drives clinically actionable elevated risk and EBV-DNA
+  monitoring is standard-of-care. Prevention-persona RedFlag (§20
+  ratification 2026-05-18).
+definition_ua: >-
+  Задокументована хронічна EBV-інфекція (позитивна EBV-ПЛР зі стабільно
+  визначуваною віремією >3 міс) ТА контекст підвищеного ризику
+  EBV-асоційованої малігнізації (стан після пересадки солідного органу
+  або після ТГСК-імуносупресії, вроджений імунодефіцит або коінфекція
+  ВІЛ). EBV — канцероген IARC Group 1, встановлений етіологічний
+  драйвер лімфоми Беркітта, посттрансплантаційного лімфопроліферативного
+  захворювання (PTLD), назофарингеальної карциноми, EBV-позитивної
+  DLBCL похилого віку, лімфоми Ходжкіна (частина), карциноми шлунка
+  (частина). Population-wide prevention непрактична (>90% дорослих
+  серопозитивні глобально), тому RF гейтиться додатковим
+  імунокомпрометованим контекстом — саме там EBV-віремія зумовлює
+  клінічно значущий підвищений ризик і моніторинг EBV-ДНК — standard
+  of care. RedFlag персони prevention (ратифікація §20, 2026-05-18).
+
+trigger:
+  type: lab_value
+  all_of:
+    - any_of:
+        - finding: "ebv_dna_pcr"
+          value: "detectable"
+        - finding: "ebv_viremia_status"
+          value: "positive"
+    - any_of:
+        - finding: "post_transplant_immunosuppression"
+          value: true
+        - finding: "post_hsct_immunosuppression"
+          value: true
+        - finding: "congenital_immunodeficiency"
+          value: true
+        - finding: "hiv_status"
+          value: "positive"
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: infectious
+
+# Anchor to DIS-BURKITT (a canonical EBV-driven lymphoma in OpenOnco KB).
+# PTLD, NPC, EBV+ DLBCL not yet in KB as distinct diseases.
+relevant_diseases:
+  - DIS-BURKITT
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag for EBV-driven cancer prevention in
+  immunocompromised hosts. Unlike HCV/HBV/H. pylori, there is no
+  curative anti-EBV regimen; the prevention pathway is (a) reduce
+  immunosuppression where feasible, (b) preemptive rituximab in
+  post-transplant patients with rising EBV-DNA (per international PTLD
+  guidelines), (c) periodic EBV-DNA monitoring. STUB pending Co-Lead
+  review.
+
+  Gating by additional immunocompromise context is deliberate — EBV
+  seroprevalence is >90% in immunocompetent adults globally, so a
+  RF triggered on EBV alone would fire universally and provide no
+  clinical signal.
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1

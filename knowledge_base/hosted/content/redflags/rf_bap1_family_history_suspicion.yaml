@@ -1,0 +1,43 @@
+id: RF-BAP1-FAMILY-HISTORY-SUSPICION
+definition: >-
+  Family pedigree suggestive of BAP1 tumor predisposition syndrome —
+  confirmed germline BAP1 pathogenic variant in family OR cluster of
+  characteristic BAP1-spectrum tumors (uveal melanoma + cutaneous
+  melanoma + mesothelioma + clear-cell RCC ± atypical Spitz tumors).
+  Prevention-persona RedFlag (§20 v0.2-B).
+definition_ua: >-
+  Сімейний родовід, підозрілий на BAP1 tumor predisposition syndrome —
+  підтверджений family BAP1 patogenic variant АБО cluster характерних
+  BAP1-spectrum пухлин (uveal melanoma + cutaneous melanoma +
+  mesothelioma + clear-cell RCC ± atypical Spitz tumors).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "family_bap1_known_pathogenic_variant"
+      value: true
+    - finding: "family_uveal_melanoma_first_or_second_degree"
+      value: true
+    - finding: "family_bap1_spectrum_cluster"
+      value: true (мезотеліома + меланома + RCC у родині)
+
+clinical_direction: investigate
+severity: major
+priority: 100
+category: other
+risk_category: genetic
+
+relevant_diseases:
+  - DIS-RCC
+  - DIS-MESOTHELIOMA
+
+shifts_algorithm: []
+sources: [SRC-NCCN-BCELL-2025, SRC-ASCO-ACMG-LYNCH-2014]
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for BAP1 syndrome family history. STUB pending two-Co-Lead signoff."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_more_hereditary
+draft_revision: 1

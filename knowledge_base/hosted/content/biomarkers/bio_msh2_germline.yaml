@@ -1,0 +1,27 @@
+id: BIO-MSH2-GERMLINE
+names:
+  preferred: "MSH2 germline pathogenic variant"
+  ukrainian: "MSH2 germline патогенний варіант"
+  english: "MSH2 germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: MSH2
+  gene_hugo_id: HGNC:7325
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements:
+  - "Whole blood or saliva DNA"
+  - "Germline panel + del/dup; consider EPCAM 3' deletion if Lynch-suspicion with MSH2-IHC loss"
+clinical_context:
+  - germline_susceptibility
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources:
+  - SRC-ESMO-CRC-2024
+  - SRC-ASCO-ACMG-LYNCH-2014
+last_reviewed: "2026-05-18"
+notes: "MSH2 germline drives Lynch syndrome. High penetrance similar to MLH1: lifetime CRC ~70-80%, endometrial ~40-60% in women, urothelial elevated. STUB."
+notes_ua: "MSH2 germline drives Lynch syndrome. Висока пенетрантність аналогічна MLH1."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_germline
+draft_revision: 1

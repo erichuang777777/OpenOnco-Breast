@@ -1,0 +1,219 @@
+id: IND-LYNCH-CARRIER-SURVEILLANCE
+plan_track: standard
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-LYNCH-CONFIRMED-CARRIER
+
+# No drug regimen — intervention is structured multi-organ surveillance.
+# Daily aspirin (CAPP2) is reserved for the INTENSIFIED track as a
+# shared-decision discussion point.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    NCCN Genetic / Familial High-Risk: Colorectal surveillance in
+    confirmed Lynch carriers reduces CRC mortality by ~70% (modeled
+    estimates; colonoscopy q1-2y removes adenomas before invasive
+    transformation). Endometrial surveillance (sampling + TVUS) has
+    modest evidence base but is recommended q1-2y from age 30-35 in
+    women. Upper-GI EGD detects early gastric cancer in MLH1 / MSH2
+    families. Urinalysis is low-cost, low-yield but high-utility when
+    positive (microhematuria triggers cystoscopy). Pancreatic
+    surveillance via EUS / MRI is restricted to families with ≥2
+    affected first-degree relatives per consensus guidelines (CAPS
+    consortium).
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track confirmed-carrier surveillance pathway for individuals
+  with a documented germline MMR / EPCAM pathogenic variant. The
+  surveillance protocol below assumes the genetic-test question is
+  already settled — pre-test counseling, panel testing, and variant
+  classification have all been completed prior to this Indication
+  firing.
+
+  **Colorectal (all genes):** Colonoscopy q1-2 years starting age 25,
+  or 10 years before the youngest CRC diagnosis in the family
+  (whichever is earlier). Targeted polypectomy with histologic review
+  of all polyps; expert pathologist review of adenomas / serrated
+  lesions. Cadence shortens to annual after age 40 or with any
+  adenoma history.
+
+  **Endometrial / ovarian (women):** Endometrial sampling + TVUS
+  q1-2 years starting age 30-35 (NCCN protocol; evidence-base modest
+  but recommended). Patient education on abnormal uterine bleeding —
+  early presentation is the strongest factor in mortality reduction.
+  Ovarian surveillance via TVUS + CA-125 is offered but documented to
+  have poor sensitivity for early-stage disease — discussed
+  honestly. Risk-reducing hysterectomy / BSO post-childbearing
+  age 40 is the INTENSIFIED-track option (IND-LYNCH-CARRIER-
+  INTENSIFIED), not surfaced as standard-protocol routine.
+
+  **Urothelial:** Annual urinalysis starting age 30-35 (low-cost,
+  low-yield, but standard-of-care). Microhematuria triggers urology
+  referral with cystoscopy + urine cytology. Annual cytology is
+  optional (low sensitivity; positive findings useful when present).
+
+  **Upper GI (gastric / small bowel / duodenum):** EGD q3-5 years
+  starting age 40 (consider earlier if family history of gastric
+  cancer or H. pylori positive — eradicate H. pylori before
+  surveillance regardless of carrier status).
+
+  **Pancreatic (PDAC):** No routine pancreatic surveillance unless
+  ≥2 first / second-degree relatives with pancreatic adenocarcinoma —
+  if present, referral to pancreatic-cancer high-risk surveillance
+  program (EUS + MRCP annually per CAPS consensus). Discussion
+  documented even when criteria not met.
+
+  **Skin (Muir-Torre variant — MLH1 / MSH2 predominantly):** Annual
+  dermatology examination, with attention to sebaceous neoplasms
+  (sebaceous adenoma, sebaceoma, sebaceous carcinoma) and
+  keratoacanthomas.
+
+  **Brain (Turcot variant — MLH1 / PMS2 predominantly):** Periodic
+  symptom-directed neurologic assessment; no routine MRI brain
+  surveillance recommended in adults (low yield, harm from
+  incidentalomas).
+
+  **CAPP2 aspirin context:** Daily aspirin (300-600 mg) for ≥2 years
+  reduces CRC incidence in confirmed Lynch carriers per CAPP2 trial
+  (Burn et al. 2020 follow-up). Standard-track Indication mentions
+  this as a topic for HCP discussion but does NOT auto-prescribe.
+  Aspirin is surfaced more prominently in the INTENSIFIED track
+  (IND-LYNCH-CARRIER-INTENSIFIED).
+
+  **Cascade testing:** Confirmed carrier status mandates cascade
+  testing offer to all first-degree relatives + cousins on the
+  affected line. This is a counseling responsibility surfaced at every
+  surveillance visit, not a one-time conversation.
+
+  Per CHARTER §11 patient-autonomy framing: surveillance schedules
+  are shared-decision-making with the patient and family. Cadence
+  individualization (e.g., q1y colonoscopy if polyp history;
+  baseline EGD before age 40 if family history dictates) is
+  appropriate.
+
+rationale_ua: >
+  Стандартний-трек шлях спостереження підтверджених носіїв для осіб з
+  задокументованим гермінативним патогенним варіантом MMR / EPCAM.
+  Протокол спостереження нижче припускає, що питання генетичного
+  тестування вже вирішене — pre-test консультування, панельне
+  тестування та класифікація варіантів виконані до спрацювання цієї
+  Indication.
+
+  **Колоректальне (всі гени):** Колоноскопія q1-2 роки з 25-річного
+  віку або 10 років до наймолодшого КРР діагнозу в сім'ї (що раніше).
+  Targeted поліпектомія з гістологічним оглядом усіх поліпів; огляд
+  експертом-патологом аденом / serrated уражень. Cadence коротшає до
+  щорічної після 40 років або при будь-якому анамнезі аденом.
+
+  **Ендометрій / яєчники (жінки):** Біопсія ендометрію + TVUS q1-2
+  роки з 30-35 років (NCCN протокол; доказова база помірна, але
+  рекомендована). Освіта пацієнтки щодо аномальної маткової кровотечі
+  — раннє звернення — найсильніший фактор зменшення смертності.
+  Спостереження яєчників через TVUS + CA-125 пропонується, але має
+  погану чутливість для ранніх стадій — обговорюється чесно.
+  Risk-reducing гістеректомія / BSO post-childbearing вік 40 — це
+  опція INTENSIFIED-треку (IND-LYNCH-CARRIER-INTENSIFIED), не
+  surfaced як стандарт-протокол routine.
+
+  **Уротеліальне:** Щорічний аналіз сечі з 30-35 років (низьковартісно,
+  низькоурожайно, але standard-of-care). Мікрогематурія викликає
+  направлення до урології з цистоскопією + цитологія сечі. Щорічна
+  цитологія опціональна.
+
+  **Верхнє GI (шлунок / тонка кишка / duodenum):** EGD q3-5 років з
+  40 років (раніше при сімейній історії раку шлунка або H. pylori
+  позитивному — ерадикувати H. pylori перед спостереженням незалежно
+  від статусу носія).
+
+  **Підшлункова (PDAC):** Без рутинного панкреатичного спостереження,
+  крім випадків ≥2 родичів першого / другого ступеня з PDAC — тоді
+  направлення на high-risk panreatic програму (EUS + MRCP щорічно).
+
+  **Шкіра (Muir-Torre варіант — переважно MLH1 / MSH2):** Щорічний
+  огляд дерматолога, з увагою до sebaceous новоутворень та
+  кератоакантом.
+
+  **CAPP2 аспірин:** Щоденний аспірин (300-600 мг) ≥2 роки зменшує
+  захворюваність КРР у підтверджених Lynch-носіїв (CAPP2 trial).
+  Стандартний-трек згадує це як тему для обговорення HCP, але НЕ
+  auto-prescribes. Більш помітно surfaced в INTENSIFIED-треку.
+
+  **Cascade тестування:** Підтверджений статус носія вимагає
+  пропонування cascade тестування всім родичам першого ступеня +
+  кузенам на ураженій лінії.
+
+  Per CHARTER §11 framing автономії пацієнта.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_confirmed_carrier
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Individuals with confirmed germline MMR / EPCAM pathogenic
+      variants enter intensive multi-organ surveillance with
+      colonoscopy q1-2y from age 25 (or 10y before youngest family
+      CRC), endometrial sampling + TVUS for women q1-2y from 30-35,
+      annual urinalysis, EGD q3-5y from 40, and pancreatic
+      surveillance restricted to families with ≥2 affected first-
+      degree relatives."
+  - source_id: SRC-ASCO-ACMG-LYNCH-2014
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Confirmed Lynch carriers should be enrolled in a structured
+      surveillance program; ACMG / ASCO recommend cascade testing of
+      first-degree relatives and surveillance modeled on gene-specific
+      penetrance estimates."
+  - source_id: SRC-ESMO-CRC-2024
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Lynch syndrome carriers should have colonoscopy with adenoma
+      removal every 1-2 years; aspirin chemoprophylaxis may be
+      offered per CAPP2 trial data following individualized
+      discussion."
+
+do_not_do:
+  - "Не пропускати cascade-тестування first-degree родичів — кожен візит спостереження має документувати статус відмови / погодження сім'ї."
+  - "Не використовувати general-population screening cadence (10-річна колоноскопія) для Lynch-носія — q1-2y є мінімальним стандартом."
+  - "Не пропонувати risk-reducing гістеректомію / BSO як стандартну частину surveillance — це INTENSIFIED-трек, з обговоренням репродуктивного планування та менопаузальних наслідків."
+  - "Не auto-prescribe аспірин з підтвердженого носійства — це shared-decision-making, з оцінкою кровотечного ризику, GI / ниркової функції, конкомітантної терапії; CAPP2 дані ефективніші у MLH1 / MSH2."
+  - "Не презентувати CA-125 + TVUS як ефективний скринінг яєчників — обмежена чутливість для ранніх стадій; framing має бути чесним."
+
+do_not_do_en:
+  - "Do not skip cascade testing of first-degree relatives — every surveillance visit should document the family's status of accepting / declining genetic testing."
+  - "Do not use general-population screening cadence (10-year colonoscopy) for a confirmed Lynch carrier — q1-2y is the floor."
+  - "Do not offer risk-reducing hysterectomy / BSO as standard surveillance — this is the INTENSIFIED track and requires reproductive-planning and menopausal-sequelae discussion."
+  - "Do not auto-prescribe aspirin from confirmed carrier status — shared-decision-making with bleeding-risk, GI / renal function, and concomitant-therapy assessment; CAPP2 data stronger in MLH1 / MSH2 carriers than MSH6 / PMS2."
+  - "Do not present CA-125 + TVUS as effective ovarian screening — sensitivity for early-stage high-grade serous carcinoma is poor; framing must be honest."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B confirmed-carrier surveillance pathway (Lynch). Two-Clinical-Co-Lead signoff queued. Sibling — IND-LYNCH-CARRIER-INTENSIFIED (aggressive plan_track)."

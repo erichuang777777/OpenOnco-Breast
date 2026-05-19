@@ -1,0 +1,163 @@
+id: ALGO-BOADICEA-V6-BREAST-OVARIAN
+applicable_to_disease: DIS-BREAST
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention. Anchored to DIS-BREAST because breast
+# cancer is the most common BOADICEA output target (>80% of BOADICEA
+# integrations are breast-cancer risk + carrier-probability use cases).
+# Reach extends to DIS-OVARIAN, DIS-PDAC, DIS-PROSTATE.
+purpose: >
+  BOADICEA v6 (Breast and Ovarian Analysis of Disease Incidence and
+  Carrier Estimation Algorithm) — Cambridge integrated risk algorithm
+  delivered via the free CanRisk web tool (canrisk.org). v6 (Lee et al.
+  Genet Med 2019; refinements 2020-2023) is the most comprehensive
+  pedigree-based hereditary breast/ovarian/pancreatic/prostate cancer
+  risk model: integrates BRCA1, BRCA2, PALB2, CHEK2, ATM, RAD51C,
+  RAD51D, BARD1 carrier probabilities + polygenic risk score (PRS313 /
+  PRS77) + mammographic density + lifestyle factors + family pedigree
+  (up to 3+ generations).
+
+  Outputs: 10-year + lifetime breast / ovarian / pancreatic / prostate
+  cancer risk, plus carrier-probability per gene. Calibration: validated
+  against ~500K women in BCAC + ECCAC + UK Biobank consortia. Out-
+  performs Tyrer-Cuzick v8, Manchester, BRCAPRO at integrated risk +
+  multi-gene + multi-cancer prediction. Free academic tool; commercial
+  use requires Cambridge license.
+
+output_indications:
+  - IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# BOADICEA is an integrated-risk + multi-gene-probability model; output
+# routes to HBOC enhanced-surveillance pathway when threshold met.
+# Algorithm routes only to the surveillance Indication to satisfy the
+# algorithm-routing contract; genetic counseling + germline panel +
+# population-risk chemoprevention components are documented in
+# Indication rationale.
+
+decision_tree:
+  - step: 1
+    # High lifetime breast cancer risk ≥30% (NICE high-risk threshold).
+    evaluate:
+      any_of:
+        - condition: "BOADICEA v6 lifetime breast cancer risk ≥30% (NICE high-risk threshold)"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "BOADICEA lifetime breast ≥30% (NICE high-risk) — annual MRI from age 30 + annual mammography from 40, discussion of risk-reducing salpingo-oophorectomy + risk-reducing mastectomy where carrier probability ≥10% or pedigree strongly suggests HBOC, chemoprevention discussion (tamoxifen / raloxifene / aromatase inhibitor). Refer for genetic counseling + germline HBOC panel."
+    if_false:
+      next_step: 2
+  - step: 2
+    # Moderate-high lifetime breast ≥20% (ACS / NCCN MRI threshold).
+    evaluate:
+      any_of:
+        - condition: "BOADICEA v6 lifetime breast cancer risk ≥20% (ACS/NCCN MRI-eligibility threshold)"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "BOADICEA lifetime breast ≥20% (ACS/NCCN moderate-high) — annual MRI + annual mammography, chemoprevention discussion. Genetic counseling referral if pedigree suggests HBOC features OR carrier probability ≥10%."
+    if_false:
+      next_step: 3
+  - step: 3
+    # Carrier-probability threshold ≥10% (NCCN testing-recommendation
+    # cutoff). BOADICEA combines per-gene probabilities into composite.
+    evaluate:
+      any_of:
+        - condition: "BOADICEA v6 carrier probability ≥10% for any of BRCA1, BRCA2, PALB2, CHEK2, ATM, RAD51C, RAD51D, BARD1 (combined or per-gene)"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "BOADICEA carrier probability ≥10% for any HBOC-spectrum gene — refer for germline panel testing. NCCN testing-recommendation threshold met. Pre-test counseling required."
+    if_false:
+      next_step: 4
+  - step: 4
+    # Ovarian / fallopian / primary peritoneal lifetime risk ≥3% (NCCN
+    # risk-reducing salpingo-oophorectomy discussion threshold for non-
+    # carriers with strong family history). BRCA1 carriers ~40-60%
+    # lifetime; BRCA2 ~15-25%; BOADICEA stratifies finely.
+    evaluate:
+      any_of:
+        - condition: "BOADICEA v6 lifetime ovarian / fallopian / primary peritoneal cancer risk ≥3%"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "BOADICEA lifetime ovarian ≥3% — NCCN risk-reducing salpingo-oophorectomy discussion threshold. Genetic counseling + germline panel + transvaginal ultrasound + CA-125 surveillance pending RRSO decision. RRSO typically discussed at age 35-40 for BRCA1 + 40-45 for BRCA2."
+    if_false:
+      next_step: 5
+  - step: 5
+    # Pancreatic lifetime ≥5% (CAPS Consortium 2022 surveillance threshold).
+    evaluate:
+      any_of:
+        - condition: "BOADICEA v6 lifetime pancreatic cancer risk ≥5%"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "BOADICEA lifetime pancreatic ≥5% — annual MRI / MRCP ± EUS pancreatic surveillance per CAPS Consortium 2022. Most common in BRCA2 / PALB2 / ATM carriers with family history of pancreatic cancer. Indication routes to HBOC enhanced surveillance pending dedicated IND-PANCREATIC-HEREDITARY-SURVEILLANCE authoring (v0.2 follow-up)."
+    if_false:
+      result: false
+      notes: "BOADICEA breast lifetime <20%, ovarian lifetime <3%, pancreatic lifetime <5%, carrier probability <10% — average / near-average HBOC risk. Routine screening per USPSTF (mammography q2y age 50-74 per 2024 update; q2y age 40-49 shared decision). Re-evaluate with BOADICEA every 3-5 years or with new family-history events. PRS integration is the v6 advantage — even average-pedigree patients with elevated PRS may have lifetime risk ≥20% (~5% of general population)."
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-NCCN-BREAST-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding BOADICEA v6 (Cambridge
+  CanRisk) integrated risk algorithm (Lee A et al. BOADICEA: a
+  comprehensive breast cancer risk prediction model incorporating
+  genetic and nongenetic risk factors. Genet Med 2019;21:1708-1718.
+  PMID 30643217 for v5; Yang X et al. CanRisk Tool — a web interface
+  for the prediction of breast and ovarian cancer risk and the
+  likelihood of carrying genetic pathogenic variants. Cancer
+  Epidemiol Biomarkers Prev 2021;30:469-473. PMID 33335018 for the v6
+  CanRisk delivery platform; Mavaddat N et al. Polygenic risk scores
+  for prediction of breast cancer and breast cancer subtypes. Am J
+  Hum Genet 2019;104:21-34. PMID 30554720 for the PRS313 component).
+  Primary-paper Source entities (SRC-LEE-2019-BOADICEA-V5, SRC-YANG-
+  2021-CANRISK, SRC-MAVADDAT-2019-PRS313) are v0.2-B authoring backlog.
+
+  Anchored to DIS-BREAST; reach: DIS-OVARIAN, DIS-PDAC, DIS-PROSTATE.
+
+  v6 features (vs v5):
+    - PALB2 carrier probability + risk integration (added 2020)
+    - PRS313 (breast) + PRS77 (ovarian) + PRS84 (prostate) integration
+    - Mammographic density (BI-RADS a-d) integration
+    - Reproductive history (parity, age-at-first-birth, breastfeeding,
+      hormonal contraceptive use, HRT) integration
+    - Pancreatic + prostate cancer modules
+    - Recalibration against UK Biobank + BCAC + ECCAC + multi-ethnic
+      cohorts (Ashkenazi Jewish founder + non-European calibration
+      adjustments)
+
+  Discrimination performance (Lee 2019 + Yang 2021 validation):
+    - AUC ~0.70 for breast cancer (10y) — better than Tyrer-Cuzick v8
+      (~0.66), Gail (~0.61), BCSC (~0.66)
+    - AUC ~0.65 for ovarian cancer (10y)
+    - Carrier-probability calibration excellent at threshold ≥10% —
+      sensitivity ~88%, specificity ~85% for HBOC-spectrum gene
+      detection
+
+  Model availability + licensing:
+    - Free academic tool at https://www.canrisk.org/ (CanRisk
+      delivery platform — Cambridge University)
+    - REST API for academic use (registration required, free)
+    - Commercial integration requires Cambridge license (research-
+      noncommercial-default mirrors OpenOnco CHARTER §2)
+    - No public bulk-download; algorithm here is a declarative scoring
+      rule referencing standardized BOADICEA outputs, not the calculator
+      itself
+
+  Key cautions:
+    - BOADICEA family history quality is rate-limiting — accuracy of
+      cancer reporting in pedigree (especially in great-aunt /
+      grandparent generations) materially affects output
+    - PRS is European-population-derived; calibration on non-European
+      ancestry less reliable; CanRisk publishes ancestry-specific
+      adjustments
+    - PALB2 + ATM + CHEK2 penetrance estimates are imprecise
+      (penetrance still being refined in 2024-2026 multi-cohort
+      studies); near-threshold cases warrant counselor discussion
+
+  Cited from RF-BRCA-HBOC-FAMILY-HISTORY-SUSPICION + RF-INTEGRATED-
+  BREAST-OVARIAN-RISK trigger logic. ALGO-TYRER-CUZICK-V8-BREAST and
+  ALGO-MANCHESTER-BRCA can be applied jointly with BOADICEA; modern
+  Cambridge consensus prefers BOADICEA v6 as primary, others as
+  cross-check.
+draft: true

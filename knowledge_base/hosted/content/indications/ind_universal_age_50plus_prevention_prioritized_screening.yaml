@@ -1,0 +1,168 @@
+id: IND-UNIVERSAL-AGE-50PLUS-PREVENTION-PRIORITIZED-SCREENING
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-UNIVERSAL-AGE-50PLUS-SCREENING-GAP
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Alternative-track companion. Patient declines comprehensive
+    catch-up across all USPSTF / NCCN-recommended modalities
+    (access barriers, prior procedure-related fear, limited
+    healthcare-engagement capacity, declining intent for invasive
+    procedures) — receives prioritized highest-yield single-
+    modality screening based on patient demographics + risk-factor
+    profile + access constraints. Prioritization typically:
+    (1) CRC FIT-stool test q1y (non-invasive, low-cost, ~70-80%
+    sensitivity for CRC, can be home-administered) OR colonoscopy
+    if access permits; (2) breast mammography q2y for women 40-74;
+    (3) cervical hr-HPV / co-test / cytology if not previously
+    completed in past 5 years; (4) LDCT only if USPSTF-eligible
+    AND patient consents. Single-modality engagement achieves
+    partial benefit relative to comprehensive program but
+    substantially exceeds no-screening baseline. Re-engagement
+    opportunity preserved for subsequent visits. Per CHARTER §11
+    patient-autonomy framing — declining comprehensive plan is
+    legitimate but framed as suboptimal vs full-coverage
+    comparator.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-UNIVERSAL-AGE-50PLUS-
+  PREVENTION-COMPREHENSIVE-CATCHUP. Patient declines comprehensive
+  catch-up across all modalities — receives prioritized highest-
+  yield single-modality screening.
+
+  **(1) Highest-yield modality prioritization** per patient
+  demographics + risk-factor profile + access:
+  - For all adults ≥50: CRC screening — FIT q1y as non-invasive
+    first choice (~70-80% sensitivity for CRC, can be home-
+    administered, low cost). If FIT positive → diagnostic
+    colonoscopy. If colonoscopy access permits and patient
+    consents → direct colonoscopy is gold-standard.
+  - For women 40-74: breast mammography q2y (USPSTF Grade B,
+    2024). Highly accessible in most settings.
+  - For women 21-65 with cervical-screening gap: hr-HPV / co-test
+    / cytology per age-appropriate modality.
+  - For USPSTF-eligible smokers: LDCT only if patient consents
+    after full informed discussion of benefit + harms.
+
+  **(2) Reassurance + symptom-vigilance education.** Patient
+  declining specific modalities receives symptom-vigilance
+  education for cancers not screened: persistent change in bowel
+  habits / hematochezia / unintended weight loss (CRC), breast
+  lump / nipple discharge (breast), postmenopausal bleeding /
+  abnormal cervical discharge (cervical / endometrial), persistent
+  cough / hemoptysis / dyspnea / unintended weight loss (lung),
+  difficulty voiding / hematuria (prostate / bladder / kidney).
+
+  **(3) Re-engagement pathway.** Document declined-modalities
+  determination explicitly + offer re-engagement at each annual
+  visit. Many patients who initially decline comprehensive
+  screening eventually engage with additional modalities when
+  motivational triggers shift (new family cancer event, peer
+  experience, change in healthcare access).
+
+  **(4) Access coordination.** For patients with documented access
+  barriers (geographic, financial, insurance, language), proactively
+  coordinate referral pathways (NSZU Family Doctor in Ukraine,
+  Medicare-covered screening in US, NHS-equivalent in UK / EU)
+  rather than accepting access barrier as immutable.
+
+  **(5) Life-expectancy + comorbidity overlay.** For patients
+  age ≥75 or with significant competing comorbidity, individualize
+  screening recommendations: continue when life expectancy ≥10
+  years and patient values screening; discontinue when life
+  expectancy <5 years OR when screening would not change management.
+
+  Per CHARTER §11 patient-autonomy framing — declining comprehensive
+  plan is legitimate but framed as suboptimal vs full-coverage
+  comparator.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від
+  comprehensive catch-up — отримує prioritized highest-yield
+  single-modality screening.
+
+  **(1) Highest-yield modality prioritization:**
+  - Усі дорослі ≥50: CRC screening — FIT q1р як non-invasive
+    first choice. Якщо FIT positive → diagnostic колоноскопія.
+  - Жінки 40-74: breast мамографія q2р (USPSTF Grade B).
+  - Жінки 21-65 з cervical-screening gap: hr-HPV / co-test /
+    cytology.
+  - USPSTF-eligible smokers: LDCT лише при consent після full
+    informed discussion benefit + harms.
+
+  **(2) Reassurance + symptom-vigilance education** для cancers
+  не screened: persistent change у bowel habits / hematochezia /
+  unintended weight loss (CRC), breast lump / nipple discharge
+  (breast), postmenopausal bleeding (cervical / endometrial),
+  persistent cough / hemoptysis (lung), difficulty voiding /
+  hematuria (prostate / bladder / kidney).
+
+  **(3) Re-engagement pathway.** Document declined-modalities
+  determination explicitly + offer re-engagement.
+
+  **(4) Access coordination** для patients з documented access
+  barriers — proactively coordinate referral pathways (NSZU /
+  Medicare / NHS).
+
+  **(5) Life-expectancy + comorbidity overlay.** Для patients
+  ≥75 або з significant competing comorbidity, individualize
+  recommendations.
+
+  Per CHARTER §11 patient-autonomy framing.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1
+
+sources:
+  - source_id: SRC-USPSTF-CRC-2021
+    position: context
+  - source_id: SRC-USPSTF-BREAST-2024
+    position: context
+  - source_id: SRC-USPSTF-CERVICAL-2018
+    position: context
+
+do_not_do:
+  - "Не презентувати single-modality screening як еквівалент comprehensive plan — outcomes inferior."
+  - "Не пропускати symptom-vigilance education для declined modalities — symptom-prompted evaluation є backup."
+  - "Не accept access barrier як immutable — proactively coordinate NSZU / Medicare / NHS referral pathways."
+  - "Не deny FIT як non-invasive CRC first-choice — substantially exceeds no-screening baseline."
+  - "Не призначати LDCT без USPSTF eligibility verification — false-positive harm + radiation поза eligibility window."
+
+do_not_do_en:
+  - "Do not present single-modality screening as equivalent to comprehensive plan — outcomes are inferior."
+  - "Do not skip symptom-vigilance education for declined modalities — symptom-prompted evaluation is the backup."
+  - "Do not accept the access barrier as immutable — proactively coordinate NSZU / Medicare / NHS referral pathways."
+  - "Do not deny FIT as the non-invasive CRC first-choice — it substantially exceeds the no-screening baseline."
+  - "Do not order LDCT without USPSTF eligibility verification — false-positive harm + radiation outside the eligibility window."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for universal age ≥50 + screening gap. §15.2 C4 ≥2-tracks invariant. Two-Clinical-Co-Lead signoff queued."

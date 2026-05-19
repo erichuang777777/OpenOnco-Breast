@@ -1,0 +1,91 @@
+id: RF-IATROGENIC-AZATHIOPRINE-LONGTERM-PREVENTION
+definition: >-
+  Long-term thiopurine exposure ≥3-5 years — azathioprine or its active
+  metabolite 6-mercaptopurine (6-MP) — across inflammatory bowel disease
+  (Crohn disease, ulcerative colitis), rheumatoid arthritis, systemic
+  lupus erythematosus, autoimmune hepatitis, transplant maintenance,
+  and other autoimmune indications. IARC Group 1 carcinogen
+  (azathioprine). Mechanism: thio-purine metabolites incorporate into
+  DNA → impaired mismatch-repair + photo-sensitization (UV-A absorption
+  by 6-thioguanine in DNA generates reactive oxygen species). Risk
+  profile: lymphoma 4-6x population risk (predominantly diffuse large
+  B-cell lymphoma; in some IBD cohorts hepatosplenic T-cell lymphoma
+  appears with anti-TNF combination — see separate anti-TNF RF);
+  non-melanoma skin cancer (especially SCC) 4-10x background, magnitude
+  scaling with cumulative dose-years and UV exposure; modest melanoma
+  signal; in IBD specifically: Epstein-Barr virus-driven post-thiopurine
+  lymphoma in EBV-seronegative young men (avoid azathioprine in EBV-
+  seronegative young-adult IBD patients per ECCO 2019). Prevention-
+  persona RedFlag — emphasis on annual skin examination + sun protection,
+  EBV serology baseline check in young adults considering azathioprine,
+  shared-decision discussion of indication continuation vs alternatives
+  (methotrexate for RA, vedolizumab / ustekinumab for IBD where
+  acceptable), HPV-vaccination catch-up where applicable, B-symptom
+  awareness. (§20 v0.3 iatrogenic pilot).
+definition_ua: >-
+  Тривала експозиція thiopurines ≥3-5 років — azathioprine або
+  активного метаболіту 6-mercaptopurine (6-MP) — у IBD (хвороба
+  Крона, виразковий коліт), ревматоїдному артриті, СЧВ,
+  autoimmune hepatitis, transplant maintenance, інших autoimmune
+  показах. IARC Group 1 канцероген (azathioprine). Mechanism:
+  thiopurine метаболіти incorporate у DNA → impaired mismatch-
+  repair + photo-sensitization (UV-A absorption за 6-thioguanine
+  у DNA generates ROS). Risk profile: лімфома 4-6x population
+  risk (переважно DLBCL); non-melanoma skin cancer (особливо SCC)
+  4-10x background, magnitude scaling з cumulative dose-years
+  і UV exposure; модерний melanoma signal; у IBD specifically:
+  EBV-driven post-thiopurine lymphoma у EBV-seronegative young
+  men (avoid azathioprine у EBV-seronegative young-adult IBD
+  per ECCO 2019). RedFlag персони prevention — annual skin exam
+  + sun protection, EBV serology baseline у young adults, shared-
+  decision discussion індикації vs alternatives, HPV-vaccination
+  catch-up, B-symptom awareness.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "azathioprine_continuous_use_ge_3y"
+      value: true
+    - finding: "mercaptopurine_continuous_use_ge_3y"
+      value: true
+    - finding: "thiopurine_cumulative_use_ge_3y"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: iatrogenic
+
+relevant_diseases:
+  - DIS-DLBCL-NOS
+  - DIS-BCC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-SKIN-2025
+  - SRC-IARC-MONO-100B-2012
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag for long-term ≥3y thiopurine
+  (azathioprine / 6-MP) exposure. Engine routes to PreventionPlan
+  recommending (1) annual whole-body skin exam by dermatologist
+  + aggressive sun-protection counseling, (2) EBV serology
+  baseline check in young adults pre-initiation (avoid initiation
+  in EBV-seronegative young men per ECCO 2019), (3) annual
+  B-symptom + lymphadenopathy review, (4) shared-decision
+  discussion of indication continuation vs alternatives (MTX for
+  RA, biologics for IBD) at year 5, (5) HPV vaccination catch-up
+  where applicable. Anchored to DIS-DLBCL-NOS (lymphoma) +
+  DIS-BCC (closest skin-cancer anchor for SCC and BCC). STUB
+  pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_iatrogenic_batch3
+draft_revision: 1

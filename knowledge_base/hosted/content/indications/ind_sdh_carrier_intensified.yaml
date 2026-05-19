@@ -1,0 +1,160 @@
+id: IND-SDH-CARRIER-INTENSIFIED
+plan_track: aggressive
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-PHEOCHROMOCYTOMA
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-SDH-CONFIRMED-CARRIER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Intensified track layers two options on top of standard SDHx
+    surveillance: (1) earlier baseline imaging (age 5 in SDHB pediatric
+    kindreds — when family-specific proband has documented onset before
+    age 10); (2) closer biochemistry interval (q6mo plasma metanephrines
+    + 3-MT in highest-risk subset, with functional 68Ga-DOTATATE PET
+    used for any biochemical signal). Trade-off: increased imaging /
+    biochemistry burden, more lifetime surveillance visits, anxiety
+    burden in pediatric carriers — all shared-decision-making points
+    within the family. Goal: maximize lead time for SDHB-associated
+    aggressive paragangliomas (metastatic-onset event is the dominant
+    SDHB mortality driver).
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Aggressive-track confirmed-carrier pathway layered on top of the
+  IND-SDH-CARRIER-SURVEILLANCE standard protocol.
+
+  **Foundation:** All standard surveillance from IND-SDH-CARRIER-
+  SURVEILLANCE applies (subunit-risk-stratified imaging cadence,
+  plasma metanephrines + 3-MT q1y, head + neck MRI q2-3y, abdominal
+  MRI q1y, mandatory pre-operative alpha-blockade for any PPGL
+  resection, paternal-inheritance counseling for SDHD / SDHAF2).
+
+  **Intensification 1 — Earlier baseline imaging (age 5 in SDHB
+  pediatric kindreds):** When the family-specific proband has
+  documented PPGL or RCC before age 10, advance baseline whole-body
+  MRI from age 6-10 to age 5 (or earlier if proband even younger).
+  Trade-off: requires age-appropriate sedation / general anesthesia
+  for compliant pediatric MRI; high family counseling burden;
+  cumulative MRI-related contrast considerations across decades.
+
+  **Intensification 2 — Closer biochemistry interval (q6mo plasma
+  metanephrines + 3-MT) in highest-risk subset:** For SDHB carriers
+  with prior PPGL history (post-resection surveillance) or for SDHB
+  carriers in families with metastatic-PPGL pedigree, advance
+  biochemistry from annual to q6mo. Any abnormal biochemical signal
+  triggers prompt functional imaging — 68Ga-DOTATATE PET (preferred
+  for SDHx-PPGL given high somatostatin-receptor-2 expression) or
+  18F-FDOPA PET as alternative. Cross-sectional MRI for anatomic
+  staging follows positive functional study.
+
+  **Other intensification considerations (not core to this track):**
+    - Empirical somatostatin-receptor-targeted therapy in asymptomatic
+      carrier is NOT indicated (octreotide, lanreotide reserved for
+      symptomatic functional or metastatic disease).
+    - Empirical PRRT (peptide receptor radionuclide therapy with
+      177Lu-DOTATATE) is NOT indicated in asymptomatic carrier —
+      reserved for metastatic / progressive disease.
+    - Pre-conception genetic counseling (preimplantation genetic
+      testing, prenatal diagnosis options) appropriate for carriers of
+      childbearing age — for SDHD / SDHAF2 carriers must include
+      paternal-inheritance counseling specifically.
+
+  **Cascade testing remains continuous:** every visit re-confirms
+  family testing status; critical for pediatric kindred and for
+  paternal-line identification in SDHD / SDHAF2.
+
+  Per CHARTER §11: intensified pediatric surveillance and closer
+  biochemistry interval are shared-decision-making domains.
+
+rationale_ua: >
+  Aggressive-трекова Indication: накладена поверх IND-SDH-CARRIER-
+  SURVEILLANCE.
+
+  **Foundation:** Усе standard з IND-SDH-CARRIER-SURVEILLANCE.
+
+  **Інтенсифікація 1 — Earlier baseline imaging (age 5 у SDHB
+  pediatric кіндредах):** Коли family-specific proband має documented
+  PPGL / RCC до 10 років — advance baseline whole-body MRI з 6-10 до 5
+  років (або раніше). Trade-off: age-appropriate sedation / general
+  anesthesia потрібна для compliant pediatric MRI; high family
+  counseling burden; cumulative MRI contrast considerations.
+
+  **Інтенсифікація 2 — Closer biochemistry (q6mo plasma metanephrines
+  + 3-MT) у highest-risk subset:** SDHB carriers з prior PPGL history
+  (post-resection surveillance) або в metastatic-PPGL pedigree —
+  advance з annual до q6mo. Будь-який abnormal biochemical signal
+  triggers prompt functional imaging — 68Ga-DOTATATE PET (preferred
+  для SDHx-PPGL через high SSTR2 expression) або 18F-FDOPA PET як
+  alternative. Cross-sectional MRI для anatomic staging follows
+  positive functional study.
+
+  **Інші міркування:**
+    - Empirical somatostatin-receptor-targeted therapy у asymptomatic
+      carrier — NOT indicated.
+    - Empirical PRRT (177Lu-DOTATATE) — NOT indicated у asymptomatic
+      carrier; реверв для metastatic / progressive disease.
+    - Pre-conception genetic counseling (PGT, prenatal diagnosis)
+      appropriate для carriers of childbearing age; для SDHD / SDHAF2
+      counseling має включати paternal-inheritance specifically.
+
+  **Cascade тестування continuous;** critical для pediatric кіндредів
+  та paternal-line identification у SDHD / SDHAF2.
+
+  Per CHARTER §11: shared-decision-making домен.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02b_confirmed_carriers_additional
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Earlier baseline imaging and closer biochemistry interval are
+      appropriate intensifications for confirmed SDHx carriers with
+      family-specific pediatric-onset PPGL or post-resection
+      metastatic-risk kindreds, following shared decision-making."
+
+do_not_do:
+  - "Не advanceувати baseline imaging до age 5 без family-specific pediatric-onset proband — sedation / anesthesia burden + lifelong cumulative surveillance не виправдані."
+  - "Не використовувати empirical PRRT (177Lu-DOTATATE) у asymptomatic carrier — реверв для metastatic / progressive disease."
+  - "Не пропускати paternal-inheritance counseling у SDHD / SDHAF2 pre-conception genetic counseling — maternal vs paternal transmission кардинально різні implications."
+  - "Не призначати empirical somatostatin-receptor-targeted therapy (octreotide / lanreotide) у asymptomatic carrier — реверв для symptomatic functional або metastatic disease."
+  - "Не intensifyувати biochemistry до q6mo у всіх SDHB carriers — реверв для prior-PPGL history або metastatic-risk pedigree."
+
+do_not_do_en:
+  - "Do not advance baseline imaging to age 5 without family-specific pediatric-onset proband — sedation / anesthesia burden and lifelong cumulative surveillance are not justified otherwise."
+  - "Do not use empirical PRRT (177Lu-DOTATATE) in an asymptomatic carrier — reserve for metastatic / progressive disease."
+  - "Do not skip paternal-inheritance counseling in SDHD / SDHAF2 pre-conception genetic counseling — maternal vs paternal transmission has fundamentally different implications."
+  - "Do not prescribe empirical somatostatin-receptor-targeted therapy (octreotide / lanreotide) in an asymptomatic carrier — reserve for symptomatic functional or metastatic disease."
+  - "Do not intensify biochemistry to q6mo in all SDHB carriers — reserve for prior-PPGL history or metastatic-risk pedigree."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B confirmed-carrier intensified track (SDH-deficiency syndromes). Sibling — IND-SDH-CARRIER-SURVEILLANCE. §15.2 C4 ≥2-tracks invariant. Severity CRITICAL inherited from RF given SDHB pediatric-onset aggressive paraganglioma + RCC risk."

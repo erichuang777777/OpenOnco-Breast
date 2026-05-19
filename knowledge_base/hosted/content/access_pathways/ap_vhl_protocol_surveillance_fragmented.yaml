@@ -1,0 +1,129 @@
+id: AP-VHL-PROTOCOL-SURVEILLANCE-FRAGMENTED
+name: "VHL surveillance protocol (MRI brain/spine + ophthalmology + metanephrines + audiometry) — fragmented across UA clinics"
+name_ua: "Протокол спостереження VHL (МРТ мозок/хребет + офтальмологія + метанефрини + аудіометрія) — фрагментований через кілька клінік України"
+
+# Multi-test AP — surveillance program spans ophthalmology, MRI brain,
+# MRI abdomen, plasma metanephrines, audiometry. Engine-side AccessMatrix
+# не використовує `applies_to_test_ids`, але pacient-facing render
+# та маршрутна документація — використовує. Також binding до
+# MonitoringSchedule MS-VHL-MULTI-ORGAN-SURVEILLANCE через
+# extension-поле applies_to_monitoring_ids (extra="allow").
+applies_to_drug_ids: []
+applies_to_regimen_ids: []
+applies_to_test_ids:
+  - TEST-MRI-BRAIN-CONTRAST
+  - TEST-MRI-ABDOMEN-RCC
+  - TEST-OPHTHALMOLOGIC-EXAM
+  - TEST-METANEPHRINES-PLASMA-PARAGANGLIOMA
+applies_to_monitoring_ids:
+  - MS-VHL-MULTI-ORGAN-SURVEILLANCE
+
+pathway_type: mixed_fragmented
+# Канонічний enum-набір не охоплює multi-clinic-fragmented-doctrine.
+# Розширення вперед-сумісним value per
+# test_pathway_type_is_freeform_but_documented.
+
+country_options: ["UA"]
+
+cost_orientation:
+  currency: UAH
+  min: 8000
+  max: 35000
+  per_unit: dose
+  notes: >
+    Annual surveillance cost для adult VHL-carrier station 2026-05
+    (typical OOP, fragmented private/public mix):
+    - Annual ophthalmologic exam (dilated retinal exam by experienced
+      ophthalmologist) — 800-2500 UAH (частково покривається сімейним
+      лікарем; для retina-specialist exam — приватно).
+    - Annual MRI abdomen with contrast (RCC + pancreatic NET + adrenal
+      pheo surveillance) — 4500-12 000 UAH OOP (НСЗУ не покриває
+      surveillance-показання).
+    - Q2y MRI brain + total spine з контрастом (CNS hemangioblastoma)
+      — 5000-12 000 UAH OOP per session, амортизовано — 2500-6000 UAH
+      annual.
+    - Annual plasma free metanephrines OR 24h urinary fractionated
+      metanephrines — 800-2500 UAH OOP у приватних лабораторіях.
+    - Q2-3y audiometry (endolymphatic sac tumor) — 300-800 UAH OOP.
+
+    Total annual OOP — приблизно 8000-25 000 UAH (стандартний рік);
+    biennial brain/spine MRI рік — 12 000-35 000 UAH. НСЗУ-покриття
+    обмежено: deemed-justified медичним станом ускладнення → доступ
+    через стаціонарний пакет 4000 / 4001; рутинне surveillance
+    без active-lesion-симптомів — OOP.
+
+typical_lead_time_weeks: [4, 16]
+
+contact_pattern: >
+  В Україні станом на 2026-05 НЕ існує консолідованих VHL-клінік
+  (як, наприклад, Charité VHL-Center у Берліні або NIH VHL Clinical
+  Care Center у США). Pacient'и з confirmed germline VHL координують
+  surveillance самостійно або через медичного-генетика регіонального
+  онкоцентру, який скеровує до окремих фахівців:
+  - Офтальмолог-retinal-specialist (приватні центри Київ, Львів;
+    Київський офтальмологічний центр) — annual exam.
+  - Радіолог з MRI experience (приватні діагностичні центри;
+    обласні онкоцентри обмежено).
+  - Ендокринолог-онколог для metanephrines interpretation + pheo
+    workup.
+  - Нейрохірург / невролог при появі CNS hemangioblastoma симптоматики.
+  - Урологія / онко-уролог для RCC surveillance + nephron-sparing
+    surgery planning.
+  - Сурдолог / отоларинголог для audiometry та endolymphatic sac
+    monitoring.
+  - Pediatric-генетик якщо carrier у дитячому віці (Київський
+    Інститут педіатрії / акушерства / гінекології).
+
+  Усі візити часто плануються окремо, з різними lead-time'ами;
+  pacients частіше пропускають елементи protocol через втому
+  координації або фінансові обмеження.
+
+eligibility_caveats:
+  - "Documented germline VHL pathogenic / likely-pathogenic variant"
+  - "Subtype-stratification (Type 1 — truncating, low pheo risk; Type 2A/B/C — missense, high pheo risk) — впливає на baseline frequency screening"
+  - "Pediatric-onset (birth-18) — окремий cadence per pediatric_surveillance phase у MS-VHL-MULTI-ORGAN-SURVEILLANCE"
+  - "Кумулятивна радіація — обмежити iodinated contrast CT (надавати перевагу MRI)"
+  - "Belzutifan (HIF-2α inhibitor) — НЕ зареєстрований у UA станом на 2026-05; named-patient import або EAP-програма Merck для documented VHL carrier'ів з прогресуючими ураженнями (див. AccessPathway-related drug_belzutifan.yaml notes)"
+
+requires_documentation:
+  - "Genetic-test report з VHL germline variant"
+  - "Pedigree + carrier-cascade-status FDR / SDR"
+  - "Попередні візуалізації (baseline) для comparison"
+  - "Список усіх лікарів-учасників surveillance team (рекомендуємо centralization у регіональному онкоцентрі)"
+  - "Belzutifan-EAP-application documents (якщо planned)"
+
+verified_by: null
+last_verified: "2026-05-18"
+
+sources:
+  - SRC-NCCN-KIDNEY-2025
+  - SRC-NCCN-CNS-2025
+
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  VHL — multi-organ syndrome, що вимагає інтегрованого surveillance
+  через 6+ дисциплін: ophthalmology, neuro-imaging, abdominal-imaging,
+  endocrinology, urology, otology, neurosurgery. Міжнародний standard
+  (NCCN Kidney v3.2025; VHL Alliance Active Surveillance Guidelines;
+  Binderup 2022 J Med Genet) — annual multidisciplinary visit з
+  централізованою координацією.
+
+  В Україні відсутній VHL-spezialized clinic; pacient'и фрагментовано
+  отримують елементи протоколу через окремі візити, що:
+  1) ускладнює compliance (часто пропускаються елементи);
+  2) затримує detection нових ушкоджень (annual coordinated visit
+     prevents fragmentation);
+  3) ускладнює нaviga belzutifan-decision (FDA 2021 approval; не
+     зареєстрований UA; вимагає cross-disciplinary tumor board
+     review).
+
+  Розглянути prevention-CHARTER pilot: централізована VHL-clinic
+  у регіональному онкоцентрі (Київ або Львів) з annual coordinated
+  visit моделлю — потенційний high-value impact для української
+  VHL-когорти (estimated prevalence 1:36 000, що дає ~1100 active
+  carrier'ів у українській популяції). Mainstreaming VHL clinic
+  можливо через існуючі онко-диспансери з мінімальними додатковими
+  resursami — питання організаційної volу.
+
+  AccessPathway render-time-only.

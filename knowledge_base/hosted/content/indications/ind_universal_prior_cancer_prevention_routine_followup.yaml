@@ -1,0 +1,176 @@
+id: IND-UNIVERSAL-PRIOR-CANCER-PREVENTION-ROUTINE-FOLLOWUP
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-UNIVERSAL-PRIOR-CANCER-SECONDARY-RISK
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Alternative-track companion. Patient declines structured
+    survivorship-program enrollment (geographic access, surveillance
+    fatigue, declining intent for late-effect-specific cadence,
+    psychological avoidance) — receives routine internal-medicine
+    follow-up with age-appropriate population-screening cadence +
+    treatment-exposure-summary documentation handed off to primary-
+    care + structured re-engagement opportunity at each annual
+    visit. Outcomes inferior to structured-program comparator
+    (Cardiotoxicity SIR ~5-10× in exposure cohort with no
+    cardiotoxicity surveillance vs <1.5× with q1-2y echo
+    surveillance per CCSS subgroup analysis). Per CHARTER §11
+    patient-autonomy framing — declining structured program is
+    legitimate but framed as suboptimal vs intervention-arm
+    comparator.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-UNIVERSAL-PRIOR-CANCER-
+  PREVENTION-SURVIVORSHIP-PROGRAM. Patient declines structured
+  survivorship-program enrollment — receives routine internal-
+  medicine follow-up.
+
+  **(1) Treatment-exposure-summary documentation handed off to
+  primary-care.** Even when patient declines structured program,
+  the treatment summary is the highest-value handoff artifact.
+  Document for primary-care provider: cancer type / stage / year,
+  chemotherapy exposures with cumulative doses, radiation fields
+  / doses, surgery, HSCT (if applicable), known late-effect risks
+  per COG-LTFU / NCCN risk-stratification. Patient also receives
+  personal copy.
+
+  **(2) Age-appropriate population-screening cadence.** USPSTF /
+  NCCN baseline modalities applied: CRC q10y colonoscopy 45-75,
+  breast q2y mammography 40-74, cervical hr-HPV / co-test q5y
+  (modalities vary by age), LDCT if USPSTF-eligible, prostate
+  PSA shared-decision 55-69. Patient retains right to engage
+  with selective enhanced surveillance (e.g., consent to breast
+  MRI as supplemental imaging in chest-RT-exposed cohort even if
+  declining full survivorship program).
+
+  **(3) Symptom-vigilance education for high-risk late effects.**
+  Heightened pattern-recognition for exposure-driven late-effect
+  features:
+  - Cardiotoxicity (anthracycline / chest-RT exposure):
+    dyspnea, orthopnea, exercise intolerance, edema, palpitations
+    → cardiology referral.
+  - Secondary breast cancer (chest-RT female): breast lump,
+    nipple discharge → mammography + breast MRI.
+  - Secondary thyroid cancer (neck-RT): palpable thyroid mass,
+    new hoarseness → thyroid US + endocrinology.
+  - Secondary CRC (abdominal RT): change in bowel habits,
+    hematochezia, unintended weight loss → colonoscopy.
+  - Secondary urothelial cancer (cyclophosphamide): hematuria
+    → cystoscopy.
+  - Secondary t-MDS / AML (alkylator + topoisomerase-II + TBI):
+    persistent cytopenia, fatigue, easy bruising / bleeding →
+    CBC + smear + bone-marrow biopsy.
+  - Endocrine late-effects (neck-RT / cranial-RT / TBI):
+    cold intolerance, weight gain, fatigue, growth-failure in
+    pediatric cohort → TSH + pituitary axis evaluation.
+
+  **(4) Re-engagement pathway.** Document declined-program
+  determination explicitly + offer re-engagement at each annual
+  visit. Many patients who initially decline structured
+  survivorship eventually engage when late-effect symptoms
+  emerge or when supportive-care needs (cardiac, endocrine,
+  reproductive, psychosocial) become apparent.
+
+  **(5) Psychosocial / reproductive-health overlay.** Even in
+  routine-follow-up track, screen at each visit for depression /
+  anxiety / cancer-related PTSD (PHQ-9 + GAD-7 + cancer-survivor-
+  specific tools); offer reproductive-counseling referral for
+  those of reproductive age.
+
+  Per CHARTER §11 patient-autonomy framing — declining structured
+  program is legitimate but framed as suboptimal vs intervention-
+  arm comparator.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від
+  structured survivorship-program enrollment — отримує routine
+  internal-medicine follow-up.
+
+  **(1) Treatment-exposure-summary documentation handed off to
+  primary-care.** Treatment summary є highest-value handoff artifact
+  навіть при declined-program scenario. Document для primary-care:
+  cancer type / stage / year, chemo + cumulative doses, radiation
+  fields / doses, surgery, HSCT, known late-effect risks.
+
+  **(2) Age-appropriate population-screening cadence** per USPSTF /
+  NCCN baseline. Patient retains right to selective enhanced
+  surveillance.
+
+  **(3) Symptom-vigilance education для high-risk late effects:**
+  - Cardiotoxicity (anthracycline / chest-RT): dyspnea, orthopnea,
+    edema → cardiology.
+  - Secondary breast cancer (chest-RT female): breast lump →
+    mammography + breast MRI.
+  - Secondary thyroid cancer (neck-RT): palpable mass → thyroid US.
+  - Secondary CRC (abdominal RT): change у bowel habits → колоноскопія.
+  - Secondary urothelial cancer (cyclophosphamide): hematuria →
+    cystoscopy.
+  - Secondary t-MDS / AML (alkylator + topoisomerase-II + TBI):
+    persistent cytopenia → CBC + smear.
+
+  **(4) Re-engagement pathway.** Document declined-program
+  determination explicitly + offer re-engagement при кожному
+  annual visit.
+
+  **(5) Psychosocial / reproductive-health overlay** (PHQ-9 +
+  GAD-7 + cancer-survivor-specific tools; reproductive-counseling
+  referral для reproductive-age cohort).
+
+  Per CHARTER §11 patient-autonomy framing.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1
+
+sources:
+  - source_id: SRC-COG
+    position: context
+  - source_id: SRC-NCCN-BREAST-2025
+    position: context
+  - source_id: SRC-NCCN-COLON-2025
+    position: context
+
+do_not_do:
+  - "Не пропускати treatment-exposure summary handoff до primary-care — навіть при declined-program scenario це highest-value artifact."
+  - "Не презентувати routine population-screening як equivalent до survivorship program у exposed cohort — late-effect screening gaps significantly увеличеваять mortality."
+  - "Не пропускати symptom-vigilance education для high-risk late effects — pattern-recognition критична коли cadence-based surveillance declined."
+  - "Не закривати door на re-engagement — більшість патієнтів eventually engage коли late-effect symptoms emerge."
+  - "Не нормалізувати late-onset cardiotoxicity symptoms у anthracycline / chest-RT exposed cohort десятиліттями post-treatment — pattern-recognition різниця між prompt cardiology referral і missed diagnosis."
+
+do_not_do_en:
+  - "Do not skip treatment-exposure summary handoff to primary-care — even in declined-program scenarios it is the highest-value artifact."
+  - "Do not present routine population-screening as equivalent to survivorship program in the exposed cohort — late-effect screening gaps significantly increase mortality."
+  - "Do not skip symptom-vigilance education for high-risk late effects — pattern recognition is critical when cadence-based surveillance is declined."
+  - "Do not close the door on re-engagement — most patients eventually engage when late-effect symptoms emerge."
+  - "Do not normalize late-onset cardiotoxicity symptoms in the anthracycline / chest-RT exposed cohort decades post-treatment — pattern recognition is the difference between prompt cardiology referral and missed diagnosis."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for universal prior-cancer survivor flag. §15.2 C4 ≥2-tracks invariant. Two-Clinical-Co-Lead signoff queued."

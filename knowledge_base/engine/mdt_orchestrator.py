@@ -1462,8 +1462,17 @@ def _bootstrap_provenance(
             summary=f"Підняте питання для {q.owner_role} (blocking={q.blocking}): {q.question}",
         ))
 
-    # Per-fired-RedFlag events (one event per RedFlag, deduplicated across steps)
+    # Per-fired-RedFlag events (one event per RedFlag, deduplicated across steps).
+    # `plan.algorithm_id` is Optional (KSS §20.2): treatment plans always carry
+    # an ALGO-* id, but PreventionPlan output (RF-driven routing, no Algorithm
+    # walked) sets it to None. Substitute a human-readable fallback so the
+    # summary never reads "алгоритму None." for prevention-path plans.
     if plan and plan.trace:
+        algo_label = (
+            plan.algorithm_id
+            if plan.algorithm_id
+            else "профілактичного маршруту"
+        )
         seen_rfs: set[str] = set()
         for entry in plan.trace:
             for rf_id in entry.get("fired_red_flags") or []:
@@ -1478,7 +1487,7 @@ def _bootstrap_provenance(
                     target_id=rf_id,
                     summary=(
                         f"RedFlag {rf_id} спрацював на step {entry.get('step')} "
-                        f"алгоритму {plan.algorithm_id}."
+                        f"алгоритму {algo_label}."
                     ),
                 ))
 

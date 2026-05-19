@@ -1,0 +1,61 @@
+id: BMA-SUFU-GERMLINE-MEDULLOBLASTOMA
+biomarker_id: BIO-SUFU-GERMLINE
+variant_qualifier: SUFU germline pathogenic (NBCCS-like, medulloblastoma-predominant)
+disease_id: DIS-GBM
+escat_tier: IIA
+evidence_summary: >
+  SUFU germline pathogenic variants cause a Gorlin-syndrome–like predisposition
+  with much higher medulloblastoma risk than PTCH1 (~30% lifetime vs ~5% in
+  PTCH1), and lower BCC burden. SUFU-driven medulloblastomas cluster in the
+  SHH-activated molecular subgroup (infant/young-child onset, desmoplastic /
+  MBEN histology in many cases). Confirmed-carrier surveillance protocol
+  (per Foulkes et al. 2017 / AACR Pediatric Predisposition Working Group):
+  brain MRI q4mo from diagnosis through age 3, q6mo from age 3-5, annually
+  to age 8 — denser-than-PTCH1 cadence reflects higher MB risk. Dermatology
+  surveillance for BCC q6-12mo from puberty. Avoid craniospinal external-beam
+  radiation when alternatives exist (second-malignancy risk in carriers).
+  Hedgehog-pathway inhibitors (vismodegib, sonidegib) have limited activity
+  in SUFU-mutant SHH-MB — downstream-of-SMO position renders SMO inhibitors
+  ineffective; this is a critical distinction from PTCH1-driven disease.
+  ESCAT IIA.
+evidence_summary_ua: >
+  Герміногенні патогенні варіанти SUFU спричиняють Gorlin-подібну схильність з
+  значно вищим ризиком медулобластоми (~30% довічно vs ~5% при PTCH1), нижчим
+  тягарем БКР. Медулобластоми SUFU — SHH-група, інфантильні/раннього дитинства,
+  десмопластичні / MBEN. Протокол нагляду: МРТ головного мозку q4 міс до 3 років,
+  q6 міс 3-5 років, щорічно до 8 років. Дерматологія q6-12 міс з пубертату.
+  Уникати краніоспінальної EBRT, де можливо. Hh-інгібітори (вісмодегіб, соніедгіб)
+  МАЛОЕФЕКТИВНІ при SUFU-мутантних SHH-MB — SUFU нижче SMO у каскаді, тому
+  SMO-інгібітори не працюють. ESCAT IIA.
+regulatory_approval:
+  fda: []
+  ema: []
+  ukraine: []
+recommended_combinations:
+  - "brain MRI q4mo to age 3, q6mo to age 5, annual to age 8 — earlier and denser than PTCH1 cadence"
+  - "dermatology surveillance q6-12mo from puberty"
+  - "neurosurgery + COG-based protocols for medulloblastoma (avoid EBRT where alternatives available)"
+  - "do NOT default to vismodegib / sonidegib for SUFU-driven SHH-MB — downstream-of-SMO position renders SMO inhibition ineffective; consider GLI-pathway investigational agents in trial setting"
+contraindicated_monotherapy:
+  - "vismodegib / sonidegib (SMO inhibitors) — limited efficacy in SUFU-mutant medulloblastoma; not a substitute for chemotherapy / radiation"
+primary_sources:
+  - SRC-NCCN-CNS-2025
+last_verified: "2026-05-18"
+evidence_sources: []
+actionability_review_required: true
+notes: >
+  STUB — Wave A+B germline expansion. Linked Indication: none (no SUFU-/Gorlin-
+  specific Indication exists yet). Two-Clinical-Co-Lead signoff queued. Disease
+  anchor uses DIS-GBM as closest CNS-tumor anchor; medulloblastoma lacks a
+  Disease entity. The PTCH1-vs-SUFU distinction matters clinically: higher MB
+  risk + tighter surveillance cadence + SMO-inhibitor resistance. Penetrance
+  estimates remain unstable due to small published cohorts.
+notes_ua: >
+  STUB — Wave A+B розширення. Indication: відсутня. Прив'язка до DIS-GBM як
+  найближчого CNS-якоря; медулобластома не має Disease-сутності. Різниця
+  PTCH1 vs SUFU клінічно важлива: вищий ризик MB + щільніший нагляд + резистентність
+  до SMO-інгібіторів. Оцінки пенетрантності нестабільні (малі публіковані когорти).
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_bma_batch3
+draft_revision: 1
+last_reviewed: "2026-05-18"

@@ -1,0 +1,83 @@
+id: REG-HIV-BIKTARVY
+name: "Biktarvy — bictegravir/emtricitabine/tenofovir-AF single-tablet ART"
+name_ua: "Біктарві — біктегравір/емтрицитабін/тенофовір-AF — однотаблеткова АРТ"
+alternate_names:
+  - "BIC/FTC/TAF"
+  - "Bictarvy STR"
+
+components:
+  - drug_id: DRUG-BICTEGRAVIR-EMTRICITABINE-TENOFOVIR-AF
+    dose: "50/200/25 mg PO (single tablet)"
+    schedule: "once daily, with or without food"
+    route: PO
+    duration: "ongoing — chronic suppression (HIV is lifelong infection)"
+
+cycle_length_days: 30
+total_cycles: "ongoing — long-term suppression"
+
+toxicity_profile: low
+
+premedication: []
+mandatory_supportive_care: []
+monitoring_schedule_id:
+
+dose_adjustments:
+  - condition: "Severe renal impairment (CrCl <30 mL/min and not on chronic hemodialysis)"
+    modification: "Biktarvy not recommended; switch to alternative ART regimen"
+    rationale: "TAF clearance reduced; alternative single-tablet regimens (e.g., Symtuza/Triumeq) may be preferred"
+    source_refs:
+      - SRC-NIH-AIDS-2024
+  - condition: "Significant hepatic impairment (Child-Pugh C)"
+    modification: "Bictegravir pharmacokinetics not characterized; switch to alternative regimen"
+    rationale: "Lack of data in severe hepatic impairment"
+    source_refs:
+      - SRC-NIH-AIDS-2024
+  - condition: "Rifamycin co-administration (rifampin, rifabutin)"
+    modification: "Avoid — significant bictegravir-rifamycin interaction reduces ART efficacy"
+    rationale: "CYP3A4 / UGT1A1 induction reduces bictegravir exposure substantially"
+    source_refs:
+      - SRC-NIH-AIDS-2024
+
+ukraine_availability:
+  all_components_registered: true
+  all_components_reimbursed: true
+  notes: "Biktarvy registered in Ukraine. ART regimens including bictegravir are reimbursed via НСЗУ national HIV programme."
+
+sources:
+  - SRC-NIH-AIDS-2024
+
+between_visit_watchpoints:
+  - trigger_ua: "Легка нудота, головний біль або порушення сну у перші 2-4 тижні"
+    action_ua: "Зазвичай минає — занотуйте і обговоріть на наступному візиті"
+    urgency: log_at_next_visit
+    sources:
+      - SRC-NIH-AIDS-2024
+  - trigger_ua: "Виражена діарея, нудота або блювота, що зберігається >3 днів"
+    action_ua: "Подзвоніть у клініку того ж дня — оцінка адгеренції + drug-drug-interaction screening"
+    urgency: call_clinic_same_day
+    sources:
+      - SRC-NIH-AIDS-2024
+  - trigger_ua: "Жовтяниця, потемніння сечі або біль у правому підребер'ї"
+    action_ua: "Подзвоніть у клініку того ж дня — оцінка функції печінки + immune reconstitution syndrome перевірка"
+    urgency: call_clinic_same_day
+    sources:
+      - SRC-NIH-AIDS-2024
+  - trigger_ua: "Будь-яке припинення прийому без узгодження з лікарем"
+    action_ua: "Звертайтесь у клініку негайно — припинення ART призводить до вірусологічного rebound і ризику резистентності"
+    urgency: call_clinic_same_day
+    sources:
+      - SRC-NIH-AIDS-2024
+  - trigger_ua: "Раптова сильна слабкість м'язів або темна сеча"
+    action_ua: "Звертайтесь у лікарню негайно — рідкісна, але серйозна лактоацидоз"
+    urgency: er_now
+    sources:
+      - SRC-NIH-AIDS-2024
+
+last_reviewed: "2026-05-18"
+notes: >
+  Biktarvy is a preferred first-line single-tablet ART regimen per DHHS / EACS / NIH AIDSinfo guidelines (2024). Combines bictegravir (integrase strand transfer inhibitor), emtricitabine (NRTI), tenofovir-AF (NRTI). High genetic barrier to resistance, well-tolerated, minimal drug-drug interactions vs. older PI-based regimens. Recommended for HIV-cancer-prevention pathway (per IND-CHRONIC-HIV-PREVENTION-ART). Drug-drug interaction screening mandatory before any cancer treatment is added.
+notes_ua: >
+  Біктарві — переважний першо-лінійний однотаблетковий ART режим за DHHS / EACS / NIH AIDSinfo guidelines (2024). Поєднує біктегравір (integrase strand transfer inhibitor), емтрицитабін (NRTI), тенофовір-AF (NRTI). Високий генетичний бар'єр до резистентності, добре переноситься, мінімальні drug-drug interactions vs. старіші PI-base режими. Рекомендується для шляху ВІЛ-онкопрофілактики (per IND-CHRONIC-HIV-PREVENTION-ART). Скринінг лікарських взаємодій обов'язковий перед додаванням будь-якого протиракового лікування.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_authoring
+draft_revision: 1

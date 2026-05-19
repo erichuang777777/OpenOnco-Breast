@@ -1,0 +1,154 @@
+id: IND-OCC-FORMALDEHYDE-PREVENTION-INTENSIFIED-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  # Primary anchor: AML (haematologic; CBC-detectable; the more
+  # actionable surveillance target). Nasopharyngeal / sinonasal
+  # surveillance addressed in rationale via ENT symptom awareness.
+  disease_id: DIS-AML
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-OCC-FORMALDEHYDE-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Primary endpoint: detection of incident formaldehyde-attributable
+    AML at earlier stage via CBC surveillance, and early detection of
+    nasopharyngeal / sinonasal carcinoma via symptom-triggered ENT
+    evaluation. No validated screening modality exists for nasopharyngeal
+    carcinoma in occupational cohorts; CBC surveillance for occupational
+    leukemia risk is supported by NCCN occupational-exposure
+    extension but not RCT-validated. Patient is informed that the
+    incremental incidence-detection benefit is modest.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for individuals with documented
+  prior occupational formaldehyde exposure who do not have a current
+  formaldehyde-associated malignancy diagnosis. Three parallel
+  interventions:
+
+  **(1) Annual CBC for myeloid-leukemia surveillance.** Formaldehyde
+  has Group-1 association with myeloid leukemia (IARC 100F).
+  Cytopenia patterns (unexplained anemia, leukopenia, thrombocytopenia,
+  or progressive monocytosis) on annual CBC prompt referral to
+  hematology for peripheral-smear review and consideration of bone-
+  marrow biopsy. Frequency q1y for active / recent exposure (within
+  20 years); may extend to q2y after 20 years post-exposure for
+  asymptomatic patients with prior normal trends.
+
+  **(2) ENT symptom-awareness counseling.** Patient is counseled to
+  report unilateral epistaxis, persistent unilateral nasal obstruction,
+  recurrent unilateral sinusitis, anosmia, or facial pain — any of
+  which warrants prompt ENT referral with consideration of nasal /
+  sinus endoscopy and CT sinus imaging. No validated screening modality
+  for asymptomatic nasopharyngeal / sinonasal cancer exists; symptom-
+  triggered evaluation is the operational standard.
+
+  **(3) Exposure-cessation / PPE counseling.** Most formaldehyde-
+  exposed individuals are no longer in high-exposure roles. Where
+  active or residual exposure persists (continuing pathology /
+  embalming work), counsel on fume-hood use, formalin-substitution
+  preservatives where available, N95+/half-face respirators during
+  high-exposure tasks, and adherence to OSHA / NSZU PEL.
+
+  Resource access in Ukraine: CBC is widely available (~150-300 UAH);
+  ENT consultation accessible at regional centers; CT sinus
+  (~1500-3000 UAH) where indicated.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для осіб з документованим попереднім
+  професійним впливом формальдегіду без поточного діагнозу
+  формальдегід-асоційованої малігнізації. Три паралельні втручання:
+
+  **(1) Щорічна CBC для спостереження за мієлоїдною лейкемією.**
+  Формальдегід — Group-1 асоціація з AML (IARC 100F). Цитопенії
+  (необʼяснена анемія, лейкопенія, тромбоцитопенія, прогресуючий
+  моноцитоз) при щорічній CBC спонукають направлення до гематолога
+  для перегляду периферійного мазка та розгляду біопсії кісткового
+  мозку. Частота q1y для активного / нещодавнього впливу (у межах
+  20 років); може бути продовжена до q2y після 20 років post-exposure
+  для асимптомних пацієнтів з попередньою нормальною динамікою.
+
+  **(2) ENT symptom-awareness counseling.** Пацієнту радять
+  повідомляти про однобічну епістаксис, persistent однобічну назальну
+  обструкцію, рецидивуючий однобічний синусит, аносмію або лицевий
+  біль — кожен з яких потребує оперативного ENT-направлення з
+  розглядом назальної / синусової ендоскопії та CT-сканування синусів.
+  Валідованої модальності скринінгу асимптомного назофарингеального /
+  синоназального раку немає; symptom-triggered оцінка — operational
+  standard.
+
+  **(3) Exposure-cessation / PPE counseling.** Більшість
+  формальдегід-експонованих осіб більше не у high-exposure ролях.
+  Де активний / залишковий вплив зберігається (продовження
+  патологоанатомічної / бальзамувальної роботи), counseling щодо
+  використання fume-hood, формалін-замінних консервантів де доступні,
+  N95+/half-face респіратори при high-exposure задачах, дотримання
+  OSHA / НСЗУ PEL.
+
+  Доступ до ресурсів в Україні: CBC (~150-300 грн); ENT-консультація
+  доступна в регіональних центрах; CT синусів (~1500-3000 грн) де
+  показано.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Occupational chemical-exposure cohorts at elevated hematologic-
+      malignancy risk warrant structured CBC surveillance and
+      multidisciplinary referral on cytopenia detection."
+  - source_id: SRC-NCCN-AML-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Patients with documented occupational benzene / formaldehyde /
+      ionizing-radiation exposure carry elevated AML risk; CBC
+      surveillance and cytopenia-triggered marrow evaluation form the
+      operational surveillance standard."
+
+do_not_do:
+  - "Не призначати рутинну біопсію кісткового мозку асимптомним пацієнтам — резервується для тривожних цитопеній на CBC."
+  - "Не пропонувати нaзальну ендоскопію як рутинний screening — резервується для пацієнтів із симптомами."
+  - "Не пропускати ENT-направлення при однобічній епістаксис / обструкції — це типові early-warning ознаки назофарингеальної карциноми."
+  - "Не екстраполювати CBC-частоту q1y indefinitely — після 20 років post-exposure для асимптомних пацієнтів q2y розумно."
+
+do_not_do_en:
+  - "Do not order routine bone-marrow biopsy in asymptomatic patients — reserve for alarm cytopenias on CBC."
+  - "Do not offer nasal endoscopy as routine screening — reserve for symptomatic patients."
+  - "Do not skip ENT referral for unilateral epistaxis / obstruction — these are typical early-warning signs of nasopharyngeal carcinoma."
+  - "Do not extrapolate CBC frequency q1y indefinitely — after 20 years post-exposure for asymptomatic patients, q2y is reasonable."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — v0.3 occupational batch-2 pilot (formaldehyde).
+  Two-Clinical-Co-Lead signoff queued per CHARTER §6.1 dev-mode
+  exemption. IARC Monograph 100F (2012) is canonical evidence anchor;
+  v0.3 source-authoring backlog.

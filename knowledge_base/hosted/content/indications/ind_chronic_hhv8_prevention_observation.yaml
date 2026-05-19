@@ -1,0 +1,89 @@
+id: IND-CHRONIC-HHV8-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-KAPOSI
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-CHRONIC-HHV8-MALIGNANCY-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Primary endpoint: surveillance compliance (mucocutaneous + oral + GI
+    + lymph-node exam quarterly; biopsy any new violaceous lesion). Does
+    not reduce HHV-8-driven malignancy incidence but improves likelihood
+    of early-stage Kaposi sarcoma / MCD detection.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+  - TEST-LFT
+desired_tests:
+  - TEST-LDH
+
+rationale: >
+  Alternative-track companion to
+  IND-CHRONIC-HHV8-PREVENTION-IMMUNE-RESTORATION. Patient with HHV-8
+  seropositivity in an immunocompromised host who declines ART (HIV+)
+  or in whom transplant-immunosuppression cannot be safely modified
+  (graft-rejection risk, recent transplant, donor-specific antibodies)
+  — surveillance per IDSA / NIH AIDS Information protocol:
+  mucocutaneous + oral + GI / lymph-node exam at each clinic visit,
+  CBC + LDH quarterly, biopsy any new violaceous cutaneous / mucosal
+  lesion.
+
+  Patient remains at elevated HHV-8-driven malignancy risk;
+  surveillance does not reduce incidence but improves early detection.
+  Per CHARTER §11 patient-autonomy framing.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до
+  IND-CHRONIC-HHV8-PREVENTION-IMMUNE-RESTORATION. Пацієнт з
+  серопозитивністю HHV-8 у імуноскомпрометованому хості, який
+  відмовляється від АРТ (ВІЛ+) або у якого імуносупресія не може
+  бути безпечно змінена (ризик відторгнення графта, недавня
+  трансплантація, donor-specific antibodies) — surveillance за
+  IDSA / NIH AIDS Information протоколом: огляд шкіри + ротової
+  порожнини + ШКТ / лімфовузлів при кожному візиті, CBC + LDH
+  щоквартально, біопсія будь-якого нового фіолетового шкірного /
+  слизового вогнища.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NIH-AIDS-2024
+    position: supports
+  - source_id: SRC-IARC-MONO-100B-2012
+    position: context
+
+do_not_do:
+  - "Не вважати observation еквівалентом ART / іммуно-оптимізації — incidence-reduction відсутній."
+  - "Не пропускати огляд шкіри / ротової порожнини при кожному візиті."
+
+do_not_do_en:
+  - "Do not consider observation equivalent to ART / immune optimization — incidence-reduction is absent."
+  - "Do not skip mucocutaneous / oral exam at each clinic visit."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — alternative-track companion for HHV-8 prevention. §15.2 C4 ≥2-tracks invariant compliance.

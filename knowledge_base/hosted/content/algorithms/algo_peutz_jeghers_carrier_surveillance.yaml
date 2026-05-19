@@ -1,0 +1,193 @@
+id: ALGO-PEUTZ-JEGHERS-CARRIER-SURVEILLANCE
+applicable_to_disease: DIS-CRC
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention. Anchored to DIS-CRC because GI
+# cancers (CRC + small bowel + gastric) are the leading absolute-risk
+# malignant contribution in Peutz-Jeghers (cumulative GI cancer
+# ~50-60% lifetime). Reach extends to DIS-BREAST (~45-55% lifetime),
+# DIS-PDAC (~36% — highest among CAPS-eligible syndromes), DIS-OVARIAN
+# (~21% — SCTAT histology specifically), DIS-GASTRIC (~29%), DIS-ENDOMETRIAL,
+# and rare PJ-specific cancers (SCTAT, Sertoli-cell testicular tumors,
+# cervical adenoma malignum / minimal-deviation adenocarcinoma).
+purpose: >
+  Multi-organ surveillance cadence for confirmed Peutz-Jeghers syndrome
+  (STK11 / LKB1) carriers per NCCN Genetic / Familial High-Risk:
+  Colorectal V.2.2025 (Peutz-Jeghers section) + ACG Hereditary CRC
+  guidelines + Beggs / Latchford / Hyer consensus (Beggs AD et al.
+  Peutz-Jeghers syndrome: a systematic review and recommendations
+  for management. Gut 2010;59:975-986. PMID 20581245).
+
+  Peutz-Jeghers (PJS) carries the highest absolute cancer risk among
+  hereditary GI cancer syndromes. Cumulative cancer risk by age 70
+  is ~85-93% across all sites. Surveillance is intensive and
+  multi-organ — small-bowel (annual video capsule endoscopy + push
+  enteroscopy / double-balloon for polyps ≥1cm), colon, stomach,
+  pancreas (CAPS-eligible), breast, ovary, testis, cervix.
+
+output_indications:
+  - IND-PEUTZ-JEGHERS-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-PEUTZ-JEGHERS-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Routes to the prevention-surveillance Indication (plan_track:
+# surveillance, recommended_regimen: null per current KB schema).
+# Engine layer should select sibling IND-PEUTZ-JEGHERS-CARRIER-
+# SURVEILLANCE (standard NCCN PJ cadence) / IND-PEUTZ-JEGHERS-
+# CARRIER-INTENSIFIED (aggressive cadence for recurrent
+# intussusception, dense polyp burden, personal PJ-spectrum cancer
+# history, or specific STK11 catalytic-domain truncation) at
+# downstream routing. Those Indications carry treatment-pathway
+# plan_track values (standard / aggressive) intended for active-
+# disease routing and so cannot be referenced as algorithm direct-
+# route targets in current schema.
+
+decision_tree:
+  - step: 1
+    # Confirmed-carrier gate — STK11 germline P/LP variant or PJ
+    # clinical diagnosis without confirmed gene (mucocutaneous
+    # pigmentation + hamartomatous polyposis + family pattern).
+    evaluate:
+      any_of:
+        - condition: "Confirmed STK11 germline pathogenic / likely-pathogenic (ACMG class 4/5) variant"
+        - condition: "Clinical Peutz-Jeghers syndrome (≥2 of: mucocutaneous melanotic pigmentation, hamartomatous polyps consistent with PJ histology, family history of PJS) without confirmed STK11 variant"
+    if_true:
+      next_step: 2
+    if_false:
+      result: false
+      notes: "Not a confirmed STK11 carrier and PJS clinical criteria not met. Apply syndrome-specific suspicion criteria (mucocutaneous pigmentation alone, juvenile polyposis differential, isolated hamartoma). Route via IND-PEUTZ-JEGHERS-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE for suspicion / cascade pathway."
+  - step: 2
+    # Pediatric entry — GI surveillance from age 8-10, gonadal /
+    # gynecologic features from puberty.
+    evaluate:
+      all_of:
+        - condition: "Carrier is age ≥8 (pediatric GI entry)"
+    if_true:
+      next_step: 3
+    if_false:
+      result: false
+      notes: "Pediatric carrier <8 years — surveillance not yet initiated. Symptom-driven evaluation only (any acute abdominal pain in young PJ carrier — high suspicion for intussusception, urgent imaging). Document re-contact plan with pediatric gastroenterology at age 8 for baseline upper + lower endoscopy + video capsule enteroscopy."
+  - step: 3
+    # GI surveillance — small-bowel is highest-yield surveillance target
+    # in PJS (cumulative GI cancer ~50-60%, small bowel intussusception
+    # is leading childhood emergency).
+    evaluate:
+      all_of:
+        - condition: "Upper endoscopy (EGD) q2-3y from age 8-10 (or symptom-driven earlier)"
+        - condition: "Colonoscopy q2-3y from age 8-10"
+        - condition: "Small-bowel imaging — video capsule endoscopy q2-3y from age 8-10 — first-line modality; CT enterography or MR enterography acceptable alternates"
+        - condition: "Push enteroscopy / double-balloon enteroscopy / spiral enteroscopy for polypectomy of small-bowel polyps ≥1-1.5 cm (prevent intussusception + reduce cancer risk)"
+    if_true:
+      next_step: 4
+    if_false:
+      result: false
+      notes: "GI surveillance schedule not complete — refer to specialist hereditary-polyposis program (multidisciplinary team: gastroenterology + endoscopy + pediatric surgery + medical oncology). Small-bowel polyp burden + intussusception risk is highest single-cause morbidity in PJS childhood."
+  - step: 4
+    # Pancreatic surveillance — CAPS-eligible, highest lifetime PDAC
+    # risk (~36%). Surveillance entry: age 30-35.
+    evaluate:
+      all_of:
+        - condition: "Pancreatic surveillance — EUS or MRI / MRCP q1-2y from age 30-35 (CAPS Consortium 2020 PJ-specific entry timing)"
+    if_true:
+      next_step: 5
+    if_false:
+      result: false
+      notes: "Pancreatic surveillance not yet entered — refer for CAPS-Consortium-eligible PDAC surveillance via ALGO-NCCN-PANCREATIC-CAPS-SURVEILLANCE."
+  - step: 5
+    # Breast surveillance — PJ lifetime breast cancer ~45-55%.
+    # NCCN PJ: MRI + mammography from age 30 q1y, similar cadence to
+    # BRCA1/2.
+    evaluate:
+      all_of:
+        - condition: "Breast: female age ≥25 — clinical breast exam q6mo; female age ≥30 — annual breast MRI + annual mammography (alternating q6mo cadence acceptable)"
+    if_true:
+      next_step: 6
+    if_false:
+      next_step: 6
+      notes: "Pre-breast-surveillance age — clinical breast exam from age 25; MRI + mammography from age 30."
+  - step: 6
+    # Gynecologic + testicular surveillance — SCTAT, Sertoli-cell
+    # testicular tumors, cervical minimal-deviation adenocarcinoma.
+    evaluate:
+      all_of:
+        - condition: "Female: pelvic exam + transvaginal US q1y from age 18-20 (SCTAT and cervical adenoma malignum surveillance); annual cervical cytology — note PJ cervical cancer is adenoma malignum / minimal-deviation adenocarcinoma which can have NORMAL conventional cytology — TVUS + clinical exam are primary surveillance"
+        - condition: "Male: annual testicular exam from age 10 (Sertoli-cell large-cell calcifying testicular tumors — risk of feminization / gynecomastia + small-but-real malignancy risk); testicular US if exam-abnormal"
+    if_true:
+      result: IND-PEUTZ-JEGHERS-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Standard Peutz-Jeghers carrier surveillance — comprehensive multi-organ schedule per NCCN PJ + ACG Hereditary CRC + Beggs 2010 consensus. GI: EGD + colonoscopy + small-bowel imaging q2-3y from age 8-10. Pancreatic: EUS or MRI q1-2y from age 30-35 (CAPS PJ). Breast: MRI + mammography q1y from age 30. Gynecologic: TVUS + pelvic exam q1y from age 18-20. Testicular: q1y from age 10. Cascade testing for all first-degree relatives (pediatric appropriate given childhood-onset features). Engine should re-route to IND-PEUTZ-JEGHERS-CARRIER-SURVEILLANCE (standard) or IND-PEUTZ-JEGHERS-CARRIER-INTENSIFIED (aggressive) at downstream layer."
+    if_false:
+      result: false
+      notes: "Surveillance schedule incomplete — refer to multidisciplinary PJ clinic. Pediatric cascade testing + comprehensive education for the family is foundation of PJ surveillance success."
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-NCCN-PANCREATIC-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding Peutz-Jeghers (STK11)
+  confirmed-carrier surveillance per NCCN Genetic / Familial High-Risk:
+  Colorectal V.2.2025 (Peutz-Jeghers section) + NCCN Genetic /
+  Familial High-Risk: Breast, Ovarian, Pancreatic V.3.2025 (PJ breast
+  + pancreatic surveillance arms) + ACG Hereditary CRC Guidelines
+  (Yang J et al. Am J Gastroenterol 2015 PMID 25645574) + Beggs /
+  Latchford / Hyer consensus (Beggs AD et al. Peutz-Jeghers syndrome:
+  a systematic review and recommendations for management. Gut
+  2010;59:975-986. PMID 20581245). Primary-paper Source entities
+  (SRC-BEGGS-2010-PJ-CONSENSUS, SRC-HEARLE-2006-PJ-CANCER-RISK
+  PMID 16707622) are v0.2-B authoring backlog.
+
+  Anchored to DIS-CRC. Reach: DIS-BREAST, DIS-PDAC, DIS-OVARIAN
+  (SCTAT histology), DIS-GASTRIC, DIS-ENDOMETRIAL, testicular
+  Sertoli-cell (no Disease entity), cervical adenoma malignum (no
+  Disease entity).
+
+  Peutz-Jeghers lifetime cancer risk by age 70 (Hearle 2006):
+    - Any cancer: ~85-93% cumulative
+    - Breast: ~45-55%
+    - Colorectal: ~39%
+    - Gastric: ~29%
+    - Pancreatic: ~36% — highest among CAPS-eligible syndromes
+    - Small bowel: ~13%
+    - Ovarian (SCTAT, mucinous): ~21%
+    - Cervical (adenoma malignum / minimal-deviation): ~10%
+    - Endometrial: ~9%
+    - Testicular Sertoli-cell large-cell calcifying: ~9%
+
+  Pediatric considerations:
+    - Mucocutaneous pigmentation typically appears age 1-5
+    - Hamartomatous polyps grow throughout childhood;
+      intussusception risk peaks age 6-18
+    - Small-bowel polyps ≥1-1.5 cm are leading intussusception
+      driver — prophylactic polypectomy via push enteroscopy /
+      DBE / spiral enteroscopy is highest-yield intervention
+    - Avoid emergency-laparotomy small-bowel resection where
+      possible (cumulative resections lead to short-gut syndrome);
+      planned endoscopic polypectomy + segmental laparoscopic
+      resection of large polyps preferred
+
+  Surveillance cadence summary (NCCN PJ + Beggs 2010):
+    - EGD q2-3y from age 8-10
+    - Colonoscopy q2-3y from age 8-10
+    - Small-bowel video capsule q2-3y from age 8-10
+    - EUS or MRI/MRCP q1-2y from age 30-35 (CAPS pancreatic
+      surveillance)
+    - Breast MRI + mammography q1y from age 30
+    - Gynecologic (TVUS + pelvic exam) q1y from age 18-20
+    - Cervical cytology q1y (adenoma malignum can be cytology-
+      negative — combine with TVUS + clinical exam)
+    - Testicular exam q1y from age 10; testicular US if abnormal
+
+  Cited from RF-PEUTZ-JEGHERS-CONFIRMED-CARRIER + RF-PJ-SUSPICION
+  trigger logic.
+
+  Decision-tree semantics: `result: false` means surveillance not
+  yet initiated; `result: IND-PEUTZ-JEGHERS-SUSPICION-PREVENTION-
+  ENHANCED-SURVEILLANCE` routes to prevention-surveillance pathway
+  (plan_track: surveillance — proper non-regimen routing per current
+  KB schema). Engine selects sibling IND-PEUTZ-JEGHERS-CARRIER-
+  SURVEILLANCE (standard) / IND-PEUTZ-JEGHERS-CARRIER-INTENSIFIED
+  (aggressive) Indications at downstream layer for intensified
+  cadence / surgical-management scenarios.
+draft: true

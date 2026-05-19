@@ -1,0 +1,49 @@
+id: RF-OCC-AROMATIC-AMINES-MALIGNANCY-PREVENTION
+definition: >-
+  Documented occupational aromatic-amine exposure — benzidine, 2-naphthylamine,
+  4-aminobiphenyl — primarily in historical pre-regulation dye, rubber, leather,
+  pigment, and chemical-manufacturing industries (mostly pre-1980s in regulated
+  countries; ongoing in unregulated jurisdictions). IARC Group 1 carcinogen for
+  bladder cancer. Engine routes to PreventionPlan recommending annual urinalysis
+  + cytology + low-threshold cystoscopy for hematuria + smoking cessation.
+definition_ua: >-
+  Задокументована occupational exposure до aromatic amines — бензидин,
+  2-нафтиламін, 4-аміно-біфеніл — переважно в pre-regulation dye, rubber,
+  leather, pigment та chemical-manufacturing галузях (переважно pre-1980s
+  у регульованих країнах; ongoing в нерегульованих юрисдикціях). IARC Group 1
+  канцероген для bladder cancer.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "occupational_aromatic_amine_exposure_documented"
+      value: true
+    - finding: "occupational_dye_rubber_leather_industry_pre_regulation"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: occupational
+
+# Anchor to existing DIS-* — urothelial may not be in this branch; use closest
+# in-KB renal/urological cancer entity. Render layer will surface the cancer-
+# being-prevented from the prevention_targets kb_state regardless.
+relevant_diseases:
+  - DIS-UROTHELIAL
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for aromatic-amines → urothelial bladder cancer prevention. Fires on documented occupational exposure. DIS-UROTHELIAL anchor preferred but using DIS-HCC as fallback if not in KB on this branch. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_completion
+draft_revision: 1

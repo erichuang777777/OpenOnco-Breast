@@ -1,0 +1,79 @@
+id: IND-IATROGENIC-TAMOXIFEN-ENDOMETRIAL-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-ENDOMETRIAL
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-TAMOXIFEN-ENDOMETRIAL-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Patient declines structured annual gynecologic exam — receives baseline symptom-vigilance education only. Postmenopausal bleeding or abnormal pre-menopausal bleeding may go unreported / delayed in workup. Outcomes worse than with prompt evaluation; stage at diagnosis later, treatment more aggressive."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-IATROGENIC-TAMOXIFEN-ENDOMETRIAL-
+  PREVENTION-SURVEILLANCE. Patient declines structured annual
+  gynecology follow-up (surveillance fatigue, geographic access,
+  preference) — receives explicit symptom-vigilance education
+  (postmenopausal bleeding, abnormal pre-menopausal bleeding, vaginal
+  discharge, pelvic pain → immediate gynecology consultation, regardless
+  of how minor the symptom appears) + medication review (HRT
+  contraindicated). Per CHARTER §11 patient-autonomy framing — declining
+  routine GYN visits is legitimate but framed as suboptimal vs. annual-
+  exam comparator.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від structured
+  annual gynecology follow-up — отримує explicit symptom-vigilance
+  education (postmenopausal bleeding, abnormal pre-menopausal bleeding,
+  vaginal discharge, pelvic pain → immediate gynecology consultation,
+  незалежно від того, як minor симптом appears) + medication review
+  (HRT contraindicated). Per CHARTER §11.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-UTERINE-2025
+    position: context
+
+do_not_do:
+  - "Не презентувати observation як еквівалент structured annual GYN follow-up — earlier-stage detection достовірно кращі outcomes."
+  - "Не пропускати explicit symptom-vigilance education — patient education критична для symptom-prompted evaluation."
+  - "Не призначати HRT — contraindicated у tamoxifen-exposed women; non-hormonal vasomotor management."
+  - "Не виключати patient зі symptom-prompted workup access — even якщо routine surveillance declined, gynecology має бути available при будь-якому symptom."
+  - "Не нормалізувати postmenopausal bleeding як 'minor' — будь-яке bleeding requires evaluation."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to structured annual GYN follow-up — earlier-stage detection produces reliably better outcomes."
+  - "Do not skip explicit symptom-vigilance education — patient education is critical for symptom-prompted evaluation."
+  - "Do not prescribe HRT — contraindicated in tamoxifen-exposed women; use non-hormonal vasomotor management."
+  - "Do not deny the patient symptom-prompted workup access — even if routine surveillance is declined, gynecology must be available for any symptom."
+  - "Do not normalize postmenopausal bleeding as 'minor' — any bleeding requires evaluation."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for tamoxifen endometrial-prevention. §15.2 C4 ≥2-tracks invariant."

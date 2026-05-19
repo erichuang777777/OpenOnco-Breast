@@ -1,0 +1,13 @@
+{
+  "patient_id": "BARRETTS-PREV-001",
+  "comment": "54yo male with confirmed long-segment (>3cm) Barrett's esophagus on EGD, non-dysplastic. Chronic GERD on PPI. No current esophageal adenocarcinoma. Engine routes to PreventionPlan: standard = EGD surveillance q3-5y for non-dysplastic Barrett's per ACG + high-dose PPI for symptom/healing; alternative = routine q5y cadence. Validates v0.3 Barrett's → esophageal AC prevention pilot.",
+  "biomarkers": {},
+  "demographics": {"age": 54, "sex": "male", "ecog": 0},
+  "findings": {
+    "barretts_esophagus_diagnosis_confirmed": true,
+    "Long-segment Barrett's (>3cm)": true,
+    "Non-dysplastic histology": true,
+    "Chronic GERD on high-dose PPI": true,
+    "No current esophageal adenocarcinoma": true
+  }
+}

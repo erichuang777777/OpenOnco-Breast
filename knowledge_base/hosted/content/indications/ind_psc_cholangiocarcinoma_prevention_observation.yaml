@@ -1,0 +1,70 @@
+id: IND-PSC-CHOLANGIOCARCINOMA-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-HCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-PSC-CHOLANGIOCARCINOMA-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Less-frequent surveillance (MRI/MRCP q2-3y instead of annual) captures cholangiocarcinoma at later stage; outcomes inferior to annual-surveillance comparator."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-PSC-CHOLANGIOCARCINOMA-PREVENTION-SURVEILLANCE.
+  Used when intensified annual MRI/MRCP cadence is impractical (cost, access,
+  patient preference, geographic distance from specialist hepatology). Adopts
+  q2-3y MRI/MRCP cadence + symptom-driven evaluation. Per CHARTER §11
+  patient-autonomy framing.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до IND-PSC-CHOLANGIOCARCINOMA-
+  PREVENTION-SURVEILLANCE. Використовується коли інтенсифікована щорічна
+  MRI/MRCP cadence непрактична (вартість, доступ, вибір пацієнта, географічна
+  відстань від спеціалізованої гепатології). Приймає q2-3y MRI/MRCP cadence +
+  symptom-driven evaluation. Per CHARTER §11 framing автономії пацієнта.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_completion
+draft_revision: 1
+
+sources:
+  - source_id: SRC-AASLD-HCC-2023
+    position: context
+
+do_not_do:
+  - "Не використовувати цей шлях у PSC-IBD підгрупі — потрібна annual surveillance через високий CRC ризик."
+  - "Не ігнорувати alarm features під час q2-3y cadence — immediate escalation на standard track."
+  - "Не презентувати observation як еквівалент annual surveillance — early-stage detection sensitivity нижче."
+
+do_not_do_en:
+  - "Do not use this pathway in the PSC-IBD subgroup — annual surveillance is required due to high CRC risk."
+  - "Do not ignore alarm features during q2-3y cadence — immediate escalation to standard track."
+  - "Do not present observation as equivalent to annual surveillance — early-stage detection sensitivity is lower."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track companion for PSC prevention. §15.2 C4 ≥2-tracks invariant compliance."

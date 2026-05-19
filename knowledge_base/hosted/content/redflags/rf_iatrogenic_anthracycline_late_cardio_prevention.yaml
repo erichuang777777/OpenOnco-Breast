@@ -1,0 +1,70 @@
+id: RF-IATROGENIC-ANTHRACYCLINE-LATE-CARDIO-PREVENTION
+definition: >-
+  Cancer survivor ≥5 years post-completion of curative-intent oncology
+  treatment that included cumulative anthracycline exposure
+  ≥250 mg/m² (doxorubicin equivalent). Distinct from
+  RF-IATROGENIC-ANTHRACYCLINE-CARDIO-PREVENTION (general anthracycline
+  cardio surveillance starting at completion): this RF targets the
+  long-term cancer-survivor cohort 5y+ post-treatment where surveillance
+  cadence is set by Children's Oncology Group Long-Term Follow-Up
+  Guidelines (COG-LTFU) + ASCO Cardio-Oncology Survivorship + ESC 2022
+  Cardio-Oncology. Late-effect cardiomyopathy incidence rises through
+  decades post-exposure — childhood cancer survivors with cumulative
+  doxorubicin ≥250 mg/m² have 5-15× HF risk vs. siblings at 30y of
+  follow-up (Childhood Cancer Survivor Study). Risk amplifiers concurrent
+  chest RT, age <18 or ≥65 at exposure, hypertension/diabetes/CAD.
+  Prevention-persona RedFlag (§20 cancer-survivor late-effects pilot).
+definition_ua: >-
+  Виживач раку ≥5 років після завершення curative-intent oncology
+  treatment з cumulative anthracycline exposure ≥250 мг/м² (doxorubicin
+  equivalent). Відрізняється від RF-IATROGENIC-ANTHRACYCLINE-CARDIO-
+  PREVENTION (general anthracycline cardio surveillance з моменту
+  completion): цей RF таргетує long-term cancer-survivor cohort 5р+
+  post-treatment де surveillance cadence визначається COG-LTFU + ASCO
+  Cardio-Oncology Survivorship + ESC 2022 Cardio-Oncology. Late-effect
+  cardiomyopathy incidence зростає через декади post-exposure — survivors
+  childhood cancer з cumulative doxorubicin ≥250 мг/м² мають 5-15× HF
+  ризик проти siblings при 30р follow-up (Childhood Cancer Survivor
+  Study). Risk amplifiers concurrent chest RT, age <18 або ≥65 at
+  exposure, HTN/DM/CAD.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "survivor_5y_post_anthracycline_cumulative_ge_250_mg_m2"
+      value: true
+    - finding: "survivor_anthracycline_plus_chest_rt_late_effect"
+      value: true
+    - finding: "survivor_pediatric_anthracycline_late_effect"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: iatrogenic
+
+# Anchor DIS-AML — mirrors RF-IATROGENIC-ANTHRACYCLINE-CARDIO-PREVENTION's
+# anchor (same cohort, late-effect surveillance dimension). The cardio
+# surveillance lives on this RF; the t-AML / secondary leukemia surveillance
+# overlap lives on RF-IATROGENIC-TOPO2-TAML-PREVENTION (engine fires both
+# for the same cohort).
+relevant_diseases:
+  - DIS-AML
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-AML-2025
+  - SRC-COG
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Cancer-survivor late-effects RedFlag for cumulative anthracycline ≥250 mg/m² with ≥5y post-treatment interval. Distinct from RF-IATROGENIC-ANTHRACYCLINE-CARDIO-PREVENTION (general cardio surveillance starting at treatment completion). COG-LTFU-driven echo cadence q1-5y based on dose + chest RT + age at exposure. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_aya_survivor_2026_05_18
+draft_revision: 1

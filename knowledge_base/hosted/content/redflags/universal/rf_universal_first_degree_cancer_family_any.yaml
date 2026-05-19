@@ -1,0 +1,73 @@
+id: RF-UNIVERSAL-FIRST-DEGREE-CANCER-FAMILY-ANY
+definition: >-
+  Any first-degree relative (parent, full sibling, biological child) with
+  a history of any cancer (any site, any age at diagnosis). Broad
+  pre-triage flag intended to fire BEFORE the disease- or
+  syndrome-specific genetic RedFlags (BRCA / Lynch / Cowden / Li-Fraumeni
+  / FAP / VHL etc.). Captures the cohort of patients whose family
+  pedigree has not yet been systematically evaluated. Universal RedFlag
+  (relevant_diseases ["*"]) — does not by itself anchor to a specific
+  cancer; serves as a routing signal to general genetic-counseling
+  referral and family-history-aware modification of age-and-modality
+  screening cadence. Most patients with a single first-degree relative
+  cancer do NOT carry a high-penetrance pathogenic variant — the value
+  of this flag is in surfacing the cohort to a structured pedigree
+  review (Tyrer-Cuzick / BOADICEA / PREMM5 / MMRpro depending on family
+  profile) which then either triggers disease-specific genetic RFs or
+  documents a negative-pedigree determination. Distinct from
+  disease-specific family-history RFs (e.g.,
+  RF-BRCA-HBOC-FAMILY-HISTORY-SUSPICION) which encode site / pedigree-
+  pattern thresholds — this RF is the upstream catchment.
+definition_ua: >-
+  Будь-який родич першого ступеня (батько, мати, рідний сиблінг,
+  біологічна дитина) з онкологічним діагнозом в анамнезі (будь-яка
+  локалізація, будь-який вік на момент діагнозу). Широкий
+  pre-triage прапор, що спрацьовує ПЕРЕД disease- або syndrome-
+  specific genetic RedFlags (BRCA / Lynch / Cowden / Li-Fraumeni
+  / FAP / VHL тощо). Охоплює когорту пацієнтів, чия сімейна
+  родовід ще не пройшла systematic evaluation. Universal RedFlag
+  (relevant_diseases ["*"]) — сам по собі не анкорований до
+  конкретного раку; служить routing-сигналом до загального
+  направлення на генетичне консультування та family-history-aware
+  модифікації частоти / модальності скринінгу. Більшість пацієнтів
+  з одним first-degree relative онкологічного анамнезу НЕ є
+  носіями high-penetrance pathogenic variant — цінність прапора
+  у винесенні когорти на structured pedigree review (Tyrer-Cuzick
+  / BOADICEA / PREMM5 / MMRpro залежно від family profile), що
+  далі або тригерить disease-specific genetic RFs, або документує
+  negative-pedigree determination. Відмінний від disease-specific
+  family-history RFs (напр., RF-BRCA-HBOC-FAMILY-HISTORY-SUSPICION),
+  які кодують site / pedigree-pattern thresholds — цей RF — upstream
+  catchment.
+
+trigger:
+  type: composite_score
+  any_of:
+    - finding: "family_first_degree_cancer_any"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: genetic
+
+relevant_diseases:
+  - "*"
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-WCRF-AICR-CUP-2018
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Pre-triage universal RedFlag — fires upstream of disease-specific genetic RFs (BRCA / Lynch / Cowden / Li-Fraumeni / FAP / VHL etc.). Authoring intent: route to structured pedigree review + general genetic-counseling referral, NOT to a specific cancer-syndrome workup until a downstream disease-specific RF fires. With relevant_diseases=[\"*\"], the engine currently does NOT attach Indication tracks via the prevention path (engine excludes \"*\" from disease-anchor matching at plan.py:297) — universal Indications anchored to DIS-BREAST and DIS-CRC are authored as documentation / sidecar candidates pending future engine extension (KSS §20 v0.2-C scope). STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1

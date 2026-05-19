@@ -1,0 +1,211 @@
+id: ALGO-CASCADE-LFS-CARRIER-FAMILY-TESTING
+applicable_to_disease: DIS-SOFT-TISSUE-SARCOMA
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention. Anchored to DIS-SOFT-TISSUE-SARCOMA
+# (LFS-defining cancer; Chompret criterion C sentinel features
+# including ACC, choroid plexus carcinoma, anaplastic rhabdomyosarcoma
+# anchor pediatric LFS). Reach extends to DIS-BREAST (most common
+# adult LFS cancer ~85% lifetime women), DIS-OSTEOSARCOMA, DIS-
+# ADRENOCORTICAL-CARCINOMA, DIS-CHOROID-PLEXUS-CARCINOMA, DIS-GBM,
+# DIS-GLIOMA-LOW-GRADE, leukemia, lung adenocarcinoma. LFS lifetime
+# any-cancer risk ~85-100%.
+purpose: >
+  Syndrome-specific cascade testing flow for confirmed Li-Fraumeni
+  syndrome index patient (germline TP53 pathogenic / likely-pathogenic
+  variant). Specializes ALGO-CASCADE-FAMILY-TESTING with LFS-specific
+  testing ages (pediatric appropriate — unlike Lynch which is adult-
+  onset-only), counseling cadences (LFS counseling burden uniquely
+  high given near-100% lifetime cancer risk + risk of psychological
+  harm), and surveillance entry timing (Toronto Protocol begins in
+  infancy for confirmed carriers).
+
+  LFS cascade is distinguished from other syndrome cascades by:
+    1. Pediatric-onset testing — children of TP53 carriers may benefit
+       from testing in early childhood (Toronto Protocol surveillance
+       begins infancy/early-childhood for confirmed carriers).
+    2. Uniquely high counseling burden — near-100% lifetime cancer
+       risk requires intensive pre-test discussion + multidisciplinary
+       psychology support.
+    3. Sentinel-tumor children (childhood ACC, choroid plexus carcinoma,
+       anaplastic rhabdomyosarcoma): germline TP53 testing in proband
+       irrespective of family-history (Chompret criterion C); ~50%+
+       germline yield in these tumors.
+
+output_indications:
+  - IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Cascade testing routes confirmed-carrier relatives to syndrome-
+# specific Toronto Protocol surveillance pathway (Villani 2011 +
+# Villani 2016 follow-up) and confirmed-non-carrier relatives to
+# general-population screening. Algorithm routes only to the
+# suspicion-prevention-enhanced-surveillance Indication to satisfy
+# the algorithm-routing contract; carrier-vs-noncarrier branching is
+# handled at engine routing layer + documented in Indication
+# rationale.
+
+decision_tree:
+  - step: 1
+    # Index patient is confirmed LFS carrier (germline TP53 P/LP
+    # variant). VUS proband does NOT trigger LFS-specific cascade —
+    # VUS-only families remain in periodic re-evaluation.
+    evaluate:
+      all_of:
+        - condition: "Index patient (proband) has confirmed Li-Fraumeni syndrome germline pathogenic or likely-pathogenic (ACMG class 4/5) variant in TP53"
+    if_true:
+      next_step: 2
+    if_false:
+      result: false
+      notes: "Index patient not confirmed TP53 carrier — apply Chompret 2015 (ALGO-CHOMPRET-2015-LFS) or classic LFS criteria (ALGO-CLASSIC-LFS-CRITERIA) for suspicion-pathway routing; LFS-specific cascade not indicated. VUS-only LFS families re-evaluate annually for variant reclassification (ClinVar / lab updates)."
+  - step: 2
+    # Identify ALL relatives — including pediatric, given LFS pediatric
+    # onset. First-degree (parents, siblings, children) get pre-test
+    # counseling first; second-degree fallback when FDRs unavailable.
+    evaluate:
+      any_of:
+        - condition: "Index patient has living first-degree relatives (parents, full siblings, biological children) at any age"
+    if_true:
+      next_step: 3
+    if_false:
+      next_step: 4
+      notes: "No living FDRs — proceed to second-degree relatives (aunts/uncles, grandparents, grandchildren, half-siblings, nieces/nephews); 25% a priori carrier probability."
+  - step: 3
+    # Pediatric considerations — LFS is uniquely pediatric-testing-
+    # appropriate among adult-onset hereditary cancer syndromes.
+    # Surveillance entry begins infancy for confirmed carriers
+    # (whole-body MRI from age 1 per Toronto Protocol). Family +
+    # pediatric-genetics team decision on optimal testing age — most
+    # centers test at age 1-2 if family-history-of-childhood-onset
+    # cancer; age 5-8 if family history adult-onset-only.
+    evaluate:
+      all_of:
+        - condition: "FDR is age ≥18 (adult capacity for consent) OR FDR is age <18 + family + pediatric-genetics team consensus that testing supports clinical surveillance entry per Toronto Protocol"
+        - condition: "FDR / legal surrogate provides informed consent after pre-test counseling addressing: lifetime ~85-100% cancer risk, surveillance burden, psychological implications, GINA / EU GDPR insurance considerations, family-system implications"
+    if_true:
+      next_step: 5
+    if_false:
+      result: false
+      notes: "FDR testing eligibility not yet met — pediatric carriers without family-history of childhood-onset cancer can typically defer testing to age 5-8 with shared-decision; pediatric carriers WITH family-history of childhood-onset cancer benefit from testing in infancy / early childhood per Toronto Protocol surveillance entry. Adult carriers who decline testing remain in periodic re-contact (LFS at-risk family) — refer to clinical genetics + psychology."
+  - step: 4
+    # SDR / TDR fallback when FDRs unavailable.
+    evaluate:
+      any_of:
+        - condition: "Second- or third-degree relative is available, eligible (age + consent + counseling), and motivated to test"
+    if_true:
+      next_step: 5
+    if_false:
+      result: false
+      notes: "No testable relatives available — document outreach attempts in family chart. Re-contact periodically (annually) per ACMG cascade-testing guidance; FDR availability changes with life events. Untested at-risk relatives may benefit from empirical-surveillance enhancement based on 50% a priori carrier probability."
+  - step: 5
+    # Pre-test counseling — uniquely high burden for LFS. Single-site
+    # variant testing — known family TP53 variant typically $250-500
+    # via single-site sequencing.
+    evaluate:
+      all_of:
+        - condition: "Relative completes pre-test genetic counseling — LFS-specific intensified content: lifetime ~85-100% cancer risk, multi-organ surveillance burden including annual whole-body MRI from infancy / childhood (Toronto Protocol), psychological support pathway, insurance / GINA / EU GDPR considerations, family-system implications, reproductive-options discussion (PGT-M, prenatal testing)"
+        - condition: "Targeted single-site TP53 test ordered (NOT full LFS panel — wasteful when family variant is documented); for sentinel-tumor probands without family history, comprehensive TP53 sequencing + del/dup analysis indicated"
+    if_true:
+      next_step: 6
+    if_false:
+      result: false
+      notes: "Pre-test counseling or single-site analysis not completed — refer to certified medical geneticist (LFS counseling demands board-certification + LFS-specific experience per ASCO 2023 / ESMO 2023). Single-site testing cost typically reimbursed by insurance / national-health schemes when proband variant documented."
+  - step: 6
+    # Post-test counseling + routing per carrier status. CARRIER-
+    # POSITIVE → Toronto Protocol surveillance entry. CARRIER-NEGATIVE
+    # → general-population screening (cascade-confirmed non-carrier
+    # relatives have population-baseline risk).
+    evaluate:
+      all_of:
+        - condition: "Single-site test result available + post-test disclosure counseling + multidisciplinary follow-up plan (medical oncology + medical genetics + radiology + psychology) confirmed"
+    if_true:
+      result: IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "LFS cascade complete. CARRIER-POSITIVE FDRs → Toronto Protocol surveillance (Villani 2016 PMID 27300673): annual whole-body MRI + brain MRI + ultrasound abdomen + dermatology + breast MRI in adult women from age 30 (or 5y younger than youngest family breast cancer); CBC q3-4mo; abdominal US q3-4mo in children; biochemistry q3-4mo in children including 17-hydroxyprogesterone (adrenocortical carcinoma surveillance). Pediatric surveillance begins infancy for confirmed pediatric carriers. Adult risk-reducing mastectomy + adnexal surveillance per shared-decision. CARRIER-NEGATIVE FDRs → general-population screening; no enhanced cadence needed for confirmed-negative relatives of confirmed carriers. NEXT-WAVE CASCADE: confirmed-positive carriers' future children → 50% a priori risk, may benefit from PGT-M / prenatal testing decisions (reproductive-counseling). Indication routes to SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE pending v0.2 dedicated post-cascade LFS-carrier-confirmed Indication (LFS-CARRIER-SURVEILLANCE / LFS-CARRIER-INTENSIFIED exist as v0.2-B siblings for treatment-active LFS patients)."
+    if_false:
+      result: false
+      notes: "Post-test counseling pending — schedule disclosure visit + written results delivery + multidisciplinary follow-up plan; do not communicate results without comprehensive counseling per ACMG / ASCO 2023 LFS-specific guidance. LFS counseling burden is uniquely high — psychological support is essential, not optional."
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-VILLANI-LFS-TORONTO-2011
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding Li-Fraumeni syndrome-
+  specific cascade testing flow. Specializes ALGO-CASCADE-FAMILY-
+  TESTING with LFS-specific pediatric-testing-appropriate timing,
+  intensified counseling content, and Toronto Protocol surveillance
+  entry per Villani A et al. Biochemical and imaging surveillance in
+  germline TP53 mutation carriers with Li-Fraumeni syndrome: 11 year
+  follow-up of a prospective observational study. Lancet Oncol
+  2016;17:1295-1305 PMID 27300673 (Toronto Protocol original
+  publication 2011 PMID 21778096). Primary-paper Source entity
+  (SRC-VILLANI-2016-TORONTO-PROTOCOL-FOLLOWUP, SRC-MAI-2016-LFS-
+  CONSENSUS PMID 27741045) is v0.2-B authoring backlog.
+
+  Anchored to DIS-SOFT-TISSUE-SARCOMA. Reach: LFS-spectrum cancers
+  (DIS-BREAST, DIS-OSTEOSARCOMA, DIS-ADRENOCORTICAL-CARCINOMA,
+  DIS-CHOROID-PLEXUS-CARCINOMA, DIS-GBM, DIS-GLIOMA-LOW-GRADE,
+  leukemia, lung adenocarcinoma).
+
+  LFS lifetime cancer risk + sentinel features:
+    - Any cancer by age 70: ~85-100% (penetrance varies by sex —
+      women higher due to breast cancer contribution; lifetime
+      risk in women is essentially 100% by older age)
+    - Sentinel pediatric tumors (Chompret criterion C — TP53
+      testing in proband irrespective of family history):
+      * Childhood adrenocortical carcinoma (ACC): ~50-80% germline
+        TP53 yield
+      * Choroid plexus carcinoma (CPC): ~50% germline TP53 yield
+      * Anaplastic rhabdomyosarcoma with embryonal-anaplastic
+        histology: ~10-20% germline TP53 yield
+
+  Pediatric-vs-adult testing considerations (key LFS-specific
+  distinction):
+    - Pediatric carriers WITHOUT family-history-of-childhood-onset
+      cancer: typical test age 5-8 (Toronto Protocol surveillance
+      can begin then)
+    - Pediatric carriers WITH family-history-of-childhood-onset
+      cancer (childhood ACC / CPC / sarcoma in family): test in
+      infancy / early childhood (age 1-3); surveillance begins
+      infancy
+    - Adult carriers: typical adult capacity-of-consent test age 18+
+    - Mosaicism in proband: ~5-10% TP53 P/LP carriers are mosaic;
+      cascade yield depends on germline penetrance of mosaic clone
+
+  Toronto Protocol surveillance (Villani 2011 + 2016 follow-up):
+    - Whole-body MRI q1y from age 30 (or 5y younger than youngest
+      family adult cancer)
+    - Brain MRI q1y (some protocols start age 18; others infancy
+      for CPC-family-history)
+    - Abdominal ultrasound + 17-OH-progesterone q3-4mo in children
+      (ACC surveillance)
+    - CBC q3-4mo in children (leukemia surveillance)
+    - Breast MRI + clinical breast exam q6-12mo from age 20-25 in
+      adult women; risk-reducing mastectomy discussion from age
+      30
+    - Dermatology q1y from age 18
+    - Colonoscopy from age 25 (or 5y younger than youngest family
+      CRC)
+    - Avoidance of radiation-based imaging where MRI is alternative
+      (LFS carriers have elevated radiation-induced secondary
+      cancer risk per Heymann 2010)
+
+  Reproductive considerations:
+    - PGT-M (preimplantation genetic testing for monogenic
+      disorders): increasingly elected by adult LFS carriers
+      planning family
+    - Prenatal testing (CVS / amniocentesis): available; ethical /
+      psychological discussion essential
+    - These decisions require multidisciplinary counseling
+
+  Cited from RF-LFS-CONFIRMED-CARRIER + RF-LFS-FAMILY-HISTORY-
+  SUSPICION trigger logic.
+
+  Decision-tree semantics: `result: false` means cascade not yet
+  completed (counseling pending, FDR ineligible, etc.); `result:
+  IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE`
+  means cascade complete + routing to syndrome-specific surveillance
+  pathway.
+draft: true

@@ -1,0 +1,140 @@
+id: RF-CHRONIC-ATROPHIC-GASTRITIS-PREVENTION
+definition: >-
+  Chronic atrophic gastritis (CAG) — histologically confirmed loss of
+  oxyntic and/or antral gastric glands with replacement by intestinal
+  metaplasia and/or pyloric metaplasia, most commonly secondary to
+  autoimmune mechanism (anti-parietal and anti-intrinsic-factor
+  antibodies, B12 deficiency, achlorhydria, elevated gastrin) or
+  long-standing H. pylori infection. Established precursor lesion to
+  gastric adenocarcinoma (intestinal type, ~5-10x lifetime relative
+  risk; absolute risk ~1-2%/year for OLGA III/IV stages) and a
+  potent risk factor for type 1 gastric neuroendocrine tumors arising
+  from ECL-cell hyperplasia driven by chronic hypergastrinemia. No
+  current gastric malignancy diagnosis. Endoscopic surveillance with
+  topographic biopsies (updated Sydney protocol) per OLGA/OLGIM stage
+  reduces gastric cancer mortality in high-risk subgroups.
+  Prevention-persona RedFlag (§20 ratification 2026-05-18, v0.3
+  chronic-condition pilot).
+definition_ua: >-
+  Хронічний атрофічний гастрит (CAG) — гістологічно підтверджена втрата
+  oxyntic та/або antral шлункових залоз з заміщенням кишковою
+  метаплазією та/або пілоричною метаплазією, найчастіше вторинна до
+  автоімунного механізму (анти-парієтальні та анти-intrinsic-factor
+  антитіла, B12-дефіцит, ахлоргідрія, підвищений гастрин) або тривалої
+  H. pylori інфекції. Встановлене передракове ураження аденокарциноми
+  шлунка (інтестинальний тип, ~5-10x lifetime відносний ризик;
+  абсолютний ризик ~1-2%/рік для OLGA III/IV стадій) та потужний
+  фактор ризику для type 1 нейроендокринних пухлин шлунка, що
+  виникають з ECL-клітинної гіперплазії, керованої хронічною
+  гіпергастринемією. Поточний діагноз злоякісного новоутворення
+  шлунка відсутній. Ендоскопічне спостереження з топографічними
+  біопсіями (оновлений Sydney-протокол) per OLGA/OLGIM стадією знижує
+  гастричну рак-смертність у high-risk підгрупах. Prevention-persona
+  RedFlag (ратифікація §20, 2026-05-18, v0.3 пілот chronic-condition).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "chronic_atrophic_gastritis_histology_confirmed"
+      value: true
+    - finding: "autoimmune_metaplastic_atrophic_gastritis"
+      value: true
+    - finding: "olga_stage_3_or_4"
+      value: true
+    - finding: "olgim_stage_3_or_4"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: chronic_condition
+
+# Cancers being prevented:
+#   - Gastric adenocarcinoma (intestinal type) → DIS-GASTRIC
+#   - Type 1 gastric neuroendocrine tumor → DIS-GI-NET (NETs in OpenOnco
+#     KB) — applies particularly to autoimmune atrophic gastritis subset
+relevant_diseases:
+  - DIS-GASTRIC
+  - DIS-GI-NET
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-GASTRIC-2025
+  - SRC-NCCN-NET-2025
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.3 chronic-condition prevention pilot — chronic atrophic gastritis
+  (CAG). Prevention-persona RedFlag (CHARTER §3 amended 2026-05-18
+  Path A, HCP-mediated). Fires when patient profile shows histologically
+  confirmed atrophic gastritis (autoimmune or post-H. pylori) AND no
+  confirmed gastric malignancy. Engine routes to PreventionPlan with
+  2 tracks: EGD q3-5y with Sydney-protocol surveillance biopsies
+  (IND-CHRONIC-ATROPHIC-GASTRITIS-PREVENTION-SURVEILLANCE) as standard;
+  symptom-driven observation with B12 + iron monitoring only
+  (IND-CHRONIC-ATROPHIC-GASTRITIS-PREVENTION-OBSERVATION) as
+  alternative.
+
+  Evidence base:
+    - **Gastric cancer risk by OLGA/OLGIM stage:** Rugge et al. Gut 2018
+      (12-year prospective cohort): OLGA stage III/IV — 12-year
+      gastric cancer incidence ~10-15%; OLGA stage 0-II — <1%.
+      OLGIM (intestinal-metaplasia-specific) staging predicts similarly.
+    - **MAPS II European Guideline (Pimentel-Nunes et al. Endoscopy
+      2019):** EGD with Sydney biopsies (2 antrum + 2 corpus + incisura)
+      at diagnosis; q3y surveillance for advanced atrophy/IM (OLGA III/IV
+      or OLGIM III/IV); q1y for IM with dysplasia or family history of
+      gastric cancer. Optical-enhanced imaging (NBI, BLI) preferred
+      where available.
+    - **Type 1 gastric NET (autoimmune CAG subset):** ECL-cell hyperplasia
+      → micro-NETs → grossly visible polypoid NETs. Typically multifocal,
+      indolent, endoscopic resection sufficient for lesions <1 cm; larger
+      or rapidly enlarging NETs warrant pathologic review and possible
+      antrectomy (removes gastrin drive).
+    - **B12 + iron deficiency** are baseline manifestations of autoimmune
+      atrophic gastritis; lifelong B12 replacement (PO or IM per response)
+      + iron supplementation as needed is standard.
+
+  Coexisting H. pylori (when still present) → eradication per
+  RF-H-PYLORI-PREVENTION pathway (separate RF entity). H. pylori
+  eradication does not reverse established advanced atrophy/IM but
+  arrests further progression.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption.
+notes_ua: >
+  v0.3 пілот prevention chronic-condition — хронічний атрофічний
+  гастрит (CAG). Prevention-persona RedFlag (CHARTER §3 поправка
+  2026-05-18). Спрацьовує коли профіль пацієнта показує гістологічно
+  підтверджений атрофічний гастрит (автоімунний або post-H. pylori)
+  ТА відсутній підтверджений рак шлунка. Engine маршрутизує до
+  PreventionPlan з 2 треками: EGD q3-5 роки з Sydney-протоколом
+  surveillance біопсіями (IND-CHRONIC-ATROPHIC-GASTRITIS-PREVENTION-
+  SURVEILLANCE) як стандарт; symptom-driven observation з B12 + iron
+  моніторингом (IND-CHRONIC-ATROPHIC-GASTRITIS-PREVENTION-OBSERVATION)
+  як альтернатива.
+
+  Доказова база: OLGA/OLGIM III/IV — 12-річна gastric cancer incidence
+  ~10-15% (Rugge Gut 2018). MAPS II (Pimentel-Nunes Endoscopy 2019):
+  EGD з Sydney біопсіями (2 антрум + 2 corpus + incisura) при діагнозі;
+  q3 роки surveillance для advanced атрофії/IM. Type 1 gastric NET
+  (автоімунна CAG підгрупа): ECL-клітинна гіперплазія → micro-NETs.
+  B12 + iron заміщення pожиттєве при автоімунному CAG.
+
+  Co-існуючий H. pylori → ерадикація per RF-H-PYLORI-PREVENTION шлях
+  (окрема RF entity). Ерадикація не реверсує встановлену advanced
+  атрофію/IM, але зупиняє подальшу прогресію.
+
+  Це STUB, очікує підпис двох Clinical Co-Lead за §6.1 dev-mode
+  exemption.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+draft: true

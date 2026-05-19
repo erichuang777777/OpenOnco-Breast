@@ -1,0 +1,255 @@
+id: IND-HLRCC-SUSPICION-PREVENTION-GENETIC-COUNSELING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-RCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-HLRCC-FAMILY-HISTORY-SUSPICION
+
+# No drug regimen — intervention is referral + germline-test ordering +
+# pre/post-test counseling + a structured carrier-confirmation
+# surveillance protocol (not a Regimen entity). For women carriers a
+# gynecologic-management plan + reproductive counseling are also part of
+# the standard package.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Diagnostic yield of germline FH panel testing in pedigree-
+    suspicion populations: ~50-90% positive carrier identification
+    (varies by criterion stringency — biopsy-confirmed cutaneous
+    leiomyomas in the proband ~80-90%; multiple early-onset uterine
+    leiomyomas + family CRC-papillary-type-2 RCC ~60-80%; family
+    history alone with no proband features ~10-20%). Confirmed
+    carrier routes to aggressive surveillance reflecting HLRCC-RCC
+    biology — even small (<3 cm) primaries can metastasize, so the
+    "3-cm rule" applied in VHL is NOT appropriate; HLRCC-RCC requires
+    radical nephrectomy on detection of any solid renal mass, plus
+    annual contrast MRI starting in childhood. Early-detection
+    benefit is substantial — localized HLRCC-RCC has reasonable
+    surgical-cure rates, while metastatic HLRCC-RCC historically had
+    poor outcomes (though emerging FH-deficient-targeted regimens
+    may shift this).
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  # Germline panel test entity not yet authored as a TEST-* — v0.2-B
+  # follow-up.
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for individuals with pedigree
+  suspicion of Hereditary Leiomyomatosis and Renal Cell Cancer
+  (HLRCC). Three parallel referrals:
+
+  **(1) Genetic counseling referral.** Pre-test counseling covers:
+  inheritance pattern (autosomal dominant for HLRCC-RCC and leiomyoma
+  phenotypes; biallelic FH variants cause autosomal-recessive fumarase
+  deficiency — a distinct severe pediatric neurometabolic syndrome
+  with different counseling implications, including avoidance of
+  consanguineous reproductive partnerships in confirmed carrier
+  families), penetrance (RCC ~15-30% lifetime; uterine leiomyomas
+  ~70-100% in females; cutaneous leiomyomas ~75%), implications for
+  family members (cascade testing if positive — siblings 50%,
+  children 50%; preimplantation genetic diagnosis available;
+  importantly, fumarase-deficiency risk if partner is also an FH
+  carrier — adds a layer to reproductive counseling unique among
+  hereditary cancer syndromes), insurance / GINA considerations,
+  psychological aspects of childhood-initiating renal surveillance
+  and aggressive nephrectomy threshold. Per ACMG / ASCO guidelines,
+  pre-test counseling is the standard of care before germline testing.
+
+  **(2) Germline FH gene panel testing.** Modern hereditary renal-
+  cancer panels (e.g., Invitae renal-cancer panel, Color renal-cancer
+  panel) cover FH (full sequencing + deletion / duplication analysis),
+  plus the hereditary-RCC differential genes (VHL, FLCN for Birt-
+  Hogg-Dubé, MET for hereditary papillary RCC, BAP1, SDHB/C/D for
+  paraganglioma-pheochromocytoma syndromes). Variant classification
+  per ACMG framework. Tumor IHC for FH protein loss and 2-succino-
+  cysteine (2SC) staining can complement germline testing — FH-
+  deficient tumors show loss of FH protein and accumulation of
+  fumarate-derived 2SC adducts; this is treatment-persona territory
+  when tumor tissue is available.
+
+  **(3) Carrier-confirmation surveillance plan (sequel pathway).**
+    Positive FH carrier → aggressive surveillance per HLRCC Family
+    Alliance / NCCN Kidney Genetic/Familial High-Risk:
+    - **Renal:** Annual contrast-enhanced abdominal MRI starting age
+      8-10 (yes, early childhood — HLRCC-RCC has been reported in
+      young adults and rarely in adolescents; the aggressive biology
+      justifies the early start). **Radical nephrectomy** on detection
+      of any solid renal mass regardless of size — the "3-cm rule"
+      applied in VHL is NOT appropriate because HLRCC-RCC can
+      metastasize from tumors as small as 1 cm. CT alternative if MRI
+      contraindicated.
+    - **Gynecologic (women):** Detailed gynecologic counseling
+      regarding uterine fibroid management. Most female FH carriers
+      develop early, large, multiple, symptomatic uterine leiomyomas
+      —fertility-preserving myomectomy is feasible at younger ages;
+      hysterectomy frequently performed in 30s-40s after childbearing
+      is complete. Hysterectomy specimens require pathology review
+      for any leiomyosarcoma transformation. Reproductive planning
+      should be addressed early (fertility-preservation options
+      including oocyte cryopreservation pre-myomectomy /
+      hysterectomy; preimplantation genetic diagnosis; partner FH-
+      testing to assess fumarase-deficiency risk in offspring).
+    - **Dermatology:** Annual skin exam for cutaneous leiomyomas;
+      biopsy of any new firm painful nodule. Cutaneous leiomyomas
+      themselves are benign but pathognomonic and inform RCC-
+      surveillance intensification.
+    - **Adrenal / pheochromocytoma:** Not a routine HLRCC feature
+      (distinguishes from VHL); plasma metanephrine screening NOT
+      indicated unless symptomatic.
+
+  Negative result (no pathogenic / likely-pathogenic variant on a
+  high-quality panel) → re-stratify residual family-history risk;
+  if cutaneous-leiomyoma phenotype is strong in family with no FH
+  variant, consider phenocopy / VUS interpretation review with a
+  multidisciplinary tumor board. VUS result → managed as pedigree
+  suspicion (this Indication) until segregation analysis or
+  functional studies clarify.
+
+  Genetic counseling and germline FH testing are typically covered
+  by insurance in the US/EU when pedigree criteria are met; in
+  Ukraine, germline testing is available through private labs at
+  out-of-pocket cost (~5000-15000 UAH for multi-gene panel).
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для осіб з родовідною підозрою на
+  синдром Hereditary Leiomyomatosis and Renal Cell Cancer (HLRCC).
+  Три паралельні направлення:
+
+  **(1) Направлення на генетичне консультування.** Pre-test
+  консультування охоплює: спадкування (аутосомно-домінантне для
+  HLRCC-РСС і лейоміоматозного фенотипу; біалельні FH варіанти
+  спричиняють аутосомно-рецесивну fumarase deficiency — окремий
+  важкий педіатричний нейрометаболічний синдром з різними
+  консультативними наслідками, включно з уникненням consanguineous
+  репродуктивних партнерств у підтверджених носійських сім'ях),
+  пенетрантність (РСС ~15-30% лайфтайм; маткові лейоміоми ~70-100% у
+  жінок; шкірні лейоміоми ~75%), наслідки для членів сім'ї (cascade
+  тестування при позитиві — сібси 50%, діти 50%; преімплантаційна
+  генетична діагностика доступна; важливо: ризик fumarase deficiency
+  якщо партнер також FH-носій — додає шар до репродуктивного
+  консультування, унікальний серед спадкових раку-синдромів),
+  страхові / GINA-міркування, психологічні аспекти childhood-
+  initiating renal спостереження та aggressive nephrectomy порогу.
+  За ACMG / ASCO настановами, pre-test консультування — standard of
+  care перед germline тестуванням.
+
+  **(2) Germline FH панельне тестування.** Сучасні панелі спадкового
+  РСС (напр., Invitae renal-cancer panel, Color renal-cancer panel)
+  покривають FH (повне секвенування + аналіз делецій / дуплікацій),
+  плюс гени диференційного діагнозу спадкового РСС (VHL, FLCN для
+  Birt-Hogg-Dubé, MET для спадкового папілярного РСС, BAP1, SDHB/C/D
+  для феохромо-парагангліома синдромів). Класифікація варіантів за
+  рамкою ACMG. Tumor IHC на FH-протеїнову втрату та 2-сукциніо-
+  цистеїн (2SC) забарвлення може доповнити germline тестування —
+  FH-дефіцитні пухлини показують втрату FH протеїну та накопичення
+  fumarate-derived 2SC adducts; це територія treatment-персони коли
+  доступна пухлинна тканина.
+
+  **(3) План спостереження при підтвердженому носійстві (sequel).**
+    Позитивний FH носій → агресивне спостереження per HLRCC Family
+    Alliance / NCCN Kidney Genetic/Familial High-Risk:
+    - **Ниркове:** Щорічна контрастна абдомінальна MRI з 8-10 років
+      (так, ранне дитинство — HLRCC-РСС повідомлявся у молодих
+      дорослих і рідко у підлітків; aggressive biology обґрунтовує
+      ранній старт). **Радикальна нефректомія** при виявленні
+      будь-якої solid renal mass незалежно від розміру — "правило
+      3-см", що застосовується при VHL, НЕ є відповідним, бо
+      HLRCC-РСС може метастазувати з пухлин розміром від 1 см. CT
+      альтернатива при контраіндикованому MRI.
+    - **Гінекологічне (жінки):** Детальне гінекологічне
+      консультування щодо ведення маткових фіброміом. Більшість
+      жінок-FH-носіїв розвивають ранні, великі, множинні,
+      симптоматичні маткові лейоміоми — fertility-preserving
+      міомектомія fea​sible у молодшому віці; гістеректомія часто
+      виконується у 30-40 років після завершення дітородіння.
+      Препарати гістеректомії потребують патологічної ревізії на
+      будь-яку лейоміосаркома-трансформацію. Репродуктивне планування
+      слід обговорити рано (опції fertility-preservation, включно з
+      cryopreservation ооцитів pre-myomectomy / hysterectomy;
+      преімплантаційна генетична діагностика; FH-тестування партнера
+      для оцінки fumarase-deficiency ризику у потомства).
+    - **Дерматологічне:** Щорічний шкірний огляд на кутанні
+      лейоміоми; біопсія будь-якого нового firm painful nodule.
+      Кутанні лейоміоми самі по собі доброякісні, але патогномонічні
+      та інформують про інтенсифікацію РСС-спостереження.
+    - **Адренал / феохромоцитома:** НЕ є рутинним проявом HLRCC
+      (відрізняє від VHL); plasma metanephrine скринінг НЕ
+      показаний без симптоматики.
+
+  Негативний результат (без патогенного / ймовірно-патогенного
+  варіанту на високоякісній панелі) → ре-стратифікація залишкового
+  сімейно-історичного ризику; якщо cutaneous-leiomyoma фенотип
+  сильний у сім'ї без FH варіанту, розгляньте phenocopy / VUS
+  interpretation review з мультидисциплінарним tumor board. VUS
+  результат → ведеться як родовідна підозра (ця Indication) до
+  segregation analysis або functional studies.
+
+  Генетичне консультування та germline FH тестування зазвичай
+  покриваються страхуванням у США/ЄС при відповідності критеріям;
+  в Україні germline тестування доступне через приватні лабораторії
+  за out-of-pocket вартість (~5000-15000 грн за мультигенну панель).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_hereditary_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-ESMO-RCC-2024
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Germline testing for hereditary RCC syndromes including HLRCC
+      (FH) is recommended for individuals or families with papillary
+      type-2 RCC, cutaneous leiomyomas, or early-onset / multiple
+      uterine leiomyomas."
+  - source_id: SRC-NCCN-KIDNEY-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Patients with suspected HLRCC should receive germline FH panel
+      testing; confirmed FH carriers enter aggressive renal
+      surveillance (annual contrast MRI from age 8-10) with radical
+      nephrectomy on detection of any solid renal mass — the
+      tumor-sparing approach used in VHL is not appropriate due to
+      the aggressive metastatic potential of HLRCC-RCC."
+
+do_not_do:
+  - "Не призначати germline тестування без pre-test консультування — інформована згода, обговорення fumarase-deficiency репродуктивного ризику (якщо партнер також FH-носій), і психологічна підготовка до child-onset surveillance обов'язкові."
+  - "Не treter VUS результат як патогенний — управляйте як родовідну підозру до подальших даних; не починайте дитячий MRI протокол на підставі VUS."
+  - "Не застосовувати «правило 3-см» VHL до HLRCC-РСС — HLRCC-pap-type-2 метастазує з пухлин <3 см; будь-яка solid renal mass у підтвердженого FH носія потребує радикальної нефректомії, не tumor-sparing підходу."
+  - "Не пропускати pre-myomectomy / pre-hysterectomy fertility-preservation обговорення (oocyte cryopreservation) у молодих жінок-FH-носіїв — fibroid surgery часто потребує hysterectomy у 30-40 років і ранне репродуктивне планування критично."
+  - "Не пропускати FH-тестування партнера у репродуктивному консультуванні підтвердженого FH-носія — біалельне FH носійство у потомства = fumarase deficiency (важкий неонатальний нейрометаболічний синдром, не HLRCC)."
+  - "Не презентувати negative-panel результат як zero-risk — фенокопії і нерозпізнані FH-варіанти можливі; consider tumor IHC (FH-loss, 2SC accumulation) на доступних пухлинних зразках родичів."
+
+do_not_do_en:
+  - "Do not order germline testing without pre-test counseling — informed consent, discussion of fumarase-deficiency reproductive risk (if partner is also an FH carrier), and psychological preparation for child-onset surveillance are mandatory."
+  - "Do not treat a VUS result as pathogenic — manage as pedigree suspicion pending further data; do not initiate the childhood MRI protocol based on a VUS."
+  - "Do not apply the VHL '3-cm rule' to HLRCC-RCC — HLRCC papillary-type-2 metastasizes from tumors <3 cm; any solid renal mass in a confirmed FH carrier requires radical nephrectomy, not a tumor-sparing approach."
+  - "Do not skip pre-myomectomy / pre-hysterectomy fertility-preservation discussion (oocyte cryopreservation) in young female FH carriers — fibroid surgery often requires hysterectomy in the 30s-40s and early reproductive planning is critical."
+  - "Do not skip partner FH testing in reproductive counseling of a confirmed FH carrier — biallelic FH in offspring = fumarase deficiency (severe neonatal neurometabolic syndrome, not HLRCC)."
+  - "Do not present a negative-panel result as zero-risk — phenocopies and unrecognised FH variants are possible; consider tumor IHC (FH loss, 2SC accumulation) on available tumor specimens from relatives."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — v0.2-B hereditary pilot (HLRCC). HLRCC Family Alliance International Surveillance Guidelines + NCCN Genetic/Familial High-Risk Kidney as new SRC entities are v0.2-B authoring backlog. Two-Co-Lead signoff queued.

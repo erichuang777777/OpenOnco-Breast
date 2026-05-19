@@ -1,0 +1,216 @@
+id: IND-IBD-CRC-PREVENTION-CHROMOENDOSCOPY
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IBD-CRC-PREVENTION
+
+# No drug regimen — intervention is surveillance colonoscopy with
+# chromoendoscopy/HD-WL + targeted biopsies, dysplasia-management
+# decision-tree (endoscopic resection vs proctocolectomy), and ongoing
+# IBD medical therapy by the patient's gastroenterologist (mucosal
+# healing reduces dysplasia risk; mesalamine chemopreventive effect
+# controversial but commonly recommended). recommended_regimen: null.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Surveillance colonoscopy with chromoendoscopy or HD-WL + targeted
+    biopsies q1-3y reduces CRC mortality in long-standing IBD by
+    enabling detection of flat dysplasia and early-stage cancers
+    amenable to endoscopic resection or curative-intent proctocolectomy.
+    Chromoendoscopy ~2-3x more sensitive than standard white-light for
+    flat dysplasia (multiple meta-analyses; SCENIC consensus 2015).
+    Mucosal healing on IBD therapy reduces colitis-associated CRC risk
+    by ~50% vs persistent inflammation. PSC-IBD subgroup carries the
+    highest absolute benefit from annual surveillance (lifetime CRC
+    risk ~15-30% drops with timely dysplasia detection).
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  - TEST-COLONOSCOPY-FULL
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for long-standing IBD with colonic
+  involvement (UC ≥8y, Crohn-colitis ≥8y with ≥1/3 colon involvement,
+  or any IBD with PSC). Surveillance cadence and modality per
+  AGA / ECCO / NCCN:
+
+  **Cadence:**
+    - **PSC-IBD:** Annual colonoscopy from PSC diagnosis (regardless of
+      IBD duration) — highest absolute CRC risk subgroup.
+    - **Long-standing UC or Crohn-colitis ≥1/3 colon involvement:**
+      Q1-2 years from 8 years after IBD diagnosis. Extension of colitis
+      (left-sided vs pancolitis) matters more than absolute duration —
+      pancolitis warrants the more aggressive end of the cadence range.
+    - **Risk-stratified shortening:** Q1y if any of (prior dysplasia,
+      family history of CRC under 50, persistent active inflammation
+      despite therapy, pseudopolyposis). Q3-5y permissible in extended
+      remission with normal-appearing mucosa on consecutive exams (but
+      Q1-2y remains preferred).
+
+  **Modality:**
+    - **Chromoendoscopy** (dye-spray indigo carmine or methylene blue)
+      with **targeted biopsies of abnormal areas** is the **preferred**
+      AGA / ECCO modality. ~2-3x more sensitive than white-light random
+      biopsies for flat dysplasia (SCENIC consensus 2015).
+    - **HD-WL + virtual chromoendoscopy** (NBI, BLI, i-Scan) is an
+      acceptable alternative when dye-spray chromoendoscopy is not
+      available — sensitivity comparable to chromoendoscopy in expert
+      hands.
+    - **Random biopsies** (4-quadrant every 10 cm + targeted biopsies):
+      historical standard, still acceptable when chromoendoscopy is
+      unavailable; lower sensitivity, longer procedure time.
+
+  **Dysplasia management:** Any dysplasia → confirm by **expert GI
+  pathologist** review (high inter-observer variability; ~30-50% of
+  community-pathologist LGD reclassified at expert review).
+    - **Visible polypoid lesion completely resected endoscopically**
+      (formerly "adenoma-like DALM"): endoscopic resection +
+      intensified surveillance Q3-6mo for the first year.
+    - **Visible non-polypoid / flat HGD or invisible HGD on random
+      biopsy:** strongly consider total proctocolectomy with IPAA.
+    - **Visible non-polypoid / flat LGD or invisible LGD:** intensified
+      surveillance Q3-6mo by an expert endoscopist; proctocolectomy
+      individualized — multifocal LGD or recurrence after endoscopic
+      resection favors surgery.
+
+  **Concurrent IBD therapy:** Maintained mucosal healing on the
+  patient's IBD regimen (5-ASA, immunomodulators, biologics, JAK
+  inhibitors per current ECCO guidance) reduces colitis-associated CRC
+  risk by ~50% vs persistent active inflammation. Mesalamine
+  chemoprevention is commonly recommended but has mixed RCT support;
+  ECCO 2024 considers it a reasonable add-on for UC patients without
+  contraindication.
+
+  **PSC-IBD specifics:** annual colonoscopy from PSC diagnosis;
+  cholangiocarcinoma surveillance separately handled via
+  RF-PSC-CHOLANGIOCARCINOMA-PREVENTION (this pilot). Ursodeoxycholic
+  acid (UDCA) for CRC chemoprevention in PSC-IBD is controversial — low
+  dose (13-15 mg/kg/day) acceptable; high dose (≥28 mg/kg/day)
+  associated with HARM in some PSC trials and is contraindicated.
+
+  In Ukraine, surveillance colonoscopy with biopsies is NSZU-covered;
+  chromoendoscopy and HD-WL availability varies by center. Expert GI
+  pathology review (rather than community pathology only) is the rate-
+  limiting step for accurate dysplasia management — referral to a
+  tertiary center may be needed.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для тривалого IBD з ободовим
+  ураженням (UC ≥8 років, Crohn-коліт ≥8 років з ≥1/3 ободової кишки,
+  або будь-яке IBD з PSC). Частота спостереження та модальність per
+  AGA/ECCO/NCCN:
+
+  **Частота:**
+    - **PSC-IBD:** Щорічна колоноскопія від PSC діагнозу (незалежно від
+      IBD тривалості) — найвища-ризикова підгрупа.
+    - **Тривале UC або Crohn-коліт ≥1/3 ободової кишки:** Q1-2 роки з
+      8 років після IBD діагнозу.
+    - **Risk-stratified коротшення:** Q1 рік при будь-чому з
+      (попередня дисплазія, сімейна історія КРР під 50, persistent
+      active inflammation, pseudopolyposis).
+
+  **Модальність:**
+    - **Хромоендоскопія** (dye-spray indigo carmine або methylene blue)
+      з **цільовими біопсіями abnormal areas** — **переважна** модальність
+      AGA/ECCO. ~2-3x чутливіша ніж white-light random біопсії для
+      flat dysplasia (SCENIC консенсус 2015).
+    - **HD-WL + virtual хромоендоскопія** (NBI, BLI, i-Scan) — прийнятна
+      альтернатива.
+    - **Random біопсії** (4-квадрантні кожні 10 см + цільові): історичний
+      стандарт, прийнятний коли хромоендоскопія недоступна.
+
+  **Управління дисплазією:** Будь-яка дисплазія → підтвердження
+  **експертним GI-патологом**.
+    - **Видиме поліповидне ураження, повністю резектоване ендоскопічно**:
+      ендоскопічна резекція + посилене спостереження Q3-6 міс перший рік.
+    - **Видиме non-polypoid / flat HGD або invisible HGD:** сильно
+      розглядати тотальну проктоколектомію з IPAA.
+    - **Видиме non-polypoid / flat LGD або invisible LGD:** посилене
+      спостереження Q3-6 міс експертним ендоскопістом.
+
+  **Конкурентна IBD-терапія:** Підтримуване mucosal healing на режимі
+  пацієнта (5-ASA, імуномодулятори, біологіки, JAK-інгібітори per
+  ECCO) знижує colitis-associated CRC ризик на ~50%.
+
+  **PSC-IBD специфіка:** щорічна колоноскопія від PSC діагнозу.
+  Урсодезоксихолева кислота (UDCA) для CRC хемопревенції у PSC-IBD —
+  контроверсійно; низька доза (13-15 мг/кг/день) прийнятна; висока
+  доза (≥28 мг/кг/день) асоційована з HARM і протипоказана.
+
+  В Україні спостережувальна колоноскопія з біопсіями покривається НСЗУ;
+  доступність хромоендоскопії та HD-WL варіюється за центром. Експертний
+  огляд GI-патології — rate-limiting step; референтні центри в Києві
+  та Львові.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-COLON-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Patients with long-standing IBD (UC or Crohn-colitis ≥8 years)
+      or IBD with concomitant PSC require intensified colorectal
+      surveillance with chromoendoscopy or HD-WL targeted biopsies.
+      PSC-IBD: annual colonoscopy from PSC diagnosis."
+  - source_id: SRC-ESMO-CRC-2024
+    position: supports
+    relevant_quote_paraphrase: >-
+      "IBD-associated CRC prevention requires surveillance colonoscopy
+      with chromoendoscopy or virtual chromoendoscopy q1-3y starting
+      8-10 years after IBD diagnosis or from PSC diagnosis."
+  - source_id: SRC-ESMO-COLON-2024
+    position: supports
+
+do_not_do:
+  - "Не використовувати white-light random біопсії як sole modality коли chromoendoscopy або HD-WL доступні — flat dysplasia пропускається."
+  - "Не базуватися на діагнозі дисплазії одного community-патолога без експертного GI-pathology огляду — high inter-observer variability."
+  - "Не виконувати проктоколектомію на основі один-патолог LGD без експертного підтвердження — over-treatment."
+  - "Не використовувати високодозовий UDCA (≥28 мг/кг/день) у PSC-IBD — асоційований з HARM в RCT."
+  - "Не подовжувати інтервал спостереження понад q2 роки у PSC-IBD — щорічне scope обов'язкове від PSC діагнозу."
+  - "Не покладатися на mesalamine хемопревенцію як еквівалент мукозного healing — потрібен active IBD control."
+
+do_not_do_en:
+  - "Do not use white-light random biopsies as sole modality when chromoendoscopy or HD-WL is available — flat dysplasia is missed."
+  - "Do not rely on a community pathologist's single dysplasia diagnosis without expert GI pathology review — high inter-observer variability."
+  - "Do not perform proctocolectomy based on a single-pathologist LGD without expert confirmation — over-treatment."
+  - "Do not use high-dose UDCA (≥28 mg/kg/day) in PSC-IBD — associated with HARM in RCTs."
+  - "Do not extend surveillance interval beyond q2y in PSC-IBD — annual scope is mandatory from PSC diagnosis."
+  - "Do not rely on mesalamine chemoprevention as equivalent to mucosal healing — active IBD control is required."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — v0.3 chronic-condition prevention pilot (IBD-associated CRC).
+  Two-Co-Lead signoff queued. Mesalamine chemoprevention controversy
+  noted in rationale; mixed RCT support — ECCO 2024 considers it
+  reasonable add-on but not standard of care.
+
+  Sources TODO: AGA Clinical Practice Update on Surveillance and
+  Management of Dysplasia in IBD (Murthy 2021) and ECCO Guidelines on
+  IBD (2024) as new SRC entities — primary citations for chromoendoscopy
+  preference, dysplasia decision-tree, and PSC-IBD annual cadence.

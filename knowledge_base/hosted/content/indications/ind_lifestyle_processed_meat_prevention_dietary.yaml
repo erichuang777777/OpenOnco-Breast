@@ -1,0 +1,112 @@
+id: IND-LIFESTYLE-PROCESSED-MEAT-PREVENTION-DIETARY
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-LIFESTYLE-PROCESSED-MEAT-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Reducing processed-meat intake to <50 g/day (and red meat to <500 g/week) is associated with proportional reduction in CRC risk. Substitution effect: replacing processed meat with poultry, fish, legumes, whole grains, or plant protein further reduces incidence. WCRF/AICR projects ~13% of US CRC cases attributable to processed-meat consumption — population-level intervention potential meaningful."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for high processed-meat consumption.
+  Components per WCRF/AICR Continuous Update Project + ACS 2020 Diet +
+  Physical Activity Guideline + NCCN Colon Cancer screening:
+
+  **(1) Dietary substitution counseling** — Reduce processed meat to
+  <50 g/day (ideally minimal/none). Reduce red meat to <500 g/week
+  (~3 portions). Substitute with:
+  - Poultry, fish, eggs, dairy
+  - Legumes (beans, lentils, chickpeas)
+  - Whole grains, nuts, seeds
+  - Plant-based protein sources
+
+  **(2) Mediterranean-style or plant-forward eating pattern** — Whole
+  foods, vegetables, fruits, whole grains, olive oil, moderate fish/
+  poultry, minimal processed/red meat. Strongest dietary-pattern
+  evidence for CRC + cardiovascular + all-cause mortality reduction.
+
+  **(3) USPSTF-cadence CRC screening** — Colonoscopy q10y from age 45
+  (or stool-based screening: FIT q1y, FIT-DNA q3y as alternatives).
+  Processed-meat consumption does not change screening cadence per
+  current guidelines but compounds baseline risk.
+
+  **(4) Referral to registered dietitian** for sustained behavioral
+  change, especially if cultural/religious dietary patterns make
+  reduction challenging.
+
+  Dietary intervention + age-appropriate screening additive for CRC
+  incidence reduction. Plant-forward patterns also reduce cardiovascular
+  + metabolic morbidity.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для high processed-meat consumption.
+  Components per WCRF/AICR Continuous Update Project + ACS 2020 Guideline:
+
+  **(1) Dietary substitution counseling** — Зменшити processed meat
+  до <50 г/день (ідеально minimal/none). Зменшити red meat до <500 г/тиждень
+  (~3 порції). Substitute:
+  - Птиця, риба, яйця, dairy
+  - Бобові
+  - Whole grains, nuts, seeds
+  - Plant-based protein
+
+  **(2) Mediterranean-style або plant-forward eating pattern** — Whole
+  foods, овочі, фрукти, whole grains, olive oil, moderate fish/poultry.
+
+  **(3) USPSTF-cadence CRC screening** — Colonoscopy q10y з 45 років
+  (або stool-based screening: FIT q1y, FIT-DNA q3y).
+
+  **(4) Direction до registered dietitian** для sustained behavioral
+  change.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-COLON-2025
+    position: supports
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не презентувати dietary counseling як заміну colonoscopy screening — both interventions complementary."
+  - "Не demonізувати окремі їжі — dietary pattern має значення більше ніж elimination окремих foods."
+  - "Не приписувати extreme dietary restriction без registered-dietitian support — risk of malnutrition / inappropriate substitution."
+  - "Не ігнорувати cultural / religious dietary patterns — counseling має бути culturally sensitive і feasible для individual."
+
+do_not_do_en:
+  - "Do not present dietary counseling as a substitute for colonoscopy screening — both interventions are complementary."
+  - "Do not demonize individual foods — dietary pattern matters more than single-food elimination."
+  - "Do not prescribe extreme dietary restriction without registered-dietitian support — risk of malnutrition / inappropriate substitution."
+  - "Do not ignore cultural / religious dietary patterns — counseling must be culturally sensitive and feasible for the individual."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 lifestyle prevention pilot (processed meat). Two-Clinical-Co-Lead signoff queued."

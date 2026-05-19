@@ -1,0 +1,242 @@
+id: IND-COWDEN-SUSPICION-PREVENTION-GENETIC-COUNSELING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-COWDEN-FAMILY-HISTORY-SUSPICION
+
+# No drug regimen — intervention is referral + germline-test ordering +
+# pre/post-test counseling + a structured carrier-confirmation multi-
+# organ surveillance protocol (not a Regimen entity).
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Diagnostic yield of germline PTEN panel testing in pedigree-
+    suspicion populations: ~80-100% positive carrier identification
+    in Lhermitte-Duclos-positive probands (Lhermitte-Duclos is
+    pathognomonic); ~25-80% positive in clinical-criteria-met
+    populations depending on Cleveland Clinic Cowden Score
+    stringency; ~10-25% in single-criterion / Bannayan-Riley-
+    Ruvalcaba pediatric phenotype populations. Confirmed PTEN
+    carrier routes to structured multi-organ surveillance: breast
+    MRI + mammography from age 30, annual thyroid US from diagnosis,
+    endometrial surveillance discussion from 35-40, colonoscopy from
+    age 35, dermatologic evaluation q1y, baseline renal imaging.
+    Early breast-cancer detection benefit is substantial given the
+    ~85% lifetime breast-cancer risk and the demonstrated mortality
+    reduction from MRI + mammography combination screening in high-
+    risk populations.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  # Germline panel test entity not yet authored as a TEST-* — v0.2-B
+  # follow-up.
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for individuals with pedigree
+  suspicion of Cowden syndrome / PTEN hamartoma tumor syndrome (PHTS).
+  Three parallel referrals:
+
+  **(1) Genetic counseling referral.** Pre-test counseling covers:
+  inheritance pattern (autosomal dominant, variable penetrance
+  particularly for the cancers — breast and thyroid penetrance high,
+  endometrial and renal moderate), implications for family members
+  (cascade testing if positive — siblings at 50% risk; children at
+  50% risk; preimplantation genetic diagnosis available; pediatric-
+  phenotype Bannayan-Riley-Ruvalcaba [BRR] variant is the childhood
+  manifestation of PHTS and warrants developmental / surveillance
+  considerations for affected children), insurance / GINA
+  considerations, psychological aspects of multi-organ surveillance
+  burden including potential risk-reducing mastectomy / hysterectomy
+  discussions in confirmed carriers. Per ACMG / NCCN / ASCO guidelines,
+  pre-test counseling is the standard of care before germline testing.
+
+  **(2) Germline PTEN gene panel testing.** Modern hereditary cancer
+  panels (e.g., Invitae multi-cancer panel, Color hereditary cancer
+  panel, GeneDx OncoGene comprehensive) cover PTEN (full sequencing
+  + large-deletion / MLPA analysis; deletions / duplications account
+  for ~10-15% of PTEN pathogenic variants), plus differential genes
+  for Cowden-phenocopies (KLLN — Killin promoter hypermethylation
+  is associated with a Cowden-like phenotype; SDHB / SDHC / SDHD —
+  hereditary paraganglioma can overlap clinically; AKT1 / PIK3CA —
+  somatic-only mosaic Cowden-like presentations). Variant
+  classification per ACMG framework.
+
+  **(3) Carrier-confirmation surveillance plan (sequel pathway).**
+    Positive PTEN carrier → structured multi-organ surveillance per
+    NCCN Genetic/Familial High-Risk Breast Ovarian Pancreatic:
+    - **Breast (women):** Annual mammography + annual breast MRI
+      (offset by 6 months for alternating Q6-month imaging) starting
+      age 30 (or 5-10 years before earliest breast cancer in family,
+      whichever is earlier). Clinical breast exam q6-12 months.
+      Discussion of risk-reducing mastectomy in shared decision-
+      making (decision driven by individual risk tolerance + family
+      history + reproductive plans).
+    - **Endometrial / uterine:** Endometrial sampling q1-2 years
+      from age 35-40, OR transvaginal ultrasound; discussion of
+      risk-reducing hysterectomy post-childbearing. Evidence base
+      for endometrial surveillance modest — shared decision-making.
+    - **Thyroid:** Baseline thyroid ultrasound at PTEN diagnosis
+      (any age including pediatric carriers); annual thyroid US
+      lifelong. Predominantly follicular variant papillary thyroid
+      carcinoma; multinodular goiter near-universal but mostly
+      benign.
+    - **Colorectal:** Colonoscopy q5 years starting age 35 (more
+      frequent if polyposis demonstrated). Cowden CRC risk is
+      lower than Lynch / FAP but elevated above general population.
+    - **Renal:** Baseline renal MRI / US at diagnosis; surveillance
+      imaging q2 years thereafter (or earlier if family history
+      includes renal cancer). Predominantly papillary or
+      chromophobe RCC.
+    - **Dermatologic:** Annual dermatologic evaluation for
+      characteristic skin lesions (trichilemmomas, acral keratoses,
+      papillomatous papules) plus melanoma surveillance.
+    - **CNS:** Brain MRI if symptoms suggest Lhermitte-Duclos
+      (cerebellar ataxia, headache, dizziness); no routine CNS
+      screening required.
+
+  Negative result (no pathogenic / likely-pathogenic variant on a
+  high-quality panel including large-deletion analysis) → re-stratify
+  residual family-history risk; consider KLLN promoter methylation
+  testing and SDH-related differential. VUS result → managed as
+  pedigree suspicion (this Indication) until segregation analysis or
+  functional studies clarify.
+
+  Genetic counseling and germline PTEN testing are typically covered
+  by insurance in the US/EU when pedigree criteria are met; in
+  Ukraine, germline testing is available through private labs at
+  out-of-pocket cost (~5000-15000 UAH for multi-gene panel).
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для осіб з родовідною підозрою на
+  синдром Cowden / PTEN hamartoma tumor syndrome (PHTS). Три
+  паралельні направлення:
+
+  **(1) Направлення на генетичне консультування.** Pre-test
+  консультування охоплює: спадкування (аутосомно-домінантне, варіабельна
+  пенетрантність — особливо для раків, груди і щитоподібна залоза
+  висока, ендометрій і нирки помірна), наслідки для членів сім'ї
+  (cascade тестування при позитиві — сібси з ризиком 50%; діти з
+  ризиком 50%; преімплантаційна генетична діагностика доступна;
+  педіатричний фенотип Bannayan-Riley-Ruvalcaba [BRR] — дитячий
+  прояв PHTS і потребує developmental / спостережувальних міркувань
+  для уражених дітей), страхові / GINA-міркування, психологічні
+  аспекти мульти-органного спостереження включаючи потенційні
+  обговорення risk-reducing мастектомії / гістеректомії у підтверджених
+  носіїв. За ACMG / NCCN / ASCO настановами, pre-test консультування
+  — standard of care перед germline тестуванням.
+
+  **(2) Germline PTEN панельне тестування.** Сучасні панелі
+  спадкових ракових захворювань (напр., Invitae multi-cancer panel,
+  Color hereditary cancer panel, GeneDx OncoGene comprehensive)
+  покривають PTEN (повне секвенування + large-deletion / MLPA аналіз;
+  делеції / дуплікації становлять ~10-15% PTEN-патогенних варіантів),
+  плюс гени диференційного діагнозу для Cowden-фенокопій (KLLN —
+  гіперметилювання промотора Killin асоційоване з Cowden-подібним
+  фенотипом; SDHB / SDHC / SDHD; AKT1 / PIK3CA — соматичні-only
+  мозаїчні Cowden-подібні презентації). Класифікація варіантів за
+  рамкою ACMG.
+
+  **(3) План спостереження при підтвердженому носійстві (sequel).**
+    Позитивний PTEN носій → структуроване мульти-органне
+    спостереження per NCCN Genetic/Familial High-Risk Breast Ovarian
+    Pancreatic:
+    - **Молочна залоза (жінки):** Щорічна мамографія + щорічне
+      MRI грудей (offset by 6 months для альтернативного Q6-month
+      візуалізаційного обстеження) з 30 років (або 5-10 років до
+      найранішого раку грудей у сім'ї, що раніше). Клінічний огляд
+      грудей q6-12 місяців. Обговорення risk-reducing мастектомії
+      у shared decision-making.
+    - **Ендометрій / матка:** Біопсія ендометрію q1-2 роки з 35-40
+      років АБО трансвагінальне УЗД; обговорення risk-reducing
+      гістеректомії post-childbearing. База доказів для
+      ендометріального скринінгу помірна.
+    - **Щитоподібна залоза:** Базове УЗД щитоподібної залози при
+      PTEN-діагнозі (будь-який вік включно з педіатричними носіями);
+      щорічне УЗД пожиттєво. Переважно фолікулярний варіант
+      папілярного раку щитоподібної залози; багатовузловий зоб
+      майже-універсальний але переважно доброякісний.
+    - **Колоректальне:** Колоноскопія q5 років з 35 років (частіше
+      якщо демонструється поліпоз). Cowden-CRC-ризик нижчий ніж
+      Lynch / FAP але підвищений над загальною популяцією.
+    - **Нирки:** Базове ниркове MRI / УЗД при діагнозі; візуалізаційне
+      спостереження q2 роки після. Переважно папілярне або
+      хромофобне РСС.
+    - **Шкіра:** Щорічне дерматологічне обстеження для характерних
+      шкірних уражень (трихілеммоми, акральні кератози, папіломатозні
+      папули) плюс melanoma-спостереження.
+    - **ЦНС:** MRI мозку при симптомах підозри Lhermitte-Duclos
+      (мозочкова атаксія, головний біль, запаморочення); без
+      рутинного ЦНС-скринінгу.
+
+  Негативний результат → ре-стратифікація залишкового ризику;
+  розгляньте KLLN-promoter-methylation тестування і SDH-related
+  диференціал. VUS → ведеться як родовідна підозра.
+
+  Генетичне консультування та germline PTEN-тестування зазвичай
+  покриваються страхуванням у США/ЄС при відповідності критеріям; в
+  Україні germline тестування доступне через приватні лабораторії за
+  out-of-pocket вартість (~5000-15000 грн за мультигенну панель).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_hereditary_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Patients meeting NCCN criteria for Cowden syndrome / PHTS should
+      receive germline PTEN panel testing. Confirmed carriers enter
+      structured multi-organ surveillance: breast MRI + mammography
+      starting age 30, annual thyroid ultrasound from diagnosis,
+      endometrial surveillance from age 35-40, colonoscopy from age 35,
+      annual dermatologic evaluation, and baseline renal imaging."
+  - source_id: SRC-NCCN-BREAST-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "High-risk breast cancer screening with annual mammography +
+      MRI is recommended for women with PTEN pathogenic variants,
+      starting at age 30."
+
+do_not_do:
+  - "Не призначати germline тестування без pre-test консультування — інформована згода + обговорення мульти-органного surveillance + потенційні risk-reducing хірургії обов'язкові."
+  - "Не treter VUS PTEN-результат як патогенний — управляйте як родовідну підозру; не починайте інтенсивний multi-organ surveillance протокол на підставі VUS."
+  - "Не пропускати MLPA / large-deletion аналіз — ~10-15% патогенних PTEN варіантів — великі делеції, пропущені sequencing-only тестуванням."
+  - "Не презентувати negative-panel результат як zero-risk — Cowden phenocopies (KLLN-methylation, SDH-related синдроми) можуть бути basis сильної сімейної історії; розгляньте дедиковану панель."
+  - "Не рекомендувати risk-reducing мастектомію або гістеректомію без підтвердженого PTEN-носійства — ці інтервенції вимагають confirmed carrier діагнозу і shared decision-making про reproductive / menopausal sequelae."
+  - "Не пропускати baseline thyroid US у дитячих PTEN-носіїв — thyroid pathology у Cowden може презентуватися рано; рання базова оцінка важлива."
+
+do_not_do_en:
+  - "Do not order germline testing without pre-test counseling — informed consent and discussion of multi-organ surveillance + potential risk-reducing surgeries are mandatory."
+  - "Do not treat a VUS PTEN result as pathogenic — manage as pedigree suspicion; do not initiate intensive multi-organ surveillance based on a VUS."
+  - "Do not skip MLPA / large-deletion analysis — ~10-15% of pathogenic PTEN variants are large deletions missed by sequencing-only testing."
+  - "Do not present a negative-panel result as zero-risk — Cowden phenocopies (KLLN methylation, SDH-related syndromes) may underlie a strong family history; consider a dedicated panel."
+  - "Do not recommend risk-reducing mastectomy or hysterectomy without confirmed PTEN carriage — these interventions require a confirmed carrier diagnosis and shared decision-making about reproductive / menopausal sequelae."
+  - "Do not skip baseline thyroid US in pediatric PTEN carriers — thyroid pathology in Cowden can present early; early baseline assessment is important."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — v0.2-B hereditary pilot (Cowden, additional). NCCN Genetic/Familial High-Risk Breast Ovarian Pancreatic 2025 includes the Cowden surveillance section; dedicated PTEN-syndrome sources (Tan et al. Clin Cancer Res 2012; Eng et al. PHTS clinical guidelines) are v0.2-B authoring backlog. Two-Co-Lead signoff queued.

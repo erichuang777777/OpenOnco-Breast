@@ -1,0 +1,65 @@
+id: DIS-PARATHYROID-CARCINOMA
+names:
+  preferred: "Parathyroid carcinoma"
+  ukrainian: "Карцинома прищитоподібної залози"
+  english: "Parathyroid carcinoma"
+  synonyms: ["Parathyroid cancer", "HRPT2-associated parathyroid carcinoma", "CDC73-associated parathyroid carcinoma", "MEN1-associated parathyroid carcinoma (rare)"]
+codes:
+  icd_o_3_morphology: "8140/3"
+  icd_o_3_topography: ["C75.0"]
+  icd_10: "C75.0"
+  who_classification: "WHO Endocrine and Neuroendocrine Tumours 5th ed (2022): Parathyroid carcinoma — diagnostic criteria require evidence of invasion (capsular / vascular / soft-tissue / lymph node / metastasis) and not just atypical histology"
+archetype: biomarker_driven
+oncotree_code: PTHC
+lineage: "endocrine"
+etiological_factors:
+  - "Sporadic (most cases) — somatic CDC73 / HRPT2 mutations dominant; CCND1 amplification minority"
+  - "Hyperparathyroidism-jaw tumor syndrome (HPT-JT, germline CDC73/HRPT2) — ~15% of parathyroid carcinoma are syndromic; jaw fibromas + renal cysts + uterine tumors part of syndrome"
+  - "MEN1 syndrome — primary hyperparathyroidism affects ~95% of MEN1 carriers, but parathyroid carcinoma is rare in this context (most are adenomas / hyperplasia)"
+  - "MEN2A — primary hyperparathyroidism in subset; parathyroid carcinoma even rarer than in MEN1"
+  - "Familial isolated hyperparathyroidism (germline CDC73 / MEN1 / CASR / GCM2)"
+related_diseases:
+  - "DIS-MTC (MEN2A axis — primary hyperparathyroidism + MTC + pheochromocytoma triad)"
+  - "DIS-PITUITARY-ADENOMA (MEN1 axis — primary hyperparathyroidism + pituitary adenoma + pancreatic NET)"
+  - "DIS-PNET (MEN1 axis — gastropancreatic NETs)"
+key_biomarkers:
+  - BIO-RET
+epidemiology:
+  context: "Very rare — <1% of primary hyperparathyroidism cases; ~0.005 per 100K/year. Classic clinical picture: profound hypercalcemia (often >14 mg/dL) + very high PTH (often >3-5x ULN) + palpable neck mass + significant bone/renal symptoms — distinguishes from typical benign hyperparathyroidism. Five-year OS ~70-85% in localized resectable disease; metastatic disease (lung, liver, bone) typically progresses over years with refractory hypercalcemia as the dominant clinical problem."
+sources:
+  - SRC-NCCN-NET-2025
+  - SRC-NCCN-THYROID-2025
+last_reviewed: "2026-05-18"
+reviewers: []
+notes: >
+  Diagnosis is histologic-plus-invasive (capsular / vascular / soft-
+  tissue invasion or metastasis) — atypical adenoma alone is not
+  parathyroid carcinoma. Germline CDC73 / HRPT2 testing recommended at
+  diagnosis for any parathyroid carcinoma (HPT-JT cascade). Treatment:
+  en-bloc resection of parathyroid + ipsilateral thyroid lobe + central
+  lymph nodes (R0 is the strongest prognostic factor; do NOT shell out
+  the tumor at index surgery). Recurrent / metastatic disease: re-
+  resection where feasible; calcimimetic (cinacalcet) for hypercalcemia
+  control; bisphosphonates / denosumab for skeletal disease;
+  pembrolizumab in MSI-H / TMB-high subset. No standard cytotoxic
+  regimen with consistent activity.
+notes_ua: |
+  Діагноз — гістологія-плюс-інвазивність (капсулярна / судинна /
+  м'якотканинна інвазія або метастаз) — атипова аденома сама по
+  собі НЕ є parathyroid carcinoma. Гермінальне CDC73 / HRPT2
+  тестування рекомендується при діагностиці будь-якої parathyroid
+  carcinoma (HPT-JT каскад). Лікування: en-bloc резекція
+  паращитоподібної залози + іпсилатеральна частка щитоподібної +
+  центральні лімфовузли (R0 — найсильніший прогностичний фактор;
+  НЕ enucleate пухлину при index surgery). Рецидивна /
+  метастатична хвороба: re-resection де можливо; calcimimetic
+  (cinacalcet) для контролю гіперкальцемії; біcфосфонати /
+  деносумаб для скелетної хвороби; pembrolizumab у MSI-H / TMB-high
+  підгрупі. Стандартного цитотоксичного режиму з консистентною
+  активністю немає.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+metadata:
+  proposal_status: stub
+  awaiting_proposal: "Full Indications for en-bloc resection (localized); re-resection + cinacalcet (recurrent/metastatic); pembrolizumab in MSI-H subset; HPT-JT / MEN1 / MEN2A cascade surveillance pending."

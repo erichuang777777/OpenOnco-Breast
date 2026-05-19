@@ -1,0 +1,285 @@
+id: IND-LI-FRAUMENI-SUSPICION-PREVENTION-GENETIC-COUNSELING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-LI-FRAUMENI-FAMILY-HISTORY-SUSPICION
+
+# No drug regimen — intervention is referral + germline-test ordering +
+# pre/post-test counseling with explicit psychological-support
+# wrap-around.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Diagnostic yield of germline TP53 testing in pedigree-suspicion
+    populations: ~50-70% in classic-LFS-criteria probands (very high
+    yield), ~20-30% in Chompret-criteria probands, ~5-10% in
+    multiple-primaries probands without Chompret/classic criteria.
+    Confirmed carrier routes to Toronto-protocol surveillance with
+    documented mortality benefit: prospective cohort data (Villani
+    et al. Lancet Oncology 2016; SIGNIFY trial) show ~25-35% 5-year
+    survival improvement with active surveillance vs untreated
+    controls (89% vs 60%). Risk-reducing mastectomy in BRCA-overlap
+    confirmed-carrier women reduces breast cancer incidence by ~90%
+    and remains a discussion point in LFS care given the very high
+    breast cancer penetrance.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  # Germline panel test entity not yet authored as a TEST-* — v0.2-B
+  # follow-up. Currently referenced in rationale.
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for individuals with pedigree
+  suspicion of Li-Fraumeni Syndrome. Two parallel referrals — with
+  explicit recognition that LFS carries unique psychological burden
+  and resource demands that distinguish it from other hereditary
+  cancer syndromes:
+
+  **(1) Genetic counseling referral — psychologically-supportive
+  framing required.** Pre-test counseling MUST explicitly address:
+  - Inheritance pattern (autosomal dominant; de novo mutation rate
+    is ~7-20% — meaning a confirmed proband without affected family
+    may still be the carrier-of-origin for their children).
+  - Penetrance (one of the highest of any hereditary cancer
+    syndrome — lifetime cancer risk approaches 100%; mean age of
+    first cancer is in the 20s-30s).
+  - Implications for first-degree relatives (cascade testing is
+    high-stakes — confirmed carrier status in a young child
+    fundamentally reshapes life trajectory).
+  - Implications for children of confirmed carrier — reproductive
+    options including pre-implantation genetic diagnosis (PGD) and
+    prenatal testing are typically presented neutrally.
+  - GINA / insurance considerations.
+  - **Psychological burden explicitly** — LFS-specific anxiety is
+    severe and persistent; clinical depression rates in confirmed-
+    carrier cohorts run 30-50%. Pre-test counseling must connect
+    patients to LFS-specific psychosocial support (LFS Association,
+    Living LFS, peer support, mental-health provider trained in
+    hereditary-cancer counseling).
+  - Per ASCO / ACMG / NCCN guidelines, pre-test counseling by a
+    certified genetic counselor experienced in LFS is the standard
+    of care. Generalist genetic counseling is acceptable when LFS-
+    specific counseling is not accessible, but should explicitly
+    flag the unique penetrance + psychosocial considerations.
+
+  **(2) Germline TP53 testing.** Targeted single-gene TP53 testing
+  (Sanger / NGS with copy-number analysis — TP53 deletions are
+  ~5-10% of all variants and missed by Sanger-only testing) is
+  preferred for clear-criteria LFS suspicion. Multi-gene HBOC panel
+  (Invitae Common Hereditary Cancers, GeneDx, Color) is appropriate
+  when differential diagnosis includes HBOC / Lynch / other
+  syndromes. Variant classification per ACMG framework: pathogenic
+  / likely pathogenic / VUS / likely benign / benign. Note TP53
+  somatic-mosaic variants (low-VAF in blood, age-related clonal
+  hematopoiesis) — interpretation requires careful clinical context
+  and may require tumor/skin tissue testing for confirmation.
+
+  **Sequel pathway (positive — confirmed TP53 carrier):**
+  Toronto Protocol surveillance (active prospective protocol with
+  documented mortality benefit; Villani et al. 2016):
+  - Annual whole-body MRI (WB-MRI) from age of risk awareness or
+    early adulthood — high diagnostic yield for sarcoma, soft-tissue
+    masses, abdominal / pelvic primary tumors.
+  - Annual brain MRI with gadolinium contrast from same starting age
+    — high LFS-associated CNS tumor risk.
+  - Annual abdominal ultrasound (childhood through young adulthood)
+    + adrenal-focused imaging — adrenocortical carcinoma surveillance.
+  - Annual dermatologic exam — soft-tissue sarcoma / melanoma /
+    cutaneous primaries.
+  - Annual breast MRI from age 20-25 for women (alternating
+    q6 months with mammogram from age 30 — though mammography in TP53
+    carriers requires explicit risk/benefit discussion given
+    radiation exposure; ULTRASOUND-alternating may be preferred in
+    young carriers).
+  - Annual physical exam + neurologic exam + bloodwork (CBC
+    surveillance for hematologic primaries).
+  - Colonoscopy q2-5 years from age 25 (LFS-CRC risk is elevated
+    over general population).
+  - **RADIATION AVOIDANCE:** Therapeutic radiation for index cancers
+    in TP53 carriers requires multidisciplinary discussion of
+    non-radiation alternatives (surgery alone, systemic therapy
+    alone, brachytherapy in rare cases). Diagnostic radiation
+    (CT, conventional X-ray) is minimized — MRI / ultrasound
+    substituted when feasible. This is one of the most distinctive
+    aspects of LFS clinical management.
+  - **Risk-reducing mastectomy discussion** — option for
+    confirmed-carrier women; ~90% breast cancer risk reduction;
+    framing as informed-consent option, not mandate. Bilateral
+    salpingo-oophorectomy is NOT routinely recommended (TP53 does
+    not substantially elevate ovarian risk).
+
+  **Sequel pathway (negative TP53):** general-population screening
+  per USPSTF + re-stratification of any residual family-history
+  risk. Consider multi-gene panel re-test if TP53 was tested in
+  isolation (some pedigrees mimic LFS with non-TP53 variants —
+  CHEK2, ATM, etc.).
+
+  **Sequel pathway (VUS):** managed as pedigree-suspicion (this
+  Indication / surveillance pathway) until segregation analysis,
+  functional studies, or in-silico re-classification clarify. VUS
+  should NOT drive Toronto-protocol surveillance — the resource
+  and psychological burden is too high to justify without confirmed
+  pathogenic status.
+
+  Genetic counseling and TP53 testing are typically covered by
+  insurance in the US / EU when criteria are met (Chompret /
+  classic-LFS / NCCN); in Ukraine, single-gene TP53 testing is
+  available through private labs (~3000-8000 UAH); multi-gene
+  panels covering TP53 are ~5000-15000 UAH.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для осіб з родовідною підозрою на
+  синдром Li-Fraumeni. Дві паралельні направлення — з явним
+  визнанням, що LFS несе унікальний психологічний тягар та ресурсні
+  вимоги, що відрізняють його від інших спадкових онкосиндромів:
+
+  **(1) Направлення на генетичне консультування — психологічно-
+  підтримуюче framing необхідне.** Pre-test консультування МУСИТЬ
+  явно адресувати:
+  - Спадкування (аутосомно-домінантне; частота de novo мутацій
+    ~7-20% — означає, що підтверджений пробанд без уражених родичів
+    все одно може бути carrier-of-origin для своїх дітей).
+  - Пенетрантність (одна з найвищих з будь-якого спадкового
+    онкосиндрому — lifetime ризик раку наближається до 100%;
+    середній вік першого раку — 20-30 рр).
+  - Наслідки для родичів першого ступеня (cascade тестування
+    high-stakes — підтверджений статус носія у молодої дитини
+    фундаментально reshape життєву траєкторію).
+  - Наслідки для дітей підтвердженого носія — репродуктивні опції,
+    включаючи pre-implantation genetic diagnosis (PGD) та пренатальне
+    тестування, зазвичай представляються нейтрально.
+  - GINA / страхові міркування.
+  - **Психологічний тягар явно** — LFS-специфічна тривога важка та
+    persistent; рівень клінічної депресії в підтверджено-носійських
+    когортах ~30-50%. Pre-test консультування мусить підключати
+    пацієнтів до LFS-специфічної psychosocial підтримки (LFS
+    Association, Living LFS, peer support, mental-health provider,
+    навчений з консультування зі спадкового раку).
+  - За ASCO / ACMG / NCCN настановами, pre-test консультування
+    сертифікованим генетичним консультантом, досвідченим в LFS,
+    — standard of care. Generalist генетичне консультування
+    прийнятне, коли LFS-специфічне недоступне, але має явно flag
+    унікальні пенетрантність + психосоціальні міркування.
+
+  **(2) Germline TP53 тестування.** Цільове тестування single-gene
+  TP53 (Sanger / NGS з copy-number аналізом — TP53 делеції ~5-10%
+  всіх варіантів і пропускаються Sanger-only тестуванням) переважне
+  для clear-criteria LFS-підозри. Мультигенна HBOC панель (Invitae
+  Common Hereditary Cancers, GeneDx, Color) доречна, коли
+  диференційна діагностика включає HBOC / Lynch / інші синдроми.
+
+  **Наступний шлях (позитивний — підтверджений TP53 носій):**
+  Toronto Protocol скринінг (активний проспективний протокол з
+  задокументованою перевагою смертності; Villani et al. 2016):
+  - Щорічна whole-body МРТ з віку усвідомлення ризику або раннього
+    дорослого життя.
+  - Щорічна brain МРТ з гадолінієвим контрастом з того ж стартового
+    віку.
+  - Щорічне abdominal ultrasound + adrenal-focused imaging.
+  - Щорічний дерматологічний огляд.
+  - Щорічна МРТ молочної залози з 20-25 років для жінок
+    (чергування q6 місяців з мамографією з 30 років — хоча
+    мамографія у TP53 носіїв потребує явного risk/benefit
+    обговорення з огляду на radiation exposure; ULTRASOUND-
+    альтернативне може бути переважним у молодих носіїв).
+  - Щорічний фізичний огляд + неврологічний огляд + bloodwork (CBC
+    скринінг гематологічних primaries).
+  - Колоноскопія q2-5 років з 25 років.
+  - **RADIATION AVOIDANCE:** Лікувальна радіація для index-раків у
+    TP53 носіїв вимагає multidisciplinary обговорення non-radiation
+    альтернатив (хірургія сама, системна терапія сама, brachytherapy
+    у рідкісних випадках). Діагностична радіація (КТ, conventional
+    X-ray) мінімізована — МРТ / ультразвук замінюється, де
+    можливо. Це один з найбільш відмінних аспектів клінічного
+    управління LFS.
+  - **Обговорення risk-reducing мастектомії** — опція для
+    підтверджено-носійських жінок; ~90% зниження ризику раку
+    молочної залози; framing як інформована-згода опція, не мандат.
+    BSO НЕ рекомендується рутинно (TP53 не суттєво підвищує ризик
+    яєчників).
+
+  **Наступний шлях (негативний TP53):** general-population скринінг
+  per USPSTF + ре-стратифікація залишкового сімейно-історичного
+  ризику. Розглянути мультигенну панель re-test, якщо TP53 був
+  тестований ізольовано (деякі pedigrees імітують LFS з не-TP53
+  варіантами — CHEK2, ATM тощо).
+
+  **Наступний шлях (VUS):** ведеться як родовідна підозра (ця
+  Indication / шлях скринінгу) до segregation analysis, functional
+  studies або in-silico ре-класифікації. VUS НЕ повинна керувати
+  Toronto-protocol скринінгом — ресурсний та психологічний тягар
+  занадто високий, щоб виправдати без підтвердженого патогенного
+  статусу.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BREAST-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Genetic counseling and TP53 testing are recommended for
+      individuals meeting Chompret or classic Li-Fraumeni criteria.
+      Confirmed TP53 carriers should be offered surveillance
+      including annual breast MRI in women, whole-body MRI, and
+      brain MRI."
+  - source_id: SRC-NCCN-SARCOMA
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Soft-tissue sarcoma and osteosarcoma at young age, or
+      multiple sarcoma primaries, warrant evaluation for Li-Fraumeni
+      syndrome and germline TP53 testing."
+  - source_id: SRC-NCCN-CNS-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Pediatric and young-adult CNS tumors (especially choroid
+      plexus carcinoma, anaplastic medulloblastoma) merit
+      evaluation for Li-Fraumeni syndrome regardless of family
+      history."
+  - source_id: SRC-NCCN-AML-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Familial AML / leukemia in the context of an LFS-spectrum
+      pedigree merits germline testing including TP53."
+
+do_not_do:
+  - "Не призначати germline TP53 тестування без LFS-специфічного pre-test консультування — психологічний тягар та lifetime-ризик-наближення-до-100% потребують спеціалізованого framing."
+  - "Не трактувати VUS TP53 результат як патогенний — управляйте як родовідну підозру; не запускайте resource-intensive Toronto-protocol surveillance без confirmed pathogenic status."
+  - "Не рекомендувати рутинну мамографію у TP53 носіїв до 30 років без явного обговорення radiation-induced secondary-cancer ризику — ультразвук / МРТ переважні у молодих носіїв."
+  - "Не приймати lifetime risk ~100% як підставу для contraindications до treatment — TP53 носії, що розвивають index-раки, лікуються з ретельним розглядом radiation-avoiding альтернатив (хірургія, системна терапія), не з therapeutic nihilism."
+  - "Не пропускати психосоціальну підтримку — LFS-специфічна тривога важка; вимагає peer support (LFS Association, Living LFS) і часто mental-health professional, навченого з hereditary-cancer counseling."
+
+do_not_do_en:
+  - "Do not order germline TP53 testing without LFS-specific pre-test counseling — the psychological burden and lifetime-risk-approaching-100% require specialized framing."
+  - "Do not treat a TP53 VUS result as pathogenic — manage as pedigree suspicion; do not trigger resource-intensive Toronto-protocol surveillance without confirmed pathogenic status."
+  - "Do not recommend routine mammography in TP53 carriers <30 without explicit discussion of radiation-induced secondary-cancer risk — ultrasound / MRI are preferred in young carriers."
+  - "Do not accept lifetime risk ~100% as grounds for treatment contraindication — TP53 carriers who develop index cancers are treated with careful consideration of radiation-avoiding alternatives (surgery, systemic therapy), not with therapeutic nihilism."
+  - "Do not skip psychosocial support — LFS-specific anxiety is severe; requires peer support (LFS Association, Living LFS) and often a mental-health professional trained in hereditary-cancer counseling."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — v0.2-B hereditary pilot for Li-Fraumeni Syndrome. NCCN Genetic/Familial High-Risk Breast/Ovarian/Pancreatic and dedicated LFS testing guidance (Mai et al. NCI consortium, Bougeard et al. revised Chompret) as new SRC entities are v0.2-B authoring backlog. Cascade testing of confirmed-carrier first-degree relatives + interventions for confirmed carriers (RF-LI-FRAUMENI-CONFIRMED-CARRIER + IND-LI-FRAUMENI-CARRIER-*) are v0.2-B follow-up authoring.

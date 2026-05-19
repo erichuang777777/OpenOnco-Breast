@@ -1,0 +1,100 @@
+id: REG-TAMOXIFEN-CHEMOPREVENTION
+name: "Tamoxifen 20 mg daily × 5 years for breast-cancer chemoprevention"
+name_ua: "Тамоксифен 20 мг щодня × 5 років для хіміопрофілактики раку молочної залози"
+alternate_names:
+  - "Tamoxifen chemoprevention"
+  - "NSABP-P1 chemoprevention regimen"
+
+components:
+  - drug_id: DRUG-TAMOXIFEN
+    dose: "20 mg PO"
+    schedule: "once daily"
+    route: PO
+    duration: "5 years"
+
+cycle_length_days: 30
+total_cycles: "60 months (5 years)"
+
+toxicity_profile: moderate
+
+premedication: []
+mandatory_supportive_care: []
+monitoring_schedule_id:
+
+dose_adjustments:
+  - condition: "VTE event during treatment (DVT, PE)"
+    modification: "Discontinue tamoxifen; switch to non-SERM strategy or risk-management without pharmacoprevention"
+    rationale: "Tamoxifen ~2-3× baseline VTE risk; recurrence high"
+    source_refs:
+      - SRC-NCCN-BREAST-2025
+  - condition: "Postmenopausal bleeding or pelvic symptoms during treatment"
+    modification: "Refer for endometrial sampling; biopsy-confirmed hyperplasia/cancer warrants discontinuation"
+    rationale: "~2-3× baseline endometrial cancer risk"
+    source_refs:
+      - SRC-NCCN-BREAST-2025
+  - condition: "Concurrent CYP2D6-inhibitor SSRI (paroxetine, fluoxetine, bupropion)"
+    modification: "Switch to weak CYP2D6 inhibitor (citalopram, escitalopram, venlafaxine) where possible"
+    rationale: "Strong 2D6 inhibition reduces active metabolite endoxifen; uncertain clinical impact but precautionary"
+    source_refs:
+      - SRC-NCCN-BREAST-2025
+
+ukraine_availability:
+  all_components_registered: true
+  all_components_reimbursed: true
+  notes: "Tamoxifen registered and reimbursed via НСЗУ in Ukraine (off-patent generic; widely available). Chemoprevention-specific indication may require oncologist documentation."
+
+sources:
+  - SRC-NCCN-BREAST-2025
+
+between_visit_watchpoints:
+  - trigger_ua: "Припливи, нічна пітливість, легке роздратування"
+    action_ua: "Поширений ефект — занотуйте на наступному візиті; обговоріть симптоматичне лікування за потреби"
+    urgency: log_at_next_visit
+    sources:
+      - SRC-NCCN-BREAST-2025
+  - trigger_ua: "Зміни менструального циклу або вагінальна сухість"
+    action_ua: "Поширений ефект — занотуйте на візиті; розгляньте місцеві засоби"
+    urgency: log_at_next_visit
+    sources:
+      - SRC-NCCN-BREAST-2025
+  - trigger_ua: "Кровотечі з піхви (особливо у постменопаузі)"
+    action_ua: "Подзвоніть у клініку того ж дня — обов'язкове трансвагінальне УЗД ± ендометріальна біопсія"
+    urgency: call_clinic_same_day
+    sources:
+      - SRC-NCCN-BREAST-2025
+  - trigger_ua: "Біль, набряк, почервоніння однієї ноги"
+    action_ua: "Зверніться до лікарні негайно — підозра на DVT"
+    urgency: er_now
+    sources:
+      - SRC-NCCN-BREAST-2025
+  - trigger_ua: "Раптова задишка, біль у грудях, кровохаркання"
+    action_ua: "Зверніться до лікарні негайно — підозра на легеневу емболію"
+    urgency: er_now
+    sources:
+      - SRC-NCCN-BREAST-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  Tamoxifen 20 mg PO daily × 5 years is the FDA-approved breast-cancer
+  chemoprevention regimen per NSABP P-1 (Fisher 1998) and IBIS-I (Cuzick).
+  Applicable to BOTH premenopausal and postmenopausal women with elevated
+  5-year Gail Model risk (≥1.66%) or BRCA1/2 / strong family history.
+  ~50% reduction in invasive breast cancer; absolute benefit varies by
+  baseline risk. Counsel on VTE and endometrial-cancer risks; baseline
+  pelvic + breast assessment before initiation. Postmenopausal women may
+  prefer raloxifene (STAR P-2) or AI (MAP.3 / IBIS-II) for lower
+  endometrial / VTE risk.
+
+notes_ua: >
+  Тамоксифен 20 мг PO щодня × 5 років — FDA-схвалена схема
+  хіміопрофілактики раку молочної залози за NSABP P-1 (Fisher 1998)
+  та IBIS-I (Cuzick). Застосовна для пре- і постменопаузних жінок з
+  підвищеним 5-річним ризиком за Gail Model (≥1.66%) або BRCA1/2 /
+  обтяженим сімейним анамнезом. ~50% зниження інвазивного РМЗ.
+  Консультуйте щодо ризиків VTE та раку ендометрія. Для постменопаузи
+  можуть бути переважними ралоксифен (STAR P-2) або АІ (MAP.3 /
+  IBIS-II) — нижчий ризик ендометрія і VTE.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_drugs_batch2
+draft_revision: 1

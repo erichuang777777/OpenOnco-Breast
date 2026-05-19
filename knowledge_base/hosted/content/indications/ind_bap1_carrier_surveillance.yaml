@@ -1,0 +1,159 @@
+id: IND-BAP1-CARRIER-SURVEILLANCE
+plan_track: standard
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-MESOTHELIOMA
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-BAP1-CONFIRMED-CARRIER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    BAP1 surveillance per Pilarski 2020 consensus reduces mortality
+    through earlier detection across four organ systems: uveal melanoma
+    (dilated fundoscopy detects pre-symptomatic lesions amenable to
+    plaque brachytherapy or proton therapy with eye preservation);
+    cutaneous melanoma and atypical Spitz tumors (whole-body skin exam
+    detects sentinel lesions early); mesothelioma (chest CT detects
+    pleural plaque or early-stage disease amenable to multimodality
+    therapy); clear-cell RCC (abdominal MRI detects T1a lesions
+    amenable to nephron-sparing partial nephrectomy). Evidence base
+    is consensus-driven (moderate quality, conditional strength) given
+    BAP1-TPDS rarity.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track confirmed-carrier surveillance pathway for BAP1-positive
+  carriers per Pilarski et al. J Med Genet 2020 BAP1-TPDS consensus
+  surveillance recommendations.
+
+  **Uveal melanoma (~25-30% lifetime — BAP1-TPDS is the only major
+  hereditary cause):** Annual dilated fundoscopic examination by an
+  ophthalmologist familiar with uveal melanoma; baseline wide-field
+  fundus photography. Early lesions (small choroidal melanoma) are
+  treatable with eye-preserving plaque brachytherapy or proton therapy
+  with excellent local control.
+
+  **Cutaneous melanoma (~15-30% lifetime) + atypical Spitz tumors:**
+  Annual whole-body skin examination by a dermatologist with dermoscopy.
+  Atypical Spitz tumors (often nodular, melanocytic, sometimes BAP1-
+  inactivated) are pathognomonic sentinels — frequently appear in
+  childhood or adolescence and may be the first BAP1-TPDS clinical
+  clue prompting family germline testing. Excise any atypical lesion
+  for full histology with BAP1 immunohistochemistry.
+
+  **Mesothelioma — pleural and peritoneal (~15-25% lifetime):** Chest
+  CT q1-3y; baseline at carrier confirmation. Annual abdominal MRI
+  (paired with RCC surveillance) covers peritoneal mesothelioma.
+  Symptom-driven workup (pleural effusion, ascites, persistent abdominal
+  pain) at lower threshold than general population.
+
+  **Clear-cell RCC (~10% lifetime):** Annual abdominal MRI (preferred
+  over CT for cumulative-radiation reasons). Small (< 3 cm) lesions
+  managed with active surveillance or partial nephrectomy; larger
+  lesions with nephron-sparing partial nephrectomy when anatomically
+  feasible.
+
+  **Asbestos-avoidance counseling:** Counsel ALL carriers to minimize
+  occupational and environmental asbestos exposure (renovation,
+  demolition, old building maintenance). Take-home asbestos exposure
+  (dust on clothing brought home from worksite) historically caused
+  family-cluster mesothelioma. This is the single most important
+  modifiable BAP1 cofactor.
+
+  **Cascade testing:** Mandates offer to all first-degree relatives;
+  pediatric testing appropriate given childhood-onset atypical Spitz
+  tumor recognition.
+
+  Per CHARTER §11 patient-autonomy framing.
+
+rationale_ua: >
+  Стандартний-трек confirmed-carrier surveillance per Pilarski 2020
+  BAP1-TPDS consensus.
+
+  **Увеальна меланома (~25-30% — BAP1-TPDS єдина major hereditary
+  cause):** Annual dilated fundoscopy офтальмологом, familiar з uveal
+  melanoma; baseline wide-field fundus photography. Early lesions
+  treatable з eye-preserving plaque brachytherapy / proton therapy.
+
+  **Шкірна меланома (~15-30%) + atypical Spitz tumors:** Annual
+  whole-body skin exam дерматологом з dermoscopy. Atypical Spitz tumors
+  — pathognomonic sentinels, часто з'являються у дитячому / підлітковому
+  віці. Excise будь-яке atypical lesion для histology з BAP1 IHC.
+
+  **Мезотеліома — pleural + peritoneal (~15-25%):** Chest CT q1-3y;
+  baseline при carrier confirmation. Annual abdominal MRI (paired з RCC
+  surveillance) covers peritoneal mesothelioma.
+
+  **Світлоклітинний RCC (~10%):** Annual abdominal MRI (preferred over
+  CT через cumulative radiation). <3 см — active surveillance або
+  partial nephrectomy.
+
+  **Asbestos-avoidance counseling:** Counsel ALL carriers щодо
+  occupational + environmental asbestos exposure (renovation,
+  demolition, old building maintenance). Take-home asbestos exposure
+  історично caused family-cluster mesothelioma — single most important
+  modifiable BAP1 cofactor.
+
+  **Cascade тестування:** mandates пропонування first-degree родичам;
+  pediatric тестування appropriate.
+
+  Per CHARTER §11 framing автономії пацієнта.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02b_confirmed_carriers_additional
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+  - source_id: SRC-ASCO-ACMG-LYNCH-2014
+    position: context
+    relevant_quote_paraphrase: >-
+      "BAP1 tumor predisposition syndrome carriers should enter
+      structured surveillance modeled on consensus recommendations
+      (Pilarski 2020): annual whole-body skin exam, annual dilated
+      ophthalmologic exam for uveal melanoma, annual abdominal MRI for
+      clear-cell RCC, periodic chest CT for mesothelioma, and explicit
+      asbestos-avoidance counseling."
+
+do_not_do:
+  - "Не пропускати annual dilated fundoscopy — BAP1-TPDS — єдина major hereditary cause uveal melanoma; early-stage detection дозволяє eye-preserving therapy."
+  - "Не використовувати тільки visual skin self-exam — annual whole-body dermatology з dermoscopy потрібна; atypical Spitz tumors easily missed."
+  - "Не використовувати CT як primary surveillance для RCC + peritoneal mesothelioma — cumulative radiation burden lifelong; abdominal МРТ preferred."
+  - "Не пропускати asbestos exposure history — single most important modifiable BAP1 cofactor; counseling має бути explicit на кожному візиті."
+  - "Не пропускати cascade-тестування first-degree родичів — pediatric atypical Spitz tumor recognition може prompt family testing."
+
+do_not_do_en:
+  - "Do not skip annual dilated fundoscopy — BAP1-TPDS is the only major hereditary cause of uveal melanoma; early-stage detection enables eye-preserving therapy."
+  - "Do not use visual skin self-exam alone — annual whole-body dermatology with dermoscopy is required; atypical Spitz tumors are easily missed."
+  - "Do not use CT as primary surveillance for RCC and peritoneal mesothelioma — lifelong cumulative radiation burden; abdominal MRI preferred."
+  - "Do not skip asbestos exposure history — single most important modifiable BAP1 cofactor; counseling should be explicit at every visit."
+  - "Do not skip cascade testing of first-degree relatives — pediatric atypical Spitz tumor recognition can prompt family testing."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B confirmed-carrier surveillance pathway (BAP1-TPDS). Sibling — IND-BAP1-CARRIER-INTENSIFIED (aggressive plan_track)."

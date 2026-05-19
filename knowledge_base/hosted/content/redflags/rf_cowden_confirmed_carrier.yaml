@@ -1,0 +1,88 @@
+id: RF-COWDEN-CONFIRMED-CARRIER
+definition: >-
+  Confirmed germline pathogenic / likely-pathogenic variant in the PTEN
+  gene (Cowden syndrome / PTEN hamartoma tumor syndrome, PHTS). Patient
+  has had germline PTEN testing returned positive; the pedigree-suspicion
+  question is settled. No current personal cancer diagnosis in the
+  carrier being assessed. Mandates multi-organ surveillance for the
+  Cowden-spectrum cancers (breast — ~85% lifetime; endometrial — ~28%;
+  thyroid — ~35%; renal — ~34%; colorectal — ~9%; melanoma — ~6%) with
+  protocols starting variously between diagnosis and age 40 depending on
+  organ. Prevention-persona RedFlag (§20, v0.2-B confirmed-carrier
+  surveillance pathway — distinct from RF-COWDEN-FAMILY-HISTORY-SUSPICION
+  which fires before testing).
+definition_ua: >-
+  Підтверджений гермінативний патогенний / ймовірно-патогенний варіант у
+  гені PTEN (синдром Cowden / PTEN hamartoma tumor syndrome, PHTS).
+  Пацієнт пройшов germline PTEN-тестування з позитивним результатом;
+  питання родовідної підозри вирішене. Поточний особистий діагноз раку
+  відсутній. Mandates мульти-органне спостереження для Cowden-spectrum
+  раків (молочна залоза ~85%; ендометрій ~28%; щитоподібна ~35%; нирки
+  ~34%; колоректальний ~9%; меланома ~6%). Prevention-persona RedFlag
+  (§20, v0.2-B шлях спостереження підтверджених носіїв).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "germline_pten_pathogenic_variant_confirmed"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+risk_category: genetic
+
+# Cowden-spectrum: breast (~85%), endometrial (~28%), thyroid (~35%),
+# renal (~34%), colorectal (~9%), melanoma (~6%). Lhermitte-Duclos
+# benign / not anchored.
+relevant_diseases:
+  - DIS-BREAST
+  - DIS-ENDOMETRIAL
+  - DIS-THYROID-PAPILLARY
+  - DIS-CRC
+  - DIS-RCC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-NCCN-BREAST-2025
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.2-B confirmed-carrier surveillance pathway — Cowden / PHTS. Fires
+  on documented germline PTEN pathogenic variant positivity in an
+  asymptomatic individual. Engine routes to PreventionPlan recommending:
+    (a) IND-COWDEN-CARRIER-SURVEILLANCE (standard) — annual breast
+        mammography + MRI from age 30 (women); annual thyroid US from
+        diagnosis; endometrial sampling / TVUS q1y from age 35-40
+        (women); colonoscopy from age 35 then per-finding; annual skin
+        exam; renal US or MRI q1-2y from age 40.
+    (b) IND-COWDEN-CARRIER-INTENSIFIED (aggressive) — standard protocol
+        PLUS risk-reducing mastectomy / hysterectomy discussion
+        post-childbearing.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption. Source-set TODO: Tan et al. Lifetime cancer risks in PHTS,
+  Clin Cancer Res 2012 — v0.2-B authoring backlog new SRC entity.
+
+  Lifetime cancer risk in confirmed PTEN carriers (Tan et al. Clin
+  Cancer Res 2012; NCCN Genetic / Familial High-Risk Breast Ovarian):
+    - Breast (women): ~85% lifetime; often early-onset (40s) and
+      bilateral
+    - Endometrial: ~28% lifetime; often early-onset (under 50)
+    - Thyroid (predominantly follicular, also papillary and Hürthle):
+      ~35% lifetime; multinodular goiter near-universal but mostly
+      benign
+    - Renal (predominantly papillary RCC and chromophobe): ~34% lifetime
+    - Colorectal: ~9% lifetime; ganglioneuromatous + hyperplastic polyps
+      near-universal but adenoma fraction modest
+    - Melanoma: ~6% lifetime
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02b_confirmed_carriers_additional
+draft_revision: 1

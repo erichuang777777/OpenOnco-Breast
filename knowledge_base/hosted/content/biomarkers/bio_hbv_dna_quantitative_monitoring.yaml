@@ -1,0 +1,59 @@
+id: BIO-HBV-DNA-QUANTITATIVE-MONITORING
+names:
+  preferred: "HBV DNA quantitative — viral-load monitoring during nucleos(t)ide analogue therapy"
+  ukrainian: "HBV ДНК кількісна — моніторинг вірусного навантаження під час нуклеоз(т)идної терапії"
+  english: "HBV DNA quantitative monitoring"
+  synonyms: ["HBV viral load monitoring", "HBV PCR quantitative", "HBV DNA serial"]
+biomarker_type: viral_load
+measurement:
+  method: "Real-time quantitative PCR (HBV DNA, IU/mL); high-sensitivity assay (LOD ≤10-20 IU/mL) required"
+  units: "IU/mL"
+  typical_range: [0, 100000000]
+specimen_requirements:
+  - "Serum or EDTA plasma; processed within 4 h or frozen"
+  - "LOINC 29615-2 (HBV DNA quantitation)"
+clinical_context: [screening_surveillance, predictive]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: viral_load
+external_ids:
+  loinc: "29615-2"
+related_biomarkers: [BIO-HBV-STATUS]
+sources:
+  - SRC-AASLD-HBV-2024
+  - SRC-EASL-HBV-2025
+  - SRC-AASLD-HCC-2023
+last_reviewed: "2026-05-18"
+notes: >
+  Quantitative HBV DNA used to TRACK viral suppression over time during
+  chronic-HBV antiviral therapy (entecavir or tenofovir TDF/TAF — first-
+  line nucleos(t)ide analogues per AASLD 2024 / EASL 2025). Distinct
+  from BIO-HBV-STATUS (serology-based screening / treatment-decision
+  gate). Two clinical contexts:
+  (1) Treatment monitoring in HBeAg+/HBeAg− chronic HBV: baseline HBV
+  DNA + ALT + HBeAg + HBsAg → start NA → recheck q3 months for first
+  year, then q6 months. Goal: HBV DNA undetectable on treatment;
+  ALT normalization; HBeAg seroconversion (HBeAg+ patients) or HBsAg
+  loss (functional cure — rare on NA monotherapy, ~1% per year).
+  Virologic breakthrough (≥1-log rise from nadir) prompts adherence
+  review then switch (entecavir → tenofovir if NA-naïve resistance).
+  (2) Prophylaxis monitoring during B-cell-depleting therapy
+  (rituximab, obinutuzumab) or anti-CD38 (daratumumab, isatuximab) in
+  HBsAg+ or anti-HBc+ patients: entecavir prophylaxis baseline → HBV
+  DNA q3 months during chemotherapy and for 12+ months post-treatment;
+  any detectable HBV DNA = reactivation, hepatology consult.
+  HCC surveillance in chronic HBV (cirrhotic OR Asian male >40 OR
+  Asian female >50 OR African >20 OR family history HCC): q6-month
+  US + AFP; HBV DNA suppression on NA reduces but does NOT eliminate
+  HCC risk, surveillance continues lifelong. STUB pending two-Co-Lead
+  signoff.
+notes_ua: >
+  Кількісна HBV ДНК для відстеження вірусної супресії під час
+  хронічної анти-HBV терапії (ентекавір або тенофовір). 2 контексти:
+  (1) Лікування хронічного HBV — мета: невизначуваний рівень. (2)
+  Профілактика під час B-клітино-виснажуючої терапії — кожні 3 місяці
+  під час хіміотерапії + ≥12 міс після. Нагляд HCC при хронічному HBV
+  (q6m УЗД + AFP) продовжується незалежно від супресії. STUB pending
+  two-Co-Lead signoff.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_surveillance_2026_05_18
+draft_revision: 1

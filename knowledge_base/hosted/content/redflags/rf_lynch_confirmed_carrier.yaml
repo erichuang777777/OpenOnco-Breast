@@ -1,0 +1,111 @@
+id: RF-LYNCH-CONFIRMED-CARRIER
+definition: >-
+  Confirmed germline pathogenic / likely-pathogenic variant in a Lynch
+  syndrome (MMR / EPCAM) gene — MLH1, MSH2, MSH6, PMS2, or EPCAM (3'
+  deletion silencing MSH2). Patient has had a germline test returned
+  positive; the family-history-suspicion question is settled. No
+  current personal cancer diagnosis in the carrier being assessed
+  (current cancer diagnosis routes to treatment-track plan with
+  carrier status recorded for tailored systemic / surgical decisions).
+  Prevention-persona RedFlag (§20, v0.2-B confirmed-carrier
+  surveillance pathway — distinct from the family-history-suspicion
+  pathway in RF-LYNCH-FAMILY-HISTORY-SUSPICION which fires before
+  testing).
+definition_ua: >-
+  Підтверджений гермінативний патогенний / ймовірно-патогенний варіант
+  в гені синдрому Lynch (MMR / EPCAM) — MLH1, MSH2, MSH6, PMS2 або
+  EPCAM (3' делеція, що замовчує MSH2). Пацієнт пройшов germline
+  тестування з позитивним результатом; питання родовідної підозри
+  вирішене. Поточний особистий діагноз раку у носія, що оцінюється,
+  відсутній (поточний діагноз раку routes до treatment-track плану з
+  записаним статусом носійства для tailored системних / хірургічних
+  рішень). Prevention-persona RedFlag (§20, v0.2-B шлях спостереження
+  підтверджених носіїв — відрізняється від шляху родовідної підозри в
+  RF-LYNCH-FAMILY-HISTORY-SUSPICION, що спрацьовує до тестування).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "germline_mlh1_pathogenic_variant_confirmed"
+      value: true
+    - finding: "germline_msh2_pathogenic_variant_confirmed"
+      value: true
+    - finding: "germline_msh6_pathogenic_variant_confirmed"
+      value: true
+    - finding: "germline_pms2_pathogenic_variant_confirmed"
+      value: true
+    - finding: "germline_epcam_pathogenic_variant_confirmed"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+# §20 prevention extension — drives engine routing to PreventionPlan
+# when patient carries this RF and no confirmed Disease (KSS §20.2).
+risk_category: genetic
+
+# Lynch-spectrum cancers in KB. MLH1 / MSH2 carriers carry the highest
+# lifetime risk across the spectrum; MSH6 / PMS2 carry lower but still
+# elevated risk (PMS2 lowest, MSH6 intermediate). EPCAM 3' deletions
+# silence MSH2 in the colonic mucosa and follow MSH2-like risk profile.
+relevant_diseases:
+  - DIS-CRC
+  - DIS-ENDOMETRIAL
+  - DIS-GASTRIC
+  - DIS-OVARIAN
+  - DIS-UROTHELIAL
+  - DIS-PROSTATE
+  - DIS-PDAC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-ASCO-ACMG-LYNCH-2014
+  - SRC-ESMO-CRC-2024
+  - SRC-ESGO-ENDOMETRIAL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.2-B confirmed-carrier surveillance pathway — Lynch syndrome.
+  Fires on documented germline MMR / EPCAM pathogenic variant
+  positivity in an asymptomatic individual. Engine routes to
+  PreventionPlan recommending:
+    (a) IND-LYNCH-CARRIER-SURVEILLANCE (standard) — NCCN Genetic /
+        Familial High-Risk: Colorectal carrier surveillance protocol
+        (colonoscopy q1-2y from 25 or 10y before youngest family CRC;
+        endometrial sampling + TVUS q1-2y from 30-35 in women;
+        annual urinalysis; EGD q3-5y from 40; pancreatic
+        surveillance discussion when ≥2 affected first-degree
+        relatives)
+    (b) IND-LYNCH-CARRIER-INTENSIFIED (aggressive) — standard
+        protocol PLUS discussion of prophylactic hysterectomy / BSO
+        post-childbearing age 40 (women) and daily aspirin per CAPP2
+        trial (gene-aware: stronger effect documented in MLH1 / MSH2
+        carriers).
+
+  Triggers correspond to a positive germline panel result (variant
+  classification per ACMG framework — pathogenic / likely pathogenic;
+  VUS results route back to the family-history-suspicion pathway via
+  RF-LYNCH-FAMILY-HISTORY-SUSPICION pending segregation or functional
+  studies).
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption.
+
+  Penetrance reference (NCCN Genetic / Familial High-Risk: Colorectal
+  v2.2025):
+    - CRC lifetime risk: ~70-80% (MLH1 / MSH2); ~25-50% (MSH6 / PMS2)
+    - Endometrial (women): ~40-60% (MLH1 / MSH2); ~17-44% (MSH6);
+      lower in PMS2
+    - Gastric: ~6-13%; Ovarian: ~4-20%; Urothelial: ~4-25%;
+      Pancreatic: ~3-6%; Brain (Turcot variant): modestly elevated;
+      sebaceous (Muir-Torre variant): elevated but uncommon
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_confirmed_carrier
+draft_revision: 1

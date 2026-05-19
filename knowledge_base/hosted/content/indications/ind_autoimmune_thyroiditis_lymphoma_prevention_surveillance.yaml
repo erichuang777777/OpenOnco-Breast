@@ -1,0 +1,175 @@
+id: IND-AUTOIMMUNE-THYROIDITIS-LYMPHOMA-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-THYROID-PAPILLARY
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-AUTOIMMUNE-THYROIDITIS-LYMPHOMA-PREVENTION
+
+# No systemic drug regimen — primary intervention is biochemical
+# monitoring (TSH) + imaging surveillance (thyroid US) + FNA of dominant
+# or sonographically suspicious nodules. Levothyroxine replacement (when
+# indicated for hypothyroidism) is supportive, not a Regimen FK.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Active surveillance (TSH q6-12mo + thyroid US q1y + FNA of any
+    dominant/TIRADS-3+ nodule) captures both primary thyroid lymphoma
+    (relative risk ~67-80x in Hashimoto's) and Hashimoto-associated PTC
+    at earliest detectable stage. Early-stage thyroid lymphoma (most
+    commonly MALT) is highly curable with stage-adapted radiation +/-
+    rituximab-based chemotherapy (>90% 5y OS for stage IE). Early-stage
+    Hashimoto-associated PTC outcomes mirror sporadic PTC (10y OS ~95%
+    for low-risk disease). Surveillance does not reduce baseline
+    incidence but materially shifts stage at diagnosis.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for patients with confirmed
+  Hashimoto's thyroiditis (or persistent positive anti-TPO/anti-Tg with
+  goiter). Two-modality surveillance:
+
+  **Biochemical (TSH q6-12mo):** monitors evolution of hypothyroidism
+  and adjusts levothyroxine dose when indicated. Persistent TSH
+  suppression in a previously euthyroid Hashimoto patient — especially
+  with a new dominant nodule — warrants nodule workup (rare Hashitoxicosis
+  vs PTC with functional autonomy vs lymphoma-related thyrotoxicosis).
+
+  **Imaging (thyroid US q1y):** baseline US at diagnosis to document
+  gland echotexture, vascular pattern, and any nodules. Annual repeat
+  US thereafter. Any new dominant nodule (>1 cm) or progressively
+  enlarging existing nodule → FNA per ATA 2015 / TIRADS criteria.
+
+  **Red-flag (immediate workup):**
+    - Rapid goiter enlargement over weeks-to-months
+    - New compressive symptoms (dysphagia, hoarseness, stridor)
+    - B-symptoms (fever, drenching night sweats, unintentional weight
+      loss >10%)
+    - Markedly hypoechoic mass replacing normal gland architecture on US
+    These features raise suspicion for primary thyroid lymphoma → urgent
+    core-needle biopsy (FNA can be inconclusive in lymphoma; histology
+    + flow cytometry preferred).
+
+  **PTC nodule workup:** FNA per Bethesda categories. Bethesda III/IV
+  indeterminate nodules → molecular testing (Afirma/ThyroSeq) or repeat
+  FNA. Bethesda V/VI → surgical consultation per ATA 2015 lobectomy vs
+  thyroidectomy thresholds.
+
+  **Levothyroxine replacement** (when TSH elevated) is standard
+  endocrine care — not cancer prevention, but optimizes patient
+  function during long-term surveillance. TSH-suppressive doses (TSH
+  <0.5) are NOT indicated for cancer prevention in Hashimoto's absent a
+  confirmed PTC requiring suppression.
+
+  In Ukraine, thyroid US is widely available (NSZU-covered for
+  evaluation of palpable nodules or goiter; ~300-800 UAH out-of-pocket
+  at private centers). FNA performed at most regional oncology and
+  endocrine centers; cytopathology turnaround typically 5-10 days.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для пацієнтів з підтвердженим
+  тиреоїдитом Хашимото (або стійкими позитивними анти-ТПО/анти-Тг із
+  зобом). Двомодальне спостереження:
+
+  **Біохімічне (ТТГ q6-12 міс):** моніторинг еволюції гіпотиреозу та
+  корекція дози левотироксину. Стійка супресія ТТГ у попередньо
+  еутиреоїдного Хашимото-пацієнта — особливо з новим домінантним вузлом
+  — потребує обстеження вузла.
+
+  **Інструментальне (УЗД щитоподібної залози q1y):** базове УЗД на момент
+  діагнозу для документації ехотекстури залози, васкулярного патерну
+  та вузлів. Щорічне повторне УЗД. Будь-який новий домінантний вузол
+  (>1 см) або прогресивно зростаючий → FNA per ATA 2015 / TIRADS критеріями.
+
+  **Red-flag (негайне обстеження):**
+    - Швидке збільшення зоба за тижні-місяці
+    - Нові компресивні симптоми (дисфагія, охриплість, стридор)
+    - B-симптоми (лихоманка, профузні нічні поти, ненавмисне схуднення
+      >10%)
+    - Виражено гіпоехогенна маса, що заміщує нормальну архітектуру залози
+    Ці ознаки підвищують підозру на первинну лімфому щитоподібної
+    залози → ургентна core-needle біопсія (FNA може бути inconclusive у
+    лімфомі; гістологія + flow cytometry переважно).
+
+  **PTC обстеження вузла:** FNA per Bethesda категоріями. Bethesda III/IV
+  невизначені → молекулярне тестування (Afirma/ThyroSeq) або повторна
+  FNA. Bethesda V/VI → хірургічна консультація per ATA 2015.
+
+  **Левотироксин-замісна терапія** (при підвищеному ТТГ) — стандартна
+  ендокринна допомога. TSH-супресивні дози (ТТГ <0.5) НЕ показані для
+  cancer prevention при Хашимото без підтвердженого PTC.
+
+  В Україні УЗД щитоподібної залози широко доступне (НСЗУ покриває для
+  оцінки пальпованих вузлів або зоба; ~300-800 грн out-of-pocket у
+  приватних центрах). FNA виконується у більшості регіональних
+  онкологічних та ендокринних центрів.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-THYROID-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Thyroid nodules in patients with chronic lymphocytic thyroiditis
+      should be evaluated with ultrasound and FNA per general nodule
+      criteria. Rapidly enlarging gland or compressive symptoms in
+      Hashimoto's warrant urgent biopsy to exclude primary thyroid
+      lymphoma."
+  - source_id: SRC-NCCN-BCELL-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Primary thyroid lymphoma (most commonly MALT or DLBCL) arises
+      almost exclusively in a background of Hashimoto's thyroiditis.
+      Diagnosis requires core-needle biopsy with histology and flow
+      cytometry; FNA alone is frequently non-diagnostic in lymphoma."
+
+do_not_do:
+  - "Не покладатися виключно на TSH-моніторинг для виявлення раку — TSH не виявляє ні лімфому, ні PTC у Хашимото."
+  - "Не призначати TSH-супресивні дози левотироксину для cancer prevention при Хашимото без підтвердженого PTC — ризик ятрогенного тиреотоксикозу, остеопорозу, аритмій."
+  - "Не покладатися лише на FNA при підозрі на первинну лімфому щитоподібної залози — core-needle біопсія з flow cytometry переважно (FNA часто inconclusive в лімфомі)."
+  - "Не ігнорувати швидке збільшення зоба або компресивні симптоми у Хашимото-пацієнта — урогенна онкологічна оцінка."
+  - "Не виконувати рутинну профілактичну тиреоїдектомію — ризик хірургії перевищує абсолютний ризик раку у переважній більшості Хашимото-пацієнтів."
+
+do_not_do_en:
+  - "Do not rely on TSH monitoring alone to detect malignancy — TSH detects neither lymphoma nor PTC in Hashimoto's."
+  - "Do not prescribe TSH-suppressive levothyroxine doses for cancer prevention in Hashimoto's without confirmed PTC — risks iatrogenic thyrotoxicosis, osteoporosis, arrhythmia."
+  - "Do not rely on FNA alone when primary thyroid lymphoma is suspected — core-needle biopsy with flow cytometry is preferred (FNA frequently non-diagnostic in lymphoma)."
+  - "Do not ignore rapid goiter enlargement or compressive symptoms in a Hashimoto patient — urgent oncologic evaluation required."
+  - "Do not perform routine prophylactic thyroidectomy — surgical risk exceeds the absolute cancer risk in the vast majority of Hashimoto patients."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — v0.3 chronic-condition prevention pilot (Hashimoto's
+  thyroiditis). Two-Co-Lead signoff queued. PTC risk magnitude in
+  Hashimoto's remains debated (2-3x vs surveillance-bias-attenuated);
+  surveillance cadence reflects the higher-confidence lymphoma signal
+  + the modest PTC nodule-emergence pattern. Future enhancement: a
+  dedicated DIS-THYROID-LYMPHOMA entity would allow more precise
+  Indication anchoring than the current DIS-THYROID-PAPILLARY +
+  DIS-BURKITT pair.

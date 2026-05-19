@@ -170,7 +170,11 @@ class Plan(Base):
 
     # What the engine ran on
     patient_snapshot: dict
-    algorithm_id: str
+    # str for treatment plans (always selected via an Algorithm). None for
+    # PreventionPlan output (§20 ratification 2026-05-18) — prevention path
+    # routes by fired prevention RedFlag, not by Algorithm. Existing
+    # treatment-plan tests assert specific ALGO-* ids and continue to pass.
+    algorithm_id: Optional[str] = None
     knowledge_base_state: dict = Field(default_factory=dict)
 
     # The tracks — at least 2 per CHARTER §2

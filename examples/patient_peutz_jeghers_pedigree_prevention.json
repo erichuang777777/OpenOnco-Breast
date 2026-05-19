@@ -1,0 +1,14 @@
+{
+  "patient_id": "PEUTZ-JEGHERS-PREV-001",
+  "comment": "14yo with characteristic perioral and buccal mucosal pigmentation (mucocutaneous melanin spots) + history of small-bowel intussusception age 10 requiring resection (showed hamartomatous polyps on histology). Father similarly affected with Peutz-Jeghers phenotype. Engine routes to PreventionPlan (after Agent F): standard = pre-test counseling + germline STK11 panel + small-bowel surveillance (VCE or MR enterography q2-3y from age 8-10) + colonoscopy q2-3y from age 18 + breast MRI from 30 (women); alternative = empirical surveillance.",
+  "biomarkers": {},
+  "demographics": {"age": 14, "sex": "female", "ecog": 0},
+  "findings": {
+    "family_classic_peutz_jeghers_phenotype": true,
+    "family_first_degree_peutz_jeghers_with_intussusception_history": true,
+    "Perioral + buccal mucosal pigmentation": true,
+    "Small-bowel intussusception age 10 (hamartomatous polyps on histology)": true,
+    "Father similarly affected with PJ phenotype": true,
+    "No personal cancer diagnosis": true
+  }
+}

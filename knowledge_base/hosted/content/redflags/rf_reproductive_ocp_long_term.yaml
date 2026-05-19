@@ -1,0 +1,72 @@
+id: RF-REPRODUCTIVE-OCP-LONG-TERM
+definition: >-
+  Long-term combined oral contraceptive use (≥10 cumulative years).
+  Mixed cancer risk profile per IARC Monograph 100A + Collaborative
+  Group on Hormonal Factors in Breast Cancer + IARC reviews:
+  - Modest BREAST cancer risk increase during current use + ~5y post-
+    cessation (RR ~1.08-1.20; effect declines after cessation, baseline
+    risk restored ~10y post-cessation).
+  - Modest CERVICAL cancer risk increase with long-term use in HPV-
+    positive women (RR ~1.5 at ≥5y use; effect attenuates post-cessation).
+    HPV is the necessary cofactor.
+  - SUBSTANTIAL PROTECTION against OVARIAN cancer (~50% reduction at
+    ≥5y use, durable for ≥30y post-cessation).
+  - SUBSTANTIAL PROTECTION against ENDOMETRIAL cancer (~50% reduction at
+    ≥5y use, durable post-cessation).
+  - Modest CRC protective association (less robust).
+  Net cancer balance is favorable for most users. Prevention-persona
+  RedFlag triggers a COUNSELING-BALANCE indication — risk-benefit
+  framing, not unidirectional risk warning. (§20 v0.3 reproductive pilot.)
+definition_ua: >-
+  Long-term використання combined oral contraceptive (≥10 кумулятивних
+  років). Mixed cancer risk profile per IARC Monograph 100A + Collaborative
+  Group on Hormonal Factors in Breast Cancer:
+  - Modest BREAST cancer ризик під час current use + ~5р post-cessation
+    (RR ~1.08-1.20; ефект знижується після cessation).
+  - Modest CERVICAL cancer ризик при long-term use у HPV-positive жінок
+    (RR ~1.5 при ≥5р use; HPV — necessary cofactor).
+  - SUBSTANTIAL PROTECTION проти OVARIAN cancer (~50% reduction при
+    ≥5р use, durable ≥30р post-cessation).
+  - SUBSTANTIAL PROTECTION проти ENDOMETRIAL cancer (~50% reduction).
+  - Modest CRC protective association.
+  Net cancer balance favorable для більшості users. Prevention-persona
+  RedFlag triggers COUNSELING-BALANCE indication — risk-benefit framing.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "combined_ocp_use_ge_10_years"
+      value: true
+    - finding: "combined_ocp_current_long_term_use"
+      value: true
+
+clinical_direction: investigate
+
+severity: minor
+priority: 110
+category: other
+
+risk_category: reproductive
+
+# All four diseases — two risk-increment, two strong protection. Counseling balance.
+relevant_diseases:
+  - DIS-BREAST
+  - DIS-CERVICAL
+  - DIS-OVARIAN
+  - DIS-ENDOMETRIAL
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BREAST-2025
+  - SRC-NCCN-CERVICAL-2025
+  - SRC-NCCN-OVARIAN-2025
+  - SRC-NCCN-UTERINE-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for long-term combined OCP use ≥10y. Mixed cancer profile — modest risk increase (breast, cervical-with-HPV) AND substantial protection (ovarian, endometrial). Engine routes to PreventionPlan recommending COUNSELING-BALANCE indication, not unidirectional risk warning. Critical that render layer present full risk-benefit panel. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1

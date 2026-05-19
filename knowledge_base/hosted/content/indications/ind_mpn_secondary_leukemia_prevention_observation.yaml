@@ -1,0 +1,170 @@
+id: IND-MPN-SECONDARY-LEUKEMIA-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-AML
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-MPN-SECONDARY-LEUKEMIA-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Hematology-driven observation (CBC q6-12mo without structured smear
+    review, bone marrow only on overt cytopenia/blast emergence, no
+    allele-burden monitoring) detects MPN clonal evolution at later
+    stage than structured surveillance. Acceptable as a minimum-
+    intensity default for stable driver-mutation-positive patients
+    without progression features; below NCCN-MPN 2025 best-practice
+    for any driver-positive patient with sustained blood-count
+    abnormality.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-MPN-SECONDARY-LEUKEMIA-
+  PREVENTION-SURVEILLANCE. Appropriate for driver-mutation-positive
+  patients without sustained blood-count abnormality, without
+  splenomegaly, and without symptom burden, who choose minimum-
+  intensity surveillance for any of: stable disease over many years,
+  cost / access constraints (no nearby hematology center capable of
+  molecular monitoring), advanced age with limited life expectancy,
+  or explicit preference after informed-consent discussion.
+
+  **Cadence:**
+    - Hematology follow-up per usual cadence (q6-12mo) with examination,
+      CBC, basic metabolic panel
+    - Peripheral smear review on any abnormal CBC
+    - Bone marrow evaluation only when triggered by:
+      - New persistent cytopenia of any lineage
+      - Circulating blasts >1% on smear
+      - New or progressive splenomegaly
+      - New constitutional symptoms (fatigue out of proportion, weight
+        loss >5-10%, night sweats, bone pain)
+      - WHO-criteria-suspicious blood-count pattern (sustained
+        thrombocytosis, polycythemia, leukocytosis)
+    - Molecular monitoring (JAK2 allele burden, NGS panel) only on
+      request or trigger
+
+  **Not appropriate for:**
+    - Patients with sustained blood-count abnormality consistent with
+      pre-WHO-criteria MPN (these warrant active surveillance)
+    - Patients with palpable splenomegaly or symptomatic disease
+    - Patients with prior thrombosis (high recurrence risk; antiplatelet
+      management and active monitoring indicated)
+    - Patients with adverse molecular features on prior NGS panel
+      (TP53, ASXL1, EZH2 mutations)
+    - JAK2-positive patients without cardiovascular risk-management
+      plan (aspirin + risk-factor modification recommended)
+
+  Per CHARTER §11 patient-autonomy framing: driver-mutation positivity
+  without sustained blood-count abnormality or progression features
+  carries modest absolute leukemic-transformation risk in any given
+  year (~0.5%/year average across MPN phenotypes). Informed-consent
+  observation is defensible for this asymptomatic subset. Patient
+  retains option to upgrade to active surveillance at any visit;
+  emerging cytopenia, blasts, or splenomegaly mandates transition.
+
+  **Alarm features** route immediately to peripheral smear review +
+  bone marrow evaluation + molecular workup — and if WHO-criteria-
+  meeting MPN, sAML, or post-MPN MF is confirmed, to the relevant
+  treatment-persona algorithm (DIS-PV / DIS-ET / DIS-PMF treatment, or
+  DIS-AML for sAML).
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до
+  IND-MPN-SECONDARY-LEUKEMIA-PREVENTION-SURVEILLANCE. Доречно для
+  driver-mutation-позитивних пацієнтів без sustained blood-count
+  абнормальності, без splenomegaly, без symptom burden, які обирають
+  мінімальної інтенсивності спостереження з причин: стабільне
+  захворювання багато років, вартість / доступ (немає поблизу
+  hematology-центра з молекулярним моніторингом), похилий вік з
+  обмеженою тривалістю життя.
+
+  **Частота:**
+    - Hematology follow-up per usual частотою (q6-12 міс)
+    - Peripheral smear review при будь-якій abnormal CBC
+    - Bone marrow evaluation лише при триггері:
+      - Нова persistent cytopenia
+      - Circulating blasts >1%
+      - Нова або прогресуюча splenomegaly
+      - Нові constitutional симптоми
+      - WHO-criteria-suspicious blood-count pattern
+    - Molecular моніторинг лише на запит або тригер
+
+  **Не доречно для:**
+    - Пацієнтів з sustained blood-count абнормальністю consistent з
+      pre-WHO-criteria MPN
+    - Пацієнтів з palpable splenomegaly або symptomatic disease
+    - Пацієнтів з попереднім тромбозом
+    - Пацієнтів з adverse molecular features (TP53, ASXL1, EZH2)
+    - JAK2-positive без cardiovascular risk-management plan
+
+  Per CHARTER §11 framing автономії пацієнта: driver-mutation
+  позитивність без sustained blood-count абнормальності — модерний
+  абсолютний ризик. Informed-consent observation defensible.
+
+  **Alarm features** маршрутизують негайно до peripheral smear review
+  + bone marrow evaluation.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-MPN-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Asymptomatic driver-mutation-positive patients without sustained
+      blood-count abnormality may be observed at usual hematology
+      follow-up intervals; active surveillance is recommended once
+      blood-count abnormality or symptoms emerge."
+  - source_id: SRC-NCCN-AML-2025
+    position: context
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не використовувати цей шлях у пацієнтів з sustained blood-count абнормальністю — потребують active surveillance."
+  - "Не презентувати observation як еквівалент structured surveillance — interval-progression виявляється на більш пізній стадії."
+  - "Не ігнорувати нову cytopenia, blasts, або splenomegaly — імідіат-bone marrow evaluation показано."
+  - "Не використовувати цей шлях у пацієнтів з попереднім тромбозом — high recurrence ризик потребує active management."
+  - "Не пропускати періодичне обговорення upgrade — driver-positive пацієнти з часом часто розвивають manifest MPN, що потребує переходу на standard track."
+
+do_not_do_en:
+  - "Do not use this pathway in patients with sustained blood-count abnormality — they require active surveillance."
+  - "Do not present observation as equivalent to structured surveillance — interval progression is detected at later stage."
+  - "Do not ignore new cytopenia, blasts, or splenomegaly — immediate bone marrow evaluation indicated."
+  - "Do not use this pathway in patients with prior thrombosis — high recurrence risk requires active management."
+  - "Do not skip periodic re-discussion of upgrade — driver-positive patients often develop manifest MPN over time and warrant transition to the standard track."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — alternative-track companion for MPN / secondary AML
+  prevention. Required for §15.2 C4 ≥2-tracks invariant. Two-Co-Lead
+  signoff queued. As with the standard track, patients with confirmed
+  DIS-PV / DIS-ET / DIS-PMF Disease entity route through the
+  treatment-persona MPN algorithm; this Indication targets pre-MPN-
+  criteria driver-mutation-positive patients only.

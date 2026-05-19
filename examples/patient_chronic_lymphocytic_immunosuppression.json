@@ -1,0 +1,14 @@
+{
+  "patient_id": "IMMUNO-UNIVERSAL-001",
+  "comment": "50yo male, status post-allogeneic hematopoietic stem-cell transplant for MDS 7 years ago, on chronic systemic immunosuppression (cyclosporine + low-dose prednisone) for chronic GVHD. Chronic immunosuppression ≥1y documented — qualifies for the upstream universal-immunocompromised RF rather than the transplant-specific RFs (deliberately distinct field per RF-UNIVERSAL-IMMUNOCOMPROMISED-CANCER-RISK design to avoid cross-firing with HIV/EBV/transplant pilots). No current malignancy. Engine fires RF-UNIVERSAL-IMMUNOCOMPROMISED-CANCER-RISK and routes to stratified cancer-screening cadence per IDSA + ASCO + ACOG + AST guidelines: enhanced skin-cancer surveillance with dermatologist q6-12mo, EBV-VL monitoring, accelerated cervical/anal screening as applicable, HPV vaccination catch-up. Note: relevant_diseases=['*'] — engine does not attach disease-specific Indication tracks via prevention path (plan.py exclusion); fires as documentation/sidecar signal pending engine extension.",
+  "biomarkers": {},
+  "demographics": {"age": 50, "sex": "male", "ecog": 1},
+  "findings": {
+    "chronic_immunosuppression_ge_1y_documented": true,
+    "Status post-allogeneic HSCT for MDS 2019 (7 years post-transplant)": true,
+    "Chronic GVHD on cyclosporine + low-dose prednisone": true,
+    "EBV-VL undetectable on last monitoring": true,
+    "Annual dermatology surveillance baseline unremarkable": true,
+    "No current malignancy": true
+  }
+}

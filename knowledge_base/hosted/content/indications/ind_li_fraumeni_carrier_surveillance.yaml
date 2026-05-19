@@ -1,0 +1,104 @@
+id: IND-LI-FRAUMENI-CARRIER-SURVEILLANCE
+plan_track: standard
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-LI-FRAUMENI-CONFIRMED-CARRIER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: "Toronto Protocol surveillance in confirmed TP53 carriers (Villani et al. 2011/2016): 5-year OS 88% in screened cohort vs 60% in unscreened — substantial mortality benefit. Whole-body MRI catches sarcomas before invasion; breast MRI from age 20-25 catches breast cancer pre-clinical; brain MRI catches CNS tumors before symptomatic; abdominal/pelvic US catches childhood adrenocortical carcinoma + Wilms-spectrum."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  - TEST-LFT
+desired_tests:
+  - TEST-LDH
+
+rationale: >
+  Toronto Protocol (Villani et al.) standardized surveillance for confirmed
+  TP53 pathogenic variant carriers:
+
+  **(1) Annual whole-body MRI (WB-MRI)** from age 1 (yes, infancy — adrenocortical
+  carcinoma occurs in early childhood in LFS). Captures soft-tissue sarcomas,
+  abdominal masses, intracranial lesions.
+
+  **(2) Annual brain MRI** — gliomas, choroid plexus carcinomas, medulloblastomas.
+
+  **(3) Annual abdominal/pelvic US** in children — adrenocortical carcinoma
+  detection. Plus 24h urine catecholamines + cortisol.
+
+  **(4) Breast MRI q1y from age 20** (women) — TP53 breast cancer presents
+  pre-menopausally; mammography may worsen radiation-related risk so MRI preferred.
+
+  **(5) Colonoscopy q2-5y starting age 25** — LFS-associated CRC risk modestly
+  elevated.
+
+  **(6) Careful skin / dermatology exam q6-12 months** — multiple primary
+  cutaneous cancers documented.
+
+  **AVOID radiation when feasible** — TP53 carriers have ~10-20x risk of
+  radiation-induced secondary malignancy. CT preferred only when MRI is
+  inadequate; therapeutic radiation only when alternative not available.
+
+rationale_ua: >
+  Toronto Protocol (Villani et al.) стандартизоване спостереження для
+  підтверджених TP53 носіїв:
+
+  **(1) Щорічна whole-body MRI** з 1 року (adrenocortical carcinoma виникає
+  у ранньому дитинстві в LFS).
+
+  **(2) Щорічна brain MRI** — гліоми, choroid plexus carcinomas, медуллобластоми.
+
+  **(3) Щорічна abdominal/pelvic US** у дітей + 24h urine catecholamines + cortisol.
+
+  **(4) Breast MRI q1y з 20 років** (жінки) — мамографія може погіршити
+  radiation-related ризик; MRI переважна.
+
+  **(5) Колоноскопія q2-5y з 25 років.**
+
+  **AVOID radiation коли можливо** — TP53 carriers мають ~10-20x ризик
+  radiation-induced secondary malignancy.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_carrier_completion
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не використовувати mammography як primary breast screening у TP53 жінок — radiation-induced ризик; MRI preferred."
+  - "Не призначати therapeutic radiation у TP53 carriers without specialist consultation — radiation-induced secondary malignancy ризик надзвичайно високий."
+  - "Не пропускати pediatric surveillance — adrenocortical carcinoma + choroid plexus carcinoma виникають у ранньому дитинстві."
+
+do_not_do_en:
+  - "Do not use mammography as primary breast screening in TP53 women — radiation-induced risk; MRI preferred."
+  - "Do not prescribe therapeutic radiation in TP53 carriers without specialist consultation — radiation-induced secondary malignancy risk is extremely high."
+  - "Do not skip pediatric surveillance — adrenocortical carcinoma + choroid plexus carcinoma occur in early childhood."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B Li-Fraumeni confirmed-carrier surveillance pathway."

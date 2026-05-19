@@ -1,0 +1,64 @@
+id: BMA-DICER1-GERMLINE-PLEUROPULMONARY-BLASTOMA
+biomarker_id: BIO-DICER1-GERMLINE
+variant_qualifier: DICER1 germline pathogenic (RNase IIIb domain hotspot or LoF)
+disease_id: DIS-OVARIAN
+escat_tier: IIA
+evidence_summary: >
+  DICER1 germline pathogenic variants cause DICER1 tumor predisposition
+  syndrome — broad spectrum centered on pleuropulmonary blastoma (PPB) in
+  early childhood, ovarian Sertoli-Leydig cell tumor in adolescence /
+  young-adult females, multinodular goiter + differentiated thyroid cancer,
+  cystic nephroma, embryonal rhabdomyosarcoma (cervix / bladder / kidney),
+  pineoblastoma, and pituitary blastoma. Confirmed-carrier surveillance
+  protocol (per International PPB Registry Consensus / Stewart et al. 2019
+  / DICER1 Cancer Predisposition Surveillance Statement): chest CT (low-dose)
+  at age 3-6 months + 2.5 years + 8 years (PPB peak incidence < 6 years),
+  chest X-ray q6mo to age 8 then annually to age 12, abdominal/pelvic US
+  q6-12mo from infancy through age 8 then annual through adolescence,
+  thyroid US q3y starting age 8, gynecologic exam + transabdominal pelvic
+  US annual from age 8-10 (Sertoli-Leydig). Symptom-directed brain MRI for
+  pineoblastoma / pituitary blastoma concern. Smoking avoidance is critical
+  (synergistic lung-tumor risk). ESCAT IIA.
+evidence_summary_ua: >
+  Герміногенні патогенні варіанти DICER1 спричиняють синдром DICER1: PPB у
+  ранньому дитинстві, Sertoli-Leydig пухлини яєчників у підлітків/жінок,
+  мультинодулярний зоб + диференційований рак щитоподібної залози, кістозна
+  нефрома, ембріональні рабдоміосаркоми, пінеобластома, гіпофізарна
+  бластома. Протокол нагляду носія: низькодозова КТ грудної клітки у 3-6 міс
+  + 2.5 років + 8 років (PPB <6 років), рентгенограма грудної клітки q6мо
+  до 8 років, УЗД органів черевної порожнини/малого таза q6-12 міс,
+  УЗД щитоподібної залози q3 роки з 8 років, гінекологічний огляд + УЗД
+  з 8-10 років. Уникати куріння (синергічний ризик). ESCAT IIA.
+regulatory_approval:
+  fda: []
+  ema: []
+  ukraine: []
+recommended_combinations:
+  - "International PPB Registry consultation on first PPB suspicion (resection + adjuvant chemotherapy protocol)"
+  - "fertility-sparing oophorectomy for unilateral Sertoli-Leydig cell tumor in young women"
+  - "thyroidectomy decision-making per multinodular goiter / nodule risk; total thyroidectomy with risk-reducing intent debated"
+  - "lifestyle: smoking avoidance critical (synergistic lung-tumor risk in DICER1 carriers)"
+  - "DICER1 surveillance per International Consensus (Stewart et al., Clin Cancer Res 2018; AACR Pediatric Working Group 2017)"
+contraindicated_monotherapy: []
+primary_sources:
+  - SRC-NCCN-PEDIATRIC-SARCOMA
+last_verified: "2026-05-18"
+evidence_sources: []
+actionability_review_required: true
+notes: >
+  STUB — Wave A+B germline expansion. Linked Indication: none (no DICER1-
+  specific surveillance Indication exists yet). Two-Clinical-Co-Lead signoff
+  queued. Disease anchor uses DIS-OVARIAN (Sertoli-Leydig); PPB lacks a
+  Disease entity. Variant biology: pathognomonic dual-hit pattern with
+  germline LoF (truncating/splice) + somatic missense in RNase IIIb hotspot
+  (codons E1705, D1709, G1809, D1810, E1813) inside tumor — tumor sequencing
+  alone misses the germline allele.
+notes_ua: >
+  STUB — Wave A+B розширення. Прив'язка до DIS-OVARIAN (Sertoli-Leydig);
+  Disease-сутності PPB немає. Біологія варіанта: подвійний хіт — герміногенна
+  LoF + соматична missense у hotspot RNase IIIb (E1705/D1709/G1809/D1810/
+  E1813); пошук лише у пухлині не виявить герміногенної алелі.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_bma_batch3
+draft_revision: 1
+last_reviewed: "2026-05-18"

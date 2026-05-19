@@ -1,0 +1,80 @@
+id: REG-HP-PPI-CLAR-AMOX
+name: "PPI-clarithromycin-amoxicillin triple therapy — 14 days"
+name_ua: "PPI-кларитроміцин-амоксицилін трійна терапія — 14 днів"
+alternate_names:
+  - "PCA triple"
+  - "Clarithromycin triple"
+
+components:
+  - drug_id: DRUG-OMEPRAZOLE
+    dose: "20 mg PO"
+    schedule: "twice daily"
+    route: PO
+    duration: "14 days continuous"
+  - drug_id: DRUG-CLARITHROMYCIN
+    dose: "500 mg PO"
+    schedule: "twice daily"
+    route: PO
+    duration: "14 days continuous"
+  - drug_id: DRUG-AMOXICILLIN
+    dose: "1 g PO"
+    schedule: "twice daily"
+    route: PO
+    duration: "14 days continuous"
+
+cycle_length_days: 14
+total_cycles: "1 (single 14-day eradication course)"
+
+toxicity_profile: low
+
+premedication: []
+mandatory_supportive_care: []
+monitoring_schedule_id:
+
+dose_adjustments:
+  - condition: "Penicillin allergy"
+    modification: "Substitute amoxicillin with metronidazole 500 mg TID"
+    rationale: "PPI-clarithromycin-metronidazole triple is an established alternative for Pen-allergic patients"
+    source_refs:
+      - SRC-MAASTRICHT-VI-FLORENCE-2022
+
+ukraine_availability:
+  all_components_registered: true
+  all_components_reimbursed: false
+  notes: "All three components are pharmacy-accessible in Ukraine. Out-of-pocket cost ~300-800 UAH per full course. Not currently reimbursed via НСЗУ. Note: clarithromycin resistance in Ukraine and Eastern Europe is high (>15%) — PBMT (REG-HP-BISMUTH-QUADRUPLE) is generally preferred."
+
+sources:
+  - SRC-MAASTRICHT-VI-FLORENCE-2022
+  - SRC-AGA-H-PYLORI-2024
+  - SRC-NCCN-BCELL-2025
+
+between_visit_watchpoints:
+  - trigger_ua: "Помірний металевий присмак або легка нудота"
+    action_ua: "Поширений ефект кларитроміцину — приймайте з їжею; занотуйте на наступному візиті"
+    urgency: log_at_next_visit
+    sources:
+      - SRC-MAASTRICHT-VI-FLORENCE-2022
+  - trigger_ua: "Висип на шкірі або кропив'янка"
+    action_ua: "Подзвоніть у клініку того ж дня — алергічна реакція на амоксицилін потребує оцінки і можливої заміни на метронідазол"
+    urgency: call_clinic_same_day
+    sources:
+      - SRC-MAASTRICHT-VI-FLORENCE-2022
+  - trigger_ua: "Виражена діарея з кров'ю"
+    action_ua: "Подзвоніть у клініку того ж дня — антибіотик-асоційований коліт (C. difficile) потребує оцінки"
+    urgency: call_clinic_same_day
+    sources:
+      - SRC-NCCN-BCELL-2025
+  - trigger_ua: "Алергічна анафілаксія — набряк горла, утруднене дихання, обморок"
+    action_ua: "Звертайтесь у лікарню негайно — припиніть прийом препарату"
+    urgency: er_now
+    sources:
+      - SRC-MAASTRICHT-VI-FLORENCE-2022
+
+last_reviewed: "2026-05-18"
+notes: >
+  Standard PPI-clarithromycin-amoxicillin triple therapy for H. pylori eradication. Preferred only in regions with clarithromycin resistance ≤15%. In Ukraine and most of Eastern Europe, clarithromycin resistance is >15% — Maastricht VI/Florence Consensus 2022 recommends PBMT (REG-HP-BISMUTH-QUADRUPLE) as first-line instead.
+notes_ua: >
+  Стандартна PPI-кларитроміцин-амоксицилін трійна терапія для ерадикації H. pylori. Переважна лише в регіонах з кларитроміцин-резистентністю ≤15%. В Україні та більшості Східної Європи резистентність кларитроміцину >15% — Maastricht VI/Florence Consensus 2022 рекомендує PBMT (REG-HP-BISMUTH-QUADRUPLE) як першу лінію.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_authoring
+draft_revision: 1

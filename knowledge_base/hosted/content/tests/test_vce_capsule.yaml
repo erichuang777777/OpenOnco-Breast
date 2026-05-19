@@ -1,0 +1,87 @@
+id: TEST-VCE-CAPSULE
+names:
+  preferred: "Video capsule endoscopy (small-bowel)"
+  ukrainian: "Відеокапсульна ендоскопія тонкої кишки"
+  english: "Small-bowel video capsule endoscopy"
+  synonyms: ["VCE", "Capsule endoscopy", "SBCE", "PillCam"]
+loinc_codes: ["18756-7"]
+category: imaging
+purpose: >
+  Non-invasive small-bowel mucosal surveillance — primary indication
+  in OpenOnco prevention pathway is Peutz-Jeghers syndrome (STK11
+  carriers, q1–3y from age 8–10 for jejunum / ileum polyp burden),
+  with secondary indications for hereditary GI polyposis (juvenile
+  polyposis syndrome, Cowden / PTEN, FAP attenuated forms with
+  duodenal advancement). Complementary to MR-enterography
+  (TEST-MR-ENTEROGRAPHY) — VCE = mucosal view, MR-E = mural / mass
+  view. Does NOT enable biopsy; positive findings → device-assisted
+  enteroscopy or surgery.
+
+specimen: "Imaging procedure (no specimen; capsule is single-use and excreted)"
+turnaround_time: "8-hour transit acquisition; image review 1–3 days; structured report 3–5 days"
+priority_class: standard
+
+availability_ukraine:
+  state_funded: false
+  typical_cost_uah: 12000.0
+  typical_availability: "Limited — private centers in Kyiv / Lviv / Kharkiv; tertiary academic centers occasionally"
+  notes: >
+    Capsule cost ~UAH 8000–15000 per study; no NSZU reimbursement
+    pathway. For pediatric Peutz-Jeghers surveillance the procedure
+    can be performed without sedation in cooperative children ≥8 y,
+    making it the preferred initial modality vs anesthesia-required
+    double-balloon enteroscopy.
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-NCCN-COLON-2025
+
+last_reviewed: "2026-05-18"
+review_status: pending_clinical_signoff
+drafted_by: claude_extraction
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Indications (OpenOnco prevention scope):
+
+  Peutz-Jeghers syndrome (STK11 / LKB1 carriers):
+  - Baseline VCE + MR-enterography age 8–10 (or earlier if
+    symptomatic — intussusception, anemia, abdominal pain)
+  - Surveillance q1–3y depending on polyp burden and growth
+    velocity
+  - Polyps ≥1–1.5 cm → device-assisted enteroscopy (single- or
+    double-balloon) for resection; intent is to prevent
+    intussusception, bleeding, and malignant transformation
+    (small-bowel cancer cumulative lifetime risk ~13%)
+
+  Juvenile polyposis syndrome (SMAD4 / BMPR1A carriers):
+  - Small-bowel evaluation if upper-GI polyposis advanced or
+    anemia / occult bleeding
+
+  FAP / attenuated FAP with advanced Spigelman / duodenal
+  polyposis:
+  - Adjunct to EGD when duodenal disease extends beyond reach of
+    side-viewing duodenoscope
+
+  Contraindications:
+  - Known or suspected GI obstruction / stricture (small-bowel
+    Crohn's, prior radiation enteritis, surgical adhesions) — use
+    patency capsule (Agile) first
+  - Swallowing dysfunction in adults (cap can be endoscopically
+    deployed)
+  - Cardiac pacemaker / ICD — historically a relative
+    contraindication; modern devices and Bluetooth-shielded
+    recorders permit use with cardiology consultation
+  - Pregnancy — no human data; defer when feasible
+
+  Limitations:
+  - No tissue acquisition (biopsy not possible)
+  - Cannot precisely localize lesions (anatomical landmarks
+    estimated by transit time)
+  - Sensitivity for flat / sessile lesions <1 cm is limited
+  - Battery life ~8–12 hours; incomplete small-bowel transit in
+    ~10–20% of studies (often slow gastric emptying)
+
+  Engineering note: referenced by v0.2-B prevention Indications for
+  Peutz-Jeghers carrier surveillance and selected polyposis-extended
+  pathways.

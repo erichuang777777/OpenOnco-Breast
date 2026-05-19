@@ -1,0 +1,13 @@
+{
+  "patient_id": "OCC-ASBESTOS-PREV-001",
+  "comment": "62yo male, 25 years occupational asbestos exposure (shipyard insulator pre-regulation era), current smoker. No current cancer. Engine routes to PreventionPlan (after Agent G Wave 2 pilot lands): standard = annual LDCT chest from 10y post first exposure + smoking cessation counseling + pleural surveillance discussion; alternative = routine general-population screening only. Validates v0.3 IARC Group 1 occupational pilot.",
+  "biomarkers": {},
+  "demographics": {"age": 62, "sex": "male", "ecog": 1},
+  "findings": {
+    "occupational_asbestos_exposure_documented": true,
+    "occupational_asbestos_exposure_years_ge_5": true,
+    "Current smoker, 35 pack-years": true,
+    "Shipyard insulator 1975-2000 (pre-regulation)": true,
+    "No current mesothelioma or lung cancer on baseline imaging": true
+  }
+}

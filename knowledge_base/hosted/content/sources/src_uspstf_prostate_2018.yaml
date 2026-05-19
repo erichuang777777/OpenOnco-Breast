@@ -1,0 +1,49 @@
+id: SRC-USPSTF-PROSTATE-2018
+source_type: guideline
+title: 'USPSTF Recommendation Statement: Screening for Prostate Cancer (2018)'
+version: '2018'
+authors:
+- US Preventive Services Task Force
+- Grossman DC
+- Curry SJ
+- Owens DK
+- et al.
+journal: JAMA
+doi: 10.1001/jama.2018.3710
+pmid: '29801017'
+url: https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/prostate-cancer-screening
+access_level: open_access
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 1
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources
+license:
+  name: Public domain (US government work)
+  url: https://www.uspreventiveservicestaskforce.org/uspstf/about-uspstf/copyright-permissions
+  spdx_id: null
+attribution:
+  required: false
+  text: US Preventive Services Task Force. Screening for Prostate Cancer Recommendation
+    Statement. JAMA 2018;319(18):1901-1913.
+commercial_use_allowed: true
+redistribution_allowed: true
+modifications_allowed: true
+legal_review:
+  status: pending
+  notes: US government work; public domain.
+relates_to_diseases: []
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Cited by prevention RFs / Indications for
+  PSA-based screening for prostate cancer: Grade C (individualized, shared decision-making)
+  in men age 55-69; Grade D (recommend against) at age ≥70. Reverses 2012 Grade D
+  across-the-board recommendation. Does not cover Black men or men with first-degree
+  family history of prostate cancer as separate strata — addressed via NCCN.
+
+  '
+pages_count: 13
+references_count: 80
+corpus_role: primary_guideline

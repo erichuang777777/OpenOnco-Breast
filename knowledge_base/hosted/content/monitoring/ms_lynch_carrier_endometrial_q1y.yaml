@@ -1,0 +1,88 @@
+id: MS-LYNCH-CARRIER-ENDOMETRIAL-Q1Y
+linked_to_regimen: null  # surveillance — no regimen
+
+phases:
+  - name: baseline
+    window: "At Lynch-syndrome confirmation in a person with a uterus / ovaries"
+    window_ua: "На момент підтвердження синдрому Лінча в особи з маткою / яєчниками"
+    tests:
+      - TEST-PEDIGREE-FAMILY-HISTORY
+      - TEST-TRANSVAGINAL-US
+      - TEST-ENDOMETRIAL-BIOPSY
+      - TEST-CA125
+    visits: ["Gynecologic-oncology counseling + multidisciplinary surveillance plan"]
+    checkpoints:
+      - "Confirm Lynch panel pathogenic / likely-pathogenic variant"
+      - "Gene-specific risk: MLH1 / MSH2 ~40-60% lifetime endometrial cancer; MSH6 ~25-30%; PMS2 ~15%"
+      - "Ovarian-cancer risk ~5-20% (MLH1 / MSH2 > MSH6 / PMS2 > general population)"
+      - "Discuss risk-reducing hysterectomy ± bilateral salpingo-oophorectomy at age 40-45 after childbearing complete (NCCN Cat 2A)"
+      - "Counsel: surveillance imperfect — TVUS / CA125 have low sensitivity for early disease"
+    checkpoints_ua:
+      - "Підтвердити патогенний / ймовірно патогенний варіант Lynch-панелі"
+      - "Ген-специфічний ризик: MLH1 / MSH2 ~40–60% довічного ризику раку ендометрія; MSH6 ~25–30%; PMS2 ~15%"
+      - "Ризик раку яєчників ~5–20% (MLH1 / MSH2 > MSH6 / PMS2 > загальна популяція)"
+      - "Обговорити профілактичну гістеректомію ± двосторонню сальпінго-оофоректомію у віці 40–45 років після завершення дітородження (NCCN Cat 2A)"
+      - "Консультування: спостереження недосконале — TVUS / CA125 мають низьку чутливість до раннього захворювання"
+
+  - name: gynecologic_surveillance_annual
+    window: "Annually from age 30-35 until risk-reducing surgery"
+    window_ua: "Щорічно з 30–35 років до профілактичної операції"
+    tests:
+      - TEST-TRANSVAGINAL-US
+      - TEST-ENDOMETRIAL-BIOPSY
+      - TEST-CA125
+    visits: ["Gynecologic-oncology surveillance visit"]
+    checkpoints:
+      - "Symptom screen: postmenopausal bleeding, intermenstrual bleeding, pelvic pain — any prompts immediate work-up"
+      - "Endometrial biopsy preferred at every annual visit (NCCN); TVUS lower yield in premenopausal women"
+      - "CA125 limited in premenopausal use (false-positive endometriosis / cyst)"
+      - "Any abnormal bleeding → hysteroscopy + biopsy, not just repeat US"
+    checkpoints_ua:
+      - "Скринінг симптомів: кровотечі в постменопаузі, міжменструальні кровотечі, тазовий біль — будь-які запускають негайне обстеження"
+      - "Біопсія ендометрія переважна на кожному щорічному візиті (NCCN); TVUS має нижчу діагностичну цінність у пременопаузальних жінок"
+      - "CA125 має обмежену цінність у пременопаузі (хибнопозитивні через ендометріоз / кісти)"
+      - "Будь-яка аномальна кровотеча → гістероскопія + біопсія, а не лише повторне УЗД"
+
+  - name: post_surgical_followup
+    window: "Lifelong after risk-reducing hysterectomy + BSO"
+    window_ua: "Пожиттєво після профілактичної гістеректомії + BSO"
+    tests: []
+    visits: ["Survivorship; continue gene-specific extracolonic surveillance"]
+    checkpoints:
+      - "Hormone-replacement therapy short-term symptom-driven if surgical menopause induced; balance bone / vasomotor benefits with non-Lynch breast risks"
+      - "Continue annual urinary + gastric surveillance per family-history triggers"
+    checkpoints_ua:
+      - "Замісна гормональна терапія короткостроково за симптомами при хірургічній менопаузі; балансувати користь для кісток / вазомоторних симптомів з не-Lynch ризиком раку молочної залози"
+      - "Продовжити щорічне спостереження сечовидільної системи + шлунка за тригерами сімейного анамнезу"
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-ASCO-ACMG-LYNCH-2014
+
+last_reviewed: "2026-05-18"
+machine_translated_review_pending: true
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  NCCN Genetic/Familial High-Risk: Colorectal v3.2025 recommends
+  endometrial biopsy q1-2y from age 30-35 in Lynch female carriers;
+  TVUS is adjunct, not standalone screen (NPV inadequate for early
+  endometrial cancer). Risk-reducing hysterectomy + BSO at age 40-45
+  (or after childbearing) is preferred risk-management strategy and
+  is NCCN Cat 2A.
+
+  Ovarian-cancer screening with TVUS + CA125 is offered but evidence
+  for mortality benefit is weak (similar to BRCA — see
+  MS-BRCA-CARRIER-OVARIAN-TVUS-CA125-Q6MO).
+
+  Skin (sebaceous neoplasms / Muir-Torre), urinary (urothelial), and
+  small-bowel surveillance are gene-specific; documented here as
+  cross-reference only:
+  - MLH1 / MSH2: urinary cytology + urinalysis q1y from age 30-35
+  - MSH2 specifically: EGD q3-5y starting age 30 (gastric / small
+    bowel) if family history of upper-GI cancer
+  - Sebaceous skin lesions: annual dermatologic exam if Muir-Torre
+    phenotype
+
+  UA translations of window / checkpoints added 2026-05-19 under CHARTER
+  §8.3 dev-mode exemption; awaiting Clinical Co-Lead sign-off.

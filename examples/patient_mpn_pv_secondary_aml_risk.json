@@ -1,0 +1,14 @@
+{
+  "patient_id": "MPN-PRE-PV-PREV-001",
+  "comment": "65yo male with JAK2 V617F+ on peripheral-blood NGS and sustained polycythemia-vera-suggestive phenotype (elevated Hct 53% + low EPO + mild splenomegaly) but workup still in progress — bone marrow biopsy pending, currently NOT meeting full WHO 2022 PV criteria. Driver-positive pre-MPN-criteria phase. No confirmed AML or post-MPN MF. Note: a CONFIRMED DIS-PV patient would route to treatment-persona MPN algorithm per KSS §20.2; this case specifically validates the §20 prevention path for driver-positive patients in pre-criteria phase. Engine routes to PreventionPlan: standard = IND-MPN-SECONDARY-LEUKEMIA-PREVENTION-SURVEILLANCE (CBC + smear q3-6mo + bone marrow on cytopenia/blast emergence + JAK2 allele-burden monitoring); alternative = IND-MPN-SECONDARY-LEUKEMIA-PREVENTION-OBSERVATION (hematology-driven, BM only on cytopenia trigger). Validates v0.3 RF-MPN-SECONDARY-LEUKEMIA-PREVENTION pilot (secondary AML prevention).",
+  "biomarkers": {"BIO-JAK2-V617F": "positive"},
+  "demographics": {"age": 65, "sex": "male", "ecog": 1},
+  "findings": {
+    "jak2_v617f_positive_without_confirmed_mpn_disease": true,
+    "mpn_phenotype_pre_who_criteria": true,
+    "JAK2 V617F positive on peripheral-blood NGS, allele burden 32%": true,
+    "Elevated Hct 53%, low EPO, mild splenomegaly on imaging": true,
+    "Bone marrow biopsy pending, full WHO 2022 PV criteria not yet met": true,
+    "No current AML or post-MPN myelofibrosis diagnosis": true
+  }
+}

@@ -1,0 +1,66 @@
+id: IND-OCC-VINYL-CHLORIDE-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-HCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints: {ecog_max: 3}
+
+triggered_by_redflags:
+  - RF-OCC-VINYL-CHLORIDE-MALIGNANCY-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Liver US + AFP q6mo (AASLD HCC surveillance protocol adapted for VCM-exposed cohort) detects early-stage angiosarcoma and HCC; trade-off — angiosarcoma is highly aggressive, even early detection has limited mortality benefit."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests: [TEST-CBC, TEST-LFT]
+desired_tests: []
+
+rationale: >
+  Standard-track surveillance for documented occupational vinyl chloride
+  exposure. Doppler liver US + AFP q6mo (extending AASLD HCC surveillance
+  protocol to this etiologically distinct cohort). Smoking cessation
+  counseling continues. Refer to hepatology for occupational-medicine
+  consultation.
+
+rationale_ua: >
+  Стандартний-трек surveillance для documented occupational VCM exposure.
+  Doppler liver US + AFP q6mo. Smoking cessation. Hepatology consult.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_completion
+draft_revision: 1
+
+sources:
+  - source_id: SRC-AASLD-HCC-2023
+    position: supports
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не пропускати hepatology consultation у VCM-exposed cohort — angiosarcoma діагностика складна."
+  - "Не використовувати тільки AFP — angiosarcoma часто AFP-negative; imaging має пріоритет."
+
+do_not_do_en:
+  - "Do not skip hepatology consultation in VCM-exposed cohort — angiosarcoma diagnosis is difficult."
+  - "Do not use AFP alone — angiosarcoma is often AFP-negative; imaging has priority."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 vinyl chloride pilot."

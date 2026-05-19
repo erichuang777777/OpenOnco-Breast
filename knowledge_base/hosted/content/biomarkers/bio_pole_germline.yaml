@@ -1,0 +1,23 @@
+id: BIO-POLE-GERMLINE
+names:
+  preferred: "POLE germline pathogenic variant (proofreading domain)"
+  ukrainian: "POLE germline патогенний варіант (proofreading-домен)"
+  english: "POLE germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: POLE
+  gene_hugo_id: HGNC:9177
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+related_biomarkers: [BIO-POLE-HYPERMUTATOR]
+sources: [SRC-NCCN-GENETIC-FAMILIAL-CRC-2025]
+last_reviewed: "2026-05-18"
+notes: "POLE germline (exonuclease / proofreading-domain variants) — drives Polymerase-Proofreading-Associated Polyposis (PPAP). Autosomal dominant; oligopolyposis (often <100 adenomas) + early-onset CRC + endometrial cancer; reported brain tumors. Tumors are typically ultramutated (TMB > 100 mut/Mb) and may respond to immune-checkpoint inhibitors. Surveillance: colonoscopy q1-2y from late teens; consider endometrial surveillance. STUB pending two-Co-Lead signoff."
+notes_ua: "POLE germline (proofreading-варіанти) — драйвер PPAP. Олігополіпоз + ранній КРР + ендометрій. Пухлини ультрамутовані (TMB > 100 mut/Mb), можуть відповідати на ICI. Колоноскопія кожні 1-2 роки з підліткового віку."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_germline_batch3
+draft_revision: 1

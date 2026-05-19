@@ -1,0 +1,122 @@
+id: ALGO-TYRER-CUZICK-V8-BREAST
+applicable_to_disease: DIS-BREAST
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention.
+purpose: >
+  Tyrer-Cuzick (IBIS) version 8 breast cancer risk model. Computes 10-
+  year and lifetime invasive breast cancer risk from a comprehensive
+  feature set: full pedigree (3+ generations), reproductive history,
+  hormonal exposures (menarche/menopause/HRT/oral contraceptives),
+  benign breast disease (atypical hyperplasia, LCIS), mammographic
+  breast density, BMI, and (v8+) optional polygenic risk score (PRS).
+
+  Output routes to enhanced HBOC surveillance pathway when lifetime
+  risk ≥20-30% (varies by guideline) or 10y risk crosses chemoprevention
+  threshold. v8 update (2017) incorporates polygenic risk and density;
+  outperforms Gail and BRCAPRO at general-population stratification.
+
+output_indications:
+  - IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Genetic counseling + germline BRCA1/2 panel referral is the first
+# action for high-BRCA-prob cases within the surveillance pathway.
+# Algorithm routes only to the surveillance Indication to satisfy the
+# algorithm-routing contract; counseling component is documented in
+# Indication rationale.
+
+decision_tree:
+  - step: 1
+    # High-risk lifetime threshold (≥30% per NICE; ≥20% per ACS for MRI)
+    evaluate:
+      any_of:
+        - condition: "Tyrer-Cuzick v8 lifetime breast cancer risk ≥30% (NICE high-risk threshold)"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Tyrer-Cuzick lifetime ≥30% (NICE high-risk) — annual MRI screening from age 30, annual mammography from 40 (or earlier if BRCA suspected), discussion of chemoprevention (tamoxifen / aromatase inhibitor), referral for HBOC genetic counseling."
+    if_false:
+      next_step: 2
+  - step: 2
+    # ACS / NCCN moderate-high threshold ≥20% for MRI eligibility
+    evaluate:
+      any_of:
+        - condition: "Tyrer-Cuzick v8 lifetime breast cancer risk ≥20% (ACS/NCCN MRI-eligibility threshold)"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Tyrer-Cuzick lifetime ≥20% (ACS/NCCN moderate-high) — annual MRI + annual mammography, chemoprevention discussion. Genetic counseling referral if pedigree suggests HBOC features."
+    if_false:
+      next_step: 3
+  - step: 3
+    # Chemoprevention threshold — Gail 5y ≥1.66% or T-C 10y ≥3% (NCCN BRSK).
+    evaluate:
+      any_of:
+        - condition: "Tyrer-Cuzick v8 10-year breast cancer risk ≥3% (NCCN BRSK chemoprevention-discussion threshold)"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Tyrer-Cuzick 10y ≥3% — discussion of risk-reducing tamoxifen / raloxifene / aromatase inhibitor (population-risk chemoprevention indication is v0.2 follow-up; routed to enhanced surveillance pending IND-* authoring)."
+    if_false:
+      next_step: 4
+  - step: 4
+    # Genetic-counseling trigger: high lifetime risk OR BRCA-mutation
+    # carrier probability ≥10% per Tyrer-Cuzick BRCA-prob output.
+    evaluate:
+      any_of:
+        - condition: "Tyrer-Cuzick v8 BRCA1/2 carrier probability ≥10%"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Tyrer-Cuzick BRCA carrier probability ≥10% — refer for germline BRCA1/2 (or multi-gene HBOC panel) testing."
+    if_false:
+      result: false
+      notes: "Tyrer-Cuzick lifetime risk <20%, 10y <3%, BRCA-prob <10% — average / near-average risk; routine USPSTF screening cadence (mammography q2y age 50-74; q2y age 40-49 shared decision-making per 2024 update)."
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-NCCN-BREAST-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding Tyrer-Cuzick / IBIS v8
+  model (Tyrer J, Duffy SW, Cuzick J. A breast cancer prediction model
+  incorporating familial and personal risk factors. Stat Med
+  2004;23:1111-1130. PMID 15057881 for v1; Brentnall AR et al.
+  Long-term Accuracy of Breast Cancer Risk Assessment Combining
+  Classic Risk Factors and Breast Density. JAMA Oncol 2018;4:e180174.
+  PMID 29621388 for v8 density integration). Primary-paper Source
+  entity (SRC-TYRER-2004-IBIS, SRC-BRENTNALL-2018-IBIS-V8) is v0.2-B
+  authoring backlog.
+
+  Anchored to DIS-BREAST. Model output also informs DIS-OVARIAN
+  surveillance indirectly via BRCA carrier probability.
+
+  Key v8 features (vs v7):
+    - Integration of mammographic breast density (BI-RADS density
+      categories a-d, or volumetric density measure)
+    - Optional polygenic risk score (PRS313 or PRS77) integration
+    - Updated BRCA1/2 penetrance estimates
+    - Recalibration against contemporary UK/EU population incidence
+
+  Model availability: free web tool at https://ibis.ikonopedia.com/
+  and Tyrer-Cuzick standalone calculator (no public API; engine
+  integration is downstream — algorithm here is a declarative scoring
+  rule, not the calculator itself).
+
+  Default-indication policy: high-risk routes to ENHANCED-SURVEILLANCE
+  by default (surveillance is the immediate actionable output for
+  general-population breast-risk models); GENETIC-COUNSELING is the
+  alternative routing for patients whose BRCA carrier probability
+  meets the testing threshold. This differs from pedigree-driven
+  Lynch/HBOC algorithms which default to genetic counseling.
+
+  POPULATION-RISK CHEMOPREVENTION GAP: chemoprevention with tamoxifen
+  / raloxifene / aromatase inhibitor for women meeting Gail ≥1.66%
+  5-year risk or Tyrer-Cuzick 10y ≥3% threshold is USPSTF grade B
+  recommendation. OpenOnco does not yet have a dedicated IND-
+  POPULATION-BREAST-CHEMOPREVENTION-* indication; surveillance
+  pathway is used as interim routing. Authoring of population-risk
+  chemoprevention indication is v0.2 follow-up backlog.
+
+  Cited from prevention RFs evaluating breast cancer risk in
+  patients without confirmed HBOC pedigree pattern.
+draft: true

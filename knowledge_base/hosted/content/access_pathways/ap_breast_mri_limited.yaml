@@ -1,0 +1,92 @@
+id: AP-BREAST-MRI-LIMITED
+name: "Breast MRI surveillance — limited capacity in Ukraine (mostly self-pay private)"
+name_ua: "МРТ молочних залоз для нагляду — обмежена доступність в Україні (переважно приватна оплата)"
+
+# Test-anchored AP per chunk brief. Schema-extension `applies_to_test_ids`
+# per `extra="allow"`. Engine не використовує для AccessMatrix, але
+# render-layer / pacient-facing routing — використовує.
+applies_to_drug_ids: []
+applies_to_regimen_ids: []
+applies_to_test_ids:
+  - TEST-BREAST-MRI
+
+pathway_type: self_pay
+
+country_options: ["UA"]
+
+cost_orientation:
+  currency: UAH
+  min: 4500
+  max: 12000
+  per_unit: dose
+  notes: >
+    Pacient OOP per breast MRI session з контрастом у приватних
+    діагностичних центрах України станом на 2026-05 — приблизно
+    4500-12 000 UAH (Київ — верхня межа; обласні центри — 4500-7000).
+    Bilateral breast MRI з gadolinium-контрастом — стандартний
+    BRCA1/2-carrier surveillance modality (annual з 25-30 років per
+    NCCN Genetic Familial Breast/Ovarian v2.2025).
+    НСЗУ — НЕ покриває breast MRI за surveillance-показаннями.
+    Покриття існує тільки за лікувальними показаннями (diagnostic
+    workup, problem-solving, response-assessment у пацієнток з
+    встановленим breast cancer-діагнозом — через стаціонарний
+    пакет 4000).
+    Annual cost для high-risk carrier surveillance — 4500-12 000 UAH
+    OOP/рік.
+
+typical_lead_time_weeks: [2, 12]
+
+contact_pattern: >
+  Онколог-мамолог / медичний-генетик призначає surveillance MRI
+  у документованих BRCA1/2 / TP53 (LFS) / PALB2 / ATM-carrier'ів.
+  Pacient бронює сесію у приватному діагностичному центрі (Borys,
+  Medikom, ISIDA, Sinevo Health, regional MRI centers).
+  Дитячий / pediatric LFS-carrier — TEST-WHOLE-BODY-MRI-LFS
+  (Toronto-протокол) виконується у дуже обмежених центрах (Київський
+  Інститут Раку, NCDS, окремі приватні центри). Контракт з
+  патронажною орг (Tabletochki / Patients of Ukraine) — рідко покриває
+  surveillance-MRI, але іноді ad-hoc гранти доступні.
+
+eligibility_caveats:
+  - "Документована high-risk germline mutation (BRCA1/2, TP53, PALB2, CDH1, PTEN, STK11) АБО life-time risk ≥20% (Tyrer-Cuzick v8)"
+  - "Дисплазія шиї / клиновидна-форма-MRI: clearance клаустрофобії або premedication (alprazolam)"
+  - "Renal function (eGFR ≥30) для безпечного gadolinium-контрасту; eGFR <30 — обережно (NSF-ризик)"
+  - "Pregnancy — gadolinium відносна КП (категорія C); відкладати або використовувати non-contrast"
+  - "Magnetic implants / pacemakers — індивідуальна перевірка сумісності"
+
+requires_documentation:
+  - "Genetic-test report (germline)"
+  - "Mammogram (попередній або 6-місячно alternating з MRI per NCCN)"
+  - "eGFR / креатинін у межах ≤30 днів"
+  - "Information щодо менструального циклу (день 7-14 preferred для premenopausal)"
+  - "Risk-score (Gail / Tyrer-Cuzick v8 — TEST-TYRER-CUZICK-V8-CALCULATOR — для не-carrier'ів з family-history-based ризиком)"
+
+verified_by: null
+last_verified: "2026-05-18"
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-NCCN-BREAST-2025
+
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Breast MRI surveillance — cornerstone для BRCA1/2 carrier'ів
+  (annual alternating з mammogram 6 months), TP53 / Li-Fraumeni
+  (annual breast MRI з 20 років per Toronto protocol), і high-risk
+  Tyrer-Cuzick-cohort. В Україні bottlenecks:
+  1) MRI-обладнання + спеціалізована breast-coil — переважно у
+     приватних центрах та небагатьох обласних онко-центрах;
+  2) Радіолог-досвід щодо breast MRI interpretation з BI-RADS
+     scoring — обмежений (annual volumes низькі для досягнення
+     proficiency);
+  3) Pacient OOP cost 4500-12 000 UAH/рік — суттєвий бар'єр для
+     economically-vulnerable carrier'ів;
+  4) Lead-time 2-12 тижнів — у Києві типово 2-4 тижні, в обласних
+     центрах може досягати 8-12 тижнів очікування.
+
+  Не плутати з TEST-WHOLE-BODY-MRI-LFS (Li-Fraumeni Toronto-протокол) —
+  ще обмеженіший доступ (повне сканування + спеціалізована обробка
+  pediatric / adolescent випадків).
+
+  AccessPathway render-time-only.

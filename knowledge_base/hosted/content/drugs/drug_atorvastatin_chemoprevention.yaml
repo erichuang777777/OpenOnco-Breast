@@ -1,0 +1,108 @@
+id: DRUG-ATORVASTATIN-CHEMOPREVENTION
+names:
+  preferred: "Atorvastatin (cancer chemoprevention context; statin class proxy)"
+  ukrainian: "Аторвастатин (хіміопрофілактика раку; представник статинів)"
+  english: "Atorvastatin (cancer chemoprevention)"
+  synonyms: ["Statin (atorvastatin proxy)"]
+  brand_names: ["Lipitor", "Torvacard"]
+atc_code: C10AA05
+rxnorm_id: "83367"
+drug_class: "HMG-CoA reductase inhibitor (statin)"
+mechanism: >
+  Competitively inhibits 3-hydroxy-3-methylglutaryl coenzyme A (HMG-CoA)
+  reductase, blocking the rate-limiting step of mevalonate / cholesterol
+  biosynthesis and upregulating hepatic LDL receptors. Cancer-prevention
+  rationale: pleiotropic effects (decreased isoprenoid prenylation of
+  Ras/Rho, anti-inflammatory, antiproliferative, pro-apoptotic) and
+  downregulation of mevalonate-pathway tumor signaling. Observational
+  meta-analyses suggest modest reductions in CRC, hepatocellular,
+  esophageal, and prostate cancer incidence; RCT-level evidence
+  remains absent. Primary regulatory indication is cardiovascular
+  risk reduction.
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 1996
+    indications_brief:
+      - "Primary and secondary CV prevention"
+      - "Hypercholesterolemia / mixed dyslipidemia"
+      - "NOT FDA-labeled for cancer chemoprevention"
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: true
+    reimbursement_indications:
+      - "Серцево-судинна профілактика / гіперліпідемія (НЕ рак-профілактика)"
+    last_verified: "2026-05-18"
+    notes: "Реімбурсується для CV-показань (вторинна профілактика, високий ризик); для хіміопрофілактики раку — позамедичне використання."
+typical_dosing: >
+  Cardiovascular-prevention dosing range used in any cancer-chemoprevention
+  observational analyses: 10-80 mg PO once daily (with or without food).
+  Typical starting dose 10-20 mg/day; titrate per LDL target. No
+  specific oncology-prevention dose; observational signals span the
+  entire dose range. Hepatic monitoring (baseline LFTs); CK only if
+  symptomatic. Renal dose adjustment unnecessary.
+formulations:
+  - "Tablet 10 mg, 20 mg, 40 mg, 80 mg"
+
+absolute_contraindications:
+  - "Active liver disease or unexplained persistent transaminase elevation (>3× ULN)"
+  - "Pregnancy / lactation / women of reproductive potential without contraception"
+  - "Hypersensitivity to atorvastatin"
+black_box_warnings: []
+major_interactions:
+  - "Strong CYP3A4 inhibitors (clarithromycin, itraconazole, HIV protease inhibitors, cobicistat, grapefruit juice) — increased myopathy/rhabdomyolysis risk; dose-limit or avoid"
+  - "Cyclosporine — contraindicated combination (severe atorvastatin level increase)"
+  - "Gemfibrozil — increased rhabdomyolysis risk; use fenofibrate if combo needed"
+  - "Warfarin — modest INR increase; monitor"
+  - "Digoxin — increased digoxin levels (~20%); monitor"
+common_adverse_events:
+  - "Myalgia / muscle aches (~5-10%; often dose-dependent)"
+  - "Arthralgia (~5%)"
+  - "Nasopharyngitis (~5-8%)"
+  - "Diarrhea (~3-5%)"
+  - "Insomnia (~2-3%)"
+serious_adverse_events:
+  - "Rhabdomyolysis with acute kidney injury (rare; ~1-3 per 100,000 patient-years)"
+  - "Hepatotoxicity (transaminase elevation; clinically significant hepatitis rare)"
+  - "New-onset diabetes mellitus (modest increase, ~10%)"
+  - "Immune-mediated necrotizing myopathy (very rare)"
+  - "Severe hypersensitivity (rare)"
+
+pharmacology: {half_life_hours: 14, clearance: "Hepatic CYP3A4 metabolism; active metabolites (ortho-/para-hydroxylated) extend effective t1/2 to 20-30 h; biliary excretion; minimal renal"}
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-WCRF-AICR-CUP-2018
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 chemoprevention-workstream authoring; pending two-Clinical-
+  Co-Lead signoff per CHARTER §6.1 dev-mode. STATIN CLASS PROXY entity
+  for cancer-chemoprevention discussions. Primary clinical use remains
+  cardiovascular. Cancer-incidence signals from observational meta-
+  analyses (Lancet 2012 Mayo collaborative pooled; multiple cohorts)
+  are modest (~5-15% relative reductions in select sites) and have
+  NOT translated to RCT-level cancer-prevention recommendations from
+  USPSTF, NCCN, or ESMO. Engine should NOT recommend statin initiation
+  for cancer prevention; appropriate when CV indications justify use.
+  Class effect debated — atorvastatin used here as representative
+  lipophilic statin (rosuvastatin / simvastatin similar mechanism).
+
+notes_ua: >
+  Аторвастатин — статин; основне FDA-показання — серцево-судинна
+  профілактика. У контексті хіміопрофілактики раку: спостережні
+  мета-аналізи свідчать про скромні зниження захворюваності
+  (~5-15% для окремих локалізацій), але РКД-доказів немає; USPSTF,
+  NCCN, ESMO НЕ рекомендують статини для профілактики раку.
+  Двигун НЕ повинен ініціювати статин лише для профілактики раку;
+  доречно, коли є серцево-судинні показання. Клас-ефект обговорюється
+  — аторвастатин використовується як представник ліпофільних статинів
+  (розувастатин / симвастатин — подібний механізм).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_chemoprevention_drugs_2026-05-18
+draft_revision: 1

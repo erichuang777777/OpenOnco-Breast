@@ -1,0 +1,108 @@
+id: DRUG-DUTASTERIDE-CHEMOPREVENTION
+names:
+  preferred: "Dutasteride (prostate cancer chemoprevention context)"
+  ukrainian: "Дутастерид (хіміопрофілактика раку передміхурової залози)"
+  english: "Dutasteride (prostate cancer chemoprevention)"
+  brand_names: ["Avodart", "Duodart (with tamsulosin)"]
+atc_code: G04CB02
+rxnorm_id: "230643"
+drug_class: "Dual 5-alpha-reductase type 1 + 2 inhibitor"
+mechanism: >
+  Competitive inhibitor of both type 1 and type 2 isoforms of 5-alpha-
+  reductase, contrasting with finasteride (type 2 selective). Reduces
+  intraprostatic and serum dihydrotestosterone (DHT) by ~90-95% — a
+  more complete androgen blockade than finasteride. Prostate cancer
+  prevention rationale identical to finasteride: lowering DHT reduces
+  androgen-driven epithelial proliferation. REDUCE trial (Andriole
+  NEJM 2010, NCT00056407): 23% relative reduction in prostate cancer
+  incidence at 4 years in men with prior negative biopsy and elevated
+  PSA, with a high-grade Gleason 8-10 signal similar to PCPT but
+  modest (small absolute number).
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 2001
+    indications_brief:
+      - "Benign prostatic hyperplasia symptom relief / prostate volume reduction"
+      - "BPH combination with tamsulosin"
+      - "NOT FDA-labeled for prostate cancer chemoprevention"
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Реімбурсація — не для хіміопрофілактики; out-of-pocket. BPH-показання покривається окремими програмами."
+typical_dosing: >
+  Prostate cancer chemoprevention (controversial / off-label, REDUCE
+  protocol): 0.5 mg PO once daily ongoing.
+  BPH dosing identical (0.5 mg/day). Steady-state intraprostatic DHT
+  reduction ~6 months. PSA values reduce ~50% within 6-12 months —
+  double measured PSA for cancer-screening interpretation. Very long
+  terminal half-life (~5 weeks) means effects persist after discontinuation.
+formulations:
+  - "Soft-gel capsule 0.5 mg"
+  - "Combination capsule 0.5 mg dutasteride + 0.4 mg tamsulosin (BPH only)"
+
+absolute_contraindications:
+  - "Pregnancy / women of reproductive potential — Category X (fetal genital abnormalities); women must not handle capsules (transdermal absorption)"
+  - "Hypersensitivity to dutasteride or other 5-ARI"
+  - "Pediatric use"
+  - "Severe hepatic impairment (caution)"
+black_box_warnings: []
+major_interactions:
+  - "Strong CYP3A4 inhibitors (ritonavir, ketoconazole, itraconazole, clarithromycin) — increase dutasteride levels significantly; monitor or avoid"
+  - "Diltiazem, verapamil — modest dutasteride level increase"
+common_adverse_events:
+  - "Decreased libido (~3-6%)"
+  - "Erectile dysfunction (~5-7%)"
+  - "Ejaculation disorders (decreased volume) (~1-2%)"
+  - "Gynecomastia / breast tenderness (~1-3%)"
+  - "Dizziness (~1-2%, especially with combination tamsulosin)"
+serious_adverse_events:
+  - "Persistent sexual dysfunction after discontinuation (controversial; class-effect with finasteride)"
+  - "High-grade prostate cancer signal (REDUCE — partially detection-bias attributable; mortality not different)"
+  - "Male breast cancer (rare signal)"
+  - "Severe depression / mood changes (rare; class warning)"
+
+pharmacology: {half_life_hours: 840, clearance: "Hepatic CYP3A4/3A5 oxidation; metabolites and parent excreted predominantly via feces; terminal t1/2 ~5 weeks at steady state. No renal dose adjustment."}
+
+sources:
+  - SRC-USPSTF-PROSTATE-2018
+  - SRC-NCCN-PROSTATE-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 chemoprevention-workstream authoring; pending two-Clinical-
+  Co-Lead signoff per CHARTER §6.1 dev-mode. CONTROVERSIAL chemoprevention
+  indication, mirrors finasteride. REDUCE trial (Andriole NEJM 2010):
+  23% relative risk reduction in prostate cancer over 4 years in men
+  with elevated PSA and prior negative biopsy, BUT signal of slightly
+  more Gleason 8-10 tumors (10 vs. 0 in years 3-4; small absolute
+  number; detection-bias debated). FDA in 2011 declined chemoprevention
+  indication for both finasteride and dutasteride citing high-grade
+  signal. AUA / USPSTF 2018 — shared decision-making, no general-
+  population recommendation. Strict pregnancy exclusion for partner;
+  women must not handle capsules (transdermal absorption). Very long
+  half-life — important for any consideration of paternity timing.
+
+notes_ua: >
+  Дутастерид — двоїстий інгібітор 5-альфа-редуктази типу 1 і 2;
+  основне FDA-показання — доброякісна гіперплазія передміхурової
+  залози. Хіміопрофілактика раку простати СУПЕРЕЧЛИВЕ показання
+  (REDUCE: 23% зниження за 4 роки у чоловіків з підвищеним PSA та
+  попередньою негативною біопсією; сигнал Gleason 8-10 — обмежений
+  кількістю випадків, частково обумовлений виявленням). FDA в 2011
+  відмовила в показанні хіміопрофілактики для finasteride/dutasteride.
+  Дуже довгий період напіввиведення (~5 тижнів) — важливо для
+  планування батьківства. Сувора виключна вагітність партнерки;
+  жінкам не торкатися капсул (трансдермальна абсорбція). Двигун
+  НЕ повинен автоматично рекомендувати; призначається чоловікам
+  високого ризику після явного консультування.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_chemoprevention_drugs_2026-05-18
+draft_revision: 1

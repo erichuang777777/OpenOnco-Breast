@@ -1,0 +1,121 @@
+id: ALGO-GAIL-BREAST
+applicable_to_disease: DIS-BREAST
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention.
+purpose: >
+  Gail model (Breast Cancer Risk Assessment Tool / BCRAT) for 5-year
+  and lifetime invasive breast cancer risk in women WITHOUT strong
+  family history. Designed for general-population stratification:
+  inputs are age, age at menarche, age at first live birth (or
+  nulliparous), number of first-degree relatives with breast cancer
+  (0/1/≥2), number of prior breast biopsies (0/1/≥2), atypical
+  hyperplasia (yes/no), and race/ethnicity. Threshold of 5-year risk
+  ≥1.66% is the USPSTF chemoprevention-discussion cutoff
+  (population-equivalent to the average 60-year-old white woman).
+
+  Gail is the simplest validated breast-risk model. Limitations:
+  underweights second-degree family history; does not include breast
+  density, BMI, hormonal exposures (HRT/OC), or polygenic risk; not
+  validated for women with hereditary cancer pedigrees or prior
+  thoracic radiation.
+
+output_indications:
+  - IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Gail is a general-population model; high-risk thresholds route into
+# the enhanced-surveillance pathway (which begins with discussion of
+# chemoprevention + density-adjusted screening). Algorithm routes only
+# to the surveillance Indication to satisfy the algorithm-routing
+# contract. Population-risk chemoprevention as a dedicated Indication
+# is v0.2 follow-up backlog.
+
+decision_tree:
+  - step: 1
+    # Eligibility gate — Gail is NOT validated for known/suspected
+    # hereditary syndromes; refer to pedigree-based models in those
+    # cases (Manchester, Tyrer-Cuzick, BRCAPRO, BOADICEA).
+    evaluate:
+      any_of:
+        - condition: "Patient has known BRCA1/BRCA2 pathogenic variant"
+        - condition: "Patient has strong family history suggesting HBOC (use Manchester / Tyrer-Cuzick / BOADICEA instead)"
+        - condition: "Patient had prior chest/thoracic radiation (e.g., Hodgkin lymphoma treatment)"
+        - condition: "Patient has personal history of breast cancer or LCIS / DCIS"
+    if_true:
+      result: null
+      notes: "Gail model not appropriate — apply pedigree-based model (Tyrer-Cuzick v8 / BRCAPRO / BOADICEA / Manchester) or hereditary cancer panel pathway."
+    if_false:
+      next_step: 2
+  - step: 2
+    # USPSTF chemoprevention threshold — Gail 5y ≥1.66%.
+    evaluate:
+      any_of:
+        - condition: "Gail 5-year invasive breast cancer risk ≥1.66%"
+    if_true:
+      next_step: 3
+    if_false:
+      result: false
+      notes: "Gail 5y <1.66% — average / below-average risk. Routine USPSTF screening cadence (mammography q2y age 50-74; q2y age 40-49 shared decision-making per 2024 update). No chemoprevention indication."
+  - step: 3
+    # Higher-risk threshold: Gail 5y ≥3% or lifetime ≥20% — moderate-to-
+    # high risk warranting enhanced surveillance discussion.
+    evaluate:
+      any_of:
+        - condition: "Gail 5-year invasive breast cancer risk ≥3.0%"
+        - condition: "Gail lifetime risk ≥20%"
+    if_true:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Gail 5y ≥3% OR lifetime ≥20% — moderate-to-high risk. Enhanced surveillance (consider annual mammography; MRI typically requires lifetime ≥20-30% by ACS/NICE, which Gail tends to underestimate vs Tyrer-Cuzick) + chemoprevention discussion (tamoxifen / raloxifene / aromatase inhibitor per USPSTF grade B). Population-risk chemoprevention indication is v0.2 follow-up; routed to enhanced surveillance as interim."
+    if_false:
+      result: IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Gail 5y 1.66-2.99% — moderate risk. USPSTF chemoprevention-eligibility threshold met; shared decision-making for tamoxifen / raloxifene / AI per individual benefit-risk balance (consider age, hysterectomy status, thrombotic risk). Routed to enhanced surveillance as interim until population-risk chemoprevention indication authored."
+
+sources:
+  - SRC-NCCN-BREAST-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding the Gail model (Gail
+  MH et al. Projecting individualized probabilities of developing
+  breast cancer for white females who are being examined annually. J
+  Natl Cancer Inst 1989;81:1879-1886. PMID 2593165; Costantino JP et
+  al. Validation studies for models projecting the risk of invasive
+  and total breast cancer incidence. J Natl Cancer Inst 1999;91:1541-
+  1548. PMID 10491430 for validation; Gail MH 2007 for race/ethnicity
+  recalibration). Primary-paper Source entity (SRC-GAIL-1989-BCRAT) is
+  v0.2-B authoring backlog.
+
+  Anchored to DIS-BREAST. Reach: breast-only (Gail does not estimate
+  ovarian risk).
+
+  Performance characteristics:
+    - Calibration good for population-level prediction
+    - Discrimination modest (c-statistic ~0.58-0.62) — Gail explains
+      relatively little individual variance
+    - Underestimates risk in:
+      - Women with extensive family history (use Tyrer-Cuzick instead)
+      - Women with dense breasts (use Tyrer-Cuzick v8 with density
+        integration)
+      - Women with prior thoracic radiation (use modified models)
+      - Women under 35 (less validated)
+    - Race/ethnicity recalibration available (CARE study extension for
+      Black women; Asian American Breast Cancer Study extension for
+      Asian/Pacific Islander women)
+
+  Model availability: free web calculator at https://bcrisktool.cancer.gov/
+  (NCI Breast Cancer Risk Assessment Tool). No public API.
+
+  USPSTF context: Gail 5y ≥1.66% threshold is grade B recommendation
+  for chemoprevention discussion in women 35+. NCCN BRSK guideline
+  uses Gail (or Tyrer-Cuzick or Claus) for chemoprevention candidacy.
+
+  POPULATION-RISK CHEMOPREVENTION GAP: As with ALGO-TYRER-CUZICK-V8-
+  BREAST, the dedicated IND-POPULATION-BREAST-CHEMOPREVENTION-*
+  indication is v0.2 follow-up. Until then, output routes to
+  enhanced surveillance pathway (interim).
+
+  Cited from prevention RFs for general-population breast cancer
+  risk stratification.
+draft: true

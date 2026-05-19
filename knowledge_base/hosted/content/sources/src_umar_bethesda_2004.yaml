@@ -1,0 +1,69 @@
+id: SRC-UMAR-BETHESDA-2004
+source_type: guideline
+title: Revised Bethesda Guidelines for hereditary nonpolyposis colorectal cancer (Lynch
+  syndrome) and microsatellite instability
+version: '2004'
+authors:
+- Umar A
+- Boland CR
+- Terdiman JP
+- Syngal S
+- de la Chapelle A
+- Rüschoff J
+- Fishel R
+- Lindor NM
+- Burgart LJ
+- Hamelin R
+- Hamilton SR
+- Hiatt RA
+- Jass J
+- Lindblom A
+- Lynch HT
+- Peltomaki P
+- Ramsey SD
+- Rodriguez-Bigas MA
+- Vasen HF
+- Hawk ET
+- Barrett JC
+- Freedman AN
+- Srivastava S
+journal: Journal of the National Cancer Institute
+doi: 10.1093/jnci/djh034
+pmid: '14970275'
+url: https://pubmed.ncbi.nlm.nih.gov/14970275
+access_level: subscription_required
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 2
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources_batch4
+license:
+  name: Oxford University Press / JNCI (subscription)
+  spdx_id: null
+attribution:
+  required: true
+  text: Umar A et al., J Natl Cancer Inst 2004 — Revised Bethesda Guidelines for HNPCC
+    / MSI
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+legal_review:
+  status: pending
+  notes: Subscription publication; abstract open access.
+relates_to_diseases:
+- DIS-CRC
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Revised Bethesda guidelines (2004) defining
+  which CRC tumors should undergo MSI / IHC testing as a Lynch-syndrome screen. Largely
+  superseded by universal-screening recommendations (NCCN / Manchester / Evaluation
+  of Genomic Applications in Practice and Prevention) but still cited as the foundational
+  selection criterion in pre-universal-tumor-testing era. Used by some non-universal-screening
+  programs and historic cohorts.
+
+  '
+pages_count: 8
+references_count: 60
+corpus_role: primary_guideline

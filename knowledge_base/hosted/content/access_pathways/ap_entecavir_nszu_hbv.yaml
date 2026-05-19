@@ -1,0 +1,69 @@
+id: AP-ENTECAVIR-NSZU-HBV
+name: "Entecavir via НСЗУ HBV programme (reimbursed)"
+name_ua: "Ентекавір через програму НСЗУ з лікування HBV (відшкодування)"
+
+applies_to_drug_ids:
+  - DRUG-ENTECAVIR
+applies_to_regimen_ids:
+  - REG-HBV-ENTECAVIR
+
+pathway_type: nszu_program
+
+country_options: ["UA"]
+
+cost_orientation:
+  currency: UAH
+  min: 0
+  max: 0
+  per_unit: month
+  notes: >
+    Pacient out-of-pocket cost: 0 UAH/month within НСЗУ "Антивірусна
+    терапія хворих на хронічний вірусний гепатит" programme + HBV-
+    реактивації prophylaxis в онкологічних пакетах. Retail price поза
+    програмою — приблизно 1500-3500 UAH/місяць для генеричного
+    ентекавіру 0.5 mg (Baraclude і генерики; перевірено drlz.com.ua
+    станом на 2026-05).
+
+typical_lead_time_weeks: [1, 4]
+
+contact_pattern: >
+  Сімейний лікар або інфекціоніст → НСЗУ-заклад з пакетом 5004
+  (Антивірусна терапія хворих на хронічний вірусний гепатит). Для
+  онкологічних пацієнтів з ризиком HBV-реактивації при анти-CD20-
+  імуносупресії — призначення прямо онкологом/гематологом як
+  prophylaxis (HBsAg+ або anti-HBc+ за результатом screening
+  per AASLD-2024).
+
+eligibility_caveats:
+  - "HBV-ДНК позитивна (≥2000 IU/mL для лікування) АБО HBsAg+/anti-HBc+ перед анти-CD20 / високо-дозовою імуносупресією (prophylaxis)"
+  - "Активна декларація НСЗУ"
+  - "Не рекомендується при HIV-коінфекції (низький бар'єр резистентності в HIV-naive — переважно TDF/TAF в комбі-АРТ)"
+  - "Не використовувати при попередній експозиції до ламівудину (M204V/I cross-resistance)"
+
+requires_documentation:
+  - "HBsAg позитивний АБО anti-HBc позитивний (для prophylaxis при імуносупресії)"
+  - "HBV-ДНК ПЛР кількісна (для treatment indication)"
+  - "ALT / печінкові ензими"
+  - "Декларація НСЗУ підтверджена"
+  - "Скринінг на HIV (виключення коінфекції до призначення мономерапії)"
+
+verified_by: null
+last_verified: "2026-05-18"
+
+sources:
+  - SRC-AASLD-HBV-2024
+  - SRC-EASL-HBV-2025
+
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Ентекавір — high-barrier-to-resistance NRTI для chronic HBV з
+  тривалим досвідом застосування. В Україні зареєстрований та
+  включений до НСЗУ HBV-програми (drug_entecavir.yaml
+  reimbursement_indications). Для онкологічних показань (HBV-реактивації
+  prophylaxis при анти-CD20) — TAF (DRUG-TENOFOVIR-AF) часто preferred
+  через нижчий ризик нефро-/кістковотоксичних effects при тривалій
+  prophylaxis; entecavir залишається валідною альтернативою (особливо
+  у TDF-naive пацієнтів з відсутністю lamivudine-experience).
+
+  Engine-side: render-time-only метадані.

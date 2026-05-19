@@ -1,0 +1,52 @@
+id: BIO-BRCA2-ASHKENAZI-FOUNDER-6174DELT
+names:
+  preferred: "BRCA2 c.5946delT (6174delT) — Ashkenazi Jewish founder mutation"
+  ukrainian: "BRCA2 c.5946delT (6174delT) — засновницька мутація ашкеназі"
+  english: "BRCA2 6174delT founder mutation"
+  synonyms: ["BRCA2 6174delT", "BRCA2 c.5946delT", "c.5946del"]
+biomarker_type: gene_mutation
+mutation_details:
+  gene: BRCA2
+  gene_hugo_id: HGNC:1101
+  exon: "11"
+  variant_type: "frameshift deletion"
+  functional_impact: "loss_of_function"
+  hgvs_protein: "p.Ser1982ArgfsTer22"
+  hgvs_coding: "c.5946delT"
+specimen_requirements: ["Whole blood EDTA or saliva — germline DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+external_ids:
+  hgnc_symbol: BRCA2
+  hgvs_coding: "c.5946delT"
+  hgvs_protein: "p.Ser1982ArgfsTer22"
+related_biomarkers: [BIO-BRCA1-BRCA2-GERMLINE]
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+last_reviewed: "2026-05-18"
+notes: >
+  Third of three Ashkenazi Jewish founder mutations (combined carrier
+  frequency ~2.5% in AJ; ~1.5% for this BRCA2 variant alone in some
+  cohorts). Single-T deletion in exon 11 causing frameshift and premature
+  termination in the DNA-binding domain region — abolishes RAD51-mediated
+  homologous-recombination repair. Modern HGVS notation c.5946delT;
+  legacy notation 6174delT (older mRNA-numbering convention). Lifetime
+  cancer risks consistent with BRCA2 average: breast ~50-60%, ovarian
+  ~15-20%, male breast ~6-8%, pancreas ~5-7%, prostate ~20-25%. Higher
+  pancreas risk than BRCA1 — CAPS-Consortium pancreatic surveillance
+  (annual MRI/MRCP or EUS from age 50 or 10 years before youngest PDAC
+  in family) applies to BRCA2 carriers with PDAC family history. Same
+  breast/ovarian surveillance and risk-reduction protocols as other
+  BRCA2 pathogenic variants (annual MRI from 25-30, RRSO 40-45). NCCN
+  2025 endorses population-wide AJ founder-panel testing. STUB pending
+  two-Co-Lead signoff.
+notes_ua: >
+  Третя з трьох засновницьких мутацій ашкеназі (~1.5% частота у деяких
+  когортах). Делеція тиміну в екзоні 11 → зсув рамки в зоні ДНК-зв'язуючого
+  домену. Сучасна нотація c.5946delT; застаріла — 6174delT. Носії BRCA2
+  з родинною історією раку підшлункової — нагляд CAPS Consortium
+  (щорічна МРТ/MRCP або ЕУС з 50 років). STUB pending two-Co-Lead signoff.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_surveillance_2026_05_18
+draft_revision: 1

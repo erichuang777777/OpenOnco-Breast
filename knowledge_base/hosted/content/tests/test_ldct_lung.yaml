@@ -1,0 +1,70 @@
+id: TEST-LDCT-LUNG
+names:
+  preferred: "Low-dose chest CT (lung-cancer screening)"
+  ukrainian: "Низькодозова КТ органів грудної клітки (скринінг раку легені)"
+  english: "Low-dose CT lung screening"
+  synonyms: ["LDCT", "Lung cancer screening CT", "LCS-CT"]
+loinc_codes: ["79103-2"]
+category: imaging
+purpose: >
+  Lung-cancer screening in high-risk smoker / former-smoker cohorts —
+  USPSTF 2021 grade B (age 50–80, ≥20 pack-years, currently smoking
+  or quit ≤15 years ago). NLST (NEJM 2011) demonstrated 20% relative
+  reduction in lung-cancer mortality vs chest X-ray; NELSON (NEJM
+  2020) confirmed in European population with stricter eligibility.
+  Distinct from CT chest with contrast (TEST-CT-CHEST-*) — LDCT uses
+  ~1–2 mSv (vs ~7 mSv standard) and no IV contrast.
+
+specimen: "Imaging procedure (no specimen, no contrast)"
+turnaround_time: "Same day; structured report (Lung-RADS) within 2–5 days"
+priority_class: standard
+
+availability_ukraine:
+  state_funded: false
+  typical_availability: "Private centers + select tertiary oncology hospitals; no organized population screening program"
+  notes: >
+    Ukraine has no organized lung-cancer screening program as of 2026-05.
+    LDCT is available at private radiology centers (~UAH 1500–3500)
+    but reimbursement coverage is essentially nil. Patient counseling
+    must include both benefit (mortality reduction in proven high-
+    risk cohorts) and harms (false positives, incidentalomas,
+    cumulative radiation, overdiagnosis).
+
+sources:
+  - SRC-NCCN-NSCLC-2025
+  - SRC-ESMO-NSCLC-EARLY-2024
+
+last_reviewed: "2026-05-18"
+review_status: pending_clinical_signoff
+drafted_by: claude_extraction
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Reported per Lung-RADS v2022 (American College of Radiology):
+  - Category 1 (negative) / 2 (benign): annual screening
+  - Category 3 (probably benign): 6-month follow-up LDCT
+  - Category 4A / 4B / 4X: short-interval LDCT, PET-CT, or biopsy
+
+  Eligibility per USPSTF 2021 (most permissive of US screening
+  recommendations):
+  - Age 50–80
+  - ≥20 pack-year smoking history
+  - Current smoker OR quit within past 15 years
+  - Asymptomatic
+  - Willing to undergo curative treatment if cancer found
+  - Shared-decision-making documented including harms (false
+    positives ~12–14% per round, ~25% radiologic incidentalomas,
+    overdiagnosis estimated 12% of detected cancers)
+
+  NCCN 2025 expands eligibility to age 50–77 with ≥20 pack-years
+  regardless of quit date for never-quit individuals. NCCN does not
+  exclude ≥15-year quitters if other risk factors present (family
+  history, COPD, occupational exposure to radon / asbestos / arsenic
+  / chromium / beryllium / cadmium / silica / diesel exhaust).
+
+  Smoking-cessation counseling is mandatory at every screening
+  encounter — single largest mortality-modifying intervention.
+
+  Engineering note: this Test entity is referenced by v0.2-B
+  prevention Indications across smoking-current, smoking-former,
+  occupational-exposure, and radon-exposure RedFlags.

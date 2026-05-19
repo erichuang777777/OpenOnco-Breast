@@ -1,0 +1,58 @@
+id: RF-LIFESTYLE-OBESITY-CANCER-PREVENTION
+definition: >-
+  Obesity — BMI ≥30 kg/m² (per WHO definition) — OR class 2/3 obesity
+  with BMI ≥35 / ≥40. IARC + WCRF/AICR establish obesity as an
+  etiological factor for ≥13 cancers: post-menopausal breast cancer,
+  endometrial, colorectal, esophageal adenocarcinoma, gastric cardia,
+  hepatocellular carcinoma (via NAFLD/MASH), renal cell carcinoma,
+  ovarian, pancreatic, gallbladder, multiple myeloma, meningioma, and
+  thyroid. Population-attributable fraction varies by cancer (~30-40%
+  for endometrial; ~5-10% for many others). Sustained weight reduction
+  (especially ≥10% BMI) produces meaningful cancer-incidence reduction
+  particularly for hormonally-driven tumors. Prevention-persona RedFlag.
+definition_ua: >-
+  Ожиріння — BMI ≥30 кг/м² (за WHO визначенням) — АБО class 2/3 obesity
+  з BMI ≥35 / ≥40. IARC + WCRF/AICR встановлюють ожиріння як етіологічний
+  фактор для ≥13 раків. Sustained weight reduction (особливо ≥10% BMI)
+  виробляє meaningful cancer-incidence reduction.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "bmi_ge_30"
+      value: true
+    - finding: "bmi_ge_35"
+      value: true
+    - finding: "bmi_ge_40"
+      value: true
+    - finding: "obesity_class_diagnosis"
+      value: "positive"
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: lifestyle
+
+relevant_diseases:
+  - DIS-BREAST
+  - DIS-ENDOMETRIAL
+  - DIS-CRC
+  - DIS-ESOPHAGEAL
+  - DIS-HCC
+  - DIS-RCC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for obesity (BMI ≥30). Engine routes to PreventionPlan recommending structured weight-loss intervention + bariatric surgery discussion in class 2/3 obesity + cancer screening per BMI-elevated risk profile. STUB pending two-Clinical-Co-Lead signoff."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle
+draft_revision: 1

@@ -1,0 +1,189 @@
+id: ALGO-INTEGRATED-RISK-FROM-MULTIPLE-RFS
+applicable_to_disease: DIS-CRC
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention. Anchored to DIS-CRC because CRC has
+# the densest prevention RF coverage in OpenOnco (Lynch family history
+# + FAP + chronic IBD + lifestyle + tobacco + obesity + diabetes
+# pathways all converge on CRC risk). However, this is a META-routing
+# algorithm — input is the SET of fired prevention RFs across all
+# personas, output is an integrated risk profile + prioritized
+# intervention list. Reach is cross-disease.
+purpose: >
+  Meta-routing algorithm for patients with multiple fired prevention
+  RedFlags spanning genetic + infectious + chronic-condition +
+  occupational + iatrogenic + lifestyle + reproductive risk-category
+  buckets (KSS §20 PreventionRiskCategory taxonomy).
+
+  Example trigger pedigrees:
+    - Chronic HCV + family Lynch suspicion + tobacco use → integrated
+      profile escalates HCC + CRC + lung + bladder cancer risks
+      simultaneously; prioritized intervention is HCV DAA cure (highest
+      mortality-reducing impact) + Lynch genetic counseling + tobacco
+      cessation
+    - Confirmed BRCA1 carrier + obesity + parity 0 → integrated profile
+      maintains baseline HBOC carrier surveillance + adds breast-cancer
+      risk amplification from nulliparity / obesity; intervention is
+      counseling on lifestyle factors interaction with BRCA risk +
+      timing of risk-reducing surgeries
+    - Occupational asbestos + chronic HBV + tobacco use → multi-cancer
+      risk (mesothelioma + HCC + lung + larynx); intervention is HBV
+      antiviral + tobacco cessation + low-dose CT screening + occupational
+      surveillance referral
+
+  Single-RF routing produces siloed plans; this meta-algorithm produces
+  a CONSOLIDATED prevention plan that orders interventions by predicted
+  mortality-reducing impact (highest first) + handles RF synergy
+  (smoking × asbestos = multiplicative lung cancer risk per IARC).
+
+output_indications:
+  - IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+  - IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+  - IND-FAP-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+  - IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+  - IND-VHL-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Default routes to the highest-mortality-impact prevention indication
+# among fired RFs. Engine should select the highest-priority Indication
+# from output_indications based on integrated-risk scoring; routing here
+# is a placeholder until v0.2 authoring of a dedicated
+# IND-INTEGRATED-RISK-PROFILE Indication.
+
+decision_tree:
+  - step: 1
+    # Count fired prevention RFs spanning ≥2 risk-category buckets.
+    # Single-bucket fires route through bucket-specific algorithms.
+    evaluate:
+      all_of:
+        - condition: "Patient has ≥2 fired prevention RedFlags AND fires span ≥2 PreventionRiskCategory buckets (genetic / infectious / chronic_condition / occupational / iatrogenic / lifestyle / reproductive)"
+    if_true:
+      next_step: 2
+    if_false:
+      result: false
+      notes: "Single-bucket or single-RF firing — route through bucket-specific algorithms (ALGO-AMSTERDAM-II-LYNCH / ALGO-BOADICEA-V6-BREAST-OVARIAN / etc.); meta-routing not required."
+  - step: 2
+    # Identify multiplicative-synergy RF pairs (IARC categorized).
+    # Smoking × asbestos = ~50x lung cancer (vs ~5x asbestos alone or
+    # ~10x smoking alone) — additive vs multiplicative interaction
+    # is empirically calibrated per IARC Monographs.
+    evaluate:
+      any_of:
+        - condition: "Patient has fired RF combination known to be multiplicatively synergistic per IARC: smoking + asbestos / smoking + occupational radon / smoking + alcohol (UADT cancers) / smoking + HPV (oropharyngeal) / smoking + diesel exhaust / chronic HBV + chronic HCV / chronic HBV + aflatoxin (HCC)"
+    if_true:
+      next_step: 3
+      notes: "Multiplicative-synergy RF pair identified — priority elevated for joint intervention. Both/all interacting RFs require simultaneous intervention; addressing one alone gives ~50% of combined risk reduction. Engine should flag this in the integrated risk-profile output."
+    if_false:
+      next_step: 3
+  - step: 3
+    # Identify dominant single-cancer-target convergence — e.g., chronic
+    # HCV + chronic HBV both fire → both target HCC → HCC surveillance
+    # is paramount. Multi-target divergent RFs → multi-track surveillance.
+    evaluate:
+      any_of:
+        - condition: "Patient has ≥2 fired prevention RFs targeting the SAME cancer (e.g., chronic HCV + chronic HBV both target HCC; chronic HCV + family Lynch both target intra-abdominal cancer hot zone)"
+        - condition: "Patient has ≥2 fired prevention RFs targeting DIFFERENT cancers with overlapping surveillance modalities (e.g., chronic HBV + Lynch — both require upper GI surveillance)"
+    if_true:
+      next_step: 4
+    if_false:
+      next_step: 4
+  - step: 4
+    # Construct prioritized intervention list per mortality-reducing
+    # impact (highest first). Order:
+    #   1. Confirmed hereditary carrier interventions (risk-reducing
+    #      surgery for BRCA1 mastectomy / RRSO if risk-window age + uptake)
+    #   2. Modifiable-RF interventions with highest evidence-supported
+    #      mortality-reducing effect (HCV DAA cure; HBV antiviral;
+    #      tobacco cessation; occupational exposure removal)
+    #   3. Hereditary-suspicion testing + counseling (genetic counseling
+    #      + germline panel)
+    #   4. Enhanced surveillance for confirmed carriers / high-suspicion
+    #      patients
+    #   5. Lifestyle modifications (weight, alcohol, physical activity,
+    #      diet) — lower individual effect, broader cancer coverage
+    evaluate:
+      all_of:
+        - condition: "Integrated-risk profile and prioritized intervention list constructed"
+    if_true:
+      result: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Integrated risk-profile + prioritized intervention list constructed. Multi-track prevention plan: address each cancer-target independently with appropriate cadence, but consolidate counseling visits + surveillance scheduling to reduce patient burden. Patient receives a SINGLE consolidated prevention plan (not N independent silos). Indication routes to Lynch suspicion as default highest-mortality-impact hereditary RF; engine should re-route to the actual highest-priority Indication based on integrated-risk scoring. v0.2 follow-up: dedicated IND-INTEGRATED-PREVENTION-PROFILE Indication with explicit multi-track support."
+    if_false:
+      result: false
+      notes: "Integrated-risk computation failed — fallback to single-RF routing through bucket-specific algorithms; consolidation pending engine availability."
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-NCCN-BREAST-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding meta-routing for
+  multi-RF prevention plans. No single primary-paper reference; built
+  on IARC Monographs multiplicative-synergy categorizations + USPSTF
+  prevention-intervention mortality-impact orderings + WCRF/AICR
+  lifestyle-RF evidence tables. The integrated-risk principle (compute
+  joint risk from independently-firing RFs, then prioritize
+  interventions by mortality-reducing impact) is established practice
+  in preventive cardiology (e.g., Framingham + ASCVD calculator
+  integration of dyslipidemia + hypertension + diabetes + smoking) but
+  is less standardized in preventive oncology — this algorithm is
+  OpenOnco's draft formalization.
+
+  Anchored to DIS-CRC; reach is cross-disease (meta-routing).
+
+  Multiplicative RF synergy pairs (IARC + WHO references):
+    - Smoking × asbestos: lung cancer ~50-100× background (Selikoff
+      1968 onwards; Hammond 1979 cohort; IARC Monograph 100C)
+    - Smoking × occupational radon: lung cancer ~10-20× background
+      (IARC Monograph 100D)
+    - Smoking × alcohol: UADT (oral cavity, oropharynx, hypopharynx,
+      larynx, esophagus) ~30× background (Hashibe 2007 INHANCE
+      pooled analysis)
+    - Smoking × HPV: oropharyngeal cancer ~30-40× background (Gillison
+      2008 cohort)
+    - HBV × aflatoxin: HCC ~60× background (Qian 1994 China cohort;
+      IARC Monograph 100F)
+    - Chronic HBV × chronic HCV: HCC ~165× background (Donato 1998
+      meta-analysis)
+    - Asbestos × smoking × occupational exposures (e.g., diesel
+      exhaust): multiplicative further (IARC Monographs 100C+105)
+
+  Integrated-risk implementation status:
+    - This algorithm is a DECLARATIVE reference. Engine implementation
+      of multi-RF integration is v0.2 follow-up; current OpenOnco
+      engine evaluates RFs independently and constructs one prevention
+      plan per fired RF (siloed routing).
+    - Target integration: meta-routing layer reads ALL fired prevention
+      RFs from the patient's evaluation, identifies synergy + target
+      convergence, constructs unified prevention plan with consolidated
+      intervention scheduling.
+    - Render-layer impact: patient sees ONE prevention plan with
+      stratified intervention sections, not N separate plans.
+
+  Prevention-intervention priority ordering (mortality-reducing effect,
+  from highest evidence base):
+    1. Risk-reducing surgery in confirmed BRCA1 / BRCA2 carriers
+       (RRM ~95% breast cancer risk reduction; RRSO ~80% ovarian
+       cancer reduction + 50% breast cancer reduction)
+    2. HCV DAA cure (SVR12 → ~70% HCC risk reduction in cirrhotics)
+    3. HBV nucleos(t)ide therapy (~60-70% HCC risk reduction in
+       chronic HBV cirrhotics)
+    4. Tobacco cessation (lung cancer risk halves within 10 years
+       of cessation; UADT + bladder + pancreatic risks decline
+       similarly)
+    5. Lynch carrier surveillance + risk-reducing surgery (colectomy
+       in confirmed carriers + hysterectomy + BSO in women — reduces
+       Lynch-spectrum cancer mortality ~50%)
+    6. Alcohol reduction (UADT + breast + CRC + HCC risk reduction)
+    7. Weight management (~12 cancer types associated with obesity
+       per IARC 2016 — colon, breast post-menopausal, endometrial,
+       pancreatic, kidney, esophageal adenocarcinoma, gastric cardia,
+       liver, gallbladder, ovarian, thyroid, multiple myeloma)
+    8. Physical activity + diet (lower individual effect, broader
+       cancer coverage)
+
+  Cited from RF-MULTI-RF-INTEGRATED + RF-INTEGRATED-RISK-CONVERGENCE
+  trigger logic (v0.2 RF authoring backlog).
+draft: true

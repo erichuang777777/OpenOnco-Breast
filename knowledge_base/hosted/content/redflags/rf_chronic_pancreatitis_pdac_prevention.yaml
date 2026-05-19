@@ -1,0 +1,44 @@
+id: RF-CHRONIC-PANCREATITIS-PDAC-PREVENTION
+definition: >-
+  Chronic pancreatitis — alcoholic etiology (≥10y heavy use), hereditary
+  (PRSS1 or SPINK1 pathogenic variant), or new-onset diabetes after age 50
+  with pancreatic stigmata. Lifetime PDAC risk: ~5% in alcoholic chronic
+  pancreatitis; ~40-50% in hereditary pancreatitis by age 70 (per EUROPAC).
+  Engine routes to PreventionPlan with PDAC surveillance + risk-factor
+  modification.
+definition_ua: >-
+  Хронічний панкреатит — alcoholic (≥10р важкого вживання), спадковий (PRSS1
+  або SPINK1), або new-onset діабет після 50 років з pancreatic stigmata.
+  Lifetime PDAC ризик: ~5% при alcoholic chronic pancreatitis; ~40-50% при
+  hereditary pancreatitis до 70 років.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "chronic_pancreatitis_alcohol_associated_duration_ge_10y"
+      value: true
+    - finding: "chronic_pancreatitis_hereditary_pancreatitis_prss1_or_spink1"
+      value: true
+    - finding: "chronic_pancreatitis_with_diabetes_new_onset_after_50"
+      value: true
+
+clinical_direction: investigate
+severity: major
+priority: 100
+category: other
+risk_category: chronic_condition
+
+relevant_diseases:
+  - DIS-PDAC
+
+shifts_algorithm: []
+sources:
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for chronic pancreatitis → PDAC. Hereditary pancreatitis carries highest risk (~40-50% lifetime). STUB pending two-Co-Lead signoff."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_completion
+draft_revision: 1

@@ -1,0 +1,48 @@
+id: SRC-USPSTF-LUNG-LDCT-2021
+source_type: guideline
+title: 'USPSTF Recommendation Statement: Screening for Lung Cancer (2021)'
+version: '2021'
+authors:
+- US Preventive Services Task Force
+- Krist AH
+- Davidson KW
+- Mangione CM
+- et al.
+journal: JAMA
+doi: 10.1001/jama.2021.1117
+pmid: '33687470'
+url: https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening
+access_level: open_access
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 1
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources
+license:
+  name: Public domain (US government work)
+  url: https://www.uspreventiveservicestaskforce.org/uspstf/about-uspstf/copyright-permissions
+  spdx_id: null
+attribution:
+  required: false
+  text: US Preventive Services Task Force. Screening for Lung Cancer Recommendation
+    Statement. JAMA 2021;325(10):962-970.
+commercial_use_allowed: true
+redistribution_allowed: true
+modifications_allowed: true
+legal_review:
+  status: pending
+  notes: US government work; public domain. Confirm JAMA-rendered version copyright doesn't override USPSTF source.
+relates_to_diseases: []
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Cited by prevention RFs / Indications for
+  lung-cancer screening with annual low-dose CT (LDCT) in adults 50-80 years with
+  ≥20 pack-year smoking history (current smoker or quit within 15 years). Grade B
+  recommendation. Expanded eligibility vs 2013 statement (was 55-80, ≥30 pack-years).
+
+  '
+pages_count: 10
+references_count: 80
+corpus_role: primary_guideline

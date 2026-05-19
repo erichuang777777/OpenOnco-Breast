@@ -1,0 +1,12 @@
+{
+  "patient_id": "REDMEAT-PREV-001",
+  "comment": "52yo male, habitual high red-meat + processed-meat consumption — ~600 g/week unprocessed red meat (beef + pork; above WCRF ≥500 g/week threshold) AND ~75 g/day processed meat (sausages, bacon, ham; above IARC ≥50 g/day threshold). No personal CRC diagnosis. IARC Monograph 114 (2015): processed meat Group 1 (sufficient evidence CRC); red meat Group 2A (probable carcinogen). Each 50 g/day processed meat raises CRC ~18% (RR ~1.18); each 100 g/day red meat raises CRC ~17%. Mechanisms: N-nitroso compounds + HCAs/PAHs from high-temperature cooking + heme-iron ROS in colonocytes. Engine fires RF-LIFESTYLE-HIGH-RED-MEAT-CRC-PREVENTION → routes to PreventionPlan: dietary counseling (red-meat <500 g/week + minimize processed) + USPSTF-cadence CRC screening (colonoscopy 45y baseline). Validates v0.3 diet pilot. Anchored DIS-CRC.",
+  "biomarkers": {},
+  "demographics": {"age": 52, "sex": "male", "ecog": 0},
+  "findings": {
+    "red_meat_intake_ge_500g_per_week": true,
+    "processed_meat_intake_ge_50g_per_day": true,
+    "Habitual ~600 g/week red meat + ~75 g/day processed meat by dietary recall": true,
+    "No personal CRC diagnosis": true
+  }
+}

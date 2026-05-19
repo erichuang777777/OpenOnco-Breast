@@ -1,0 +1,12 @@
+{
+  "patient_id": "HPV-PREV-001",
+  "comment": "29yo female, persistent HPV-16 positive on cervical co-testing, unvaccinated. Engine routes to PreventionPlan: standard = Gardasil-9 nonavalent vaccination (3-dose series) + age-appropriate cervical screening cadence; alternative = screening alone without vaccination. Validates v0.2-A HPV → cervical / anal cancer prevention pathway.",
+  "biomarkers": {},
+  "demographics": {"age": 29, "sex": "female", "ecog": 0},
+  "findings": {
+    "hpv_high_risk_status": "positive",
+    "hpv_vaccine_status": "unvaccinated",
+    "Persistent HPV-16 on cervical co-test": true,
+    "No cervical CIN on colposcopy": true
+  }
+}

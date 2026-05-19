@@ -1,0 +1,154 @@
+id: IND-IATROGENIC-PLATINUM-LATE-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-AML
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-PLATINUM-LATE-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Testicular GCT + ovarian + cervical + H&N survivor cohorts with cumulative platinum ≥400 mg/m²: cardiovascular mortality SIR 1.5-2× population baseline; testicular cancer survivors with BEP exposure have 2-3× CV-mortality at 30y. CKD stage ≥2 in ~30% of long-term survivors. t-AML / t-MDS cumulative ~1-3% at 10y depending on co-exposures. Structured surveillance enables earlier intervention on modifiable CV risk factors (statin + BP control + smoking cessation reduces 10y-MACE per primary-prevention RCT data extrapolation), earlier detection of CKD progression (renal-protective management — ACE-i/ARB, magnesium supplementation), earlier detection of t-MDS at cytopenic phase (allogeneic HSCT in fit candidates significantly improves outcomes vs. delayed)."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CMP
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track late-effects surveillance for cancer survivors with
+  prior cumulative platinum exposure ≥400 mg/m² (cisplatin or AUC-
+  equivalent carboplatin). Components per NCCN Testicular Cancer
+  Survivorship + NCCN AML Survivorship + ASCO Cardio-Oncology
+  Survivorship + ESC 2022 Cardio-Oncology + COG-LTFU:
+
+  **(1) Annual BP measurement** —
+  - Lower treatment threshold (consider initiating antihypertensive
+    at 130/80 vs. 140/90 in this cohort given elevated CV risk)
+  - Out-of-office BP monitoring (home cuff) for confirmation
+
+  **(2) Annual lipid panel** —
+  - Total cholesterol, LDL, HDL, triglycerides
+  - Lower statin initiation threshold appropriate (ASCVD 10y risk
+    ≥7.5% rather than ≥10% in this cohort)
+  - Aggressive LDL target <100 mg/dL (vs. <130 general population)
+
+  **(3) Annual creatinine + CMP** —
+  - Track GFR trend (eGFR decline >5 mL/min/1.73m² per year warrants
+    nephrology referral)
+  - Magnesium specifically — cisplatin-induced renal Mg wasting
+    persists lifelong; supplementation often required
+  - ACE-inhibitor / ARB if proteinuria + elevated risk factors
+    (renoprotective + cardioprotective)
+
+  **(4) Annual CBC with differential** —
+  - Surveillance for t-MDS / t-AML — peak risk 5-10y post-exposure
+  - Any new unexplained cytopenia → marrow evaluation per
+    RF-IATROGENIC-ALKYLATOR-TAML-PREVENTION pathway
+
+  **(5) Cardiovascular risk modification counseling** —
+  - HIGHEST-yield late-effect intervention in this cohort
+  - Smoking cessation (compounds CV + renal + lung-cancer risk)
+  - Physical activity per HHS guidelines (cardioprotective + cancer-
+    survivor benefit)
+  - DM screening + management (lower thresholds appropriate)
+  - Mediterranean / DASH dietary pattern counseling
+  - Alcohol moderation
+
+  **(6) Raynaud syndrome surveillance** —
+  - Often persistent late effect (cisplatin / BEP); patient education
+    on cold-protection + smoking-cessation impact
+
+  **(7) Ototoxicity + peripheral neuropathy surveillance** (co-managed
+  outside cancer surveillance scope) — audiometry q3-5y if symptoms;
+  neurology referral if progressive neuropathy.
+
+  **(8) Co-fired surveillance dimensions** — platinum often co-
+  administered with etoposide (BEP) or alkylators; RF-IATROGENIC-
+  TOPO2-TAML-PREVENTION + RF-IATROGENIC-ALKYLATOR-TAML-PREVENTION may
+  fire in parallel. Engine builds combined PreventionPlan.
+
+rationale_ua: >
+  Стандартний-трек late-effects surveillance для виживачів раку з
+  prior cumulative platinum ≥400 мг/м². Components per NCCN
+  Testicular Survivorship + NCCN AML Survivorship + ASCO Cardio-
+  Oncology + ESC 2022 + COG-LTFU:
+
+  **(1) Annual BP measurement** — lower treatment threshold (130/80
+  vs. 140/90); home cuff monitoring.
+
+  **(2) Annual lipid panel** — lower statin initiation threshold
+  (ASCVD 10y risk ≥7.5%); LDL <100 mg/dL target.
+
+  **(3) Annual creatinine + CMP** —
+  - GFR trend; >5 mL/min/1.73m² per year decline → nephrology
+  - Magnesium specifically — cisplatin Mg wasting persists lifelong
+  - ACE-i / ARB при proteinuria
+
+  **(4) Annual CBC з diff** — surveillance для t-MDS / t-AML; будь-яка
+  unexplained cytopenia → marrow evaluation.
+
+  **(5) Cardiovascular risk modification counseling** — НАЙВИЩА-yield
+  late-effect інтервенція; smoking cessation, physical activity,
+  DM screening, Mediterranean/DASH діета, alcohol moderation.
+
+  **(6) Raynaud syndrome surveillance** — patient education на cold-
+  protection + smoking-cessation impact.
+
+  **(7) Ototoxicity + peripheral neuropathy surveillance** (co-managed
+  outside cancer surveillance scope).
+
+  **(8) Co-fired surveillance dimensions** — RF-IATROGENIC-TOPO2-TAML-
+  PREVENTION + RF-IATROGENIC-ALKYLATOR-TAML-PREVENTION можуть
+  спрацьовувати паралельно. Combined PreventionPlan.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_aya_survivor_2026_05_18
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+  - source_id: SRC-NCCN-AML-2025
+    position: supports
+  - source_id: SRC-NCCN-TESTICULAR-2025
+    position: supports
+  - source_id: SRC-COG
+    position: supports
+
+do_not_do:
+  - "Не використовувати general-population BP / lipid / ASCVD-risk thresholds у platinum survivors — lower thresholds appropriate given elevated CV risk."
+  - "Не пропускати magnesium measurement в annual CMP — cisplatin-induced renal Mg wasting persists lifelong та може бути silent."
+  - "Не нормалізувати progressive GFR decline як 'aging' у platinum survivors — nephrology referral при decline >5 mL/min/1.73m² per year."
+  - "Не пропускати CV risk modification counseling — highest-yield late-effect інтервенція; smoking cessation, статини, BP control."
+  - "Не вважати ototoxicity / neuropathy / Raynaud 'just side effects' — significantly impact quality of life і warrant ongoing management."
+
+do_not_do_en:
+  - "Do not use general-population BP / lipid / ASCVD-risk thresholds in platinum survivors — lower thresholds are appropriate given the elevated CV risk."
+  - "Do not skip magnesium measurement in the annual CMP — cisplatin-induced renal Mg wasting persists lifelong and can be silent."
+  - "Do not normalize progressive GFR decline as 'aging' in platinum survivors — nephrology referral when decline is >5 mL/min/1.73m² per year."
+  - "Do not skip CV risk modification counseling — it is the highest-yield late-effect intervention; smoking cessation, statins, BP control."
+  - "Do not treat ototoxicity / neuropathy / Raynaud as 'just side effects' — they significantly impact quality of life and warrant ongoing management."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — cancer-survivor late-effects pilot (platinum). Three surveillance domains: cardiovascular risk modification (highest yield — BP + lipid q1y), nephropathy (creatinine + Mg q1y), secondary AML/MDS (CBC q1y). Anchor DIS-AML for secondary leukemia dimension; CV + renal are co-managed under same RF firing. Two-Clinical-Co-Lead signoff queued."

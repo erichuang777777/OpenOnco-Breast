@@ -1,0 +1,86 @@
+id: IND-OCC-AROMATIC-AMINES-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-UROTHELIAL
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-OCC-AROMATIC-AMINES-MALIGNANCY-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Annual urinalysis + urine cytology in high-risk occupational cohorts: sensitivity for low-grade urothelial carcinoma ~30-40%; sensitivity for high-grade urothelial carcinoma ~80-90%. Low-threshold cystoscopy for hematuria detects early-stage tumors before muscle invasion."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests:
+  - TEST-LFT
+
+rationale: >
+  Standard-track surveillance for occupational aromatic-amine exposure (Group 1
+  IARC carcinogen for urothelial bladder cancer). Three components:
+
+  **(1) Annual urinalysis + urine cytology** — primary surveillance modality.
+  Microscopic hematuria + atypical/positive cytology trigger cystoscopy.
+
+  **(2) Low-threshold cystoscopy for hematuria** — any visible hematuria, or
+  persistent microscopic hematuria in an aromatic-amines-exposed individual,
+  warrants cystoscopy regardless of age. Standard for general population is
+  age-stratified evaluation, but exposure history lowers the threshold.
+
+  **(3) Smoking cessation counseling** — tobacco is an independent IARC Group 1
+  bladder carcinogen; combined exposure is multiplicative. Tobacco cessation
+  is the single most modifiable risk factor.
+
+rationale_ua: >
+  Стандартний-трек surveillance для occupational aromatic-amine exposure.
+
+  **(1) Щорічна urinalysis + urine cytology** — первинна модальність surveillance.
+
+  **(2) Низький поріг cystoscopy при hematuria** — будь-який visible hematuria
+  або persistent microscopic hematuria у людини з aromatic-amines exposure
+  потребує cystoscopy незалежно від віку.
+
+  **(3) Smoking cessation counseling** — tobacco — незалежний IARC Group 1
+  bladder carcinogen; combined exposure мультиплікативна.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_completion
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не пропускати annual urinalysis у aromatic-amines-exposed cohort навіть якщо asymptomatic."
+  - "Не використовувати age-stratified threshold для cystoscopy у exposed individuals — exposure знижує поріг."
+  - "Не ігнорувати tobacco cessation — multiplicative ефект з aromatic amines."
+
+do_not_do_en:
+  - "Do not skip annual urinalysis in aromatic-amines-exposed cohorts even if asymptomatic."
+  - "Do not use age-stratified threshold for cystoscopy in exposed individuals — exposure lowers the threshold."
+  - "Do not ignore tobacco cessation — multiplicative effect with aromatic amines."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 occupational pilot for aromatic amines. Two-Co-Lead signoff queued."

@@ -1,0 +1,81 @@
+id: BMA-BLM-GERMLINE-BLOOM-BROAD
+biomarker_id: BIO-BLM-GERMLINE
+variant_qualifier: BLM germline biallelic pathogenic (Bloom syndrome — broad cancer susceptibility)
+disease_id: DIS-CRC
+escat_tier: IIA
+evidence_summary: >
+  BLM germline biallelic pathogenic variants cause Bloom syndrome —
+  autosomal-recessive disorder of replication-fork resolution (BLM RecQ
+  helicase loss). Phenotype: severe pre- and postnatal growth restriction,
+  characteristic facial features + sun-sensitive erythematous facial rash
+  (telangiectatic), immunodeficiency, diabetes, and very high lifetime
+  cancer risk with broad spectrum: leukemia (AML, ALL), lymphoma, early
+  colorectal + gastric + skin (BCC, SCC, melanoma) + breast + GU cancers.
+  Median age at first cancer diagnosis ~25 years; many patients develop
+  multiple primary cancers. Confirmed-carrier (biallelic) surveillance
+  protocol (per Bloom Syndrome Registry / Cunniff et al. 2017): strict
+  sun protection from infancy; annual dermatology + comprehensive skin
+  exam; complete blood count q3-6mo (leukemia surveillance); colonoscopy
+  q1-2y starting age 12-15 with polypectomy; EGD q1-2y from age 12-15;
+  breast MRI + mammography annual from age 18-20 in women;
+  symptom-directed evaluation with low threshold (cancers present
+  atypically and at all ages). Avoid ionizing radiation when possible —
+  radiosensitivity is documented. Monoallelic (heterozygous) BLM carriers
+  may have modestly elevated cancer risk (Ashkenazi BLM-Ash founder
+  variant — small CRC association in some studies); standard-population
+  screening reasonable. ESCAT IIA (biallelic carriers).
+evidence_summary_ua: >
+  Біалельні герміногенні патогенні варіанти BLM спричиняють синдром Блума —
+  аутосомно-рецесивне порушення resolution реплікаційної вилки (втрата
+  RecQ-хелікази BLM). Фенотип: важка пре-/постнатальна затримка росту,
+  характерні риси обличчя + сонячна еритема, імунодефіцит, діабет,
+  дуже високий довічний ризик раку широкого спектра: лейкози (AML, ALL),
+  лімфоми, ранній КРР + рак шлунка + шкіра (БКР, ПКР, меланома) + молочна
+  залоза + сечостатева система. Медіана першого діагнозу ~25 років; часті
+  множинні первинні пухлини. Протокол нагляду біалельного носія: строгий
+  фотозахист з немовлячого віку; дерматологія + повний огляд шкіри
+  щорічно; CBC q3-6 міс; колоноскопія q1-2 роки з 12-15; ЕГДС q1-2 роки
+  з 12-15; МРТ молочних залоз + мамографія щорічно з 18-20 (жінки);
+  низький поріг симптом-орієнтованої оцінки. Уникати іонізуючого
+  опромінення (документована радіочутливість). Моноалельні носії
+  (включно з Ashkenazi BLM-Ash) — модерне підвищення ризику; стандартний
+  скринінг достатній. ESCAT IIA (біалельні носії).
+regulatory_approval:
+  fda: []
+  ema: []
+  ukraine: []
+recommended_combinations:
+  - "strict UVA/UVB sun protection from infancy (SPF 50+ + protective clothing + UV-blocking eyewear)"
+  - "annual dermatology with comprehensive skin exam (BCC, SCC, melanoma)"
+  - "CBC q3-6mo (leukemia surveillance — AML, ALL, MDS)"
+  - "colonoscopy q1-2y from age 12-15 with polypectomy"
+  - "EGD q1-2y from age 12-15"
+  - "breast MRI + mammography annual from age 18-20 (women)"
+  - "low-threshold symptom-directed imaging — atypical cancer presentations at all ages"
+  - "partner-carrier screening for couples planning children (autosomal-recessive)"
+contraindicated_monotherapy:
+  - "elective ionizing radiation exposure (diagnostic CT when alternatives available, EBRT for solid tumors when alternatives available) — documented radiosensitivity in Bloom syndrome"
+primary_sources:
+  - SRC-NCCN-PEDIATRIC-SARCOMA
+last_verified: "2026-05-18"
+evidence_sources: []
+actionability_review_required: true
+notes: >
+  STUB — Wave A+B germline expansion. Linked Indication: none (no Bloom-
+  specific Indication exists yet). Two-Clinical-Co-Lead signoff queued.
+  Critical: only biallelic carriers face the Bloom-phenotype cancer risk.
+  Heterozygous BLM (including BLM-Ash Ashkenazi founder) — at most modest
+  elevation; not currently a routine surveillance indication. Cytotoxic
+  chemotherapy dose-reductions may be required due to underlying genomic
+  instability and bone-marrow fragility — consult with center experienced
+  in Bloom syndrome before any oncologic treatment.
+notes_ua: >
+  STUB — Wave A+B розширення. Indication: відсутня. Тільки біалельні носії
+  мають Bloom-фенотипний ризик. Гетерозиготи (включно з BLM-Ash) — максимум
+  модерне підвищення; рутинний нагляд не показаний. Цитотоксична хіміотерапія
+  може потребувати знижених доз через геномну нестабільність + кістково-мозкову
+  крихкість — консультація з центром, що має досвід синдрому Блума.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_bma_batch3
+draft_revision: 1
+last_reviewed: "2026-05-18"

@@ -1,0 +1,54 @@
+id: CI-BIKTARVY-RIFAMYCIN
+severity: absolute
+trigger:
+  type: drug_drug_interaction
+  conditions:
+    - concurrent_medication: "Rifampin (rifampicin) — active TB treatment, latent-TB regimen, or other indication"
+    - concurrent_medication: "Rifabutin — MAC prophylaxis or alternative TB regimen"
+    - concurrent_medication: "Rifapentine — short-course latent-TB therapy (e.g., 3HP, 1HP)"
+  logic: OR
+
+description: >
+  Biktarvy (bictegravir/emtricitabine/tenofovir-AF) is absolutely
+  contraindicated with co-administration of rifamycins (rifampin,
+  rifabutin, rifapentine). Rifamycins are potent inducers of CYP3A4
+  and UGT1A1 — the dual metabolic pathway for bictegravir — and reduce
+  bictegravir AUC by ~75% (rifampin) to ~40% (rifabutin). The resulting
+  subtherapeutic ART exposure risks virologic failure and emergence of
+  INSTI resistance, which forecloses future first-line ART options.
+description_ua: >
+  Біктарві (біктегравір/емтрицитабін/тенофовір-AF) абсолютно
+  протипоказаний при сумісному застосуванні з рифаміцинами (рифампіцин,
+  рифабутин, рифапентин). Рифаміцини — потужні індуктори CYP3A4 та
+  UGT1A1 — подвійного метаболічного шляху біктегравіру — і знижують
+  AUC біктегравіру на ~75% (рифампіцин). Субтерапевтична концентрація
+  ART призводить до вірусологічної невдачі та селекції INSTI-резистентності.
+
+alternative_actions:
+  - "Switch ART backbone to a rifamycin-compatible regimen: dolutegravir 50 mg BID + 2 NRTIs (preferred per DHHS for rifampin co-administration)"
+  - "Alternative: efavirenz 600 mg daily + 2 NRTIs (well-studied with rifampin but neuropsychiatric AE risk)"
+  - "If TB is latent and not urgent → defer rifamycin-based latent-TB therapy until ART transition complete; consider 6-9 months isoniazid monotherapy as alternative latent-TB regimen (no CYP induction)"
+  - "Coordinate care between TB program and HIV clinic; document the switch with infectious-disease specialist before either drug is started"
+  - "Resume Biktarvy ≥4 weeks after rifamycin discontinuation (allow CYP3A4/UGT1A1 induction to wash out)"
+
+affects_drugs:
+  - DRUG-BICTEGRAVIR-EMTRICITABINE-TENOFOVIR-AF
+affects_regimens:
+  - REG-HIV-BIKTARVY
+affects_indications:
+  - IND-CHRONIC-HIV-PREVENTION-ART
+
+sources:
+  - SRC-NIH-AIDS-2024
+
+last_reviewed: "2026-05-18"
+notes: >
+  DHHS Adult/Adolescent ARV Guidelines (2024) and the Biktarvy USPI
+  list rifampin as contraindicated and rifabutin/rifapentine as
+  "not recommended." Similar prohibition applies to other strong
+  CYP3A4/UGT1A1 inducers in HIV care — carbamazepine, phenytoin,
+  phenobarbital, St John's wort. Important pre-treatment screen for
+  any patient initiating Biktarvy in TB-endemic settings (including
+  Ukraine, where MDR-TB prevalence is high). Distinct from
+  dolutegravir, which can be dose-doubled with rifampin to maintain
+  therapeutic concentrations.

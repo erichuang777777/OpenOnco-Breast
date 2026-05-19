@@ -1,0 +1,14 @@
+{
+  "patient_id": "PSC-IBD-PREV-001",
+  "comment": "39yo male with primary sclerosing cholangitis diagnosed 7 years ago + concurrent ulcerative colitis (PSC-IBD subtype = very high CRC + cholangiocarcinoma risk). No current hepatobiliary or colorectal malignancy. Engine routes to PreventionPlan: standard = annual MRI/MRCP + CA 19-9 for cholangiocarcinoma surveillance + annual colonoscopy from PSC diagnosis (PSC-IBD subgroup) + ERCP with brushings for dominant strictures + liver transplant evaluation as disease progresses; alternative = routine cadence q2-3y. Validates v0.3 PSC → cholangiocarcinoma + CRC prevention pilot. Patient is in the highest-risk subgroup.",
+  "biomarkers": {},
+  "demographics": {"age": 39, "sex": "male", "ecog": 1},
+  "findings": {
+    "primary_sclerosing_cholangitis_diagnosis_confirmed": true,
+    "primary_sclerosing_cholangitis_with_ibd": true,
+    "PSC diagnosed 2019 (7 years)": true,
+    "Concurrent ulcerative colitis": true,
+    "No dominant biliary stricture currently": true,
+    "No current cholangiocarcinoma or colorectal malignancy": true
+  }
+}

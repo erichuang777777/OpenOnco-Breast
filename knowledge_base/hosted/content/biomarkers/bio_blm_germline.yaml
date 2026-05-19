@@ -1,0 +1,22 @@
+id: BIO-BLM-GERMLINE
+names:
+  preferred: "BLM germline biallelic pathogenic variants"
+  ukrainian: "BLM germline біалельні патогенні варіанти"
+  english: "BLM germline pathogenic variant (biallelic)"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: BLM
+  gene_hugo_id: HGNC:1058
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources: [SRC-NCCN-PEDIATRIC-SARCOMA]
+last_reviewed: "2026-05-18"
+notes: "BLM germline biallelic — drives Bloom syndrome (autosomal recessive). RecQ helicase deficiency → genomic instability with elevated sister-chromatid exchanges (diagnostic). Broad cancer susceptibility: leukemias / lymphomas (childhood), CRC, breast, skin, head/neck, others. Non-cancer: short stature, photosensitive facial erythema, immunodeficiency, diabetes. Common in Ashkenazi-Jewish ancestry (founder variant blmAsh). Heterozygotes may have modestly elevated CRC risk. STUB pending two-Co-Lead signoff."
+notes_ua: "BLM germline біалельний — синдром Блума (аутосомно-рецесивний). RecQ-геліказа, геномна нестабільність. Широкий спектр пухлин: лейкемії/лімфоми, КРР, РМЗ. Засновницький варіант у Ашкеназі."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_germline_batch3
+draft_revision: 1

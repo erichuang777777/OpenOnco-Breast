@@ -1,0 +1,243 @@
+id: IND-OCC-ASBESTOS-PREVENTION-INTENSIFIED-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  # Prevention target — primary anchor: lung cancer (most numerically
+  # important asbestos-attributable malignancy, addressable by LDCT
+  # screening + smoking cessation). Mesothelioma surveillance is
+  # discussed in rationale but no validated screening modality exists.
+  # Ovarian cancer prevention via avoidance of perineal-talc / further
+  # exposure is mentioned in rationale.
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-OCC-ASBESTOS-MALIGNANCY-PREVENTION
+
+# No drug regimen — intervention is counseling + LDCT surveillance.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Primary endpoint: detection of incident asbestos-attributable
+    malignancy at earliest treatable stage. NLST + NELSON data show
+    annual LDCT in high-risk smokers (≥20 pack-years, age 50-77 per
+    USPSTF 2021) reduces lung-cancer mortality ~20-26%; asbestos-
+    exposed cohorts are not formally enrolled but mechanistic
+    inference supports extension. Smoking cessation in asbestos-
+    exposed workers reduces incremental lung-cancer risk substantially
+    (smoker-asbestos RR ~50x baseline; ex-smoker-asbestos RR
+    decreases over 10-15 years toward asbestos-only RR ~2-5x).
+    Mesothelioma surveillance has NO validated modality — chest CT,
+    pleural ultrasound, and serum mesothelin / SMRP markers have low
+    sensitivity / specificity for early-stage disease; surveillance
+    is discussed but not as a routine recommendation.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for individuals with documented
+  prior occupational asbestos exposure who do not have a current
+  asbestos-associated malignancy diagnosis. Four parallel interventions:
+
+  **(1) Exposure-cessation counseling.** Most asbestos-exposed
+  individuals are now retired or in regulated-exposure environments,
+  so contemporary exposure cessation is typically not the primary
+  lever. Where active or residual exposure exists (legacy buildings
+  with asbestos-containing materials, demolition / renovation work
+  on pre-1980 structures), counsel on PPE (P100 respirator,
+  disposable coveralls), wet-method demolition, professional
+  asbestos-abatement referral, and avoidance of DIY removal.
+  Take-home exposure to family members (work clothes laundering)
+  was historically a substantial vector for spousal mesothelioma —
+  counsel on workplace-only laundering protocols where any current
+  exposure exists.
+
+  **(2) Smoking-cessation counseling.** This is the SINGLE MOST
+  IMPACTFUL intervention. Asbestos × tobacco lung-cancer risk is
+  multiplicative — smoker-asbestos-exposed worker RR ~50x baseline,
+  vs ~2-5x for asbestos-only and ~10x for smoking-only. Ten to
+  fifteen years of smoking cessation substantially attenuates the
+  smoking-attributable component. Behavioral counseling +
+  pharmacotherapy (varenicline, bupropion, NRT) per USPSTF / ATS /
+  AAFP guidelines. Refer to dedicated smoking-cessation program.
+
+  **(3) Annual low-dose CT (LDCT) chest screening.** USPSTF 2021
+  criteria (age 50-80, ≥20 pack-years, current smoker or quit within
+  15 years) are the established baseline. For asbestos-exposed
+  individuals, ACR / Fleischner / NCCN extend consideration based on
+  cumulative exposure and latency:
+    - First LDCT at ≥20 years from first asbestos exposure for
+      non-smokers, ≥10-15 years for current / ex-smokers (earlier
+      latency due to smoking synergy).
+    - Annual cadence; Lung-RADS reporting for nodule classification.
+    - Continue annually as long as the patient remains a candidate
+      for curative-intent treatment (typically age <85, life
+      expectancy >5 years, ECOG ≤2).
+    - Suspended if the patient develops a competing terminal illness
+      or declines further evaluation.
+
+  **(4) Pleural / peritoneal surveillance — DISCUSSION ONLY.** No
+  validated surveillance modality exists for malignant mesothelioma.
+  Chest CT performed for lung-cancer screening will incidentally
+  capture pleural plaques (common, benign), diffuse pleural thickening
+  (sometimes pre-malignant), and pleural effusion (warrants
+  evaluation). Serum mesothelin-related peptide (SMRP / Mesomark) and
+  osteopontin assays have low single-sample sensitivity (~40-50% in
+  symptomatic disease; lower in asymptomatic surveillance) and are
+  NOT recommended as routine screening. Patient is counseled that
+  mesothelioma risk persists for life post-exposure, that there is
+  no validated early-detection test, and that new chest / abdominal
+  symptoms (dyspnea, pleuritic pain, abdominal distension, weight
+  loss) warrant prompt evaluation.
+
+  Resource access in Ukraine: LDCT chest is available at large
+  regional / private centers (~1500-3500 UAH per scan); НСЗУ partial
+  coverage for high-risk-cohort screening was piloted in 2024 but
+  national rollout is incomplete. Out-of-pocket access otherwise.
+  Smoking-cessation pharmacotherapy (varenicline, bupropion) is
+  pharmacy-accessible without НСЗУ reimbursement.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для осіб з документованим
+  попереднім професійним впливом азбесту, які не мають поточного
+  діагнозу азбест-асоційованої малігнізації. Чотири паралельні
+  втручання:
+
+  **(1) Counseling щодо припинення впливу.** Більшість
+  азбест-експонованих осіб зараз пенсіонери або працюють у
+  регульованих умовах, тому сучасне припинення впливу зазвичай не є
+  головним важелем. Де існує активний або залишковий вплив (legacy
+  будівлі з азбест-вмісними матеріалами, демоліційні / реноваційні
+  роботи на структурах до 1980 р.), counseling щодо PPE (P100
+  респіратор, одноразовий комбінезон), wet-method демоліція,
+  направлення до професійного abatement, уникнення DIY-видалення.
+  Take-home вплив на членів сім'ї (прання робочого одягу) історично
+  був суттєвим вектором для подружньої мезотеліоми — counseling
+  щодо протоколів workplace-only прання, де існує поточний вплив.
+
+  **(2) Counseling щодо припинення куріння.** Це НАЙВАЖЛИВІШЕ
+  одиничне втручання. Ризик раку легень азбест × тютюн —
+  мультиплікативний — RR курця-працівника, експонованого азбестом
+  ~50x baseline, проти ~2-5x для тільки-азбесту та ~10x для
+  тільки-куріння. 10-15 років припинення куріння суттєво
+  послаблюють smoking-attributable складову. Поведінкове
+  consulting + pharmacotherapy (варенiклін, бупропіон, NRT) за
+  USPSTF / ATS / AAFP. Направлення до спеціалізованої програми
+  припинення куріння.
+
+  **(3) Щорічна low-dose CT (LDCT) грудної клітки.** USPSTF 2021
+  критерії (вік 50-80, ≥20 pack-years, поточний курець або кинув
+  за останні 15 років) — встановлений baseline. Для азбест-
+  експонованих ACR / Fleischner / NCCN розширюють розгляд на основі
+  кумулятивного впливу та латентності:
+    - Перша LDCT при ≥20 років від першого впливу азбесту для
+      некурців, ≥10-15 років для поточних / ex-курців (коротша
+      латентність через smoking synergy).
+    - Щорічна частота; Lung-RADS звітність для класифікації вузлів.
+    - Продовжувати щорічно, поки пацієнт залишається кандидатом на
+      curative-intent лікування (зазвичай вік <85, очікувана
+      тривалість життя >5 років, ECOG ≤2).
+    - Призупинено, якщо у пацієнта розвивається competing terminal
+      illness або він відмовляється від подальшої оцінки.
+
+  **(4) Плевральне / перитонеальне спостереження — ТІЛЬКИ
+  ОБГОВОРЕННЯ.** Жодна валідована модальність спостереження для
+  злоякісної мезотеліоми не існує. CT грудної клітки, виконана для
+  скринінгу раку легень, інцидентально захопить плевральні бляшки
+  (поширені, доброякісні), дифузне плевральне потовщення (іноді
+  пре-малігнантне) та плевральний випіт (вимагає оцінки).
+  Сироватковий mesothelin-related peptide (SMRP / Mesomark) і
+  osteopontin аналізи мають низьку single-sample чутливість
+  (~40-50% при симптоматичному захворюванні; нижчу при
+  безсимптомному спостереженні) і НЕ рекомендовані як рутинний
+  скринінг. Пацієнту повідомляють, що ризик мезотеліоми зберігається
+  на все життя після впливу, що немає валідованого early-detection
+  тесту, і що нові симптоми з боку грудної клітки / черевної
+  порожнини (диспное, плевральний біль, абдомінальне розтягнення,
+  втрата ваги) вимагають швидкої оцінки.
+
+  Доступ до ресурсів в Україні: LDCT грудної клітки доступна у
+  великих регіональних / приватних центрах (~1500-3500 грн за
+  сканування); часткове покриття НСЗУ для скринінгу когорт
+  високого ризику пілотувалося в 2024 році, але національне
+  поширення неповне. В іншому випадку — out-of-pocket. Pharmacotherapy
+  для припинення куріння (варенiклін, бупропіон) аптечно доступна
+  без покриття НСЗУ.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-NSCLC-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Annual low-dose CT lung-cancer screening is recommended for
+      individuals at elevated lung-cancer risk by age, smoking
+      history, and (per Clinical Practice Guidelines extension)
+      occupational carcinogen exposure including asbestos."
+  - source_id: SRC-NCCN-SCLC-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Small-cell lung cancer is a smoking-related malignancy;
+      detection at the limited-stage on incidental imaging during
+      structured surveillance improves curative-intent outcomes."
+  - source_id: SRC-ESMO-NSCLC-EARLY-2024
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Lung-cancer screening with low-dose CT in high-risk cohorts
+      reduces lung-cancer-specific mortality ~20-25% per NLST and
+      NELSON; smoking cessation is a foundational concurrent
+      intervention."
+
+do_not_do:
+  - "Не презентувати LDCT як screening для мезотеліоми — модальність валідована для NSCLC / SCLC, не для мезотеліоми; пацієнтське очікування має бути керованим."
+  - "Не призначати serum mesothelin (SMRP / Mesomark) як рутинний screening — чутливість занадто низька; tests тільки в контексті симптоматичної підозри."
+  - "Не пропускати counseling щодо припинення куріння — це найвпливовіше одиничне втручання у multiplicative-synergy ризику раку легень; не лікувати LDCT як замінник."
+  - "Не екстраполювати USPSTF age 50-80 беззастережно — азбест-експонованим non-smokers, перша LDCT може бути доречною з ≥20 років від першого впливу незалежно від pack-years."
+  - "Не пропонувати інтенсивний моніторинг плевральних бляшок — це поширені бенігні знахідки; інтервенція тільки при діагностичній підозрі на mesothelioma / lung cancer."
+  - "Не нехтувати take-home exposure для членів сім'ї — counseling щодо workplace-only laundering необхідне там, де поточний вплив зберігається."
+
+do_not_do_en:
+  - "Do not present LDCT as screening for mesothelioma — the modality is validated for NSCLC / SCLC, not mesothelioma; patient expectation must be managed."
+  - "Do not order serum mesothelin (SMRP / Mesomark) as routine screening — sensitivity is too low; testing only in the context of symptomatic suspicion."
+  - "Do not skip smoking-cessation counseling — this is the single most impactful intervention in the multiplicative-synergy lung-cancer risk; do not treat LDCT as a substitute."
+  - "Do not extrapolate USPSTF age 50-80 unconditionally — for asbestos-exposed non-smokers, first LDCT may be appropriate ≥20 years from first exposure regardless of pack-years."
+  - "Do not offer intensive monitoring for pleural plaques — these are common benign findings; intervention only at the diagnostic suspicion of mesothelioma / lung cancer."
+  - "Do not overlook take-home exposure for family members — workplace-only laundering counseling is necessary where current exposure persists."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — v0.3 occupational pilot (asbestos). Two-Clinical-Co-Lead
+  signoff queued per CHARTER §6.1 dev-mode exemption. No drug regimen
+  — intervention is counseling + surveillance imaging. IARC Monograph
+  100C (2012) and ATSDR Asbestos Tox Profile are the canonical
+  evidence anchors; both are v0.3 source-authoring backlog (not yet
+  in KB as separate SRC entities). Citations above are the most
+  clinically relevant in-KB sources (NCCN / ESMO lung-cancer
+  guidelines) per the source-set caveat documented on the paired
+  RedFlag. Adoption of LDCT screening for asbestos-exposed non-smokers
+  predates the USPSTF pack-years threshold and remains a soft-evidence
+  region with NCCN extending consideration on the basis of cumulative
+  carcinogen exposure rather than RCT data.

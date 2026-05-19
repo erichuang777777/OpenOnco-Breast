@@ -1,0 +1,14 @@
+{
+  "patient_id": "ENV-OUTDOOR-UV-PREV-001",
+  "comment": "50yo male outdoor construction worker (general contractor + road crew), 25 years cumulative daily outdoor exposure in temperate-to-southern UA latitudes (intermittent equatorial deployments earlier career), Fitzpatrick type II skin, history of multiple sunburns. No current cutaneous malignancy. Engine routes to PreventionPlan recommending photoprotection counseling (broad-spectrum sunscreen + clothing + hat) + annual clinical skin exam + patient skin self-exam education + vitamin D balance. Validates v0.3 RF-ENVIRONMENTAL-OUTDOOR-UV-SKIN-PREVENTION pilot (BCC/SCC/melanoma risk).",
+  "biomarkers": {},
+  "demographics": {"age": 50, "sex": "male", "ecog": 0, "fitzpatrick_skin_type": "II"},
+  "findings": {
+    "occupational_outdoor_work_ge_10y_high_uv_latitude": true,
+    "occupational_outdoor_uv_exposure_documented": true,
+    "agricultural_or_outdoor_trade_history_ge_10y": true,
+    "Outdoor construction worker 2000-present (25 years)": true,
+    "History of >5 lifetime sunburns": true,
+    "No current cutaneous malignancy": true
+  }
+}

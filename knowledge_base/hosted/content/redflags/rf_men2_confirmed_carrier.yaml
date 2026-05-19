@@ -1,0 +1,85 @@
+id: RF-MEN2-CONFIRMED-CARRIER
+definition: >-
+  Confirmed germline pathogenic / likely-pathogenic variant in the RET
+  proto-oncogene — MEN2A or MEN2B by mutation class. Patient has had
+  germline RET testing returned positive; the pedigree-suspicion question
+  is settled. No current personal cancer diagnosis in the carrier being
+  assessed (current cancer diagnosis routes to treatment-track plan with
+  RET-class status recorded). Mandates prophylactic thyroidectomy timed
+  by RET class (HST e.g. M918T → infancy; high-risk e.g. C634 → age ≤5;
+  moderate-risk → age 5-10) plus lifelong pheochromocytoma + parathyroid
+  surveillance. Prevention-persona RedFlag (§20, v0.2-B confirmed-carrier
+  surveillance pathway — distinct from RF-MEN2-FAMILY-HISTORY-SUSPICION
+  which fires before testing).
+definition_ua: >-
+  Підтверджений гермінативний патогенний / ймовірно-патогенний варіант у
+  гені RET — MEN2A або MEN2B за класом мутації. Пацієнт пройшов germline
+  RET-тестування з позитивним результатом; питання родовідної підозри
+  вирішене. Поточний особистий діагноз раку відсутній. Mandates
+  prophylactic тиреоїдектомію timed by RET class (HST напр. M918T →
+  інфантильний вік; high-risk напр. C634 → ≤5 років; moderate-risk →
+  5-10 років) + lifelong спостереження феохромоцитоми + паращитоподібних.
+  Prevention-persona RedFlag (§20, v0.2-B шлях спостереження
+  підтверджених носіїв).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "germline_ret_pathogenic_variant_confirmed"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+risk_category: genetic
+
+# MEN2-spectrum: MTC near-100% penetrance (DIS-MTC primary).
+# Pheochromocytoma ~50% in MEN2A and MEN2B (DIS-PHEOCHROMOCYTOMA).
+# Primary hyperparathyroidism ~20-30% in MEN2A only — managed under
+# DIS-MTC surveillance notes (no dedicated entity).
+relevant_diseases:
+  - DIS-MTC
+  - DIS-PHEOCHROMOCYTOMA
+
+shifts_algorithm: []
+
+sources:
+  - SRC-ATA-THYROID-2015
+  - SRC-NCCN-THYROID-2025
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.2-B confirmed-carrier surveillance pathway — MEN2. Fires on
+  documented germline RET pathogenic variant positivity in an
+  asymptomatic individual. Engine routes to PreventionPlan recommending:
+    (a) IND-MEN2-CARRIER-SURVEILLANCE (standard) — ATA-class-driven
+        prophylactic thyroidectomy timing + calcitonin q6mo + plasma /
+        urine metanephrines q1y from age 8-16 (RET-class-dependent) +
+        PTH/Ca q1y in MEN2A class.
+    (b) IND-MEN2-CARRIER-INTENSIFIED (aggressive) — earlier thyroidectomy
+        + bilateral adrenalectomy discussion if bilateral pheochromocytoma
+        emerges + cortical-sparing surgery option to preserve
+        glucocorticoid function.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption.
+
+  Lifetime tumor risk in confirmed RET carriers (Wells et al. ATA 2015):
+    - MTC: near-100% penetrance; age of onset by RET class (MEN2B M918T
+      infancy-toddlerhood; classic MEN2A C634 childhood-adolescence;
+      moderate-risk RET adulthood)
+    - Pheochromocytoma: ~50% in MEN2A and MEN2B; preferentially
+      bilateral / adrenal medullary; emerges after MTC (age 30s-40s)
+    - Primary hyperparathyroidism: ~20-30% in MEN2A only (absent in
+      MEN2B); multi-glandular hyperplasia
+    - Mucosal neuromas + marfanoid + corneal nerve thickening: MEN2B
+      pathognomonic stigmata
+    - Hirschsprung disease: ~7% in MEN2A C620 / C618 subgroup
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02b_confirmed_carriers_additional
+draft_revision: 1

@@ -1,0 +1,83 @@
+id: IND-ENVIRONMENTAL-AIR-POLLUTION-LUNG-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-ENVIRONMENTAL-AIR-POLLUTION-LUNG-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Continued chronic high-PM2.5 exposure without individual-level mitigation: baseline lung-cancer + cardiovascular + respiratory morbidity continues to climb with each year of exposure. Symptom-triggered evaluation captures earlier-stage disease but does not reduce incidence. Smoking-cessation counseling remains appropriate regardless of mitigation-track choice."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-ENVIRONMENTAL-AIR-POLLUTION-
+  LUNG-PREVENTION-MITIGATION. Patient declines structured individual-
+  level mitigation (cost of air purifiers, mask wear non-acceptable
+  socially, residence relocation infeasible, perception of low
+  individual benefit) — receives USPSTF-cadence lung-cancer screening
+  eligibility check + brief exposure-awareness counseling with each
+  clinical contact + symptom-triggered evaluation pathway. Per CHARTER
+  §11 patient-autonomy framing — exposure-management choice is
+  legitimate but framed as suboptimal vs. structured-mitigation
+  comparator. Smoking-cessation counseling continues regardless.
+  Periodic re-discussion of mitigation track at follow-up visits is
+  appropriate, especially with changes in local air-quality patterns
+  (industrial accidents, wartime events).
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від
+  structured individual-level mitigation — отримує USPSTF-cadence
+  lung-cancer screening eligibility check + brief exposure-awareness
+  counseling на кожному клінічному контакті + symptom-triggered
+  evaluation. Per CHARTER §11. Smoking-cessation counseling
+  залишається appropriate незалежно. Periodic re-discussion mitigation
+  треку на повторних візитах, especially з changes у local air-quality
+  patterns.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_diet_environmental
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-NSCLC-2025
+    position: context
+
+do_not_do:
+  - "Не презентувати observation як еквівалент mitigation — lung-cancer + cardiovascular incidence reduction не досягається."
+  - "Не пропускати smoking-cessation counseling — multiplicative interaction з PM2.5; recommendation relevant незалежно від mitigation-track choice."
+  - "Не ігнорувати alarm features (persistent cough, hemoptysis, dyspnea, weight loss) — immediate diagnostic imaging + multidisciplinary review."
+  - "Не презентувати decision як final — periodic re-discussion mitigation треку appropriate на повторних візитах."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to mitigation — lung-cancer + cardiovascular incidence reduction is not achieved."
+  - "Do not skip smoking-cessation counseling — multiplicative interaction with PM2.5; recommendation is relevant regardless of mitigation-track choice."
+  - "Do not ignore alarm features (persistent cough, hemoptysis, dyspnea, weight loss) — immediate diagnostic imaging + multidisciplinary review."
+  - "Do not present the decision as final — periodic re-discussion of the mitigation track is appropriate at follow-up visits."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for air-pollution lung prevention. §15.2 C4 ≥2-tracks invariant."

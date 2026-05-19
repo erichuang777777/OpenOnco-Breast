@@ -1,0 +1,12 @@
+{
+  "patient_id": "OCC-WOOD-DUST-PREV-001",
+  "comment": "52yo male cabinetmaker, 25 years bespoke furniture workshop (oak/walnut/mahogany hardwood dust exposure, pre-2010s dust-extraction era), no current malignancy. Hardwood dust is IARC Group 1 (Monograph 100C); sinonasal adenocarcinoma latency 30-40y. Engine routes to PreventionPlan: standard = IND-OCC-WOOD-LEATHER-DUST-PREVENTION-INTENSIFIED-SURVEILLANCE (annual ENT consult + symptom-review for unilateral nasal obstruction/epistaxis/anosmia + low-threshold CT sinus + PPE counseling); alternative = IND-OCC-WOOD-LEATHER-DUST-PREVENTION-OBSERVATION. Validates v0.3 RF-OCC-WOOD-LEATHER-DUST-PREVENTION pilot (sinonasal adenocarcinoma risk).",
+  "biomarkers": {},
+  "demographics": {"age": 52, "sex": "male", "ecog": 0},
+  "findings": {
+    "occupational_hardwood_dust_exposure_documented": true,
+    "Cabinetmaker 2000-present (25 years), hardwood-focused workshop": true,
+    "No current nasal obstruction/epistaxis/anosmia symptoms": true,
+    "No current head & neck malignancy diagnosis": true
+  }
+}

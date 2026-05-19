@@ -1,0 +1,109 @@
+id: MS-IBD-COLONOSCOPY-Q1-2Y
+linked_to_regimen: null  # surveillance — no regimen
+
+phases:
+  - name: baseline
+    window: "8 years after IBD-symptom onset (ulcerative colitis with extensive disease, Crohn's colitis involving >1/3 of colon, or left-sided UC) — earlier (immediately) if PSC co-diagnosis"
+    window_ua: "Через 8 років після початку симптомів IBD (виразковий коліт з поширеним ураженням, хвороба Крона з ураженням >1/3 товстої кишки, або лівобічний UC) — раніше (негайно) при супутньому діагнозі PSC"
+    tests:
+      - TEST-COLONOSCOPY-SURVEILLANCE
+    visits: ["GI surveillance + multidisciplinary IBD program"]
+    checkpoints:
+      - "Confirm extensive UC or Crohn's colitis duration ≥8 years"
+      - "PSC co-existence → IMMEDIATE annual surveillance from PSC diagnosis (highest CRC risk subgroup, RR ~4-5×)"
+      - "Document baseline disease distribution, prior dysplasia / colectomy history, primary biliary findings if PSC"
+      - "Optimize disease control before surveillance — surveillance during active flare confounds dysplasia assessment"
+      - "Counsel: cumulative CRC risk in UC ~2% at 10y, ~8% at 20y, ~18% at 30y (Eaden 2001 Gut) — modified by modern era / mesalamine / surveillance"
+    checkpoints_ua:
+      - "Підтвердити поширений UC або хворобу Крона з колітом тривалістю ≥8 років"
+      - "Супутній PSC → НЕГАЙНО щорічне спостереження з моменту діагнозу PSC (підгрупа з найвищим ризиком CRC, RR ~4–5×)"
+      - "Документувати базове поширення хвороби, попередній анамнез дисплазії / колектомії, первинні біліарні знахідки при PSC"
+      - "Оптимізувати контроль хвороби перед спостереженням — спостереження під час активного загострення спотворює оцінку дисплазії"
+      - "Консультування: кумулятивний ризик CRC при UC ~2% на 10 рік, ~8% на 20 рік, ~18% на 30 рік (Eaden 2001 Gut) — модифікований сучасною ерою / мезалазином / спостереженням"
+
+  - name: high_risk_annual_surveillance
+    window: "Annual colonoscopy with chromoendoscopy"
+    window_ua: "Щорічна колоноскопія з хромоендоскопією"
+    tests:
+      - TEST-COLONOSCOPY-SURVEILLANCE
+    visits: ["IBD surveillance — high-risk cohort"]
+    checkpoints:
+      - "Annual triggers: PSC + IBD, prior dysplasia, family history CRC <50, stricture, multiple inflammatory pseudopolyps, ongoing severe inflammation"
+      - "Chromoendoscopy (methylene blue 0.1% or indigo carmine 0.4%) preferred over white-light alone for dysplasia detection — improved adenoma / dysplasia detection rate (SCENIC 2015 international consensus)"
+      - "Pan-colonic chromoendoscopy with targeted biopsies of any visible lesion preferred over random biopsies"
+      - "If chromoendoscopy unavailable → high-definition white-light + targeted biopsies + 4-quadrant random biopsies every 10cm (32-40 biopsies total)"
+      - "Visible dysplastic lesions → endoscopic resection if endoscopically resectable + adjacent biopsies clear; otherwise colectomy referral"
+    checkpoints_ua:
+      - "Тригери щорічного спостереження: PSC + IBD, попередня дисплазія, сімейний анамнез CRC <50 років, стриктура, множинні запальні псевдополіпи, активне тяжке запалення"
+      - "Хромоендоскопія (метиленовий синій 0,1% або індиго кармін 0,4%) переважна над лише white-light для виявлення дисплазії — підвищена частота виявлення аденом / дисплазії (SCENIC 2015, міжнародний консенсус)"
+      - "Панколонічна хромоендоскопія з прицільними біопсіями будь-яких видимих вогнищ переважна над випадковими біопсіями"
+      - "Якщо хромоендоскопія недоступна → high-definition white-light + прицільні біопсії + випадкові біопсії з 4 квадрантів кожні 10 см (32–40 біопсій загалом)"
+      - "Видимі диспластичні вогнища → ендоскопічна резекція, якщо ендоскопічно резектабельне + прилеглі біопсії чисті; інакше — направлення на колектомію"
+
+  - name: standard_risk_q1_2y_surveillance
+    window: "Every 1-2 years — standard-risk extensive UC / Crohn's colitis"
+    window_ua: "Кожні 1–2 роки — стандартний ризик: поширений UC / коліт Крона"
+    tests:
+      - TEST-COLONOSCOPY-SURVEILLANCE
+    visits: ["IBD surveillance"]
+    checkpoints:
+      - "AGA 2024 IBD-CRC surveillance: standard-risk extensive UC / Crohn's colitis without high-risk features → colonoscopy q1-2y (was q1-2y in prior cadence; recent revision permits q2-3y in some quiescent-disease cohorts but AGA still preferences q1-2y in standard risk)"
+      - "Chromoendoscopy preferred over white-light"
+      - "If consistently quiescent + macroscopically normal mucosa + no dysplasia for 2 consecutive surveillance EGDs → consider extending to q3y"
+      - "Any new dysplasia → upgrade to annual; consider colectomy referral if HGD or multifocal LGD"
+    checkpoints_ua:
+      - "AGA 2024 IBD-CRC спостереження: стандартний ризик поширеного UC / коліту Крона без high-risk ознак → колоноскопія кожні 1–2 роки (раніше теж кожні 1–2 роки; недавня редакція допускає кожні 2–3 роки в деяких ремісійних когортах, проте AGA усе ще віддає перевагу кожні 1–2 роки для стандартного ризику)"
+      - "Хромоендоскопія переважна над white-light"
+      - "Якщо стабільна ремісія + макроскопічно нормальна слизова + відсутність дисплазії 2 поспіль спостережних EGD → розглянути продовження до кожних 3 років"
+      - "Будь-яка нова дисплазія → перейти на щорічне; розглянути направлення на колектомію при HGD або мультифокальній LGD"
+
+  - name: low_risk_q5y_surveillance
+    window: "Every 5 years — low-risk subgroups (limited proctitis / UC <8 years)"
+    window_ua: "Кожні 5 років — підгрупи низького ризику (обмежений проктит / UC <8 років)"
+    tests:
+      - TEST-COLONOSCOPY-SURVEILLANCE
+    visits: ["IBD surveillance — low-risk cohort"]
+    checkpoints:
+      - "Proctitis-only UC and Crohn's with non-colonic disease distribution → low excess CRC risk"
+      - "q5y colonoscopy or general population screening cadence (whichever earlier)"
+      - "Re-evaluate risk strata if disease extent progresses"
+    checkpoints_ua:
+      - "Лише проктитна форма UC та хвороба Крона з некишковою локалізацією → низький надлишковий ризик CRC"
+      - "Колоноскопія кожні 5 років або графік скринінгу загальної популяції (що раніше)"
+      - "Переоцінити страту ризику при прогресуванні поширення хвороби"
+
+sources:
+  - SRC-AGA-IBD-CRC-2024
+
+last_reviewed: "2026-05-18"
+machine_translated_review_pending: true
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  AGA 2024 IBD CRC Surveillance Clinical Practice Guideline
+  (Murthy et al, Gastroenterology 2024). Risk stratification:
+  - High-risk → annual: PSC + IBD, prior dysplasia / cancer, stricture,
+    extensive inflammation, FHx CRC <50
+  - Standard-risk extensive disease → q1-2y
+  - Low-risk → q3-5y (or general population screening)
+
+  Chromoendoscopy is the preferred modality (SCENIC 2015 + AGA
+  2024) — improved dysplasia detection vs white-light alone in
+  meta-analyses (Iannone 2017 GI Endosc). High-definition white-
+  light is acceptable alternative where chromoendoscopy unavailable;
+  random 4-quadrant biopsies every 10cm of inflamed mucosa is the
+  legacy fallback approach.
+
+  Mesalamine chemoprevention: probably reduces CRC risk in UC
+  (Nguyen 2012 meta), Cat 2B recommendation. Not a substitute for
+  surveillance.
+
+  Ukrainian context: chromoendoscopy with methylene blue / indigo
+  carmine is variable across endoscopy units; high-definition
+  white-light available at most centers. Pathologist familiarity
+  with IBD-associated dysplasia (vs sporadic adenoma) is variable —
+  two-pathologist review for any dysplastic finding is best
+  practice and aligns with SCENIC consensus.
+
+  UA translations of window / checkpoints added 2026-05-19 under CHARTER
+  §8.3 dev-mode exemption; awaiting Clinical Co-Lead sign-off.

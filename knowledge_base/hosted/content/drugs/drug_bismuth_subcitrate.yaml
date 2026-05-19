@@ -1,0 +1,113 @@
+id: DRUG-BISMUTH-SUBCITRATE
+names:
+  preferred: "Bismuth subcitrate potassium"
+  ukrainian: "Бісмуту субцитрат калію"
+  english: "Bismuth subcitrate potassium"
+  synonyms:
+    - "Tripotassium dicitrato bismuthate (TDB)"
+    - "Colloidal bismuth subcitrate (CBS)"
+    - "Bismuth subcitrate"
+  brand_names:
+    - "De-Nol"
+    - "Pylera (component, with metronidazole + tetracycline)"
+    - "Ulkavis"
+    - "Gastrostat"
+atc_code: A02BX05
+rxnorm_id: null
+drug_class: "Bismuth salt — antimicrobial / mucosal protective (anti-Helicobacter pylori)"
+mechanism: >
+  Colloidal bismuth salt that, in the acid gastric milieu, precipitates as
+  bismuth oxychloride and bismuth citrate, which: (i) adhere to ulcer
+  craters and the gastric mucus layer to form a protective barrier;
+  (ii) directly damage Helicobacter pylori cell wall and impair iron and
+  nickel uptake — bactericidal effect; (iii) inhibit H. pylori urease,
+  phospholipase, and proteolytic enzymes; (iv) stimulate prostaglandin E2,
+  bicarbonate, and mucus secretion. Synergistic with metronidazole and
+  tetracycline in quadruple therapy — also overcomes clarithromycin
+  resistance, the primary mode of failure for standard triple therapy.
+
+regulatory_status:
+  fda:
+    approved: true
+    year_first_approval: 2006
+    indications_brief:
+      - "Helicobacter pylori eradication (component of bismuth-based quadruple therapy — PBMT)"
+      - "Adjunct therapy of gastric / duodenal ulcer disease (in some regions)"
+  ema:
+    approved: true
+    year_first_approval: null
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Зареєстровано в Україні (De-Nol, Ulkavis, generics). НСЗУ-програма ерадикації H. pylori на 2026-05 не передбачена — оплата з кишені пацієнта. Перевірено drlz.com.ua 2026-05-18."
+typical_dosing: >
+  H. pylori PBMT quadruple therapy (adult): 120 mg (one tablet) PO QID
+  (taken with meals and at bedtime) × 10-14 days, together with omeprazole
+  20 mg PO BID + metronidazole 500 mg PO TID-QID + tetracycline 500 mg PO
+  QID. Take ≥30 min before meals and at bedtime; avoid co-administration
+  with milk, antacids, or H2 blockers within 30 min (chelation reduces
+  efficacy). Avoid in moderate-severe renal impairment. The combination
+  product Pylera (bismuth subcitrate potassium 140 mg + metronidazole 125
+  mg + tetracycline 125 mg per capsule, 3 capsules QID × 10 days, with a
+  PPI) is approved in the US/EU as a fixed-dose alternative.
+formulations:
+  - "Tablet 120 mg (De-Nol); 140 mg (Pylera component)"
+  - "Chewable tablet 240 mg (regional)"
+
+absolute_contraindications:
+  - "Hypersensitivity to bismuth or any component"
+  - "Severe renal impairment (CrCl <30 mL/min) — risk of bismuth accumulation and neurotoxicity"
+  - "Pregnancy and breastfeeding (insufficient safety data)"
+  - "Pediatric use generally avoided (limited safety data)"
+black_box_warnings: []
+major_interactions:
+  - "Polyvalent cations (antacids, iron, calcium, dairy / milk products, multivitamins with minerals): chelation reduces bismuth and co-administered tetracycline absorption — separate by ≥30 min"
+  - "Tetracyclines (component of PBMT): note bismuth itself does not significantly impair tetracycline absorption when both given as part of the regimen — historical concern overstated"
+  - "Anticoagulants (warfarin, DOACs): theoretical interaction via gut-flora alteration — monitor INR / anti-Xa"
+  - "H2 blockers, PPIs (when not part of the planned regimen): reduce bismuth efficacy by raising gastric pH — separate timing"
+  - "Methotrexate: theoretical reduced absorption — separate timing"
+  - "Aspirin: additive GI mucosal effect — typically not clinically significant"
+common_adverse_events:
+  - "Black / dark stools (harmless bismuth sulfide; expected, warn patient) — very common"
+  - "Black tongue (transient discoloration) — very common"
+  - "Nausea — ~5-10%"
+  - "Mild constipation — ~5%"
+  - "Diarrhea — ~3-5% (often related to co-administered metronidazole/tetracycline)"
+  - "Metallic taste — ~3-5%"
+  - "Mild abdominal discomfort — ~3-5%"
+  - "Headache — ~2-3%"
+  - "Dizziness — ~1-2%"
+serious_adverse_events:
+  - "Bismuth encephalopathy with prolonged / high-dose use or in renal impairment (myoclonus, ataxia, confusion, dysarthria, tremor, seizures — historically described with prolonged use; can be reversible if drug stopped promptly)"
+  - "Acute kidney injury — rare, reported in case series with high-dose bismuth"
+  - "Severe hypersensitivity / anaphylaxis (rare)"
+  - "Methemoglobinemia (rare)"
+  - "Hepatotoxicity (rare)"
+pharmacology:
+  half_life_hours: 5  # plasma elimination 5-11 days for residual bismuth body burden; therapeutic effect local
+  clearance: "Renal — accumulated bismuth excreted slowly in urine and faeces; bioavailability of bismuth from oral subcitrate <1%"
+  protein_binding_pct: null
+  metabolism: "Minimal systemic absorption (~0.2% of dose); bismuth subcitrate dissociates in acid environment; bismuth precipitates locally and is excreted in stool; small absorbed fraction is renally excreted slowly"
+sources:
+  - SRC-NCCN-BCELL-2025
+last_reviewed: "2026-05-18"
+reviewer_signoffs: []
+notes: >
+  STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. Cornerstone of bismuth-based
+  quadruple therapy (PBMT — PPI + bismuth + metronidazole + tetracycline)
+  for H. pylori eradication, increasingly preferred over standard triple
+  therapy in regions with clarithromycin resistance >15% (much of Europe
+  including Ukraine). Overcomes clarithromycin and metronidazole
+  resistance. The black tongue and black stools are the most patient-
+  visible side effects — pre-counseling is essential to avoid panic.
+  Encephalopathy is rare and historically associated with prolonged high-
+  dose use; 10-14 day PBMT courses have a clean safety record. RxNorm
+  has separate codes for "bismuth subcitrate" variants but no single
+  canonical ID for "bismuth subcitrate potassium" was confirmed at draft
+  time — orchestrator should verify. Ukraine: De-Nol is the dominant
+  brand; widely available, out-of-pocket. Two-Co-Lead signoff queued for
+  v0.2-A clinical review.

@@ -1,0 +1,24 @@
+id: BIO-RAD51D-GERMLINE
+names:
+  preferred: "RAD51D germline pathogenic variant"
+  ukrainian: "RAD51D germline патогенний варіант"
+  english: "RAD51D germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: RAD51D
+  gene_hugo_id: HGNC:9823
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-NCCN-OVARIAN-2025
+last_reviewed: "2026-05-18"
+notes: "RAD51D germline — HRR-pathway gene; ovarian cancer lifetime risk ~10-15% (NCCN: discuss risk-reducing salpingo-oophorectomy age 45-50); breast cancer modestly elevated. PARPi consideration in HRR-context ovarian per NCCN. STUB pending two-Co-Lead signoff."
+notes_ua: "RAD51D germline — HRR-ген; ризик яєчників ~10-15%; PARPi розгляд у HRR-контексті."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v04_germline_batch2
+draft_revision: 1

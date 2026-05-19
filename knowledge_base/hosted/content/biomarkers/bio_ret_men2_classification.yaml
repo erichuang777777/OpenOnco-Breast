@@ -1,0 +1,62 @@
+id: BIO-RET-MEN2-CLASSIFICATION
+names:
+  preferred: "RET codon-based MEN2 classification (MEN2A / MEN2B / FMTC)"
+  ukrainian: "Класифікація MEN2 за кодоном RET (MEN2A / MEN2B / FMTC)"
+  english: "RET MEN2 subtype classification"
+  synonyms: ["MEN2A vs MEN2B", "FMTC vs MEN2A", "ATA RET risk-level stratification"]
+biomarker_type: composite_score
+mutation_details:
+  gene: RET
+  gene_hugo_id: HGNC:9967
+  variant_type: "missense (specific codon assignment predicts phenotype)"
+  functional_impact: "activating (constitutive kinase signaling)"
+specimen_requirements:
+  - "Whole blood EDTA or saliva — germline DNA with specific RET codon variant identification"
+  - "Clinical phenotype: thyroidectomy timing, presence of pheochromocytoma, hyperparathyroidism, marfanoid habitus / mucosal neuromas (MEN2B)"
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: clinical_composite
+external_ids:
+  hgnc_symbol: RET
+related_biomarkers: [BIO-RET-GERMLINE, BIO-RET-M918T]
+sources:
+  - SRC-NCCN-THYROID-2025
+  - SRC-ENDOCRINE-SOCIETY-MEN-2023
+last_reviewed: "2026-05-18"
+notes: >
+  Composite codon-phenotype classification for MEN2 (germline RET-
+  activating pathogenic variants). ATA 2015 / NCCN 2025 stratify
+  carriers into three syndromic subtypes and four codon-based risk
+  tiers driving prophylactic-thyroidectomy timing.
+  Syndromic subtypes:
+  • MEN2A (~75% of MEN2): MTC + pheochromocytoma (~50%) +
+    primary hyperparathyroidism (~25%); occasional cutaneous lichen
+    amyloidosis or Hirschsprung disease. Codons mostly cysteine-rich
+    extracellular domain (609, 611, 618, 620, 630, 634).
+  • MEN2B (~5%): MTC (earliest onset, most aggressive) + pheo (~50%) +
+    marfanoid habitus + mucosal neuromas (tongue, lips, GI) +
+    medullated corneal nerves. Codon M918T (95%) or A883F (rare).
+  • FMTC (~20%): MTC only, no pheo / no HPT. Codons 768, 790, 791,
+    804, 891 (lower-risk codons) — increasingly considered MEN2A
+    variant with low-penetrance pheo.
+  ATA RET risk tiers driving prophylactic-thyroidectomy timing:
+  • Highest risk (ATA HST): M918T → thyroidectomy by age 1 (before
+    metastatic MTC).
+  • High risk (ATA H): C634, A883F → by age 5.
+  • Moderate risk (ATA MOD): 609, 611, 618, 620, 630, 768, 790, 791,
+    804, 891 → individualized; consider 5-10 years (basal calcitonin
+    + neck US trigger).
+  Surveillance for pheo: annual plasma metanephrines starting age 11
+  (MEN2A high/moderate) or age 8 (MEN2B); for HPT: annual calcium +
+  PTH starting age 11 (MEN2A only). STUB pending two-Co-Lead signoff.
+notes_ua: >
+  Композитна класифікація кодон-фенотип для MEN2. 3 синдромні підтипи:
+  MEN2A (~75% — MTC + феохромоцитома + первинний гіперпаратиреоз),
+  MEN2B (~5% — MTC найагресивніший + феохромоцитома + марфаноїдний
+  габітус + слизові нейроми; кодон M918T), FMTC (~20% — лише MTC).
+  ATA рівні ризику визначають час профілактичної тиреоїдектомії:
+  M918T — до 1 року; C634 — до 5 років; помірний ризик — 5-10 років.
+  STUB pending two-Co-Lead signoff.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_surveillance_2026_05_18
+draft_revision: 1

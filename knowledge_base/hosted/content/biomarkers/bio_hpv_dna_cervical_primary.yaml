@@ -1,0 +1,25 @@
+id: BIO-HPV-DNA-CERVICAL-PRIMARY
+names:
+  preferred: "HPV DNA test — primary cervical screening (high-risk genotypes)"
+  ukrainian: "ВПЛ-ДНК тест — первинний цервікальний скринінг (онкогенні генотипи)"
+  english: "Primary HPV DNA cervical screening"
+  synonyms: ["primary HPV testing", "hrHPV DNA", "HPV 16/18 genotyping screen", "cobas HPV", "Aptima HPV"]
+biomarker_type: gene_mutation
+measurement:
+  method: "Validated HPV DNA PCR or signal-amplification on cervical sample; partial genotyping (HPV 16, HPV 18, ± 45) reported separately from pooled 12-other-hrHPV"
+  units: "categorical per genotype: HPV-16+ | HPV-18+ | other-hrHPV+ | negative"
+specimen_requirements:
+  - "Cervical swab/brush sample in validated transport medium"
+  - "FDA-approved primary-screening platform (cobas 4800, Onclarity, Aptima)"
+related_biomarkers: [BIO-HPV-STATUS, BIO-PAP-CYTOLOGY-CERVICAL]
+clinical_context: [screening, screening_surveillance]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: tumor_marker
+sources: [SRC-NCCN-CERVICAL-2025, SRC-ESMO-CERVICAL-2024]
+last_reviewed: "2026-05-18"
+notes: >
+  STUB. USPSTF Grade A (2018) — primary HPV testing every 5 years ages
+  30-65 acceptable alternative to cytology q3y or co-test q5y. Sensitivity
+  for CIN3+ ~95% (vs ~70% cytology). HPV-16/18+ → direct colposcopy;
+  other-hrHPV+ → reflex cytology triage (ASCCP 2019). Negative primary
+  HPV at 5y has higher NPV than cytology alone.

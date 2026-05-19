@@ -1,0 +1,143 @@
+id: DRUG-GREEN-TEA-EXTRACT-RESEARCH
+names:
+  preferred: "Green tea extract / EGCG (research-only chemoprevention candidate — NOT standard-of-care)"
+  ukrainian: "Екстракт зеленого чаю / EGCG (дослідницький кандидат — НЕ стандарт)"
+  english: "Green tea extract / EGCG research"
+  synonyms: ["Epigallocatechin gallate (EGCG)", "Camellia sinensis polyphenols", "Green tea catechins", "Polyphenon E (standardized formulation)"]
+  brand_names: ["various OTC supplements — Polyphenon E, Veregen (topical, FDA-approved for genital warts)"]
+atc_code: D06BB12  # ATC for sinecatechins topical (Veregen — genital warts; cancer prevention is off-label)
+rxnorm_id: null
+drug_class: "Polyphenol catechin mixture from Camellia sinensis — dietary supplement"
+mechanism: >
+  Standardized catechin mixture from green tea leaves, dominated by
+  (-)-epigallocatechin-3-gallate (EGCG, ~50-70% of total catechins).
+  Preclinical mechanisms include inhibition of receptor tyrosine
+  kinases (EGFR, VEGFR), suppression of NF-κB, modulation of mTOR
+  and AMPK, DNA-methyltransferase inhibition (epigenetic), induction
+  of apoptosis, and inhibition of angiogenesis in cancer cell lines.
+  Cancer-prevention rationale: ecological data (East Asian green-tea
+  consumption) correlated with lower incidence of multiple cancers;
+  preclinical signal in skin, breast, prostate, oral, and colorectal
+  models. CLINICAL TRANSLATION IS MIXED: prostate-cancer prevention
+  RCT in HGPIN (Bettuzzi 2006, n=60 — 90% reduction in 1-year cancer
+  detection with 600 mg/d catechins) was small and was NOT replicated
+  in larger Bettuzzi 2008 / Kumar 2015 (Polyphenon E in HGPIN/ASAP,
+  n=97, FUTURE trial null). EGCG hepatotoxicity signals (case reports
+  + EFSA 2018 safety opinion → daily intake from supplements should
+  not exceed 800 mg EGCG) further dampen enthusiasm.
+
+regulatory_status:
+  fda:
+    approved: true  # sinecatechins (Veregen) — topical for external genital warts (NOT cancer chemoprevention)
+    first_approval_year: 2006  # Veregen approval for HPV warts
+    indications_brief:
+      - "Veregen (sinecatechins 10% ointment) — topical treatment of external genital and perianal warts (HPV)"
+      - "Oral green tea / EGCG extracts — dietary supplement (food category, GRAS)"
+      - "NOT FDA-labeled for cancer chemoprevention"
+  ema:
+    approved: true  # Veregen marketed in EU as Veregen
+  ukraine_registration:
+    registered: true  # green tea extract widely available as БАД; Veregen registration status varies
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Екстракт зеленого чаю — БАД, OTC, не реімбурсується НСЗУ. Veregen (sinecatechins) для генітальних кондилом — статус реєстрації потребує підтвердження в Державному реєстрі ЛЗ. Якість продукту дуже варіабельна — стандартизація вмісту EGCG неуніфікована."
+typical_dosing: >
+  RESEARCH-ONLY context — NO accepted clinical-use dose for cancer
+  chemoprevention:
+    Polyphenon E (standardized EGCG-rich extract): 200-600 mg EGCG
+    equivalent daily in prevention trials (HGPIN, oral premalignancy).
+    EFSA 2018 acceptable daily intake from green-tea-extract supplements:
+    ≤800 mg EGCG/day; above this threshold rising hepatotoxicity risk.
+  Dietary green-tea consumption (3-5 cups/day) provides ~150-250 mg
+  EGCG and is regarded as safe; supplement-based high-dose EGCG is
+  the safety concern.
+formulations:
+  - "Capsule / tablet standardized green-tea-extract 200, 400, 500 mg (variable EGCG content)"
+  - "Polyphenon E standardized extract (~50-65% EGCG)"
+  - "Brewed tea (food consumption — distinct from supplement)"
+  - "Veregen 10% ointment (topical, HPV warts — NOT chemoprevention)"
+
+absolute_contraindications:
+  - "Hypersensitivity to green-tea catechins"
+  - "Active liver disease / elevated transaminases (EFSA hepatotoxicity signal at high supplement doses)"
+  - "Pregnancy / breastfeeding at supplement doses (insufficient safety data; dietary tea acceptable)"
+  - "Concomitant high-risk hepatotoxic drug regimens (acetaminophen, statins, isoniazid, methotrexate at high dose) at supplement doses"
+black_box_warnings: []
+major_interactions:
+  - "Anticoagulants / antiplatelets — possible additive effect; vitamin K content of green-tea infusions modest, supplement extracts negligible"
+  - "Hepatotoxic drugs (acetaminophen, isoniazid, methotrexate) — additive hepatotoxicity risk at supplement doses"
+  - "Bortezomib — EGCG inhibits bortezomib activity (avoid in active multiple-myeloma proteasome-inhibitor therapy — Golden Blood 2009)"
+  - "Iron supplements — green-tea polyphenols chelate non-heme iron; separate by 1-2 h"
+  - "Beta-blockers (nadolol) — green tea reduces nadolol absorption"
+  - "Statins, CYP3A4 substrates — EGCG inhibits CYP3A4 in vitro; clinical magnitude uncertain"
+common_adverse_events:
+  - "GI upset, nausea, diarrhea (~5-15% at supplement doses)"
+  - "Headache (~5-10%)"
+  - "Insomnia, jitteriness (caffeine content — typical extract 5-10% caffeine; decaffeinated extracts available)"
+  - "Constipation (~3-5%)"
+serious_adverse_events:
+  - "Hepatotoxicity — case reports of acute hepatitis (idiosyncratic; EFSA 2018 safety opinion; risk rises with doses >800 mg EGCG/d on empty stomach)"
+  - "Bortezomib antagonism in multiple myeloma (treatment-context AE, not prevention AE)"
+  - "Severe hypersensitivity (rare)"
+
+pharmacology: {half_life_hours: 5, clearance: "Hepatic and intestinal methylation (COMT), sulfation (SULT1A1), glucuronidation (UGT1A1, UGT1A8). Oral bioavailability of EGCG ~0.1-0.3% as parent compound; methylated/glucuronidated/sulfated metabolites dominate plasma. Conjugates excreted via bile + urine."}
+
+sources:
+  - SRC-WCRF-AICR-CUP-2018
+  - SRC-NCCN-PROSTATE-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 chemoprevention-workstream authoring (batch 2); pending
+  two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode. GREEN-TEA
+  EXTRACT / EGCG IS NOT STANDARD-OF-CARE CHEMOPREVENTION (research-
+  only context). Clinical data are mixed and inconsistent:
+    - Bettuzzi 2006 (n=60, HGPIN, 1 year): ~90% reduction in prostate-
+      cancer detection — promising but small.
+    - Kumar 2015 / FUTURE trial (n=97, HGPIN/ASAP, 1 year, Polyphenon E):
+      NULL for prostate-cancer detection.
+    - Oral-premalignancy trials (Tsao 2009, Schwartz 2014): small,
+      mixed surrogate-endpoint results.
+  EFSA 2018 — daily intake of EGCG from green-tea-extract supplements
+  should not exceed 800 mg/day due to rising hepatotoxicity signal at
+  higher doses, particularly on an empty stomach. Dietary green-tea
+  consumption (3-5 cups/d) is generally safe and is the preferred
+  exposure mode in WCRF-AICR recommendations. NCCN / USPSTF / WCRF /
+  ASCO — no recommendation for green-tea-extract supplementation for
+  cancer prevention. EXPLICIT CAUTION: avoid green-tea extract in
+  patients on bortezomib (multiple myeloma) — EGCG abolishes bortezomib
+  efficacy. ENGINE MUST NOT recommend green-tea extract for cancer
+  prevention; entity exists for catalog completeness and for explicit
+  counseling away from OTC chemoprevention marketing. VEREGEN topical
+  for genital warts is a separate, FDA-approved use unrelated to
+  chemoprevention. No primary green-tea chemoprevention RCT yet ingested
+  as standalone SRC-* entity; cited sources cover the umbrella
+  WCRF-AICR position and NCCN Prostate guideline (which does NOT
+  include green tea or EGCG).
+
+notes_ua: >
+  Екстракт зеленого чаю / EGCG (епігалокатехін-3-галлат) — основний
+  катехин з листя Camellia sinensis. У контексті ХІМІОПРОФІЛАКТИКИ
+  РАКУ — НЕ Є СТАНДАРТОМ ДОПОМОГИ (тільки дослідницький контекст).
+  Клінічні дані ЗМІШАНІ:
+    - Bettuzzi 2006 (n=60, HGPIN, 1 рік): ~90% зниження виявлення
+      раку простати — обнадійливе, але мале.
+    - Kumar 2015 / FUTURE (n=97, Polyphenon E): NULL.
+  EFSA 2018 — добове споживання EGCG з добавок ≤800 мг (вище — ризик
+  гепатотоксичності, особливо натщесерце). ДІЄТИЧНИЙ зелений чай (3-5
+  чашок/день) — безпечний і є переважним способом експозиції (WCRF-
+  AICR). НСЗУ — без реімбурсації; OTC БАД, якість варіабельна.
+  ВАЖЛИВО: уникати у пацієнтів з активною патологією печінки + при
+  лікуванні бортезомібом (мієлома — EGCG абсолютно антагоністичний
+  бортезомібу — Golden Blood 2009). ЖОДНА авторитетна настанова (FDA,
+  EMA, USPSTF, NCCN, ASCO, WCRF-AICR) НЕ рекомендує екстракт зеленого
+  чаю для онкопрофілактики. Двигун НЕ повинен рекомендувати; запис
+  існує для каталогу та для активного відраджування від ОТС-маркетингу.
+  Veregen (синекатехіни мазь) для генітальних кондилом — окреме
+  FDA-показання, НЕ профілактика раку.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_chemoprevention_drugs_batch2_2026-05-18
+draft_revision: 1

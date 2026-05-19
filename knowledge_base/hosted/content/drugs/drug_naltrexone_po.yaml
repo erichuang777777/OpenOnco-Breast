@@ -1,0 +1,92 @@
+id: DRUG-NALTREXONE-PO
+names:
+  preferred: "Naltrexone (oral and IM depot)"
+  ukrainian: "Налтрексон (пероральний і депо-IM)"
+  english: "Naltrexone"
+  brand_names: ["ReVia", "Depade", "Vivitrol (IM depot)"]
+atc_code: N07BB04
+rxnorm_id: "7242"
+drug_class: "Opioid receptor antagonist (μ, κ, δ)"
+mechanism: >
+  Competitive antagonist at opioid receptors. In alcohol use disorder
+  (AUD), blocks endogenous opioid-mediated reward signaling triggered
+  by alcohol ingestion → reduces craving and heavy-drinking days.
+  First-line FDA-approved AUD pharmacotherapy (alongside acamprosate
+  and disulfiram). Also FDA-approved for opioid use disorder
+  (block opioid effect — requires opioid-free interval first).
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 1984  # opioid; 1994 for alcohol; 2006 IM depot Vivitrol
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Registered in Ukraine (oral naltrexone). IM depot (Vivitrol) limited availability. Not on НСЗУ AUD package — out-of-pocket."
+typical_dosing: >
+  AUD:
+    PO: 50 mg once daily (some protocols use 25 mg × 1-2 days to assess
+        tolerance, then escalate); can extend to 100 mg if needed.
+    IM depot (Vivitrol): 380 mg deep IM gluteal every 4 weeks; preferred
+        if adherence is a concern. Verify opioid-free for ≥7-10 days
+        before first IM dose (precipitated withdrawal otherwise).
+formulations:
+  - "Tablet PO 50 mg"
+  - "IM depot 380 mg (Vivitrol)"
+
+absolute_contraindications:
+  - "Current opioid use or opioid-physical-dependence (precipitated withdrawal)"
+  - "Acute opioid withdrawal"
+  - "Anticipated need for opioid analgesia (planned surgery; severe pain syndromes)"
+  - "Active hepatitis or hepatic failure (transaminitis at high doses)"
+  - "Hypersensitivity to naltrexone, polylactide-co-glycolide microsphere components (IM)"
+black_box_warnings:
+  - "Hepatotoxicity at supratherapeutic doses (originally noted at 300 mg/d; uncommon at 50 mg/d but LFT monitoring recommended)"
+major_interactions:
+  - "Opioid analgesics — antagonist effect blocks analgesia; if emergency opioid pain control needed, much higher doses required + airway/respiratory monitoring in monitored setting"
+  - "Methadone, buprenorphine — contraindicated (withdrawal)"
+common_adverse_events:
+  - "Nausea (~10-30%; worse with IM first dose)"
+  - "Headache (~7-25%)"
+  - "Dizziness (~4-13%)"
+  - "Insomnia, anxiety (~3-10%)"
+  - "Fatigue (~7-15%)"
+  - "Injection-site reaction (IM only — ~50% mild; ~10% moderate-severe with rare abscess/necrosis)"
+serious_adverse_events:
+  - "Hepatotoxicity (rare at 50 mg/d; more common at supratherapeutic doses)"
+  - "Eosinophilic pneumonia (rare; IM depot)"
+  - "Severe injection-site reaction — induration, abscess, necrosis, sterile granuloma"
+  - "Suicidality (signal in AUD trials; mood monitoring)"
+  - "Opioid overdose if patient relapses to opioids after antagonist clearance (lowered tolerance)"
+
+pharmacology: {half_life_hours: 4, clearance: "Hepatic to active 6-β-naltrexol (t1/2 13 h); renal excretion. IM depot delivers ~30-day continuous release"}
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. First-line AUD pharmacotherapy
+  (NIAAA + APA). Both oral and IM depot superior to placebo at reducing
+  heavy-drinking days; IM depot preferred when adherence challenging.
+  Critical: must be opioid-free ≥7-10 days before initiation. Alcohol
+  cessation/reduction is a cancer-prevention intervention (HCC, CRC,
+  esophageal SCC, breast). Source cited (SRC-NCCN-BCELL-2025) is closest
+  in-KB until NIAAA/APA AUD sources land in source-stub workstream.
+
+notes_ua: >
+  Налтрексон — перша лінія фармакотерапії при розладі вживання
+  алкоголю (AUD). Як пероральна, так і IM-депо форма перевершують
+  плацебо за зниженням кількості днів важкого вживання. IM-депо
+  Vivitrol — при низькій прихильності. Критично: ≥7-10 днів без
+  опіоїдів перед початком (precipitated withdrawal).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_drugs_batch2
+draft_revision: 1

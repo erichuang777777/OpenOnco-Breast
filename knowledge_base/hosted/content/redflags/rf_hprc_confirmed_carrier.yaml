@@ -1,0 +1,87 @@
+id: RF-HPRC-CONFIRMED-CARRIER
+definition: >-
+  Confirmed germline pathogenic / likely-pathogenic variant in the MET
+  proto-oncogene — Hereditary Papillary Renal Cancer (HPRC), autosomal
+  dominant type-1-papillary RCC predisposition. Patient has had germline
+  MET testing returned positive; the pedigree-suspicion question is
+  settled. No current personal cancer diagnosis in the carrier being
+  assessed. Mandates structured renal surveillance with annual
+  abdominal MRI from age 30 (or 10 years before youngest family RCC).
+  HPRC tumors are typically bilateral, multifocal, indolent type-1
+  papillary — less aggressive than HLRCC (FH-driven type-2 papillary) —
+  enabling active surveillance for sub-3-cm lesions and nephron-sparing
+  surgery as the dominant interventional strategy. Prevention-persona
+  RedFlag (§20, v0.2-B confirmed-carrier surveillance pathway —
+  distinct from RF-HPRC-FAMILY-HISTORY-SUSPICION which fires before
+  testing).
+definition_ua: >-
+  Підтверджений гермінативний патогенний / ймовірно-патогенний варіант у
+  гені MET — Hereditary Papillary Renal Cancer (HPRC), autosomal
+  dominant type-1-papillary RCC predisposition. Пацієнт пройшов germline
+  MET-тестування з позитивним результатом; питання родовідної підозри
+  вирішене. Поточний особистий діагноз раку відсутній. Mandates
+  структуроване renal surveillance з annual abdominal MRI з 30 років
+  (або 10 років до наймолодшого family RCC). HPRC пухлини зазвичай
+  bilateral, multifocal, indolent type-1 papillary — менш агресивні ніж
+  HLRCC — дозволяють active surveillance для sub-3-cm lesions та
+  nephron-sparing surgery. Prevention-persona RedFlag (§20, v0.2-B
+  шлях спостереження підтверджених носіїв).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "germline_met_pathogenic_variant_confirmed"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+risk_category: genetic
+
+# HPRC-spectrum: bilateral / multifocal type-1 papillary RCC.
+relevant_diseases:
+  - DIS-RCC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.2-B confirmed-carrier surveillance pathway — HPRC / MET. Fires on
+  documented germline MET pathogenic variant positivity. Engine routes
+  to PreventionPlan recommending:
+    (a) IND-HPRC-CARRIER-SURVEILLANCE (standard) — annual abdominal
+        MRI from age 30 (or 10 years before youngest family RCC);
+        nephron-sparing surgery threshold ≥3 cm; active surveillance
+        permissible for smaller lesions (HPRC-RCC less aggressive than
+        HLRCC type-2-papillary).
+    (b) IND-HPRC-CARRIER-INTENSIFIED (aggressive) — earlier surveillance
+        initiation + lower surgical threshold for atypical / rapidly
+        growing lesions.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption. Source-set TODO: dedicated HPRC surveillance source —
+  Schmidt et al. JNCI; Linehan / Marston Linehan group recommendations
+  — v0.2-B authoring backlog new SRC entities.
+
+  Clinical features of confirmed MET carriers (Schmidt et al. 1997; NCI
+  Urologic Oncology Branch experience):
+    - Bilateral, multifocal type-1 papillary RCC; lifetime risk
+      approaches 100% with extended follow-up
+    - Indolent biology — many tumors enlarge slowly; metastatic
+      potential lower than HLRCC type-2-papillary
+    - Surveillance modality preference: MRI (radiation-sparing for
+      lifelong cadence) > contrast-enhanced CT
+    - Surgical strategy: nephron-sparing partial nephrectomy for
+      lesions ≥3 cm; enucleation often feasible given lesion biology;
+      active surveillance acceptable for sub-3-cm lesions in shared-
+      decision-making
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02b_confirmed_carriers_additional
+draft_revision: 1

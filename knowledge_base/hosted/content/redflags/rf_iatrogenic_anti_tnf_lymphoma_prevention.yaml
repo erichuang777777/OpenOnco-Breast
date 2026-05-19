@@ -1,0 +1,94 @@
+id: RF-IATROGENIC-ANTI-TNF-LYMPHOMA-PREVENTION
+definition: >-
+  Chronic anti-TNF biologic exposure ≥3 years in pediatric, adolescent,
+  or young-adult inflammatory bowel disease (IBD) — infliximab,
+  adalimumab, certolizumab pegol, golimumab. Modest lymphoma signal:
+  most population-based analyses (e.g., DOLCE, Danish nationwide cohort)
+  show small absolute-risk excess, dominated by NOT-additive signal
+  with concomitant thiopurine (azathioprine / 6-MP) — the most-reported
+  rare hepatosplenic T-cell lymphoma (HSTCL) cases occur in young male
+  IBD patients on COMBINATION anti-TNF + thiopurine ≥1-2 years, not
+  anti-TNF monotherapy. FDA Boxed Warning for anti-TNF + thiopurine
+  combination in pediatric / young-adult IBD specifically calls out
+  HSTCL risk. Anti-TNF monotherapy in adults aged ≥35: lymphoma RR
+  approximately 1.0-1.3 vs background — within statistical noise.
+  Pediatric / young-adult cohort is the higher-attention subset; in
+  adults the conversation is dominated by combination-therapy
+  considerations. Other cancer signals: modest non-melanoma skin
+  cancer (synergistic with thiopurine + UV); melanoma signal small
+  + inconsistent across studies. NCCN B-cell + ECCO + AAP / NASPGHAN
+  IBD-pediatric guidance. Prevention-persona RedFlag — emphasis on
+  EBV serology pre-initiation, B-symptom + lymphadenopathy awareness,
+  skin examination, periodic discussion of combination-therapy step-
+  down where IBD activity allows, vaccination catch-up. (§20 v0.3
+  iatrogenic pilot).
+definition_ua: >-
+  Хронічна експозиція anti-TNF biologic ≥3 років у pediatric,
+  adolescent, або young-adult IBD — infliximab, adalimumab,
+  certolizumab pegol, golimumab. Модерний lymphoma signal:
+  більшість population-based analyses (DOLCE, Danish nationwide
+  cohort) показують малий absolute-risk excess, переважно NOT-
+  additive з concomitant thiopurine (azathioprine / 6-MP) — rare
+  hepatosplenic T-cell lymphoma (HSTCL) у young male IBD patients
+  на COMBINATION anti-TNF + thiopurine ≥1-2 років, не anti-TNF
+  monotherapy. FDA Boxed Warning для combination у pediatric /
+  young-adult IBD calls out HSTCL ризик. Anti-TNF monotherapy у
+  дорослих ≥35: lymphoma RR ~1.0-1.3 — в межах statistical noise.
+  Pediatric / young-adult cohort — головна attention subset; у
+  adults conversation dominated combination-therapy considerations.
+  Інші cancer signals: модерний non-melanoma skin cancer (synergistic
+  з thiopurine + UV); melanoma signal small + inconsistent. RedFlag
+  персони prevention — EBV serology pre-initiation, B-symptom +
+  lymphadenopathy awareness, skin examination, periodic discussion
+  combination-therapy step-down де IBD activity allows.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "anti_tnf_continuous_use_ge_3y_pediatric_young_adult_ibd"
+      value: true
+    - finding: "anti_tnf_combination_thiopurine_pediatric_young_adult_ibd"
+      value: true
+    - finding: "infliximab_adalimumab_continuous_use_ge_3y_age_lt_35"
+      value: true
+
+clinical_direction: investigate
+
+severity: minor
+priority: 100
+category: other
+
+risk_category: iatrogenic
+
+relevant_diseases:
+  - DIS-DLBCL-NOS
+  - DIS-HSTCL
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-SKIN-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag for chronic anti-TNF biologic exposure
+  ≥3y in pediatric / adolescent / young-adult IBD cohort. Engine
+  routes to PreventionPlan recommending (1) EBV serology baseline
+  in young adults, (2) B-symptom + lymphadenopathy awareness, (3)
+  annual skin examination (synergistic with concomitant thiopurine
+  + UV), (4) periodic shared-decision discussion of combination-
+  therapy step-down where IBD activity allows (anti-TNF monotherapy
+  has favourable cancer signal vs combination with thiopurine),
+  (5) vaccination catch-up (HPV, HBV, influenza, pneumococcal).
+  Severity = minor — absolute attributable risk in anti-TNF
+  monotherapy is small; the meaningful signal is the combination-
+  with-thiopurine HSTCL warning specifically in pediatric / young-
+  adult cohort, addressed via combination-step-down counseling.
+  Anchored to DIS-DLBCL-NOS + DIS-HSTCL. STUB pending two-Clinical-
+  Co-Lead signoff per CHARTER §6.1 dev-mode.
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_iatrogenic_batch3
+draft_revision: 1

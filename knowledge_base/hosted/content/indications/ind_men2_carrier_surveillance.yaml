@@ -1,0 +1,163 @@
+id: IND-MEN2-CARRIER-SURVEILLANCE
+plan_track: standard
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-MTC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-MEN2-CONFIRMED-CARRIER
+
+# No drug regimen — prophylactic thyroidectomy + lifelong biochemical /
+# imaging surveillance. Surgery is a procedure (not a Regimen entity).
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    ATA-class-driven prophylactic thyroidectomy in confirmed RET carriers
+    is curative for MTC when performed before any nodal involvement —
+    near-100% biochemical cure (undetectable post-op calcitonin) with
+    appropriate timing. Pheochromocytoma surveillance with annual plasma
+    or urine metanephrines detects pre-symptomatic disease at small size
+    (amenable to cortical-sparing adrenalectomy). Primary hyperparathyroid
+    surveillance in MEN2A (PTH/Ca q1y) detects multi-glandular disease
+    at biochemical-only stage.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track confirmed-carrier surveillance pathway for RET-positive
+  carriers per ATA 2015 Revised Guidelines for the Management of MTC.
+
+  **Prophylactic thyroidectomy (the central MEN2 decision):** Timing is
+  RET-class-driven (ATA 2015 risk stratification):
+    - **HST (highest-risk):** RET M918T (MEN2B). Total thyroidectomy in
+      first year of life (before age 1, ideally first 6 months); central
+      lymph node dissection if calcitonin elevated or thyroid nodule
+      present. MTC may already be invasive by infancy.
+    - **High-risk:** RET codon 634 mutations (C634R, C634Y, C634W, etc.;
+      classic MEN2A). Total thyroidectomy by age 5; central lymph node
+      dissection at surgeon discretion based on calcitonin and US.
+    - **Moderate-risk:** Other RET mutations (e.g., V804M, K666E, L790F,
+      etc.). Total thyroidectomy by age 5-10, or deferred to adulthood
+      with q1y calcitonin + neck US surveillance — shared decision with
+      family, weighted toward earlier surgery if calcitonin rising.
+
+  **Calcitonin q6mo:** Sensitive marker for residual / recurrent MTC
+  post-thyroidectomy and for emerging disease in carriers who have
+  deferred surgery (moderate-risk class). Pentagastrin / calcium-
+  stimulation tests historical (not widely available).
+
+  **Pheochromocytoma surveillance (MEN2A and MEN2B):** Plasma fractionated
+  metanephrines OR 24-hour urinary metanephrines + catecholamines q1y,
+  starting age 8 (MEN2B / high-risk MEN2A) or age 16 (moderate-risk).
+  Cross-sectional imaging (abdominal MRI or CT) at symptomatic / lab
+  signal — not routine baseline imaging.
+
+  **Primary hyperparathyroidism (MEN2A only — absent in MEN2B):** Serum
+  PTH + ionized calcium q1y starting age 8-11; surgical strategy
+  multi-glandular subtotal parathyroidectomy or total + autotransplant
+  (NOT single-adenoma excision).
+
+  **Hirschsprung concern:** RET codon 620 / 618 carriers have ~7%
+  Hirschsprung disease incidence — symptomatic-driven workup in
+  childhood (constipation, megacolon).
+
+  **MEN2B stigmata:** Mucosal neuromas (lips, tongue), corneal nerve
+  thickening, marfanoid habitus — visible in infancy if known to look
+  for; clinical recognition can prompt RET testing in absence of family
+  history.
+
+  **Cascade testing:** Mandates offer to all first-degree relatives;
+  particularly time-sensitive given pediatric thyroidectomy timing.
+
+  Per CHARTER §11 patient-autonomy framing; pediatric surgical timing
+  requires extensive family counseling.
+
+rationale_ua: >
+  Стандартний-трек confirmed-carrier surveillance per ATA 2015.
+
+  **Prophylactic тиреоїдектомія (центральне MEN2-рішення):** Timing
+  RET-class-driven:
+    - **HST:** RET M918T (MEN2B). Total thyroidectomy у перший рік життя
+      (до 1 року, ideally перші 6 місяців); central LN dissection if
+      calcitonin elevated.
+    - **High-risk:** RET codon 634 (класична MEN2A). Total thyroidectomy
+      до 5 років.
+    - **Moderate-risk:** Інші RET мутації. Total thyroidectomy до 5-10
+      років або deferred з q1y calcitonin + neck US.
+
+  **Калцитонін q6mo:** Sensitive marker для residual / recurrent MTC.
+
+  **Pheochromocytoma surveillance (MEN2A і MEN2B):** Plasma або urine
+  metanephrines q1y з 8 років (MEN2B / high-risk MEN2A) або з 16 років
+  (moderate-risk). Cross-sectional imaging при symptomatic / lab
+  signal.
+
+  **Гіперпаратиреоз (MEN2A only):** PTH + іонізований Ca q1y з 8-11
+  років; multi-glandular subtotal або total + autotransplant.
+
+  **Hirschsprung concern:** RET codon 620 / 618 — ~7%; symptomatic-
+  driven workup.
+
+  **MEN2B stigmata:** mucosal neuromas, corneal nerve thickening,
+  marfanoid habitus.
+
+  **Cascade тестування:** mandates пропонування first-degree родичам;
+  time-sensitive через pediatric surgical timing.
+
+  Per CHARTER §11 framing автономії пацієнта.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02b_confirmed_carriers_additional
+draft_revision: 1
+
+sources:
+  - source_id: SRC-ATA-THYROID-2015
+    position: supports
+    relevant_quote_paraphrase: >-
+      "RET-class-driven prophylactic thyroidectomy timing is the
+      cornerstone of MEN2 carrier management: HST class (M918T) →
+      thyroidectomy in first year, high-risk (C634) → by age 5,
+      moderate-risk → by age 5-10 or deferred with biochemical
+      surveillance. Lifelong pheochromocytoma and parathyroid
+      surveillance applies thereafter."
+  - source_id: SRC-NCCN-THYROID-2025
+    position: supports
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не deferувати prophylactic thyroidectomy у HST класі (M918T) поза перший рік життя — MTC може бути інвазивним у інфантильному віці."
+  - "Не використовувати single-adenoma parathyroidectomy у MEN2A гіперпаратиреоїді — multi-glandular hyperplasia вимагає subtotal або total + autotransplant."
+  - "Не виконувати adrenalectomy для pheochromocytoma без alpha-blockade preop (mandatory ≥7-14 days, phenoxybenzamine або doxazosin) — intra-operative crisis ризик life-threatening."
+  - "Не пропускати pediatric metanephrine surveillance у HST / high-risk класах — pheochromocytoma може presentувати в дитячому віці."
+
+do_not_do_en:
+  - "Do not defer prophylactic thyroidectomy in HST class (M918T) beyond the first year of life — MTC can be invasive in infancy."
+  - "Do not use single-adenoma parathyroidectomy in MEN2A hyperparathyroidism — multi-glandular hyperplasia requires subtotal or total + autotransplant."
+  - "Do not perform pheochromocytoma adrenalectomy without preoperative alpha-blockade (mandatory ≥7-14 days, phenoxybenzamine or doxazosin) — intraoperative crisis risk is life-threatening."
+  - "Do not skip pediatric metanephrine surveillance in HST / high-risk classes — pheochromocytoma can present in childhood."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B confirmed-carrier surveillance pathway (MEN2). Sibling — IND-MEN2-CARRIER-INTENSIFIED (aggressive plan_track)."

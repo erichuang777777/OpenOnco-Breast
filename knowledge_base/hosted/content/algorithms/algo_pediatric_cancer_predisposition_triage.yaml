@@ -1,0 +1,209 @@
+id: ALGO-PEDIATRIC-CANCER-PREDISPOSITION-TRIAGE
+applicable_to_disease: DIS-ADRENOCORTICAL-CARCINOMA
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention. Anchored to DIS-ADRENOCORTICAL-
+# CARCINOMA because childhood ACC is the most LFS-pathognomonic
+# pediatric sentinel tumor (~50-80% germline TP53 yield per Chompret
+# criterion C). DIS-OSTEOSARCOMA, DIS-RETINOBLASTOMA, DIS-WILMS,
+# DIS-CHOROID-PLEXUS-CARCINOMA all serve as alternative anchors —
+# pediatric oncology genetic-evaluation triage is cross-disease by
+# design. Reach: all pediatric-cancer-predisposition syndromes
+# (LFS / NF1 / NF2 / DICER1 / Beckwith-Wiedemann / retinoblastoma /
+# Gorlin / Constitutional Mismatch Repair Deficiency CMMRD /
+# Fanconi anemia / Bloom / xeroderma pigmentosum / ataxia-
+# telangiectasia / RASopathies / Noonan / Costello / hereditary
+# paragangliomas SDHx / VHL / MEN2 / Sotos / Perlman / Simpson-
+# Golabi-Behmel / hereditary RCC / Birt-Hogg-Dube / etc.).
+purpose: >
+  Pediatric cancer predisposition gene-panel triage based on phenotype
+  clues per Jongmans / Ripperger / Knapke / Children's Oncology Group
+  (COG) recommendations + AACR Pediatric Cancer Predisposition
+  Working Group consensus (Brodeur GM et al. Pediatric Cancer
+  Predisposition and Surveillance: An Overview, and a Tribute to
+  Alfred G. Knudson Jr. Clin Cancer Res 2017;23:e1-e5 PMID 28572261).
+
+  Pediatric oncology + clinical genetics increasingly recommend that
+  every pediatric cancer proband undergo germline-testing
+  consideration — ~10-15% of pediatric cancer probands have an
+  identifiable germline predisposition (Zhang J et al. N Engl J Med
+  2015;373:2336-2346 PMID 26580448; Gröbner SN et al. Nature
+  2018;555:321-327 PMID 29489755). This algorithm operationalizes
+  triage by phenotype clues (multiple primary tumors, sentinel
+  histologies, specific syndromic features, family-history pattern,
+  consanguinity) to select highest-yield germline panel.
+
+output_indications:
+  - IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+  - IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+  - IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+  - IND-VHL-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+  - IND-FAP-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Default routes to LFS suspicion (highest single-syndrome yield in
+# pediatric sentinel-tumor probands — Chompret criterion C). Engine
+# should select the syndrome-specific Indication matching the triage
+# outcome.
+
+decision_tree:
+  - step: 1
+    # Sentinel-tumor + multiple-primary gate (Chompret criterion C
+    # + LFS-spectrum + Gorlin-spectrum + retinoblastoma + DICER1).
+    # Highest single-step diagnostic yield.
+    evaluate:
+      any_of:
+        - condition: "Pediatric adrenocortical carcinoma (ACC) at any age — Chompret C; ~50-80% germline TP53 yield"
+        - condition: "Pediatric choroid plexus carcinoma (CPC) at any age — Chompret C; ~50% germline TP53 yield"
+        - condition: "Pediatric anaplastic rhabdomyosarcoma with embryonal-anaplastic histology — Chompret C; ~10-20% TP53 yield"
+        - condition: "Bilateral or familial retinoblastoma at any age — ~100% germline RB1 yield"
+        - condition: "Pediatric medulloblastoma SHH-subtype with anaplastic histology — germline TP53 (LFS) yield ~10-20%; PTCH1 / SUFU (Gorlin) yield ~5-15%; SMARCA4 / SMARCB1 (CMMRD / rhabdoid) ~10%"
+        - condition: "Pediatric DICER1-spectrum tumor (pleuropulmonary blastoma, ovarian Sertoli-Leydig cell tumor, multinodular goiter / thyroid neoplasms, cystic nephroma, embryonal rhabdomyosarcoma of cervix) — germline DICER1 yield variable but high in pleuropulmonary blastoma (~70%)"
+    if_true:
+      result: IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Sentinel pediatric tumor identified — order germline testing irrespective of family history. For ACC / CPC / anaplastic rhabdomyosarcoma: TP53 + comprehensive hereditary cancer panel; LFS surveillance enrollment per Toronto Protocol if positive. For retinoblastoma: RB1 single-gene panel + bilateral / familial mandates germline testing. For DICER1-spectrum tumors: DICER1 + comprehensive panel. For medulloblastoma SHH-anaplastic: TP53 + Gorlin / SMARCA4 / SMARCB1 panel. Indication routes to LI-FRAUMENI-SUSPICION as the highest-yield default; engine should route confirmed-carrier results to syndrome-specific Indication (retinoblastoma → IND-RETINOBLASTOMA-CARRIER-SURVEILLANCE pending v0.2 authoring; DICER1 → IND-DICER1-CARRIER-SURVEILLANCE pending v0.2 authoring; Gorlin → IND-GORLIN-CARRIER-SURVEILLANCE pending v0.2 authoring)."
+    if_false:
+      next_step: 2
+  - step: 2
+    # Multiple-primary-tumor gate (any pediatric proband with ≥2
+    # primary cancers).
+    evaluate:
+      all_of:
+        - condition: "Pediatric proband with ≥2 primary cancers at any age — multiple primaries are strongly suggestive of underlying predisposition"
+    if_true:
+      result: IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Multiple primary pediatric cancers — comprehensive hereditary cancer panel (TP53, BRCA1/2, MMR, NF1, RB1, DICER1, SDHx, VHL, RET, PTEN, APC, MUTYH, STK11, CDKN2A, etc.). Yield varies but expected ~20-30% germline finding in pediatric multi-primary cohorts. Indication routes to LI-FRAUMENI-SUSPICION as highest-yield single-syndrome default (TP53 carries highest pediatric multi-primary signal); engine should re-route based on panel result."
+    if_false:
+      next_step: 3
+  - step: 3
+    # Syndromic-features gate — neurocutaneous + somatic-overgrowth +
+    # immunodeficiency / pancytopenia + photosensitivity / chromosomal-
+    # instability + RASopathy features.
+    evaluate:
+      any_of:
+        - condition: "Neurocutaneous features (café-au-lait macules, neurofibromas, optic glioma, Lisch nodules, axillary / inguinal freckling) → suspect NF1"
+        - condition: "Bilateral vestibular schwannomas or meningiomas + skin neurofibromas → suspect NF2"
+        - condition: "Macrocephaly + hemihypertrophy + omphalocele + macroglossia + neonatal hypoglycemia → suspect Beckwith-Wiedemann syndrome"
+        - condition: "Aniridia + GU anomalies + intellectual disability → suspect WAGR syndrome (WT1 deletion)"
+        - condition: "Bone marrow failure + congenital anomalies (radial-ray defects, cafe-au-lait, short stature) → suspect Fanconi anemia"
+        - condition: "Short stature + sun-sensitivity + immunodeficiency → suspect Bloom syndrome"
+        - condition: "Severe photosensitivity + early skin cancers → suspect xeroderma pigmentosum"
+        - condition: "Cerebellar ataxia + immunodeficiency + telangiectasia → suspect ataxia-telangiectasia (ATM biallelic)"
+        - condition: "Marfanoid habitus + mucosal neuromas + ganglioneuromatosis → suspect MEN2B"
+        - condition: "Café-au-lait macules in a child with ≥1 pediatric cancer AND consanguineous parents → suspect Constitutional Mismatch Repair Deficiency (CMMRD — biallelic MMR)"
+        - condition: "Bilateral / multifocal pheochromocytoma + paraganglioma → suspect VHL or SDHx"
+        - condition: "RASopathy features (Noonan, Costello, CFC) in proband with hematologic malignancy → suspect RASopathy-associated JMML"
+    if_true:
+      next_step: 4
+    if_false:
+      next_step: 5
+  - step: 4
+    # Syndromic-features identified — order syndrome-specific panel.
+    evaluate:
+      all_of:
+        - condition: "Syndromic features identified at step 3 — refer to clinical genetics for syndrome-specific panel"
+    if_true:
+      result: IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Syndromic features identified — route to specific syndrome panel: NF1 (NF1 single-gene); NF2 (NF2 single-gene); Beckwith-Wiedemann (11p15 methylation + CDKN1C sequencing); WAGR (WT1 deletion); Fanconi anemia (FANC genes — 22 known); Bloom (BLM); xeroderma pigmentosum (XPA-XPG, POLH); ataxia-telangiectasia (ATM biallelic); MEN2B (RET M918T); CMMRD (biallelic MLH1 / MSH2 / MSH6 / PMS2 — pediatric panel typically includes); pheochromocytoma-paraganglioma (VHL, RET, NF1, SDHA, SDHB, SDHC, SDHD, SDHAF2, TMEM127, MAX, FH, MDH2); RASopathies (PTPN11, SOS1, RAF1, KRAS, BRAF, NRAS, MAP2K1, MAP2K2). Indication routes to LI-FRAUMENI-SUSPICION as default-routing placeholder; engine should re-route to syndrome-specific Indication once panel result available. Several syndromes lack dedicated Indications in current KB (v0.2 authoring backlog: NF1, NF2, Beckwith-Wiedemann, Fanconi anemia, etc.)."
+    if_false:
+      result: false
+      notes: "Step 4 logic inconsistency — should not be reachable. Route to next_step: 5."
+  - step: 5
+    # Family-history-pattern gate — ≥1 first-degree relative with
+    # young-onset cancer OR ≥2 second-degree relatives with cancer.
+    evaluate:
+      any_of:
+        - condition: "First-degree relative with cancer diagnosed <50, OR ≥2 second-degree relatives with cancer at any age, OR ≥1 family member with sentinel-LFS-tumor (ACC, CPC, anaplastic rhabdomyosarcoma)"
+    if_true:
+      result: IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Pediatric proband with family-history-suspicion pattern — order comprehensive hereditary cancer panel (50-80 genes). Modern pediatric oncology recommendations (COG / AACR 2017) increasingly favor comprehensive panel testing for any pediatric cancer proband, given falling cost ($250-500) and yield ~10-15% in unselected pediatric cancer cohorts. Indication routes to LI-FRAUMENI-SUSPICION as default; engine re-routes based on result."
+    if_false:
+      next_step: 6
+  - step: 6
+    # Default — any pediatric cancer proband warrants germline testing
+    # consideration per AACR 2017. Yield in unselected pediatric
+    # cancer cohorts is ~8-12% (Zhang 2015 / Gröbner 2018).
+    evaluate:
+      all_of:
+        - condition: "Pediatric cancer proband without sentinel-tumor + without multi-primary + without syndromic features + without family-history suspicion — consider comprehensive panel per AACR 2017 / COG recommendations"
+    if_true:
+      result: IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Pediatric cancer proband without specific risk features — shared-decision discussion with family re: comprehensive germline panel. Yield ~8-12% in unselected cohorts (Zhang 2015 / Gröbner 2018). Pre-test counseling addresses VUS implications + insurance / GINA / EU GDPR concerns + family-system implications. Indication routes to LI-FRAUMENI-SUSPICION as default-routing placeholder; engine should re-route based on panel result. Negative result remains clinically valuable — informs that the proband's tumor is most likely sporadic; cascade testing not indicated."
+    if_false:
+      result: false
+      notes: "Should not be reachable — all pediatric cancer probands fall through to step 6 default. Logic-inconsistency check."
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-NCCN-PEDIATRIC-SARCOMA
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding pediatric cancer
+  predisposition gene-panel triage per AACR Pediatric Cancer
+  Predisposition Working Group consensus (Brodeur GM et al.
+  Pediatric Cancer Predisposition and Surveillance: An Overview,
+  and a Tribute to Alfred G. Knudson Jr. Clin Cancer Res
+  2017;23:e1-e5 PMID 28572261; Knapke S et al. Identification,
+  Management, and Evaluation of Children With Cancer-Predisposition
+  Syndromes. American Society of Clinical Oncology Educational
+  Book 2019;39:e25-e34 PMID 31099673; Ripperger T et al.
+  Childhood cancer predisposition syndromes — A concise review and
+  recommendations by the Cancer Predisposition Working Group of
+  the Society for Pediatric Oncology and Hematology. Am J Med
+  Genet A 2017;173:1017-1037 PMID 28168833). Primary-paper Source
+  entities (SRC-BRODEUR-2017-AACR-PEDIATRIC, SRC-ZHANG-2015-NEJM-
+  PEDIATRIC-GERMLINE, SRC-GROBNER-2018-NATURE-PEDIATRIC,
+  SRC-RIPPERGER-2017-SPOH-PEDIATRIC) are v0.2-B authoring backlog.
+
+  Anchored to DIS-ADRENOCORTICAL-CARCINOMA (most pathognomonic
+  pediatric-LFS sentinel tumor — Chompret criterion C). Reach is
+  cross-disease (the algorithm's input is a pediatric cancer
+  proband — any tumor type — and the output is gene-panel
+  recommendation). Reach covers all pediatric cancer predisposition
+  syndromes: LFS (TP53), NF1, NF2, Beckwith-Wiedemann (11p15
+  methylation + CDKN1C), WAGR (WT1), retinoblastoma (RB1), DICER1,
+  Gorlin (PTCH1 / SUFU), CMMRD (biallelic MMR), Fanconi anemia
+  (FANC genes), Bloom (BLM), xeroderma pigmentosum (XPA-XPG, POLH),
+  ataxia-telangiectasia (ATM biallelic), MEN2B (RET M918T),
+  pheochromocytoma-paraganglioma syndromes (VHL, SDHx, NF1, RET,
+  TMEM127, MAX, FH, MDH2), RASopathies (PTPN11 etc.), Sotos
+  (NSD1), Perlman, Simpson-Golabi-Behmel, hereditary RCC, Birt-
+  Hogg-Dube (FLCN), and additional newer rare syndromes.
+
+  Pediatric cancer germline yield benchmarks:
+    - Unselected pediatric cancer cohorts: ~8-12% germline finding
+      (Zhang 2015 NEJM, n=1120; Gröbner 2018 Nature, n=961)
+    - Pediatric cancer with phenotype-clue triage (this algorithm):
+      yield substantially higher in triaged subgroups —
+      * Sentinel ACC / CPC: ~50-80% germline yield
+      * Bilateral / familial retinoblastoma: ~100% germline RB1
+      * Multi-primary pediatric proband: ~20-30%
+      * Syndromic-features-positive (NF1 / Beckwith-Wiedemann /
+        etc.): >90% for the syndrome-specific gene
+      * Family-history-positive pediatric proband: ~15-25%
+
+  Practical considerations:
+    - Comprehensive panel cost ~$250-500 in 2024-2026 — typically
+      reimbursed by insurance / national-health schemes for
+      pediatric cancer probands (varies by jurisdiction)
+    - Pre-test counseling for pediatric germline testing requires
+      capacity-of-consent management — minor proband, parental
+      legal surrogate, future-adult-implication discussion
+    - Post-test surveillance pathways vary by syndrome — Toronto
+      Protocol for LFS, retinoblastoma surveillance for RB1, etc.
+      Cascade testing for at-risk family members per syndrome-
+      specific algorithm
+
+  Cited from RF-PEDIATRIC-CANCER-PREDISPOSITION-SUSPICION + sentinel-
+  tumor RF-* trigger logic.
+
+  Decision-tree semantics: routes (via default-Indication placeholder
+  IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE) for any
+  pediatric cancer proband triaged for germline workup. Engine re-
+  routes to syndrome-specific Indication based on panel result.
+  Indication-coverage gaps in current KB (pediatric-syndrome-specific
+  Indications) are v0.2 authoring backlog.
+draft: true

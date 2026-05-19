@@ -1,0 +1,72 @@
+id: IND-REPRODUCTIVE-OCP-LONG-TERM-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-REPRODUCTIVE-OCP-LONG-TERM
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Patient declines structured risk-benefit counseling — receives baseline USPSTF cancer screening (cervical Pap/HPV co-test, mammography per age, no routine ovarian/endometrial surveillance). Cancer risk profile unchanged: modest breast + cervical (HPV-cofactor) increment OFFSET by substantial ovarian + endometrial protection during use."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-REPRODUCTIVE-OCP-LONG-TERM-
+  COUNSELING. Patient does not wish to engage with structured risk-
+  benefit counseling (counselors unavailable, patient preference,
+  family-planning needs override discussion) — receives baseline
+  USPSTF cancer screening + symptom-prompted evaluation pathway +
+  brief intervention at each clinical contact. Per CHARTER §11
+  patient-autonomy framing.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт не бажає engaging зі
+  structured risk-benefit counseling — отримує baseline USPSTF cancer
+  screening + symptom-prompted evaluation + brief intervention на
+  кожному клінічному контакті. Per CHARTER §11.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BREAST-2025
+    position: context
+
+do_not_do:
+  - "Не презентувати observation як риск-нейтральну — risk-benefit calculus exists."
+  - "Не пропускати cervical Pap/HPV co-test screening — HPV cofactor для OCP-cervical association."
+  - "Не пропускати mammography per USPSTF cadence — breast risk modest але real під час use."
+  - "Не призначати ovarian/endometrial surveillance — protective effect makes it unnecessary."
+
+do_not_do_en:
+  - "Do not present observation as risk-neutral — a risk-benefit calculus exists."
+  - "Do not skip cervical Pap/HPV co-test screening — HPV cofactor for OCP-cervical association."
+  - "Do not skip mammography per USPSTF cadence — breast risk is modest but real during use."
+  - "Do not order ovarian/endometrial surveillance — the protective effect makes it unnecessary."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for OCP long-term reproductive prevention. §15.2 C4 ≥2-tracks invariant."

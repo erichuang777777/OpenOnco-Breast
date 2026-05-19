@@ -1,0 +1,15 @@
+{
+  "patient_id": "SCLERODERMA-LUNG-PREV-001",
+  "comment": "55yo female with limited cutaneous systemic sclerosis (ACR/EULAR 2013 criteria: Raynaud's, sclerodactyly, abnormal nailfold capillaroscopy, anti-Scl70/topoisomerase-I+) + established interstitial lung disease (HRCT-confirmed NSIP pattern), no current lung cancer. SSc-ILD subset carries ~5-7x lung cancer SIR (anti-Scl70 further elevated). Engine routes to PreventionPlan: standard = IND-SCLERODERMA-LUNG-PREVENTION-SURVEILLANCE (HRCT chest q1-2y + PFTs q6-12mo + smoking-cessation reinforcement); alternative = IND-SCLERODERMA-LUNG-PREVENTION-OBSERVATION (rheumatology-driven, chest imaging only on symptom trigger). Validates v0.3 RF-SCLERODERMA-LUNG-PREVENTION pilot.",
+  "biomarkers": {"BIO-ANTI-SCL70": "positive"},
+  "demographics": {"age": 55, "sex": "female", "ecog": 1},
+  "findings": {
+    "systemic_sclerosis_diagnosis_confirmed": true,
+    "scleroderma_with_interstitial_lung_disease": true,
+    "anti_scl70_topoisomerase_positive": true,
+    "Limited cutaneous SSc, diagnosed 2020": true,
+    "HRCT-confirmed NSIP pattern ILD, PFTs stable on antifibrotic": true,
+    "Never smoker": true,
+    "No current lung cancer diagnosis": true
+  }
+}

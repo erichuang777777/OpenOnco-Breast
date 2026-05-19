@@ -1,0 +1,26 @@
+id: BIO-ANAL-CYTOLOGY-HSIL
+names:
+  preferred: "Anal cytology for HSIL detection (high-risk populations)"
+  ukrainian: "Анальна цитологія для виявлення HSIL (групи високого ризику)"
+  english: "Anal Pap cytology for HSIL"
+  synonyms: ["anal Pap", "anal cytology", "anal liquid-based cytology", "ANCHOR-screening cytology"]
+biomarker_type: serum_marker
+measurement:
+  method: "Liquid-based cytology of anal canal swab (transition-zone sampling); Bethesda-modified reporting (NILM, ASC-US, LSIL, ASC-H, HSIL)"
+  units: "categorical: NILM | ASC-US | LSIL | ASC-H | HSIL"
+specimen_requirements:
+  - "Dacron/flocked swab inserted blind ~5 cm into anal canal, rotated against transition zone"
+  - "Liquid preservative vial (ThinPrep / SurePath)"
+related_biomarkers: [BIO-HPV-STATUS, BIO-PAP-CYTOLOGY-CERVICAL]
+clinical_context: [screening, screening_surveillance, precursor_lesion]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: tumor_marker
+sources: [SRC-NCCN-ANAL-2025, SRC-NIH-AIDS-2024]
+last_reviewed: "2026-05-18"
+notes: >
+  STUB. ANCHOR (2022) demonstrated HSIL treatment reduces anal cancer
+  incidence in HIV+ adults ≥35 — operationalises anal cytology screening
+  for HIV+, MSM, immunosuppressed (solid-organ transplant), women with
+  HPV-driven cervical/vulvar HSIL. Abnormal cytology → high-resolution
+  anoscopy (HRA) + targeted biopsy. Universal screening not USPSTF-
+  endorsed; targeted high-risk screening per IANS / HIVMA / NCCN.

@@ -1,0 +1,12 @@
+{
+  "patient_id": "TRANSPLANT-IMMUNO-PREV-001",
+  "comment": "44yo female, status post-kidney-transplant 6 years ago on tacrolimus + mycophenolate immunosuppression. No current malignancy. Engine routes to PreventionPlan: standard = annual whole-body skin exam + EBV-DNA q3-6mo + cervical Pap + anal cytology + oral cancer awareness; alternative = general USPSTF cadence.",
+  "biomarkers": {},
+  "demographics": {"age": 44, "sex": "female", "ecog": 1},
+  "findings": {
+    "post_solid_organ_transplant_immunosuppression": true,
+    "Status post-kidney-transplant 2020": true,
+    "Chronic tacrolimus + mycophenolate immunosuppression": true,
+    "No current malignancy": true
+  }
+}

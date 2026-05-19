@@ -1,0 +1,48 @@
+id: SRC-WCRF-AICR-CUP-2018
+source_type: meta_analysis
+title: 'World Cancer Research Fund / American Institute for Cancer Research — Continuous
+  Update Project Expert Report 2018: Diet, Nutrition, Physical Activity and Cancer
+  — a Global Perspective'
+version: 'Third Expert Report (2018)'
+authors:
+- World Cancer Research Fund International
+- American Institute for Cancer Research
+url: https://www.wcrf.org/diet-activity-and-cancer/
+access_level: open_access
+currency_status: current
+current_as_of: '2018'
+evidence_tier: 1
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources
+license:
+  name: WCRF / AICR copyright — freely downloadable with attribution; redistribution requires permission
+  url: https://www.wcrf.org/about-us/copyright/
+  spdx_id: null
+attribution:
+  required: true
+  text: World Cancer Research Fund / American Institute for Cancer Research. Diet,
+    Nutrition, Physical Activity and Cancer — a Global Perspective. Continuous Update
+    Project Expert Report 2018.
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+legal_review:
+  status: pending
+  notes: WCRF freely downloads the Expert Report; redistribution of derivative content requires permission.
+relates_to_diseases: []
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Cited by prevention RFs / Indications for
+  lifestyle-attributable cancer risk: body fatness, physical activity, diet (red and
+  processed meat, alcohol, fibre, dairy, fruits and vegetables, sugar-sweetened drinks),
+  breastfeeding. WCRF Cancer Prevention Recommendations (10 goals: weight, activity,
+  whole grains/vegetables/fruits/beans, fast foods, red/processed meat, sugary drinks,
+  alcohol, supplements, breastfeed, after-cancer). Continuously updated via cancer-site
+  reports (CUP) — recheck against latest CUP report at next refresh.
+
+  '
+pages_count: 100
+references_count: 7000
+corpus_role: primary_guideline

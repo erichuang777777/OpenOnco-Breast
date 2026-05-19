@@ -1,0 +1,74 @@
+id: BMA-PTCH1-GERMLINE-NBCCS-GORLIN
+biomarker_id: BIO-PTCH1-GERMLINE
+variant_qualifier: PTCH1 germline pathogenic (NBCCS / Gorlin syndrome)
+disease_id: DIS-BCC
+escat_tier: IIA
+evidence_summary: >
+  PTCH1 germline pathogenic variants cause Nevoid Basal Cell Carcinoma
+  Syndrome (NBCCS / Gorlin syndrome) — characterized by multiple early-onset
+  basal cell carcinomas (BCCs, often hundreds over a lifetime),
+  odontogenic keratocysts of the jaw, palmar/plantar pits, macrocephaly,
+  rib + skeletal anomalies, cardiac fibroma, and ~5% lifetime risk of
+  desmoplastic-type medulloblastoma (SHH subgroup) — peak age 1-2 years.
+  Confirmed-carrier surveillance protocol (per Bree & Shah 2011 / NCCN Skin):
+  pediatric brain MRI q6mo from diagnosis through age 3 then annually
+  through age 7 (medulloblastoma); whole-body dermatology q6mo from infancy
+  for BCC detection (transition to q3mo after first BCC); jaw OPG /
+  panoramic radiograph q1y from age 8 for odontogenic keratocyst;
+  echocardiogram in infancy for cardiac fibroma; minimize ionizing
+  radiation exposure (BCCs induced by EBRT — avoid radiotherapy for
+  medulloblastoma when alternatives available). Vismodegib and sonidegib
+  (Hedgehog-pathway smoothened inhibitors) are active for locally
+  advanced/metastatic BCC and for BCC-burden reduction (off-label),
+  surveillance-triggered. ESCAT IIA.
+evidence_summary_ua: >
+  Герміногенні патогенні варіанти PTCH1 спричиняють синдром Горліна (NBCCS):
+  численні ранні БКР (часто сотні протягом життя), одонтогенні кератокісти
+  щелеп, пальмарні/плантарні pits, макроцефалія, скелетні аномалії,
+  серцева фіброма, ~5% довічний ризик десмопластичної медулобластоми
+  (SHH-група, пік 1-2 роки). Протокол нагляду: МРТ головного мозку q6 міс
+  до 3 років, потім щорічно до 7 років; дерматологія q6 міс з немовлячого
+  віку (q3 міс після першого БКР); ОПГ щелеп q1 рік з 8 років; ехокардіографія
+  в немовлячому віці; мінімізувати іонізуюче опромінення (БКР індукується
+  EBRT). Вісмодегіб / соніедгіб (Hh-інгібітори) — активні. ESCAT IIA.
+regulatory_approval:
+  fda:
+    - "vismodegib — locally advanced / metastatic BCC (FDA approved)"
+    - "sonidegib — locally advanced BCC (FDA approved)"
+  ema:
+    - "vismodegib — locally advanced / metastatic BCC (EMA approved)"
+    - "sonidegib — locally advanced BCC (EMA approved)"
+  ukraine: []
+recommended_combinations:
+  - "vismodegib 150 mg PO daily — locally advanced / metastatic BCC; off-label BCC-burden reduction in NBCCS (intolerance of recurrent surgery)"
+  - "sonidegib 200 mg PO daily — locally advanced BCC; off-label NBCCS BCC-burden reduction"
+  - "topical 5-fluorouracil / imiquimod — superficial BCC field therapy adjunct"
+  - "dermatology q3-6mo with photodynamic therapy / curettage for low-risk lesions; Mohs for high-risk sites"
+  - "oral/maxillofacial surgery follow-up for odontogenic keratocyst (recurrence-prone — marsupialization vs enucleation)"
+  - "minimize EBRT exposure (BCC induction in irradiation field is a known late effect)"
+contraindicated_monotherapy:
+  - "external-beam radiation therapy for medulloblastoma when alternatives available — induces BCCs in field (NBCCS-specific concern)"
+primary_sources:
+  - SRC-NCCN-SKIN-2025
+last_verified: "2026-05-18"
+evidence_sources: []
+actionability_review_required: true
+notes: >
+  STUB — Wave A+B germline expansion. Linked Indication: none (no Gorlin/
+  NBCCS-specific Indication exists yet). Two-Clinical-Co-Lead signoff queued.
+  PTCH1 carriers face the BCC-treatment paradox: surgical excision is gold
+  standard but cumulative scarring + functional impairment make Hedgehog-
+  pathway inhibitors attractive for diffuse disease — vismodegib drug-holiday
+  protocols (3 mo on / 3 mo off) attempt to balance efficacy with muscle
+  cramps, alopecia, dysgeusia, weight loss. SUFU germline (BMA-SUFU-GERMLINE-
+  MEDULLOBLASTOMA) is the alternate NBCCS-like locus.
+notes_ua: >
+  STUB — Wave A+B розширення. Indication: відсутня. Парадокс лікування БКР:
+  хірургічне видалення — gold standard, але кумулятивне рубцювання робить
+  Hh-інгібітори привабливими для дифузних уражень; протоколи з drug-holiday
+  (3 міс прийому / 3 міс пауза) балансують ефективність із побічними
+  ефектами (м'язові спазми, алопеція, дисгевзія).
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_bma_batch3
+draft_revision: 1
+last_reviewed: "2026-05-18"

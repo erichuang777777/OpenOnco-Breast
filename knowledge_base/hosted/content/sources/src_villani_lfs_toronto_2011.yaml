@@ -1,0 +1,56 @@
+id: SRC-VILLANI-LFS-TORONTO-2011
+source_type: cohort_study
+title: Biochemical and imaging surveillance in germline TP53 mutation carriers with
+  Li-Fraumeni syndrome — a prospective observational study (Toronto protocol)
+version: '2011'
+authors:
+- Villani A
+- Tabori U
+- Schiffman J
+- Shlien A
+- Beyene J
+- Druker H
+- Novokmet A
+- Finlay J
+- Malkin D
+journal: Lancet Oncology
+doi: 10.1016/S1470-2045(11)70119-X
+pmid: '21601526'
+url: https://pubmed.ncbi.nlm.nih.gov/21601526
+access_level: subscription_required
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 2
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources
+license:
+  name: Elsevier / Lancet Oncology (subscription)
+  spdx_id: null
+attribution:
+  required: true
+  text: Villani A et al., Lancet Oncology 2011 — Toronto Li-Fraumeni surveillance
+    protocol
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+legal_review:
+  status: pending
+  notes: Subscription publication; abstract open access.
+relates_to_diseases:
+- DIS-LI-FRAUMENI-SYNDROME
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Cited by Li-Fraumeni surveillance Indications.
+  Foundational study establishing the Toronto protocol: annual whole-body MRI + breast
+  MRI + brain MRI + biochemical screening in germline TP53 carriers. 7 of 33 surveilled
+  carriers had asymptomatic cancers detected; 100% 3-year OS in surveillance arm vs
+  21% in non-surveillance arm. Basis for current NCCN / ACMG / IARC TP53 surveillance
+  recommendations. 2016 follow-up (Villani Lancet Oncol 2016) confirmed durable survival
+  benefit at 11 years.
+
+  '
+pages_count: 11
+references_count: 35
+corpus_role: rct_publication

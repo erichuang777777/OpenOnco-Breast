@@ -1,0 +1,164 @@
+id: IND-SJOGREN-MALT-LYMPHOMA-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-HCV-MZL
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-SJOGREN-MALT-LYMPHOMA-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Rheumatology-driven observation (ESSDAI tracking and disease-
+    activity-driven Sjögren's management without scheduled lymphoma-
+    focused lab panel or imaging) detects MALT lymphoma at later stage
+    when caught only on clinical suspicion or symptom presentation.
+    Acceptable as a minimum-intensity default for patients without
+    high-risk predictors (no persistent parotid swelling, normal C4,
+    no cryoglobulinemia, no monoclonal gammopathy) — but below EULAR
+    2020 best-practice surveillance recommendation for any Sjögren's
+    patient.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-SJOGREN-MALT-LYMPHOMA-PREVENTION-
+  SURVEILLANCE. Appropriate for patients with confirmed primary
+  Sjögren's syndrome WITHOUT high-risk lymphoma-predictor features
+  who choose minimum-intensity surveillance for any of: stable mild
+  Sjögren's with low ESSDAI for >5 years and no predictors, cost /
+  access constraints (no nearby rheumatology center capable of
+  cryoglobulin testing), procedural anxiety, geographic distance, or
+  explicit preference for symptom-driven follow-up after informed-
+  consent discussion.
+
+  **Cadence:**
+    - Rheumatology follow-up per usual cadence (typically q6-12mo)
+      with ESSDAI tracking
+    - CBC + basic metabolic panel q12mo
+    - Lymphoma-focused lab workup (SPEP, cryoglobulins, C4) only when
+      triggered by clinical suspicion
+    - Imaging (parotid US, CT, etc.) only on trigger
+
+  **Trigger list for prompt lymphoma workup:**
+    - New persistent parotid or lacrimal swelling >2 weeks
+    - New palpable purpura, livedo, or vasculitic skin lesion
+    - New lymphadenopathy (>1 cm cervical or any axillary/inguinal)
+    - New splenomegaly on examination
+    - B-symptoms (fever, night sweats, unintentional weight loss >10%)
+    - New unexplained cytopenias
+    - New monoclonal protein on incidental SPEP
+
+  **Not appropriate for:**
+    - Patients with any pre-existing lymphoma-predictor (persistent
+      parotid swelling, low C4, cryoglobulinemia, palpable purpura,
+      monoclonal gammopathy)
+    - Patients with high ESSDAI (≥14) or active extraglandular
+      involvement
+    - Patients with prior salivary gland biopsy showing lymphoepithelial
+      lesions or focal lymphocyte score ≥3
+    - Patients with family history of lymphoma
+
+  Per CHARTER §11 patient-autonomy framing: low-risk Sjögren's patients
+  (no predictors, low ESSDAI) carry near-population MALT incidence in
+  short-term, so symptom-driven observation is a defensible informed-
+  consent choice. Risk of missed early lymphoma exists; patient retains
+  option to upgrade to scheduled surveillance at any future visit.
+
+  **Alarm features** route immediately to lymphoma workup (lab panel +
+  targeted imaging ± biopsy) — and if MALT or other lymphoma confirmed,
+  to the relevant treatment-persona algorithm.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до
+  IND-SJOGREN-MALT-LYMPHOMA-PREVENTION-SURVEILLANCE. Доречно для
+  пацієнтів з підтвердженим первинним Шегреном БЕЗ high-risk lymphoma-
+  предикторів, які обирають мінімальної інтенсивності спостереження з
+  причин: стабільний легкий Шегрен з низьким ESSDAI >5 років без
+  предикторів, вартість / доступ (немає поблизу rheumatology-центра з
+  cryoglobulin testing), процедурна тривога, географічна відстань.
+
+  **Частота:**
+    - Rheumatology follow-up per usual частотою (q6-12 міс) з ESSDAI
+    - CBC + базовий метаболічний панель q12 міс
+    - Lymphoma-focused лабораторний workup (SPEP, кріоглобуліни, C4)
+      лише при триггері клінічної підозри
+    - Imaging (parotid US, CT) лише на тригер
+
+  **Триггер-лист для prompt lymphoma workup:**
+    - Новий persistent привушний або слізний набряк >2 тижні
+    - Нова palpable purpura, livedo або vasculitic шкірне ураження
+    - Нова лімфаденопатія
+    - Нова спленомегалія
+    - B-симптоми
+    - Нові непояснені cytopenias
+    - Новий моноклональний протеїн на випадковій SPEP
+
+  **Не доречно для:**
+    - Пацієнтів з будь-яким lymphoma-предиктором (persistent привушний
+      набряк, низький C4, кріоглобулінемія, palpable purpura,
+      моноклональна гаммапатія)
+    - Пацієнтів з високим ESSDAI (≥14)
+    - Пацієнтів з попередньою salivary gland біопсією з lymphoepithelial
+      ураженнями або focal lymphocyte score ≥3
+    - Пацієнтів з сімейним анамнезом лімфоми
+
+  Per CHARTER §11 framing автономії пацієнта: low-risk Шегрен-пацієнти
+  несуть near-population MALT incidence у short-term, тому
+  symptom-driven observation — defensible informed-consent вибір.
+
+  **Alarm features** маршрутизують негайно до lymphoma workup.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Symptom-driven workup is the minimum acceptable surveillance for
+      low-risk Sjögren's; structured lymphoma surveillance is
+      recommended for any patient with predictor features."
+
+do_not_do:
+  - "Не використовувати цей шлях у пацієнтів з будь-яким lymphoma-предиктором — потребують structured surveillance."
+  - "Не презентувати rheumatology-only observation як еквівалент lymphoma-focused surveillance — interval-cancer ризик вищий."
+  - "Не ігнорувати alarm features (persistent parotid swelling, palpable purpura, нова лімфаденопатія) — імідіат-workup показано."
+  - "Не використовувати цей шлях у пацієнтів з високим ESSDAI або активним extraglandular involvement."
+  - "Не пропускати періодичне обговорення upgrade — Шегрен-предиктори можуть емерджувати з часом."
+
+do_not_do_en:
+  - "Do not use this pathway in patients with any lymphoma predictor — they require structured surveillance."
+  - "Do not present rheumatology-only observation as equivalent to lymphoma-focused surveillance — interval-cancer risk is higher."
+  - "Do not ignore alarm features (persistent parotid swelling, palpable purpura, new lymphadenopathy) — immediate workup indicated."
+  - "Do not use this pathway in patients with high ESSDAI or active extraglandular involvement."
+  - "Do not skip periodic re-discussion of upgrade — Sjögren's predictors can emerge over time."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — alternative-track companion for Sjögren's / MALT prevention.
+  Required for §15.2 C4 ≥2-tracks invariant. Two-Co-Lead signoff queued.

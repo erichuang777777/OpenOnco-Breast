@@ -1,0 +1,58 @@
+id: RF-LIFESTYLE-HOT-BEVERAGES-PREVENTION
+definition: >-
+  Regular consumption of very hot beverages (≥65°C / 149°F) per IARC
+  Monograph 116 (2016) — applies primarily to teas (especially traditional
+  preparation styles in regions of Iran, Turkey, China, parts of South
+  America with maté), but also coffee/water consumed at scalding
+  temperatures. IARC Group 2A (probably carcinogenic) classification —
+  associated with esophageal squamous-cell carcinoma (ESCC), particularly
+  in regions with high background ESCC incidence. Mechanism: thermal
+  injury to esophageal epithelium → chronic inflammation → field
+  carcinogenesis. Note: at typical Western coffee/tea temperatures
+  (<60°C), no association observed; coffee + tea per se are not
+  carcinogenic. Prevention-persona RedFlag (§20 v0.3 lifestyle pilot).
+definition_ua: >-
+  Регулярне споживання дуже гарячих напоїв (≥65°C) per IARC Monograph 116
+  (2016) — застосовується переважно до чаїв (особливо традиційні preparation
+  styles у регіонах Ірану, Туреччини, Китаю, частинах Південної Америки з
+  matе), а також кофе/води at scalding temperatures. IARC Group 2A
+  (probably carcinogenic) — асоційовано з esophageal squamous-cell
+  carcinoma (ESCC), особливо в регіонах з high background ESCC incidence.
+  Mechanism: thermal injury до esophageal epithelium → chronic inflammation →
+  field carcinogenesis. Примітка: при типових Western температурах кофе/чаю
+  (<60°C), no association observed.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "very_hot_beverage_consumption_ge_65c"
+      value: true
+    - finding: "traditional_tea_culture_high_temperature"
+      value: true
+    - finding: "scalding_beverage_intake_regular"
+      value: true
+
+clinical_direction: investigate
+
+severity: minor
+priority: 110
+category: other
+
+risk_category: lifestyle
+
+relevant_diseases:
+  - DIS-ESOPHAGEAL
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-ESOPHAGEAL-2025
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for very hot beverage consumption ≥65°C. IARC Group 2A classification (2016). Most relevant in regions with high background ESCC incidence (Iran, Turkey, China, parts of South America); effect size modest in low-incidence regions. Engine routes to PreventionPlan recommending beverage-temperature counseling. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1

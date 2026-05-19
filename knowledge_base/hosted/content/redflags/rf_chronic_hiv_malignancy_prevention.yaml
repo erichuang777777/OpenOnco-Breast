@@ -1,0 +1,74 @@
+id: RF-CHRONIC-HIV-MALIGNANCY-PREVENTION
+definition: >-
+  HIV infection (positive serology) in an individual without a current
+  AIDS-defining or HIV-associated malignancy diagnosis. IARC Group 1
+  carcinogen (HIV-1) — drives elevated risk of Kaposi sarcoma (KS),
+  non-Hodgkin lymphoma (especially DLBCL, Burkitt, PCNSL), invasive
+  cervical cancer (AIDS-defining trio), and elevated incidence of
+  Hodgkin lymphoma, anal cancer, HCC (via HCV co-infection), and
+  oropharyngeal cancer. Effective antiretroviral therapy (ART) with
+  durable virological suppression substantially reduces all AIDS-defining
+  malignancy incidence and modestly reduces non-AIDS-defining cancer
+  incidence. Prevention-persona RedFlag (§20 ratification 2026-05-18).
+definition_ua: >-
+  ВІЛ-інфекція (позитивна серологія) у пацієнта без поточного діагнозу
+  AIDS-визначальної або ВІЛ-асоційованої малігнізації. ВІЛ-1 —
+  канцероген IARC Group 1, що зумовлює підвищений ризик саркоми Капоші
+  (КС), неходжкінської лімфоми (особливо DLBCL, лімфома Беркітта,
+  ПЦНС-лімфома), інвазивного раку шийки матки (AIDS-визначальна тріада),
+  а також підвищену захворюваність на лімфому Ходжкіна, анальний рак,
+  ГЦК (через коінфекцію HCV) і орофарингеальний рак. Ефективна
+  антиретровірусна терапія (АРТ) з тривалою вірологічною супресією
+  суттєво знижує захворюваність усіма AIDS-визначальними злоякісними
+  пухлинами та помірно знижує захворюваність не-AIDS-визначальними
+  пухлинами. RedFlag персони prevention (ратифікація §20, 2026-05-18).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "hiv_status"
+      value: "positive"
+    - finding: "hiv_serology"
+      value: "positive"
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: infectious
+
+# Anchor to DIS-DLBCL-NOS (HIV-associated NHL is the most common
+# AIDS-defining malignancy in the modern ART era). KS and HIV-related
+# cervical cancer noted in rationale; KS lacks dedicated Disease entity
+# in KB (v0.2-A backlog).
+relevant_diseases:
+  - DIS-DLBCL-NOS
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NIH-AIDS-2024
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag for HIV-associated cancer prevention.
+  Fires on positive HIV serology in patient without AIDS-defining or
+  HIV-associated malignancy. Engine routes to PreventionPlan recommending
+  durable ART suppression (per IND-CHRONIC-HIV-PREVENTION-ART) + cancer
+  screening cadence (annual anal cytology in MSM/HIV+; q3-yearly
+  cervical Pap in WLHIV; opportunistic Kaposi/oral hairy leukoplakia
+  visual screening). STUB pending Co-Lead review.
+
+  Cancer scope: anchored to DIS-DLBCL-NOS as the canonical HIV-associated
+  NHL. KS, cervical, anal, Hodgkin, HCC are also HIV-associated; covered
+  via screening recommendations in the ART indication rationale rather
+  than discrete Disease anchors (until DIS-KAPOSI etc. land in v0.2-A
+  authoring backlog).
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1

@@ -1,0 +1,53 @@
+id: BMA-CTDNA-MRD-POST-TREATMENT-BREAST
+biomarker_id: BIO-CTDNA-MRD-POST-TREATMENT
+variant_qualifier: ctDNA minimal residual disease — post-neoadjuvant / post-adjuvant breast
+disease_id: DIS-BREAST
+escat_tier: IIIA
+evidence_summary: >
+  Personalized tumor-informed ctDNA assays detect MRD before clinical/
+  radiographic recurrence in early breast cancer (median lead time 8-18
+  months). Garcia-Murillas 2019 (TNBC + HR+), Magbanua 2021 (I-SPY2),
+  cTRAK-TN (Turner 2023 — preinvasion intervention with pembrolizumab in
+  TNBC MRD+ failed). c-TRAK-TN-2, ZEST (Bidard 2024 — niraparib in MRD+
+  HER2-neg) accruing. ESMO Breast Metastatic 2024 notes ctDNA-MRD as
+  emerging risk-stratification, NOT a treatment-escalation trigger
+  outside trials. ESCAT IIIA.
+regulatory_approval:
+  fda:
+  - Signatera — Breakthrough Designation in breast cancer MRD;
+    not yet a guideline-endorsed treatment trigger
+  ema: []
+  ukraine: []
+recommended_combinations: []
+contraindicated_monotherapy: []
+primary_sources:
+- SRC-NCCN-BREAST-2025
+- SRC-ESMO-BREAST-METASTATIC-2024
+last_verified: '2026-05-18'
+evidence_sources:
+- source: SRC-NCCN-BREAST-2025
+  level: Category 2B
+  evidence_lane: molecular_evidence_option
+  note: >
+    NCCN Breast v3.2025 surveillance section acknowledges emerging ctDNA-MRD
+    role; "insufficient evidence for routine clinical use" — research / shared
+    decision only.
+- source: SRC-CIVIC
+  level: D
+  evidence_ids: []
+  evidence_lane: trial_research_option
+  note: >
+    No CIViC-tracked breast-specific MRD record yet. Placeholder pending
+    ZEST / DARE / LEADER readouts.
+actionability_review_required: true
+indications: []
+notes: |
+  STUB pending two-Co-Lead signoff. cTRAK-TN demonstrated that early
+  pembrolizumab in MRD-positive TNBC did NOT prevent recurrence — caution
+  against assuming MRD-guided escalation improves OS in breast. Engine must
+  not surface MRD-positive as a treatment-intensification trigger outside
+  trial enrolment (CHARTER §8.3).
+
+  No post-treatment breast Indication entity yet ingests ctDNA-MRD status
+  (future IND-BREAST-POST-PRIMARY-CTDNA-MRD-MONITORING). Indications: []
+  intentional.

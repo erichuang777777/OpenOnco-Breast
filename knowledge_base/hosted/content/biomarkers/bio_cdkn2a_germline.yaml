@@ -1,0 +1,24 @@
+id: BIO-CDKN2A-GERMLINE
+names:
+  preferred: "CDKN2A germline pathogenic variant"
+  ukrainian: "CDKN2A germline патогенний варіант"
+  english: "CDKN2A germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: CDKN2A
+  gene_hugo_id: HGNC:1787
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources:
+  - SRC-NCCN-MELANOMA-2025
+  - SRC-NCCN-PANCREATIC-2025
+last_reviewed: "2026-05-18"
+notes: "CDKN2A germline — drives Familial Atypical Multiple Mole Melanoma syndrome (FAMMM). Cutaneous melanoma lifetime risk ~50-70%; pancreatic ductal adenocarcinoma ~15-20%. Encodes p16INK4a + p14ARF; both isoforms may be affected. NCCN: annual dermatologic exam + pancreatic surveillance (MRI/EUS) per CAPS consortium. STUB pending two-Co-Lead signoff."
+notes_ua: "CDKN2A germline — драйвер FAMMM (Familial Atypical Multiple Mole Melanoma) + ризик підшлункової залози."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v04_germline_batch2
+draft_revision: 1

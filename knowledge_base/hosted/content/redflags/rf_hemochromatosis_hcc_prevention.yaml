@@ -1,0 +1,135 @@
+id: RF-HEMOCHROMATOSIS-HCC-PREVENTION
+definition: >-
+  Hereditary hemochromatosis (HFE-related; C282Y homozygous genotype
+  primarily, compound C282Y/H63D heterozygous less common) with
+  biochemical or histologic iron overload in an individual without a
+  current HCC diagnosis. Strongest genetic HCC risk factor among
+  metabolic-genetic liver diseases: relative risk ~20-200x in
+  cirrhotic HFE C282Y homozygotes (population baseline rare; absolute
+  HCC incidence ~3-5%/year in cirrhotic HH cohorts). Non-cirrhotic
+  HFE-positive iron-overload patients carry near-baseline HCC risk;
+  the cirrhotic transition is the inflection point. Phlebotomy
+  treatment to deplete iron stores (target ferritin <50 ng/mL,
+  transferrin saturation <50%) arrests further iron-driven hepatic
+  injury but does not reverse established cirrhosis or eliminate
+  HCC risk in cirrhotic patients. AASLD HCC surveillance with US ±
+  AFP q6mo recommended in HH-associated cirrhosis. Prevention-persona
+  RedFlag (§20 ratification 2026-05-18, v0.3 chronic-condition pilot).
+definition_ua: >-
+  Спадковий гемохроматоз (HFE-пов'язаний; C282Y гомозиготний генотип
+  переважно, compound C282Y/H63D гетерозиготний рідше) з біохімічним
+  або гістологічним надлишком заліза у пацієнта без поточного діагнозу
+  HCC. Найсильніший генетичний HCC фактор ризику серед метаболічно-
+  генетичних захворювань печінки: відносний ризик ~20-200x у cirrhotic
+  HFE C282Y гомозиготів (популяційний baseline рідкий; абсолютна HCC
+  incidence ~3-5%/рік у cirrhotic HH когортах). Non-cirrhotic
+  HFE-позитивні пацієнти з iron-overload несуть near-baseline HCC
+  ризик; cirrhotic transition — inflection point. Лікування
+  флеботомією для виснаження запасів заліза (target ferritin
+  <50 нг/мл, transferrin saturation <50%) зупиняє подальшу iron-driven
+  hepatic injury, але не реверсує встановлену cirrhosis або елімінує
+  HCC ризик у cirrhotic пацієнтів. AASLD HCC surveillance з US ± AFP
+  q6 міс рекомендована в HH-асоційованому цирозі. Prevention-persona
+  RedFlag (ратифікація §20, 2026-05-18, v0.3 пілот chronic-condition).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "hfe_c282y_homozygous"
+      value: true
+    - finding: "hfe_c282y_h63d_compound_heterozygous_with_iron_overload"
+      value: true
+    - finding: "hemochromatosis_with_cirrhosis"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: chronic_condition
+
+# Cancer being prevented: HCC in cirrhotic hereditary hemochromatosis.
+# DIS-HCC is the primary anchor.
+relevant_diseases:
+  - DIS-HCC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-AASLD-HCC-2023
+  - SRC-NCCN-HCC-2025
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.3 chronic-condition prevention pilot — hereditary hemochromatosis
+  (HFE) / HCC. Prevention-persona RedFlag (CHARTER §3 amended 2026-05-18
+  Path A, HCP-mediated). Fires when patient profile shows confirmed
+  HFE-related hemochromatosis (especially C282Y homozygous with iron
+  overload) AND no confirmed HCC. Engine routes to PreventionPlan with
+  2 tracks: phlebotomy treatment + ferritin/transferrin saturation
+  monitoring + AASLD HCC surveillance if cirrhotic
+  (IND-HEMOCHROMATOSIS-HCC-PREVENTION-SURVEILLANCE) as standard;
+  hepatology-driven observation in non-cirrhotic iron-controlled HH
+  (IND-HEMOCHROMATOSIS-HCC-PREVENTION-OBSERVATION) as alternative.
+
+  Evidence base:
+    - **HCC risk in cirrhotic HH:** Niederau et al. NEJM 1996 (cohort
+      251 HH patients, HCC SIR 219 in cirrhotic subset vs population);
+      Elmberg et al. Gastroenterology 2003 (Swedish national cohort,
+      SIR 21 overall, dominated by cirrhotic subset); contemporary
+      studies confirm ~3-5%/year cirrhotic HCC incidence — exceeding
+      AASLD 1.5%/year surveillance threshold.
+    - **HCC risk in non-cirrhotic HH:** very low absolute incidence
+      in iron-controlled non-cirrhotic patients per multiple cohorts
+      — does not meet AASLD surveillance threshold.
+    - **Phlebotomy benefit:** Niederau 1985+1996 long-term cohort —
+      phlebotomy-treated non-cirrhotic patients normalize life
+      expectancy; cirrhotic patients have markedly improved survival
+      but residual HCC risk persists.
+    - **AASLD 2023 / EASL 2022 / NCCN-HCC 2025:** HCC surveillance
+      with US ± AFP q6mo for any cirrhosis from HH; not recommended
+      for non-cirrhotic HFE-positive patients.
+
+  Phlebotomy regimen typically 500 mL weekly to biweekly during
+  induction (until ferritin <50 ng/mL), then maintenance phlebotomy
+  q2-4mo to keep ferritin 50-100 ng/mL. Iron chelation (deferasirox,
+  deferoxamine) for patients unable to undergo phlebotomy (cardiac
+  failure, severe anemia from concurrent disease).
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption.
+notes_ua: >
+  v0.3 пілот prevention chronic-condition — спадковий гемохроматоз
+  (HFE) / HCC. Prevention-persona RedFlag (CHARTER §3 поправка
+  2026-05-18). Спрацьовує коли профіль пацієнта показує підтверджений
+  HFE-пов'язаний гемохроматоз (особливо C282Y гомозиготний з
+  iron-overload) ТА відсутній підтверджений HCC. Engine маршрутизує
+  до PreventionPlan з 2 треками: phlebotomy treatment + ferritin/
+  transferrin saturation моніторинг + AASLD HCC surveillance якщо
+  cirrhotic (IND-HEMOCHROMATOSIS-HCC-PREVENTION-SURVEILLANCE) як
+  стандарт; hepatology-driven спостереження у non-cirrhotic
+  iron-controlled HH (IND-HEMOCHROMATOSIS-HCC-PREVENTION-OBSERVATION)
+  як альтернатива.
+
+  Доказова база: HCC SIR ~21-200 у cirrhotic HH (Niederau NEJM 1996;
+  Elmberg Gastroenterology 2003); ~3-5%/рік absolute incidence —
+  перевищує AASLD 1.5%/рік. Non-cirrhotic iron-controlled — дуже
+  низький абсолютний ризик. Phlebotomy нормалізує тривалість життя
+  для non-cirrhotic; для cirrhotic — поліпшує виживання, але
+  залишковий HCC ризик persistent.
+
+  Phlebotomy режим: 500 мл щотижнево-біwknownight індукція (до
+  ferritin <50 нг/мл), далі maintenance q2-4 міс (ferritin 50-100
+  нг/мл). Iron chelation для пацієнтів, що не можуть phlebotomy.
+
+  Це STUB, очікує підпис двох Clinical Co-Lead за §6.1 dev-mode
+  exemption.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+draft: true

@@ -1,0 +1,37 @@
+id: RF-OCC-VINYL-CHLORIDE-MALIGNANCY-PREVENTION
+definition: >-
+  Documented occupational vinyl chloride monomer (VCM) exposure — historically
+  in PVC manufacturing, pre-1974 regulations. IARC Group 1 carcinogen —
+  pathognomonic for hepatic angiosarcoma (~RR ~100); also implicated in HCC,
+  brain tumors, lung. Pre-regulation cohort still at residual risk decades
+  post-exposure cessation. Prevention-persona RedFlag (§20 v0.3 occupational).
+definition_ua: >-
+  Задокументована occupational vinyl chloride monomer (VCM) exposure — pre-1974
+  PVC manufacturing. IARC Group 1 канцероген — патогномонічний для hepatic
+  angiosarcoma; також HCC, brain tumors, lung.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "occupational_vinyl_chloride_exposure_documented"
+      value: true
+    - finding: "occupational_pvc_manufacturing_pre_regulation"
+      value: true
+
+clinical_direction: investigate
+severity: major
+priority: 100
+category: other
+risk_category: occupational
+
+relevant_diseases: [DIS-HCC]
+shifts_algorithm: []
+sources: [SRC-AASLD-HCC-2023, SRC-NCCN-BCELL-2025]
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for vinyl chloride → hepatic angiosarcoma / HCC. Pre-1974 PVC workers still at residual risk. STUB pending two-Co-Lead signoff."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_completion
+draft_revision: 1

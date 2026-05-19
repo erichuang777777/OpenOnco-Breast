@@ -1,0 +1,63 @@
+id: SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+source_type: guideline
+title: 'NCCN Clinical Practice Guidelines in Oncology: Genetic/Familial High-Risk
+  Assessment: Breast, Ovarian, and Pancreatic'
+version: v.3.2025 [VERIFY]
+authors:
+- National Comprehensive Cancer Network
+url: https://www.nccn.org/guidelines/guidelines-detail?category=2&id=1503
+access_level: registered_free
+currency_status: current
+superseded_by: null
+current_as_of: '2025'
+evidence_tier: 1
+hosting_mode: referenced
+hosting_justification: null
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v02_prevention_authoring
+license:
+  name: NCCN proprietary (no redistribution)
+  url: https://www.nccn.org/permissions
+  spdx_id: null
+attribution:
+  required: true
+  text: 'Referenced from NCCN Clinical Practice Guidelines in Oncology (NCCN Guidelines®)
+    for Genetic/Familial High-Risk Assessment: Breast, Ovarian, and Pancreatic V.3.2025.
+    © National Comprehensive Cancer Network, Inc.'
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+sharealike_required: false
+known_restrictions:
+- No hosting of content; only paraphrase + link per SOURCE_INGESTION_SPEC §1.2
+- NCCN actively enforces copyright; no tables / flowcharts / screenshots
+- NCCN Genetic/Familial sub-license posture may differ from NCCN-Treatment sub-license
+  — escalated for legal review per docs/plans/openonco_prevention_scope_2026-05-18-1500.md
+  open question #7
+legal_review:
+  status: escalated
+  reviewer: null
+  date: null
+  notes: 'ESCALATED: NCCN Genetic/Familial Guidelines sub-license terms may differ
+    from the NCCN-Treatment sub-license that SRC-NCCN-BCELL-2025 was reviewed under.
+    Flag for orchestrator per scope-proposal Q7. Mirror BCELL-2025 license block as
+    interim posture until legal confirms.'
+relates_to_diseases: []
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. Cited by prevention RFs and Indications (HBOC
+  / BRCA1/BRCA2 / PALB2 / Lynch-overlap ovarian / hereditary pancreatic surveillance
+  / risk-reducing salpingo-oophorectomy / risk-reducing mastectomy / breast-MRI surveillance)
+  in the v0.2-B hereditary cancer pilot. NCCN Genetic/Familial High-Risk Assessment:
+  Breast, Ovarian, and Pancreatic covers panel-testing criteria, germline variant
+  interpretation, age-adjusted surveillance, and risk-reduction options.
+
+  Version v.3.2025 cited per task assumption; maintainers to confirm current released
+  version as of last_verified date.
+
+  '
+pages_count: 270
+references_count: 650
+corpus_role: primary_guideline

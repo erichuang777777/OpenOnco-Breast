@@ -1,0 +1,92 @@
+id: IND-CHRONIC-HCV-HBV-COINFECTION-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-HCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-CHRONIC-HCV-HBV-COINFECTION-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Primary endpoint: intensified HCC-surveillance compliance (US + AFP
+    q4-6mo). Coinfection without antiviral carries highest documented
+    HCC risk in non-cirrhotic adults; surveillance does NOT reduce
+    incidence but improves early-stage detection (resectable / curable
+    disease).
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+  - TEST-LFT
+  - TEST-HBV-SEROLOGY
+  - TEST-FIB4
+desired_tests:
+  - TEST-LDH
+
+rationale: >
+  Alternative-track companion to
+  IND-CHRONIC-HCV-HBV-COINFECTION-PREVENTION-COMBINATION-ANTIVIRAL.
+  Patient with HCV + HBV coinfection who declines combination
+  antiviral — for any reason (drug intolerance, prior failure,
+  preference, decompensated cirrhosis requiring hepatology-led
+  pathway, access barrier) — is offered intensified HCC surveillance
+  per AASLD-modified protocol: US + AFP every 4-6 months (more
+  frequent than mono-infection q6mo cadence).
+
+  Patient remains at highest documented HCC risk among non-cirrhotic
+  adults; surveillance does not reduce incidence but improves likelihood
+  of early-stage detection. Per CHARTER §11 patient-autonomy framing.
+
+  Strongly recommend hepatology referral for ongoing review — patient
+  preferences may shift over time.
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до
+  IND-CHRONIC-HCV-HBV-COINFECTION-PREVENTION-COMBINATION-ANTIVIRAL.
+  Пацієнт з коінфекцією HCV + HBV, який відмовляється від
+  комбінованої противірусної — з будь-якої причини (непереносимість
+  препаратів, попередня невдача, вибір, декомпенсований цироз з
+  потребою гепатологічно-керованого шляху, бар'єр доступу) —
+  отримує інтенсифікований HCC-surveillance за AASLD-модифікованим
+  протоколом: УЗД + AFP кожні 4-6 міс.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-AASLD-HCC-2023
+    position: supports
+  - source_id: SRC-AASLD-HBV-2024
+    position: context
+
+do_not_do:
+  - "Не пропускати інтенсифікований q4-6mo HCC surveillance — коінфекція є найвищим ризиком ГЦК у нециротичних дорослих."
+  - "Не вважати observation еквівалентом combination antiviral — incidence-reduction відсутній."
+
+do_not_do_en:
+  - "Do not skip intensified q4-6mo HCC surveillance — coinfection is the highest HCC risk in non-cirrhotic adults."
+  - "Do not consider observation equivalent to combination antiviral — incidence-reduction is absent."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — alternative-track companion for HCV+HBV coinfection prevention. §15.2 C4 ≥2-tracks invariant compliance.

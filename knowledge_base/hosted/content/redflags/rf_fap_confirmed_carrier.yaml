@@ -1,0 +1,42 @@
+id: RF-FAP-CONFIRMED-CARRIER
+definition: >-
+  Patient has a confirmed germline APC pathogenic variant. Mandates structured
+  colorectal + upper-GI surveillance + prophylactic colectomy timing decision.
+  Confirmed-carrier RedFlag (§20 v0.2-B).
+definition_ua: >-
+  Пацієнт має підтверджений germline APC патогенний варіант. Mandates
+  колоректальне + upper-GI спостереження + рішення про прорпрофілактичну
+  колектомію.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "germline_apc_pathogenic_variant_confirmed"
+      value: true
+
+clinical_direction: investigate
+
+severity: critical
+priority: 90
+category: other
+risk_category: genetic
+
+relevant_diseases:
+  - DIS-CRC
+  - DIS-PDAC
+  - DIS-GASTRIC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-ESMO-CRC-2024
+  - SRC-ASCO-ACMG-LYNCH-2014
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona confirmed-carrier RedFlag for FAP. Severity=critical because untreated classic FAP has ~100% lifetime CRC risk by age 40 — prophylactic colectomy is curative and time-sensitive."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_carrier_completion
+draft_revision: 1

@@ -1,0 +1,127 @@
+id: DRUG-CLARITHROMYCIN
+names:
+  preferred: "Clarithromycin"
+  ukrainian: "Кларитроміцин"
+  english: "Clarithromycin"
+  brand_names:
+    - "Biaxin"
+    - "Klacid"
+    - "Klabax"
+atc_code: J01FA09
+rxnorm_id: "21212"
+drug_class: "Semi-synthetic 14-membered macrolide antibiotic (Gram-positive + atypicals + Helicobacter pylori)"
+mechanism: >
+  Macrolide antibiotic that binds reversibly to the 50S ribosomal subunit
+  near the peptidyl transferase center, blocking the translocation step of
+  peptide elongation and producing bacteriostatic (or bactericidal at high
+  intracellular concentrations) inhibition of protein synthesis. Spectrum:
+  Streptococcus spp., Staphylococcus spp. (methicillin-susceptible),
+  Haemophilus influenzae, Moraxella catarrhalis, atypicals (Mycoplasma
+  pneumoniae, Chlamydophila pneumoniae, Legionella), Mycobacterium avium
+  complex (MAC), and Helicobacter pylori (in combination therapy). Active
+  metabolite 14-hydroxyclarithromycin contributes to H. influenzae
+  coverage. Cancer-prevention relevance: macrolide component of H. pylori
+  triple therapy — eradication reduces gastric cancer risk in chronic
+  carriers (KSS §20 v0.2-A scope).
+
+regulatory_status:
+  fda:
+    approved: true
+    year_first_approval: 1991
+    indications_brief:
+      - "Pharyngitis / tonsillitis, acute maxillary sinusitis, acute bronchitis exacerbation, community-acquired pneumonia"
+      - "Skin / skin-structure infections"
+      - "Mycobacterium avium complex (MAC) prophylaxis and treatment (HIV / immunocompromised)"
+      - "Helicobacter pylori eradication (component of triple therapy with PPI + amoxicillin or metronidazole) — gastric-cancer-prevention pathway"
+  ema:
+    approved: true
+    year_first_approval: 1991
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Зареєстровано в Україні (Klacid, Klabax, generics). НСЗУ-програма ерадикації H. pylori на 2026-05 не передбачена — оплата з кишені пацієнта. Перевірено drlz.com.ua 2026-05-18."
+typical_dosing: >
+  H. pylori eradication (component of triple therapy, adult): 500 mg PO BID
+  × 14 days, taken with PPI (omeprazole 20 mg BID) + amoxicillin 1 g BID
+  OR metronidazole 500 mg BID (clarithromycin–metronidazole pair if
+  penicillin-allergic). Local clarithromycin resistance >15% precludes use
+  in triple therapy — switch to quadruple bismuth-based regimen. Other
+  indications (CAP, sinusitis): 500 mg PO BID × 7-14 days. MAC prophylaxis:
+  500 mg PO BID. Renal adjustment: CrCl <30 → reduce dose by 50%. Hepatic:
+  no adjustment in mild/moderate; caution in severe.
+formulations:
+  - "Immediate-release tablet 250 mg, 500 mg"
+  - "Extended-release tablet 500 mg"
+  - "Oral suspension 125 mg/5 mL, 250 mg/5 mL"
+
+absolute_contraindications:
+  - "Hypersensitivity to clarithromycin, erythromycin, or other macrolides"
+  - "History of cholestatic jaundice / hepatic dysfunction with prior clarithromycin use"
+  - "Concurrent use with cisapride, pimozide, astemizole, terfenadine, ergotamine, dihydroergotamine (QT prolongation / ergotism)"
+  - "Concurrent use with HMG-CoA reductase inhibitors metabolized by CYP3A (lovastatin, simvastatin) — myopathy / rhabdomyolysis"
+  - "Concurrent use with colchicine in renal or hepatic impairment (fatal toxicity reported)"
+  - "Congenital long QT syndrome or history of torsades de pointes"
+black_box_warnings:
+  - "Increased risk of cardiac death — observational signal from CLARICOR trial (10-year follow-up); avoid in coronary artery disease where alternatives exist"
+major_interactions:
+  - "Strong CYP3A inhibitor → increases exposure of many drugs: statins (simvastatin/lovastatin contraindicated; atorvastatin/rosuvastatin caution), tacrolimus, cyclosporine, sirolimus, midazolam, alfentanil, fentanyl, sildenafil, vardenafil, tadalafil, warfarin, rivaroxaban, apixaban, dabigatran"
+  - "Colchicine: severe toxicity (fatal in renal/hepatic impairment) — AVOID combination"
+  - "QT-prolonging drugs (ondansetron, quetiapine, methadone, ranolazine, antiarrhythmics class IA/III, fluoroquinolones, azoles): additive QT — monitor ECG, K, Mg"
+  - "Digoxin: increased levels (P-gp inhibition + altered gut flora) — monitor levels"
+  - "Warfarin: increased INR — monitor closely"
+  - "Carbamazepine, phenytoin, valproate: increased anticonvulsant levels — monitor"
+  - "P-gp substrates (digoxin, dabigatran, edoxaban): increased exposure"
+  - "Theophylline: increased levels — monitor"
+  - "Calcium channel blockers (verapamil, diltiazem, amlodipine, felodipine): hypotension, AKI signal in elderly"
+  - "Rifampin / rifabutin: reduce clarithromycin levels; clarithromycin increases rifabutin → uveitis — monitor"
+  - "Live vaccines (oral typhoid, BCG): antibacterial activity may inactivate"
+common_adverse_events:
+  - "Taste disturbance (metallic / bitter) — ~10-15%"
+  - "Diarrhea — ~5-10%"
+  - "Nausea — ~5-10%"
+  - "Abdominal pain — ~3-5%"
+  - "Dyspepsia — ~3-5%"
+  - "Headache — ~2-5%"
+  - "Vomiting — ~2-3%"
+  - "Mild transaminitis — ~2-3%"
+  - "Rash — ~2-3%"
+  - "Insomnia — ~2-3%"
+  - "Dry mouth — ~2%"
+serious_adverse_events:
+  - "QT prolongation / torsades de pointes — class warning"
+  - "Severe hepatotoxicity: hepatocellular or cholestatic — rare but can be fatal; discontinue at first sign of LFT rise or jaundice"
+  - "Severe hypersensitivity / DRESS / SJS / TEN (rare)"
+  - "Clostridioides difficile colitis"
+  - "Increased cardiac mortality signal (CLARICOR; mechanism uncertain)"
+  - "Hearing loss (typically reversible)"
+  - "Hallucinations / mania / acute psychosis (rare)"
+  - "Hypoglycemia in patients on sulfonylureas (rare)"
+  - "Severe interactions causing fatal rhabdomyolysis (statins), colchicine toxicity, ergotism"
+pharmacology:
+  half_life_hours: 5  # parent ~3-5 h (IR 500 mg BID); active metabolite 14-OH ~7-9 h
+  clearance: "Hepatic CYP3A4 + renal excretion of parent + 14-OH metabolite (~20-40% of dose)"
+  protein_binding_pct: 70
+  metabolism: "Hepatic CYP3A4 to active 14-hydroxyclarithromycin and inactive metabolites; saturable hepatic clearance at higher doses (non-linear PK); strong CYP3A4 inhibitor and P-gp inhibitor"
+sources:
+  - SRC-NCCN-BCELL-2025
+last_reviewed: "2026-05-18"
+reviewer_signoffs: []
+notes: >
+  STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. Key component of H. pylori standard
+  triple therapy (clarithromycin + PPI + amoxicillin or metronidazole)
+  used for gastric-MALT-lymphoma treatment and gastric-cancer-prevention.
+  WATCH: rising regional clarithromycin resistance in H. pylori (>15-20%
+  in many European centers including Ukraine) means triple therapy is
+  failing more often — quadruple bismuth-based therapy (PBMT) is becoming
+  first-line in high-resistance settings. Local antibiogram or community-
+  resistance data should drive regimen choice. Strong CYP3A4 inhibitor —
+  drug interactions are extensive and clinically critical (esp. statins,
+  colchicine, calcineurin inhibitors, anticoagulants). Pre-prescription
+  medication review is mandatory. Cardiac mortality signal from CLARICOR
+  is real but absolute risk small — avoid in CAD where alternatives exist.
+  Ukraine: out-of-pocket pharmacy, widely available, generics affordable.
+  Two-Co-Lead signoff queued for v0.2-A clinical review.

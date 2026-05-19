@@ -1,0 +1,149 @@
+id: RF-COWDEN-FAMILY-HISTORY-SUSPICION
+definition: >-
+  Family pedigree suggestive of Cowden syndrome / PTEN hamartoma tumor
+  syndrome (PHTS): any of (a) a family member with a known pathogenic
+  PTEN variant; (b) Cowden clinical diagnostic criteria met in the
+  proband or in a family member per revised Cleveland Clinic / NCCN
+  framework — macrocephaly (≥97th percentile, occipitofrontal
+  circumference ≥58 cm in adult women / ≥60 cm in adult men) plus
+  characteristic mucocutaneous findings (multiple trichilemmomas,
+  acral keratoses, papillomatous papules) or characteristic GI
+  hamartomatous polyps, or multi-organ involvement spanning breast
+  (early-onset / bilateral), endometrial (especially under 50),
+  follicular thyroid pathology, and characteristic CNS lesions; (c)
+  a proband or family member with Lhermitte-Duclos disease (adult-
+  onset dysplastic cerebellar gangliocytoma) — pathognomonic for
+  Cowden and a stand-alone diagnostic criterion. No current personal
+  cancer diagnosis in the individual at risk. Prevention-persona
+  RedFlag (§20 ratification 2026-05-18, v0.2-B hereditary pilot —
+  additional).
+definition_ua: >-
+  Сімейний родовід, що відповідає підозрі на синдром Cowden / PTEN
+  hamartoma tumor syndrome (PHTS): будь-яке з (а) родич з відомим
+  патогенним варіантом гена PTEN; (б) клінічні діагностичні критерії
+  Cowden, виконані у пробанда або члена сім'ї за переглянутою рамкою
+  Cleveland Clinic / NCCN — макроцефалія (≥97-го перцентиля,
+  потилично-лобова окружність ≥58 см у дорослих жінок / ≥60 см у
+  дорослих чоловіків) плюс характерні шкірно-слизові ознаки
+  (численні трихілеммоми, акральні кератози, папіломатозні папули)
+  або характерні шлунково-кишкові гамартоматозні поліпи, або
+  мульти-органне ураження, що охоплює молочну залозу (рання поява /
+  двосторонній рак), ендометрій (особливо до 50 років), фолікулярну
+  тиреоїдну патологію та характерні ЦНС-ураження; (в) пробанд або
+  родич з хворобою Lhermitte-Duclos (дорослого віку диспластична
+  гангліоцитома мозочка) — патогномонічна для Cowden і самостійний
+  діагностичний критерій. Поточний особистий діагноз раку у пацієнта
+  з ризиком відсутній. Prevention-persona RedFlag (ратифікація §20,
+  2026-05-18, v0.2-B пілот спадковості — додатковий).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "family_pten_known_pathogenic_variant"
+      value: true
+    - finding: "family_cowden_clinical_diagnostic_criteria_met"
+      value: true
+    - finding: "family_proband_lhermitte_duclos_dysplastic_gangliocytoma"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+# §20 prevention extension — drives engine routing to PreventionPlan
+# when patient carries this RF and no confirmed Disease (KSS §20.2).
+risk_category: genetic
+
+# Cowden-spectrum cancers (existing KB Disease entities):
+# - Breast cancer is the highest-incidence Cowden-spectrum cancer
+#   (lifetime risk ~85%) and drives the most concrete surveillance
+#   protocol (mammography + breast MRI from age 30). Anchored to
+#   DIS-BREAST as primary disease_id for the Cowden Indications.
+# - Endometrial carcinoma (~28% lifetime) anchored to DIS-ENDOMETRIAL.
+# - Thyroid cancer (~35% lifetime, predominantly follicular variant
+#   papillary; also follicular and Hürthle-cell) anchored to
+#   DIS-THYROID-PAPILLARY as closest available.
+# - Colorectal cancer (~9% lifetime, often with characteristic
+#   ganglioneuromatous and hyperplastic polyps) anchored to DIS-CRC.
+# - Renal cell carcinoma (~34% lifetime, predominantly papillary or
+#   chromophobe variants) anchored to DIS-RCC.
+# - Lhermitte-Duclos dysplastic cerebellar gangliocytoma is
+#   pathognomonic for Cowden but a benign / low-grade CNS lesion;
+#   not anchored to a Disease entity here. Other Cowden-spectrum
+#   lesions (macrocephaly, multinodular goiter, cutaneous hamartomas)
+#   are not independent cancers.
+relevant_diseases:
+  - DIS-BREAST
+  - DIS-ENDOMETRIAL
+  - DIS-THYROID-PAPILLARY
+  - DIS-CRC
+  - DIS-RCC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-NCCN-BREAST-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.2-B hereditary pilot — Cowden syndrome / PTEN hamartoma tumor
+  syndrome. Fires on pedigree-based suspicion of Cowden in an
+  asymptomatic individual (no current cancer diagnosis). Engine routes
+  to PreventionPlan recommending:
+    (a) genetic counseling + germline PTEN panel testing via
+        IND-COWDEN-SUSPICION-PREVENTION-GENETIC-COUNSELING (standard)
+    (b) empirical multi-organ Cowden-style surveillance for patients
+        declining testing via IND-COWDEN-SUSPICION-PREVENTION-
+        ENHANCED-SURVEILLANCE (alternative).
+
+  Triggers correspond to established Cowden suspicion criteria. The
+  Cleveland Clinic / NCCN scoring system is the most-cited clinical
+  framework: a Cleveland Clinic Cowden score that incorporates
+  pathognomonic / major / minor criteria with weighted scoring is the
+  practical tool used to recommend germline PTEN testing. Lhermitte-
+  Duclos disease — adult-onset dysplastic gangliocytoma — is
+  pathognomonic and stand-alone diagnostic.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption. Source-set TODO: NCCN Genetic/Familial High-Risk: Breast,
+  Ovarian, Pancreatic (covers Cowden surveillance) is currently
+  cited via SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025; dedicated
+  PTEN-syndromes-specific sources (Tan et al. Lifetime cancer risks
+  in PHTS, Clin Cancer Res 2012; Cowden syndrome / PHTS clinical
+  practice guidelines — Eng et al.) are v0.2-B authoring backlog
+  new SRC entities.
+
+  Confirmed PTEN carriers (germline PTEN pathogenic variant positive)
+  route to a DIFFERENT prevention pathway (carrier-confirmed structured
+  multi-organ surveillance — breast MRI + mammography from age 30,
+  endometrial sampling discussion from 35-40, annual thyroid US,
+  colonoscopy from age 35, dermatologic evaluation q1y, renal imaging
+  baseline). That pathway is v0.2-B follow-up authoring
+  (RF-COWDEN-CONFIRMED-CARRIER + IND-COWDEN-CARRIER-SURVEILLANCE).
+
+  Lifetime cancer risk in confirmed PTEN carriers (Tan et al. Clin
+  Cancer Res 2012; NCCN Genetic/Familial High-Risk Breast Ovarian
+  Pancreatic):
+    - Breast (women): ~85% lifetime; often early-onset (40s) and
+      bilateral
+    - Endometrial: ~28% lifetime; often early-onset (under 50)
+    - Thyroid (non-medullary; predominantly follicular, also
+      papillary and Hürthle-cell): ~35% lifetime; multinodular
+      goiter near-universal but mostly benign
+    - Renal (predominantly papillary RCC and chromophobe): ~34%
+      lifetime
+    - Colorectal: ~9% lifetime; ganglioneuromatous + hyperplastic
+      polyps near-universal but adenoma fraction modest
+    - Melanoma: ~6% lifetime; modest elevation, no dedicated
+      surveillance protocol vs general population
+    - Bannayan-Riley-Ruvalcaba (pediatric PHTS variant): macrocephaly,
+      lipomas, hemangiomas, intestinal hamartomatous polyposis,
+      developmental delay
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_hereditary_pilot
+draft_revision: 1

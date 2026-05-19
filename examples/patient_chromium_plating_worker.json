@@ -1,0 +1,15 @@
+{
+  "patient_id": "OCC-CHROMIUM-001",
+  "comment": "55yo male, 25 years occupational exposure as chrome-plating-line operator in a metal-finishing plant (hexavalent chromium Cr(VI) inhalation + dermal contact during electroplating bath operations). Hexavalent chromium is an IARC Group 1 carcinogen (Monograph 100C, 2012) — established lung-cancer endpoint, with paranasal-sinus + nasal cancer also elevated in heavily exposed cohorts. No current chromium-attributable malignancy. Engine routing pending RF-OCC-HEXAVALENT-CHROMIUM-PREVENTION authoring (v0.3 Wave I occupational backlog) — when that RF lands, expected fire branches: documented exposure + ≥10-years. Forward-compatible findings keys used following established occupational-RF pattern (occupational_*_documented + occupational_*_years_ge_10). Until RF lands, patient profile carries narrative findings only. Validates the v0.3 chrome-plating occupational pilot scaffolding.",
+  "biomarkers": {},
+  "demographics": {"age": 55, "sex": "male", "ecog": 0},
+  "findings": {
+    "occupational_hexavalent_chromium_exposure_documented": true,
+    "occupational_hexavalent_chromium_years_ge_10": true,
+    "Chrome-plating-line operator 1996-present (25 years), metal-finishing plant": true,
+    "Hexavalent chromium Cr(VI) inhalation + dermal contact during electroplating": true,
+    "Never-smoker — synergistic tobacco amplifier absent": true,
+    "Baseline chest CT + ENT exam (paranasal sinuses) unremarkable": true,
+    "No current chromium-attributable malignancy": true
+  }
+}

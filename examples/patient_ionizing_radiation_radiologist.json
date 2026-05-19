@@ -1,0 +1,14 @@
+{
+  "patient_id": "OCC-IONIZING-RADIATION-PREV-001",
+  "comment": "48yo female radiologic technologist, 22 years interventional-radiology suite (fluoroscopy-heavy practice, documented lifetime occupational dose tracking), no current malignancy. Engine routes to PreventionPlan: standard = IND-OCC-IONIZING-RADIATION-PREVENTION-INTENSIFIED-SURVEILLANCE (CBC q1y + thyroid US q3-5y + lifetime dose-equivalent review + ALARA counseling + standard breast screening); alternative = IND-OCC-IONIZING-RADIATION-PREVENTION-OBSERVATION. Validates v0.3 RF-OCC-IONIZING-RADIATION-PREVENTION pilot (AML/thyroid/breast/lung risk).",
+  "biomarkers": {},
+  "demographics": {"age": 48, "sex": "female", "ecog": 0},
+  "findings": {
+    "occupational_ionizing_radiation_exposure_documented": true,
+    "occupational_ionizing_radiation_years_ge_10": true,
+    "Radiologic technologist 2003-present (22 years), interventional-radiology suite": true,
+    "Dosimetry records on file, no overexposure incidents": true,
+    "Baseline CBC + thyroid US unremarkable": true,
+    "No current radiation-attributable malignancy": true
+  }
+}

@@ -1,0 +1,61 @@
+id: SRC-REDUCE-DUTASTERIDE-2010
+source_type: rct_publication
+title: Effect of dutasteride on the risk of prostate cancer (REDUCE — Reduction by
+  Dutasteride of Prostate Cancer Events)
+version: '2010'
+authors:
+- Andriole GL
+- Bostwick DG
+- Brawley OW
+- Gomella LG
+- Marberger M
+- Montorsi F
+- Pettaway CA
+- Tammela TL
+- Teloken C
+- Tindall DJ
+- Somerville MC
+- Wilson TH
+- Fowler IL
+- Rittmaster RS
+journal: New England Journal of Medicine
+doi: 10.1056/NEJMoa0908127
+pmid: '20357281'
+url: https://pubmed.ncbi.nlm.nih.gov/20357281
+access_level: subscription_required
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 1
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources_batch4
+license:
+  name: Massachusetts Medical Society / NEJM (subscription)
+  spdx_id: null
+attribution:
+  required: true
+  text: Andriole GL et al., NEJM 2010 — REDUCE dutasteride prostate cancer chemoprevention
+    RCT
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+legal_review:
+  status: pending
+  notes: Subscription publication; abstract open access.
+relates_to_diseases:
+- DIS-PROSTATE
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. REDUCE — placebo-controlled RCT in 8,231
+  men aged 50–75 with elevated PSA (2.5–10) and a recent negative biopsy, randomised
+  to dutasteride 0.5 mg/day vs placebo for 4 years. Primary result: 22.8% relative
+  reduction in biopsy-detected prostate cancer (HR 0.77, 95% CI 0.68–0.86). Similar
+  Gleason-grade signal as PCPT (small absolute excess of Gleason 8–10), prompting
+  FDA decision NOT to grant a chemoprevention indication for either 5-ARI. Cited by
+  ASCO / AUA chemoprevention discussion frameworks.
+
+  '
+pages_count: 11
+references_count: 30
+corpus_role: rct_publication

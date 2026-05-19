@@ -1,0 +1,61 @@
+id: RF-IATROGENIC-TAMOXIFEN-ENDOMETRIAL-PREVENTION
+definition: >-
+  Current or prior tamoxifen exposure ≥5 years in a woman with intact
+  uterus (no prior hysterectomy). Tamoxifen is a selective estrogen-
+  receptor modulator (SERM) — antagonist in breast tissue (therapeutic
+  for ER+ breast cancer + risk reduction) but partial agonist in
+  endometrium → ~2-7 fold increased endometrial cancer risk
+  (predominantly endometrioid; less commonly serous, carcinosarcoma).
+  Cumulative risk ~1-2% over 5y treatment; higher with longer duration
+  + post-menopausal status. Endometrial cancers in tamoxifen-exposed
+  women often more aggressive histology than spontaneous. Population
+  with hysterectomy: this RF does NOT fire (no at-risk organ). Patient
+  with ER+ breast cancer (treatment-time persona) ALSO has prevention-
+  persona considerations covered by this RF. Prevention-persona RedFlag
+  (§20 v0.3 iatrogenic pilot).
+definition_ua: >-
+  Current або prior tamoxifen exposure ≥5 років у жінки з intact uterus
+  (без prior hysterectomy). Tamoxifen — selective estrogen-receptor
+  modulator (SERM) — antagonist у breast tissue (therapeutic для ER+
+  breast cancer + risk reduction) але partial agonist в endometrium →
+  ~2-7 fold увеличений endometrial cancer risk (переважно endometrioid;
+  менш часто serous, carcinosarcoma). Cumulative risk ~1-2% за 5р
+  treatment; вищий при longer duration + post-menopausal status.
+  Endometrial cancers у tamoxifen-exposed жінок часто more aggressive
+  histology порівняно з spontaneous. Population з hysterectomy: цей RF
+  НЕ fires (no at-risk organ).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "current_tamoxifen_use_ge_5y"
+      value: true
+    - finding: "prior_tamoxifen_completion_intact_uterus"
+      value: true
+    - finding: "tamoxifen_post_menopausal_intact_uterus"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: iatrogenic
+
+relevant_diseases:
+  - DIS-ENDOMETRIAL
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BREAST-2025
+  - SRC-NCCN-UTERINE-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for tamoxifen exposure ≥5y in women with intact uterus. ~2-7 fold endometrial cancer risk. Engine routes to PreventionPlan recommending symptom-prompted evaluation (postmenopausal bleeding → immediate workup with TVUS + endometrial biopsy). Routine asymptomatic TVUS screening NOT recommended per ACOG (false-positives from tamoxifen-related subepithelial changes). STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1

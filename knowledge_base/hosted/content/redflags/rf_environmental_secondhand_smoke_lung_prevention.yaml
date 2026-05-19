@@ -1,0 +1,75 @@
+id: RF-ENVIRONMENTAL-SECONDHAND-SMOKE-LUNG-PREVENTION
+definition: >-
+  Chronic involuntary exposure to environmental tobacco smoke (ETS,
+  also "secondhand smoke" or "passive smoking") with household or
+  workplace exposure duration ≥10 years. ETS is an IARC Group 1
+  carcinogen (Monograph 83, 2004; reaffirmed multiple times) and a
+  US Surgeon General-confirmed cause of lung cancer in non-smokers
+  (2006 + 2014 reports). Meta-analyses (Hackshaw 1997; Stayner 2007):
+  adult non-smoker household ETS exposure raises lung-cancer risk by
+  ~20-25% (RR ~1.20-1.25); workplace ETS exposure similar magnitude.
+  Childhood / in-utero ETS exposure has additional long-term lung-
+  cancer + childhood-asthma signals. Mechanisms: sidestream smoke
+  contains many of the same carcinogens (PAHs, nitrosamines, aromatic
+  amines, benzene, heavy metals) as mainstream smoke; combustion-
+  particle inhalation drives oxidative + inflammatory injury;
+  KRAS/EGFR mutation enrichment in passive-smoke-exposed non-smoker
+  adenocarcinoma cohorts. Distinct from RF-LIFESTYLE-TOBACCO-CANCER-
+  PREVENTION (active personal smoking). Prevention-persona RedFlag
+  (§20 v0.3 environmental pilot, 2026-05-18). risk_category=
+  occupational is the closest enum match.
+definition_ua: >-
+  Хронічне involuntary exposure до environmental tobacco smoke (ETS,
+  secondhand smoke / passive smoking) з household або workplace
+  exposure duration ≥10 років. ETS — IARC Group 1 канцероген
+  (Monograph 83, 2004) та US Surgeon General-confirmed cause of lung
+  cancer в non-smokers (2006 + 2014 reports). Meta-analyses
+  (Hackshaw 1997; Stayner 2007): adult non-smoker household ETS
+  exposure підвищує lung-cancer risk на ~20-25% (RR ~1.20-1.25);
+  workplace ETS exposure similar magnitude. Childhood / in-utero ETS
+  exposure має additional long-term lung-cancer + childhood-asthma
+  signals. Mechanisms: sidestream smoke містить the same carcinogens
+  (PAHs, nitrosamines, aromatic amines, benzene, heavy metals) як
+  mainstream smoke. Distinct from RF-LIFESTYLE-TOBACCO-CANCER-
+  PREVENTION (active personal smoking).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "household_ets_exposure_ge_10y"
+      value: true
+    - finding: "workplace_ets_exposure_ge_10y"
+      value: true
+    - finding: "spouse_active_smoker"
+      value: true
+    - finding: "in_utero_or_childhood_ets_exposure"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+# Closest enum match — ambient environmental exposures
+risk_category: occupational
+
+# Anchor — NSCLC (most-attributable lung-cancer subtype to passive
+# smoking). Cardiovascular co-burden + childhood-respiratory effects
+# documented in rationale.
+relevant_diseases:
+  - DIS-NSCLC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-NSCLC-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for chronic ETS exposure (household / workplace ≥10y). IARC Group 1 + US Surgeon General-confirmed cause of lung cancer in non-smokers. risk_category=occupational is closest enum match — schema lacks an explicit 'environmental' enum. Distinct from active-smoking RF. Engine routes to PreventionPlan recommending exposure elimination (cohabitant smoking cessation / workplace smoke-free policy enforcement / personal mitigation) + USPSTF screening eligibility check + symptom-triggered evaluation. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_diet_environmental
+draft_revision: 1

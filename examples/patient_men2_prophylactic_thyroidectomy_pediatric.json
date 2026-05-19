@@ -1,0 +1,14 @@
+{
+  "patient_id": "MEN2-CONFIRMED-001",
+  "comment": "5yo male with confirmed germline RET M918T pathogenic variant (MEN2B / HST class — highest-risk RET classification per ATA 2015). No current personal cancer diagnosis but classification mandates prophylactic thyroidectomy ideally in infancy; presenting at age 5 represents a late/urgent surgical scenario rather than elective deliberation. Engine fires RF-MEN2-CONFIRMED-CARRIER and routes to PreventionPlan: standard = IND-MEN2-CARRIER-SURVEILLANCE (prophylactic total thyroidectomy + central neck dissection per ATA HST class urgent timing + calcitonin q6mo + plasma/urine metanephrines q1y from age 8 + screening for marfanoid + mucosal neuroma stigmata); aggressive = IND-MEN2-CARRIER-INTENSIFIED (earlier comprehensive workup with bilateral adrenalectomy planning discussion if bilateral pheo emerges, cortical-sparing surgery option). Validates v0.2-B confirmed-carrier surveillance pilot. Distinct from existing MEN2-PREV-001 (8yo pedigree-suspicion, untested).",
+  "biomarkers": {},
+  "demographics": {"age": 5, "sex": "male", "ecog": 0},
+  "findings": {
+    "germline_ret_pathogenic_variant_confirmed": true,
+    "RET M918T confirmed germline pathogenic variant (MEN2B/HST class)": true,
+    "No personal cancer diagnosis (asymptomatic carrier)": true,
+    "Baseline calcitonin pending": true,
+    "Marfanoid habitus + early mucosal neuroma stigmata noted on exam": true,
+    "Prophylactic thyroidectomy decision urgent per ATA HST-class timing": true
+  }
+}

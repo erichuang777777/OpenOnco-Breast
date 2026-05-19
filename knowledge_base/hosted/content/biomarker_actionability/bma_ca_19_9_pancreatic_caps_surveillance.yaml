@@ -1,0 +1,65 @@
+id: BMA-CA-19-9-PANCREATIC-CAPS-SURVEILLANCE
+biomarker_id: BIO-CA-19-9-PANCREATIC
+variant_qualifier: CA 19-9 — PDAC surveillance / treatment-response monitoring
+disease_id: DIS-PDAC
+escat_tier: IIIA
+evidence_summary: >
+  CA 19-9 is the principal serum biomarker for pancreatic ductal
+  adenocarcinoma (PDAC) — used for (a) prognosis at diagnosis, (b)
+  treatment response monitoring (declining CA 19-9 during neoadjuvant /
+  systemic therapy correlates with PFS / OS — Tempero 2024), and (c)
+  longitudinal surveillance in high-risk germline carriers per the
+  CAPS Consortium 2020 (CDKN2A, BRCA1/2, PALB2, ATM, STK11, MMR with
+  positive FH; PRSS1 mutation with hereditary pancreatitis). CA 19-9 is
+  NOT useful for population screening — high false-positive rate and
+  Lewis-antigen-negative non-secretors (~5-10%) lack the epitope. In the
+  CAPS surveillance pathway, rising CA 19-9 combined with EUS/MRI
+  findings triggers further workup. ESCAT IIIA.
+regulatory_approval:
+  fda:
+  - CA 19-9 immunoassays — multiple FDA-cleared (Roche, Abbott, Beckman);
+    indicated for monitoring response in pancreatic cancer (NOT screening)
+  ema: []
+  ukraine:
+  - CA 19-9 — widely available; used routinely in oncology follow-up
+recommended_combinations:
+- 'Rising CA 19-9 + new EUS / MRCP findings in high-risk carrier: refer
+  to multidisciplinary pancreas centre for biopsy / staging'
+- 'Treatment response: declining CA 19-9 >50% by mid-treatment supports
+  continuation; rising despite therapy → restage'
+contraindicated_monotherapy: []
+primary_sources:
+- SRC-CAPS-CONSORTIUM-PANCREATIC-2020
+- SRC-NCCN-PANCREATIC-2025
+- SRC-ESMO-PANCREATIC-2024
+last_verified: '2026-05-18'
+evidence_sources:
+- source: SRC-CAPS-CONSORTIUM-PANCREATIC-2020
+  level: Consensus
+  evidence_lane: standard_care
+  note: >
+    CAPS Consortium consensus — annual CA 19-9 + MRI / EUS in high-risk
+    germline carriers from age 50 (or 10 yr younger than youngest
+    affected relative). Specific cadence per syndrome.
+- source: SRC-NCCN-PANCREATIC-2025
+  level: Category 2A
+  evidence_lane: standard_care
+  note: >
+    NCCN Pancreatic 2025 — CA 19-9 at baseline + every 2-3 months during
+    therapy / surveillance for measurable disease.
+actionability_review_required: true
+indications:
+- IND-CHRONIC-PANCREATITIS-PDAC-PREVENTION-SURVEILLANCE
+notes: |
+  STUB pending two-Co-Lead signoff. Hereditary-PDAC surveillance Indication
+  entities for CAPS-cohort syndromes (CDKN2A/FAMMM, BRCA1/2, PALB2, ATM,
+  Lynch, STK11, hereditary pancreatitis) are partially authored — closest
+  existing entities: ind_brca_carrier_surveillance,
+  ind_fammm_carrier_surveillance, ind_lynch_carrier_surveillance. A
+  dedicated IND-CAPS-COHORT-SURVEILLANCE entity (consolidating the
+  trigger criteria across syndromes) is a future authoring task.
+
+  Lewis-antigen-negative status (~5-10% of population) yields false-negative
+  CA 19-9 — this should be flagged in the patient profile to avoid false
+  reassurance. Engine should not surface CA 19-9 < ULN as "negative" without
+  Lewis status known.

@@ -1,0 +1,13 @@
+{
+  "patient_id": "SJOGREN-MALT-PREV-001",
+  "comment": "58yo female with primary Sjögren's syndrome (EULAR/ACR 2016 criteria: anti-Ro/SSA+, anti-La/SSB+, focal lymphocytic sialadenitis on minor salivary gland biopsy, sicca symptoms 8 years), no current lymphoma. Strongest hematologic-cancer risk among rheumatic diseases (~15-20x RR for MALT lymphoma, lifetime incidence ~5-10%). Engine routes to PreventionPlan: standard = IND-SJOGREN-MALT-LYMPHOMA-PREVENTION-SURVEILLANCE (annual physical + lab monitoring including cryoglobulins/C4/SPEP/Ig + parotid US for any new/persistent swelling); alternative = IND-SJOGREN-MALT-LYMPHOMA-PREVENTION-OBSERVATION (rheumatology-driven, workup only on clinical suspicion). Validates v0.3 RF-SJOGREN-MALT-LYMPHOMA-PREVENTION pilot.",
+  "biomarkers": {"BIO-ANTI-RO-SSA": "positive", "BIO-ANTI-LA-SSB": "positive"},
+  "demographics": {"age": 58, "sex": "female", "ecog": 1},
+  "findings": {
+    "primary_sjogren_syndrome_diagnosis_confirmed": true,
+    "Sicca symptoms 8 years, EULAR/ACR 2016 criteria met": true,
+    "C4 normal, no cryoglobulinemia, no monoclonal gammopathy at baseline": true,
+    "No persistent parotid swelling or palpable purpura": true,
+    "No current lymphoma diagnosis": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "patient_id": "COWDEN-PHENOTYPE-001",
+  "comment": "38yo female with macrocephaly (occipitofrontal circumference 59 cm, ≥97th percentile for adult women) + characteristic mucocutaneous papillomas (multiple trichilemmomas on face, acral keratoses on hands, papillomatous papules in oral cavity) + multinodular goiter on US. Meets revised Cleveland Clinic / NCCN Cowden clinical diagnostic criteria via pathognomonic mucocutaneous findings + macrocephaly + thyroid pathology. No current cancer diagnosis. Engine fires RF-COWDEN-FAMILY-HISTORY-SUSPICION via clinical-diagnostic-criteria branch and routes to PreventionPlan: standard = IND-COWDEN-SUSPICION-PREVENTION-GENETIC-COUNSELING (pre-test counseling + germline PTEN panel); alternative = IND-COWDEN-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE (empirical multi-organ Cowden-style surveillance if patient declines testing). Distinct from existing COWDEN-PREV-001 (35yo) — older age cohort, more developed papilloma phenotype.",
+  "biomarkers": {},
+  "demographics": {"age": 38, "sex": "female", "ecog": 0},
+  "findings": {
+    "family_cowden_clinical_diagnostic_criteria_met": true,
+    "Macrocephaly OFC 59 cm (≥97th percentile adult female)": true,
+    "Multiple trichilemmomas face + acral keratoses hands": true,
+    "Papillomatous papules oral cavity": true,
+    "Multinodular goiter on thyroid US": true,
+    "No personal cancer diagnosis": true
+  }
+}

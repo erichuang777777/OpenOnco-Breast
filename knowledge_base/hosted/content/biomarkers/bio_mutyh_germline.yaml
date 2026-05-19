@@ -1,0 +1,22 @@
+id: BIO-MUTYH-GERMLINE
+names:
+  preferred: "MUTYH germline pathogenic variant (biallelic for MAP)"
+  ukrainian: "MUTYH germline патогенний варіант (biallelic для MAP)"
+  english: "MUTYH germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: MUTYH
+  gene_hugo_id: HGNC:7527
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources: [SRC-ESMO-CRC-2024]
+last_reviewed: "2026-05-18"
+notes: "MUTYH germline — biallelic variants drive MUTYH-Associated Polyposis (MAP), autosomal recessive. Attenuated FAP-like phenotype. Monoallelic carriers have modest CRC risk elevation. Common founder variants: Y179C, G396D. STUB."
+notes_ua: "MUTYH germline — biallelic варіанти драйвер MAP (MUTYH-Associated Polyposis), аутосомно-рецесивна."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_germline
+draft_revision: 1

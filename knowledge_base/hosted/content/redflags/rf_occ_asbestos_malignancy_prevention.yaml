@@ -1,0 +1,201 @@
+id: RF-OCC-ASBESTOS-MALIGNANCY-PREVENTION
+definition: >-
+  Documented historical occupational exposure to asbestos fibres
+  (chrysotile, amosite, crocidolite, anthophyllite, tremolite,
+  actinolite) in an individual without a current asbestos-associated
+  malignancy diagnosis. Classic high-risk occupations: shipyard
+  workers, insulators, boilermakers, pipefitters, asbestos-cement
+  manufacture / installation, brake-lining manufacture / repair,
+  demolition / construction trades pre-regulation, miners and millers
+  of asbestos ore. Asbestos is an IARC Group 1 carcinogen — established
+  etiological driver of malignant mesothelioma (pleural and peritoneal),
+  lung cancer (synergistic with tobacco — multiplicative risk), and
+  (per the 2012 IARC Monograph 100C update) ovarian and laryngeal
+  cancer. Latency from first exposure to mesothelioma is typically
+  20-50 years; lung-cancer latency is shorter (10-30 years) and
+  cumulative-dose- and smoking-dependent. There is NO curative
+  intervention for prior exposure — exposure-cessation counseling,
+  smoking-cessation counseling (synergistic lung-cancer risk), and
+  intensified surveillance are the levers. Prevention-persona RedFlag
+  (§20 ratification 2026-05-18, v0.3 occupational pilot starter).
+definition_ua: >-
+  Документоване історичне професійне впливу азбестових волокон
+  (хризотил, амозит, крокідоліт, антофіліт, тремоліт, актиноліт) у
+  пацієнта без поточного діагнозу азбест-асоційованої малігнізації.
+  Класичні високоризикові професії: працівники верфей, ізолювальники,
+  робітники з котлами, пайпфітери, виробництво / монтаж азбестоцементу,
+  виробництво / ремонт гальмівних накладок, демоліційні / будівельні
+  ремесла до регуляторного періоду, гірники та переробники азбестової
+  руди. Азбест — канцероген IARC Group 1, встановлений етіологічний
+  драйвер злоякісної мезотеліоми (плевральної та перитонеальної), раку
+  легень (синергія з тютюном — мультиплікативний ризик) та (за
+  оновленням IARC Monograph 100C 2012) раку яєчників та гортані.
+  Латентність від першого впливу до мезотеліоми зазвичай 20-50 років;
+  латентність раку легень коротша (10-30 років) і залежить від
+  кумулятивної дози та куріння. КУРАТИВНОГО втручання для попереднього
+  впливу НЕМАЄ — counseling щодо припинення впливу, counseling щодо
+  припинення куріння (синергічний ризик раку легень) та посилене
+  спостереження — це наявні важелі. Prevention-persona RedFlag
+  (ратифікація §20, 2026-05-18, v0.3 пілот occupational — starter).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "occupational_asbestos_exposure_documented"
+      value: true
+    - finding: "occupational_asbestos_exposure_years_ge_5"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+# §20 prevention extension — drives engine routing to PreventionPlan
+# when patient carries this RF and no confirmed Disease (KSS §20.2).
+risk_category: occupational
+
+# Asbestos-associated cancers (existing KB Disease entities):
+# - DIS-MESOTHELIOMA (the canonical asbestos-defining malignancy;
+#   ~80% of mesothelioma cases have documented asbestos exposure).
+# - DIS-NSCLC + DIS-SCLC (asbestos is an established lung-cancer
+#   carcinogen; multiplicative synergy with tobacco — relative risk
+#   in smoker-asbestos-exposed workers ~50x baseline).
+# - DIS-OVARIAN (IARC Monograph 100C 2012 update upgraded asbestos
+#   to Group 1 for ovarian cancer; mechanism likely talc / asbestos
+#   contamination historically in perineal-talc use, plus direct
+#   peritoneal exposure in occupational settings).
+# Laryngeal cancer is also Group-1-associated but DIS-LARYNGEAL is
+# not a distinct KB entity — coverage falls under DIS-HNSCC if a
+# laryngeal anchor is needed; not enumerated here to keep RF tight.
+relevant_diseases:
+  - DIS-MESOTHELIOMA
+  - DIS-NSCLC
+  - DIS-SCLC
+  - DIS-OVARIAN
+
+shifts_algorithm: []
+
+# Source caveat: IARC Monograph 100C (Arsenic, Metals, Fibres, Dusts)
+# is the canonical Group-1 classification for asbestos and is NOT yet
+# a separate SRC entity in KB. SRC-IARC-MONO-100B-2012 covers
+# biological agents only and is INTENTIONALLY NOT cited here to avoid
+# misrepresenting the monograph's scope. In-KB lung-cancer guideline
+# sources are cited as the most clinically relevant available
+# references; addition of IARC 100C as a v0.3 follow-up SRC entity
+# is in the v0.3 source-authoring backlog.
+sources:
+  - SRC-NCCN-NSCLC-2025
+  - SRC-NCCN-SCLC-2025
+  - SRC-ESMO-NSCLC-EARLY-2024
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag — v0.3 occupational/environmental pilot
+  starter (CHARTER §3 prevention scope, ratified 2026-05-18 Path A,
+  HCP-mediated). Fires when patient profile carries documented prior
+  occupational asbestos exposure AND no confirmed asbestos-associated
+  malignancy diagnosis. Engine routes such patients to a 2-track
+  PreventionPlan:
+    (a) IND-OCC-ASBESTOS-PREVENTION-INTENSIFIED-SURVEILLANCE
+        (standard) — counseling on exposure cessation (typically
+        irrelevant for retired / non-active workers), smoking-
+        cessation counseling (paramount due to multiplicative lung-
+        cancer synergy), annual LDCT chest from 10-20 years post
+        first exposure adjusted by smoking status, discussion of
+        pleural surveillance.
+    (b) IND-OCC-ASBESTOS-PREVENTION-OBSERVATION (surveillance) —
+        routine general-population screening only; patient declines
+        intensified imaging surveillance for any reason (cost,
+        radiation concerns, anxiety, preference).
+
+  Trigger findings are computed booleans from occupational-history
+  intake at the patient-profile layer (FHIR Patient + Observation /
+  Condition extensions; computation pipeline downstream of KB and
+  not yet implemented).
+
+  Evidence base (IARC Monograph 100C 2012; LeMasters et al. 2007
+  systematic review; Hodgson & Darnton 2000 meta-analysis; ATSDR
+  Asbestos Toxicological Profile):
+    - Mesothelioma SMR ~5-200x in asbestos-exposed cohorts depending
+      on fibre type (amphiboles > chrysotile) and cumulative dose;
+      ~80% of mesothelioma cases attributable to asbestos exposure
+    - Lung-cancer SMR ~2-5x in asbestos-only exposure; ~50x in
+      asbestos + smoking (multiplicative interaction). Smoking
+      cessation post-exposure substantially reduces incremental risk.
+    - Ovarian cancer SMR ~1.8-2.0x in heavily-exposed female cohorts
+      (textile mill workers, asbestos-cement workers) per IARC 100C
+      meta-analysis.
+    - Latency: mesothelioma ≥20 years from first exposure typically;
+      lung cancer ≥10-15 years; ovarian variable.
+
+  Sources TODO: IARC Monograph 100C (2012) as a new SRC entity for
+  authoritative Group-1 classification; ATSDR Asbestos Tox Profile
+  (2001 + 2014 update) as a new SRC entity. v0.3 source-authoring
+  backlog.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption.
+
+  Engine consumption is OPERATIONAL via §20 PreventionPlan path —
+  this RF will fire and produce a 2-track PreventionPlan as soon as
+  the paired prevention Indications below are loaded.
+notes_ua: >
+  Prevention-persona RedFlag — v0.3 occupational/environmental пілот
+  starter (CHARTER §3 prevention scope, ратифікація 2026-05-18
+  Path A, HCP-mediated). Спрацьовує коли профіль пацієнта містить
+  документований попередній професійний вплив азбесту ТА відсутній
+  підтверджений діагноз азбест-асоційованої малігнізації. Engine
+  маршрутизує таких пацієнтів до 2-track PreventionPlan:
+    (а) IND-OCC-ASBESTOS-PREVENTION-INTENSIFIED-SURVEILLANCE
+        (стандартний) — counseling щодо припинення впливу (зазвичай
+        не актуально для пенсіонерів / неактивних робітників),
+        counseling щодо припинення куріння (першочергове через
+        мультиплікативну синергію раку легень), щорічна LDCT грудної
+        клітки з 10-20 років від першого впливу з поправкою на
+        статус куріння, обговорення плеврального спостереження.
+    (б) IND-OCC-ASBESTOS-PREVENTION-OBSERVATION (surveillance) —
+        тільки рутинний загальнопопуляційний скринінг; пацієнт
+        відмовляється від інтенсифікованого imaging-спостереження
+        з будь-якої причини (вартість, занепокоєння радіацією,
+        тривога, перевага).
+
+  Trigger findings — обчислювані булеві значення з опитування
+  професійної історії на рівні patient-profile (FHIR Patient +
+  Observation / Condition extensions; pipeline обчислення
+  downstream KB, ще не реалізовано).
+
+  Доказова база (IARC Monograph 100C 2012; LeMasters et al. 2007
+  systematic review; Hodgson & Darnton 2000 meta-analysis; ATSDR
+  Asbestos Toxicological Profile):
+    - Мезотеліома SMR ~5-200x у когортах експонованих азбестом
+      залежно від типу волокон (амфіболи > хризотил) та кумулятивної
+      дози; ~80% випадків мезотеліоми приписують впливу азбесту.
+    - SMR раку легень ~2-5x при моноексп. азбестом; ~50x при
+      азбест + куріння (мультиплікативна взаємодія). Припинення
+      куріння post-exposure суттєво знижує приріст ризику.
+    - SMR раку яєчників ~1.8-2.0x у важко-експонованих жіночих
+      когортах (текстильниці, працівниці азбестоцементу) за
+      meta-analysis IARC 100C.
+    - Латентність: мезотеліома ≥20 років від першого впливу
+      зазвичай; рак легень ≥10-15 років; яєчник варіабельно.
+
+  Source caveat: IARC Monograph 100C (Arsenic, Metals, Fibres,
+  Dusts) — канонічна Group-1 класифікація для азбесту, але ще НЕ
+  є окремою SRC entity у KB. SRC-IARC-MONO-100B-2012 покриває
+  тільки біологічні агенти і НАВМИСНО НЕ цитується тут, щоб не
+  спотворити scope монографії. Замість цього цитуються
+  KB-присутні lung-cancer guideline-джерела як найбільш клінічно
+  релевантні; додавання IARC 100C як v0.3 follow-up SRC — у
+  backlog v0.3 source-authoring.
+
+  Це STUB, очікує підпис двох Clinical Co-Lead за §6.1 dev-mode
+  exemption.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_pilot
+draft_revision: 1
+
+draft: true

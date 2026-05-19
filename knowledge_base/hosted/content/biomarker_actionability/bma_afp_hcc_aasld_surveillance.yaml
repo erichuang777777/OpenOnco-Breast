@@ -1,0 +1,70 @@
+id: BMA-AFP-HCC-AASLD-SURVEILLANCE
+biomarker_id: BIO-AFP
+variant_qualifier: Alpha-fetoprotein — HCC surveillance in cirrhotics + chronic HBV
+disease_id: DIS-HCC
+escat_tier: IIIA
+evidence_summary: >
+  Serum AFP is used in combination with ultrasound every 6 months for HCC
+  surveillance in cirrhotic patients of any aetiology (Child-Pugh A/B7,
+  candidates for treatment) and in non-cirrhotic chronic HBV with elevated
+  HCC risk per AASLD HCC 2023. US-alone sensitivity is suboptimal
+  (~63%); US + AFP raises sensitivity for early-stage HCC to ~70-80% with
+  acceptable specificity (~85-90%). AFP threshold typically >20 ng/mL
+  (some guidelines >7 ng/mL with risk-stratified cutoffs). Rising AFP
+  trajectory is more informative than single value. AFP elevation also
+  occurs in chronic hepatitis flares, regenerative nodules,
+  germ-cell tumours, and gestation — interpret in context. Diagnostic
+  workup of rising AFP: multiphasic CT or MRI per LI-RADS criteria. AFP-L3
+  fraction and DCP (PIVKA-II) are adjunct markers in some practices.
+  ESCAT IIIA — AFP directs HCC diagnostic workup / surveillance cadence.
+regulatory_approval:
+  fda:
+  - AFP immunoassays — widely FDA-cleared; AFP-L3 and DCP also
+    FDA-cleared (μTASWako, others)
+  ema: []
+  ukraine:
+  - AFP — widely available, low cost
+recommended_combinations:
+- 'Cirrhotic of any aetiology (Child-Pugh A/B7): US + AFP every 6 months'
+- 'Chronic HBV high-risk (Asian/African ancestry men ≥40, women ≥50,
+  family history, HBeAg+, high HBV DNA): US + AFP every 6 months even
+  without cirrhosis'
+- 'AFP >20 ng/mL or rising trajectory with negative US: multiphasic CT or
+  MRI per LI-RADS'
+contraindicated_monotherapy:
+- 'AFP alone (without imaging) is insufficient for HCC surveillance —
+  AASLD does not endorse AFP-only screening'
+primary_sources:
+- SRC-AASLD-HCC-2023
+- SRC-NCCN-HCC-2025
+last_verified: '2026-05-18'
+evidence_sources:
+- source: SRC-AASLD-HCC-2023
+  level: Conditional / Moderate certainty
+  evidence_lane: standard_care
+  note: >
+    AASLD HCC 2023 — US + AFP every 6 months for cirrhotics and high-risk
+    chronic HBV. AFP >20 ng/mL (or rising) prompts diagnostic CT/MRI.
+- source: SRC-NCCN-HCC-2025
+  level: Category 2A
+  evidence_lane: standard_care
+  note: >
+    NCCN HCC 2025 — AFP component of surveillance bundle; LI-RADS for
+    diagnostic imaging interpretation.
+actionability_review_required: true
+indications: []
+notes: |
+  STUB pending two-Co-Lead signoff. AASLD-aligned HCC surveillance
+  Indication entities are partially authored — closest existing entities:
+  ind_a1at_deficiency_hcc_lung_prevention_surveillance and the HCV/HBV
+  prevention bundle. A general
+  IND-CIRRHOSIS-HCC-SURVEILLANCE entity (aetiology-agnostic, gated on
+  Child-Pugh class) is a future authoring task.
+
+  AFP-L3 and DCP/PIVKA-II are adjunct markers not consistently
+  guideline-endorsed for surveillance; render layer should not surface as
+  primary surveillance.
+
+  Special context: in post-SVR12 HCV cirrhotics, HCC risk persists at
+  reduced level — AFP + US surveillance continues lifelong in those who
+  reached F3/F4 fibrosis before cure.

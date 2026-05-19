@@ -1,0 +1,28 @@
+id: BIO-KI67-IHC-PROLIFERATION-INDEX
+names:
+  preferred: "Ki-67 IHC in surveillance/precursor contexts"
+  ukrainian: "Ki-67 ІГХ у нагляді/попередніх ураженнях"
+  english: "Ki-67 proliferation index — surveillance application"
+  synonyms: ["MIB-1 surveillance", "Ki-67 in Barrett's HGD", "Ki-67 in dysplastic colon"]
+biomarker_type: protein_expression_ihc
+measurement:
+  method: "IHC on FFPE biopsy (MIB-1 / Ki-67); hot-spot count of nuclear-positive epithelial cells"
+  units: "percentage (0-100% positive nuclei)"
+specimen_requirements:
+  - "FFPE biopsy block (Barrett's segment, dysplastic colon polyp, or IBD surveillance biopsy)"
+  - "Adequate epithelial representation (basal layer must be present)"
+clinical_context: [screening_surveillance, precursor_lesion, dysplasia_grading]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: ihc_no_variant
+external_ids:
+  hgnc_symbol: MKI67
+related_biomarkers: [BIO-KI67-PROLIFERATION-INDEX]
+sources: [SRC-NCCN-ESOPHAGEAL-2025, SRC-NCCN-COLON-2025]
+last_reviewed: "2026-05-18"
+notes: >
+  STUB. Companion to BIO-KI67-PROLIFERATION-INDEX (which scopes hematologic
+  treatment selection). Surveillance use case: in Barrett's high-grade dysplasia
+  (HGD), expansion of Ki-67 positivity into the superficial epithelium signals
+  progression risk; in IBD-associated colorectal dysplasia, increased Ki-67
+  with loss of normal basal-restricted pattern supports dysplasia diagnosis.
+  Not algorithm-impacting standalone — adjunct to morphology + p53.

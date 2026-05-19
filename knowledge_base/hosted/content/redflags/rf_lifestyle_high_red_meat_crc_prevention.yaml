@@ -1,0 +1,65 @@
+id: RF-LIFESTYLE-HIGH-RED-MEAT-CRC-PREVENTION
+definition: >-
+  Habitual high red-meat consumption (≥500 g/week of cooked unprocessed
+  red meat — beef, lamb, pork, veal) OR habitual processed-meat
+  consumption (≥50 g/day — sausages, ham, bacon, salami, cured/smoked/
+  salted/preserved meat). IARC Monograph 114 (2015): processed meat
+  Group 1 (sufficient evidence for CRC); red meat Group 2A (probable
+  carcinogen). WCRF/AICR convincing-evidence rating for processed meat
+  and CRC; probable for red meat. Each 50 g/day processed meat raises
+  CRC risk ~18% (RR ~1.18); each 100 g/day red meat raises CRC risk
+  ~17% (RR ~1.17). Mechanisms: N-nitroso compounds (NOCs) from nitrite
+  preservatives + endogenous formation; heterocyclic amines (HCAs) +
+  polycyclic aromatic hydrocarbons (PAHs) from high-temperature cooking;
+  heme iron promoting reactive-oxygen species in colonocytes. Prevention-
+  persona RedFlag (§20 v0.3 diet pilot, 2026-05-18). Distinct from
+  RF-LIFESTYLE-PROCESSED-MEAT-PREVENTION (predecessor) — this RF
+  combines both red + processed meat thresholds per the WCRF/AICR
+  framework.
+definition_ua: >-
+  Звичне високе споживання червоного м'яса (≥500 г/тиждень cooked
+  unprocessed red meat — яловичина, баранина, свинина, телятина) АБО
+  звичне споживання processed meat (≥50 г/день — ковбаси, шинка, бекон,
+  салямі, cured/smoked/salted/preserved). IARC Monograph 114 (2015):
+  processed meat Group 1 для CRC; red meat Group 2A. WCRF/AICR
+  convincing-evidence для processed meat і CRC; probable для red meat.
+  Кожні 50 г/день processed meat — CRC risk +~18% (RR ~1.18); 100 г/день
+  red meat — +~17% (RR ~1.17). Механізми: N-нітрозо compounds (NOCs)
+  з нітритних консервантів + ендогенне утворення; гетероциклічні аміни
+  (HCAs) + поліциклічні ароматичні вуглеводні (PAHs) з high-temperature
+  cooking; heme iron — reactive-oxygen species у колоноцитах.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "red_meat_intake_ge_500g_per_week"
+      value: true
+    - finding: "processed_meat_intake_ge_50g_per_day"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: lifestyle
+
+# Anchor — colorectal cancer. IARC Group 1 (processed meat) /
+# Group 2A (red meat) classifications are CRC-specific.
+relevant_diseases:
+  - DIS-CRC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-COLON-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag combining red-meat ≥500g/week + processed-meat ≥50g/day thresholds per WCRF/AICR + IARC Monograph 114. Severity:major because processed-meat exposure is Group-1 carcinogen with population-attributable fraction ~13% for CRC (WCRF/AICR). Engine routes to PreventionPlan recommending dietary substitution + CRC screening per USPSTF. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode. Coexists with existing RF-LIFESTYLE-PROCESSED-MEAT-PREVENTION — both may fire."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_diet_environmental
+draft_revision: 1

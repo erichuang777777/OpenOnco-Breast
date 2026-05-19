@@ -1,0 +1,131 @@
+id: ALGO-REVISED-BETHESDA-LYNCH
+applicable_to_disease: DIS-CRC
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention (see ALGO-AMSTERDAM-II-LYNCH for the
+# `0` LoT documentation note).
+purpose: >
+  Revised Bethesda guidelines (Umar 2004) for selecting CRC tumors for
+  MSI / MMR-IHC testing as a Lynch syndrome screen. Any one of the five
+  criteria meeting triggers tumor testing; tumor MSI-high or MMR-loss
+  results then drive germline testing pathway. Higher sensitivity than
+  Amsterdam II (~70-90%) at the cost of specificity (~25-77%).
+
+  This algorithm captures clinical Lynch suspicion in CRC probands
+  (already-diagnosed patients) rather than asymptomatic family
+  pedigrees. Output routes to enhanced surveillance pathway when
+  satisfied; that pathway begins with genetic counseling + germline
+  MMR/EPCAM panel as the first action (documented in Indication
+  rationale).
+
+output_indications:
+  - IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Genetic counseling + germline panel referral is the first action
+# within the surveillance pathway. Algorithm routes only to the
+# surveillance Indication to satisfy the algorithm-routing contract.
+
+decision_tree:
+  - step: 1
+    # Criterion 1: CRC <50.
+    evaluate:
+      any_of:
+        - condition: "Colorectal cancer diagnosed in a patient <50 years of age"
+    if_true:
+      result: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Revised Bethesda criterion 1 met (CRC <50) — tumor MSI/MMR-IHC + genetic counseling + germline panel referral (within surveillance pathway)."
+    if_false:
+      next_step: 2
+  - step: 2
+    # Criterion 2: Synchronous/metachronous CRC or other Lynch-spectrum
+    # tumors regardless of age.
+    evaluate:
+      any_of:
+        - condition: "Synchronous (≥2 simultaneous) CRC, OR metachronous CRC (separate primaries at different times), regardless of age"
+        - condition: "Synchronous or metachronous Lynch-spectrum cancers (CRC + endometrial / gastric / ovarian / pancreatic / urothelial / small bowel / hepatobiliary / brain / sebaceous skin), regardless of age"
+    if_true:
+      result: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Revised Bethesda criterion 2 met (synchronous/metachronous Lynch-spectrum) — tumor MSI/MMR-IHC + germline panel referral."
+    if_false:
+      next_step: 3
+  - step: 3
+    # Criterion 3: CRC with MSI-H histologic features dx <60.
+    evaluate:
+      all_of:
+        - condition: "Colorectal cancer diagnosed at age <60"
+        - any_of:
+            - condition: "MSI-H histologic features: tumor-infiltrating lymphocytes (TILs)"
+            - condition: "MSI-H histologic features: Crohn-like lymphocytic reaction"
+            - condition: "MSI-H histologic features: mucinous / signet-ring differentiation"
+            - condition: "MSI-H histologic features: medullary growth pattern"
+    if_true:
+      result: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Revised Bethesda criterion 3 met (MSI-H histology <60) — tumor MSI/MMR-IHC."
+    if_false:
+      next_step: 4
+  - step: 4
+    # Criterion 4: CRC + ≥1 first-degree relative with Lynch-spectrum
+    # cancer, one <50.
+    evaluate:
+      all_of:
+        - condition: "Patient has colorectal cancer"
+        - condition: "≥1 first-degree relative with Lynch-spectrum cancer (CRC, endometrial, urothelial, small bowel, gastric, ovarian, pancreatic, hepatobiliary, brain, sebaceous)"
+        - condition: "At least one of these cancers (patient or relative) diagnosed at age <50"
+    if_true:
+      result: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Revised Bethesda criterion 4 met (CRC + first-degree Lynch-spectrum, ≥1 dx <50)."
+    if_false:
+      next_step: 5
+  - step: 5
+    # Criterion 5: CRC + ≥2 first-or-second-degree relatives with Lynch-
+    # spectrum cancer regardless of age.
+    evaluate:
+      all_of:
+        - condition: "Patient has colorectal cancer"
+        - condition: "≥2 first-degree or second-degree relatives with Lynch-spectrum cancer, regardless of age"
+    if_true:
+      result: IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Revised Bethesda criterion 5 met (CRC + 2 first/second-degree Lynch-spectrum)."
+    if_false:
+      result: false
+      notes: "No revised Bethesda criterion met — consider PREMM5 (ALGO-PREMM5-LYNCH) for continuous probability + universal tumor testing per NCCN universal-screen policy regardless of pedigree."
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-ESMO-CRC-2024
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding the revised Bethesda
+  guidelines (Umar A et al. Revised Bethesda guidelines for hereditary
+  nonpolyposis colorectal cancer (Lynch syndrome) and microsatellite
+  instability. J Natl Cancer Inst 2004;96:261-268. PMID 14970275).
+  Primary-paper Source entity (SRC-UMAR-2004-BETHESDA) is v0.2-B
+  authoring backlog.
+
+  Anchored to DIS-CRC (the proband disease for which testing is
+  triggered). Lynch-spectrum reach extends to all NCCN Genetic/Familial
+  CRC scope.
+
+  Modern context: NCCN now recommends UNIVERSAL MMR-IHC / MSI testing
+  for ALL CRC tumors regardless of Bethesda satisfaction (universal-
+  screen policy adopted by most US/EU pathology labs since ~2012).
+  Revised Bethesda therefore functions more as a positive-trigger for
+  germline counseling referral in settings without universal screening.
+  Sensitivity for MMR carriers in modern series ~70-90%, specificity
+  ~25-77% (varies by criterion combination).
+
+  Cited from RF-LYNCH-FAMILY-HISTORY-SUSPICION trigger
+  `family_revised_bethesda_criteria_met`.
+
+  Routing convention: this algorithm routes to the enhanced-surveillance
+  Indication (which has plan_track: surveillance). Genetic counseling +
+  germline panel testing is the first action within that surveillance
+  pathway, documented in the Indication's rationale rather than as a
+  separate algorithm output, to satisfy the algorithm-routing contract
+  check (algorithm cannot route to an indication with plan_track:
+  standard + recommended_regimen: null — see ALGO-AMSTERDAM-II-LYNCH
+  for the convention rationale).
+draft: true

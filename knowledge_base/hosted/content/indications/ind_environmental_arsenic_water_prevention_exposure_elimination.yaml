@@ -1,0 +1,187 @@
+id: IND-ENVIRONMENTAL-ARSENIC-WATER-PREVENTION-EXPOSURE-ELIMINATION
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-UROTHELIAL
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-ENVIRONMENTAL-ARSENIC-WATER-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Eliminating ongoing arsenic exposure through water-source change or filtration reduces incremental cancer risk; however, prior cumulative-dose-driven risk persists for decades (bladder + lung + skin cancer latencies of 10-40 years). Bangladesh + Taiwan cohort follow-up: arsenic-exposure mitigation reduces but does not eliminate excess cancer incidence in the historically-exposed cohort. Skin-cancer surveillance + bladder + lung-symptom evaluation pathways add stage-shift benefit even after exposure cessation."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for chronic arsenic-contaminated
+  drinking water exposure. Components per IARC Monograph 100C (2012) +
+  WHO 2017 Arsenic in Drinking Water + NCCN Bladder + NSCLC + Skin
+  guidelines:
+
+  **(1) Water-source change OR filtration — primary intervention**
+  - Test current drinking-water source for total + inorganic arsenic.
+    Private wells: regional environmental health authority lab; consider
+    repeat seasonal testing.
+  - If >10 µg/L: switch to alternative source (municipal water with
+    verified compliance, bottled water with documented compliance, or
+    point-of-use filtration). Boiling does NOT remove arsenic — water
+    boiled to concentrate arsenic to higher levels.
+  - Point-of-use filters: reverse-osmosis (RO) is the gold standard
+    (removes ~95-99% inorganic arsenic); activated alumina + iron-based
+    adsorption media also effective. NSF Standard 58 (RO) / 53 (As)
+    certified units preferred. Test post-filter water periodically to
+    verify performance.
+  - Counsel on use of safe water for ALL ingestion: drinking, cooking,
+    food preparation (vegetables / pasta absorb water arsenic), ice
+    cubes, infant formula reconstitution. Bathing / hand-washing risk
+    is low (dermal + inhalation absorption minimal at WHO thresholds).
+
+  **(2) Cumulative-dose biomarker assessment — limited utility**
+  - Urinary inorganic arsenic + methylated metabolites (DMA, MMA)
+    reflect recent (~72h) exposure. Not useful for cumulative-dose
+    estimation but can document ongoing exposure when source is
+    uncertain.
+  - Arsenic in hair / nails — long-term marker but bandwidth limited
+    + contamination-prone; not recommended for routine clinical
+    surveillance.
+
+  **(3) Tobacco-cessation counseling** — Arsenic + tobacco interact
+  multiplicatively for bladder + lung cancer risk. Smoking cessation
+  is the highest-yield co-intervention (see RF-LIFESTYLE-TOBACCO-
+  CANCER-PREVENTION).
+
+  **(4) Intensified screening** — Three organ systems:
+  - Skin: annual full-body skin examination by clinician (cumulative
+    UV + arsenic synergy increases BCC/SCC + Bowen's risk). Patient
+    education on hyperpigmentation, hyperkeratosis (palms / soles),
+    new persistent skin lesions — these are arsenic-skin-signature
+    findings warranting workup.
+  - Bladder: USPSTF does NOT recommend routine bladder-cancer
+    screening (urine cytology + cystoscopy in asymptomatic adults).
+    Symptom-triggered evaluation only — low threshold for hematuria,
+    dysuria, urinary frequency.
+  - Lung: USPSTF lung-cancer screening eligibility check (age 50-80,
+    ≥20 pack-years, current or quit within 15 years). Arsenic
+    exposure alone does not establish screening eligibility but NCCN
+    allows clinical judgment for environmental carcinogen exposure
+    plus borderline-USPSTF risk factors.
+
+  **(5) Multi-systemic toxicity awareness** — Chronic arsenic exposure
+  also causes peripheral neuropathy, cardiovascular disease (atherosclerosis,
+  ischemic heart disease, peripheral arterial disease — blackfoot
+  disease in Taiwan cohorts), diabetes mellitus, hepatic + renal
+  toxicity. Holistic clinical surveillance appropriate.
+
+  Resource access in Ukraine: arsenic testing not routine on municipal
+  water (focus on lead + microbiology); private-well testing at
+  environmental health labs (~500-2000 UAH per panel). RO point-of-use
+  filters 3000-12000 UAH. Bottled water with documented chemistry
+  available at major retailers.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для chronic arsenic-contaminated
+  drinking water exposure. Components per IARC Monograph 100C + WHO
+  2017 + NCCN Bladder + NSCLC + Skin:
+
+  **(1) Water-source change АБО filtration — primary intervention**
+  - Test current drinking-water source на total + inorganic arsenic.
+    Private wells: regional environmental health authority lab;
+    consider repeat seasonal testing.
+  - Якщо >10 мкг/л: switch до alternative source (municipal water з
+    verified compliance, bottled water з documented compliance, або
+    point-of-use filtration). Boiling НЕ видаляє arsenic — water
+    boiled to concentrate.
+  - Point-of-use filters: reverse-osmosis (RO) — gold standard
+    (видаляє ~95-99% inorganic arsenic); activated alumina + iron-
+    based adsorption media також effective. NSF Standard 58 (RO) /
+    53 (As) certified.
+  - Counsel на use of safe water для ALL ingestion: drinking, cooking,
+    food preparation, ice cubes, infant formula reconstitution.
+
+  **(2) Cumulative-dose biomarker assessment — limited utility**
+  - Urinary inorganic arsenic + methylated metabolites (DMA, MMA)
+    — recent (~72h) exposure. Не useful для cumulative-dose estimation
+    але can document ongoing exposure.
+
+  **(3) Tobacco-cessation counseling** — Multiplicative interaction
+  з arsenic для bladder + lung cancer. Див RF-LIFESTYLE-TOBACCO-
+  CANCER-PREVENTION.
+
+  **(4) Intensified screening** — Three organ systems:
+  - Skin: annual full-body skin examination (cumulative UV + arsenic
+    synergy → BCC/SCC + Bowen's). Patient education на
+    hyperpigmentation, hyperkeratosis (palms / soles), нових
+    persistent skin lesions.
+  - Bladder: USPSTF НЕ рекомендує routine screening. Symptom-triggered
+    evaluation only — низький поріг для hematuria, dysuria, urinary
+    frequency.
+  - Lung: USPSTF lung-cancer screening eligibility check.
+
+  **(5) Multi-systemic toxicity awareness** — Peripheral neuropathy,
+  cardiovascular disease, diabetes mellitus, hepatic + renal toxicity.
+
+  Resource access в Україні: arsenic testing не routine на municipal
+  water; private-well testing at environmental health labs (~500-2000
+  грн per panel). RO point-of-use filters 3000-12000 грн.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_diet_environmental
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-NSCLC-2025
+    position: supports
+  - source_id: SRC-NCCN-SKIN-2025
+    position: supports
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не рекомендувати boiling як arsenic removal — boiling концентрує arsenic."
+  - "Не покладатися на standard carbon-block filters — вони НЕ remove inorganic arsenic; RO або NSF-53-certified As-specific media потрібні."
+  - "Не пропускати tobacco-cessation counseling — multiplicative interaction з arsenic для bladder + lung cancer."
+  - "Не призначати routine bladder cancer screening (cystoscopy / cytology) в asymptomatic adults — USPSTF проти; symptom-triggered evaluation only."
+  - "Не використовувати hair / nail arsenic testing як routine clinical surveillance — contamination-prone + bandwidth-limited."
+  - "Не нехтувати dermatological surveillance — arsenic-induced skin findings (hyperpigmentation, hyperkeratosis) — pre-malignant markers."
+
+do_not_do_en:
+  - "Do not recommend boiling as arsenic removal — boiling concentrates arsenic."
+  - "Do not rely on standard carbon-block filters — they do NOT remove inorganic arsenic; RO or NSF-53-certified arsenic-specific media is needed."
+  - "Do not skip tobacco-cessation counseling — multiplicative interaction with arsenic for bladder and lung cancer."
+  - "Do not order routine bladder-cancer screening (cystoscopy / cytology) in asymptomatic adults — USPSTF recommends against; symptom-triggered evaluation only."
+  - "Do not use hair / nail arsenic testing as routine clinical surveillance — contamination-prone and bandwidth-limited."
+  - "Do not overlook dermatological surveillance — arsenic-induced skin findings (hyperpigmentation, hyperkeratosis) are pre-malignant markers."
+
+known_controversies:
+  - topic: "Bladder + lung cancer screening for arsenic-exposed but USPSTF-ineligible patients"
+    positions:
+      - position: "USPSTF recommends against routine bladder-cancer screening in asymptomatic adults (cystoscopy / cytology)"
+      - position: "USPSTF lung-cancer LDCT screening requires age 50-80 + ≥20 pack-years + recent smoking; arsenic-only exposed never-smokers fall outside criteria"
+      - position: "NCCN allows clinical judgment for occupational + environmental carcinogen exposures + concurrent risk factors"
+    our_default: "Symptom-triggered evaluation for bladder; USPSTF-cadence + NCCN clinical judgment for lung; annual full-body skin exam for cutaneous surveillance."
+    rationale: "RCT screening evidence does not exist for arsenic-exposed populations; observational signal supports intensified clinical-exam pathways rather than population-screening modalities."
+
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 environmental prevention pilot (drinking-water arsenic → urothelial / lung / skin). Two-Clinical-Co-Lead signoff queued."

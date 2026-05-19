@@ -4,7 +4,7 @@ from typing import Literal, Optional
 
 from pydantic import Field, model_validator
 
-from .base import Base, NamePair
+from .base import Base, BiomarkerClinicalContext, NamePair
 
 
 # Stable machine-readable tokens for biomarkers we deliberately exclude
@@ -120,6 +120,20 @@ class Biomarker(Base):
     # Cross-references to external KBs (HGNC, OncoKB, CIViC, ClinGen).
     # Optional and partial — see BiomarkerExternalIDs.
     external_ids: Optional[BiomarkerExternalIDs] = None
+
+    # §20 prevention extensions (RATIFIED 2026-05-18). Multi-valued — one
+    # marker may serve several clinical contexts (e.g., MMR / MSI is
+    # simultaneously germline_susceptibility + tumor_profiling +
+    # predictive). Default `[tumor_profiling]` matches current implicit
+    # behavior across the ~170 existing Biomarker YAMLs — no backfill
+    # required. `applicable_in_asymptomatic` is the fast filter for
+    # Prevention Plan composition: only true for markers with established
+    # asymptomatic use (germline panels, syndrome-specific monitoring like
+    # calcitonin in MEN2, AFP+US in cirrhotics).
+    clinical_context: list[BiomarkerClinicalContext] = Field(
+        default_factory=lambda: [BiomarkerClinicalContext.TUMOR_PROFILING]
+    )
+    applicable_in_asymptomatic: bool = False
 
     related_biomarkers: list[str] = Field(default_factory=list)
     knowledge_base_refs: dict[str, str] = Field(default_factory=dict)  # oncokb | civic | clinvar URL

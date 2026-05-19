@@ -1,0 +1,95 @@
+id: REG-TIRZEPATIDE-OBESITY
+name: "Tirzepatide 15 mg weekly for chronic obesity management"
+name_ua: "Тирзепатид 15 мг щотижня для хронічного управління ожирінням"
+alternate_names:
+  - "Zepbound obesity dose"
+  - "Tirzepatide chronic-weight-management"
+
+components:
+  - drug_id: DRUG-TIRZEPATIDE
+    dose: "2.5 → 5 → 7.5 → 10 → 12.5 → 15 mg SC (4-week steps); maintenance 15 mg weekly (max)"
+    schedule: "once weekly SC; dose escalation every 4 weeks over 20 weeks to maximum"
+    route: SC
+    duration: "ongoing — chronic obesity management; sustained ≥72 weeks per SURMOUNT trials"
+
+cycle_length_days: 7
+total_cycles: "ongoing — chronic management"
+
+toxicity_profile: moderate
+
+premedication: []
+mandatory_supportive_care: []
+monitoring_schedule_id:
+
+dose_adjustments:
+  - condition: "Severe GI intolerance during escalation"
+    modification: "Hold escalation; reduce to prior tolerated dose × 4 weeks; resume escalation if symptoms abate"
+    rationale: "Slower titration limits dropout"
+    source_refs:
+      - SRC-NCCN-BCELL-2025
+  - condition: "Maintenance 15 mg not tolerated"
+    modification: "Maintain at 10 mg (or 5 mg minimum) weekly"
+    rationale: "Lower doses still produce ~15% weight loss in SURMOUNT-1"
+    source_refs:
+      - SRC-NCCN-BCELL-2025
+  - condition: "Pregnancy planning"
+    modification: "Discontinue ≥1 month before planned conception"
+    rationale: "Animal teratogenicity signals; long half-life"
+    source_refs:
+      - SRC-NCCN-BCELL-2025
+  - condition: "Concurrent oral contraceptives"
+    modification: "Add barrier method × 4 weeks after each dose escalation step"
+    rationale: "Delayed gastric emptying may reduce COC absorption"
+    source_refs:
+      - SRC-NCCN-BCELL-2025
+
+ukraine_availability:
+  all_components_registered: false
+  all_components_reimbursed: false
+  notes: "Mounjaro (T2DM) limited availability in Ukraine; Zepbound (obesity) not yet registered as of 2026-05. Out-of-pocket / international pharmacy."
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+between_visit_watchpoints:
+  - trigger_ua: "Нудота, блювота, діарея у перші 4-12 тижнів"
+    action_ua: "Поширений ефект — їжте малими порціями, уникайте жирної їжі; занотуйте на візиті"
+    urgency: log_at_next_visit
+    sources:
+      - SRC-NCCN-BCELL-2025
+  - trigger_ua: "Раптовий сильний біль у животі"
+    action_ua: "Зверніться до лікарні негайно — можливий гострий панкреатит"
+    urgency: er_now
+    sources:
+      - SRC-NCCN-BCELL-2025
+  - trigger_ua: "Сильний біль у правому підребер'ї, жовтяниця"
+    action_ua: "Подзвоніть у клініку того ж дня — жовчнокам'яні ускладнення"
+    urgency: call_clinic_same_day
+    sources:
+      - SRC-NCCN-BCELL-2025
+  - trigger_ua: "Гіпоглікемія — якщо паралельно інсулін або сульфонілсечовина"
+    action_ua: "Подзвоніть у клініку того ж дня для перегляду доз цукрознижувальних"
+    urgency: call_clinic_same_day
+    sources:
+      - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  Zepbound (tirzepatide 15 mg weekly max) is the most effective approved
+  obesity pharmacotherapy as of 2026 (~21% weight loss SURMOUNT-1).
+  Dual GIP+GLP-1 mechanism. Contraindicated in personal/family history
+  of MTC or MEN2. Discontinue ≥1 month before pregnancy. Counsel women
+  on COCs to add barrier method during titration. Obesity is associated
+  with 13+ cancers (IARC/WCRF).
+
+notes_ua: >
+  Zepbound (тирзепатид, макс 15 мг/тиждень) — найефективніша
+  схвалена фармакотерапія ожиріння станом на 2026 (~21% зниження
+  ваги, SURMOUNT-1). Подвійний механізм GIP+GLP-1. Протипоказаний
+  при MTC/MEN2. Припинити ≥1 місяць до планованої вагітності.
+  Жінкам на КОК додати бар'єрний метод під час титрації. Ожиріння
+  асоціюється з 13+ типами раку (IARC/WCRF).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_drugs_batch2
+draft_revision: 1

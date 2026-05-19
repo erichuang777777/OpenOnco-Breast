@@ -1,0 +1,23 @@
+id: BIO-SDHC-GERMLINE
+names:
+  preferred: "SDHC germline pathogenic variant"
+  ukrainian: "SDHC germline патогенний варіант"
+  english: "SDHC germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: SDHC
+  gene_hugo_id: HGNC:10683
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources:
+  - SRC-NCCN-BCELL-2025
+last_reviewed: "2026-05-18"
+notes: "SDHC germline — drives hereditary paraganglioma-pheochromocytoma syndrome (PGL3). Predominantly head-and-neck paraganglioma (typically benign, low malignant potential vs SDHB). SDH-deficient GIST + rare RCC. Lower lifetime penetrance than SDHB/SDHD. Annual biochemistry (metanephrines) + whole-body MRI surveillance per NCCN. STUB pending two-Co-Lead signoff."
+notes_ua: "SDHC germline — драйвер PGL3 (переважно H&N парагангліома, низький малігнантний потенціал)."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v04_germline_batch2
+draft_revision: 1

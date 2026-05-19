@@ -1,0 +1,57 @@
+id: BIO-CTDNA-MRD-POST-TREATMENT
+names:
+  preferred: "ctDNA-based minimal residual disease (MRD) — post-treatment monitoring"
+  ukrainian: "цтДНК-MRD — моніторинг після лікування"
+  english: "ctDNA MRD post-treatment"
+  synonyms: ["ctDNA MRD monitoring", "molecular residual disease post-treatment", "serial ctDNA MRD"]
+biomarker_type: composite_score
+measurement:
+  method: "Serial liquid biopsy (plasma cfDNA): tumor-informed (Signatera, RaDaR, NeXT Personal — patient-specific multi-locus panel from primary tumor WES) OR tumor-agnostic fixed-panel ctDNA assay"
+  units: "categorical (MRD-positive | MRD-negative) + quantitative (mean tumor molecules per mL plasma, MTM/mL, or VAF)"
+specimen_requirements:
+  - "Plasma from peripheral blood (Streck or EDTA tube per assay protocol)"
+  - "Tumor-informed assays: primary tumor FFPE block for bespoke-panel design (8-12 weeks turnaround for first MRD timepoint)"
+  - "Serial sampling cadence: typically 3-monthly or per assay-specific protocol; aligned with imaging surveillance"
+clinical_context: [screening_surveillance, prognostic]
+applicable_in_asymptomatic: false
+oncokb_skip_reason: tumor_agnostic
+sources:
+  - SRC-NCCN-COLON-2025
+  - SRC-ESMO-CRC-2024
+  - SRC-CIVIC
+related_biomarkers: [BIO-CTDNA-MRD]
+last_reviewed: "2026-05-18"
+notes: >
+  Companion entry to BIO-CTDNA-MRD focused on POST-TREATMENT serial
+  surveillance (vs. single landmark timepoint). Distinct from MCED
+  (BIO-CFDNA-METHYLATION-MCED) in that ctDNA-MRD assumes a known prior
+  cancer diagnosis with post-curative-intent surgery / chemoradiation.
+  Strongest evidence in CRC (GALAXY / CIRCULATE-Japan, Kotani Nat Med
+  2023): MRD-positive post-op patients ~22% 18-mo DFS vs ~93% MRD-
+  negative; MRD-positive benefit from adjuvant chemotherapy. Emerging
+  evidence in muscle-invasive bladder cancer (IMvigor010 ctDNA
+  subgroup), early breast cancer (c-TRAK-TN), NSCLC (post-IMpower010
+  retrospectives), pancreatic, gastric. Trial frameworks for MRD-driven
+  escalation/de-escalation: CIRCULATE-Japan ALTAIR/VEGA, NRG-GI008
+  (CIRCULATE-US), DYNAMIC-IV. ESMO 2024 endorses ctDNA-MRD as a
+  prognostic biomarker for CRC stage II adjuvant decision-making (May
+  inform adjuvant chemo discussion when MRD+ at 4-8 weeks post-op).
+  NOT recommended for asymptomatic-population screening — entry is
+  surveillance of KNOWN prior cancer survivors. `applicable_in_asymptomatic:
+  false` — patient has documented cancer history, not asymptomatic in
+  the prevention sense. Caveats: assay LOD ~0.01% VAF, micrometastatic
+  disease below LOD can recur (MRD-negative ≠ cured); clonal-hematopoiesis
+  (CHIP) interference (tumor-informed assays mitigate); optimal cadence
+  uncertain. STUB pending two-Co-Lead signoff.
+notes_ua: >
+  Супутній запис до BIO-CTDNA-MRD, орієнтований на ПОСТ-ТЕРАПЕВТИЧНИЙ
+  серійний нагляд. Відрізняється від MCED (BIO-CFDNA-METHYLATION-MCED) —
+  передбачає відомий попередній діагноз з куративним наміром.
+  Найсильніші дані — КРР (GALAXY/CIRCULATE-Japan, Kotani Nat Med 2023):
+  MRD+ після операції — 22% 18-міс DFS проти 93% MRD−. ESMO 2024
+  рекомендує цтДНК-MRD для прогнозу при стадії II КРР. НЕ рекомендований
+  для скринінгу безсимптомної популяції. STUB pending two-Co-Lead
+  signoff.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_surveillance_2026_05_18
+draft_revision: 1

@@ -1,0 +1,130 @@
+# PROC-PROPHYLACTIC-HYSTERECTOMY-LYNCH — Risk-reducing hysterectomy ± BSO
+# in Lynch-syndrome carriers post-childbearing. §20 prevention-persona
+# procedure (RATIFIED 2026-05-18). `intent: curative` per §17.1 enum
+# (carrier-state framing — no `preventive` enum value in v0.1).
+id: PROC-PROPHYLACTIC-HYSTERECTOMY-LYNCH
+names:
+  preferred: "Risk-reducing hysterectomy with or without BSO in Lynch syndrome carriers"
+  ukrainian: "Профілактична гістеректомія з/без двобічної сальпінго-оофоректомії при синдромі Лінча"
+  english: "Risk-reducing hysterectomy with or without BSO in Lynch syndrome carriers"
+  synonyms:
+    - "Prophylactic hysterectomy + BSO for Lynch syndrome"
+    - "Risk-reducing total hysterectomy with bilateral salpingo-oophorectomy"
+    - "Lynch-syndrome prophylactic gynecologic surgery"
+
+type: risk_reducing_hysterectomy_bso
+intent: curative
+
+target_organ: uterus_ovary_fallopian_tube
+# Lynch carriers face elevated endometrial + ovarian + colorectal risk;
+# DIS-ENDOMETRIAL and DIS-OVARIAN are the gynecologic-cancer endpoints
+# addressed by the procedure. DIS-CRC is the index-organ syndrome but
+# this procedure does not address it (colectomy / colonoscopy do).
+applicable_diseases:
+  - DIS-ENDOMETRIAL
+  - DIS-OVARIAN
+  - DIS-CRC
+
+operative_mortality_pct: "<0.5% in laparoscopic / robotic hysterectomy in women aged 40-50 at high-volume gynecologic-oncology centers"
+
+common_complications:
+  - name: "Bowel / bladder / ureteric injury"
+    frequency: "1-3%"
+  - name: "Vaginal cuff dehiscence (post-laparoscopic / robotic)"
+    frequency: "1-2%"
+  - name: "Wound infection / port-site issues"
+    frequency: "2-5%"
+  - name: "Venous thromboembolism (without prophylaxis)"
+    frequency: "1-3%"
+  - name: "Surgical-menopause symptoms (if BSO performed premenopausally)"
+    frequency: "70-90%"
+  - name: "Pelvic floor / urinary issues (long-term)"
+    frequency: "5-15%"
+  - name: "Sexual function changes"
+    frequency: "Variable; usually transient"
+  - name: "Occult endometrial hyperplasia / occult carcinoma in specimen"
+    frequency: "1-5% in Lynch carriers undergoing prophylactic surgery"
+
+sources:
+  - SRC-ASCO-ACMG-LYNCH-2014
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-NCCN-UTERINE-2025
+
+last_reviewed: "2026-05-18"
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_agent_aac98192634228af3
+draft_revision: 1
+
+patient_facing_summary:
+  english: >
+    Lynch syndrome (germline pathogenic variant in MLH1, MSH2, MSH6,
+    PMS2, or EPCAM) is best known for elevated colorectal cancer risk
+    but also raises lifetime risk of endometrial cancer to roughly
+    20-60% (highest with MLH1/MSH2/MSH6) and ovarian cancer to roughly
+    4-20% depending on gene. Endometrial-cancer screening (annual
+    endometrial biopsy + transvaginal ultrasound) is offered but
+    sensitivity for early disease is limited, so risk-reducing
+    hysterectomy with bilateral salpingo-oophorectomy after completion
+    of childbearing (typically age 40+ for MLH1/MSH2, individualized
+    for MSH6/PMS2) is endorsed by ASCO/ACMG and NCCN. The decision is
+    individualized: gene-specific risk, family history of gynecologic
+    cancers, comorbidities, and preferences all weigh in. Laparoscopic
+    or robotic approach is standard. If BSO is performed premenopausally,
+    surgical-menopause counseling (hormone-replacement options, bone /
+    cardiovascular health) is part of pre-operative discussion.
+  ukrainian: >
+    Синдром Лінча (зародкові патогенні варіанти MLH1, MSH2, MSH6, PMS2
+    або EPCAM) найбільш відомий підвищеним ризиком колоректального
+    раку, але також збільшує довічний ризик раку ендометрія до
+    приблизно 20–60% (найвищий при MLH1/MSH2/MSH6) та раку яєчників —
+    до приблизно 4–20% залежно від гена. Скринінг раку ендометрія
+    (щорічна біопсія ендометрія + трансвагінальне УЗД) пропонується,
+    але чутливість для ранніх форм обмежена, тому профілактична
+    гістеректомія з двобічною сальпінго-оофоректомією після
+    завершення дітородіння (зазвичай від 40 років для MLH1/MSH2,
+    індивідуально для MSH6/PMS2) рекомендована ASCO/ACMG та NCCN.
+    Рішення є індивідуалізованим: гено-специфічний ризик, сімейний
+    анамнез гінекологічних злоякісних новоутворень, супутні
+    захворювання та преференції — все має значення. Стандартним є
+    лапароскопічний або робот-асистований доступ. Якщо BSO
+    виконується у пременопаузі, обговорюються хірургічна менопауза
+    (варіанти замісної гормональної терапії, стан кісток та
+    серцево-судинної системи) як частина передопераційного
+    консультування.
+
+notes: >
+  Lifetime gynecologic cancer risk in Lynch syndrome (Vasen et al.,
+  ASCO/ACMG 2014; NCCN Genetic/Familial CRC v3.2025; NCCN Uterine
+  v3.2025):
+    - Endometrial cancer: MLH1 ~25-60%, MSH2 ~25-60%, MSH6 ~16-45%,
+      PMS2 ~15-25%.
+    - Ovarian cancer: MLH1 ~4-20%, MSH2 ~8-20%, MSH6 ~1-11%, PMS2 ~3%.
+    - Background population risks: endometrial ~3%, ovarian ~1-2%.
+
+  Risk-reducing total hysterectomy with bilateral salpingo-oophorectomy
+  (RR-TH-BSO) is the most effective preventive intervention; it
+  eliminates endometrial cancer risk and reduces ovarian cancer risk by
+  >90%. Schmeler 2006 NEJM cohort showed zero endometrial / ovarian
+  cancers in the RR-surgery arm vs ~33% endometrial / 5% ovarian in the
+  surveillance arm.
+
+  Timing:
+    - MLH1 / MSH2: age 40-45 typical, after completion of childbearing.
+    - MSH6 / PMS2: lower / later-onset gene-specific risk — RR-TH may
+      be offered later or limited to TH without BSO depending on
+      individualized risk assessment.
+
+  Approach: laparoscopic / robotic total hysterectomy is standard; open
+  reserved for technical considerations (adhesions, large uteri).
+  Sentinel-node assessment is NOT performed in a true prophylactic
+  setting because there is no presumed cancer. If pathology reveals
+  occult carcinoma (~1-5%), referral to gynecologic oncology for staging
+  and adjuvant decision-making is the standard pathway.
+
+  Premenopausal BSO induces surgical menopause — HRT up to age of
+  natural menopause is generally endorsed in Lynch carriers without
+  hormone-driven malignancy contraindications.
+
+  `intent: curative` per §17.1 enum — risk-reducing surgery in carriers
+  is curative-intent in the carrier-state framing. The schema does not
+  define a `preventive` intent in v0.1.

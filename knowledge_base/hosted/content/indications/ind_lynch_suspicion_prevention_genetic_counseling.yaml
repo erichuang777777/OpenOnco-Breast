@@ -1,0 +1,162 @@
+id: IND-LYNCH-SUSPICION-PREVENTION-GENETIC-COUNSELING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-LYNCH-FAMILY-HISTORY-SUSPICION
+
+# No drug regimen — intervention is referral + genetic-test ordering +
+# pre/post-test counseling. recommended_regimen: null is appropriate.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Diagnostic yield of germline MMR/EPCAM panel testing in pedigree-
+    suspicion populations: ~15-25% positive carrier identification
+    (varies by criterion stringency — Amsterdam II ~25-50%, single
+    relative <50 ~10-15%, PREMM5 ≥5% ~25-30%). Confirmed carrier
+    routes to enhanced surveillance with documented mortality benefit:
+    colonoscopy q1-2y reduces CRC mortality by ~70%; risk-reducing
+    hysterectomy + BSO post-childbearing reduces endometrial and
+    ovarian cancer incidence to near-zero.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  # Germline panel test entity not yet authored as a TEST-* — v0.2-B
+  # follow-up. Currently referenced in rationale.
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for individuals with pedigree
+  suspicion of Lynch syndrome. Two parallel referrals:
+
+  **(1) Genetic counseling referral.** Pre-test counseling covers:
+  inheritance pattern (autosomal dominant), penetrance (variable by
+  gene — MLH1/MSH2 high, MSH6/PMS2 lower), implications for family
+  members (cascade testing if positive), insurance / GINA
+  considerations, psychological aspects. Per ACMG / ASCO guidelines,
+  pre-test counseling is the standard of care before germline testing.
+
+  **(2) Germline MMR/EPCAM panel testing.** Modern multi-gene panels
+  (e.g., Invitae Lynch syndrome panel, Color hereditary cancer panel,
+  GeneDx OncoGene Comprehensive) cover MLH1, MSH2, MSH6, PMS2, EPCAM
+  (3' deletion). Variant classification per ACMG framework: pathogenic
+  / likely pathogenic / VUS / likely benign / benign.
+
+  **Tumor MMR/MSI screening** (universal in CRC and endometrial cancer
+  per NCCN/ASCO) — if any tumor is available from family members,
+  IHC-detected loss of MLH1/MSH2/MSH6/PMS2 protein, MSI-high status, or
+  somatic MLH1 promoter methylation provides supporting evidence
+  (treatment-persona territory; useful here as an additional pedigree
+  signal).
+
+  **Sequel pathway:**
+  - Positive carrier → enhanced surveillance per NCCN Genetic/Familial
+    High-Risk: Colorectal protocol (colonoscopy q1-2y starting age 25
+    or 10y before youngest family CRC dx; endometrial surveillance;
+    discussion of risk-reducing hysterectomy/BSO post-childbearing
+    age 40+; urothelial / gastric / pancreatic surveillance per
+    individual risk).
+  - Negative result (no pathogenic / likely-pathogenic variant) →
+    general-population screening cadence (USPSTF) +
+    re-stratification of any residual family-history risk.
+  - VUS result → managed as pedigree-suspicion (this Indication)
+    until segregation analysis or functional studies clarify.
+
+  Genetic counseling and germline testing are typically covered by
+  insurance in the US/EU when pedigree criteria are met; in Ukraine,
+  germline testing is available through private labs at
+  out-of-pocket cost (~5000-15000 UAH for multi-gene panel).
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для осіб з родовідною підозрою на
+  синдром Lynch. Дві паралельні направлення:
+
+  **(1) Направлення на генетичне консультування.** Pre-test
+  консультування охоплює: спадкування (аутосомно-домінантне),
+  пенетрантність (варіабельна за геном — MLH1/MSH2 високa, MSH6/PMS2
+  нижча), наслідки для членів сім'ї (cascade тестування при позитиві),
+  страхові / GINA-міркування, психологічні аспекти. За ACMG / ASCO
+  настановами, pre-test консультування — standard of care перед
+  germline тестуванням.
+
+  **(2) Germline MMR/EPCAM панельне тестування.** Сучасні мультигенні
+  панелі (напр., Invitae Lynch syndrome panel, Color hereditary cancer
+  panel, GeneDx OncoGene Comprehensive) покривають MLH1, MSH2, MSH6,
+  PMS2, EPCAM (3' делеція). Класифікація варіантів за рамкою ACMG:
+  патогенний / ймовірно патогенний / VUS / ймовірно доброякісний /
+  доброякісний.
+
+  **Tumor MMR/MSI скринінг** (універсальний у КРР і раку ендометрію
+  per NCCN/ASCO) — якщо доступна будь-яка пухлина від членів сім'ї,
+  IHC-виявлена втрата MLH1/MSH2/MSH6/PMS2 білка, MSI-high статус або
+  соматичне MLH1 промотор-метилювання забезпечує підтверджувальний
+  доказ (treatment-persona територія; корисне тут як додатковий
+  родовідний сигнал).
+
+  **Наступний шлях:**
+  - Позитивний носій → посилене спостереження per NCCN протокол
+    (колоноскопія q1-2y з 25 років або 10 років до наймолодшого
+    сімейного КРР діагнозу; ендометріальне спостереження; обговорення
+    risk-reducing гістеректомії/BSO post-childbearing вік 40+;
+    уротеліальне / шлункове / панкреатичне спостереження за
+    індивідуальним ризиком).
+  - Негативний результат (без патогенного / ймовірно-патогенного
+    варіанту) → general-population скринінг-частота (USPSTF) +
+    ре-стратифікація залишкового сімейно-історичного ризику.
+  - VUS результат → ведеться як родовідна підозра (ця Indication) до
+    segregation analysis або functional studies.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-ESMO-CRC-2024
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Germline testing for Lynch syndrome is recommended for individuals
+      meeting Amsterdam II or revised Bethesda criteria, or with PREMM5
+      score ≥2.5%. Genetic counseling should precede testing."
+  - source_id: SRC-ESGO-ENDOMETRIAL-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Lynch syndrome screening in women with endometrial cancer
+      family history; cascade testing of relatives upon positive
+      identification."
+
+do_not_do:
+  - "Не призначати germline тестування без pre-test консультування — інформована згода, психологічна підготовка обов'язкові."
+  - "Не trete VUS результат як патогенний — управляйте як родовідну підозру до подальших даних."
+  - "Не призначати risk-reducing хірургію (BSO / hysterectomy) у носіїв без обговорення reproductive-planning + менопаузальних наслідків."
+  - "Не презентувати negative-panel результат як zero-risk — residual сімейний-історичний ризик може зберігатися (deep intronic / regulatory варіанти, не покриті панеллю; rare non-Lynch hereditary CRC синдроми)."
+
+do_not_do_en:
+  - "Do not order germline testing without pre-test counseling — informed consent and psychological preparation are mandatory."
+  - "Do not treat a VUS result as pathogenic — manage as pedigree suspicion pending further data."
+  - "Do not recommend risk-reducing surgery (BSO / hysterectomy) in carriers without a discussion of reproductive planning and menopausal sequelae."
+  - "Do not present a negative-panel result as zero-risk — residual family-history risk may persist (deep intronic / regulatory variants not covered by panel; rare non-Lynch hereditary CRC syndromes)."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — v0.2-B hereditary pilot starter. NCCN Genetic/Familial High-Risk Colorectal/Endometrial as a new SRC entity is v0.2-B authoring backlog (per scope proposal open question #7 on license posture).

@@ -1,0 +1,22 @@
+id: BIO-CDC73-GERMLINE
+names:
+  preferred: "CDC73 (HRPT2) germline pathogenic variant"
+  ukrainian: "CDC73 (HRPT2) germline патогенний варіант"
+  english: "CDC73 germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: CDC73
+  gene_hugo_id: HGNC:16783
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources: [SRC-NCCN-BCELL-2025]
+last_reviewed: "2026-05-18"
+notes: "CDC73 (HRPT2) germline — drives Hyperparathyroidism-Jaw Tumor (HPT-JT) syndrome. Spectrum: primary hyperparathyroidism (often single-gland adenoma, ~15% parathyroid carcinoma), ossifying fibromas of mandible/maxilla, uterine tumors, renal cysts/Wilms-like tumors. Surveillance: annual serum calcium + PTH + neck exam; jaw imaging; renal/uterine imaging in carriers. STUB pending two-Co-Lead signoff."
+notes_ua: "CDC73 (HRPT2) germline — драйвер HPT-JT синдрому: первинний гіперпаратиреоз (часто паратиреоїдна карцинома), оссифікуючі фіброми щелеп, ниркові/маткові пухлини. Щорічний контроль кальцію + ПТГ."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_germline_batch3
+draft_revision: 1

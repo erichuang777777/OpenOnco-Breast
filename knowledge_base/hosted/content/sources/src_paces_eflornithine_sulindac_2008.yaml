@@ -1,0 +1,65 @@
+id: SRC-PACES-EFLORNITHINE-SULINDAC-2008
+source_type: rct_publication
+title: Difluoromethylornithine plus sulindac for the prevention of sporadic colorectal
+  adenomas — a randomized placebo-controlled, double-blind trial
+version: '2008'
+authors:
+- Meyskens FL
+- McLaren CE
+- Pelot D
+- Fujikawa-Brooks S
+- Carpenter PM
+- Hawk E
+- Kelloff G
+- Lawson MJ
+- Kidao J
+- McCracken J
+- Albers CG
+- Ahnen DJ
+- Turgeon DK
+- Goldschmid S
+- Lance P
+- Hagedorn CH
+- Gillen DL
+- Gerner EW
+journal: Cancer Prevention Research
+doi: 10.1158/1940-6207.CAPR-08-0042
+url: https://aacrjournals.org/cancerpreventionresearch/article/1/1/32/49648
+access_level: subscription_required
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 2
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources_batch4
+license:
+  name: American Association for Cancer Research / Cancer Prevention Research (subscription)
+  spdx_id: null
+attribution:
+  required: true
+  text: Meyskens FL et al., Cancer Prev Res 2008 — eflornithine + sulindac sporadic
+    colorectal adenoma RCT
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+legal_review:
+  status: pending
+  notes: Subscription publication; abstract open access. Subsequent FAP trial Burke
+    NEJM 2020 (PACES-derived combination in FAP) is a separate publication.
+relates_to_diseases:
+- DIS-CRC
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. PACES — double-blind RCT randomising 375
+  adults with prior sporadic colorectal adenoma to difluoromethylornithine (DFMO /
+  eflornithine 500 mg/day) + sulindac 150 mg/day vs placebo for 3 years. Result: 70%
+  relative reduction in adenoma recurrence (12.3% vs 41.1%) and >90% reduction in
+  advanced / multiple adenomas. Foundational for combination-chemoprevention research
+  and subsequent J-FAPP / Burke FAP trials. Not yet a guideline-recommended regimen
+  in average-risk colorectal prevention (cardiovascular / NSAID risk profile).
+
+  '
+pages_count: 11
+references_count: 35
+corpus_role: rct_publication

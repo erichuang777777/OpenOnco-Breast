@@ -1,0 +1,164 @@
+id: IND-AUTOIMMUNE-THYROIDITIS-LYMPHOMA-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-THYROID-PAPILLARY
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-AUTOIMMUNE-THYROIDITIS-LYMPHOMA-PREVENTION
+
+# Symptom-driven observation only — biochemical TSH-monitoring for
+# hypothyroidism management; no scheduled imaging.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Symptom-driven observation (TSH q6-12mo for hypothyroidism
+    management; thyroid US only if palpable abnormality, compressive
+    symptoms, or B-symptoms) misses subclinical sonographic nodules
+    that would have been found by scheduled US. Acceptable as a
+    minimum-intensity default when patient declines or cannot access
+    annual ultrasound — but Hashimoto-associated thyroid lymphoma and
+    PTC can present at later stage when caught only by clinical
+    examination.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-AUTOIMMUNE-THYROIDITIS-LYMPHOMA-
+  PREVENTION-SURVEILLANCE. Appropriate for patients with confirmed
+  Hashimoto's thyroiditis who choose minimal-intensity surveillance
+  for any of: cost / access constraints (no ultrasound coverage),
+  procedural anxiety, geographic distance to imaging center, very
+  long-standing stable Hashimoto without nodular evolution on prior
+  studies, or explicit preference for symptom-driven follow-up.
+
+  **Cadence:** TSH q6-12mo for routine endocrine management. Thyroid US
+  ordered only when triggered by:
+    - New palpable nodule or asymmetry on clinical examination
+    - New compressive symptoms (dysphagia, hoarseness, stridor)
+    - Rapid goiter enlargement reported by patient
+    - B-symptoms (fever, drenching night sweats, unintentional weight
+      loss >10%)
+    - Otherwise-unexplained TSH instability
+
+  **Not appropriate for:**
+    - Patients with any pre-existing thyroid nodule on prior imaging
+      (these warrant scheduled US per ATA 2015 / TIRADS-driven cadence)
+    - Patients with a strong family history of thyroid lymphoma or
+      thyroid cancer
+    - Patients with prior childhood neck radiation (independent thyroid
+      cancer risk factor)
+    - Patients who present with any of the "red-flag" features above —
+      these route immediately to the standard-track surveillance pathway
+      or directly to diagnostic workup
+
+  **PPI/levothyroxine analogy:** as in the Barrett's observation track,
+  this is a CHARTER §11 patient-autonomy framing — the absolute lymphoma
+  risk in any individual Hashimoto patient remains low (~0.5-3 cases
+  per 100,000 per year), so an informed-consent choice of symptom-driven
+  observation is defensible even though it is below best-practice
+  imaging cadence. Patient retains the option to upgrade to active
+  surveillance at any visit.
+
+  **Alarm features** (see "not appropriate for" above) route immediately
+  to thyroid US ± core-needle biopsy as appropriate. If frank malignancy
+  is confirmed, the patient transitions to the treatment-persona
+  algorithm via DIS-THYROID-PAPILLARY (for PTC) or to a B-cell-lymphoma
+  treatment pathway (for primary thyroid lymphoma).
+
+rationale_ua: >
+  Альтернативно-трекова Indication — компаньйон до
+  IND-AUTOIMMUNE-THYROIDITIS-LYMPHOMA-PREVENTION-SURVEILLANCE. Доречно
+  для пацієнтів з підтвердженим тиреоїдитом Хашимото, які обирають
+  мінімальної інтенсивності спостереження з причин: вартість / доступ
+  (брак покриття УЗД), процедурна тривога, географічна відстань до
+  imaging-центра, дуже тривалий стабільний Хашимото без нодулярної
+  еволюції на попередніх дослідженнях, або явна перевага
+  symptom-driven follow-up.
+
+  **Частота:** ТТГ q6-12 міс для рутинного endocrine-менеджменту. УЗД
+  щитоподібної залози замовляється лише при триггері:
+    - Новий пальповний вузол або асиметрія на клінічному огляді
+    - Нові компресивні симптоми (дисфагія, охриплість, стридор)
+    - Швидке збільшення зоба за повідомленням пацієнта
+    - B-симптоми (лихоманка, профузні нічні поти, ненавмисне схуднення
+      >10%)
+    - Інакше-непояснена нестабільність ТТГ
+
+  **Не доречно для:**
+    - Пацієнтів з будь-яким попередньо виявленим тиреоїдним вузлом на
+      раніше виконаному імиджингу (запланована УЗД per ATA 2015 / TIRADS)
+    - Пацієнтів з сильним сімейним анамнезом лімфоми щитоподібної
+      залози або раку щитоподібної залози
+    - Пацієнтів з попереднім дитячим опроміненням шиї (незалежний
+      фактор ризику)
+    - Пацієнтів з "red-flag" ознаками — маршрутизують негайно до
+      стандарт-треку спостереження або діагностичного обстеження
+
+  Per CHARTER §11 framing автономії пацієнта: абсолютний ризик лімфоми
+  у будь-якого окремого Хашимото-пацієнта залишається низьким (~0.5-3
+  випадки на 100 000 на рік), тому informed-consent вибір
+  symptom-driven observation є legitimate. Пацієнт зберігає опцію
+  upgrade до активного спостереження на будь-якому візиті.
+
+  **Alarm features** маршрутизують негайно до УЗД щитоподібної залози
+  ± core-needle біопсії за показаннями. Якщо frank malignancy
+  підтверджено, пацієнт переходить до treatment-persona алгоритму
+  через DIS-THYROID-PAPILLARY (для PTC) або B-cell lymphoma treatment
+  pathway (для первинної лімфоми щитоподібної залози).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-THYROID-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Routine surveillance imaging in patients with chronic lymphocytic
+      thyroiditis without nodular disease is not strictly mandated;
+      ultrasound is triggered by clinical findings."
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не використовувати цей шлях у пацієнтів з пре-існуючими вузлами на УЗД — потребують запланованої сонографічної surveillance."
+  - "Не презентувати symptom-driven observation як еквівалент активного УЗД-спостереження — interval malignancy ризик вищий."
+  - "Не ігнорувати alarm features (швидко зростаючий зоб, дисфагія, B-симптоми) — імідіат-обстеження показано."
+  - "Не використовувати цей шлях у пацієнтів з попереднім дитячим опроміненням шиї — незалежний фактор ризику виправдовує запланований УЗД-моніторинг."
+  - "Не пропускати повторне обговорення upgrade до активного спостереження — пацієнти можуть змінити переваги."
+
+do_not_do_en:
+  - "Do not use this pathway in patients with pre-existing nodules on ultrasound — they require scheduled sonographic surveillance."
+  - "Do not present symptom-driven observation as equivalent to active US surveillance — interval-malignancy risk is higher."
+  - "Do not ignore alarm features (rapidly enlarging goiter, dysphagia, B-symptoms) — immediate workup indicated."
+  - "Do not use this pathway in patients with prior childhood neck radiation — independent risk factor warrants scheduled US monitoring."
+  - "Do not skip periodic re-discussion of upgrade to active surveillance — patients may change preferences."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — alternative-track companion for Hashimoto's lymphoma/PTC
+  prevention. Required for §15.2 C4 ≥2-tracks invariant on the
+  PreventionPlan shape (KSS §20.2). Two-Co-Lead signoff queued.

@@ -1,0 +1,79 @@
+id: RF-UNIVERSAL-CURRENT-SMOKER-MULTI-CANCER
+definition: >-
+  Current tobacco use ≥3 months at any quantity (cigarettes, cigars,
+  pipe, smokeless tobacco, hookah / waterpipe). IARC Monograph 100A
+  (2012) classifies tobacco smoking as Group 1 carcinogen with
+  sufficient evidence in humans for cancers of: oral cavity, oro- /
+  hypo- / nasopharynx, paranasal sinuses, larynx, oesophagus,
+  stomach, colon and rectum, liver, pancreas, lung, kidney (RCC
+  and renal pelvis / ureter urothelial), urinary bladder, uterine
+  cervix, ovary (mucinous), and myeloid leukaemia (≥17 sites).
+  Smokeless tobacco adds oral / oesophageal / pancreas
+  associations. Current-smoker status is the highest-yield
+  intervention point in cancer prevention — dose-response is
+  steep and cessation benefits accrue from year 1 with measurable
+  lung-cancer risk reduction by year 5 and continuing for ≥20y.
+  Universal RedFlag (relevant_diseases ["*"]) — routes to
+  structured cessation (combined behavioural + pharmacotherapy,
+  varenicline / bupropion / NRT-combination per USPHS / NICE)
+  AND to USPSTF lung-cancer screening eligibility evaluation
+  (annual LDCT for adults aged 50-80 with ≥20 pack-year history
+  who currently smoke or have quit within 15 years). Distinct
+  from disease-specific smoking RFs (rare; smoking is universal
+  enough that it has not been authored as a per-disease RF) —
+  this RF is the upstream catchment.
+definition_ua: >-
+  Поточне tobacco use ≥3 місяців у будь-якій кількості (сигарети,
+  сигари, люлька, smokeless tobacco, кальян / waterpipe). IARC
+  Monograph 100A (2012) класифікує tobacco smoking як Group 1
+  canceroген з sufficient evidence у людей для раків: ротова
+  порожнина, oro- / hypo- / nasopharynx, paranasal sinuses,
+  гортань, стравохід, шлунок, товста і пряма кишка, печінка,
+  підшлункова, легені, нирка (RCC та renal pelvis / ureter
+  urothelial), сечовий міхур, шийка матки, яєчник (mucinous),
+  myeloid leukaemia (≥17 локалізацій). Smokeless tobacco додає
+  oral / oesophageal / pancreas асоціації. Current-smoker status
+  — найвища-yield точка інтервенції в cancer prevention —
+  dose-response steep, і cessation benefits накопичуються з 1-го
+  року з measurable lung-cancer risk reduction до 5-го року і
+  тривають ≥20р. Universal RedFlag (relevant_diseases ["*"]) —
+  routes до structured cessation (combined behavioural +
+  pharmacotherapy, varenicline / bupropion / NRT-combination
+  per USPHS / NICE) ТА до USPSTF lung-cancer screening
+  eligibility evaluation (щорічний LDCT для дорослих 50-80 з
+  ≥20 pack-year history, поточні курці або quit within 15 років).
+  Відмінний від disease-specific smoking RFs (рідкі; куріння
+  universal enough, не authored as per-disease RF) — цей RF —
+  upstream catchment.
+
+trigger:
+  type: composite_score
+  any_of:
+    - finding: "current_tobacco_use_documented"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: lifestyle
+
+relevant_diseases:
+  - "*"
+
+shifts_algorithm: []
+
+sources:
+  - SRC-IARC-100A-TOBACCO-SMOKING
+  - SRC-USPSTF-LUNG-LDCT-2021
+  - SRC-WCRF-AICR-CUP-2018
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Pre-triage universal RedFlag — current tobacco use (≥3 mo, any quantity) per IARC 100A 17-cancer cluster. Authoring intent: highest-yield prevention intervention. Routes to (1) structured cessation — combined behavioural + first-line pharmacotherapy (varenicline / bupropion / NRT-combination) per USPHS 2008 + NICE / NCQA, and (2) USPSTF 2021 LDCT eligibility evaluation (annual LDCT for 50-80yo with ≥20 pack-y history, current smoker or quit ≤15y). With relevant_diseases=[\"*\"], engine does NOT attach Indication tracks via prevention path (plan.py:297 excludes \"*\") — universal Indications anchored to DIS-NSCLC are documentation / sidecar candidates pending future engine extension. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1

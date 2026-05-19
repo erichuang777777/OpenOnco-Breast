@@ -1,0 +1,14 @@
+{
+  "patient_id": "BRCA-PREV-001",
+  "comment": "32yo woman, mother diagnosed with breast cancer at 38, maternal aunt with high-grade serous ovarian cancer at 52, Ashkenazi-Jewish ancestry. Patient herself untested, no current cancer. Engine routes to PreventionPlan: standard = pre-test counseling + germline BRCA1/2 + extended-panel (PALB2/CHEK2/ATM/RAD51C/D) testing; alternative = empirical enhanced surveillance (breast MRI q1y from 25-30, alternating with mammogram from 30). Validates v0.2-B BRCA/HBOC hereditary pilot.",
+  "biomarkers": {},
+  "demographics": {"age": 32, "sex": "female", "ecog": 0},
+  "findings": {
+    "family_breast_cancer_under_50": true,
+    "family_ovarian_cancer_any_age": true,
+    "family_ashkenazi_jewish_ancestry_with_breast_or_ovarian": true,
+    "Mother breast cancer age 38": true,
+    "Maternal aunt high-grade serous ovarian cancer age 52": true,
+    "No personal cancer diagnosis": true
+  }
+}

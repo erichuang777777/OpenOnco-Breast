@@ -1,0 +1,13 @@
+{
+  "patient_id": "COWDEN-PREV-001",
+  "comment": "35yo female with macrocephaly (head circumference >97th %ile), characteristic mucocutaneous papillomas of the tongue and gingivae, family history of multiple thyroid nodules. Meets revised Cleveland Clinic / NCCN Cowden clinical criteria. No current cancer. Engine routes to PreventionPlan (after Agent F): standard = pre-test counseling + germline PTEN panel + breast cancer screening at 30 (mammography + breast MRI) + thyroid US q1y + endometrial surveillance discussion at 35-40 + colonoscopy from age 35; alternative = empirical surveillance.",
+  "biomarkers": {},
+  "demographics": {"age": 35, "sex": "female", "ecog": 0},
+  "findings": {
+    "family_cowden_clinical_diagnostic_criteria_met": true,
+    "Macrocephaly head circumference >97th percentile": true,
+    "Mucocutaneous papillomas tongue + gingivae": true,
+    "Family history of multiple thyroid nodules": true,
+    "No personal cancer diagnosis": true
+  }
+}

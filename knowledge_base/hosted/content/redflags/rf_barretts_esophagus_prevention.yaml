@@ -1,0 +1,136 @@
+id: RF-BARRETTS-ESOPHAGUS-PREVENTION
+definition: >-
+  Barrett's esophagus (intestinal metaplasia of the distal esophagus with
+  goblet cells on biopsy after EGD performed for chronic GERD or
+  Barrett's-specific surveillance) in an individual without a current
+  esophageal adenocarcinoma diagnosis. Established precursor lesion to
+  esophageal adenocarcinoma — annual progression rates: non-dysplastic
+  Barrett's ~0.1-0.3%/year to EAC, low-grade dysplasia (LGD) ~0.7-2%/year,
+  high-grade dysplasia (HGD) ~7-19%/year. Endoscopic surveillance and
+  endoscopic eradication therapy (radiofrequency ablation, endoscopic
+  mucosal resection) for dysplastic Barrett's substantially reduce EAC
+  incidence and mortality. Prevention-persona RedFlag (§20 ratification
+  2026-05-18, v0.3 chronic-condition pilot).
+definition_ua: >-
+  Стравохід Барретта (кишкова метаплазія дистального стравоходу з
+  келихоподібними клітинами на біопсії після EGD, виконаної з приводу
+  хронічного ГЕРХ або Barrett-специфічного спостереження) у пацієнта без
+  поточного діагнозу аденокарциноми стравоходу. Встановлена передракова
+  патологія аденокарциноми стравоходу — щорічні показники прогресії:
+  не-дисплазійний Barrett ~0.1-0.3%/рік до EAC, дисплазія низького
+  ступеня (LGD) ~0.7-2%/рік, дисплазія високого ступеня (HGD)
+  ~7-19%/рік. Ендоскопічне спостереження та ендоскопічна ерадикаційна
+  терапія (радіочастотна абляція, ендоскопічна резекція слизової) для
+  дисплазійного Barrett суттєво знижують захворюваність EAC та
+  смертність. Prevention-persona RedFlag (ратифікація §20, 2026-05-18,
+  v0.3 пілот chronic-condition).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "barretts_esophagus_diagnosis_confirmed"
+      value: true
+    - finding: "barretts_esophagus_with_dysplasia_low_grade"
+      value: true
+    - finding: "barretts_esophagus_with_dysplasia_high_grade"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+# §20 prevention extension — drives engine routing to PreventionPlan
+# when patient carries this RF and no confirmed Disease (KSS §20.2).
+risk_category: chronic_condition
+
+# Cancer being prevented: esophageal adenocarcinoma (EAC), captured in
+# OpenOnco KB as DIS-ESOPHAGEAL. Barrett's metaplasia is the established
+# precursor lesion; risk escalates with dysplasia grade.
+relevant_diseases:
+  - DIS-ESOPHAGEAL
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-ESOPHAGEAL-2025
+  - SRC-ESMO-ESOPHAGEAL-2024
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.3 chronic-condition prevention pilot — Barrett's esophagus.
+  Prevention-persona RedFlag (CHARTER §3 amended 2026-05-18 Path A,
+  HCP-mediated). Fires when patient profile shows confirmed Barrett's
+  esophagus (with or without dysplasia) AND no confirmed esophageal
+  adenocarcinoma. Engine routes such patients to a PreventionPlan with
+  2 tracks: intensified EGD surveillance per ACG/NCCN cadences
+  (IND-BARRETTS-ESOPHAGUS-PREVENTION-SURVEILLANCE) as the standard
+  pathway; routine q5y EGD observation (IND-BARRETTS-ESOPHAGUS-
+  PREVENTION-OBSERVATION) as the alternative — appropriate ONLY for
+  confirmed non-dysplastic Barrett, not for any dysplasia grade.
+
+  Evidence for surveillance + endoscopic eradication therapy reducing
+  EAC incidence: HGD ablation reduces progression to EAC by ~75% vs
+  observation (Shaheen et al. JAMA 2014; AIM-Dysplasia trial). LGD
+  ablation reduces progression to HGD/EAC by ~75% (SURF trial, Phoa
+  et al. JAMA 2014). For non-dysplastic Barrett, surveillance does not
+  reduce incidence but improves earliest-stage detection.
+
+  Dysplasia management: LGD → endoscopic eradication therapy (RFA ±
+  EMR for visible lesions) OR intensified surveillance q6-12mo if
+  patient declines. HGD → endoscopic eradication therapy mandatory
+  (RFA + EMR); esophagectomy reserved for non-responders or invasive
+  T1b disease.
+
+  PPI co-therapy: high-dose PPI (omeprazole 40mg BID or equivalent) is
+  recommended for symptom control and esophagitis healing in all
+  Barrett's patients regardless of surveillance track; reduces
+  inflammatory progression but does not by itself prevent EAC
+  development.
+
+  Sources TODO: ACG Barrett's Esophagus Clinical Guideline 2022
+  (Shaheen et al.) as a new SRC entity; AGA Barrett's Esophagus
+  Clinical Practice Update 2022 as a new SRC entity.
+
+  This is a STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1
+  dev-mode exemption (sources cited, draft flag set).
+notes_ua: >
+  v0.3 пілот prevention chronic-condition — стравохід Барретта.
+  Prevention-persona RedFlag (CHARTER §3 поправка 2026-05-18, Path A
+  HCP-mediated). Спрацьовує коли профіль пацієнта показує підтверджений
+  стравохід Барретта (з дисплазією або без) ТА відсутній діагноз
+  аденокарциноми стравоходу. Engine маршрутизує до PreventionPlan з 2
+  треками: посилене EGD-спостереження за ACG/NCCN частотами
+  (IND-BARRETTS-ESOPHAGUS-PREVENTION-SURVEILLANCE) як стандартний шлях;
+  рутинна EGD q5y (IND-BARRETTS-ESOPHAGUS-PREVENTION-OBSERVATION) як
+  альтернатива — доречно ЛИШЕ для підтвердженого не-дисплазійного
+  Barrett, не для жодного ступеня дисплазії.
+
+  Доказова база ерадикаційної терапії: RFA при HGD знижує прогресію до
+  EAC на ~75% порівняно з спостереженням (Shaheen et al. JAMA 2014;
+  AIM-Dysplasia). RFA при LGD знижує прогресію до HGD/EAC на ~75%
+  (SURF trial, Phoa et al. JAMA 2014). Для не-дисплазійного Barrett
+  спостереження не знижує захворюваність, але покращує раннє виявлення.
+
+  Управління дисплазією: LGD → ендоскопічна ерадикаційна терапія
+  (RFA ± EMR для видимих уражень) АБО посилене спостереження q6-12 міс
+  при відмові пацієнта. HGD → ендоскопічна ерадикаційна терапія
+  обов'язкова (RFA + EMR); езофагектомія резервована для нон-респондерів
+  або інвазивного T1b захворювання.
+
+  PPI co-терапія: високодозовий PPI (омепразол 40мг BID або еквівалент)
+  рекомендований для контролю симптомів і загоєння езофагіту у всіх
+  пацієнтів з Barrett незалежно від треку спостереження.
+
+  TODO джерела: ACG Barrett's Esophagus Clinical Guideline 2022 та
+  AGA Barrett's Esophagus Clinical Practice Update 2022 як нові SRC.
+
+  Це STUB, очікує підпис двох Clinical Co-Lead за §6.1 dev-mode
+  exemption.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+draft: true

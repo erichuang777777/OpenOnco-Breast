@@ -1,0 +1,112 @@
+id: DRUG-TENOFOVIR-AF
+names:
+  preferred: "Tenofovir alafenamide"
+  ukrainian: "Тенофовіру алафенамід"
+  english: "Tenofovir alafenamide"
+  synonyms:
+    - "TAF"
+    - "Tenofovir AF"
+  brand_names:
+    - "Vemlidy"
+atc_code: J05AF13
+rxnorm_id: "1924396"
+drug_class: "Nucleotide analog reverse transcriptase inhibitor (NRTI / NtRTI) — second-generation tenofovir prodrug"
+mechanism: >
+  Second-generation phosphonamidate prodrug of tenofovir; stabilized to
+  resist plasma hydrolysis (versus TDF) so it preferentially delivers
+  tenofovir intracellularly to hepatocytes (HBV) and lymphocytes (HIV).
+  Once in target cell, intracellular cathepsin A cleaves TAF to tenofovir,
+  which is then phosphorylated to tenofovir-DP and competitively inhibits
+  HBV polymerase / HIV-1 reverse transcriptase with chain termination.
+  Yields ~90% lower systemic tenofovir exposure than TDF at equivalent
+  intracellular concentrations — reduced renal and bone toxicity.
+
+regulatory_status:
+  fda:
+    approved: true
+    year_first_approval: 2016
+    indications_brief:
+      - "Chronic hepatitis B (HBV) in adults and pediatric patients ≥6 years and ≥25 kg with compensated liver disease"
+      - "HIV-1 infection (component of ART, in fixed-dose combinations)"
+      - "Cancer-prevention pathway: long-term HBV suppression for HCC / HBV-associated NHL risk reduction"
+  ema:
+    approved: true
+    year_first_approval: 2017
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: true
+    reimbursement_indications:
+      - "Хронічний гепатит B (HBV) — лікування для довготривалого пригнічення з нижчим ризиком нефро- та кістковотоксичних ефектів порівняно з TDF"
+      - "ВІЛ-інфекція — як компонент комбінованих режимів АРТ"
+    last_verified: "2026-05-18"
+    notes: "Зареєстровано в Україні (Vemlidy для HBV; компонент Biktarvy, Genvoya, Descovy для ВІЛ). НСЗУ-покриття за програмами ВІЛ і вірусних гепатитів. Перевірено drlz.com.ua станом на 2026-05-18."
+typical_dosing: >
+  Chronic HBV (adult, compensated liver disease): 25 mg PO once daily with
+  food, indefinite duration. HIV-1: TAF is a component of fixed-dose
+  combinations (e.g., Biktarvy = bictegravir + emtricitabine + TAF; Genvoya;
+  Descovy) — dose set by the FDC, typically 25 mg TAF / day. No renal dose
+  adjustment for CrCl ≥15 mL/min; HD patients can receive 25 mg daily after
+  dialysis on dialysis days. Hepatic: not recommended in decompensated
+  cirrhosis (Child-Pugh B/C — use TDF or entecavir). Abrupt discontinuation
+  in HBV → risk of severe acute exacerbation; monitor LFTs ≥several months
+  after stopping (black-box).
+formulations:
+  - "Tablet 25 mg (Vemlidy)"
+  - "Component of fixed-dose combinations: 10 mg or 25 mg per tablet"
+
+absolute_contraindications:
+  - "Hypersensitivity to tenofovir alafenamide"
+  - "Decompensated cirrhosis (Child-Pugh B/C) — limited data; use TDF or entecavir"
+black_box_warnings:
+  - "Lactic acidosis and severe hepatomegaly with steatosis (NRTI class effect; lower signal than TDF)"
+  - "Severe acute exacerbation of hepatitis B upon discontinuation — monitor LFTs ≥several months post-stop"
+  - "Risk of HIV-1 resistance in HIV/HBV coinfected patients treated for HBV alone without full ART"
+major_interactions:
+  - "Strong P-gp inducers (rifampin, rifabutin, carbamazepine, phenytoin, St. John's wort): reduce TAF exposure substantially — AVOID combination"
+  - "Strong P-gp inhibitors (cobicistat, ritonavir, itraconazole): increase TAF exposure — generally safe but monitor"
+  - "Other nephrotoxins: additive renal injury (lower signal than TDF but still relevant)"
+  - "Adefovir: avoid — overlapping mechanism"
+  - "Calcineurin inhibitors (tacrolimus, cyclosporine): additive renal toxicity — monitor"
+common_adverse_events:
+  - "Headache — ~10-15%"
+  - "Nausea — ~5-10%"
+  - "Fatigue — ~5-10%"
+  - "Diarrhea — ~5%"
+  - "Abdominal pain — ~3-5%"
+  - "Cough — ~3-5%"
+  - "Dyspepsia — ~3%"
+  - "Arthralgia — ~3%"
+  - "Rash — ~2-3%"
+  - "Mild dyslipidemia (LDL, total cholesterol) — common, signal-only"
+serious_adverse_events:
+  - "Lactic acidosis / severe hepatic steatosis (boxed, rare)"
+  - "HBV reactivation flare on discontinuation (boxed)"
+  - "Nephrotoxicity (uncommon and milder vs TDF; still monitor)"
+  - "Decreased bone mineral density (substantially less than TDF)"
+  - "Weight gain (signal in HIV ART regimens containing TAF)"
+  - "Severe hypersensitivity / angioedema (rare)"
+  - "Pancreatitis (rare)"
+pharmacology:
+  half_life_hours: 0.5  # ~0.5 h plasma (rapid prodrug conversion); intracellular tenofovir-DP ~150 h
+  clearance: "Hepatic and renal — TAF prodrug cleaved by cathepsin A; tenofovir then excreted renally (parent) ~30%"
+  protein_binding_pct: 80
+  metabolism: "Prodrug cleaved intracellularly by cathepsin A (lymphocytes/hepatocytes) to tenofovir; minimal CYP3A involvement; downstream tenofovir cleared renally"
+sources:
+  - SRC-AASLD-HBV-2024
+  - SRC-NIH-AIDS-2024
+last_reviewed: "2026-05-18"
+reviewer_signoffs: []
+notes: >
+  STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. AASLD-2024 preferred first-line HBV
+  antiviral alongside TDF and entecavir; preferred over TDF in older adults
+  (>60), reduced GFR (CrCl <60), and osteopenia/osteoporosis given the ~90%
+  lower systemic tenofovir exposure. Also a backbone of multiple HIV-1 FDC
+  ART regimens (Biktarvy, Genvoya, Descovy). Long-term HBV suppression is
+  the etiologic-prevention pathway for HBV-mediated HCC and HBV-associated
+  B-cell NHL (the v0.2-A scope). Note: avoid in decompensated cirrhosis —
+  use entecavir or TDF instead (TAF clinical data in decompensated disease
+  are limited). The HIV-ART weight-gain signal vs TDF is well-described but
+  irrelevant to HBV monotherapy at 25 mg/day. Two-Co-Lead signoff queued
+  for v0.2-A clinical review.

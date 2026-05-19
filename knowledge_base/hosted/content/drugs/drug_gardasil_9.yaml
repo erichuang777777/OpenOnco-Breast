@@ -1,0 +1,124 @@
+id: DRUG-GARDASIL-9
+names:
+  preferred: "9-valent HPV vaccine"
+  ukrainian: "9-валентна вакцина проти ВПЛ"
+  english: "Human papillomavirus (HPV) 9-valent vaccine, recombinant"
+  synonyms:
+    - "HPV9"
+    - "Recombinant 9-valent HPV vaccine"
+    - "9vHPV"
+  brand_names:
+    - "Gardasil 9"
+    - "Gardasil-9"
+atc_code: J07BM03
+rxnorm_id: null  # NDC 0006-4119 — vaccines tracked by NDC + CVX, not RxNorm
+drug_class: "Recombinant subunit vaccine (virus-like particles, L1 protein) — prophylactic against HPV"
+mechanism: >
+  Recombinant non-infectious nine-valent HPV vaccine. Each dose contains
+  virus-like particles (VLPs) assembled from the L1 major capsid protein
+  of nine HPV types — 6, 11, 16, 18, 31, 33, 45, 52, and 58 — produced in
+  Saccharomyces cerevisiae and adjuvanted with amorphous aluminium
+  hydroxyphosphate sulfate (AAHS). L1 VLPs are immunogenic but contain no
+  viral DNA — cannot cause HPV infection. Vaccination elicits high-titer
+  neutralizing IgG that prevents incident infection by the covered HPV
+  types. Cancer-prevention pathway: prevents persistent infection with
+  the HPV types responsible for ~90% of cervical cancers, ~90% of anal
+  cancers, ~70% of vaginal/vulvar cancers, ~60% of penile cancers, and a
+  growing fraction of oropharyngeal cancers.
+
+regulatory_status:
+  fda:
+    approved: true
+    year_first_approval: 2014
+    indications_brief:
+      - "Prevention of cervical, vulvar, vaginal, anal, oropharyngeal, and other head/neck cancers caused by HPV types 16, 18, 31, 33, 45, 52, 58"
+      - "Prevention of genital warts (condyloma acuminatum) caused by HPV types 6 and 11"
+      - "Prevention of precancerous or dysplastic lesions caused by HPV types 6, 11, 16, 18, 31, 33, 45, 52, 58 (CIN, VIN, VaIN, AIN grade 2/3 + AIS)"
+      - "Approved age 9 through 45 years (M/F)"
+  ema:
+    approved: true
+    year_first_approval: 2015
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Зареєстровано в Україні (Merck Sharp & Dohme). НЕ включена до національного календаря профілактичних щеплень України станом на 2026-05; НЕ покривається НСЗУ. Доступна за рецептом у приватних медичних центрах та аптеках, оплата з кишені пацієнта (~5000-8000 UAH за дозу). Перевірено drlz.com.ua та офіційні джерела МОЗ 2026-05-18."
+typical_dosing: >
+  Routine schedule (age 9-14 at first dose, immunocompetent): 2-dose
+  schedule — 0 and 6-12 months. Catch-up schedule (age 15-45, or any age
+  if immunocompromised): 3-dose schedule — 0, 2, 6 months (months 0, 2,
+  6 from first dose). Each dose: 0.5 mL IM in deltoid (preferred) or
+  anterolateral thigh. Do NOT inject IV, SC, or intradermally. Series
+  interruption: resume from where left off — do not restart. Catch-up in
+  adults to age 45 is supported by FDA / NCCN; benefit is highest before
+  HPV exposure but residual benefit exists at any age. Hepatic / renal
+  impairment: no dose adjustment. Pregnancy: avoid initiating series in
+  pregnancy (insufficient data, not a known teratogen); complete after
+  delivery. Lactation: compatible.
+formulations:
+  - "Pre-filled syringe 0.5 mL (single dose)"
+  - "Single-dose vial 0.5 mL"
+
+absolute_contraindications:
+  - "Severe hypersensitivity (anaphylaxis) to any component of the vaccine including yeast (Saccharomyces cerevisiae)"
+  - "Severe acute illness with fever — defer until resolved"
+black_box_warnings: []
+major_interactions:
+  - "Immunosuppressive therapy (corticosteroids ≥20 mg prednisone-equivalent ≥14 days, chemotherapy, anti-CD20 monoclonals, calcineurin inhibitors, JAK inhibitors, biologic DMARDs): reduced immunogenicity — administer ≥2 weeks before scheduled immunosuppression where possible, or after immune reconstitution (≥3-6 months post-chemo / anti-CD20)"
+  - "Other inactivated vaccines: may be co-administered at separate anatomic sites without interaction (per ACIP / CDC schedule)"
+  - "Live vaccines: no contraindication (Gardasil-9 is itself non-live recombinant); can co-administer or separate per general schedule"
+  - "Anticoagulants / bleeding disorders: use 23-25 gauge needle, apply firm pressure ≥2 min — no contraindication"
+  - "Blood products containing immunoglobulins: theoretical reduced response — no specific interval mandated"
+common_adverse_events:
+  - "Injection-site pain — very common (~85%)"
+  - "Injection-site erythema / swelling — common (~25-30%)"
+  - "Injection-site bruising / pruritus — common (~5-10%)"
+  - "Headache — common (~15%)"
+  - "Fatigue — common (~5-10%)"
+  - "Myalgia — common (~3-5%)"
+  - "Pyrexia (≥38°C, transient 1-2 days) — common (~5%)"
+  - "Nausea — uncommon (~3%)"
+  - "Dizziness — uncommon (~2-3%)"
+  - "Syncope (especially adolescents — vasovagal at injection) — uncommon (~1%; observe 15 min post-dose)"
+serious_adverse_events:
+  - "Anaphylaxis — very rare (~1-3 per million doses)"
+  - "Severe injection-site reaction / cellulitis — rare"
+  - "Syncope with secondary injury (typically vasovagal in adolescent recipients) — uncommon; require 15-min post-dose observation"
+  - "Guillain-Barré syndrome (causal association NOT established; passive-surveillance signal only)"
+  - "Stevens-Johnson syndrome / DRESS — very rare"
+  - "Postural orthostatic tachycardia syndrome (POTS) — investigated, no confirmed causal link"
+  - "Complex regional pain syndrome (CRPS) — investigated, no confirmed causal link"
+  - "Idiopathic thrombocytopenia (rare)"
+pharmacology: null  # vaccines are characterized by immunogenicity, not PK; see notes
+immunogenicity:
+  seroconversion_rate_pct: 99  # ≥99% seroconversion for all 9 HPV types after full series
+  duration_of_protection: "≥10 years observational follow-up with no waning; modeled lifetime protection"
+  correlate_of_protection: "Anti-HPV neutralizing IgG (qualitative)"
+sources:
+  - SRC-NCCN-CERVICAL-2025
+  - SRC-ESMO-CERVICAL-2024
+last_reviewed: "2026-05-18"
+reviewer_signoffs: []
+notes: >
+  STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. Gardasil-9 is the only HPV vaccine
+  currently available in most markets (Gardasil-4 and Cervarix-2 are
+  discontinued). Recommended by WHO, ACIP, ESMO, NCCN for routine HPV
+  immunization, ideally before sexual debut (age 9-14, 2 doses). Catch-up
+  through age 45 supported with shared-decision making in adults. Prevents
+  HPV-driven cancers: cervical (Path A v0.2-A scope — primary prevention
+  for the largest infectious-etiology cancer attributable fraction
+  globally), anal, vaginal, vulvar, penile, oropharyngeal, and certain
+  head/neck cancers. Vaccine modality — no standard pharmacology block;
+  immunogenicity data captured in separate `immunogenicity` field
+  (preserved as extra under permissive schema; render layer can ignore or
+  surface). NDC 0006-4119; vaccines are tracked by NDC and CVX codes, not
+  by RxNorm — rxnorm_id intentionally null. Ukraine-specific:
+  Gardasil-9 is NOT on the national vaccination schedule and is NOT
+  reimbursed by NSZU as of 2026-05; available out-of-pocket at private
+  centers (~₴5000-8000/dose × 2-3 doses) — a substantial cost barrier in
+  the Ukrainian context. Funding-pathway work (philanthropy, regional
+  pilots) is out of scope for this Drug entry. Two-Co-Lead signoff queued
+  for v0.2-A clinical review.

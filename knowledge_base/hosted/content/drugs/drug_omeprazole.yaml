@@ -1,0 +1,129 @@
+id: DRUG-OMEPRAZOLE
+names:
+  preferred: "Omeprazole"
+  ukrainian: "Омепразол"
+  english: "Omeprazole"
+  brand_names:
+    - "Prilosec"
+    - "Losec"
+    - "Omez"
+    - "Ortanol"
+atc_code: A02BC01
+rxnorm_id: "7646"
+drug_class: "Proton-pump inhibitor (PPI; substituted benzimidazole)"
+mechanism: >
+  Prodrug that is acid-activated in the parietal cell secretory canaliculus
+  to a sulfenamide cation, which forms a covalent disulfide bond with
+  cysteine residues of the H+/K+-ATPase (proton pump) and irreversibly
+  inhibits gastric acid secretion. New pump synthesis is required for
+  recovery (≥24 h half-life of effect despite ~1 h plasma half-life).
+  Cancer-prevention relevance: profound gastric acid suppression is
+  required for H. pylori antimicrobial efficacy (clarithromycin and
+  amoxicillin both require near-neutral gastric pH for stability and
+  bactericidal activity) — PPI is the linchpin of triple / quadruple
+  H. pylori eradication regimens.
+
+regulatory_status:
+  fda:
+    approved: true
+    year_first_approval: 1989
+    indications_brief:
+      - "Gastroesophageal reflux disease (GERD)"
+      - "Erosive esophagitis (healing and maintenance)"
+      - "Duodenal and gastric ulcer (treatment and prevention; NSAID-associated)"
+      - "Helicobacter pylori eradication (component of triple / quadruple therapy)"
+      - "Zollinger-Ellison syndrome and other pathologic hypersecretory states"
+  ema:
+    approved: true
+    year_first_approval: 1988
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Зареєстровано в Україні (Omez, Ortanol, Losec, generics); OTC та за рецептом. НСЗУ-програма ерадикації H. pylori на 2026-05 не передбачена — оплата з кишені пацієнта. Перевірено drlz.com.ua 2026-05-18."
+typical_dosing: >
+  H. pylori eradication (component of triple therapy, adult): 20 mg PO BID
+  × 14 days, taken 30-60 min before breakfast and dinner, with
+  clarithromycin 500 mg BID + amoxicillin 1 g BID (or metronidazole 500 mg
+  BID if penicillin-allergic). H. pylori quadruple (PBMT) therapy: 20 mg
+  PO BID × 10-14 days with bismuth subcitrate + metronidazole + tetracycline.
+  GERD / erosive esophagitis: 20-40 mg PO daily × 4-8 weeks. Duodenal
+  ulcer: 20 mg PO daily × 4 weeks. Renal: no adjustment. Hepatic: reduce
+  dose 50% in severe hepatic impairment (clearance ~⅓ normal). Long-term
+  use carries risks (bone loss, B12 deficiency, hypomagnesemia, AKI,
+  C. difficile) — limit duration where possible.
+formulations:
+  - "Delayed-release capsule 10 mg, 20 mg, 40 mg"
+  - "Delayed-release tablet 20 mg"
+  - "Oral suspension 2 mg/mL (delayed-release granules in sodium bicarbonate)"
+  - "IV solution 40 mg / vial (less common)"
+
+absolute_contraindications:
+  - "Hypersensitivity to omeprazole, esomeprazole, or other substituted benzimidazoles"
+  - "Concurrent use with rilpivirine (substantial reduction in rilpivirine exposure → virologic failure)"
+  - "Concurrent use with nelfinavir (substantial reduction in nelfinavir exposure)"
+black_box_warnings: []
+major_interactions:
+  - "Clopidogrel: omeprazole inhibits CYP2C19 → reduced clopidogrel activation → reduced antiplatelet effect — AVOID combination (use pantoprazole, dexlansoprazole, or H2 blocker as alternative)"
+  - "Rilpivirine: contraindicated — substantial PPI-induced reduction in rilpivirine absorption"
+  - "Atazanavir, nelfinavir, raltegravir-extended: reduced exposure with PPIs — avoid or use alternative"
+  - "Methotrexate: PPI delays renal clearance of methotrexate → increased toxicity (esp. high-dose MTX) — hold PPI during high-dose MTX cycles"
+  - "Warfarin: variable INR increase (CYP2C19/3A4 effects) — monitor"
+  - "Diazepam, phenytoin: increased levels (CYP2C19 inhibition) — monitor"
+  - "Mycophenolate mofetil: reduced absorption → reduced exposure (consider acid-stable enteric-coated mycophenolic acid)"
+  - "Tacrolimus: variable level changes — monitor"
+  - "Iron salts, calcium carbonate, ketoconazole, itraconazole: reduced absorption (acid-dependent)"
+  - "Cilostazol: increased exposure"
+  - "Tyrosine kinase inhibitors with pH-dependent absorption (erlotinib, dasatinib, nilotinib, pazopanib, gefitinib): substantially reduced absorption — AVOID concurrent PPI for these TKIs"
+  - "Digoxin: increased exposure (modest)"
+common_adverse_events:
+  - "Headache — ~5-10%"
+  - "Diarrhea — ~3-5%"
+  - "Abdominal pain — ~3-5%"
+  - "Nausea — ~3-5%"
+  - "Vomiting — ~3%"
+  - "Flatulence — ~3%"
+  - "Constipation — ~2-3%"
+  - "Dizziness — ~2-3%"
+  - "Rash — ~1-2%"
+  - "Fatigue — ~1-2%"
+  - "Mild transaminitis — ~1-2%"
+serious_adverse_events:
+  - "Increased risk of fundic gland polyps / gastric polyps with prolonged use (>1 year)"
+  - "Vitamin B12 deficiency (prolonged use >2 years)"
+  - "Hypomagnesemia (prolonged use; can be severe, with tetany, arrhythmia, seizure)"
+  - "Acute interstitial nephritis (idiosyncratic; can progress to CKD)"
+  - "Increased risk of Clostridioides difficile colitis"
+  - "Increased risk of pneumonia (modest signal)"
+  - "Bone fracture risk (prolonged high-dose use; modest signal in observational data)"
+  - "Subacute cutaneous lupus erythematosus (rare)"
+  - "Stevens-Johnson syndrome / TEN (rare)"
+  - "Severe hypersensitivity / anaphylaxis (rare)"
+  - "Increased risk of fundic gland polyps (benign)"
+  - "Rebound acid hypersecretion after discontinuation of prolonged use"
+pharmacology:
+  half_life_hours: 1  # ~0.5-1 h plasma; pharmacodynamic effect >24 h (irreversible binding)
+  clearance: "Hepatic CYP2C19 (major) and CYP3A4 (minor); ~80% of dose excreted as inactive metabolites in urine"
+  protein_binding_pct: 95
+  metabolism: "Hepatic CYP2C19 to inactive 5-hydroxyomeprazole and sulfone; CYP2C19 poor metabolizers (~3% white, ~15-20% Asian) have ~5-fold higher AUC. Omeprazole is itself a moderate CYP2C19 inhibitor."
+sources:
+  - SRC-NCCN-BCELL-2025
+last_reviewed: "2026-05-18"
+reviewer_signoffs: []
+notes: >
+  STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. PPI is the linchpin of H. pylori
+  triple and quadruple eradication therapy — without near-neutral gastric
+  pH, clarithromycin is unstable and amoxicillin/tetracycline are less
+  bactericidal. Standard 20 mg BID dose for 14 days in both triple and
+  quadruple PBMT regimens. Critical interactions: clopidogrel (use
+  pantoprazole instead), rilpivirine (contraindicated), high-dose
+  methotrexate (hold), pH-dependent TKIs in oncology context (erlotinib,
+  dasatinib, etc.). CYP2C19 poor metabolizer status (esp. Asian patients)
+  → higher exposure and better H. pylori cure rates with standard doses;
+  some experts dose PPI by genotype. Ukraine: cheap, OTC, ubiquitous,
+  out-of-pocket. Long-term safety concerns (bone, B12, Mg, AKI, CDI,
+  pneumonia) are largely irrelevant for a 14-day eradication course.
+  Two-Co-Lead signoff queued for v0.2-A clinical review.

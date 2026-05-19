@@ -1,0 +1,69 @@
+id: RF-LIFESTYLE-LOW-MEDITERRANEAN-DIET-PREVENTION
+definition: >-
+  Low adherence to a Mediterranean dietary pattern (Trichopoulou
+  Mediterranean Diet Score [MDS] 0-3 of 9, or PREDIMED-style score in
+  the lowest tertile, or 14-item MEDAS <7). Mediterranean dietary
+  pattern = high intake of olive oil, vegetables, fruits, whole grains,
+  legumes, nuts, fish; moderate dairy + wine with meals; low intake of
+  red/processed meat + sweets. EPIC + Nurses' Health Study + PREDIMED
+  cohorts: high adherence associated with ~12-15% reduction in overall
+  cancer incidence + mortality; strongest signals for CRC, breast,
+  gastric, hepatocellular cancers + dietary-pattern co-benefits for
+  cardiovascular disease (PREDIMED 2013 RCT primary endpoint).
+  Mechanisms: high polyphenol (olive oil, vegetables) + ω-3 fatty acid
+  (fish) + fibre + antioxidant content; low pro-inflammatory red/
+  processed meat + refined-carbohydrate content; favorable microbiome
+  modulation. Prevention-persona RedFlag (§20 v0.3 diet pilot,
+  2026-05-18) — represents general dietary-pattern lever distinct from
+  single-nutrient RFs (fibre, calcium, etc.) above.
+definition_ua: >-
+  Низька adherence до Mediterranean dietary pattern (Trichopoulou
+  Mediterranean Diet Score [MDS] 0-3 з 9, або PREDIMED-style score у
+  lowest tertile, або 14-item MEDAS <7). Mediterranean pattern =
+  високе споживання olive oil, овочів, фруктів, whole grains, legumes,
+  nuts, риба; moderate dairy + wine з їжею; низьке red/processed meat +
+  sweets. EPIC + Nurses' Health Study + PREDIMED: high adherence
+  асоціюється з ~12-15% зниженням overall cancer incidence +
+  mortality; найсильніші сигнали для CRC, breast, gastric, HCC +
+  cardiovascular co-benefits (PREDIMED 2013 RCT). Механізми: високий
+  polyphenol (olive oil, овочі) + ω-3 (риба) + fibre + antioxidant
+  content; низький pro-inflammatory red/processed meat + refined-carb;
+  favorable microbiome modulation.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "mediterranean_diet_score_lt_4"
+      value: true
+    - finding: "medas_score_lt_7"
+      value: true
+    - finding: "predimed_lowest_tertile"
+      value: true
+
+clinical_direction: investigate
+
+severity: minor
+priority: 110
+category: other
+
+risk_category: lifestyle
+
+# Anchor — colorectal cancer (strongest single-tumor evidence in
+# Mediterranean-diet meta-analyses). Pattern affects multiple cancer
+# types per EPIC/PREDIMED cohort signals but anchor stays focused.
+relevant_diseases:
+  - DIS-CRC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-COLON-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for low Mediterranean-diet adherence. Population-level dietary-pattern lever — distinct from single-nutrient RFs (fibre, calcium, red meat). PREDIMED RCT (2013 primary endpoint cardiovascular; 2015 secondary CRC analysis) + EPIC + NHS observational signal. Anchored to DIS-CRC because pattern-cancer evidence is strongest there; multi-cancer benefit framed in rationale. Engine routes to PreventionPlan recommending dietary-pattern counseling + USPSTF-cadence screening per anchor. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_diet_environmental
+draft_revision: 1

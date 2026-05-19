@@ -1,0 +1,14 @@
+{
+  "patient_id": "FAMMM-SUSPICION-001",
+  "comment": "28yo male with strong family pedigree suggestive of FAMMM / CDKN2A hereditary predisposition: father diagnosed cutaneous melanoma age 32 (Clark IV, BRAF V600E), paternal grandfather diagnosed pancreatic adenocarcinoma age 55. Personal exam shows ~30 atypical nevi on trunk + extremities (not yet ≥50 threshold but clinically suspicious dysplastic-nevus phenotype). No personal cancer diagnosis. Engine fires RF-FAMMM-FAMILY-HISTORY-SUSPICION via family melanoma + pancreatic cluster branch and routes to PreventionPlan: standard = pre-test counseling + germline CDKN2A panel testing; alternative = empirical FAMMM-style surveillance (annual full-body skin exam + total body photography + EUS/MRI pancreatic screening from age 40 per CAPS Consortium) if patient declines testing.",
+  "biomarkers": {},
+  "demographics": {"age": 28, "sex": "male", "ecog": 0},
+  "findings": {
+    "family_melanoma_two_or_more_first_second_degree": true,
+    "family_melanoma_pancreatic_cluster": true,
+    "Father cutaneous melanoma diagnosed age 32 (Clark IV, BRAF V600E)": true,
+    "Paternal grandfather pancreatic adenocarcinoma age 55": true,
+    "Personal ~30 atypical nevi trunk + extremities (dysplastic-nevus phenotype)": true,
+    "No personal cancer diagnosis": true
+  }
+}

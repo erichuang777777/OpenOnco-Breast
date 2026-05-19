@@ -1,0 +1,12 @@
+{
+  "patient_id": "LIFESTYLE-ALCOHOL-PREV-001",
+  "comment": "49yo male, heavy alcohol use (~25 drinks/week × 15 years), no current cancer. Engine routes to PreventionPlan: standard = AUDIT-C + motivational interviewing + naltrexone + FIB-4 + targeted screening (esophageal/HCC); alternative = symptom-driven + brief intervention.",
+  "biomarkers": {},
+  "demographics": {"age": 49, "sex": "male", "ecog": 1},
+  "findings": {
+    "alcohol_heavy_use_above_threshold": true,
+    "alcohol_lifetime_drink_years_ge_40": true,
+    "Heavy alcohol use 25 drinks/week × 15y": true,
+    "No current malignancy": true
+  }
+}

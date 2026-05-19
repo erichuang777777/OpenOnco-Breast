@@ -1,0 +1,25 @@
+id: BIO-CHROMOENDOSCOPY-DYSPLASIA-IBD
+names:
+  preferred: "Chromoendoscopy + targeted biopsy (IBD dysplasia surveillance)"
+  ukrainian: "Хромоендоскопія з прицільною біопсією (нагляд дисплазії при ЗЗК)"
+  english: "Chromoendoscopy for IBD surveillance"
+  synonyms: ["dye-spray chromoendoscopy", "methylene blue chromoendoscopy", "SCENIC chromoendoscopy"]
+biomarker_type: imaging
+measurement:
+  method: "High-definition white-light colonoscopy + topical methylene blue OR indigo carmine dye spray; targeted biopsy of visible lesions per SCENIC consensus"
+  units: "categorical: dysplasia (visible/invisible, LGD/HGD) | indefinite | negative"
+specimen_requirements:
+  - "Adequate bowel preparation (Boston ≥6)"
+  - "Quiescent inflammation (active inflammation reduces detection sensitivity)"
+clinical_context: [screening_surveillance, precursor_lesion, dysplasia_grading]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: imaging
+sources: [SRC-NCCN-COLON-2025]
+last_reviewed: "2026-05-18"
+notes: >
+  STUB. SCENIC (2015) + AGA/ASGE/ESGE consensus: chromoendoscopy with
+  targeted biopsy is preferred over random 4-quadrant biopsies for
+  dysplasia detection in long-standing UC/Crohn's colitis (≥8 years
+  pancolitis or ≥15 left-sided). Sensitivity gain ~2-3× for flat dysplasia.
+  Triggers surgical referral (colectomy) for invisible HGD or visible
+  non-resectable dysplasia.

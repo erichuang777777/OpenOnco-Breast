@@ -1,0 +1,62 @@
+id: DIS-CHOROID-PLEXUS-CARCINOMA
+names:
+  preferred: "Choroid plexus carcinoma"
+  ukrainian: "Карцинома хоріоїдного сплетення"
+  english: "Choroid plexus carcinoma"
+  synonyms: ["CPC", "Pediatric choroid plexus carcinoma", "Choroid plexus papilloma (atypical / malignant variants)"]
+codes:
+  icd_o_3_morphology: "9390/3"
+  icd_o_3_topography: ["C71.5"]
+  icd_10: "C71.5"
+  who_classification: "WHO CNS Tumours 5th ed (2021): Choroid plexus carcinoma (Grade 3); choroid plexus papilloma (Grade 1) and atypical choroid plexus papilloma (Grade 2) are benign / intermediate counterparts"
+archetype: stage_driven
+oncotree_code: CPC
+lineage: "cns_embryonal"
+etiological_factors:
+  - "Li-Fraumeni syndrome (germline TP53) — strong predisposition; CPC is one of the few pediatric tumors that should trigger germline TP53 testing irrespective of family history"
+  - "Sporadic somatic TP53 mutation (most non-LFS cases)"
+  - "SV40-related historical case clusters (not consistent)"
+related_diseases:
+  - "DIS-MELANOMA (Li-Fraumeni cross-syndrome surveillance)"
+  - "DIS-OSTEOSARCOMA (Li-Fraumeni cross-syndrome surveillance)"
+  - "DIS-BREAST (Li-Fraumeni adult-onset surveillance)"
+key_biomarkers:
+  - BIO-TP53-MUTATION
+epidemiology:
+  context: "Very rare — <100 pediatric CPC cases/year globally. Median age <3 years. Distinct from far more common choroid plexus papilloma (benign Grade 1). Five-year OS 30-50% with multimodal therapy; trilateral (intraocular RB + intracranial PNET / CPC) particularly grim historically."
+sources:
+  - SRC-COG
+  - SRC-NCCN-CNS-2025
+last_reviewed: "2026-05-18"
+reviewers: []
+notes: >
+  One of the strongest single-tumor signals for germline TP53 — CPC
+  diagnosis in a child should trigger germline TP53 testing regardless
+  of family history (per Chompret + Li-Fraumeni 2015 testing criteria).
+  Treatment: maximal safe surgical resection (gross total resection is
+  prognostic dominant — bleeding-prone tumor with intraventricular
+  drainage challenges); adjuvant chemotherapy (regimens vary — ICE,
+  carboplatin-VP16, CCNU-based); craniospinal RT in age-appropriate
+  patients (typically deferred under age 3 to avoid neurocognitive
+  toll — high-dose chemo + autoSCT bridge sometimes used). Li-Fraumeni
+  carriers require lifelong Toronto-protocol surveillance after
+  treatment (cross-syndrome second-primary risk).
+notes_ua: |
+  Один з найсильніших одно-пухлинних сигналів для гермінального TP53
+  — діагноз CPC у дитини має ініціювати гермінальне TP53-тестування
+  незалежно від родинного анамнезу (за критеріями Chompret +
+  Li-Fraumeni 2015). Лікування: максимально безпечна хірургічна
+  резекція (повна резекція — домінуючий прогностичний фактор —
+  пухлина схильна до кровотеч з drainage challenges);
+  ад'ювантна ХТ (режими різні — ICE, carboplatin-VP16, CCNU);
+  краніо-спінальна RT у age-appropriate пацієнтів (зазвичай
+  відкладається до 3 років через нейрокогнітивну ціну — high-dose
+  chemo + autoSCT bridge іноді використовується). Носії Li-Fraumeni
+  потребують пожиттєвого Toronto-протокол спостереження після
+  лікування.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+metadata:
+  proposal_status: stub
+  awaiting_proposal: "Full Indications for surgery + adjuvant chemo (age-stratified); craniospinal RT in age-appropriate; high-dose chemo + autoSCT bridge under age 3; Li-Fraumeni surveillance pending."

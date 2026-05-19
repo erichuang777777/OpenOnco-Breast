@@ -1,0 +1,167 @@
+id: IND-ENVIRONMENTAL-AIR-POLLUTION-LUNG-PREVENTION-MITIGATION
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-ENVIRONMENTAL-AIR-POLLUTION-LUNG-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Reducing chronic PM2.5 exposure from >35 µg/m³ to WHO Interim-Target levels (≤25 then ≤15 µg/m³ annual mean) is associated with proportional lung-cancer-incidence reduction over decades — ecological + cohort data suggest ~9% incidence reduction per 10 µg/m³ improvement (Hamra/Pope meta-analyses). Individual-level mitigation (indoor air filtration, mask use during peak events, residence relocation) yields incomplete protection but reduces inhaled-dose burden. Population-level policy levers (Clean Air Act analogues, traffic / industrial emissions regulation) are the dominant exposure-reduction mechanism."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for chronic high-PM2.5 residential
+  exposure. Components per WHO 2021 Global Air Quality Guidelines +
+  IARC Monograph 109 (2013) + NCCN NSCLC screening + ATS/ERS air-
+  pollution statements:
+
+  **(1) Exposure reduction counseling — individual levers**
+  - Indoor air filtration: HEPA-filter portable purifiers in primary
+    living areas (bedrooms especially); CADR sized to room volume.
+    Whole-home HEPA HVAC where economically feasible.
+  - Outdoor activity timing: avoid high-pollution hours (typically
+    morning rush hour + late-afternoon traffic peaks; check local AQI).
+    Defer vigorous outdoor exercise on poor-AQI days (>100 in US AQI
+    scale, >50 µg/m³ PM2.5).
+  - Respiratory protection: N95 (US) / FFP2 (EU) masks during peak-
+    pollution events (wildfire smoke, dust storms, war-related fires,
+    industrial accidents). KN95 acceptable substitute.
+  - Window-closure during high-pollution events; minimize indoor
+    combustion (gas stoves with vented hoods, no candles / incense
+    in poorly-ventilated areas, no indoor smoking).
+  - Residence relocation — discuss only if economically feasible;
+    chronic-exposure reduction over decades is what drives
+    incidence benefit.
+
+  **(2) Tobacco-cessation counseling** — PM2.5 + tobacco interact
+  multiplicatively for lung-cancer risk (similar to asbestos × tobacco
+  framing). Smoking cessation is the highest-yield co-intervention.
+  See RF-LIFESTYLE-TOBACCO-CANCER-PREVENTION for full cessation
+  protocol.
+
+  **(3) USPSTF lung-cancer screening eligibility check** — Annual
+  LDCT for ages 50-80, ≥20 pack-years, current smoker or quit within
+  15 years. Air-pollution exposure alone does not establish screening
+  eligibility per USPSTF 2021; however, NCCN extends consideration
+  for occupational + environmental carcinogen exposures in the
+  presence of additional risk factors. Discuss with patient if
+  smoking history is borderline-USPSTF.
+
+  **(4) Symptom-triggered evaluation** — Low threshold for diagnostic
+  workup of new persistent cough, hemoptysis, dyspnea, chest pain,
+  unintentional weight loss. Chronic-PM2.5 exposure does not change
+  evaluation thresholds but raises pre-test probability.
+
+  **(5) Policy / advocacy framing** — Document exposure in clinical
+  record; encourage patient awareness of local air-quality monitoring
+  (AQI apps, IQAir, government monitors). Individual-level mitigation
+  is partial protection only; population-level emissions regulation
+  is the dominant lever.
+
+  Resource access in Ukraine: portable HEPA purifiers 2000-15000 UAH
+  depending on CADR; KN95/FFP2 masks pharmacy-accessible (~10-30 UAH
+  each). Real-time PM2.5 monitoring via SaveEcoBot Telegram +
+  IQAir AirVisual. Wartime fires + war-zone exposures are an active
+  PM2.5 burden — see public-health advisories.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для chronic high-PM2.5 residential
+  exposure. Components per WHO 2021 Global Air Quality Guidelines +
+  IARC Monograph 109 + NCCN NSCLC screening:
+
+  **(1) Exposure reduction counseling — individual levers**
+  - Indoor air filtration: HEPA-filter portable purifiers у primary
+    living areas (especially bedrooms); CADR sized to room volume.
+  - Outdoor activity timing: уникати high-pollution hours (typically
+    morning rush hour + late-afternoon traffic peaks; check local AQI).
+    Defer vigorous outdoor exercise при poor-AQI days (>50 мкг/м³ PM2.5).
+  - Respiratory protection: N95 / FFP2 masks при peak-pollution events
+    (wildfire smoke, dust storms, war-related fires, industrial accidents).
+  - Window-closure during high-pollution events; minimize indoor
+    combustion (gas stoves з vented hoods, no candles / incense у
+    poorly-ventilated areas, no indoor smoking).
+  - Residence relocation — discuss only if economically feasible.
+
+  **(2) Tobacco-cessation counseling** — PM2.5 + tobacco interact
+  multiplicatively. Smoking cessation — highest-yield co-intervention.
+  Див RF-LIFESTYLE-TOBACCO-CANCER-PREVENTION.
+
+  **(3) USPSTF lung-cancer screening eligibility check** — Annual
+  LDCT для ages 50-80, ≥20 pack-years, current smoker або quit within
+  15 years. Air-pollution exposure alone не establishes screening
+  eligibility per USPSTF 2021; NCCN extends consideration for
+  occupational + environmental carcinogen exposures з additional risk
+  factors.
+
+  **(4) Symptom-triggered evaluation** — Низький поріг для diagnostic
+  workup нових persistent cough, hemoptysis, dyspnea, chest pain,
+  unintentional weight loss.
+
+  **(5) Policy / advocacy framing** — Document exposure у клінічному
+  record; encourage patient awareness local air-quality monitoring
+  (AQI apps, SaveEcoBot Telegram, IQAir AirVisual).
+
+  Resource access в Україні: portable HEPA purifiers 2000-15000 грн;
+  KN95/FFP2 masks pharmacy-accessible. Real-time PM2.5 monitoring via
+  SaveEcoBot Telegram + IQAir AirVisual. Wartime fires + war-zone
+  exposures є active PM2.5 burden.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_diet_environmental
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-NSCLC-2025
+    position: supports
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не презентувати individual-level mitigation як sufficient — exposure reduction yields incidence benefit at population scale + over decades."
+  - "Не extrapolate USPSTF age-pack-years criteria до non-smoker air-pollution-exposed cohort — LDCT screening не validated для цього population per USPSTF 2021."
+  - "Не пропускати smoking-cessation counseling — multiplicative interaction з PM2.5; cessation — highest-yield co-intervention."
+  - "Не використовувати ozone-generating air purifiers — ozone — separate respiratory irritant + Group-2A carcinogen-component."
+  - "Не нехтувати indoor air quality (cooking fumes, candles, indoor smoking) — indoor sources можуть exceed outdoor PM2.5 в residential settings."
+
+do_not_do_en:
+  - "Do not present individual-level mitigation as sufficient — exposure reduction yields incidence benefit at population scale and over decades."
+  - "Do not extrapolate USPSTF age-pack-years criteria to a non-smoker air-pollution-exposed cohort — LDCT screening is not validated for this population per USPSTF 2021."
+  - "Do not skip smoking-cessation counseling — multiplicative interaction with PM2.5; cessation is the highest-yield co-intervention."
+  - "Do not use ozone-generating air purifiers — ozone is a separate respiratory irritant + Group-2A carcinogen component."
+  - "Do not overlook indoor air quality (cooking fumes, candles, indoor smoking) — indoor sources may exceed outdoor PM2.5 in residential settings."
+
+known_controversies:
+  - topic: "LDCT screening eligibility for non-smoker high-PM2.5-exposed cohorts"
+    positions:
+      - position: "USPSTF 2021 limits LDCT screening to age 50-80 + ≥20 pack-years + current smoker or quit ≤15y; does not endorse air-pollution exposure as standalone screening indication"
+      - position: "NCCN allows clinical judgment for occupational + environmental carcinogen exposures in the presence of additional risk factors; air-pollution-exposed never-smokers fall in soft-evidence region"
+    our_default: "Apply USPSTF 2021 criteria as standard; consider individual NCCN-style clinical judgment when concurrent risk factors (eg, borderline pack-years, occupational co-exposure, family history) escalate cumulative-risk estimate."
+    rationale: "RCT screening evidence (NLST, NELSON) enrolled smokers; extension to air-pollution-only cohort is mechanistic + not direct-evidence supported."
+
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 environmental prevention pilot (PM2.5 air pollution → lung). Two-Clinical-Co-Lead signoff queued."

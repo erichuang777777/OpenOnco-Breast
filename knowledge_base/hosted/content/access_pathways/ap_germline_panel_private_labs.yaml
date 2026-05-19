@@ -1,0 +1,100 @@
+id: AP-GERMLINE-PANEL-PRIVATE-LABS
+name: "Germline multi-gene panel testing — private labs (international referral or local) — out-of-pocket"
+name_ua: "Гермінальне багатогенне панельне тестування — приватні лабораторії (міжнародні або локальні) — оплата з кишені"
+
+# Test-anchored. Engine-side AccessMatrix не використовує
+# `applies_to_test_ids`, але render-layer / pacient routing — використовує.
+applies_to_drug_ids: []
+applies_to_regimen_ids: []
+applies_to_test_ids:
+  - TEST-GERMLINE-MULTI-GENE-PANEL
+  - TEST-GERMLINE-BRCA-PANEL
+
+pathway_type: self_pay
+
+country_options: ["UA"]
+
+cost_orientation:
+  currency: UAH
+  min: 8000
+  max: 30000
+  per_unit: dose
+  notes: >
+    Pacient OOP per germline panel test станом на 2026-05:
+    - Локальні приватні лабораторії (Synevo Health, MedLabs, CSD,
+      Innova Lab, Diagen) — BRCA1/2 panel: ~8000-15 000 UAH;
+      multi-gene hereditary cancer panel (25-100+ генів):
+      ~12 000-25 000 UAH. Sequencing — переважно NGS, MLPA для
+      large rearrangements (deletion/duplication coverage).
+    - Міжнародні reference labs через посередництво локальних центрів
+      (Invitae international, Ambry Genetics, Myriad Genetics через
+      аккредитованих агентів-постачальників): ~15 000-30 000 UAH +
+      shipping/logistics. Convenient для broad-spectrum пан-cancer
+      panels та variant-curation якості.
+
+    НСЗУ — НЕ покриває germline-тестування за surveillance- /
+    risk-stratification-показаннями. Виняток: окремі регіональні
+    пілотні гранти для BRCA1/2-тестування серед пацієнток з
+    triple-negative breast cancer < 40 років або з сильним family
+    history — обмежені та локальні.
+
+typical_lead_time_weeks: [3, 12]
+
+contact_pattern: >
+  Онколог / медичний-генетик у регіональному онкоцентрі АБО
+  приватний клінічний центр (Medikom, Borys, Dobrobut) → pre-test
+  generic counseling → забір крові (EDTA tube) → відправка до
+  обраної лабораторії. Post-test counseling та інтерпретація варіантів
+  (VUS / pathogenic / likely-pathogenic) — окремий візит.
+  Lead-time: 3-6 тижнів локальні; 6-12 тижнів міжнародні (включаючи
+  логістику).
+
+  Деякі pacients використовують direct-to-consumer (Color, 23andMe+
+  follow-up clinical testing, Helix) — НЕ рекомендується через
+  variant-curation limitations та regulatory-grey-zone.
+
+eligibility_caveats:
+  - "Pre-test genetic counseling (NCCN рекомендує перед multi-gene panel'ом)"
+  - "Family pedigree — Amsterdam/Bethesda criteria для Lynch; NCCN BRCA criteria для BRCA1/2; etc."
+  - "Pediatric — спеціалізовані pediatric-genetic-counselors обмежені поза Київом/Львовом; pre-test informed consent від батьків + (де можливо) child's assent"
+  - "Pregnancy / IVF — окремі consіderations щодо PGT-M (preimplantation genetic testing for monogenic disorders) у IVF-циклах — додаткові тести та лабораторії"
+  - "Cascade-testing (FDR / SDR після probend'а) — typically повторне тестування того ж variant'а (~2000-5000 UAH per relative — single-site sequencing)"
+
+requires_documentation:
+  - "Pre-test counseling документація"
+  - "Pedigree з мінімум 3-pokolinnoyu сімейного анамнезу"
+  - "Інформована згода щодо incidental findings та insurance-implications (зараз менш-актуально в UA, але важливо)"
+  - "Реcept на тест від лікаря (некоторые лабораторії — direct-to-consumer без рецепта)"
+  - "Метод оплати (готівка / card; страхування рідко покриває)"
+
+verified_by: null
+last_verified: "2026-05-18"
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Germline-тестування є cornerstone hereditary-cancer-surveillance
+  pathway: variant-результат визначає intensified-surveillance protocol
+  (Lynch / BRCA / Li-Fraumeni / VHL / etc.). В Україні bottlenecks:
+  1) НСЗУ не покриває risk-stratification тестування —
+     ~10 000-25 000 UAH OOP — суттєвий бар'єр.
+  2) Pre/post-test genetic-counseling як formal-discipline дуже
+     обмежений; медичні-генетики переважно концентровані у Київських
+     академічних центрах (NIH, NCDS) та Львівському-Інституті.
+     Регіональні онкологи частково перебирають counseling-роль,
+     але без formal training.
+  3) Variant-curation якість — international labs (Invitae, Ambry,
+     Myriad) мають better-curated databases (ClinVar / LOVD-style
+     curation, internal variant-classification committees). Локальні
+     лабораторії використовують generic NGS-pipelines з менш-strict
+     curation.
+  4) Cascade-testing FDR/SDR — economically-vulnerable членам
+     родини часто недоступне (loop-back через pacient-фонди
+     Tabletochki / Patients of Ukraine — теоретично можливо, але
+     not standard).
+
+  AccessPathway render-time-only.

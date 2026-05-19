@@ -1,0 +1,79 @@
+id: IND-FAMMM-SUSPICION-PREVENTION-GENETIC-COUNSELING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-PDAC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints: {ecog_max: 3}
+
+triggered_by_redflags:
+  - RF-FAMMM-FAMILY-HISTORY-SUSPICION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Germline CDKN2A testing in pedigree-suspicion cohort: positive rate ~15-30% in classic FAMMM phenotype. Confirmed carriers' surveillance: annual whole-body skin exam captures melanoma at earlier-stage; pancreatic surveillance via EUS/MRI q1-2y in CAPS-Consortium-eligible carriers may detect PanIN/PDAC at resectable stage."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: [TEST-CBC, TEST-GERMLINE-MULTI-GENE-PANEL]
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for FAMMM / CDKN2A syndrome.
+
+  **(1) Genetic counseling + germline CDKN2A panel.**
+
+  **(2) Confirmed-carrier surveillance:**
+  - Annual whole-body skin exam by dermatologist; total body photography
+    with dermoscopy
+  - Patient self-skin exam monthly; dermoscopy-trained primary care
+  - Pancreatic surveillance via EUS/MRI q1-2y starting age 40 in
+    CAPS-Consortium-eligible carriers (varies by CDKN2A variant)
+  - Sun-protection counseling (UV is primary modifiable melanoma risk)
+
+  **(3) Cascade testing of first-degree relatives.**
+
+rationale_ua: >
+  Стандартний-трек для FAMMM / CDKN2A.
+
+  **(1) Genetic counseling + germline CDKN2A panel.**
+
+  **(2) Surveillance:**
+  - Annual whole-body skin exam + total body photography + dermoscopy
+  - Pancreatic surveillance через EUS/MRI q1-2y з 40 років
+  - Sun-protection counseling
+
+  **(3) Cascade testing родичів.**
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_more_hereditary
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не пропускати pancreatic surveillance в FAMMM CDKN2A carriers — pancreatic risk значно elevated."
+  - "Не використовувати tanning beds у CDKN2A carriers — UV synergy."
+
+do_not_do_en:
+  - "Do not skip pancreatic surveillance in FAMMM CDKN2A carriers — pancreatic risk significantly elevated."
+  - "Do not use tanning beds in CDKN2A carriers — UV synergy."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B FAMMM hereditary pilot."

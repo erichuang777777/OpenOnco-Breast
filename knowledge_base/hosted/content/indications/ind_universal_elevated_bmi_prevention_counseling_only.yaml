@@ -1,0 +1,147 @@
+id: IND-UNIVERSAL-ELEVATED-BMI-PREVENTION-COUNSELING-ONLY
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-UNIVERSAL-ELEVATED-BMI-CANCER-CLUSTER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Alternative-track companion. Patient declines structured weight-
+    loss program enrollment (access barriers, prior unsuccessful
+    attempts, surveillance fatigue, weight-stigma, declining intent
+    for pharmacotherapy or bariatric surgery) — receives brief-
+    intervention counseling at each routine visit (5As framework:
+    Ask, Advise, Assess, Assist, Arrange) + age-appropriate cancer-
+    cluster screening at standard cadence per USPSTF / NCCN without
+    obesity-driven cadence modification. Cumulative effect: modest
+    weight loss in subset of patients re-engaging on later visits;
+    cancer-cluster screening yield mirrors general-population
+    cadence. Outcomes inferior to structured-program comparator
+    for obesity-related cancer incidence (no documented behavioural-
+    counseling-only intervention shows obesity-cluster cancer
+    reduction; bariatric-surgery cohort studies remain the strongest
+    evidence for incidence reduction). Per CHARTER §11 patient-
+    autonomy framing — declining structured program is legitimate
+    but framed as suboptimal vs intervention-arm comparator.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-UNIVERSAL-ELEVATED-BMI-
+  PREVENTION-WEIGHT-LOSS-SCREENING. Patient declines structured
+  weight-loss program enrollment — gives brief-intervention
+  counseling within routine-visit scope.
+
+  **(1) 5As brief intervention at each routine visit.** Ask
+  (current weight, weight history, prior weight-loss attempts);
+  Advise (link obesity to cancer-cluster risk + cardiometabolic
+  risk in plain language); Assess (readiness to change per
+  Prochaska stages); Assist (provide written resources on
+  Mediterranean / DASH dietary patterns, ≥150 min/wk moderate
+  activity, NEAT-increment strategies, smartphone apps for
+  self-monitoring); Arrange (follow-up at 3-6 month interval to
+  re-assess, offer structured-program referral at each touch).
+
+  **(2) Re-engagement opportunity.** Document declined-program
+  determination explicitly + offer re-engagement at each annual
+  visit. Many patients who initially decline behavioural-intensive
+  program engage later when motivational triggers shift
+  (cardiometabolic event, new cancer diagnosis in family,
+  reproductive-planning concerns).
+
+  **(3) Standard-cadence cancer screening** per USPSTF / NCCN
+  without obesity-driven cadence modification. Same age-and-
+  modality endpoints as the structured-program track but without
+  the colonoscopy-interval shortening (no adenoma + family-history
+  co-factor) or supplemental imaging (no high-density + family-
+  history co-factor).
+
+  **(4) Symptom-vigilance education.** Heightened pattern-
+  recognition for site-specific early-warning features in the
+  obesity cohort: new persistent abdominal pain (HCC, pancreatic),
+  postmenopausal bleeding (endometrial), persistent change in
+  bowel habits (CRC), painless hematuria (RCC), new persistent
+  fatigue + weight loss (paradoxical — work up for malignancy in
+  obesity cohort presenting with unintended weight loss).
+
+  Per CHARTER §11 patient-autonomy framing — declining structured
+  program is legitimate but framed as suboptimal vs intervention-
+  arm comparator.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від
+  structured weight-loss program — отримує brief-intervention
+  counseling у routine-visit scope.
+
+  **(1) 5As brief intervention при кожному routine visit.** Ask /
+  Advise / Assess / Assist / Arrange. Письмові ресурси
+  Mediterranean / DASH, ≥150 хв/тиждень moderate activity,
+  smartphone apps. Follow-up на 3-6 місяців з re-assess + offer
+  structured-program referral при кожному touch.
+
+  **(2) Re-engagement opportunity.** Document declined-program
+  determination explicitly + offer re-engagement при кожному
+  annual visit.
+
+  **(3) Standard-cadence cancer screening** per USPSTF / NCCN без
+  obesity-driven cadence modification.
+
+  **(4) Symptom-vigilance education.** Heightened pattern-
+  recognition для site-specific early-warning features:
+  new persistent abdominal pain (HCC, pancreatic), postmenopausal
+  bleeding (endometrial), persistent change у bowel habits (CRC),
+  painless hematuria (RCC), unintended weight loss (paradoxical у
+  obesity cohort — work up для malignancy).
+
+  Per CHARTER §11 patient-autonomy framing.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1
+
+sources:
+  - source_id: SRC-WCRF-AICR-CUP-2018
+    position: context
+  - source_id: SRC-USPSTF-CRC-2021
+    position: context
+
+do_not_do:
+  - "Не презентувати counseling-only як еквівалент structured intervention — outcomes inferior; framing is critical для shared-decision."
+  - "Не пропускати re-engagement opportunity — більшість патієнтів eventually engage коли motivational triggers shift."
+  - "Не уникати weight-related obesity-cluster cancer discussions через weight-stigma concerns — clinical reality requires honest framing з compassion."
+  - "Не нормалізувати unintended weight loss у obesity cohort — paradoxical presentation з malignancy occult, warrants prompt evaluation."
+  - "Не пропускати NAFLD / MASH screening (FIB-4) при metabolic syndrome — окрема axis від weight-loss intervention engagement."
+
+do_not_do_en:
+  - "Do not present counseling-only as equivalent to structured intervention — outcomes are inferior; framing is critical for shared decision-making."
+  - "Do not skip re-engagement opportunity — most patients eventually engage when motivational triggers shift."
+  - "Do not avoid weight-related obesity-cluster cancer discussions because of weight-stigma concerns — clinical reality requires honest framing with compassion."
+  - "Do not normalize unintended weight loss in the obesity cohort — paradoxical presentation with occult malignancy warrants prompt evaluation."
+  - "Do not skip NAFLD / MASH screening (FIB-4) when metabolic syndrome is present — separate axis from weight-loss intervention engagement."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for universal elevated-BMI flag. §15.2 C4 ≥2-tracks invariant. Two-Clinical-Co-Lead signoff queued."

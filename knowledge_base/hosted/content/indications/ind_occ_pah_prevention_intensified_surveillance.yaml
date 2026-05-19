@@ -1,0 +1,154 @@
+id: IND-OCC-PAH-PREVENTION-INTENSIFIED-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-NSCLC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-OCC-PAH-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Primary endpoint: detection of incident PAH-attributable malignancy
+    (lung, bladder, cutaneous SCC) at earliest treatable stage via
+    multi-organ surveillance. Lung-cancer SMR ~2-4x in heavily-exposed
+    coke-oven workers (Costantino 1995); bladder-cancer SMR ~1.5-3x in
+    aluminum-smelter cohorts (Spinelli 2006); cutaneous SCC excess
+    historically well-documented (Pott 1775 chimney-sweep observation
+    is foundational). Smoking-cessation has largest single-intervention
+    impact on lung component.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for individuals with documented
+  prior occupational PAH-rich exposure who do not have a current
+  PAH-associated malignancy diagnosis. Four parallel interventions:
+
+  **(1) Risk-adjusted annual LDCT chest screening.** USPSTF 2021
+  criteria are the baseline. PAH-exposed cohorts extend consideration:
+    - First LDCT at ≥10-15 years from first PAH exposure for
+      current / ex-smokers (smoker-PAH synergy supports earlier start),
+      ≥15-20 years for never-smokers with heavy cumulative PAH-rich
+      occupational exposure.
+    - Annual cadence; Lung-RADS reporting.
+
+  **(2) Urinalysis q1-2y for bladder-cancer surveillance.** Several
+  PAH-rich occupations (coal gasification, aluminum production) are
+  IARC Group 1 for bladder cancer. Non-invasive urinalysis with
+  microscopy for hematuria is supported by NCCN occupational-exposure
+  guidance; cystoscopy reserved for persistent / unexplained
+  hematuria. Urinary cytology is not recommended as standalone
+  screening.
+
+  **(3) Annual dermatology consultation with full-skin exam.**
+  Cutaneous PAH-contact areas (face, neck, hands, forearms, scrotum)
+  receive focused attention. Suspicious lesions (chronic
+  hyperkeratotic plaques, non-healing ulcers, "tar warts") prompt
+  biopsy. Patient is counseled to perform monthly self-skin-checks
+  between visits and report any new / changing lesion.
+
+  **(4) Smoking-cessation counseling.** Highest-impact single
+  intervention for lung component. PAH × tobacco interaction is
+  additive-to-multiplicative. Behavioral counseling + pharmacotherapy
+  (varenicline, bupropion, NRT) per USPSTF / ATS / AAFP.
+
+  Resource access in Ukraine: LDCT chest (~1500-3500 UAH); urinalysis
+  (~150-400 UAH); dermatology consultation accessible at regional
+  centers.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для осіб з документованим попереднім
+  професійним впливом PAH-rich occupations без поточного діагнозу
+  PAH-асоційованої малігнізації. Чотири паралельні втручання:
+
+  **(1) Risk-adjusted щорічна LDCT грудної клітки.** USPSTF 2021
+  критерії — baseline. PAH-експоновані когорти розширюють розгляд:
+  перша LDCT при ≥10-15 років від першого PAH-впливу для поточних /
+  ex-курців, ≥15-20 років для некурців з heavy cumulative PAH-rich
+  occupational exposure. Щорічна частота; Lung-RADS звітність.
+
+  **(2) Urinalysis q1-2y для спостереження за сечовим міхуром.**
+  Декілька PAH-rich професій (газифікація вугілля, виробництво
+  алюмінію) — IARC Group 1 для раку сечового міхура. Неінвазивний
+  urinalysis з мікроскопією для гематурії підтримується NCCN
+  occupational-exposure guidance; цистоскопія резервується для
+  persistent / нез'ясованої гематурії.
+
+  **(3) Щорічна дерматологічна консультація з повним оглядом шкіри.**
+  Cutaneous PAH-contact ділянки (обличчя, шия, руки, передпліччя,
+  мошонка) отримують фокусовану увагу. Підозрілі ураження (хронічні
+  hyperkeratotic plaques, неcicатризуючі виразки, "tar warts")
+  потребують біопсії. Пацієнту радять виконувати щомісячні
+  self-skin-checks між візитами та повідомляти про будь-які нові /
+  змінювальні ураження.
+
+  **(4) Counseling щодо припинення куріння.** Найвпливовіше одиничне
+  втручання для легеневого компоненту. PAH × тютюн взаємодія —
+  адитивно-мультиплікативна.
+
+  Доступ до ресурсів в Україні: LDCT грудної клітки (~1500-3500 грн);
+  urinalysis (~150-400 грн); дерматологічна консультація доступна в
+  регіональних центрах.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+    relevant_quote_paraphrase: >-
+      "Occupational PAH-exposure cohorts at elevated multi-organ cancer
+      risk warrant structured multi-modality surveillance (LDCT,
+      urinalysis, dermatologic exam) per NCCN occupational-exposure
+      extension."
+  - source_id: SRC-NCCN-NSCLC-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Annual low-dose CT lung-cancer screening is recommended for
+      individuals at elevated lung-cancer risk by age, smoking history,
+      and (per Clinical Practice Guidelines extension) occupational
+      carcinogen exposure including polycyclic aromatic hydrocarbons."
+
+do_not_do:
+  - "Не пропускати дерматологічний огляд — cutaneous SCC від PAH-контакту — historic foundational occupational-cancer association (Pott 1775)."
+  - "Не використовувати urinary cytology як standalone screening — низька чутливість для low-grade захворювання."
+  - "Не призначати cystoscopy рутинно — резервується для persistent / нез'ясованої гематурії."
+  - "Не пропускати counseling щодо припинення куріння — PAH × тютюн взаємодія — адитивно-мультиплікативна."
+
+do_not_do_en:
+  - "Do not skip dermatologic exam — cutaneous SCC from PAH contact is the historic foundational occupational-cancer association (Pott 1775)."
+  - "Do not use urinary cytology as standalone screening — low sensitivity for low-grade disease."
+  - "Do not order cystoscopy routinely — reserve for persistent / unexplained hematuria."
+  - "Do not skip smoking-cessation counseling — the PAH × tobacco interaction is additive-to-multiplicative."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — v0.3 occupational batch-2 pilot (PAH). Two-Clinical-Co-Lead
+  signoff queued per CHARTER §6.1 dev-mode exemption. IARC Monograph
+  100F (2012) is canonical evidence anchor; v0.3 source-authoring
+  backlog.

@@ -1,0 +1,105 @@
+id: IND-CHRONIC-HPV-PREVENTION-VACCINATION-SCREENING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CERVICAL
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-CHRONIC-HPV-MALIGNANCY-PREVENTION
+
+# HPV vaccination regimen — Gardasil-9 nonavalent, 3-dose series (0/2/6 months).
+# Plus age-appropriate cervical/anal screening cadence (rationale below).
+recommended_regimen: REG-HPV-GARDASIL-9
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Vaccination efficacy (Gardasil-9, 3-dose series in ages 9-26
+    catch-up): >90% reduction in incidence of HPV-16/18/31/33/45/52/58
+    -associated cervical, anal, oropharyngeal pre-cancer and cancer.
+    Population-level cervical-cancer mortality reduction projected
+    >90% with vaccination + screening combined.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for HPV-associated cancers. Two
+  parallel interventions:
+
+  **(1) Vaccination** — Gardasil-9 nonavalent vaccine, 3-dose series
+  (0, 2, 6 months) covering HPV-6, 11, 16, 18, 31, 33, 45, 52, 58.
+  Age-eligibility per WHO / CDC / EU: routine 9-14, catch-up 15-26,
+  shared-decision-making 27-45. Maximum benefit when administered
+  before sexual debut (HPV-naive).
+
+  **(2) Screening** — cadence by age and risk group:
+  - **Cervical (USPSTF / NCCN):** ages 21-29: Pap q3y; ages 30-65:
+    Pap q3y OR HPV-only q5y OR Pap+HPV co-test q5y. Stop after age 65
+    if 3 negative Pap or 2 negative co-tests in prior 10 years.
+  - **Anal (HIV+/MSM/post-transplant high-risk):** HRA (high-resolution
+    anoscopy) + anal cytology q1-3y.
+  - **Oropharyngeal:** routine screening not currently recommended;
+    visual inspection during dental visits.
+
+  Vaccination and screening are complementary, not alternatives.
+  Vaccinated individuals still need cervical screening per age-
+  appropriate cadence.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для HPV-асоційованих раків. Дві
+  паралельні інтервенції:
+
+  **(1) Вакцинація** — Gardasil-9 нонавалентна вакцина, 3-дозова серія
+  (0, 2, 6 міс), покриває HPV-6, 11, 16, 18, 31, 33, 45, 52, 58.
+  Вік-прийнятність за WHO / CDC / ЄС: рутинно 9-14, catch-up 15-26,
+  shared-decision-making 27-45. Максимальна користь при введенні до
+  сексуального дебюту (HPV-naive).
+
+  **(2) Скринінг** — частота за віком і групою ризику:
+  - **Цервікальний (USPSTF / NCCN):** вік 21-29: Pap q3y; вік 30-65:
+    Pap q3y АБО HPV-only q5y АБО Pap+HPV ко-тест q5y. Припинити після
+    65 років при 3 негативних Pap або 2 негативних ко-тестах за
+    попередні 10 років.
+  - **Анальний (ВІЛ+/МСМ/post-transplant високого ризику):** HRA + анальна цитологія q1-3y.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-CERVICAL-2025
+    position: supports
+  - source_id: SRC-NCCN-ANAL-2025
+    position: supports
+
+do_not_do:
+  - "Не пропускати цервікальний скринінг у вакцинованих жінок — вакцина не покриває всі HPV-генотипи."
+  - "Не давати Gardasil-9 під час вагітності — постпонувати до пост-партум (хоча випадкова вакцинація не показує тератогенності)."
+  - "Не давати Gardasil-9 при гострій тяжкій хворобі — постпонувати."
+
+do_not_do_en:
+  - "Do not skip cervical screening in vaccinated women — vaccine does not cover all HPV genotypes."
+  - "Do not administer Gardasil-9 during pregnancy — postpone to post-partum (though inadvertent vaccination does not show teratogenicity)."
+  - "Do not administer Gardasil-9 during acute severe illness — postpone."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — v0.2-A continuation. Vaccine Drug entity (DRUG-GARDASIL-9) needs separate authoring as v0.2-A backlog.

@@ -1,0 +1,70 @@
+id: RF-CHRONIC-HBV-MALIGNANCY-PREVENTION
+definition: >-
+  Chronic Hepatitis B infection (HBsAg+ ≥6 months OR HBV-DNA detectable
+  ≥6 months) in an individual without a current HCC or HBV-associated
+  lymphoma diagnosis. IARC Group 1 carcinogen (HBV) — established
+  etiological driver of HCC (lifetime risk 15-25% in untreated chronic
+  HBV per WHO; 5-10x reduction with antiviral suppression) and a
+  contributor to B-cell NHL (HCC the dominant cancer outcome).
+  Long-term nucleos(t)ide analog suppression (entecavir / tenofovir
+  TDF or TAF) reduces HCC incidence. Prevention-persona RedFlag
+  (§20 ratification 2026-05-18).
+definition_ua: >-
+  Хронічна інфекція Hepatitis B (HBsAg+ ≥6 міс АБО HBV-ДНК визначувана
+  ≥6 міс) у пацієнта без поточного діагнозу ГЦК або HBV-асоційованої
+  лімфоми. HBV — канцероген IARC Group 1, встановлений етіологічний
+  драйвер ГЦК (lifetime ризик 15-25% у нелікованому хронічному HBV за
+  WHO; зниження 5-10x з антивірусною супресією) і фактор для B-клітинної
+  НХЛ (ГЦК — домінуючий онкологічний результат). Тривала супресія
+  nucleos(t)ide аналогами (entecavir / tenofovir TDF або TAF) знижує
+  захворюваність ГЦК. RedFlag персони prevention (ратифікація §20,
+  2026-05-18).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "hbsag"
+      value: "positive"
+    - finding: "hbv_dna"
+      value: "detectable"
+    - finding: "hbv_chronic_status"
+      value: "positive"
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: infectious
+
+relevant_diseases:
+  - DIS-HCC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-AASLD-HBV-2024
+  - SRC-EASL-HBV-2025
+  - SRC-AASLD-HCC-2023
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag for HBV-associated cancer prevention.
+  Fires on HBsAg+ OR detectable HBV-DNA in patient without HCC. Engine
+  routes to PreventionPlan recommending nucleos(t)ide analog suppression
+  (per IND-CHRONIC-HBV-PREVENTION-ANTIVIRAL) + AFP+US HCC surveillance
+  q6mo per AASLD protocol. STUB pending Co-Lead review.
+
+  Cancer scope: anchor target DIS-HCC. HBV-associated DLBCL/NHL is also
+  documented in literature but with weaker effect-size data than the
+  HCV-NHL link; covered via the broader NHL prevention surveillance
+  bullet in the antiviral indication rationale.
+
+  Distinct from RF-UNIVERSAL-HBV-REACTIVATION-RISK (existing) which is
+  the treatment-time RF for HBV reactivation during anti-CD20 / chemo.
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1

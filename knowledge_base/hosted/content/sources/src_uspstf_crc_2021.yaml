@@ -1,0 +1,49 @@
+id: SRC-USPSTF-CRC-2021
+source_type: guideline
+title: 'USPSTF Recommendation Statement: Screening for Colorectal Cancer (2021)'
+version: '2021'
+authors:
+- US Preventive Services Task Force
+- Davidson KW
+- Barry MJ
+- Mangione CM
+- et al.
+journal: JAMA
+doi: 10.1001/jama.2021.6238
+pmid: '34003218'
+url: https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening
+access_level: open_access
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 1
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources
+license:
+  name: Public domain (US government work)
+  url: https://www.uspreventiveservicestaskforce.org/uspstf/about-uspstf/copyright-permissions
+  spdx_id: null
+attribution:
+  required: false
+  text: US Preventive Services Task Force. Screening for Colorectal Cancer Recommendation
+    Statement. JAMA 2021;325(19):1965-1977.
+commercial_use_allowed: true
+redistribution_allowed: true
+modifications_allowed: true
+legal_review:
+  status: pending
+  notes: US government work; public domain.
+relates_to_diseases: []
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Cited by prevention RFs / Indications for
+  average-risk colorectal-cancer screening: Grade B at age 45-49, Grade A at age 50-75,
+  Grade C (selective) at age 76-85. Lowered start age from 50 to 45 vs 2016 statement.
+  Acceptable modalities: gFOBT or FIT annually; FIT-DNA q1-3y; flexible sigmoidoscopy
+  q5y (alone) or q10y (with FIT q1y); colonoscopy q10y; CT colonography q5y.
+
+  '
+pages_count: 13
+references_count: 90
+corpus_role: primary_guideline

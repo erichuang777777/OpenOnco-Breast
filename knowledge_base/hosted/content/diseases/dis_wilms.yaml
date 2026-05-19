@@ -1,0 +1,59 @@
+id: DIS-WILMS
+names:
+  preferred: "Wilms tumor (nephroblastoma)"
+  ukrainian: "Пухлина Вільмса (нефробластома)"
+  english: "Wilms tumor"
+  synonyms: ["Nephroblastoma", "Pediatric kidney tumor", "WAGR-associated Wilms", "Beckwith-Wiedemann-associated Wilms"]
+codes:
+  icd_o_3_morphology: "8960/3"
+  icd_o_3_topography: ["C64"]
+  icd_10: "C64"
+  who_classification: "WHO Urinary and Male Genital Tumours 5th ed (2022): Nephroblastoma (favorable histology + anaplastic variant)"
+archetype: stage_driven
+oncotree_code: WT
+lineage: "embryonal_tumor"
+etiological_factors:
+  - "Sporadic (>90%) — somatic WT1, CTNNB1, AMER1 mutations and 11p15 alterations"
+  - "WAGR syndrome (germline 11p13 deletion: WT1 + PAX6) — Wilms tumor + aniridia + GU anomalies + intellectual disability"
+  - "Denys-Drash syndrome (germline WT1 missense) — Wilms tumor + diffuse mesangial sclerosis + gonadal dysgenesis"
+  - "Beckwith-Wiedemann syndrome (11p15 imprinting) — Wilms + hepatoblastoma + adrenocortical predisposition; abdominal-US + AFP surveillance protocol"
+  - "Familial Wilms (rare; multiple loci including FWT1, FWT2)"
+related_diseases:
+  - "DIS-ADRENOCORTICAL-CARCINOMA (Beckwith-Wiedemann surveillance overlap)"
+  - "DIS-RCC (adult kidney cancer differential; biologically distinct embryonal vs adult tubular)"
+key_biomarkers: []
+epidemiology:
+  context: "Most common pediatric kidney malignancy (~6% of childhood cancers). ~500 new cases/year in US, ~6000-8000 globally. Median age 3-4 years. Five-year OS >90% in high-income settings with COG / SIOP protocols. Bilateral disease (~5-10%) often hereditary."
+sources:
+  - SRC-COG
+  - SRC-NCCN-PEDIATRIC-SARCOMA
+last_reviewed: "2026-05-18"
+reviewers: []
+notes: >
+  Two major treatment philosophies: COG (North American) — upfront
+  surgery + adjuvant chemo (± RT) based on stage + histology. SIOP
+  (European) — pre-operative chemo (4-6 weeks) → surgery → adjuvant
+  based on response + histology. Both achieve >90% OS in favorable-
+  histology disease. Chemotherapy backbone: vincristine + actinomycin
+  ± doxorubicin per stage / histology / risk group. Anaplastic
+  histology requires intensified regimens (ifosfamide + carboplatin +
+  etoposide). Cascade screening obligatory for syndromic carriers —
+  abdominal US q3-4 months from birth to age 7 in Beckwith-Wiedemann
+  / WAGR.
+notes_ua: |
+  Дві основні філософії лікування: COG (Північна Америка) — спочатку
+  хірургія + ад'ювантна ХТ (± RT) за стадією + гістологією. SIOP
+  (Європа) — передопераційна ХТ (4-6 тижнів) → хірургія →
+  ад'ювантна за response + histology. Обидві досягають >90% OS у
+  favorable-histology хворобі. Каркас ХТ: vincristine + actinomycin
+  ± doxorubicin за стадією / гістологією / risk group. Анапластична
+  гістологія потребує інтенсифікованих режимів (ifosfamide +
+  carboplatin + etoposide). Каскадний скринінг обов'язковий для
+  носіїв синдромів — УЗД черевної порожнини q3-4 міс від народження
+  до 7 років при Beckwith-Wiedemann / WAGR.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+metadata:
+  proposal_status: stub
+  awaiting_proposal: "Full Indications for COG vs SIOP frameworks; favorable vs anaplastic histology; bilateral disease; WAGR / Beckwith-Wiedemann surveillance pending."

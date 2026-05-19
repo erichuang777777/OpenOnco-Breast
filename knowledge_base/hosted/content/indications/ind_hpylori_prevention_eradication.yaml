@@ -1,0 +1,177 @@
+id: IND-H-PYLORI-PREVENTION-ERADICATION
+plan_track: standard
+
+intent: prevention
+
+applicable_to:
+  # Prevention target: gastric adenocarcinoma. Eradication also prevents
+  # / treats gastric MALT lymphoma, but DIS-GASTRIC-MALT is not yet a
+  # distinct OpenOnco Disease entity (v0.2-A authoring backlog).
+  disease_id: DIS-GASTRIC
+
+  stage_requirements: []
+
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-CHRONIC-H-PYLORI-MALIGNANCY-PREVENTION
+
+# Standard primary eradication regimen: PBMT bismuth-quadruple — preferred
+# in Ukraine and most of Eastern Europe due to clarithromycin resistance
+# >15% (Maastricht VI/Florence Consensus 2022). Alternative regimen
+# REG-HP-PPI-CLAR-AMOX listed in rationale for low-resistance regions.
+recommended_regimen: REG-HP-BISMUTH-QUADRUPLE
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Primary endpoint: H. pylori eradication (~80-95% SVR depending on
+    regimen + local resistance patterns). Secondary endpoint (gastric
+    adenocarcinoma incidence): RR ~0.54-0.66 over 5-15 years follow-up
+    per Cochrane meta-analyses (NNT ~15-50). Effect strongest in
+    younger patients without atrophic gastritis / intestinal metaplasia.
+    For early-stage gastric MALT lymphoma (treatment-persona, distinct
+    from this Indication): Wotherspoon regression in ~70-80% of
+    t(11;18)-negative cases.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC  # baseline before antibiotic course
+  - TEST-LFT  # antibiotic / PPI hepatotoxicity baseline
+
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway. Patient with chronic H. pylori
+  infection (positive UBT / stool antigen / biopsy / stool PCR) and no
+  confirmed gastric malignancy is offered eradication antibiotics as the
+  etiological cancer-prevention pathway. H. pylori is an IARC Group 1
+  carcinogen; eradication reduces gastric adenocarcinoma incidence
+  (RR ~0.54-0.66) and is curative for early-stage gastric MALT lymphoma
+  in most t(11;18)-negative cases.
+
+  **Regimen selection (Maastricht VI / Florence Consensus 2022, AGA
+  2024):**
+    Region-dependent due to clarithromycin-resistance prevalence:
+    - **First-line in regions with clarithromycin resistance >15%
+      (Eastern Europe incl. Ukraine, many parts of Asia):** Bismuth
+      quadruple therapy — PBMT (PPI + Bismuth subcitrate + Metronidazole
+      + Tetracycline) ×10-14 days. Higher eradication rates in
+      clarithromycin-resistant populations.
+    - **First-line in regions with clarithromycin resistance ≤15%:**
+      PPI + Clarithromycin + Amoxicillin ×14 days (or +Metronidazole
+      if Pen-allergic).
+    - **Alternative:** Vonoprazan-amoxicillin dual therapy
+      (vonoprazan 20mg BID + amoxicillin 1g TID ×14d) — non-inferior
+      eradication rates, simpler regimen, FDA-approved 2022.
+    - **Salvage (after failure):** Levofloxacin-amoxicillin-PPI triple
+      OR rifabutin-amoxicillin-PPI triple.
+
+  Confirmation of eradication: UBT or stool antigen ≥4 weeks after
+  completion of therapy AND ≥2 weeks off PPI.
+
+  In Ukraine, H. pylori eradication antibiotics + PPI / bismuth are
+  pharmacy-accessible without НСЗУ reimbursement — out-of-pocket cost
+  ~500-1500 UAH per full course depending on regimen and local
+  pricing.
+
+  Eradication is NOT curative for gastric malignancy already present —
+  if patient has a confirmed gastric adenocarcinoma or MALT lymphoma,
+  this is treatment-persona territory (existing or future treatment
+  Indications), NOT prevention.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях. Пацієнтові з хронічним H. pylori
+  (позитивний УДТ / антиген у калі / біопсія / стульова ПЛР) та без
+  підтвердженого діагнозу шлункової малігнізації пропонується
+  ерадикаційна антибіотикотерапія як шлях етіологічної профілактики
+  раку. H. pylori — канцероген IARC Group 1; ерадикація знижує
+  захворюваність аденокарциномою шлунка (RR ~0.54-0.66) і є куративною
+  для ранньої стадії MALT-лімфоми шлунка у більшості t(11;18)-негативних
+  випадків.
+
+  **Вибір режиму (Maastricht VI / Florence Consensus 2022, AGA 2024):**
+  Регіон-залежний через поширеність кларитроміцин-резистентності:
+    - **Перша лінія в регіонах з кларитроміцин-резистентністю >15%
+      (Східна Європа включно з Україною, багато частин Азії):**
+      Бісмутова квадра-терапія — PBMT (PPI + Bismuth subcitrate +
+      Metronidazole + Tetracycline) ×10-14 днів. Вищі показники
+      ерадикації в кларитроміцин-резистентних популяціях.
+    - **Перша лінія в регіонах з кларитроміцин-резистентністю ≤15%:**
+      PPI + Clarithromycin + Amoxicillin ×14 днів (або +Metronidazole
+      у пацієнтів з алергією на пеніциліни).
+    - **Альтернатива:** Vonoprazan-amoxicillin dual терапія
+      (vonoprazan 20mg BID + amoxicillin 1g TID ×14 днів) — non-inferior
+      показники ерадикації, простіший режим, FDA-схвалено 2022.
+    - **Salvage (після невдачі):** Levofloxacin-amoxicillin-PPI triple
+      АБО rifabutin-amoxicillin-PPI triple.
+
+  Підтвердження ерадикації: УДТ або антиген у калі ≥4 тижні після
+  завершення терапії ТА ≥2 тижні без PPI.
+
+  В Україні ерадикаційні антибіотики + PPI / bismuth — аптечно доступні
+  без відшкодування НСЗУ — out-of-pocket вартість ~500-1500 грн за
+  повний курс залежно від режиму та локальної ціни.
+
+  Ерадикація НЕ є куративною для вже існуючої шлункової малігнізації —
+  якщо у пацієнта є підтверджена аденокарцинома шлунка або MALT-лімфома,
+  це територія treatment-персони (існуючі або майбутні treatment
+  Indications), НЕ prevention.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Eradication antibiotic therapy is first-line treatment for
+      H. pylori-positive early-stage gastric MALT lymphoma; H. pylori
+      eradication in chronic infection reduces subsequent gastric
+      adenocarcinoma incidence per Cochrane meta-analyses."
+
+do_not_do:
+  - "Не використовувати clarithromycin-вмісну triple-therapy в регіонах з кларитроміцин-резистентністю >15% (включно з Україною) — низькі показники ерадикації."
+  - "Не пропускати підтвердження ерадикації УДТ або антигеном у калі через ≥4 тижні після завершення курсу — реінфекція або неефективність потребує salvage режиму."
+  - "Не давати PPI у дні УДТ — false-negative результат."
+  - "Не презентувати ерадикацію як еквівалент лікування існуючої малігнізації — це prevention pathway, не treatment."
+  - "Не використовувати бісмут-вмісні режими при тяжкій нирковій недостатності (CrCl <30) — accumulation risk."
+
+do_not_do_en:
+  - "Do not use clarithromycin-containing triple therapy in regions with clarithromycin resistance >15% (including Ukraine) — low eradication rates."
+  - "Do not skip eradication confirmation by UBT or stool antigen ≥4 weeks after completion — reinfection or treatment failure requires salvage regimen."
+  - "Do not administer PPI on UBT day — false-negative result."
+  - "Do not present eradication as equivalent to treatment of existing malignancy — this is a prevention pathway, not treatment."
+  - "Do not use bismuth-containing regimens in severe renal impairment (CrCl <30) — accumulation risk."
+
+known_controversies: []
+
+time_critical: false
+
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — v0.2-A continuation. Two-Co-Lead signoff queued. Eradication
+  regimen (REG-HP-BISMUTH-QUADRUPLE or REG-HP-PPI-CLAR-AMOX or
+  REG-HP-VONOPRAZAN-AMOX) needs separate authoring with new Drug
+  entities (clarithromycin, amoxicillin, omeprazole/vonoprazan, bismuth
+  subcitrate, tetracycline). Indication currently authored with
+  recommended_regimen=null and regimen options in rationale; future
+  commit replaces with proper Regimen FK once those entities land.
+
+  Sources TODO: IARC Monograph 100B (H. pylori Group 1), Maastricht VI /
+  Florence Consensus 2022, AGA 2024 H. pylori treatment guideline as
+  new SRC-* entities.

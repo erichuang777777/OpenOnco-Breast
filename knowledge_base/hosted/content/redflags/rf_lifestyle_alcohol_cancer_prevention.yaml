@@ -1,0 +1,60 @@
+id: RF-LIFESTYLE-ALCOHOL-CANCER-PREVENTION
+definition: >-
+  Heavy alcohol consumption — defined as >14 drinks/week (women) or
+  >21 drinks/week (men) per US DHHS / WHO thresholds — OR
+  cumulative lifetime alcohol use ≥40 drink-years. IARC Group 1
+  carcinogen — established etiological driver of head + neck
+  squamous cell carcinoma (oral cavity + oropharynx + larynx +
+  hypopharynx), esophageal SCC, hepatocellular carcinoma (via
+  cirrhosis), colorectal cancer, female breast cancer (dose-
+  response from ≥1 drink/day), and probably pancreatic + gastric.
+  Alcohol-tobacco interaction is multiplicative for oral-pharyngeal-
+  laryngeal-esophageal-SCC. Cessation / moderation produces
+  meaningful cancer-incidence reduction over decades. Prevention-
+  persona RedFlag (§20 v0.3 lifestyle pilot).
+definition_ua: >-
+  Важке вживання алкоголю — визначається як >14 напоїв/тиждень
+  (жінки) або >21 напоїв/тиждень (чоловіки) за US DHHS / WHO
+  thresholds — АБО кумулятивне lifetime alcohol use ≥40 drink-years.
+  IARC Group 1 канцероген — встановлений етіологічний драйвер раку
+  голови + шиї (порожнина рота + ротоглотка + гортань + гіпофаринкс),
+  esophageal SCC, гепатоцелюлярної карциноми (через цироз),
+  колоректального раку, раку молочної залози у жінок (dose-response
+  від ≥1 напою/день), і ймовірно панкреатичного + шлункового.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "alcohol_heavy_use_above_threshold"
+      value: true
+    - finding: "alcohol_lifetime_drink_years_ge_40"
+      value: true
+    - finding: "alcohol_with_concurrent_tobacco_use"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: lifestyle
+
+relevant_diseases:
+  - DIS-HCC
+  - DIS-CRC
+  - DIS-ESOPHAGEAL
+  - DIS-BREAST
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for heavy alcohol use. Engine routes to PreventionPlan recommending structured cessation/moderation counseling + pharmacotherapy + appropriate cancer screening (esophageal endoscopy for high-risk, breast cancer surveillance for women). STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle
+draft_revision: 1

@@ -1,0 +1,87 @@
+id: TEST-EGD-SURVEILLANCE
+names:
+  preferred: "Surveillance esophagogastroduodenoscopy (EGD) with chromoendoscopy / NBI"
+  ukrainian: "ФГДС для нагляду з хромоендоскопією / NBI"
+  english: "Surveillance EGD"
+  synonyms: ["Surveillance OGD", "EGD with Seattle protocol", "Upper-GI surveillance endoscopy"]
+loinc_codes: ["50090-1"]
+category: imaging
+purpose: >
+  Upper-GI surveillance endoscopy with targeted + protocol biopsies
+  in defined high-risk cohorts: Barrett's esophagus (Seattle 4-quadrant
+  protocol q3–5y non-dysplastic; q6–12mo LGD; q3mo HGD), FAP duodenum
+  (Spigelman staging q1–5y from age 20–25), chronic atrophic gastritis
+  / pernicious anemia (OLGA / OLGIM staging q3y), hereditary diffuse
+  gastric cancer (CDH1 carriers — annual Cambridge-protocol biopsies),
+  post-H. pylori-eradication gastritis with intestinal metaplasia.
+  Distinct from TEST-EGD-VARICES-SCREENING (HCC + cirrhosis varices
+  staging).
+
+specimen: "Multiple biopsy specimens — protocol-driven sampling (4-quadrant Seattle for Barrett's, Cambridge / random + targeted for CDH1)"
+turnaround_time: "Procedure same day; histology + dysplasia review 7–14 days; expert dysplasia consensus 14–30 days if HGD / indefinite for dysplasia"
+priority_class: standard
+
+availability_ukraine:
+  state_funded: true
+  typical_availability: "Tertiary endoscopy units widely available; HD + NBI / chromoendoscopy at major centers; expert GI-pathology dysplasia review limited to ~3–4 centers"
+  notes: >
+    Standard EGD access is universal; the constraint for surveillance
+    quality is high-definition white-light + virtual chromoendoscopy
+    (NBI / BLI / LCI) availability, plus expert GI-pathology
+    confirmation of any dysplasia call (especially CDH1 / Barrett's
+    HGD where management is surgical / endoscopic resection).
+
+sources:
+  - SRC-NCCN-ESOPHAGEAL-2025
+  - SRC-NCCN-GASTRIC-2025
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-AGA-H-PYLORI-2024
+  - SRC-MAASTRICHT-VI-FLORENCE-2022
+
+last_reviewed: "2026-05-18"
+review_status: pending_clinical_signoff
+drafted_by: claude_extraction
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Surveillance intervals by indication:
+
+  Barrett's esophagus (BSG / ACG / NCCN):
+    - Non-dysplastic Barrett's, <3 cm: q3–5y EGD with Seattle
+      4-quadrant biopsies every 2 cm
+    - Non-dysplastic Barrett's, ≥3 cm: q3y; biopsies every 1 cm
+      if long-segment Barrett's
+    - Indefinite for dysplasia: optimize PPI, repeat in 6 months
+    - LGD (confirmed by 2 GI pathologists): endoscopic eradication
+      OR q6–12mo surveillance with shared decision-making
+    - HGD or intramucosal cancer: endoscopic eradication therapy
+      (RFA + EMR / ESD) — NOT surveillance alone
+
+  FAP duodenum (NCCN-Genetic/Familial-CRC):
+    - Baseline EGD age 20–25
+    - Spigelman 0–II: q5y
+    - Spigelman III: q1–2y
+    - Spigelman IV: surgical consultation (pancreas-preserving
+      duodenectomy or pancreaticoduodenectomy)
+
+  Chronic atrophic gastritis with intestinal metaplasia (AGA 2020,
+  MAPS II 2019, Maastricht VI 2022):
+    - Extensive IM (corpus + antrum) OR family history gastric
+      cancer: q3y
+    - IM with dysplasia: q1y LGD, urgent referral HGD
+
+  Hereditary diffuse gastric cancer (CDH1 carriers):
+    - Annual Cambridge-protocol EGD from age 20–30 (or 5 years
+      before earliest family case) — random + targeted biopsies
+    - Surveillance is bridging to prophylactic total gastrectomy,
+      which is recommended in all confirmed CDH1 carriers age
+      20–30 regardless of endoscopic findings (sensitivity for
+      signet-ring foci limited)
+
+  Quality elements: HD endoscope mandatory, ≥7 minutes withdrawal
+  inspection for Barrett's / IM, photo-documentation per Prague
+  C&M criteria (Barrett's), expert GI-pathology dysplasia review.
+
+  Engineering note: referenced by v0.2-B prevention Indications for
+  Barrett's, FAP, atrophic gastritis with IM, CDH1 carriers, and
+  pernicious anemia cohorts.

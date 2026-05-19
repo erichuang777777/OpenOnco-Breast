@@ -1,0 +1,147 @@
+id: IND-FAMMM-CARRIER-SURVEILLANCE
+plan_track: standard
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-MELANOMA
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-FAMMM-CONFIRMED-CARRIER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Whole-body dermatology surveillance with total body photography +
+    dermoscopy in CDKN2A carriers detects melanoma at smaller (median
+    < 1 mm Breslow) and lower-stage presentation than population
+    screening — corresponding to ~95% disease-specific survival vs
+    ~85-90% in unselected populations. Pancreatic surveillance per CAPS
+    Consortium (EUS or MRI / MRCP q1-2y from age 40) detects pancreatic
+    intraepithelial neoplasia or T1 adenocarcinoma in a meaningful
+    minority of high-risk carriers — yielding higher resectability and
+    R0 resection rates. Sun-protection counseling reduces UV-driven
+    accelerator effect on background CDKN2A risk.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track confirmed-carrier surveillance pathway for CDKN2A-
+  positive carriers per NCCN Genetic / Familial High-Risk: Breast,
+  Ovarian, Pancreatic (covers FAMMM pancreatic surveillance), Goldstein
+  et al. recommendations, and CAPS Consortium consensus.
+
+  **Cutaneous melanoma (~60-80% lifetime; often multiple primaries):**
+  Annual whole-body skin examination by dermatologist with total body
+  photography (digital baseline + annual comparison) and dermoscopy
+  for atypical nevi. Self-examination education with mirror / partner
+  technique for hard-to-see sites. Lower threshold for excisional
+  biopsy of any changing / atypical lesion. Earlier start: at-risk
+  pediatric carriers from age 10 with parental-supervised skin exam.
+
+  **Pancreatic adenocarcinoma (~15-25% lifetime — CDKN2A is CAPS
+  Consortium-eligible):** EUS or MRI / MRCP q1-2y starting age 40
+  (earlier if family pancreatic cancer < age 50 — see INTENSIFIED
+  track for that scenario). HbA1c q1y as adjunctive early-diabetes
+  signal. Smoking cessation is essential — smoking is the dominant
+  modifiable cofactor (multiplicatively raises CDKN2A pancreatic risk).
+
+  **Sun-protection counseling:** Broad-spectrum SPF 30+ daily;
+  protective clothing (long sleeves, hats with brims, sun-protective
+  fabric); avoidance of peak-UV hours; tanning bed prohibition.
+  Particularly important in pediatric / adolescent carriers (childhood
+  UV exposure is the strongest modifiable melanoma risk factor).
+
+  **Cascade testing:** Mandates offer to all first-degree relatives.
+  Pediatric testing appropriate given the childhood-onset skin exam
+  window.
+
+  **Uveal melanoma (modest elevation):** No dedicated ophthalmology
+  surveillance required for CDKN2A carriers (unlike BAP1-TPDS — see
+  RF-BAP1-CONFIRMED-CARRIER for ocular surveillance). Routine eye
+  exams sufficient.
+
+  Per CHARTER §11 patient-autonomy framing; pediatric surveillance
+  requires family counseling.
+
+rationale_ua: >
+  Стандартний-трек confirmed-carrier surveillance per NCCN +
+  Goldstein recommendations + CAPS Consortium.
+
+  **Шкірна меланома (~60-80%; часто multiple primaries):** Annual
+  whole-body skin exam дерматологом + total body photography (digital
+  baseline + annual comparison) + dermoscopy для atypical nevi. Self-
+  examination education з mirror / partner technique. Lower threshold
+  excisional biopsy будь-якого changing / atypical lesion. Earlier
+  start: at-risk pediatric carriers з 10 років (parental-supervised).
+
+  **Pancreatic adenocarcinoma (~15-25% — CAPS-eligible):** EUS або
+  МРТ / MRCP q1-2y з 40 років. HbA1c q1y. Smoking cessation essential
+  — smoking multiplicatively raises CDKN2A pancreatic risk.
+
+  **Sun-protection counseling:** Broad-spectrum SPF 30+ daily;
+  protective clothing; avoidance peak-UV hours; tanning bed prohibition.
+  Particularly important у pediatric / adolescent carriers.
+
+  **Cascade тестування:** mandates пропонування first-degree родичам;
+  pediatric appropriate.
+
+  **Увеальна меланома (modest elevation):** No dedicated ophthalmology
+  surveillance потрібна для CDKN2A (unlike BAP1-TPDS). Routine eye
+  exams sufficient.
+
+  Per CHARTER §11 framing автономії пацієнта.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02b_confirmed_carriers_additional
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Confirmed CDKN2A / FAMMM carriers should enter structured
+      surveillance: annual whole-body dermatology exam with total body
+      photography and dermoscopy, pancreatic surveillance with EUS or
+      MRI from age 40 per CAPS Consortium, and explicit sun-protection
+      counseling. Smoking cessation is critical given the
+      multiplicative pancreatic-cancer risk modification."
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не використовувати тільки visual self-exam — annual whole-body dermatology з total body photography + dermoscopy потрібна для multi-primary CDKN2A phenotype."
+  - "Не пропускати pancreatic surveillance — CDKN2A — один з небагатьох hereditary syndromes зі sufficient absolute risk per CAPS Consortium consensus."
+  - "Не пропускати smoking cessation discussion — single most important modifiable cofactor для CDKN2A pancreatic risk; multiplicatively raises baseline."
+  - "Не використовувати tanning beds — UV exposure dominant modifiable melanoma risk; tanning bed use в anyone з CDKN2A categorically contraindicated."
+  - "Не пропускати pediatric skin exam — childhood UV exposure найсильніший modifiable melanoma risk factor."
+
+do_not_do_en:
+  - "Do not use visual self-exam alone — annual whole-body dermatology with total body photography and dermoscopy is required for the multi-primary CDKN2A phenotype."
+  - "Do not skip pancreatic surveillance — CDKN2A is one of the few hereditary syndromes with sufficient absolute risk per CAPS Consortium consensus."
+  - "Do not skip smoking-cessation discussion — single most important modifiable cofactor for CDKN2A pancreatic risk; multiplicatively raises baseline."
+  - "Do not use tanning beds — UV exposure is the dominant modifiable melanoma risk; tanning bed use in anyone with CDKN2A is categorically contraindicated."
+  - "Do not skip pediatric skin exam — childhood UV exposure is the strongest modifiable melanoma risk factor."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B confirmed-carrier surveillance pathway (FAMMM / CDKN2A). Sibling — IND-FAMMM-CARRIER-INTENSIFIED (aggressive plan_track)."

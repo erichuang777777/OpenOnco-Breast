@@ -1,0 +1,22 @@
+id: BIO-WT1-GERMLINE
+names:
+  preferred: "WT1 germline pathogenic variant"
+  ukrainian: "WT1 germline патогенний варіант"
+  english: "WT1 germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: WT1
+  gene_hugo_id: HGNC:12796
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources: [SRC-NCCN-PEDIATRIC-SARCOMA]
+last_reviewed: "2026-05-18"
+notes: "WT1 germline — drives WAGR (11p13 contiguous-gene deletion: Wilms, aniridia, genitourinary anomalies, range of intellectual disability), Denys-Drash syndrome (pseudohermaphroditism + diffuse mesangial sclerosis + Wilms), and Frasier syndrome. Pediatric Wilms tumor risk ~50% in Denys-Drash, ~30-50% in WAGR. Surveillance: renal US every 3 months until age 7 in known carriers. STUB pending two-Co-Lead signoff."
+notes_ua: "WT1 germline — драйвер WAGR / Denys-Drash / Frasier syndromes. Високий ризик дитячої пухлини Вільмса. Нагляд: УЗД нирок кожні 3 міс до 7 років."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_germline_batch3
+draft_revision: 1

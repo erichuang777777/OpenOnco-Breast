@@ -1,0 +1,193 @@
+id: IND-UNIVERSAL-IMMUNOCOMPROMISED-PREVENTION-STRATIFIED-SCREENING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-KAPOSI
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-UNIVERSAL-IMMUNOCOMPROMISED-CANCER-RISK
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Stratified cancer-screening cadence per IDSA + ASCO + AST
+    (transplant) + ACOG (cervical-screening modification in
+    immunocompromised) + ECCO (IBD-immunosuppressed) guidelines
+    detects elevated-incidence AIDS-defining + non-AIDS-defining
+    cancers earlier than general-population screening cadence.
+    Documented outcomes: anal cancer screening in HIV+ MSM with
+    HRA (high-resolution anoscopy) every 1-3 years detects HSIL
+    treatable lesions with cumulative cancer-incidence reduction
+    in compliant cohort (NEJM ANCHOR trial 2022 — treatment of
+    HSIL reduced anal cancer by ~57%); cervical screening at
+    accelerated cadence in immunocompromised women (annual
+    cytology / hr-HPV vs q3-5y general population per ACOG /
+    ASCCP) detects CIN earlier; skin-cancer screening at
+    q6-12mo dermatology with low-threshold biopsy in transplant
+    cohort detects skin SCC / BCC / Merkel before regional /
+    metastatic progression. EBV-VL monitoring in post-transplant
+    cohort detects EBV-driven PTLD precursor states (elevated
+    VL) at preemptive-intervention-amenable stage.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for any patient with chronic
+  immunosuppression ≥1 year. Stratified cancer-screening cadence
+  per IDSA + ASCO + AST + ACOG + ECCO + NCCN guidelines.
+
+  **(1) Anal cancer screening.** HIV+ MSM, transplant recipients,
+  women with prior HPV-associated dysplasia (vulvar / cervical),
+  prolonged immunosuppression cohorts have anal-cancer SIR ~30-80
+  vs general population. ANCHOR trial 2022: treatment of HSIL
+  reduces anal-cancer incidence ~57%. Recommended cadence: HRA
+  q1-3y in highest-risk cohort, anal cytology q1y as alternative
+  / triage modality. Symptom-prompted exam for any anal pain,
+  bleeding, palpable mass independent of cadence.
+
+  **(2) Cervical cancer screening.** ACOG / ASCCP 2020:
+  HIV-positive women + other immunocompromised cohort require
+  accelerated cadence — annual cytology for ≥3 consecutive
+  negative cytology, then q3y; concurrent HPV testing per
+  guidance; colposcopy for any ASC-US-or-higher cytology
+  (lower threshold than general population). Continue beyond
+  age 65 in immunocompromised cohort (do not cease per general-
+  population age cessation).
+
+  **(3) Skin cancer screening.** Solid-organ transplant recipients
+  have skin-SCC SIR ~65-250, BCC SIR ~10, Merkel-cell carcinoma
+  SIR ~24. Recommended: dermatology q6-12mo with low-threshold
+  biopsy for any suspicious lesion; full-body skin exam at each
+  visit; sun-protection counseling.
+
+  **(4) EBV-VL monitoring (post-transplant cohort).** EBV viral
+  load q1-3mo for solid-organ-transplant recipients with EBV-
+  seronegative status pre-transplant + EBV-seropositive donor
+  (highest PTLD risk). Elevated VL → reduction of immunosuppression
+  + rituximab preemptive (if VL escalating despite reduction);
+  PTLD diagnostic biopsy if mass / nodal disease emerges.
+
+  **(5) Kaposi sarcoma + AIDS-defining lymphoma.** HIV-positive
+  cohort: maintain ART with CD4 monitoring; Kaposi-sarcoma
+  symptom-prompted exam (cutaneous mucocutaneous lesions);
+  ART-naive cohort baseline imaging + LDH per HIV/AIDS
+  Malignancy Branch guidelines.
+
+  **(6) Hepatocellular carcinoma.** Cirrhosis component in
+  immunocompromised cohort (e.g., HCV / HBV co-infection in
+  HIV+; alcohol use; NAFLD/MASH): US + AFP q6mo if cirrhosis
+  documented per AASLD.
+
+  **(7) Lung cancer.** USPSTF LDCT applies if eligibility met
+  (smoking history + age criteria); in transplant cohort
+  consider broadening per AST guidelines (any pack-year history
+  ≥10 with chest-RT history); document determination.
+
+  **(8) General CRC / breast cancer / prostate.** USPSTF /
+  NCCN baseline cadence with no immunosuppression-specific
+  cadence modification (immunosuppression does not significantly
+  elevate these site-specific risks).
+
+  **(9) Vaccination.** HPV vaccine catch-up to age 45 per ACIP
+  (immunocompromised cohort accelerated); hepatitis B per
+  immune-deficiency-cohort series; PCV13 / PPSV23 per ACIP;
+  zoster vaccine per age + immunosuppression cohort.
+
+  **Anchor disease:** Kaposi sarcoma chosen as canonical anchor
+  because (a) Kaposi is an AIDS-defining cancer with steep
+  immunosuppression-attributable SIR, (b) HHV-8-driven Kaposi
+  is well-characterized as the immunosuppression-state marker,
+  (c) deliberate selection of DIS-KAPOSI rather than DIS-DLBCL-NOS
+  avoids cross-firing with the HIV-prevention pilot test scenario
+  (advisor flag — RF-CHRONIC-HIV-MALIGNANCY-PREVENTION targets
+  DIS-DLBCL-NOS). Anal cancer, cervical cancer, skin SCC, EBV-
+  driven PTLD, HCC, and lung cancer surveillance covered in
+  rationale.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для пацієнта з chronic
+  immunosuppression ≥1 рік. Stratified cancer-screening cadence
+  per IDSA + ASCO + AST + ACOG + ECCO + NCCN.
+
+  **(1) Anal cancer screening** у HIV+ MSM + transplant recipients
+  + women з prior HPV-associated dysplasia. ANCHOR trial 2022 —
+  treatment HSIL ↓ anal-cancer incidence ~57%. HRA q1-3р у
+  highest-risk cohort, anal cytology q1р як alternative / triage.
+
+  **(2) Cervical cancer screening.** ACOG / ASCCP 2020:
+  HIV-positive women + other immunocompromised — annual cytology
+  для ≥3 послідовних negative cytology, потім q3р. Continue
+  beyond age 65 у immunocompromised cohort.
+
+  **(3) Skin cancer screening.** Transplant recipients SCC
+  SIR ~65-250. Dermatology q6-12 міс з low-threshold biopsy.
+
+  **(4) EBV-VL monitoring** у post-transplant cohort (EBV-
+  seronegative pre-tx + EBV-seropositive donor — highest PTLD
+  risk). Elevated VL → reduction immunosuppression + rituximab
+  preemptive.
+
+  **(5) Kaposi sarcoma + AIDS-defining lymphoma.** HIV-positive
+  cohort: maintain ART з CD4 monitoring; symptom-prompted exam.
+
+  **(6) HCC** при cirrhosis component — US + AFP q6 міс per AASLD.
+
+  **(7) Lung cancer** USPSTF LDCT якщо eligibility met; у
+  transplant cohort consider broadening per AST.
+
+  **(8) General CRC / breast / prostate** — USPSTF / NCCN baseline.
+
+  **(9) Vaccination** — HPV catch-up до 45 років per ACIP;
+  HepB; PCV13 / PPSV23; zoster.
+
+  **Анкор-захворювання:** Kaposi sarcoma — AIDS-defining cancer
+  з steep immunosuppression-attributable SIR; deliberate selection
+  DIS-KAPOSI rather than DIS-DLBCL-NOS уникає cross-firing з
+  HIV-prevention pilot test.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NIH-AIDS-2024
+    position: supports
+  - source_id: SRC-IDSA-EBV-2019
+    position: supports
+
+do_not_do:
+  - "Не використовувати general-population cervical-screening cadence у immunocompromised cohort — accelerated cadence (annual cytology initial) per ACOG / ASCCP 2020 mandatory."
+  - "Не cease cervical screening на 65 років у immunocompromised cohort — risk-elevation persists."
+  - "Не пропускати annual dermatology у transplant cohort — SCC SIR ~65-250 з low-threshold biopsy axis."
+  - "Не нормалізувати new skin lesion / oral lesion / cervical lesion / anal-canal symptom у immunocompromised cohort — alarm symptoms warrant prompt evaluation."
+  - "Не deny EBV-VL monitoring у high-risk post-transplant cohort (EBV-seronegative pre-tx + seropositive donor) — preemptive intervention відрізняє treatment success від PTLD progression."
+
+do_not_do_en:
+  - "Do not use general-population cervical-screening cadence in the immunocompromised cohort — accelerated cadence (annual cytology initial) per ACOG / ASCCP 2020 is mandatory."
+  - "Do not cease cervical screening at age 65 in the immunocompromised cohort — risk elevation persists."
+  - "Do not skip annual dermatology in the transplant cohort — SCC SIR ~65-250 with low-threshold biopsy axis."
+  - "Do not normalize a new skin lesion / oral lesion / cervical lesion / anal-canal symptom in the immunocompromised cohort — alarm symptoms warrant prompt evaluation."
+  - "Do not deny EBV-VL monitoring in the high-risk post-transplant cohort (EBV-seronegative pre-tx + seropositive donor) — preemptive intervention is the difference between treatment success and PTLD progression."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — universal immunocompromised cancer-risk flag. Anchor DIS-KAPOSI deliberately chosen (advisor flag) to avoid cross-firing with DIS-DLBCL-NOS (HIV-prevention pilot target). Two-Clinical-Co-Lead signoff queued."

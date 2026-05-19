@@ -1,0 +1,117 @@
+id: DRUG-AMOXICILLIN
+names:
+  preferred: "Amoxicillin"
+  ukrainian: "Амоксицилін"
+  english: "Amoxicillin"
+  brand_names:
+    - "Amoxil"
+    - "Trimox"
+    - "Ospamox"
+    - "Hiconcil"
+    - "Flemoxin"
+atc_code: J01CA04
+rxnorm_id: "723"
+drug_class: "Aminopenicillin (extended-spectrum beta-lactam antibiotic)"
+mechanism: >
+  Semi-synthetic aminopenicillin that binds to penicillin-binding proteins
+  (PBPs) in actively dividing bacteria, inhibiting cross-linking of the
+  peptidoglycan cell-wall layer and triggering autolysin-mediated
+  bactericidal effect. Spectrum: broader than penicillin V/G — includes
+  many Streptococcus spp., Enterococcus faecalis, Listeria monocytogenes,
+  Helicobacter pylori, and some Gram-negatives (E. coli, Proteus mirabilis,
+  Haemophilus influenzae, Salmonella, Shigella) where no β-lactamase
+  expression. Susceptible to β-lactamase hydrolysis (hence Augmentin
+  combination with clavulanic acid for many Gram-negative infections).
+
+regulatory_status:
+  fda:
+    approved: true
+    year_first_approval: 1972
+    indications_brief:
+      - "Acute otitis media, sinusitis, pharyngitis / tonsillitis (GAS)"
+      - "Lower respiratory tract infections (community-acquired pneumonia, exacerbation of chronic bronchitis)"
+      - "Urinary tract infections (uncomplicated, susceptible organisms)"
+      - "Skin / skin-structure infections"
+      - "Helicobacter pylori eradication (component of triple or quadruple therapy)"
+      - "Endocarditis prophylaxis (high-risk dental / GI procedures)"
+      - "Lyme disease (early-stage)"
+  ema:
+    approved: true
+    year_first_approval: 1972
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Зареєстровано в Україні (Ospamox, Hiconcil, Flemoxin, generics). НСЗУ-програма ерадикації H. pylori на 2026-05 не передбачена — оплата з кишені пацієнта. Перевірено drlz.com.ua 2026-05-18."
+typical_dosing: >
+  H. pylori eradication (component of triple therapy, adult): 1 g PO BID
+  × 14 days, taken with PPI (omeprazole 20 mg BID) + clarithromycin 500 mg
+  BID. Adult CAP / sinusitis (high-dose): 1 g PO TID × 7-10 days. Adult
+  UTI: 500 mg PO TID × 7 days. Pediatric: 25-50 mg/kg/day PO divided q8-12h;
+  90 mg/kg/day high-dose for AOM with drug-resistant S. pneumoniae risk.
+  Renal adjustment: CrCl 10-30 → q12h dosing; CrCl <10 → q24h; HD → 250-500
+  mg q24h post-dialysis. Hepatic: no adjustment. Endocarditis prophylaxis:
+  2 g PO 30-60 min before procedure (adult), 50 mg/kg pediatric.
+formulations:
+  - "Capsule 250 mg, 500 mg"
+  - "Tablet 500 mg, 875 mg"
+  - "Chewable tablet 125 mg, 250 mg"
+  - "Oral suspension 125 mg/5 mL, 200 mg/5 mL, 250 mg/5 mL, 400 mg/5 mL"
+  - "Oral suspension drops 50 mg/mL"
+
+absolute_contraindications:
+  - "Hypersensitivity (anaphylaxis, severe rash, SJS/TEN/DRESS history) to amoxicillin, penicillins, or carbapenems"
+  - "Infectious mononucleosis (EBV) — high rate of non-allergic morbilliform rash"
+  - "History of cholestatic jaundice with amoxicillin or amoxicillin/clavulanate"
+black_box_warnings: []
+major_interactions:
+  - "Allopurinol: increased risk of non-allergic morbilliform rash (mechanism unclear)"
+  - "Probenecid: reduces renal tubular secretion → increases amoxicillin levels (used therapeutically in some regimens)"
+  - "Warfarin: variable INR increase (gut-flora alteration) — monitor"
+  - "Methotrexate: reduced renal clearance → increased methotrexate toxicity (esp. high-dose MTX) — monitor levels"
+  - "Oral typhoid vaccine (Ty21a), BCG: antibacterial activity may inactivate live vaccine — delay vaccine ≥3 days post-antibiotic"
+  - "Oral contraceptives: theoretical reduced efficacy (gut-flora hypothesis) — evidence weak; advise backup contraception during therapy"
+common_adverse_events:
+  - "Diarrhea — ~5-10%"
+  - "Nausea — ~3-5%"
+  - "Vomiting — ~1-3%"
+  - "Rash (morbilliform / maculopapular — non-allergic) — ~3-5% (>>10% in EBV mononucleosis)"
+  - "Vaginal candidiasis — ~2-5%"
+  - "Oral candidiasis / thrush — ~2%"
+  - "Headache — ~2%"
+  - "Taste disturbance — ~1-2%"
+  - "Mild transaminitis — ~1-2%"
+serious_adverse_events:
+  - "Anaphylaxis / immediate-type hypersensitivity (rare but can be fatal — class warning for all penicillins)"
+  - "Stevens-Johnson syndrome / toxic epidermal necrolysis (rare)"
+  - "DRESS syndrome (rare)"
+  - "Acute interstitial nephritis (rare, T-cell-mediated)"
+  - "Cholestatic hepatitis (more common with amoxicillin/clavulanate than amoxicillin alone)"
+  - "Clostridioides difficile colitis"
+  - "Hemolytic anemia (rare, immune-mediated)"
+  - "Seizures with high doses in renal failure (rare)"
+  - "Crystalluria with very high doses (uncommon)"
+pharmacology:
+  half_life_hours: 1.3  # ~1-1.5 h normal renal function; prolonged in renal failure
+  clearance: "Renal — ~60-70% excreted unchanged via glomerular filtration + tubular secretion"
+  protein_binding_pct: 18
+  metabolism: "Minimal hepatic metabolism (~10% hydrolyzed to penicilloic acid, inactive); renal excretion of parent"
+sources:
+  - SRC-NCCN-BCELL-2025
+last_reviewed: "2026-05-18"
+reviewer_signoffs: []
+notes: >
+  STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. Standard β-lactam component of H. pylori
+  triple therapy (clarithromycin + PPI + amoxicillin × 14d) used to prevent
+  gastric MALT lymphoma progression and reduce gastric-adenocarcinoma risk.
+  Penicillin allergy is the key contraindication — substitute metronidazole
+  if true allergy, or refer for allergy evaluation as ~90% of self-reported
+  penicillin allergy is not confirmed on testing. Active against H. pylori
+  with virtually no resistance (unlike clarithromycin, where resistance is
+  rising). Dose-limiting toxicity is rare; clavulanic acid combination
+  (Augmentin) shifts the AE profile toward hepatotoxicity and diarrhea —
+  not used in H. pylori. Ukraine: cheap, ubiquitous, out-of-pocket for
+  H. pylori. Two-Co-Lead signoff queued for v0.2-A clinical review.

@@ -1,0 +1,111 @@
+id: DRUG-TENOFOVIR-DF
+names:
+  preferred: "Tenofovir disoproxil fumarate"
+  ukrainian: "Тенофовіру дизопроксил фумарат"
+  english: "Tenofovir disoproxil fumarate"
+  synonyms:
+    - "TDF"
+    - "Tenofovir DF"
+  brand_names:
+    - "Viread"
+atc_code: J05AF07
+rxnorm_id: "460127"
+drug_class: "Nucleotide analog reverse transcriptase inhibitor (NRTI / NtRTI) — HBV polymerase + HIV-1 reverse transcriptase"
+mechanism: >
+  Acyclic nucleotide analog prodrug; the parent compound tenofovir is
+  phosphorylated intracellularly to tenofovir diphosphate, which
+  competitively inhibits HBV polymerase / HIV-1 reverse transcriptase and
+  terminates the nascent viral DNA chain after incorporation. Active
+  against wild-type HBV, lamivudine-resistant HBV, and HIV-1; no activity
+  against HCV.
+
+regulatory_status:
+  fda:
+    approved: true
+    year_first_approval: 2001
+    indications_brief:
+      - "Chronic hepatitis B (HBV) in adults and pediatric patients ≥2 years"
+      - "HIV-1 infection (component of ART, in combination with other agents)"
+      - "Cancer-prevention pathway: long-term HBV suppression to reduce HBV-driven HCC and NHL risk (chronic HBV management; etiologic prevention)"
+  ema:
+    approved: true
+    year_first_approval: 2002
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: true
+    reimbursement_indications:
+      - "Хронічний гепатит B (HBV) — лікування для зниження вірусного навантаження та профілактики прогресування до HCC / асоційованих лімфом"
+      - "ВІЛ-інфекція — як компонент антиретровірусної терапії (АРТ) в межах НСЗУ-програми"
+    last_verified: "2026-05-18"
+    notes: "Зареєстровано в Україні (Viread, generics). НСЗУ-покриття за програмами ВІЛ і вірусних гепатитів. Перевірено drlz.com.ua станом на 2026-05-18."
+typical_dosing: >
+  Chronic HBV (adult): 300 mg PO once daily with food, indefinite duration
+  (long-term suppression). HIV-1 (adult): 300 mg PO once daily as component
+  of combination ART. Renal adjustment required: CrCl 30-49 → 300 mg q48h;
+  CrCl 10-29 → 300 mg q72-96h; HD → 300 mg weekly after dialysis. Pediatric
+  (≥2 y, ≥10 kg): 8 mg/kg PO daily, max 300 mg. Continue HBV therapy long-
+  term — abrupt discontinuation risks severe HBV reactivation / acute
+  hepatitis flare (black-box warning).
+formulations:
+  - "Tablet 150 mg, 200 mg, 250 mg, 300 mg"
+  - "Oral powder 40 mg/g"
+
+absolute_contraindications:
+  - "Hypersensitivity to tenofovir disoproxil fumarate"
+  - "Concurrent use with adefovir dipivoxil (cross-toxicity)"
+black_box_warnings:
+  - "Lactic acidosis and severe hepatomegaly with steatosis (class effect of NRTIs)"
+  - "Severe acute exacerbation of hepatitis B upon discontinuation in HBV-infected patients — monitor LFTs ≥several months after stopping"
+  - "Risk of HIV-1 resistance in HIV/HBV coinfected patients treated for HBV alone without full ART"
+major_interactions:
+  - "Didanosine: increased didanosine exposure → pancreatitis, lactic acidosis — AVOID combination"
+  - "Other nephrotoxic agents (aminoglycosides, NSAIDs, IV contrast, cidofovir, foscarnet, high-dose acyclovir): additive renal toxicity — avoid or monitor closely"
+  - "Atazanavir (boosted) / lopinavir-ritonavir: increase tenofovir exposure ~30% — monitor renal function"
+  - "Acyclovir, valacyclovir, ganciclovir: competition for renal tubular secretion — monitor levels and renal function"
+  - "Aminoglycosides + vancomycin: additive nephrotoxicity"
+  - "Calcineurin inhibitors (tacrolimus, cyclosporine): additive renal / bone toxicity — monitor"
+common_adverse_events:
+  - "Nausea — ~10-15%"
+  - "Diarrhea — ~5-10%"
+  - "Headache — ~5-10%"
+  - "Fatigue — ~5-10%"
+  - "Asthenia — ~5%"
+  - "Vomiting — ~3-5%"
+  - "Abdominal pain — ~3-5%"
+  - "Flatulence — ~3-5%"
+  - "Dizziness — ~3%"
+  - "Rash — ~3-5%"
+  - "Mild transaminitis — ~2-5%"
+serious_adverse_events:
+  - "Nephrotoxicity: proximal renal tubulopathy (Fanconi syndrome — phosphate wasting, glycosuria, proteinuria, hypouricemia); acute kidney injury (uncommon but can be permanent)"
+  - "Decreased bone mineral density / osteomalacia (long-term use; phosphate wasting contributes)"
+  - "Lactic acidosis / severe hepatomegaly with steatosis (boxed, rare)"
+  - "HBV reactivation flare on discontinuation (boxed)"
+  - "Pancreatitis (rare)"
+  - "Severe hypersensitivity / DRESS / SJS (rare)"
+pharmacology:
+  half_life_hours: 17  # ~17 h plasma; intracellular tenofovir-DP ~150 h
+  clearance: "Renal — ~70-80% excreted unchanged via glomerular filtration + active tubular secretion (OAT1/3)"
+  protein_binding_pct: 7
+  metabolism: "Prodrug rapidly hydrolyzed in plasma to tenofovir; no significant CYP metabolism; eliminated renally as parent drug"
+sources:
+  - SRC-AASLD-HBV-2024
+  - SRC-NIH-AIDS-2024
+last_reviewed: "2026-05-18"
+reviewer_signoffs: []
+notes: >
+  STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. First-line oral antiviral for chronic
+  HBV per AASLD-2024; one of three preferred agents (TDF, TAF, entecavir).
+  Long-term HBV suppression is the etiologic-prevention pathway for HBV-
+  driven HCC and HBV-associated B-cell NHL (the v0.2-A prevention scope).
+  TDF carries a higher signal of nephrotoxicity and bone-density loss than
+  TAF — prefer TAF in older adults, baseline renal impairment, or
+  osteopenia/osteoporosis. Also a backbone of HIV-1 ART (commonly co-
+  formulated with emtricitabine ± efavirenz / rilpivirine). The cancer-
+  prevention rationale spans both HBV-mediated HCC reduction (the dominant
+  effect — meta-analyses show ~50-70% HCC risk reduction with sustained
+  viral suppression) and chronic-HBV-associated NHL risk reduction (smaller
+  but consistent signal). Two-Co-Lead signoff queued for v0.2-A clinical
+  review.

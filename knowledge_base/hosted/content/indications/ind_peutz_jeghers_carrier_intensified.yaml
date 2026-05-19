@@ -1,0 +1,154 @@
+id: IND-PEUTZ-JEGHERS-CARRIER-INTENSIFIED
+plan_track: aggressive
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-PEUTZ-JEGHERS-CONFIRMED-CARRIER
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Intensified track layers two options on top of standard PJS
+    surveillance: (1) earlier pancreatic surveillance initiation
+    (age 25-30 vs. age 30-35) in high-risk pedigree (family pancreatic
+    cancer < age 50 or proband with smoking / diabetes co-risk);
+    (2) breast risk-reducing options (bilateral mastectomy or tamoxifen
+    chemoprevention) discussion — PJS breast cancer risk is
+    BRCA-comparable but PJS chemoprevention evidence base is weaker
+    than BRCA, so shared-decision-making must surface this distinction
+    honestly.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Aggressive-track confirmed-carrier pathway layered on top of the
+  IND-PEUTZ-JEGHERS-CARRIER-SURVEILLANCE standard protocol.
+
+  **Foundation:** All standard surveillance from IND-PEUTZ-JEGHERS-
+  CARRIER-SURVEILLANCE applies (VCE / MR enterography q2-3y from 8-10,
+  colonoscopy q2-3y from 18, EGD q2-3y from 8-10, breast MRI from 30,
+  pancreatic EUS / MRI q1-2y from 30-35, annual cervical Pap with
+  adenoma-malignum awareness, annual testicular exam men, TVUS q1y
+  women).
+
+  **Intensification 1 — Earlier pancreatic surveillance initiation:**
+  In high-risk PJS kindreds (family pancreatic cancer onset < age 50,
+  or proband with smoking / type-2 diabetes / chronic pancreatitis
+  co-risk factors), advancing pancreatic surveillance from age 30-35
+  to age 25-30 is a shared-decision option. Trade-off: earlier start
+  means more lifetime imaging studies + earlier exposure to false-
+  positive findings (small cystic lesions in young adults). Center
+  must be experienced in PJS-pancreas surveillance to avoid harm from
+  unnecessary biopsies / resections.
+
+  **Intensification 2 — Breast risk-reducing options:** Bilateral
+  mastectomy in confirmed PJS carriers reduces breast cancer incidence
+  to near-zero — same evidence base as BRCA carriers in terms of
+  surgical outcomes, though absolute PJS-attributable breast cancer
+  risk is somewhat lower than BRCA1 / 2 (~32-54% lifetime vs.
+  ~50-72% BRCA1). Shared-decision-making must cover surgical risk,
+  psychological impact, reconstructive options, fertility / breast-
+  feeding planning, and alternative continued breast MRI surveillance.
+  Tamoxifen chemoprevention has lower-tier evidence in PJS than in
+  BRCA — discuss only after explicit framing of the weaker PJS-specific
+  evidence base.
+
+  **Other intensification considerations (not core to this track):**
+    - Empirical prophylactic colectomy is NOT routine — PJS polyps are
+      hamartomatous (not adenomatous), and structured colonoscopy with
+      polypectomy keeps CRC risk manageable.
+    - mTOR-pathway chemoprevention (rapalogs) is investigational in
+      PJS — do NOT prescribe outside trial setting despite plausible
+      STK11-AMPK-mTOR pathway rationale.
+
+  **Cascade testing remains continuous:** every visit re-confirms
+  family testing status.
+
+  Per CHARTER §11: intensified surveillance and risk-reducing surgery
+  are shared-decision-making domains. Patient autonomy is paramount;
+  standard-track protocol remains the floor.
+
+rationale_ua: >
+  Aggressive-трекова Indication: накладена поверх IND-PEUTZ-JEGHERS-
+  CARRIER-SURVEILLANCE.
+
+  **Foundation:** Усе standard з IND-PEUTZ-JEGHERS-CARRIER-SURVEILLANCE.
+
+  **Інтенсифікація 1 — Рання pancreatic surveillance initiation:** У
+  high-risk кіндредах (family pancreatic cancer < 50 років, або
+  smoking / type-2 diabetes / chronic pancreatitis co-risk) — advancing
+  з 30-35 до 25-30 років. Trade-off: more lifetime imaging + earlier
+  false-positive exposure.
+
+  **Інтенсифікація 2 — Breast risk-reducing options:** Bilateral
+  mastectomy — reduces incidence до near-zero; same evidence base
+  surgical outcomes як BRCA, хоча absolute PJS-attributable risk
+  somewhat lower (~32-54% vs. ~50-72% BRCA1). Shared-decision-making.
+  Tamoxifen chemoprevention — lower-tier evidence у PJS ніж BRCA;
+  discuss only after framing of weaker PJS-specific evidence base.
+
+  **Інші міркування:**
+    - Empirical prophylactic colectomy — NOT routine; PJS polyps
+      hamartomatous (не adenomatous).
+    - mTOR-pathway chemoprevention (rapalogs) — investigational; NOT
+      prescribe outside trial despite STK11-AMPK-mTOR pathway rationale.
+
+  **Cascade тестування continuous.**
+
+  Per CHARTER §11: shared-decision-making домен.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02b_confirmed_carriers_additional
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Earlier pancreatic surveillance initiation and discussion of
+      breast risk-reducing options are appropriate intensifications for
+      confirmed PJS carriers with high-risk pedigrees, following
+      shared decision-making."
+  - source_id: SRC-NCCN-COLON-2025
+    position: context
+
+do_not_do:
+  - "Не advanceувати pancreatic surveillance раніше 25-30 без high-risk pedigree або co-risk factors — false-positive burden + early imaging exposure не виправдані."
+  - "Не виконувати empirical prophylactic колектомію — PJS polyps hamartomatous, не adenomatous; structured colonoscopy з polypectomy adequate."
+  - "Не використовувати mTOR-pathway chemoprevention (rapalogs) поза clinical trial — currently investigational у PJS."
+  - "Не презентувати breast risk-reducing mastectomy як equivalent BRCA evidence base — PJS-specific absolute risk somewhat lower; shared-decision discussion must surface."
+  - "Не пропонувати tamoxifen chemoprevention як standard у PJS — evidence base lower-tier ніж BRCA."
+
+do_not_do_en:
+  - "Do not advance pancreatic surveillance earlier than age 25-30 without high-risk pedigree or co-risk factors — false-positive burden and early imaging exposure are not justified otherwise."
+  - "Do not perform empirical prophylactic colectomy — PJS polyps are hamartomatous (not adenomatous); structured colonoscopy with polypectomy is adequate."
+  - "Do not use mTOR-pathway chemoprevention (rapalogs) outside a clinical trial — currently investigational in PJS."
+  - "Do not present breast risk-reducing mastectomy as having equivalent BRCA evidence base — PJS-specific absolute risk is somewhat lower; shared-decision-making discussion must surface this."
+  - "Do not offer tamoxifen chemoprevention as standard in PJS — evidence base is lower-tier than in BRCA."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B confirmed-carrier intensified track (Peutz-Jeghers). Sibling — IND-PEUTZ-JEGHERS-CARRIER-SURVEILLANCE. §15.2 C4 ≥2-tracks invariant."

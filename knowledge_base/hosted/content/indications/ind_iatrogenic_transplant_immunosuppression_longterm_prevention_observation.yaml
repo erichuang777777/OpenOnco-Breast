@@ -1,0 +1,96 @@
+id: IND-IATROGENIC-TRANSPLANT-IMMUNOSUPPRESSION-LONGTERM-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-DLBCL-NOS
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-TRANSPLANT-IMMUNOSUPPRESSION-LONGTERM-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Patient declines structured cancer-surveillance pathway (annual skin exam, cervical co-test, anal cytology, dental cancer screening, lymphadenopathy/B-symptom review) — receives baseline symptom-vigilance education and sun-protection counseling. Skin cancers (especially aggressive post-transplant SCC), late-onset PTLD, HPV-associated cancers may go undetected at curable stage; outcomes worse than with structured surveillance arm. Critical caveat: post-transplant SCC has substantially worse stage-for-stage prognosis than spontaneous SCC — surveillance is the standard, not optional."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-IATROGENIC-TRANSPLANT-
+  IMMUNOSUPPRESSION-LONGTERM-PREVENTION-SURVEILLANCE. Patient
+  declines structured annual skin exam + GYN co-test + symptom-
+  surveillance pathway (transplant survivorship fatigue,
+  geographic access, preference) — receives explicit symptom-
+  vigilance education (new or changing skin lesion, non-healing
+  sore, persistent lymphadenopathy, unexplained fevers / night
+  sweats / weight loss, hematochezia, abnormal vaginal bleeding,
+  oral leukoplakia / non-healing oral lesion → immediate referral)
+  + sun-protection counseling (broad-spectrum SPF 30+, avoidance
+  during peak UV, photoprotective clothing — sun protection is
+  the single highest-yield self-care intervention for this
+  cohort). Coordination with transplant team for any immuno-
+  suppression review remains essential — NEVER unilateral changes.
+  Per CHARTER §11 patient-autonomy framing — declining the
+  structured pathway is legitimate but framed as suboptimal vs.
+  active-surveillance comparator, particularly given the
+  aggressive post-transplant SCC subset.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від
+  structured annual skin exam + GYN co-test + symptom-surveillance
+  pathway — отримує explicit symptom-vigilance education (new
+  або changing skin lesion, non-healing sore, persistent
+  lymphadenopathy, unexplained fevers / night sweats / weight
+  loss, hematochezia, abnormal vaginal bleeding, oral leukoplakia
+  / non-healing oral lesion → immediate referral) + sun-protection
+  counseling. Координація з transplant team для immunosuppression
+  review essential — НІКОЛИ unilateral changes. Per CHARTER §11.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_iatrogenic_batch3
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+  - source_id: SRC-NCCN-CERVICAL-2025
+    position: context
+  - source_id: SRC-NCCN-SKIN-2025
+    position: context
+  - source_id: SRC-NCCN-ANAL-2025
+    position: context
+
+do_not_do:
+  - "Не презентувати observation як еквівалент structured cancer surveillance — post-transplant SCC has worse stage-for-stage prognosis than spontaneous."
+  - "Не пропускати explicit symptom-vigilance education — pattern-recognition critical у high-risk cohort."
+  - "Не нормалізувати new skin lesion / non-healing sore — high probability SCC у post-transplant cohort."
+  - "Не пропускати sun-protection counseling — найбільший self-care yield."
+  - "Не reducing immunosuppression unilaterally — graft rejection risk; завжди координація з transplant team."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to structured cancer surveillance — post-transplant SCC has worse stage-for-stage prognosis than spontaneous."
+  - "Do not skip explicit symptom-vigilance education — pattern recognition is critical in this high-risk cohort."
+  - "Do not normalize a new skin lesion / non-healing sore — high probability of SCC in the post-transplant cohort."
+  - "Do not omit sun-protection counseling — the highest self-care yield."
+  - "Do not reduce immunosuppression unilaterally — graft rejection risk; always coordinate with transplant team."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for chronic post-transplant immunosuppression prevention. §15.2 C4 ≥2-tracks invariant. Particular emphasis on the limitation of symptom-only pathway given aggressive post-transplant SCC subset."

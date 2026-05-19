@@ -1,0 +1,13 @@
+{
+  "patient_id": "HASHIMOTO-PREV-001",
+  "comment": "48yo female, confirmed Hashimoto's thyroiditis (anti-TPO 380 IU/mL positive, anti-thyroglobulin 220 IU/mL positive, diffuse goiter on US, hypothyroidism on levothyroxine 75 mcg daily x 8 years), no current thyroid nodule >1 cm, no personal thyroid malignancy diagnosis. Engine fires RF-AUTOIMMUNE-THYROIDITIS-LYMPHOMA-PREVENTION → routes to PreventionPlan: standard = IND-AUTOIMMUNE-THYROIDITIS-LYMPHOMA-PREVENTION-SURVEILLANCE (TSH q6-12mo, thyroid US q1y, FNA of any dominant or TIRADS-3+ nodule; urgent core-needle biopsy if rapid goiter enlargement or B-symptoms — ~67-80x thyroid MALT/DLBCL risk per Holm NEJM 1985 / Pedersen Histopath 1996); alternative = IND-AUTOIMMUNE-THYROIDITIS-LYMPHOMA-PREVENTION-OBSERVATION (TSH-only follow-up, symptom-driven imaging). Validates v0.3 autoimmune chronic-condition prevention pilot.",
+  "biomarkers": {"BIO-ANTI-TPO": "positive_380_iu_ml", "BIO-ANTI-THYROGLOBULIN": "positive_220_iu_ml"},
+  "demographics": {"age": 48, "sex": "female", "ecog": 0},
+  "findings": {
+    "hashimoto_thyroiditis_diagnosis_confirmed": true,
+    "anti_tpo_antibodies_positive_with_goiter": true,
+    "anti_thyroglobulin_antibodies_positive_with_goiter": true,
+    "Diffuse goiter on ultrasound, hypothyroidism on levothyroxine x 8 years": true,
+    "No current thyroid nodule >1 cm, no personal thyroid malignancy": true
+  }
+}

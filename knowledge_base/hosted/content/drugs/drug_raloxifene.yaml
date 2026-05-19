@@ -1,0 +1,94 @@
+id: DRUG-RALOXIFENE
+names:
+  preferred: "Raloxifene"
+  ukrainian: "Ралоксифен"
+  english: "Raloxifene"
+  brand_names: ["Evista"]
+atc_code: G03XC01
+rxnorm_id: "36737"
+drug_class: "Selective estrogen receptor modulator (SERM)"
+mechanism: >
+  Benzothiophene SERM with mixed estrogen-receptor agonist/antagonist
+  activity tissue-specific to tamoxifen: antagonist in breast and uterus
+  (no endometrial agonism — lower endometrial-cancer risk than tamoxifen),
+  agonist in bone (BMD preservation) and lipid metabolism. FDA-approved
+  for postmenopausal osteoporosis and invasive-breast-cancer risk reduction.
+  STAR P-2 trial established non-inferior breast-cancer-prevention efficacy
+  vs. tamoxifen in postmenopausal women with lower endometrial-cancer and
+  VTE risk.
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 1997  # osteoporosis; 2007 breast chemoprevention
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Registered in Ukraine (Evista and generics). Not on НСЗУ chemoprevention package — out-of-pocket."
+typical_dosing: >
+  PO: 60 mg once daily with or without food, for 5 years for
+  chemoprevention (per STAR P-2 and NSABP P-2 protocols).
+  Postmenopausal only. Same dose for osteoporosis prevention/treatment.
+  No specific dose adjustment for hepatic/renal impairment but caution
+  in severe.
+formulations:
+  - "Tablet 60 mg"
+
+absolute_contraindications:
+  - "Active or past venous thromboembolism (DVT, PE, retinal vein thrombosis)"
+  - "Pregnancy / lactation / women of reproductive potential"
+  - "Hypersensitivity to raloxifene"
+  - "Hepatic impairment (severe)"
+black_box_warnings:
+  - "Increased risk of venous thromboembolism (DVT, PE) — similar magnitude to estrogen and tamoxifen"
+  - "Increased risk of fatal stroke in postmenopausal women with documented coronary heart disease or at increased risk for major coronary events (RUTH trial)"
+major_interactions:
+  - "Cholestyramine — reduces raloxifene absorption (avoid combo)"
+  - "Warfarin — modest INR reduction (~10%); monitor INR"
+  - "Highly protein-bound drugs (diazepam, lidocaine, etc.) — theoretical displacement; clinically not significant"
+common_adverse_events:
+  - "Hot flashes (~25-30%)"
+  - "Leg cramps (~6-10%)"
+  - "Peripheral edema (~5-7%)"
+  - "Flu-like syndrome (~5-15%)"
+  - "Arthralgia (~5-10%)"
+  - "Sweating (~3-5%)"
+serious_adverse_events:
+  - "VTE — DVT, PE (~2-3 fold increase vs placebo)"
+  - "Fatal stroke (increased in women with CHD per RUTH)"
+  - "Retinal vein thrombosis (rare)"
+  - "Severe hypersensitivity (rare)"
+
+pharmacology: {half_life_hours: 32, clearance: "Hepatic glucuronidation (no significant CYP metabolism); biliary excretion; extensive first-pass effect (bioavailability ~2%)"}
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-BREAST-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. POSTMENOPAUSAL ONLY for breast
+  chemoprevention. Per STAR P-2 (NSABP-P2), raloxifene reduces invasive
+  breast cancer ~38% (vs. ~50% for tamoxifen) with lower endometrial
+  cancer (no agonism) and lower VTE rates. Preferred over tamoxifen in
+  postmenopausal women with intact uterus or VTE-risk profile. Adds
+  osteoporosis benefit. NOT for premenopausal use or DCIS prevention
+  (insufficient data; tamoxifen retains the indication there).
+
+notes_ua: >
+  Ралоксифен — SERM, ТІЛЬКИ для постменопаузних жінок для
+  хіміопрофілактики раку молочної залози. За даними STAR P-2 знижує
+  інвазивний РМЗ ~38% (vs. ~50% для тамоксифену) з нижчим ризиком
+  раку ендометрія (немає агонізму) і нижчим VTE. Перевага над
+  тамоксифеном у постменопаузі при інтактній матці або VTE-профілі
+  ризику. Додає бонус щодо остеопорозу.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_drugs_batch2
+draft_revision: 1

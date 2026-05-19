@@ -1,0 +1,97 @@
+id: IND-IATROGENIC-COMBINED-HRT-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-COMBINED-HRT-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Patient declines structured shared-decision review + age-appropriate screening — receives baseline symptom-vigilance education on breast (lump, skin change, nipple discharge) and endometrial (any unexpected bleeding) alarm symptoms. Breast and endometrial cancers may go undetected at screen-detectable stage; outcomes worse than with structured screening + shared-decision arm. Patient also missing periodic reassessment of HRT risk-benefit ratio — continued use under default may persist past the window where benefits outweigh risks (cardiovascular risk profile evolves with age)."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-IATROGENIC-COMBINED-HRT-
+  PREVENTION-SURVEILLANCE. Patient declines structured shared-
+  decision HRT review + age-appropriate mammographic screening
+  + annual GYN exam (screening fatigue, geographic access,
+  preference, comfort with current symptom control) — receives
+  explicit symptom-vigilance education (breast lump, skin
+  retraction / dimpling, nipple discharge, ANY unexpected
+  bleeding outside the expected sequential-withdrawal pattern,
+  postmenopausal bleeding → immediate breast / gynecology
+  referral, regardless of how minor it appears) + cardiovascular
+  / VTE self-awareness counseling (new leg swelling, chest pain,
+  neurologic symptom → emergency evaluation; not HRT-stop in
+  isolation but acute event workup). Per CHARTER §11 patient-
+  autonomy framing — declining the structured pathway is
+  legitimate but framed as suboptimal vs. annual-review +
+  screening comparator. Particular emphasis: endometrial cancers
+  in HRT-exposed women present with bleeding ~95% of the time —
+  symptom-prompted pathway has high sensitivity.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від
+  structured shared-decision HRT review + age-appropriate
+  mammographic screening + annual GYN exam — отримує explicit
+  symptom-vigilance education (breast lump, skin retraction,
+  nipple discharge, БУДЬ-ЯКЕ unexpected bleeding поза очікуваним
+  sequential-withdrawal pattern, postmenopausal bleeding →
+  immediate breast / gynecology referral) + cardiovascular /
+  VTE self-awareness counseling (new leg swelling, chest pain,
+  neurologic symptom → emergency evaluation). Per CHARTER §11.
+  Особлива емфаза: endometrial cancers у HRT-exposed жінок
+  presented з bleeding ~95% часу — symptom-prompted pathway
+  має високу sensitivity.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_iatrogenic_batch3
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BREAST-2025
+    position: context
+  - source_id: SRC-NCCN-UTERINE-2025
+    position: context
+  - source_id: SRC-USPSTF-BREAST-2024
+    position: context
+
+do_not_do:
+  - "Не презентувати observation як еквівалент structured screening + shared-decision review — earlier-stage detection достовірно кращі outcomes."
+  - "Не пропускати explicit symptom-vigilance education — pattern-recognition critical для symptom-prompted evaluation."
+  - "Не виключати patient зі symptom-prompted endometrial / breast workup access — навіть при declining routine screening."
+  - "Не нормалізувати unexpected або postmenopausal bleeding — будь-який alarm symptom requires evaluation."
+  - "Не продовжувати HRT за default без periodic reassessment risk-benefit — CV ризик evolves з віком."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to structured screening + shared-decision review — earlier-stage detection produces reliably better outcomes."
+  - "Do not skip explicit symptom-vigilance education — pattern recognition is critical for symptom-prompted evaluation."
+  - "Do not deny the patient symptom-prompted endometrial / breast workup access — even if routine screening is declined."
+  - "Do not normalize unexpected or postmenopausal bleeding — any alarm symptom requires evaluation."
+  - "Do not continue HRT by default without periodic risk-benefit reassessment — CV risk evolves with age."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for combined HRT prevention. §15.2 C4 ≥2-tracks invariant."

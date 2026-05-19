@@ -1,0 +1,23 @@
+id: BIO-SDHD-GERMLINE
+names:
+  preferred: "SDHD germline pathogenic variant"
+  ukrainian: "SDHD germline патогенний варіант"
+  english: "SDHD germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: SDHD
+  gene_hugo_id: HGNC:10684
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources:
+  - SRC-NCCN-BCELL-2025
+last_reviewed: "2026-05-18"
+notes: "SDHD germline — drives hereditary paraganglioma-pheochromocytoma syndrome (PGL1). Paternal-allele-only penetrance (maternal imprinting): disease essentially exclusive to carriers inheriting the variant from father. Predominantly multifocal head-and-neck paragangliomas; lower malignant rate than SDHB. Annual biochemistry + whole-body MRI surveillance from age 5-10 in paternally-inheriting carriers per NCCN. STUB pending two-Co-Lead signoff."
+notes_ua: "SDHD germline — драйвер PGL1; материнський імпринтинг — захворювання лише при батьківському успадкуванні."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v04_germline_batch2
+draft_revision: 1

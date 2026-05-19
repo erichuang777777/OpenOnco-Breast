@@ -1,0 +1,135 @@
+id: MS-FAP-COLON-EGD-SURVEILLANCE
+linked_to_regimen: null  # surveillance — no regimen
+
+phases:
+  - name: baseline
+    window: "At familial-adenomatous-polyposis confirmation (germline APC pathogenic variant) — classical FAP onset age 10-15, attenuated FAP later"
+    window_ua: "На момент підтвердження сімейного аденоматозного поліпозу (гермінальний патогенний варіант APC) — класичний FAP з 10–15 років, атенуйований FAP — пізніше"
+    tests:
+      - TEST-PEDIGREE-FAMILY-HISTORY
+      - TEST-FLEX-SIGMOIDOSCOPY
+      - TEST-COLONOSCOPY-SURVEILLANCE
+    visits: ["GI + colorectal-surgery + genetics multidisciplinary clinic"]
+    checkpoints:
+      - "Confirm germline APC pathogenic / likely-pathogenic variant; distinguish classical FAP (>100 adenomas) vs attenuated FAP (10-99 adenomas, later onset)"
+      - "Cascade-test first-degree relatives — typically children offered testing age 10-12 (allows informed pediatric surveillance start)"
+      - "Counsel on near-certain CRC progression if untreated — colectomy timing depends on polyp burden / symptoms / histology"
+      - "Discuss extracolonic risks: duodenal / periampullary adenocarcinoma (~5-10% lifetime), desmoid tumors, thyroid (papillary), hepatoblastoma in young children, CNS / medulloblastoma (Turcot)"
+      - "Annual thyroid US considered (NCCN Cat 2B)"
+    checkpoints_ua:
+      - "Підтвердити гермінальний патогенний / ймовірно патогенний варіант APC; відрізнити класичний FAP (>100 аденом) від атенуйованого FAP (10–99 аденом, пізніший початок)"
+      - "Каскадне тестування родичів першого ступеня — зазвичай дітям пропонують тестування у віці 10–12 років (дозволяє інформовано розпочати педіатричне спостереження)"
+      - "Консультувати щодо майже неминучого прогресування до CRC без лікування — час колектомії залежить від поліпного навантаження / симптомів / гістології"
+      - "Обговорити позакишкові ризики: дуоденальна / періампулярна аденокарцинома (~5–10% довічно), десмоїдні пухлини, щитоподібна залоза (папілярний), гепатобластома у малих дітей, CNS / медулобластома (Turcot)"
+      - "Розглядати щорічне УЗД щитоподібної залози (NCCN Cat 2B)"
+
+  - name: classical_fap_pediatric_surveillance
+    window: "Classical FAP — flexible sigmoidoscopy q1-2y from age 10-15"
+    window_ua: "Класичний FAP — гнучка сигмоїдоскопія кожні 1–2 роки з 10–15 років"
+    tests:
+      - TEST-FLEX-SIGMOIDOSCOPY
+    visits: ["Pediatric GI surveillance"]
+    checkpoints:
+      - "Flex sigmoidoscopy preferred over full colonoscopy in early surveillance — adenomas appear distally first; less sedation burden"
+      - "Transition to full colonoscopy once polyps detected → annual"
+      - "Refer for colectomy when polyp burden exceeds endoscopic management — typical late teens to early 20s"
+      - "Counsel patient + family on surgical timing — IPAA (ileal-pouch-anal anastomosis) vs IRA (ileorectal anastomosis) depends on rectal polyp burden"
+    checkpoints_ua:
+      - "Гнучка сигмоїдоскопія переважна над повною колоноскопією при ранньому спостереженні — аденоми спочатку з'являються дистально; менше навантаження від седації"
+      - "Перехід на повну колоноскопію після виявлення поліпів → щорічно"
+      - "Направлення на колектомію коли поліпне навантаження перевищує ендоскопічне ведення — зазвичай пізні підліткові роки або раннє 20-річчя"
+      - "Консультування пацієнта + сім'ї щодо часу операції — IPAA (ileal-pouch-anal anastomosis) проти IRA (ileorectal anastomosis) залежить від поліпного навантаження прямої кишки"
+
+  - name: attenuated_fap_surveillance
+    window: "Attenuated FAP — colonoscopy q1-2y from age 18-20 (vs early-teen onset in classical FAP)"
+    window_ua: "Атенуйований FAP — колоноскопія кожні 1–2 роки з 18–20 років (проти раннього підліткового початку при класичному FAP)"
+    tests:
+      - TEST-COLONOSCOPY-SURVEILLANCE
+    visits: ["Adult GI surveillance"]
+    checkpoints:
+      - "Annual colonoscopy with full polypectomy of all visible adenomas"
+      - "Colectomy threshold higher than classical FAP — many AFAP carriers managed endoscopically for decades"
+      - "Right-sided + flat adenomas more common in AFAP — chromoendoscopy / dye-spray helpful"
+    checkpoints_ua:
+      - "Щорічна колоноскопія з повною поліпектомією всіх видимих аденом"
+      - "Поріг для колектомії вищий, ніж при класичному FAP — багато носіїв AFAP ведуться ендоскопічно десятиліттями"
+      - "Правосторонні + плоскі аденоми частіші при AFAP — хромоендоскопія / dye-spray корисні"
+
+  - name: upper_gi_surveillance_spigelman
+    window: "EGD starting age 25-30 (or at colectomy) — q1-5y by Spigelman stage"
+    window_ua: "EGD починаючи з 25–30 років (або при колектомії) — кожні 1–5 років за стадією Spigelman"
+    tests:
+      - TEST-EGD-SURVEILLANCE
+    visits: ["GI surveillance — Spigelman-staging EGD with side-viewing duodenoscope for ampullary visualization"]
+    checkpoints:
+      - "Spigelman staging: polyp number (1-4 pts) + size (1-3 pts) + histology tubular/tubulovillous/villous (1-3 pts) + dysplasia (1-3 pts) = stage 0-IV"
+      - "Stage 0 → EGD q5y"
+      - "Stage I → EGD q5y"
+      - "Stage II → EGD q3y"
+      - "Stage III → EGD q1-2y + chromoendoscopy + biopsy of all visible polyps"
+      - "Stage IV → consider duodenectomy / Whipple referral (NCCN); EGD q6-12 months in interim"
+      - "Side-viewing duodenoscope to evaluate ampulla at every EGD (separate cap-fitted forward EGD if duodenoscope unavailable)"
+      - "Random biopsies of duodenal mucosa even without visible polyps if Spigelman stage III+"
+    checkpoints_ua:
+      - "Стадіювання за Spigelman: кількість поліпів (1–4 бали) + розмір (1–3 бали) + гістологія tubular/tubulovillous/villous (1–3 бали) + дисплазія (1–3 бали) = стадія 0–IV"
+      - "Стадія 0 → EGD кожні 5 років"
+      - "Стадія I → EGD кожні 5 років"
+      - "Стадія II → EGD кожні 3 роки"
+      - "Стадія III → EGD кожні 1–2 роки + хромоендоскопія + біопсія всіх видимих поліпів"
+      - "Стадія IV → розглянути дуоденектомію / направлення на Whipple (NCCN); EGD кожні 6–12 місяців у проміжку"
+      - "Дуоденоскоп з боковою оптикою для оцінки ампули на кожному EGD (окремий cap-fitted EGD прямого огляду, якщо дуоденоскоп недоступний)"
+      - "Випадкові біопсії слизової дванадцятипалої кишки навіть за відсутності видимих поліпів при стадії Spigelman III+"
+
+  - name: post_colectomy_surveillance
+    window: "After colectomy — annual or q6mo pouch endoscopy + lifelong EGD per Spigelman"
+    window_ua: "Після колектомії — щорічна або кожні 6 місяців pouch-endoscopy + пожиттєвий EGD за Spigelman"
+    tests:
+      - TEST-FLEX-SIGMOIDOSCOPY
+      - TEST-EGD-SURVEILLANCE
+    visits: ["Long-term post-colectomy surveillance"]
+    checkpoints:
+      - "If IRA — annual flexible sigmoidoscopy of rectal stump; rectal cancer remains a risk"
+      - "If IPAA — pouchoscopy q1-3y; pouch adenomas possible long-term"
+      - "Continue Spigelman-staged EGD lifelong"
+      - "Annual thyroid US (papillary thyroid risk)"
+      - "Monitor for desmoid — symptoms / palpable mass → CT or MRI abdomen"
+    checkpoints_ua:
+      - "При IRA — щорічна гнучка сигмоїдоскопія куксу прямої кишки; ризик раку прямої кишки зберігається"
+      - "При IPAA — pouchoscopy кожні 1–3 роки; довгострокові аденоми резервуара можливі"
+      - "Продовжити EGD за Spigelman пожиттєво"
+      - "Щорічне УЗД щитоподібної залози (ризик папілярного раку щитоподібної залози)"
+      - "Моніторинг десмоїдних пухлин — симптоми / пальпована маса → CT або МРТ живота"
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+
+last_reviewed: "2026-05-18"
+machine_translated_review_pending: true
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  NCCN Genetic/Familial High-Risk: Colorectal v3.2025 governs FAP +
+  attenuated FAP surveillance.
+
+  Spigelman staging (Spigelman 1989 Lancet, validated through 2020s)
+  is the canonical framework for duodenal-adenoma management in FAP.
+  Stage IV duodenal disease confers ~30% risk of duodenal cancer at
+  10 years if not managed surgically — prophylactic / risk-reducing
+  pancreaticoduodenectomy (Whipple) is morbid and reserved for
+  truly high-risk anatomy.
+
+  Pediatric onset: classical FAP develops adenomas mid-childhood;
+  cascade testing offered age 10-12 to allow informed pediatric
+  surveillance start. Hepatoblastoma surveillance in young children
+  (AFP + abdominal US q3-6 months ages 0-7) is sometimes offered
+  but evidence base is modest; not universally recommended.
+
+  Ukrainian context: pediatric GI endoscopy with appropriate
+  pediatric scope is concentrated in major centers
+  (Kyiv / Lviv / Dnipro); rural pediatric FAP surveillance often
+  requires referral to specialized centers. Side-viewing
+  duodenoscopes are scarce; ampullary surveillance may default to
+  cap-fitted forward EGD with explicit ampullary inspection notes.
+
+  UA translations of window / checkpoints added 2026-05-19 under CHARTER
+  §8.3 dev-mode exemption; awaiting Clinical Co-Lead sign-off.

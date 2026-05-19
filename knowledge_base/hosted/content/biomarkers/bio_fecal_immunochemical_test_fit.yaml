@@ -1,0 +1,26 @@
+id: BIO-FECAL-IMMUNOCHEMICAL-TEST-FIT
+names:
+  preferred: "Fecal immunochemical test (FIT) for hemoglobin"
+  ukrainian: "Імунохімічний тест калу на приховану кров (FIT)"
+  english: "Fecal immunochemical test"
+  synonyms: ["FIT", "iFOBT", "immunochemical fecal occult blood test"]
+biomarker_type: serum_marker
+measurement:
+  method: "Immunochemical assay (anti-human-globin antibody) on single stool sample; annual collection without dietary restriction"
+  units: "categorical: positive (≥20 µg Hb/g feces typical cutoff) | negative"
+specimen_requirements:
+  - "Single stool sample, kit-provided buffer tube"
+  - "No fasting / no dietary restriction required (advantage over gFOBT)"
+clinical_context: [screening, screening_surveillance]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: tumor_marker
+sources: [SRC-NCCN-COLON-2025, SRC-ESMO-COLON-2024]
+last_reviewed: "2026-05-18"
+notes: >
+  STUB. USPSTF Grade A — average-risk CRC screening alternative to
+  colonoscopy/sigmoidoscopy; annual interval ages 45-75 (50-75 prior).
+  Sensitivity ~74% for CRC, ~24% for advanced adenoma (single test).
+  Positive FIT mandates diagnostic colonoscopy within ≤6 mo (program
+  benefit lost if delayed). Cheaper, less invasive than colonoscopy;
+  trades single-test sensitivity for repetition. Not for symptomatic
+  patients — they go straight to colonoscopy.

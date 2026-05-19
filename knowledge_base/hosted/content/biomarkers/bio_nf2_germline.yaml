@@ -1,0 +1,23 @@
+id: BIO-NF2-GERMLINE
+names:
+  preferred: "NF2 (merlin) germline pathogenic variant"
+  ukrainian: "NF2 (мерлін) germline патогенний варіант"
+  english: "NF2 germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: NF2
+  gene_hugo_id: HGNC:7773
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+related_biomarkers: [BIO-NF2]
+sources: [SRC-NCCN-CNS-2025]
+last_reviewed: "2026-05-18"
+notes: "NF2 germline — drives Neurofibromatosis Type 2 (distinct from NF1). Hallmark: bilateral vestibular schwannomas (pathognomonic). Spectrum also includes multiple intracranial / spinal meningiomas, spinal schwannomas, ependymomas, juvenile cataracts. Surveillance: brain + spine MRI, audiology. Bevacizumab off-label for vestibular-schwannoma hearing preservation. STUB pending two-Co-Lead signoff."
+notes_ua: "NF2 germline — драйвер NF2 (відмінний від NF1). Двосторонні вестибулярні шваноми + множинні менінгіоми + спинальні шваноми. Нагляд: МРТ головного/спинного мозку, аудіометрія."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_germline_batch3
+draft_revision: 1

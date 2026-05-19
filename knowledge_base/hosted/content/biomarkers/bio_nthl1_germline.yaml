@@ -1,0 +1,22 @@
+id: BIO-NTHL1-GERMLINE
+names:
+  preferred: "NTHL1 germline biallelic pathogenic variants"
+  ukrainian: "NTHL1 germline біалельні патогенні варіанти"
+  english: "NTHL1 germline pathogenic variant (biallelic)"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: NTHL1
+  gene_hugo_id: HGNC:8028
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources: [SRC-NCCN-GENETIC-FAMILIAL-CRC-2025]
+last_reviewed: "2026-05-18"
+notes: "NTHL1 germline biallelic — drives NTHL1-associated polyposis / NTHL1 tumor syndrome (autosomal recessive). Base-excision-repair defect → C>T mutational signature, adenomatous polyposis + early CRC, breast cancer (~67% lifetime in females), endometrial, urothelial, head/neck, and other primaries (multiple primary tumours frequent). Surveillance: colonoscopy from late teens, breast MRI for female carriers, dermatologic + urinary. Heterozygotes near population risk. STUB pending two-Co-Lead signoff."
+notes_ua: "NTHL1 germline біалельний — NTHL1-полiпозний синдром (аутосомно-рецесивний). Дефект BER. Поліпоз + КРР + РМЗ (~67% жінки) + множинні первинні пухлини. Колоноскопія + MRT РМЗ."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_germline_batch3
+draft_revision: 1

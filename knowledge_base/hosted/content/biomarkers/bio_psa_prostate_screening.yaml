@@ -1,0 +1,53 @@
+id: BIO-PSA-PROSTATE-SCREENING
+names:
+  preferred: "PSA (prostate cancer screening / surveillance context — USPSTF C-grade)"
+  ukrainian: "ПСА (скринінг/нагляд раку передміхурової залози — USPSTF C)"
+  english: "Prostate-Specific Antigen for Screening"
+  synonyms: ["PSA screening", "serum PSA"]
+biomarker_type: serum_marker
+measurement:
+  method: "Serum immunoassay (ECLIA, CLIA); WHO 96/670 calibration preferred"
+  units: "ng/mL"
+  typical_range: [0, 4]
+specimen_requirements:
+  - "Serum (5 mL clotted blood)"
+  - "Avoid recent ejaculation (<48 h), DRE (<1 week), or urological procedure (<6 weeks)"
+  - "LOINC 2857-1 (PSA, total)"
+clinical_context: [screening_surveillance]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: tumor_marker
+external_ids:
+  hgnc_symbol: KLK3
+  loinc: "2857-1"
+related_biomarkers: [BIO-PSA]
+sources:
+  - SRC-USPSTF-PROSTATE-2018
+  - SRC-NCCN-PROSTATE-2025
+last_reviewed: "2026-05-18"
+notes: >
+  Screening-context entry for PSA — separate from BIO-PSA (which covers
+  diagnostic and treatment-monitoring dynamics for established prostate
+  cancer). USPSTF 2018: Grade C for men 55-69 (individualized
+  shared-decision-making about benefits + harms); Grade D for men ≥70
+  (recommend AGAINST routine screening). NCCN 2025 (Early Detection):
+  baseline PSA + DRE discussion at age 45 for African American men or
+  BRCA2 carriers (high-risk groups), age 50 for average risk; if PSA
+  <1 ng/mL, repeat every 2-4 years; if PSA 1-3 ng/mL, repeat every 1-2
+  years; if PSA >3 ng/mL, evaluate further (repeat PSA, mpMRI, biomarker
+  reflex such as 4Kscore/PHI, possible biopsy). Higher screening intensity
+  for confirmed BRCA2 germline carriers (IMPACT study — PSA q1y starting
+  age 40; biopsy threshold ≥3 ng/mL). PSA can be falsely elevated in BPH,
+  prostatitis, urinary retention, recent instrumentation. Free PSA ratio,
+  PSA density, and reflex biomarkers (PHI, 4Kscore, SelectMDx) reduce
+  unnecessary biopsy. Limitations: overdiagnosis/overtreatment of
+  indolent cancers (well-characterized harm — driver of USPSTF Grade C).
+  STUB pending two-Co-Lead signoff.
+notes_ua: >
+  Скринінговий контекст ПСА — окремо від BIO-PSA (динаміка при
+  встановленому захворюванні). USPSTF 2018: ступінь C для чоловіків 55-69
+  (індивідуалізоване рішення), ступінь D для ≥70. NCCN 2025: обговорення з
+  45 років (афроамериканці, носії BRCA2), з 50 років (середній ризик).
+  Носії BRCA2 — щорічно з 40 років. STUB pending two-Co-Lead signoff.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_surveillance_2026_05_18
+draft_revision: 1

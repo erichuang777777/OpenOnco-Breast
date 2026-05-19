@@ -1,0 +1,50 @@
+id: SRC-USPSTF-BREAST-2024
+source_type: guideline
+title: 'USPSTF Recommendation Statement: Screening for Breast Cancer (2024)'
+version: '2024'
+authors:
+- US Preventive Services Task Force
+- Nicholson WK
+- Silverstein M
+- Wong JB
+- et al.
+journal: JAMA
+doi: 10.1001/jama.2024.5534
+pmid: '38687503'
+url: https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening
+access_level: open_access
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 1
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources
+license:
+  name: Public domain (US government work)
+  url: https://www.uspreventiveservicestaskforce.org/uspstf/about-uspstf/copyright-permissions
+  spdx_id: null
+attribution:
+  required: false
+  text: US Preventive Services Task Force. Screening for Breast Cancer Recommendation
+    Statement. JAMA 2024;331(22):1918-1930.
+commercial_use_allowed: true
+redistribution_allowed: true
+modifications_allowed: true
+legal_review:
+  status: pending
+  notes: US government work; public domain.
+relates_to_diseases: []
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Cited by prevention RFs / Indications for
+  average-risk breast-cancer screening: Grade B biennial mammography in women age
+  40-74. New 2024 statement lowered start age from 50 to 40. Insufficient evidence
+  (I statement) for: continuing screening at age ≥75; supplemental screening with
+  US/MRI for dense breasts. Does not cover hereditary or high-risk pathways (those
+  follow ACS/NCCN).
+
+  '
+pages_count: 13
+references_count: 90
+corpus_role: primary_guideline

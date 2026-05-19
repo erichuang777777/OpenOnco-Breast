@@ -1,0 +1,67 @@
+id: BMA-POLD1-GERMLINE-POLYMERASE-PROOFREADING
+biomarker_id: BIO-POLD1-GERMLINE
+variant_qualifier: POLD1 germline exonuclease-domain pathogenic (PPAP — polymerase proofreading–associated polyposis)
+disease_id: DIS-CRC
+escat_tier: IIA
+evidence_summary: >
+  POLD1 germline pathogenic variants in the exonuclease (proofreading) domain
+  cause PPAP — similar to POLE-PPAP but with a stronger endometrial-cancer
+  signal in women (lifetime endometrial risk ~50% per published cohorts).
+  Phenotype includes attenuated polyposis with early-onset CRC, endometrial
+  cancer, and CNS tumors in some families. Confirmed-carrier surveillance
+  protocol (Lynch-like): colonoscopy q1-2y starting age 20-25, endometrial
+  sampling + TVUS q1-2y from age 30-35 in women (consider earlier given
+  higher endometrial risk than POLE), EGD q3y from age 30, urinalysis q1y
+  from age 30. Tumor ultramutator phenotype (TMB high) suggests
+  immunotherapy responsiveness in advanced disease; pembrolizumab FDA-
+  approved for TMB-H solid tumors. Risk-reducing hysterectomy + BSO after
+  childbearing is reasonable to discuss in POLD1 carriers (analogous to
+  Lynch INTENSIFIED-track decision). ESCAT IIA.
+evidence_summary_ua: >
+  Герміногенні патогенні варіанти POLD1 у proofreading-домені — PPAP схожий
+  на POLE, але з вищим ризиком ендометріального раку (~50% довічно).
+  Фенотип: атенюйований поліпоз з раннім КРР, ендометріальний рак, CNS-пухлини
+  в окремих родинах. Протокол нагляду (Lynch-подібний): колоноскопія q1-2 роки
+  з 20-25; ендометріальна біопсія + TVUS q1-2 роки з 30-35 (раніше, ніж для
+  POLE — вищий ризик); ЕГДС q3 роки з 30; аналіз сечі q1 рік з 30. Ультрамутаторний
+  фенотип TMB-high — пембролізумаб ефективний при поширених стадіях. Profilakticheskaya
+  гістеректомія + BSO після репродуктивного періоду — обговорення (аналогічно
+  Lynch INTENSIFIED-треку). ESCAT IIA.
+regulatory_approval:
+  fda:
+    - "pembrolizumab — TMB-H (≥10 mut/Mb) advanced solid tumors (FDA pan-tumor approval, KEYNOTE-158)"
+  ema: []
+  ukraine: []
+recommended_combinations:
+  - "colonoscopy q1-2y starting age 20-25 with polypectomy"
+  - "endometrial sampling + TVUS q1-2y from age 30-35 (women); consider earlier given higher endometrial risk vs POLE"
+  - "discussion of risk-reducing hysterectomy + BSO after childbearing (INTENSIFIED-track conversation)"
+  - "EGD q3y from age 30"
+  - "annual urinalysis from age 30"
+  - "for POLD1-mutant advanced disease: pembrolizumab 200 mg q3w — high response rate in TMB-H ultramutator setting"
+contraindicated_monotherapy: []
+primary_sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+last_verified: "2026-05-18"
+evidence_sources: []
+actionability_review_required: true
+linked_indications:
+  - IND-LYNCH-CARRIER-SURVEILLANCE
+notes: >
+  STUB — Wave A+B germline expansion. Linked Indication: IND-LYNCH-CARRIER-
+  SURVEILLANCE used as closest-fit; no POLD1-specific Indication exists.
+  Two-Clinical-Co-Lead signoff queued. Variant classification: only
+  exonuclease-domain variants (Ser478Asn, Pro327Leu, Leu474Pro most common)
+  drive PPAP. Endometrial-cancer risk in POLD1 carriers appears higher than
+  POLE — supports earlier / denser endometrial surveillance + low-threshold
+  risk-reducing surgery discussion at completion of childbearing.
+notes_ua: >
+  STUB — Wave A+B розширення. Прив'язка до IND-LYNCH-CARRIER-SURVEILLANCE.
+  POLD1-специфічної Indication немає. Класифікація варіанта: лише
+  екзонуклеазний домен (Ser478Asn, Pro327Leu, Leu474Pro). Ендометріальний
+  ризик у носіїв POLD1 вищий, ніж POLE — підтримує більш ранній нагляд +
+  обговорення risk-reducing хірургії після завершення дітородного періоду.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_bma_batch3
+draft_revision: 1
+last_reviewed: "2026-05-18"

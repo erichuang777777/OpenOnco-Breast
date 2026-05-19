@@ -1,0 +1,139 @@
+id: ALGO-CLASSIC-FAP-CRITERIA
+applicable_to_disease: DIS-CRC
+applicable_to_line_of_therapy: 0
+# Prevention-persona convention.
+purpose: >
+  Classic clinical criteria for familial adenomatous polyposis (FAP) /
+  APC-associated polyposis. FAP is autosomal-dominant inheritance of
+  APC germline mutation; without intervention, near-100% penetrance for
+  colorectal cancer by age 40-50. Classic FAP phenotype: ≥100
+  colorectal adenomatous polyps; attenuated FAP (AFAP) variant: 10-99
+  adenomas with later onset.
+
+  Three independent diagnostic gates trigger FAP / APC-germline
+  testing: (1) classic phenotype (≥100 polyps), (2) family APC
+  germline mutation, (3) AFAP phenotype with family-history pattern
+  or extracolonic FAP-spectrum features (desmoid, CHRPE, osteomas,
+  duodenal polyps).
+
+output_indications:
+  - IND-FAP-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+
+default_indication: IND-FAP-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+alternative_indication: null
+# Genetic counseling + germline APC/MUTYH panel referral is the first
+# action within the surveillance pathway, which may culminate in
+# prophylactic colectomy for confirmed classic-FAP carriers. Algorithm
+# routes only to the surveillance Indication to satisfy the algorithm-
+# routing contract; counseling component is documented in Indication
+# rationale.
+
+decision_tree:
+  - step: 1
+    # Gate 1: classic FAP phenotype (≥100 adenomas) — pathognomonic.
+    evaluate:
+      any_of:
+        - condition: "≥100 colorectal adenomatous polyps on endoscopy or pathology, at any age"
+    if_true:
+      result: IND-FAP-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Classic FAP phenotype satisfied (≥100 adenomas) — refer for germline APC + MUTYH testing (MUTYH for biallelic recessive AP — phenocopies FAP), genetic counseling, surgical evaluation for colectomy timing. Children of confirmed APC carriers warrant cascade testing + sigmoidoscopy from age 10-12."
+    if_false:
+      next_step: 2
+  - step: 2
+    # Gate 2: family APC pathogenic variant identified.
+    evaluate:
+      any_of:
+        - condition: "Known family history of APC germline pathogenic / likely-pathogenic variant identified in first-degree relative"
+    if_true:
+      result: IND-FAP-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Family APC mutation known — cascade testing for at-risk relatives. Counseling, predictive testing (single-site analysis for the known family variant), surveillance from age 10-12 for classic FAP families or 18-20 for AFAP families."
+    if_false:
+      next_step: 3
+  - step: 3
+    # Gate 3: AFAP phenotype (10-99 adenomas) — clinical AFAP variant
+    # warrants APC + MUTYH biallelic testing.
+    evaluate:
+      all_of:
+        - condition: "10-99 colorectal adenomatous polyps cumulative on endoscopy / pathology"
+        - any_of:
+            - condition: "Personal history of colorectal cancer + polyposis"
+            - condition: "First-degree relative with polyposis (≥10 polyps) or CRC <50"
+            - condition: "Extracolonic FAP-spectrum features: desmoid tumor, congenital hypertrophy of retinal pigment epithelium (CHRPE), osteoma, epidermoid cyst, duodenal/ampullary adenoma, hepatoblastoma in childhood, papillary thyroid cancer (cribriform-morular variant)"
+    if_true:
+      result: IND-FAP-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "AFAP phenotype with supporting feature — refer for germline APC + biallelic MUTYH testing (MAP — MUTYH-associated polyposis — phenocopies AFAP and is autosomal recessive). Genetic counseling, surveillance per NCCN Genetic/Familial High-Risk CRC AFAP protocol."
+    if_false:
+      next_step: 4
+  - step: 4
+    # Gate 4: extracolonic FAP-spectrum features alone (rare presentation
+    # — e.g., desmoid before colorectal manifestation).
+    evaluate:
+      any_of:
+        - condition: "Desmoid tumor at any age in patient without other known cause"
+        - condition: "Hepatoblastoma in infancy / childhood"
+        - condition: "Cribriform-morular variant papillary thyroid cancer"
+        - condition: "Multiple CHRPE lesions on ophthalmologic exam"
+    if_true:
+      result: IND-FAP-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE
+      notes: "Isolated extracolonic FAP-spectrum feature — consider germline APC testing (yield variable: 10-15% for isolated desmoid, ~70% for hepatoblastoma when family history of polyposis, near-100% for multiple CHRPE). Concurrent colonoscopy / sigmoidoscopy to evaluate for polyposis."
+    if_false:
+      result: false
+      notes: "No FAP / AFAP criterion met. Polyp count <10 with no extracolonic features → general-population CRC screening per USPSTF (colonoscopy q10y from 45, or per personal/family history risk-stratification)."
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-ESMO-CRC-2024
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  STUB — declarative reference content encoding classic FAP +
+  attenuated FAP (AFAP) clinical diagnostic criteria (Vogelstein B,
+  Kinzler KW et al. for the foundational APC discoveries; Bisgaard
+  ML, Bülow S 2006 for AFAP characterization PMID 16770751; modern
+  consensus per Yang J et al. Hereditary Colorectal Cancer Syndromes:
+  Clinical Practice Guideline. Am J Gastroenterol 2015;110:223-262
+  PMID 25645574; NCCN Genetic/Familial High-Risk CRC Guidelines
+  V.2.2025 for current diagnostic + management protocol). Primary-
+  paper Source entity (SRC-BISGAARD-2006-AFAP, SRC-YANG-2015-ACG-
+  HEREDITARY-CRC) is v0.2-B authoring backlog.
+
+  Anchored to DIS-CRC; reach: FAP-spectrum extracolonic cancers
+  (desmoid, duodenal/ampullary, hepatoblastoma, thyroid papillary
+  cribriform-morular).
+
+  Penetrance + clinical timeline:
+    - Classic FAP: ≥100 adenomas typically appear by 16-25, CRC by
+      40-50 without prophylactic colectomy. Near-100% CRC penetrance.
+    - AFAP: 10-99 adenomas, later onset (~age 50-55), CRC penetrance
+      ~70%.
+    - MAP (MUTYH biallelic): phenocopies AFAP, autosomal recessive,
+      CRC penetrance ~80% by 60-70 without colectomy.
+
+  Genotype-phenotype correlation in classic FAP:
+    - APC codon 1309 deletion → severe phenotype (>1000 polyps,
+      early CRC)
+    - APC 5' (codons 1-178) or 3' (codons 1581-end) → attenuated
+      phenotype (AFAP)
+    - APC codons 1250-1464 → severe CRC risk + congenital
+      hypertrophy of retinal pigment epithelium (CHRPE)
+
+  Surveillance entry:
+    - Classic FAP at-risk relatives: flexible sigmoidoscopy from age
+      10-12 annually until polyposis identified (then full
+      colonoscopy + surgical planning).
+    - AFAP at-risk relatives: colonoscopy from age 18-20 every 1-2y.
+    - Confirmed carriers awaiting colectomy: colonoscopy q1-2y;
+      duodenal surveillance (Spigelman staging) from age 20-25.
+
+  Cited from RF-FAP-FAMILY-HISTORY-SUSPICION + RF-FAP-CONFIRMED-
+  CARRIER trigger logic.
+
+  IMPORTANT — APC vs MUTYH distinction: ALGO-CLASSIC-FAP-CRITERIA
+  triggers panel testing that includes BOTH APC (autosomal dominant)
+  and biallelic MUTYH (autosomal recessive — MAP). Modern hereditary-
+  cancer panels (e.g., Invitae CRC panel, Color hereditary cancer
+  panel) include both genes. Family-history pattern (vertical AD
+  transmission vs sibling-only AR transmission) helps differentiate
+  before testing but does not gate the panel.
+draft: true

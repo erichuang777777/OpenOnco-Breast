@@ -1,0 +1,194 @@
+id: IND-HEMOCHROMATOSIS-HCC-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-HCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-HEMOCHROMATOSIS-HCC-PREVENTION
+
+# No systemic drug regimen — primary interventions are phlebotomy
+# (or iron chelation when phlebotomy contraindicated) and HCC
+# surveillance imaging. Phlebotomy is a procedure managed by
+# hematology/hepatology, captured as standard supportive care rather
+# than a Regimen FK.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Combined phlebotomy + AASLD HCC surveillance in cirrhotic
+    hereditary hemochromatosis:
+      - Phlebotomy in non-cirrhotic HH normalizes life expectancy
+        (Niederau 1985+1996 cohorts) — primary-prevention success.
+      - Phlebotomy in cirrhotic HH markedly improves survival
+        (median ~20-25y vs ~5-10y untreated) but does NOT reverse
+        cirrhosis or eliminate HCC risk (~3-5%/year residual).
+      - HCC surveillance with US ± AFP q6mo shifts stage at diagnosis
+        from advanced to early (BCLC 0/A, amenable to ablation,
+        resection, or transplant within Milan); early-stage HCC 5y OS
+        60-75% vs <15% for advanced disease.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for patients with hereditary
+  hemochromatosis, particularly cirrhotic and pre-cirrhotic
+  iron-overload subsets. Three-component standard:
+
+  **Phlebotomy treatment:**
+    - Induction phase: 500 mL whole blood phlebotomy q1-2 weeks until
+      ferritin <50 ng/mL (typical duration 1-3 years depending on
+      baseline iron stores)
+    - Maintenance phase: phlebotomy q2-4mo to maintain ferritin
+      50-100 ng/mL and transferrin saturation <50%
+    - Pre-phlebotomy CBC + ferritin + iron studies to confirm safety
+      and target
+    - Iron chelation (deferasirox 14-28 mg/kg/day OR deferoxamine
+      40-50 mg/kg SC overnight 5-7 nights/week) for patients with
+      contraindications to phlebotomy (severe anemia from concurrent
+      disease, cardiac failure, poor venous access)
+    - Family screening: first-degree relatives (siblings, children
+      >18y) for HFE genotyping per AASLD 2018; HFE C282Y homozygotes
+      enter same monitoring/treatment pathway
+
+  **HCC surveillance imaging (cirrhotic HH only):**
+    - Abdominal ultrasound q6mo (AASLD 2023) with AFP simultaneously
+    - Suboptimal US visualization → MRI or multiphase CT q6mo
+      (LI-RADS framework)
+    - LR-3 → repeat 3-6mo; LR-4 → biopsy or close surveillance per
+      MDT; LR-5 → DIS-HCC treatment algorithm
+
+  **Hepatic status monitoring:**
+    - LFT panel + INR + platelet count + albumin q6-12mo
+    - Liver elastography (FibroScan, MR elastography) q1-2y to track
+      fibrosis stage; alternative — calculated FIB-4 / APRI scores
+    - Hepatology consultation for new decompensation signs
+
+  **Cardiac + endocrine screening (concurrent organ involvement):**
+    - Baseline ECG + echocardiogram (iron cardiomyopathy)
+    - Fasting glucose + HbA1c (HH-associated diabetes mellitus)
+    - Testosterone in men (hypogonadism from iron pituitary deposition)
+    - TSH (hypothyroidism less common but worth annual check)
+
+  **Diet + lifestyle:**
+    - Avoid iron supplementation (including iron-fortified multivitamins)
+    - Limit alcohol (synergistic hepatic injury; AASLD recommends total
+      abstinence in cirrhotic HH)
+    - Avoid raw shellfish (Vibrio vulnificus infection risk in
+      iron-overloaded patients)
+    - Vitamin C supplementation limited to <500 mg/day (potentiates
+      iron absorption)
+
+  In Ukraine, hereditary hemochromatosis is under-recognized; HFE
+  genotyping available at Institute of Genetics + select private labs.
+  Phlebotomy services available at major blood banks and hematology
+  centers (Kyiv, Lviv, Odesa, Kharkiv); maintenance phlebotomy may be
+  done at regional centers if induction protocol is established.
+  Deferasirox availability variable. Liver transplantation at
+  Shalimov Institute for advanced HH cirrhosis ± HCC within Milan.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для пацієнтів зі спадковим
+  гемохроматозом, особливо cirrhotic та pre-cirrhotic iron-overload
+  підгруп. Трикомпонентний стандарт:
+
+  **Phlebotomy treatment:**
+    - Індукційна фаза: 500 мл whole blood phlebotomy q1-2 тижні до
+      ferritin <50 нг/мл (типова тривалість 1-3 роки)
+    - Підтримуюча фаза: phlebotomy q2-4 міс (ferritin 50-100 нг/мл,
+      transferrin saturation <50%)
+    - Iron chelation (деферазірокс 14-28 мг/кг/день АБО деферoxamine
+      40-50 мг/кг SC overnight 5-7 ночей/тиждень) для пацієнтів з
+      контраіндикаціями до phlebotomy
+    - Сімейний скринінг: first-degree родичі (>18 років) для
+      HFE-генотипування
+
+  **HCC surveillance imaging (лише cirrhotic HH):**
+    - Абдомінальне УЗД q6 міс + AFP одночасно
+    - Subтimal візуалізація → MRI або багатофазний CT q6 міс
+      (LI-RADS)
+
+  **Hepatic status моніторинг:**
+    - LFT + INR + платіт + альбумін q6-12 міс
+    - Liver elastography q1-2 роки або FIB-4 / APRI
+
+  **Cardiac + endocrine screening:**
+    - Baseline ЕКГ + ехокардіограма (iron cardiomyopathy)
+    - HbA1c (HH-асоційований diabetes)
+    - Тестостерон у чоловіків (hypogonadism)
+    - ТТГ
+
+  **Diet + lifestyle:**
+    - Уникати iron supplementation
+    - Limit алкоголь (synergistic hepatic injury)
+    - Уникати raw shellfish (Vibrio vulnificus)
+    - Vitamin C <500 мг/день
+
+  В Україні HH під-визнаний; HFE-генотипування — Institute of
+  Genetics. Phlebotomy у blood banks та hematology centers (Київ,
+  Львів, Одеса, Харків).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-AASLD-HCC-2023
+    position: supports
+    relevant_quote_paraphrase: >-
+      "HCC surveillance with ultrasound ± AFP every 6 months is
+      recommended for patients with cirrhosis from hereditary
+      hemochromatosis. Phlebotomy is the standard de-ironing
+      intervention; iron chelation is an alternative when phlebotomy
+      is contraindicated."
+  - source_id: SRC-NCCN-HCC-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Hereditary hemochromatosis with cirrhosis is a category 1
+      indication for HCC surveillance. Maintenance phlebotomy and
+      avoidance of alcohol and iron supplementation are mandatory
+      components of long-term management."
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не пропускати phlebotomy у iron-overloaded HFE C282Y гомозиготів — phlebotomy у non-cirrhotic нормалізує тривалість життя."
+  - "Не покладатися лише на ferritin для tracking treatment — transferrin saturation також треба моніторити (раніше нормалізується, ніж ferritin)."
+  - "Не пропускати HCC surveillance у cirrhotic HH — найвищий-ризик субcohort серед усіх chronic-liver-disease етіологій."
+  - "Не призначати iron supplementation або iron-fortified multivitamins у HFE-позитивних — посилює патологію."
+  - "Не пропускати ehokардіографію + endocrine workup — iron cardiomyopathy + гіпогонадизм + diabetes — multi-organ HFE прояви."
+
+do_not_do_en:
+  - "Do not omit phlebotomy in iron-overloaded HFE C282Y homozygotes — phlebotomy in non-cirrhotic HH normalizes life expectancy."
+  - "Do not rely on ferritin alone to track treatment — transferrin saturation must also be monitored (normalizes earlier than ferritin)."
+  - "Do not skip HCC surveillance in cirrhotic HH — the highest-risk subcohort among all chronic-liver-disease etiologies."
+  - "Do not prescribe iron supplementation or iron-fortified multivitamins in HFE-positive patients — exacerbates pathology."
+  - "Do not skip echocardiography + endocrine workup — iron cardiomyopathy, hypogonadism, and diabetes are multi-organ HFE manifestations."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — v0.3 chronic-condition prevention pilot (hemochromatosis /
+  HCC). Two-Co-Lead signoff queued. Phlebotomy + AASLD surveillance
+  is one of the highest-evidence chronic-condition prevention
+  combinations across the v0.3 pilot set.

@@ -1,0 +1,187 @@
+id: RF-RADON-MALIGNANCY-PREVENTION
+definition: >-
+  Documented elevated radon exposure — either residential
+  (indoor-air radon ≥4 pCi/L per EPA action threshold, or
+  ≥148 Bq/m³ per WHO threshold; geographic high-risk areas with
+  documented home measurement) or occupational (uranium / hard-rock
+  mining, milling and processing; underground non-uranium mining
+  with documented radon-progeny exposure; pre-regulation
+  occupations) — in an individual without a current lung-cancer
+  diagnosis. Radon (²²²Rn) and its short-lived progeny (²¹⁸Po,
+  ²¹⁴Pb, ²¹⁴Bi, ²¹⁴Po) emit alpha radiation that deposits in
+  bronchial epithelium when inhaled. Radon is an IARC Group 1
+  carcinogen — the second-leading cause of lung cancer overall
+  after tobacco smoking, and the leading cause among never-smokers.
+  Radon-smoking interaction is synergistic (greater than additive
+  but submultiplicative on the log-additive scale), with smoker-
+  radon-exposed workers carrying ~10-25x background lung-cancer
+  risk per high cumulative exposure. There is NO curative
+  intervention for prior radon exposure — radon mitigation in
+  occupied dwellings (sub-slab depressurization, ventilation
+  improvements), smoking-cessation counseling (synergistic
+  risk-reduction), and annual LDCT surveillance per modified
+  USPSTF criteria are the levers. Prevention-persona RedFlag
+  (§20 ratification 2026-05-18, v0.3 occupational pilot starter).
+definition_ua: >-
+  Документоване підвищене радонове експонування — або
+  residential (indoor-air радон ≥4 pCi/л за EPA action threshold,
+  або ≥148 Бк/м³ за WHO порогом; географічні high-risk
+  території з документованим home measurement) або occupational
+  (уранова / hard-rock гірнича промисловість, переробка та помол;
+  підземна не-уранова гірнича промисловість з документованою
+  експозицією радонових нащадків; pre-regulation професії) — у
+  пацієнта без поточного діагнозу раку легень. Радон (²²²Rn) та
+  його короткоживучі нащадки (²¹⁸Po, ²¹⁴Pb, ²¹⁴Bi, ²¹⁴Po)
+  емітують alpha-радіацію, що депонується у бронхіальному
+  епітелії при інгаляції. Радон — канцероген IARC Group 1, друга
+  провідна причина раку легень загалом після куріння тютюну, і
+  провідна причина серед never-smokers. Radon-smoking взаємодія
+  синергічна (більш ніж адитивна, але субмультиплікативна на
+  log-additive шкалі), з курцями-радон-експонованими робітниками,
+  що мають ~10-25x background ризик раку легень при high
+  cumulative експозиції. КУРАТИВНОГО втручання для попередньої
+  радонової експозиції НЕМАЄ — радонова мітигація у житлових
+  приміщеннях (sub-slab depressurization, покращення вентиляції),
+  counseling щодо припинення куріння (синергічне зменшення
+  ризику) та щорічна LDCT з модифікованими USPSTF критеріями —
+  це наявні важелі. Prevention-persona RedFlag (ратифікація §20,
+  2026-05-18, v0.3 пілот occupational — starter).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "residential_radon_exposure_ge_4_pci_per_l"
+      value: true
+    - finding: "residential_radon_exposure_documented_high_with_smoking_hx"
+      value: true
+    - finding: "occupational_uranium_mining_or_processing_exposure"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: occupational
+
+# Radon-attributable malignancies (existing KB Disease entities):
+# - DIS-NSCLC: predominant histology; adenocarcinoma and squamous
+#   cell carcinoma both elevated; small-cell histology over-
+#   represented in heavy radon-exposed cohorts (vs general
+#   population).
+# - DIS-SCLC: heavily over-represented in uranium-miner cohorts
+#   historically; histology-specific risk elevation continues to
+#   be observed in residential-radon meta-analyses albeit with
+#   smaller magnitude.
+# Lung cancer is the ONLY radon-attributable malignancy with
+# convincing epidemiologic evidence; other cancers (leukemia,
+# kidney) have been investigated and not confirmed.
+relevant_diseases:
+  - DIS-NSCLC
+  - DIS-SCLC
+
+shifts_algorithm: []
+
+# Source caveat: IARC Monograph 100D (Radiation, 2012) is the
+# canonical Group-1 classification for radon and its decay
+# products and is NOT yet a separate SRC entity in KB. EPA Radon
+# Risk Assessment + BEIR VI report (1999) are the meta-analytic
+# anchors and also not yet in KB. In-KB lung-cancer guideline
+# sources are cited as the most clinically relevant available
+# references.
+sources:
+  - SRC-NCCN-NSCLC-2025
+  - SRC-NCCN-SCLC-2025
+  - SRC-ESMO-NSCLC-EARLY-2024
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag — v0.3 occupational/environmental
+  pilot starter. Mixed occupational-and-residential scope: the
+  same risk-category enum value (`occupational`) covers both per
+  KSS §20.1 7-category taxonomy (the taxonomy has no separate
+  ENVIRONMENTAL bucket — radon's residential-exposure context is
+  treated as occupational-equivalent for routing).
+
+  Fires when patient profile carries documented elevated radon
+  exposure (residential at-or-above EPA action level, or
+  documented high residential with smoking history, or
+  occupational uranium-mining / processing exposure) AND no
+  confirmed lung-cancer diagnosis. Engine routes to a 2-track
+  PreventionPlan:
+    (a) IND-RADON-PREVENTION-MITIGATION-AND-SCREENING (standard)
+        — radon mitigation (sub-slab depressurization,
+        ventilation, sealing) for residential exposure; smoking-
+        cessation counseling (synergistic with radon for lung
+        cancer); annual LDCT per modified USPSTF criteria adjusted
+        for radon-elevated risk.
+    (b) IND-RADON-PREVENTION-OBSERVATION (surveillance) —
+        unmodified USPSTF screening criteria only; patient
+        declines intensified imaging surveillance and / or radon
+        mitigation.
+
+  Evidence base (IARC Monograph 100D 2012; BEIR VI Report 1999;
+  Darby et al. 2005 European pooled residential analysis; Krewski
+  et al. 2005 North American pooled residential analysis;
+  Lubin et al. 2004 Chinese residential analysis; uranium-miner
+  cohorts — Colorado Plateau, Czech, French):
+    - Residential radon: per 100 Bq/m³ sustained exposure, ~16%
+      relative increase in lung-cancer risk for never-smokers
+      and current smokers (multiplicative on smoking RR).
+    - Uranium-miner cohorts: SMR 2-5x for moderately exposed,
+      ≥10x for heavily exposed.
+    - Latency: 5-25 years; effect persists decades after
+      exposure cessation.
+    - Smoking interaction: greater than additive but
+      sub-multiplicative on log-additive scale; smoking-cessation
+      meaningfully attenuates radon risk in smokers.
+
+  Sources TODO: IARC Monograph 100D (2012); EPA Radon Risk
+  Assessment (Citizen's Guide to Radon, 2022 update); BEIR VI
+  Report (1999) as new SRC entities. v0.3 source-authoring
+  backlog.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1
+  dev-mode exemption.
+notes_ua: >
+  Prevention-persona RedFlag — v0.3 occupational/environmental
+  пілот starter. Mixed occupational-і-residential scope: одне
+  й те ж risk-category enum значення (`occupational`) покриває
+  обидва за KSS §20.1 7-category таксономією (таксономія не має
+  окремого ENVIRONMENTAL bucket — residential-exposure контекст
+  радону trakhtuetsya як occupational-equivalent для routing).
+
+  Спрацьовує коли профіль пацієнта містить документовану
+  підвищену радонову експозицію (residential at-or-above EPA
+  action level, або документована висока residential з історією
+  куріння, або occupational uranium-mining / processing
+  експозиція) ТА відсутній підтверджений діагноз раку легень.
+  Engine маршрутизує до 2-track PreventionPlan:
+    (а) IND-RADON-PREVENTION-MITIGATION-AND-SCREENING
+        (стандартний) — радонова мітигація (sub-slab
+        depressurization, вентиляція, sealing) для residential
+        експозиції; counseling щодо припинення куріння
+        (синергічне з радоном для раку легень); щорічна LDCT з
+        модифікованими USPSTF критеріями для radon-elevated
+        ризику.
+    (б) IND-RADON-PREVENTION-OBSERVATION (surveillance) —
+        тільки немодифіковані USPSTF screening критерії;
+        пацієнт відмовляється від інтенсифікованого imaging
+        спостереження та / або радонової мітигації.
+
+  Source caveat: IARC Monograph 100D (Radiation, 2012) —
+  канонічна Group-1 класифікація для радону, EPA Radon Risk
+  Assessment + BEIR VI Report (1999) — мета-аналітичні якорі,
+  всі НЕ є окремими SRC entities у KB. v0.3 source-authoring
+  backlog.
+
+  Це STUB, очікує підпис двох Clinical Co-Lead за §6.1
+  dev-mode exemption.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_pilot
+draft_revision: 1
+
+draft: true

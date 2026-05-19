@@ -1,0 +1,14 @@
+{
+  "patient_id": "VHL-CARRIER-PREV-001",
+  "comment": "19yo male, recently confirmed VHL c.500G>A (Arg167Gln) pathogenic variant (cascade testing after father's cerebellar hemangioblastoma + pheochromocytoma). No personal lesions yet on baseline imaging. Engine routes to PreventionPlan (after Agent I): standard = VHL Alliance Active Surveillance protocol — MRI brain + spine q1y from age 15-16 (started 4 years ago), MRI abdomen (kidneys + adrenals + pancreas) q1-2y from age 15, ophthalmology q1y (started at age 1-5 ideally, currently catching up), catecholamines / metanephrines q1y from age 5-10, comprehensive audiology q2-3y; alternative = intensified track with nephron-sparing surgery threshold for renal lesions ≥3cm + CNS hemangioblastoma resection threshold discussion. Canonical 'family-with-kidney-cancer' protocol — RCC is the leading cause of mortality in adult VHL carriers.",
+  "biomarkers": {},
+  "demographics": {"age": 19, "sex": "male", "ecog": 0},
+  "findings": {
+    "germline_vhl_pathogenic_variant_confirmed": true,
+    "VHL c.500G>A (Arg167Gln) confirmed pathogenic": true,
+    "Cascade testing positive after father confirmed VHL": true,
+    "Baseline MRI brain/spine/abdomen — no current lesions": true,
+    "Baseline catecholamines/metanephrines normal": true,
+    "No personal cancer diagnosis": true
+  }
+}

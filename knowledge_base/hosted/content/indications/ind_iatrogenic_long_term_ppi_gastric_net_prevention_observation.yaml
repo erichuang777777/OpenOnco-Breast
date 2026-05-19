@@ -1,0 +1,86 @@
+id: IND-IATROGENIC-LONG-TERM-PPI-GASTRIC-NET-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-GASTRIC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-LONG-TERM-PPI-GASTRIC-NET-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Patient declines structured indication review + endoscopic evaluation — receives baseline education on dyspepsia / new GI symptom escalation and continues PPI per prior plan. Type-1 gastric NET and atrophic-gastritis-derived gastric adenocarcinoma may go undetected until symptomatic; stage at diagnosis later, intervention more invasive. Outcomes worse than with structured indication-review + targeted surveillance arm, though absolute risk increment remains modest in any individual long-term PPI user."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-IATROGENIC-LONG-TERM-PPI-
+  GASTRIC-NET-PREVENTION-SURVEILLANCE. Patient declines structured
+  PPI indication-review + endoscopic evaluation (acceptance of
+  reflux control as priority, geographic access, surveillance
+  fatigue) — receives explicit symptom-vigilance education
+  (new dyspepsia not responsive to current PPI, weight loss,
+  iron-deficiency anemia, melena, persistent epigastric pain
+  → gastroenterology referral, regardless of how minor it appears)
+  + PPI-side-effect-monitoring counseling (calcium, vit B12,
+  magnesium, Clostridioides difficile risk, community-acquired
+  pneumonia association). Per CHARTER §11 patient-autonomy framing
+  — declining a step-down trial or surveillance EGD is legitimate
+  but framed as suboptimal vs. structured-review comparator.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від
+  structured PPI indication-review + endoscopic evaluation —
+  отримує explicit symptom-vigilance education (нова dyspepsia
+  не відповідає поточному PPI, втрата ваги, залізодефіцитна анемія,
+  мелена, persistent epigastric pain → gastroenterology referral,
+  незалежно від мінімальності) + PPI-side-effect-monitoring
+  counseling (calcium, vit B12, magnesium, Clostridioides difficile
+  ризик, community-acquired pneumonia association). Per CHARTER §11.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_iatrogenic_batch3
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-GASTRIC-2025
+    position: context
+  - source_id: SRC-NCCN-NET-2025
+    position: context
+
+do_not_do:
+  - "Не презентувати observation як еквівалент structured indication-review — de-prescription зменшує iatrogenic exposure."
+  - "Не пропускати explicit symptom-vigilance education — pattern-recognition критична для symptom-prompted evaluation."
+  - "Не виключати patient зі symptom-prompted endoscopy access — навіть якщо routine surveillance declined, GI має бути available."
+  - "Не нормалізувати дисфагію / weight loss / melena як 'minor' — будь-який alarm symptom requires immediate evaluation."
+  - "Не ігнорувати PPI side-effect monitoring (Ca, B12, Mg) — discontinuation issue окрема від cancer risk."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to structured indication review — de-prescription reduces iatrogenic exposure."
+  - "Do not skip explicit symptom-vigilance education — pattern recognition is critical for symptom-prompted evaluation."
+  - "Do not deny the patient symptom-prompted endoscopy access — even if routine surveillance is declined, GI must be available."
+  - "Do not normalize dysphagia / weight loss / melena as 'minor' — any alarm symptom requires immediate evaluation."
+  - "Do not ignore PPI side-effect monitoring (Ca, B12, Mg) — independent from cancer-risk discussion."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for long-term PPI / gastric-NET prevention. §15.2 C4 ≥2-tracks invariant."

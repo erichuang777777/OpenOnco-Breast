@@ -1,0 +1,131 @@
+id: DRUG-LETROZOLE-CHEMOPREVENTION
+names:
+  preferred: "Letrozole (breast-cancer chemoprevention context — investigational/off-label)"
+  ukrainian: "Летрозол (хіміопрофілактика раку молочної залози — дослідницько/off-label)"
+  english: "Letrozole (breast-cancer chemoprevention)"
+  synonyms: ["AI chemoprevention — letrozole"]
+  brand_names: ["Femara"]
+atc_code: L02BG04
+rxnorm_id: "6413"
+drug_class: "Aromatase inhibitor (non-steroidal, third-generation)"
+mechanism: >
+  Highly potent reversible non-steroidal inhibitor of cytochrome P450
+  aromatase (CYP19A1), reducing peripheral conversion of androgens to
+  estrogens. Letrozole 2.5 mg/day suppresses circulating estradiol by
+  >98% in postmenopausal women — the most complete suppression among
+  the three third-generation AIs (anastrozole, letrozole, exemestane).
+  Cancer-prevention rationale: estrogen exposure drives HR-positive
+  breast carcinogenesis; near-total suppression reduces incidence of
+  ER+ breast cancer and DCIS. NO completed primary breast-cancer
+  PREVENTION RCT for letrozole equivalent to IBIS-II (anastrozole) or
+  MAP.3 (exemestane); the AI-class effect supports cross-extrapolation
+  but letrozole-specific prevention evidence is indirect (cross-AI
+  meta-analyses and adjuvant-extension data showing contralateral
+  breast-cancer reduction, e.g., MA.17R Goss NEJM 2016: extended
+  letrozole reduced contralateral primaries).
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 1997  # for breast-cancer treatment
+    indications_brief:
+      - "Adjuvant treatment of postmenopausal HR-positive early breast cancer"
+      - "Extended adjuvant treatment after 5 y of tamoxifen"
+      - "First-line treatment of postmenopausal HR-positive advanced breast cancer"
+      - "NOT FDA-labeled for chemoprevention (no completed primary-prevention RCT — off-label)"
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: true
+    reimbursement_indications:
+      - "Ад'ювантна терапія HR+ раку молочної залози у постменопаузі (НЕ хіміопрофілактика)"
+    last_verified: "2026-05-18"
+    notes: "Реімбурсується НСЗУ для ЛІКУВАННЯ HR+ РМЗ; для хіміопрофілактики — off-label, out-of-pocket. У більшості клінічних настанов перевага надається анастрозолу (IBIS-II) або екземестану (MAP.3) — letrozole-specific evidence слабкіша."
+typical_dosing: >
+  Breast-cancer chemoprevention (off-label, AI class extrapolation —
+  NOT a guideline first-choice):
+    2.5 mg PO once daily for 5 years.
+  Indicated only for POSTMENOPAUSAL women at increased breast-cancer
+  risk who cannot receive anastrozole or exemestane (e.g., intolerance,
+  drug-interaction profile). Baseline DEXA + lipid panel; vitamin D
+  + calcium supplementation; bone-density re-assessment every 1-2 y.
+  Discontinue and refer to endocrinology if osteoporotic fracture
+  occurs. NOT effective in premenopausal women (ovarian aromatase
+  escape).
+formulations:
+  - "Tablet 2.5 mg"
+
+absolute_contraindications:
+  - "Premenopausal status (ineffective and contraindicated)"
+  - "Pregnancy, breastfeeding"
+  - "Hypersensitivity to letrozole"
+  - "Severe hepatic impairment (Child-Pugh C — limited data; reduce dose to 2.5 mg every other day)"
+black_box_warnings: []
+major_interactions:
+  - "Tamoxifen — concurrent use abolishes AI benefit (do NOT combine)"
+  - "Estrogen-containing products (HRT, vaginal estrogen) — pharmacodynamic antagonism"
+  - "CYP2A6 / CYP3A4 inducers (rifampin, phenytoin, carbamazepine, phenobarbital) — accelerated letrozole metabolism, decreased exposure; significance debated"
+  - "Strong CYP2A6 inhibitors — modest increase in letrozole exposure"
+common_adverse_events:
+  - "Hot flushes / vasomotor symptoms (~30-50%)"
+  - "Arthralgia / musculoskeletal pain (~25-35%)"
+  - "Fatigue (~10-15%)"
+  - "Vaginal dryness, dyspareunia (~10-15%)"
+  - "Headache (~10-15%)"
+  - "Hypercholesterolemia (~5-10%)"
+  - "Reduced bone mineral density (~5-10% over 5 years)"
+serious_adverse_events:
+  - "Osteoporotic fracture (~3-5% over 5 years)"
+  - "Cardiovascular events (small absolute ↑; lipid changes — monitor)"
+  - "Severe hepatic dysfunction (rare)"
+  - "Carpal tunnel syndrome (~2-3%)"
+
+pharmacology: {half_life_hours: 42, clearance: "Hepatic CYP3A4 and CYP2A6 metabolism to inactive carbinol; renal excretion as conjugate (~90%). No significant CYP inhibition at therapeutic doses."}
+
+sources:
+  - SRC-USPSTF-BREAST-2024
+  - SRC-NCCN-BREAST-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 chemoprevention-workstream authoring (batch 2); pending
+  two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode. BREAST-CANCER
+  CHEMOPREVENTION CONTEXT — distinct from generic DRUG-LETROZOLE
+  (treatment indications for postmenopausal HR+ breast cancer +
+  ovulation induction). EVIDENCE WEAKER than anastrozole/exemestane:
+  no completed primary-prevention RCT for letrozole equivalent to
+  IBIS-II or MAP.3; reliance on AI-class extrapolation and contralateral-
+  breast-cancer reduction in adjuvant trials (e.g., MA.17R Goss NEJM
+  2016 extended-adjuvant letrozole). USPSTF 2024 (Grade B) supports
+  AI chemoprevention in general but cites anastrozole/exemestane as
+  evidence-supported agents. NCCN Breast 2025 lists letrozole as an
+  AI option, with anastrozole/exemestane preferred. Engine should
+  prefer DRUG-ANASTROZOLE-CHEMOPREVENTION or DRUG-EXEMESTANE
+  chemoprevention over letrozole unless documented intolerance or
+  interaction. Surface only after (a) postmenopausal confirmed,
+  (b) high-risk calculator met, (c) baseline bone-health assessment,
+  (d) preference for letrozole specifically documented. Two-Clinical-
+  Co-Lead signoff required before clinical surfacing. Primary AI-class
+  evidence (IBIS-II, MAP.3) not yet ingested as standalone SRC-*
+  entities; umbrella sources cover the USPSTF/NCCN recommendation.
+
+notes_ua: >
+  Летрозол — нестероїдний інгібітор ароматази 3-го покоління, найбільш
+  потужний серед AI (>98% супресія естрадіолу у постменопаузі). Основне
+  FDA-показання — лікування HR+ РМЗ. У контексті ХІМІОПРОФІЛАКТИКИ —
+  off-label, ДОКАЗИ СЛАБКІШІ за анастрозол (IBIS-II) та екземестан
+  (MAP.3): немає завершеного РКД первинної профілактики; екстраполяція
+  з ад'ювантних досліджень (MA.17R Goss 2016 — зменшення контралатерального
+  РМЗ). NCCN Breast 2025 / USPSTF 2024 — анастрозол/екземестан є
+  переважними AI-агентами. Доза для хіміопрофілактики (off-label):
+  2.5 mg/день 5 років, тільки у постменопаузі при високому ризику +
+  непереносимості/протипоказаннях до анастрозолу або екземестану.
+  ОБОВ'ЯЗКОВО: DEXA на початку та кожні 1-2 роки, вітамін D + кальцій.
+  НСЗУ — реімбурсація лише для лікування РМЗ. Двигун повинен надавати
+  перевагу анастрозолу/екземестану; летрозол — резервний вибір.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_chemoprevention_drugs_batch2_2026-05-18
+draft_revision: 1

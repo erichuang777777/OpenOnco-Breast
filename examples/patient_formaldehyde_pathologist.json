@@ -1,0 +1,12 @@
+{
+  "patient_id": "FORMALDEHYDE-PREV-001",
+  "comment": "50yo female, anatomical pathologist with 20 years documented occupational formaldehyde (HCHO + formalin) exposure in histology / gross-room settings. No personal formaldehyde-attributable malignancy diagnosis. IARC Group 1 carcinogen (Monograph 100F, 2012) — nasopharyngeal carcinoma (latency 20-40y) + myeloid leukemia / AML (latency 5-15y) primary endpoints. Engine fires RF-OCC-FORMALDEHYDE-PREVENTION → routes to 2-track PreventionPlan: standard = continued PPE/respiratory protection if active, routine CBC for leukemia surveillance, ENT symptom awareness + low-threshold nasopharyngeal exam; aggressive = annual CBC + baseline nasopharyngoscopy + symptom-prompted MRI. Validates v0.3 occupational batch-2 pilot. Anchored DIS-AML + DIS-HNSCC.",
+  "biomarkers": {},
+  "demographics": {"age": 50, "sex": "female", "ecog": 0},
+  "findings": {
+    "occupational_formaldehyde_exposure_documented": true,
+    "occupational_formaldehyde_exposure_years_ge_10": true,
+    "Anatomical pathologist 20y histology + gross-room formaldehyde exposure": true,
+    "No personal formaldehyde-attributable malignancy diagnosis": true
+  }
+}

@@ -1,0 +1,46 @@
+id: SRC-ENDOCRINE-SOCIETY-MEN-2023
+source_type: guideline
+title: 'Endocrine Society Clinical Practice Guideline: Multiple Endocrine Neoplasia
+  (MEN1 / MEN2 / MEN4) — diagnosis, screening, and surveillance (2023) [VERIFY exact
+  title / publication year — may be 2024 MEN1 update]'
+version: '2023'
+authors:
+- Endocrine Society
+journal: Journal of Clinical Endocrinology and Metabolism
+doi: null
+url: https://www.endocrine.org/clinical-practice-guidelines
+access_level: open_access
+currency_status: current
+current_as_of: '2023'
+evidence_tier: 1
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources
+license:
+  name: Endocrine Society / Oxford Academic — publisher copyright; abstract open access
+  url: https://www.endocrine.org/copyright-policy
+  spdx_id: null
+attribution:
+  required: true
+  text: Endocrine Society Clinical Practice Guideline — Multiple Endocrine Neoplasia,
+    2023.
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+legal_review:
+  status: pending
+  notes: Verify exact title, DOI, PMID, year, and whether 2023 or 2024 Endocrine Society MEN guideline is current.
+relates_to_diseases: []
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Cited by surveillance Indications for MEN1
+  carriers (parathyroid, pituitary, gastro-entero-pancreatic neuroendocrine tumours),
+  MEN2A/2B carriers (medullary thyroid carcinoma, pheochromocytoma, primary hyperparathyroidism),
+  and MEN4 carriers. Recommends prophylactic thyroidectomy timing in MEN2 by RET codon
+  risk strata. Used together with NCCN Neuroendocrine and NANETS / ENETS guidelines.
+
+  '
+pages_count: 40
+references_count: 300
+corpus_role: primary_guideline

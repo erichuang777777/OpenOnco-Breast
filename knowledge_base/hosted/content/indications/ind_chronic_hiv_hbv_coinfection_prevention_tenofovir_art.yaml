@@ -1,0 +1,116 @@
+id: IND-CHRONIC-HIV-HBV-COINFECTION-PREVENTION-TENOFOVIR-ART
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-HCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-CHRONIC-HIV-HBV-COINFECTION-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Tenofovir-based ART (TDF or TAF, paired with FTC or 3TC + third
+    agent per DHHS): HIV viral suppression to undetectable >95%,
+    concurrent HBV-DNA suppression to undetectable >95%. HCC incidence
+    reduction over 5-10 years comparable to HBV mono-infection
+    treatment cohorts. Accelerated-fibrosis trajectory of coinfection
+    is halted / reversed with virological control.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+  - TEST-LFT
+  - TEST-FIB4
+desired_tests:
+  - TEST-LDH
+
+rationale: >
+  Standard-track prevention pathway for HIV + HBV coinfection. The ART
+  regimen MUST be tenofovir-based — TDF (300 mg PO daily) or TAF
+  (25 mg PO daily), paired with emtricitabine (FTC) or lamivudine
+  (3TC) as the NRTI backbone, plus a third agent (integrase inhibitor
+  preferred per current DHHS guidance: dolutegravir, bictegravir, or
+  raltegravir). Tenofovir + FTC/3TC has dual activity against HIV and
+  HBV — single regimen covers both. Bictegravir/FTC/TAF (Biktarvy) is
+  a common single-tablet regimen in this population.
+
+  HARD RULE: entecavir is NOT active against HIV. Entecavir monotherapy
+  in an HIV-coinfected patient drives HIV resistance (M184V emerges).
+  Never prescribe entecavir without concurrent HIV ART in HIV+/HBV+.
+
+  HCC surveillance per AASLD: US + AFP every 6 months for all chronic
+  HBV patients regardless of antiviral status; cirrhotic coinfected
+  patients may warrant q4mo cadence per hepatology judgment.
+
+  In Ukraine, tenofovir-based ART is reimbursed via the national HIV
+  programme (ART access is universal-free policy); HBV-active
+  component is bundled (no separate funding pathway).
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для коінфекції ВІЛ + HBV. АРТ-режим
+  ОБОВ'ЯЗКОВО має бути tenofovir-based — TDF (300 мг PO щодня) або
+  TAF (25 мг PO щодня), у парі з emtricitabine (FTC) або lamivudine
+  (3TC) як NRTI-каркас, + третій агент (integrase inhibitor
+  переважно за поточними DHHS: dolutegravir, bictegravir, або
+  raltegravir). Тенофовір + FTC/3TC має подвійну активність проти
+  ВІЛ і HBV — єдиний режим покриває обидва. Bictegravir/FTC/TAF
+  (Biktarvy) — поширений single-tablet режим в цій популяції.
+
+  HARD RULE: entecavir НЕ активний проти ВІЛ. Entecavir-monotherapy
+  у HIV-коінфікованого пацієнта призводить до HIV-резистентності
+  (M184V). НІКОЛИ не призначати entecavir без concurrent HIV ART у
+  ВІЛ+/HBV+.
+
+  HCC-surveillance за AASLD: УЗД + AFP кожні 6 міс для всіх пацієнтів
+  з хронічним HBV незалежно від антивірусного статусу; коінфіковані
+  циротики можуть потребувати q4мо за рішенням гепатолога.
+
+  В Україні tenofovir-based АРТ відшкодовується через національну
+  програму ВІЛ (доступ до АРТ — політика універсального
+  безкоштовного).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_a_anchor
+draft_revision: 1
+
+sources:
+  - source_id: SRC-AASLD-HBV-2024
+    position: supports
+  - source_id: SRC-EASL-HBV-2025
+    position: supports
+  - source_id: SRC-AASLD-HCC-2023
+    position: supports
+  - source_id: SRC-NIH-AIDS-2024
+    position: supports
+
+do_not_do:
+  - "Не призначати entecavir monotherapy при коінфекції ВІЛ — НЕ активний проти ВІЛ, призведе до HIV-резистентності (M184V)."
+  - "Не використовувати NRTI-щадні (NRTI-sparing) ART-режими у HIV+/HBV+ — позбавляє пацієнта HBV-покриття."
+  - "Не пропускати q6mo HCC surveillance УЗД + AFP."
+
+do_not_do_en:
+  - "Do not prescribe entecavir monotherapy in HIV coinfection — not active against HIV, will drive HIV resistance (M184V)."
+  - "Do not use NRTI-sparing ART regimens in HIV+/HBV+ — deprives the patient of HBV coverage."
+  - "Do not skip q6mo HCC surveillance ultrasound + AFP."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: STUB — HIV+HBV coinfection prevention anchor. v0.2-A continuation. Tenofovir-based ART REG-* not yet authored.

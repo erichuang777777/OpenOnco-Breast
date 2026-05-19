@@ -1,0 +1,75 @@
+id: RF-UNIVERSAL-HEAVY-ALCOHOL-MULTI-CANCER
+definition: >-
+  Heavy alcohol use — ≥3 standard drinks per day in men, ≥2 standard
+  drinks per day in women (one US-standard drink = 14 g pure
+  ethanol). IARC Monograph 100E (2012) and the IARC Working Group
+  on Alcoholic Beverages and Ethanol classify alcoholic beverages
+  as Group 1 carcinogen with sufficient evidence for ≥7 cancer
+  types: oral cavity, pharynx, larynx, oesophagus (squamous cell),
+  liver (HCC), colorectum, and female breast. WCRF / AICR
+  Continuous Update Project (2018) adds gastric cardia and
+  probable evidence for pancreas. Dose-response is supra-linear
+  for upper-aerodigestive cancers (multiplicative synergy with
+  tobacco — combined heavy use 10-100× baseline risk for oral
+  / oesophageal cancers) and approximately log-linear for breast
+  (HR ~1.05-1.10 per drink/day). No safe lower threshold for
+  cancer risk has been established (ESC 2018, ICRP 2020). Universal
+  RedFlag (relevant_diseases ["*"]) — routes to cessation counseling
+  (motivational interviewing + naltrexone / acamprosate / disulfiram
+  as appropriate per AUDIT-C / DSM-5 AUD severity) and to
+  alcohol-related-cancer screening cadence adjustment (HCC US+AFP
+  q6mo if cirrhosis component; UADT examination low-threshold;
+  CRC + mammography per age-and-modality standards but with
+  vigilance for atypical presentations).
+definition_ua: >-
+  Heavy alcohol use — ≥3 standard drinks на день у чоловіків,
+  ≥2 standard drinks на день у жінок (один US-standard drink = 14 г
+  pure ethanol). IARC Monograph 100E (2012) і IARC Working Group
+  on Alcoholic Beverages and Ethanol класифікують алкогольні напої
+  як Group 1 canceroген з sufficient evidence для ≥7 типів раку:
+  ротова порожнина, pharynx, larynx, стравохід (squamous cell),
+  печінка (HCC), colorectum, і жіноча молочна залоза. WCRF / AICR
+  Continuous Update Project (2018) додає gastric cardia і
+  probable evidence для підшлункової. Dose-response supra-linear
+  для upper-aerodigestive раків (multiplicative synergy з tobacco
+  — combined heavy use 10-100× baseline ризик для oral / oesophageal
+  cancers) і приблизно log-linear для молочної залози (HR ~1.05-1.10
+  per drink/день). Безпечного нижнього порогу для cancer ризику
+  не встановлено (ESC 2018, ICRP 2020). Universal RedFlag
+  (relevant_diseases ["*"]) — routes до cessation counseling
+  (motivational interviewing + naltrexone / acamprosate / disulfiram
+  per AUDIT-C / DSM-5 AUD severity) та до alcohol-related-cancer
+  screening cadence adjustment (HCC US+AFP q6 міс при cirrhosis
+  компоненті; UADT examination low-threshold; CRC + мамографія per
+  age-and-modality standards але з vigilance до atypical presentations).
+
+trigger:
+  type: composite_score
+  any_of:
+    - finding: "heavy_alcohol_use_documented"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: lifestyle
+
+relevant_diseases:
+  - "*"
+
+shifts_algorithm: []
+
+sources:
+  - SRC-IARC-100E-ALCOHOL
+  - SRC-WCRF-AICR-CUP-2018
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Pre-triage universal RedFlag — heavy alcohol use (≥3 drinks/d men, ≥2 drinks/d women) per IARC 100E 7-cancer cluster. Authoring intent: cessation counseling (motivational interviewing + AUD-pharmacotherapy per AUDIT-C / DSM-5 severity stratification) + alcohol-related-cancer screening adjustment (HCC US+AFP q6mo if cirrhosis; UADT low-threshold; breast / CRC per age-and-modality standards). With relevant_diseases=[\"*\"], engine does NOT attach Indication tracks via prevention path (plan.py:297 excludes \"*\") — universal Indications anchored to DIS-HCC are documentation / sidecar candidates pending future engine extension. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_universal_batch1
+draft_revision: 1

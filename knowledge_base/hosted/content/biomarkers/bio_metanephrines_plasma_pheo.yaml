@@ -1,0 +1,47 @@
+id: BIO-METANEPHRINES-PLASMA-PHEO
+names:
+  preferred: "Plasma free metanephrines (pheochromocytoma/paraganglioma surveillance — VHL/MEN2/SDH)"
+  ukrainian: "Метанефрини плазми вільні (нагляд феохромоцитоми/парагангліоми — VHL/MEN2/SDH)"
+  english: "Plasma Free Metanephrines"
+  synonyms: ["plasma metanephrine", "plasma normetanephrine", "fractionated plasma metanephrines"]
+biomarker_type: serum_marker
+measurement:
+  method: "Plasma LC-MS/MS (preferred) or immunoassay; patient supine ≥30 min before draw"
+  units: "pg/mL or nmol/L (assay-dependent reference ranges; metanephrine and normetanephrine reported separately)"
+specimen_requirements:
+  - "EDTA plasma (5 mL), patient supine ≥30 min before phlebotomy"
+  - "Avoid acetaminophen, sympathomimetics, tricyclic antidepressants ≥5 days before draw (assay interferents)"
+  - "LOINC 35114-7 (metanephrine, plasma), 50182-9 (normetanephrine, plasma)"
+clinical_context: [screening_surveillance]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: tumor_marker
+external_ids:
+  loinc: "35114-7"
+sources:
+  - SRC-NCCN-KIDNEY-2025
+  - SRC-NCCN-NET-2025
+  - SRC-ENDOCRINE-SOCIETY-MEN-2023
+last_reviewed: "2026-05-18"
+notes: >
+  Catecholamine-metabolite biomarker — gold-standard biochemical test for
+  pheochromocytoma and paraganglioma (PPGL). Preferred for asymptomatic
+  surveillance in syndromic carriers: VHL (annual, lifelong), MEN2A/MEN2B
+  (annual after age 5-8 per RET codon stratification), SDHB/SDHC/SDHD/SDHA
+  (annual, starting age 6-10 per Endocrine Society 2023). Sensitivity
+  ~96-99% for PPGL when properly drawn; specificity ~85-95% (lower with
+  drug/dietary interferents). VHL Type 1 lacks pheo; Type 2A/2B/2C have
+  pheo as defining feature — surveillance schedule keyed to VHL phenotype
+  classification (see BIO-VHL-CLASSIFICATION-PHENOTYPE). Elevation >3-4x
+  upper limit highly suggestive; intermediate elevation prompts clonidine
+  suppression test or 24-h urinary fractionated metanephrines as confirm.
+  Imaging (MRI abdomen + I-123 MIBG or 68Ga-DOTATATE PET) when biochemistry
+  positive. STUB pending two-Co-Lead signoff.
+notes_ua: >
+  Метаболіт катехоламінів — золотий стандарт біохімічного тесту для
+  феохромоцитоми/парагангліоми. Переважний для безсимптомного нагляду
+  носіїв синдромів: VHL (щорічно довічно), MEN2A/2B (щорічно після 5-8 років
+  за стратифікацією кодону RET), SDHB/C/D/A (щорічно з 6-10 років за
+  Endocrine Society 2023). STUB pending two-Co-Lead signoff.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_surveillance_2026_05_18
+draft_revision: 1

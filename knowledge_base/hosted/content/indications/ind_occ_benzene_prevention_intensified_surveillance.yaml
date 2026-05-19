@@ -1,0 +1,210 @@
+id: IND-OCC-BENZENE-PREVENTION-INTENSIFIED-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  # Primary prevention anchor — AML is the strongest benzene-
+  # attributable hematologic malignancy and the canonical target.
+  # MDS-LR and MDS-HR are co-targets via the RF's relevant_diseases
+  # listing; the engine surfaces both as kb_state targets via the
+  # fired RF.
+  disease_id: DIS-AML
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-OCC-BENZENE-MALIGNANCY-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Primary endpoint: detection of cytopenia / clonal hematopoiesis /
+    incipient MDS at earliest treatable stage. Periodic CBC + smear
+    review captures emerging cytopenias (anemia, thrombocytopenia,
+    neutropenia, macrocytosis) at presentation; persistent
+    unexplained cytopenia (≥3-6 months) is the conventional trigger
+    for bone marrow aspirate + biopsy with cytogenetics + NGS panel
+    (myeloid genes — TP53, ASXL1, SF3B1, SRSF2, U2AF1, RUNX1, NRAS,
+    KRAS, FLT3, NPM1, IDH1/2). Early MDS detection enables
+    risk-stratified intervention (HMA initiation, transplant
+    referral) at lower disease burden. Benzene-attributable AML
+    detected at incipient / MDS-prodromal stage has better
+    transplant-outcome profile than at fulminant presentation.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests:
+  - TEST-LFT
+
+rationale: >
+  Standard-track prevention pathway for individuals with documented
+  prior occupational benzene exposure who do not have a current
+  myeloid neoplasm diagnosis. Three parallel interventions:
+
+  **(1) Exposure-cessation counseling.** Most benzene-exposed
+  individuals are now retired or working in OSHA-regulated
+  environments (1 ppm 8-hr TWA + 5 ppm STEL since 1987 in US;
+  similar EU thresholds), so contemporary high-exposure cessation
+  is typically not the primary lever. Where active exposure exists
+  (legacy environments, informal workshop / artisanal trades,
+  household solvent use, second-hand cigarette smoke as a low-dose
+  benzene source), counsel on PPE (respiratory protection,
+  ventilation), engineering controls (closed-system handling,
+  vapor recovery), and substitution where feasible. Second-hand
+  smoke exposure in benzene-exposed workers compounds the risk
+  marginally — smoking-cessation counseling included.
+
+  **(2) Longitudinal CBC + peripheral smear surveillance.**
+    - Baseline CBC with manual differential + peripheral smear
+      review at enrollment.
+    - Repeat CBC q6-12 months thereafter; intensify to q3 months
+      if any baseline cytopenia is borderline.
+    - Manual smear review (not automated-only) — automated counts
+      miss dysplastic features (Pelger-Huet anomaly, hypogranular
+      neutrophils, micromegakaryocytes on rare smear; macrocytosis
+      and anisocytosis on RBC review).
+    - Reticulocyte count, LDH, B12 + folate, ferritin to triage
+      cytopenia etiology before invasive workup.
+
+  **(3) Low-threshold bone marrow aspirate + biopsy.** Persistent
+  (≥3-6 months) unexplained cytopenia (anemia <12 g/dL persistently
+  in men or <11 g/dL in women; ANC <1.5; platelets <100), or
+  macrocytic anemia without B12 / folate / hypothyroid etiology,
+  or any dysplasia on smear → bone marrow with cytogenetics + NGS
+  myeloid panel + iron stain + immunohistochemistry. Refer to
+  hematology / oncology for procedure + interpretation. Findings
+  routed:
+    - Normal marrow / non-clonal cytopenia → continue surveillance.
+    - MDS (any IPSS-R / IPSS-M stratification) → treatment-persona
+      DIS-MDS-LR / DIS-MDS-HR pathway.
+    - AML (≥20% blasts) → treatment-persona DIS-AML pathway.
+    - Clonal hematopoiesis of indeterminate potential (CHIP) /
+      clonal cytopenia of undetermined significance (CCUS) →
+      enhanced surveillance, hematology co-management.
+
+  **Hematology co-management.** Referral threshold low; many
+  centers offer benzene-exposure-specific occupational-medicine /
+  hematology joint clinics. Workers'-compensation documentation
+  may benefit the patient — surveillance findings + exposure
+  documentation can support disability / compensation claims if
+  malignancy emerges.
+
+  Resource access in Ukraine: CBC is universally accessible
+  (~50-150 UAH per draw); bone marrow aspirate + biopsy with
+  cytogenetics + NGS is available at regional cancer centers and
+  large private labs (~3000-15000 UAH depending on extent of
+  molecular workup). НСЗУ covers CBC in primary care; bone marrow
+  workup typically requires oncology / hematology referral with
+  partial НСЗУ coverage.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для осіб з документованим
+  попереднім професійним впливом бензолу, які не мають поточного
+  діагнозу мієлоїдної неоплазії. Три паралельні втручання:
+
+  **(1) Counseling щодо припинення впливу.** Більшість
+  benzene-експонованих осіб зараз пенсіонери або працюють у
+  OSHA-регульованих умовах, тому сучасне припинення high-exposure
+  зазвичай не є головним важелем. Де існує активна експозиція
+  (legacy середовища, неформальні майстерні / artisanal ремесла,
+  household solvent використання, second-hand cigarette smoke як
+  low-dose бензольне джерело), counseling щодо PPE (respiratory
+  захист, вентиляція), engineering controls (closed-system
+  поводження, vapor recovery), та substitution де можливо.
+  Second-hand куріння у benzene-експонованих робітників маргінально
+  посилює ризик — counseling щодо припинення куріння включено.
+
+  **(2) Longitudinal CBC + peripheral smear спостереження.**
+    - Baseline CBC з ручним диф. + peripheral smear оглядом на
+      enrollment.
+    - Повторні CBC q6-12 місяців; інтенсифікувати до q3 місяців,
+      якщо будь-яка baseline цитопенія borderline.
+    - Ручний smear огляд (не тільки автоматизований) —
+      автоматизовані counts пропускають диспластичні риси
+      (Pelger-Huet anomaly, hypogranular neutrophils,
+      micromegakaryocytes на rare smear; макроцитоз та anisocytosis
+      на RBC огляді).
+    - Reticulocyte count, LDH, B12 + folate, ferritin для triage
+      cytopenia етіології перед інвазивним workup.
+
+  **(3) Low-threshold bone marrow aspirate + biopsy.** Persistent
+  (≥3-6 місяців) нез'ясована цитопенія (анемія <12 г/дл persistently
+  у чоловіків або <11 г/дл у жінок; ANC <1.5; тромбоцити <100), або
+  макроцитарна анемія без B12 / folate / гіпотиреоїдної етіології,
+  або будь-яка дисплазія на smear → bone marrow з цитогенетикою +
+  NGS myeloid panel + iron stain + IHC. Направлення до гематології /
+  онкології для процедури + інтерпретації. Знахідки routed:
+    - Нормальний marrow / non-clonal cytopenia → продовжувати
+      спостереження.
+    - MDS (будь-який IPSS-R / IPSS-M стратифікація) → treatment-
+      persona DIS-MDS-LR / DIS-MDS-HR шлях.
+    - AML (≥20% бластів) → treatment-persona DIS-AML шлях.
+    - Clonal hematopoiesis of indeterminate potential (CHIP) /
+      clonal cytopenia of undetermined significance (CCUS) →
+      посилене спостереження, hematology co-management.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_occupational_pilot
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-AML-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Therapy-related AML and AML following antecedent
+      hematologic disorder include benzene-exposed cohorts;
+      surveillance for cytopenia development with low-threshold
+      marrow evaluation is appropriate."
+  - source_id: SRC-ELN-AML-2022
+    position: supports
+    relevant_quote_paraphrase: >-
+      "AML with myelodysplasia-related changes (AML-MRC) frequently
+      follows prior cytotoxic / occupational exposure; molecular
+      and cytogenetic profile (TP53, complex karyotype) carries
+      adverse prognostic implications."
+  - source_id: SRC-ESMO-MDS-2021
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Secondary MDS following chemical / occupational exposure
+      carries distinct cytogenetic and clinical profile; early
+      detection via CBC surveillance + low-threshold marrow
+      evaluation enables risk-stratified management."
+
+do_not_do:
+  - "Не покладатися виключно на автоматизований CBC — manual smear огляд необхідний для виявлення dysplastic features (Pelger-Huet, hypogranular neutrophils), які автоматизовані counts пропускають."
+  - "Не призначати bone marrow на основі ізольованої транзіторної цитопенії — повторити CBC через 4-8 тижнів спочатку; persistent ≥3-6 місяців — поріг для marrow."
+  - "Не пропускати молекулярний NGS myeloid panel при marrow biopsy — TP53, ASXL1, SF3B1, та інші myeloid mutations керують клінічним ризиком і ASCT-eligibility decisions."
+  - "Не лікувати CHIP / CCUS як malignancy — це pre-cancerous стани, що вимагають моніторингу, не лікування (NCCN не рекомендує HMA-терапію поза clinical trial для CHIP)."
+  - "Не нехтувати documentation експозиції для workers' compensation — патогенетичний зв'язок benzene-AML / MDS добре встановлений і може підтримати disability claims, якщо malignancy emerges."
+
+do_not_do_en:
+  - "Do not rely solely on automated CBC — manual smear review is necessary to detect dysplastic features (Pelger-Huet, hypogranular neutrophils) that automated counts miss."
+  - "Do not order bone marrow on the basis of an isolated transient cytopenia — repeat the CBC in 4-8 weeks first; persistent ≥3-6 months is the threshold for marrow evaluation."
+  - "Do not skip the molecular NGS myeloid panel at marrow biopsy — TP53, ASXL1, SF3B1, and other myeloid mutations drive clinical risk and ASCT-eligibility decisions."
+  - "Do not treat CHIP / CCUS as malignancy — these are pre-cancerous states requiring monitoring, not treatment (NCCN does not recommend HMA therapy outside of clinical trial for CHIP)."
+  - "Do not overlook exposure documentation for workers' compensation — the pathogenetic link of benzene to AML / MDS is well-established and may support disability claims if malignancy emerges."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: >
+  STUB — v0.3 occupational pilot (benzene). Two-Clinical-Co-Lead
+  signoff queued per CHARTER §6.1 dev-mode exemption. No drug
+  regimen — intervention is counseling + CBC surveillance +
+  low-threshold marrow workup. IARC Monograph 100F (2012) is the
+  canonical evidence anchor; v0.3 source-authoring backlog.

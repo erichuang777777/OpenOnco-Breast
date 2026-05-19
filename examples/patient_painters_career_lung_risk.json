@@ -1,0 +1,14 @@
+{
+  "patient_id": "OCC-PAINTERS-PREV-001",
+  "comment": "60yo male, 25 years as industrial painter (construction + ship-painting tradesman, pre-1990s solvent-heavy formulations), no current malignancy. Engine routes to PreventionPlan: standard = IND-OCC-PAINTERS-PREVENTION-INTENSIFIED-SURVEILLANCE (LDCT chest if smoker-eligible + urinalysis q1-2y + CBC q1y + smoking-cessation counseling); alternative = IND-OCC-PAINTERS-PREVENTION-OBSERVATION (USPSTF general-population only). Validates v0.3 RF-OCC-PAINTERS-PREVENTION pilot (lung/bladder/AML risk).",
+  "biomarkers": {},
+  "demographics": {"age": 60, "sex": "male", "ecog": 1},
+  "findings": {
+    "occupational_painter_exposure_documented": true,
+    "occupational_painter_years_ge_10": true,
+    "Industrial + ship painter 2000-present (25 years)": true,
+    "Former smoker 15 pack-years, quit 2018": true,
+    "Baseline CBC + urinalysis unremarkable": true,
+    "No current paint-occupation-attributable malignancy": true
+  }
+}

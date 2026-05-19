@@ -1,0 +1,100 @@
+id: IND-IATROGENIC-AZATHIOPRINE-LONGTERM-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-DLBCL-NOS
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-AZATHIOPRINE-LONGTERM-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Patient declines structured dermatologic surveillance + indication-review discussion — receives baseline sun-protection counseling, B-symptom-vigilance education, and skin-self-examination instruction. Thiopurine-attributable lymphoma and non-melanoma skin cancers may present at advanced stage; outcomes worse than with active surveillance. Patient continues on thiopurine without year-5 alternative-discussion structured prompt — may persist on a treatment whose risk-benefit balance has shifted unfavorably with cumulative exposure."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-IATROGENIC-AZATHIOPRINE-
+  LONGTERM-PREVENTION-SURVEILLANCE. Patient declines structured
+  annual dermatologic surveillance + structured year-5 indication-
+  review (long-stable disease control, geographic access,
+  surveillance fatigue, preference) — receives explicit sun-
+  protection counseling (broad-spectrum SPF 30+ daily, peak UV
+  avoidance, photoprotective clothing) + symptom-vigilance
+  education (new or changing skin lesion, non-healing sore,
+  persistent lymphadenopathy, unexplained fevers / night sweats /
+  weight loss / fatigue → immediate referral; in IBD cohort,
+  perianal / GI symptoms — escalation as usual but with thiopurine-
+  context awareness) + skin-self-examination instruction (monthly,
+  full-body with mirror; partner-assisted for hard-to-see areas).
+  Per CHARTER §11 patient-autonomy framing — declining structured
+  surveillance is legitimate but framed as suboptimal vs. annual-
+  dermatology + active-indication-review comparator. Particular
+  emphasis: thiopurine-attributable cancer signal does NOT
+  disappear with continued use; cumulative exposure compounds risk.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від
+  structured annual dermatologic surveillance + structured year-5
+  indication-review — отримує explicit sun-protection counseling
+  (SPF 30+ daily, peak UV avoidance, photoprotective clothing)
+  + symptom-vigilance education (нова або changing skin lesion,
+  non-healing sore, persistent lymphadenopathy, unexplained
+  fevers / night sweats / weight loss / fatigue → immediate
+  referral; у IBD cohort, perianal / GI симптоми — escalation
+  з thiopurine-context awareness) + skin-self-examination
+  instruction (monthly, full-body з mirror; partner-assisted).
+  Per CHARTER §11. Особлива емфаза: thiopurine-attributable cancer
+  signal НЕ зникає з продовженням use; cumulative exposure
+  compound risk.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_iatrogenic_batch3
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+  - source_id: SRC-NCCN-SKIN-2025
+    position: context
+  - source_id: SRC-IARC-MONO-100B-2012
+    position: context
+
+do_not_do:
+  - "Не презентувати observation як еквівалент дермtologic surveillance + indication review — thiopurine cumulative risk compound."
+  - "Не пропускати explicit sun-protection + B-symptom education — найбільший self-care yield."
+  - "Не виключати patient зі symptom-prompted dermatology / hematology access — навіть при declining routine surveillance."
+  - "Не нормалізувати new skin lesion / non-healing sore / lymphadenopathy / B-symptoms — alarm signs."
+  - "Не продовжувати thiopurine indefinitely без structured shared-decision discussion на 5р."
+  - "Не покладатися на self-examination alone — early lesions можуть бути subtle."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to dermatologic surveillance + indication review — thiopurine cumulative risk compounds."
+  - "Do not skip explicit sun-protection + B-symptom education — highest self-care yield."
+  - "Do not deny the patient symptom-prompted dermatology / hematology access — even if routine surveillance is declined."
+  - "Do not normalize a new skin lesion / non-healing sore / lymphadenopathy / B-symptoms — alarm signs."
+  - "Do not continue thiopurine indefinitely without structured shared-decision discussion at year 5."
+  - "Do not rely on self-examination alone — early lesions can be subtle."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for long-term azathioprine / 6-MP prevention. §15.2 C4 ≥2-tracks invariant."

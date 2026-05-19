@@ -1,0 +1,103 @@
+id: RF-BRCA-CONFIRMED-CARRIER
+definition: >-
+  Confirmed germline pathogenic / likely-pathogenic variant in BRCA1
+  or BRCA2 — the canonical HBOC (Hereditary Breast and Ovarian Cancer)
+  spectrum genes. Patient has had a germline test returned positive;
+  the family-history-suspicion question is settled. No current
+  personal cancer diagnosis in the carrier being assessed (current
+  cancer diagnosis routes to treatment-track plan with carrier status
+  driving systemic-therapy selection — PARP inhibitor consideration,
+  platinum sensitivity, RRM / RRSO interaction). Prevention-persona
+  RedFlag (§20, v0.2-B confirmed-carrier surveillance pathway —
+  distinct from the family-history-suspicion pathway in
+  RF-BRCA-HBOC-FAMILY-HISTORY-SUSPICION which fires before testing).
+definition_ua: >-
+  Підтверджений гермінативний патогенний / ймовірно-патогенний варіант
+  у BRCA1 або BRCA2 — канонічні гени HBOC (Hereditary Breast and
+  Ovarian Cancer) спектру. Пацієнт пройшов germline тестування з
+  позитивним результатом; питання родовідної підозри вирішене.
+  Поточний особистий діагноз раку у носія, що оцінюється, відсутній
+  (поточний діагноз раку routes до treatment-track плану зі статусом
+  носія, що визначає вибір системної терапії — PARP-інгібітор
+  розгляд, чутливість до платини, взаємодія RRM / RRSO). Prevention-
+  persona RedFlag (§20, v0.2-B шлях спостереження підтверджених
+  носіїв — відрізняється від родовідного підозрового шляху в
+  RF-BRCA-HBOC-FAMILY-HISTORY-SUSPICION).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "germline_brca1_pathogenic_variant_confirmed"
+      value: true
+    - finding: "germline_brca2_pathogenic_variant_confirmed"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+# §20 prevention extension — drives engine routing to PreventionPlan
+# when patient carries this RF and no confirmed Disease (KSS §20.2).
+risk_category: genetic
+
+# HBOC-spectrum cancers in KB. Breast is the primary risk anchor
+# (lifetime risk ~55-72% BRCA1, ~45-69% BRCA2). Ovarian (39-44%
+# BRCA1, 11-17% BRCA2), prostate (BRCA2 high-grade enriched),
+# pancreatic (BRCA2 ~5-10%, BRCA1 ~2-3%).
+relevant_diseases:
+  - DIS-BREAST
+  - DIS-OVARIAN
+  - DIS-PDAC
+  - DIS-PROSTATE
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  - SRC-NCCN-BREAST-2025
+  - SRC-NCCN-OVARIAN-2025
+  - SRC-ESMO-BREAST-EARLY-2024
+  - SRC-ESMO-OVARIAN-2024
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.2-B confirmed-carrier surveillance pathway — BRCA1 / BRCA2.
+  Fires on documented germline BRCA pathogenic variant positivity in
+  an asymptomatic individual. Engine routes to PreventionPlan
+  recommending:
+    (a) IND-BRCA-CARRIER-SURVEILLANCE (standard) — NCCN Genetic /
+        Familial High-Risk: Breast, Ovarian, Pancreatic carrier
+        surveillance protocol (annual breast MRI from age 25
+        alternating with mammogram from 30; clinical breast exam
+        q6mo; TVUS + CA-125 q6mo from age 30-35 framed honestly as
+        suboptimal; PSA + DRE for BRCA2 men from 40)
+    (b) IND-BRCA-CARRIER-INTENSIFIED (aggressive) — standard
+        protocol PLUS discussion of risk-reducing mastectomy (RRM)
+        age 25-30 (BRCA1 > BRCA2 urgency) AND risk-reducing BSO
+        (RRSO) age 35-40 (BRCA1) / 40-45 (BRCA2) post-childbearing.
+
+  Triggers correspond to a positive germline panel result (variant
+  classification per ACMG framework — pathogenic / likely
+  pathogenic). PALB2, CHEK2, ATM, RAD51C/D, BRIP1 confirmed carriers
+  receive distinct (gene-specific) protocols and would be
+  authored as separate confirmed-carrier RFs in future v0.2-B
+  iterations (out of scope here per task allowlist).
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption.
+
+  Penetrance reference (NCCN Genetic / Familial High-Risk: Breast,
+  Ovarian, Pancreatic v2.2025):
+    - Breast (women): BRCA1 ~55-72% lifetime; BRCA2 ~45-69%
+    - Ovarian (women): BRCA1 ~39-44%; BRCA2 ~11-17%
+    - Male breast: BRCA2 ~6.8%; BRCA1 ~1-5%
+    - Pancreatic (PDAC): BRCA2 ~5-10%; BRCA1 ~2-3%
+    - Prostate (men): BRCA2 ~20-30% high-grade / metastatic; BRCA1
+      modest elevation
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_confirmed_carrier
+draft_revision: 1

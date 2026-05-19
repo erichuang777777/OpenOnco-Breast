@@ -1,0 +1,52 @@
+id: BIO-BRCA1-ASHKENAZI-FOUNDER-5266DUPC
+names:
+  preferred: "BRCA1 c.5266dupC (5382insC) — Ashkenazi Jewish founder mutation"
+  ukrainian: "BRCA1 c.5266dupC (5382insC) — засновницька мутація ашкеназі"
+  english: "BRCA1 5266dupC founder mutation"
+  synonyms: ["BRCA1 5382insC", "BRCA1 5385insC", "c.5266dupC", "c.5266dup"]
+biomarker_type: gene_mutation
+mutation_details:
+  gene: BRCA1
+  gene_hugo_id: HGNC:1100
+  exon: "20"
+  variant_type: "frameshift insertion (duplication)"
+  functional_impact: "loss_of_function"
+  hgvs_protein: "p.Gln1756ProfsTer74"
+  hgvs_coding: "c.5266dupC"
+specimen_requirements: ["Whole blood EDTA or saliva — germline DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+external_ids:
+  hgnc_symbol: BRCA1
+  hgvs_coding: "c.5266dupC"
+  hgvs_protein: "p.Gln1756ProfsTer74"
+related_biomarkers: [BIO-BRCA1-BRCA2-GERMLINE]
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+last_reviewed: "2026-05-18"
+notes: >
+  Second of three Ashkenazi Jewish founder mutations. Single-nucleotide
+  duplication (cytosine) in exon 20 causing frameshift and premature
+  termination — truncates BRCA1 within the BRCT2 domain, abolishing
+  C-terminal protein-binding function critical for homologous-recombination
+  repair coordination. Also called 5382insC in legacy nomenclature
+  (offset by stop-codon counting convention shift). Recurrent founder
+  effect in AJ populations (~0.8-1.0% carrier frequency in AJ vs <0.1%
+  non-AJ); also reported as a recurrent variant in Polish, Russian,
+  Belarusian populations (likely separate founder events or AJ admixture).
+  Lifetime cancer risks consistent with BRCA1 average. NCCN 2025
+  endorses population-wide AJ founder-panel testing (3-mutation panel)
+  regardless of family history. Same surveillance and risk-reduction
+  protocols as other BRCA1 pathogenic variants. STUB pending two-Co-Lead
+  signoff.
+notes_ua: >
+  Друга з трьох засновницьких мутацій ашкеназі. Одно-нуклеотидна
+  дуплікація цитозину в екзоні 20 → зсув рамки, передчасний стоп-кодон,
+  обрізаний домен BRCT2. Також відома як 5382insC у застарілій
+  номенклатурі. Рекурентний засновницький ефект в ашкеназі (~0.8-1.0%),
+  у польській, російській, білоруській популяціях. NCCN 2025: панельне
+  тестування. STUB pending two-Co-Lead signoff.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_surveillance_2026_05_18
+draft_revision: 1

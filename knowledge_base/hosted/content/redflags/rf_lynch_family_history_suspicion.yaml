@@ -1,0 +1,110 @@
+id: RF-LYNCH-FAMILY-HISTORY-SUSPICION
+definition: >-
+  Family pedigree meeting criteria suggestive of hereditary nonpolyposis
+  colorectal cancer (HNPCC) / Lynch syndrome: any of (a) Amsterdam II
+  criteria — ≥3 relatives with Lynch-spectrum cancer (CRC, endometrial,
+  small bowel, urothelial, hepatobiliary, brain, sebaceous skin), spanning
+  ≥2 generations, with ≥1 first-degree relative and ≥1 diagnosis <50y;
+  (b) revised Bethesda criteria; (c) PREMM5 model ≥2.5%; or (d)
+  first-degree relative with Lynch-spectrum cancer diagnosed <50.
+  No current personal cancer diagnosis in the individual at risk.
+  Prevention-persona RedFlag (§20 ratification 2026-05-18, v0.2-B
+  hereditary pilot starter).
+definition_ua: >-
+  Сімейний родовід, що відповідає критеріям підозри на спадковий
+  неполіпозний колоректальний рак (HNPCC) / синдром Lynch: будь-яке з
+  (а) Амстердамські критерії II — ≥3 родичів з Lynch-spectrum раком
+  (КРР, ендометрій, тонка кишка, уротелій, гепатобіліарний, мозок,
+  себорейні шкірні пухлини), охоплюючи ≥2 поколінь, з ≥1 родичем
+  першого ступеня та ≥1 діагнозом <50р; (б) переглянуті Bethesda
+  критерії; (в) PREMM5 модель ≥2.5%; або (г) родич першого ступеня з
+  Lynch-spectrum раком діагностований <50. Поточний особистий діагноз
+  раку у пацієнта з ризиком відсутній. Prevention-persona RedFlag
+  (ратифікація §20, 2026-05-18, v0.2-B пілот спадковості — starter).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "family_amsterdam_ii_criteria_met"
+      value: true
+    - finding: "family_revised_bethesda_criteria_met"
+      value: true
+    - finding: "family_premm5_score_ge_2_5pct"
+      value: true
+    - finding: "family_first_degree_lynch_spectrum_under_50"
+      value: true
+    - finding: "family_two_lynch_spectrum_first_or_second_degree"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+# §20 prevention extension — drives engine routing to PreventionPlan
+# when patient carries this RF and no confirmed Disease (KSS §20.2).
+risk_category: genetic
+
+# Lynch-spectrum cancers (all in KB): CRC, endometrial, gastric,
+# ovarian, urothelial, prostate, PDAC. Pancreatic adenocarcinoma is
+# included per NCCN Genetic/Familial High-Risk: Colorectal §HNPCC
+# section (modest elevated risk).
+relevant_diseases:
+  - DIS-CRC
+  - DIS-ENDOMETRIAL
+  - DIS-GASTRIC
+  - DIS-OVARIAN
+  - DIS-UROTHELIAL
+  - DIS-PROSTATE
+  - DIS-PDAC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-ESMO-CRC-2024
+  - SRC-ESGO-ENDOMETRIAL-2025
+  - SRC-ESMO-ENDOMETRIAL-2022
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.2-B hereditary pilot starter. Fires on pedigree-based suspicion of
+  Lynch syndrome / HNPCC in an asymptomatic individual (no current
+  cancer diagnosis). Engine routes to PreventionPlan recommending:
+    (a) genetic counseling + germline MMR/EPCAM panel testing via
+        IND-LYNCH-SUSPICION-PREVENTION-GENETIC-COUNSELING (standard)
+    (b) enhanced empirical surveillance for patients declining
+        testing via IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-
+        SURVEILLANCE (alternative).
+
+  Triggers correspond to established Lynch-suspicion criteria
+  (Amsterdam II, revised Bethesda, PREMM5 ≥2.5%, single-relative <50
+  bright-line). Patient profile is expected to carry these as computed
+  booleans from the pedigree input (FHIR FamilyMemberHistory at the
+  data-standards layer; computation is a downstream concern not yet
+  implemented).
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption. Source-set TODO: NCCN Genetic/Familial High-Risk:
+  Colorectal/Endometrial (license posture to verify per scope proposal
+  open question #7); ACMG Lynch testing guidance.
+
+  Confirmed Lynch carriers (germline mutation positive on panel) route
+  to a DIFFERENT prevention pathway (carrier-confirmed surveillance —
+  colonoscopy q1-2y from 25, endometrial surveillance, etc.). That
+  pathway is v0.2-B follow-up authoring (RF-LYNCH-CONFIRMED-CARRIER +
+  IND-LYNCH-CARRIER-SURVEILLANCE).
+
+  Lifetime cancer risk in confirmed Lynch carriers (per NCCN Genetic/
+  Familial High-Risk: Colorectal):
+    - CRC: ~70-80% (MLH1/MSH2); ~25-50% (MSH6/PMS2)
+    - Endometrial (women): ~40-60% (MLH1/MSH2); ~17-44% (MSH6)
+    - Stomach: ~6-13%; Ovarian: ~4-20%; Urothelial: ~4-25%;
+      Pancreas: ~3-6%
+    - Sebaceous neoplasms (Muir-Torre variant): elevated but
+      uncommon
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_anchor
+draft_revision: 1

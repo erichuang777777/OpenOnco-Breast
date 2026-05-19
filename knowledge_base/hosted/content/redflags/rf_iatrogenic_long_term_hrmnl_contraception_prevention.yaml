@@ -1,0 +1,74 @@
+id: RF-IATROGENIC-LONG-TERM-HRMNL-CONTRACEPTION-PREVENTION
+definition: >-
+  Cumulative use of estrogen-containing or combined hormonal
+  contraception (combined oral contraceptive, combined patch, combined
+  vaginal ring) ≥10 years — IARC Group 1 carcinogen (estrogen-progestogen
+  combined oral contraceptives). Modest, small-magnitude relative-risk
+  elevation: breast cancer +1.2-1.3x during current/recent use (effect
+  attenuates within 10 years of stopping; population-level absolute
+  increment ~13 extra cases per 100,000 woman-years for ages 35-39);
+  cervical cancer +1.5-2.0x at ≥5y use among high-risk HPV-positive
+  cohort (mechanism: probable co-factor for HPV persistence + cervical
+  squamous-cell carcinoma progression). NOTE: this iatrogenic-persona
+  RF is intentionally distinct from RF-REPRODUCTIVE-OCP-LONG-TERM,
+  which carries the BALANCED risk-benefit counseling framing
+  (substantial ovarian + endometrial protection lifelong). The
+  iatrogenic-persona view focuses on the exposure-as-risk axis —
+  patient who has already stopped OCP after long use, or who is
+  evaluating ongoing breast-screening adequacy + HPV-co-test cadence
+  in the context of prior exposure. Prevention-persona RedFlag
+  (§20 v0.3 iatrogenic pilot).
+definition_ua: >-
+  Кумулятивне використання естроген-вмісної або комбінованої
+  гормональної контрацепції ≥10 років — IARC Group 1 канцероген
+  (combined oral contraceptives). Скромне підвищення ризику:
+  breast cancer +1.2-1.3x під час current/recent use (ефект
+  згасає протягом 10 років після зупинки; populational absolute
+  increment ~13 додаткових випадків на 100,000 woman-years для
+  35-39р); cervical cancer +1.5-2.0x при ≥5р у high-risk HPV-
+  positive когорті (механізм: ймовірний co-factor для HPV
+  persistence + прогресії cervical SCC). ПРИМІТКА: цей iatrogenic-
+  персона RF навмисно відмінний від RF-REPRODUCTIVE-OCP-LONG-TERM,
+  який несе ЗБАЛАНСОВАНЕ risk-benefit counseling (substantial
+  ovarian + endometrial protection lifelong). Iatrogenic-персона
+  фокусується на exposure-as-risk осі — пацієнт після тривалого
+  OCP use оцінює adequate breast-screening / HPV co-test cadence
+  у контексті prior exposure. RedFlag персони prevention.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "cumulative_hormonal_contraception_ge_10y"
+      value: true
+    - finding: "prior_hormonal_contraception_ge_10y_off_now"
+      value: true
+    - finding: "current_hormonal_contraception_ge_10y_with_hpv_positive"
+      value: true
+
+clinical_direction: investigate
+
+severity: minor
+priority: 100
+category: other
+
+risk_category: iatrogenic
+
+relevant_diseases:
+  - DIS-BREAST
+  - DIS-CERVICAL
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BREAST-2025
+  - SRC-NCCN-CERVICAL-2025
+  - SRC-USPSTF-BREAST-2024
+  - SRC-USPSTF-CERVICAL-2018
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for cumulative hormonal-contraception exposure ≥10y, iatrogenic-axis only (exposure-as-risk). Engine routes to PreventionPlan recommending HPV co-test on schedule per ASCCP / USPSTF, age-appropriate mammographic screening per USPSTF, attentive symptom history (breast lump, abnormal bleeding). Severity minor — absolute risk increment small, effect on breast cancer attenuates after stop. Distinct from RF-REPRODUCTIVE-OCP-LONG-TERM (balanced risk-benefit counseling, see §20 reproductive bucket). STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_iatrogenic_batch3
+draft_revision: 1

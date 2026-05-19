@@ -1,0 +1,110 @@
+id: IND-LIFESTYLE-OBESITY-PREVENTION-WEIGHT-LOSS
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-LIFESTYLE-OBESITY-CANCER-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: "Sustained ≥10% weight reduction in adults with BMI ≥30: ~25-30% reduction in post-menopausal breast cancer incidence (per WHI long-term follow-up); ~20-30% reduction in endometrial cancer incidence; modest reductions in CRC + esophageal AC + HCC. GLP-1 receptor agonists (semaglutide, tirzepatide) producing 15-20% sustained weight loss are expected to deliver cancer-incidence reduction in long-term follow-up (data emerging)."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+  - TEST-LFT
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for obesity (BMI ≥30). Tiered intervention:
+
+  **(1) Behavioral / lifestyle modification** (first-line per USPSTF):
+  - Intensive structured weight-loss program (≥14 contacts/year per USPSTF
+    Grade B); typically 6-12 month duration
+  - Mediterranean / DASH / portion-controlled dietary patterns
+  - ≥150 min/week moderate-intensity aerobic + resistance training
+
+  **(2) Pharmacotherapy** for BMI ≥30 (or ≥27 with weight-related comorbidity):
+  - GLP-1 receptor agonists (semaglutide 2.4mg, tirzepatide 15mg) — current
+    first-line for sustained ≥15% weight loss
+  - Bupropion-naltrexone (Contrave) — alternative
+  - Phentermine-topiramate (Qsymia) — alternative
+  - Orlistat — older option
+
+  **(3) Bariatric surgery referral** for BMI ≥40 (or ≥35 with comorbidity):
+  - Roux-en-Y gastric bypass / sleeve gastrectomy / one-anastomosis bypass
+  - Produces durable 25-35% weight loss + meaningful cancer-incidence
+    reduction in long-term cohort follow-up
+
+  **(4) Cancer screening per BMI-elevated risk profile:**
+  - Post-menopausal women: ensure adherence to USPSTF mammography
+  - Endometrial cancer awareness (post-menopausal bleeding evaluation)
+  - HCC surveillance in cirrhotic (MASH) subset
+  - Routine CRC screening per USPSTF (q10y colonoscopy from 45 or 50)
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для ожиріння (BMI ≥30).
+
+  **(1) Behavioral / lifestyle modification** — structured weight-loss program
+  (≥14 contacts/year per USPSTF Grade B); Mediterranean / DASH дієтичні
+  паттерни; ≥150 хв/тиждень помірної aerobic + resistance training.
+
+  **(2) Фармакотерапія** при BMI ≥30 (або ≥27 з weight-related coморбідністю):
+  - GLP-1 receptor agonists (семаглутид 2.4мг, тирзепатид 15мг) — поточна
+    перша лінія для sustained ≥15% weight loss
+  - Bupropion-налтрексон (Contrave) — альтернатива
+  - Phentermine-topiramate (Qsymia) — альтернатива
+
+  **(3) Bariatric surgery referral** при BMI ≥40 (або ≥35 з коморбідністю):
+  - Roux-en-Y gastric bypass / sleeve gastrectomy / one-anastomosis bypass
+  - Виробляє durable 25-35% weight loss + meaningful cancer-incidence
+    reduction
+
+  **(4) Cancer screening per BMI-elevated risk:**
+  - Post-menopausal жінки: adherence до USPSTF mammography
+  - Endometrial cancer awareness (post-menopausal bleeding evaluation)
+  - HCC surveillance в цирозному (MASH) subset
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не починати pharmacotherapy без структурного behavioral context — combined approach has best outcomes."
+  - "Не пропускати mental-health screening — obesity often co-occurs with depression / disordered eating."
+  - "Не використовувати semaglutide / GLP-1 RAs у пацієнтів з historией medullary thyroid carcinoma / MEN2."
+  - "Не очікувати full cancer-risk-restoration до non-obese comparator — лише incremental risk reduction."
+
+do_not_do_en:
+  - "Do not start pharmacotherapy without a structured behavioral context — combined approach has best outcomes."
+  - "Do not skip mental-health screening — obesity often co-occurs with depression / disordered eating."
+  - "Do not use semaglutide / GLP-1 RAs in patients with history of medullary thyroid carcinoma / MEN2."
+  - "Do not expect full cancer-risk-restoration to non-obese comparator — only incremental risk reduction."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 lifestyle prevention pilot (obesity). Two-Co-Lead signoff queued."

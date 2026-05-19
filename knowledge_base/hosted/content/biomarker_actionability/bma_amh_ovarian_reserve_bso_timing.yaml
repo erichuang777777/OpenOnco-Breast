@@ -1,0 +1,64 @@
+id: BMA-AMH-OVARIAN-RESERVE-BSO-TIMING
+biomarker_id: BIO-AMH-OVARIAN-RESERVE
+variant_qualifier: Anti-Müllerian Hormone — ovarian reserve / BSO timing
+  counselling in BRCA1/2 carriers
+disease_id: DIS-OVARIAN
+escat_tier: X
+evidence_summary: >
+  Anti-Müllerian Hormone (AMH) reflects primordial follicle pool size and
+  is the best single biomarker of ovarian reserve. In the BRCA1/2 carrier
+  population, AMH is used as DECISION-SUPPORT for risk-reducing
+  salpingo-oophorectomy (RSSO / BSO) timing, fertility counselling, and
+  oocyte cryopreservation planning — NOT as a screening test for ovarian
+  cancer. NCCN Genetic/Familial Breast/Ovarian 2025 recommends BSO at
+  age 35-40 (BRCA1) / 40-45 (BRCA2) after completion of childbearing.
+  AMH is one input informing the personalised cost/benefit of pre-BSO
+  oocyte cryopreservation and post-BSO menopausal hormone replacement
+  decisions. AMH does NOT predict ovarian cancer risk and does NOT replace
+  germline-mutation-driven BSO recommendation. ESCAT X — AMH does not
+  drive cancer-treatment selection; categorised as
+  reproductive-counselling support.
+regulatory_approval:
+  fda:
+  - AMH immunoassays — multiple FDA-cleared (Beckman Coulter, Roche
+    Elecsys, Ansh, others); preferred for fertility / ovarian-reserve
+    assessment
+  ema: []
+  ukraine:
+  - AMH — widely available in reproductive-medicine centres
+recommended_combinations:
+- 'BRCA1/2 carrier pre-BSO fertility counselling: AMH + antral follicle
+  count + age determines oocyte cryopreservation feasibility'
+- 'BRCA1: BSO at 35-40 after childbearing complete; BRCA2: 40-45'
+- 'Post-BSO menopausal-hormone-therapy decision: consider until natural
+  menopause age (50-51) in carriers without prior breast cancer, per
+  NCCN Genetic 2025 + Domchek 2014'
+contraindicated_monotherapy:
+- 'AMH must NOT be used as an ovarian cancer screening test or as a basis
+  to delay BSO beyond NCCN-recommended age in confirmed BRCA1/2 carriers'
+primary_sources:
+- SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+last_verified: '2026-05-18'
+evidence_sources:
+- source: SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+  level: Category 2A
+  evidence_lane: standard_care
+  note: >
+    NCCN Genetic/Familial Breast/Ovarian 2025 — BSO timing recommendation
+    is GERMLINE-MUTATION-driven (BRCA1 age 35-40, BRCA2 age 40-45). AMH
+    + antral follicle count inform parallel fertility-preservation
+    decisions.
+actionability_review_required: true
+indications:
+- IND-BRCA-CARRIER-SURVEILLANCE
+- IND-BRCA-CARRIER-INTENSIFIED
+notes: |
+  STUB pending two-Co-Lead signoff. A dedicated
+  IND-BRCA-CARRIER-FERTILITY-PRESERVATION Indication entity (gated on
+  age + reproductive intent) would be the cleanest home for this
+  biomarker; the listed surveillance Indications are adjacent but not
+  precisely fitted to the fertility-counselling use case.
+
+  Engine must explicitly de-couple BSO timing from AMH value — AMH never
+  delays BSO in a confirmed carrier; it only informs WHETHER to attempt
+  oocyte cryopreservation before BSO and HOW many cycles to plan.

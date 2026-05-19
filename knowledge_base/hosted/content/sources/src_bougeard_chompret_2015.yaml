@@ -1,0 +1,63 @@
+id: SRC-BOUGEARD-CHOMPRET-2015
+source_type: cohort_study
+title: Revisiting Li-Fraumeni syndrome from TP53 mutation carriers (the French LFS
+  cohort, basis for revised Chompret criteria)
+version: '2015'
+authors:
+- Bougeard G
+- Renaux-Petel M
+- Flaman JM
+- Charbonnier C
+- Fermey P
+- Belotti M
+- Gauthier-Villars M
+- Stoppa-Lyonnet D
+- Consolino E
+- Brugières L
+- Caron O
+- Benusiglio PR
+- Bressac-de Paillerets B
+- Bonadona V
+- Bonaïti-Pellié C
+- Tinat J
+- Baert-Desurmont S
+- Frebourg T
+journal: Journal of Clinical Oncology
+doi: 10.1200/JCO.2014.59.5728
+pmid: '26014290'
+url: https://pubmed.ncbi.nlm.nih.gov/26014290
+access_level: subscription_required
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 2
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources_batch4
+license:
+  name: American Society of Clinical Oncology / JCO (subscription)
+  spdx_id: null
+attribution:
+  required: true
+  text: Bougeard G et al., J Clin Oncol 2015 — French LFS cohort + revised Chompret
+    criteria
+commercial_use_allowed: false
+redistribution_allowed: false
+modifications_allowed: false
+legal_review:
+  status: pending
+  notes: Subscription publication; abstract open access.
+relates_to_diseases: []
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Large French cohort study (415 TP53-mutation
+  families) underpinning the revised Chompret criteria (2015) for clinical TP53 testing
+  eligibility. Demonstrates spectrum + age-distribution of LFS-associated tumors —
+  soft-tissue sarcoma, osteosarcoma, premenopausal breast cancer, choroid plexus carcinoma,
+  adrenocortical carcinoma. Foundation for current NCCN Genetic/Familial High-Risk
+  Breast/Ovarian/Pancreatic v2025 and ACMG/ENIGMA TP53 testing thresholds.
+
+  '
+pages_count: 10
+references_count: 40
+corpus_role: cohort_study

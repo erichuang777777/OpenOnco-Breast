@@ -1,0 +1,162 @@
+id: RF-IBD-CRC-PREVENTION
+definition: >-
+  Long-standing inflammatory bowel disease (IBD) with colonic involvement
+  — either ulcerative colitis (UC) with diagnosis ≥8 years, or Crohn's
+  colitis (involvement of ≥1/3 of colon) with diagnosis ≥8 years, or
+  IBD with concomitant primary sclerosing cholangitis (PSC) regardless
+  of duration (PSC-IBD is the highest-risk IBD subgroup for colorectal
+  cancer — cumulative CRC risk ~15-30% at 30 years from PSC diagnosis).
+  No current colorectal cancer diagnosis. Chronic colonic inflammation
+  drives colitis-associated dysplasia and CRC via an
+  inflammation-dysplasia-carcinoma sequence distinct from sporadic CRC
+  (often arises from flat dysplasia, multifocal, harder to detect by
+  conventional white-light colonoscopy). Surveillance colonoscopy with
+  chromoendoscopy or high-definition white-light reduces CRC mortality
+  in this population. Prevention-persona RedFlag (§20 ratification
+  2026-05-18, v0.3 chronic-condition pilot).
+definition_ua: >-
+  Тривалозіе запальне захворювання кишечника (IBD) з ураженням
+  ободової кишки — або виразковий коліт (UC) з діагнозом ≥8 років, або
+  Crohn-коліт (ураження ≥1/3 ободової кишки) з діагнозом ≥8 років, або
+  IBD з супутнім первинним склерозуючим холангітом (PSC) незалежно від
+  тривалості (PSC-IBD — найвища-ризикова IBD-підгрупа для
+  колоректального раку — кумулятивний CRC ризик ~15-30% за 30 років
+  від діагнозу PSC). Поточний діагноз КРР відсутній. Хронічне
+  ободове запалення керує колітом-асоційованою дисплазією та КРР через
+  inflammation-dysplasia-carcinoma послідовність, відмінну від спорадичного
+  КРР (часто виникає з flat dysplasia, мультифокально, важче виявити
+  стандартною білою ендоскопією). Спостережувальна колоноскопія з
+  хромоендоскопією або high-definition білою ендоскопією знижує
+  смертність від КРР у цій популяції. Prevention-persona RedFlag
+  (ратифікація §20, 2026-05-18, v0.3 пілот chronic-condition).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "inflammatory_bowel_disease_uc_diagnosis_ge_8y"
+      value: true
+    - finding: "inflammatory_bowel_disease_crohn_colitis_ge_8y"
+      value: true
+    - finding: "inflammatory_bowel_disease_with_primary_sclerosing_cholangitis"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+# §20 prevention extension — drives engine routing to PreventionPlan
+# when patient carries this RF and no confirmed Disease (KSS §20.2).
+risk_category: chronic_condition
+
+# Cancer being prevented: colorectal cancer (DIS-CRC). Long-standing IBD
+# with colonic involvement carries cumulative CRC risk increasing over
+# time (~2% at 10y, 8% at 20y, 18% at 30y in UC; comparable in Crohn-
+# colitis ≥1/3 colon involvement; ~15-30% at 30y in PSC-IBD).
+relevant_diseases:
+  - DIS-CRC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-COLON-2025
+  - SRC-ESMO-CRC-2024
+  - SRC-ESMO-COLON-2024
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.3 chronic-condition prevention pilot — IBD-associated CRC.
+  Prevention-persona RedFlag (CHARTER §3 amended 2026-05-18 Path A,
+  HCP-mediated). Fires when patient profile shows long-standing IBD
+  with colonic involvement AND no confirmed CRC. Engine routes to
+  PreventionPlan with 2 tracks: surveillance colonoscopy with
+  chromoendoscopy q1-2y per AGA/ECCO/NCCN
+  (IND-IBD-CRC-PREVENTION-CHROMOENDOSCOPY) as standard; routine q3-5y
+  colonoscopy (IND-IBD-CRC-PREVENTION-OBSERVATION) as alternative —
+  clinically below standard-of-care but included per §15.2 C4 and
+  CHARTER §11 patient-autonomy framing.
+
+  Evidence base:
+    - **AGA Clinical Practice Update on Surveillance and Management of
+      Dysplasia in IBD (2021):** Chromoendoscopy with targeted biopsies
+      preferred over white-light random biopsies. q1-3y surveillance
+      from 8-10y after IBD diagnosis (extension of colitis matters more
+      than duration), or from PSC diagnosis in PSC-IBD.
+    - **ECCO Guideline on IBD-associated CRC (2024):** Aligns with AGA;
+      additionally recommends high-definition white-light + virtual
+      chromoendoscopy (NBI, BLI) as alternative to dye-spray when
+      chromoendoscopy not available.
+    - **CRC risk in UC (Eaden meta-analysis JAMA 2001 + updated SR
+      cohorts):** cumulative 2% at 10y, 8% at 20y, 18% at 30y.
+    - **CRC risk in PSC-IBD:** ~15-30% lifetime, with onset 5-15 years
+      earlier than non-PSC IBD. Annual colonoscopy from PSC diagnosis
+      regardless of IBD duration.
+    - **Crohn-colitis CRC risk:** comparable to UC when ≥1/3 of colon
+      involved; lower for ileal-only Crohn (~background population
+      risk).
+
+  PSC-IBD subgroup separately captured in RF-PSC-CHOLANGIOCARCINOMA-
+  PREVENTION (this pilot). Patients with PSC-IBD fire BOTH RFs and
+  receive overlapping but separately-anchored PreventionPlan tracks
+  (CRC-prevention via this RF, cholangiocarcinoma-prevention via the
+  PSC RF) — engine deduplication respects the disease-anchor split.
+
+  Dysplasia management: any dysplasia on biopsy → expert GI pathologist
+  review; visible polypoid lesions amenable to endoscopic resection
+  (DALM = dysplasia-associated lesion or mass that can be completely
+  resected) routes to endoscopic management + intensified surveillance;
+  flat invisible high-grade dysplasia or multifocal LGD → discussion of
+  proctocolectomy.
+
+  Sources TODO: AGA Clinical Practice Update on Surveillance and
+  Management of Dysplasia in IBD (Murthy et al. Gastroenterology 2021)
+  as a new SRC entity; ECCO Guidelines on Therapeutics in Inflammatory
+  Bowel Disease (2024) as a new SRC entity.
+
+  This is a STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1
+  dev-mode exemption.
+notes_ua: >
+  v0.3 пілот prevention chronic-condition — IBD-асоційований CRC.
+  Prevention-persona RedFlag (CHARTER §3 поправка 2026-05-18, Path A
+  HCP-mediated). Спрацьовує коли профіль пацієнта показує тривале IBD
+  з ободовим ураженням ТА відсутній підтверджений діагноз КРР. Engine
+  маршрутизує до PreventionPlan з 2 треками: спостережувальна
+  колоноскопія з хромоендоскопією q1-2 роки per AGA/ECCO/NCCN
+  (IND-IBD-CRC-PREVENTION-CHROMOENDOSCOPY) як стандарт; рутинна
+  колоноскопія q3-5 роки (IND-IBD-CRC-PREVENTION-OBSERVATION) як
+  альтернатива — клінічно нижче standard-of-care, але включена per
+  §15.2 C4 та CHARTER §11 framing автономії пацієнта.
+
+  Доказова база:
+    - **AGA Clinical Practice Update on Surveillance and Management of
+      Dysplasia in IBD (2021):** Хромоендоскопія з цільовими біопсіями
+      переважно над white-light random біопсіями. q1-3y спостереження з
+      8-10 років після IBD діагнозу.
+    - **ECCO Guideline on IBD-associated CRC (2024).**
+    - **CRC ризик у UC:** cumulative 2% at 10y, 8% at 20y, 18% at 30y.
+    - **CRC ризик у PSC-IBD:** ~15-30% lifetime, з онсетом 5-15 років
+      раніше, ніж не-PSC IBD. Щорічна колоноскопія від PSC діагнозу
+      незалежно від IBD тривалості.
+
+  PSC-IBD subgroup окремо охоплений у RF-PSC-CHOLANGIOCARCINOMA-
+  PREVENTION (цей пілот). Пацієнти з PSC-IBD спрацьовують ОБИДВІ RFs.
+
+  Управління дисплазією: будь-яка дисплазія на біопсії → експертний
+  GI-патолог огляд; видимі поліповидні ураження piддaються ендоскопічній
+  резекції (DALM) маршрутизують до ендоскопічного управління +
+  посиленого спостереження; flat invisible high-grade dysplasia або
+  multifocal LGD → обговорення проктоколектомії.
+
+  TODO джерела: AGA Clinical Practice Update on Surveillance and
+  Management of Dysplasia in IBD (2021) та ECCO Guidelines (2024) як
+  нові SRC entities.
+
+  Це STUB, очікує підпис двох Clinical Co-Lead за §6.1 dev-mode
+  exemption.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_3_chronic_condition_pilot
+draft_revision: 1
+
+draft: true

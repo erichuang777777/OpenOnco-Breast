@@ -1,0 +1,23 @@
+id: BIO-RET-GERMLINE
+names:
+  preferred: "RET germline pathogenic variant"
+  ukrainian: "RET germline патогенний варіант"
+  english: "RET germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: RET
+  gene_hugo_id: HGNC:9967
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+sources:
+  - SRC-NCCN-THYROID-2025
+last_reviewed: "2026-05-18"
+notes: "RET germline — drives MEN2A, MEN2B, and Familial Medullary Thyroid Carcinoma (FMTC). Medullary thyroid carcinoma (MTC) near-100% penetrance; pheochromocytoma in MEN2A/B; primary hyperparathyroidism in MEN2A; marfanoid habitus + mucosal neuromas in MEN2B. Prophylactic thyroidectomy timing keyed to specific codon variant (ATA risk tiers). STUB pending two-Co-Lead signoff."
+notes_ua: "RET germline — драйвер MEN2A, MEN2B, FMTC. Час профілактичної тиреоїдектомії визначається конкретним кодоном (ATA рівні ризику)."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v04_germline_batch2
+draft_revision: 1

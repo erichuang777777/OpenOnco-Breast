@@ -1,0 +1,155 @@
+id: IND-MEN1-CARRIER-SURVEILLANCE
+plan_track: standard
+intent: surveillance
+
+applicable_to:
+  disease_id: DIS-PNET
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-MEN1-CONFIRMED-CARRIER
+
+# No drug regimen — structured multi-organ endocrine surveillance.
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: >-
+    Structured multi-organ MEN1 surveillance per Thakker JCEM 2012 / ESE
+    2024 detects parathyroid disease at the biochemical-only stage
+    (asymptomatic hypercalcemia), pituitary adenomas before
+    mass-effect / hormonal-syndrome presentation, and GEP-NETs at smaller
+    sizes amenable to enucleation rather than Whipple. Earliest-onset
+    tumors (primary hyperparathyroidism, median age 20-25) are reliably
+    captured by annual PTH/Ca biochemistry. GEP-NET surveillance with
+    abdominal MRI carries no radiation burden — important given lifelong
+    surveillance starting age 10.
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track confirmed-carrier surveillance pathway for individuals
+  with a documented germline MEN1 pathogenic variant. Protocol assumes
+  genetic counseling, panel testing, and variant classification are
+  already complete.
+
+  **Parathyroid (~95% lifetime, earliest tumor):** Serum PTH + ionized
+  calcium (or albumin-corrected total calcium) q1y starting age 5.
+  Multi-glandular hyperplasia (not solitary adenoma) is the rule;
+  surgical strategy when indicated is subtotal (3.5-gland) parathyroidectomy
+  or total parathyroidectomy + autotransplantation, NOT single-adenoma
+  excision (high recurrence).
+
+  **Pituitary (~30-40%):** Prolactin + IGF-1 q1y from age 5. Pituitary
+  MRI q3y starting age 5 (asymptomatic baseline) — earlier or more
+  frequent if biochemistry abnormal or visual symptoms develop.
+  Prolactinoma is the most common MEN1 pituitary tumor and responds to
+  dopamine agonists; surgery reserved for refractory / aggressive cases.
+
+  **GEP-NET (~30-80% lifetime, dominant mortality driver):**
+  Chromogranin-A q1y starting age 10 (specificity limited by PPI use,
+  atrophic gastritis, renal impairment — interpret cautiously). Fasting
+  gastrin q1y (high if Zollinger-Ellison / gastrinoma). Abdominal MRI
+  q1y starting age 10 — preferred over CT for cumulative-radiation
+  reasons. EUS adjunct for sub-cm pancreatic lesion characterization.
+  68Ga-DOTATATE PET reserved for staging confirmed lesions, not routine
+  surveillance.
+
+  **Adrenocortical (~20-40%, mostly non-functioning):** Captured
+  incidentally on abdominal MRI surveillance — no dedicated biochemistry
+  unless functional features (Cushing, virilization, aldosteronism)
+  emerge clinically.
+
+  **Bronchial / thymic NET (~5-10%, thymic more aggressive in male
+  carriers):** Chest CT q1-3y from age 20 (thymic NET in male MEN1
+  carriers can be aggressive — argued for shorter interval in some
+  programs). Optional, individualized.
+
+  **Cascade testing:** Confirmed carrier status mandates cascade testing
+  offer to all first-degree relatives. Counseling responsibility
+  surfaced at every surveillance visit.
+
+  Per CHARTER §11 patient-autonomy framing: surveillance intervals are
+  shared-decision-making with the patient and family. Pediatric-onset
+  surveillance (PTH/Ca and prolactin from age 5) requires age-appropriate
+  patient and parental counseling.
+
+rationale_ua: >
+  Стандартний-трекова Indication для confirmed-carrier MEN1 surveillance.
+  Протокол per Thakker JCEM 2012 / ESE 2024:
+
+  **Паращитоподібні (~95% lifetime, найраніша пухлина):** PTH +
+  іонізований кальцій q1y з 5 років. Multi-glandular hyperplasia — норма;
+  хірургія = subtotal (3.5-gland) паратиреоїдектомія або total + auto-
+  transplantation, НЕ single-adenoma excision (висока рецидивність).
+
+  **Гіпофіз (~30-40%):** Пролактин + IGF-1 q1y з 5 років. Гіпофізарна
+  МРТ q3y з 5 років. Пролактинома — найчастіша; реагує на дофамінові
+  агоністи.
+
+  **GEP-NET (~30-80%, основний драйвер смертності):** Хромогранін-А +
+  fasting gastrin q1y з 10 років. Абдомінальна МРТ q1y з 10 років
+  (preferred over CT через cumulative radiation). EUS adjunct для
+  sub-cm pancreatic lesion. 68Ga-DOTATATE PET — для confirmed lesions,
+  не routine surveillance.
+
+  **Adrenocortical (~20-40%):** Виявлення incidentally на abdominal MRI.
+
+  **Bronchial / thymic NET (~5-10%):** Chest CT q1-3y з 20 років (thymic
+  NET у чоловіків-носіїв часто aggressive).
+
+  **Cascade тестування:** Mandates пропонування тестування first-degree
+  родичам.
+
+  Per CHARTER §11 framing автономії пацієнта; педіатрична-вікова
+  surveillance потребує age-appropriate counseling.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02b_confirmed_carriers_additional
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-NET-2025
+    position: supports
+    relevant_quote_paraphrase: >-
+      "Confirmed MEN1 carriers should enter structured multi-organ
+      endocrine surveillance: annual PTH and ionized calcium from
+      childhood, periodic pituitary MRI, and annual GEP-NET surveillance
+      with cross-sectional imaging from age 10."
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не використовувати single-adenoma parathyroidectomy при MEN1 — multi-glandular hyperplasia вимагає subtotal або total + autotransplant."
+  - "Не використовувати CT як primary GEP-NET surveillance modality — cumulative radiation burden lifelong; МРТ preferred."
+  - "Не пропускати pediatric biochemistry (PTH/Ca, prolactin з 5 років) — primary hyperparathyroidism часто presents у teen years."
+  - "Не intepretувати chromogranin-A ізольовано — PPI, atrophic gastritis, renal impairment підвищують false-positive rate."
+  - "Не пропускати cascade-тестування first-degree родичів — кожен візит має документувати family testing status."
+
+do_not_do_en:
+  - "Do not perform single-adenoma parathyroidectomy in MEN1 — multi-glandular hyperplasia requires subtotal or total + autotransplant."
+  - "Do not use CT as the primary GEP-NET surveillance modality — lifelong cumulative radiation burden; MRI preferred."
+  - "Do not skip pediatric biochemistry (PTH/Ca, prolactin from age 5) — primary hyperparathyroidism often presents in teen years."
+  - "Do not interpret chromogranin-A in isolation — PPI use, atrophic gastritis, and renal impairment raise false-positive rate."
+  - "Do not skip cascade testing of first-degree relatives — every surveillance visit should document family testing status."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.2-B confirmed-carrier surveillance pathway (MEN1). Two-Clinical-Co-Lead signoff queued. Sibling — IND-MEN1-CARRIER-INTENSIFIED (aggressive plan_track)."

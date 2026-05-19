@@ -1,0 +1,148 @@
+id: IND-IATROGENIC-ANTHRACYCLINE-CARDIO-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-AML
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-ANTHRACYCLINE-CARDIO-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: "ASCO + COG-LTFU + ESC + Childhood Cancer Survivor Study (CCSS) cardio-surveillance pathways detect asymptomatic LV dysfunction at GLS / LVEF decline phase, enabling early ACE inhibitor / beta-blocker / SGLT2-i initiation that can stabilize or reverse early cardiotoxicity. Outcomes substantially better with surveillance-detected early-stage cardiotoxicity vs. late presentation with symptomatic HF. Pediatric cancer survivors with anthracycline exposure have 5-15x risk of HF vs. siblings — lifelong surveillance warranted."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track surveillance for cumulative anthracycline exposure
+  ≥250 mg/m². Components per ASCO Cardio-Oncology Survivorship +
+  COG-LTFU + ESC 2022 Cardio-Oncology Guidelines:
+
+  **(1) Baseline echocardiogram** within 6-12 months of completing
+  anthracycline therapy. Document LVEF + global longitudinal strain
+  (GLS) + diastolic function.
+
+  **(2) Serial echocardiogram cadence by risk stratum** —
+  - Standard risk (cumulative dose 250-400 mg/m², no concurrent
+    trastuzumab, no chest RT, adult, no comorbidities):
+    echo q5y lifelong starting year 2 post-completion
+  - Higher risk (cumulative dose ≥400 mg/m², concurrent trastuzumab,
+    concurrent/prior chest RT, age <18 at exposure OR ≥65 at exposure,
+    hypertension/diabetes/CAD): echo q1-2y lifelong
+  - GLS surveillance preferred over isolated LVEF — earlier change
+    detection
+  - BNP / NT-proBNP can complement echo as biochemical signal
+
+  **(3) Symptom-prompted evaluation** — Dyspnea on exertion, orthopnea,
+  paroxysmal nocturnal dyspnea, lower-extremity edema, fatigue out of
+  proportion: stat echo + BNP + cardiology referral.
+
+  **(4) Early intervention if GLS / LVEF decline** —
+  - GLS decline >15% from baseline OR LVEF decline >10% (absolute) AND
+    below normal (LVEF <50%): cardiology referral
+  - Initiate ACE inhibitor (enalapril, lisinopril) ± beta-blocker
+    (carvedilol, bisoprolol) per cardiology
+  - SGLT2 inhibitor (dapagliflozin, empagliflozin) per emerging evidence
+    for cancer-therapy-related cardiac dysfunction
+  - Consider HF specialist consultation
+
+  **(5) Cardioprotective lifestyle counseling** —
+  - Avoid smoking (compounds CV risk)
+  - Hypertension + diabetes + lipid control per primary care
+  - Physical activity per HHS guidelines (cardioprotective + cancer-
+    survivor benefit)
+  - Avoid recreational/excess alcohol
+
+  **(6) Pregnancy planning counseling** for women of reproductive age —
+  pregnancy hemodynamic load can unmask subclinical cardiotoxicity;
+  pre-conception cardiology + cardio-OB referral.
+
+  **(7) Concurrent t-AML surveillance** per RF-IATROGENIC-TOPO2-TAML-
+  PREVENTION — engine fires both; clinical workflow co-manages cardio
+  + hematologic surveillance.
+
+rationale_ua: >
+  Стандартний-трек surveillance для cumulative anthracycline exposure
+  ≥250 мг/м². Components per ASCO Cardio-Oncology + COG-LTFU + ESC 2022:
+
+  **(1) Baseline echocardiogram** протягом 6-12 місяців completing
+  anthracycline therapy. Document LVEF + GLS + diastolic function.
+
+  **(2) Serial echocardiogram cadence by risk stratum** —
+  - Standard risk: echo q5y lifelong starting year 2 post-completion
+  - Higher risk (≥400 mg/m², trastuzumab, chest RT, age <18 або ≥65,
+    HTN/DM/CAD): echo q1-2y lifelong
+  - GLS surveillance preferred over isolated LVEF
+  - BNP / NT-proBNP can complement echo
+
+  **(3) Symptom-prompted evaluation** — Dyspnea on exertion, orthopnea,
+  PND, edema, fatigue: stat echo + BNP + cardiology referral.
+
+  **(4) Early intervention при GLS / LVEF decline** —
+  - GLS decline >15% from baseline АБО LVEF decline >10% absolute з
+    LVEF <50%: cardiology referral
+  - Initiate ACE inhibitor (enalapril, lisinopril) ± beta-blocker
+    (carvedilol, bisoprolol)
+  - SGLT2 inhibitor (dapagliflozin, empagliflozin)
+
+  **(5) Cardioprotective lifestyle counseling** — Smoking cessation,
+  HTN/DM/lipid control, physical activity, alcohol moderation.
+
+  **(6) Pregnancy planning counseling** — pre-conception cardiology +
+  cardio-OB referral.
+
+  **(7) Concurrent t-AML surveillance** per RF-IATROGENIC-TOPO2-TAML-
+  PREVENTION — engine fires both; clinical workflow co-manages.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-AML-2025
+    position: context
+  - source_id: SRC-NCCN-BREAST-2025
+    position: supports
+  - source_id: SRC-NCCN-BCELL-2025
+    position: supports
+
+do_not_do:
+  - "Не покладатися лише на LVEF без GLS — GLS катує subclinical dysfunction earlier."
+  - "Не пропускати baseline echo — без baseline, decline cannot be quantified."
+  - "Не використовувати дорослий surveillance cadence для pediatric cancer survivors — pediatric ACS lifetime HF risk substantially higher; COG-LTFU mandates more frequent surveillance."
+  - "Не призначати pregnancy без pre-conception cardio assessment у women з anthracycline history."
+  - "Не пропускати t-AML surveillance — anthracyclines є topo2 inhibitors; both surveillance dimensions необхідні."
+  - "Не вважати asymptomatic LV dysfunction 'wait + watch' — early ACE inhibitor + beta-blocker може stabilize або reverse."
+
+do_not_do_en:
+  - "Do not rely on LVEF alone without GLS — GLS catches subclinical dysfunction earlier."
+  - "Do not skip the baseline echo — without baseline, decline cannot be quantified."
+  - "Do not use the adult surveillance cadence for pediatric cancer survivors — pediatric ACS lifetime HF risk is substantially higher; COG-LTFU mandates more frequent surveillance."
+  - "Do not approve pregnancy without pre-conception cardio assessment in women with anthracycline history."
+  - "Do not skip t-AML surveillance — anthracyclines are topo2 inhibitors; both surveillance dimensions are required."
+  - "Do not treat asymptomatic LV dysfunction as 'wait + watch' — early ACE inhibitor + beta-blocker can stabilize or reverse it."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 iatrogenic prevention pilot (anthracycline cardiotoxicity). Two-Clinical-Co-Lead signoff queued. Co-fires with RF-IATROGENIC-TOPO2-TAML-PREVENTION for t-AML surveillance overlap."

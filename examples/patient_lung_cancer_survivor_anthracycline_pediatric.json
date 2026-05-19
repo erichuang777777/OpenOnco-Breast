@@ -1,0 +1,16 @@
+{
+  "patient_id": "SURVIVOR-PED-ALL-001",
+  "comment": "25yo male, long-term survivor of childhood B-cell ALL diagnosed age 5, completed curative-intent therapy at age 8 (induction + consolidation per legacy COG protocol: cumulative doxorubicin ~280 mg/m² + cyclophosphamide + cranial radiotherapy 18 Gy for CNS prophylaxis era-typical). Now 17 years post-treatment, no personal cancer recurrence, no current malignancy or heart failure. Multiple iatrogenic late-effects RFs expected to fire: (1) RF-IATROGENIC-ANTHRACYCLINE-LATE-CARDIO-PREVENTION via cumulative ≥250 mg/m² + ≥5y post-treatment + pediatric-exposure branches → COG-LTFU echocardiogram cadence q2-5y; (2) RF-IATROGENIC-PRIOR-RADIATION-PREVENTION via ≥5y + childhood-cancer-RT branches → second-primary surveillance for radiation-induced thyroid / breast / CNS / sarcoma malignancies. Validates v0.3 multi-RF stacking on pediatric-survivor cohort. Note: original task title mentions 'lung cancer survivor' but childhood ALL is the underlying cohort — title preserved.",
+  "biomarkers": {},
+  "demographics": {"age": 25, "sex": "male", "ecog": 0},
+  "findings": {
+    "survivor_5y_post_anthracycline_cumulative_ge_250_mg_m2": true,
+    "survivor_pediatric_anthracycline_late_effect": true,
+    "history_therapeutic_radiation_ge_5y_ago": true,
+    "history_childhood_cancer_radiotherapy": true,
+    "Childhood B-cell ALL diagnosed age 5, completed therapy age 8 (17y post-treatment)": true,
+    "Cumulative doxorubicin ~280 mg/m^2 + cyclophosphamide + cranial RT 18 Gy CNS prophylaxis": true,
+    "No personal cancer recurrence": true,
+    "No current heart failure or second primary malignancy": true
+  }
+}

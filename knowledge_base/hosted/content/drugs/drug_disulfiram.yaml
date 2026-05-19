@@ -1,0 +1,96 @@
+id: DRUG-DISULFIRAM
+names:
+  preferred: "Disulfiram"
+  ukrainian: "Дисульфірам"
+  english: "Disulfiram"
+  brand_names: ["Antabuse", "Esperal"]
+atc_code: N07BB01
+rxnorm_id: "3638"
+drug_class: "Aldehyde dehydrogenase (ALDH) inhibitor"
+mechanism: >
+  Irreversibly inhibits hepatic aldehyde dehydrogenase, causing
+  acetaldehyde accumulation when alcohol is ingested. This produces
+  the "disulfiram-alcohol reaction" — flushing, nausea/vomiting,
+  tachycardia, hypotension, dyspnea, headache — intended to deter
+  drinking via aversion. Effective only with motivated, adherent
+  patients in supervised settings. FDA-approved AUD pharmacotherapy
+  (third-line after naltrexone and acamprosate).
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 1951
+  ema:
+    approved: true
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Registered in Ukraine (Esperal implants historically; oral tablets). Not on НСЗУ AUD package — out-of-pocket."
+typical_dosing: >
+  PO: 500 mg once daily × 1-2 weeks, then 250 mg once daily for
+  maintenance (range 125-500 mg). Patient must be alcohol-free
+  ≥12 h before initiation (and informed of disulfiram-alcohol
+  reaction). Supervised administration substantially improves outcomes
+  vs. self-administered.
+formulations:
+  - "Tablet 250 mg, 500 mg"
+
+absolute_contraindications:
+  - "Recent alcohol ingestion (within 12 h)"
+  - "Severe cardiovascular disease, recent MI, severe coronary artery disease"
+  - "Psychosis (current or history)"
+  - "Use of metronidazole, ritonavir, paraldehyde (disulfiram-like reaction)"
+  - "Hypersensitivity to disulfiram or thiuram derivatives (rubber industry exposure)"
+  - "Severe hepatic impairment"
+black_box_warnings:
+  - "Severe (potentially fatal) disulfiram-alcohol reaction — never administer to a patient in alcohol intoxication or without their full knowledge and consent"
+major_interactions:
+  - "Alcohol (any source — including OTC cough syrups, mouthwashes, sauces, perfumes via skin absorption) — disulfiram-alcohol reaction"
+  - "Metronidazole — disulfiram-like reaction + CNS toxicity (avoid)"
+  - "Warfarin — increased INR (CYP2C9 inhibition)"
+  - "Phenytoin — increased levels"
+  - "Isoniazid — additive CNS toxicity"
+  - "Theophylline — increased levels"
+  - "Tricyclic antidepressants — additive CNS effects"
+  - "Diazepam, chlordiazepoxide — increased levels"
+common_adverse_events:
+  - "Drowsiness, fatigue (~10%)"
+  - "Headache (~5-10%)"
+  - "Metallic / garlic-like aftertaste (~5-10%)"
+  - "Dermatitis, acneiform rash (~5%)"
+  - "Decreased libido (~5%)"
+serious_adverse_events:
+  - "Severe disulfiram-alcohol reaction — hypotension, arrhythmia, cardiovascular collapse, fatal"
+  - "Hepatotoxicity — idiosyncratic fulminant hepatic failure (rare; LFT monitoring at baseline and q2-4 weeks initially)"
+  - "Optic neuritis"
+  - "Peripheral neuropathy"
+  - "Psychosis (rare)"
+
+pharmacology: {half_life_hours: 60, clearance: "Hepatic — reduced to diethyldithiocarbamate; renal and biliary excretion. Effects persist 14 days after last dose"}
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. Third-line AUD pharmacotherapy
+  (after naltrexone and acamprosate). Aversive mechanism — works only
+  with motivated patients; supervised administration improves outcomes.
+  CV contraindications limit use. Alcohol cessation is a cancer-
+  prevention intervention (HCC, CRC, esophageal SCC, breast). Source
+  cited is closest in-KB until NIAAA/APA AUD sources land in source-stub
+  workstream.
+
+notes_ua: >
+  Дисульфірам — третя лінія фармакотерапії AUD (після налтрексону і
+  акампросату). Аверсивний механізм — працює лише з мотивованими
+  пацієнтами; супервізоване приймання покращує результати. СС
+  протипоказання обмежують застосування.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_drugs_batch2
+draft_revision: 1

@@ -1,0 +1,23 @@
+id: BIO-PTCH1-GERMLINE
+names:
+  preferred: "PTCH1 germline pathogenic variant"
+  ukrainian: "PTCH1 germline патогенний варіант"
+  english: "PTCH1 germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: PTCH1
+  gene_hugo_id: HGNC:9585
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+related_biomarkers: [BIO-PTCH1]
+sources: [SRC-NCCN-SKIN-2025]
+last_reviewed: "2026-05-18"
+notes: "PTCH1 germline — drives Gorlin / Nevoid Basal Cell Carcinoma Syndrome (NBCCS). Hedgehog-pathway dysregulation. Hallmarks: multiple BCCs (often early-onset, sun-protected areas), odontogenic keratocysts of jaw, palmar/plantar pits, macrocephaly, calcified falx cerebri, skeletal anomalies (bifid ribs), childhood medulloblastoma (SHH-subtype, ~5%). AVOID therapeutic radiation when feasible — radiation drives BCC formation. Smoothened inhibitors (vismodegib, sonidegib) for advanced BCC. STUB pending two-Co-Lead signoff."
+notes_ua: "PTCH1 germline — драйвер Gorlin / NBCCS. Множинні BCC, кератоцистні одонтогенні пухлини, медулобластома (SHH). УНИКАТИ променевої терапії. Smoothened-інгібітори (вісмодегіб)."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_germline_batch3
+draft_revision: 1

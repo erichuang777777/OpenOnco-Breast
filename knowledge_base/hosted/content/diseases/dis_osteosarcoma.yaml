@@ -1,0 +1,165 @@
+id: DIS-OSTEOSARCOMA
+names:
+  preferred: "Osteosarcoma"
+  ukrainian: "Остеосаркома"
+  english: "Osteosarcoma"
+  synonyms:
+    - "Osteogenic sarcoma"
+    - "OS"
+    - "Conventional osteosarcoma"
+
+codes:
+  icd_o_3_morphology: "9180/3"  # Osteosarcoma NOS
+  icd_o_3_topography: ["C40", "C41"]  # bones of limbs / other bones
+  icd_10: "C40, C41"
+  who_classification: "WHO Soft Tissue and Bone Tumours 5th ed (2020): Osteosarcoma — conventional (high-grade intramedullary), telangiectatic, small cell, low-grade central, parosteal, periosteal, high-grade surface, extraskeletal"
+
+archetype: stage_driven
+oncotree_code: OS
+lineage: "sarcoma"
+
+etiological_factors:
+  - "Sporadic (most)"
+  - "Li-Fraumeni syndrome (germline TP53) — second-most common cancer in Li-Fraumeni; lifetime osteosarcoma risk ~15%"
+  - "Hereditary retinoblastoma (germline RB1) — second-primary osteosarcoma risk; especially after prior RT for retinoblastoma"
+  - "Rothmund-Thomson syndrome (germline RECQL4) — pediatric osteosarcoma predisposition"
+  - "Werner syndrome (germline WRN) — adult osteosarcoma in 4th–5th decade"
+  - "Bloom syndrome (germline BLM) — pediatric osteosarcoma"
+  - "Paget disease of bone (older adults) — secondary osteosarcoma in pagetic bone; markedly elevated risk over background"
+  - "Prior therapeutic radiation — secondary post-RT osteosarcoma (decades latency)"
+  - "Chronic osteomyelitis, fibrous dysplasia, bone infarcts (rare predisposing settings)"
+
+related_diseases:
+  - DIS-CHONDROSARCOMA         # adjacent bone-sarcoma differential
+  - DIS-SOFT-TISSUE-SARCOMA    # extraskeletal osteosarcoma overlaps STS pathways
+
+key_biomarkers:
+  - BIO-TP53-MUTATION          # germline TP53 in Li-Fraumeni; somatic TP53 alterations in most sporadic OS
+  - BIO-RB1                    # germline RB1 retinoblastoma carriers; somatic RB1 loss in most sporadic OS
+
+epidemiology:
+  global_incidence: "~3–4 per million children + adolescents/year; ~1–2 per million adults/year; bimodal age distribution (adolescent peak 10–20y; secondary peak >60y largely Paget-associated)"
+  primary_site_distribution: "Metaphysis of long bones — distal femur, proximal tibia, proximal humerus (~80% of conventional OS); axial / craniofacial sites (~10–15%; older adults)"
+  five_year_survival: "Localized resectable disease ~60–70% with multi-agent chemo + surgery; metastatic at diagnosis (~20% of cases) ~20–30%; relapsed disease <30%"
+
+sources:
+  - SRC-NCCN-BONE-SARCOMA           # NCCN Bone Cancer guideline (osteosarcoma chapter)
+  - SRC-ESMO-BONE-SARCOMA           # ESMO Bone Sarcoma guideline
+  - SRC-NCCN-PEDIATRIC-SARCOMA      # NCCN Pediatric (covers childhood osteosarcoma trials)
+
+last_reviewed: "2026-05-19"
+reviewers: []
+reviewer_signoffs: 0
+
+metadata:
+  proposal_status: partial
+  awaiting_proposal: >
+    Full multi-agent neoadjuvant / adjuvant chemo Indications
+    (MAP regimen: high-dose methotrexate + doxorubicin + cisplatin per
+    EURAMOS-1; AOST0331 ifosfamide / etoposide intensification in poor
+    responders) referenced in prose pending guideline-anchored
+    Indication authoring. Surgical (limb-salvage vs amputation),
+    radiation, and second-line / metastatic-disease pathways
+    (regorafenib, sorafenib, cabozantinib, mifamurtide where licensed)
+    pending. Germline TP53 + RB1 cascade cross-references prevention-
+    track v0.2-B Li-Fraumeni + retinoblastoma-survivor surveillance
+    Indications.
+
+notes: >
+  Osteosarcoma is the most common primary malignant bone tumor in
+  children + adolescents. Bimodal age distribution: adolescent
+  growth-spurt peak (10–20y; long-bone metaphyses) and elderly
+  secondary peak (>60y; predominantly Paget disease-associated or
+  post-radiation).
+
+  Standard-of-care multi-modal treatment (full Indications pending):
+  neoadjuvant chemotherapy → en-bloc surgical resection (limb-salvage
+  preferred; amputation reserved for unresectable / vascular-bundle
+  invasion) → adjuvant chemotherapy. MAP regimen (high-dose
+  methotrexate, doxorubicin, cisplatin) is the global standard from
+  EURAMOS-1 (good-responder arm). Histological necrosis ≥90% at
+  resection predicts favorable outcome; poor responders (<90% necrosis)
+  do NOT benefit from intensification per EURAMOS-1.
+
+  Genetic relationships drive prevention-workstream surveillance:
+  - Li-Fraumeni (germline TP53): osteosarcoma is the second-most
+    common cancer in this syndrome; Toronto-protocol annual
+    whole-body MRI + bone surveillance recommended. v0.2-B pilot.
+  - Hereditary retinoblastoma (germline RB1) survivors: lifetime
+    osteosarcoma risk markedly elevated, particularly within prior
+    RT field. Long-term surveillance post-retinoblastoma childhood
+    treatment required. v0.2-B pilot.
+  - Paget disease of bone: ~1% of Paget patients develop secondary
+    osteosarcoma; aggressive presentation in older adults; treated
+    differently from primary adolescent OS due to comorbidity and
+    histology (pagetic OS often shows poorer chemo response).
+
+  Histological subtypes shape treatment intensity:
+  - Conventional high-grade intramedullary (~80%) — full MAP regimen.
+  - Low-grade central (~1–2%) and parosteal (~5%) — surgery alone may
+    suffice for low-grade variants without high-grade dedifferentiation.
+  - Telangiectatic (~3%) and small-cell (rare) — same MAP intensity
+    as conventional.
+  - Extraskeletal osteosarcoma — treated more like soft-tissue sarcoma.
+
+  Second-line / metastatic: limited evidence; regorafenib (REGOBONE),
+  sorafenib, cabozantinib (CABONE — phase 2 ORR ~12%), mifamurtide
+  (EMA-approved adjuvant in EU + UA for localized non-metastatic
+  osteosarcoma <30y as part of front-line, with chemo).
+notes_ua: |
+  Остеосаркома — найпоширеніша первинна злоякісна пухлина кістки у
+  дітей та підлітків. Бімодальний віковий розподіл: підлітковий пік
+  росту (10–20 років; метафізи довгих кісток) і вторинний пік у
+  старшому віці (>60 років; переважно асоційований із хворобою
+  Педжета або як вторинна постпроменева пухлина).
+
+  Стандарт мультимодального лікування (повний набір Indications
+  очікується): неоад'ювантна хіміотерапія → en-bloc хірургічна
+  резекція (перевага кінцівко-збережного підходу; ампутація — для
+  нерезектабельних випадків / інвазії судинно-нервового пучка) →
+  ад'ювантна хіміотерапія. Режим MAP (високодозний метотрексат
+  (methotrexate), доксорубіцин (doxorubicin), цисплатин (cisplatin)) —
+  глобальний стандарт за результатами EURAMOS-1 (плече з добрими
+  респондерами). Гістологічний некроз ≥90% при резекції є
+  передбачувачем сприятливого результату; пацієнти з поганою
+  відповіддю (<90% некрозу) НЕ отримують переваги від інтенсифікації
+  за даними EURAMOS-1.
+
+  Генетичні зв'язки визначають профілактичні програми спостереження:
+  - Li-Fraumeni (гермінальний TP53): остеосаркома — другий за
+    частотою рак у цьому синдромі; рекомендоване щорічне МРТ всього
+    тіла + кісткове спостереження за Торонтським протоколом.
+    Пілот v0.2-B.
+  - Спадкова ретинобластома (гермінальний RB1), реконвалесценти:
+    ризик остеосаркоми пожиттєво значно підвищений, особливо в межах
+    попереднього поля променевої терапії. Необхідне довгострокове
+    спостереження після дитячого лікування ретинобластоми.
+    Пілот v0.2-B.
+  - Хвороба Педжета кістки: ~1% пацієнтів розвивають вторинну
+    остеосаркому; агресивний перебіг у старших дорослих; лікування
+    відрізняється від первинної підліткової OS через коморбідність
+    та гістологічні особливості (педжетівська OS часто демонструє
+    гіршу відповідь на хіміотерапію).
+
+  Гістологічні підтипи визначають інтенсивність терапії:
+  - Конвенційна високого ступеня інтрамедулярна (~80%) — повний MAP.
+  - Низького ступеня центральна (~1–2%) та парастальна (~5%) —
+    самостійна хірургія може бути достатньою для низько-злоякісних
+    варіантів без високозлоякісної дедиференціації.
+  - Телеангіектатична (~3%) та дрібноклітинна (рідко) — інтенсивність
+    MAP як у конвенційної.
+  - Екстраскелетна остеосаркома — лікується ближче до сарком м'яких
+    тканин.
+
+  Друга лінія / метастатична хвороба: обмежена доказова база;
+  регорафеніб (regorafenib, REGOBONE), сорафеніб (sorafenib),
+  кабозантиніб (cabozantinib, CABONE — фаза 2 ORR ~12%),
+  міфамуртид (mifamurtide, схвалений EMA та зареєстрований в Україні)
+  як ад'ювантний при локалізованій неметастатичній остеосаркомі у
+  пацієнтів <30 років у складі першої лінії з хіміотерапією.
+
+review_status: pending_clinical_signoff
+drafted_by: claude_extraction
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_ua_01
+draft_revision: 1

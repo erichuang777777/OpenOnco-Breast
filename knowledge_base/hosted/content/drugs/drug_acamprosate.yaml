@@ -1,0 +1,87 @@
+id: DRUG-ACAMPROSATE
+names:
+  preferred: "Acamprosate"
+  ukrainian: "Акампросат"
+  english: "Acamprosate calcium"
+  brand_names: ["Campral"]
+atc_code: N07BB03
+rxnorm_id: "1118"
+drug_class: "Glutamate (NMDA) and GABA modulator"
+mechanism: >
+  Synthetic taurine analog with mixed action on NMDA glutamate receptors
+  (modulator) and GABAergic neurotransmission. Restores glutamatergic
+  excitatory / GABAergic inhibitory balance disrupted by chronic alcohol
+  use. Used to maintain abstinence in alcohol use disorder (AUD) after
+  successful detoxification. First-line FDA-approved AUD pharmacotherapy
+  alongside naltrexone and disulfiram. No effect on intoxication or
+  withdrawal — purely abstinence maintenance.
+
+regulatory_status:
+  fda:
+    approved: true
+    first_approval_year: 2004
+  ema:
+    approved: true
+    first_approval_year: 1989
+  ukraine_registration:
+    registered: true
+    registration_number: null
+    reimbursed_nszu: false
+    reimbursement_indications: []
+    last_verified: "2026-05-18"
+    notes: "Registered in Ukraine (Campral and generics). Not on НСЗУ AUD package — out-of-pocket."
+typical_dosing: >
+  PO: 666 mg (two 333 mg tablets) TID with meals (1998 mg total daily dose).
+  Lower body weight (<60 kg) or older patients: consider 333 mg TID.
+  Renal: CrCl 30-50 mL/min → 333 mg TID; CrCl <30 → contraindicated.
+  Initiate AFTER alcohol detoxification (typically within 5 days of last
+  drink) and continue ≥6-12 months even if relapses occur.
+formulations:
+  - "Delayed-release enteric-coated tablet 333 mg"
+
+absolute_contraindications:
+  - "Hypersensitivity to acamprosate"
+  - "Severe renal impairment (CrCl <30 mL/min)"
+common_adverse_events:
+  - "Diarrhea (~10-17%; dose-related, often improves over weeks)"
+  - "Nausea (~3-5%)"
+  - "Flatulence, abdominal pain (~3-5%)"
+  - "Insomnia (~6%)"
+  - "Asthenia, headache (~3-5%)"
+  - "Pruritus, sweating (~3%)"
+serious_adverse_events:
+  - "Suicidality (small signal in trials; mood monitoring recommended)"
+  - "Severe hypersensitivity (rare)"
+  - "Hyponatremia / electrolyte imbalance (rare)"
+
+major_interactions:
+  - "Minimal — acamprosate has no significant CYP-mediated metabolism and is renally excreted unchanged"
+  - "Can be safely combined with naltrexone (COMBINE trial: combo non-inferior to monotherapy; small evidence base)"
+  - "Disulfiram — no PK interaction; combination not commonly used"
+
+pharmacology: {half_life_hours: 22, clearance: "Renal — excreted unchanged; no CYP metabolism; not protein-bound"}
+
+sources:
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+notes: >
+  STUB — v0.2 prevention-workstream authoring; pending two-Clinical-Co-Lead
+  signoff per CHARTER §6.1 dev-mode. First-line AUD pharmacotherapy
+  for maintenance of abstinence. Particularly suited to patients with
+  hepatic impairment (renal excretion only). TID dosing limits
+  adherence — once-daily naltrexone often preferred unless renal-safety
+  considerations dictate otherwise. Alcohol cessation is a cancer-
+  prevention intervention (HCC, CRC, esophageal SCC, breast). Source
+  cited is closest in-KB until NIAAA/APA AUD sources land.
+
+notes_ua: >
+  Акампросат — перша лінія фармакотерапії AUD для підтримання
+  абстиненції. Особливо підходить пацієнтам з порушенням функції
+  печінки (тільки нирковий шлях виведення). Дозування TID обмежує
+  прихильність — за відсутності ниркових міркувань часто перевагу
+  віддають налтрексону.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v02_prevention_drugs_batch2
+draft_revision: 1

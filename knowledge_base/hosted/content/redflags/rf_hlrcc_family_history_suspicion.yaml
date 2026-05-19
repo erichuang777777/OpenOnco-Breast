@@ -1,0 +1,125 @@
+id: RF-HLRCC-FAMILY-HISTORY-SUSPICION
+definition: >-
+  Family pedigree suggestive of Hereditary Leiomyomatosis and Renal
+  Cell Cancer (HLRCC) syndrome, caused by germline pathogenic variants
+  in fumarate hydratase (FH): any of (a) a family member with a known
+  pathogenic FH gene variant; (b) family history of cutaneous
+  leiomyomas (pathognomonic for HLRCC) and/or multiple uterine
+  leiomyomas with early onset (under 30) in female relatives; (c)
+  family history of papillary type-2 / FH-deficient renal cell
+  carcinoma — aggressive HLRCC-associated histology characterised by
+  prominent eosinophilic nucleoli and perinucleolar halos (so-called
+  "viral inclusion-like" nucleoli). No current personal cancer
+  diagnosis in the individual at risk. Prevention-persona RedFlag
+  (§20 ratification 2026-05-18, v0.2-B hereditary pilot starter).
+definition_ua: >-
+  Сімейний родовід, що відповідає підозрі на синдром Hereditary
+  Leiomyomatosis and Renal Cell Cancer (HLRCC), спричинений germline
+  патогенними варіантами fumarate hydratase (FH): будь-яке з (а)
+  родич з відомим патогенним варіантом гена FH; (б) сімейна історія
+  шкірних лейоміом (патогномонічних для HLRCC) та/або множинних
+  маткових лейоміом з раннім початком (до 30 років) у родичок; (в)
+  сімейна історія папілярного type-2 / FH-дефіцитного нирково-
+  клітинного раку — агресивна HLRCC-асоційована гістологія,
+  характеризована prominenтними еозинофільними ядерцями та
+  перинуклеолярними halo (так звані "viral inclusion-like" ядерця).
+  Поточний особистий діагноз раку у пацієнта з ризиком відсутній.
+  Prevention-persona RedFlag (ратифікація §20, 2026-05-18, v0.2-B
+  пілот спадковості — starter).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "family_fh_known_pathogenic_variant"
+      value: true
+    - finding: "family_cutaneous_leiomyomas_or_uterine_leiomyomas_early_onset"
+      value: true
+    - finding: "family_papillary_type_2_rcc"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+# §20 prevention extension — drives engine routing to PreventionPlan
+# when patient carries this RF and no confirmed Disease (KSS §20.2).
+risk_category: genetic
+
+# HLRCC-spectrum cancer in KB. Renal anchor is DIS-RCC (papillary
+# type-2 / FH-deficient RCC histology). Cutaneous and uterine
+# leiomyomas are benign neoplasms (not in DIS-* taxonomy); uterine
+# leiomyosarcoma is a rare HLRCC-associated malignancy but no
+# DIS-LEIOMYOSARCOMA entity exists yet — RCC anchor covers the
+# primary cancer-prevention target.
+relevant_diseases:
+  - DIS-RCC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-ESMO-RCC-2024
+  - SRC-NCCN-KIDNEY-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.2-B hereditary pilot — HLRCC. Fires on pedigree-based suspicion
+  of HLRCC syndrome in an asymptomatic individual (no current cancer
+  diagnosis). Engine routes to PreventionPlan recommending:
+    (a) genetic counseling + germline FH gene panel testing (modern
+        renal-cancer hereditary panels include FH, VHL, FLCN, MET,
+        BAP1, SDHB/C/D for differential) via
+        IND-HLRCC-SUSPICION-PREVENTION-GENETIC-COUNSELING (standard)
+    (b) empirical annual abdominal MRI surveillance for patients
+        declining testing via IND-HLRCC-SUSPICION-PREVENTION-ENHANCED-
+        SURVEILLANCE (alternative).
+
+  Triggers correspond to established HLRCC-suspicion criteria.
+  Cutaneous leiomyomas are pathognomonic (firm, painful, often
+  multiple, characteristic histology — well-circumscribed
+  intradermal fascicles of smooth-muscle cells). Multiple early-onset
+  uterine leiomyomas plus family history of cutaneous leiomyomas or
+  papillary type-2 RCC strongly suggest HLRCC. Papillary type-2 RCC
+  in HLRCC is notably more aggressive than sporadic papillary type-2
+  — can metastasize from very small primary tumors, justifying the
+  aggressive low-threshold surveillance protocol below.
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption. Source-set TODO: NCCN Genetic/Familial High-Risk:
+  Kidney as a new SRC entity; HLRCC Family Alliance International
+  Surveillance Guidelines (Menko et al. 2014, Smit et al. 2011);
+  ACMG FH testing guidance.
+
+  Confirmed FH carriers (germline mutation positive on panel) route
+  to a DIFFERENT prevention pathway (carrier-confirmed annual
+  contrast-enhanced abdominal MRI starting age 8-10 — yes, early
+  childhood; gynecologic management plan for women including
+  reproductive counseling regarding fibroid burden and
+  hysterectomy timing). That pathway is v0.2-B follow-up authoring
+  (RF-HLRCC-CONFIRMED-CARRIER + IND-HLRCC-CARRIER-SURVEILLANCE).
+
+  Lifetime cancer risk in confirmed FH carriers (HLRCC Family
+  Alliance, NCCN Kidney):
+    - HLRCC-associated RCC (papillary type-2 / FH-deficient):
+      ~15-30% lifetime; mean age at diagnosis ~40-45; aggressive
+      behavior with high metastatic potential even from small
+      tumors (<3 cm); 5-year survival of metastatic HLRCC-RCC
+      historically poor (~10-30%) though emerging FH-deficient
+      targeted approaches (bevacizumab-erlotinib combinations) may
+      improve outcomes
+    - Uterine leiomyomas: ~70-100% of female carriers; mean age
+      onset ~20s-30s; often very large, very numerous; commonly
+      symptomatic (menorrhagia, dysmenorrhea, infertility); high
+      hysterectomy rate
+    - Cutaneous leiomyomas: ~75% lifetime; firm, painful skin nodules
+      from arrector pili smooth muscle; often the first manifestation
+      and pathognomonic
+    - Uterine leiomyosarcoma (rare but elevated): ~1-2% lifetime;
+      decision-making around hysterectomy specimen pathology
+      particularly important
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_hereditary_pilot
+draft_revision: 1

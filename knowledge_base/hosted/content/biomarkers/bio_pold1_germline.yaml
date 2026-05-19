@@ -1,0 +1,23 @@
+id: BIO-POLD1-GERMLINE
+names:
+  preferred: "POLD1 germline pathogenic variant (proofreading domain)"
+  ukrainian: "POLD1 germline патогенний варіант (proofreading-домен)"
+  english: "POLD1 germline pathogenic variant"
+biomarker_type: gene_mutation
+mutation_details:
+  gene: POLD1
+  gene_hugo_id: HGNC:9175
+  variant_type: missense_or_truncating
+  functional_impact: loss_of_function
+specimen_requirements: ["Whole blood or saliva DNA"]
+clinical_context: [germline_susceptibility]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: germline_no_somatic
+related_biomarkers: [BIO-POLD1-HYPERMUTATOR]
+sources: [SRC-NCCN-GENETIC-FAMILIAL-CRC-2025]
+last_reviewed: "2026-05-18"
+notes: "POLD1 germline (exonuclease / proofreading-domain variants) — drives Polymerase-Proofreading-Associated Polyposis (PPAP), mechanistically analogous to POLE-PPAP. Autosomal dominant; oligopolyposis + early-onset CRC + endometrial cancer (higher endometrial penetrance than POLE-PPAP). Tumors ultramutated; potential ICI sensitivity. Surveillance: colonoscopy q1-2y from late teens; endometrial sampling from 40. STUB pending two-Co-Lead signoff."
+notes_ua: "POLD1 germline (proofreading-варіанти) — драйвер PPAP, аналогічно POLE-PPAP. Олігополіпоз + КРР + ендометрій (вища пенетрантність ендометрія за POLE). Колоноскопія кожні 1-2 роки + ендометріальний контроль з 40."
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v05_germline_batch3
+draft_revision: 1

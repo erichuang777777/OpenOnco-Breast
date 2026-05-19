@@ -1,0 +1,124 @@
+id: RF-VHL-FAMILY-HISTORY-SUSPICION
+definition: >-
+  Family pedigree suggestive of Von Hippel-Lindau (VHL) disease: any of
+  (a) a family member with a known pathogenic VHL gene variant; (b)
+  first-degree relative with clear-cell renal cell carcinoma diagnosed
+  before age 46 (early-onset RCC bright-line for hereditary RCC
+  syndrome workup); (c) family history of bilateral or multifocal RCC
+  (suggestive of hereditary RCC syndrome, with VHL the most common
+  cause); (d) family history of CNS or retinal hemangioblastoma
+  (pathognomonic VHL manifestation); (e) family history of
+  pheochromocytoma / paraganglioma co-occurring with RCC or
+  hemangioblastoma (the multi-organ VHL pattern). No current personal
+  cancer diagnosis in the individual at risk. Prevention-persona
+  RedFlag (§20 ratification 2026-05-18, v0.2-B hereditary pilot
+  starter).
+definition_ua: >-
+  Сімейний родовід, що відповідає підозрі на хворобу Von Hippel-Lindau
+  (VHL): будь-яке з (а) родич з відомим патогенним варіантом гена VHL;
+  (б) родич першого ступеня з clear-cell нирково-клітинною карциномою
+  діагностованою до 46 років (рання РСС-bright-line для workup
+  спадкового РСС-синдрому); (в) сімейна історія двостороннього або
+  мультифокального РСС (свідчить про спадковий РСС-синдром, з VHL —
+  найчастішою причиною); (г) сімейна історія гемангіобластом ЦНС або
+  сітківки (патогномонічний прояв VHL); (д) сімейна історія
+  феохромоцитоми / парагангліоми у поєднанні з РСС або
+  гемангіобластомою (мульти-органний VHL-патерн). Поточний особистий
+  діагноз раку у пацієнта з ризиком відсутній. Prevention-persona
+  RedFlag (ратифікація §20, 2026-05-18, v0.2-B пілот спадковості —
+  starter).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "family_vhl_known_pathogenic_variant"
+      value: true
+    - finding: "family_clear_cell_rcc_under_46"
+      value: true
+    - finding: "family_bilateral_or_multifocal_rcc"
+      value: true
+    - finding: "family_hemangioblastoma_cns_or_retinal"
+      value: true
+    - finding: "family_pheochromocytoma_paraganglioma_with_rcc_or_hemangioblastoma"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+# §20 prevention extension — drives engine routing to PreventionPlan
+# when patient carries this RF and no confirmed Disease (KSS §20.2).
+risk_category: genetic
+
+# VHL-spectrum cancers in KB. Renal anchor is DIS-RCC. VHL also
+# elevates pheochromocytoma / paraganglioma, pancreatic neuroendocrine
+# tumors, endolymphatic-sac tumors, and reproductive cystadenomas —
+# but these aren't independent Disease entities in OpenOnco KB and
+# would be carried under DIS-RCC's multi-organ surveillance protocol.
+# Pancreatic NETs anchored under DIS-PDAC as closest pancreatic entity
+# (acknowledged anatomical approximation).
+relevant_diseases:
+  - DIS-RCC
+  - DIS-PDAC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-ESMO-RCC-2024
+  - SRC-NCCN-KIDNEY-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  v0.2-B hereditary pilot — VHL. Fires on pedigree-based suspicion of
+  VHL disease in an asymptomatic individual (no current cancer
+  diagnosis). Engine routes to PreventionPlan recommending:
+    (a) genetic counseling + germline VHL gene panel testing (modern
+        renal-cancer hereditary panels include VHL, FH, FLCN, MET,
+        BAP1, SDHB/C/D, TSC1/2 for differential) via
+        IND-VHL-SUSPICION-PREVENTION-GENETIC-COUNSELING (standard)
+    (b) empirical multi-organ surveillance for patients declining
+        testing via IND-VHL-SUSPICION-PREVENTION-ENHANCED-
+        SURVEILLANCE (alternative).
+
+  Triggers correspond to established VHL-suspicion criteria. Patient
+  profile is expected to carry these as computed booleans from the
+  pedigree input (FHIR FamilyMemberHistory at the data-standards
+  layer; computation is a downstream concern not yet implemented).
+
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode
+  exemption. Source-set TODO: NCCN Genetic/Familial High-Risk:
+  Kidney as a new SRC entity; VHL Alliance / International VHL
+  Surveillance Guidelines (2020 consensus); ACMG VHL testing guidance.
+
+  Confirmed VHL carriers (germline mutation positive on panel) route
+  to a DIFFERENT prevention pathway (carrier-confirmed structured
+  multi-organ surveillance starting in early childhood). That pathway
+  is v0.2-B follow-up authoring (RF-VHL-CONFIRMED-CARRIER +
+  IND-VHL-CARRIER-SURVEILLANCE).
+
+  Lifetime cancer risk in confirmed VHL carriers (VHL Alliance
+  surveillance guidelines, NCCN Kidney):
+    - Clear-cell RCC: ~25-60% lifetime; multifocal / bilateral
+      pattern; emerges typically age 30-60
+    - CNS hemangioblastoma: ~60-80% lifetime; cerebellar > spinal >
+      brainstem; emerges age 20-40
+    - Retinal hemangioblastoma: ~25-60% lifetime; can emerge in
+      childhood (age 5-15); leading cause of vision loss in VHL
+    - Pheochromocytoma / paraganglioma: ~10-20% lifetime; emerges
+      age 5-30 (childhood onset documented); preferentially
+      bilateral / adrenal
+    - Pancreatic neuroendocrine tumors: ~10-15% lifetime; often
+      multifocal
+    - Pancreatic cysts (serous cystadenoma): ~50-70% lifetime; mostly
+      benign but distinguishes from sporadic
+    - Endolymphatic-sac tumors (ELST): ~10-15% lifetime; cause
+      sensorineural hearing loss; emerge age 20-40
+    - Epididymal cystadenoma (men) / broad-ligament cystadenoma
+      (women): ~25-60% lifetime; benign but pathognomonic
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v0_2_b_hereditary_pilot
+draft_revision: 1

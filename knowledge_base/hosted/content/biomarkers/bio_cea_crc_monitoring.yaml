@@ -1,0 +1,48 @@
+id: BIO-CEA-CRC-MONITORING
+names:
+  preferred: "CEA (carcinoembryonic antigen) — CRC post-treatment surveillance"
+  ukrainian: "РЕА (раково-ембріональний антиген) — нагляд після лікування КРР"
+  english: "Carcinoembryonic Antigen"
+  synonyms: ["CEA", "CEACAM5"]
+biomarker_type: serum_marker
+measurement:
+  method: "Serum immunoassay (ECLIA, CLIA)"
+  units: "ng/mL"
+  typical_range: [0, 5]
+specimen_requirements:
+  - "Serum (5 mL clotted blood)"
+  - "LOINC 2039-6 (CEA)"
+  - "Note: smokers have higher baseline (~5-10 ng/mL); interpret trend, not single value"
+clinical_context: [screening_surveillance]
+applicable_in_asymptomatic: true
+oncokb_skip_reason: tumor_marker
+external_ids:
+  hgnc_symbol: CEACAM5
+  loinc: "2039-6"
+sources:
+  - SRC-NCCN-COLON-2025
+  - SRC-ESMO-CRC-2024
+last_reviewed: "2026-05-18"
+notes: >
+  Serum tumor marker (CEACAM5). NOT recommended for general-population CRC
+  screening (low sensitivity for early-stage disease, false positives from
+  smoking, IBD, cirrhosis, pancreatitis). PRIMARY surveillance use: after
+  curative-intent resection of stage II/III CRC — q3-6 months CEA for
+  2 years then q6 months for 3-5 years (NCCN/ESMO concordant), rising
+  trend triggers imaging workup for recurrence. Two consecutive rises
+  >5 ng/mL or doubling within 1-2 months warrant CT chest/abdomen/pelvis
+  and consider colonoscopy. Approximately 30% of CRCs do not secrete CEA
+  (microsatellite-unstable, mucinous, signet-ring histologies); in those
+  patients CEA surveillance has limited yield. Distinct from BIO-CTDNA-MRD
+  which offers higher analytic sensitivity for molecular residual disease.
+  STUB pending two-Co-Lead signoff.
+notes_ua: >
+  Сироватковий пухлинний маркер (CEACAM5). НЕ рекомендований для скринінгу
+  КРР у загальній популяції. ОСНОВНЕ застосування — нагляд після
+  куративної резекції КРР стадії II/III: кожні 3-6 міс протягом 2 років,
+  потім кожні 6 міс протягом 3-5 років (NCCN/ESMO). ~30% КРР не секретують
+  РЕА (МСI, муцинозні, перснеподібно-клітинні). STUB pending two-Co-Lead
+  signoff.
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_surveillance_2026_05_18
+draft_revision: 1

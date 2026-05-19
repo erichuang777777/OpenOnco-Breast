@@ -1,0 +1,48 @@
+id: SRC-USPSTF-CERVICAL-2018
+source_type: guideline
+title: 'USPSTF Recommendation Statement: Screening for Cervical Cancer (2018)'
+version: '2018'
+authors:
+- US Preventive Services Task Force
+- Curry SJ
+- Krist AH
+- Owens DK
+- et al.
+journal: JAMA
+doi: 10.1001/jama.2018.10897
+pmid: '30140884'
+url: https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/cervical-cancer-screening
+access_level: open_access
+currency_status: current
+current_as_of: '2026-05-01'
+evidence_tier: 1
+hosting_mode: referenced
+ingestion:
+  method: manual
+  ingested_at: '2026-05-18'
+  ingested_by: claude_v04_sources
+license:
+  name: Public domain (US government work)
+  url: https://www.uspreventiveservicestaskforce.org/uspstf/about-uspstf/copyright-permissions
+  spdx_id: null
+attribution:
+  required: false
+  text: US Preventive Services Task Force. Screening for Cervical Cancer Recommendation
+    Statement. JAMA 2018;320(7):674-686.
+commercial_use_allowed: true
+redistribution_allowed: true
+modifications_allowed: true
+legal_review:
+  status: pending
+  notes: US government work; public domain. JAMA-rendered version copyright doesn't override USPSTF source.
+relates_to_diseases: []
+last_verified: '2026-05-18'
+notes: 'STUB — v0.2 prevention workstream. Cited by prevention RFs / Indications for
+  cervical cancer screening: ages 21-65 cytology q3y; ages 30-65 may switch to hrHPV
+  testing alone q5y or cotest (cytology + hrHPV) q5y. Grade A. Note: a 2024 draft
+  update is in progress at USPSTF — recheck currency at next refresh.
+
+  '
+pages_count: 13
+references_count: 80
+corpus_role: primary_guideline
