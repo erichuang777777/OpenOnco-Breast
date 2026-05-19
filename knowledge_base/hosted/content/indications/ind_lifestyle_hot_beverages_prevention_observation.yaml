@@ -1,0 +1,72 @@
+id: IND-LIFESTYLE-HOT-BEVERAGES-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-ESOPHAGEAL
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-LIFESTYLE-HOT-BEVERAGES-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Continued very-hot-beverage consumption: thermal injury + chronic inflammation in esophageal epithelium continues. Symptom-prompted endoscopic evaluation captures disease earlier but does not reduce incidence."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-LIFESTYLE-HOT-BEVERAGES-PREVENTION-
+  COOLING. Patient declines temperature modification (cultural ritual,
+  preference) — receives co-modifiable risk factor screening (alcohol,
+  tobacco) + symptom-vigilance education (dysphagia, odynophagia,
+  unexplained weight loss → immediate workup) + brief intervention with
+  each clinical contact. Per CHARTER §11 patient-autonomy framing.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від temperature
+  modification — отримує co-modifiable risk factor screening + symptom-
+  vigilance education (дисфагія, odynophagia, unexplained weight loss →
+  immediate workup) + brief intervention. Per CHARTER §11.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-ESOPHAGEAL-2025
+    position: context
+
+do_not_do:
+  - "Не презентувати observation як еквівалент cooling intervention — ESCC incidence reduction не досягається."
+  - "Не пропускати alcohol + tobacco screening — synergistic compound risk важливо address."
+  - "Не затримувати endoscopic workup при early dysphagia."
+  - "Не нормалізувати hot-beverage consumption як culturally fixed — counsel що temperature, не beverage type, має значення."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to cooling intervention — ESCC incidence reduction is not achieved."
+  - "Do not skip alcohol + tobacco screening — synergistic compound risk is important to address."
+  - "Do not delay endoscopic workup for early dysphagia."
+  - "Do not normalize hot-beverage consumption as culturally fixed — counsel that temperature, not beverage type, is what matters."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for hot-beverage prevention. §15.2 C4 ≥2-tracks invariant."

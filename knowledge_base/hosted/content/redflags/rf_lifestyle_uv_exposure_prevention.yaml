@@ -1,0 +1,64 @@
+id: RF-LIFESTYLE-UV-EXPOSURE-PREVENTION
+definition: >-
+  High cumulative ultraviolet radiation exposure — including chronic
+  occupational/recreational sun exposure (outdoor work, equatorial
+  residence, water/snow sports), indoor tanning-bed use (IARC Group 1
+  carcinogen since 2009), AND personal history of severe sunburns
+  (especially blistering sunburns in childhood/adolescence; ≥5 lifetime
+  sunburns doubles melanoma risk). UV is the principal modifiable
+  etiologic driver of cutaneous melanoma + basal cell carcinoma (BCC) +
+  squamous cell carcinoma (SCC) of the skin. Tanning-bed use before age
+  35 increases melanoma risk by ~75%. Fair skin (Fitzpatrick I-II), red/
+  blond hair, blue eyes, freckles compound risk. Prevention-persona
+  RedFlag (§20 v0.3 lifestyle pilot).
+definition_ua: >-
+  Висока кумулятивна exposure ultraviolet radiation — включаючи хронічну
+  occupational/recreational sun exposure (outdoor work, equatorial
+  residence, water/snow sports), використання tanning beds (IARC Group 1
+  канцероген з 2009), І особисту історію severe sunburns (особливо
+  blistering sunburns у дитинстві/підлітковому віці; ≥5 lifetime sunburns
+  подвоюють melanoma risk). UV — principal modifiable etiologic driver
+  cutaneous melanoma + basal cell carcinoma (BCC) + squamous cell
+  carcinoma (SCC) шкіри. Tanning-bed use до 35 років збільшує melanoma
+  risk на ~75%.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "high_cumulative_uv_exposure"
+      value: true
+    - finding: "tanning_bed_use_history"
+      value: true
+    - finding: "history_blistering_sunburn"
+      value: true
+    - finding: "fair_skin_fitzpatrick_i_ii"
+      value: true
+    - finding: "occupational_outdoor_uv_exposure"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: lifestyle
+
+# Anchor DIS-MELANOMA (most-lethal); engine surfaces all relevant_diseases
+relevant_diseases:
+  - DIS-MELANOMA
+  - DIS-BCC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-MELANOMA-2025
+  - SRC-NCCN-SKIN-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for high cumulative UV exposure. IARC Group 1 classification for tanning beds (2009). NCCN Melanoma + AAD guidelines support UV-protection counseling + skin self-exam + clinical skin exam cadence. Engine routes to PreventionPlan recommending sun-protection + skin surveillance. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1

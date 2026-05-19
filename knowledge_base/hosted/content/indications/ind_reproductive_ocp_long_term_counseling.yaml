@@ -1,0 +1,133 @@
+id: IND-REPRODUCTIVE-OCP-LONG-TERM-COUNSELING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-REPRODUCTIVE-OCP-LONG-TERM
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: "Risk-benefit counseling for long-term OCP use. NET cancer balance is favorable for most users: ~50% reduction in ovarian + endometrial cancer (durable post-cessation) offsets modest increases in breast (~1.08-1.20 during use, baseline restored ~10y post-cessation) + cervical (~1.5 with concurrent HPV; HPV is necessary cofactor). All-cause mortality reduced or neutral. Decision must be individualized — high-risk-breast-cancer carriers (BRCA1/2, dense breast tissue, family history) warrant separate consideration."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for long-term combined OCP use.
+  Components per ACOG Practice Bulletin + NCCN Genetic/Familial Breast +
+  USPSTF + IARC Monograph 100A:
+
+  **(1) Full risk-benefit counseling** — NOT a unidirectional risk
+  warning. Present FOUR cancer endpoints:
+  - Breast: modest risk increment during use + ~5y post-cessation
+    (RR ~1.08-1.20). Baseline restored ~10y post-cessation.
+  - Cervical: modest risk increment with ≥5y use IN HPV-positive women.
+    HPV is necessary cofactor — HPV vaccination + screening Pap/HPV
+    co-test address primary risk.
+  - Ovarian: ~50% protection at ≥5y use, durable for ≥30y post-cessation.
+  - Endometrial: ~50% protection at ≥5y use, durable.
+
+  **(2) Targeted high-risk subgroup assessment** — Strong family history,
+  known BRCA1/BRCA2 / Lynch / Cowden / Li-Fraumeni carriers: separate
+  shared-decision-making with genetics + breast-oncology before
+  initiating or continuing OCP. BRCA1 carriers: OCP may slightly
+  increase breast cancer risk but is the most-effective ovarian cancer
+  prevention non-surgical option — individualized risk-benefit critical.
+
+  **(3) HPV-related cervical risk mitigation** — HPV vaccination (any
+  unvaccinated patient through age 45 considered case-by-case),
+  cervical cancer screening per USPSTF (Pap/HPV co-test cadence).
+  These largely neutralize the OCP-cervical association.
+
+  **(4) Breast cancer screening per age-appropriate USPSTF cadence** —
+  Mammography from age 40-50+ per shared decision-making. Long-term OCP
+  use does NOT trigger earlier screening cadence in average-risk women
+  (per current USPSTF/ACS).
+
+  **(5) No routine ovarian or endometrial surveillance for OCP users
+  per se** — Protection effect makes surveillance unnecessary.
+
+  Counseling outcome may be: continue OCP, switch to non-hormonal
+  contraception (IUD, diaphragm, condoms, sterilization), or change
+  formulation. All defensible depending on individual priorities + risk
+  factors.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для long-term combined OCP use.
+  Components per ACOG Practice Bulletin + NCCN Genetic/Familial Breast +
+  USPSTF + IARC Monograph 100A:
+
+  **(1) Повне risk-benefit counseling** — НЕ unidirectional risk warning.
+  Презентувати ЧОТИРИ cancer endpoints:
+  - Breast: modest риск під час use + ~5р post-cessation (RR ~1.08-1.20)
+  - Cervical: modest риск при ≥5р use У HPV-positive жінок
+  - Ovarian: ~50% protection при ≥5р use, durable ≥30р post-cessation
+  - Endometrial: ~50% protection при ≥5р use, durable
+
+  **(2) Targeted high-risk subgroup assessment** — BRCA1/BRCA2 / Lynch /
+  Cowden / Li-Fraumeni carriers: окреме shared-decision-making з
+  genetics + breast-oncology.
+
+  **(3) HPV-related cervical risk mitigation** — HPV vaccination, Pap/
+  HPV co-test screening per USPSTF.
+
+  **(4) Breast cancer screening per age-appropriate USPSTF cadence** —
+  Мамографія з 40-50+ per shared decision-making. Long-term OCP use
+  НЕ triggers earlier screening cadence у average-risk жінок.
+
+  **(5) Жодного routine ovarian/endometrial surveillance для OCP users
+  per se** — protection effect робить surveillance непотрібною.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BREAST-2025
+    position: supports
+  - source_id: SRC-NCCN-CERVICAL-2025
+    position: supports
+  - source_id: SRC-NCCN-OVARIAN-2025
+    position: supports
+  - source_id: SRC-NCCN-UTERINE-2025
+    position: supports
+
+do_not_do:
+  - "Не презентувати OCP як unilaterally cancer-risk-increasing — net balance favorable для більшості users."
+  - "Не пропускати BRCA1/2 / Lynch / Cowden assessment перед long-term OCP — different risk-benefit calculus."
+  - "Не призначати earlier breast cancer screening лише на основі OCP use — current USPSTF cadence applies."
+  - "Не покладатися лише на cessation для cervical risk mitigation — HPV vaccination + screening адекватніше."
+  - "Не позиціонувати ovarian protection як стійку причину продовжувати OCP після reproductive years без contraceptive need — risk-benefit calculus shifts."
+
+do_not_do_en:
+  - "Do not present OCP as unilaterally cancer-risk-increasing — the net balance is favorable for most users."
+  - "Do not skip BRCA1/2 / Lynch / Cowden assessment before long-term OCP — risk-benefit calculus differs."
+  - "Do not order earlier breast cancer screening solely based on OCP use — current USPSTF cadence applies."
+  - "Do not rely on cessation alone for cervical risk mitigation — HPV vaccination + screening is more adequate."
+  - "Do not present ovarian protection as a stand-alone reason to continue OCP beyond reproductive years without contraceptive need — risk-benefit calculus shifts."
+
+known_controversies: []
+
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 reproductive prevention pilot (OCP long-term). Risk-benefit balanced counseling — NOT unidirectional risk warning. Known controversy (not yet captured as structured KnownControversy entity): BRCA1 carriers — OCP modestly increases breast cancer risk but is among the most effective non-surgical ovarian cancer prevention options; some guidelines recommend, others prefer prophylactic salpingectomy/oophorectomy. Two-Clinical-Co-Lead signoff queued."

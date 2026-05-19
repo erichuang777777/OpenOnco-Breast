@@ -1,0 +1,123 @@
+id: IND-REPRODUCTIVE-LATE-FIRST-PREGNANCY-PREVENTION-COUNSELING
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-REPRODUCTIVE-LATE-FIRST-PREGNANCY-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Cumulative breastfeeding ≥12 months associated with ~4% breast cancer risk reduction per 12 months. First-pregnancy age cannot be retroactively modified, but counseling supports breastfeeding in current/subsequent pregnancies + age-appropriate breast cancer screening + lifestyle co-modification (alcohol moderation, physical activity, weight management — all independently breast-cancer-protective)."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for late-first-pregnancy + short-
+  breastfeeding combination. Components per ACOG + AAP + USPSTF +
+  NCCN Breast Cancer Screening:
+
+  **(1) Breastfeeding promotion (forward-looking)** — In current or
+  subsequent pregnancies, support exclusive breastfeeding ≥6 months +
+  continued breastfeeding through ≥12 months per WHO + AAP. Lactation
+  consultant referral for any breastfeeding difficulty. Each 12 months
+  of cumulative lifetime breastfeeding reduces breast cancer risk ~4%.
+
+  **(2) Modifiable cancer-protective lifestyle counseling** — Since
+  reproductive timing cannot be reversed, double-down on modifiable
+  factors:
+  - Alcohol: ≤1 drink/day (less is better; each drink/day adds ~7-10%
+    breast cancer risk)
+  - Physical activity: ≥150 min/week moderate per HHS guidelines
+  - Weight management: maintain healthy BMI post-menopause (most-
+    impactful single modifiable factor)
+  - Mediterranean dietary pattern
+
+  **(3) Breast cancer screening per USPSTF cadence + family history
+  modification** —
+  - Mammography from age 40-50+ per shared decision-making (USPSTF
+    starts age 40 with shared DM, ACS routine 45+)
+  - If family history of breast cancer + this RF cluster: shared DM
+    about earlier/more-frequent screening + risk assessment
+    (Gail / Tyrer-Cuzick / BOADICEA models)
+  - If 5-year breast cancer risk ≥1.66% (Gail) OR ≥3% (10-year
+    Tyrer-Cuzick): refer for risk-reducing medication discussion
+    (tamoxifen/raloxifene/AI) per USPSTF Grade B
+
+  **(4) Genetic counseling referral** if family-history red flags
+  present (per NCCN BRCA1/2 / Lynch / Cowden criteria) — these are
+  separate from reproductive-history RF but should be assessed.
+
+  Counseling tone: reproductive choices are personal + non-modifiable
+  retroactively. Focus on what CAN be done — breastfeeding when feasible,
+  lifestyle, screening cadence.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для late-first-pregnancy + short-
+  breastfeeding. Components per ACOG + AAP + USPSTF + NCCN Breast
+  Cancer Screening:
+
+  **(1) Breastfeeding promotion (forward-looking)** — У поточних або
+  subsequent pregnancies, support exclusive breastfeeding ≥6 місяців +
+  continued breastfeeding через ≥12 місяців per WHO + AAP.
+
+  **(2) Modifiable cancer-protective lifestyle counseling** —
+  - Алкоголь: ≤1 напій/день
+  - Фізична активність: ≥150 хв/тиждень moderate
+  - Weight management: maintain healthy BMI post-menopause
+  - Mediterranean dietary pattern
+
+  **(3) Breast cancer screening per USPSTF cadence + family history
+  modification** — Мамографія з 40-50+ per shared decision-making. При
+  family history: shared DM про earlier/more-frequent screening + risk
+  assessment (Gail / Tyrer-Cuzick / BOADICEA models).
+
+  **(4) Genetic counseling referral** при family-history red flags per
+  NCCN BRCA1/2 / Lynch / Cowden criteria.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BREAST-2025
+    position: supports
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не презентувати reproductive timing як 'mistake' — counsel forward-looking, modifiable factors."
+  - "Не пропускати genetic counseling assessment — family-history RFs separate but overlap у diagnosed-young families."
+  - "Не purchase earlier breast cancer screening cadence лише на основі цього RF cluster у average-risk women without family history — USPSTF cadence applies."
+  - "Не делегувати breastfeeding support до non-lactation-consultant без надання resource — major barrier to breastfeeding success."
+
+do_not_do_en:
+  - "Do not present reproductive timing as a 'mistake' — counsel forward-looking, modifiable factors."
+  - "Do not skip genetic counseling assessment — family-history RFs are separate but overlap in diagnosed-young families."
+  - "Do not order earlier breast cancer screening cadence based on this RF cluster alone in average-risk women without family history — USPSTF cadence applies."
+  - "Do not delegate breastfeeding support to non-lactation-consultant without providing the resource — a major barrier to breastfeeding success."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 reproductive prevention pilot (late-first-pregnancy + short-breastfeeding). Two-Clinical-Co-Lead signoff queued."

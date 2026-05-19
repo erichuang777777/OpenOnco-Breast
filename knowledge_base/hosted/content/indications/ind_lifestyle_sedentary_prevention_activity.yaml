@@ -1,0 +1,106 @@
+id: IND-LIFESTYLE-SEDENTARY-PREVENTION-ACTIVITY
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-CRC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-LIFESTYLE-SEDENTARY-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: high
+strength_of_recommendation: strong
+nccn_category: "1"
+
+expected_outcomes:
+  overall_response_rate: "Meeting WHO physical-activity threshold (≥150 min/week moderate OR ≥75 min/week vigorous) reduces CRC incidence ~20-25%, endometrial cancer ~20%, postmenopausal breast cancer ~10-15% (WCRF/AICR convincing-evidence rating). All-cause mortality reduction ~20-30%. Effect dose-dependent; benefits accrue at modest activity increments above sedentary baseline."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests: []
+
+rationale: >
+  Standard-track prevention pathway for sedentary lifestyle. Components per
+  HHS Physical Activity Guidelines (2nd ed.) + ACS Guideline for Diet +
+  Physical Activity for Cancer Prevention (2020):
+
+  **(1) Activity prescription (FITT framework)** — Frequency 5x/week,
+  Intensity moderate (50-70% HRmax) OR 3x/week vigorous, Time 30+ min/session,
+  Type aerobic + 2x/week resistance training. Target ≥150 min/week moderate
+  OR ≥75 min/week vigorous; greater benefit up to 300 min/week.
+
+  **(2) Sedentary-time reduction** — Break sitting periods every 30-60 min.
+  Standing desks, walking meetings, "exercise snacks" (brief activity bouts).
+
+  **(3) Structured behavioral support** — Motivational interviewing, goal-
+  setting (SMART goals), wearable activity trackers for self-monitoring,
+  group programs (e.g., Silver Sneakers for older adults).
+
+  **(4) Age-appropriate cancer screening** — Continue routine USPSTF screening
+  cadence (colonoscopy q10y from age 45 for CRC, mammography for women age
+  40-50+, endometrial cancer surveillance only if symptomatic post-menopausal
+  bleeding; no routine asymptomatic endometrial screening).
+
+  Combined activity intervention + age-appropriate screening produces additive
+  cancer-incidence reduction. Activity is also cardioprotective + metabolically
+  protective — broad health-span benefit beyond cancer-specific endpoints.
+
+rationale_ua: >
+  Стандартний-трек prevention шлях для sedentary lifestyle. Components per
+  HHS Physical Activity Guidelines + ACS Guideline for Diet + Physical
+  Activity (2020):
+
+  **(1) Призначення активності (FITT framework)** — Frequency 5x/тиждень,
+  Intensity moderate (50-70% HRmax) АБО 3x/тиждень vigorous, Time 30+ хв/сесія,
+  Type aerobic + 2x/тиждень resistance training. Target ≥150 хв/тиждень
+  moderate АБО ≥75 хв/тиждень vigorous.
+
+  **(2) Зменшення sedentary time** — Перерви sitting кожні 30-60 хв. Standing
+  desks, walking meetings, "exercise snacks".
+
+  **(3) Behavioral support** — Motivational interviewing, goal-setting,
+  wearable activity trackers, group programs.
+
+  **(4) Age-appropriate cancer screening** — Continue USPSTF cadence
+  (colonoscopy q10y з 45 років для CRC, мамографія для жінок 40-50+).
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+  - source_id: SRC-NCCN-COLON-2025
+    position: supports
+
+do_not_do:
+  - "Не призначати vigorous-intensity пацієнтам з cardiovascular disease без preceding stress testing."
+  - "Не презентувати активність як заміну age-appropriate screening — обидві intervention доповнюють."
+  - "Не ігнорувати resistance training — сама aerobic activity недостатня для метаболічної + sarcopenia protection у старших."
+  - "Не очікувати швидкого зниження ризику — incidence reduction накопичується протягом років послідовної активності."
+
+do_not_do_en:
+  - "Do not prescribe vigorous-intensity activity in patients with cardiovascular disease without preceding stress testing."
+  - "Do not present activity as a substitute for age-appropriate screening — both interventions are complementary."
+  - "Do not ignore resistance training — aerobic activity alone is insufficient for metabolic + sarcopenia protection in older adults."
+  - "Do not expect rapid risk reduction — incidence reduction accrues over years of sustained activity."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 lifestyle prevention pilot (sedentary). Two-Clinical-Co-Lead signoff queued."

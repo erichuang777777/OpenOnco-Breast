@@ -1,0 +1,63 @@
+id: RF-IATROGENIC-ALKYLATOR-TAML-PREVENTION
+definition: >-
+  History of prior cumulative alkylating-agent chemotherapy exposure
+  (cyclophosphamide, ifosfamide, melphalan, busulfan, chlorambucil,
+  procarbazine, bendamustine, BCNU/CCNU/lomustine, dacarbazine,
+  temozolomide) ≥5 years prior. Therapy-related AML (t-AML) and
+  therapy-related MDS following alkylator exposure has characteristic
+  features: median latency 5-7 years post-exposure (longer than
+  topoisomerase-II-inhibitor t-AML), preceded often by t-MDS phase
+  with chromosomes 5q-/-5 or 7q-/-7 cytogenetics, complex karyotype.
+  Cumulative incidence ~1-10% at 10y depending on dose + concurrent
+  RT + age. Highest risk: Hodgkin lymphoma survivors (MOPP-era),
+  multiple myeloma (melphalan), pediatric sarcoma survivors.
+  Prevention-persona RedFlag (§20 v0.3 iatrogenic pilot).
+definition_ua: >-
+  Історія prior cumulative alkylating-agent chemotherapy exposure
+  (cyclophosphamide, ifosfamide, melphalan, busulfan, chlorambucil,
+  procarbazine, bendamustine, BCNU/CCNU/lomustine, dacarbazine,
+  temozolomide) ≥5 років тому. Therapy-related AML (t-AML) і therapy-
+  related MDS після alkylator exposure має characteristic features:
+  median latency 5-7 років post-exposure (довша ніж topoisomerase-II-
+  inhibitor t-AML), often preceded by t-MDS phase з chromosomes 5q-/-5
+  або 7q-/-7 cytogenetics, complex karyotype. Cumulative incidence
+  ~1-10% at 10р залежно від dose + concurrent RT + age. Highest risk:
+  Hodgkin lymphoma survivors (MOPP-era), multiple myeloma (melphalan),
+  pediatric sarcoma survivors.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "prior_alkylator_chemo_ge_5y_ago"
+      value: true
+    - finding: "prior_high_cumulative_alkylator_dose"
+      value: true
+    - finding: "prior_hodgkin_lymphoma_alkylator_regimen"
+      value: true
+    - finding: "prior_melphalan_multiple_myeloma_therapy"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: iatrogenic
+
+relevant_diseases:
+  - DIS-AML
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-AML-2025
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for prior alkylator chemotherapy exposure. Median t-AML latency 5-7y post-exposure; cumulative incidence ~1-10% at 10y. Engine routes to PreventionPlan recommending CBC q3-6mo for first 10y post-chemo + low threshold for marrow evaluation if cytopenias appear. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1

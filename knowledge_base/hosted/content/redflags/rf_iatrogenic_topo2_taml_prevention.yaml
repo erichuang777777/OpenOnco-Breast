@@ -1,0 +1,62 @@
+id: RF-IATROGENIC-TOPO2-TAML-PREVENTION
+definition: >-
+  History of prior topoisomerase-II inhibitor exposure — etoposide,
+  teniposide, anthracyclines (doxorubicin, daunorubicin, epirubicin,
+  idarubicin, mitoxantrone) — ≥1 year prior. Therapy-related AML following
+  topoisomerase-II-inhibitor exposure has distinctive features that
+  differ from alkylator-related t-AML: SHORTER median latency (2-3
+  years post-exposure vs 5-7y for alkylators), characteristic
+  cytogenetics with balanced translocations involving 11q23 (KMT2A/MLL),
+  21q22 (RUNX1), or t(15;17) (PML-RARA, APL-like), absence of preceding
+  MDS phase, lower TP53 mutation frequency. Higher per-dose risk than
+  alkylators in some series. Highest risk: breast cancer survivors
+  (anthracycline + cyclophosphamide), pediatric ALL/AML survivors
+  (etoposide), testicular cancer survivors (etoposide in BEP).
+  Prevention-persona RedFlag (§20 v0.3 iatrogenic pilot).
+definition_ua: >-
+  Історія prior topoisomerase-II inhibitor exposure — etoposide, teniposide,
+  anthracyclines (doxorubicin, daunorubicin, epirubicin, idarubicin,
+  mitoxantrone) — ≥1 рік тому. Therapy-related AML після topoisomerase-II-
+  inhibitor exposure має distinctive features порівняно з alkylator-related
+  t-AML: КОРОТША median latency (2-3 роки post-exposure vs 5-7р для
+  alkylators), characteristic cytogenetics з balanced translocations
+  involving 11q23 (KMT2A/MLL), 21q22 (RUNX1), або t(15;17) (PML-RARA,
+  APL-like), відсутність preceding MDS phase, нижча TP53 mutation
+  frequency. Higher per-dose risk than alkylators в деяких series.
+  Highest risk: breast cancer survivors, pediatric ALL/AML survivors,
+  testicular cancer survivors (etoposide в BEP).
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "prior_etoposide_exposure"
+      value: true
+    - finding: "prior_anthracycline_exposure_ge_1y_ago"
+      value: true
+    - finding: "prior_topoisomerase_ii_inhibitor_chemo"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: iatrogenic
+
+relevant_diseases:
+  - DIS-AML
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-AML-2025
+  - SRC-NCCN-BREAST-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for prior topoisomerase-II inhibitor exposure. Distinct from alkylator t-AML: shorter latency (2-3y vs 5-7y), characteristic 11q23/21q22 cytogenetics, often APL-like t(15;17). Engine routes to PreventionPlan recommending CBC q3mo for first 5y post-chemo + low threshold for marrow evaluation. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode. Note: anthracycline exposure also fires RF-IATROGENIC-ANTHRACYCLINE-CARDIO-PREVENTION (separate cardio + t-AML surveillance overlap)."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1

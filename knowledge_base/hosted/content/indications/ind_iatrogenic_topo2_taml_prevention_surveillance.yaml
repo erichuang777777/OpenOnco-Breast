@@ -1,0 +1,127 @@
+id: IND-IATROGENIC-TOPO2-TAML-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-AML
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-TOPO2-TAML-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Breast cancer + testicular cancer + pediatric ALL/AML survivor cohorts post-topoisomerase-II inhibitor: 0.5-3% cumulative t-AML incidence at 5-10y post-exposure. CBC q3mo for first 5y surveillance window catches APL-like presentations (t(15;17), KMT2A/MLL t-AML) at treatable stages. Topo2-inhibitor t-AML often presents abruptly without preceding MDS phase — surveillance focuses on cytopenias + blasts on smear vs. dysplastic morphology."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests:
+  - TEST-LDH
+
+rationale: >
+  Standard-track surveillance for prior topoisomerase-II inhibitor exposure.
+  Components per NCCN AML Survivorship + Childhood Cancer Survivor Study
+  (CCSS) + COG-LTFU guidelines:
+
+  **(1) CBC with differential q3 months for first 5 years post-
+  chemotherapy** — Then q6-12mo through year 10, then q12mo lifelong.
+  Surveillance window shorter than alkylator t-AML because median
+  latency 2-3y (vs 5-7y for alkylators). Risk highest years 2-5.
+
+  **(2) Low-threshold marrow evaluation** for any of:
+  - New unexplained cytopenia (anemia, neutropenia, thrombocytopenia)
+  - Blasts on peripheral smear (even <5%)
+  - Coagulopathy / DIC-like presentation (APL alarm — emergent workup
+    + immediate ATRA empirically per NCCN AML if APL suspected)
+  - Unexplained fevers + cytopenias
+  Bone marrow aspirate + biopsy + cytogenetics (look for 11q23/MLL,
+  21q22/RUNX1, t(15;17)/PML-RARA, inv(16)/CBFB-MYH11) + flow cytometry
+  + molecular panel.
+
+  **(3) APL-emergency awareness** — Topo2-inhibitor t-APL (t(15;17))
+  presents with bleeding/DIC; mortality high if treatment delayed.
+  Educate patient + family about emergent presentation symptoms:
+  unexplained bleeding/bruising, persistent fatigue, fever, bone
+  pain — immediate ED evaluation if any of these.
+
+  **(4) Avoid additional topoisomerase-II inhibitor exposures** —
+  if cancer recurrence requires re-treatment, prefer non-topo2
+  alternatives where feasible without compromising outcomes.
+
+  **(5) Allogeneic HSCT eligibility assessment** if t-AML develops —
+  early evaluation per NCCN AML; topoisomerase-II t-AML with favorable
+  cytogenetics (t(15;17), t(8;21), inv(16)) has better outcomes than
+  alkylator-related complex-karyotype t-AML.
+
+  Note: routine prophylactic bone marrow biopsies NOT recommended in
+  asymptomatic patients with normal CBC. CBC q3mo + peripheral smear
+  review is the recommended modality.
+
+rationale_ua: >
+  Стандартний-трек surveillance для prior topoisomerase-II inhibitor
+  exposure. Components per NCCN AML Survivorship + CCSS + COG-LTFU:
+
+  **(1) CBC з диференційною q3 місяців для перших 5 років post-
+  chemotherapy** — Потім q6-12mo через year 10, потім q12mo lifelong.
+  Surveillance window коротший ніж alkylator t-AML, тому що median
+  latency 2-3р (vs 5-7р для alkylators). Risk highest years 2-5.
+
+  **(2) Low-threshold marrow evaluation** при:
+  - New unexplained cytopenia
+  - Blasts на peripheral smear (навіть <5%)
+  - Coagulopathy / DIC-like presentation (APL alarm — emergent workup +
+    immediate ATRA empirically per NCCN AML if APL suspected)
+  - Unexplained fevers + cytopenias
+
+  **(3) APL-emergency awareness** — Topo2-inhibitor t-APL (t(15;17))
+  presents з bleeding/DIC; mortality висока if treatment delayed.
+
+  **(4) Уникати additional topoisomerase-II inhibitor exposures** —
+  prefer non-topo2 alternatives при cancer recurrence де feasible.
+
+  **(5) Allogeneic HSCT eligibility assessment** при розвитку t-AML.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-AML-2025
+    position: supports
+  - source_id: SRC-NCCN-BREAST-2025
+    position: context
+
+do_not_do:
+  - "Не використовувати alkylator-t-AML surveillance schedule (5-7р median latency) для topo2 patients — peak risk 2-5р, не 5-7р."
+  - "Не пропускати APL emergency awareness — t-APL presents з DIC + bleeding; treatment delay deadly."
+  - "Не виконувати routine prophylactic marrow biopsies у asymptomatic patients з normal CBC."
+  - "Не очікувати preceding MDS phase — topo2-inhibitor t-AML часто abrupt без cytopenic prodrome."
+  - "Не вважати всі t-AML однаковими — topo2-inhibitor t-AML з favorable cytogenetics (t(15;17), t(8;21), inv(16)) has better outcomes than alkylator-related complex-karyotype t-AML."
+
+do_not_do_en:
+  - "Do not use the alkylator-t-AML surveillance schedule (5-7y median latency) for topo2 patients — peak risk is 2-5y, not 5-7y."
+  - "Do not skip APL emergency awareness — t-APL presents with DIC + bleeding; treatment delay is deadly."
+  - "Do not perform routine prophylactic marrow biopsies in asymptomatic patients with normal CBC."
+  - "Do not expect a preceding MDS phase — topo2-inhibitor t-AML is often abrupt without cytopenic prodrome."
+  - "Do not consider all t-AMLs the same — topo2-inhibitor t-AML with favorable cytogenetics (t(15;17), t(8;21), inv(16)) has better outcomes than alkylator-related complex-karyotype t-AML."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 iatrogenic prevention pilot (topo2 t-AML). Two-Clinical-Co-Lead signoff queued."

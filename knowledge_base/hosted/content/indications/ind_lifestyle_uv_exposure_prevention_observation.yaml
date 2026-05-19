@@ -1,0 +1,75 @@
+id: IND-LIFESTYLE-UV-EXPOSURE-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-MELANOMA
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-LIFESTYLE-UV-EXPOSURE-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Continued UV exposure without protection: cumulative melanoma + NMSC incidence climbs with each year of exposure. Skin examination alone (without UV-protection behavior change) shifts diagnosis-stage earlier but does not reduce incidence."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-LIFESTYLE-UV-EXPOSURE-PREVENTION-
+  PROTECTION. Patient declines structured UV-protection program
+  (occupation, recreational preference, body-image concerns) — receives
+  age- and risk-appropriate clinical skin exam + skin self-exam
+  education + brief intervention with each clinical contact. Per
+  CHARTER §11 patient-autonomy framing — UV exposure is a legitimate
+  patient choice but framed as suboptimal vs. protected comparator.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від structured
+  UV-protection program — отримує age- + risk-appropriate clinical skin
+  exam + SSE education + brief intervention на кожному клінічному
+  контакті. Per CHARTER §11.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-MELANOMA-2025
+    position: context
+  - source_id: SRC-NCCN-SKIN-2025
+    position: context
+
+do_not_do:
+  - "Не презентувати observation як еквівалент UV-protection — melanoma + NMSC incidence reduction не досягається."
+  - "Не виключати пацієнта зі skin exam через odmovu від UV protection — surveillance залишається indicated незалежно."
+  - "Не пропускати ABCDE counseling — SSE без criteria має поганий yield для early melanoma detection."
+  - "Не нормалізувати tanning-bed use навіть якщо пацієнт відмовляється кинути — clearly counsel continued risk."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to UV protection — melanoma + NMSC incidence reduction is not achieved."
+  - "Do not exclude a patient from skin exam because of UV-protection refusal — surveillance remains indicated regardless."
+  - "Do not skip ABCDE counseling — SSE without criteria has poor yield for early melanoma detection."
+  - "Do not normalize tanning-bed use even if the patient declines to stop — clearly counsel continued risk."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for UV-exposure prevention. §15.2 C4 ≥2-tracks invariant."

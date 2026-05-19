@@ -1,0 +1,128 @@
+id: IND-IATROGENIC-ALKYLATOR-TAML-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-AML
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-ALKYLATOR-TAML-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Hodgkin lymphoma + multiple myeloma + pediatric sarcoma survivor cohorts: ~1-10% 10-year cumulative t-AML/t-MDS incidence post-alkylator-based regimens. Surveillance with CBC q3-6mo for first 10y catches t-MDS at cytopenic phase enabling early intervention (allogeneic HSCT in fit candidates significantly improves outcomes vs. delayed presentation with overt AML). Cytogenetic studies (-5/5q-, -7/7q-, complex karyotype) confirm therapy-related etiology + guide prognosis."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+
+required_tests:
+  - TEST-CBC
+desired_tests:
+  - TEST-LDH
+
+rationale: >
+  Standard-track surveillance for prior alkylator chemotherapy exposure.
+  Components per NCCN AML Survivorship + Childhood Cancer Survivor Study
+  (CCSS) + COG-LTFU guidelines:
+
+  **(1) CBC with differential q3-6 months for first 10 years post-
+  chemotherapy** — Then q12mo lifelong. Median t-AML latency 5-7y
+  post-alkylator exposure; risk plateaus after 10y but does not return
+  to baseline.
+
+  **(2) Low-threshold marrow evaluation** for any of:
+  - New unexplained cytopenia (anemia, neutropenia, thrombocytopenia)
+  - Persistent macrocytosis (MCV >100)
+  - Dysplastic changes on peripheral smear
+  - Unexplained monocytosis
+  Bone marrow aspirate + biopsy + cytogenetics + flow cytometry +
+  NGS panel (TP53, ASXL1, RUNX1 +-7/-5/del5q signal).
+
+  **(3) Avoid additional bone-marrow-toxic exposures** —
+  - Avoid radioactive iodine, additional alkylator-based therapy if
+    alternative non-leukemogenic regimens exist
+  - Counsel about benzene exposure (refer to RF-OCC-BENZENE if active
+    occupational risk)
+  - Pre-medication assessment before any cancer-related re-treatment
+
+  **(4) Patient education** —
+  - Self-monitoring for symptoms: easy bruising, prolonged bleeding,
+    persistent fatigue, recurrent infections, fever
+  - Report any of above to clinician immediately
+
+  **(5) Allogeneic HSCT eligibility assessment** —if t-MDS or t-AML
+  develops, early evaluation for allogeneic transplant per NCCN AML
+  + AAMC age/comorbidity criteria. Outcomes substantially better with
+  early intervention vs. delayed.
+
+  Note: routine prophylactic bone marrow biopsies NOT recommended in
+  asymptomatic patients with normal CBC. CBC surveillance is the
+  recommended monitoring modality.
+
+rationale_ua: >
+  Стандартний-трек surveillance для prior alkylator chemotherapy exposure.
+  Components per NCCN AML Survivorship + CCSS + COG-LTFU guidelines:
+
+  **(1) CBC з диференційною q3-6 місяців для перших 10 років post-
+  chemotherapy** — Потім q12mo lifelong. Median t-AML latency 5-7р
+  post-alkylator; risk plateaus після 10р але не повертається до baseline.
+
+  **(2) Low-threshold marrow evaluation** при:
+  - New unexplained cytopenia (anemia, neutropenia, thrombocytopenia)
+  - Persistent macrocytosis (MCV >100)
+  - Dysplastic changes на peripheral smear
+  - Unexplained monocytosis
+  Bone marrow aspirate + biopsy + cytogenetics + flow + NGS panel.
+
+  **(3) Уникати additional bone-marrow-toxic exposures** — additional
+  alkylator-based therapy if alternative non-leukemogenic регимени exist;
+  counsel про benzene exposure.
+
+  **(4) Patient education** — Self-monitoring for symptoms: easy bruising,
+  prolonged bleeding, persistent fatigue, recurrent infections, fever.
+
+  **(5) Allogeneic HSCT eligibility assessment** при розвитку t-MDS або
+  t-AML — early evaluation per NCCN AML.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-AML-2025
+    position: supports
+  - source_id: SRC-NCCN-BCELL-2025
+    position: context
+
+do_not_do:
+  - "Не пропускати CBC surveillance — median t-AML latency 5-7р, не years 1-2."
+  - "Не виконувати routine prophylactic marrow biopsies у asymptomatic patients з normal CBC — yield poor."
+  - "Не очікувати t-AML обмежується першими 5р — cumulative incidence продовжує наростати до 10р."
+  - "Не використовувати alkylator-based regimens для curable conditions якщо alternative non-leukemogenic regimen exists без compromise outcome."
+  - "Не вважати t-AML always fatal — early-detected t-MDS amenable до allogeneic HSCT з meaningful long-term survival."
+
+do_not_do_en:
+  - "Do not skip CBC surveillance — median t-AML latency is 5-7y, not years 1-2."
+  - "Do not perform routine prophylactic marrow biopsies in asymptomatic patients with normal CBC — yield is poor."
+  - "Do not expect t-AML to be limited to the first 5y — cumulative incidence continues to climb through 10y."
+  - "Do not use alkylator-based regimens for curable conditions when an alternative non-leukemogenic regimen exists without compromising outcome."
+  - "Do not consider t-AML always fatal — early-detected t-MDS is amenable to allogeneic HSCT with meaningful long-term survival."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 iatrogenic prevention pilot (alkylator t-AML). Two-Clinical-Co-Lead signoff queued."

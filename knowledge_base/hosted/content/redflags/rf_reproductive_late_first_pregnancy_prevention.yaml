@@ -1,0 +1,59 @@
+id: RF-REPRODUCTIVE-LATE-FIRST-PREGNANCY-PREVENTION
+definition: >-
+  Reproductive history combining late first full-term pregnancy (age
+  ≥30) OR nulliparity, AND short cumulative lifetime breastfeeding
+  duration (<6 months total). Both factors independently confer
+  modest increases in hormone-receptor-positive breast cancer risk
+  (RR ~1.2-1.4 each) per Collaborative Group on Hormonal Factors in
+  Breast Cancer + WCRF/AICR. Breastfeeding is protective in dose-
+  dependent fashion (~4% breast cancer risk reduction per 12 months of
+  cumulative breastfeeding). Mechanism: cumulative ovulatory cycles +
+  unopposed estrogen exposure + delayed terminal differentiation of
+  breast ductal epithelium. Effect cumulative with other reproductive
+  factors (early menarche, late menopause, nulliparity, HRT).
+  Prevention-persona RedFlag (§20 v0.3 reproductive pilot).
+definition_ua: >-
+  Reproductive history яка поєднує late first full-term pregnancy (вік
+  ≥30) АБО nulliparity, І short cumulative lifetime breastfeeding
+  duration (<6 місяців total). Обидва factors незалежно дають modest
+  increases у hormone-receptor-positive breast cancer risk (RR ~1.2-1.4)
+  per Collaborative Group on Hormonal Factors in Breast Cancer + WCRF/
+  AICR. Breastfeeding protective в dose-dependent fashion (~4% breast
+  cancer risk reduction per 12 місяців cumulative breastfeeding).
+  Mechanism: cumulative ovulatory cycles + unopposed estrogen exposure +
+  delayed terminal differentiation breast ductal epithelium.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "nulliparous_or_first_pregnancy_age_ge_30"
+      value: true
+    - finding: "cumulative_breastfeeding_lt_6_months"
+      value: true
+    - finding: "combined_late_pregnancy_short_breastfeeding"
+      value: true
+
+clinical_direction: investigate
+
+severity: minor
+priority: 110
+category: other
+
+risk_category: reproductive
+
+relevant_diseases:
+  - DIS-BREAST
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BREAST-2025
+  - SRC-NCCN-BCELL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for late-first-pregnancy + short-breastfeeding combination. Modest individual effect sizes; cumulative effect non-trivial. Cannot retroactively modify primary trigger (timing of reproductive events) — counseling is forward-looking (encourage breastfeeding when feasible in subsequent pregnancies) + tightened breast cancer screening. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_lifestyle_iatrogenic_batch2
+draft_revision: 1
