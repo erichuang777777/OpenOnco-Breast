@@ -1,0 +1,20 @@
+{
+  "results": [
+    {
+      "drugid": "fluorouracil",
+      "genesymbol": "DPYD",
+      "guidelineid": "G1-A0",
+      "cpiclevel": "A",
+      "pgkbcalevel": "1A",
+      "removed": false
+    },
+    {
+      "drugid": "capecitabine",
+      "genesymbol": "DPYD",
+      "guidelineid": "G1-A0",
+      "cpiclevel": "A",
+      "pgkbcalevel": "1A",
+      "removed": false
+    }
+  ]
+}

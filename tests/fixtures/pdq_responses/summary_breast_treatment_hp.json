@@ -1,0 +1,24 @@
+{
+  "cdr_id": "CDR0000062955",
+  "title": "Breast Cancer Treatment (PDQ®)–Health Professional Version",
+  "audience": "Health Professionals",
+  "url": "https://www.cancer.gov/types/breast/hp/breast-treatment-pdq",
+  "date_last_modified": "2026-04-10",
+  "summary": {
+    "general_information": "Breast cancer is the most frequently diagnosed cancer in women in the United States...",
+    "stage_information": "Staging is based on the AJCC TNM system, 8th edition...",
+    "treatment_options_by_stage": [
+      {
+        "stage": "Stage I",
+        "options": ["Breast-conserving surgery + radiation therapy", "Total mastectomy"]
+      },
+      {
+        "stage": "Metastatic",
+        "options": ["Systemic therapy guided by hormone receptor and HER2 status"]
+      }
+    ]
+  },
+  "references": [
+    {"id": 1, "citation": "Siegel RL, et al. CA Cancer J Clin. 2024;74:12-49."}
+  ]
+}

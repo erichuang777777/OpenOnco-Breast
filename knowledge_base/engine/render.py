@@ -1865,6 +1865,124 @@ def _outlook_notes_index(outlook) -> dict[str, str]:
     return idx
 
 
+def _render_ua_sites(trial, target_lang: str) -> str:
+    """Render the UA-sites cell for one trial row.
+
+    Three states, in priority order:
+
+    1. `ua_sites_detail` non-empty → list each UA facility with city +
+       per-site status. This is the high-information path; surfaces the
+       cities a Ukrainian patient can actually ask about. Closes Gap 2
+       from `docs/reviews/ctgov-wiring-audit-2026-05-18.md`.
+    2. `sites_ua` non-empty (legacy path) → binary UA badge. Old cached
+       records carry this; new records also carry it for backward compat.
+    3. Neither → em-dash placeholder.
+    """
+    detail = getattr(trial, "ua_sites_detail", None) or []
+    if detail:
+        # One line per UA site: "City — Facility (status)". Empty fields
+        # collapse cleanly (e.g. "Kyiv (RECRUITING)" when facility absent).
+        lines: list[str] = []
+        for site in detail:
+            parts: list[str] = []
+            if site.city:
+                parts.append(_h(site.city))
+            if site.facility:
+                parts.append(_h(site.facility))
+            line = " — ".join(parts) if parts else _h("Ukraine")
+            if site.status:
+                line += f' <span class="trial-site-status">({_h(site.status)})</span>'
+            lines.append(f'<li>{line}</li>')
+        title_attr = "Recruiting sites in Ukraine"
+        return (
+            f'<div class="trial-ua-detail" title="{_h(title_attr)}">'
+            '<span class="badge badge--ua">UA</span>'
+            f'<ul class="trial-ua-sites">{"".join(lines)}</ul>'
+            '</div>'
+        )
+    if getattr(trial, "sites_ua", None):
+        return '<span class="badge badge--ua" title="Site present in Ukraine">UA</span>'
+    return "—"
+
+
+def _render_cited_trials_status(
+    body_html: str,
+    target_lang: str = "uk",
+    cache_root=None,
+) -> str:
+    """Decorate cited pivotal trials with live status from the per-NCT
+    cache. Closes Gap 3 from `docs/reviews/ctgov-wiring-audit-2026-05-18.md`.
+
+    Strategy: extract every NCT that already appears in the rendered
+    Plan body (so we decorate exactly what was cited, no more), look up
+    each in the per-NCT cache, render a status badge block. Skips the
+    section entirely when no cached badge is available — never invents
+    placeholder content.
+
+    Render-time only (CHARTER §8.3): does not influence routing.
+    """
+    from .citation_enrichment import (
+        DEFAULT_CACHE_ROOT,
+        extract_nct_ids,
+        trial_status_badge,
+    )
+
+    if not body_html:
+        return ""
+
+    root = cache_root if cache_root is not None else DEFAULT_CACHE_ROOT
+    cited = extract_nct_ids(body_html)
+    if not cited:
+        return ""
+
+    rows = []
+    for nct in cited:
+        badge = trial_status_badge(nct, cache_root=root)
+        if badge is None:
+            continue
+        status_class = "trial-status--recruiting" if badge.is_recruiting else "trial-status--closed"
+        status_label = badge.status.replace("_", " ").title()
+        synced = badge.last_synced or ""
+        if synced and len(synced) >= 10:
+            synced_short = synced[:10]
+        else:
+            synced_short = synced
+        rows.append(
+            '<li class="cited-trial">'
+            f'<a href="https://clinicaltrials.gov/study/{_h(nct)}" '
+            f'target="_blank" rel="noopener" class="cited-trial-nct">{_h(nct)}</a>'
+            f' <span class="badge {status_class}">{_h(status_label)}</span>'
+            + (f' <span class="cited-trial-synced">({_h(synced_short)})</span>' if synced_short else "")
+            + "</li>"
+        )
+
+    if not rows:
+        # NCTs were cited but none have cached status — suppress the
+        # section rather than emit an empty list. The cache may be
+        # unpopulated (fresh checkout) or the prewarm hasn't run.
+        return ""
+
+    heading = (
+        "Цитовані випробування — поточний статус"
+        if target_lang == "uk"
+        else "Cited trials — current status"
+    )
+    sub = (
+        "Поточний статус набору з ClinicalTrials.gov, оновлено через "
+        "кеш per-NCT (`scripts/sync_ctgov_studies.py`)."
+        if target_lang == "uk"
+        else "Recruiting status from ClinicalTrials.gov, refreshed via "
+             "the per-NCT cache (`scripts/sync_ctgov_studies.py`)."
+    )
+    return (
+        '<section class="cited-trials-status">'
+        f'<h2>{_h(heading)}</h2>'
+        f'<p class="section-sub">{_h(sub)}</p>'
+        f'<ul class="cited-trials-list">{"".join(rows)}</ul>'
+        '</section>'
+    )
+
+
 def _render_experimental_options(option, target_lang: str = "uk") -> str:
     """Render the clinical-trial track surfaced after engine selection.
 
@@ -1909,9 +2027,12 @@ def _render_experimental_options(option, target_lang: str = "uk") -> str:
 
     rows = []
     for t in trials:
-        ua_badge = ""
-        if t.sites_ua:
-            ua_badge = '<span class="badge badge--ua" title="Site present in Ukraine">UA</span>'
+        # Structured UA detail (city + facility + per-site status) when
+        # the upstream ctgov record carried site-level fields. Closes
+        # Gap 2 from docs/reviews/ctgov-wiring-audit-2026-05-18.md.
+        # Falls back to the binary UA badge for old cached records that
+        # only know country-level info.
+        ua_cell = _render_ua_sites(t, target_lang)
         elig = t.inclusion_summary or ""
         elig_short = (elig[:140] + "…") if len(elig) > 140 else elig
         outlook_cell = _render_trial_outlook(
@@ -1925,7 +2046,7 @@ def _render_experimental_options(option, target_lang: str = "uk") -> str:
             f'<td class="trial-phase">{_h(t.phase or "—")}</td>'
             f'<td class="trial-status">{_h(t.status)}</td>'
             f'<td class="trial-sponsor">{_h(t.sponsor or "—")}</td>'
-            f'<td class="trial-ua">{ua_badge or "—"}</td>'
+            f'<td class="trial-ua">{ua_cell}</td>'
             f'<td class="trial-outlook">{outlook_cell}</td>'
             f'<td class="trial-elig">{_h(elig_short)}</td>'
             "</tr>"
@@ -3072,6 +3193,13 @@ def render_plan_html(
     if fda.data_sources_summary:
         items = "".join(f"<li>{_h(s)}</li>" for s in fda.data_sources_summary)
         body.append(f"<section><h2>Sources cited</h2><ul class='sources'>{items}</ul></section>")
+
+    # Cited trials — live status decoration for cited pivotal NCT IDs.
+    # Scans the in-progress body for `NCT\d{8}` occurrences and looks up
+    # cached ctgov data via `_render_cited_trials_status`. Render-time
+    # only (CHARTER §8.3); empty when the cache has nothing.
+    # See docs/reviews/ctgov-wiring-audit-2026-05-18.md Gap 3.
+    body.append(_render_cited_trials_status("".join(body), target_lang))
 
     # Experimental options (Phase C — clinical-trial track)
     body.append(_render_experimental_options(plan_result.experimental_options, target_lang))

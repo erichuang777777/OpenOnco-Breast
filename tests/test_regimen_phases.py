@@ -269,11 +269,20 @@ def test_no_regression_all_244_legacy_yamls_load():
             assert len(r.phases) >= 1, (
                 f"{path.name}: phases authored explicitly but model has 0"
             )
-            # Drugs live in phases now; top-level components is the no-op
+            # Drugs live in phases now; top-level components is the no-op.
+            # Procedure-pathway regimens (allogeneic HCT, surgical pathways)
+            # legitimately carry zero drug components — the "treatment" is
+            # the stem-cell / surgical product, documented via phase
+            # purpose strings rather than DRUG-* refs. They have raw_count
+            # == 0 at top level too, so we recognise the shape and accept it.
             phase_drugs = sum(len(p.components) for p in r.phases)
-            assert phase_drugs > 0, (
-                f"{path.name}: explicit phases must have ≥1 component"
-            )
+            if phase_drugs == 0:
+                assert raw_count == 0, (
+                    f"{path.name}: explicit phases have 0 drug components "
+                    f"but top-level `components` has {raw_count} — drugs "
+                    f"left at top level instead of being moved into phases"
+                )
+                # else: procedure-pathway shape — accept.
             explicit_multiphase_count += 1
         elif raw_count > 0:
             # Legacy auto-wrap — single phase named "main"

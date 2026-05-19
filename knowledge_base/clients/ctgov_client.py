@@ -37,7 +37,13 @@ _FIELDS = ",".join([
     "Condition", "BriefSummary",
     "EligibilityCriteria", "MinimumAge", "MaximumAge", "Sex",
     "LeadSponsorName",
-    "LocationCountry",
+    # Per-site location fields. The flat v2 API returns these as parallel
+    # arrays — Country[i] / City[i] / Facility[i] / Status[i] correspond to
+    # the same physical site. `_parse_study` zips them into a structured
+    # `locations` list. Without these, only country-level data flows
+    # through and the render layer can only emit a binary UA badge.
+    # See docs/reviews/ctgov-wiring-audit-2026-05-18.md Gap 2.
+    "LocationCountry", "LocationCity", "LocationFacility", "LocationStatus",
     "PrimaryOutcomeMeasure",
 ])
 
@@ -194,12 +200,47 @@ def _parse_study(raw: dict) -> dict:
     sponsor_mod = _get("sponsorCollaboratorsModule.leadSponsor") or {}
     sponsor     = sponsor_mod.get("name", "") if isinstance(sponsor_mod, dict) else raw.get("LeadSponsorName", "")
 
-    # Countries (flat field is a list; protocolSection is nested)
-    countries_raw = raw.get("LocationCountry") or []
-    if not countries_raw:
-        locs = _get("contactsLocationsModule.locations") or []
-        countries_raw = list({loc.get("country", "") for loc in locs if loc.get("country")})
-    countries = countries_raw if isinstance(countries_raw, list) else [countries_raw]
+    # Locations. Two response shapes:
+    #   1. fields= mode (the search path) → parallel flat arrays:
+    #      LocationCountry, LocationCity, LocationFacility, LocationStatus
+    #   2. full-record mode (get_trial) → contactsLocationsModule.locations
+    #      as a list of dicts {country, city, facility, status, …}
+    # The structured `locations` list normalises both into the dict shape
+    # so downstream consumers don't branch.
+    locations: list[dict] = []
+    flat_country = raw.get("LocationCountry") or []
+    flat_city = raw.get("LocationCity") or []
+    flat_facility = raw.get("LocationFacility") or []
+    flat_status = raw.get("LocationStatus") or []
+    if flat_country and isinstance(flat_country, list):
+        # Parallel arrays — zip defensively (lengths can drift if some
+        # sites lack a city tag). Pad shorter arrays with None.
+        n = max(len(flat_country), len(flat_city), len(flat_facility), len(flat_status))
+        def _at(arr: list, i: int):
+            return arr[i] if i < len(arr) else None
+        for i in range(n):
+            locations.append({
+                "country":  _at(flat_country, i),
+                "city":     _at(flat_city, i),
+                "facility": _at(flat_facility, i),
+                "status":   _at(flat_status, i),
+            })
+    else:
+        for loc in (_get("contactsLocationsModule.locations") or []):
+            if not isinstance(loc, dict):
+                continue
+            locations.append({
+                "country":  loc.get("country"),
+                "city":     loc.get("city"),
+                "facility": loc.get("facility"),
+                "status":   loc.get("status"),
+            })
+
+    countries = [loc["country"] for loc in locations if loc.get("country")]
+    # Stable de-dup preserving order of first appearance — downstream
+    # consumers expect a unique-country list (matches pre-change shape).
+    _seen: set[str] = set()
+    countries = [c for c in countries if not (c in _seen or _seen.add(c))]
 
     # Primary outcomes
     outcomes_raw = raw.get("PrimaryOutcomeMeasure") or []
@@ -226,6 +267,12 @@ def _parse_study(raw: dict) -> dict:
         "sponsor":            sponsor,
         "countries":          [c for c in countries if c],
         "site_count":         len(countries),
+        # Per-site detail (one entry per location). Each dict carries
+        # {country, city, facility, status}; values may be None when the
+        # upstream record didn't fill them. Consumed by
+        # `engine.experimental_options._to_trial` to populate
+        # `ExperimentalTrial.ua_sites_detail`.
+        "locations":          locations,
         "url":                f"https://clinicaltrials.gov/study/{nct_id}" if nct_id else "",
     }
 

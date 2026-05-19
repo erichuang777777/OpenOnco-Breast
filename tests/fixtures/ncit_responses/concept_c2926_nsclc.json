@@ -1,0 +1,20 @@
+{
+  "code": "C2926",
+  "name": "Non-Small Cell Lung Carcinoma",
+  "terminology": "ncit",
+  "version": "26.05d",
+  "definitions": [
+    {
+      "definition": "A heterogeneous aggregate of at least three distinct histological types of lung cancer, including squamous cell carcinoma, adenocarcinoma, and large cell carcinoma.",
+      "source": "NCI"
+    }
+  ],
+  "synonyms": [
+    {"name": "NSCLC", "termType": "AB"},
+    {"name": "Non-Small Cell Lung Cancer", "termType": "SY"},
+    {"name": "Non-small Cell Lung Carcinoma", "termType": "SY"}
+  ],
+  "parents": [
+    {"code": "C3262", "name": "Lung Carcinoma"}
+  ]
+}

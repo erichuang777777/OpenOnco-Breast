@@ -13,6 +13,12 @@ class DiseaseCodes(Base):
     icd_10: Optional[str] = None
     snomed_ct: Optional[str] = None  # only populated if country license acquired
     who_classification: Optional[str] = None
+    # NCI Thesaurus stable concept code (e.g. "C2926" = Non-Small Cell
+    # Lung Carcinoma). Backs term normalization from free-text patient
+    # input to KB disease IDs. See `knowledge_base/clients/ncit_client.py`
+    # and `docs/reviews/ncit-license-2026-05-18.md`. Optional in MVP;
+    # populating per-disease is a separate clinical-content workstream.
+    ncit: Optional[str] = None
 
 
 class Disease(Base):

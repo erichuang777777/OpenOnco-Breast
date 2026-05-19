@@ -85,6 +85,11 @@ class BiomarkerExternalIDs(Base):
     clingen_id: Optional[str] = None
     hgvs_protein: Optional[str] = None
     hgvs_coding: Optional[str] = None
+    # NCI Thesaurus stable concept code (e.g. "C20188" = EGFR Mutation,
+    # "C17068" = EGFR Gene). Backs term normalization from free-text
+    # biomarker mentions to KB biomarker IDs. Optional in MVP; see
+    # `knowledge_base/clients/ncit_client.py`.
+    ncit: Optional[str] = None
 
 
 class Biomarker(Base):
