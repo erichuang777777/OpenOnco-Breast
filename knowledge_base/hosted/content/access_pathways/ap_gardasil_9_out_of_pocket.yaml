@@ -1,0 +1,74 @@
+id: AP-GARDASIL-9-OUT-OF-POCKET
+name: "HPV-9 vaccine (Gardasil-9) — private pay in Ukraine"
+name_ua: "Вакцина HPV-9 (Gardasil-9) — оплата з кишені пацієнта в Україні"
+
+applies_to_drug_ids:
+  - DRUG-GARDASIL-9
+applies_to_regimen_ids:
+  - REG-HPV-GARDASIL-9
+
+pathway_type: self_pay
+
+country_options: ["UA"]
+
+cost_orientation:
+  currency: UAH
+  min: 3500
+  max: 8000
+  per_unit: dose
+  notes: >
+    Retail price per single dose у приватних медичних центрах та
+    аптеках Києва і обласних центрів — приблизно 3500-8000 UAH/доза
+    станом на 2026-05 (drlz.com.ua + опитування приватних мереж
+    типу Synevo, Boris, Medikom, ISIDA). Повний 2-дозовий курс
+    (вік 9-14) — ~7000-16 000 UAH; повний 3-дозовий курс (catch-up
+    age 15-45 або immunocompromised) — ~10 500-24 000 UAH.
+
+typical_lead_time_weeks: [0, 2]
+
+contact_pattern: >
+  Pacient (або батьки) звертаються до приватного педіатричного /
+  сімейного / гінекологічного центру (Synevo Health, Medikom, Borys,
+  ISIDA, Dobrobut та регіональні аналоги). Препарат купується за
+  рецептом у приватній аптеці АБО постачається безпосередньо у
+  клініці. Запис на серію 0-(2)-6 місяців. Деякі державні
+  ЦПМСД (центри ПМСД) пропонують HPV-вакцинацію за домовленостями
+  з виробником або за рахунок грантових пілотних проєктів — слід
+  уточнювати локально.
+
+eligibility_caveats:
+  - "Pediatric від 9 років (per FDA / NCCN / ESMO); катч-ап до 45 років"
+  - "Pregnancy — інактивована, але рекомендовано відкласти до постпартум (категорія B)"
+  - "Severe-immediate-allergic-reaction до попередньої дози або компонента — абсолютна КП"
+  - "Saccharomyces cerevisiae (дріжджі) алергія — обережно (вакцина рекомбінантна на дріжджах)"
+  - "Acute illness / febrile — відкласти введення"
+
+requires_documentation:
+  - "Інформована згода / батьківська згода для неповнолітніх"
+  - "Card вакцинації (Form 063/о або електронний)"
+  - "Анамнез попередніх вакцинацій (включаючи попередню дозу HPV-вакцини якщо є)"
+
+verified_by: null
+last_verified: "2026-05-18"
+
+sources:
+  - SRC-USPSTF-CERVICAL-2018
+  - SRC-WHO-LNSC-2023
+
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Україна станом на 2026-05 не включила HPV-вакцинацію у Календар
+  профілактичних щеплень (затверджений МОЗ). НСЗУ не покриває
+  HPV-вакцинацію. Доступ — лише через приватний ринок (out-of-pocket)
+  АБО рідкісні пілотні програми (наприклад, Patients of Ukraine /
+  Tabletochki іноді проводять локалізовані кампанії, але масштаб
+  обмежений).
+
+  Це створює значну bаrrier-to-prevention для попередження раку
+  шийки матки (cervical), анального, орофарингеального,
+  vulvar/vaginal та penile у українських когортах. Pre-exposure
+  vaccination до сексуального дебюту — найефективніша стратегія,
+  тому фокус — pediatric age 9-14 (2-dose schedule).
+
+  AccessPathway render-time-only.

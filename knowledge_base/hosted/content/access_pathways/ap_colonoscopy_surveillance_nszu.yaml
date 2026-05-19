@@ -1,0 +1,100 @@
+id: AP-COLONOSCOPY-SURVEILLANCE-NSZU
+name: "Colonoscopy surveillance for Lynch / FAP — НСЗУ funding pathway (mixed availability)"
+name_ua: "Колоноскопія-нагляд при синдромі Лінча / FAP — фінансування НСЗУ (змішана доступність)"
+
+# Test- та procedure-anchored AP. Engine-side `_find_access_pathways`
+# читає тільки `applies_to_drug_ids`, тому matching до AccessMatrix-row
+# не відбудеться, але pacient-facing render layer та маршрутна
+# документація використовують ці поля (схема `extra="allow"`).
+applies_to_drug_ids: []
+applies_to_regimen_ids: []
+applies_to_test_ids:
+  - TEST-COLONOSCOPY-SURVEILLANCE
+  - TEST-FLEX-SIGMOIDOSCOPY
+
+pathway_type: nszu_program_partial
+# Канонічний enum-набір не охоплює змішаний "частково покривається
+# НСЗУ через діагностичний пакет, інтервали-нагляд платні поза
+# показанням". Розширення вперед-сумісним value per
+# test_pathway_type_is_freeform_but_documented.
+
+country_options: ["UA"]
+
+cost_orientation:
+  currency: UAH
+  min: 0
+  max: 8000
+  per_unit: dose
+  notes: >
+    Pacient OOP per colonoscopy session станом на 2026-05:
+    - НСЗУ пакет 2202 "Діагностика та лікування дорослих та дітей у
+      стаціонарних та амбулаторних умовах при гострих та хронічних
+      захворюваннях органів травлення" — покриває діагностичну
+      колоноскопію за наявності клінічних показань (сімейний анамнез,
+      симптоматика). Pacient OOP: 0-1500 UAH (можливі співплатежі
+      на анестезію і витратні матеріали в державних закладах).
+    - Surveillance-показання у безсимптомних carriers (Lynch q1-2y,
+      FAP q12mo з 10-12 років) — НЕ завжди приймаються як підстава
+      для НСЗУ-пакета без активної симптоматики. У приватних
+      клініках (Borys, Medikom, Dobrobut, ISIDA) — 4000-8000 UAH
+      за сеанс з седацією. Загалом, для documented Lynch / FAP
+      carrier при наявності genetic-test-результату та сімейного
+      анамнезу — більшість регіональних онкоцентрів виконують
+      surveillance безкоштовно (через регіональний онкодиспансер).
+
+typical_lead_time_weeks: [4, 16]
+
+contact_pattern: >
+  Сімейний лікар (за декларацією НСЗУ) → направлення до
+  гастроентеролога АБО до regional cancer-center medical-genetics
+  consultation. Documented Lynch/FAP carrier → регіональний
+  онкоцентр / obласний онкодиспансер виконує surveillance-
+  колоноскопію через НСЗУ-пакет 2202 або через цільову регіональну
+  програму онкоскринінгу. Безсимптомні асимптомні carrier'и (без
+  documented variant) — частіше потребують приватного оплачуваного
+  візиту. Седація з пропофолом — додатковий co-pay 1500-3500 UAH
+  навіть у НСЗУ-закладах.
+
+eligibility_caveats:
+  - "Подтверджена germline mutation (Lynch — MLH1/MSH2/MSH6/PMS2/EPCAM; FAP — APC; MAP — MUTYH) АБО задокументований сімейний анамнез з clinical criteria"
+  - "Активна декларація НСЗУ"
+  - "Госпіталі з ендоскопічним обладнанням + досвідом surveillance-колоноскопії — переважно обласні центри (Київ, Львів, Харків, Одеса, Дніпро). Сільські райони — обмежений доступ, потребує відрядження до oblast-центру"
+  - "Anesthesiology / седація — окрема логістика; може бути не доступною у державних закладах вночі / у вихідні"
+
+requires_documentation:
+  - "Genetic-test report (germline-варіант)"
+  - "Сімейний родовід / Amsterdam II або Bethesda criteria для Lynch"
+  - "Попередня колоноскопія + патогістологічне заключення (для timing нагляду)"
+  - "Декларація НСЗУ"
+  - "Skрининг-карта онкологічного диспансеру"
+
+verified_by: null
+last_verified: "2026-05-18"
+
+sources:
+  - SRC-NCCN-GENETIC-FAMILIAL-CRC-2025
+  - SRC-USPSTF-CRC-2021
+
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Колоноскопія є cornerstone surveillance для Lynch (q1-2y starting
+  age 20-25 або 2-5 років до earliest family CRC) та FAP (q12mo
+  starting age 10-12). В Україні доступність — змішана:
+  - Київ, Львів, Харків, Одеса, Дніпро, Запоріжжя — обласні
+    онкоцентри з досвідом високоризикової surveillance + достатнім
+    ендоскопічним обладнанням.
+  - Малі обласні центри та районні лікарні — обмежений досвід
+    chromoendoscopy, polypectomy під час surveillance, технічних
+    можливостей. Може потребувати відрядження.
+  - Pediatric FAP (10-12 років) — pediatric-gastroenterologists з
+    flex-sigmoidoscopy + colonoscopy досвідом дуже обмежені поза
+    Київсkим/Львівським дитячими центрами. Часто фактично виконують
+    дорослі ендоскопісти з pediatric-modifications.
+
+  АП показує що technical-availability та НСЗУ-funding частково
+  покриває cohort, але fragment-у-fragment'і — bottlenecks
+  пов'язані з географією, дитячим/підлітковим віком, та довжиною
+  лікарняного листа очікування.
+
+  AccessPathway render-time-only.

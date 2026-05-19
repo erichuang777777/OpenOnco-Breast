@@ -1,0 +1,64 @@
+id: AP-TENOFOVIR-AF-NSZU-HBV
+name: "Tenofovir alafenamide (TAF) via НСЗУ HBV programme (reimbursed)"
+name_ua: "Тенофовір алафенамід (TAF) через програму НСЗУ з лікування HBV (відшкодування)"
+
+applies_to_drug_ids:
+  - DRUG-TENOFOVIR-AF
+applies_to_regimen_ids:
+  - REG-HBV-TENOFOVIR-AF
+
+pathway_type: nszu_program
+
+country_options: ["UA"]
+
+cost_orientation:
+  currency: UAH
+  min: 0
+  max: 0
+  per_unit: month
+  notes: >
+    Pacient out-of-pocket cost: 0 UAH/month within НСЗУ HBV programme
+    (пакет 5004) and within HIV programme when TAF is supplied as
+    a component of FDC (Biktarvy, Genvoya, Descovy). Standalone
+    Vemlidy 25 mg retail price — приблизно 6000-9000 UAH/місяць у
+    приватних аптеках станом на 2026-05 (drlz.com.ua перевірено).
+
+typical_lead_time_weeks: [1, 4]
+
+contact_pattern: >
+  Інфекціоніст / гепатолог за договором НСЗУ (пакет 5004 — HBV
+  програма) для chronic HBV. Альтернативно — гематолог / онколог
+  призначає для HBV-реактивації prophylaxis у HBsAg+/anti-HBc+
+  пацієнтів на анти-CD20 / R-CHOP-подібних режимах (per AASLD-2024
+  / NCCN рекомендація).
+
+eligibility_caveats:
+  - "Chronic HBV — HBV-ДНК ≥2000 IU/mL (treatment indication) АБО HBsAg+/anti-HBc+ перед імуносупресією (prophylaxis)"
+  - "CrCl ≥15 mL/min (TAF дозволено при HD з прийомом після діалізу)"
+  - "Decompensated cirrhosis — НЕ рекомендовано (TDF preferred)"
+  - "Pediatric ≥12 років + ≥35 kg для standalone HBV indication"
+
+requires_documentation:
+  - "HBsAg позитивний / HBV-ДНК ПЛР"
+  - "ALT, креатинін, фосфор (TAF safer на нирки/кістки, але baseline моніторинг стандартний)"
+  - "Скринінг на HIV (одночасна терапія потребує full ART, не TAF-monotherapy)"
+  - "Декларація НСЗУ підтверджена"
+
+verified_by: null
+last_verified: "2026-05-18"
+
+sources:
+  - SRC-AASLD-HBV-2024
+  - SRC-EASL-HBV-2025
+
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  TAF — newer prodrug tenofovir з ~90% нижчою системною експозицією
+  vs TDF, що зменшує ризик нефро-/кістковотоксичних effects при
+  тривалому застосуванні (Buti 2016 Lancet GH; Chan 2016 LancetGH).
+  В Україні зареєстрований як Vemlidy (HBV) та компонент Biktarvy /
+  Genvoya / Descovy (ВІЛ). НСЗУ-програма "Антивірусна терапія" покриває
+  TAF за HBV-показаннями.
+
+  AccessPathway render-time-only.

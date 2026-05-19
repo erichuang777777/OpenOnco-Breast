@@ -1,0 +1,86 @@
+id: AP-TAMOXIFEN-NSZU-CHEMOPREVENTION
+name: "Tamoxifen for breast chemoprevention — off-label НСЗУ status, low-cost generic"
+name_ua: "Тамоксифен для хіміопрофілактики РМЗ — off-label статус у НСЗУ, низькі ціни генериків"
+
+applies_to_drug_ids:
+  - DRUG-TAMOXIFEN
+applies_to_regimen_ids:
+  - REG-TAMOXIFEN-CHEMOPREVENTION
+
+pathway_type: self_pay
+# Tamoxifen registered + reimbursed by НСЗУ ТІЛЬКИ за лікувальними
+# та ад'ювантними breast-cancer показаннями. Chemoprevention (NSABP-
+# P1, IBIS-I) — off-label у контексті НСЗУ-реімбурсації — НЕ покривається
+# программою. Pacients оплачують самостійно, але вартість мізерна.
+
+country_options: ["UA"]
+
+cost_orientation:
+  currency: UAH
+  min: 150
+  max: 600
+  per_unit: month
+  notes: >
+    Tamoxifen 20 mg PO daily generic retail price у приватних аптеках
+    станом на 2026-05 — приблизно 150-600 UAH/місяць (~5-20 UAH/день).
+    5-річний chemoprevention course — приблизно 9000-36 000 UAH total
+    OOP. Дешевизна генерика (off-patent з 1980-х) робить це
+    найдоступнішим chemoprevention-варіантом для українських пацієнток
+    високого ризику. Бренди Nolvadex, Tamoxifen-Sandoz, Tamoxifen-Teva,
+    тощо — перевірено drlz.com.ua.
+
+typical_lead_time_weeks: [0, 1]
+
+contact_pattern: >
+  Онколог-мамолог (або сімейний лікар з направленням на онкоконсиліум)
+  оцінює risk profile (BRCA1/2-носійство, LCIS, atypical hyperplasia,
+  Tyrer-Cuzick або Gail 5-year risk >1.7%) і призначає
+  tamoxifen 20 mg PO daily × 5 років. Pacient купує препарат за
+  рецептом у будь-якій приватній аптеці. Off-label статус щодо
+  НСЗУ-реімбурсації не блокує призначення — chemoprevention-режим
+  визнаний NCCN Breast / USPSTF Grade B / ESMO. Деякі онкологи
+  виписують tamoxifen під ICD-10 D-кодом "carcinoma in situ" або
+  Z80.3 "сімейний анамнез РМЗ" для документації.
+
+eligibility_caveats:
+  - "Premenopausal або postmenopausal жінка з 5-річним ризиком РМЗ ≥1.7% (Gail) АБО life-time ризиком ≥20% (IBIS/Tyrer-Cuzick v8)"
+  - "Інтактна матка — обережно щодо ризику ендометріального раку (~2× baseline; surveillance for postmenopausal bleeding)"
+  - "Анамнез VTE або стану підвищеного ризику — ВІДНОСНА КП (ВТЕ ризик ~2×)"
+  - "Pregnancy / lactation / fertility — категорія D / тератогенна — adequate contraception обов'язкова"
+  - "Concurrent strong CYP2D6 inhibitors (fluoxetine, paroxetine, bupropion) — знижують активний метаболіт (endoxifen)"
+
+requires_documentation:
+  - "Risk-score (Gail, Tyrer-Cuzick v8 — TEST-TYRER-CUZICK-V8-CALCULATOR)"
+  - "BRCA1/2 / multi-gene panel (TEST-GERMLINE-MULTI-GENE-PANEL або TEST-GERMLINE-BRCA-PANEL) якщо сімейний ризик"
+  - "Mammogram / TEST-MAMMOGRAPHY / TEST-BREAST-MRI baseline"
+  - "Pelvic exam / TVUS baseline для постменопаузних жінок з інтактною маткою"
+  - "Інформована згода щодо risk/benefit balance"
+
+verified_by: null
+last_verified: "2026-05-18"
+
+sources:
+  - SRC-NCCN-BREAST-2025
+  - SRC-USPSTF-BREAST-2024
+
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Tamoxifen-chemoprevention доведено знижує incidence ER+ invasive
+  breast cancer ~50% у high-risk premenopausal та postmenopausal
+  women (NSABP-P1 Fisher 1998; IBIS-I Cuzick 2015 20-year follow-up
+  показав persistent benefit після припинення прийому). USPSTF Grade
+  B рекомендація. ESMO Breast 2024 + NCCN Breast v3.2025 endorsement.
+
+  В Україні tamoxifen широко доступний як generic; вартість мізерна
+  (5-20 UAH/день). Бар'єр — не вартість, а:
+  1) clinician-awareness щодо risk-assessment протоколів
+     (Gail / Tyrer-Cuzick недостатньо інтегровані у щоденну практику);
+  2) пацієнтська настороженість щодо ендометріальних / VTE-ризиків;
+  3) відсутність формальної chemoprevention-clinic-моделі.
+
+  Raloxifene (REG-RALOXIFENE-CHEMOPREVENTION + DRUG-RALOXIFENE) —
+  альтернатива для постменопаузних жінок з інтактною маткою або
+  VTE-ризиком (див. AP-RALOXIFENE-OOP).
+
+  AccessPathway render-time-only.

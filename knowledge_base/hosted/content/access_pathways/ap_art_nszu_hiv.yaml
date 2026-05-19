@@ -1,0 +1,77 @@
+id: AP-ART-NSZU-HIV
+name: "ART regimens (Biktarvy and alternatives) via НСЗУ HIV programme"
+name_ua: "Антиретровірусна терапія (Biktarvy та альтернативи) через програму НСЗУ з лікування ВІЛ"
+
+applies_to_drug_ids:
+  - DRUG-BICTEGRAVIR-EMTRICITABINE-TENOFOVIR-AF
+  - DRUG-TENOFOVIR-AF
+  - DRUG-TENOFOVIR-DF
+applies_to_regimen_ids:
+  - REG-HIV-BIKTARVY
+
+pathway_type: nszu_program
+
+country_options: ["UA"]
+
+cost_orientation:
+  currency: UAH
+  min: 0
+  max: 0
+  per_unit: month
+  notes: >
+    Pacient out-of-pocket cost: 0 UAH/month within Center for Public
+    Health (ЦГЗ МОЗ України) ART programme — централізовано закуповує
+    та розподіляє ART через мережу обласних СНІД-центрів. Biktarvy
+    (BIC/FTC/TAF FDC) включений до НСЗУ-першолінійних опцій станом
+    на 2026-05. Альтернативи в перелік централізованих закупівель:
+    - DTG/3TC (Dovato) — preferred first-line per WHO 2024
+    - DTG + TDF/FTC (separate) — generic-friendly
+    - DTG + TDF/3TC fixed-dose generic
+    Retail price Biktarvy у приватних аптеках — ~25 000-35 000 UAH/місяць
+    (рідко продається OOP — переважно через ЦГЗ).
+
+typical_lead_time_weeks: [1, 4]
+
+contact_pattern: >
+  Сімейний лікар → обласний СНІД-центр (за місцем декларації / реєстрації)
+  → інфекціоніст-консиліум для призначення режиму. Програма ЦГЗ
+  безкоштовно постачає ART через мережу регіональних медичних
+  закладів. Pacient звертається до СНІД-центру з результатом
+  HIV-ELISA + confirmatory тест (Western blot або 2nd ELISA).
+
+eligibility_caveats:
+  - "HIV-1 ELISA позитивний + confirmatory (Western blot або 2-й ELISA іншою тест-системою)"
+  - "Лабораторія: CD4, HIV-РНК baseline, HLA-B*5701 (якщо ABC у режимі); HBV / HCV скринінг; туберкульоз-скринінг"
+  - "Активна декларація НСЗУ та реєстрація у регіональному СНІД-центрі"
+  - "Pediatric ≥2 років + ≥14 kg для Biktarvy low-dose таблетки"
+  - "Pregnancy — DTG-based режими preferred per WHO 2024"
+
+requires_documentation:
+  - "HIV-confirmatory тести (ELISA + WB або 2-ELISA)"
+  - "CD4-count та HIV-РНК baseline"
+  - "HBsAg / anti-HBc / anti-HCV"
+  - "Виключення активного туберкульозу (Xpert MTB/RIF / IGRA)"
+  - "Декларація НСЗУ + реєстрація у СНІД-центрі"
+
+verified_by: null
+last_verified: "2026-05-18"
+
+sources:
+  - SRC-WHO-LNSC-2023
+
+notes: >
+  STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode.
+
+  Україна має one of the largest HIV epidemics в Європі. ЦГЗ МОЗ
+  України централізовано закуповує ART через міжнародні грантові
+  механізми (Global Fund, PEPFAR) та національний бюджет; пацієнти
+  отримують ART безкоштовно. Biktarvy (DRUG-BICTEGRAVIR-EMTRICITABINE-
+  TENOFOVIR-AF) — preferred у нових настановах України з ART (2024
+  редакція), хоча DTG-based generic режими (DTG/3TC, DTG+TDF/FTC)
+  залишаються cost-effective альтернативою у централізованому
+  закупівельному переліку.
+
+  Pre-exposure prophylaxis (PrEP): TDF/FTC централізовано постачається
+  ЦГЗ для груп ризику (MSM, transgender, серодискордантні пари).
+
+  AccessPathway render-time-only.
