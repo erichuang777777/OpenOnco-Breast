@@ -1,0 +1,75 @@
+id: BMA-METANEPHRINES-PHEO-VHL-MEN2-SURVEILLANCE
+biomarker_id: BIO-METANEPHRINES-PLASMA-PHEO
+variant_qualifier: Plasma free metanephrines — pheochromocytoma/paraganglioma
+  surveillance in VHL / MEN2 / SDH carriers
+disease_id: DIS-PHEOCHROMOCYTOMA
+escat_tier: IIIA
+evidence_summary: >
+  Plasma free metanephrines are the gold-standard biochemical test for
+  pheochromocytoma and paraganglioma (PPGL) — sensitivity ~96-99%,
+  specificity ~85-95% (lower with sympathomimetic / tricyclic /
+  acetaminophen interferents and improper supine sampling). Used for
+  annual lifelong surveillance in confirmed carriers of VHL (Type 2A/2B/2C),
+  MEN2A/MEN2B (RET-codon-stratified onset), and SDHB/SDHC/SDHD/SDHA per
+  Endocrine Society MEN 2023 and NCCN Kidney 2025 (VHL component).
+  Elevation >3-4× upper limit highly suggestive of PPGL; intermediate
+  elevation prompts clonidine-suppression test or 24-hour urinary
+  fractionated metanephrines. Positive biochemistry triggers MRI abdomen +
+  68Ga-DOTATATE PET (or I-123 MIBG). Biochemistry directs adrenalectomy /
+  paraganglioma resection planning. ESCAT IIIA — biomarker directs
+  curative-intent surgery scheduling in syndromic carriers.
+regulatory_approval:
+  fda:
+  - Plasma free metanephrines — LC-MS/MS panels (LabCorp, Quest, Mayo)
+    and FDA-cleared immunoassays; LC-MS/MS preferred (lower
+    interference)
+  ema: []
+  ukraine:
+  - Plasma metanephrines — limited availability; reference labs in Kyiv;
+    24-h urinary fractionated metanephrines more widely available
+recommended_combinations:
+- 'Confirmed elevation in syndromic carrier: MRI abdomen + 68Ga-DOTATATE
+  PET → adrenalectomy (cortical-sparing if bilateral risk) or paraganglioma
+  resection'
+- 'Equivocal: clonidine-suppression test OR 24-h urinary fractionated
+  metanephrines confirm'
+contraindicated_monotherapy:
+- 'Do not initiate beta-blockade for PPGL hypertension before adequate
+  alpha-blockade (phenoxybenzamine 10-14 days) — risk of hypertensive
+  crisis from unopposed alpha stimulation'
+primary_sources:
+- SRC-ENDOCRINE-SOCIETY-MEN-2023
+- SRC-NCCN-NET-2025
+- SRC-NCCN-KIDNEY-2025
+last_verified: '2026-05-18'
+evidence_sources:
+- source: SRC-ENDOCRINE-SOCIETY-MEN-2023
+  level: Strong / Moderate certainty
+  evidence_lane: standard_care
+  note: >
+    Endocrine Society MEN 2023 — annual plasma free metanephrines in
+    MEN2A/2B carriers from age 11 (codon 634) / age 5 (M918T), VHL
+    Type 2 carriers from age 5, SDHB/C/D from age 6-10.
+- source: SRC-NCCN-KIDNEY-2025
+  level: Category 2A
+  evidence_lane: standard_care
+  note: >
+    NCCN Kidney 2025 (VHL section) — biochemistry every 1-2 years in
+    VHL Type 2 carriers; imaging directed by biochemistry.
+actionability_review_required: true
+indications:
+- IND-VHL-CARRIER-SURVEILLANCE
+- IND-VHL-CARRIER-INTENSIFIED
+- IND-MEN2-CARRIER-SURVEILLANCE
+- IND-MEN2-CARRIER-INTENSIFIED
+notes: |
+  STUB pending two-Co-Lead signoff. SDH (B/C/D/A) carrier surveillance
+  Indication entities are pending authoring (closest existing:
+  none yet for SDH; future IND-SDH-CARRIER-SURVEILLANCE). VHL
+  classification (Type 1 vs Type 2A/2B/2C) determines pheo
+  surveillance need — Type 1 lacks pheochromocytoma, Type 2 has it as
+  defining feature.
+
+  Render layer should flag concurrent sympathomimetic / tricyclic /
+  acetaminophen use, supine-sample status, and renal function — all
+  affect interpretation.

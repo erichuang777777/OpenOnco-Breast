@@ -1,0 +1,68 @@
+id: BMA-HBV-DNA-MONITORING-ANTIVIRAL-RESPONSE
+biomarker_id: BIO-HBV-DNA-QUANTITATIVE-MONITORING
+variant_qualifier: Quantitative HBV DNA — viral-load monitoring during nucleos(t)ide
+  analogue therapy
+disease_id: DIS-HCC
+escat_tier: IIIA
+evidence_summary: >
+  Quantitative HBV DNA tracks response during nucleos(t)ide-analogue (NA)
+  therapy with entecavir (ETV) or tenofovir alafenamide/disoproxil (TAF/TDF).
+  Effective suppression (HBV DNA <2,000 IU/mL, ideally undetectable) is the
+  primary virologic response endpoint per AASLD HBV 2024 and EASL HBV 2025.
+  Sustained suppression reduces HCC incidence by ~50-70% in CHB cirrhotics
+  (REVEAL-HBV cohort; Wong 2013 meta-analysis). Primary non-response or
+  viral breakthrough (≥1-log rise on therapy) prompts adherence review,
+  resistance testing, and regimen change (rare with ETV/TAF/TDF — high
+  genetic barrier). ESCAT IIIA — biomarker directs antiviral
+  continuation/switch decisions and is the primary HCC-prevention lever in
+  chronic HBV.
+regulatory_approval:
+  fda:
+  - HBV DNA quantitative assays — multiple FDA-cleared (Roche cobas,
+    Abbott RealTime); standard of care per AASLD
+  ema: []
+  ukraine:
+  - HBV DNA quantitative — CE-marked assays available in UA reference labs;
+    coverage under NSZU varies regionally
+recommended_combinations:
+- 'Continued antiviral on full suppression (entecavir, TAF, TDF)'
+- 'HCC surveillance regardless of DNA — see BMA-AFP-HCC-AASLD-SURVEILLANCE
+  (US/AFP q6mo in cirrhotics and high-risk non-cirrhotics)'
+contraindicated_monotherapy:
+- lamivudine monotherapy (high resistance — superseded)
+- adefovir monotherapy (low potency — superseded)
+primary_sources:
+- SRC-AASLD-HBV-2024
+- SRC-EASL-HBV-2025
+- SRC-AASLD-HCC-2023
+last_verified: '2026-05-18'
+evidence_sources:
+- source: SRC-AASLD-HBV-2024
+  level: Class I / Level A
+  evidence_lane: standard_care
+  note: >
+    AASLD HBV 2024 — quantitative HBV DNA at baseline, every 3-6 months on
+    therapy. Treatment goal: maintained DNA suppression below assay limit
+    of detection.
+- source: SRC-EASL-HBV-2025
+  level: A1
+  evidence_lane: standard_care
+  note: >
+    EASL HBV 2025 — HBV DNA <2,000 IU/mL (ideally undetectable) defines
+    virologic response. Persistent viraemia after 12 months → assess
+    adherence / resistance / regimen change.
+actionability_review_required: true
+indications:
+- IND-CHRONIC-HBV-PREVENTION-ANTIVIRAL
+- IND-CHRONIC-HBV-PREVENTION-OBSERVATION
+notes: |
+  STUB pending two-Co-Lead signoff. HCC anchor reflects the primary
+  oncology endpoint of HBV antiviral therapy — long-term suppression
+  reduces but does not eliminate HCC risk; surveillance continues
+  regardless of virologic suppression in cirrhotics (AASLD HCC 2023).
+
+  HBeAg seroconversion is a parallel response endpoint not captured in
+  this BMA (covered separately under BIO-HBV-STATUS). Engine must not
+  treat detectable but stable low-level viraemia (<2,000 IU/mL) as
+  treatment failure — AASLD specifically permits this state on continued
+  NA therapy.

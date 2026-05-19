@@ -1,0 +1,70 @@
+id: BMA-PSA-PROSTATE-USPSTF-SHARED-DECISION
+biomarker_id: BIO-PSA-PROSTATE-SCREENING
+variant_qualifier: PSA — population screening / shared decision making (USPSTF
+  Grade C)
+disease_id: DIS-PROSTATE
+escat_tier: IIIA
+evidence_summary: >
+  PSA screening for prostate cancer carries a USPSTF Grade C recommendation
+  for men aged 55-69 — "small potential benefit" weighed against
+  overdiagnosis / overtreatment harms — and a Grade D (recommendation
+  against) for men ≥70 (USPSTF Prostate 2018). NCCN Prostate 2025 and
+  AUA support shared decision making informed by family history, race
+  (Black men: earlier / more frequent screening discussion), BRCA1/2 and
+  Lynch carrier status (BIO-HRR-PANEL — earlier screening per NCCN
+  Genetic/Familial 2025). Active surveillance for Gleason 6 (Grade Group 1)
+  low-risk disease has replaced reflex prostatectomy. PSA velocity, PSA
+  density, free/total PSA ratio, and reflex tests (4Kscore, PHI, SelectMDx)
+  refine biopsy decisions. ESCAT IIIA — PSA directs screening / biopsy
+  / surveillance decisions but is not a treatment-selection biomarker.
+regulatory_approval:
+  fda:
+  - Total PSA immunoassays — multiple FDA-cleared; harmonised to WHO
+    standard 96/670 (most modern assays)
+  - 4Kscore, PHI, SelectMDx — FDA-cleared reflex tests
+  ema: []
+  ukraine:
+  - PSA — widely available, low cost; reflex tests not routinely available
+recommended_combinations:
+- 'Shared decision making with men 55-69 average risk (USPSTF Grade C)'
+- 'BRCA1/2, ATM, MMR-deficient carriers: earlier screening discussion
+  starting age 40 (BRCA2) / 45 (BRCA1, ATM, Lynch) per NCCN Genetic 2025'
+- 'Persistently rising PSA: MRI-prostate → MR-targeted + systematic biopsy
+  rather than reflex systematic biopsy (PRECISION trial, Kasivisvanathan
+  2018)'
+contraindicated_monotherapy:
+- 'Reflex prostatectomy on PSA alone for Gleason 6 — active surveillance
+  is the standard of care (NCCN Prostate 2025)'
+- 'USPSTF Grade D in men ≥70 — do not initiate new screening above age 70
+  outside shared decision-making with limited life-expectancy considered'
+primary_sources:
+- SRC-USPSTF-PROSTATE-2018
+- SRC-NCCN-PROSTATE-2025
+- SRC-NCCN-GENETIC-FAMILIAL-BREAST-OVARIAN-2025
+last_verified: '2026-05-18'
+evidence_sources:
+- source: SRC-USPSTF-PROSTATE-2018
+  level: Grade C (55-69) / Grade D (≥70)
+  evidence_lane: standard_care
+  note: >
+    USPSTF Prostate 2018 — clinician-patient shared decision making for
+    men 55-69; recommends against routine PSA screening ≥70.
+- source: SRC-NCCN-PROSTATE-2025
+  level: Category 2A
+  evidence_lane: standard_care
+  note: >
+    NCCN Prostate Early Detection 2025 — risk-stratified PSA cadence;
+    DRE supplementary, MRI-prostate before biopsy in PSA-elevated.
+actionability_review_required: true
+indications: []
+notes: |
+  STUB pending two-Co-Lead signoff. No standalone IND-PROSTATE-SCREENING-
+  SHARED-DECISION entity exists yet; closest existing surveillance
+  Indications attach to HRR-positive carriers (ind_brca_carrier_surveillance,
+  ind_lynch_carrier_surveillance). A general-population
+  IND-PROSTATE-SCREENING-USPSTF entity (gated on age + risk-factor profile
+  + shared-decision-making questionnaire) is a future authoring task.
+
+  Engine must NOT auto-recommend PSA screening for asymptomatic men
+  without rendering the USPSTF tradeoff explicitly — overdiagnosis /
+  overtreatment harms are the stated reason for Grade C (not Grade B).
