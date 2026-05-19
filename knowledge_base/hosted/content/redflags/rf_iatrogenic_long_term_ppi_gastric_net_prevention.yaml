@@ -1,0 +1,71 @@
+id: RF-IATROGENIC-LONG-TERM-PPI-GASTRIC-NET-PREVENTION
+definition: >-
+  Chronic proton-pump inhibitor (PPI) exposure ≥10 years (omeprazole,
+  esomeprazole, pantoprazole, lansoprazole, rabeprazole, dexlansoprazole).
+  Sustained acid suppression → hypergastrinemia → enterochromaffin-like
+  (ECL) cell hyperplasia in gastric body / fundus mucosa → small but
+  measurable elevation in well-differentiated Type-1 gastric
+  neuroendocrine tumors (gastric NET, formerly gastric carcinoid).
+  Concomitantly, chronic acid suppression accelerates progression of
+  underlying atrophic gastritis (especially in H. pylori-positive
+  cohort) — atrophic gastritis is itself an independent gastric
+  adenocarcinoma risk factor. Absolute risk increment is modest (most
+  long-term PPI users do NOT develop gastric NET or cancer) but the
+  cohort is large (millions exposed) and the indication for PPI is
+  often weak (long-tail use for vague dyspepsia, NSAID prophylaxis
+  without ongoing NSAID use, post-hospital-discharge inertia).
+  Prevention-persona RedFlag — indication review + de-prescription
+  is the primary intervention; surveillance EGD is secondary in
+  cohorts with co-existing atrophic gastritis on biopsy.
+definition_ua: >-
+  Хронічна експозиція до інгібіторів протонної помпи (PPI) ≥10 років
+  (омепразол, езомепразол, пантопразол, лансопразол, рабепразол,
+  декслансопразол). Стійка acid suppression → гіпергастринемія →
+  гіперплазія enterochromaffin-like (ECL) клітин у gastric body /
+  fundus → невелике, але вимірне підвищення well-differentiated
+  Type-1 gastric neuroendocrine tumors (гастральні NET, раніше
+  гастральний карциноїд). Одночасно chronic acid suppression
+  прискорює прогресію underlying atrophic gastritis (особливо у
+  H. pylori-positive когорті) — atrophic gastritis сам по собі
+  незалежний фактор ризику gastric adenocarcinoma. Абсолютний
+  приріст ризику скромний, але когорта величезна, і призначення
+  PPI часто слабо обґрунтоване (long-tail use на тривалу dyspepsia,
+  NSAID prophylaxis без поточного NSAID, post-discharge inertia).
+  RedFlag персони prevention — перегляд показів + de-prescription
+  є первинною інтервенцією; surveillance EGD — вторинною у когорті
+  з co-existing atrophic gastritis за біопсією.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "ppi_continuous_use_ge_10y"
+      value: true
+    - finding: "ppi_chronic_use_with_atrophic_gastritis"
+      value: true
+    - finding: "ppi_chronic_use_with_hypergastrinemia"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: iatrogenic
+
+relevant_diseases:
+  - DIS-GASTRIC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-GASTRIC-2025
+  - SRC-NCCN-NET-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for chronic PPI exposure ≥10y. Engine routes to PreventionPlan recommending (1) indication-review + de-prescription where the PPI is no longer needed (most common scenario), (2) fasting gastrin + chromogranin A in cohort with persistent acid-suppression indication, (3) EGD with body/fundus biopsies in those with elevated gastrin or symptoms; surveillance EGD q3-5y if atrophic gastritis or ECL hyperplasia documented. Anchored to DIS-GASTRIC (gastric NET and atrophic-gastritis-derived adenocarcinoma both gastric-body diseases); NET-specific outcomes carried in indication prose. STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_iatrogenic_batch3
+draft_revision: 1

@@ -1,0 +1,79 @@
+id: RF-IATROGENIC-COMBINED-HRT-PREVENTION
+definition: >-
+  Cumulative use of combined hormone replacement therapy (estrogen +
+  progestin / progestogen) ≥5 years in postmenopausal women — IARC
+  Group 1 carcinogen (combined menopausal therapy). Elevated risk
+  profile: breast cancer +1.2-1.7x with current use, magnitude scaling
+  with duration (~+8 cases per 10,000 woman-years per WHI Combined-HRT
+  arm at year 5), effect attenuates within 5-10 years of stopping;
+  endometrial cancer risk depends on regimen: continuous combined HRT
+  (daily estrogen + daily progestin) NEUTRAL or slightly protective vs
+  no HRT (~RR 1.0-1.1) — the progestin opposes estrogen-driven
+  endometrial proliferation. Sequential / cyclic combined regimens
+  (estrogen daily + progestin 10-14 days/month) carry a smaller but
+  measurable endometrial-cancer signal (~RR 1.2-1.5) vs continuous
+  combined. Estrogen-ALONE HRT in a woman with intact uterus carries
+  marked endometrial cancer risk (~RR 5-10) — contraindicated in
+  intact-uterus women; covered by separate guideline-level safety
+  prohibition rather than this RF. Modest ovarian-cancer signal
+  (+1.2-1.4x at ≥5y exposure) per Collaborative Group on Epidemiological
+  Studies of Ovarian Cancer 2015. Prevention-persona RedFlag —
+  shared decision-making framework with patient: continued HRT
+  use if vasomotor symptom benefit > breast/cardiovascular risk
+  on individualized basis. NOT a recommendation to stop HRT
+  automatically. Prevention-persona RedFlag (§20 v0.3 iatrogenic
+  pilot).
+definition_ua: >-
+  Кумулятивне використання combined HRT (естроген + прогестин /
+  прогестоген) ≥5 років у postmenopausal жінок — IARC Group 1
+  канцероген (combined menopausal therapy). Підвищений risk profile:
+  breast cancer +1.2-1.7x з current use, magnitude масштабує з
+  duration (~+8 випадків на 10,000 woman-years per WHI Combined-HRT
+  arm на 5р), ефект згасає протягом 5-10р після зупинки; ризик
+  endometrial cancer залежить від режиму: continuous combined HRT
+  (щоденно estrogen + daily progestin) НЕЙТРАЛЬНИЙ або злегка
+  protective (~RR 1.0-1.1); sequential / cyclic combined regimens
+  carry менший але measurable endometrial-cancer signal (~RR 1.2-1.5).
+  Estrogen-ALONE HRT у intact-uterus woman carries marked endometrial
+  cancer ризик (~RR 5-10) — contraindicated у intact-uterus жінок.
+  Модерний ovarian-cancer signal (+1.2-1.4x при ≥5р). RedFlag
+  персони prevention — shared decision-making framework: continued
+  HRT use якщо vasomotor symptom benefit > breast / cardiovascular
+  ризик. НЕ recommendation зупинити HRT автоматично.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "combined_hrt_continuous_use_ge_5y"
+      value: true
+    - finding: "combined_hrt_sequential_use_ge_5y"
+      value: true
+    - finding: "prior_combined_hrt_ge_5y_within_decade"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: iatrogenic
+
+relevant_diseases:
+  - DIS-BREAST
+  - DIS-ENDOMETRIAL
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BREAST-2025
+  - SRC-NCCN-UTERINE-2025
+  - SRC-USPSTF-BREAST-2024
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: "Prevention-persona RedFlag for combined HRT exposure ≥5y. Engine routes to PreventionPlan recommending (1) shared-decision discussion of risk-benefit (vasomotor symptoms, bone-density preservation vs breast / VTE / cardiovascular risks), (2) lowest-effective-dose + shortest-duration principle per NAMS / ACOG, (3) breast surveillance per USPSTF cadence — supplemental imaging not recommended on HRT alone (density-related supplemental imaging is a separate axis), (4) symptom-prompted endometrial workup (any abnormal bleeding → TVUS + biopsy) for women on sequential/cyclic combined or with intact uterus on any HRT, (5) annual GYN exam. Distinct from RF-IATROGENIC-TAMOXIFEN-ENDOMETRIAL-PREVENTION (different mechanism: SERM with partial endometrial agonism). STUB pending two-Clinical-Co-Lead signoff per CHARTER §6.1 dev-mode."
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_iatrogenic_batch3
+draft_revision: 1

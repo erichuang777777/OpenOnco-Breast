@@ -1,0 +1,97 @@
+id: IND-IATROGENIC-CALCINEURIN-INHIBITOR-LONGTERM-PREVENTION-OBSERVATION
+plan_track: surveillance
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-KAPOSI
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-CALCINEURIN-INHIBITOR-LONGTERM-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: low
+strength_of_recommendation: conditional
+nccn_category: "2B"
+
+expected_outcomes:
+  overall_response_rate: "Patient declines structured annual / q6mo dermatologic surveillance pathway — receives baseline sun-protection counseling and skin-self-examination education. Aggressive SCC subset and Kaposi sarcoma may present at advanced stage; outcomes worse than with active dermatologic surveillance. Critical caveat: post-transplant / calcineurin-driven SCC has substantially worse stage-for-stage prognosis than spontaneous SCC in immunocompetent hosts — surveillance is the standard, not optional. Patient self-examination cannot substitute for dermatologic exam (early lesions often subtle / mistaken for actinic damage)."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Alternative-track companion to IND-IATROGENIC-CALCINEURIN-
+  INHIBITOR-LONGTERM-PREVENTION-SURVEILLANCE. Patient declines
+  structured annual / q6mo dermatologic surveillance (geographic
+  access, surveillance fatigue, preference — particularly common
+  in long-term-stable transplant survivors who have not yet had
+  a skin cancer) — receives explicit sun-protection counseling
+  (broad-spectrum SPF 30+ daily, peak UV avoidance, photo-
+  protective clothing) + symptom-vigilance education (new or
+  changing skin lesion regardless of how minor it appears,
+  non-healing sore, purple / red / brown macule or nodule on
+  extremities or oral mucosa, lower-lip persistent dryness /
+  ulceration → immediate dermatology referral) + skin-self-
+  examination instruction (monthly with mirror; partner-
+  assisted for hard-to-see areas). Per CHARTER §11 patient-
+  autonomy framing — declining the structured pathway is
+  legitimate but framed as suboptimal vs. active-dermatology
+  comparator. Particular emphasis: skin self-examination cannot
+  substitute for dermatologic exam in this high-risk cohort;
+  early SCC and KS lesions often subtle / mistaken for actinic
+  damage by the patient.
+
+rationale_ua: >
+  Альтернативно-трекова Indication. Пацієнт відмовляється від
+  structured annual / q6mo dermatologic surveillance — отримує
+  explicit sun-protection counseling (SPF 30+ daily, peak UV
+  avoidance, photoprotective clothing) + symptom-vigilance
+  education (нова або changing skin lesion, non-healing sore,
+  purple / red / brown macule або nodule на extremities або
+  oral mucosa, lower-lip persistent dryness / ulceration →
+  immediate dermatology referral) + skin-self-examination
+  instruction (monthly з mirror; partner-assisted для
+  hard-to-see areas). Per CHARTER §11. Особлива емфаза: skin
+  self-examination не може substitute dermatologic exam у
+  високо-ризиковій cohort.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_iatrogenic_batch3
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-SKIN-2025
+    position: context
+  - source_id: SRC-IARC-MONO-100B-2012
+    position: context
+
+do_not_do:
+  - "Не презентувати observation як еквівалент dermatologic surveillance — calcineurin-driven SCC має worse stage-for-stage prognosis."
+  - "Не пропускати explicit symptom-vigilance + sun-protection education — найбільший self-care yield."
+  - "Не виключати patient зі symptom-prompted dermatology access — навіть при declining routine surveillance."
+  - "Не нормалізувати new skin lesion / non-healing sore / purple macule — будь-який alarm sign requires evaluation."
+  - "Не покладатися на self-examination alone — early lesions subtle / mistaken for actinic damage."
+
+do_not_do_en:
+  - "Do not present observation as equivalent to dermatologic surveillance — calcineurin-driven SCC has worse stage-for-stage prognosis."
+  - "Do not skip explicit symptom-vigilance + sun-protection education — the highest self-care yield."
+  - "Do not deny the patient symptom-prompted dermatology access — even if routine surveillance is declined."
+  - "Do not normalize a new skin lesion / non-healing sore / purple macule — any alarm sign requires evaluation."
+  - "Do not rely on self-examination alone — early lesions are often subtle / mistaken for actinic damage."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — alternative-track for long-term calcineurin-inhibitor prevention. §15.2 C4 ≥2-tracks invariant."

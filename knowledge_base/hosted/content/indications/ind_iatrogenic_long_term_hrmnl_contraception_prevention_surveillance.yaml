@@ -1,0 +1,147 @@
+id: IND-IATROGENIC-LONG-TERM-HRMNL-CONTRACEPTION-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-BREAST
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-LONG-TERM-HRMNL-CONTRACEPTION-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Age-appropriate USPSTF mammography (q2y women 40-74) + ASCCP cervical co-test cadence (primary HPV q5y or co-test q5y, ages 30-65) detects breast and cervical cancers at curable stage in this modestly-elevated-risk cohort. Absolute increment over background population is small (+~10-15 breast cases per 100,000 woman-years during use, attenuating after stop; cervical incidence elevated 1.5-2.0x at ≥5y use only in HPV-positive subset) — surveillance recommendation matches population guidelines rather than mandating intensification. Cervical attention is the higher-yield axis (HPV positivity + cumulative exposure is the meaningful combination)."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Standard-track surveillance for cumulative hormonal-contraception
+  exposure ≥10y. Components per NCCN Breast / Cervical + USPSTF
+  + ASCCP:
+
+  **(1) Mammographic screening per USPSTF** — women 40-74,
+  biennial. NOT mandating supplemental screening (MRI/US) based
+  on OCP exposure alone — absolute risk increment too modest to
+  justify intensification per USPSTF. Density-based intensification
+  is a separate axis (dense breasts on mammogram → consider US
+  per state-level supplemental-screening regulations).
+
+  **(2) Cervical co-test cadence per ASCCP** — primary HPV
+  testing q5y ages 25-65 (preferred), or co-test (cytology + HPV)
+  q5y ages 30-65. ≥10y prior OCP use is NOT a guideline-modifying
+  factor in itself, but co-existing high-risk HPV positivity at
+  screening shifts management per ASCCP (immediate colposcopy
+  for HPV-16/18 positive; risk-based for other high-risk types).
+
+  **(3) Clinical breast exam + breast self-awareness counseling.**
+  Breast lump, skin change, nipple discharge, persistent breast
+  pain → diagnostic mammogram + targeted US workup, not screening
+  pathway.
+
+  **(4) Abnormal-bleeding evaluation** — post-coital bleeding,
+  intermenstrual bleeding outside expected pattern, postmenopausal
+  bleeding → speculum exam + cervical cytology + colposcopy +
+  endometrial sampling per ACOG.
+
+  **(5) Risk-factor co-screening** — Lynch / BRCA family history,
+  prior thoracic radiation (Hodgkin survivor), tobacco use,
+  obesity / sedentary lifestyle — all separately addressable
+  axes; address per separate pathways. Cumulative OCP exposure
+  alone is not a referral trigger for high-risk-genetics
+  evaluation.
+
+  **(6) Patient counseling** — magnitude of OCP-attributable
+  risk is small in absolute terms, attenuating after stopping;
+  ovarian + endometrial protection (covered by RF-REPRODUCTIVE-
+  OCP-LONG-TERM) is the offsetting axis. NOT a recommendation to
+  stop OCP for risk reduction in average-risk women.
+
+  Goal: keep cadence at population guideline; ensure HPV co-test
+  is happening; mainstream breast screening 40+; respond promptly
+  to symptoms.
+
+rationale_ua: >
+  Стандартний-трек surveillance для кумулятивної гормональної
+  контрацепції ≥10р. Components per NCCN Breast / Cervical
+  + USPSTF + ASCCP:
+
+  **(1) Mammographic screening per USPSTF** — жінки 40-74,
+  q2р. НЕ мандат supplemental screening (MRI/US) на основі OCP
+  exposure alone — абсолютний приріст ризику замалий для
+  intensification per USPSTF. Density-based intensification —
+  окрема вісь.
+
+  **(2) Cervical co-test cadence per ASCCP** — primary HPV
+  q5р у віці 25-65 (preferred), або co-test (cytology + HPV)
+  q5р у 30-65. ≥10р попередній OCP — НЕ guideline-modifying
+  factor, але co-existing high-risk HPV positivity під час
+  screening shift management per ASCCP (immediate colposcopy
+  для HPV-16/18 positive).
+
+  **(3) Clinical breast exam + breast self-awareness
+  counseling.** Lump, skin change, discharge, persistent
+  pain → diagnostic mammogram + US workup.
+
+  **(4) Evaluation patterns abnormal bleeding** — post-coital,
+  intermenstrual поза очікуваним pattern, postmenopausal
+  bleeding → speculum exam + cervical cytology + colposcopy
+  + endometrial sampling per ACOG.
+
+  **(5) Co-screening факторів ризику** — Lynch / BRCA family
+  history, prior thoracic radiation, tobacco use, obesity —
+  окремі осі.
+
+  **(6) Counseling** — magnitude OCP-attributable risk малий
+  в абсолютних термінах; ovarian + endometrial protection —
+  компенсуюча вісь. НЕ recommendation зупиняти OCP для risk
+  reduction.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_iatrogenic_batch3
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BREAST-2025
+    position: supports
+  - source_id: SRC-NCCN-CERVICAL-2025
+    position: supports
+  - source_id: SRC-USPSTF-BREAST-2024
+    position: supports
+  - source_id: SRC-USPSTF-CERVICAL-2018
+    position: supports
+
+do_not_do:
+  - "Не призначати supplemental MRI / US screening на основі OCP exposure alone — абсолютний risk increment замалий per USPSTF."
+  - "Не зупиняти OCP у жінок середнього ризику для risk reduction — magnitude attributable risk малий + offsetting ovarian/endometrial protection."
+  - "Не пропускати HPV co-testing у когорті з ≥10р OCP exposure — co-positivity з high-risk HPV — meaningful axis."
+  - "Не нормалізувати postmenopausal або abnormal bleeding — будь-який alarm symptom requires workup."
+  - "Не ігнорувати breast self-awareness counseling — pattern-recognition critical для early detection."
+
+do_not_do_en:
+  - "Do not order supplemental MRI / US screening based on OCP exposure alone — absolute risk increment too modest per USPSTF."
+  - "Do not stop OCP in average-risk women for risk reduction — attributable-risk magnitude small + offsetting ovarian/endometrial protection."
+  - "Do not skip HPV co-testing in the ≥10y OCP cohort — co-positivity with high-risk HPV is the meaningful axis."
+  - "Do not normalize postmenopausal or abnormal bleeding — any alarm symptom requires workup."
+  - "Do not omit breast self-awareness counseling — pattern recognition is critical for early detection."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 iatrogenic pilot (cumulative hormonal contraception ≥10y → modest breast + cervical signal). Two-Clinical-Co-Lead signoff queued. Distinct from RF-REPRODUCTIVE-OCP-LONG-TERM (balanced risk-benefit framing); this is iatrogenic-exposure-as-risk axis."

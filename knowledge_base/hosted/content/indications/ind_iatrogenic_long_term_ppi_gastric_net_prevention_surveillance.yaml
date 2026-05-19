@@ -1,0 +1,145 @@
+id: IND-IATROGENIC-LONG-TERM-PPI-GASTRIC-NET-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-GASTRIC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-LONG-TERM-PPI-GASTRIC-NET-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Indication-review + de-prescription where appropriate eliminates the iatrogenic exposure in the majority of long-term PPI users (~50-70% of chronic users have no current strong indication per primary-care de-prescription studies). For those with ongoing strong indication (Barrett oesophagus, severe GERD with documented erosive disease, Zollinger-Ellison), targeted surveillance (fasting gastrin + chromogranin A, EGD with body/fundus biopsies if abnormal or symptomatic) detects ECL hyperplasia and Type-1 gastric NET at curable stage. Absolute Type-1 gastric NET incidence remains low (~1-2 per 1000 chronic PPI users over 10y in observational cohorts); most lesions are <1 cm, indolent, and managed endoscopically with excellent survival."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Standard-track surveillance for chronic PPI exposure ≥10y. Components
+  per NCCN Gastric / NET guidelines + ACG de-prescription consensus:
+
+  **(1) Indication review and de-prescription where appropriate** —
+  THE primary intervention. PPI continuation justified for: Barrett
+  oesophagus, severe erosive GERD (LA grade C/D), Zollinger-Ellison
+  syndrome, dual antiplatelet therapy with prior GI bleeding,
+  ongoing chronic NSAID with high GI-bleed risk. NOT justified
+  for: vague dyspepsia without erosive disease, NSAID-prophylaxis
+  after NSAID stopped, post-hospital "carry-over," eosinophilic
+  oesophagitis without symptoms. Step-down trial (alternate-day
+  dosing → H2 blocker → as-needed) for the de-prescribable cohort.
+
+  **(2) Fasting gastrin + chromogranin A** in those with ongoing
+  strong PPI indication. Hold PPI 14 days before draw (clinically
+  difficult — prior abstinence often impractical); interpret elevated
+  values in context of acid-suppression continuation. Markedly
+  elevated gastrin or rising chromogranin A → endoscopic evaluation.
+
+  **(3) EGD with body / fundus biopsies** when (a) elevated
+  gastrin/CgA, (b) new dyspepsia / anemia / weight loss / GI
+  bleeding, (c) prior atrophic gastritis on biopsy, or (d) ≥15y
+  continuous PPI without prior EGD. Look for ECL hyperplasia,
+  atrophic gastritis, Type-1 gastric NET, intestinal metaplasia.
+
+  **(4) Surveillance interval** for documented atrophic gastritis /
+  ECL hyperplasia on biopsy: EGD q3-5y per ACG / European
+  guidelines; q1-2y if intestinal metaplasia + extensive corpus
+  involvement (OLGIM 3-4). Type-1 gastric NET <1 cm with
+  hypergastrinemia: endoscopic resection or surveillance q6-12mo;
+  >1 cm or symptomatic: endoscopic resection.
+
+  **(5) H. pylori testing** at first EGD if not previously
+  documented — eradication reduces atrophic-gastritis progression
+  and reduces gastric-cancer risk in seropositive cohort.
+
+  **(6) Calcium / vitamin B12 / magnesium screening** —
+  long-term PPI associated with reduced absorption; check at
+  10y mark and supplement deficiencies.
+
+  Goal: most patients return to no-PPI or as-needed PPI at year
+  10 review (de-prescription). For the minority with sustained
+  strong indication, structured monitoring catches ECL hyperplasia
+  and Type-1 gastric NET while still endoscopically curable.
+
+rationale_ua: >
+  Стандартний-трек surveillance для хронічного PPI ≥10р. Components
+  per NCCN Gastric / NET + ACG de-prescription consensus:
+
+  **(1) Перегляд показів і de-prescription** — ПЕРВИННА інтервенція.
+  Продовження PPI виправдане при: Barrett oesophagus, важка
+  erosive GERD (LA grade C/D), синдром Золлінгера-Еллісона,
+  подвійна антиагрегантна терапія з попередньою ШКТ-кровотечею,
+  тривалий хронічний NSAID з високим ризиком ШКТ-кровотечі.
+  НЕ виправдане для: vague dyspepsia без erosive disease,
+  NSAID-профілактика після відміни NSAID, post-discharge
+  "carry-over". Step-down trial для de-prescribable когорти.
+
+  **(2) Натще gastrin + chromogranin A** у тих з тривалим
+  show-indication. Зупинити PPI на 14 днів перед забором
+  (клінічно складно); інтерпретувати значення в контексті
+  продовження acid-suppression. Виражено підвищений gastrin
+  або зростаючий CgA → ендоскопічна оцінка.
+
+  **(3) EGD з body / fundus біопсіями** при (а) підвищенні
+  gastrin/CgA, (б) новій dyspepsia / anemia / weight loss / GI
+  bleeding, (в) попередній atrophic gastritis за біопсією, або
+  (г) ≥15р безперервний PPI без попередньої EGD. Шукати ECL
+  hyperplasia, atrophic gastritis, Type-1 gastric NET,
+  intestinal metaplasia.
+
+  **(4) Інтервал surveillance** для документованої atrophic
+  gastritis / ECL hyperplasia: EGD q3-5р per ACG / Європейські
+  guidelines; q1-2р при intestinal metaplasia + extensive corpus
+  involvement (OLGIM 3-4). Type-1 gastric NET <1 cm з
+  hypergastrinemia: ендоскопічна резекція або surveillance q6-12mo.
+
+  **(5) Тестування H. pylori** при першій EGD якщо раніше не
+  документовано — ерадикація знижує прогресію atrophic gastritis.
+
+  **(6) Скринінг Calcium / vit B12 / Mg** — тривалий PPI
+  пов'язаний зі зниженою абсорбцією; перевірити на 10р.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_iatrogenic_batch3
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-GASTRIC-2025
+    position: supports
+  - source_id: SRC-NCCN-NET-2025
+    position: supports
+
+do_not_do:
+  - "Не продовжувати PPI без активного перегляду показів — найбільший effect від de-prescription, не від surveillance."
+  - "Не призначати рутинний скринінг gastrin/CgA у всіх PPI-users — лише при тривалому strong-indication використанні."
+  - "Не інтерпретувати помірно підвищений gastrin під час PPI як патологічний — частково очікувано від acid-suppression."
+  - "Не пропускати тестування H. pylori при першій EGD — co-factor для atrophic gastritis."
+  - "Не продовжувати PPI індеферентно після гострої події (stress ulcer, post-NSAID) — re-evaluate при кожному follow-up."
+
+do_not_do_en:
+  - "Do not continue PPI without active indication review — de-prescription is the highest-yield intervention, not surveillance."
+  - "Do not order routine gastrin/CgA screening in all PPI users — only in those with ongoing strong indication."
+  - "Do not interpret moderately elevated gastrin during PPI as pathologic — partially expected from acid suppression."
+  - "Do not skip H. pylori testing at first EGD — co-factor for atrophic gastritis progression."
+  - "Do not continue PPI indefinitely after an acute event (stress ulcer, post-NSAID) — re-evaluate at every follow-up."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 iatrogenic pilot (long-term PPI ≥10y → gastric NET / atrophic gastritis). Two-Clinical-Co-Lead signoff queued. De-prescription review is primary; surveillance EGD is secondary in cohorts with documented atrophic-gastritis biopsy."

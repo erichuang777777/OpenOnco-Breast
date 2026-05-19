@@ -1,0 +1,164 @@
+id: IND-IATROGENIC-AZATHIOPRINE-LONGTERM-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-DLBCL-NOS
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-AZATHIOPRINE-LONGTERM-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Annual whole-body skin examination by dermatologist + EBV serology check at initiation + B-symptom / lymphadenopathy review + shared-decision discussion at year 5 catches the major thiopurine-attributable cancers (DLBCL, non-melanoma skin cancer) at early stage. CESAME cohort + Dutch Pediatric IBD studies: lymphoma absolute risk on thiopurines ~4-6 per 1000 person-years vs ~1 per 1000 background; SCC risk increases 4-10x with cumulative dose-years. Discontinuation of thiopurine after a thiopurine-attributable cancer reduces second-event risk; early detection of NMSC enables Mohs / wide excision with high cure rate."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+  - TEST-LFT
+desired_tests: []
+
+rationale: >
+  Standard-track surveillance for long-term ≥3y thiopurine
+  (azathioprine / 6-MP) exposure. Components per ECCO 2019
+  IBD-malignancy + EULAR + NCCN B-Cell Lymphoma / Skin:
+
+  **(1) EBV serology check at thiopurine initiation** —
+  baseline anti-VCA-IgG. Avoid thiopurine initiation in EBV-
+  seronegative young men (highest risk of fatal post-mononucleosis
+  lymphoma on thiopurine per ECCO 2019); discuss alternative
+  (methotrexate, biologics). In already-treated cohort with
+  unknown baseline EBV status, document current status — does
+  not change current management but flags for B-symptom workup
+  intensity.
+
+  **(2) Annual whole-body skin examination by dermatologist** —
+  thiopurine + UV is the dominant SCC risk axis. q6mo cadence
+  if any prior skin cancer history. Field actinic-damage
+  treatment per dermatology (5-FU / imiquimod field therapy
+  vs lesion-directed cryotherapy).
+
+  **(3) Aggressive sun-protection counseling at every visit** —
+  broad-spectrum SPF 30+ daily on sun-exposed skin (including
+  through-window contexts), peak UV avoidance, photoprotective
+  clothing + wide-brim hat. Thiopurine photo-sensitization is
+  mechanistic — sun protection is NOT optional.
+
+  **(4) Annual B-symptom + lymphadenopathy review** —
+  unexplained fevers, night sweats, weight loss, fatigue,
+  persistent lymphadenopathy → workup with imaging + biopsy.
+  In IBD patients, abdominal lymphadenopathy at IBD imaging
+  may be reactive — biopsy threshold lower in thiopurine-exposed
+  cohort.
+
+  **(5) HPV vaccination catch-up** — Gardasil-9 through age
+  45 per ACIP shared-decision; immunosuppressed cohort
+  particularly benefits. Cervical / anal HPV-screening cadence
+  matches transplant-cohort intensification (q1-3y co-test for
+  women; anal cytology in high-risk subset).
+
+  **(6) Shared-decision discussion at year 5 of thiopurine
+  use** — indication continuation review:
+  - For IBD: discuss switch to vedolizumab / ustekinumab /
+    risankizumab / upadacitinib (varies by IBD type, disease
+    severity, prior failures). Vedolizumab particularly has a
+    favorable cancer-signal profile.
+  - For RA: methotrexate is the first-line conventional DMARD;
+    switch where clinically acceptable.
+  - For autoimmune hepatitis: maintenance often required long
+    term; review at year 5 with hepatology.
+
+  **(7) HBV / HCV / HIV screening** at initiation and as
+  indicated — thiopurine increases reactivation risk for HBV;
+  prophylactic antiviral required in HBsAg+ or anti-HBc+ cohort.
+
+  **(8) Annual CBC + LFT** — thiopurine-induced cytopenia /
+  hepatotoxicity monitoring (also detects early hematologic
+  malignancy in cytopenia subset).
+
+  Goal: ensure surveillance burden distributed appropriately,
+  EBV-seronegative young men do not start thiopurine, indication-
+  review happens at year 5, skin protection is active.
+
+rationale_ua: >
+  Стандартний-трек surveillance для тривалої ≥3р експозиції
+  thiopurines (azathioprine / 6-MP). Components per ECCO 2019
+  + EULAR + NCCN B-Cell Lymphoma / Skin:
+
+  **(1) EBV serology check на initiation** — baseline
+  anti-VCA-IgG. Avoid initiation у EBV-seronegative young men
+  per ECCO 2019.
+
+  **(2) Annual whole-body skin examination dermatologist** —
+  thiopurine + UV dominant SCC risk axis. q6mo якщо prior
+  skin cancer. Field actinic-damage treatment (5-FU / imiquimod
+  field therapy).
+
+  **(3) Aggressive sun-protection counseling** — SPF 30+ daily,
+  peak UV avoidance, photoprotective clothing. Photo-
+  sensitization mechanistic.
+
+  **(4) Annual B-symptom + lymphadenopathy review.**
+
+  **(5) HPV vaccination catch-up.** Cervical / anal HPV-
+  screening cadence — q1-3р co-test.
+
+  **(6) Shared-decision discussion на 5р thiopurine use** —
+  indication review:
+  - IBD: vedolizumab / ustekinumab / risankizumab / upadacitinib.
+  - RA: methotrexate first-line.
+  - Autoimmune hepatitis: review з hepatology.
+
+  **(7) HBV / HCV / HIV screening** — HBV reactivation ризик;
+  prophylactic antiviral у HBsAg+ або anti-HBc+ cohort.
+
+  **(8) Annual CBC + LFT** — thiopurine-induced cytopenia /
+  hepatotoxicity monitoring.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_iatrogenic_batch3
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: supports
+  - source_id: SRC-NCCN-SKIN-2025
+    position: supports
+  - source_id: SRC-IARC-MONO-100B-2012
+    position: supports
+
+do_not_do:
+  - "Не initiateувати azathioprine у EBV-seronegative young man — fatal post-mononucleosis lymphoma risk per ECCO 2019."
+  - "Не пропускати annual whole-body skin exam — primary cancer-prevention yield."
+  - "Не пропускати HBV screening pre-initiation — reactivation risk; prophylactic antiviral у HBsAg+ або anti-HBc+ cohort."
+  - "Не нормалізувати unexplained lymphadenopathy / B-symptoms у thiopurine-exposed patient — DLBCL ризик."
+  - "Не продовжувати thiopurine без year-5 shared-decision indication review — alternatives existed and improved."
+  - "Не пропускати HPV vaccination catch-up — immunosuppression не contraindication до inactivated vaccines."
+
+do_not_do_en:
+  - "Do not initiate azathioprine in an EBV-seronegative young man — fatal post-mononucleosis lymphoma risk per ECCO 2019."
+  - "Do not skip annual whole-body skin exam — primary cancer-prevention yield."
+  - "Do not skip HBV screening pre-initiation — reactivation risk; prophylactic antiviral in HBsAg+ or anti-HBc+ cohort."
+  - "Do not normalize unexplained lymphadenopathy / B-symptoms in a thiopurine-exposed patient — DLBCL risk."
+  - "Do not continue thiopurine without year-5 shared-decision indication review — alternatives have improved."
+  - "Do not skip HPV vaccination catch-up — immunosuppression is not a contraindication to inactivated vaccines."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 iatrogenic pilot (long-term azathioprine / 6-MP exposure). Two-Clinical-Co-Lead signoff queued. Applies to IBD, RA, SLE, autoimmune hepatitis, transplant maintenance, other autoimmune indications."

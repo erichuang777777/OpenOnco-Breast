@@ -1,0 +1,178 @@
+id: IND-IATROGENIC-TRANSPLANT-IMMUNOSUPPRESSION-LONGTERM-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-DLBCL-NOS
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-TRANSPLANT-IMMUNOSUPPRESSION-LONGTERM-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Annual whole-body skin examination by dermatologist + q1-3y cervical co-test + q1-3y anal cytology in at-risk subset + dental cancer screening + annual lymphadenopathy / B-symptom review detects skin cancers, HPV-associated cancers, and late-onset PTLD at curable stage in the chronic-transplant cohort. Most aggressive SCC subset (post-transplant SCC) responds to early Mohs surgical excision; advanced cases historically have ~30-50% 5-year survival. Late-onset PTLD: complete response rates with rituximab-based first-line approach ~60-70%; lower than early-onset EBV-driven PTLD. Earlier detection consistently improves all outcomes."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+  - TEST-LFT
+desired_tests: []
+
+rationale: >
+  Standard-track surveillance for chronic ≥3y post-transplant
+  immunosuppression. Components per NCCN B-Cell Lymphoma /
+  Cervical / Anal / Skin + ASTS / KDIGO transplant-survivorship
+  guidance:
+
+  **(1) Annual whole-body skin examination by dermatologist** —
+  THE highest-yield component. Post-transplant SCC has ~65-100x
+  background incidence; aggressive subset (high recurrence,
+  perineural invasion, metastasis) requires early Mohs excision.
+  q6mo cadence for patients with any prior skin cancer history.
+  Sun-protection counseling (broad-spectrum SPF 30+, avoidance
+  during peak UV hours, photoprotective clothing) at every visit.
+
+  **(2) Cervical co-test q1-3y** in post-transplant women per
+  ASCCP modified-cadence guidance (transplant recipients are
+  immunocompromised cohort; co-test cadence shorter than the
+  q5y average-risk interval). HPV vaccination catch-up if not
+  previously vaccinated (Gardasil-9 through age 45 per ACIP
+  shared-decision recommendation; transplant cohort included).
+
+  **(3) Anal cytology q1-3y** in MSM, HIV-positive transplant
+  recipients, and women with anogenital HPV history. Routine
+  anal cytology in average-risk female transplant recipients
+  is variable per institutional guideline — discussion at GI /
+  GYN visits.
+
+  **(4) Annual oral / oropharyngeal exam** by dentist or
+  primary care — look for leukoplakia, erythroplakia,
+  non-healing ulcer, mass. HPV-associated oropharyngeal cancer
+  cohort overlaps with cervical-cancer cohort.
+
+  **(5) Annual lymphadenopathy + B-symptom review** —
+  unexplained lymphadenopathy, fevers, night sweats, weight
+  loss, fatigue → workup with imaging + biopsy. Late-onset PTLD
+  often presents with extranodal disease (GI tract, CNS, allograft
+  itself) — keep imaging modality choice broad. Routine EBV-DNA
+  monitoring in the chronic cohort is lower-yield than in the
+  acute window — pivot to symptom-driven workup.
+
+  **(6) Kaposi-sarcoma surveillance** in HHV-8-positive cohort
+  (e.g. transplant from HHV-8-endemic donor region, prior HHV-8
+  seropositivity) — inspect skin, oral mucosa, GI symptoms (KS
+  GI involvement is common); refer for endoscopy if symptomatic.
+
+  **(7) HCC surveillance q6mo** with US + AFP in transplant
+  recipients with HBV / HCV history (active or past), cirrhosis,
+  or post-liver-transplant cohort with native-liver HCC history.
+
+  **(8) Renal-cell carcinoma surveillance** in kidney-transplant
+  recipients ≥10y post-transplant — annual US of native kidneys
+  (acquired-cystic-disease pathway is the dominant RCC risk;
+  abdominal imaging usually obtained for transplant kidney can
+  also visualize natives).
+
+  **(9) Coordinated immunosuppression-minimization discussion
+  with the transplant team** — over the chronic cohort, the
+  minimum effective immunosuppression that preserves the graft
+  is the goal. NEVER unilateral patient-driven or oncology-
+  driven changes; coordinate via transplant nephrologist /
+  hepatologist / cardiologist as relevant.
+
+  **(10) Vaccination** — annual influenza, pneumococcal series,
+  shingrix (zoster), hepatitis B status check + boosters,
+  COVID-19 per cohort. Live vaccines remain contraindicated.
+
+  Goal: chronic-cohort surveillance cadence captures the
+  cumulative cancer risk profile distinct from acute-window
+  EBV-DNA monitoring.
+
+rationale_ua: >
+  Стандартний-трек surveillance для хронічної ≥3р post-transplant
+  immunosuppression. Components per NCCN B-Cell Lymphoma / Cervical
+  / Anal / Skin + ASTS / KDIGO:
+
+  **(1) Annual whole-body skin examination dermatologist** —
+  найвища yield component. Post-transplant SCC ~65-100x background.
+  q6mo cadence для prior skin cancer history. Sun-protection
+  counseling на кожному візиті.
+
+  **(2) Cervical co-test q1-3р** у post-transplant жінок per
+  ASCCP modified-cadence (transplant cohort іммуноскомпрометована).
+  HPV vaccination catch-up.
+
+  **(3) Anal cytology q1-3р** у MSM, HIV-positive, жінок з
+  anogenital HPV history.
+
+  **(4) Annual oral / oropharyngeal exam** — leukoplakia,
+  erythroplakia, non-healing ulcer, mass.
+
+  **(5) Annual lymphadenopathy + B-symptom review** — unexplained
+  lymphadenopathy, fevers, night sweats, weight loss → workup з
+  imaging + biopsy. Late-onset PTLD часто extranodal.
+
+  **(6) KS surveillance** у HHV-8-positive cohort.
+
+  **(7) HCC surveillance q6mo** з US + AFP при HBV / HCV
+  history, cirrhosis, post-liver-transplant з native-liver HCC.
+
+  **(8) RCC surveillance** у kidney-transplant recipients ≥10р
+  post-transplant — annual US нативних нирок.
+
+  **(9) Coordinated immunosuppression-minimization з transplant
+  team** — НІКОЛИ unilateral changes.
+
+  **(10) Vaccination** — annual influenza, pneumococcal series,
+  shingrix, HBV status + boosters, COVID-19. Live vaccines
+  contraindicated.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_iatrogenic_batch3
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: supports
+  - source_id: SRC-NCCN-CERVICAL-2025
+    position: supports
+  - source_id: SRC-NCCN-SKIN-2025
+    position: supports
+  - source_id: SRC-NCCN-ANAL-2025
+    position: supports
+
+do_not_do:
+  - "Не пропускати annual whole-body skin exam — найбільший cancer-prevention yield у post-transplant cohort."
+  - "Не reducing immunosuppression unilaterally без coordination з transplant team — graft rejection ризик."
+  - "Не рутинно EBV-DNA monitoring у chronic >3y cohort — yield знижений; symptom-driven workup."
+  - "Не пропускати HPV vaccination catch-up у unvaccinated post-transplant cohort — adoption повільне; immunosuppressed not contraindication."
+  - "Не використовувати live vaccines у post-transplant immunosuppression — contraindicated."
+  - "Не нормалізувати unexplained lymphadenopathy / B-symptoms — late-onset PTLD може presented extranodally."
+
+do_not_do_en:
+  - "Do not skip annual whole-body skin exam — the highest cancer-prevention yield in the post-transplant cohort."
+  - "Do not reduce immunosuppression unilaterally without transplant-team coordination — graft rejection risk."
+  - "Do not routinely monitor EBV-DNA in the chronic >3y cohort — yield drops; pivot to symptom-driven workup."
+  - "Do not skip HPV vaccination catch-up in the unvaccinated post-transplant cohort — uptake is slow; immunosuppression is not a contraindication."
+  - "Do not use live vaccines in post-transplant immunosuppression — contraindicated."
+  - "Do not normalize unexplained lymphadenopathy / B-symptoms — late-onset PTLD often presents extranodally."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 iatrogenic pilot (chronic ≥3y post-transplant immunosuppression). Two-Clinical-Co-Lead signoff queued. Distinct from RF-IATROGENIC-TRANSPLANT-IMMUNOSUPPRESSION-PREVENTION (new-transplant window with acute EBV-DNA cadence)."

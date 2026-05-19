@@ -1,0 +1,97 @@
+id: RF-IATROGENIC-CALCINEURIN-INHIBITOR-LONGTERM-PREVENTION
+definition: >-
+  Long-term calcineurin-inhibitor exposure ≥5 years — cyclosporine
+  or tacrolimus (prograf, FK-506) — across transplant, autoimmune
+  (psoriasis, atopic dermatitis, refractory nephrotic syndrome),
+  and ophthalmologic / other indications. IARC Group 1 carcinogen
+  (cyclosporine). Mechanism: direct calcineurin-pathway suppression
+  of T-cell function plus pro-oncogenic effects (TGF-β upregulation,
+  IL-6 induction, impaired DNA repair, anti-apoptotic signaling).
+  Risk profile: cutaneous squamous-cell carcinoma 65-100x background
+  in transplant cohort (calcineurin-inhibitors are a primary driver
+  of this excess), basal-cell carcinoma 10-20x, aggressive SCC
+  variant prone to local recurrence + perineural invasion + nodal
+  metastasis; Kaposi sarcoma in HHV-8-exposed cohort (KSHV
+  reactivation under calcineurin inhibition); cutaneous T-cell
+  lymphoma (less common); lip cancer (cumulative UV co-factor);
+  modest increase in non-cutaneous cancers (lymphoma, post-transplant
+  lymphoproliferative disorder). Cancer signal generally higher with
+  cyclosporine than tacrolimus in head-to-head comparisons;
+  cyclosporine has the more robust IARC Group 1 designation.
+  Prevention-persona RedFlag — emphasis on intensive skin
+  surveillance, sun protection, HPV vaccination catch-up, and
+  shared-decision discussion of switch to mTOR inhibitor
+  (sirolimus / everolimus) in the high-skin-cancer-burden cohort
+  (CONVERT trial + ProSparc evidence: mTOR switch reduces new
+  SCC incidence). NEVER unilateral switch — coordinated with
+  transplant nephrologist / hepatologist / cardiologist or
+  dermatologist as appropriate. (§20 v0.3 iatrogenic pilot).
+definition_ua: >-
+  Тривала експозиція до calcineurin-інгібіторів ≥5 років —
+  cyclosporine або tacrolimus — у transplant, autoimmune
+  (psoriasis, atopic dermatitis, refractory nephrotic syndrome)
+  та ophthalmologic / інших показів. IARC Group 1 канцероген
+  (cyclosporine). Risk profile: cutaneous SCC 65-100x background
+  у transplant cohort (calcineurin-inhibitors — primary driver),
+  BCC 10-20x, aggressive SCC variant; Kaposi sarcoma у HHV-8-
+  exposed cohort; cutaneous T-cell lymphoma; lip cancer; modest
+  підвищення non-cutaneous cancers. Cancer signal generally
+  вище з cyclosporine ніж tacrolimus у head-to-head comparisons.
+  RedFlag персони prevention — інтенсивний skin surveillance,
+  sun protection, HPV vaccination catch-up, shared-decision
+  switch на mTOR inhibitor (sirolimus / everolimus) у high-skin-
+  cancer-burden cohort (CONVERT + ProSparc evidence). НІКОЛИ
+  unilateral switch — координовано з transplant team /
+  dermatologist.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "cyclosporine_continuous_use_ge_5y"
+      value: true
+    - finding: "tacrolimus_continuous_use_ge_5y"
+      value: true
+    - finding: "calcineurin_inhibitor_use_ge_5y_with_skin_cancer_history"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: iatrogenic
+
+relevant_diseases:
+  - DIS-KAPOSI
+  - DIS-BCC
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-SKIN-2025
+  - SRC-IARC-MONO-100B-2012
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag for long-term ≥5y calcineurin-inhibitor
+  exposure (cyclosporine or tacrolimus). Engine routes to
+  PreventionPlan recommending (1) annual or q6mo whole-body skin
+  exam by dermatologist (q6mo if any prior skin cancer), (2)
+  aggressive sun-protection counseling, (3) HHV-8 awareness in
+  endemic cohorts + KS surveillance (skin, oral, GI), (4) HPV
+  vaccination catch-up if transplant context, (5) shared-decision
+  discussion with transplant team of switch to mTOR inhibitor
+  (sirolimus / everolimus) in patients with cumulative skin-
+  cancer burden — CONVERT + ProSparc evidence: mTOR-switch
+  reduces new SCC. Anchored to DIS-KAPOSI + DIS-BCC. Distinct
+  from broader RF-IATROGENIC-TRANSPLANT-IMMUNOSUPPRESSION-* RFs
+  by drug-class specificity — applies also to non-transplant
+  calcineurin-inhibitor users (psoriasis, atopic dermatitis,
+  nephrotic syndrome). STUB pending two-Clinical-Co-Lead signoff
+  per CHARTER §6.1 dev-mode.
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_iatrogenic_batch3
+draft_revision: 1

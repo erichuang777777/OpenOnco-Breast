@@ -1,0 +1,174 @@
+id: IND-IATROGENIC-ANTI-TNF-LYMPHOMA-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-DLBCL-NOS
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-ANTI-TNF-LYMPHOMA-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: conditional
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "EBV serology baseline check + structured year-1 / year-3 / year-5 review of combination anti-TNF + thiopurine vs monotherapy + annual B-symptom / lymphadenopathy / skin assessment achieves early detection of the rare HSTCL and DLBCL events in this cohort. Most population-based studies (DOLCE, Danish, French CESAME) show anti-TNF monotherapy cancer signal is at population background; the meaningful intervention is structured combination-therapy step-down where IBD activity permits (combination → monotherapy reduces HSTCL signal in young men)."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests:
+  - TEST-CBC
+  - TEST-LFT
+desired_tests: []
+
+rationale: >
+  Standard-track surveillance for chronic anti-TNF biologic
+  exposure ≥3y in pediatric / young-adult IBD cohort. Components
+  per ECCO 2019 IBD-malignancy + AAP / NASPGHAN IBD-pediatric +
+  NCCN B-Cell Lymphoma:
+
+  **(1) EBV serology at anti-TNF initiation** — baseline
+  anti-VCA-IgG. Document status; influences combination-therapy
+  decision-making (avoid anti-TNF + thiopurine combination in
+  EBV-seronegative young men where alternative monotherapy or
+  alternative biologic class is acceptable).
+
+  **(2) Structured shared-decision review at year 1, year 3,
+  and year 5 of anti-TNF therapy** — combination-therapy
+  reassessment:
+  - Anti-TNF + thiopurine combination has the highest
+    cancer signal (most HSTCL cases reported with this
+    combination). Step-down to anti-TNF monotherapy if IBD
+    activity allows + therapeutic drug monitoring of anti-TNF
+    trough confirms adequate exposure without anti-drug
+    antibodies.
+  - Alternative biologic classes with reportedly favorable
+    cancer-signal profiles: vedolizumab (gut-selective integrin),
+    ustekinumab (IL-12/23), risankizumab (IL-23), upadacitinib
+    (JAK1 — own cancer-signal caveat).
+  - Step-up considerations balance against IBD relapse risk.
+
+  **(3) Annual B-symptom + lymphadenopathy assessment** —
+  unexplained fevers, drenching night sweats, weight loss,
+  persistent lymphadenopathy, hepatosplenomegaly without IBD
+  flare → urgent workup with imaging + biopsy. HSTCL has a
+  distinctive presentation (hepatosplenomegaly without
+  lymphadenopathy, cytopenias, B symptoms) — should be
+  considered in any young IBD patient on combination therapy
+  with these findings.
+
+  **(4) Annual whole-body skin examination by dermatologist** —
+  non-melanoma skin cancer signal is synergistic with concomitant
+  thiopurine + UV exposure; q6mo if any prior skin cancer.
+  Sun-protection counseling at every visit.
+
+  **(5) Vaccination catch-up** — HPV (Gardasil-9 through age
+  45 per ACIP), HBV (anti-HBs titer + booster if needed), HAV,
+  influenza, pneumococcal (PCV20 + PPSV23 schedule for immuno-
+  suppressed cohort), VZV / shingrix (recombinant zoster).
+  Live vaccines contraindicated during active biologic therapy.
+
+  **(6) HBV / HCV / TB screening** at initiation and as
+  indicated. Anti-TNF can reactivate HBV (HBsAg+ or anti-HBc+
+  → prophylactic antiviral) and latent TB (IGRA / TST →
+  treatment of latent TB before initiation). HCV screening
+  baseline.
+
+  **(7) Pediatric / young-adult-specific counseling** — patient
+  + family informed of small but real cancer-signal that scales
+  with combination therapy; HSTCL-specific Boxed Warning for
+  combination in pediatric / young-adult IBD per FDA. Framing
+  matters: anti-TNF monotherapy cancer signal is at population
+  background; the meaningful intervention is structured
+  combination-step-down rather than anti-TNF abandonment.
+
+  **(8) Annual CBC + LFT** — monitoring for cytopenia,
+  hepatotoxicity, and early hematologic-malignancy signal.
+
+  Goal: structured year-1 / year-3 / year-5 review of
+  combination therapy; early detection of B-symptoms; vaccination
+  intact; sun protection active; framing avoids over-stating
+  monotherapy cancer risk while addressing the combination-
+  therapy HSTCL signal.
+
+rationale_ua: >
+  Стандартний-трек surveillance для хронічної anti-TNF biologic
+  експозиції ≥3р у pediatric / young-adult IBD cohort. Components
+  per ECCO 2019 + AAP / NASPGHAN + NCCN B-Cell Lymphoma:
+
+  **(1) EBV serology на anti-TNF initiation** — baseline
+  anti-VCA-IgG. Documenta status; впливає на combination-therapy
+  decision (avoid anti-TNF + thiopurine combination у EBV-
+  seronegative young men).
+
+  **(2) Structured shared-decision review на 1р, 3р, 5р anti-TNF
+  therapy** — combination-therapy reassessment:
+  - Anti-TNF + thiopurine combination — найвищий cancer signal.
+    Step-down на anti-TNF monotherapy якщо IBD activity allows.
+  - Alternative biologic classes: vedolizumab, ustekinumab,
+    risankizumab, upadacitinib.
+
+  **(3) Annual B-symptom + lymphadenopathy assessment** —
+  unexplained fevers, drenching night sweats, weight loss,
+  persistent lymphadenopathy, hepatosplenomegaly без IBD flare
+  → urgent workup. HSTCL: hepatosplenomegaly без lymphadenopathy,
+  cytopenias, B symptoms.
+
+  **(4) Annual whole-body skin examination dermatologist** —
+  NMSC signal synergistic з concomitant thiopurine + UV.
+
+  **(5) Vaccination catch-up** — HPV (Gardasil-9 до 45), HBV,
+  HAV, influenza, pneumococcal (PCV20 + PPSV23), VZV / shingrix.
+  Live vaccines contraindicated.
+
+  **(6) HBV / HCV / TB screening** — анти-TNF може reactivate
+  HBV і latent TB.
+
+  **(7) Pediatric / young-adult-specific counseling** —
+  HSTCL-specific Boxed Warning для combination у pediatric /
+  young-adult IBD per FDA.
+
+  **(8) Annual CBC + LFT.**
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_iatrogenic_batch3
+draft_revision: 1
+
+sources:
+  - source_id: SRC-NCCN-BCELL-2025
+    position: supports
+  - source_id: SRC-NCCN-SKIN-2025
+    position: supports
+
+do_not_do:
+  - "Не initiateувати anti-TNF + thiopurine combination у EBV-seronegative young man без discussion alternatives — HSTCL ризик."
+  - "Не пропускати TB screening (IGRA / TST) pre-anti-TNF initiation — latent TB reactivation ризик."
+  - "Не пропускати HBV screening pre-anti-TNF — reactivation у HBsAg+ або anti-HBc+ cohort."
+  - "Не over-stating anti-TNF monotherapy cancer signal — population background; combination — meaningful axis."
+  - "Не нормалізувати unexplained hepatosplenomegaly без IBD flare у young patient на combination — HSTCL workup."
+  - "Не використовувати live vaccines під час active biologic therapy."
+
+do_not_do_en:
+  - "Do not initiate anti-TNF + thiopurine combination in an EBV-seronegative young man without discussing alternatives — HSTCL risk."
+  - "Do not skip TB screening (IGRA / TST) before anti-TNF initiation — latent TB reactivation risk."
+  - "Do not skip HBV screening before anti-TNF — reactivation in HBsAg+ or anti-HBc+ cohort."
+  - "Do not overstate anti-TNF monotherapy cancer signal — at population background; combination therapy is the meaningful axis."
+  - "Do not normalize unexplained hepatosplenomegaly without IBD flare in a young patient on combination — HSTCL workup."
+  - "Do not use live vaccines during active biologic therapy."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 iatrogenic pilot (anti-TNF biologic chronic exposure with modest lymphoma signal in pediatric / young-adult IBD). Two-Clinical-Co-Lead signoff queued. Key framing: anti-TNF monotherapy is at population cancer background; combination with thiopurine is the meaningful axis with HSTCL signal in young men."

@@ -1,0 +1,103 @@
+id: RF-IATROGENIC-TRANSPLANT-IMMUNOSUPPRESSION-LONGTERM-PREVENTION
+definition: >-
+  Solid-organ transplant recipient on chronic immunosuppression ≥3 years
+  post-transplant, beyond the high-acute-rejection window — the chronic-
+  cohort persona. Distinct from the new-transplant cohort covered by
+  RF-IATROGENIC-TRANSPLANT-IMMUNOSUPPRESSION-PREVENTION (which focuses
+  on the acute / early window with EBV-DNA monitoring for PTLD, peri-
+  transplant antiviral prophylaxis). Chronic-cohort risk profile shifts
+  toward: cumulative skin-cancer burden (squamous-cell carcinoma 65-100x
+  background; basal-cell carcinoma 10-20x; aggressive SCC subset prone
+  to local recurrence + metastasis), late-onset post-transplant
+  lymphoproliferative disorder (PTLD; late-onset PTLD ≥1y post-transplant
+  more often EBV-negative, more diffuse-large-B-cell-like histology,
+  worse prognosis than early-onset EBV-driven PTLD), Kaposi sarcoma
+  in HHV-8-exposed cohort, cervical intraepithelial neoplasia / cervical
+  cancer (HPV co-factor), anal SCC (HPV co-factor in MSM + women with
+  anogenital HPV history), oropharyngeal cancer, HCC in HBV/HCV-history
+  cohort, renal-cell carcinoma in kidney-transplant recipients
+  (acquired-cystic-disease native-kidney pathway). Prevention-persona
+  RedFlag — emphasis on long-cycle surveillance cadence (annual skin
+  exam, q1-3y cervical co-test, dental cancer screening, q6mo HCC
+  surveillance in at-risk subset), shared-decision discussion of
+  immunosuppression-minimization strategies coordinated with the
+  transplant team (NEVER unilateral changes), and HPV vaccination
+  catch-up where applicable. (§20 v0.3 iatrogenic pilot).
+definition_ua: >-
+  Реципієнт solid-organ transplant на хронічній імуносупресії ≥3
+  років post-transplant, за межами вікна високого acute-rejection
+  ризику — persona хронічної когорти. Відмінний від new-transplant
+  когорти (RF-IATROGENIC-TRANSPLANT-IMMUNOSUPPRESSION-PREVENTION
+  — фокус на acute / early window з EBV-DNA monitoring для PTLD).
+  Risk profile хронічної когорти зсувається до: cumulative skin-
+  cancer burden (SCC 65-100x background; BCC 10-20x; aggressive
+  SCC subset prone до local recurrence + metastasis), late-onset
+  PTLD (≥1р post-transplant частіше EBV-negative, DLBCL-like
+  histology, гірший prognosis), Kaposi sarcoma у HHV-8-exposed
+  когорті, CIN / cervical cancer (HPV co-factor), anal SCC (HPV
+  co-factor у MSM + жінок з anogenital HPV history), oropharyngeal
+  cancer, HCC при HBV/HCV-history, RCC у kidney-transplant
+  recipients (acquired-cystic-disease native-kidney pathway).
+  RedFlag персони prevention — long-cycle surveillance cadence
+  (annual skin exam, q1-3р cervical co-test, dental cancer screening,
+  q6mo HCC surveillance у at-risk subset), shared-decision discussion
+  immunosuppression-minimization coordinated з transplant team
+  (НІКОЛИ unilateral changes), HPV vaccination catch-up.
+
+trigger:
+  type: lab_value
+  any_of:
+    - finding: "post_solid_organ_transplant_immunosuppression_ge_3y"
+      value: true
+    - finding: "post_allogeneic_hsct_chronic_immunosuppression_ge_3y"
+      value: true
+    - finding: "years_post_transplant_ge_3_on_immunosuppression"
+      value: true
+
+clinical_direction: investigate
+
+severity: major
+priority: 100
+category: other
+
+risk_category: iatrogenic
+
+relevant_diseases:
+  - DIS-DLBCL-NOS
+  - DIS-PTLD
+  - DIS-BCC
+  - DIS-CERVICAL
+  - DIS-ANAL-SCC
+  - DIS-KAPOSI
+
+shifts_algorithm: []
+
+sources:
+  - SRC-NCCN-BCELL-2025
+  - SRC-NCCN-CERVICAL-2025
+  - SRC-NCCN-SKIN-2025
+  - SRC-NCCN-ANAL-2025
+
+last_reviewed: "2026-05-18"
+reviewer_signoffs: 0
+notes: >
+  Prevention-persona RedFlag for chronic ≥3y post-transplant
+  immunosuppression cohort. Engine routes to PreventionPlan with
+  long-cycle surveillance cadence appropriate to the chronic
+  cohort (vs the acute-window EBV-DNA cadence in the new-transplant
+  RF). Distinct from RF-IATROGENIC-TRANSPLANT-IMMUNOSUPPRESSION-
+  PREVENTION (which covers acute / new-transplant window). Both
+  RFs may fire simultaneously in the early-chronic window
+  (1-3y post-transplant) — engine routes to both surveillance
+  tracks, render layer deduplicates overlapping recommendations.
+
+  Anchored to DIS-DLBCL-NOS as the primary lymphoma anchor (late-
+  onset PTLD histology more DLBCL-like; DIS-PTLD as the canonical
+  early-onset EBV-driven entity). Multiple cancer types listed in
+  relevant_diseases reflect the broad cumulative-risk profile of
+  the chronic cohort. STUB pending two-Clinical-Co-Lead signoff
+  per CHARTER §6.1 dev-mode.
+draft: true
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_iatrogenic_batch3
+draft_revision: 1

@@ -1,0 +1,157 @@
+id: IND-IATROGENIC-DES-EXPOSURE-PREVENTION-SURVEILLANCE
+plan_track: standard
+intent: prevention
+
+applicable_to:
+  disease_id: DIS-VULVAR-VAGINAL-SCC
+  stage_requirements: []
+  biomarker_requirements_required: []
+  biomarker_requirements_excluded: []
+  demographic_constraints:
+    ecog_max: 3
+
+triggered_by_redflags:
+  - RF-IATROGENIC-DES-EXPOSURE-PREVENTION
+
+recommended_regimen: null
+concurrent_therapy: []
+followed_by: []
+
+evidence_level: moderate
+strength_of_recommendation: strong
+nccn_category: "2A"
+
+expected_outcomes:
+  overall_response_rate: "Annual gynecologic examination with DES-specific technique (full speculum visualization + palpation of vaginal walls + colposcopy / cervical staining) detects clear-cell adenocarcinoma (CCA) and cervical CIS at curable stage in the DES-exposed cohort. Historical CCA cohort studies show 5-year survival ≥80% for stage I disease at diagnosis, falling sharply with advanced stage; surveillance is the primary tool for keeping this rare cancer in stage I."
+
+hard_contraindications: []
+red_flags_triggering_alternative: []
+required_tests: []
+desired_tests: []
+
+rationale: >
+  Standard-track surveillance for documented in-utero DES exposure.
+  Components per CDC DES Update + ACOG Committee Opinion +
+  NCCN Cervical:
+
+  **(1) Annual gynecologic examination with DES-specific
+  technique** — full speculum visualization (rotating speculum
+  to see full vaginal wall, NOT just cervix), bimanual exam,
+  careful palpation of vaginal walls (clear-cell adenocarcinoma
+  often presents as a submucosal mass, not a mucosal lesion).
+  Iodine staining (Schiller test) on vaginal mucosa highlights
+  glycogen-poor areas (adenosis) for targeted biopsy.
+
+  **(2) Colposcopy of cervix + vagina** at first visit and
+  whenever any abnormal area visualized. Vaginal adenosis
+  (ectopic glandular epithelium in vagina, present in ~30-40%
+  of DES daughters) is benign in itself but is the precursor
+  field for CCA — abnormal vascular pattern or persistent
+  glandular changes warrant biopsy.
+
+  **(3) Cervical cytology + HPV co-testing** per ASCCP cadence —
+  q3y if normal, q5y co-test, more frequent if abnormal. NOT
+  a substitute for direct vaginal-wall inspection (CCA arises
+  in vaginal adenosis, often missed by cervical Pap).
+
+  **(4) Symptom evaluation** — abnormal vaginal bleeding
+  (intermenstrual, postmenopausal), persistent vaginal
+  discharge, dyspareunia, pelvic pain → immediate gynecologic
+  exam + colposcopy + targeted biopsy. CCA does not always
+  bleed; structural exam by experienced gynecologist is
+  irreplaceable.
+
+  **(5) Breast surveillance** — age-appropriate USPSTF
+  mammography q2y ages 40-74. DES-exposed cohort has modestly
+  elevated breast cancer risk after age 40 (~1.3x); intensified
+  screening NOT recommended on DES exposure alone, but baseline
+  screening must not be missed.
+
+  **(6) Pregnancy / reproductive counseling** for DES daughters
+  of reproductive age — increased risk of preterm birth,
+  miscarriage, ectopic pregnancy from Müllerian-tract anomalies;
+  high-risk obstetric care advisable.
+
+  **(7) DES granddaughters (3rd generation)** — data limited
+  and inconclusive; routine intensified surveillance NOT
+  recommended; awareness counseling at first GYN visit. Mother's
+  DES exposure should be documented in family history.
+
+  **(8) Lifelong surveillance** — bimodal CCA risk extends past
+  40 years; cohort is aging (born 1940-1971) but surveillance
+  does NOT stop at any age threshold. Compromise to once-yearly
+  cadence after age 60 if all prior exams normal is acceptable
+  per ACOG.
+
+  Goal: early-stage detection of CCA in the rare-event scenario;
+  routine cervical / breast prevention does not slip; symptom-
+  prompted evaluation pathway robust.
+
+rationale_ua: >
+  Стандартний-трек surveillance для документованої in-utero
+  DES exposure. Components per CDC DES Update + ACOG + NCCN
+  Cervical:
+
+  **(1) Annual gynecologic examination з DES-specific technique**
+  — full speculum visualization, bimanual exam, careful palpation
+  vaginal walls (CCA часто submucosal mass, не mucosal lesion).
+  Iodine staining (Schiller) vaginal mucosa — підкреслює glycogen-
+  poor areas (adenosis) для targeted biopsy.
+
+  **(2) Colposcopy cervix + vagina** на першому візиті і при
+  будь-якій abnormality. Vaginal adenosis (у ~30-40% DES
+  daughters) benign в собі, але precursor field для CCA.
+
+  **(3) Cervical cytology + HPV co-testing** per ASCCP cadence.
+  НЕ substitute для direct vaginal-wall inspection.
+
+  **(4) Symptom evaluation** — abnormal vaginal bleeding,
+  persistent discharge, dyspareunia, pelvic pain → immediate
+  gynecologic exam + colposcopy + targeted biopsy. CCA не
+  завжди bleeds.
+
+  **(5) Breast surveillance** — age-appropriate USPSTF
+  mammography q2р у 40-74. DES-exposed когорта модерно
+  підвищений breast cancer ризик після 40р (~1.3x).
+
+  **(6) Reproductive counseling** — increased ризик preterm
+  birth, miscarriage, ectopic pregnancy від Müllerian anomalies.
+
+  **(7) DES granddaughters** — дані обмежені; routine
+  intensified surveillance НЕ recommended; awareness.
+
+  **(8) Lifelong surveillance** — bimodal CCA ризик extends past
+  40р; cohort старіє але surveillance НЕ stops на будь-якому віці.
+
+ukrainian_review_status: pending_clinical_signoff
+ukrainian_drafted_by: claude_v03_iatrogenic_batch3
+draft_revision: 1
+
+sources:
+  - source_id: SRC-IARC-MONO-100B-2012
+    position: supports
+  - source_id: SRC-NCCN-CERVICAL-2025
+    position: supports
+
+do_not_do:
+  - "Не покладатися лише на cervical Pap у DES daughter — CCA arises у vaginal adenosis, often missed by cervical Pap."
+  - "Не пропускати full speculum visualization з rotating speculum — adequate vaginal-wall inspection критичний."
+  - "Не нормалізувати abnormal vaginal bleeding / discharge / dyspareunia у DES daughter — immediate workup."
+  - "Не зупиняти surveillance на arbitrary age cutoff — bimodal risk extends past 40р."
+  - "Не intensify mammographic screening на основі DES exposure alone — magnitude modest."
+  - "Не пропускати reproductive counseling у women of reproductive age — Müllerian-tract anomalies впливають на pregnancy planning."
+
+do_not_do_en:
+  - "Do not rely only on cervical Pap in a DES daughter — CCA arises in vaginal adenosis, often missed by cervical Pap."
+  - "Do not skip full speculum visualization with rotating speculum — adequate vaginal-wall inspection is critical."
+  - "Do not normalize abnormal vaginal bleeding / discharge / dyspareunia in a DES daughter — immediate workup."
+  - "Do not stop surveillance at an arbitrary age cutoff — bimodal risk extends past 40 years."
+  - "Do not intensify mammographic screening based on DES exposure alone — magnitude modest."
+  - "Do not skip reproductive counseling in women of reproductive age — Müllerian-tract anomalies affect pregnancy planning."
+
+known_controversies: []
+time_critical: false
+last_reviewed: "2026-05-18"
+reviewers: []
+reviewer_signoffs: 0
+notes: "STUB — v0.3 iatrogenic pilot (in-utero DES exposure → vaginal CCA + cervical CIS). Two-Clinical-Co-Lead signoff queued. Critical: cervical Pap is NOT sufficient; full vaginal-wall inspection by DES-experienced gynecologist is the standard. Anchored to DIS-VULVAR-VAGINAL-SCC (anatomic site) — clear-cell adenocarcinoma histology specificity carried in prose; future DIS-VAGINAL-CLEAR-CELL entity recommended."
