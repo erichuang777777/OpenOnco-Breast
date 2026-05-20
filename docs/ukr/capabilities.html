@@ -32,7 +32,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link href="/style.css" rel="stylesheet">
 <style>
-  /* ── Tabs ─────────────────────────────────────────── */
+  /* Tabs */
   .cap-tabs {
     display: flex; gap: 2px; flex-wrap: wrap;
     border-bottom: 2px solid var(--bg-strong, #e5e7eb);
@@ -64,7 +64,7 @@
   .cap-panel.is-active { display: block; animation: capFade .25s ease; }
   @keyframes capFade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; } }
 
-  /* ── New infographic: Pipeline with concrete example ── */
+  /* Pipeline */
   .pipeline {
     margin: 24px 0 36px;
     border-radius: 14px; overflow: hidden;
@@ -121,7 +121,7 @@
   .pipeline-code .pl-k { color: #fcd34d; }
   .pipeline-code .pl-s { color: #a5f3fc; }
   .pipeline-code .pl-c { color: #94a3b8; font-style: italic; }
-  .pipeline-stages { list-style: none; padding: 0; margin: 0; font-size: 12px; }
+  .pipeline-stages { list-style: none; padding: 0; margin: 0; font-size: 12px; counter-reset: stage; }
   .pipeline-stages li {
     padding: 4px 0 4px 22px; color: #d1fae5; position: relative;
     border-bottom: 1px dashed rgba(94,234,212,0.18);
@@ -134,7 +134,6 @@
     background: rgba(94,234,212,0.18); color: #5eead4;
     font: 700 10px/16px 'JetBrains Mono', monospace; text-align: center;
   }
-  .pipeline-stages { counter-reset: stage; }
   .pipeline-track {
     border-left: 3px solid #5eead4; padding: 4px 0 4px 10px;
     margin-bottom: 8px;
@@ -161,7 +160,7 @@
   .pipeline-foot strong { color: white; font-weight: 600; }
   .pipeline-foot .pip-dot { width: 6px; height: 6px; border-radius: 50%; background: #5eead4; display: inline-block; }
 
-  /* Compact key-numbers strip */
+  /* Key numbers */
   .key-nums {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 12px; margin: 20px 0 32px;
@@ -181,7 +180,7 @@
   .key-num.is-warn { border-top-color: var(--amber, #d97706); }
   .key-num.is-warn .key-num-val { color: var(--amber, #d97706); }
 
-  /* Pillar bar — 4 short ones across */
+  /* Pillars */
   .pillars {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 14px; margin: 24px 0 8px;
@@ -247,12 +246,12 @@
 
     <div class="callout callout-hard">
       <strong>STUB-статус клінічного контенту.</strong>
-      Dual sign-off: <strong>15/806</strong> (CHARTER §6.1 вимагає два Clinical Co-Lead approvals).
+      Dual sign-off: <strong>15/806</strong>
+      (CHARTER §6.1 вимагає два Clinical Co-Lead approvals).
       Це proposed-plan: structured data + algorithm + sources на місці, але без dual sign-off.
-      Інструмент підтримки рішень, не медичний пристрій. Стан на <code>2026-05-19</code>.
+      Інструмент підтримки рішень, не медичний пристрій. Стан на <code>2026-05-20 18:35 UTC</code>.
     </div>
 
-    <!-- ─── Tabs nav ─── -->
     <nav class="cap-tabs" role="tablist" aria-label="Розділи">
       <button class="cap-tab is-active" role="tab" data-tab="overview" aria-selected="true"><span class="cap-tab-num">01</span>Огляд</button>
       <button class="cap-tab" role="tab" data-tab="engine" aria-selected="false"><span class="cap-tab-num">02</span>Engine</button>
@@ -261,13 +260,13 @@
       <button class="cap-tab" role="tab" data-tab="contribute" aria-selected="false"><span class="cap-tab-num">05</span>Долучитись</button>
     </nav>
 
-    <!-- ════════════════ TAB 1 · OVERVIEW ════════════════ -->
+    <!-- TAB 1: OVERVIEW -->
     <section class="cap-panel is-active" id="panel-overview" role="tabpanel">
 
       <div class="pipeline" role="img" aria-label="OpenOnco — pipeline: JSON-профіль → engine → Plan з двома треками">
         <div class="pipeline-head">
           <span class="pipeline-eyebrow">OpenOnco · engine у двох словах</span>
-          <span class="pipeline-version">v0.1.4 · 2026-05-19</span>
+          <span class="pipeline-version">v0.1.4 · 2026-05-20 18:35 UTC</span>
         </div>
         <h2 class="pipeline-title">
           Один JSON-профіль → <em>два плани лікування</em> з citation під кожною claim.
@@ -278,7 +277,6 @@
         </p>
 
         <div class="pipeline-grid">
-          <!-- INPUT -->
           <div class="pipeline-col">
             <div class="pipeline-col-tag">Вхід</div>
             <div class="pipeline-col-title">Profile (FHIR / mCODE)</div>
@@ -297,7 +295,6 @@
 
           <div class="pipeline-arrow" aria-hidden="true">→</div>
 
-          <!-- ENGINE -->
           <div class="pipeline-col">
             <div class="pipeline-col-tag">Engine · 6 стадій</div>
             <div class="pipeline-col-title">Algorithm walk + RedFlags + CIViC</div>
@@ -313,7 +310,6 @@
 
           <div class="pipeline-arrow" aria-hidden="true">→</div>
 
-          <!-- OUTPUT -->
           <div class="pipeline-col is-out">
             <div class="pipeline-col-tag">Вихід</div>
             <div class="pipeline-col-title">Plan з ≥2 tracks + trace</div>
@@ -339,7 +335,6 @@
         </div>
       </div>
 
-      <!-- Key numbers -->
       <div class="key-nums">
         <div class="key-num"><div class="key-num-val">92</div><div class="key-num-lbl">хвороб у KB</div></div>
         <div class="key-num"><div class="key-num-val">664</div><div class="key-num-lbl">показань (230 1L · 172 2L+)</div></div>
@@ -351,7 +346,6 @@
         <div class="key-num is-warn"><div class="key-num-val">15/806</div><div class="key-num-lbl">з dual sign-off</div></div>
       </div>
 
-      <!-- 4 Pillars -->
       <div class="pillars">
         <div class="pillar">
           <div class="pillar-title"><span class="pillar-ic">01</span>Не «чорний ящик»</div>
@@ -389,7 +383,7 @@
       </div>
     </section>
 
-    <!-- ════════════════ TAB 2 · ENGINE ════════════════ -->
+    <!-- TAB 2: ENGINE -->
     <section class="cap-panel" id="panel-engine" role="tabpanel">
 
       <div class="info-section">
@@ -512,7 +506,7 @@
       </div>
     </section>
 
-    <!-- ════════════════ TAB 3 · DATA ════════════════ -->
+    <!-- TAB 3: DATA -->
     <section class="cap-panel" id="panel-data" role="tabpanel">
 
       <div class="info-section">
@@ -603,7 +597,7 @@
       </div>
     </section>
 
-    <!-- ════════════════ TAB 4 · LIMITS ════════════════ -->
+    <!-- TAB 4: LIMITS -->
     <section class="cap-panel" id="panel-limits" role="tabpanel">
 
       <div class="info-section">
@@ -750,14 +744,15 @@
       </div>
     </section>
 
-    <!-- ════════════════ TAB 5 · CONTRIBUTE ════════════════ -->
+    <!-- TAB 5: CONTRIBUTE -->
     <section class="cap-panel" id="panel-contribute" role="tabpanel">
 
       <div class="info-section">
         <h2>TaskTorrent — верифікувати алгоритми токенами вашого AI</h2>
         <p class="info-text">
-          Найбільший gap — <strong>15/806</strong> dual-reviewer sign-off. Bottleneck не вирішується новим
-          кодом — він вирішується контрибуторами з AI-tool'ами, що беруть structured chunks роботи.
+          Найбільший gap — <strong>15/806</strong> dual-reviewer sign-off.
+          Bottleneck не вирішується новим кодом — він вирішується контрибуторами з AI-tool'ами,
+          що беруть structured chunks роботи.
         </p>
         <div class="num-grid num-grid--rich">
           <div class="num-card num-card--accent">
@@ -862,7 +857,6 @@
       });
     });
 
-    // Initial activation from URL hash
     var hash = (window.location.hash || '').replace('#', '');
     if (hash && document.getElementById('panel-' + hash)) {
       activate(hash);
