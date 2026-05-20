@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-05-19T18:33:27Z",
-  "kb_root": "C:\\tmp\\openonco-int2\\knowledge_base\\hosted\\content",
+  "generated_at_utc": "2026-05-20T10:32:58Z",
+  "kb_root": "/home/runner/work/OpenOnco/OpenOnco/knowledge_base/hosted/content",
   "entity_counts": {
     "diseases": 92,
     "drugs": 298,
