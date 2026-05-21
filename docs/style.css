@@ -360,6 +360,24 @@ body.home-page {
 .home-stats-band .promo-stat-lbl {
   color: var(--gray-500);
 }
+/* A stat may optionally be a link (e.g. "92 Diseases" → /diseases.html).
+ * The link inherits look; hover reveals it's clickable. */
+.home-stats-band .promo-stat-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .12s ease, color .12s ease;
+}
+.home-stats-band .promo-stat-link:hover .promo-stat-num,
+.home-stats-band .promo-stat-link:focus-visible .promo-stat-num {
+  color: var(--green-900);
+}
+.home-stats-band .promo-stat-link:hover .promo-stat-lbl,
+.home-stats-band .promo-stat-link:focus-visible .promo-stat-lbl {
+  color: var(--green-700);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 
 /* ── Home: two-pillar grid (Saves time / Catches misses) ─────────── */
 .home-pillars {

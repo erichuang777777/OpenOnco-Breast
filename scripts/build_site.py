@@ -1227,6 +1227,7 @@ def _render_landing_v2(stats, *, target_lang: str = "en") -> str:
         secondary = "See a sample plan →"
         tertiary = "Ask the AI Tumor Board"
         gallery_href = "/gallery.html"
+        diseases_href = "/diseases.html"
         note = "Open-data inputs: CIViC (CC0) for biomarker actionability, ClinicalTrials.gov for trial-aware options, PubMed/PMID/DOI and DailyMed/openFDA for literature and drug-label context. No LLM chooses treatment: plans are rules-first with YAML provenance, so LLM hallucinations are excluded from the plan. The clinician remains the final authority (CHARTER §11)."
         footer = "Informational tool for clinicians, not a medical device (CHARTER §15 + §11)."
         try_href = "/try.html"
@@ -1390,6 +1391,7 @@ def _render_landing_v2(stats, *, target_lang: str = "en") -> str:
         secondary = "Подивитися приклад плану →"
         tertiary = "Запитати AI-туморборд"
         gallery_href = "/ukr/gallery.html"
+        diseases_href = "/ukr/diseases.html"
         note = "Відкриті джерела: CIViC (CC0) для біомаркерної клінічної значущості, ClinicalTrials.gov для trial-aware опцій, PubMed/PMID/DOI та DailyMed/openFDA для літератури й контексту інструкцій до препаратів. LLM не обирає лікування: план збирається rules-first із YAML provenance, тому LLM-галюцинації виключені з плану. Фінальне рішення лишається за лікарем (CHARTER §11)."
         footer = "Це інформаційний інструмент для лікаря, не медичний пристрій (CHARTER §15 + §11)."
         try_href = "/ukr/try.html"
@@ -1562,16 +1564,25 @@ def _render_landing_v2(stats, *, target_lang: str = "en") -> str:
         for paragraph in sub_paragraphs
     )
 
-    def _stat_block(num_html: str, lbl: str) -> str:
+    def _stat_block(num_html: str, lbl: str, href: str | None = None) -> str:
+        inner = (
+            f'        <div class="promo-stat-num">{num_html}</div>\n'
+            f'        <div class="promo-stat-lbl">{html.escape(lbl)}</div>'
+        )
+        if href:
+            inner = (
+                f'        <a class="promo-stat-link" href="{href}">\n'
+                f'  {inner}\n'
+                '        </a>'
+            )
         return (
             '      <div class="promo-stat">\n'
-            f'        <div class="promo-stat-num">{num_html}</div>\n'
-            f'        <div class="promo-stat-lbl">{html.escape(lbl)}</div>\n'
+            f'{inner}\n'
             '      </div>'
         )
 
     stats_html = "\n".join([
-        _stat_block(str(counts['diseases']), stat_labels['diseases']),
+        _stat_block(str(counts['diseases']), stat_labels['diseases'], href=diseases_href),
         _stat_block(str(counts['indications']), stat_labels['indications']),
         _stat_block(str(counts['regimens']), stat_labels['regimens']),
         _stat_block(str(counts['redflags']), stat_labels['redflags']),
