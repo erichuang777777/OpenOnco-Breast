@@ -8749,11 +8749,16 @@ def build_one_case(case: CaseEntry, output_dir: Path,
 
 
 def _copy_landing_assets(output_dir: Path) -> list[str]:
-    """Copy infographic images used by the landing into docs/. Source-of-truth
-    lives in infograph/ (gitignored except these). Listed by name so we don't
-    accidentally copy patient HTMLs (CHARTER §9.3)."""
+    """Copy public landing assets into docs/. Source-of-truth for infographics
+    lives in infograph/ (gitignored except specifically listed names below).
+    Listed by name so we don't accidentally copy patient HTMLs (CHARTER §9.3).
+
+    History: MDT.png / MDT-light.png (UA-only MDT infographic) were dropped
+    on 2026-05-21 — bad UX as cross-language OG card. Add new entries to the
+    `assets` list when introducing future landing images.
+    """
     src_root = REPO_ROOT / "infograph"
-    assets = ["MDT.png", "MDT-light.png"]
+    assets: list[str] = []
     copied: list[str] = []
     for name in assets:
         src = src_root / name
