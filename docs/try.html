@@ -20,12 +20,10 @@
 <meta property="og:title" content="OpenOnco · Plan Builder">
 <meta property="og:description" content="Run the OpenOnco browser demo on synthetic oncology profiles with auditable, source-grounded output.">
 <meta property="og:url" content="https://openonco.info/try.html">
-<meta property="og:image" content="https://openonco.info/MDT.png">
 <meta property="og:locale" content="en_US">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenOnco · Plan Builder">
 <meta name="twitter:description" content="Run the OpenOnco browser demo on synthetic oncology profiles with auditable, source-grounded output.">
-<meta name="twitter:image" content="https://openonco.info/MDT.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OpenOnco · Plan Builder","description":"Run the OpenOnco browser demo on synthetic oncology profiles with auditable, source-grounded output.","url":"https://openonco.info/try.html","inLanguage":"en-US","isAccessibleForFree":true,"publisher":{"@type":"Organization","name":"OpenOnco","url":"https://openonco.info","logo":"https://openonco.info/logo.svg"},"about":["oncology decision support","source-grounded medical knowledge base","synthetic oncology examples","clinical AI retrieval"],"audience":[{"@type":"MedicalAudience","audienceType":"Clinicians"},{"@type":"Audience","audienceType":"Patients"},{"@type":"Audience","audienceType":"Laboratories"},{"@type":"Audience","audienceType":"Investors"}],"potentialAction":{"@type":"ReadAction","target":"https://openonco.info/try.html"},"applicationCategory":"MedicalApplication","operatingSystem":"Web browser"}</script>
 <!-- openonco-seo:end -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -227,7 +225,7 @@
           <span id="pwaInstallState" class="build-state">Browser</span>
         </div>
         <dl class="build-meta">
-          <div><dt>Core</dt><dd id="coreVersion">v2fe5ed2e5f54</dd></div>
+          <div><dt>Core</dt><dd id="coreVersion">v6976032c33c7</dd></div>
           <div><dt>Disease</dt><dd id="diseaseVersion">—</dd></div>
           <div><dt>Cache</dt><dd id="cacheState">Checking…</dd></div>
           <div><dt>Offline</dt><dd id="offlineState">Network required for first launch</dd></div>
@@ -566,7 +564,7 @@ async function refreshBuildPanel(diseaseId = null) {
     : 'Browser');
 
   if (bundleIndex) {
-    setText(coreVersionEl, 'v' + (bundleIndex.core_version || '2fe5ed2e5f54'));
+    setText(coreVersionEl, 'v' + (bundleIndex.core_version || '6976032c33c7'));
     if (offlineCacheTotal <= 0) {
       const total = offlineBundleUrls().length;
       setOfflineCacheProgress(0, total, 0);
