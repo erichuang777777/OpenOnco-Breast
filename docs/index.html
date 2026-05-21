@@ -63,17 +63,117 @@
   <section class="home-hero">
     <div class="home-hero-inner">
       <p class="home-kicker">Open-source clinical decision support</p>
-      <h1>OpenOnco</h1>
-      <p class="home-sub">OpenOnco helps clinicians assemble a clinically coherent treatment plan quickly: from diagnosis, stage, biomarkers, and patient status to therapeutic options. Onco Wiki sits beside it as the project's oncology wiki for diseases, drugs, biomarkers, and source-linked facts.</p>
-      <p class="home-sub">Every recommendation is tied to sources, standards, and verified rules. The system highlights key drugs, biomarkers, and constraints, while AI Tumor Board helps formulate review questions before the final decision.</p>
+      <h1>Cross-checks NCCN, ESMO, and drug labels for you — so you verify, not research.</h1>
+      <p class="home-sub">One JSON patient profile in, a standard <em>and</em> an aggressive treatment plan out — side by side, with a citation under every recommendation. The engine reads 444 sources for you and surfaces 594 red flags worth a second look.</p>
+      <p class="home-sub">Rules-first, not LLM-driven. The plan cannot hallucinate a drug or a dose. The clinical decision stays with you; the engine is the second pair of eyes that read every guideline at once.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="/try.html">Build a virtual plan</a>
+        <a class="btn btn-primary" href="/try.html">Try the plan builder</a>
+        <a class="btn btn-secondary" href="/gallery.html">See a sample plan →</a>
       </div>
     </div>
   </section>
 
+  <section class="home-stats-band" aria-label="Knowledge base scale">
+    <div class="promo-stats">
+      <div class="promo-stat">
+        <div class="promo-stat-num">92</div>
+        <div class="promo-stat-lbl">Diseases</div>
+      </div>
+      <div class="promo-stat">
+        <div class="promo-stat-num">664</div>
+        <div class="promo-stat-lbl">Indications</div>
+      </div>
+      <div class="promo-stat">
+        <div class="promo-stat-num">384</div>
+        <div class="promo-stat-lbl">Regimens</div>
+      </div>
+      <div class="promo-stat">
+        <div class="promo-stat-num">594</div>
+        <div class="promo-stat-lbl">Red flags</div>
+      </div>
+      <div class="promo-stat">
+        <div class="promo-stat-num">444</div>
+        <div class="promo-stat-lbl">Cited sources</div>
+      </div>
+      <div class="promo-stat">
+        <div class="promo-stat-num">~200<span class="promo-stat-plus">ms</span></div>
+        <div class="promo-stat-lbl">Per profile</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-pillars" aria-label="What OpenOnco does for the clinician">
+    <h2 class="home-pillar-h">Saves the routine work</h2>
+    <p class="home-pillar-sub">Five tabs collapse into one. The engine does the cross-checking so you can spend the time on the call, not the lookup.</p>
+    <div class="num-grid num-grid--rich">
+
+      <div class="num-card num-card--accent">
+        <div class="num-big">Pass</div>
+        <div class="num-lbl">One pass replaces five tabs</div>
+        <p class="num-text">The engine resolves NCCN, ESMO, drug labels, and CIViC actionability in a single pass. No more switching between guidelines, label PDFs, and biomarker databases for each case.</p>
+      </div>
+
+      <div class="num-card num-card--accent">
+        <div class="num-big">Cite</div>
+        <div class="num-lbl">Citations attached automatically</div>
+        <p class="num-text">Every line in the plan ships with the PMID, DOI, DailyMed link, or guideline section. You verify in 10 seconds instead of running a literature search to back up each recommendation.</p>
+      </div>
+
+      <div class="num-card num-card--accent">
+        <div class="num-big">Sync</div>
+        <div class="num-lbl">444 sources refreshed for you</div>
+        <p class="num-text">NCCN, ESMO, EHA, BSH, EASL, MoH, WHO, CTCAE, FDA, CIViC — refreshed on a schedule. No more monitoring every guideline update yourself to know what changed since last quarter.</p>
+      </div>
+
+      <div class="num-card num-card--accent">
+        <div class="num-big">Pair</div>
+        <div class="num-lbl">Standard + aggressive built together</div>
+        <p class="num-text">Both alternatives are generated side by side every time — you don't manually construct the second option to weigh against the first. CHARTER §15.2 C6: the alternative is never buried.</p>
+      </div>
+
+    </div>
+
+    <h2 class="home-pillar-h home-pillar-h--alt">Surfaces what's easy to overlook</h2>
+    <p class="home-pillar-sub">The engine is a checklist that runs against every profile. It cannot replace clinical judgment — but it can stop a tired Friday afternoon from missing a contraindication.</p>
+    <div class="num-grid num-grid--rich">
+
+      <div class="num-card">
+        <div class="num-big">Flag</div>
+        <div class="num-lbl">594 red flags worth a second look</div>
+        <p class="num-text">Drug interactions, contraindications, organ-function thresholds, high-risk cytogenetics, bulky disease — every red flag fires automatically against the profile and surfaces in the plan for review.</p>
+      </div>
+
+      <div class="num-card">
+        <div class="num-big">Match</div>
+        <div class="num-lbl">Targetable mutations don't slip past</div>
+        <p class="num-text">CIViC actionability lookup is fusion-aware. A BRAF V600E or a BCR::ABL1 finding maps to ESCAT-tier evidence before it can quietly disappear into a long workup report.</p>
+      </div>
+
+      <div class="num-card">
+        <div class="num-big">Rules</div>
+        <div class="num-lbl">No hallucinated drugs or doses</div>
+        <p class="num-text">The plan is assembled by a declarative rule engine, not by an LLM. A drug must exist in the KB with a real label entry; a dose must come from a curated Regimen YAML. No creative invention.</p>
+      </div>
+
+      <div class="num-card">
+        <div class="num-big">Ask</div>
+        <div class="num-lbl">Refuses to default silently</div>
+        <p class="num-text">When the profile lacks data — missing cytogenetics, no ECOG, incomplete biomarker panel — the engine emits an Open Question instead of guessing. CHARTER §15.2 C6: anti automation-bias is mandatory.</p>
+      </div>
+
+    </div>
+  </section>
+
   <section class="home-source-band" aria-label="OpenOnco sources">
-    <p class="home-note">Open-data inputs: CIViC (CC0) for biomarker actionability, ClinicalTrials.gov for trial-aware options, PubMed/PMID/DOI and DailyMed/openFDA for literature and drug-label context. No LLM chooses treatment: plans are rules-first with YAML provenance, so LLM hallucinations are excluded from the plan.</p>
+    <p class="home-note">Open-data inputs: CIViC (CC0) for biomarker actionability, ClinicalTrials.gov for trial-aware options, PubMed/PMID/DOI and DailyMed/openFDA for literature and drug-label context. No LLM chooses treatment: plans are rules-first with YAML provenance, so LLM hallucinations are excluded from the plan. The clinician remains the final authority (CHARTER §11).</p>
+  </section>
+
+  <section class="home-cta-doors" aria-label="Where to go next">
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/try.html">Build a plan from a case</a>
+      <a class="btn btn-secondary" href="/ask.html">Ask the AI Tumor Board</a>
+      <a class="btn btn-secondary" href="/kb.html">Browse Onco Wiki</a>
+    </div>
   </section>
 
   <footer class="page-foot">
