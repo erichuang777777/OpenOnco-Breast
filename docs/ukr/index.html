@@ -20,12 +20,10 @@
 <meta property="og:title" content="OpenOnco — онкологічні рішення, які можна перевірити">
 <meta property="og:description" content="OpenOnco - відкрита онкологічна база знань і браузерна демонстрація підтримки клінічних рішень для лікарів, лабораторій, інвесторів і пацієнтів.">
 <meta property="og:url" content="https://openonco.info/ukr/">
-<meta property="og:image" content="https://openonco.info/MDT.png">
 <meta property="og:locale" content="uk_UA">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenOnco — онкологічні рішення, які можна перевірити">
 <meta name="twitter:description" content="OpenOnco - відкрита онкологічна база знань і браузерна демонстрація підтримки клінічних рішень для лікарів, лабораторій, інвесторів і пацієнтів.">
-<meta name="twitter:image" content="https://openonco.info/MDT.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"OpenOnco — онкологічні рішення, які можна перевірити","description":"OpenOnco - відкрита онкологічна база знань і браузерна демонстрація підтримки клінічних рішень для лікарів, лабораторій, інвесторів і пацієнтів.","url":"https://openonco.info/ukr/","inLanguage":"uk-UA","isAccessibleForFree":true,"publisher":{"@type":"Organization","name":"OpenOnco","url":"https://openonco.info","logo":"https://openonco.info/logo.svg"},"about":["oncology decision support","source-grounded medical knowledge base","synthetic oncology examples","clinical AI retrieval"],"audience":[{"@type":"MedicalAudience","audienceType":"Clinicians"},{"@type":"Audience","audienceType":"Patients"},{"@type":"Audience","audienceType":"Laboratories"},{"@type":"Audience","audienceType":"Investors"}],"potentialAction":{"@type":"ReadAction","target":"https://openonco.info/ukr/"}}</script>
 <!-- openonco-seo:end -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -63,17 +61,119 @@
   <section class="home-hero">
     <div class="home-hero-inner">
       <p class="home-kicker">Відкрита підтримка клінічних рішень</p>
-      <h1>OpenOnco</h1>
-      <p class="home-sub">OpenOnco допомагає швидко зібрати клінічно осмислений план лікування: від діагнозу, стадії, біомаркерів і стану пацієнта до можливих терапевтичних опцій. Поруч працює Онко-вікі - онкологічна вікіпедія проєкту з хворобами, препаратами, біомаркерами та джерелами.</p>
-      <p class="home-sub">Кожна рекомендація прив'язана до джерел, стандартів і перевірених правил. Система підсвічує ключові ліки, біомаркери та обмеження, а AI-туморборд допомагає сформулювати питання для клінічного рев'ю перед фінальним рішенням.</p>
+      <h1>Звіряє за вас NCCN, ESMO і label-и — ви перевіряєте, не досліджуєте.</h1>
+      <p class="home-sub">Один JSON-профіль пацієнта на вході — план standard <em>і</em> aggressive поруч, із цитатою під кожною рекомендацією. Engine читає за вас 444 джерела і виносить на огляд 594 red flag, які варті повторного погляду.</p>
+      <p class="home-sub">Rules-first, а не LLM. План не може «вигадати» препарат чи дозу. Клінічне рішення лишається за вами; engine — це друга пара очей, що читає всі гайдлайни одночасно.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="/ukr/try.html">Побудувати план лікування</a>
+        <a class="btn btn-primary" href="/ukr/try.html">Спробувати конструктор плану</a>
+        <a class="btn btn-secondary" href="/ukr/gallery.html">Подивитися приклад плану →</a>
       </div>
     </div>
   </section>
 
+  <section class="home-stats-band" aria-label="Масштаб бази знань">
+    <div class="promo-stats">
+      <div class="promo-stat">
+        <a class="promo-stat-link" href="/ukr/diseases.html">
+          <div class="promo-stat-num">92</div>
+        <div class="promo-stat-lbl">Хвороби</div>
+        </a>
+      </div>
+      <div class="promo-stat">
+        <div class="promo-stat-num">664</div>
+        <div class="promo-stat-lbl">Показання</div>
+      </div>
+      <div class="promo-stat">
+        <div class="promo-stat-num">384</div>
+        <div class="promo-stat-lbl">Режими</div>
+      </div>
+      <div class="promo-stat">
+        <div class="promo-stat-num">594</div>
+        <div class="promo-stat-lbl">Red flag</div>
+      </div>
+      <div class="promo-stat">
+        <div class="promo-stat-num">444</div>
+        <div class="promo-stat-lbl">Цитованих джерел</div>
+      </div>
+      <div class="promo-stat">
+        <div class="promo-stat-num">~200<span class="promo-stat-plus">мс</span></div>
+        <div class="promo-stat-lbl">На профіль</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-pillars" aria-label="Що OpenOnco робить для лікаря">
+    <h2 class="home-pillar-h">Економить рутинну роботу</h2>
+    <p class="home-pillar-sub">П'ять вкладок згортаються в один прохід. Engine робить крос-чек, а ви витрачаєте час на саме рішення, а не на пошук джерел.</p>
+    <div class="num-grid num-grid--rich">
+
+      <div class="num-card num-card--accent">
+        <div class="num-big">Pass</div>
+        <div class="num-lbl">Один прохід замість п'яти вкладок</div>
+        <p class="num-text">Engine за один прохід розв'язує NCCN, ESMO, інструкції до препаратів і CIViC-actionability. Більше не треба перемикатися між гайдлайнами, label-PDF і базами біомаркерів для кожного кейсу.</p>
+      </div>
+
+      <div class="num-card num-card--accent">
+        <div class="num-big">Cite</div>
+        <div class="num-lbl">Цитати додаються автоматично</div>
+        <p class="num-text">Кожен рядок плану несе PMID, DOI, посилання на DailyMed або секцію гайдлайну. Ви перевіряєте за 10 секунд, а не запускаєте літ. пошук, щоб обґрунтувати кожну рекомендацію.</p>
+      </div>
+
+      <div class="num-card num-card--accent">
+        <div class="num-big">Sync</div>
+        <div class="num-lbl">444 джерела оновлюються за вас</div>
+        <p class="num-text">NCCN, ESMO, EHA, BSH, EASL, МОЗ, WHO, CTCAE, FDA, CIViC — оновлюються за розкладом. Більше не треба самостійно моніторити кожен апдейт гайдлайну, щоб знати, що змінилося за останній квартал.</p>
+      </div>
+
+      <div class="num-card num-card--accent">
+        <div class="num-big">Pair</div>
+        <div class="num-lbl">Standard + aggressive будуються разом</div>
+        <p class="num-text">Обидві альтернативи генеруються поруч щоразу — ви не будуєте другий варіант вручну, щоб зважити його проти першого. CHARTER §15.2 C6: альтернатива ніколи не схована.</p>
+      </div>
+
+    </div>
+
+    <h2 class="home-pillar-h home-pillar-h--alt">Виносить на огляд те, що легко пропустити</h2>
+    <p class="home-pillar-sub">Engine — це чек-лист, що пробігає кожен профіль. Він не замінює клінічне судження — але може не дати втомленому п'ятничному вечору пропустити протипоказання.</p>
+    <div class="num-grid num-grid--rich">
+
+      <div class="num-card">
+        <div class="num-big">Flag</div>
+        <div class="num-lbl">594 red flag, варті повторного погляду</div>
+        <p class="num-text">Drug interactions, протипоказання, пороги органної функції, high-risk цитогенетика, bulky disease — кожен red flag спрацьовує автоматично на профілі й виноситься в план для огляду.</p>
+      </div>
+
+      <div class="num-card">
+        <div class="num-big">Match</div>
+        <div class="num-lbl">Таргетні мутації не загубляться</div>
+        <p class="num-text">CIViC actionability lookup — fusion-aware. Знахідка BRAF V600E чи BCR::ABL1 мапиться на ESCAT-tier evidence до того, як могла б тихо зникнути в довгому workup-звіті.</p>
+      </div>
+
+      <div class="num-card">
+        <div class="num-big">Rules</div>
+        <div class="num-lbl">Жодного «вигаданого» препарату чи дози</div>
+        <p class="num-text">План збирається декларативним rule engine, а не LLM. Препарат мусить існувати в KB зі справжньою label-інструкцією; доза мусить прийти з кураторського Regimen YAML. Жодного творчого винаходу.</p>
+      </div>
+
+      <div class="num-card">
+        <div class="num-big">Ask</div>
+        <div class="num-lbl">Відмовляється мовчки додумувати</div>
+        <p class="num-text">Коли в профілі бракує даних — немає цитогенетики, немає ECOG, неповна біомаркерна панель — engine видає Open Question замість здогадки. CHARTER §15.2 C6: anti automation-bias обов'язковий.</p>
+      </div>
+
+    </div>
+  </section>
+
   <section class="home-source-band" aria-label="OpenOnco sources">
-    <p class="home-note">Відкриті джерела: CIViC (CC0) для біомаркерної клінічної значущості, ClinicalTrials.gov для trial-aware опцій, PubMed/PMID/DOI та DailyMed/openFDA для літератури й контексту інструкцій до препаратів. LLM не обирає лікування: план збирається rules-first із YAML provenance.</p>
+    <p class="home-note">Відкриті джерела: CIViC (CC0) для біомаркерної клінічної значущості, ClinicalTrials.gov для trial-aware опцій, PubMed/PMID/DOI та DailyMed/openFDA для літератури й контексту інструкцій до препаратів. LLM не обирає лікування: план збирається rules-first із YAML provenance, тому LLM-галюцинації виключені з плану. Фінальне рішення лишається за лікарем (CHARTER §11).</p>
+  </section>
+
+  <section class="home-cta-doors" aria-label="Куди далі">
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/ukr/try.html">Побудувати план із кейсу</a>
+      <a class="btn btn-secondary" href="/ukr/ask.html">Запитати AI-туморборд</a>
+      <a class="btn btn-secondary" href="/ukr/kb.html">Переглянути Онко-вікі</a>
+    </div>
   </section>
 
   <footer class="page-foot">

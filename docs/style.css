@@ -303,11 +303,12 @@ body.home-page {
 }
 .home-hero h1 {
   font-family: var(--font-display);
-  font-size: 78px;
-  line-height: .96;
-  font-weight: 900;
+  font-size: 48px;
+  line-height: 1.06;
+  font-weight: 800;
   color: var(--green-700);
   margin-bottom: 20px;
+  max-width: 880px;
 }
 .home-sub {
   max-width: 700px;
@@ -333,6 +334,86 @@ body.home-page {
   margin: 0 auto;
   padding: 22px 24px 0;
 }
+
+/* ── Home: stats band ─────────────────────────────────────────────────
+ * Wraps the .promo-stats grid (reused from capabilities.html) on a
+ * white background. The promo-stats children are styled for the dark
+ * .promo-info block — we re-skin them here for light context.
+ */
+.home-stats-band {
+  max-width: 1100px;
+  margin: 28px auto 0;
+  padding: 0 24px;
+}
+.home-stats-band .promo-stats {
+  padding: 24px 0;
+  margin-bottom: 0;
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+}
+.home-stats-band .promo-stat-num {
+  color: var(--green-700);
+}
+.home-stats-band .promo-stat-num .promo-stat-plus {
+  color: var(--green-900);
+}
+.home-stats-band .promo-stat-lbl {
+  color: var(--gray-500);
+}
+/* A stat may optionally be a link (e.g. "92 Diseases" → /diseases.html).
+ * The link inherits look; hover reveals it's clickable. */
+.home-stats-band .promo-stat-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .12s ease, color .12s ease;
+}
+.home-stats-band .promo-stat-link:hover .promo-stat-num,
+.home-stats-band .promo-stat-link:focus-visible .promo-stat-num {
+  color: var(--green-900);
+}
+.home-stats-band .promo-stat-link:hover .promo-stat-lbl,
+.home-stats-band .promo-stat-link:focus-visible .promo-stat-lbl {
+  color: var(--green-700);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ── Home: two-pillar grid (Saves time / Catches misses) ─────────── */
+.home-pillars {
+  max-width: 1100px;
+  margin: 36px auto 0;
+  padding: 0 24px;
+}
+.home-pillar-h {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--green-700);
+  margin: 8px 0 6px;
+}
+.home-pillar-h--alt {
+  margin-top: 48px;
+  padding-top: 36px;
+  border-top: 1px solid var(--gray-100);
+}
+.home-pillar-sub {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--gray-700);
+  margin: 0 0 22px;
+  max-width: 720px;
+}
+
+/* ── Home: bottom CTA doors row ──────────────────────────────────── */
+.home-cta-doors {
+  max-width: 1100px;
+  margin: 40px auto 24px;
+  padding: 22px 24px 0;
+  border-top: 1px solid var(--gray-100);
+}
+
 body.home-page .btn-primary,
 body.home-page .btn-primary:hover {
   background: var(--green-700);

@@ -18,7 +18,11 @@ SITE_FAVICON_LINK = '<link rel="icon" type="image/svg+xml" href="/favicon.svg">'
 
 SITE_BASE_URL = "https://openonco.info"
 SITE_NAME = "OpenOnco"
-SITE_IMAGE = f"{SITE_BASE_URL}/MDT.png"
+# Set to a URL string to emit og:image / twitter:image across all pages, or
+# None to omit them (twitter:card then degrades from summary_large_image to
+# summary). The previous MDT.png infographic was Ukrainian-only and made for a
+# bad cross-language OG card — removed 2026-05-21.
+SITE_IMAGE: str | None = None
 DEFAULT_DESCRIPTION_EN = (
     "OpenOnco is an open, auditable oncology decision-support knowledge base "
     "and browser demo for clinicians, laboratories, investors, and patients."

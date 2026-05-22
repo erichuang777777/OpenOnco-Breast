@@ -60,9 +60,9 @@ desktop.ini
 # Pattern matches anywhere in the tree (not just root) so files moved
 # into infograph/, patient_plans/, etc. stay protected.
 **план лікування.html
-# Note: infograph/MDT.png, infograph/MDT-light.png, infograph/терапія.png are
-# generic project infographics (NOT patient-specific) and intentionally tracked
-# — they render on the public landing.
+# Note: infograph/терапія.png is a generic project infographic (NOT
+# patient-specific) and intentionally tracked. MDT.png / MDT-light.png were
+# removed 2026-05-21 — UA-only text, bad cross-language OG card.
 
 # Knowledge base: live-API query cache (not source of truth, never commit)
 knowledge_base/cache/

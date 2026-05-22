@@ -50,7 +50,7 @@ Domain glossary for OpenOnco. Extracted from CHARTER, specs, code, and ongoing c
 | **Clinical Co-Lead**  | One of three named oncologists with sign-off authority on clinical KB content                                           | Reviewer, lead, owner         |
 | **Two-Reviewer Merge**| The CHARTER §6.1 rule that any clinical-content change needs approval from two of three Clinical Co-Leads               | Dual review, peer review      |
 | **Stub**              | A KB entity that exists structurally but has not received clinical sign-off; not safe for production recommendations    | Draft, placeholder, WIP       |
-| **MDT**               | Multidisciplinary Team — the clinical consilium model the product augments; not the `MDT.png` infographic file          | Tumor board, consilium        |
+| **MDT**               | Multidisciplinary Team — the clinical consilium model the product augments                                              | Tumor board, consilium        |
 
 ## Provenance & events
 
@@ -101,7 +101,6 @@ Domain glossary for OpenOnco. Extracted from CHARTER, specs, code, and ongoing c
 
 - **"Plan"** was used for both the treatment recommendation entity and the workup recommendation. **Plan** is now reserved for treatment output; **DiagnosticPlan** is the distinct workup entity. Don't say "diagnostic plan" in lowercase prose without meaning the entity.
 - **"Source"** collided with English "source code" and "source document." In the OpenOnco domain, **Source** always refers to the cited-authority KB entity. Use "source file" or "the original PDF" for other senses.
-- **"MDT"** is the clinical role (Multidisciplinary Team). The repo files `MDT.png` / `MDT-light.png` are infographics about MDT — they are not themselves an MDT. Don't conflate.
 - **"Reviewer"** is informal; the governance role with sign-off authority is **Clinical Co-Lead**. Reserve "reviewer" for non-binding feedback.
 - **"Event"** is overloaded between **Provenance Event** (clinical action) and runtime/build events (e.g. scheduled tasks). When in doubt, prefix as **Provenance Event**.
 - **"Engine"** can mean the **Rule Engine** (Python evaluator) or the **Engine Bundle** (Pyodide-loaded zip). They are the same logic in different runtime shells; disambiguate when context is unclear.
