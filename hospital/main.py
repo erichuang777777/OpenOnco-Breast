@@ -1,0 +1,193 @@
+"""FastAPI application entry point.
+
+Start:  uvicorn hospital.main:app --reload
+"""
+
+from __future__ import annotations
+
+from contextlib import asynccontextmanager
+
+from fastapi import FastAPI, Request, status
+from fastapi.responses import JSONResponse, RedirectResponse
+
+from hospital.auth.dependencies import COOKIE_NAME
+from hospital.auth.google_oauth import (
+    build_authorization_url,
+    exchange_code_for_tokens,
+    generate_state_nonce,
+    verify_id_token,
+)
+from hospital.auth.jwt_utils import create_access_token
+from hospital.config import get_settings
+from hospital.db.models import User
+from hospital.db.session import create_all_tables, get_db
+
+# ── Sub-routers ───────────────────────────────────────────────────────────────
+from hospital.api.plan import router as plan_router
+from hospital.api.cases import router as cases_router
+from hospital.api.extract import router as extract_router
+from hospital.api.drug_req import router as drug_req_router
+from hospital.api.admin.users import router as admin_users_router
+from hospital.api.admin.kb import router as admin_kb_router
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Create tables (dev / SQLite only; prod uses Alembic migrations)
+    settings = get_settings()
+    if "sqlite" in settings.DATABASE_URL:
+        await create_all_tables()
+    # Bootstrap admin account if configured
+    await _bootstrap_admin_if_needed()
+    yield
+
+
+app = FastAPI(
+    title="OpenOnco Hospital Edition",
+    version="0.1.0",
+    description="Clinical decision support add-on — breast cancer focus.",
+    lifespan=lifespan,
+)
+
+# ── API routes ────────────────────────────────────────────────────────────────
+API_PREFIX = "/api/v1"
+app.include_router(plan_router,       prefix=API_PREFIX)
+app.include_router(cases_router,      prefix=API_PREFIX)
+app.include_router(extract_router,    prefix=API_PREFIX)
+app.include_router(drug_req_router,   prefix=API_PREFIX)
+app.include_router(admin_users_router, prefix=API_PREFIX)
+app.include_router(admin_kb_router,   prefix=API_PREFIX)
+
+
+# ── Auth routes ───────────────────────────────────────────────────────────────
+
+@app.get("/auth/google", tags=["auth"])
+async def google_login():
+    """Redirect to Google OAuth consent screen."""
+    state = generate_state_nonce()
+    url = build_authorization_url(state)
+    response = RedirectResponse(url=url)
+    response.set_cookie("oauth_state", state, httponly=True, samesite="lax", max_age=600)
+    return response
+
+
+@app.get("/auth/google/callback", tags=["auth"])
+async def google_callback(request: Request, code: str, state: str):
+    """Handle Google OAuth callback — issue JWT cookie."""
+    saved_state = request.cookies.get("oauth_state")
+    if not saved_state or saved_state != state:
+        return JSONResponse(status_code=400, content={"error": "INVALID_STATE"})
+
+    try:
+        tokens = await exchange_code_for_tokens(code)
+        claims = await verify_id_token(tokens["id_token"])
+    except Exception as exc:
+        return JSONResponse(status_code=400, content={"error": "AUTH_FAILED", "message": str(exc)})
+
+    google_sub = claims["sub"]
+    email = claims.get("email", "")
+    name = claims.get("name")
+
+    # Upsert user
+    async for db in get_db():
+        from sqlalchemy import select as sa_select
+        user = await db.scalar(sa_select(User).where(User.google_sub == google_sub))
+        if user is None:
+            user = User(
+                user_id=google_sub,
+                google_sub=google_sub,
+                google_email=email,
+                google_name=name,
+                role="pending",
+            )
+            db.add(user)
+        else:
+            from datetime import datetime, timezone
+            user.last_login_at = datetime.now(timezone.utc)
+        break
+
+    settings = get_settings()
+    if user.role == "pending":
+        response = RedirectResponse(url="/auth/pending")
+    else:
+        expire = (
+            settings.JWT_ADMIN_EXPIRE_MINUTES
+            if user.role in ("kb_admin", "auditor")
+            else settings.JWT_EXPIRE_MINUTES
+        )
+        token = create_access_token(
+            user.user_id, email, name, user.role, expire_minutes=expire
+        )
+        home = {
+            "tumor_board_hcp": "/board",
+            "clinic_hcp": "/clinic",
+            "kb_admin": "/admin",
+            "auditor": "/admin/audit",
+        }.get(user.role, "/")
+        response = RedirectResponse(url=home)
+        response.set_cookie(
+            COOKIE_NAME, token,
+            httponly=True, secure=True, samesite="lax",
+            max_age=expire * 60,
+        )
+    response.delete_cookie("oauth_state")
+    return response
+
+
+@app.get("/auth/pending", tags=["auth"])
+async def pending_page(request: Request):
+    from fastapi.responses import HTMLResponse
+    email = request.cookies.get("oauth_state", "")  # best-effort
+    return HTMLResponse(f"""
+    <html><head><meta charset="utf-8"><title>待開通</title></head>
+    <body style="font-family:sans-serif;max-width:600px;margin:4rem auto;text-align:center">
+    <h1>帳號已建立</h1>
+    <p>您的帳號尚待管理員指派角色。</p>
+    <p>請聯絡您的系統管理員並提供您的 Google 帳號 Email。</p>
+    <p style="color:#666;font-size:0.9rem">完成後請重新登入。</p>
+    <a href="/auth/google">重新登入</a>
+    </body></html>
+    """)
+
+
+@app.get("/auth/logout", tags=["auth"])
+async def logout():
+    response = RedirectResponse(url="/auth/google")
+    response.delete_cookie(COOKIE_NAME)
+    return response
+
+
+@app.get("/auth/me", tags=["auth"])
+async def me(request: Request):
+    from hospital.auth.dependencies import get_current_user
+    user = await get_current_user(request)
+    return user
+
+
+# ── Health check ──────────────────────────────────────────────────────────────
+
+@app.get("/health", tags=["system"])
+async def health():
+    return {"status": "ok", "version": app.version}
+
+
+# ── Bootstrap helper ──────────────────────────────────────────────────────────
+
+async def _bootstrap_admin_if_needed() -> None:
+    settings = get_settings()
+    if not settings.BOOTSTRAP_ADMIN_EMAIL:
+        return
+    async for db in get_db():
+        from sqlalchemy import select as sa_select, func
+        count = await db.scalar(sa_select(func.count()).select_from(User))
+        if count == 0:
+            admin = User(
+                user_id=f"bootstrap-{settings.BOOTSTRAP_ADMIN_EMAIL}",
+                google_sub=f"bootstrap-{settings.BOOTSTRAP_ADMIN_EMAIL}",
+                google_email=settings.BOOTSTRAP_ADMIN_EMAIL,
+                google_name="Bootstrap Admin",
+                role="kb_admin",
+                active=True,
+            )
+            db.add(admin)
+        break
