@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>門診決策 · OpenOnco 院內版</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="layout">
+
+  <!-- 側邊欄 -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-logo">O</div>
+      <div>
+        <div class="brand-name">OpenOnco</div>
+        <div class="brand-sub">院內版 · 乳癌模組</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <div class="nav-label">臨床</div>
+      <a class="nav-item active" href="clinic.html"><span class="ic">◎</span> 門診決策</a>
+      <a class="nav-item" href="#"><span class="ic">▤</span> 個案管理</a>
+      <a class="nav-item" href="board.html"><span class="ic">◳</span> 腫瘤委員會</a>
+      <div class="nav-label">工具</div>
+      <a class="nav-item" href="#"><span class="ic">∑</span> 劑量計算</a>
+      <a class="nav-item" href="#"><span class="ic">℞</span> 藥物申請</a>
+      <div class="nav-label">管理</div>
+      <a class="nav-item" href="#"><span class="ic">⚙</span> 後台設定</a>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="avatar">陳</div>
+      <div class="user-meta">
+        <div class="user-name">陳醫師</div>
+        <div class="user-role">門診醫師</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 主內容 -->
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <h1>門診決策</h1>
+        <div class="crumbs">新個案 · 尚未建檔</div>
+      </div>
+      <div class="row">
+        <span class="chip muted">草稿</span>
+        <button class="btn btn-ghost">重新開始</button>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <!-- 步驟列 -->
+      <div class="steps">
+        <div class="step done"><span class="step-dot">✓</span><span class="step-label">輸入病歷</span></div>
+        <div class="step-line done"></div>
+        <div class="step done"><span class="step-dot">✓</span><span class="step-label">確認資料</span></div>
+        <div class="step-line done"></div>
+        <div class="step active"><span class="step-dot">3</span><span class="step-label">治療方案</span></div>
+      </div>
+
+      <!-- 輸入（已收合，顯示原文） -->
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">① 病歷原文</div>
+          <button class="btn btn-ghost" style="padding:5px 12px;font-size:12.5px">編輯</button>
+        </div>
+        <div class="card-body">
+          <p class="muted" style="font-size:13.5px;line-height:1.7">
+            55 歲女性，右側乳癌，HER2 陽性（IHC 3+），ER 陽性、PR 陰性。
+            影像顯示肝臟與骨骼多處轉移，臨床分期第四期。ECOG 體能狀態 1 分。
+            尚未接受過全身性治療，預計開始第一線治療。
+          </p>
+        </div>
+      </div>
+
+      <!-- 萃取確認 -->
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">② 系統萃取的關鍵欄位 <span class="chip ok"><span class="dot"></span>已由醫師確認</span></div>
+        </div>
+        <div class="card-body">
+          <div class="fields">
+            <div class="field confirmed">
+              <div><div class="field-k">癌別</div><div class="field-v">乳癌</div></div><span class="tick">✓</span>
+            </div>
+            <div class="field confirmed">
+              <div><div class="field-k">HER2</div><div class="field-v">陽性 · IHC 3+</div></div><span class="tick">✓</span>
+            </div>
+            <div class="field confirmed">
+              <div><div class="field-k">ER / PR</div><div class="field-v">陽性 / 陰性</div></div><span class="tick">✓</span>
+            </div>
+            <div class="field confirmed">
+              <div><div class="field-k">分期</div><div class="field-v">第四期（轉移）</div></div><span class="tick">✓</span>
+            </div>
+            <div class="field confirmed">
+              <div><div class="field-k">治療線別</div><div class="field-v">第一線</div></div><span class="tick">✓</span>
+            </div>
+            <div class="field confirmed">
+              <div><div class="field-k">ECOG</div><div class="field-v">1</div></div><span class="tick">✓</span>
+            </div>
+            <div class="field missing">
+              <div><div class="field-k">BRCA 胚系</div><div class="field-v muted">未檢測</div></div><span class="add">+ 補充</span>
+            </div>
+            <div class="field missing">
+              <div><div class="field-k">腦部轉移</div><div class="field-v muted">未評估</div></div><span class="add">+ 補充</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 決策缺口 -->
+      <div class="gap-banner" style="margin-top:20px">
+        <div class="gap-icon">⚠️</div>
+        <div style="flex:1">
+          <div class="gap-title">這些缺漏資訊可能改變建議方案</div>
+          <div class="gap-list">
+            <div class="gap-item">• 若 <b>BRCA 胚系突變陽性</b>，第二線後可考慮 PARP 抑制劑路徑（OlympiAD）。建議安排胚系基因檢測。</div>
+            <div class="gap-item">• 若有 <b>腦部轉移</b>，二線方案會傾向 tucatinib 組合（HER2CLIMB）。建議安排腦部 MRI。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 兩個方案 -->
+      <p class="section-title">③ 建議治療方案</p>
+      <div class="tracks">
+
+        <!-- 標準 -->
+        <div class="track standard">
+          <div class="track-band"></div>
+          <div class="track-head">
+            <div class="track-kind">標準方案</div>
+            <div class="track-name">THP</div>
+            <div class="track-full">Trastuzumab + Pertuzumab + Docetaxel</div>
+          </div>
+          <div class="track-body">
+            <div class="track-row"><span class="k">適應症</span><span class="v">HER2+ 轉移 1L</span></div>
+            <div class="track-row"><span class="k">NCCN 分類</span><span class="v"><span class="chip ok" style="padding:2px 8px">第 1 類</span></span></div>
+            <div class="track-row"><span class="k">中位整體存活</span><span class="v">57.1 個月</span></div>
+            <div class="track-row"><span class="k">證據等級</span><span class="v">高（CLEOPATRA）</span></div>
+          </div>
+          <div class="track-cites">
+            <div class="cite">📄 NCCN Breast v2.2025 · <span class="src">SRC-NCCN-BREAST-2025</span></div>
+            <div class="cite">📄 CLEOPATRA Trial · <span class="src">NCT00567190</span></div>
+          </div>
+          <div class="track-foot">
+            <button class="btn btn-primary btn-block">選擇此方案</button>
+            <button class="btn btn-ghost">詳情</button>
+          </div>
+        </div>
+
+        <!-- 積極 -->
+        <div class="track aggressive">
+          <div class="track-band"></div>
+          <div class="track-head">
+            <div class="track-kind">積極方案</div>
+            <div class="track-name">THP → T-DXd</div>
+            <div class="track-full">標準誘導後早期序貫 Trastuzumab deruxtecan</div>
+          </div>
+          <div class="track-body">
+            <div class="track-row"><span class="k">適應症</span><span class="v">HER2+ 轉移 1L→2L</span></div>
+            <div class="track-row"><span class="k">NCCN 分類</span><span class="v"><span class="chip info" style="padding:2px 8px">第 2A 類</span></span></div>
+            <div class="track-row"><span class="k">2L 中位無惡化存活</span><span class="v">28.8 個月</span></div>
+            <div class="track-row"><span class="k">證據等級</span><span class="v">高（DESTINY-Breast03）</span></div>
+          </div>
+          <div class="track-cites">
+            <div class="cite">📄 NCCN Breast v2.2025 · <span class="src">SRC-NCCN-BREAST-2025</span></div>
+            <div class="cite">📄 DESTINY-Breast03 · <span class="src">NCT03529110</span></div>
+          </div>
+          <div class="track-foot">
+            <button class="btn btn-primary btn-block">選擇此方案</button>
+            <button class="btn btn-ghost">詳情</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="disclaimer">
+        <span>ℹ️</span>
+        <span>本工具為臨床決策輔助，所有建議均依據版本化知識庫與指引產生，須由合格腫瘤科醫師確認。非醫療器材。</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

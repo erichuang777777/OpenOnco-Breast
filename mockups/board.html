@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>腫瘤委員會 · OpenOnco 院內版</title>
+<link rel="stylesheet" href="app.css">
+<style>
+  .case-list { display: flex; flex-direction: column; }
+  .case-row {
+    display: grid; grid-template-columns: 90px 1fr 150px 130px 90px;
+    align-items: center; gap: 14px;
+    padding: 14px 18px; border-bottom: 1px solid var(--border);
+    text-decoration: none; color: inherit;
+  }
+  .case-row:hover { background: var(--surface-2); }
+  .case-row.head { font-size: 11.5px; font-weight: 700; color: var(--text-subtle);
+                   text-transform: uppercase; letter-spacing: .4px; background: var(--surface-2); }
+  .mrn { font-family: ui-monospace, Menlo, monospace; font-weight: 650; }
+  .case-dx { font-weight: 600; }
+  .case-sub { font-size: 12px; color: var(--text-subtle); }
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+  .tl-item { display: flex; gap: 14px; padding-bottom: 18px; position: relative; }
+  .tl-item:not(:last-child)::before {
+    content:''; position:absolute; left: 13px; top: 28px; bottom: -4px; width: 2px; background: var(--border);
+  }
+  .tl-dot { width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center;
+            font-size: 13px; color:#fff; z-index: 1; }
+  .tl-body { flex: 1; padding-top: 2px; }
+  .tl-title { font-weight: 650; font-size: 13.5px; }
+  .tl-meta { font-size: 12px; color: var(--text-subtle); margin-top: 1px; }
+  .tl-card { margin-top: 8px; padding: 10px 14px; background: var(--surface-2);
+             border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-logo">O</div>
+      <div><div class="brand-name">OpenOnco</div><div class="brand-sub">院內版 · 乳癌模組</div></div>
+    </div>
+    <nav class="nav">
+      <div class="nav-label">臨床</div>
+      <a class="nav-item" href="clinic.html"><span class="ic">◎</span> 門診決策</a>
+      <a class="nav-item" href="#"><span class="ic">▤</span> 個案管理</a>
+      <a class="nav-item active" href="board.html"><span class="ic">◳</span> 腫瘤委員會</a>
+      <div class="nav-label">工具</div>
+      <a class="nav-item" href="#"><span class="ic">∑</span> 劑量計算</a>
+      <a class="nav-item" href="#"><span class="ic">℞</span> 藥物申請</a>
+      <div class="nav-label">管理</div>
+      <a class="nav-item" href="#"><span class="ic">⚙</span> 後台設定</a>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="avatar">林</div>
+      <div class="user-meta"><div class="user-name">林主任</div><div class="user-role">腫瘤委員會</div></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <h1>腫瘤委員會</h1>
+        <div class="crumbs">本週待討論 · 6 例</div>
+      </div>
+      <div class="row">
+        <button class="btn btn-ghost">匯出議程</button>
+        <button class="btn btn-primary">+ 新增個案</button>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <!-- 個案清單 -->
+      <div class="card" style="overflow:hidden">
+        <div class="case-list">
+          <div class="case-row head">
+            <div>病歷號</div><div>診斷</div><div>狀態</div><div>方案</div><div></div>
+          </div>
+          <a class="case-row" href="#case">
+            <div class="mrn">A12●●●47</div>
+            <div><div class="case-dx">乳癌 · HER2+ 第四期</div><div class="case-sub">55F · 第一線 · 肝/骨轉移</div></div>
+            <div><span class="chip warn"><span class="dot"></span>待討論</span></div>
+            <div class="case-sub">2 方案待選</div>
+            <div class="muted">→</div>
+          </a>
+          <a class="case-row" href="#">
+            <div class="mrn">B33●●●02</div>
+            <div><div class="case-dx">乳癌 · 三陰性 第四期</div><div class="case-sub">48F · 第一線 · PD-L1 CPS 12</div></div>
+            <div><span class="chip warn"><span class="dot"></span>待討論</span></div>
+            <div class="case-sub">免疫+化療</div>
+            <div class="muted">→</div>
+          </a>
+          <a class="case-row" href="#">
+            <div class="mrn">C71●●●88</div>
+            <div><div class="case-dx">乳癌 · HR+ 第二期</div><div class="case-sub">62F · 輔助治療</div></div>
+            <div><span class="chip info"><span class="dot"></span>已選方案</span></div>
+            <div class="case-sub">CDK4/6i + AI</div>
+            <div class="muted">→</div>
+          </a>
+          <a class="case-row" href="#">
+            <div class="mrn">D08●●●15</div>
+            <div><div class="case-dx">乳癌 · HER2+ 第二線</div><div class="case-sub">59F · 腦轉移評估中</div></div>
+            <div><span class="chip accent"><span class="dot"></span>缺檢查</span></div>
+            <div class="case-sub">待 MRI</div>
+            <div class="muted">→</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 展開的個案討論 -->
+      <div class="card" id="case">
+        <div class="card-head">
+          <div class="card-title">個案討論 · <span class="mrn">A12●●●47</span> <span class="chip warn"><span class="dot"></span>待討論</span></div>
+          <div class="row">
+            <button class="btn btn-ghost" style="padding:6px 12px">藥物申請單</button>
+            <button class="btn btn-primary" style="padding:6px 14px">核定方案</button>
+          </div>
+        </div>
+        <div class="card-body" style="display:grid;grid-template-columns:1.4fr 1fr;gap:24px">
+
+          <!-- 左：方案與討論 -->
+          <div>
+            <p class="section-title">建議方案</p>
+            <div style="display:flex;gap:12px;margin-bottom:18px">
+              <div class="chip info" style="padding:8px 12px;border-radius:10px">
+                標準 · <b style="margin-left:4px">THP</b> · NCCN 1
+              </div>
+              <div class="chip warn" style="padding:8px 12px;border-radius:10px">
+                積極 · <b style="margin-left:4px">THP→T-DXd</b> · NCCN 2A
+              </div>
+            </div>
+
+            <p class="section-title">委員批註</p>
+            <div class="timeline">
+              <div class="tl-item">
+                <div class="tl-dot" style="background:var(--standard)">陳</div>
+                <div class="tl-body">
+                  <div class="tl-title">陳醫師 · 內科腫瘤</div>
+                  <div class="tl-meta">今天 09:42</div>
+                  <div class="tl-card">病人肝功能正常，建議採標準 THP 起始，密切追蹤心臟功能。</div>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot" style="background:var(--accent)">黃</div>
+                <div class="tl-body">
+                  <div class="tl-title">黃醫師 · 放射腫瘤</div>
+                  <div class="tl-meta">今天 09:48</div>
+                  <div class="tl-card">骨轉移部位若有疼痛可加局部放療，先安排骨骼掃描。</div>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot" style="background:var(--text-subtle)">＋</div>
+                <div class="tl-body">
+                  <div class="tl-title muted">新增批註…</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 右：缺口與證據 -->
+          <div>
+            <p class="section-title">決策缺口</p>
+            <div class="gap-banner" style="margin-bottom:18px">
+              <div class="gap-icon">⚠️</div>
+              <div>
+                <div class="gap-title" style="font-size:13px">建議補做檢查</div>
+                <div class="gap-list">
+                  <div class="gap-item">• BRCA 胚系檢測</div>
+                  <div class="gap-item">• 腦部 MRI</div>
+                </div>
+              </div>
+            </div>
+            <p class="section-title">佐證來源</p>
+            <div class="card" style="box-shadow:none">
+              <div class="card-body" style="padding:14px">
+                <div class="cite" style="margin-bottom:8px">📄 NCCN Breast v2.2025 · <span class="src">SRC-NCCN-BREAST-2025</span></div>
+                <div class="cite" style="margin-bottom:8px">📄 CLEOPATRA · <span class="src">NCT00567190</span></div>
+                <div class="cite">📄 DESTINY-Breast03 · <span class="src">NCT03529110</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        <span>ℹ️</span>
+        <span>所有方案建議由規則引擎依版本化知識庫產生，須經腫瘤委員會兩位以上成員確認後核定。</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
