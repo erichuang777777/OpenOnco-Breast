@@ -7,9 +7,9 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from hospital.auth.dependencies import HCP_ROLES, require_role
 from hospital.db.session import get_db
-from hospital.schemas.plan import GapsResponse, PlanRequest, PlanResponse, ReviseRequest
+from hospital.decision.schemas.plan import GapsResponse, PlanRequest, PlanResponse, ReviseRequest
 from hospital.services import audit_service
-from hospital.services.plan_service import (
+from hospital.decision.services.plan_service import (
     compute_gaps,
     generate_plan_response,
     plan_result_to_json,

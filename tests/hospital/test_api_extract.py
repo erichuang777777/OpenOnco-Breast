@@ -61,7 +61,7 @@ class TestExtractionEndpoint:
             "pdl1_cps": None,
         }
         with patch(
-            "hospital.services.extraction_service._call_llm_extract",
+            "hospital.decision.services.extraction_service._call_llm_extract",
             new=AsyncMock(return_value=mock_response),
         ):
             resp = await client.post(
@@ -92,7 +92,7 @@ class TestExtractionEndpoint:
             "pik3ca_mutation": None, "esr1_mutation": None, "pdl1_cps": None,
         }
         with patch(
-            "hospital.services.extraction_service._call_llm_extract",
+            "hospital.decision.services.extraction_service._call_llm_extract",
             new=AsyncMock(return_value=incomplete),
         ):
             resp = await client.post(
@@ -120,7 +120,7 @@ class TestExtractionEndpoint:
         second_extraction = {**first_extraction, "stage_group": "IV"}
 
         with patch(
-            "hospital.services.extraction_service._call_llm_extract",
+            "hospital.decision.services.extraction_service._call_llm_extract",
             new=AsyncMock(return_value=first_extraction),
         ):
             resp1 = await client.post(
@@ -131,7 +131,7 @@ class TestExtractionEndpoint:
         conv_id = resp1.json()["conversation_id"]
 
         with patch(
-            "hospital.services.extraction_service._call_llm_extract",
+            "hospital.decision.services.extraction_service._call_llm_extract",
             new=AsyncMock(return_value=second_extraction),
         ):
             resp2 = await client.post(

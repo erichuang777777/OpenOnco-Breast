@@ -13,7 +13,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from hospital.config import get_settings
-from hospital.schemas.plan import (
+from hospital.decision.services.onco_engine_client import engine as _engine
+from hospital.decision.schemas.plan import (
     GapItem,
     MdtRoleSummary,
     PatientInput,
@@ -23,9 +24,8 @@ from hospital.schemas.plan import (
 
 
 def generate_plan(patient_dict: dict, *, kb_root) -> object:
-    """Thin wrapper around the engine — module-level so tests can patch it."""
-    from knowledge_base.engine.plan import generate_plan as _engine_fn
-    return _engine_fn(patient_dict, kb_root=kb_root)
+    """Module-level wrapper — patchable in tests, delegates to OncoEngineClient."""
+    return _engine.generate_plan(patient_dict, kb_root=kb_root)
 
 
 def _patient_input_to_dict(patient: PatientInput) -> dict:
@@ -73,8 +73,6 @@ def generate_plan_response(
 
     Raises ValueError if the engine cannot produce a plan.
     """
-    from knowledge_base.engine.mdt_orchestrator import orchestrate_mdt
-
     settings = get_settings()
     patient_dict = _patient_input_to_dict(patient)
 
@@ -90,7 +88,7 @@ def generate_plan_response(
 
     mdt_summary = None
     if include_mdt:
-        mdt = orchestrate_mdt(patient_dict, result, kb_root=settings.kb_root_path)
+        mdt = _engine.orchestrate_mdt(patient_dict, result, kb_root=settings.kb_root_path)
         required = [r.role_id for r in (mdt.required_roles or [])]
         recommended = [r.role_id for r in (mdt.recommended_roles or [])]
         open_q = mdt.open_questions or []

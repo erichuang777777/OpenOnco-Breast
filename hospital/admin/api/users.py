@@ -9,7 +9,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from hospital.auth.dependencies import ADMIN_ROLES, require_role
 from hospital.db.models import User
 from hospital.db.session import get_db
-from hospital.schemas.users import UserListResponse, UserPatch, UserResponse
+from hospital.admin.schemas.users import UserListResponse, UserPatch, UserResponse
 from hospital.services import audit_service
 
 router = APIRouter(prefix="/admin/users", tags=["admin"])

@@ -12,7 +12,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from hospital.auth.dependencies import HCP_ROLES, require_role
 from hospital.db.models import DrugRequisition, Plan
 from hospital.db.session import get_db
-from hospital.schemas.drug_req import DrugReqCreate, DrugReqResponse, DrugReqStatusPatch
+from hospital.admin.schemas.drug_req import DrugReqCreate, DrugReqResponse, DrugReqStatusPatch
 from hospital.services import audit_service
 
 router = APIRouter(prefix="/drug-requisition", tags=["drug-requisition"])

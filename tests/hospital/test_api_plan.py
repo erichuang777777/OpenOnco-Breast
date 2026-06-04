@@ -63,7 +63,7 @@ class TestCreatePlan:
     @pytest.mark.asyncio
     async def test_valid_her2_positive_patient(self, client, hcp_headers):
         with patch(
-            "hospital.services.plan_service.generate_plan",
+            "hospital.decision.services.plan_service.generate_plan",
             return_value=_mock_plan_result(),
         ):
             resp = await client.post(
@@ -80,7 +80,7 @@ class TestCreatePlan:
     @pytest.mark.asyncio
     async def test_plan_id_in_response(self, client, hcp_headers):
         with patch(
-            "hospital.services.plan_service.generate_plan",
+            "hospital.decision.services.plan_service.generate_plan",
             return_value=_mock_plan_result("PLAN-XYZ"),
         ):
             resp = await client.post(
@@ -98,7 +98,7 @@ class TestCreatePlan:
     @pytest.mark.asyncio
     async def test_engine_error_returns_422(self, client, hcp_headers):
         with patch(
-            "hospital.services.plan_service.generate_plan",
+            "hospital.decision.services.plan_service.generate_plan",
             side_effect=ValueError("No algorithm found"),
         ):
             resp = await client.post(
@@ -111,7 +111,7 @@ class TestCreatePlan:
     @pytest.mark.asyncio
     async def test_include_gaps_field_present(self, client, hcp_headers):
         with patch(
-            "hospital.services.plan_service.generate_plan",
+            "hospital.decision.services.plan_service.generate_plan",
             return_value=_mock_plan_result(),
         ):
             body = _make_breast_patient()
@@ -124,7 +124,7 @@ class TestCreatePlan:
     @pytest.mark.asyncio
     async def test_tumor_board_role_allowed(self, client, board_headers):
         with patch(
-            "hospital.services.plan_service.generate_plan",
+            "hospital.decision.services.plan_service.generate_plan",
             return_value=_mock_plan_result(),
         ):
             resp = await client.post(
@@ -139,7 +139,7 @@ class TestDecisionGaps:
     @pytest.mark.asyncio
     async def test_gaps_endpoint_returns_list(self, client, hcp_headers):
         with patch(
-            "hospital.services.plan_service.generate_plan",
+            "hospital.decision.services.plan_service.generate_plan",
             return_value=_mock_plan_result(),
         ):
             resp = await client.post(
@@ -155,7 +155,7 @@ class TestDecisionGaps:
     async def test_gap_item_has_required_fields(self, client, hcp_headers):
         brca_gap_result = _mock_plan_result("IND-BREAST-BRCA-POS-MET-PARPI")
         with patch(
-            "hospital.services.plan_service.generate_plan",
+            "hospital.decision.services.plan_service.generate_plan",
             side_effect=[_mock_plan_result(), brca_gap_result],
         ):
             resp = await client.post(

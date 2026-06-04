@@ -23,12 +23,12 @@ from hospital.db.models import User
 from hospital.db.session import create_all_tables, get_db
 
 # ── Sub-routers ───────────────────────────────────────────────────────────────
-from hospital.api.plan import router as plan_router
-from hospital.api.cases import router as cases_router
-from hospital.api.extract import router as extract_router
-from hospital.api.drug_req import router as drug_req_router
-from hospital.api.admin.users import router as admin_users_router
-from hospital.api.admin.kb import router as admin_kb_router
+from hospital.decision.api.plan import router as plan_router
+from hospital.decision.api.cases import router as cases_router
+from hospital.decision.api.extract import router as extract_router
+from hospital.admin.api.drug_req import router as drug_req_router
+from hospital.admin.api.users import router as admin_users_router
+from hospital.admin.api.kb import router as admin_kb_router
 
 
 @asynccontextmanager

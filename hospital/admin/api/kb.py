@@ -100,7 +100,7 @@ async def action_review(
         action_str = audit_service.KB_REVIEW_REJECT
 
     else:  # request_changes
-        review.status = "pending"  # stays pending
+        review.status = "pending"
         action_str = "kb.review.request_changes"
 
     await audit_service.log_action(

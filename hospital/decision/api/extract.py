@@ -5,8 +5,8 @@ from __future__ import annotations
 from fastapi import APIRouter, Depends, HTTPException, status
 
 from hospital.auth.dependencies import HCP_ROLES, require_role
-from hospital.schemas.extract import ExtractionRequest, ExtractionResponse
-from hospital.services.extraction_service import extract_from_text
+from hospital.decision.schemas.extract import ExtractionRequest, ExtractionResponse
+from hospital.decision.services.extraction_service import extract_from_text
 
 router = APIRouter(prefix="/extract", tags=["extract"])
 

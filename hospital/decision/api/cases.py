@@ -10,7 +10,7 @@ from sqlalchemy.orm import selectinload
 from hospital.auth.dependencies import ALL_CLINICAL, HCP_ROLES, require_role
 from hospital.db.models import Annotation, Case, Plan
 from hospital.db.session import get_db
-from hospital.schemas.cases import (
+from hospital.decision.schemas.cases import (
     AnnotationCreate,
     AnnotationSummary,
     CaseCreate,
@@ -110,7 +110,6 @@ async def add_annotation(
         track_id=body.track_id,
     )
     db.add(annotation)
-    # Update plan.selected_track_id if this is a track selection
     if body.annotation_type == "select_track" and body.track_id:
         plan.selected_track_id = body.track_id
     await audit_service.log_action(

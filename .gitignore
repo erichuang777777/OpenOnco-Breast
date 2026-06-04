@@ -23,6 +23,8 @@ research.db
 *.db-journal
 *.db-shm
 *.db-wal
+hospital.db
+*.db
 
 # Skill bundle (binary zip)
 *.skill

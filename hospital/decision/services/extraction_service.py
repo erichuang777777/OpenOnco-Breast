@@ -16,7 +16,7 @@ import time
 import uuid
 from typing import Any
 
-from hospital.schemas.extract import (
+from hospital.decision.schemas.extract import (
     ExtractionGap,
     ExtractionRequest,
     ExtractionResponse,
