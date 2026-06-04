@@ -3,8 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#3a587f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>A12●●●47 · OpenOnco 院內版</title>
+<link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="app.css">
+<script src="theme.js"></script>
 <style>
   /* 2-column detail layout: main + right sidebar */
   .detail-layout {
@@ -48,8 +53,8 @@
     margin-top: 8px; padding: 12px 14px; border-radius: var(--radius-sm);
     background: var(--surface-2); border: 1px solid var(--border); font-size: 13px; line-height: 1.65;
   }
-  .tl-card.coordinator { background: var(--primary-soft); border-color: #c7d2fe; }
-  .tl-card.alert       { background: var(--warning-soft); border-color: #fde68a; }
+  .tl-card.coordinator { background: var(--primary-soft); border-color: var(--border); }
+  .tl-card.alert       { background: var(--warning-soft); border-color: var(--border); }
   .tl-system { font-size: 12px; color: var(--text-subtle); font-style: italic; }
 
   /* Right sidebar panels */
@@ -66,25 +71,6 @@
   .reminder-due.urgent { color: var(--danger); }
   .reminder-due.warn   { color: var(--warning); }
   .reminder-due.ok     { color: var(--text-subtle); }
-
-  /* OpenOnco reference panel */
-  .ref-panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-  .ref-head  {
-    padding: 12px 16px; background: var(--primary-soft); border-bottom: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: space-between; gap: 8px;
-  }
-  .ref-head-title { font-weight: 700; font-size: 13.5px; color: var(--primary-dark); display: flex; align-items: center; gap: 7px; }
-  .ref-body { padding: 14px 16px; }
-  .ref-track {
-    padding: 10px 12px; border-radius: var(--radius-sm); margin-bottom: 8px;
-  }
-  .ref-track.standard   { background: var(--standard-soft);   border: 1px solid #bfdbfe; }
-  .ref-track.aggressive { background: var(--aggressive-soft); border: 1px solid #fed7aa; }
-  .ref-kind  { font-size: 11px; font-weight: 700; letter-spacing: .3px; }
-  .ref-kind.standard   { color: var(--standard); }
-  .ref-kind.aggressive { color: var(--aggressive); }
-  .ref-name  { font-weight: 750; font-size: 15px; margin: 3px 0 1px; }
-  .ref-sub   { font-size: 11.5px; color: var(--text-muted); }
 
   /* Consultations */
   .consult-item { padding: 10px 0; border-bottom: 1px solid var(--border); }
@@ -115,6 +101,11 @@
     <div class="sidebar-foot">
       <div class="avatar">陳</div>
       <div class="user-meta"><div class="user-name">陳醫師</div><div class="user-role">門診醫師</div></div>
+      <div class="theme-switcher">
+        <button class="theme-btn" data-theme-btn="slate"  title="Slate"></button>
+        <button class="theme-btn" data-theme-btn="forest" title="Forest"></button>
+        <button class="theme-btn" data-theme-btn="sand"   title="Sand"></button>
+      </div>
     </div>
   </aside>
 
@@ -315,45 +306,25 @@
             </div>
           </div>
 
-          <!-- OpenOnco reference panel (collapsed/summary) -->
-          <div class="ref-panel">
-            <div class="ref-head">
-              <div class="ref-head-title">
-                <span>◈</span> OpenOnco 參考
-              </div>
-              <span class="chip info" style="padding:2px 8px;font-size:11px">HER2+ 1L</span>
+          <!-- OpenOnco reference — doctor must initiate explicitly -->
+          <div class="card">
+            <div class="card-head" style="padding:12px 16px">
+              <div class="card-title" style="font-size:13.5px">◈ OpenOnco 循證查詢</div>
             </div>
-            <div class="ref-body">
-              <div style="font-size:12px;color:var(--text-subtle);margin-bottom:10px">
-                依目前病況自動摘要 · 可依新資訊重新查詢
-              </div>
-
-              <div class="ref-track standard">
-                <div class="ref-kind standard">標準方案</div>
-                <div class="ref-name">THP</div>
-                <div class="ref-sub">NCCN 1 · OS 57.1 mo（CLEOPATRA）</div>
-              </div>
-              <div class="ref-track aggressive">
-                <div class="ref-kind aggressive">積極方案（二線序貫）</div>
-                <div class="ref-name">THP → T-DXd</div>
-                <div class="ref-sub">NCCN 2A · PFS 28.8 mo（DB03）</div>
-              </div>
-
-              <div class="gap-banner" style="margin:10px 0;padding:10px 12px">
-                <div class="gap-icon" style="font-size:16px">⚠️</div>
-                <div style="font-size:12px;color:#78350f;line-height:1.5">
-                  BRCA 胚系結果待回（影響二線選擇）・腦部 MRI 未排定
+            <div class="card-body" style="padding:14px 16px">
+              <p style="font-size:12.5px;color:var(--text-muted);line-height:1.6;margin-bottom:14px">
+                OpenOnco 方案建議須由醫師主動發起。系統依知識庫規則產生，非自動診斷。
+              </p>
+              <a href="clinic.html" class="onco-init-btn">
+                <div class="onco-init-icon">◈</div>
+                <div>
+                  <div class="onco-init-label">查詢循證治療建議</div>
+                  <div class="onco-init-sub">依現有欄位帶入 · 醫師確認後適用</div>
                 </div>
-              </div>
-
-              <div style="font-size:12px;color:var(--text-muted);font-weight:600;margin-bottom:5px">佐證文獻</div>
-              <div class="cite">📄 NCCN Breast v2.2025 · <span class="src">SRC-NCCN-BREAST-2025</span></div>
-              <div class="cite" style="margin-top:4px">📄 CLEOPATRA · <span class="src">NCT00567190</span></div>
-              <div class="cite" style="margin-top:4px">📄 DESTINY-Breast03 · <span class="src">NCT03529110</span></div>
-
-              <a href="clinic.html" class="btn btn-ghost" style="width:100%;margin-top:12px;font-size:12.5px;text-align:center">
-                展開完整分析 →
               </a>
+              <div style="margin-top:12px;font-size:11.5px;color:var(--text-subtle)">
+                上次查詢：2026-04-15 · 陳醫師 · THP 第一線確認
+              </div>
             </div>
           </div>
 

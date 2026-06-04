@@ -3,8 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#3a587f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>腫瘤委員會 · OpenOnco 院內版</title>
+<link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="app.css">
+<script src="theme.js"></script>
 <style>
   .case-list { display: flex; flex-direction: column; }
   .case-row {
@@ -54,6 +59,11 @@
     <div class="sidebar-foot">
       <div class="avatar">林</div>
       <div class="user-meta"><div class="user-name">林主任</div><div class="user-role">腫瘤委員會</div></div>
+      <div class="theme-switcher">
+        <button class="theme-btn" data-theme-btn="slate"  title="Slate"></button>
+        <button class="theme-btn" data-theme-btn="forest" title="Forest"></button>
+        <button class="theme-btn" data-theme-btn="sand"   title="Sand"></button>
+      </div>
     </div>
   </aside>
 

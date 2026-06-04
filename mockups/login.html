@@ -3,11 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#3a587f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>登入 · OpenOnco 院內版</title>
+<link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="app.css">
+<script src="theme.js"></script>
 <style>
   body { display: grid; place-items: center; min-height: 100vh;
-         background: radial-gradient(1200px 600px at 70% -10%, #eef2ff 0%, var(--bg) 55%); }
+         background: var(--bg); }
   .login { width: 400px; max-width: 92vw; }
   .login-card { background: var(--surface); border: 1px solid var(--border);
                 border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); padding: 36px 32px; }

@@ -1,0 +1,40 @@
+{
+  "name": "OpenOnco 院內版",
+  "short_name": "OpenOnco",
+  "description": "乳癌臨床照護管理平台",
+  "start_url": "/mockups/patient-list.html",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#eef1f5",
+  "theme_color": "#3a587f",
+  "lang": "zh-TW",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["medical", "productivity"],
+  "shortcuts": [
+    {
+      "name": "我的病人",
+      "short_name": "病人清單",
+      "url": "/mockups/patient-list.html",
+      "description": "查看我的病人列表"
+    },
+    {
+      "name": "腫瘤委員會",
+      "short_name": "MTD",
+      "url": "/mockups/board.html",
+      "description": "本週腫瘤委員會案件"
+    }
+  ]
+}
