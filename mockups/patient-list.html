@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我的病人 · OpenOnco 院內版</title>
+<link rel="stylesheet" href="app.css">
+<style>
+  .stat-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 24px; }
+  .stat-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px 20px;
+  }
+  .stat-num { font-size: 30px; font-weight: 750; line-height: 1; }
+  .stat-label { font-size: 12px; color: var(--text-subtle); margin-top: 4px; }
+  .stat-change { font-size: 11.5px; margin-top: 6px; }
+
+  .tabs { display: flex; gap: 0; margin-bottom: 0; border-bottom: 1px solid var(--border); }
+  .tab {
+    padding: 10px 18px; font-size: 13.5px; font-weight: 500;
+    color: var(--text-muted); cursor: pointer;
+    border-bottom: 2px solid transparent; margin-bottom: -1px;
+  }
+  .tab.active { color: var(--primary); border-color: var(--primary); font-weight: 650; }
+
+  .pt-list { display: flex; flex-direction: column; }
+  .pt-row {
+    display: grid; grid-template-columns: 110px 1.6fr 160px 160px 110px 80px;
+    align-items: center; gap: 14px;
+    padding: 13px 18px; border-bottom: 1px solid var(--border);
+    text-decoration: none; color: inherit;
+    transition: background .1s;
+  }
+  .pt-row:hover { background: var(--surface-2); }
+  .pt-row.head {
+    font-size: 11.5px; font-weight: 700; color: var(--text-subtle);
+    text-transform: uppercase; letter-spacing: .4px;
+    background: var(--surface-2); pointer-events: none;
+  }
+  .pt-name { font-weight: 650; font-size: 14px; }
+  .pt-diag { font-size: 12.5px; color: var(--text-muted); margin-top: 2px; }
+  .next-action { font-size: 13px; font-weight: 600; }
+  .next-sub { font-size: 11.5px; color: var(--text-subtle); margin-top: 1px; }
+  .care-info { font-size: 12px; color: var(--text-muted); }
+
+  .alert-dots { display: flex; gap: 5px; align-items: center; }
+  .alert-dot {
+    width: 9px; height: 9px; border-radius: 50%;
+    cursor: default;
+  }
+  .alert-dot.urgent { background: var(--danger); }
+  .alert-dot.warn   { background: var(--warning); }
+  .alert-dot.info   { background: var(--standard); }
+
+  .sync-badge { font-size: 11px; color: var(--text-subtle); margin-top: 2px; }
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-logo">O</div>
+      <div><div class="brand-name">OpenOnco</div><div class="brand-sub">院內版 · 乳癌模組</div></div>
+    </div>
+    <nav class="nav">
+      <div class="nav-label">臨床</div>
+      <a class="nav-item active" href="patient-list.html"><span class="ic">◉</span> 我的病人</a>
+      <a class="nav-item" href="board.html"><span class="ic">◳</span> 腫瘤委員會</a>
+      <div class="nav-label">工具</div>
+      <a class="nav-item" href="#"><span class="ic">∑</span> 劑量計算</a>
+      <a class="nav-item" href="#"><span class="ic">℞</span> 藥物申請</a>
+      <div class="nav-label">管理</div>
+      <a class="nav-item" href="#"><span class="ic">⚙</span> 後台設定</a>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="avatar">陳</div>
+      <div class="user-meta"><div class="user-name">陳醫師</div><div class="user-role">門診醫師</div></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <h1>我的病人</h1>
+        <div class="crumbs">共 24 位 · 上次同步 10 分鐘前 <span style="color:var(--success)">●</span></div>
+      </div>
+      <div class="row">
+        <button class="btn btn-ghost">同步 HIS</button>
+        <button class="btn btn-primary">+ 新增個案</button>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <!-- Summary stats -->
+      <div class="stat-cards">
+        <div class="stat-card">
+          <div class="stat-num" style="color:var(--primary)">24</div>
+          <div class="stat-label">在管病人</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" style="color:var(--warning)">5</div>
+          <div class="stat-label">待回診（7天內）</div>
+          <div class="stat-change" style="color:var(--text-subtle)">最近：2026-06-06</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" style="color:var(--danger)">3</div>
+          <div class="stat-label">緊急提醒</div>
+          <div class="stat-change" style="color:var(--danger)">↑ 1 自昨日</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" style="color:var(--standard)">2</div>
+          <div class="stat-label">待 MTD 討論</div>
+          <div class="stat-change" style="color:var(--text-subtle)">下次：2026-06-06</div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="card" style="overflow:hidden">
+        <div class="tabs">
+          <div class="tab active">全部
+            <span class="chip muted" style="margin-left:5px;padding:1px 7px;font-size:11px">24</span>
+          </div>
+          <div class="tab">待回診
+            <span class="chip warn" style="margin-left:5px;padding:1px 7px;font-size:11px">5</span>
+          </div>
+          <div class="tab">被諮詢
+            <span class="chip info" style="margin-left:5px;padding:1px 7px;font-size:11px">2</span>
+          </div>
+          <div class="tab">待 MTD
+            <span class="chip warn" style="margin-left:5px;padding:1px 7px;font-size:11px">2</span>
+          </div>
+          <div class="tab">提醒
+            <span class="chip" style="margin-left:5px;padding:1px 7px;font-size:11px;background:var(--danger-soft);color:var(--danger);border-color:#fca5a5">3</span>
+          </div>
+        </div>
+
+        <!-- Patient rows -->
+        <div class="pt-list">
+          <div class="pt-row head">
+            <div>病歷號</div>
+            <div>病人 / 診斷</div>
+            <div>狀態 · HIS 同步</div>
+            <div>下一步</div>
+            <div>照護</div>
+            <div>提醒</div>
+          </div>
+
+          <!-- Row 1: active treatment, urgent reminders -->
+          <a class="pt-row" href="patient-detail.html">
+            <div class="mrn">A12●●●47</div>
+            <div>
+              <div class="pt-name">王●●</div>
+              <div class="pt-diag">乳癌 HER2+ · 第四期 · 55F</div>
+            </div>
+            <div>
+              <span class="chip warn"><span class="dot"></span>治療中</span>
+              <div class="sync-badge">THP C2 · 同步自 HIS</div>
+            </div>
+            <div>
+              <div class="next-action">回診評估</div>
+              <div class="next-sub">2026-06-10 · 6 天後</div>
+            </div>
+            <div class="care-info">個管師：林護理師</div>
+            <div class="alert-dots">
+              <div class="alert-dot urgent" title="藥物申請重卡 3 天後到期"></div>
+              <div class="alert-dot warn" title="BRCA 報告待確認"></div>
+            </div>
+          </a>
+
+          <!-- Row 2: MTD pending -->
+          <a class="pt-row" href="#">
+            <div class="mrn">B33●●●02</div>
+            <div>
+              <div class="pt-name">李●●</div>
+              <div class="pt-diag">乳癌 TNBC · 第四期 · 48F</div>
+            </div>
+            <div>
+              <span class="chip info"><span class="dot"></span>MTD 待討論</span>
+              <div class="sync-badge">免疫 + 化療 C1</div>
+            </div>
+            <div>
+              <div class="next-action">MTD 會議</div>
+              <div class="next-sub">2026-06-06 · 明天</div>
+            </div>
+            <div class="care-info">個管師：林護理師</div>
+            <div class="alert-dots">
+              <div class="alert-dot info" title="MTD 議程確認中"></div>
+            </div>
+          </a>
+
+          <!-- Row 3: routine follow-up -->
+          <a class="pt-row" href="#">
+            <div class="mrn">C71●●●88</div>
+            <div>
+              <div class="pt-name">張●●</div>
+              <div class="pt-diag">乳癌 HR+ · 第二期 · 62F</div>
+            </div>
+            <div>
+              <span class="chip ok"><span class="dot"></span>定期追蹤</span>
+              <div class="sync-badge">CDK4/6i + AI · 第 6 月</div>
+            </div>
+            <div>
+              <div class="next-action">6 個月影像</div>
+              <div class="next-sub">2026-07-15 · 41 天後</div>
+            </div>
+            <div class="care-info">個管師：陳護理師</div>
+            <div class="alert-dots"></div>
+          </a>
+
+          <!-- Row 4: missing exam, consultation in progress -->
+          <a class="pt-row" href="#">
+            <div class="mrn">D08●●●15</div>
+            <div>
+              <div class="pt-name">黃●●</div>
+              <div class="pt-diag">乳癌 HER2+ · 第二線 · 59F</div>
+            </div>
+            <div>
+              <span class="chip accent"><span class="dot"></span>缺檢查</span>
+              <div class="sync-badge">腦 MRI 待排程</div>
+            </div>
+            <div>
+              <div class="next-action">安排腦部 MRI</div>
+              <div class="next-sub">未排定</div>
+            </div>
+            <div class="care-info">被諮詢：黃放腫醫師</div>
+            <div class="alert-dots">
+              <div class="alert-dot urgent" title="腦轉移評估逾期未排程"></div>
+            </div>
+          </a>
+
+          <!-- Row 5: post-op, reminder for drug application -->
+          <a class="pt-row" href="#">
+            <div class="mrn">E55●●●31</div>
+            <div>
+              <div class="pt-name">陳●●</div>
+              <div class="pt-diag">乳癌 HR+ · 第一期 · 44F</div>
+            </div>
+            <div>
+              <span class="chip ok"><span class="dot"></span>術後輔助</span>
+              <div class="sync-badge">放療完成</div>
+            </div>
+            <div>
+              <div class="next-action">荷爾蒙治療啟動</div>
+              <div class="next-sub">2026-06-08 · 4 天後</div>
+            </div>
+            <div class="care-info">個管師：林護理師</div>
+            <div class="alert-dots">
+              <div class="alert-dot warn" title="荷爾蒙藥物申請待送出"></div>
+            </div>
+          </a>
+
+          <!-- Row 6: consultation from another doctor (cross-access) -->
+          <a class="pt-row" href="#" style="background:var(--primary-soft)">
+            <div class="mrn">F22●●●09</div>
+            <div>
+              <div class="pt-name">林●● <span class="chip info" style="margin-left:6px;padding:1px 7px;font-size:11px">被諮詢</span></div>
+              <div class="pt-diag">乳癌 HR+ HER2+ · 第三期 · 51F</div>
+            </div>
+            <div>
+              <span class="chip muted"><span class="dot"></span>術前化療</span>
+              <div class="sync-badge">neoadjuvant C3</div>
+            </div>
+            <div>
+              <div class="next-action">回覆放射治療諮詢</div>
+              <div class="next-sub">等待中 · 王醫師案件</div>
+            </div>
+            <div class="care-info">主治：王醫師</div>
+            <div class="alert-dots">
+              <div class="alert-dot info" title="諮詢待回覆"></div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        <span>ℹ️</span>
+        <span>病人狀態每 15 分鐘自 HIS 同步更新。「被諮詢」列（藍底）為其他醫師轉來之諮詢，僅限於諮詢範圍內閱覽病歷。OpenOnco 建議僅供參考，須由主治醫師確認。</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
