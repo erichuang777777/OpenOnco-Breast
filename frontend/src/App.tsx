@@ -3,6 +3,12 @@ import { AuthProvider, useAuth } from './hooks/useAuth'
 import { AuthGuard } from './components/AuthGuard'
 import { LoginPage } from './pages/LoginPage'
 import { PendingPage } from './pages/PendingPage'
+import { PatientListPage } from './pages/PatientListPage'
+import { PatientDetailPage } from './pages/PatientDetailPage'
+import { BoardPage } from './pages/BoardPage'
+import { ClinicPage } from './pages/ClinicPage'
+import { DrugReqPage } from './pages/DrugReqPage'
+import { AdminPage } from './pages/AdminPage'
 
 function NavBar() {
   const { user, logout } = useAuth()
@@ -35,23 +41,27 @@ function App() {
           <Route path="/" element={<Navigate to="/patients" replace />} />
           <Route
             path="/patients"
-            element={<AuthGuard><div data-testid="patient-list-page">Patient List</div></AuthGuard>}
+            element={<AuthGuard><PatientListPage /></AuthGuard>}
+          />
+          <Route
+            path="/patients/:mrn/onco"
+            element={<AuthGuard><ClinicPage /></AuthGuard>}
+          />
+          <Route
+            path="/patients/:mrn/drug-req"
+            element={<AuthGuard><DrugReqPage /></AuthGuard>}
           />
           <Route
             path="/patients/:mrn"
-            element={<AuthGuard><div data-testid="patient-detail-page">Patient Detail</div></AuthGuard>}
+            element={<AuthGuard><PatientDetailPage /></AuthGuard>}
           />
           <Route
             path="/board"
-            element={<AuthGuard allowedRoles={['tumor_board_hcp', 'kb_admin']}><div>Tumor Board</div></AuthGuard>}
-          />
-          <Route
-            path="/clinic"
-            element={<AuthGuard><div>Clinic</div></AuthGuard>}
+            element={<AuthGuard allowedRoles={['tumor_board_hcp', 'kb_admin']}><BoardPage /></AuthGuard>}
           />
           <Route
             path="/admin"
-            element={<AuthGuard allowedRoles={['kb_admin', 'auditor']}><div>Admin</div></AuthGuard>}
+            element={<AuthGuard allowedRoles={['kb_admin', 'auditor']}><AdminPage /></AuthGuard>}
           />
           <Route path="*" element={<Navigate to="/patients" replace />} />
         </Routes>
