@@ -83,6 +83,16 @@ async def _patients_by_mrns(
 
 
 async def _build_response(patient: Patient, active: int, urgent: int) -> PatientResponse:
+    from datetime import datetime, timedelta, timezone as _tz
+    _cutoff = datetime.now(_tz.utc) - timedelta(days=3)
+    if not patient.his_patient_id:
+        his_sync_status = "unknown"
+    elif patient.his_synced_at is None:
+        his_sync_status = "never"
+    elif patient.his_synced_at < _cutoff:
+        his_sync_status = "stale"
+    else:
+        his_sync_status = "ok"
     return PatientResponse(
         mrn=patient.mrn,
         masked_name=patient.masked_name,
@@ -95,6 +105,7 @@ async def _build_response(patient: Patient, active: int, urgent: int) -> Patient
         his_synced_at=patient.his_synced_at,
         active_reminder_count=active,
         urgent_reminder_count=urgent,
+        his_sync_status=his_sync_status,
         care_team=[
             CareTeamMemberResponse.model_validate(m)
             for m in patient.care_team

@@ -268,6 +268,31 @@ async def rule_followup_appt_7d(db: AsyncSession, mrn: str) -> Reminder | None:
     return None
 
 
+# ── Rule: his_sync_stale ──────────────────────────────────────────────────────
+
+async def rule_his_sync_stale(db: AsyncSession, mrn: str) -> Reminder | None:
+    """Create HIGH urgency reminder if a HIS-linked patient has no sync in 3+ days."""
+    from hospital.db.models import Patient
+    cutoff = _now() - timedelta(days=3)
+    patient = await db.get(Patient, mrn)
+    if not patient:
+        return None
+    # Only alert for HIS-linked patients
+    if not patient.his_patient_id:
+        return None
+    # his_synced_at is None or older than cutoff
+    if patient.his_synced_at is not None and patient.his_synced_at > cutoff:
+        return None
+    return await create_if_not_exists(
+        db, mrn=mrn,
+        reminder_type="his_sync_stale",
+        urgency="high",
+        title="HIS 資料同步逾期（超過 3 天）",
+        due_date=_now(),
+        triggered_by="his_sync_stale",
+    )
+
+
 # ── Rule: reminder_auto_expire ────────────────────────────────────────────────
 
 async def rule_auto_expire(db: AsyncSession, mrn: str) -> int:
@@ -297,5 +322,6 @@ ALL_RULES = [
     rule_brca_pending_14d,
     rule_imaging_followup_due,
     rule_followup_appt_7d,
+    rule_his_sync_stale,
     rule_auto_expire,
 ]

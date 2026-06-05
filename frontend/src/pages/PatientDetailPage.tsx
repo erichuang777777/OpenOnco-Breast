@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import type { PatientResponse, TimelineEventResponse, ReminderResponse, ConsultationResponse } from '../api/types'
+import { useToast } from '../hooks/useToast'
 
 function TimelineEvent({ event }: { event: TimelineEventResponse }) {
   const [expanded, setExpanded] = useState(false)
@@ -129,6 +130,7 @@ export function PatientDetailPage() {
   const [page, setPage] = useState(0)
   const [note, setNote] = useState('')
   const [oncoLoading, setOncoLoading] = useState(false)
+  const { show: showToast, ToastContainer } = useToast()
   const pageSize = 20
 
   useEffect(() => {
@@ -166,7 +168,7 @@ export function PatientDetailPage() {
       body: JSON.stringify({ event_type: 'doctor_note', title: note }),
       credentials: 'include',
     }).then((r) => r.ok ? r.json() : null)
-      .then((evt) => { if (evt) { setTimeline((prev) => [evt, ...prev]); setNote('') } })
+      .then((evt) => { if (evt) { setTimeline((prev) => [evt, ...prev]); setNote(''); showToast('備注已儲存', 'success') } })
       .catch(() => {})
   }
 
@@ -228,7 +230,7 @@ export function PatientDetailPage() {
         ))}
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '1rem', marginTop: '1rem' }}>
+      <div className="grid-2" style={{ marginTop: '1rem' }}>
         <div>
           {/* Timeline */}
           <div data-testid="timeline-section">
@@ -273,6 +275,7 @@ export function PatientDetailPage() {
           <ConsultationsPanel mrn={mrn!} />
         </div>
       </div>
+      <ToastContainer />
     </div>
   )
 }
