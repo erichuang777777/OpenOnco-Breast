@@ -170,7 +170,8 @@ describe('ClinicPage', () => {
   })
 
   it('test_clinic_loading_state_then_loaded', async () => {
-    let resolveTimeline!: (v: unknown) => void
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let resolveTimeline!: (v: any) => void
     server.use(
       http.get('/api/v1/patients/:mrn/timeline', () =>
         new Promise((res) => { resolveTimeline = res })

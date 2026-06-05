@@ -11,6 +11,7 @@ from httpx import AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from tests.hospital.conftest import make_jwt
+from hospital.services import audit_service
 
 
 # ---------------------------------------------------------------------------
@@ -308,3 +309,205 @@ async def test_consultation_message_on_nonexistent_consult_returns_404(
         headers=headers("clinic_hcp"),
     )
     assert resp.status_code == 404
+
+
+# ---------------------------------------------------------------------------
+# H0-11  Security response headers
+# ---------------------------------------------------------------------------
+
+async def test_response_has_x_content_type_options_header(client: AsyncClient) -> None:
+    resp = await client.get("/api/v1/patients", headers=headers("clinic_hcp"))
+    assert resp.headers.get("x-content-type-options") == "nosniff"
+
+
+async def test_response_has_x_frame_options_header(client: AsyncClient) -> None:
+    resp = await client.get("/api/v1/patients", headers=headers("clinic_hcp"))
+    assert resp.headers.get("x-frame-options") == "DENY"
+
+
+async def test_api_response_has_no_server_header_leaking_version(
+    client: AsyncClient,
+) -> None:
+    resp = await client.get("/api/v1/patients", headers=headers("clinic_hcp"))
+    server_hdr = resp.headers.get("server", "")
+    # Must not leak framework/version info
+    assert "uvicorn" not in server_hdr.lower()
+    assert "starlette" not in server_hdr.lower()
+
+
+# ---------------------------------------------------------------------------
+# H0-12  Input validation — SQL injection param binding
+# ---------------------------------------------------------------------------
+
+async def test_mrn_with_sql_injection_returns_safe_response(
+    client: AsyncClient,
+) -> None:
+    # SQLAlchemy param binding prevents injection; endpoint returns 404 (patient not found)
+    # not 500 (DB error), confirming safe parameterised queries.
+    malicious_mrn = "' OR '1'='1"
+    resp = await client.get(
+        f"/api/v1/patients/{malicious_mrn}/timeline",
+        headers=headers("clinic_hcp"),
+    )
+    assert resp.status_code in (404, 422), (
+        f"SQL injection attempt should return 404/422, got {resp.status_code}"
+    )
+    assert resp.status_code != 500
+
+
+async def test_mrn_with_xss_payload_stored_and_returned_as_json(
+    client: AsyncClient,
+    db_session,
+) -> None:
+    from hospital.db.models import Patient
+
+    # Use a safe MRN for retrieval; verify the response Content-Type is JSON
+    # (meaning the browser cannot interpret returned data as HTML/script).
+    xss_mrn = "XSS-TEST-001"
+    patient = Patient(
+        mrn=xss_mrn,
+        masked_name="<b>bold name</b>",
+        status="active",
+        created_by="user-sec",
+    )
+    db_session.add(patient)
+    await db_session.flush()
+
+    resp = await client.get(
+        f"/api/v1/patients/{xss_mrn}",
+        headers=headers("clinic_hcp"),
+    )
+    # JSON response means browser won't execute any script tags in the data.
+    assert resp.status_code == 200
+    assert "application/json" in resp.headers.get("content-type", "")
+
+
+# ---------------------------------------------------------------------------
+# H0-13  Audit completeness
+# ---------------------------------------------------------------------------
+
+async def test_every_patient_read_produces_audit_log_row(
+    client: AsyncClient,
+    db_session,
+    sample_patient,
+    sample_care_team,
+) -> None:
+    from sqlalchemy import select
+    from hospital.db.models import AuditLog
+
+    # A doctor who is NOT on the care team reads the patient → cross-access audit
+    cross_doctor = headers("clinic_hcp", sub="cross-doc-777")
+    resp = await client.get(
+        f"/api/v1/patients/{sample_patient.mrn}",
+        headers=cross_doctor,
+    )
+    assert resp.status_code == 200
+
+    rows = list(await db_session.scalars(
+        select(AuditLog).where(
+            AuditLog.user_id == "cross-doc-777",
+            AuditLog.action == "patient.cross_access",
+        )
+    ))
+    assert len(rows) >= 1, "cross-doctor read should write an audit log row"
+
+
+async def test_audit_log_mrn_stored_as_hash_not_plaintext(
+    client: AsyncClient,
+    db_session,
+    sample_patient,
+    sample_care_team,
+) -> None:
+    from sqlalchemy import select
+    from hospital.db.models import AuditLog
+
+    cross_doctor = headers("clinic_hcp", sub="cross-doc-888")
+    await client.get(
+        f"/api/v1/patients/{sample_patient.mrn}",
+        headers=cross_doctor,
+    )
+
+    rows = list(await db_session.scalars(
+        select(AuditLog).where(
+            AuditLog.user_id == "cross-doc-888",
+        )
+    ))
+    for row in rows:
+        if row.mrn_hash is not None:
+            # mrn_hash must not equal the raw MRN
+            assert row.mrn_hash != sample_patient.mrn, (
+                "Audit log must store hashed MRN, not plaintext"
+            )
+
+
+async def test_audit_log_has_no_patient_name(
+    client: AsyncClient,
+    db_session,
+    sample_patient,
+    sample_care_team,
+) -> None:
+    from sqlalchemy import select
+    from hospital.db.models import AuditLog
+
+    cross_doctor = headers("clinic_hcp", sub="cross-doc-999")
+    await client.get(
+        f"/api/v1/patients/{sample_patient.mrn}",
+        headers=cross_doctor,
+    )
+
+    rows = list(await db_session.scalars(
+        select(AuditLog).where(AuditLog.user_id == "cross-doc-999")
+    ))
+    for row in rows:
+        summary = (row.diff_summary or "").lower()
+        assert sample_patient.masked_name.lower() not in summary, (
+            "Patient name must not appear in audit log diff_summary"
+        )
+
+
+async def test_plan_generation_produces_audit_log_row(
+    client: AsyncClient,
+    db_session,
+    sample_patient,
+) -> None:
+    from unittest.mock import MagicMock, patch
+    from sqlalchemy import select
+    from hospital.db.models import AuditLog
+    from hospital.decision.schemas.plan import PlanResponse, TrackResponse
+
+    mock_plan = PlanResponse(
+        plan_id="plan-audit-test",
+        disease_id="BRCA-HER2+",
+        tracks=[
+            TrackResponse(
+                track_id="T1",
+                label="THP 1L",
+                is_default=True,
+                indication_id="ind-1",
+            )
+        ],
+        gaps=[],
+        warnings=[],
+    )
+
+    # generate_plan_response is a synchronous function — use MagicMock, not AsyncMock
+    with patch("hospital.decision.api.plan.generate_plan_response", return_value=mock_plan):
+        resp = await client.post(
+            "/api/v1/plan",
+            json={
+                "patient_mrn": sample_patient.mrn,
+                "patient": {
+                    "disease": {"id": "DIS-BREAST"},
+                    "biomarkers": {"HER2": "positive"},
+                },
+            },
+            headers=headers("clinic_hcp"),
+        )
+    assert resp.status_code == 200
+
+    rows = list(await db_session.scalars(
+        select(AuditLog).where(
+            AuditLog.action == audit_service.PLAN_GENERATE,
+        )
+    ))
+    assert len(rows) >= 1, "plan generation should write a plan.generate audit log row"

@@ -37,6 +37,7 @@ from hospital.admin.api.drug_req import router as drug_req_router
 from hospital.admin.api.users import router as admin_users_router
 from hospital.admin.api.kb import router as admin_kb_router
 from hospital.admin.api.audit import router as admin_audit_router
+from hospital.middleware.security_headers import SecurityHeadersMiddleware
 
 
 @asynccontextmanager
@@ -56,6 +57,8 @@ app = FastAPI(
     description="Clinical decision support add-on — breast cancer focus.",
     lifespan=lifespan,
 )
+
+app.add_middleware(SecurityHeadersMiddleware)
 
 # ── API routes ────────────────────────────────────────────────────────────────
 API_PREFIX = "/api/v1"
