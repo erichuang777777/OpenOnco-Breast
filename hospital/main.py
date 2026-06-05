@@ -8,7 +8,12 @@ from __future__ import annotations
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Request, status
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, RedirectResponse
+from starlette.middleware.base import BaseHTTPMiddleware
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
 
 from hospital.auth.dependencies import COOKIE_NAME
 from hospital.auth.google_oauth import (
@@ -58,7 +63,39 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+settings_instance = get_settings()
+
+# ── Rate limiter (shared instance used by decorated endpoints) ────────────────
+limiter = Limiter(key_func=get_remote_address, default_limits=[])
+
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+
 app.add_middleware(SecurityHeadersMiddleware)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=settings_instance.ALLOWED_ORIGINS,
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allow_headers=["Authorization", "Content-Type", "X-HIS-Secret"],
+)
+
+
+class _BodySizeLimitMiddleware(BaseHTTPMiddleware):
+    """Reject requests whose body exceeds MAX_BODY_SIZE_BYTES."""
+
+    async def dispatch(self, request: Request, call_next):
+        content_length = request.headers.get("content-length")
+        if content_length and int(content_length) > settings_instance.MAX_BODY_SIZE_BYTES:
+            return JSONResponse(
+                status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+                content={"error": "PAYLOAD_TOO_LARGE", "message": "Request body exceeds limit."},
+            )
+        return await call_next(request)
+
+
+app.add_middleware(_BodySizeLimitMiddleware)
 
 # ── API routes ────────────────────────────────────────────────────────────────
 API_PREFIX = "/api/v1"
@@ -82,7 +119,8 @@ app.include_router(admin_audit_router, prefix=API_PREFIX)
 # ── Auth routes ───────────────────────────────────────────────────────────────
 
 @app.get("/auth/google", tags=["auth"])
-async def google_login():
+@limiter.limit(settings_instance.RATE_LIMIT_LOGIN)
+async def google_login(request: Request):
     """Redirect to Google OAuth consent screen."""
     state = generate_state_nonce()
     url = build_authorization_url(state)
@@ -92,6 +130,7 @@ async def google_login():
 
 
 @app.get("/auth/google/callback", tags=["auth"])
+@limiter.limit(settings_instance.RATE_LIMIT_LOGIN)
 async def google_callback(request: Request, code: str, state: str):
     """Handle Google OAuth callback — issue JWT cookie."""
     saved_state = request.cookies.get("oauth_state")

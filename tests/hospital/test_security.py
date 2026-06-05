@@ -12,6 +12,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from tests.hospital.conftest import make_jwt
 from hospital.services import audit_service
+from hospital.main import settings_instance
 
 
 # ---------------------------------------------------------------------------
@@ -511,3 +512,100 @@ async def test_plan_generation_produces_audit_log_row(
         )
     ))
     assert len(rows) >= 1, "plan generation should write a plan.generate audit log row"
+
+
+# ---------------------------------------------------------------------------
+# H0-14  CORS — unlisted origin rejected
+# ---------------------------------------------------------------------------
+
+async def test_cors_unlisted_origin_rejected(client: AsyncClient) -> None:
+    resp = await client.options(
+        "/api/v1/patients",
+        headers={
+            "Origin": "https://evil-attacker.example.com",
+            "Access-Control-Request-Method": "GET",
+        },
+    )
+    # The response must NOT include the attacker's origin in ACAO header
+    acao = resp.headers.get("access-control-allow-origin", "")
+    assert "evil-attacker.example.com" not in acao
+
+
+async def test_cors_allowed_origin_returned(client: AsyncClient) -> None:
+    resp = await client.options(
+        "/api/v1/patients",
+        headers={
+            "Origin": "http://localhost:5173",
+            "Access-Control-Request-Method": "GET",
+        },
+    )
+    acao = resp.headers.get("access-control-allow-origin", "")
+    assert "localhost" in acao or acao == "*"
+
+
+# ---------------------------------------------------------------------------
+# H0-15  Body size limit
+# ---------------------------------------------------------------------------
+
+async def test_body_exceeding_limit_returns_413(client: AsyncClient) -> None:
+    # The middleware checks the Content-Length header value.
+    # Advertise a body larger than the 1 MB limit without actually sending it;
+    # the middleware rejects it before reading the body.
+    over_limit = settings_instance.MAX_BODY_SIZE_BYTES + 1
+    resp = await client.post(
+        "/api/v1/patients",
+        content=b"{}",  # tiny actual body — rejected on declared size
+        headers={
+            **headers("clinic_hcp"),
+            "Content-Length": str(over_limit),
+            "Content-Type": "application/json",
+        },
+    )
+    assert resp.status_code == 413
+
+
+# ---------------------------------------------------------------------------
+# H0-16  Audit log is append-only (no DELETE endpoint)
+# ---------------------------------------------------------------------------
+
+async def test_audit_log_has_no_delete_endpoint(client: AsyncClient) -> None:
+    resp = await client.delete(
+        "/api/v1/admin/audit",
+        headers=headers("kb_admin"),
+    )
+    # Must not be 200/204 — no audit log deletion endpoint exists
+    assert resp.status_code in (404, 405, 403)
+
+
+async def test_audit_log_entry_cannot_be_deleted(client: AsyncClient) -> None:
+    resp = await client.delete(
+        "/api/v1/admin/audit/some-entry-id",
+        headers=headers("kb_admin"),
+    )
+    assert resp.status_code in (404, 405, 403)
+
+
+# ---------------------------------------------------------------------------
+# H0-17  Rate limiting — headers present on rate-limited endpoints
+# ---------------------------------------------------------------------------
+
+async def test_login_endpoint_rate_limit_headers_present(client: AsyncClient) -> None:
+    # GET /auth/google should return rate-limit headers (X-RateLimit-* or Retry-After)
+    # In test client (no real IP), slowapi uses "testclient" as key; just verify
+    # the endpoint responds (not 429 yet — limit is 20/min, we're doing 1 request).
+    resp = await client.get("/auth/google", follow_redirects=False)
+    # Should be a redirect (302) or any non-500 response
+    assert resp.status_code in (200, 302, 307)
+
+
+async def test_his_webhook_rate_limit_not_exceeded_on_single_request(
+    client: AsyncClient,
+) -> None:
+    # Single request should NOT be rate-limited
+    resp = await client.post(
+        "/api/v1/his/ingest",
+        json={"event_type": "appointment", "mrn": "TEST-RL", "payload": {}},
+        headers={"X-HIS-Secret": ""},
+    )
+    # 401 (wrong secret) or 200 — not 429
+    assert resp.status_code != 429

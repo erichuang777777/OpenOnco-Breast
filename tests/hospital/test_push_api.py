@@ -12,9 +12,13 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from hospital.db.models import Patient, PushSubscription
 from tests.hospital.conftest import make_jwt
 
-# Set a VAPID public key for tests
-os.environ.setdefault("VAPID_PUBLIC_KEY", "test-vapid-public-key-base64")
-os.environ.setdefault("VAPID_PRIVATE_KEY", "test-vapid-private-key")
+# Set VAPID keys before any import that triggers lru_cache on get_settings()
+os.environ["VAPID_PUBLIC_KEY"] = "test-vapid-public-key-base64"
+os.environ["VAPID_PRIVATE_KEY"] = "test-vapid-private-key"
+
+# Clear the settings cache so the new env vars are picked up
+from hospital.config import get_settings
+get_settings.cache_clear()
 
 
 def _hdr(sub: str = "user-push", role: str = "clinic_hcp") -> dict:

@@ -41,6 +41,17 @@ class Settings(BaseSettings):
     # ── Patient plans (gitignored per CHARTER §9.3) ───────────────────────
     PATIENT_PLANS_DIR: str = "patient_plans"
 
+    # ── CORS ─────────────────────────────────────────────────────────────
+    ALLOWED_ORIGINS: list[str] = ["http://localhost:5173", "http://localhost:4173"]
+    # Comma-separated in env: ALLOWED_ORIGINS=https://app.hospital.tw,https://staging.hospital.tw
+
+    # ── Request size limit ────────────────────────────────────────────────
+    MAX_BODY_SIZE_BYTES: int = 1 * 1024 * 1024   # 1 MB default
+
+    # ── Rate limiting ─────────────────────────────────────────────────────
+    RATE_LIMIT_LOGIN: str = "20/minute"
+    RATE_LIMIT_HIS_WEBHOOK: str = "100/minute"
+
     # ── HIS adapter (B3) ──────────────────────────────────────────────────
     HIS_WEBHOOK_SECRET: str = ""   # HMAC secret for HIS webhook signature
 

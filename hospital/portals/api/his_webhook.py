@@ -9,8 +9,10 @@ from __future__ import annotations
 import hashlib
 import json
 
-from fastapi import APIRouter, Depends, Header, HTTPException, status
+from fastapi import APIRouter, Depends, Header, HTTPException, Request, status
 from pydantic import BaseModel
+from slowapi import Limiter
+from slowapi.util import get_remote_address
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -18,6 +20,8 @@ from hospital.config import get_settings
 from hospital.db.models import HisSyncEvent
 from hospital.db.session import get_db
 from hospital.portals.his_ingestion import ingest_his_event
+
+_limiter = Limiter(key_func=get_remote_address)
 
 VALID_HIS_EVENT_TYPES = {"appointment", "medication", "lab_result", "imaging", "discharge"}
 
@@ -31,7 +35,9 @@ class HisIngestBody(BaseModel):
 
 
 @router.post("/ingest", status_code=status.HTTP_200_OK)
+@_limiter.limit(get_settings().RATE_LIMIT_HIS_WEBHOOK)
 async def his_ingest(
+    request: Request,
     body: HisIngestBody,
     x_his_secret: str | None = Header(default=None),
     db: AsyncSession = Depends(get_db),

@@ -60,6 +60,26 @@ async def create_if_not_exists(
     )
     db.add(r)
     await db.flush()
+
+    if urgency in ("high", "critical"):
+        from hospital.services.push_service import notify_user
+        from hospital.db.models import Patient, CareTeamMember
+        patient = await db.get(Patient, mrn)
+        if patient:
+            notify_ids: set[str] = set()
+            if patient.primary_doctor_id:
+                notify_ids.add(patient.primary_doctor_id)
+            team = await db.scalars(
+                select(CareTeamMember).where(CareTeamMember.patient_mrn == mrn)
+            )
+            for member in team.all():
+                notify_ids.add(member.user_id)
+            for uid in notify_ids:
+                try:
+                    await notify_user(db, uid, title, detail or "")
+                except Exception:
+                    pass
+
     return r
 
 
