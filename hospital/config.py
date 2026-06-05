@@ -55,6 +55,9 @@ class Settings(BaseSettings):
     # ── HIS adapter (B3) ──────────────────────────────────────────────────
     HIS_WEBHOOK_SECRET: str = ""   # HMAC secret for HIS webhook signature
 
+    # ── KB crawler webhook ────────────────────────────────────────────────────
+    CRAWLER_WEBHOOK_SECRET: str = ""  # HMAC-SHA256 secret shared with the KB crawler
+
     # ── PWA push notifications / VAPID (B7) ───────────────────────────────
     VAPID_PRIVATE_KEY: str = ""
     VAPID_PUBLIC_KEY: str = ""
