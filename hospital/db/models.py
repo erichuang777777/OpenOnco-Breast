@@ -132,8 +132,8 @@ class DrugRequisition(Base):
     )
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
-    plan_id: Mapped[str] = mapped_column(
-        String, ForeignKey("plans.plan_id"), nullable=False, index=True
+    plan_id: Mapped[str | None] = mapped_column(
+        String, ForeignKey("plans.plan_id"), nullable=True, index=True
     )
     mrn: Mapped[str] = mapped_column(String, nullable=False)
     track_id: Mapped[str] = mapped_column(String, nullable=False)
@@ -493,13 +493,14 @@ class HisSyncEvent(Base):
     )
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
-    patient_mrn: Mapped[str] = mapped_column(
-        String, ForeignKey("patients.mrn"), nullable=False, index=True
+    patient_mrn: Mapped[str | None] = mapped_column(
+        String, ForeignKey("patients.mrn"), nullable=True, index=True
     )
+    raw_mrn: Mapped[str] = mapped_column(String, nullable=False, index=True)
     his_event_type: Mapped[str] = mapped_column(String, nullable=False)
     payload_json: Mapped[str] = mapped_column(Text, nullable=False)
     sync_source: Mapped[str] = mapped_column(String, nullable=False)
     received_at: Mapped[datetime] = mapped_column(default=_now, index=True)
     processed_at: Mapped[datetime | None] = mapped_column(nullable=True)
 
-    patient: Mapped["Patient"] = relationship("Patient", back_populates="his_sync_events")
+    patient: Mapped["Patient | None"] = relationship("Patient", back_populates="his_sync_events")

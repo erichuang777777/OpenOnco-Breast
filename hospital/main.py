@@ -26,6 +26,10 @@ from hospital.db.session import create_all_tables, get_db
 from hospital.decision.api.plan import router as plan_router
 from hospital.decision.api.cases import router as cases_router
 from hospital.decision.api.extract import router as extract_router
+from hospital.decision.api.patients import router as patients_router
+from hospital.decision.api.timeline import router as timeline_router
+from hospital.portals.api.his_webhook import router as his_webhook_router
+from hospital.decision.api.reminders import router as reminders_router, admin_router as reminders_admin_router
 from hospital.admin.api.drug_req import router as drug_req_router
 from hospital.admin.api.users import router as admin_users_router
 from hospital.admin.api.kb import router as admin_kb_router
@@ -51,12 +55,17 @@ app = FastAPI(
 
 # ── API routes ────────────────────────────────────────────────────────────────
 API_PREFIX = "/api/v1"
-app.include_router(plan_router,       prefix=API_PREFIX)
-app.include_router(cases_router,      prefix=API_PREFIX)
-app.include_router(extract_router,    prefix=API_PREFIX)
-app.include_router(drug_req_router,   prefix=API_PREFIX)
+app.include_router(plan_router,        prefix=API_PREFIX)
+app.include_router(cases_router,       prefix=API_PREFIX)
+app.include_router(extract_router,     prefix=API_PREFIX)
+app.include_router(patients_router,    prefix=API_PREFIX)
+app.include_router(timeline_router,    prefix=API_PREFIX)
+app.include_router(his_webhook_router,        prefix=API_PREFIX)
+app.include_router(reminders_router,          prefix=API_PREFIX)
+app.include_router(reminders_admin_router,    prefix=API_PREFIX)
+app.include_router(drug_req_router,    prefix=API_PREFIX)
 app.include_router(admin_users_router, prefix=API_PREFIX)
-app.include_router(admin_kb_router,   prefix=API_PREFIX)
+app.include_router(admin_kb_router,    prefix=API_PREFIX)
 
 
 # ── Auth routes ───────────────────────────────────────────────────────────────
