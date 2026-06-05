@@ -11,7 +11,7 @@ measurement:
 specimen_requirements:
   - "Standardised lighting + photographic equipment (TBP-grade)"
   - "Patient skin type / phototype documented (Fitzpatrick I-VI)"
-clinical_context: [screening_surveillance, precursor_lesion, hereditary_surveillance]
+clinical_context: [screening_surveillance, germline_susceptibility]
 applicable_in_asymptomatic: true
 oncokb_skip_reason: imaging
 sources: [SRC-NCCN-MELANOMA-2025, SRC-NCCN-SKIN-2025, SRC-ESMO-MELANOMA-2024]

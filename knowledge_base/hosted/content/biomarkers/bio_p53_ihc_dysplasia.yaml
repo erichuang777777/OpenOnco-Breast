@@ -11,7 +11,7 @@ measurement:
 specimen_requirements:
   - "FFPE Barrett's esophagus biopsy block"
   - "Internal positive control (stromal lymphocytes) confirmed for null-pattern call"
-clinical_context: [screening_surveillance, precursor_lesion, dysplasia_grading]
+clinical_context: [screening_surveillance, tumor_profiling]
 applicable_in_asymptomatic: true
 oncokb_skip_reason: ihc_no_variant
 external_ids:
