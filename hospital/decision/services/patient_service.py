@@ -114,7 +114,10 @@ async def list_patients(
     db: AsyncSession,
     user_id: str,
     tab: TabLiteral = "all",
-) -> list[PatientResponse]:
+    q: str | None = None,
+    limit: int = 50,
+    offset: int = 0,
+) -> tuple[list[PatientResponse], int]:
     if tab == "followup":
         own = (await _primary_mrns(db, user_id)) | (await _active_team_mrns(db, user_id))
         appt_rows = await db.scalars(
@@ -156,11 +159,22 @@ async def list_patients(
         )
 
     patients = await _patients_by_mrns(db, mrns)
+    if q:
+        ql = q.lower()
+        patients = [
+            p for p in patients
+            if ql in (p.mrn or "").lower()
+            or ql in (p.masked_name or "").lower()
+            or ql in (p.disease_summary or "").lower()
+        ]
+    total = len(patients)
+    patients = patients[offset : offset + limit]
     active_map, urgent_map = await _reminder_counts(db, [p.mrn for p in patients])
-    return [
+    results = [
         await _build_response(p, active_map.get(p.mrn, 0), urgent_map.get(p.mrn, 0))
         for p in patients
     ]
+    return results, total
 
 
 # ── Get single patient ────────────────────────────────────────────────────────

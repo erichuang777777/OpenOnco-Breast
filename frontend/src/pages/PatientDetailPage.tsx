@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import type { PatientResponse, TimelineEventResponse, ReminderResponse, ConsultationResponse } from '../api/types'
 
 function TimelineEvent({ event }: { event: TimelineEventResponse }) {
+  const [expanded, setExpanded] = useState(false)
   const styleMap: Record<string, React.CSSProperties> = {
     coordinator_note: { background: '#eff6ff', padding: '0.5rem', borderLeft: '3px solid #3b82f6' },
     doctor_note: { padding: '0.5rem' },
@@ -12,6 +13,8 @@ function TimelineEvent({ event }: { event: TimelineEventResponse }) {
     consultation_reply: { background: '#f5f3ff', padding: '0.5rem', borderLeft: '3px solid #7c3aed' },
   }
   const style = styleMap[event.event_type] ?? { padding: '0.5rem' }
+  const hasBody = event.body_json && Object.keys(event.body_json as object).length > 0
+
   return (
     <div
       data-testid={`timeline-event-${event.id}`}
@@ -22,6 +25,23 @@ function TimelineEvent({ event }: { event: TimelineEventResponse }) {
       <span style={{ marginLeft: '0.5rem', color: '#9ca3af', fontSize: '0.8rem' }}>
         {new Date(event.event_time).toLocaleString('zh-TW')}
       </span>
+      {hasBody && (
+        <button
+          data-testid={`expand-event-${event.id}`}
+          onClick={() => setExpanded((v) => !v)}
+          style={{ marginLeft: '0.5rem', fontSize: '0.75rem', background: 'none', border: 'none', color: '#6b7280', cursor: 'pointer' }}
+        >
+          {expanded ? '▲' : '▼'}
+        </button>
+      )}
+      {expanded && hasBody && (
+        <pre
+          data-testid={`event-body-${event.id}`}
+          style={{ marginTop: '0.5rem', fontSize: '0.75rem', background: '#f9fafb', padding: '0.5rem', borderRadius: 4, overflow: 'auto' }}
+        >
+          {JSON.stringify(event.body_json, null, 2)}
+        </pre>
+      )}
     </div>
   )
 }
@@ -104,17 +124,22 @@ export function PatientDetailPage() {
   const { mrn } = useParams<{ mrn: string }>()
   const navigate = useNavigate()
   const [patient, setPatient] = useState<PatientResponse | null>(null)
+  const [error, setError] = useState<string | null>(null)
   const [timeline, setTimeline] = useState<TimelineEventResponse[]>([])
   const [page, setPage] = useState(0)
   const [note, setNote] = useState('')
+  const [oncoLoading, setOncoLoading] = useState(false)
   const pageSize = 20
 
   useEffect(() => {
     if (!mrn) return
     fetch(`/api/v1/patients/${mrn}`, { credentials: 'include' })
-      .then((r) => r.ok ? r.json() : null)
+      .then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`)
+        return r.json()
+      })
       .then(setPatient)
-      .catch(() => {})
+      .catch((e: Error) => setError(e.message))
 
     fetch(`/api/v1/patients/${mrn}/timeline?skip=0&limit=${pageSize}`, { credentials: 'include' })
       .then((r) => r.ok ? r.json() : [])
@@ -145,6 +170,37 @@ export function PatientDetailPage() {
       .catch(() => {})
   }
 
+  const initOnco = async () => {
+    if (!mrn || oncoLoading) return
+    setOncoLoading(true)
+    try {
+      await fetch('/api/v1/plan', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({
+          patient_mrn: mrn,
+          include_gaps: true,
+          patient: {
+            patient_id: mrn,
+            disease: { id: 'DIS-BREAST' },
+            line_of_therapy: 1,
+          },
+        }),
+      })
+      navigate(`/patients/${mrn}/onco`)
+    } catch {
+      setOncoLoading(false)
+    }
+  }
+
+  if (error) return (
+    <div data-testid="patient-detail-error" style={{ padding: '2rem', color: '#dc2626' }}>
+      <h2>無法載入患者資料</h2>
+      <p>{error}</p>
+      <button onClick={() => window.location.reload()}>重試</button>
+    </div>
+  )
   if (!patient) return <div data-testid="patient-detail-loading">載入中…</div>
 
   return (
@@ -203,9 +259,10 @@ export function PatientDetailPage() {
           <div style={{ marginTop: '1rem' }}>
             <button
               data-testid="onco-init-btn"
-              onClick={() => navigate(`/patients/${mrn}/onco`)}
+              onClick={initOnco}
+              disabled={oncoLoading}
             >
-              OpenOnco 分析
+              {oncoLoading ? '分析中…' : 'OpenOnco 分析'}
             </button>
             {patient.his_synced_at && (
               <div data-testid="last-query-timestamp" style={{ fontSize: '0.8rem', color: '#6b7280' }}>

@@ -2,10 +2,14 @@
 
 from __future__ import annotations
 
+import json as _json
+
 from fastapi import APIRouter, Depends, HTTPException, Request, status
+from sqlalchemy import select as sa_select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from hospital.auth.dependencies import HCP_ROLES, require_role
+from hospital.db.models import Plan as PlanModel
 from hospital.db.session import get_db
 from hospital.decision.schemas.plan import GapsResponse, PlanRequest, PlanResponse, ReviseRequest
 from hospital.services import audit_service
@@ -50,6 +54,16 @@ async def create_plan(
             detail={"error": "INVALID_PATIENT_DICT", "message": msg},
         ) from exc
 
+    plan_row = PlanModel(
+        plan_id=response.plan_id,
+        mrn=body.patient_mrn or (body.patient.patient_id or ""),
+        plan_json=_json.dumps(response.model_dump()),
+        created_by=user["sub"],
+        status="active",
+    )
+    db.add(plan_row)
+    await db.flush()
+
     await audit_service.log_action(
         db,
         user_id=user["sub"],
@@ -81,6 +95,22 @@ async def create_plan(
         )
 
     return response
+
+
+@router.get("/{plan_id}", response_model=PlanResponse)
+async def get_plan(
+    plan_id: str,
+    user: dict = Depends(require_role(HCP_ROLES)),
+    db: AsyncSession = Depends(get_db),
+) -> PlanResponse:
+    row = await db.scalar(sa_select(PlanModel).where(PlanModel.plan_id == plan_id))
+    if not row:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail={"error": "PLAN_NOT_FOUND"},
+        )
+    data = _json.loads(row.plan_json)
+    return PlanResponse(**data)
 
 
 @router.post("/gaps", response_model=GapsResponse)

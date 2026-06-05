@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from fastapi import APIRouter, Depends, HTTPException, Request, status
+from fastapi import APIRouter, Depends, HTTPException, Request, Response, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from hospital.auth.dependencies import HCP_ROLES, require_role
@@ -24,10 +24,16 @@ router = APIRouter(prefix="/patients", tags=["patients"])
 @router.get("", response_model=list[PatientResponse])
 async def list_patients(
     tab: str = "all",
+    q: str | None = None,
+    limit: int = 50,
+    offset: int = 0,
+    response: Response = None,
     user: dict = Depends(require_role(HCP_ROLES)),
     db: AsyncSession = Depends(get_db),
 ) -> list[PatientResponse]:
-    return await patient_service.list_patients(db, user["sub"], tab=tab)  # type: ignore[arg-type]
+    patients, total = await patient_service.list_patients(db, user["sub"], tab=tab, q=q, limit=limit, offset=offset)  # type: ignore[arg-type]
+    response.headers["X-Total-Count"] = str(total)
+    return patients
 
 
 @router.post("", response_model=PatientResponse, status_code=status.HTTP_201_CREATED)

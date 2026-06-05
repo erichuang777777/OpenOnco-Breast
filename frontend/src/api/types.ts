@@ -48,7 +48,7 @@ export interface TimelineEventResponse {
   event_time: string
   source: string
   title: string
-  body_json?: unknown
+  body_json?: Record<string, unknown>
   created_by?: string
   created_at: string
 }

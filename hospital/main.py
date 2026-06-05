@@ -5,6 +5,7 @@ Start:  uvicorn hospital.main:app --reload
 
 from __future__ import annotations
 
+import asyncio as _asyncio
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Request, status
@@ -45,6 +46,19 @@ from hospital.admin.api.audit import router as admin_audit_router
 from hospital.middleware.security_headers import SecurityHeadersMiddleware
 
 
+async def _daily_reminder_task() -> None:
+    """Run reminder rule engine for all active patients once per day."""
+    while True:
+        await _asyncio.sleep(24 * 3600)
+        try:
+            from hospital.decision.services.reminder_service import evaluate_all_patients
+            from hospital.db.session import db_context
+            async with db_context() as _db:
+                await evaluate_all_patients(_db)
+        except Exception:
+            pass  # never crash the background task
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Create tables (dev / SQLite only; prod uses Alembic migrations)
@@ -53,7 +67,13 @@ async def lifespan(app: FastAPI):
         await create_all_tables()
     # Bootstrap admin account if configured
     await _bootstrap_admin_if_needed()
+    _task = _asyncio.create_task(_daily_reminder_task())
     yield
+    _task.cancel()
+    try:
+        await _task
+    except _asyncio.CancelledError:
+        pass
 
 
 app = FastAPI(

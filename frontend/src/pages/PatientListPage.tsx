@@ -36,14 +36,29 @@ export function PatientListPage() {
   const [stats, setStats] = useState<PatientStats>({ total: 0, urgent: 0, followup: 0, mtd: 0 })
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [searchQuery, setSearchQuery] = useState('')
+  const [debouncedQ, setDebouncedQ] = useState('')
+  const [currentPage, setCurrentPage] = useState(0)
+  const [total, setTotal] = useState(0)
   const navigate = useNavigate()
+
+  useEffect(() => {
+    const timer = setTimeout(() => setDebouncedQ(searchQuery), 300)
+    return () => clearTimeout(timer)
+  }, [searchQuery])
+
+  useEffect(() => {
+    setCurrentPage(0)
+  }, [tab, debouncedQ])
 
   useEffect(() => {
     setLoading(true)
     setError(null)
-    fetch(`/api/v1/patients?tab=${tab}`, { credentials: 'include' })
+    fetch(`/api/v1/patients?tab=${tab}&q=${debouncedQ}&limit=20&offset=${currentPage * 20}`, { credentials: 'include' })
       .then((r) => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`)
+        const totalCount = r.headers.get('X-Total-Count')
+        if (totalCount !== null) setTotal(parseInt(totalCount, 10))
         return r.json()
       })
       .then((data: PatientResponse[]) => {
@@ -54,7 +69,7 @@ export function PatientListPage() {
         setError(e.message)
         setLoading(false)
       })
-  }, [tab])
+  }, [tab, debouncedQ, currentPage])
 
   useEffect(() => {
     fetch('/api/v1/patients/stats', { credentials: 'include' })
@@ -71,6 +86,17 @@ export function PatientListPage() {
         <div data-testid="stat-urgent">緊急: {stats.urgent}</div>
         <div data-testid="stat-followup">追蹤: {stats.followup}</div>
         <div data-testid="stat-mtd">MTD: {stats.mtd}</div>
+      </div>
+
+      {/* Search input */}
+      <div style={{ padding: '0 1rem' }}>
+        <input
+          data-testid="search-input"
+          value={searchQuery}
+          onChange={(e) => { setSearchQuery(e.target.value); setCurrentPage(0) }}
+          placeholder="搜尋病歷號、姓名、診斷…"
+          style={{ padding: '0.5rem', width: '100%', marginBottom: '0.5rem', border: '1px solid #d1d5db', borderRadius: 4 }}
+        />
       </div>
 
       {/* Tabs */}
@@ -141,6 +167,21 @@ export function PatientListPage() {
           </tbody>
         </table>
       )}
+
+      {/* Pagination */}
+      <div data-testid="pagination" style={{ display: 'flex', gap: '1rem', padding: '1rem', alignItems: 'center' }}>
+        <button
+          data-testid="prev-page-btn"
+          disabled={currentPage === 0}
+          onClick={() => setCurrentPage((p) => p - 1)}
+        >上一頁</button>
+        <span data-testid="page-info">第 {currentPage + 1} 頁 · 共 {total} 位</span>
+        <button
+          data-testid="next-page-btn"
+          disabled={(currentPage + 1) * 20 >= total}
+          onClick={() => setCurrentPage((p) => p + 1)}
+        >下一頁</button>
+      </div>
     </div>
   )
 }
