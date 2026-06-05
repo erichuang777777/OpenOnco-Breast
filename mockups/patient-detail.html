@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#3a587f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>A12●●●47 · OpenOnco 院內版</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="app.css">
+<script src="theme.js"></script>
+<style>
+  /* 2-column detail layout: main + right sidebar */
+  .detail-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 20px;
+    align-items: start;
+  }
+
+  /* Patient header strip */
+  .pt-header {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px 22px;
+    margin-bottom: 18px;
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 20px;
+  }
+  .pt-tag-row { display: flex; gap: 7px; margin-top: 9px; flex-wrap: wrap; }
+  .team-strip { display: flex; gap: -4px; align-items: center; }
+  .team-av {
+    width: 28px; height: 28px; border-radius: 50%;
+    display: grid; place-items: center; font-weight: 600; font-size: 12px; color: #fff;
+    border: 2px solid var(--surface);
+  }
+  .team-label { font-size: 11.5px; color: var(--text-subtle); margin-bottom: 4px; }
+
+  /* Timeline */
+  .tl { display: flex; flex-direction: column; }
+  .tl-item { display: flex; gap: 14px; padding-bottom: 20px; position: relative; }
+  .tl-item:not(:last-child)::before {
+    content: ''; position: absolute; left: 13px; top: 28px; bottom: -4px;
+    width: 2px; background: var(--border);
+  }
+  .tl-dot {
+    width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+    display: grid; place-items: center; font-size: 12px; color: #fff; z-index: 1;
+  }
+  .tl-body { flex: 1; padding-top: 3px; }
+  .tl-title { font-weight: 650; font-size: 13.5px; }
+  .tl-meta  { font-size: 12px; color: var(--text-subtle); margin-top: 2px; }
+  .tl-card  {
+    margin-top: 8px; padding: 12px 14px; border-radius: var(--radius-sm);
+    background: var(--surface-2); border: 1px solid var(--border); font-size: 13px; line-height: 1.65;
+  }
+  .tl-card.coordinator { background: var(--primary-soft); border-color: var(--border); }
+  .tl-card.alert       { background: var(--warning-soft); border-color: var(--border); }
+  .tl-system { font-size: 12px; color: var(--text-subtle); font-style: italic; }
+
+  /* Right sidebar panels */
+  .sidebar-r { display: flex; flex-direction: column; gap: 16px; }
+
+  /* Reminders */
+  .reminder-item {
+    display: flex; align-items: flex-start; gap: 10px; padding: 9px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .reminder-item:last-child { border-bottom: none; }
+  .reminder-label { font-size: 13px; flex: 1; }
+  .reminder-due   { font-size: 11.5px; font-weight: 600; margin-top: 2px; }
+  .reminder-due.urgent { color: var(--danger); }
+  .reminder-due.warn   { color: var(--warning); }
+  .reminder-due.ok     { color: var(--text-subtle); }
+
+  /* Consultations */
+  .consult-item { padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .consult-item:last-child { border-bottom: none; }
+  .consult-to   { font-size: 12.5px; font-weight: 650; }
+  .consult-topic{ font-size: 12.5px; color: var(--text-muted); margin-top: 2px; }
+  .consult-meta { font-size: 11px; color: var(--text-subtle); margin-top: 2px; }
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-logo">O</div>
+      <div><div class="brand-name">OpenOnco</div><div class="brand-sub">院內版 · 乳癌模組</div></div>
+    </div>
+    <nav class="nav">
+      <div class="nav-label">臨床</div>
+      <a class="nav-item" href="patient-list.html"><span class="ic">◉</span> 我的病人</a>
+      <a class="nav-item" href="board.html"><span class="ic">◳</span> 腫瘤委員會</a>
+      <div class="nav-label">工具</div>
+      <a class="nav-item" href="#"><span class="ic">∑</span> 劑量計算</a>
+      <a class="nav-item" href="#"><span class="ic">℞</span> 藥物申請</a>
+      <div class="nav-label">管理</div>
+      <a class="nav-item" href="#"><span class="ic">⚙</span> 後台設定</a>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="avatar">陳</div>
+      <div class="user-meta"><div class="user-name">陳醫師</div><div class="user-role">門診醫師</div></div>
+      <div class="theme-switcher">
+        <button class="theme-btn" data-theme-btn="slate"  title="Slate"></button>
+        <button class="theme-btn" data-theme-btn="forest" title="Forest"></button>
+        <button class="theme-btn" data-theme-btn="sand"   title="Sand"></button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <a href="patient-list.html" class="btn btn-ghost" style="padding:5px 10px;font-size:12px">← 返回清單</a>
+          <h1 class="mrn" style="font-size:16px">A12●●●47
+            <span style="font-weight:400;font-size:14px;color:var(--text-muted)">王●●</span>
+          </h1>
+        </div>
+        <div class="crumbs">乳癌 HER2+ · 第四期 · 55F · 主治：陳醫師</div>
+      </div>
+      <div class="row">
+        <button class="btn btn-ghost">新增諮詢</button>
+        <button class="btn btn-ghost">提至 MTD</button>
+        <button class="btn btn-primary">個管師紀錄</button>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <!-- Patient status strip -->
+      <div class="pt-header">
+        <div>
+          <div class="pt-tag-row">
+            <span class="chip warn"><span class="dot"></span>治療中</span>
+            <span class="chip info">THP C2D1 · 2026-05-20</span>
+            <span class="chip muted">ECOG 1</span>
+            <span class="chip muted">HER2+ IHC3+</span>
+            <span class="chip muted">ER+ PR−</span>
+            <span class="chip" style="background:var(--danger-soft);color:var(--danger);border-color:#fca5a5">⚠ 藥物申請到期</span>
+          </div>
+          <div style="font-size:11.5px;color:var(--text-subtle);margin-top:10px">
+            HIS 最後同步：2026-06-04 08:30 <span style="color:var(--success)">●</span>
+          </div>
+        </div>
+        <div>
+          <div class="team-label">照護團隊</div>
+          <div style="display:flex;gap:6px">
+            <div class="team-av" style="background:var(--primary)" title="陳醫師（主治）">陳</div>
+            <div class="team-av" style="background:var(--accent)" title="黃醫師（放射腫瘤）">黃</div>
+            <div class="team-av" style="background:var(--success)" title="林護理師（個管師）">林</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-layout">
+
+        <!-- ── Left: Timeline ── -->
+        <div>
+          <p class="section-title">病人動向時間軸</p>
+          <div class="tl">
+
+            <!-- Coordinator MTD conclusion — most prominent -->
+            <div class="tl-item">
+              <div class="tl-dot" style="background:var(--primary)">林</div>
+              <div class="tl-body">
+                <div class="tl-title">個管師紀錄 · MTD 結論</div>
+                <div class="tl-meta">2026-05-28 · 林護理師（個管師）</div>
+                <div class="tl-card coordinator">
+                  MTD 結論（2026-05-28）：委員會一致同意繼續 THP 第三療程，待 C3 影像評估後決定是否序貫 T-DXd。
+                  BRCA 胚系檢測已送出，2 週內出報告。骨轉移疼痛控制穩定，暫無即時放療需求。
+                  下次 MTD 評估：C3 後影像確認（預計 2026-07-01 前）。
+                </div>
+              </div>
+            </div>
+
+            <!-- Consultation reply -->
+            <div class="tl-item">
+              <div class="tl-dot" style="background:var(--accent)">黃</div>
+              <div class="tl-body">
+                <div class="tl-title">諮詢回覆 · 黃醫師（放射腫瘤）</div>
+                <div class="tl-meta">2026-05-25 · 回覆陳醫師 2026-05-22 之諮詢</div>
+                <div class="tl-card">
+                  骨轉移部位症狀控制可，暫不建議立即放療。若 C3 評估後仍有局部疼痛，可考慮單次止痛放射（8 Gy × 1）。
+                  建議先完成全身性治療第三療程評估再重新評估。
+                </div>
+              </div>
+            </div>
+
+            <!-- HIS crawler event -->
+            <div class="tl-item">
+              <div class="tl-dot" style="background:var(--border-strong)">⟳</div>
+              <div class="tl-body">
+                <div class="tl-title tl-system">HIS 同步 · THP C2D1 給藥完成</div>
+                <div class="tl-meta">2026-05-20 · 系統自動記錄（爬蟲）</div>
+              </div>
+            </div>
+
+            <!-- Doctor note -->
+            <div class="tl-item">
+              <div class="tl-dot" style="background:var(--standard)">陳</div>
+              <div class="tl-body">
+                <div class="tl-title">陳醫師 · 門診記錄</div>
+                <div class="tl-meta">2026-05-20</div>
+                <div class="tl-card">
+                  C2 耐受性良好，輕度噁心（Grade 1），無明顯心毒性指標變化（LVEF 穩定）。肝功能正常。
+                  已發出諮詢至黃醫師評估骨轉移放療需求。BRCA 胚系已送至遺傳諮詢門診。
+                </div>
+              </div>
+            </div>
+
+            <!-- Reminder / alert item -->
+            <div class="tl-item">
+              <div class="tl-dot" style="background:var(--danger)">!</div>
+              <div class="tl-body">
+                <div class="tl-title">⚠ 提醒 · 藥物重卡申請到期</div>
+                <div class="tl-meta">2026-06-07 到期 · 距今 3 天 · 系統自動偵測</div>
+                <div class="tl-card alert">
+                  Trastuzumab 重大傷病藥物申請重卡將於 2026-06-07 到期。
+                  請盡速完成申請並送件至健保署。
+                  <div style="margin-top:8px">
+                    <button class="btn btn-primary" style="padding:5px 12px;font-size:12.5px">前往藥物申請</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- HIS crawler: first chemo -->
+            <div class="tl-item">
+              <div class="tl-dot" style="background:var(--border-strong)">⟳</div>
+              <div class="tl-body">
+                <div class="tl-title tl-system">HIS 同步 · THP C1D1 給藥完成</div>
+                <div class="tl-meta">2026-04-25 · 系統自動記錄（爬蟲）</div>
+              </div>
+            </div>
+
+            <!-- Initial visit / plan selected -->
+            <div class="tl-item">
+              <div class="tl-dot" style="background:var(--standard)">陳</div>
+              <div class="tl-body">
+                <div class="tl-title">初診 · 治療方案確定（THP 第一線）</div>
+                <div class="tl-meta">2026-04-15</div>
+                <div class="tl-card">
+                  HER2 陽性（IHC 3+）轉移性乳癌第四期，肝 / 骨多處轉移，ECOG 1。
+                  依 NCCN Breast v2.2025 建議啟動 THP（Trastuzumab + Pertuzumab + Docetaxel），CLEOPATRA 試驗依據。
+                  <div style="margin-top:6px;font-size:12px;color:var(--text-subtle)">
+                    依據 OpenOnco 查詢結果確認方案 · 陳醫師確認
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add new note input -->
+            <div class="tl-item">
+              <div class="tl-dot" style="background:var(--text-subtle)">＋</div>
+              <div class="tl-body">
+                <div style="color:var(--text-subtle);font-size:13.5px;margin-bottom:8px">新增紀錄…</div>
+                <textarea class="note-input"
+                  placeholder="輸入醫師批註或個管師記錄…" rows="3"></textarea>
+                <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+                  <button class="btn btn-primary"  style="padding:6px 14px;font-size:13px">儲存紀錄</button>
+                  <button class="btn btn-ghost"    style="padding:6px 12px;font-size:13px">提至 MTD</button>
+                  <button class="btn btn-ghost"    style="padding:6px 12px;font-size:13px">發出諮詢</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── Right sidebar ── -->
+        <div class="sidebar-r">
+
+          <!-- Reminders / alerts -->
+          <div class="card">
+            <div class="card-head" style="padding:12px 16px">
+              <div class="card-title" style="font-size:13.5px">待辦提醒</div>
+              <span class="chip" style="background:var(--danger-soft);color:var(--danger);border-color:#fca5a5;padding:2px 8px">2 急</span>
+            </div>
+            <div class="card-body" style="padding:12px 16px">
+              <div class="reminder-item">
+                <div style="font-size:18px">💊</div>
+                <div style="flex:1">
+                  <div class="reminder-label">藥物申請重卡</div>
+                  <div class="reminder-due urgent">2026-06-07 · 3 天後</div>
+                </div>
+                <button class="btn btn-ghost" style="padding:4px 10px;font-size:11.5px">送件</button>
+              </div>
+              <div class="reminder-item">
+                <div style="font-size:18px">🧬</div>
+                <div style="flex:1">
+                  <div class="reminder-label">BRCA 胚系報告</div>
+                  <div class="reminder-due warn">待回報（2 週內）</div>
+                </div>
+                <button class="btn btn-ghost" style="padding:4px 10px;font-size:11.5px">確認</button>
+              </div>
+              <div class="reminder-item">
+                <div style="font-size:18px">🖼</div>
+                <div style="flex:1">
+                  <div class="reminder-label">C3 療效影像排程</div>
+                  <div class="reminder-due ok">2026-06-20 前</div>
+                </div>
+                <button class="btn btn-ghost" style="padding:4px 10px;font-size:11.5px">排程</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- OpenOnco reference — doctor must initiate explicitly -->
+          <div class="card">
+            <div class="card-head" style="padding:12px 16px">
+              <div class="card-title" style="font-size:13.5px">◈ OpenOnco 循證查詢</div>
+            </div>
+            <div class="card-body" style="padding:14px 16px">
+              <p style="font-size:12.5px;color:var(--text-muted);line-height:1.6;margin-bottom:14px">
+                OpenOnco 方案建議須由醫師主動發起。系統依知識庫規則產生，非自動診斷。
+              </p>
+              <a href="clinic.html" class="onco-init-btn">
+                <div class="onco-init-icon">◈</div>
+                <div>
+                  <div class="onco-init-label">查詢循證治療建議</div>
+                  <div class="onco-init-sub">依現有欄位帶入 · 醫師確認後適用</div>
+                </div>
+              </a>
+              <div style="margin-top:12px;font-size:11.5px;color:var(--text-subtle)">
+                上次查詢：2026-04-15 · 陳醫師 · THP 第一線確認
+              </div>
+            </div>
+          </div>
+
+          <!-- Active consultations -->
+          <div class="card">
+            <div class="card-head" style="padding:12px 16px">
+              <div class="card-title" style="font-size:13.5px">進行中諮詢</div>
+              <button class="btn btn-ghost" style="padding:4px 10px;font-size:12px">+ 新增</button>
+            </div>
+            <div class="card-body" style="padding:12px 16px">
+              <div class="consult-item">
+                <div class="consult-to">
+                  → 黃醫師（放射腫瘤）
+                  <span class="chip ok" style="margin-left:5px;padding:1px 7px;font-size:11px">已回覆</span>
+                </div>
+                <div class="consult-topic">骨轉移放療評估</div>
+                <div class="consult-meta">2026-05-22 發出 · 2026-05-25 回覆</div>
+              </div>
+              <div class="consult-item">
+                <div class="consult-to">
+                  → 遺傳諮詢門診
+                  <span class="chip warn" style="margin-left:5px;padding:1px 7px;font-size:11px">待回覆</span>
+                </div>
+                <div class="consult-topic">BRCA 胚系陽性後遺傳諮詢</div>
+                <div class="consult-meta">2026-05-28 發出</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        <span>ℹ️</span>
+        <span>病人動向由 HIS 爬蟲自動同步，個管師結論由人工紀錄。OpenOnco 參考僅依版本化知識庫產生，須由主治醫師確認後執行。非醫療器材。</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

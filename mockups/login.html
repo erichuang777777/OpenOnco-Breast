@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#3a587f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>登入 · OpenOnco 院內版</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="app.css">
+<script src="theme.js"></script>
+<style>
+  body { display: grid; place-items: center; min-height: 100vh;
+         background: var(--bg); }
+  .login { width: 400px; max-width: 92vw; }
+  .login-card { background: var(--surface); border: 1px solid var(--border);
+                border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); padding: 36px 32px; }
+  .login-logo { width: 52px; height: 52px; border-radius: 14px;
+                background: linear-gradient(135deg, var(--primary), var(--accent));
+                display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 24px;
+                margin: 0 auto 18px; }
+  .login h1 { text-align: center; font-size: 21px; }
+  .login .sub { text-align: center; color: var(--text-muted); font-size: 13.5px; margin: 6px 0 28px; }
+  .google-btn {
+    width: 100%; padding: 12px; border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm); background: #fff; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 11px;
+    font-weight: 600; font-size: 14.5px; color: var(--text);
+    transition: background .12s, box-shadow .12s;
+  }
+  .google-btn:hover { background: var(--surface-2); box-shadow: var(--shadow-sm); }
+  .gicon { width: 19px; height: 19px; }
+  .pending {
+    margin-top: 18px; padding: 12px 14px; border-radius: var(--radius-sm);
+    background: var(--warning-soft); border: 1px solid #fde68a;
+    font-size: 12.5px; color: #78350f; line-height: 1.5;
+  }
+  .foot { text-align: center; margin-top: 22px; font-size: 11.5px; color: var(--text-subtle); }
+</style>
+</head>
+<body>
+  <div class="login">
+    <div class="login-card">
+      <div class="login-logo">O</div>
+      <h1>OpenOnco 院內版</h1>
+      <div class="sub">乳癌臨床決策輔助系統</div>
+
+      <button class="google-btn">
+        <svg class="gicon" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.6 2.4 30.1 0 24 0 14.6 0 6.4 5.4 2.5 13.3l7.9 6.1C12.3 13.2 17.6 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.4c-.5 2.9-2.2 5.4-4.7 7l7.2 5.6c4.2-3.9 6.6-9.6 6.6-16.1z"/><path fill="#FBBC05" d="M10.4 28.5c-.5-1.4-.8-3-.8-4.5s.3-3.1.8-4.5l-7.9-6.1C.9 16.5 0 20.1 0 24s.9 7.5 2.5 10.6l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.2-5.6c-2 1.4-4.6 2.2-8.7 2.2-6.4 0-11.7-3.7-13.6-9.4l-7.9 6.1C6.4 42.6 14.6 48 24 48z"/></svg>
+        使用 Google 帳號登入
+      </button>
+
+      <div class="pending">
+        🔒 首次登入會建立帳號並進入「待開通」狀態，需由系統管理員指派角色後方可使用。
+      </div>
+    </div>
+    <div class="foot">研究與決策輔助工具 · 非醫療器材 · 須由合格醫師確認</div>
+  </div>
+</body>
+</html>
