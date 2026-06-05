@@ -109,7 +109,7 @@ async def update_requisition_status(
     if body.external_ref:
         db_req.external_ref = body.external_ref
     data = json.loads(db_req.requisition_json)
-    return DrugReqResponse(**data)
+    return DrugReqResponse(id=db_req.id, **data)
 
 
 # ── Private helpers ───────────────────────────────────────────────────────────
