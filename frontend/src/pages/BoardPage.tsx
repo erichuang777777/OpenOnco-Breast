@@ -144,7 +144,7 @@ export function BoardPage() {
                     <tr key={`${session.id}-${c.patient_mrn}-expanded`}>
                       <td colSpan={4} style={{ padding: '0.75rem 1rem', background: '#f0f9ff', borderBottom: '2px solid #bfdbfe' }}>
                         <div data-testid={`case-expanded-${c.patient_mrn}`}>
-                          <div data-testid="recommendation-panel" style={{ marginBottom: '0.5rem' }}>
+                          <div data-testid="recommendation-panel" style={{ marginBottom: '0.75rem' }}>
                             <strong>建議治療方案</strong>
                             {!planCache[c.patient_mrn] && <span style={{ color: '#6b7280', marginLeft: '0.5rem', fontSize: '0.85rem' }}>載入中…</span>}
                             {planCache[c.patient_mrn]?.length === 0 && <span style={{ color: '#6b7280', marginLeft: '0.5rem', fontSize: '0.85rem' }}>尚無計畫</span>}
@@ -158,11 +158,19 @@ export function BoardPage() {
                               ))}
                             </div>
                           </div>
-                          {c.conclusion_text && (
-                            <div data-testid="annotation-timeline" style={{ marginTop: '0.5rem', color: '#374151', fontSize: '0.9rem' }}>
-                              <strong>結論：</strong>{c.conclusion_text}
-                            </div>
-                          )}
+                          <div data-testid="annotation-timeline" style={{ marginBottom: '0.5rem', fontSize: '0.9rem', color: '#374151' }}>
+                            {c.conclusion_text
+                              ? <span><strong>結論：</strong>{c.conclusion_text}</span>
+                              : <span style={{ color: '#9ca3af' }}>尚無討論記錄</span>}
+                          </div>
+                          <div style={{ display: 'flex', gap: '0.5rem' }}>
+                            <input
+                              data-testid="annotation-input"
+                              placeholder="新增討論記錄…"
+                              style={{ flex: 1, padding: '0.35rem 0.5rem', border: '1px solid #d1d5db', borderRadius: 4, fontSize: '0.9rem' }}
+                            />
+                            <button data-testid="annotation-submit-btn" style={{ fontSize: '0.85rem' }}>新增</button>
+                          </div>
                         </div>
                       </td>
                     </tr>
