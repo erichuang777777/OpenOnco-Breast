@@ -10,6 +10,7 @@ export interface PatientResponse {
   primary_doctor_id?: string
   his_patient_id?: string
   his_synced_at?: string
+  his_sync_status?: string
   created_at: string
   updated_at: string
   care_team: CareTeamMemberResponse[]

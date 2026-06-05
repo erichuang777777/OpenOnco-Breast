@@ -11,7 +11,10 @@ Rules are intentionally stateless; the DB is the source of truth.
 from __future__ import annotations
 
 import json
+import logging
 from datetime import datetime, timedelta, timezone
+
+_log = logging.getLogger(__name__)
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -77,8 +80,8 @@ async def create_if_not_exists(
             for uid in notify_ids:
                 try:
                     await notify_user(db, uid, title, detail or "")
-                except Exception:
-                    pass
+                except Exception as exc:
+                    _log.warning("push notify failed for user %s (mrn=%s): %s", uid, mrn, exc)
 
     return r
 

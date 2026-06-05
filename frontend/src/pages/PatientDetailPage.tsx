@@ -68,6 +68,9 @@ function RemindersPanel({ mrn }: { mrn: string }) {
   return (
     <div data-testid="reminders-panel">
       <h3>提醒 {urgent.length > 0 && <span data-testid="urgent-count-badge">{urgent.length}</span>}</h3>
+      {reminders.length === 0 && (
+        <div data-testid="reminders-empty" style={{ color: '#9ca3af', fontSize: '0.9rem', padding: '0.5rem 0' }}>目前沒有待處理提醒</div>
+      )}
       {reminders.map((r) => (
         <div key={r.id} data-testid={`reminder-${r.reminder_type}`} style={{ padding: '0.5rem', marginBottom: '0.5rem', border: '1px solid #e5e7eb' }}>
           <div>{r.title}</div>
@@ -266,8 +269,15 @@ export function PatientDetailPage() {
         <div>
           {/* Timeline */}
           <div data-testid="timeline-section">
+            {timeline.length === 0 && (
+              <div data-testid="timeline-empty" style={{ color: '#9ca3af', fontSize: '0.9rem', padding: '1rem 0', textAlign: 'center' }}>
+                目前沒有時間軸事件
+              </div>
+            )}
             {timeline.map((e) => <TimelineEvent key={e.id} event={e} />)}
-            <button data-testid="load-more-btn" onClick={loadMore}>載入更多</button>
+            {timeline.length > 0 && (
+              <button data-testid="load-more-btn" onClick={loadMore}>載入更多</button>
+            )}
           </div>
 
           {/* Note input */}

@@ -14,6 +14,8 @@ export function BoardPage() {
   const [sessions, setSessions] = useState<MtdSessionResponse[]>([])
   const [expanded, setExpanded] = useState<string | null>(null)
   const [planCache, setPlanCache] = useState<Record<string, PlanTrack[]>>({})
+  const [annotationText, setAnnotationText] = useState<Record<string, string>>({})
+  const [annotationSaving, setAnnotationSaving] = useState<Record<string, boolean>>({})
 
   useEffect(() => {
     fetch('/api/v1/mtd/sessions', { credentials: 'include' })
@@ -74,6 +76,21 @@ export function BoardPage() {
         ))
       })
       .catch(() => {})
+  }
+
+  const submitAnnotation = (mrn: string) => {
+    const text = annotationText[mrn]?.trim()
+    if (!text) return
+    setAnnotationSaving((prev) => ({ ...prev, [mrn]: true }))
+    fetch(`/api/v1/patients/${mrn}/timeline`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ event_type: 'doctor_note', title: text }),
+      credentials: 'include',
+    }).then((r) => r.ok ? r.json() : null)
+      .then((evt) => { if (evt) setAnnotationText((prev) => ({ ...prev, [mrn]: '' })) })
+      .catch(() => {})
+      .finally(() => setAnnotationSaving((prev) => ({ ...prev, [mrn]: false })))
   }
 
   const exportAgenda = () => {
@@ -166,10 +183,19 @@ export function BoardPage() {
                           <div style={{ display: 'flex', gap: '0.5rem' }}>
                             <input
                               data-testid="annotation-input"
+                              value={annotationText[c.patient_mrn] ?? ''}
+                              onChange={(e) => setAnnotationText((prev) => ({ ...prev, [c.patient_mrn]: e.target.value }))}
                               placeholder="新增討論記錄…"
                               style={{ flex: 1, padding: '0.35rem 0.5rem', border: '1px solid #d1d5db', borderRadius: 4, fontSize: '0.9rem' }}
                             />
-                            <button data-testid="annotation-submit-btn" style={{ fontSize: '0.85rem' }}>新增</button>
+                            <button
+                              data-testid="annotation-submit-btn"
+                              onClick={() => submitAnnotation(c.patient_mrn)}
+                              disabled={annotationSaving[c.patient_mrn] || !annotationText[c.patient_mrn]?.trim()}
+                              style={{ fontSize: '0.85rem' }}
+                            >
+                              {annotationSaving[c.patient_mrn] ? '…' : '新增'}
+                            </button>
                           </div>
                         </div>
                       </td>

@@ -25,6 +25,21 @@ function ReminderDot({ urgency }: { urgency: 'urgent' | 'warn' | 'none' }) {
   return null
 }
 
+function HisBadge({ status }: { status?: string }) {
+  if (!status || status === 'unknown') return null
+  const cfg = {
+    ok:    { color: '#16a34a', label: 'HIS ✓' },
+    stale: { color: '#d97706', label: 'HIS ⚠' },
+    never: { color: '#9ca3af', label: 'HIS —' },
+  }[status] ?? null
+  if (!cfg) return null
+  return (
+    <span data-testid={`his-badge-${status}`} style={{ fontSize: '0.75rem', color: cfg.color, marginLeft: '0.25rem', fontWeight: 500 }}>
+      {cfg.label}
+    </span>
+  )
+}
+
 function dotUrgency(p: PatientResponse): 'urgent' | 'warn' | 'none' {
   if (!p.urgent_reminder_count) return 'none'
   return p.urgent_reminder_count > 0 ? 'urgent' : 'warn'
@@ -150,7 +165,10 @@ export function PatientListPage() {
                   background: p.his_patient_id ? '#f0f9ff' : undefined,
                 }}
               >
-                <td data-testid={`mrn-${p.mrn}`}>{p.mrn}</td>
+                <td data-testid={`mrn-${p.mrn}`}>
+                  {p.mrn}
+                  <HisBadge status={p.his_sync_status} />
+                </td>
                 <td data-testid={`name-${p.mrn}`}>{p.masked_name}</td>
                 <td data-testid={`disease-${p.mrn}`}>{p.disease_summary}</td>
                 <td>

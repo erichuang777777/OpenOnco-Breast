@@ -20,6 +20,21 @@ export function DrugReqPage() {
   const [reqId, setReqId] = useState<string | null>(null)  // DB id for preview URL
   const [reqCode, setReqCode] = useState<string | null>(null) // human-readable code
   const [loadError, setLoadError] = useState<string | null>(null)
+  const [patientInfo, setPatientInfo] = useState<{ nameInitials: string; birthYear: string; sex: string }>({ nameInitials: '', birthYear: '', sex: '' })
+
+  useEffect(() => {
+    if (!mrn) return
+    fetch(`/api/v1/patients/${mrn}`, { credentials: 'include' })
+      .then((r) => r.ok ? r.json() : null)
+      .then((p) => {
+        if (p) setPatientInfo({
+          nameInitials: p.masked_name ?? '',
+          birthYear: p.dob_year ? String(p.dob_year) : '',
+          sex: p.sex ?? '',
+        })
+      })
+      .catch(() => {})
+  }, [mrn])
 
   // Load plan tracks from the patient's most recent onco_query_initiated timeline event
   useEffect(() => {
@@ -48,7 +63,14 @@ export function DrugReqPage() {
     fetch('/api/v1/drug-requisition', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ plan_id: planId, track_id: trackId, patient_mrn: mrn }),
+      body: JSON.stringify({
+        plan_id: planId,
+        track_id: trackId,
+        patient_mrn: mrn,
+        patient_name_initials: patientInfo.nameInitials,
+        patient_birth_year: patientInfo.birthYear,
+        patient_sex: patientInfo.sex,
+      }),
       credentials: 'include',
     }).then((r) => r.ok ? r.json() : Promise.reject(r.status))
       .then((data) => { setReqId(data.id); setReqCode(data.requisition_id); setSubmitState('done') })

@@ -91,7 +91,7 @@ async def acknowledge_reminder(
             status_code=status.HTTP_404_NOT_FOUND,
             detail={"error": "REMINDER_NOT_FOUND"},
         )
-    if r.status != "acknowledged":
+    if r.status == "active":
         r.status = "acknowledged"
         r.acknowledged_by = user_id
         r.acknowledged_at = _now()
