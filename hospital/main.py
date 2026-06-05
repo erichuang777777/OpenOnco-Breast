@@ -25,7 +25,7 @@ from hospital.auth.google_oauth import (
 from hospital.auth.jwt_utils import create_access_token
 from hospital.config import get_settings
 from hospital.db.models import User
-from hospital.db.session import create_all_tables, get_db
+from hospital.db.session import create_all_tables, db_context, get_db
 
 # ── Sub-routers ───────────────────────────────────────────────────────────────
 from hospital.decision.api.plan import router as plan_router
@@ -147,8 +147,8 @@ async def google_callback(request: Request, code: str, state: str):
     email = claims.get("email", "")
     name = claims.get("name")
 
-    # Upsert user
-    async for db in get_db():
+    # Upsert user — use db_context() so commit/rollback are guaranteed.
+    async with db_context() as db:
         from sqlalchemy import select as sa_select
         user = await db.scalar(sa_select(User).where(User.google_sub == google_sub))
         if user is None:
@@ -163,7 +163,6 @@ async def google_callback(request: Request, code: str, state: str):
         else:
             from datetime import datetime, timezone
             user.last_login_at = datetime.now(timezone.utc)
-        break
 
     settings = get_settings()
     if user.role == "pending":
@@ -236,7 +235,7 @@ async def _bootstrap_admin_if_needed() -> None:
     settings = get_settings()
     if not settings.BOOTSTRAP_ADMIN_EMAIL:
         return
-    async for db in get_db():
+    async with db_context() as db:
         from sqlalchemy import select as sa_select, func
         count = await db.scalar(sa_select(func.count()).select_from(User))
         if count == 0:
@@ -249,4 +248,3 @@ async def _bootstrap_admin_if_needed() -> None:
                 active=True,
             )
             db.add(admin)
-        break

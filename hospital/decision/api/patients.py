@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from fastapi import APIRouter, Depends, Request, status
+from fastapi import APIRouter, Depends, HTTPException, Request, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from hospital.auth.dependencies import HCP_ROLES, require_role
@@ -76,19 +76,18 @@ async def update_patient(
     user: dict = Depends(require_role(HCP_ROLES)),
     db: AsyncSession = Depends(get_db),
 ) -> PatientResponse:
-    patient = await patient_service.update_patient(db, mrn, body)
+    # Ownership check BEFORE the write — unauthorized mutations are blocked, not just logged.
+    patient = await patient_service.get_patient(db, mrn)
     is_own = (
         patient.primary_doctor_id == user["sub"]
         or await patient_service.is_on_care_team(db, mrn, user["sub"])
     )
     if not is_own:
-        await audit_service.log_action(
-            db, user_id=user["sub"],
-            action=audit_service.PATIENT_CROSS_ACCESS,
-            resource_type="patient", resource_id=mrn,
-            mrn=mrn,
-            diff_summary="patch",
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail={"error": "FORBIDDEN", "message": "Not authorized to update this patient."},
         )
+    patient = await patient_service.update_patient(db, mrn, body)
     return await patient_service.build_patient_response(db, patient)
 
 

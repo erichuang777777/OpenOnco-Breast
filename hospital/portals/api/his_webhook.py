@@ -7,6 +7,7 @@ Idempotency: de-dup on (raw_mrn, his_event_type, payload hash).
 from __future__ import annotations
 
 import hashlib
+import hmac
 import json
 
 from fastapi import APIRouter, Depends, Header, HTTPException, Request, status
@@ -43,7 +44,9 @@ async def his_ingest(
     db: AsyncSession = Depends(get_db),
 ) -> dict:
     settings = get_settings()
-    if not settings.HIS_WEBHOOK_SECRET or x_his_secret != settings.HIS_WEBHOOK_SECRET:
+    if not settings.HIS_WEBHOOK_SECRET or not hmac.compare_digest(
+        (x_his_secret or "").encode(), settings.HIS_WEBHOOK_SECRET.encode()
+    ):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail={"error": "INVALID_HIS_SECRET", "message": "Missing or wrong X-HIS-Secret."},
