@@ -2,21 +2,42 @@
 
 from __future__ import annotations
 
+import sqlite3
 from collections.abc import AsyncGenerator
 
-from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
+from sqlalchemy import event
+from sqlalchemy.ext.asyncio import AsyncEngine, AsyncSession, async_sessionmaker, create_async_engine
 
 from hospital.config import get_settings
 from hospital.db.models import Base
 
 
+def _enable_sqlite_fk(engine: AsyncEngine) -> None:
+    """Enable FK enforcement for SQLite (no-op for other backends).
+
+    aiosqlite wraps the underlying sqlite3 connection in a worker thread;
+    using cursor() is more portable than calling execute() directly.
+    """
+    @event.listens_for(engine.sync_engine, "connect")
+    def _set_pragma(dbapi_conn, _):
+        try:
+            cursor = dbapi_conn.cursor()
+            cursor.execute("PRAGMA foreign_keys=ON")
+            cursor.close()
+        except Exception:
+            pass  # non-sqlite backend
+
+
 def _make_engine():
     settings = get_settings()
-    return create_async_engine(
+    engine = create_async_engine(
         settings.DATABASE_URL,
         echo=False,
         future=True,
     )
+    if "sqlite" in settings.DATABASE_URL:
+        _enable_sqlite_fk(engine)
+    return engine
 
 
 _engine = None

@@ -14,8 +14,8 @@ os.environ.setdefault("JWT_SECRET", "test-secret-not-for-prod")
 os.environ.setdefault("AUDIT_MRN_SALT", "test-salt")
 os.environ.setdefault("ANTHROPIC_API_KEY", "")
 
-from hospital.db.models import Base
-from hospital.db.session import get_db
+from hospital.db.models import Base, CareTeamMember, Patient
+from hospital.db.session import _enable_sqlite_fk, get_db
 from hospital.main import app
 
 
@@ -24,6 +24,7 @@ from hospital.main import app
 @pytest_asyncio.fixture
 async def db_engine():
     engine = create_async_engine("sqlite+aiosqlite:///:memory:", future=True)
+    _enable_sqlite_fk(engine)
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
     yield engine
@@ -86,3 +87,44 @@ def admin_headers():
 def pending_headers():
     token = make_jwt(role="pending")
     return {"Authorization": f"Bearer {token}"}
+
+
+# ── Patient / care-team seed helpers ─────────────────────────────────────────
+
+@pytest_asyncio.fixture
+async def sample_patient(db_session: AsyncSession) -> Patient:
+    patient = Patient(
+        mrn="MRN-TEST-001",
+        masked_name="王●●",
+        sex="F",
+        dob_year=1975,
+        disease_summary="乳癌 HER2+ · 第四期",
+        status="active",
+        primary_doctor_id="user-001",
+        created_by="user-001",
+    )
+    db_session.add(patient)
+    await db_session.flush()
+    return patient
+
+
+@pytest_asyncio.fixture
+async def sample_care_team(db_session: AsyncSession, sample_patient: Patient) -> list[CareTeamMember]:
+    members = [
+        CareTeamMember(
+            patient_mrn=sample_patient.mrn,
+            user_id="user-001",
+            member_role="primary_hcp",
+            specialty="Oncology",
+            assigned_by="user-001",
+        ),
+        CareTeamMember(
+            patient_mrn=sample_patient.mrn,
+            user_id="coord-001",
+            member_role="care_coordinator",
+            assigned_by="user-001",
+        ),
+    ]
+    db_session.add_all(members)
+    await db_session.flush()
+    return members

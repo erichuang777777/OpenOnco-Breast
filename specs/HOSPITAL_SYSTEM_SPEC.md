@@ -107,7 +107,7 @@ username + bcrypt password.
 | ORM / DB | SQLAlchemy 2.x + Alembic | Type-safe, migration support |
 | DB (prod) | PostgreSQL 16 | Multi-user, JSON column for plan_json |
 | DB (MVP) | SQLite | Zero-config single-server pilot |
-| Frontend | Server-side HTML (Jinja2) + HTMX | Minimal JS; works on hospital IE-era proxies |
+| Frontend | React 18 + Vite + TypeScript (PWA) | Installable SPA; MSW for test mocking; OpenAPI → generated TS types |
 | Auth (MVP) | Local JWT (python-jose) | No SSO dependency for pilot |
 | Auth (prod) | Hospital LDAP / SAML 2.0 | Via python3-saml / authlib |
 | LLM client | Anthropic SDK (claude-sonnet-4-6) | Free-text extraction only (§8.3) |

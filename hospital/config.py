@@ -41,6 +41,14 @@ class Settings(BaseSettings):
     # ── Patient plans (gitignored per CHARTER §9.3) ───────────────────────
     PATIENT_PLANS_DIR: str = "patient_plans"
 
+    # ── HIS adapter (B3) ──────────────────────────────────────────────────
+    HIS_WEBHOOK_SECRET: str = ""   # HMAC secret for HIS webhook signature
+
+    # ── PWA push notifications / VAPID (B7) ───────────────────────────────
+    VAPID_PRIVATE_KEY: str = ""
+    VAPID_PUBLIC_KEY: str = ""
+    VAPID_SUBJECT: str = "mailto:admin@openonco.local"
+
     @property
     def kb_root_path(self) -> Path:
         return Path(self.KB_ROOT)

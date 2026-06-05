@@ -281,7 +281,6 @@ Cross-doctor reads are allowed but **every** such access writes an `AuditLog` ro
 ```python
 # --- list ---
 test_patient_list_returns_only_my_patients            # HCP sees only own patients
-test_patient_list_tab_followup_filters_correctly      # returns patients with upcoming appts
 test_patient_list_tab_consulted_returns_inbound       # returns patients where I am to_user on open consultation
 test_patient_list_tab_mtd_returns_scheduled           # returns patients in upcoming MtdSession
 test_patient_list_tab_alerts_returns_urgent_reminders # returns patients with urgent active reminders
@@ -462,6 +461,9 @@ test_his_webhook_unknown_event_type_422
 test_his_webhook_stores_his_sync_event_in_db
 test_his_webhook_creates_timeline_event_in_db
 test_his_webhook_idempotent_on_duplicate_payload    # same payload twice → stored once
+
+# --- patient list tab (requires HIS appointment data — moved from B1) ---
+test_patient_list_tab_followup_filters_correctly    # returns patients with upcoming appointments from his_sync_events
 ```
 
 ### Gate
@@ -866,8 +868,7 @@ npm ci
 npm run typecheck       # tsc --noEmit: 0 errors
 npm run build           # vite build: exit 0, dist/ produced
 npm run test -- --run   # vitest: 0 test failures
-npx playwright install --with-deps chromium
-npx playwright test --project=chromium e2e/smoke.spec.ts   # loads page, no JS errors
+# Note: Playwright E2E scaffold is Phase E0 — not gated here
 ```
 
 ---
