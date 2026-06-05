@@ -30,6 +30,9 @@ from hospital.decision.api.patients import router as patients_router
 from hospital.decision.api.timeline import router as timeline_router
 from hospital.portals.api.his_webhook import router as his_webhook_router
 from hospital.decision.api.reminders import router as reminders_router, admin_router as reminders_admin_router
+from hospital.decision.api.consultations import router as consultations_router
+from hospital.decision.api.mtd import router as mtd_router
+from hospital.decision.api.push import router as push_router
 from hospital.admin.api.drug_req import router as drug_req_router
 from hospital.admin.api.users import router as admin_users_router
 from hospital.admin.api.kb import router as admin_kb_router
@@ -63,6 +66,9 @@ app.include_router(timeline_router,    prefix=API_PREFIX)
 app.include_router(his_webhook_router,        prefix=API_PREFIX)
 app.include_router(reminders_router,          prefix=API_PREFIX)
 app.include_router(reminders_admin_router,    prefix=API_PREFIX)
+app.include_router(consultations_router,     prefix=API_PREFIX)
+app.include_router(mtd_router,               prefix=API_PREFIX)
+app.include_router(push_router,              prefix=API_PREFIX)
 app.include_router(drug_req_router,    prefix=API_PREFIX)
 app.include_router(admin_users_router, prefix=API_PREFIX)
 app.include_router(admin_kb_router,    prefix=API_PREFIX)

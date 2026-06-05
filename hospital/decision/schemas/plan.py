@@ -32,6 +32,7 @@ class PlanRequest(BaseModel):
     patient: PatientInput
     include_mdt: bool = False
     include_gaps: bool = False
+    patient_mrn: Optional[str] = None
 
 
 class ReviseRequest(BaseModel):

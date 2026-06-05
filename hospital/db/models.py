@@ -473,6 +473,7 @@ class MtdCase(Base):
     added_by: Mapped[str] = mapped_column(String, nullable=False)
     reason: Mapped[str | None] = mapped_column(Text, nullable=True)
     status: Mapped[str] = mapped_column(String, default="pending", nullable=False)
+    conclusion_text: Mapped[str | None] = mapped_column(Text, nullable=True)
     conclusion_by: Mapped[str | None] = mapped_column(String, nullable=True)
     conclusion_at: Mapped[datetime | None] = mapped_column(nullable=True)
     created_at: Mapped[datetime] = mapped_column(default=_now)

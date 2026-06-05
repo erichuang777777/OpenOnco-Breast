@@ -14,6 +14,8 @@ from hospital.decision.services.plan_service import (
     generate_plan_response,
     plan_result_to_json,
 )
+from hospital.decision.services.timeline_service import add_system_event
+from hospital.decision.services.patient_service import get_patient
 
 router = APIRouter(prefix="/plan", tags=["plan"])
 
@@ -26,6 +28,10 @@ async def create_plan(
     db: AsyncSession = Depends(get_db),
 ) -> PlanResponse:
     """Generate a treatment plan from a structured patient profile."""
+    # Validate patient_mrn early if provided
+    if body.patient_mrn:
+        await get_patient(db, body.patient_mrn)
+
     try:
         response = generate_plan_response(
             body.patient,
@@ -54,6 +60,26 @@ async def create_plan(
         diff_summary=f"disease={response.disease_id} algorithm={response.algorithm_id}",
         ip_address=request.client.host if request.client else None,
     )
+
+    if body.patient_mrn:
+        await add_system_event(
+            db,
+            mrn=body.patient_mrn,
+            event_type="onco_query_initiated",
+            title="OpenOnco 分析已啟動",
+            body_json={"plan_id": response.plan_id},
+            source="system_rule",
+        )
+        await audit_service.log_action(
+            db,
+            user_id=user["sub"],
+            action="onco_query",
+            resource_type="plan",
+            resource_id=response.plan_id,
+            mrn=body.patient_mrn,
+            diff_summary=f"onco_query for patient={body.patient_mrn}",
+        )
+
     return response
 
 
