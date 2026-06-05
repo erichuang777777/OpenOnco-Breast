@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { Fragment, useState, useEffect } from 'react'
 import type { MtdSessionResponse, MtdCaseResponse } from '../api/types'
 
 interface PlanTrack {
@@ -131,7 +131,7 @@ export function BoardPage() {
           <tbody>
             {sessions.flatMap((session) =>
               session.cases.map((c: MtdCaseResponse) => (
-                <>
+                <Fragment key={`${session.id}-${c.patient_mrn}`}>
                   <tr
                     key={`${session.id}-${c.patient_mrn}`}
                     data-testid={`case-row-${c.patient_mrn}`}
@@ -201,7 +201,7 @@ export function BoardPage() {
                       </td>
                     </tr>
                   )}
-                </>
+                </Fragment>
               ))
             )}
           </tbody>

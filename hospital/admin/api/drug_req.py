@@ -145,7 +145,7 @@ def _build_from_plan_dict(plan_dict: dict, body: DrugReqCreate) -> dict:
         "plan_track_id": body.track_id,
         "regimen_id": regimen.get("id", ""),
         "regimen_name_en": regimen.get("name", ""),
-        "regimen_name_zh": regimen.get("name_ua", ""),
+        "regimen_name_zh": regimen.get("name_zh", regimen.get("name", "")),
         "cycle_length_days": int(regimen.get("cycle_length_days", 0)),
         "total_cycles": str(regimen.get("total_cycles", "")),
         "components": regimen.get("components", []),
