@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import type { PatientResponse, TimelineEventResponse, ReminderResponse, ConsultationResponse } from '../api/types'
+import type { PatientResponse, TimelineEventResponse, ReminderResponse, ConsultationResponse, MtdSessionResponse } from '../api/types'
 import { useToast } from '../hooks/useToast'
 
 function TimelineEvent({ event }: { event: TimelineEventResponse }) {
@@ -79,9 +79,9 @@ function RemindersPanel({ mrn }: { mrn: string }) {
   )
 }
 
-function ConsultationsPanel({ mrn }: { mrn: string }) {
+function ConsultationsPanel({ mrn, openOnMount }: { mrn: string; openOnMount?: boolean }) {
   const [consultations, setConsultations] = useState<ConsultationResponse[]>([])
-  const [showForm, setShowForm] = useState(false)
+  const [showForm, setShowForm] = useState(openOnMount ?? false)
   const [toUser, setToUser] = useState('')
   const [subject, setSubject] = useState('')
 
@@ -92,13 +92,19 @@ function ConsultationsPanel({ mrn }: { mrn: string }) {
       .catch(() => {})
   }, [mrn])
 
+  useEffect(() => {
+    if (openOnMount) setShowForm(true)
+  }, [openOnMount])
+
   const submit = () => {
+    if (!toUser || !subject) return
     fetch(`/api/v1/patients/${mrn}/consultations`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ to_user_id: toUser, subject }),
       credentials: 'include',
-    }).then(() => { setShowForm(false); setToUser(''); setSubject('') })
+    }).then((r) => r.ok ? r.json() : null)
+      .then((c) => { if (c) setConsultations((prev) => [c, ...prev]); setShowForm(false); setToUser(''); setSubject('') })
   }
 
   return (
@@ -115,6 +121,7 @@ function ConsultationsPanel({ mrn }: { mrn: string }) {
           <input data-testid="consult-to-input" value={toUser} onChange={(e) => setToUser(e.target.value)} placeholder="受諮詢醫師 ID" />
           <input data-testid="consult-subject-input" value={subject} onChange={(e) => setSubject(e.target.value)} placeholder="主題" />
           <button data-testid="consult-submit-btn" onClick={submit}>送出</button>
+          <button onClick={() => setShowForm(false)} style={{ marginLeft: '0.5rem' }}>取消</button>
         </div>
       )}
     </div>
@@ -130,6 +137,9 @@ export function PatientDetailPage() {
   const [page, setPage] = useState(0)
   const [note, setNote] = useState('')
   const [oncoLoading, setOncoLoading] = useState(false)
+  const [showMtdPicker, setShowMtdPicker] = useState(false)
+  const [mtdSessions, setMtdSessions] = useState<MtdSessionResponse[]>([])
+  const [openConsult, setOpenConsult] = useState(false)
   const { show: showToast, ToastContainer } = useToast()
   const pageSize = 20
 
@@ -170,6 +180,28 @@ export function PatientDetailPage() {
     }).then((r) => r.ok ? r.json() : null)
       .then((evt) => { if (evt) { setTimeline((prev) => [evt, ...prev]); setNote(''); showToast('備注已儲存', 'success') } })
       .catch(() => {})
+  }
+
+  const openMtdPicker = () => {
+    setShowMtdPicker(true)
+    if (mtdSessions.length === 0) {
+      fetch('/api/v1/mtd/sessions?status=open', { credentials: 'include' })
+        .then((r) => r.ok ? r.json() : [])
+        .then(setMtdSessions)
+        .catch(() => {})
+    }
+  }
+
+  const addToMtd = (sessionId: string) => {
+    fetch(`/api/v1/mtd/sessions/${sessionId}/cases`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ patient_mrn: mrn }),
+      credentials: 'include',
+    }).then((r) => r.ok ? r.json() : null)
+      .then((s) => { if (s) showToast(`已加入 ${new Date(s.meeting_date).toLocaleDateString('zh-TW')} 委員會`, 'success') })
+      .catch(() => showToast('加入失敗', 'error'))
+      .finally(() => setShowMtdPicker(false))
   }
 
   const initOnco = async () => {
@@ -250,9 +282,22 @@ export function PatientDetailPage() {
             />
             <div style={{ display: 'flex', gap: '0.5rem' }}>
               <button data-testid="save-note-btn" onClick={saveNote}>儲存</button>
-              <button data-testid="mtd-btn" onClick={() => {}}>MTD</button>
-              <button data-testid="consult-btn" onClick={() => {}}>諮詢</button>
+              <button data-testid="mtd-btn" onClick={openMtdPicker}>MTD</button>
+              <button data-testid="consult-btn" onClick={() => setOpenConsult(true)}>諮詢</button>
             </div>
+            {showMtdPicker && (
+              <div data-testid="mtd-picker" style={{ marginTop: '0.5rem', border: '1px solid #e5e7eb', borderRadius: 6, padding: '0.75rem', background: '#f9fafb' }}>
+                <strong>選擇委員會場次</strong>
+                {mtdSessions.length === 0 && <p style={{ color: '#6b7280', fontSize: '0.85rem' }}>目前沒有開放中的委員會場次</p>}
+                {mtdSessions.map((s) => (
+                  <div key={s.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.4rem 0' }}>
+                    <span>{new Date(s.meeting_date).toLocaleDateString('zh-TW')} — {s.status}</span>
+                    <button data-testid={`add-to-mtd-${s.id}`} onClick={() => addToMtd(s.id)} style={{ fontSize: '0.85rem' }}>加入</button>
+                  </div>
+                ))}
+                <button onClick={() => setShowMtdPicker(false)} style={{ marginTop: '0.5rem', fontSize: '0.8rem' }}>關閉</button>
+              </div>
+            )}
           </div>
         </div>
 
@@ -272,7 +317,7 @@ export function PatientDetailPage() {
               </div>
             )}
           </div>
-          <ConsultationsPanel mrn={mrn!} />
+          <ConsultationsPanel mrn={mrn!} openOnMount={openConsult} />
         </div>
       </div>
       <ToastContainer />

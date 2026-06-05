@@ -72,7 +72,7 @@ async def create_drug_requisition(
         ip_address=request.client.host if request.client else None,
     )
     await db.flush()
-    return DrugReqResponse(**req)
+    return DrugReqResponse(id=db_req.id, **req)
 
 
 @router.get("/{req_id}/preview", response_class=HTMLResponse)
