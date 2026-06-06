@@ -45,6 +45,81 @@ function dotUrgency(p: PatientResponse): 'urgent' | 'warn' | 'none' {
   return p.urgent_reminder_count > 0 ? 'urgent' : 'warn'
 }
 
+// ── FHIR import modal ─────────────────────────────────────────────────────────
+
+function FhirImportModal({ onClose, onImported }: { onClose: () => void; onImported: (mrn: string) => void }) {
+  const [json, setJson] = useState('')
+  const [error, setError] = useState<string | null>(null)
+  const [loading, setLoading] = useState(false)
+
+  const submit = async () => {
+    setError(null)
+    let resource: unknown
+    try { resource = JSON.parse(json) } catch { setError('JSON 格式錯誤'); return }
+    setLoading(true)
+    try {
+      const res = await fetch('/api/v1/fhir/Patient/$import', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ resource }),
+      })
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({})) as { detail?: { message?: string } }
+        setError(body?.detail?.message ?? `HTTP ${res.status}`)
+      } else {
+        const result = await res.json() as { mrn: string; action: string }
+        onImported(result.mrn)
+      }
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : '匯入失敗')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const placeholder = JSON.stringify({
+    resourceType: 'Patient',
+    id: 'twcore-001',
+    identifier: [{ type: { coding: [{ system: 'http://terminology.hl7.org/CodeSystem/v2-0203', code: 'MR' }] }, value: 'MRN-FHIR-001' }],
+    name: [{ use: 'official', text: '王大明' }],
+    gender: 'male',
+    birthDate: '1971',
+  }, null, 2)
+
+  return (
+    <div data-testid="fhir-import-modal" style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100 }}>
+      <div style={{ background: '#fff', borderRadius: 8, padding: '1.5rem', maxWidth: 560, width: '100%', boxShadow: '0 4px 24px rgba(0,0,0,0.18)' }}>
+        <h2 style={{ margin: '0 0 0.75rem', color: '#1e3a8a', fontSize: '1.1rem' }}>匯入 FHIR TW Core 病患資料</h2>
+        <p style={{ fontSize: '0.82rem', color: '#6b7280', marginBottom: '0.75rem' }}>
+          貼上符合 TW Core 規範的 FHIR R4 Patient 資源（或含有 Patient 的 Bundle）。
+          姓名將自動遮蔽，僅保留第一字。
+        </p>
+        <textarea
+          data-testid="fhir-json-input"
+          value={json}
+          onChange={e => setJson(e.target.value)}
+          placeholder={placeholder}
+          rows={10}
+          style={{ width: '100%', fontFamily: 'monospace', fontSize: '0.78rem', border: '1px solid #d1d5db', borderRadius: 4, padding: '0.5rem', boxSizing: 'border-box' }}
+        />
+        {error && <p data-testid="fhir-error" style={{ color: '#dc2626', fontSize: '0.85rem', margin: '0.5rem 0 0' }}>{error}</p>}
+        <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1rem', justifyContent: 'flex-end' }}>
+          <button onClick={onClose} style={{ padding: '0.4rem 0.9rem', background: '#f3f4f6', border: '1px solid #d1d5db', borderRadius: 6, cursor: 'pointer' }}>取消</button>
+          <button
+            data-testid="fhir-submit-btn"
+            onClick={submit}
+            disabled={loading || !json.trim()}
+            style={{ padding: '0.4rem 0.9rem', background: '#1e40af', color: '#fff', border: 'none', borderRadius: 6, cursor: 'pointer', opacity: loading || !json.trim() ? 0.6 : 1 }}
+          >
+            {loading ? '匯入中…' : '確認匯入'}
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export function PatientListPage() {
   const [tab, setTab] = useState('all')
   const [patients, setPatients] = useState<PatientResponse[]>([])
@@ -55,6 +130,7 @@ export function PatientListPage() {
   const [debouncedQ, setDebouncedQ] = useState('')
   const [currentPage, setCurrentPage] = useState(0)
   const [total, setTotal] = useState(0)
+  const [showFhirImport, setShowFhirImport] = useState(false)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -103,16 +179,29 @@ export function PatientListPage() {
         <div data-testid="stat-mtd">MTD: {stats.mtd}</div>
       </div>
 
-      {/* Search input */}
-      <div style={{ padding: '0 1rem' }}>
+      {/* Search + FHIR import */}
+      <div style={{ padding: '0 1rem', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
         <input
           data-testid="search-input"
           value={searchQuery}
           onChange={(e) => { setSearchQuery(e.target.value); setCurrentPage(0) }}
           placeholder="搜尋病歷號、姓名、診斷…"
-          style={{ padding: '0.5rem', width: '100%', marginBottom: '0.5rem', border: '1px solid #d1d5db', borderRadius: 4 }}
+          style={{ padding: '0.5rem', flex: 1, marginBottom: '0.5rem', border: '1px solid #d1d5db', borderRadius: 4 }}
         />
+        <button
+          data-testid="fhir-import-btn"
+          onClick={() => setShowFhirImport(true)}
+          style={{ padding: '0.5rem 0.75rem', background: '#eff6ff', border: '1px solid #bfdbfe', borderRadius: 6, cursor: 'pointer', fontSize: '0.85rem', whiteSpace: 'nowrap', marginBottom: '0.5rem' }}
+        >
+          FHIR 匯入
+        </button>
       </div>
+      {showFhirImport && (
+        <FhirImportModal
+          onClose={() => setShowFhirImport(false)}
+          onImported={(mrn) => { setShowFhirImport(false); navigate(`/patients/${mrn}`) }}
+        />
+      )}
 
       {/* Tabs */}
       <div style={{ display: 'flex', gap: '0.5rem', padding: '0 1rem' }}>

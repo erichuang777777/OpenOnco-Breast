@@ -9,7 +9,9 @@ from pydantic import BaseModel, field_validator
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from hospital.db.models import Patient, Reminder
+from sqlalchemy.orm import selectinload
+
+from hospital.db.models import Patient, Reminder, User
 from hospital.decision.services.patient_service import get_patient
 from hospital.decision.services.reminder_rules import ALL_RULES
 
@@ -142,3 +144,37 @@ async def evaluate_all_patients(db: AsyncSession) -> dict[str, list[str]]:
     for mrn in mrns.all():
         results[mrn] = await evaluate_patient(db, mrn)
     return results
+
+
+async def notify_care_team_line(
+    db: AsyncSession,
+    mrn: str,
+    reminder: Reminder,
+) -> None:
+    """
+    Send LINE Notify message to all care-team members who have registered a token,
+    but only for high/critical urgency reminders when LINE_NOTIFY_ENABLED=True.
+    """
+    from hospital.config import get_settings
+    if not get_settings().LINE_NOTIFY_ENABLED:
+        return
+    if reminder.urgency not in ("high", "critical"):
+        return
+
+    from hospital.db.models import CareTeamMember
+    from hospital.services.line_notify import format_reminder_message, send_line_notify
+
+    members = await db.scalars(
+        select(CareTeamMember).where(CareTeamMember.patient_mrn == mrn)
+    )
+    user_ids = [m.user_id for m in members.all()]
+    if not user_ids:
+        return
+
+    users = await db.scalars(
+        select(User).where(User.user_id.in_(user_ids), User.line_notify_token.is_not(None))
+    )
+    message = format_reminder_message(mrn, reminder.title, reminder.urgency)
+    for u in users.all():
+        if u.line_notify_token:
+            await send_line_notify(u.line_notify_token, message)

@@ -63,6 +63,9 @@ class Settings(BaseSettings):
     VAPID_PUBLIC_KEY: str = ""
     VAPID_SUBJECT: str = "mailto:admin@openonco.local"
 
+    # ── LINE Notify ────────────────────────────────────────────────────────
+    LINE_NOTIFY_ENABLED: bool = False  # set True to send LINE messages on high-urgency reminders
+
     @property
     def kb_root_path(self) -> Path:
         return Path(self.KB_ROOT)

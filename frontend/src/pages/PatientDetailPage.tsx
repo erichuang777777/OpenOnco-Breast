@@ -131,6 +131,94 @@ function ConsultationsPanel({ mrn, openOnMount }: { mrn: string; openOnMount?: b
   )
 }
 
+// ── Trials panel ─────────────────────────────────────────────────────────────
+
+interface TrialSummary {
+  nct_id: string; title: string; status: string; phase: string;
+  enrollment: number | null; start_date: string; completion_date: string;
+  brief_summary: string; primary_outcomes: string[]; sponsor: string;
+  countries: string[]; site_count: number; url: string;
+}
+
+function TrialsPanel({ condition }: { condition: string }) {
+  const [trials, setTrials] = useState<TrialSummary[]>([])
+  const [loading, setLoading] = useState(false)
+  const [open, setOpen] = useState(false)
+
+  const load = () => {
+    if (loading) return
+    setLoading(true)
+    const q = new URLSearchParams({ condition, status: 'recruiting', max_results: '5' })
+    fetch(`/api/v1/trials?${q}`, { credentials: 'include' })
+      .then(r => r.ok ? r.json() : [])
+      .then((data: TrialSummary[]) => { setTrials(data); setOpen(true) })
+      .catch(() => {})
+      .finally(() => setLoading(false))
+  }
+
+  const statusColor = (s: string) => s === 'RECRUITING' ? '#16a34a' : s === 'COMPLETED' ? '#6b7280' : '#d97706'
+
+  return (
+    <div data-testid="trials-panel" style={{ marginTop: '1rem' }}>
+      <button
+        data-testid="trials-toggle-btn"
+        onClick={open ? () => setOpen(false) : load}
+        style={{ fontSize: '0.9rem', background: '#eff6ff', border: '1px solid #bfdbfe', borderRadius: 6, padding: '0.4rem 0.75rem', cursor: 'pointer' }}
+      >
+        {loading ? '搜尋中…' : open ? '▲ 收起試驗' : '🔬 相關臨床試驗'}
+      </button>
+      {open && (
+        <div style={{ marginTop: '0.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+          {trials.length === 0 && <p style={{ color: '#9ca3af', fontSize: '0.85rem' }}>無相關招募中試驗</p>}
+          {trials.map(t => (
+            <div key={t.nct_id} style={{ border: '1px solid #e5e7eb', borderRadius: 6, padding: '0.6rem 0.75rem', background: '#fff' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '0.5rem' }}>
+                <div>
+                  <a href={t.url} target="_blank" rel="noreferrer" style={{ fontWeight: 600, fontSize: '0.85rem', color: '#1d4ed8' }}>
+                    {t.nct_id}
+                  </a>
+                  <span style={{ marginLeft: '0.5rem', fontSize: '0.8rem', color: statusColor(t.status), fontWeight: 500 }}>{t.status}</span>
+                  <span style={{ marginLeft: '0.5rem', fontSize: '0.75rem', color: '#6b7280' }}>{t.phase}</span>
+                </div>
+                {t.site_count > 0 && <span style={{ fontSize: '0.75rem', color: '#6b7280', whiteSpace: 'nowrap' }}>{t.site_count} 個研究中心</span>}
+              </div>
+              <div style={{ fontSize: '0.82rem', marginTop: '0.25rem', color: '#374151' }}>{t.title}</div>
+              <div style={{ fontSize: '0.78rem', color: '#6b7280', marginTop: '0.2rem' }}>贊助：{t.sponsor}</div>
+            </div>
+          ))}
+          <a
+            href={`https://clinicaltrials.gov/search?cond=${encodeURIComponent(condition)}&recrs=a&recrs=b`}
+            target="_blank" rel="noreferrer"
+            style={{ fontSize: '0.78rem', color: '#6b7280', textAlign: 'right' }}
+          >
+            在 ClinicalTrials.gov 查看更多 →
+          </a>
+        </div>
+      )}
+    </div>
+  )
+}
+
+// ── Plan PDF button ───────────────────────────────────────────────────────────
+
+function PlanPdfButton({ planId }: { planId: string }) {
+  const download = () => {
+    const a = document.createElement('a')
+    a.href = `/api/v1/plan/${planId}/pdf`
+    a.download = `plan-${planId}.pdf`
+    a.click()
+  }
+  return (
+    <button
+      data-testid="plan-pdf-btn"
+      onClick={download}
+      style={{ fontSize: '0.82rem', background: '#f0fdf4', border: '1px solid #86efac', borderRadius: 6, padding: '0.3rem 0.65rem', cursor: 'pointer' }}
+    >
+      下載 PDF
+    </button>
+  )
+}
+
 export function PatientDetailPage() {
   const { mrn } = useParams<{ mrn: string }>()
   const navigate = useNavigate()
@@ -328,8 +416,18 @@ export function PatientDetailPage() {
             )}
           </div>
           <ConsultationsPanel mrn={mrn!} openOnMount={openConsult} />
+          {patient.disease_summary && (
+            <TrialsPanel condition={patient.disease_summary.split('·')[0].trim()} />
+          )}
         </div>
       </div>
+
+      {/* Plan actions row */}
+      {patient.his_synced_at && (
+        <div style={{ marginTop: '1rem', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+          <PlanPdfButton planId={`plan-${mrn!.toLowerCase()}`} />
+        </div>
+      )}
       <ToastContainer />
     </div>
   )

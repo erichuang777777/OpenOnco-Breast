@@ -212,6 +212,7 @@ class User(Base):
     active: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
     auth_provider: Mapped[str] = mapped_column(String, default="google", nullable=False)
     password_hash: Mapped[str | None] = mapped_column(String, nullable=True)
+    line_notify_token: Mapped[str | None] = mapped_column(String, nullable=True)
     created_at: Mapped[datetime] = mapped_column(default=_now)
     last_login_at: Mapped[datetime | None] = mapped_column(nullable=True)
 
@@ -240,6 +241,7 @@ class Patient(Base):
     primary_doctor_id: Mapped[str | None] = mapped_column(String, nullable=True)
     his_patient_id: Mapped[str | None] = mapped_column(String, nullable=True, index=True)
     his_synced_at: Mapped[datetime | None] = mapped_column(nullable=True)
+    fhir_patient_id: Mapped[str | None] = mapped_column(String, nullable=True, index=True)
     created_at: Mapped[datetime] = mapped_column(default=_now)
     updated_at: Mapped[datetime] = mapped_column(default=_now, onupdate=_now)
     created_by: Mapped[str] = mapped_column(String, nullable=False)

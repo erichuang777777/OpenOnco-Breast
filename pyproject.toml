@@ -28,6 +28,8 @@ hospital = [
     "pywebpush>=2.0",
     # Rate limiting
     "slowapi>=0.1.9",
+    # PDF report generation
+    "reportlab>=4.0",
     # LLM extraction (CHARTER §8.3 — extraction only)
     "anthropic>=0.28",
 ]
