@@ -14,18 +14,6 @@ from datetime import datetime, timezone
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.responses import StreamingResponse
-from reportlab.lib import colors
-from reportlab.lib.pagesizes import A4
-from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
-from reportlab.lib.units import cm
-from reportlab.platypus import (
-    HRFlowable,
-    Paragraph,
-    SimpleDocTemplate,
-    Spacer,
-    Table,
-    TableStyle,
-)
 from sqlalchemy import select as sa_select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -35,56 +23,30 @@ from hospital.db.session import get_db
 
 router = APIRouter(prefix="/plan", tags=["plan"])
 
-# ── Styles ────────────────────────────────────────────────────────────────────
-
-_BASE = getSampleStyleSheet()
-
-_TITLE = ParagraphStyle(
-    "OOTitle",
-    parent=_BASE["Title"],
-    fontSize=16,
-    leading=20,
-    textColor=colors.HexColor("#1e3a8a"),
-)
-_H2 = ParagraphStyle(
-    "OOH2",
-    parent=_BASE["Heading2"],
-    fontSize=12,
-    leading=16,
-    textColor=colors.HexColor("#1e3a8a"),
-    spaceBefore=10,
-)
-_BODY = ParagraphStyle(
-    "OOBody",
-    parent=_BASE["Normal"],
-    fontSize=9,
-    leading=13,
-    wordWrap="CJK",
-)
-_SMALL = ParagraphStyle(
-    "OOSmall",
-    parent=_BASE["Normal"],
-    fontSize=7.5,
-    leading=11,
-    textColor=colors.HexColor("#64748b"),
-    wordWrap="CJK",
-)
-_WARN = ParagraphStyle(
-    "OOWarn",
-    parent=_BASE["Normal"],
-    fontSize=8.5,
-    leading=12,
-    textColor=colors.HexColor("#b45309"),
-    wordWrap="CJK",
-)
-
-_TABLE_HEADER = colors.HexColor("#dbeafe")
-_TABLE_BORDER = colors.HexColor("#93c5fd")
-
 
 # ── PDF builder ───────────────────────────────────────────────────────────────
 
 def _build_pdf(plan: dict) -> bytes:
+    try:
+        from reportlab.lib import colors
+        from reportlab.lib.pagesizes import A4
+        from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
+        from reportlab.lib.units import cm
+        from reportlab.platypus import (
+            HRFlowable, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle,
+        )
+    except ModuleNotFoundError as exc:
+        raise RuntimeError("reportlab is required for PDF export: pip install reportlab") from exc
+
+    _BASE = getSampleStyleSheet()
+    _TITLE = ParagraphStyle("OOTitle", parent=_BASE["Title"], fontSize=16, leading=20, textColor=colors.HexColor("#1e3a8a"))
+    _H2 = ParagraphStyle("OOH2", parent=_BASE["Heading2"], fontSize=12, leading=16, textColor=colors.HexColor("#1e3a8a"), spaceBefore=10)
+    _BODY = ParagraphStyle("OOBody", parent=_BASE["Normal"], fontSize=9, leading=13, wordWrap="CJK")
+    _SMALL = ParagraphStyle("OOSmall", parent=_BASE["Normal"], fontSize=7.5, leading=11, textColor=colors.HexColor("#64748b"), wordWrap="CJK")
+    _WARN = ParagraphStyle("OOWarn", parent=_BASE["Normal"], fontSize=8.5, leading=12, textColor=colors.HexColor("#b45309"), wordWrap="CJK")
+    _TABLE_HEADER = colors.HexColor("#dbeafe")
+    _TABLE_BORDER = colors.HexColor("#93c5fd")
+
     buf = io.BytesIO()
     doc = SimpleDocTemplate(
         buf,
