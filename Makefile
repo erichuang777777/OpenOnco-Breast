@@ -7,7 +7,7 @@
 #   make test       run all tests
 #   make build      build the production frontend bundle
 
-.PHONY: dev install backend frontend test build
+.PHONY: dev install backend frontend test build seed
 
 # ── First-time setup ──────────────────────────────────────────────────────────
 install:
@@ -40,6 +40,10 @@ frontend:
 test:
 	python -m pytest tests/hospital/ -q
 	cd frontend && npm run test -- --run
+
+# ── Seed dev users (requires DEV_LOCAL_LOGIN=true in .env + backend running) ─
+seed:
+	python scripts/seed_dev_users.py
 
 # ── Production build ──────────────────────────────────────────────────────────
 build:

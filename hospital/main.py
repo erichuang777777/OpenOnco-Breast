@@ -186,6 +186,11 @@ if _s.FEATURE_LINE_NOTIFY_API:
     app.include_router(me_router, prefix=API_PREFIX)
 
 
+# ── Dev-only local login (SQLite + DEV_LOCAL_LOGIN=true only) ─────────────────
+if get_settings().DEV_LOCAL_LOGIN and "sqlite" in get_settings().DATABASE_URL:
+    from hospital.auth.dev_auth import router as _dev_auth_router
+    app.include_router(_dev_auth_router)
+
 # ── Auth routes ───────────────────────────────────────────────────────────────
 
 @app.get("/auth/google", tags=["auth"])

@@ -35,6 +35,11 @@ class Settings(BaseSettings):
     # ── Account bootstrap ─────────────────────────────────────────────────
     BOOTSTRAP_ADMIN_EMAIL: str = ""
 
+    # ── Local dev login (SQLite only — never enable in production) ────────
+    # When true, POST /auth/dev/login accepts {email, role} without OAuth.
+    # Automatically disabled if DATABASE_URL is not SQLite.
+    DEV_LOCAL_LOGIN: bool = False
+
     # ── Audit ─────────────────────────────────────────────────────────────
     AUDIT_MRN_SALT: str = "dev-salt-CHANGE-IN-PROD"
 

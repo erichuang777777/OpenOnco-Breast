@@ -12,6 +12,10 @@ function flag(key: string, defaultOn = true): boolean {
   return val !== 'false' && val !== '0'
 }
 
+/** True when the backend has DEV_LOCAL_LOGIN=true (detected at runtime). */
+export const DEV_LOGIN_ENABLED: boolean =
+  (import.meta as unknown as { env: Record<string, string | undefined> }).env['VITE_DEV_LOCAL_LOGIN'] === 'true'
+
 export const FEATURES = {
   /** POST /api/v1/fhir/Patient/$import */
   fhirImport: flag('VITE_FEATURE_FHIR_IMPORT'),
