@@ -10,6 +10,19 @@ interface Toast {
 
 let _nextId = 0
 
+// Defined outside the hook so React never remounts the container on re-renders
+export function ToastContainer({ toasts }: { toasts: Toast[] }) {
+  return (
+    <div className="toast-container" data-testid="toast-container">
+      {toasts.map((t) => (
+        <div key={t.id} className={`toast ${t.type}`} data-testid={`toast-${t.type}`}>
+          {t.message}
+        </div>
+      ))}
+    </div>
+  )
+}
+
 export function useToast() {
   const [toasts, setToasts] = useState<Toast[]>([])
 
@@ -21,15 +34,8 @@ export function useToast() {
     }, 3000)
   }, [])
 
-  const ToastContainer = () => (
-    <div className="toast-container" data-testid="toast-container">
-      {toasts.map((t) => (
-        <div key={t.id} className={`toast ${t.type}`} data-testid={`toast-${t.type}`}>
-          {t.message}
-        </div>
-      ))}
-    </div>
-  )
+  // Return the bound component so callers can render <ToastDisplay />
+  const ToastDisplay = () => <ToastContainer toasts={toasts} />
 
-  return { show, ToastContainer }
+  return { show, ToastContainer: ToastDisplay }
 }

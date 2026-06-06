@@ -64,8 +64,18 @@ async def _daily_reminder_task() -> None:
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Create tables (dev / SQLite only; prod uses Alembic migrations)
     settings = get_settings()
+    # Production secret guard — fail loud rather than silently ship dev defaults
+    if "sqlite" not in settings.DATABASE_URL:
+        _DEV_JWT = "dev-secret-CHANGE-IN-PROD"
+        _DEV_SALT = "dev-salt-CHANGE-IN-PROD"
+        if settings.JWT_SECRET == _DEV_JWT or settings.AUDIT_MRN_SALT == _DEV_SALT:
+            raise RuntimeError(
+                "Production deployment detected (non-SQLite DB) but JWT_SECRET or "
+                "AUDIT_MRN_SALT still equals the development default. "
+                "Set strong secrets in the environment before starting."
+            )
+    # Create tables (dev / SQLite only; prod uses Alembic migrations)
     if "sqlite" in settings.DATABASE_URL:
         await create_all_tables()
     # Bootstrap admin account if configured
@@ -106,15 +116,37 @@ app.add_middleware(
 
 
 class _BodySizeLimitMiddleware(BaseHTTPMiddleware):
-    """Reject requests whose body exceeds MAX_BODY_SIZE_BYTES."""
+    """Reject requests whose body exceeds MAX_BODY_SIZE_BYTES.
+
+    Handles both declared Content-Length and chunked transfer encoding.
+    For chunked requests the body is read in full before passing downstream.
+    """
 
     async def dispatch(self, request: Request, call_next):
         content_length = request.headers.get("content-length")
-        if content_length and int(content_length) > settings_instance.MAX_BODY_SIZE_BYTES:
+        limit = settings_instance.MAX_BODY_SIZE_BYTES
+
+        if content_length and int(content_length) > limit:
             return JSONResponse(
                 status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
                 content={"error": "PAYLOAD_TOO_LARGE", "message": "Request body exceeds limit."},
             )
+
+        # Guard chunked transfers that omit Content-Length
+        if not content_length and request.method in ("POST", "PUT", "PATCH"):
+            body = b""
+            async for chunk in request.stream():
+                body += chunk
+                if len(body) > limit:
+                    return JSONResponse(
+                        status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+                        content={"error": "PAYLOAD_TOO_LARGE", "message": "Request body exceeds limit."},
+                    )
+            # Re-inject the body so FastAPI can still read it downstream
+            async def _receive():
+                return {"type": "http.request", "body": body, "more_body": False}
+            request._receive = _receive  # type: ignore[attr-defined]
+
         return await call_next(request)
 
 
@@ -185,8 +217,12 @@ async def google_callback(request: Request, code: str, state: str):
     name = claims.get("name")
 
     # Upsert user — use db_context() so commit/rollback are guaranteed.
+    # Wrap INSERT in an IntegrityError catch to handle concurrent double-logins
+    # (two parallel OAuth callbacks for the same Google sub).
     async with db_context() as db:
+        from datetime import datetime, timezone
         from sqlalchemy import select as sa_select
+        from sqlalchemy.exc import IntegrityError
         user = await db.scalar(sa_select(User).where(User.google_sub == google_sub))
         if user is None:
             user = User(
@@ -197,8 +233,12 @@ async def google_callback(request: Request, code: str, state: str):
                 role="pending",
             )
             db.add(user)
+            try:
+                await db.flush()
+            except IntegrityError:
+                await db.rollback()
+                user = await db.scalar(sa_select(User).where(User.google_sub == google_sub))
         else:
-            from datetime import datetime, timezone
             user.last_login_at = datetime.now(timezone.utc)
 
     settings = get_settings()

@@ -51,10 +51,12 @@ function RemindersPanel({ mrn }: { mrn: string }) {
   const [reminders, setReminders] = useState<ReminderResponse[]>([])
 
   useEffect(() => {
-    fetch(`/api/v1/patients/${mrn}/reminders?reminder_status=active`, { credentials: 'include' })
+    const ctrl = new AbortController()
+    fetch(`/api/v1/patients/${mrn}/reminders?reminder_status=active`, { credentials: 'include', signal: ctrl.signal })
       .then((r) => r.ok ? r.json() : [])
       .then(setReminders)
-      .catch(() => {})
+      .catch((e: unknown) => { if (e instanceof Error && e.name !== 'AbortError') console.warn(e) })
+    return () => ctrl.abort()
   }, [mrn])
 
   const urgent = reminders.filter((r) => r.urgency === 'high' || r.urgency === 'critical')
@@ -82,22 +84,26 @@ function RemindersPanel({ mrn }: { mrn: string }) {
   )
 }
 
-function ConsultationsPanel({ mrn, openOnMount }: { mrn: string; openOnMount?: boolean }) {
+// openFormTrigger is a counter — each increment opens the new-consult form,
+// avoiding the stale-boolean problem where openOnMount=true → close → reclick has no effect.
+function ConsultationsPanel({ mrn, openFormTrigger }: { mrn: string; openFormTrigger?: number }) {
   const [consultations, setConsultations] = useState<ConsultationResponse[]>([])
-  const [showForm, setShowForm] = useState(openOnMount ?? false)
+  const [showForm, setShowForm] = useState(false)
   const [toUser, setToUser] = useState('')
   const [subject, setSubject] = useState('')
 
   useEffect(() => {
-    fetch(`/api/v1/patients/${mrn}/consultations`, { credentials: 'include' })
+    const ctrl = new AbortController()
+    fetch(`/api/v1/patients/${mrn}/consultations`, { credentials: 'include', signal: ctrl.signal })
       .then((r) => r.ok ? r.json() : [])
       .then(setConsultations)
-      .catch(() => {})
+      .catch((e: unknown) => { if (e instanceof Error && e.name !== 'AbortError') console.warn(e) })
+    return () => ctrl.abort()
   }, [mrn])
 
   useEffect(() => {
-    if (openOnMount) setShowForm(true)
-  }, [openOnMount])
+    if (openFormTrigger && openFormTrigger > 0) setShowForm(true)
+  }, [openFormTrigger])
 
   const submit = () => {
     if (!toUser || !subject) return
@@ -232,24 +238,29 @@ export function PatientDetailPage() {
   const [oncoLoading, setOncoLoading] = useState(false)
   const [showMtdPicker, setShowMtdPicker] = useState(false)
   const [mtdSessions, setMtdSessions] = useState<MtdSessionResponse[]>([])
-  const [openConsult, setOpenConsult] = useState(false)
+  const [consultFormTrigger, setConsultFormTrigger] = useState(0)
   const { show: showToast, ToastContainer } = useToast()
   const pageSize = 20
 
   useEffect(() => {
     if (!mrn) return
-    fetch(`/api/v1/patients/${mrn}`, { credentials: 'include' })
+    const ctrl = new AbortController()
+    const sig = ctrl.signal
+
+    fetch(`/api/v1/patients/${mrn}`, { credentials: 'include', signal: sig })
       .then((r) => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`)
         return r.json()
       })
       .then(setPatient)
-      .catch((e: Error) => setError(e.message))
+      .catch((e: Error) => { if (e.name !== 'AbortError') setError(e.message) })
 
-    fetch(`/api/v1/patients/${mrn}/timeline?skip=0&limit=${pageSize}`, { credentials: 'include' })
+    fetch(`/api/v1/patients/${mrn}/timeline?skip=0&limit=${pageSize}`, { credentials: 'include', signal: sig })
       .then((r) => r.ok ? r.json() : [])
       .then(setTimeline)
-      .catch(() => {})
+      .catch((e: unknown) => { if (e instanceof Error && e.name !== 'AbortError') console.warn(e) })
+
+    return () => ctrl.abort()
   }, [mrn])
 
   const loadMore = () => {
@@ -383,7 +394,7 @@ export function PatientDetailPage() {
             <div style={{ display: 'flex', gap: '0.5rem' }}>
               <button data-testid="save-note-btn" onClick={saveNote}>儲存</button>
               <button data-testid="mtd-btn" onClick={openMtdPicker}>MTD</button>
-              <button data-testid="consult-btn" onClick={() => setOpenConsult(true)}>諮詢</button>
+              <button data-testid="consult-btn" onClick={() => setConsultFormTrigger((n) => n + 1)}>諮詢</button>
             </div>
             {showMtdPicker && (
               <div data-testid="mtd-picker" style={{ marginTop: '0.5rem', border: '1px solid #e5e7eb', borderRadius: 6, padding: '0.75rem', background: '#f9fafb' }}>
@@ -417,7 +428,7 @@ export function PatientDetailPage() {
               </div>
             )}
           </div>
-          <ConsultationsPanel mrn={mrn!} openOnMount={openConsult} />
+          <ConsultationsPanel mrn={mrn!} openFormTrigger={consultFormTrigger} />
           {patient.disease_summary && (
             <TrialsPanel condition={patient.disease_summary.split('·')[0].trim()} />
           )}

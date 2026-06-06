@@ -437,7 +437,8 @@ tr:hover td { background: var(--c-gray-50); }
   grid-template-columns: 2fr 1fr;
   gap: var(--sp-4);
 }
-@media (max-width: 900px) {
+/* Collapse grid at the same breakpoint as the sidebar to avoid overflow */
+@media (max-width: 768px) {
   .grid-2 { grid-template-columns: 1fr; }
 }
 

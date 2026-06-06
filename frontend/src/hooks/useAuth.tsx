@@ -30,7 +30,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('/auth/me', { credentials: 'include' })
+    const controller = new AbortController()
+    fetch('/auth/me', { credentials: 'include', signal: controller.signal })
       .then((r) => {
         if (r.status === 401) return null
         return r.json()
@@ -38,8 +39,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       .then((data) => {
         if (data && data.sub) setUser(data as AuthUser)
       })
-      .catch(() => {})
+      .catch((e: unknown) => {
+        if (e instanceof Error && e.name === 'AbortError') return
+      })
       .finally(() => setLoading(false))
+    return () => controller.abort()
   }, [])
 
   const logout = () => {
