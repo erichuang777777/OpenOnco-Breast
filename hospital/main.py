@@ -45,10 +45,8 @@ from hospital.admin.api.kb import router as admin_kb_router
 from hospital.admin.api.audit import router as admin_audit_router
 from hospital.admin.api.his_health import router as admin_his_health_router
 from hospital.middleware.security_headers import SecurityHeadersMiddleware
-from hospital.portals.api.fhir import router as fhir_router
-from hospital.decision.api.trials import router as trials_router
-from hospital.decision.api.plan_pdf import router as plan_pdf_router
-from hospital.decision.api.me import router as me_router
+
+# Feature-gated imports deferred to registration block below
 
 
 async def _daily_reminder_task() -> None:
@@ -140,10 +138,19 @@ app.include_router(admin_users_router, prefix=API_PREFIX)
 app.include_router(admin_kb_router,    prefix=API_PREFIX)
 app.include_router(admin_audit_router, prefix=API_PREFIX)
 app.include_router(admin_his_health_router, prefix=API_PREFIX)
-app.include_router(fhir_router,            prefix=API_PREFIX)
-app.include_router(trials_router,          prefix=API_PREFIX)
-app.include_router(plan_pdf_router,        prefix=API_PREFIX)
-app.include_router(me_router,              prefix=API_PREFIX)
+_s = get_settings()
+if _s.FEATURE_FHIR_IMPORT:
+    from hospital.portals.api.fhir import router as fhir_router
+    app.include_router(fhir_router, prefix=API_PREFIX)
+if _s.FEATURE_TRIALS_SEARCH:
+    from hospital.decision.api.trials import router as trials_router
+    app.include_router(trials_router, prefix=API_PREFIX)
+if _s.FEATURE_PDF_EXPORT:
+    from hospital.decision.api.plan_pdf import router as plan_pdf_router
+    app.include_router(plan_pdf_router, prefix=API_PREFIX)
+if _s.FEATURE_LINE_NOTIFY_API:
+    from hospital.decision.api.me import router as me_router
+    app.include_router(me_router, prefix=API_PREFIX)
 
 
 # ── Auth routes ───────────────────────────────────────────────────────────────

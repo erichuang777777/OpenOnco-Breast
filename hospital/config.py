@@ -66,6 +66,13 @@ class Settings(BaseSettings):
     # ── LINE Notify ────────────────────────────────────────────────────────
     LINE_NOTIFY_ENABLED: bool = False  # set True to send LINE messages on high-urgency reminders
 
+    # ── Feature flags — set =false to disable/remove a module ─────────────
+    FEATURE_FHIR_IMPORT: bool = True      # POST /fhir/Patient/$import
+    FEATURE_TRIALS_SEARCH: bool = True    # GET /trials (CT.gov proxy)
+    FEATURE_PDF_EXPORT: bool = True       # GET /plan/{id}/pdf
+    FEATURE_LINE_NOTIFY_API: bool = True  # GET|PUT /me/line-notify-token
+    FEATURE_CIVIC_LOOKUP: bool = False    # CIViC actionability engine (phase 2 pending)
+
     @property
     def kb_root_path(self) -> Path:
         return Path(self.KB_ROOT)
