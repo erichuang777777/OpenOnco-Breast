@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import asyncio as _asyncio
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 from fastapi import FastAPI, Request, status
 from fastapi.middleware.cors import CORSMiddleware
@@ -324,3 +325,24 @@ async def _bootstrap_admin_if_needed() -> None:
                 active=True,
             )
             db.add(admin)
+
+
+# ── SPA static file serving (Docker / production only) ───────────────────────
+# When the React build exists at frontend/dist (Dockerfile copies it there),
+# serve the compiled assets and fall back to index.html for client-side routes.
+# In local dev the Vite dev server handles this instead (npm run dev on :5173).
+
+_DIST = Path(__file__).parent.parent / "frontend" / "dist"
+
+if _DIST.is_dir():
+    from fastapi.staticfiles import StaticFiles
+    from fastapi.responses import FileResponse as _FileResponse
+
+    _assets = _DIST / "assets"
+    if _assets.is_dir():
+        app.mount("/assets", StaticFiles(directory=str(_assets)), name="spa-assets")
+
+    @app.get("/{full_path:path}", include_in_schema=False)
+    async def serve_spa(full_path: str):  # noqa: ARG001
+        """Serve the React SPA for any path not matched by API routes."""
+        return _FileResponse(str(_DIST / "index.html"))
