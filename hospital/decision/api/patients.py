@@ -5,7 +5,10 @@ from __future__ import annotations
 from fastapi import APIRouter, Depends, HTTPException, Request, Response, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from sqlalchemy import func as sa_func, select as sa_select2
+
 from hospital.auth.dependencies import HCP_ROLES, require_role
+from hospital.db.models import Patient as PatientModel, Reminder as ReminderModel, MtdCase as MtdCaseModel
 from hospital.db.session import get_db
 from hospital.decision.schemas.patient import (
     CareTeamMemberCreate,
@@ -52,6 +55,33 @@ async def create_patient(
         ip_address=request.client.host if request.client else None,
     )
     return await patient_service.build_patient_response(db, patient)
+
+
+@router.get("/stats")
+async def get_patient_stats(
+    user: dict = Depends(require_role(HCP_ROLES)),
+    db: AsyncSession = Depends(get_db),
+) -> dict:
+    """Return aggregate counts for the dashboard stat cards."""
+    total = await db.scalar(sa_select2(sa_func.count()).select_from(PatientModel)) or 0
+    urgent = await db.scalar(
+        sa_select2(sa_func.count()).select_from(ReminderModel).where(
+            ReminderModel.status == "active",
+            ReminderModel.urgency.in_(["high", "critical"]),
+        )
+    ) or 0
+    followup = await db.scalar(
+        sa_select2(sa_func.count()).select_from(ReminderModel).where(
+            ReminderModel.status == "active",
+            ReminderModel.reminder_type == "followup_appt",
+        )
+    ) or 0
+    mtd = await db.scalar(
+        sa_select2(sa_func.count(MtdCaseModel.patient_mrn.distinct())).where(
+            MtdCaseModel.status == "pending"
+        )
+    ) or 0
+    return {"total": total, "urgent": urgent, "followup": followup, "mtd": mtd}
 
 
 @router.get("/{mrn}", response_model=PatientResponse)

@@ -48,9 +48,11 @@ async def search_trials(
     Results are fetched live from clinicaltrials.gov — expect ~500ms latency.
     The backend imposes a ~10 req/s rate limit inherited from the CT.gov API.
     """
+    import asyncio
     from knowledge_base.clients.ctgov_client import search_trials as _search
 
-    raw = _search(
+    raw = await asyncio.to_thread(
+        _search,
         condition=condition,
         intervention=intervention,
         status=trial_status,

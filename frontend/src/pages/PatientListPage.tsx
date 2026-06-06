@@ -19,8 +19,8 @@ interface PatientStats {
 }
 
 function urgencyColor(p: PatientResponse): string | undefined {
-  if (!p.urgent_reminder_count) return undefined
-  return p.urgent_reminder_count > 0 ? 'var(--c-danger)' : 'var(--c-warn)'
+  if (!p.urgent_reminder_count || p.urgent_reminder_count <= 0) return undefined
+  return p.urgent_reminder_count > 1 ? 'var(--c-danger)' : 'var(--c-warn)'
 }
 
 function statusBadgeClass(status: string): string {
@@ -91,9 +91,9 @@ function FhirImportModal({ onClose, onImported }: { onClose: () => void; onImpor
   }, null, 2)
 
   return (
-    <div data-testid="fhir-import-modal" className="modal-overlay">
+    <div data-testid="fhir-import-modal" className="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="fhir-modal-title">
       <div className="modal">
-        <h2 className="modal-title">匯入 FHIR TW Core 病患資料</h2>
+        <h2 id="fhir-modal-title" className="modal-title">匯入 FHIR TW Core 病患資料</h2>
         <p style={{ fontSize: 'var(--text-sm)', color: 'var(--c-gray-500)', marginBottom: 'var(--sp-4)' }}>
           貼上符合 TW Core 規範的 FHIR R4 Patient 資源（或含有 Patient 的 Bundle）。
           姓名將自動遮蔽，僅保留第一字。
@@ -216,11 +216,12 @@ export function PatientListPage() {
       </div>
 
       {/* Tabs */}
-      <div className="tabs">
+      <div className="tabs" role="tablist">
         {TABS.map((t) => (
           <button
             key={t.key}
             data-testid={`tab-${t.key}`}
+            role="tab"
             className={`tab-btn${tab === t.key ? ' active' : ''}`}
             onClick={() => setTab(t.key)}
             aria-selected={tab === t.key}

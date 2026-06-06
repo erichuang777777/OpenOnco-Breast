@@ -93,6 +93,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         }} className="mobile-topbar" data-testid="navbar">
           <button
             onClick={() => setMobileOpen(true)}
+            aria-label="開啟選單"
+            aria-expanded={mobileOpen}
             style={{ background: 'none', border: 'none', color: '#fff', fontSize: '1.25rem', cursor: 'pointer', padding: 0 }}
           >
             ☰

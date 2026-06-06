@@ -230,10 +230,9 @@ async def google_callback(request: Request, code: str, state: str):
 
 
 @app.get("/auth/pending", tags=["auth"])
-async def pending_page(request: Request):
+async def pending_page():
     from fastapi.responses import HTMLResponse
-    email = request.cookies.get("oauth_state", "")  # best-effort
-    return HTMLResponse(f"""
+    return HTMLResponse("""
     <html><head><meta charset="utf-8"><title>待開通</title></head>
     <body style="font-family:sans-serif;max-width:600px;margin:4rem auto;text-align:center">
     <h1>帳號已建立</h1>

@@ -18,7 +18,7 @@ from sqlalchemy import select as sa_select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from hospital.auth.dependencies import HCP_ROLES, require_role
-from hospital.db.models import Plan as PlanModel
+from hospital.db.models import CareTeamMember, Plan as PlanModel
 from hospital.db.session import get_db
 
 router = APIRouter(prefix="/plan", tags=["plan"])
@@ -206,6 +206,18 @@ async def download_plan_pdf(
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail={"error": "PLAN_NOT_FOUND"},
+        )
+    # Ownership check: requester must be on the patient's care team
+    member = await db.scalar(
+        sa_select(CareTeamMember).where(
+            CareTeamMember.patient_mrn == row.mrn,
+            CareTeamMember.user_id == user["sub"],
+        )
+    )
+    if member is None:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail={"error": "FORBIDDEN", "message": "Not on this patient's care team."},
         )
     plan = _json.loads(row.plan_json)
     pdf_bytes = _build_pdf(plan)

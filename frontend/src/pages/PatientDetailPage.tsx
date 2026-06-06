@@ -206,7 +206,9 @@ function PlanPdfButton({ planId }: { planId: string }) {
     const a = document.createElement('a')
     a.href = `/api/v1/plan/${planId}/pdf`
     a.download = `plan-${planId}.pdf`
+    document.body.appendChild(a)
     a.click()
+    document.body.removeChild(a)
   }
   return (
     <button

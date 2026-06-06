@@ -379,7 +379,7 @@ class Reminder(Base):
         CheckConstraint(
             "reminder_type IN ("
             "'drug_reapplication','pending_lab','imaging_due',"
-            "'followup_appt','brca_result','custom'"
+            "'followup_appt','brca_result','his_sync_stale','custom'"
             ")",
             name="ck_reminder_type",
         ),
