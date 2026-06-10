@@ -71,6 +71,12 @@ class Settings(BaseSettings):
     # ── LINE Notify ────────────────────────────────────────────────────────
     LINE_NOTIFY_ENABLED: bool = False  # set True to send LINE messages on high-urgency reminders
 
+    # ── CIViC snapshots ───────────────────────────────────────────────────
+    # Path to the directory containing CIViC nightly snapshots.
+    # Each subfolder is a date (YYYY-MM-DD) containing evidence.yaml.
+    # Auto-detected from KB_ROOT parent if not set.
+    CIVIC_SNAPSHOT_DIR: str = "knowledge_base/hosted/civic"
+
     # ── Feature flags — set =false to disable/remove a module ─────────────
     FEATURE_FHIR_IMPORT: bool = True      # POST /fhir/Patient/$import
     FEATURE_TRIALS_SEARCH: bool = True    # GET /trials (CT.gov proxy)
@@ -85,6 +91,18 @@ class Settings(BaseSettings):
     @property
     def patient_plans_path(self) -> Path:
         return Path(self.PATIENT_PLANS_DIR)
+
+    @property
+    def civic_snapshot_path(self) -> Path | None:
+        """Return the latest evidence.yaml in CIVIC_SNAPSHOT_DIR, or None."""
+        base = Path(self.CIVIC_SNAPSHOT_DIR)
+        if not base.is_dir():
+            return None
+        candidates = sorted(
+            (p / "evidence.yaml" for p in base.iterdir() if p.is_dir() and (p / "evidence.yaml").exists()),
+            reverse=True,  # newest date first (lexicographic on YYYY-MM-DD)
+        )
+        return candidates[0] if candidates else None
 
 
 @lru_cache
