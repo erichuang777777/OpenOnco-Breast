@@ -11,7 +11,7 @@ measurement:
 specimen_requirements:
   - "FFPE tumor block from progression/transformation specimen (≥40% tumor cellularity)"
   - "Paired primary tumor block when available for clonal-evolution context"
-clinical_context: [screening_surveillance, dysplasia_grading, hereditary_surveillance]
+clinical_context: [screening_surveillance, tumor_profiling, germline_susceptibility]
 applicable_in_asymptomatic: false
 oncokb_skip_reason: tumor_agnostic
 external_ids:

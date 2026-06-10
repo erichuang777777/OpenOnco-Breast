@@ -2,20 +2,131 @@
 
 from __future__ import annotations
 
+import hashlib
+import hmac
 from datetime import datetime, timezone
 from typing import Literal
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, Header, HTTPException, Request, status
 from pydantic import BaseModel
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from hospital.auth.dependencies import ADMIN_ROLES, require_role
+from hospital.config import get_settings
 from hospital.db.models import KbReview
 from hospital.db.session import get_db
 from hospital.services import audit_service
 
 router = APIRouter(prefix="/admin/kb", tags=["admin"])
+
+# ── KB status helpers ─────────────────────────────────────────────────────────
+
+class KbStatusResponse(BaseModel):
+    ok: bool
+    total_entities: int
+    by_type: dict[str, int]
+    schema_errors: int
+    ref_errors: int
+    contract_errors: int
+    last_refreshed_at: datetime | None = None
+
+_last_refreshed_at: datetime | None = None
+
+
+def _get_kb_status() -> KbStatusResponse:
+    from knowledge_base.validation.loader import load_content
+    settings = get_settings()
+    result = load_content(settings.kb_root_path)
+    by_type: dict[str, int] = {}
+    for info in result.entities_by_id.values():
+        t = info.get("type", "unknown")
+        by_type[t] = by_type.get(t, 0) + 1
+    return KbStatusResponse(
+        ok=result.ok,
+        total_entities=len(result.entities_by_id),
+        by_type=by_type,
+        schema_errors=len(result.schema_errors),
+        ref_errors=len(result.ref_errors),
+        contract_errors=len(result.contract_errors),
+        last_refreshed_at=_last_refreshed_at,
+    )
+
+
+def _do_refresh() -> KbStatusResponse:
+    from knowledge_base.validation.loader import clear_load_cache
+    global _last_refreshed_at
+    clear_load_cache()
+    _last_refreshed_at = datetime.now(timezone.utc)
+    return _get_kb_status()
+
+
+# ── KB status / refresh endpoints ─────────────────────────────────────────────
+
+@router.get("/status", response_model=KbStatusResponse)
+async def kb_status(
+    user: dict = Depends(require_role(ADMIN_ROLES)),
+) -> KbStatusResponse:
+    """Return current in-process KB load stats without triggering a reload."""
+    import asyncio
+    return await asyncio.get_running_loop().run_in_executor(None, _get_kb_status)
+
+
+@router.post("/refresh", response_model=KbStatusResponse)
+async def kb_refresh(
+    request: Request,
+    user: dict = Depends(require_role(ADMIN_ROLES)),
+    db: AsyncSession = Depends(get_db),
+) -> KbStatusResponse:
+    """Clear the KB loader cache and reload from disk.
+
+    Call after the crawler has written new YAML content to knowledge_base/hosted/content/.
+    """
+    import asyncio
+    result = await asyncio.get_running_loop().run_in_executor(None, _do_refresh)
+    await audit_service.log_action(
+        db, user_id=user["sub"],
+        action="kb.refresh",
+        resource_type="kb", resource_id="global",
+        diff_summary=f"total={result.total_entities} ok={result.ok} errors={result.schema_errors + result.ref_errors}",
+        ip_address=request.client.host if request.client else None,
+    )
+    return result
+
+
+@router.post("/crawler-notify", response_model=KbStatusResponse)
+async def crawler_notify(
+    request: Request,
+    x_crawler_secret: str | None = Header(default=None),
+) -> KbStatusResponse:
+    """Webhook called by the KB crawler after it writes new YAML content.
+
+    Authenticated via HMAC-SHA256 of the request body using CRAWLER_WEBHOOK_SECRET.
+    On success, clears the KB loader cache so the next plan generation reads fresh data.
+    """
+    settings = get_settings()
+    if not settings.CRAWLER_WEBHOOK_SECRET:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail={"error": "WEBHOOK_NOT_CONFIGURED"},
+        )
+
+    body = await request.body()
+    expected = hmac.new(
+        settings.CRAWLER_WEBHOOK_SECRET.encode(),
+        body,
+        hashlib.sha256,
+    ).hexdigest()
+
+    provided = (x_crawler_secret or "").removeprefix("sha256=")
+    if not hmac.compare_digest(expected, provided):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail={"error": "INVALID_SIGNATURE"},
+        )
+
+    import asyncio
+    return await asyncio.get_running_loop().run_in_executor(None, _do_refresh)
 
 
 class KbReviewResponse(BaseModel):

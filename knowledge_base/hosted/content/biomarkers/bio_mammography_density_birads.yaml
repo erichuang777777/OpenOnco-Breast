@@ -11,7 +11,7 @@ measurement:
 specimen_requirements:
   - "Standard 2-view digital mammogram (CC + MLO) per breast"
   - "Digital breast tomosynthesis (DBT) acceptable; reader-trained in BI-RADS 5th ed."
-clinical_context: [screening_surveillance, screening]
+clinical_context: [screening_surveillance]
 applicable_in_asymptomatic: true
 oncokb_skip_reason: clinical_composite
 sources: [SRC-NCCN-BREAST-2025]

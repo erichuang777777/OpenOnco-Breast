@@ -1,6 +1,6 @@
 [project]
 name = "openonco"
-version = "0.1.3"
+version = "0.1.0"
 description = "OpenOnco — free public oncology clinical decision support resource"
 requires-python = ">=3.11"
 license = {text = "MIT"}
@@ -11,6 +11,28 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+hospital = [
+    # Web framework + server
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    # Database
+    "sqlalchemy[asyncio]>=2.0",
+    "aiosqlite>=0.20",
+    "asyncpg>=0.29",
+    "alembic>=1.13",
+    # Settings + auth
+    "pydantic-settings>=2.3",
+    "python-jose[cryptography]>=3.3",
+    "passlib[bcrypt]>=1.7",
+    # Push notifications
+    "pywebpush>=2.0",
+    # Rate limiting
+    "slowapi>=0.1.9",
+    # PDF report generation
+    "reportlab>=4.0",
+    # LLM extraction (CHARTER §8.3 — extraction only)
+    "anthropic>=0.28",
+]
 ingestion = [
     "pypdf>=4.0",
     "pdfplumber>=0.11",
@@ -18,6 +40,8 @@ ingestion = [
 ]
 dev = [
     "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "anyio>=4.0",
     "ruff>=0.5",
 ]
 
@@ -26,11 +50,7 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
-# Top-level dirs at the repo root that are NOT importable Python packages
-# but contain __init__.py-less or otherwise non-package YAML / docs / data.
-# Without this, setuptools' flat-layout auto-discovery errors with
-# "Multiple top-level packages discovered" on pip install -e .
-include = ["knowledge_base*"]
+include = ["knowledge_base*", "hospital*"]
 exclude = [
     "contributions*",
     "specs*",

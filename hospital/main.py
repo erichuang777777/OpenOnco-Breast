@@ -5,7 +5,9 @@ Start:  uvicorn hospital.main:app --reload
 
 from __future__ import annotations
 
+import asyncio as _asyncio
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 from fastapi import FastAPI, Request, status
 from fastapi.middleware.cors import CORSMiddleware
@@ -25,7 +27,7 @@ from hospital.auth.google_oauth import (
 from hospital.auth.jwt_utils import create_access_token
 from hospital.config import get_settings
 from hospital.db.models import User
-from hospital.db.session import create_all_tables, get_db
+from hospital.db.session import create_all_tables, db_context, get_db
 
 # ── Sub-routers ───────────────────────────────────────────────────────────────
 from hospital.decision.api.plan import router as plan_router
@@ -42,18 +44,50 @@ from hospital.admin.api.drug_req import router as drug_req_router
 from hospital.admin.api.users import router as admin_users_router
 from hospital.admin.api.kb import router as admin_kb_router
 from hospital.admin.api.audit import router as admin_audit_router
+from hospital.admin.api.his_health import router as admin_his_health_router
 from hospital.middleware.security_headers import SecurityHeadersMiddleware
+
+# Feature-gated imports deferred to registration block below
+
+
+async def _daily_reminder_task() -> None:
+    """Run reminder rule engine for all active patients once per day."""
+    while True:
+        await _asyncio.sleep(24 * 3600)
+        try:
+            from hospital.decision.services.reminder_service import evaluate_all_patients
+            from hospital.db.session import db_context
+            async with db_context() as _db:
+                await evaluate_all_patients(_db)
+        except Exception:
+            pass  # never crash the background task
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Create tables (dev / SQLite only; prod uses Alembic migrations)
     settings = get_settings()
+    # Production secret guard — fail loud rather than silently ship dev defaults
+    if "sqlite" not in settings.DATABASE_URL:
+        _DEV_JWT = "dev-secret-CHANGE-IN-PROD"
+        _DEV_SALT = "dev-salt-CHANGE-IN-PROD"
+        if settings.JWT_SECRET == _DEV_JWT or settings.AUDIT_MRN_SALT == _DEV_SALT:
+            raise RuntimeError(
+                "Production deployment detected (non-SQLite DB) but JWT_SECRET or "
+                "AUDIT_MRN_SALT still equals the development default. "
+                "Set strong secrets in the environment before starting."
+            )
+    # Create tables (dev / SQLite only; prod uses Alembic migrations)
     if "sqlite" in settings.DATABASE_URL:
         await create_all_tables()
     # Bootstrap admin account if configured
     await _bootstrap_admin_if_needed()
+    _task = _asyncio.create_task(_daily_reminder_task())
     yield
+    _task.cancel()
+    try:
+        await _task
+    except _asyncio.CancelledError:
+        pass
 
 
 app = FastAPI(
@@ -83,15 +117,37 @@ app.add_middleware(
 
 
 class _BodySizeLimitMiddleware(BaseHTTPMiddleware):
-    """Reject requests whose body exceeds MAX_BODY_SIZE_BYTES."""
+    """Reject requests whose body exceeds MAX_BODY_SIZE_BYTES.
+
+    Handles both declared Content-Length and chunked transfer encoding.
+    For chunked requests the body is read in full before passing downstream.
+    """
 
     async def dispatch(self, request: Request, call_next):
         content_length = request.headers.get("content-length")
-        if content_length and int(content_length) > settings_instance.MAX_BODY_SIZE_BYTES:
+        limit = settings_instance.MAX_BODY_SIZE_BYTES
+
+        if content_length and int(content_length) > limit:
             return JSONResponse(
                 status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
                 content={"error": "PAYLOAD_TOO_LARGE", "message": "Request body exceeds limit."},
             )
+
+        # Guard chunked transfers that omit Content-Length
+        if not content_length and request.method in ("POST", "PUT", "PATCH"):
+            body = b""
+            async for chunk in request.stream():
+                body += chunk
+                if len(body) > limit:
+                    return JSONResponse(
+                        status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+                        content={"error": "PAYLOAD_TOO_LARGE", "message": "Request body exceeds limit."},
+                    )
+            # Re-inject the body so FastAPI can still read it downstream
+            async def _receive():
+                return {"type": "http.request", "body": body, "more_body": False}
+            request._receive = _receive  # type: ignore[attr-defined]
+
         return await call_next(request)
 
 
@@ -114,7 +170,26 @@ app.include_router(drug_req_router,    prefix=API_PREFIX)
 app.include_router(admin_users_router, prefix=API_PREFIX)
 app.include_router(admin_kb_router,    prefix=API_PREFIX)
 app.include_router(admin_audit_router, prefix=API_PREFIX)
+app.include_router(admin_his_health_router, prefix=API_PREFIX)
+_s = get_settings()
+if _s.FEATURE_FHIR_IMPORT:
+    from hospital.portals.api.fhir import router as fhir_router
+    app.include_router(fhir_router, prefix=API_PREFIX)
+if _s.FEATURE_TRIALS_SEARCH:
+    from hospital.decision.api.trials import router as trials_router
+    app.include_router(trials_router, prefix=API_PREFIX)
+if _s.FEATURE_PDF_EXPORT:
+    from hospital.decision.api.plan_pdf import router as plan_pdf_router
+    app.include_router(plan_pdf_router, prefix=API_PREFIX)
+if _s.FEATURE_LINE_NOTIFY_API:
+    from hospital.decision.api.me import router as me_router
+    app.include_router(me_router, prefix=API_PREFIX)
 
+
+# ── Dev-only local login (SQLite + DEV_LOCAL_LOGIN=true only) ─────────────────
+if get_settings().DEV_LOCAL_LOGIN and "sqlite" in get_settings().DATABASE_URL:
+    from hospital.auth.dev_auth import router as _dev_auth_router
+    app.include_router(_dev_auth_router)
 
 # ── Auth routes ───────────────────────────────────────────────────────────────
 
@@ -147,9 +222,13 @@ async def google_callback(request: Request, code: str, state: str):
     email = claims.get("email", "")
     name = claims.get("name")
 
-    # Upsert user
-    async for db in get_db():
+    # Upsert user — use db_context() so commit/rollback are guaranteed.
+    # Wrap INSERT in an IntegrityError catch to handle concurrent double-logins
+    # (two parallel OAuth callbacks for the same Google sub).
+    async with db_context() as db:
+        from datetime import datetime, timezone
         from sqlalchemy import select as sa_select
+        from sqlalchemy.exc import IntegrityError
         user = await db.scalar(sa_select(User).where(User.google_sub == google_sub))
         if user is None:
             user = User(
@@ -160,10 +239,13 @@ async def google_callback(request: Request, code: str, state: str):
                 role="pending",
             )
             db.add(user)
+            try:
+                await db.flush()
+            except IntegrityError:
+                await db.rollback()
+                user = await db.scalar(sa_select(User).where(User.google_sub == google_sub))
         else:
-            from datetime import datetime, timezone
             user.last_login_at = datetime.now(timezone.utc)
-        break
 
     settings = get_settings()
     if user.role == "pending":
@@ -194,10 +276,9 @@ async def google_callback(request: Request, code: str, state: str):
 
 
 @app.get("/auth/pending", tags=["auth"])
-async def pending_page(request: Request):
+async def pending_page():
     from fastapi.responses import HTMLResponse
-    email = request.cookies.get("oauth_state", "")  # best-effort
-    return HTMLResponse(f"""
+    return HTMLResponse("""
     <html><head><meta charset="utf-8"><title>待開通</title></head>
     <body style="font-family:sans-serif;max-width:600px;margin:4rem auto;text-align:center">
     <h1>帳號已建立</h1>
@@ -236,7 +317,7 @@ async def _bootstrap_admin_if_needed() -> None:
     settings = get_settings()
     if not settings.BOOTSTRAP_ADMIN_EMAIL:
         return
-    async for db in get_db():
+    async with db_context() as db:
         from sqlalchemy import select as sa_select, func
         count = await db.scalar(sa_select(func.count()).select_from(User))
         if count == 0:
@@ -249,4 +330,24 @@ async def _bootstrap_admin_if_needed() -> None:
                 active=True,
             )
             db.add(admin)
-        break
+
+
+# ── SPA static file serving (Docker / production only) ───────────────────────
+# When the React build exists at frontend/dist (Dockerfile copies it there),
+# serve the compiled assets and fall back to index.html for client-side routes.
+# In local dev the Vite dev server handles this instead (npm run dev on :5173).
+
+_DIST = Path(__file__).parent.parent / "frontend" / "dist"
+
+if _DIST.is_dir():
+    from fastapi.staticfiles import StaticFiles
+    from fastapi.responses import FileResponse as _FileResponse
+
+    _assets = _DIST / "assets"
+    if _assets.is_dir():
+        app.mount("/assets", StaticFiles(directory=str(_assets)), name="spa-assets")
+
+    @app.get("/{full_path:path}", include_in_schema=False)
+    async def serve_spa(full_path: str):  # noqa: ARG001
+        """Serve the React SPA for any path not matched by API routes."""
+        return _FileResponse(str(_DIST / "index.html"))

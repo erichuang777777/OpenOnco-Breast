@@ -11,7 +11,7 @@ measurement:
 specimen_requirements:
   - "Whole stool sample, lab-provided collection kit + buffer/stabilizer"
   - "Ship within ≤72h of collection"
-clinical_context: [screening, screening_surveillance]
+clinical_context: [screening_surveillance]
 applicable_in_asymptomatic: true
 oncokb_skip_reason: tumor_marker
 sources: [SRC-NCCN-COLON-2025, SRC-ESMO-COLON-2024]

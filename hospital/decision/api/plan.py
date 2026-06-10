@@ -2,10 +2,14 @@
 
 from __future__ import annotations
 
+import json as _json
+
 from fastapi import APIRouter, Depends, HTTPException, Request, status
+from sqlalchemy import select as sa_select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from hospital.auth.dependencies import HCP_ROLES, require_role
+from hospital.db.models import Plan as PlanModel
 from hospital.db.session import get_db
 from hospital.decision.schemas.plan import GapsResponse, PlanRequest, PlanResponse, ReviseRequest
 from hospital.services import audit_service
@@ -50,6 +54,16 @@ async def create_plan(
             detail={"error": "INVALID_PATIENT_DICT", "message": msg},
         ) from exc
 
+    plan_row = PlanModel(
+        plan_id=response.plan_id,
+        mrn=body.patient_mrn or (body.patient.patient_id or ""),
+        plan_json=_json.dumps(response.model_dump()),
+        created_by=user["sub"],
+        status="active",
+    )
+    db.add(plan_row)
+    await db.flush()
+
     await audit_service.log_action(
         db,
         user_id=user["sub"],
@@ -83,6 +97,26 @@ async def create_plan(
     return response
 
 
+@router.get("/{plan_id}", response_model=PlanResponse)
+async def get_plan(
+    plan_id: str,
+    user: dict = Depends(require_role(HCP_ROLES)),
+    db: AsyncSession = Depends(get_db),
+) -> PlanResponse:
+    row = await db.scalar(sa_select(PlanModel).where(PlanModel.plan_id == plan_id))
+    if not row:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail={"error": "PLAN_NOT_FOUND"},
+        )
+    data = _json.loads(row.plan_json)
+    response = PlanResponse(**data)
+    if row.status != "active":
+        stale_warnings = [*response.warnings, f"plan_status:{row.status} — this plan may be outdated"]
+        response = response.model_copy(update={"warnings": stale_warnings})
+    return response
+
+
 @router.post("/gaps", response_model=GapsResponse)
 async def get_decision_gaps(
     body: PlanRequest,
@@ -108,6 +142,13 @@ async def revise_plan(
     db: AsyncSession = Depends(get_db),
 ) -> PlanResponse:
     """Generate a next-version plan superseding an existing one."""
+    old_plan = await db.scalar(sa_select(PlanModel).where(PlanModel.plan_id == plan_id))
+    if not old_plan:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail={"error": "PLAN_NOT_FOUND", "message": f"plan_id {plan_id!r} not found"},
+        )
+
     try:
         response = generate_plan_response(body.patient)
     except ValueError as exc:
@@ -116,6 +157,9 @@ async def revise_plan(
             detail={"error": "ENGINE_NO_ALGORITHM", "message": str(exc)},
         ) from exc
 
+    old_plan.status = "superseded"
+    await db.flush()
+
     await audit_service.log_action(
         db,
         user_id=user["sub"],
@@ -123,6 +167,6 @@ async def revise_plan(
         resource_type="plan",
         resource_id=response.plan_id,
         mrn=body.patient.patient_id,
-        diff_summary=f"supersedes={plan_id} trigger={body.revision_trigger[:80]}",
+        diff_summary=f"supersedes={plan_id} trigger={(body.revision_trigger or '')[:80]}",
     )
     return response

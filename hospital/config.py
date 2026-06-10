@@ -35,6 +35,11 @@ class Settings(BaseSettings):
     # ── Account bootstrap ─────────────────────────────────────────────────
     BOOTSTRAP_ADMIN_EMAIL: str = ""
 
+    # ── Local dev login (SQLite only — never enable in production) ────────
+    # When true, POST /auth/dev/login accepts {email, role} without OAuth.
+    # Automatically disabled if DATABASE_URL is not SQLite.
+    DEV_LOCAL_LOGIN: bool = False
+
     # ── Audit ─────────────────────────────────────────────────────────────
     AUDIT_MRN_SALT: str = "dev-salt-CHANGE-IN-PROD"
 
@@ -55,10 +60,29 @@ class Settings(BaseSettings):
     # ── HIS adapter (B3) ──────────────────────────────────────────────────
     HIS_WEBHOOK_SECRET: str = ""   # HMAC secret for HIS webhook signature
 
+    # ── KB crawler webhook ────────────────────────────────────────────────────
+    CRAWLER_WEBHOOK_SECRET: str = ""  # HMAC-SHA256 secret shared with the KB crawler
+
     # ── PWA push notifications / VAPID (B7) ───────────────────────────────
     VAPID_PRIVATE_KEY: str = ""
     VAPID_PUBLIC_KEY: str = ""
     VAPID_SUBJECT: str = "mailto:admin@openonco.local"
+
+    # ── LINE Notify ────────────────────────────────────────────────────────
+    LINE_NOTIFY_ENABLED: bool = False  # set True to send LINE messages on high-urgency reminders
+
+    # ── CIViC snapshots ───────────────────────────────────────────────────
+    # Path to the directory containing CIViC nightly snapshots.
+    # Each subfolder is a date (YYYY-MM-DD) containing evidence.yaml.
+    # Auto-detected from KB_ROOT parent if not set.
+    CIVIC_SNAPSHOT_DIR: str = "knowledge_base/hosted/civic"
+
+    # ── Feature flags — set =false to disable/remove a module ─────────────
+    FEATURE_FHIR_IMPORT: bool = True      # POST /fhir/Patient/$import
+    FEATURE_TRIALS_SEARCH: bool = True    # GET /trials (CT.gov proxy)
+    FEATURE_PDF_EXPORT: bool = True       # GET /plan/{id}/pdf
+    FEATURE_LINE_NOTIFY_API: bool = True  # GET|PUT /me/line-notify-token
+    FEATURE_CIVIC_LOOKUP: bool = False    # CIViC actionability engine (phase 2 pending)
 
     @property
     def kb_root_path(self) -> Path:
@@ -67,6 +91,18 @@ class Settings(BaseSettings):
     @property
     def patient_plans_path(self) -> Path:
         return Path(self.PATIENT_PLANS_DIR)
+
+    @property
+    def civic_snapshot_path(self) -> Path | None:
+        """Return the latest evidence.yaml in CIVIC_SNAPSHOT_DIR, or None."""
+        base = Path(self.CIVIC_SNAPSHOT_DIR)
+        if not base.is_dir():
+            return None
+        candidates = sorted(
+            (p / "evidence.yaml" for p in base.iterdir() if p.is_dir() and (p / "evidence.yaml").exists()),
+            reverse=True,  # newest date first (lexicographic on YYYY-MM-DD)
+        )
+        return candidates[0] if candidates else None
 
 
 @lru_cache

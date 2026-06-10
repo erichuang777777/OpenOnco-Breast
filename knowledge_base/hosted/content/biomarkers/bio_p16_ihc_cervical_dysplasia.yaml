@@ -11,7 +11,7 @@ measurement:
 specimen_requirements:
   - "FFPE cervical biopsy block"
   - "Adequate epithelium thickness (no cautery artifact in basal zone)"
-clinical_context: [screening_surveillance, diagnostic_workup, precursor_lesion]
+clinical_context: [screening_surveillance, tumor_profiling]
 applicable_in_asymptomatic: true
 oncokb_skip_reason: ihc_no_variant
 external_ids:
