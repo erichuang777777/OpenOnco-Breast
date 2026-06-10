@@ -5,6 +5,7 @@ import {
   useEffect,
   ReactNode,
 } from 'react'
+import { DEMO_MODE } from '../config'
 
 export interface AuthUser {
   sub: string
@@ -32,8 +33,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const controller = new AbortController()
     fetch('/auth/me', { credentials: 'include', signal: controller.signal })
-      .then((r) => {
-        if (r.status === 401) return null
+      .then(async (r) => {
+        if (r.status === 401) {
+          if (DEMO_MODE) {
+            // Auto-login in demo mode — skip the login page entirely
+            await fetch('/auth/dev/login', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              credentials: 'include',
+              body: JSON.stringify({ email: 'demo@openonco.local', role: 'clinic_hcp' }),
+            })
+            window.location.href = '/'
+          }
+          return null
+        }
         return r.json()
       })
       .then((data) => {

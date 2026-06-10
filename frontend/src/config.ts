@@ -16,6 +16,13 @@ function flag(key: string, defaultOn = true): boolean {
 export const DEV_LOGIN_ENABLED: boolean =
   (import.meta as unknown as { env: Record<string, string | undefined> }).env['VITE_DEV_LOCAL_LOGIN'] === 'true'
 
+/**
+ * True when running in demo mode. On 401 from /auth/me, auto-login as
+ * demo@openonco.local (clinic_hcp role) without showing the login page.
+ */
+export const DEMO_MODE: boolean =
+  (import.meta as unknown as { env: Record<string, string | undefined> }).env['VITE_DEMO_MODE'] === 'true'
+
 export const FEATURES = {
   /** POST /api/v1/fhir/Patient/$import */
   fhirImport: flag('VITE_FEATURE_FHIR_IMPORT'),

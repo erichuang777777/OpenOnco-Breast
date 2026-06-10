@@ -6,8 +6,8 @@ import { LoginPage } from './pages/LoginPage'
 import { PendingPage } from './pages/PendingPage'
 import { PatientListPage } from './pages/PatientListPage'
 import { PatientDetailPage } from './pages/PatientDetailPage'
+import { PatientOncologyPage } from './pages/PatientOncologyPage'
 import { BoardPage } from './pages/BoardPage'
-import { ClinicPage } from './pages/ClinicPage'
 import { DrugReqPage } from './pages/DrugReqPage'
 import { AdminPage } from './pages/AdminPage'
 
@@ -26,7 +26,7 @@ function App() {
             />
             <Route
               path="/patients/:mrn/onco"
-              element={<AuthGuard><ClinicPage /></AuthGuard>}
+              element={<AuthGuard><PatientOncologyPage /></AuthGuard>}
             />
             <Route
               path="/patients/:mrn/drug-req"
