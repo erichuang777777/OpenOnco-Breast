@@ -11,7 +11,7 @@ measurement:
 specimen_requirements:
   - "Cervical brush sample in liquid preservative (ThinPrep / SurePath vial)"
   - "Adequate cellularity per Bethesda criteria"
-clinical_context: [screening, screening_surveillance, precursor_lesion]
+clinical_context: [screening_surveillance]
 applicable_in_asymptomatic: true
 oncokb_skip_reason: tumor_marker
 sources: [SRC-NCCN-CERVICAL-2025, SRC-ESMO-CERVICAL-2024]

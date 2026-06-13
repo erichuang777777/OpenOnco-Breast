@@ -11,7 +11,7 @@ measurement:
 specimen_requirements:
   - "FFPE biopsy block (Barrett's segment, dysplastic colon polyp, or IBD surveillance biopsy)"
   - "Adequate epithelial representation (basal layer must be present)"
-clinical_context: [screening_surveillance, precursor_lesion, dysplasia_grading]
+clinical_context: [screening_surveillance]
 applicable_in_asymptomatic: true
 oncokb_skip_reason: ihc_no_variant
 external_ids:

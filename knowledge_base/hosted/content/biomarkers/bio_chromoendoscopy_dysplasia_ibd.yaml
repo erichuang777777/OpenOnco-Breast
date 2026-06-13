@@ -11,7 +11,7 @@ measurement:
 specimen_requirements:
   - "Adequate bowel preparation (Boston ≥6)"
   - "Quiescent inflammation (active inflammation reduces detection sensitivity)"
-clinical_context: [screening_surveillance, precursor_lesion, dysplasia_grading]
+clinical_context: [screening_surveillance]
 applicable_in_asymptomatic: true
 oncokb_skip_reason: imaging
 sources: [SRC-NCCN-COLON-2025]

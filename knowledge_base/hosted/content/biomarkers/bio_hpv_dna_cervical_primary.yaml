@@ -12,7 +12,7 @@ specimen_requirements:
   - "Cervical swab/brush sample in validated transport medium"
   - "FDA-approved primary-screening platform (cobas 4800, Onclarity, Aptima)"
 related_biomarkers: [BIO-HPV-STATUS, BIO-PAP-CYTOLOGY-CERVICAL]
-clinical_context: [screening, screening_surveillance]
+clinical_context: [screening_surveillance]
 applicable_in_asymptomatic: true
 oncokb_skip_reason: tumor_marker
 sources: [SRC-NCCN-CERVICAL-2025, SRC-ESMO-CERVICAL-2024]
