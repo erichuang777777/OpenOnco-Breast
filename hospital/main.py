@@ -29,6 +29,7 @@ from hospital.db.session import create_all_tables, get_db
 
 # ── Sub-routers ───────────────────────────────────────────────────────────────
 from hospital.decision.api.plan import router as plan_router
+from hospital.decision.api.guidelines import router as guidelines_router
 from hospital.decision.api.cases import router as cases_router
 from hospital.decision.api.extract import router as extract_router
 from hospital.decision.api.patients import router as patients_router
@@ -100,6 +101,7 @@ app.add_middleware(_BodySizeLimitMiddleware)
 # ── API routes ────────────────────────────────────────────────────────────────
 API_PREFIX = "/api/v1"
 app.include_router(plan_router,        prefix=API_PREFIX)
+app.include_router(guidelines_router,  prefix=API_PREFIX)
 app.include_router(cases_router,       prefix=API_PREFIX)
 app.include_router(extract_router,     prefix=API_PREFIX)
 app.include_router(patients_router,    prefix=API_PREFIX)

@@ -9,6 +9,8 @@ import { BoardPage } from './pages/BoardPage'
 import { ClinicPage } from './pages/ClinicPage'
 import { DrugReqPage } from './pages/DrugReqPage'
 import { AdminPage } from './pages/AdminPage'
+import { GuidelinesPage } from './pages/GuidelinesPage'
+import { AuditPage } from './pages/AuditPage'
 
 function NavBar() {
   const { user, logout } = useAuth()
@@ -22,8 +24,12 @@ function NavBar() {
       {user.role === 'tumor_board_hcp' && (
         <a href="/board" style={{ color: '#fff' }} data-testid="nav-board">腫瘤委員會</a>
       )}
+      <a href="/guidelines" style={{ color: '#fff' }} data-testid="nav-guidelines">指引流程圖</a>
       {(user.role === 'kb_admin' || user.role === 'auditor') && (
         <a href="/admin" style={{ color: '#fff' }} data-testid="nav-admin">管理</a>
+      )}
+      {(user.role === 'kb_admin' || user.role === 'auditor') && (
+        <a href="/audit" style={{ color: '#fff' }} data-testid="nav-audit">驗證稽核</a>
       )}
       <button onClick={logout} data-testid="logout-btn" style={{ marginLeft: 'auto', cursor: 'pointer' }}>登出</button>
     </nav>
@@ -60,8 +66,16 @@ function App() {
             element={<AuthGuard allowedRoles={['tumor_board_hcp', 'kb_admin']}><BoardPage /></AuthGuard>}
           />
           <Route
+            path="/guidelines"
+            element={<AuthGuard><GuidelinesPage /></AuthGuard>}
+          />
+          <Route
             path="/admin"
             element={<AuthGuard allowedRoles={['kb_admin', 'auditor']}><AdminPage /></AuthGuard>}
+          />
+          <Route
+            path="/audit"
+            element={<AuthGuard allowedRoles={['kb_admin', 'auditor']}><AuditPage /></AuthGuard>}
           />
           <Route path="*" element={<Navigate to="/patients" replace />} />
         </Routes>

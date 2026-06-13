@@ -111,6 +111,7 @@ def generate_plan_response(
         mdt=mdt_summary,
         gaps=gaps,
         warnings=result.warnings or [],
+        trace=list(getattr(result, "trace", None) or []),
     )
 
 

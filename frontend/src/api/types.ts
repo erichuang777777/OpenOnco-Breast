@@ -95,3 +95,59 @@ export interface MtdCaseResponse {
   conclusion_at?: string
   created_at: string
 }
+
+// ── Guideline flowchart visualization ─────────────────────────────────────────
+
+export interface GuidelineNode {
+  id: string
+  kind: 'start' | 'decision' | 'indication' | 'no_indication'
+  label: string
+  step?: number | string | null
+  match?: 'all' | 'any' | 'single' | null
+  conditions: string[]
+  red_flags: string[]
+  notes?: string | null
+  indication_id?: string | null
+  regimen_name?: string | null
+  nccn_category?: string | null
+  evidence_level?: string | null
+  on_path: boolean
+}
+
+export interface GuidelineEdge {
+  source: string
+  target: string
+  branch?: 'true' | 'false' | null
+  label?: string | null
+  on_path: boolean
+}
+
+export interface GuidelineGraph {
+  algorithm_id: string
+  disease_id?: string | null
+  line_of_therapy?: number | string | null
+  purpose?: string | null
+  default_indication?: string | null
+  alternative_indication?: string | null
+  sources: string[]
+  nodes: GuidelineNode[]
+  edges: GuidelineEdge[]
+  has_trace: boolean
+}
+
+export interface GuidelineSummary {
+  algorithm_id: string
+  disease_id?: string | null
+  line_of_therapy?: number | string | null
+  purpose?: string | null
+}
+
+// One entry of the engine decision-tree trace (PlanResponse.trace).
+export interface TraceEntry {
+  step?: number | string | null
+  outcome?: boolean
+  branch?: { result?: string | boolean | null; next_step?: number | string } | null
+  result?: string | null
+  fired_red_flags?: string[]
+  winner_red_flag?: string | null
+}

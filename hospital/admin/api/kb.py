@@ -11,9 +11,14 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from hospital.auth.dependencies import ADMIN_ROLES, require_role
+from hospital.config import get_settings
 from hospital.db.models import KbReview
 from hospital.db.session import get_db
 from hospital.services import audit_service
+from hospital.admin.services import kb_status as kb_status_service
+
+# Audit dashboard is read-only for auditors as well as kb_admin.
+KB_STATUS_ROLES = ADMIN_ROLES + ["auditor"]
 
 router = APIRouter(prefix="/admin/kb", tags=["admin"])
 
@@ -39,6 +44,37 @@ class KbReviewPatch(BaseModel):
 
 class KbReviewListResponse(BaseModel):
     pending: list[KbReviewResponse]
+
+
+class KbIngestionStatusResponse(BaseModel):
+    generated_at: str
+    content_counts: dict[str, int]
+    total_entities: int
+    civic: dict
+    source_freshness: dict
+    stale_after_days: int
+    review_queue: dict
+
+
+@router.get("/ingestion-status", response_model=KbIngestionStatusResponse)
+async def ingestion_status(
+    user: dict = Depends(require_role(KB_STATUS_ROLES)),
+    db: AsyncSession = Depends(get_db),
+) -> KbIngestionStatusResponse:
+    """Read-only verification dashboard: content counts, CIViC snapshot
+    freshness, source-citation staleness, and the review-queue summary."""
+    settings = get_settings()
+    status_payload = kb_status_service.compute_kb_status(settings.kb_root_path)
+
+    queue: dict[str, int] = {"pending": 0, "approved": 0, "rejected": 0, "awaiting_second_reviewer": 0}
+    rows = list(await db.scalars(select(KbReview)))
+    for r in rows:
+        if r.status in queue:
+            queue[r.status] += 1
+        if r.status == "pending" and r.reviewer_1 is not None and r.reviewer_2 is None:
+            queue["awaiting_second_reviewer"] += 1
+
+    return KbIngestionStatusResponse(review_queue=queue, **status_payload)
 
 
 @router.get("/reviews", response_model=KbReviewListResponse)
