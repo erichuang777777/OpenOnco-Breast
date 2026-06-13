@@ -11,7 +11,7 @@ measurement:
 specimen_requirements:
   - "High-frequency (≥10 MHz) linear transducer thyroid ultrasound"
   - "Radiologist with TI-RADS training (inter-observer agreement κ ~0.5-0.7)"
-clinical_context: [screening_surveillance, precursor_lesion]
+clinical_context: [screening_surveillance]
 applicable_in_asymptomatic: true
 oncokb_skip_reason: clinical_composite
 sources: [SRC-NCCN-THYROID-2025, SRC-ATA-THYROID-2015]

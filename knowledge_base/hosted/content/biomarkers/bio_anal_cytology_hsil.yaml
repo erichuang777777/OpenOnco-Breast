@@ -12,7 +12,7 @@ specimen_requirements:
   - "Dacron/flocked swab inserted blind ~5 cm into anal canal, rotated against transition zone"
   - "Liquid preservative vial (ThinPrep / SurePath)"
 related_biomarkers: [BIO-HPV-STATUS, BIO-PAP-CYTOLOGY-CERVICAL]
-clinical_context: [screening, screening_surveillance, precursor_lesion]
+clinical_context: [screening_surveillance]
 applicable_in_asymptomatic: true
 oncokb_skip_reason: tumor_marker
 sources: [SRC-NCCN-ANAL-2025, SRC-NIH-AIDS-2024]

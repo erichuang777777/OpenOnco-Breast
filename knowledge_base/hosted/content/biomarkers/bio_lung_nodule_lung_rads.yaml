@@ -11,7 +11,7 @@ measurement:
 specimen_requirements:
   - "Low-dose CT chest (≤1.5 mGy CTDIvol, ~1 mSv effective)"
   - "Standardized protocol per ACR / NCCN; trained radiologist"
-clinical_context: [screening, screening_surveillance]
+clinical_context: [screening_surveillance]
 applicable_in_asymptomatic: true
 oncokb_skip_reason: clinical_composite
 sources: [SRC-NCCN-NSCLC-2025, SRC-NCCN-SCLC-2025]

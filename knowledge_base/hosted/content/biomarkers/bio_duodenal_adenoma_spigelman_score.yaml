@@ -11,7 +11,7 @@ measurement:
 specimen_requirements:
   - "Forward + side-viewing duodenoscopy with ampullary inspection"
   - "Multiple biopsies of largest/most-dysplastic polyps for histology + dysplasia grading"
-clinical_context: [screening_surveillance, precursor_lesion, hereditary_surveillance, dysplasia_grading]
+clinical_context: [screening_surveillance]
 applicable_in_asymptomatic: true
 oncokb_skip_reason: clinical_composite
 related_biomarkers: [BIO-APC]
