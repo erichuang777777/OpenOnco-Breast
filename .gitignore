@@ -90,6 +90,12 @@ legacy/source_pdfs/
 patient_plans/
 .tmp/
 
+# Institutional source full text — licensed for a deployer's INTERNAL use
+# only (e.g. hospital NCCN subscription). Surfaced in the clinical-review UI
+# when INSTITUTIONAL_FULLTEXT_ENABLED, but NEVER committed/redistributed
+# (SOURCE_INGESTION_SPEC §1–2; CHARTER §2 non-commercial / referenced-only).
+knowledge_base/hosted/source_fulltext/
+
 # Claude Code local state — per-machine settings, scheduled-task locks,
 # and agent worktree scratch dirs. Never commit. (scheduled_tasks.lock
 # was tracked historically; leave it tracked but ignore future churn.)

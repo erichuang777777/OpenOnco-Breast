@@ -73,12 +73,16 @@ def _load(kb_root_str: str, etype: str, entity_id: str) -> Optional[dict]:
 
 
 def _signoff_count(entity: dict) -> int:
+    """Number of identity-bearing sign-offs.
+
+    Only `reviewer_signoffs` as a *list* of ReviewerSignoff carries reviewer
+    identity. The legacy `reviewer_signoffs: <int>` form is coerced to [] by
+    the schema (`_migrate_int_signoffs`) because it never recorded *who*
+    signed — so we count it as 0 here too, matching engine semantics. This
+    keeps legacy int-counted entities in the review queue where they belong.
+    """
     so = entity.get("reviewer_signoffs")
-    if isinstance(so, list):
-        return len(so)
-    if isinstance(so, int):
-        return so
-    return 0
+    return len(so) if isinstance(so, list) else 0
 
 
 def _label_for(etype: str, entity: dict) -> str:
@@ -155,7 +159,34 @@ def _stringify(value: Any) -> Any:
     return yaml.safe_dump(value, allow_unicode=True, sort_keys=False, default_flow_style=False).strip()
 
 
-def build_review_bundle(kb_root: Path | str, etype: str, entity_id: str) -> Optional[dict]:
+def _load_fulltext(fulltext_dir: Optional[Path], src_id: str) -> Optional[str]:
+    """Institutional source full text for one Source id, if present.
+
+    Looked up only when a fulltext_dir is supplied (i.e. the deployer enabled
+    INSTITUTIONAL_FULLTEXT and holds a licence for internal use). Files are
+    `<src-id-lower>.{md,txt}`; the directory is gitignored and never
+    redistributed.
+    """
+    if fulltext_dir is None:
+        return None
+    stem = src_id.strip().lower().replace("-", "_")
+    for ext in (".md", ".txt"):
+        p = fulltext_dir / f"{stem}{ext}"
+        if p.is_file():
+            try:
+                return p.read_text(encoding="utf-8")
+            except OSError:
+                return None
+    return None
+
+
+def build_review_bundle(
+    kb_root: Path | str,
+    etype: str,
+    entity_id: str,
+    *,
+    fulltext_dir: Optional[Path] = None,
+) -> Optional[dict]:
     kb_root_str = str(kb_root)
     entity = _load(kb_root_str, etype, entity_id)
     if entity is None:
@@ -175,7 +206,14 @@ def build_review_bundle(kb_root: Path | str, etype: str, entity_id: str) -> Opti
 
     src_ids: list[str] = []
     _collect_source_ids(entity, src_ids)
-    citations = [_resolve_citation(kb_root_str, sid) for sid in src_ids]
+    citations = []
+    for sid in src_ids:
+        cit = _resolve_citation(kb_root_str, sid)
+        full = _load_fulltext(fulltext_dir, sid)
+        if full is not None:
+            cit["fulltext"] = full
+            cit["fulltext_institutional"] = True
+        citations.append(cit)
 
     raw_yaml = yaml.safe_dump(entity, allow_unicode=True, sort_keys=False)
 

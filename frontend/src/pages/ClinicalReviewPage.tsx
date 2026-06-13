@@ -80,6 +80,17 @@ function CitationCard({ c }: { c: ReviewCitation }) {
       <EvidenceBlock label="study_design" value={c.study_design} />
       <EvidenceBlock label="key_results" value={c.key_results} />
       <EvidenceBlock label="primary_endpoint" value={c.primary_endpoint} />
+      {c.fulltext && (
+        <details data-testid={`fulltext-${c.source_id}`} style={{ marginTop: 6 }}>
+          <summary style={{ fontSize: '0.78rem', color: '#0f766e', cursor: 'pointer' }}>
+            原文全文（機構內部使用）Source full text (institutional internal use)
+          </summary>
+          <pre style={{
+            background: '#f0fdfa', border: '1px solid #99f6e4', borderRadius: 4,
+            padding: '0.5rem', fontSize: '0.74rem', whiteSpace: 'pre-wrap', maxHeight: 280, overflow: 'auto',
+          }}>{c.fulltext}</pre>
+        </details>
+      )}
       {c.license && (
         <div style={{ fontSize: '0.72rem', color: '#94a3b8', marginTop: 4 }}>license: {c.license}</div>
       )}

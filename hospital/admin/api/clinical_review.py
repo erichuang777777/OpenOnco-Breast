@@ -84,7 +84,10 @@ async def get_review_bundle(
     user: dict = Depends(require_role(VIEW_ROLES)),
 ) -> dict:
     settings = get_settings()
-    bundle = svc.build_review_bundle(settings.kb_root_path, entity_type, entity_id)
+    bundle = svc.build_review_bundle(
+        settings.kb_root_path, entity_type, entity_id,
+        fulltext_dir=settings.source_fulltext_path,
+    )
     if bundle is None:
         raise HTTPException(
             status_code=404,

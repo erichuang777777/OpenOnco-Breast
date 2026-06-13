@@ -174,6 +174,8 @@ export interface ReviewCitation {
   key_results?: unknown
   primary_endpoint?: unknown
   section?: unknown
+  fulltext?: string | null
+  fulltext_institutional?: boolean
 }
 
 export interface ReviewBundle {
