@@ -142,6 +142,54 @@ export interface GuidelineSummary {
   purpose?: string | null
 }
 
+// ── Clinical sign-off review ──────────────────────────────────────────────────
+
+export interface UnsignedEntity {
+  entity_type: string
+  entity_id: string
+  label: string
+  disease_id?: string | null
+  signoff_count: number
+  draft: boolean
+}
+
+export interface ReviewCitation {
+  source_id: string
+  found: boolean
+  title?: string | null
+  type?: string | null
+  hosting?: string | null
+  license?: string | null
+  citation?: {
+    authors?: string | null
+    journal?: string | null
+    year?: string | number | null
+    volume?: string | number | null
+    pages?: string | null
+    doi?: string | null
+    pmid?: string | null
+  } | null
+  url?: string | null
+  study_design?: unknown
+  key_results?: unknown
+  primary_endpoint?: unknown
+  section?: unknown
+}
+
+export interface ReviewBundle {
+  entity_type: string
+  entity_id: string
+  label: string
+  disease_id?: string | null
+  signoff_count: number
+  draft: boolean
+  claims: Array<{ field: string; value: unknown }>
+  citations: ReviewCitation[]
+  citation_count: number
+  missing_sources: string[]
+  raw_yaml: string
+}
+
 // One entry of the engine decision-tree trace (PlanResponse.trace).
 export interface TraceEntry {
   step?: number | string | null

@@ -2,10 +2,14 @@
 
 from __future__ import annotations
 
+import json
+
 from fastapi import APIRouter, Depends, HTTPException, Request, status
+from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from hospital.auth.dependencies import HCP_ROLES, require_role
+from hospital.db.models import Plan
 from hospital.db.session import get_db
 from hospital.decision.schemas.plan import GapsResponse, PlanRequest, PlanResponse, ReviseRequest
 from hospital.services import audit_service
@@ -18,6 +22,27 @@ from hospital.decision.services.timeline_service import add_system_event
 from hospital.decision.services.patient_service import get_patient
 
 router = APIRouter(prefix="/plan", tags=["plan"])
+
+
+async def _persist_plan(
+    db: AsyncSession, response: PlanResponse, *, mrn: str, created_by: str
+) -> None:
+    """Store the generated plan so it can be retrieved by GET /plan/{id}.
+
+    plan_json holds the serialized PlanResponse (PHI — encrypt at rest in
+    production, see SECURITY.md). Idempotent on plan_id.
+    """
+    existing = await db.scalar(select(Plan).where(Plan.plan_id == response.plan_id))
+    if existing is not None:
+        existing.plan_json = response.model_dump_json()
+        return
+    db.add(Plan(
+        plan_id=response.plan_id,
+        mrn=mrn,
+        plan_json=response.model_dump_json(),
+        created_by=created_by,
+        status="draft",
+    ))
 
 
 @router.post("", response_model=PlanResponse)
@@ -62,6 +87,9 @@ async def create_plan(
     )
 
     if body.patient_mrn:
+        await _persist_plan(
+            db, response, mrn=body.patient_mrn, created_by=user["sub"]
+        )
         await add_system_event(
             db,
             mrn=body.patient_mrn,
@@ -81,6 +109,32 @@ async def create_plan(
         )
 
     return response
+
+
+@router.get("/{plan_id}", response_model=PlanResponse)
+async def get_plan(
+    plan_id: str,
+    request: Request,
+    user: dict = Depends(require_role(HCP_ROLES)),
+    db: AsyncSession = Depends(get_db),
+) -> PlanResponse:
+    """Retrieve a previously generated plan by id."""
+    row = await db.scalar(select(Plan).where(Plan.plan_id == plan_id))
+    if row is None:
+        raise HTTPException(
+            status_code=404,
+            detail={"error": "PLAN_NOT_FOUND", "message": f"No plan '{plan_id}'."},
+        )
+    await audit_service.log_action(
+        db,
+        user_id=user["sub"],
+        action="plan.view",
+        resource_type="plan",
+        resource_id=plan_id,
+        mrn=row.mrn,
+        ip_address=request.client.host if request.client else None,
+    )
+    return PlanResponse(**json.loads(row.plan_json))
 
 
 @router.post("/gaps", response_model=GapsResponse)
