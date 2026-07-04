@@ -408,9 +408,22 @@ Phase 0（止血）已經做完（見第 3.2 節）。以下是 Plan agent 設�
 工程師/維護者看一眼再合併——這不是臨床審查，是一般的技術複核，因為
 「工具說沒變」這種話本身也值得再確認一次。
 
-### Phase 3 — 把「會改變路由」的 86%（~549 筆）包裝成待審 PR
+### Phase 3 — 把「會改變路由」的 86%（554 筆）包裝成待審文件（2026-07-04 完成）
 
-**這是硬性停損點：這個 Phase 只產出 PR，絕對不能合併。**
+**這是硬性停損點：這個 Phase 只產出審查文件，絕對不能合併，也沒有合併。**
+
+**已完成**：`scripts/generate_migration_drafts.py` 依疾病分組產出
+`docs/audits/migration_drafts/`（74 個疾病檔 + 1 個排序索引
+`README.md`），每筆列出目前的 `condition:` 原文、結構分類、信心分級、
+（高信心才有的）建議改寫，以及每份文件是否有「step 1 整段是散文」的
+最高風險標記。**沒有動任何 `knowledge_base/` 底下的檔案**——這些都是
+純文件，等真人 Co-Lead 到位後才會變成真正的 PR。沒有為了避免洗版而
+開 100+ 個個別 GitHub draft PR，改成 repo 內的審查文件集合，等審查者
+決定要拆成幾個 PR。測試：`tests/test_generate_migration_drafts.py`
+（9 個測試，含「輸出總數必須跟 CSV 的 routing-changing 子集完全一致」
+的守門測試）。
+
+以下是原始設計，供理解產出格式的邏輯依據：
 
 對每個疾病（不是每個檔案）批次產出一個**草稿 PR**（GitHub draft PR，
 或如果沒有 push 權限就存成本地分支/patch 檔案），內容包含：
@@ -458,12 +471,17 @@ Phase 3 的草稿 PR 已經準備好等審查，但目前沒有人可以審查�
 
 這些不在 Phase 0-5 的主線裡，但值得記錄：
 
-1. **治理透明度（技術性小改動，不需臨床審查）**：在 render 出去的
-   Plan / 網站上，針對尚未有 Co-Lead 簽核、或含有散文 condition 尚未
-   修正的 Algorithm，加上明確的「此決策樹尚待臨床複核」標示。這是
-   誠實揭露現況，不是修 bug，也不涉及臨床內容變更。可以參考
-   `knowledge_base/engine/render.py` 現有的 badge/警語渲染模式（例如
-   `_render_trial_outlook` 附近的寫法）。
+1. **治理透明度（技術性小改動，不需臨床審查）——已完成 2026-07-04**：
+   `knowledge_base/engine/render.py::_algorithm_has_unresolved_prose()`
+   走訪 `plan_result.kb_resolved["algorithm"]["decision_tree"]`，只要
+   有任何 `condition:` clause 被 `_looks_like_prose_condition` 判定為
+   散文，`_render_patient_strip()` 就在病人資訊列加一個
+   `badge--pending-review` 標籤（uk/en 都有文案）。文案刻意誠實：
+   **沒有說「這不影響結果」**（因為多數散文 condition 其實會影響路由，
+   今天才剛證明過），而是明確提示「這個決策樹可能沒有走到畫面顯示的
+   那條路徑，請自行核對臨床邏輯」。純 render 層改動，engine 選擇邏輯
+   完全沒動（CHARTER §8.3 不受影響）。測試：
+   `tests/test_governance_transparency_badge.py`（9 個測試）。
 2. **病人可看 UI 落差**：`specs/PATIENT_MODE_SPEC.md`/
    `specs/PORTAL_SPEC.md`（Jinja2+HTMX，含 `/patient/{token}`）跟
    `DEVELOPMENT_PLAN.md`（React SPA）互相矛盾，且
