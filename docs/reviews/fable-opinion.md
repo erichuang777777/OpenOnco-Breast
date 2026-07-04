@@ -356,43 +356,74 @@ Phase 0（止血）已經做完（見第 3.2 節）。以下是 Plan agent 設�
 **重要**：這份 CSV 是稽核文件（跟 `docs/reviews/*.md` 同性質），
 **可以在沒有臨床審查下 commit**，但檔頭要清楚標註「未套用、未審查」。
 
-### Phase 2 — 只修 DEAD 分類（93 筆）：可證明零行為變更
+### Phase 2 — DEAD 分類（100 筆）：**「可證明零行為變更」這個假設已知不成立，改成待審**
 
-**前置工作（一定要先做，不能跳過）**：寫
-`tests/test_algorithm_routing_snapshot.py`：
-- 對 `knowledge_base/hosted/content/algorithms/*.yaml` 裡每一個
-  Algorithm，用 `knowledge_base.engine.plan.generate_plan()` 對一組
-  合成的病人樣板跑一次。樣板設計：
-  - 每個 `Algorithm.output_indications` 裡的 indication 至少準備一個
-    「理論上應該會選到它」的病人樣板（參考現有測試如
-    `tests/test_esophageal_1l_algorithm.py` 的 `_patient()` helper
-    寫法）。
-  - 加一個「全部欄位缺失」的 min-data 樣板、一個「所有 findings 都
-    True」的 max-positive 樣板。
-- 把每次跑的結果存成快照：`(algorithm_id, 樣板名稱) → (indication_id,
-  決策路徑 trace)`。存成 JSON 檔案（例如
-  `tests/fixtures/algorithm_routing_snapshot.json`），第一次跑
-  `--write-snapshot` 產生，之後跑就是比對模式。
-- **CI 規則**：任何 PR 動到某個 Algorithm 的 `decision_tree`，這個
-  測試就要對該檔案的快照做 diff；如果 diff 非空但 PR 沒有明確在
-  PR 描述裡寫「這次故意改路由」，測試失敗。
+**2026-07-04 更新（重要，讀完再動手）**：這一節原本寫「可證明零行為
+變更、我可以獨立完成」——**這個假設已經被證明是錯的**，而且是實際套用
+後才發現的，不是紙上談兵。過程與根本原因完整記錄在
+`docs/reviews/dead-clause-cleanup-candidates-2026-07-04.md`，這裡只
+摘要結論：
 
-**修正 DEAD 分類**：對 Phase 1 CSV 裡標記 `DEAD` 的 93 筆，把散文
-`condition:` 移除或轉成結構化寫法（因為理論上結果不受影響，可以
-直接刪掉散文的那個 clause，或者為了保留文件價值改寫成正確的
-`{finding: ..., value: ...}`）。**每個疾病分開送 PR**，PR 描述附上
-Phase 2 快照工具算出的路由差異（理論上應為空）。
+- `scripts/audit_prose_conditions.py`（Phase 1）已經寫好並可重跑，
+  正確標出 100 筆 DEAD-class（`any_of` 裡有 working sibling）。
+- `scripts/build_routing_snapshot.py`（Phase 2 快照工具）已經寫好、
+  可重跑，用兩種通用樣板（"empty" 全空、"all_true" 把樹上每個真正
+  finding key 設 True）快照 180×2=360 筆路由結果。
+- **實際套用 100 筆 DEAD 移除後，快照顯示 0 diff（360 筆全部沒變），
+  但既有測試套件裡 `test_esophageal_1l_algorithm.py::
+  test_escc_cps_positive_chemo_sparing_routes_to_ipi_nivo` 卻真的
+  紅了。** 根本原因：`tests/test_esophageal_1l_algorithm.py` 的病人
+  fixture 直接把散文原文當 key 塞值（`{"ESCC CPS >=1": True}`），這是
+  一個已知的 workaround 寫法（`openonco-state-audit-2026-05-17.md`
+  就提過）。我的快照工具的兩種通用樣板都沒有這種「散文字串剛好被當
+  key 用」的情況，所以沒測到；只有專案自己既有、手寫的測試套件抓到。
+- **結論：光靠 routing snapshot diff 為零，不足以證明這類改動安全**
+  ——「DEAD = 同 any_of 有 working sibling」只在一般情況下成立，
+  但擋不住「有人直接拿散文字串當 finding key」這種已存在於本 repo 的
+  用法。
+- 套用的 100 筆已經**全數復原**（`git checkout --`），目前
+  `knowledge_base/hosted/content/algorithms/` 沒有任何改動。
+- 使用者的決定（2026-07-04）：**把 DEAD-class 清理降級成跟 Phase 3
+  一樣的待審模式**——只產出候選清單 + 完整既有測試套件跑過的結果，
+  不自動套用到真實 YAML。
 
-**退出條件**：所有 DEAD 分類清除；快照工具對全部 180 個檔案顯示
-diff 為零；Phase 1 的 CSV 重跑，`DEAD` 分類數量歸零。
+**如果你是接手的模型，要真的套用這 100 筆之前，至少要做到**：
+1. 不能只看 routing snapshot diff——`scripts/build_routing_snapshot.py`
+   的兩種通用樣板不夠。
+2. 每一筆候選的散文原文，要對照**整個測試套件 + `examples/*.json`**
+   逐字搜尋，確認沒有任何 fixture 把這句原文當成 finding key 在用
+   （像 ESCC CPS 這樣）。有的話，這筆就不是真的 DEAD，要轉去 Phase 3
+   走臨床審查流程。
+3. 每套用一個檔案（甚至每移除一個 clause）就跑一次**完整**既有測試
+   套件，任何一個既有測試變紅就整批擋下、立刻復原，不要事後才發現。
+4. 即使 (1)-(3) 都過了，套用到 `knowledge_base/hosted/content/` 底下
+   仍然是 CHARTER §6.1 管轄範圍——是否要為「可證明安全」的清理開一個
+   例外，是專案負責人的決定，不是工程判斷。
+
+`scripts/apply_dead_condition_cleanup.py` 的原始工具還在，dry-run
+可以重跑（100/100 驗證通過、0 skip），但**不要在補上上述驗證之前
+再次用它寫入真實檔案**。
 
 **建議（不是強制）**：即使工具說「沒有變化」，這批 PR 仍建議找另一位
 工程師/維護者看一眼再合併——這不是臨床審查，是一般的技術複核，因為
 「工具說沒變」這種話本身也值得再確認一次。
 
-### Phase 3 — 把「會改變路由」的 86%（~549 筆）包裝成待審 PR
+### Phase 3 — 把「會改變路由」的 86%（554 筆）包裝成待審文件（2026-07-04 完成）
 
-**這是硬性停損點：這個 Phase 只產出 PR，絕對不能合併。**
+**這是硬性停損點：這個 Phase 只產出審查文件，絕對不能合併，也沒有合併。**
+
+**已完成**：`scripts/generate_migration_drafts.py` 依疾病分組產出
+`docs/audits/migration_drafts/`（74 個疾病檔 + 1 個排序索引
+`README.md`），每筆列出目前的 `condition:` 原文、結構分類、信心分級、
+（高信心才有的）建議改寫，以及每份文件是否有「step 1 整段是散文」的
+最高風險標記。**沒有動任何 `knowledge_base/` 底下的檔案**——這些都是
+純文件，等真人 Co-Lead 到位後才會變成真正的 PR。沒有為了避免洗版而
+開 100+ 個個別 GitHub draft PR，改成 repo 內的審查文件集合，等審查者
+決定要拆成幾個 PR。測試：`tests/test_generate_migration_drafts.py`
+（9 個測試，含「輸出總數必須跟 CSV 的 routing-changing 子集完全一致」
+的守門測試）。
+
+以下是原始設計，供理解產出格式的邏輯依據：
 
 對每個疾病（不是每個檔案）批次產出一個**草稿 PR**（GitHub draft PR，
 或如果沒有 push 權限就存成本地分支/patch 檔案），內容包含：
@@ -440,12 +471,17 @@ Phase 3 的草稿 PR 已經準備好等審查，但目前沒有人可以審查�
 
 這些不在 Phase 0-5 的主線裡，但值得記錄：
 
-1. **治理透明度（技術性小改動，不需臨床審查）**：在 render 出去的
-   Plan / 網站上，針對尚未有 Co-Lead 簽核、或含有散文 condition 尚未
-   修正的 Algorithm，加上明確的「此決策樹尚待臨床複核」標示。這是
-   誠實揭露現況，不是修 bug，也不涉及臨床內容變更。可以參考
-   `knowledge_base/engine/render.py` 現有的 badge/警語渲染模式（例如
-   `_render_trial_outlook` 附近的寫法）。
+1. **治理透明度（技術性小改動，不需臨床審查）——已完成 2026-07-04**：
+   `knowledge_base/engine/render.py::_algorithm_has_unresolved_prose()`
+   走訪 `plan_result.kb_resolved["algorithm"]["decision_tree"]`，只要
+   有任何 `condition:` clause 被 `_looks_like_prose_condition` 判定為
+   散文，`_render_patient_strip()` 就在病人資訊列加一個
+   `badge--pending-review` 標籤（uk/en 都有文案）。文案刻意誠實：
+   **沒有說「這不影響結果」**（因為多數散文 condition 其實會影響路由，
+   今天才剛證明過），而是明確提示「這個決策樹可能沒有走到畫面顯示的
+   那條路徑，請自行核對臨床邏輯」。純 render 層改動，engine 選擇邏輯
+   完全沒動（CHARTER §8.3 不受影響）。測試：
+   `tests/test_governance_transparency_badge.py`（9 個測試）。
 2. **病人可看 UI 落差**：`specs/PATIENT_MODE_SPEC.md`/
    `specs/PORTAL_SPEC.md`（Jinja2+HTMX，含 `/patient/{token}`）跟
    `DEVELOPMENT_PLAN.md`（React SPA）互相矛盾，且
@@ -471,7 +507,7 @@ Phase 3 的草稿 PR 已經準備好等審查，但目前沒有人可以審查�
 | Phase 0.2（prose ratchet） | `python scripts/check_prose_conditions.py` | 輸出 `... (unchanged)` 或 `(improved)`，不是 `FAILED` |
 | Phase 0.3（plan GET） | `pytest tests/hospital/test_api_plan_retrieval.py -q` | 8/8 通過（今天已驗證） |
 | Phase 1（稽核 CSV） | 人工抽查 CSV 裡 10-15 筆分類是否合理 | 分類邏輯站得住腳，沒有明顯誤判 |
-| Phase 2（DEAD 清理） | `pytest tests/test_algorithm_routing_snapshot.py -q` | 全綠，且既有測試（`test_algorithm_regimen_routing_contracts.py`、`test_esophageal_1l_algorithm.py`）不能變紅 |
+| Phase 2（DEAD 候選，僅稽核不套用） | `pytest tests/test_algorithm_routing_snapshot.py tests/test_esophageal_1l_algorithm.py tests/test_algorithm_regimen_routing_contracts.py -q` | 全綠（今天已驗證，77 個測試通過）；**套用前**還要對每筆候選做 `docs/reviews/dead-clause-cleanup-candidates-2026-07-04.md` 列的 4 項額外驗證 |
 | Phase 3（草稿 PR） | 人工審閱路由差異報告的可讀性 | 每個 PR 的差異報告讓一個沒讀過程式碼的臨床醫師也看得懂「誰的治療方案會變」 |
 | 全域 | `python scripts/audit_validator.py --human` | 0 schema/ref/contract errors（跟今天一樣，這個沒有被這次改動動到） |
 

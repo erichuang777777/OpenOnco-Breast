@@ -386,6 +386,39 @@ def _diagnosis_name(plan_result: PlanResult, target_lang: str = "uk") -> str:
     return _pick_name(names, target_lang, default=plan_result.disease_id or "")
 
 
+def _algorithm_has_unresolved_prose(plan_result: PlanResult) -> bool:
+    """True if the Algorithm actually used to build this Plan has any
+    `condition:` clause that reads as unevaluated prose — see
+    `knowledge_base.engine.redflag_eval`'s module docstring and
+    `docs/reviews/openonco-state-audit-2026-05-17.md`.
+
+    Render-time-only transparency signal (fable-opinion.md Section 6):
+    purely disclosive, never a selection signal, never withholds or
+    alters the Plan itself (CHARTER §8.3 invariant unaffected).
+    """
+    from knowledge_base.engine.redflag_eval import _looks_like_prose_condition
+
+    algo = (plan_result.kb_resolved or {}).get("algorithm") or {}
+
+    def _walk(node) -> bool:
+        if isinstance(node, dict):
+            cond = node.get("condition")
+            if cond and _looks_like_prose_condition(cond):
+                return True
+            for key in ("all_of", "any_of", "none_of"):
+                if any(_walk(child) for child in node.get(key) or []):
+                    return True
+            return False
+        if isinstance(node, list):
+            return any(_walk(item) for item in node)
+        return False
+
+    for step in algo.get("decision_tree") or []:
+        if _walk(step.get("evaluate") or {}):
+            return True
+    return False
+
+
 def _render_patient_strip(plan_result: PlanResult, target_lang: str = "uk") -> str:
     plan = plan_result.plan
     patient_id = (plan.patient_id if plan is not None else plan_result.patient_id) or ""
@@ -417,16 +450,42 @@ def _render_patient_strip(plan_result: PlanResult, target_lang: str = "uk") -> s
         for label, value in meta
     )
     details_html = f'<div class="patient-meta-grid">{details}</div>' if details else ""
+
+    pending_review_html = ""
+    if _algorithm_has_unresolved_prose(plan_result):
+        label = _t("algo_pending_review", target_lang)
+        title = _t("algo_pending_review_title", target_lang)
+        pending_review_html = (
+            f'<span class="badge badge--pending-review" title="{_h(title)}">'
+            f'{_h(label)}</span>'
+        )
+
     return (
         '<div class="patient-strip">'
         f'<div class="label">{_h(_t("patient_label", target_lang))}</div>'
-        f'<div class="value">{_h(patient_id)} · Algorithm: {_h(algorithm_id)}</div>'
+        f'<div class="value">{_h(patient_id)} · Algorithm: {_h(algorithm_id)}'
+        f'{pending_review_html}</div>'
         f'{details_html}'
         '</div>'
     )
 
 
 _UI_STRINGS: dict[str, dict[str, str]] = {
+    # Governance transparency badge (fable-opinion.md Section 6). Purely
+    # disclosive — never a selection signal, never withholds a Plan.
+    "algo_pending_review":         {"uk": "Це дерево рішень ще очікує клінічного перегляду",
+                                    "en": "This decision tree is pending clinical review"},
+    "algo_pending_review_title":   {"uk": "Частина умов у цьому алгоритмі записана як вільний "
+                                          "текст, який рушій ще не може оцінити як true/false — "
+                                          "такі умови завжди дають хибний результат і дерево "
+                                          "рішень може повести пацієнта не тим шляхом, який "
+                                          "показаний. Перевірте клінічну логіку самостійно.",
+                                    "en": "Some conditions in this algorithm are written as "
+                                          "free-text prose the engine can't yet evaluate as "
+                                          "true/false — those conditions always resolve to false, "
+                                          "which can route a patient down a different path than "
+                                          "the tree visually suggests. Verify the clinical logic "
+                                          "independently."},
     # Section headers
     "treatment_options":           {"uk": "Варіанти лікування", "en": "Treatment options"},
     "etiological_driver":          {"uk": "Етіологічний драйвер", "en": "Etiological driver"},
