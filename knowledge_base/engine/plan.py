@@ -1095,13 +1095,16 @@ def generate_plan(
             or ((disease_data.get("names") or {}).get("preferred"))
             or disease_id
         )
-        biomarker_term = _first_truthy_biomarker(patient.get("biomarkers") or {})
+        biomarker_terms = _positive_biomarker_terms(patient.get("biomarkers") or {})
+        demographics = patient.get("demographics") or {}
         try:
             result.experimental_options = enumerate_experimental_options(
                 disease_id=disease_id,
                 disease_term=disease_term,
-                biomarker_profile=biomarker_term,
+                biomarker_profiles=biomarker_terms,
                 line_of_therapy=line,
+                patient_age=demographics.get("age"),
+                patient_sex=demographics.get("sex"),
                 search_fn=experimental_search_fn,
                 cache_root=Path(experimental_cache_root) if experimental_cache_root else None,
             )
@@ -1185,28 +1188,32 @@ def generate_plan(
     return result
 
 
-def _first_truthy_biomarker(biomarkers: dict) -> Optional[str]:
-    """Pick a representative biomarker term for the ctgov query.
+def _positive_biomarker_terms(biomarkers: dict) -> list[str]:
+    """Collect every positive biomarker term for the ctgov query.
 
     Patient biomarker dicts vary in shape — values may be bool, str,
     or nested dict. We prefer keys whose value is True or a positive
     string ("positive", "mutated", "amplified"). Returns the human
-    label form (e.g. `BIO-EGFR-MUT` → `EGFR mutation`-ish), or None
-    when no positive biomarker is present.
+    label form of each (e.g. `BIO-EGFR-MUT` → `EGFR mutation`-ish), in
+    dict-iteration order; empty list when no positive biomarker is
+    present.
 
-    Engine doesn't read this — it only feeds the trial query.
+    A patient can have more than one positive biomarker (e.g. EGFR+ and
+    TP53+) — collecting all of them (rather than only the first) means
+    `enumerate_experimental_options` can surface trials enrolling for
+    either. Engine doesn't read this — it only feeds the trial query.
     """
 
     if not biomarkers:
-        return None
+        return []
+    terms: list[str] = []
     for key, val in biomarkers.items():
-        if val is True:
-            return _humanize_biomarker_key(key)
-        if isinstance(val, str) and val.lower() in {
-            "positive", "pos", "mutated", "mut", "amplified", "high"
-        }:
-            return _humanize_biomarker_key(key)
-    return None
+        if val is True or (
+            isinstance(val, str)
+            and val.lower() in {"positive", "pos", "mutated", "mut", "amplified", "high"}
+        ):
+            terms.append(_humanize_biomarker_key(key))
+    return terms
 
 
 def _humanize_biomarker_key(key: str) -> str:

@@ -651,6 +651,10 @@ _UI_STRINGS: dict[str, dict[str, str]] = {
                                     "en": "Surrogate endpoint only"},
     "exp_outlook_single_country":  {"uk": "Одна країна",
                                     "en": "Single country"},
+    "exp_outlook_age_sex_mismatch": {"uk": "Вік/стать: не підходить",
+                                    "en": "Age/sex: mismatch"},
+    "exp_outlook_age_sex_match":   {"uk": "Вік/стать: підходить",
+                                    "en": "Age/sex: match"},
     # Access matrix
     "matrix_heading":              {"uk": "Доступність опцій в Україні",
                                     "en": "Option availability in Ukraine"},
@@ -1824,6 +1828,22 @@ def _render_trial_outlook(outlook, notes_index: dict[str, str], target_lang: str
         )
     # "open_label" intentionally renders nothing — it's the absence of signal.
 
+    if outlook.age_sex_screen == "mismatch":
+        label = _t("exp_outlook_age_sex_mismatch", target_lang)
+        title = notes_index.get("age_sex_mismatch", label)
+        parts.append(
+            f'<span class="badge badge--age-sex-mismatch" title="{_h(title)}">'
+            f'{_h(label)}</span>'
+        )
+    elif outlook.age_sex_screen == "match":
+        label = _t("exp_outlook_age_sex_match", target_lang)
+        title = notes_index.get("age_sex_match", label)
+        parts.append(
+            f'<span class="badge badge--age-sex-match" title="{_h(title)}">'
+            f'{_h(label)}</span>'
+        )
+    # "unknown" intentionally renders nothing — no patient data or no trial constraint.
+
     for flag in outlook.design_flags:
         key = _OUTLOOK_FLAG_KEYS.get(flag)
         if key is None:
@@ -1850,7 +1870,15 @@ def _outlook_notes_index(outlook) -> dict[str, str]:
     idx: dict[str, str] = {}
     for note in outlook.notes:
         low = note.lower()
-        if "inclusion criteria reference" in low:
+        if low.startswith("age/sex screen:"):
+            # `trial_outlook.detect_age_sex_screen` only ever emits these
+            # two phrasings for a "match" reason; anything else under this
+            # prefix is one of its "mismatch" reasons.
+            if "is within the trial's stated range" in low or "matches the trial's" in low:
+                idx["age_sex_match"] = note
+            else:
+                idx["age_sex_mismatch"] = note
+        elif "inclusion criteria reference" in low:
             idx["enriched"] = note
         elif "partial biomarker" in low or "exclusion" in low:
             idx["unclear"] = note

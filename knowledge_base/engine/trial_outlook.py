@@ -113,6 +113,94 @@ def _detect_biomarker_stratification(
     return ("open_label", None)
 
 
+# ── Age / sex screen ──────────────────────────────────────────────────────
+#
+# Compares the trial's *structured* eligibility fields (min/max age, sex)
+# against a patient's demographics. Deliberately does not touch the free-
+# text eligibility criteria — those are curator/site-authored prose with
+# no reliable parse target; the structured ctgov fields are the one part
+# of eligibility that's safe to compare mechanically.
+#
+# Patient-dependent, so NOT cached inside `TrialOutlook` the way
+# stratification/design_flags are — see the note on `AgeSexScreen` in
+# `knowledge_base/schemas/experimental_option.py`. Called by
+# `experimental_options._apply_patient_screen`, not by `score_trial`.
+
+_AGE_UNIT_TO_YEARS = {
+    "year": 1.0,
+    "years": 1.0,
+    "month": 1 / 12,
+    "months": 1 / 12,
+    "week": 1 / 52,
+    "weeks": 1 / 52,
+    "day": 1 / 365,
+    "days": 1 / 365,
+}
+
+
+def _parse_ctgov_age(text: Optional[str]) -> Optional[float]:
+    """Parse a ctgov age string ("18 Years", "6 Months", "N/A") into a
+    float number of years. Returns None when unparseable/absent — callers
+    treat that as "no constraint on this bound", not "age zero"."""
+    if not text:
+        return None
+    m = re.match(r"\s*(\d+(?:\.\d+)?)\s*([a-zA-Z]+)", text)
+    if not m:
+        return None
+    value, unit = m.groups()
+    factor = _AGE_UNIT_TO_YEARS.get(unit.lower())
+    if factor is None:
+        return None
+    return float(value) * factor
+
+
+def detect_age_sex_screen(
+    min_age: Optional[str],
+    max_age: Optional[str],
+    eligible_sex: Optional[str],
+    patient_age: Optional[float],
+    patient_sex: Optional[str],
+) -> tuple[str, Optional[str]]:
+    """Return (age_sex_screen, note). See `AgeSexScreen` for the three
+    values. "mismatch" wins over "match" when both age and sex are
+    checkable and only one clears; "unknown" means nothing was
+    checkable (no patient data, or trial has no structured constraint)."""
+
+    if patient_age is None and not patient_sex:
+        return ("unknown", None)
+
+    reasons_mismatch: list[str] = []
+    reasons_match: list[str] = []
+
+    if patient_age is not None:
+        min_y = _parse_ctgov_age(min_age)
+        max_y = _parse_ctgov_age(max_age)
+        if min_y is not None and patient_age < min_y:
+            reasons_mismatch.append(
+                f"patient age {patient_age:g} is below the trial minimum ({min_age})"
+            )
+        elif max_y is not None and patient_age > max_y:
+            reasons_mismatch.append(
+                f"patient age {patient_age:g} is above the trial maximum ({max_age})"
+            )
+        elif min_y is not None or max_y is not None:
+            reasons_match.append("patient age is within the trial's stated range")
+
+    if patient_sex and eligible_sex and eligible_sex.strip().upper() not in ("ALL", ""):
+        if patient_sex.strip().upper() != eligible_sex.strip().upper():
+            reasons_mismatch.append(
+                f"trial is restricted to {eligible_sex}, patient sex is {patient_sex}"
+            )
+        else:
+            reasons_match.append(f"patient sex matches the trial's {eligible_sex} restriction")
+
+    if reasons_mismatch:
+        return ("mismatch", "age/sex screen: " + "; ".join(reasons_mismatch))
+    if reasons_match:
+        return ("match", "age/sex screen: " + "; ".join(reasons_match))
+    return ("unknown", None)
+
+
 # ── Design flags ─────────────────────────────────────────────────────────
 
 
@@ -245,4 +333,4 @@ def score_trial(
     )
 
 
-__all__ = ["score_trial"]
+__all__ = ["score_trial", "detect_age_sex_screen"]
