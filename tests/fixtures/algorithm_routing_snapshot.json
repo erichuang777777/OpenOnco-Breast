@@ -1,0 +1,1442 @@
+{
+  "ALGO-ADVSM-1L::all_true": {
+    "alternative_indication_id": "IND-ADVSM-1L-AVAPRITINIB",
+    "default_indication_id": "IND-ADVSM-1L-MIDOSTAURIN"
+  },
+  "ALGO-ADVSM-1L::empty": {
+    "alternative_indication_id": "IND-ADVSM-1L-AVAPRITINIB",
+    "default_indication_id": "IND-ADVSM-1L-MIDOSTAURIN"
+  },
+  "ALGO-AITL-1L::all_true": {
+    "alternative_indication_id": "IND-AITL-1L-CHP-BV",
+    "default_indication_id": "IND-AITL-1L-CHOEP"
+  },
+  "ALGO-AITL-1L::empty": {
+    "alternative_indication_id": "IND-AITL-1L-CHP-BV",
+    "default_indication_id": "IND-AITL-1L-CHOEP"
+  },
+  "ALGO-AITL-2L::all_true": {
+    "alternative_indication_id": "IND-AITL-2L-AZACITIDINE",
+    "default_indication_id": "IND-AITL-2L-BELINOSTAT"
+  },
+  "ALGO-AITL-2L::empty": {
+    "alternative_indication_id": "IND-AITL-2L-ROMIDEPSIN",
+    "default_indication_id": "IND-AITL-2L-AZACITIDINE"
+  },
+  "ALGO-ALCL-1L::all_true": {
+    "alternative_indication_id": "IND-TCELL-1L-CHP-BV",
+    "default_indication_id": "IND-TCELL-1L-CHOEP"
+  },
+  "ALGO-ALCL-1L::empty": {
+    "alternative_indication_id": "IND-TCELL-1L-CHP-BV",
+    "default_indication_id": "IND-TCELL-1L-CHOEP"
+  },
+  "ALGO-ALCL-2L::all_true": {
+    "alternative_indication_id": "IND-ALCL-2L-BRENTUXIMAB-MONO",
+    "default_indication_id": "IND-ALCL-2L-BENDAMUSTINE"
+  },
+  "ALGO-ALCL-2L::empty": {
+    "alternative_indication_id": "IND-ALCL-2L-BRENTUXIMAB-MONO",
+    "default_indication_id": "IND-ALCL-2L-BENDAMUSTINE"
+  },
+  "ALGO-AML-1L::all_true": {
+    "alternative_indication_id": "IND-AML-1L-VEN-AZA",
+    "default_indication_id": "IND-AML-1L-7-3"
+  },
+  "ALGO-AML-1L::empty": {
+    "alternative_indication_id": "IND-AML-1L-VEN-AZA",
+    "default_indication_id": "IND-AML-1L-7-3"
+  },
+  "ALGO-AML-2L::all_true": {
+    "alternative_indication_id": "IND-AML-2L-IDH2-ENASIDENIB",
+    "default_indication_id": "IND-AML-2L-GILTERITINIB-FLT3"
+  },
+  "ALGO-AML-2L::empty": {
+    "alternative_indication_id": "IND-AML-2L-IDH2-ENASIDENIB",
+    "default_indication_id": "IND-AML-2L-GILTERITINIB-FLT3"
+  },
+  "ALGO-AMSTERDAM-II-LYNCH::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE"
+  },
+  "ALGO-AMSTERDAM-II-LYNCH::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-LYNCH-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE"
+  },
+  "ALGO-ANAL-SCC-1L::all_true": {
+    "alternative_indication_id": "IND-ANAL-SCC-METASTATIC-1L-RETIFANLIMAB-CARBO-PACLI",
+    "default_indication_id": "IND-ANAL-SCC-LA-1L-NIGRO-CRT"
+  },
+  "ALGO-ANAL-SCC-1L::empty": {
+    "alternative_indication_id": "IND-ANAL-SCC-METASTATIC-1L-RETIFANLIMAB-CARBO-PACLI",
+    "default_indication_id": "IND-ANAL-SCC-LA-1L-NIGRO-CRT"
+  },
+  "ALGO-APL-1L::all_true": {
+    "alternative_indication_id": "IND-APL-1L-ATRA-ATO-IDA",
+    "default_indication_id": "IND-APL-1L-ATRA-ATO"
+  },
+  "ALGO-APL-1L::empty": {
+    "alternative_indication_id": "IND-APL-1L-ATRA-ATO-IDA",
+    "default_indication_id": "IND-APL-1L-ATRA-ATO"
+  },
+  "ALGO-APL-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-APL-SALVAGE-ATRA-ATO"
+  },
+  "ALGO-APL-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-APL-SALVAGE-ATRA-ATO"
+  },
+  "ALGO-ATLL-1L::all_true": {
+    "alternative_indication_id": "IND-ATLL-1L-AGGRESSIVE",
+    "default_indication_id": "IND-ATLL-1L-INDOLENT-AZT-IFN"
+  },
+  "ALGO-ATLL-1L::empty": {
+    "alternative_indication_id": "IND-ATLL-1L-INDOLENT-AZT-IFN",
+    "default_indication_id": "IND-ATLL-1L-AGGRESSIVE"
+  },
+  "ALGO-ATLL-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-ATLL-2L-MOGAMULIZUMAB"
+  },
+  "ALGO-ATLL-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-ATLL-2L-MOGAMULIZUMAB"
+  },
+  "ALGO-B-ALL-1L::all_true": {
+    "alternative_indication_id": "IND-B-ALL-1L-PH-POS",
+    "default_indication_id": "IND-B-ALL-1L-PH-NEG"
+  },
+  "ALGO-B-ALL-1L::empty": {
+    "alternative_indication_id": "IND-B-ALL-1L-PH-POS",
+    "default_indication_id": "IND-B-ALL-1L-PH-NEG"
+  },
+  "ALGO-B-ALL-2L::all_true": {
+    "alternative_indication_id": "IND-B-ALL-2L-INOTUZUMAB",
+    "default_indication_id": "IND-B-ALL-BLINATUMOMAB-MRD-OR-RR"
+  },
+  "ALGO-B-ALL-2L::empty": {
+    "alternative_indication_id": "IND-B-ALL-2L-INOTUZUMAB",
+    "default_indication_id": "IND-B-ALL-BLINATUMOMAB-MRD-OR-RR"
+  },
+  "ALGO-BCC-1L::all_true": {
+    "alternative_indication_id": "IND-BCC-1L-SONIDEGIB",
+    "default_indication_id": "IND-BCC-1L-VISMODEGIB"
+  },
+  "ALGO-BCC-1L::empty": {
+    "alternative_indication_id": "IND-BCC-1L-SONIDEGIB",
+    "default_indication_id": "IND-BCC-1L-VISMODEGIB"
+  },
+  "ALGO-BCSC-BREAST::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE"
+  },
+  "ALGO-BCSC-BREAST::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE"
+  },
+  "ALGO-BOADICEA-V6-BREAST-OVARIAN::all_true": {
+    "actual_algorithm_selected": "ALGO-BCSC-BREAST",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-BOADICEA-V6-BREAST-OVARIAN::empty": {
+    "actual_algorithm_selected": "ALGO-BCSC-BREAST",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-BRCAPRO::all_true": {
+    "actual_algorithm_selected": "ALGO-BCSC-BREAST",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-BRCAPRO::empty": {
+    "actual_algorithm_selected": "ALGO-BCSC-BREAST",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-BREAST-1L::all_true": {
+    "alternative_indication_id": "IND-BREAST-HR-POS-MET-1L-CDKI",
+    "default_indication_id": "IND-BREAST-TNBC-METASTATIC-1L-PEMBRO-CHEMO"
+  },
+  "ALGO-BREAST-1L::empty": {
+    "alternative_indication_id": "IND-BREAST-HR-POS-EARLY-ADJ-CDK46I",
+    "default_indication_id": "IND-BREAST-HR-POS-MET-1L-CDKI"
+  },
+  "ALGO-BREAST-HER2-POS-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-BREAST-HER2-POS-MET-2L-TDXD"
+  },
+  "ALGO-BREAST-HER2-POS-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-BREAST-HER2-POS-MET-2L-TDXD"
+  },
+  "ALGO-BREAST-HR-POS-2L::all_true": {
+    "alternative_indication_id": "IND-BREAST-HR-POS-2L-PIK3CA-ALPELISIB",
+    "default_indication_id": "IND-BREAST-HR-POS-2L-FUL-EVEROLIMUS"
+  },
+  "ALGO-BREAST-HR-POS-2L::empty": {
+    "alternative_indication_id": "IND-BREAST-HR-POS-2L-PIK3CA-ALPELISIB",
+    "default_indication_id": "IND-BREAST-HR-POS-2L-FUL-EVEROLIMUS"
+  },
+  "ALGO-BREAST-TNBC-2L::all_true": {
+    "alternative_indication_id": "IND-BREAST-TNBC-2L-BRCA-OLAPARIB",
+    "default_indication_id": "IND-BREAST-TNBC-2L-SACITUZUMAB"
+  },
+  "ALGO-BREAST-TNBC-2L::empty": {
+    "alternative_indication_id": "IND-BREAST-TNBC-2L-BRCA-OLAPARIB",
+    "default_indication_id": "IND-BREAST-TNBC-2L-SACITUZUMAB"
+  },
+  "ALGO-BURKITT-1L::all_true": {
+    "alternative_indication_id": "IND-BURKITT-1L-CODOXM-IVAC",
+    "default_indication_id": "IND-BURKITT-1L-DAEPOCHR"
+  },
+  "ALGO-BURKITT-1L::empty": {
+    "alternative_indication_id": "IND-BURKITT-1L-CODOXM-IVAC",
+    "default_indication_id": "IND-BURKITT-1L-DAEPOCHR"
+  },
+  "ALGO-BURKITT-2L::all_true": {
+    "alternative_indication_id": "IND-BURKITT-2L-RICE-ASCT",
+    "default_indication_id": "IND-BURKITT-2L-RDHAP-ASCT"
+  },
+  "ALGO-BURKITT-2L::empty": {
+    "alternative_indication_id": "IND-BURKITT-2L-RDHAP-ASCT",
+    "default_indication_id": "IND-BURKITT-2L-RICE-ASCT"
+  },
+  "ALGO-CARRIER-CASCADE-LYNCH::all_true": {
+    "actual_algorithm_selected": "ALGO-AMSTERDAM-II-LYNCH",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-CARRIER-CASCADE-LYNCH::empty": {
+    "actual_algorithm_selected": "ALGO-AMSTERDAM-II-LYNCH",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-CASCADE-FAMILY-TESTING::all_true": {
+    "actual_algorithm_selected": "ALGO-AMSTERDAM-II-LYNCH",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-CASCADE-FAMILY-TESTING::empty": {
+    "actual_algorithm_selected": "ALGO-AMSTERDAM-II-LYNCH",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-CASCADE-LFS-CARRIER-FAMILY-TESTING::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE"
+  },
+  "ALGO-CASCADE-LFS-CARRIER-FAMILY-TESTING::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE"
+  },
+  "ALGO-CERVICAL-LOCALLY-ADVANCED-1L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-CERVICAL-LOCALLY-ADVANCED-CRT"
+  },
+  "ALGO-CERVICAL-LOCALLY-ADVANCED-1L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-CERVICAL-LOCALLY-ADVANCED-CRT"
+  },
+  "ALGO-CERVICAL-METASTATIC-1L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-CERVICAL-METASTATIC-1L-PEMBRO-CHEMO-BEV"
+  },
+  "ALGO-CERVICAL-METASTATIC-1L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-CERVICAL-METASTATIC-1L-PEMBRO-CHEMO-BEV"
+  },
+  "ALGO-CHL-1L::all_true": {
+    "alternative_indication_id": "IND-CHL-1L-A-AVD",
+    "default_indication_id": "IND-CHL-1L-ABVD"
+  },
+  "ALGO-CHL-1L::empty": {
+    "alternative_indication_id": "IND-CHL-1L-A-AVD",
+    "default_indication_id": "IND-CHL-1L-ABVD"
+  },
+  "ALGO-CHL-2L::all_true": {
+    "alternative_indication_id": "IND-CHL-2L-BRENTUXIMAB-MAINTENANCE",
+    "default_indication_id": "IND-CHL-2L-PEMBROLIZUMAB"
+  },
+  "ALGO-CHL-2L::empty": {
+    "alternative_indication_id": "IND-CHL-2L-BRENTUXIMAB-MAINTENANCE",
+    "default_indication_id": "IND-CHL-2L-PEMBROLIZUMAB"
+  },
+  "ALGO-CHOLANGIO-1L::all_true": {
+    "alternative_indication_id": "IND-CHOLANGIO-METASTATIC-1L-DURVA-CHEMO",
+    "default_indication_id": "IND-CHOLANGIO-ADVANCED-GEM-CIS"
+  },
+  "ALGO-CHOLANGIO-1L::empty": {
+    "alternative_indication_id": "IND-CHOLANGIO-METASTATIC-1L-DURVA-CHEMO",
+    "default_indication_id": "IND-CHOLANGIO-ADVANCED-GEM-CIS"
+  },
+  "ALGO-CHOLANGIO-2L::all_true": {
+    "alternative_indication_id": "IND-CHOLANGIO-2L-HER2-ZANIDATAMAB",
+    "default_indication_id": "IND-CHOLANGIO-2L-IDH1-IVOSIDENIB"
+  },
+  "ALGO-CHOLANGIO-2L::empty": {
+    "alternative_indication_id": "IND-CHOLANGIO-2L-HER2-ZANIDATAMAB",
+    "default_indication_id": "IND-CHOLANGIO-2L-IDH1-IVOSIDENIB"
+  },
+  "ALGO-CHOMPRET-2015-LFS::all_true": {
+    "actual_algorithm_selected": "ALGO-CASCADE-LFS-CARRIER-FAMILY-TESTING",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-CHOMPRET-2015-LFS::empty": {
+    "actual_algorithm_selected": "ALGO-CASCADE-LFS-CARRIER-FAMILY-TESTING",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-CHONDROSARCOMA-1L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-CHONDROSARCOMA-ADVANCED-DOXORUBICIN"
+  },
+  "ALGO-CHONDROSARCOMA-1L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-CHONDROSARCOMA-ADVANCED-DOXORUBICIN"
+  },
+  "ALGO-CLASSIC-FAP-CRITERIA::all_true": {
+    "actual_algorithm_selected": "ALGO-AMSTERDAM-II-LYNCH",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-CLASSIC-FAP-CRITERIA::empty": {
+    "actual_algorithm_selected": "ALGO-AMSTERDAM-II-LYNCH",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-CLASSIC-LFS-CRITERIA::all_true": {
+    "actual_algorithm_selected": "ALGO-CASCADE-LFS-CARRIER-FAMILY-TESTING",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-CLASSIC-LFS-CRITERIA::empty": {
+    "actual_algorithm_selected": "ALGO-CASCADE-LFS-CARRIER-FAMILY-TESTING",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-CLL-1L::all_true": {
+    "alternative_indication_id": "IND-CLL-1L-VENO",
+    "default_indication_id": "IND-CLL-1L-BTKI"
+  },
+  "ALGO-CLL-1L::empty": {
+    "alternative_indication_id": "IND-CLL-1L-VENO",
+    "default_indication_id": "IND-CLL-1L-BTKI"
+  },
+  "ALGO-CLL-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-CLL-2L-VENR-MURANO"
+  },
+  "ALGO-CLL-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-CLL-2L-VENR-MURANO"
+  },
+  "ALGO-CML-1L::all_true": {
+    "alternative_indication_id": "IND-CML-1L-2GEN-TKI",
+    "default_indication_id": "IND-CML-1L-IMATINIB"
+  },
+  "ALGO-CML-1L::empty": {
+    "alternative_indication_id": "IND-CML-1L-2GEN-TKI",
+    "default_indication_id": "IND-CML-1L-IMATINIB"
+  },
+  "ALGO-CML-2L::all_true": {
+    "alternative_indication_id": "IND-CML-ADVANCED-ALLOHCT",
+    "default_indication_id": "IND-CML-2L-PONATINIB-T315I"
+  },
+  "ALGO-CML-2L::empty": {
+    "alternative_indication_id": "IND-CML-ADVANCED-ALLOHCT",
+    "default_indication_id": "IND-CML-2L-PONATINIB-T315I"
+  },
+  "ALGO-COWDEN-CARRIER-SURVEILLANCE::all_true": {
+    "actual_algorithm_selected": "ALGO-BCSC-BREAST",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-COWDEN-CARRIER-SURVEILLANCE::empty": {
+    "actual_algorithm_selected": "ALGO-BCSC-BREAST",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-CRC-ADJUVANT::all_true": {
+    "alternative_indication_id": "IND-CRC-ADJUVANT-STAGE3-FOLFOX",
+    "default_indication_id": "IND-CRC-ADJUVANT-STAGE2-HIGHRISK-FOLFOX"
+  },
+  "ALGO-CRC-ADJUVANT::empty": {
+    "alternative_indication_id": "IND-CRC-ADJUVANT-STAGE3-FOLFOX",
+    "default_indication_id": "IND-CRC-ADJUVANT-STAGE2-HIGHRISK-FOLFOX"
+  },
+  "ALGO-CRC-METASTATIC-1L::all_true": {
+    "alternative_indication_id": "IND-CRC-OLIGOMET-LIVER-LIMITED",
+    "default_indication_id": "IND-CRC-METASTATIC-1L-FOLFOX-BEV"
+  },
+  "ALGO-CRC-METASTATIC-1L::empty": {
+    "alternative_indication_id": "IND-CRC-OLIGOMET-LIVER-LIMITED",
+    "default_indication_id": "IND-CRC-METASTATIC-1L-FOLFOX-BEV"
+  },
+  "ALGO-CRC-METASTATIC-2L::all_true": {
+    "alternative_indication_id": "IND-CRC-METASTATIC-2L-MSI-H-PEMBRO",
+    "default_indication_id": "IND-CRC-METASTATIC-2L-FOLFIRI-BEV"
+  },
+  "ALGO-CRC-METASTATIC-2L::empty": {
+    "alternative_indication_id": "IND-CRC-METASTATIC-2L-MSI-H-PEMBRO",
+    "default_indication_id": "IND-CRC-METASTATIC-2L-FOLFIRI-BEV"
+  },
+  "ALGO-CRC-METASTATIC-3L::all_true": {
+    "alternative_indication_id": "IND-CRC-METASTATIC-3L-REGORAFENIB",
+    "default_indication_id": "IND-CRC-METASTATIC-3L-TAS102-BEV"
+  },
+  "ALGO-CRC-METASTATIC-3L::empty": {
+    "alternative_indication_id": "IND-CRC-METASTATIC-3L-REGORAFENIB",
+    "default_indication_id": "IND-CRC-METASTATIC-3L-TAS102-BEV"
+  },
+  "ALGO-DLBCL-1L::all_true": {
+    "alternative_indication_id": "IND-DLBCL-1L-POLA-R-CHP",
+    "default_indication_id": "IND-DLBCL-1L-RCHOP"
+  },
+  "ALGO-DLBCL-1L::empty": {
+    "alternative_indication_id": "IND-DLBCL-1L-POLA-R-CHP",
+    "default_indication_id": "IND-DLBCL-1L-RCHOP"
+  },
+  "ALGO-DLBCL-2L::all_true": {
+    "alternative_indication_id": "IND-DLBCL-2L-LISOCEL",
+    "default_indication_id": "IND-DLBCL-2L-POLA-R-BENDAMUSTINE"
+  },
+  "ALGO-DLBCL-2L::empty": {
+    "alternative_indication_id": "IND-DLBCL-2L-LISOCEL",
+    "default_indication_id": "IND-DLBCL-2L-POLA-R-BENDAMUSTINE"
+  },
+  "ALGO-DLBCL-3L::all_true": {
+    "alternative_indication_id": "IND-DLBCL-3L-AXICEL-CART",
+    "default_indication_id": "IND-DLBCL-3L-LONCASTUXIMAB"
+  },
+  "ALGO-DLBCL-3L::empty": {
+    "alternative_indication_id": "IND-DLBCL-3L-AXICEL-CART",
+    "default_indication_id": "IND-DLBCL-3L-LONCASTUXIMAB"
+  },
+  "ALGO-EATL-1L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-EATL-1L-CHOEP-AUTOSCT"
+  },
+  "ALGO-EATL-1L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-EATL-1L-CHOEP-AUTOSCT"
+  },
+  "ALGO-ENDOMETRIAL-2L::all_true": {
+    "alternative_indication_id": "IND-ENDOMETRIAL-2L-DOSTARLIMAB-DMMR",
+    "default_indication_id": "IND-ENDOMETRIAL-2L-PEMBRO-LENVA-PMMR"
+  },
+  "ALGO-ENDOMETRIAL-2L::empty": {
+    "alternative_indication_id": "IND-ENDOMETRIAL-2L-DOSTARLIMAB-DMMR",
+    "default_indication_id": "IND-ENDOMETRIAL-2L-PEMBRO-LENVA-PMMR"
+  },
+  "ALGO-ENDOMETRIAL-ADVANCED-1L::all_true": {
+    "alternative_indication_id": "IND-ENDOMETRIAL-ADVANCED-1L-DOSTARLIMAB-CHEMO",
+    "default_indication_id": "IND-ENDOMETRIAL-ADVANCED-1L-PEMBRO-CHEMO"
+  },
+  "ALGO-ENDOMETRIAL-ADVANCED-1L::empty": {
+    "alternative_indication_id": "IND-ENDOMETRIAL-ADVANCED-1L-DOSTARLIMAB-CHEMO",
+    "default_indication_id": "IND-ENDOMETRIAL-ADVANCED-1L-PEMBRO-CHEMO"
+  },
+  "ALGO-EPITHELIOID-SARCOMA-1L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-EPITHELIOID-SARCOMA-1L-TAZEMETOSTAT"
+  },
+  "ALGO-EPITHELIOID-SARCOMA-1L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-EPITHELIOID-SARCOMA-1L-TAZEMETOSTAT"
+  },
+  "ALGO-ESOPH-2L::all_true": {
+    "alternative_indication_id": "IND-ESOPH-METASTATIC-2L-HER2-POSITIVE-T-DXD",
+    "default_indication_id": "IND-ESOPH-METASTATIC-2L-NIVO-SQUAMOUS"
+  },
+  "ALGO-ESOPH-2L::empty": {
+    "alternative_indication_id": "IND-ESOPH-METASTATIC-2L-HER2-POSITIVE-T-DXD",
+    "default_indication_id": "IND-ESOPH-METASTATIC-2L-NIVO-SQUAMOUS"
+  },
+  "ALGO-ESOPH-DEFINITIVE-1L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-ESOPH-DEFINITIVE-CRT-SCC"
+  },
+  "ALGO-ESOPH-DEFINITIVE-1L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-ESOPH-DEFINITIVE-CRT-SCC"
+  },
+  "ALGO-ESOPH-METASTATIC-1L::all_true": {
+    "alternative_indication_id": "IND-ESOPH-OLIGOMET-SYSTEMIC-PLUS-LOCAL",
+    "default_indication_id": "IND-ESOPH-METASTATIC-1L-SCC-IPI-NIVO"
+  },
+  "ALGO-ESOPH-METASTATIC-1L::empty": {
+    "alternative_indication_id": "IND-ESOPH-OLIGOMET-SYSTEMIC-PLUS-LOCAL",
+    "default_indication_id": "IND-ESOPH-METASTATIC-1L-NIVO-CHEMO-SCC"
+  },
+  "ALGO-ESOPH-RESECTABLE-1L::all_true": {
+    "alternative_indication_id": "IND-ESOPH-ADJUVANT-NIVOLUMAB-POST-CROSS",
+    "default_indication_id": "IND-ESOPH-RESECTABLE-CROSS-NEOADJUVANT"
+  },
+  "ALGO-ESOPH-RESECTABLE-1L::empty": {
+    "alternative_indication_id": "IND-ESOPH-ADJUVANT-NIVOLUMAB-POST-CROSS",
+    "default_indication_id": "IND-ESOPH-RESECTABLE-CROSS-NEOADJUVANT"
+  },
+  "ALGO-ESOPHAGEAL-ADJUVANT-1L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-ESOPH-ADJUVANT-NIVOLUMAB-POST-CROSS"
+  },
+  "ALGO-ESOPHAGEAL-ADJUVANT-1L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-ESOPH-ADJUVANT-NIVOLUMAB-POST-CROSS"
+  },
+  "ALGO-ET-1L::all_true": {
+    "alternative_indication_id": "IND-ET-1L-HU",
+    "default_indication_id": "IND-ET-1L-ASA"
+  },
+  "ALGO-ET-1L::empty": {
+    "alternative_indication_id": "IND-ET-1L-HU",
+    "default_indication_id": "IND-ET-1L-ASA"
+  },
+  "ALGO-ET-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-ET-2L-ANAGRELIDE"
+  },
+  "ALGO-ET-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-ET-2L-ANAGRELIDE"
+  },
+  "ALGO-FL-1L::all_true": {
+    "alternative_indication_id": "IND-FL-1L-BR",
+    "default_indication_id": "IND-FL-1L-WATCH"
+  },
+  "ALGO-FL-1L::empty": {
+    "alternative_indication_id": "IND-FL-1L-BR",
+    "default_indication_id": "IND-FL-1L-WATCH"
+  },
+  "ALGO-FL-2L::all_true": {
+    "alternative_indication_id": "IND-FL-2L-R2",
+    "default_indication_id": "IND-FL-2L-OBG-BENDA"
+  },
+  "ALGO-FL-2L::empty": {
+    "alternative_indication_id": "IND-FL-2L-R2",
+    "default_indication_id": "IND-FL-2L-OBG-BENDA"
+  },
+  "ALGO-GAIL-BREAST::all_true": {
+    "actual_algorithm_selected": "ALGO-BCSC-BREAST",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-GAIL-BREAST::empty": {
+    "actual_algorithm_selected": "ALGO-BCSC-BREAST",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-GASTRIC-2L::all_true": {
+    "alternative_indication_id": "IND-GASTRIC-METASTATIC-2L-HER2-TDXD",
+    "default_indication_id": "IND-GASTRIC-METASTATIC-2L-RAMUCIRUMAB-PACLITAXEL"
+  },
+  "ALGO-GASTRIC-2L::empty": {
+    "alternative_indication_id": "IND-GASTRIC-METASTATIC-2L-HER2-TDXD",
+    "default_indication_id": "IND-GASTRIC-METASTATIC-2L-RAMUCIRUMAB-PACLITAXEL"
+  },
+  "ALGO-GASTRIC-METASTATIC-1L::all_true": {
+    "alternative_indication_id": "IND-GASTRIC-OLIGOMET-SYSTEMIC-PLUS-LOCAL",
+    "default_indication_id": "IND-GASTRIC-METASTATIC-1L-PDL1-CHEMO-ICI"
+  },
+  "ALGO-GASTRIC-METASTATIC-1L::empty": {
+    "alternative_indication_id": "IND-GASTRIC-OLIGOMET-SYSTEMIC-PLUS-LOCAL",
+    "default_indication_id": "IND-GASTRIC-METASTATIC-1L-PDL1-CHEMO-ICI"
+  },
+  "ALGO-GASTRIC-RESECTABLE-PERIOP::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-GASTRIC-PERIOP-FLOT4"
+  },
+  "ALGO-GASTRIC-RESECTABLE-PERIOP::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-GASTRIC-PERIOP-FLOT4"
+  },
+  "ALGO-GBM-NEWLY-DIAGNOSED-1L::all_true": {
+    "alternative_indication_id": "IND-GBM-NEWLY-DIAGNOSED-ELDERLY-TMZ",
+    "default_indication_id": "IND-GBM-NEWLY-DIAGNOSED-STUPP"
+  },
+  "ALGO-GBM-NEWLY-DIAGNOSED-1L::empty": {
+    "alternative_indication_id": "IND-GBM-NEWLY-DIAGNOSED-ELDERLY-TMZ",
+    "default_indication_id": "IND-GBM-NEWLY-DIAGNOSED-STUPP"
+  },
+  "ALGO-GBM-RECURRENT::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-GBM-RECURRENT-BEVACIZUMAB"
+  },
+  "ALGO-GBM-RECURRENT::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-GBM-RECURRENT-BEVACIZUMAB"
+  },
+  "ALGO-GCT-METASTATIC-1L::all_true": {
+    "alternative_indication_id": "IND-GCT-METASTATIC-1L-EP",
+    "default_indication_id": "IND-GCT-METASTATIC-1L-BEP"
+  },
+  "ALGO-GCT-METASTATIC-1L::empty": {
+    "alternative_indication_id": "IND-GCT-METASTATIC-1L-EP",
+    "default_indication_id": "IND-GCT-METASTATIC-1L-BEP"
+  },
+  "ALGO-GCT-SALVAGE-2L::all_true": {
+    "alternative_indication_id": "IND-GCT-SALVAGE-2L-HDCT-ASCT",
+    "default_indication_id": "IND-GCT-SALVAGE-2L-TIP"
+  },
+  "ALGO-GCT-SALVAGE-2L::empty": {
+    "alternative_indication_id": "IND-GCT-SALVAGE-2L-HDCT-ASCT",
+    "default_indication_id": "IND-GCT-SALVAGE-2L-TIP"
+  },
+  "ALGO-GI-NET-ADVANCED-1L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-GI-NET-ADVANCED-1L-LANREOTIDE"
+  },
+  "ALGO-GI-NET-ADVANCED-1L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-GI-NET-ADVANCED-1L-LANREOTIDE"
+  },
+  "ALGO-GIST-1L::all_true": {
+    "alternative_indication_id": "IND-GIST-1L-AVAPRITINIB-PDGFRA-D842V",
+    "default_indication_id": "IND-GIST-1L-IMATINIB"
+  },
+  "ALGO-GIST-1L::empty": {
+    "alternative_indication_id": "IND-GIST-1L-AVAPRITINIB-PDGFRA-D842V",
+    "default_indication_id": "IND-GIST-1L-IMATINIB"
+  },
+  "ALGO-GIST-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-GIST-2L-SUNITINIB"
+  },
+  "ALGO-GIST-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-GIST-2L-SUNITINIB"
+  },
+  "ALGO-GLIOMA-LGG-1L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-GLIOMA-LOW-GRADE-1L-RT-PCV"
+  },
+  "ALGO-GLIOMA-LGG-1L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-GLIOMA-LOW-GRADE-1L-RT-PCV"
+  },
+  "ALGO-GRANULOSA-CELL-1L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-GRANULOSA-CELL-1L-CARBOPLATIN-PACLITAXEL"
+  },
+  "ALGO-GRANULOSA-CELL-1L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-GRANULOSA-CELL-1L-CARBOPLATIN-PACLITAXEL"
+  },
+  "ALGO-HCC-SYSTEMIC-1L::all_true": {
+    "alternative_indication_id": "IND-HCC-SYSTEMIC-1L-ATEZO-BEV",
+    "default_indication_id": "IND-HCC-SYSTEMIC-1L-SORAFENIB"
+  },
+  "ALGO-HCC-SYSTEMIC-1L::empty": {
+    "alternative_indication_id": "IND-HCC-SYSTEMIC-1L-ATEZO-BEV",
+    "default_indication_id": "IND-HCC-SYSTEMIC-1L-SORAFENIB"
+  },
+  "ALGO-HCC-SYSTEMIC-2L::all_true": {
+    "alternative_indication_id": "IND-HCC-SYSTEMIC-2L-CABOZANTINIB",
+    "default_indication_id": "IND-HCC-SYSTEMIC-2L-REGORAFENIB"
+  },
+  "ALGO-HCC-SYSTEMIC-2L::empty": {
+    "alternative_indication_id": "IND-HCC-SYSTEMIC-2L-CABOZANTINIB",
+    "default_indication_id": "IND-HCC-SYSTEMIC-2L-REGORAFENIB"
+  },
+  "ALGO-HCL-1L::all_true": {
+    "alternative_indication_id": "IND-HCL-1L-PENTOSTATIN",
+    "default_indication_id": "IND-HCL-1L-CLADRIBINE"
+  },
+  "ALGO-HCL-1L::empty": {
+    "alternative_indication_id": "IND-HCL-1L-PENTOSTATIN",
+    "default_indication_id": "IND-HCL-1L-CLADRIBINE"
+  },
+  "ALGO-HCL-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-HCL-2L-VEMURAFENIB"
+  },
+  "ALGO-HCL-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-HCL-2L-VEMURAFENIB"
+  },
+  "ALGO-HCV-MZL-1L::all_true": {
+    "alternative_indication_id": "IND-HCV-MZL-1L-ANTIVIRAL",
+    "default_indication_id": "IND-HCV-MZL-1L-BR-AGGRESSIVE"
+  },
+  "ALGO-HCV-MZL-1L::empty": {
+    "alternative_indication_id": "IND-HCV-MZL-1L-ANTIVIRAL",
+    "default_indication_id": "IND-HCV-MZL-1L-BR-AGGRESSIVE"
+  },
+  "ALGO-HCV-MZL-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": null
+  },
+  "ALGO-HCV-MZL-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": null
+  },
+  "ALGO-HEREDITARY-MELANOMA-SURVEILLANCE::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-FAMMM-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE"
+  },
+  "ALGO-HEREDITARY-MELANOMA-SURVEILLANCE::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-FAMMM-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE"
+  },
+  "ALGO-HEREDITARY-PROSTATE-CANCER-RISK::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE"
+  },
+  "ALGO-HEREDITARY-PROSTATE-CANCER-RISK::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE"
+  },
+  "ALGO-HGBL-DH-1L::all_true": {
+    "alternative_indication_id": "IND-HGBL-DH-1L-DAEPOCHR",
+    "default_indication_id": "IND-HGBL-DH-1L-RCHOP"
+  },
+  "ALGO-HGBL-DH-1L::empty": {
+    "alternative_indication_id": "IND-HGBL-DH-1L-DAEPOCHR",
+    "default_indication_id": "IND-HGBL-DH-1L-RCHOP"
+  },
+  "ALGO-HGBL-DH-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-HGBL-DH-2L-CART-AXICEL"
+  },
+  "ALGO-HGBL-DH-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-HGBL-DH-2L-CART-AXICEL"
+  },
+  "ALGO-HNSCC-RM-1L::all_true": {
+    "alternative_indication_id": "IND-HNSCC-RM-1L-PEMBRO-CHEMO",
+    "default_indication_id": "IND-HNSCC-RM-1L-EXTREME"
+  },
+  "ALGO-HNSCC-RM-1L::empty": {
+    "alternative_indication_id": "IND-HNSCC-RM-1L-PEMBRO-MONO-CPS-HIGH",
+    "default_indication_id": "IND-HNSCC-RM-1L-PEMBRO-CHEMO"
+  },
+  "ALGO-HNSCC-RM-2L::all_true": {
+    "alternative_indication_id": "IND-HNSCC-RM-2L-PEMBROLIZUMAB",
+    "default_indication_id": "IND-HNSCC-RM-2L-NIVOLUMAB"
+  },
+  "ALGO-HNSCC-RM-2L::empty": {
+    "alternative_indication_id": "IND-HNSCC-RM-2L-PEMBROLIZUMAB",
+    "default_indication_id": "IND-HNSCC-RM-2L-NIVOLUMAB"
+  },
+  "ALGO-HSTCL-1L::all_true": {
+    "alternative_indication_id": "IND-HSTCL-1L-ICE-ALLOSCT",
+    "default_indication_id": "IND-HSTCL-1L-CHOEP-UNFIT"
+  },
+  "ALGO-HSTCL-1L::empty": {
+    "alternative_indication_id": "IND-HSTCL-1L-ICE-ALLOSCT",
+    "default_indication_id": "IND-HSTCL-1L-CHOEP-UNFIT"
+  },
+  "ALGO-IFS-1L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-IFS-NTRK-LAROTRECTINIB"
+  },
+  "ALGO-IFS-1L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-IFS-NTRK-LAROTRECTINIB"
+  },
+  "ALGO-IMT-1L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-IMT-ALK-CRIZOTINIB"
+  },
+  "ALGO-IMT-1L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-IMT-ALK-CRIZOTINIB"
+  },
+  "ALGO-INTEGRATED-RISK-FROM-MULTIPLE-RFS::all_true": {
+    "actual_algorithm_selected": "ALGO-AMSTERDAM-II-LYNCH",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-INTEGRATED-RISK-FROM-MULTIPLE-RFS::empty": {
+    "actual_algorithm_selected": "ALGO-AMSTERDAM-II-LYNCH",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-JMML-1L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-JMML-1L-ALLOHCT"
+  },
+  "ALGO-JMML-1L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-JMML-1L-ALLOHCT"
+  },
+  "ALGO-LAM-1L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-LAM-1L-SIROLIMUS"
+  },
+  "ALGO-LAM-1L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-LAM-1L-SIROLIMUS"
+  },
+  "ALGO-MANCHESTER-BRCA::all_true": {
+    "actual_algorithm_selected": "ALGO-BCSC-BREAST",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-MANCHESTER-BRCA::empty": {
+    "actual_algorithm_selected": "ALGO-BCSC-BREAST",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-MCL-1L::all_true": {
+    "alternative_indication_id": "IND-MCL-1L-INTENSIVE",
+    "default_indication_id": "IND-MCL-1L-BTKI-R"
+  },
+  "ALGO-MCL-1L::empty": {
+    "alternative_indication_id": "IND-MCL-1L-INTENSIVE",
+    "default_indication_id": "IND-MCL-1L-BTKI-R"
+  },
+  "ALGO-MCL-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-MCL-2L-ACALABRUTINIB"
+  },
+  "ALGO-MCL-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-MCL-2L-ACALABRUTINIB"
+  },
+  "ALGO-MCL-3L::all_true": {
+    "alternative_indication_id": "IND-MCL-3L-BREXUCEL-CART",
+    "default_indication_id": "IND-MCL-3L-PIRTOBRUTINIB"
+  },
+  "ALGO-MCL-3L::empty": {
+    "alternative_indication_id": "IND-MCL-3L-BREXUCEL-CART",
+    "default_indication_id": "IND-MCL-3L-PIRTOBRUTINIB"
+  },
+  "ALGO-MDS-HR-1L::all_true": {
+    "alternative_indication_id": "IND-MDS-HR-1L-VEN-AZA",
+    "default_indication_id": "IND-MDS-HR-1L-AZA"
+  },
+  "ALGO-MDS-HR-1L::empty": {
+    "alternative_indication_id": "IND-MDS-HR-1L-VEN-AZA",
+    "default_indication_id": "IND-MDS-HR-1L-AZA"
+  },
+  "ALGO-MDS-HR-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": null
+  },
+  "ALGO-MDS-HR-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": null
+  },
+  "ALGO-MDS-LR-1L::all_true": {
+    "alternative_indication_id": "IND-MDS-LR-1L-LUSPATERCEPT",
+    "default_indication_id": "IND-MDS-LR-1L-ESA"
+  },
+  "ALGO-MDS-LR-1L::empty": {
+    "alternative_indication_id": "IND-MDS-LR-1L-LUSPATERCEPT",
+    "default_indication_id": "IND-MDS-LR-1L-ESA"
+  },
+  "ALGO-MDS-LR-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-MDS-LR-2L-IMETELSTAT"
+  },
+  "ALGO-MDS-LR-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-MDS-LR-2L-IMETELSTAT"
+  },
+  "ALGO-MELANOMA-ADJUVANT-1L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-MELANOMA-ADJUVANT-PEMBRO-STAGE-III"
+  },
+  "ALGO-MELANOMA-ADJUVANT-1L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-MELANOMA-ADJUVANT-PEMBRO-STAGE-III"
+  },
+  "ALGO-MELANOMA-METASTATIC-1L::all_true": {
+    "alternative_indication_id": "IND-MELANOMA-ADJUVANT-PEMBRO-STAGE-III",
+    "default_indication_id": "IND-MELANOMA-METASTATIC-1L-PEMBRO-MONO"
+  },
+  "ALGO-MELANOMA-METASTATIC-1L::empty": {
+    "alternative_indication_id": "IND-MELANOMA-ADJUVANT-PEMBRO-STAGE-III",
+    "default_indication_id": "IND-MELANOMA-METASTATIC-1L-NIVO-IPI"
+  },
+  "ALGO-MELANOMA-METASTATIC-2L::all_true": {
+    "alternative_indication_id": "IND-MELANOMA-2L-KIT-IMATINIB",
+    "default_indication_id": "IND-MELANOMA-2L-POST-IO-BRAFI-MEKI"
+  },
+  "ALGO-MELANOMA-METASTATIC-2L::empty": {
+    "alternative_indication_id": "IND-MELANOMA-2L-KIT-IMATINIB",
+    "default_indication_id": "IND-MELANOMA-2L-POST-IO-BRAFI-MEKI"
+  },
+  "ALGO-MEN1-CARRIER-SURVEILLANCE::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-MEN1-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE"
+  },
+  "ALGO-MEN1-CARRIER-SURVEILLANCE::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-MEN1-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE"
+  },
+  "ALGO-MEN2-CARRIER-PROPHYLACTIC-THYROIDECTOMY-TIMING::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-MEN2-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE"
+  },
+  "ALGO-MEN2-CARRIER-PROPHYLACTIC-THYROIDECTOMY-TIMING::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-MEN2-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE"
+  },
+  "ALGO-MENINGIOMA-1L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-MENINGIOMA-1L-RESECTION-RT"
+  },
+  "ALGO-MENINGIOMA-1L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-MENINGIOMA-1L-RESECTION-RT"
+  },
+  "ALGO-MESOTHELIOMA-1L::all_true": {
+    "alternative_indication_id": "IND-MESOTHELIOMA-1L-PEMETREXED-PLATINUM",
+    "default_indication_id": "IND-MESOTHELIOMA-1L-NIVO-IPI"
+  },
+  "ALGO-MESOTHELIOMA-1L::empty": {
+    "alternative_indication_id": "IND-MESOTHELIOMA-1L-PEMETREXED-PLATINUM",
+    "default_indication_id": "IND-MESOTHELIOMA-1L-NIVO-IPI"
+  },
+  "ALGO-MESOTHELIOMA-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-MESOTHELIOMA-2L-NIVO"
+  },
+  "ALGO-MESOTHELIOMA-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-MESOTHELIOMA-2L-NIVO"
+  },
+  "ALGO-MF-SEZARY-1L::all_true": {
+    "alternative_indication_id": "IND-MF-ADVANCED-1L-MOGA",
+    "default_indication_id": "IND-MF-EARLY-1L-SKIN-DIRECTED"
+  },
+  "ALGO-MF-SEZARY-1L::empty": {
+    "alternative_indication_id": "IND-MF-ADVANCED-1L-MOGA",
+    "default_indication_id": "IND-MF-EARLY-1L-SKIN-DIRECTED"
+  },
+  "ALGO-MF-SEZARY-2L::all_true": {
+    "alternative_indication_id": "IND-MF-MAINTENANCE-RETINOID",
+    "default_indication_id": "IND-MF-ADVANCED-2L-BEXAROTENE"
+  },
+  "ALGO-MF-SEZARY-2L::empty": {
+    "alternative_indication_id": "IND-MF-MAINTENANCE-RETINOID",
+    "default_indication_id": "IND-MF-ADVANCED-2L-BEXAROTENE"
+  },
+  "ALGO-MM-1L::all_true": {
+    "alternative_indication_id": "IND-MM-1L-DVRD",
+    "default_indication_id": "IND-MM-1L-VRD"
+  },
+  "ALGO-MM-1L::empty": {
+    "alternative_indication_id": "IND-MM-1L-DVRD",
+    "default_indication_id": "IND-MM-1L-VRD"
+  },
+  "ALGO-MM-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-MM-2L-DKD"
+  },
+  "ALGO-MM-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-MM-2L-DKD"
+  },
+  "ALGO-MM-3L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-MM-3L-ISA-KD"
+  },
+  "ALGO-MM-3L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-MM-3L-ISA-KD"
+  },
+  "ALGO-MMRPRO::all_true": {
+    "actual_algorithm_selected": "ALGO-AMSTERDAM-II-LYNCH",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-MMRPRO::empty": {
+    "actual_algorithm_selected": "ALGO-AMSTERDAM-II-LYNCH",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-MPNST-1L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-MPNST-DOXORUBICIN-IFOSFAMIDE"
+  },
+  "ALGO-MPNST-1L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-MPNST-DOXORUBICIN-IFOSFAMIDE"
+  },
+  "ALGO-MTC-1L::all_true": {
+    "alternative_indication_id": "IND-MTC-ADVANCED-1L-SELPERCATINIB",
+    "default_indication_id": "IND-MTC-ADVANCED-1L-CABOZANTINIB-RET-WT"
+  },
+  "ALGO-MTC-1L::empty": {
+    "alternative_indication_id": "IND-MTC-ADVANCED-1L-SELPERCATINIB",
+    "default_indication_id": "IND-MTC-ADVANCED-1L-CABOZANTINIB-RET-WT"
+  },
+  "ALGO-MULTI-SYNDROME-PEDIGREE-TRIAGE::all_true": {
+    "actual_algorithm_selected": "ALGO-AMSTERDAM-II-LYNCH",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-MULTI-SYNDROME-PEDIGREE-TRIAGE::empty": {
+    "actual_algorithm_selected": "ALGO-AMSTERDAM-II-LYNCH",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-NCCN-PANCREATIC-CAPS-SURVEILLANCE::all_true": {
+    "alternative_indication_id": "IND-PEUTZ-JEGHERS-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE",
+    "default_indication_id": "IND-FAMMM-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE"
+  },
+  "ALGO-NCCN-PANCREATIC-CAPS-SURVEILLANCE::empty": {
+    "alternative_indication_id": "IND-PEUTZ-JEGHERS-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE",
+    "default_indication_id": "IND-FAMMM-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE"
+  },
+  "ALGO-NK-T-NASAL-1L::all_true": {
+    "alternative_indication_id": "IND-NK-T-NASAL-1L-SMILE",
+    "default_indication_id": "IND-NK-T-NASAL-1L-P-GEMOX"
+  },
+  "ALGO-NK-T-NASAL-1L::empty": {
+    "alternative_indication_id": "IND-NK-T-NASAL-1L-SMILE",
+    "default_indication_id": "IND-NK-T-NASAL-1L-P-GEMOX"
+  },
+  "ALGO-NK-T-NASAL-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-NK-T-NASAL-2L-AVELUMAB"
+  },
+  "ALGO-NK-T-NASAL-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-NK-T-NASAL-2L-AVELUMAB"
+  },
+  "ALGO-NLPBL-1L::all_true": {
+    "alternative_indication_id": "IND-NLPBL-1L-OBSERVATION-OR-RT",
+    "default_indication_id": "IND-FL-1L-RCHOP-AGGRESSIVE"
+  },
+  "ALGO-NLPBL-1L::empty": {
+    "alternative_indication_id": "IND-NLPBL-1L-OBSERVATION-OR-RT",
+    "default_indication_id": "IND-FL-1L-RCHOP-AGGRESSIVE"
+  },
+  "ALGO-NLPBL-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-NLPBL-2L-RCHOP-TRANSFORMATION"
+  },
+  "ALGO-NLPBL-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-NLPBL-2L-RCHOP-TRANSFORMATION"
+  },
+  "ALGO-NMZL-1L::all_true": {
+    "alternative_indication_id": "IND-NMZL-1L-BR",
+    "default_indication_id": "IND-NMZL-1L-WATCH"
+  },
+  "ALGO-NMZL-1L::empty": {
+    "alternative_indication_id": "IND-NMZL-1L-BR",
+    "default_indication_id": "IND-NMZL-1L-WATCH"
+  },
+  "ALGO-NMZL-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-NMZL-2L-BR"
+  },
+  "ALGO-NMZL-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-NMZL-2L-BR"
+  },
+  "ALGO-NSCLC-ADJUVANT::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-NSCLC-ADJUVANT-ATEZO-PDL1POS"
+  },
+  "ALGO-NSCLC-ADJUVANT::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-NSCLC-ADJUVANT-ATEZO-PDL1POS"
+  },
+  "ALGO-NSCLC-METASTATIC-1L::all_true": {
+    "alternative_indication_id": "IND-NSCLC-EGFR-MUT-MET-1L",
+    "default_indication_id": "IND-NSCLC-PDL1-LOW-NONSQ-MET-1L"
+  },
+  "ALGO-NSCLC-METASTATIC-1L::empty": {
+    "alternative_indication_id": "IND-NSCLC-EGFR-MUT-MET-1L",
+    "default_indication_id": "IND-NSCLC-PDL1-LOW-NONSQ-MET-1L"
+  },
+  "ALGO-NSCLC-METASTATIC-2L::all_true": {
+    "alternative_indication_id": "IND-NSCLC-2L-EGFR-POST-OSI-AMI-LAZ",
+    "default_indication_id": "IND-NSCLC-2L-PD-L1-POST-IO-DOCETAXEL"
+  },
+  "ALGO-NSCLC-METASTATIC-2L::empty": {
+    "alternative_indication_id": "IND-NSCLC-2L-EGFR-POST-OSI-AMI-LAZ",
+    "default_indication_id": "IND-NSCLC-2L-PD-L1-POST-IO-DOCETAXEL"
+  },
+  "ALGO-NSCLC-RESECTABLE-PERIOP::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-NSCLC-PERIOPERATIVE-PEMBRO"
+  },
+  "ALGO-NSCLC-RESECTABLE-PERIOP::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-NSCLC-PERIOPERATIVE-PEMBRO"
+  },
+  "ALGO-OVARIAN-2L::all_true": {
+    "alternative_indication_id": "IND-OVARIAN-2L-PLAT-SENS-CARBO-PLD-BEV",
+    "default_indication_id": "IND-OVARIAN-2L-PLAT-RES-WEEKLY-PAC-BEV"
+  },
+  "ALGO-OVARIAN-2L::empty": {
+    "alternative_indication_id": "IND-OVARIAN-2L-PLAT-SENS-CARBO-PLD-BEV",
+    "default_indication_id": "IND-OVARIAN-2L-PLAT-RES-WEEKLY-PAC-BEV"
+  },
+  "ALGO-OVARIAN-ADVANCED-1L::all_true": {
+    "alternative_indication_id": "IND-OVARIAN-ADVANCED-1L-CARBO-PACLI-HRD-OLAP",
+    "default_indication_id": "IND-OVARIAN-ADVANCED-1L-CARBO-PACLI-HRD-NEG"
+  },
+  "ALGO-OVARIAN-ADVANCED-1L::empty": {
+    "alternative_indication_id": "IND-OVARIAN-ADVANCED-1L-CARBO-PACLI-HRD-OLAP",
+    "default_indication_id": "IND-OVARIAN-ADVANCED-1L-CARBO-PACLI-HRD-NEG"
+  },
+  "ALGO-PCNSL-1L::all_true": {
+    "alternative_indication_id": "IND-PCNSL-1L-MATRIX",
+    "default_indication_id": "IND-PCNSL-1L-R-MPV"
+  },
+  "ALGO-PCNSL-1L::empty": {
+    "alternative_indication_id": "IND-PCNSL-1L-R-MPV",
+    "default_indication_id": "IND-PCNSL-1L-MATRIX"
+  },
+  "ALGO-PCNSL-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-PCNSL-2L-RMPV-SALVAGE"
+  },
+  "ALGO-PCNSL-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-PCNSL-2L-RMPV-SALVAGE"
+  },
+  "ALGO-PDAC-LAPC::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-PDAC-LAPC-CHEMORADIATION"
+  },
+  "ALGO-PDAC-LAPC::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-PDAC-LAPC-CHEMORADIATION"
+  },
+  "ALGO-PDAC-METASTATIC-1L::all_true": {
+    "alternative_indication_id": "IND-PDAC-METASTATIC-1L-FOLFIRINOX",
+    "default_indication_id": "IND-PDAC-METASTATIC-1L-GEM-NAB-PAC"
+  },
+  "ALGO-PDAC-METASTATIC-1L::empty": {
+    "alternative_indication_id": "IND-PDAC-METASTATIC-1L-FOLFIRINOX",
+    "default_indication_id": "IND-PDAC-METASTATIC-1L-GEM-NAB-PAC"
+  },
+  "ALGO-PDAC-METASTATIC-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-PDAC-METASTATIC-2L-NAL-IRI"
+  },
+  "ALGO-PDAC-METASTATIC-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-PDAC-METASTATIC-2L-NAL-IRI"
+  },
+  "ALGO-PDAC-RESECTABLE-PERIOP::all_true": {
+    "alternative_indication_id": "IND-PDAC-BORDERLINE-RESECTABLE-NEOADJ-FOLFIRINOX",
+    "default_indication_id": "IND-PDAC-ADJUVANT-MFOLFIRINOX"
+  },
+  "ALGO-PDAC-RESECTABLE-PERIOP::empty": {
+    "alternative_indication_id": "IND-PDAC-BORDERLINE-RESECTABLE-NEOADJ-FOLFIRINOX",
+    "default_indication_id": "IND-PDAC-ADJUVANT-MFOLFIRINOX"
+  },
+  "ALGO-PEDIATRIC-CANCER-PREDISPOSITION-TRIAGE::all_true": {
+    "alternative_indication_id": "IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE",
+    "default_indication_id": "IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE"
+  },
+  "ALGO-PEDIATRIC-CANCER-PREDISPOSITION-TRIAGE::empty": {
+    "alternative_indication_id": "IND-BRCA-HBOC-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE",
+    "default_indication_id": "IND-LI-FRAUMENI-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE"
+  },
+  "ALGO-PEUTZ-JEGHERS-CARRIER-SURVEILLANCE::all_true": {
+    "actual_algorithm_selected": "ALGO-AMSTERDAM-II-LYNCH",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-PEUTZ-JEGHERS-CARRIER-SURVEILLANCE::empty": {
+    "actual_algorithm_selected": "ALGO-AMSTERDAM-II-LYNCH",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-PMBCL-1L::all_true": {
+    "alternative_indication_id": "IND-PMBCL-1L-RCHOP-RT",
+    "default_indication_id": "IND-PMBCL-1L-DA-EPOCH-R"
+  },
+  "ALGO-PMBCL-1L::empty": {
+    "alternative_indication_id": "IND-PMBCL-1L-RCHOP-RT",
+    "default_indication_id": "IND-PMBCL-1L-DA-EPOCH-R"
+  },
+  "ALGO-PMBCL-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-PMBCL-2L-RICE-AUTOSCT"
+  },
+  "ALGO-PMBCL-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-PMBCL-2L-RICE-AUTOSCT"
+  },
+  "ALGO-PMF-1L::all_true": {
+    "alternative_indication_id": "IND-PMF-1L-RUXOLITINIB",
+    "default_indication_id": "IND-PMF-1L-OBSERVATION"
+  },
+  "ALGO-PMF-1L::empty": {
+    "alternative_indication_id": "IND-PMF-1L-RUXOLITINIB",
+    "default_indication_id": "IND-PMF-1L-OBSERVATION"
+  },
+  "ALGO-PMF-2L::all_true": {
+    "alternative_indication_id": "IND-PMF-MOMELOTINIB-ANEMIA",
+    "default_indication_id": "IND-PMF-2L-FEDRATINIB"
+  },
+  "ALGO-PMF-2L::empty": {
+    "alternative_indication_id": "IND-PMF-MOMELOTINIB-ANEMIA",
+    "default_indication_id": "IND-PMF-2L-FEDRATINIB"
+  },
+  "ALGO-PNET-METASTATIC-1L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-PNET-METASTATIC-1L-EVEROLIMUS"
+  },
+  "ALGO-PNET-METASTATIC-1L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-PNET-METASTATIC-1L-EVEROLIMUS"
+  },
+  "ALGO-PREMM5-LYNCH::all_true": {
+    "actual_algorithm_selected": "ALGO-AMSTERDAM-II-LYNCH",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-PREMM5-LYNCH::empty": {
+    "actual_algorithm_selected": "ALGO-AMSTERDAM-II-LYNCH",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-PREVENTION-RISK-TRIAGE-OVERVIEW::all_true": {
+    "actual_algorithm_selected": "ALGO-AMSTERDAM-II-LYNCH",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-PREVENTION-RISK-TRIAGE-OVERVIEW::empty": {
+    "actual_algorithm_selected": "ALGO-AMSTERDAM-II-LYNCH",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-PROSTATE-MCRPC-1L::all_true": {
+    "alternative_indication_id": "IND-PROSTATE-MCRPC-1L-PARPI",
+    "default_indication_id": "IND-PROSTATE-MCRPC-1L-ARPI"
+  },
+  "ALGO-PROSTATE-MCRPC-1L::empty": {
+    "alternative_indication_id": "IND-PROSTATE-MCRPC-1L-PARPI",
+    "default_indication_id": "IND-PROSTATE-MCRPC-1L-ARPI"
+  },
+  "ALGO-PROSTATE-MCRPC-2L::all_true": {
+    "alternative_indication_id": "IND-PROSTATE-MCRPC-2L-PARPI",
+    "default_indication_id": "IND-PROSTATE-MCRPC-2L-CABAZITAXEL"
+  },
+  "ALGO-PROSTATE-MCRPC-2L::empty": {
+    "alternative_indication_id": "IND-PROSTATE-MCRPC-2L-PARPI",
+    "default_indication_id": "IND-PROSTATE-MCRPC-2L-CABAZITAXEL"
+  },
+  "ALGO-PROSTATE-MHSPC-1L::all_true": {
+    "alternative_indication_id": "IND-PROSTATE-MHSPC-1L-TRIPLET",
+    "default_indication_id": "IND-PROSTATE-MHSPC-1L-ARPI-DOUBLET"
+  },
+  "ALGO-PROSTATE-MHSPC-1L::empty": {
+    "alternative_indication_id": "IND-PROSTATE-MHSPC-1L-TRIPLET",
+    "default_indication_id": "IND-PROSTATE-MHSPC-1L-ARPI-DOUBLET"
+  },
+  "ALGO-PTCL-1L::all_true": {
+    "alternative_indication_id": "IND-TCELL-1L-CHP-BV",
+    "default_indication_id": "IND-TCELL-1L-CHOEP"
+  },
+  "ALGO-PTCL-1L::empty": {
+    "alternative_indication_id": "IND-TCELL-1L-CHP-BV",
+    "default_indication_id": "IND-TCELL-1L-CHOEP"
+  },
+  "ALGO-PTCL-2L::all_true": {
+    "alternative_indication_id": "IND-PTCL-2L-PRALATREXATE",
+    "default_indication_id": "IND-PTCL-2L-ROMIDEPSIN"
+  },
+  "ALGO-PTCL-2L::empty": {
+    "alternative_indication_id": "IND-PTCL-2L-PRALATREXATE",
+    "default_indication_id": "IND-PTCL-2L-ROMIDEPSIN"
+  },
+  "ALGO-PTLD-1L::all_true": {
+    "alternative_indication_id": "IND-PTLD-1L-REDUCE-IS",
+    "default_indication_id": "IND-PTLD-1L-RCHOP"
+  },
+  "ALGO-PTLD-1L::empty": {
+    "alternative_indication_id": "IND-PTLD-1L-REDUCE-IS",
+    "default_indication_id": "IND-PTLD-1L-RCHOP"
+  },
+  "ALGO-PTLD-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-PTLD-MAINTENANCE-RITUXIMAB"
+  },
+  "ALGO-PTLD-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-PTLD-MAINTENANCE-RITUXIMAB"
+  },
+  "ALGO-PV-1L::all_true": {
+    "alternative_indication_id": "IND-PV-1L-HU",
+    "default_indication_id": "IND-PV-1L-PHLEBOTOMY-ASA"
+  },
+  "ALGO-PV-1L::empty": {
+    "alternative_indication_id": "IND-PV-1L-HU",
+    "default_indication_id": "IND-PV-1L-PHLEBOTOMY-ASA"
+  },
+  "ALGO-PV-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-PV-2L-RUXOLITINIB"
+  },
+  "ALGO-PV-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-PV-2L-RUXOLITINIB"
+  },
+  "ALGO-RCC-METASTATIC-1L::all_true": {
+    "alternative_indication_id": "IND-RCC-METASTATIC-1L-NIVO-IPI",
+    "default_indication_id": "IND-RCC-METASTATIC-1L-PEMBRO-AXI"
+  },
+  "ALGO-RCC-METASTATIC-1L::empty": {
+    "alternative_indication_id": "IND-RCC-METASTATIC-1L-NIVO-IPI",
+    "default_indication_id": "IND-RCC-METASTATIC-1L-PEMBRO-AXI"
+  },
+  "ALGO-RCC-METASTATIC-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-RCC-METASTATIC-2L-BELZUTIFAN"
+  },
+  "ALGO-RCC-METASTATIC-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-RCC-METASTATIC-2L-BELZUTIFAN"
+  },
+  "ALGO-RECTAL-LOCALLY-ADVANCED-TNT::all_true": {
+    "alternative_indication_id": "IND-RECTAL-TNT-LONG-COURSE-PRODIGE23",
+    "default_indication_id": "IND-RECTAL-TNT-SHORT-COURSE-RAPIDO"
+  },
+  "ALGO-RECTAL-LOCALLY-ADVANCED-TNT::empty": {
+    "alternative_indication_id": "IND-RECTAL-TNT-LONG-COURSE-PRODIGE23",
+    "default_indication_id": "IND-RECTAL-TNT-SHORT-COURSE-RAPIDO"
+  },
+  "ALGO-REVISED-BETHESDA-LYNCH::all_true": {
+    "actual_algorithm_selected": "ALGO-AMSTERDAM-II-LYNCH",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-REVISED-BETHESDA-LYNCH::empty": {
+    "actual_algorithm_selected": "ALGO-AMSTERDAM-II-LYNCH",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-SALIVARY-1L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-SALIVARY-PALLIATIVE-PACLITAXEL-CARBO"
+  },
+  "ALGO-SALIVARY-1L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-SALIVARY-PALLIATIVE-PACLITAXEL-CARBO"
+  },
+  "ALGO-SCLC-1L::all_true": {
+    "alternative_indication_id": "IND-SCLC-LIMITED-1L",
+    "default_indication_id": "IND-SCLC-EXTENSIVE-1L"
+  },
+  "ALGO-SCLC-1L::empty": {
+    "alternative_indication_id": "IND-SCLC-LIMITED-1L",
+    "default_indication_id": "IND-SCLC-EXTENSIVE-1L"
+  },
+  "ALGO-SCLC-2L::all_true": {
+    "alternative_indication_id": "IND-SCLC-RR-LURBINECTEDIN",
+    "default_indication_id": "IND-SCLC-RR-TOPOTECAN"
+  },
+  "ALGO-SCLC-2L::empty": {
+    "alternative_indication_id": "IND-SCLC-RR-LURBINECTEDIN",
+    "default_indication_id": "IND-SCLC-RR-TOPOTECAN"
+  },
+  "ALGO-SMZL-1L::all_true": {
+    "alternative_indication_id": "IND-SMZL-1L-HCV-POSITIVE",
+    "default_indication_id": "IND-SMZL-1L-RITUXIMAB"
+  },
+  "ALGO-SMZL-1L::empty": {
+    "alternative_indication_id": "IND-SMZL-1L-HCV-POSITIVE",
+    "default_indication_id": "IND-SMZL-1L-RITUXIMAB"
+  },
+  "ALGO-SMZL-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-SMZL-2L-BR"
+  },
+  "ALGO-SMZL-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-SMZL-2L-BR"
+  },
+  "ALGO-STS-ADVANCED-1L::all_true": {
+    "alternative_indication_id": "IND-STS-ADVANCED-1L-AI",
+    "default_indication_id": "IND-STS-ADVANCED-1L-DOXORUBICIN"
+  },
+  "ALGO-STS-ADVANCED-1L::empty": {
+    "alternative_indication_id": "IND-STS-ADVANCED-1L-AI",
+    "default_indication_id": "IND-STS-ADVANCED-1L-DOXORUBICIN"
+  },
+  "ALGO-STS-ADVANCED-2L::all_true": {
+    "alternative_indication_id": "IND-STS-ADVANCED-2L-PAZOPANIB",
+    "default_indication_id": "IND-STS-ADVANCED-2L-GEMDOC"
+  },
+  "ALGO-STS-ADVANCED-2L::empty": {
+    "alternative_indication_id": "IND-STS-ADVANCED-2L-PAZOPANIB",
+    "default_indication_id": "IND-STS-ADVANCED-2L-GEMDOC"
+  },
+  "ALGO-T-ALL-1L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-T-ALL-1L-HYPER-CVAD"
+  },
+  "ALGO-T-ALL-1L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-T-ALL-1L-HYPER-CVAD"
+  },
+  "ALGO-T-ALL-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-T-ALL-2L-NELARABINE"
+  },
+  "ALGO-T-ALL-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-T-ALL-2L-NELARABINE"
+  },
+  "ALGO-T-PLL-1L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-T-PLL-1L-ALEMTUZUMAB"
+  },
+  "ALGO-T-PLL-1L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-T-PLL-1L-ALEMTUZUMAB"
+  },
+  "ALGO-T-PLL-2L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-T-PLL-2L-VENETOCLAX-ALEMTUZUMAB"
+  },
+  "ALGO-T-PLL-2L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-T-PLL-2L-VENETOCLAX-ALEMTUZUMAB"
+  },
+  "ALGO-TGCT-1L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-TGCT-1L-PEXIDARTINIB"
+  },
+  "ALGO-TGCT-1L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-TGCT-1L-PEXIDARTINIB"
+  },
+  "ALGO-THYROID-ANAPLASTIC-1L::all_true": {
+    "alternative_indication_id": "IND-ATC-BRAF-V600E-DAB-TRAM",
+    "default_indication_id": "IND-ATC-PACLITAXEL-CARBOPLATIN"
+  },
+  "ALGO-THYROID-ANAPLASTIC-1L::empty": {
+    "alternative_indication_id": "IND-ATC-BRAF-V600E-DAB-TRAM",
+    "default_indication_id": "IND-ATC-PACLITAXEL-CARBOPLATIN"
+  },
+  "ALGO-THYROID-PAPILLARY-1L::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-THYROID-PAPILLARY-RAI-REFRACTORY-LENVATINIB"
+  },
+  "ALGO-THYROID-PAPILLARY-1L::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-THYROID-PAPILLARY-RAI-REFRACTORY-LENVATINIB"
+  },
+  "ALGO-TYRER-CUZICK-V8-BREAST::all_true": {
+    "actual_algorithm_selected": "ALGO-BCSC-BREAST",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-TYRER-CUZICK-V8-BREAST::empty": {
+    "actual_algorithm_selected": "ALGO-BCSC-BREAST",
+    "unreachable_in_isolation": true
+  },
+  "ALGO-UROTHELIAL-METASTATIC-1L::all_true": {
+    "alternative_indication_id": "IND-UROTHELIAL-METASTATIC-1L-PLATINUM-CHEMO-AVELUMAB",
+    "default_indication_id": "IND-UROTHELIAL-METASTATIC-1L-EV-PEMBRO"
+  },
+  "ALGO-UROTHELIAL-METASTATIC-1L::empty": {
+    "alternative_indication_id": "IND-UROTHELIAL-METASTATIC-1L-PLATINUM-CHEMO-AVELUMAB",
+    "default_indication_id": "IND-UROTHELIAL-METASTATIC-1L-EV-PEMBRO"
+  },
+  "ALGO-UROTHELIAL-METASTATIC-2L::all_true": {
+    "alternative_indication_id": "IND-UROTHELIAL-2L-PEMBROLIZUMAB",
+    "default_indication_id": "IND-UROTHELIAL-2L-EV"
+  },
+  "ALGO-UROTHELIAL-METASTATIC-2L::empty": {
+    "alternative_indication_id": "IND-UROTHELIAL-2L-PEMBROLIZUMAB",
+    "default_indication_id": "IND-UROTHELIAL-2L-EV"
+  },
+  "ALGO-VHL-CARRIER-SURVEILLANCE-VHL-ALLIANCE::all_true": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-VHL-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE"
+  },
+  "ALGO-VHL-CARRIER-SURVEILLANCE-VHL-ALLIANCE::empty": {
+    "alternative_indication_id": null,
+    "default_indication_id": "IND-VHL-SUSPICION-PREVENTION-ENHANCED-SURVEILLANCE"
+  },
+  "ALGO-WM-1L::all_true": {
+    "alternative_indication_id": "IND-WM-1L-BTKI",
+    "default_indication_id": "IND-WM-1L-DRC"
+  },
+  "ALGO-WM-1L::empty": {
+    "alternative_indication_id": "IND-WM-1L-BTKI",
+    "default_indication_id": "IND-WM-1L-DRC"
+  },
+  "ALGO-WM-2L::all_true": {
+    "alternative_indication_id": "IND-WM-2L-VRD",
+    "default_indication_id": "IND-WM-2L-ZANUBRUTINIB"
+  },
+  "ALGO-WM-2L::empty": {
+    "alternative_indication_id": "IND-WM-2L-VRD",
+    "default_indication_id": "IND-WM-2L-ZANUBRUTINIB"
+  }
+}
