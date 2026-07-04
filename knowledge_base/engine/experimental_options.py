@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import time
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -31,12 +32,19 @@ from typing import Callable, Optional
 from knowledge_base.schemas.experimental_option import (
     ExperimentalOption,
     ExperimentalTrial,
+    TrialOutlook,
     UaSiteDetail,
 )
-from knowledge_base.engine.trial_outlook import score_trial
+from knowledge_base.engine.trial_outlook import detect_age_sex_screen, score_trial
 
 
 _DEFAULT_TTL_DAYS = 7
+
+# Courtesy delay between successive per-biomarker ctgov calls within one
+# multi-biomarker enumerate_experimental_options() invocation (see the
+# fan-out loop below). Matches the spacing already used elsewhere for
+# ctgov courtesy (`ctgov_client.enrich_report_with_trials`).
+_MULTI_TERM_SLEEP_SECONDS = 0.15
 
 
 # Statuses we surface as "experimental option for the patient."
@@ -56,14 +64,27 @@ class TrialQuery:
 
     disease_term: str           # plain-text condition (e.g. "Multiple myeloma")
     biomarker_term: str = ""    # plain-text biomarker (e.g. "TP53 mutation"); "" → no filter
+    biomarker_terms: tuple[str, ...] = ()  # multi-biomarker case; () → use biomarker_term
     line_of_therapy: Optional[int] = None
     max_results: int = 10
 
     def signature(self) -> str:
-        """Stable hash for in-process + on-disk caching."""
+        """Stable hash for in-process + on-disk caching.
+
+        When `biomarker_terms` is empty (the single-biomarker or
+        no-biomarker case — still the overwhelming majority of calls),
+        this produces byte-identical hashes to the pre-multi-biomarker
+        implementation, so existing on-disk cache files stay valid.
+        """
+        if self.biomarker_terms:
+            terms_key = "+".join(
+                sorted(t.strip().lower() for t in self.biomarker_terms if t.strip())
+            )
+        else:
+            terms_key = self.biomarker_term.strip().lower()
         joined = "|".join([
             self.disease_term.strip().lower(),
-            self.biomarker_term.strip().lower(),
+            terms_key,
             str(self.line_of_therapy or ""),
             str(self.max_results),
         ])
@@ -122,6 +143,21 @@ def _ua_sites_detail_from_locations(locations: list) -> list[UaSiteDetail]:
     return out
 
 
+# Rank used to pick the "best" outlook when the same NCT ID surfaces
+# under more than one biomarker search (multi-biomarker patients) —
+# `score_trial`'s stratification is scoped to a single biomarker phrase
+# (ALL tokens within that phrase must match), so a trial enriched for
+# the patient's *second* biomarker but not their first must still show
+# as "enriched" rather than being overwritten by the weaker result.
+_STRAT_RANK = {"enriched": 2, "unclear": 1, "open_label": 0}
+
+
+def _outlook_rank(trial: ExperimentalTrial) -> int:
+    if trial.outlook is None:
+        return -1
+    return _STRAT_RANK.get(trial.outlook.biomarker_stratification, 0)
+
+
 def _to_trial(
     study: dict,
     *,
@@ -166,6 +202,9 @@ def _to_trial(
         summary=(study.get("summary") or "")[:600] or None,
         inclusion_summary=incl,
         exclusion_summary=excl,
+        min_age=study.get("min_age") or study.get("MinimumAge") or None,
+        max_age=study.get("max_age") or study.get("MaximumAge") or None,
+        eligible_sex=study.get("sex") or study.get("Sex") or None,
         countries=list(countries) if isinstance(countries, list) else [],
         sites_ua=_ua_sites_from_countries(
             list(countries) if isinstance(countries, list) else []
@@ -258,15 +297,65 @@ def _write_disk_cache(
         pass
 
 
+def _apply_patient_screen(
+    option: ExperimentalOption,
+    patient_age: Optional[float],
+    patient_sex: Optional[str],
+) -> ExperimentalOption:
+    """Overlay a per-patient age/sex eligibility screen onto an
+    `ExperimentalOption` — including one that came straight out of the
+    in-process or on-disk cache.
+
+    `ExperimentalOption` bundles are cached by (disease, biomarker, line)
+    signature and shared across every patient with that signature. The
+    trial's own min/max age and sex fields are patient-agnostic facts
+    (cached safely on `ExperimentalTrial`); the *comparison* against a
+    specific patient's age/sex is not, so it is computed fresh here on
+    every call rather than baked into the cached object.
+
+    Returns `option` unchanged (same object identity) when no patient
+    demographics are supplied, so callers that don't pass them see zero
+    overhead and cache-identity tests keep holding.
+    """
+    if patient_age is None and not patient_sex:
+        return option
+    if not option.trials:
+        return option
+
+    new_trials = []
+    for t in option.trials:
+        screen, note = detect_age_sex_screen(
+            t.min_age, t.max_age, t.eligible_sex, patient_age, patient_sex
+        )
+        base = t.outlook
+        if base is None:
+            new_outlook = TrialOutlook(
+                biomarker_stratification="open_label",
+                age_sex_screen=screen,
+                notes=[note] if note else [],
+            )
+        else:
+            notes = list(base.notes)
+            if note:
+                notes.append(note)
+            new_outlook = base.model_copy(update={"age_sex_screen": screen, "notes": notes})
+        new_trials.append(t.model_copy(update={"outlook": new_outlook}))
+
+    return option.model_copy(update={"trials": new_trials})
+
+
 def enumerate_experimental_options(
     *,
     disease_id: str,
     disease_term: str,
     biomarker_profile: Optional[str] = None,
+    biomarker_profiles: Optional[list[str]] = None,
     stage_stratum: Optional[str] = None,
     line_of_therapy: Optional[int] = None,
+    patient_age: Optional[float] = None,
+    patient_sex: Optional[str] = None,
     search_fn: Optional[SearchFn] = None,
-    max_results: int = 10,
+    max_results: int = 20,
     cache: bool = True,
     cache_root: Optional[Path] = None,
     cache_ttl_days: int = _DEFAULT_TTL_DAYS,
@@ -277,32 +366,64 @@ def enumerate_experimental_options(
     Args:
         disease_id:        KB disease id (e.g. "DIS-NSCLC")
         disease_term:      plain-text condition for ctgov (e.g. "Non-small cell lung cancer")
-        biomarker_profile: optional biomarker term (e.g. "EGFR mutation")
+        biomarker_profile: optional single biomarker term (e.g. "EGFR mutation").
+                           Ignored when `biomarker_profiles` is also given.
+        biomarker_profiles: optional list of biomarker terms for patients with
+                           more than one positive biomarker (e.g. EGFR+ and
+                           TP53+). Each term is searched separately — CT.gov's
+                           `query.term` Essie syntax technically supports
+                           boolean OR, but per-term calls keep the trial-outlook
+                           stratification scoped correctly (see `_to_trial` /
+                           `score_trial`, which requires ALL tokens of a *single*
+                           biomarker phrase to match, not a mix across
+                           biomarkers) and avoid depending on undocumented-here
+                           Essie query behavior. Results are deduplicated by
+                           NCT ID; when a trial surfaces under more than one
+                           biomarker, the best (most-specific) stratification
+                           wins. Bounded to the first 5 distinct terms to cap
+                           API calls for heavily-annotated patients.
         stage_stratum:     optional stage tag passed through to the bundle
         line_of_therapy:   optional 1/2/3+ — included in cache key
+        patient_age:       optional patient age in years. NOT part of the
+                           cache key (see `_apply_patient_screen`) — used
+                           only to compute each trial's `age_sex_screen`
+                           overlay for this call.
+        patient_sex:       optional patient sex (e.g. "male"/"female").
+                           Same non-cached overlay treatment as `patient_age`.
         search_fn:         injected ctgov-search callable; when None,
                            the bundle returns empty and notes "ctgov
                            search not configured" (offline-friendly)
-        max_results:       trials to retrieve
+        max_results:       trials to retrieve per biomarker term
         cache:             when True, reuse a same-signature result
                            from in-process cache
 
     Returns:
-        ExperimentalOption with up-to-`max_results` trials, filtered to
-        enrollment-open status. Always returns an `ExperimentalOption`
-        — never raises on offline / API failure (per plan §3.3).
+        ExperimentalOption with up-to-`max_results` trials per biomarker term
+        (deduplicated), filtered to enrollment-open status. Always returns an
+        `ExperimentalOption` — never raises on offline / API failure (per
+        plan §3.3).
     """
+
+    _MAX_BIOMARKER_TERMS = 5
+    if biomarker_profiles:
+        # Dedup, drop blanks, preserve order, bound the fan-out.
+        terms_list = list(dict.fromkeys(t for t in biomarker_profiles if t))[
+            :_MAX_BIOMARKER_TERMS
+        ]
+    else:
+        terms_list = [biomarker_profile] if biomarker_profile else []
 
     query = TrialQuery(
         disease_term=disease_term,
-        biomarker_term=biomarker_profile or "",
+        biomarker_term=(terms_list[0] if len(terms_list) == 1 else ""),
+        biomarker_terms=tuple(terms_list) if len(terms_list) > 1 else (),
         line_of_therapy=line_of_therapy,
         max_results=max_results,
     )
     sig = query.signature()
 
     if cache and sig in _QUERY_CACHE:
-        return _QUERY_CACHE[sig].option
+        return _apply_patient_screen(_QUERY_CACHE[sig].option, patient_age, patient_sex)
 
     if cache and cache_root is not None:
         disk_hit = _read_disk_cache(Path(cache_root), sig, cache_ttl_days)
@@ -310,12 +431,15 @@ def enumerate_experimental_options(
             _QUERY_CACHE[sig] = _CacheEntry(
                 when=datetime.now(timezone.utc), option=disk_hit
             )
-            return disk_hit
+            return _apply_patient_screen(disk_hit, patient_age, patient_sex)
 
-    # Stable id derived from disease + biomarker + line + sync month
+    # Stable id derived from disease + biomarker(s) + line + sync month
     sync_ts = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     sync_month = sync_ts[:7]
-    bm_slug = (biomarker_profile or "ALL").upper().replace(" ", "_")
+    bm_display = ", ".join(terms_list) if terms_list else None
+    bm_slug = (
+        "+".join(t.upper().replace(" ", "_") for t in terms_list) if terms_list else "ALL"
+    )
     line_slug = f"L{line_of_therapy}" if line_of_therapy else "ALL"
     option_id = f"EXPER-{disease_id}-{bm_slug}-{line_slug}-{sync_month}"
 
@@ -323,7 +447,7 @@ def enumerate_experimental_options(
         return ExperimentalOption(
             id=option_id,
             disease_id=disease_id,
-            molecular_subtype=biomarker_profile,
+            molecular_subtype=bm_display,
             stage_stratum=stage_stratum,
             line_of_therapy=line_of_therapy,
             trials=[],
@@ -331,40 +455,66 @@ def enumerate_experimental_options(
             notes="ctgov search not configured — pass search_fn to enumerate trials.",
         )
 
-    try:
-        raw_studies = search_fn(
-            condition=disease_term,
-            intervention=biomarker_profile or "",
-            status="recruiting",
-            max_results=max_results,
-        )
-    except Exception as exc:
+    # One search per biomarker term (or a single unfiltered search when the
+    # patient has none). Merge-by-NCT-ID so a trial matching more than one
+    # biomarker appears once, keeping its best stratification.
+    query_terms: list[Optional[str]] = terms_list if terms_list else [None]
+    seen_trials: dict[str, ExperimentalTrial] = {}
+    search_errors: list[str] = []
+    for i, term in enumerate(query_terms):
+        # Courtesy spacing between per-biomarker fan-out calls only —
+        # ctgov's own rate limiting is the caller's responsibility
+        # (`CtgovClient.rate_limit`), but a bare `search_trials` callable
+        # has none, and a multi-biomarker patient would otherwise fire
+        # several requests back-to-back within one Plan generation.
+        if i > 0:
+            time.sleep(_MULTI_TERM_SLEEP_SECONDS)
+        try:
+            raw_studies = search_fn(
+                condition=disease_term,
+                term=term or "",
+                status="open",
+                max_results=max_results,
+            )
+        except Exception as exc:
+            search_errors.append(str(exc))
+            continue
+        for study in (raw_studies or []):
+            t = _to_trial(study, sync_ts=sync_ts, biomarker_term=term)
+            if t is None:
+                continue
+            prior = seen_trials.get(t.nct_id)
+            if prior is None or _outlook_rank(t) > _outlook_rank(prior):
+                seen_trials[t.nct_id] = t
+
+    if search_errors and not seen_trials:
         return ExperimentalOption(
             id=option_id,
             disease_id=disease_id,
-            molecular_subtype=biomarker_profile,
+            molecular_subtype=bm_display,
             stage_stratum=stage_stratum,
             line_of_therapy=line_of_therapy,
             trials=[],
             last_synced=sync_ts,
-            notes=f"ctgov search failed: {exc}",
+            notes=f"ctgov search failed: {'; '.join(search_errors)}",
         )
 
-    trials: list[ExperimentalTrial] = []
-    for study in (raw_studies or []):
-        t = _to_trial(study, sync_ts=sync_ts, biomarker_term=biomarker_profile)
-        if t is not None:
-            trials.append(t)
+    notes = None
+    if search_errors:
+        notes = (
+            f"partial ctgov failure ({len(search_errors)}/{len(query_terms)} "
+            f"terms): {'; '.join(search_errors)}"
+        )
 
     option = ExperimentalOption(
         id=option_id,
         disease_id=disease_id,
-        molecular_subtype=biomarker_profile,
+        molecular_subtype=bm_display,
         stage_stratum=stage_stratum,
         line_of_therapy=line_of_therapy,
-        trials=trials,
+        trials=list(seen_trials.values()),
         last_synced=sync_ts,
-        notes=None,
+        notes=notes,
     )
 
     if cache:
@@ -372,7 +522,7 @@ def enumerate_experimental_options(
         if cache_root is not None:
             _write_disk_cache(Path(cache_root), sig, option)
 
-    return option
+    return _apply_patient_screen(option, patient_age, patient_sex)
 
 
 def clear_cache() -> None:

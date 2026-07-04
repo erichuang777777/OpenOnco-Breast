@@ -39,6 +39,10 @@ jobs:
         run: |
           python scripts/audit_validator.py --human
 
+      - name: Prose-condition ratchet (block new unevaluable conditions)
+        run: |
+          python scripts/check_prose_conditions.py
+
       - name: Run tests
         run: |
           python -m pytest \
@@ -48,6 +52,7 @@ jobs:
             tests/test_algorithm_regimen_routing_contracts.py \
             tests/test_legacy_regimen_normalization.py \
             tests/test_esophageal_1l_algorithm.py \
+            tests/test_check_prose_conditions.py \
             tests/test_build_site.py::test_static_assets_present \
             tests/test_build_site.py::test_try_page_wires_pyodide_and_form \
             tests/test_build_site.py::test_try_page_has_pwa_manifest_and_build_status \
