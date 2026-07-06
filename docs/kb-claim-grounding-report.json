@@ -1,14 +1,22 @@
 {
-  "generated_at": "2026-07-04T05:53:28.148167+00:00",
+  "generated_at": "2026-07-06T10:03:49.589755+00:00",
   "semantic_enabled": false,
   "metrics": {
-    "total_claims": 6,
-    "claims_with_anchor": 6,
-    "anchor_coverage": 1.0,
+    "total_claims": 3602,
+    "claims_with_anchor": 3578,
+    "anchor_coverage": 0.9933370349805664,
     "by_entity_type": {
       "biomarker_actionability": {
-        "total": 6,
-        "anchored": 6
+        "total": 950,
+        "anchored": 950
+      },
+      "indications": {
+        "total": 1911,
+        "anchored": 1911
+      },
+      "regimens": {
+        "total": 741,
+        "anchored": 717
       }
     },
     "semantic": {
@@ -18,6 +26,175 @@
       "skipped": 0
     }
   },
-  "detached_top": [],
+  "detached_top": [
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-BEP-GCT",
+      "field": "notes_ua",
+      "excerpt": "BEP (блеоміцин + етопозид + цисплатин): стандартна 1L хіміотерапія пухлин зародкових клітин (ПЗК) яєчка. Блеоміцин (bleomycin) 30 ОД в/в дн…",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_bep_gct.yaml"
+    },
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-CABAZITAXEL-MCRPC",
+      "field": "notes_ua",
+      "excerpt": "Кабазитаксел (cabazitaxel) 20-25 мг/м² в/в + преднізон (prednisone) 10 мг/добу перорально при мКРРП 2L. TROPIC: ЗВ ВР 0,70 проти мітоксантр…",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_cabazitaxel_mcrpc.yaml"
+    },
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-CABOZANTINIB-HCC",
+      "field": "notes_ua",
+      "excerpt": "Кабозантиніб (cabozantinib) 60 мг перорально щоденно безперервно при ГЦК 2L (CELESTIAL, n=707): мЗВ 10,2 проти 8,0 міс. (ВР 0,76, p=0,005);…",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_cabozantinib_hcc.yaml"
+    },
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-CARBO-PACLI-ANAL-MET",
+      "field": "notes_ua",
+      "excerpt": "Карбоплатин (carboplatin) AUC 5 + паклітаксел (paclitaxel) 175 мг/м² в/в день 1 q21d при метастатичному / рецидивуючому неоперабельному ASC…",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_carbo_pacli_anal_met.yaml"
+    },
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-CE-SCLC",
+      "field": "notes_ua",
+      "excerpt": "Карбоплатин (carboplatin) AUC 5 + етопозид (etoposide) 100 мг/м²/добу дні 1-3 q21d × 4-6 циклів при МДрЛ без імунотерапії. Використовується…",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_ce_sclc.yaml"
+    },
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-DAB-TRAM-ATC",
+      "field": "notes_ua",
+      "excerpt": "Дабрафеніб (dabrafenib) 150 мг перорально двічі на добу + траметиніб (trametinib) 2 мг перорально щоденно при BRAF V600E ATC (ROAR, n=36): …",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_dabrafenib_trametinib_atc.yaml"
+    },
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-DOXORUBICIN-IFOSFAMIDE-STS",
+      "field": "notes_ua",
+      "excerpt": "Доксорубіцин (doxorubicin) 75 мг/м² + іфосфамід (ifosfamide) 10 г/м² (2,5 г/м²/добу дні 1-4) + мезна (mesna, ОБОВ'ЯЗКОВА) q21d при СМТ 1L а…",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_doxorubicin_ifosfamide_sts.yaml"
+    },
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-DOXORUBICIN-STS",
+      "field": "notes_ua",
+      "excerpt": "Доксорубіцин (doxorubicin) 75 мг/м² в/в день 1 q21d при СМТ 1L стандарт (ЗРВ ~14-27%). Везикант — обов'язковий центральний венозний доступ.…",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_doxorubicin_sts.yaml"
+    },
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-EP-GCT",
+      "field": "notes_ua",
+      "excerpt": "EP (етопозид (etoposide) + цисплатин (cisplatin)): варіант без блеоміцину при ПЗК. Показання: легеневий фіброз / знижений DLCO (<80%), CrCl…",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_ep_gct.yaml"
+    },
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-EV-MONO-UROTHELIAL",
+      "field": "notes_ua",
+      "excerpt": "Енфортумаб ведотин (enfortumab vedotin) 1,25 мг/кг в/в дні 1, 8, 15 q28d при уротеліальній карциномі 2L монотерапія (EV-301, n=608): мЗВ 12…",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_ev_mono_urothelial.yaml"
+    },
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-GEMCITABINE-DOCETAXEL-STS",
+      "field": "notes_ua",
+      "excerpt": "Гемцитабін (gemcitabine) 900 мг/м² в/в (фіксована швидкість 10 мг/м²/хв КРИТИЧНО) + доцетаксел (docetaxel) 100 мг/м² дні 1 і 8 q21d при СМТ…",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_gemcitabine_docetaxel_sts.yaml"
+    },
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-NAL-IRI-5FU-LV-PDAC",
+      "field": "notes_ua",
+      "excerpt": "Нал-ІРІ (nal-IRI, nanoliposomal irinotecan, ONIVYDE) 70 мг/м² (вільна основа) в/в день 1 + 5-ФУ (fluorouracil) 2400 мг/м² 46-год інфузія + …",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_nal_iri_5fu_lv_pdac.yaml"
+    },
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-NIGRO-MMC-5FU-RT",
+      "field": "notes_ua",
+      "excerpt": "Протокол Ніґро (Nigro): мітоміцин-C (mitomycin-C) 10-12 мг/м² болюс дні 1 і 29 + 5-ФУ (fluorouracil) 1000 мг/м²/добу безперервна інфузія дн…",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_nigro_mmc_5fu_rt.yaml"
+    },
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-NIVO-IPI-MESOTHELIOMA",
+      "field": "notes_ua",
+      "excerpt": "Ніволумаб (nivolumab) 3 мг/кг в/в q14d + іпілімумаб (ipilimumab) 1 мг/кг в/в q6w при злоякісній плевральній мезотеліомі (МПМ) 1L (CheckMate…",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_nivo_ipi_mesothelioma.yaml"
+    },
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-NIVOLUMAB-MONO",
+      "field": "notes_ua",
+      "excerpt": "Ніволумаб (nivolumab) монотерапія: 240 мг в/в кожні 2 тижні АБО 480 мг в/в кожні 4 тижні (FDA-схвалений еквівалент). Анти-PD-1 ICI з широки…",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_nivolumab_mono.yaml"
+    },
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-PAZOPANIB-STS",
+      "field": "notes_ua",
+      "excerpt": "Пазопаніб (pazopanib) 800 мг перорально щоденно безперервно при СМТ 2L (PALETTE, n=369): ВБП 4,6 проти 1,6 міс. (ВР 0,31, p<0,0001), без пе…",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_pazopanib_sts.yaml"
+    },
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-PEMBRO-CHEMO-TNBC-MET",
+      "field": "notes_ua",
+      "excerpt": "Пембролізумаб (pembrolizumab) 200 мг + хімія (наб-паклітаксел 100 мг/м² дні 1, 8, 15 q28d АБО паклітаксел 90 мг/м² дні 1, 8, 15 q28d АБО ге…",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_pembro_chemo_tnbc_met.yaml"
+    },
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-PEMBROLIZUMAB-MONO",
+      "field": "notes_ua",
+      "excerpt": "Пембролізумаб (pembrolizumab) монотерапія: 200 мг в/в кожні 3 тижні АБО 400 мг кожні 6 тижнів (FDA-схвалений еквівалент). Анти-PD-1 ICI з п…",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_pembrolizumab_mono.yaml"
+    },
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-PEMETREXED-CISPLATIN-MPM",
+      "field": "notes_ua",
+      "excerpt": "Пеметрексед (pemetrexed) 500 мг/м² в/в день 1 + цисплатин (cisplatin) 75 мг/м² в/в день 1 q21d при злоякісній плевральній мезотеліомі (МПМ)…",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_pemetrexed_cisplatin_mpm.yaml"
+    },
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-RADIUM223-MCRPC",
+      "field": "notes_ua",
+      "excerpt": "Радій-223 (radium-223 dichloride, Xofigo) 55 кБк/кг в/в 1 раз на 4 тижні × 6 ін'єкцій при мКРРП з кістковими метастазами без вісцеральних м…",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_radium223_mcrpc.yaml"
+    },
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-RAMUCIRUMAB-HCC",
+      "field": "notes_ua",
+      "excerpt": "Рамуцирумаб (ramucirumab) 8 мг/кг в/в кожні 14 днів при ГЦК 2L з АФП >=400 нг/мл (REACH-2, n=292): мЗВ 8,5 проти 7,3 міс. (ВР 0,71, p=0,019…",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_ramucirumab_hcc.yaml"
+    },
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-REGORAFENIB-HCC",
+      "field": "notes_ua",
+      "excerpt": "Регорафеніб (regorafenib) 160 мг перорально щоденно дні 1-21 q28d (3 тижні прийом / 1 тиждень відпочинок) при ГЦК 2L після сорафенібу (RESO…",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_regorafenib_hcc.yaml"
+    },
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-TIP-GCT-SALVAGE",
+      "field": "notes_ua",
+      "excerpt": "TIP (паклітаксел (paclitaxel) 250 мг/м² 24-год безперервна інфузія день 1 + іфосфамід (ifosfamide) 1,5 г/м²/добу дні 2-6 + цисплатин (cispl…",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_tip_gct_salvage.yaml"
+    },
+    {
+      "entity_type": "regimens",
+      "entity_id": "REG-TOPOTECAN-SCLC-RR",
+      "field": "notes_ua",
+      "excerpt": "Топотекан (topotecan) 1,5 мг/м²/добу в/в дні 1-5 q21d при рецидивуючому / рефрактерному МДрЛ. При чутливому рецидиві (CTFI >=90 днів): ЗРВ …",
+      "entity_path": "knowledge_base/hosted/content/regimens/reg_topotecan_sclc_rr.yaml"
+    }
+  ],
   "ungrounded": []
 }
