@@ -6,7 +6,7 @@ OpenOnco 是一個**免費、開源的腫瘤科臨床決策支援資源**。核�
 
 > 醫師上傳一份病人資料（診斷、分期、生物標記、體能狀態、共病等）→ 系統回傳**兩套並列的治療計畫**（標準 standard + 積極 aggressive），每一項建議都附完整來源引用。當新資料進來（新的化驗值、醫師決策、更新的指引）時，計畫會刷新。
 
-線上 Demo：**[openonco.info](https://openonco.info)**（瀏覽器內直接試用，用 Pyodide 在前端跑真正的 Python 引擎，病人資料不離開裝置）。
+線上 Demo：**[openonco.info](https://openonco.info)**（瀏覽器內直接試用，用 Pyodide 在前端跑真正的 Python 引擎，病人資料不離開裝置）。**這是 `try.html` 展示頁專屬的特性,不是整個系統的保證**——Hospital Edition 與未來的 CQL/ELM 決策引擎（[ADR-0005](../docs/adr/0005-production-decision-engine-runs-server-side.md)）跑在伺服器端,正式部署場景以決策邏輯正確性為優先,而非前端零後端執行。
 
 ## 為什麼存在
 
