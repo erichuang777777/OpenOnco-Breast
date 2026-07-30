@@ -9,19 +9,31 @@
 #      new snapshot under knowledge_base/hosted/civic/<today>/.
 #   3. Diffs the new snapshot against the most recent prior snapshot,
 #      writing a markdown summary into the same dated directory.
-#   4. Opens a pull request with the new snapshot + diff summary as the
-#      PR body, labelled `civic-refresh` and `needs-clinical-review`.
+#   4. Pushes the new snapshot + diff summary to a
+#      `civic-refresh-<run_id>` branch and prints the "open a PR" link
+#      in the job summary. A human opens the PR from that branch.
 #
 # Two-reviewer signoff required per CHARTER §6.1 before merge —
 # drift in CIViC evidence levels, directions, or therapy lists can
 # affect engine-driven clinical recommendations, so a clinician must
-# read the diff summary before this PR is merged.
+# read the diff summary before this snapshot reaches master. That is
+# why this workflow does NOT commit straight to master the way
+# daily-site-refresh.yml and claim-grounding-audit.yml do: those write
+# generated artifacts under docs/, this one writes clinical evidence
+# data.
+#
+# History: step 4 used peter-evans/create-pull-request until
+# 2026-07-30. The action pushes the branch fine but then fails with
+# "GitHub Actions is not permitted to create or approve pull requests"
+# (repo setting Settings → Actions → General → Workflow permissions),
+# turning the whole run red after the useful work was already done.
+# Pushing the branch and letting a human open the PR keeps the
+# clinical-review gate intact without depending on that setting. If
+# the setting is ever enabled, the PR-creation step can come back.
 #
 # Notes:
-# - The PR is opened against the default branch (master).
+# - The branch is pushed to origin; the PR is opened against master.
 # - GITHUB_TOKEN is auto-provided by Actions; no extra secrets needed.
-# - peter-evans/create-pull-request is a permissively-licensed third
-#   party action; pinned to a major version.
 
 name: CIViC monthly refresh
 
@@ -31,8 +43,7 @@ on:
   workflow_dispatch: {}
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: write  # push the refresh branch; no PR is created here
 
 jobs:
   refresh:
@@ -67,14 +78,38 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Open PR
+      - name: Push refresh branch for clinical review
         if: steps.diff.outputs.changed == 'true'
-        uses: peter-evans/create-pull-request@v6
-        with:
-          branch: civic-refresh-${{ github.run_id }}
-          title: "chore(civic): monthly snapshot refresh"
-          body-path: ${{ steps.refresh.outputs.diff_path }}
-          labels: |
-            civic-refresh
-            needs-clinical-review
-          commit-message: "chore(civic): refresh nightly snapshot — auto-PR for clinical review"
+        env:
+          BRANCH: civic-refresh-${{ github.run_id }}
+        run: |
+          git config user.name  "openonco-civic-refresh[bot]"
+          git config user.email "civic-refresh@openonco.info"
+          git checkout -b "$BRANCH"
+          git add knowledge_base/hosted/civic
+          git commit -m "chore(civic): refresh nightly snapshot — awaiting clinical review"
+          git push origin "$BRANCH"
+
+      - name: Summary
+        if: always()
+        env:
+          BRANCH: civic-refresh-${{ github.run_id }}
+        run: |
+          if [ "${{ steps.diff.outputs.changed }}" != "true" ]; then
+            echo "✓ No CIViC drift this month — nothing to review." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          {
+            echo "## CIViC monthly refresh — needs clinical review"
+            echo
+            echo "Snapshot pushed to branch \`$BRANCH\`."
+            echo
+            echo "**Open the PR:** ${{ github.server_url }}/${{ github.repository }}/compare/master...$BRANCH?expand=1"
+            echo
+            echo "Label it \`civic-refresh\` + \`needs-clinical-review\`. Two Clinical"
+            echo "Co-Lead approvals required before merge (CHARTER §6.1)."
+            echo
+            echo "### Diff summary"
+            echo
+            cat "${{ steps.refresh.outputs.diff_path }}"
+          } >> "$GITHUB_STEP_SUMMARY"

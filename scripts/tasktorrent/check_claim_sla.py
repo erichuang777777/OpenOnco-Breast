@@ -50,21 +50,50 @@ def _gh(args: list[str]) -> Any:
     return result.stdout
 
 
+def _gh_error(exc: Exception) -> str:
+    """One-line reason from a failed `gh` call, for log annotations."""
+    stderr = getattr(exc, "stderr", None)
+    return (stderr or str(exc)).strip().replace("\n", " ")
+
+
 def _list_chunk_issues() -> list[dict]:
-    return _gh([
-        "issue", "list",
-        "--label", "chunk-task",
-        "--state", "open",
-        "--json", "number,title,assignees,labels",
-        "--limit", "100",
-    ])
+    """Open chunk-task issues, or [] if the board isn't set up yet.
+
+    `gh issue list --label chunk-task` exits non-zero when the label does
+    not exist in the repo (rather than returning an empty list), which
+    used to crash the hourly workflow on every run. No chunk board means
+    no claims to police, so treat it as "nothing to do" — but surface the
+    reason as a workflow annotation so a genuine auth/API failure doesn't
+    pass for a quiet day.
+    """
+    try:
+        return _gh([
+            "issue", "list",
+            "--label", "chunk-task",
+            "--state", "open",
+            "--json", "number,title,assignees,labels",
+            "--limit", "100",
+        ])
+    except (subprocess.CalledProcessError, OSError) as exc:
+        print(f"::warning::cannot list chunk-task issues, skipping run: {_gh_error(exc)}")
+        return []
 
 
 def _get_comments(issue_number: int) -> list[dict]:
-    return _gh([
-        "issue", "view", str(issue_number),
-        "--json", "comments",
-    ])["comments"]
+    """Comments on one issue, or [] if that issue can't be read.
+
+    A per-issue failure (deleted mid-run, transient API error) must not
+    abort the sweep over the remaining issues — skipping one issue costs
+    at most a one-hour delay, since this bot runs hourly.
+    """
+    try:
+        return _gh([
+            "issue", "view", str(issue_number),
+            "--json", "comments",
+        ])["comments"]
+    except (subprocess.CalledProcessError, OSError, KeyError, ValueError) as exc:
+        print(f"::warning::skipping issue #{issue_number}: {_gh_error(exc)}")
+        return []
 
 
 def _is_past_sla(comment_iso: str, now: dt.datetime) -> bool:
