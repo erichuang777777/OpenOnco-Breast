@@ -42,6 +42,7 @@ from hospital.decision.api.push import router as push_router
 from hospital.admin.api.drug_req import router as drug_req_router
 from hospital.admin.api.users import router as admin_users_router
 from hospital.admin.api.kb import router as admin_kb_router
+from hospital.admin.api.clinical_review import router as admin_clinical_review_router
 from hospital.admin.api.audit import router as admin_audit_router
 from hospital.middleware.security_headers import SecurityHeadersMiddleware
 
@@ -115,6 +116,7 @@ app.include_router(push_router,              prefix=API_PREFIX)
 app.include_router(drug_req_router,    prefix=API_PREFIX)
 app.include_router(admin_users_router, prefix=API_PREFIX)
 app.include_router(admin_kb_router,    prefix=API_PREFIX)
+app.include_router(admin_clinical_review_router, prefix=API_PREFIX)
 app.include_router(admin_audit_router, prefix=API_PREFIX)
 
 

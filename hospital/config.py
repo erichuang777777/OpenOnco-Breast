@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from functools import lru_cache
 from pathlib import Path
+from typing import Optional
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -41,6 +42,14 @@ class Settings(BaseSettings):
     # ── Patient plans (gitignored per CHARTER §9.3) ───────────────────────
     PATIENT_PLANS_DIR: str = "patient_plans"
 
+    # ── Institutional source full text (clinical-review only) ─────────────
+    # When a deployer holds an institutional licence permitting INTERNAL use
+    # of source full text (e.g. a hospital NCCN subscription), excerpts may be
+    # placed in SOURCE_FULLTEXT_DIR (one file per Source id, gitignored — never
+    # redistributed). The clinical-review UI surfaces them ONLY when enabled.
+    INSTITUTIONAL_FULLTEXT_ENABLED: bool = False
+    SOURCE_FULLTEXT_DIR: str = "knowledge_base/hosted/source_fulltext"
+
     # ── CORS ─────────────────────────────────────────────────────────────
     ALLOWED_ORIGINS: list[str] = ["http://localhost:5173", "http://localhost:4173"]
     # Comma-separated in env: ALLOWED_ORIGINS=https://app.hospital.tw,https://staging.hospital.tw
@@ -67,6 +76,11 @@ class Settings(BaseSettings):
     @property
     def patient_plans_path(self) -> Path:
         return Path(self.PATIENT_PLANS_DIR)
+
+    @property
+    def source_fulltext_path(self) -> Optional[Path]:
+        """Dir holding institutional source full text, or None when disabled."""
+        return Path(self.SOURCE_FULLTEXT_DIR) if self.INSTITUTIONAL_FULLTEXT_ENABLED else None
 
 
 @lru_cache

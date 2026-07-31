@@ -11,6 +11,8 @@ import { DrugReqPage } from './pages/DrugReqPage'
 import { AdminPage } from './pages/AdminPage'
 import { GuidelinesPage } from './pages/GuidelinesPage'
 import { AuditPage } from './pages/AuditPage'
+import { ClinicalReviewPage } from './pages/ClinicalReviewPage'
+import { DisclaimerBanner } from './components/DisclaimerBanner'
 
 function NavBar() {
   const { user, logout } = useAuth()
@@ -31,6 +33,9 @@ function NavBar() {
       {(user.role === 'kb_admin' || user.role === 'auditor') && (
         <a href="/audit" style={{ color: '#fff' }} data-testid="nav-audit">驗證稽核</a>
       )}
+      {(user.role === 'kb_admin' || user.role === 'auditor') && (
+        <a href="/review" style={{ color: '#fff' }} data-testid="nav-review">臨床簽核</a>
+      )}
       <button onClick={logout} data-testid="logout-btn" style={{ marginLeft: 'auto', cursor: 'pointer' }}>登出</button>
     </nav>
   )
@@ -41,6 +46,7 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <NavBar />
+        <DisclaimerBanner />
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/pending" element={<PendingPage />} />
@@ -76,6 +82,10 @@ function App() {
           <Route
             path="/audit"
             element={<AuthGuard allowedRoles={['kb_admin', 'auditor']}><AuditPage /></AuthGuard>}
+          />
+          <Route
+            path="/review"
+            element={<AuthGuard allowedRoles={['kb_admin', 'auditor']}><ClinicalReviewPage /></AuthGuard>}
           />
           <Route path="*" element={<Navigate to="/patients" replace />} />
         </Routes>
