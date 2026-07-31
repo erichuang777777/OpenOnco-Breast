@@ -1,0 +1,655 @@
+file,step,clause_path,condition_text,structural_class,confidence,proposed_clause,candidate_finding_keys
+algo_advsm_1l.yaml,1,all_of[1].any_of[3],KIT D816V positive,DEAD,HIGH_CONFIDENCE_RENAME,"{finding: ""kit_d816v_status""}",kit_d816v_status
+algo_advsm_1l.yaml,1,all_of[2],Platelet count ≥50 ×10⁹/L,MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_advsm_1l.yaml,2,any_of[0],KIT D816V negative,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""kit_d816v_status""}",kit_d816v_status
+algo_advsm_1l.yaml,2,any_of[1],Platelet count <50 ×10⁹/L,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_advsm_1l.yaml,2,any_of[2],Avapritinib contraindicated OR inaccessible,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_aitl_2l.yaml,1,any_of[0],≥1 prior systemic line failed (post-CHOEP/CHP-Bv),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_aitl_2l.yaml,1,any_of[1],AITL-typical epigenetic mutations documented (TET2/DNMT3A/IDH2),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_aitl_2l.yaml,1,any_of[2],Hypomethylating agent accessible / preferred,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_aitl_2l.yaml,2,all_of[1],Romidepsin accessible (named-patient or trial),MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_aitl_2l.yaml,2,all_of[2],No baseline cardiac arrhythmia / QTc prolongation precluding HDACi,MIXED_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""baseline_cardiac_arrhythmia""}",baseline_cardiac_arrhythmia
+algo_aitl_2l.yaml,3,any_of[5],Romidepsin inaccessible / intolerant,DEAD,HIGH_CONFIDENCE_RENAME,"{finding: ""romidepsin_intolerant""}",romidepsin_intolerant
+algo_aitl_2l.yaml,3,any_of[6],"Mild baseline arrhythmia, prefer belinostat profile",DEAD,NEEDS_CLINICAL_JUDGMENT,,
+algo_alcl_1l.yaml,1,all_of[1],Brentuximab accessible (funding pathway),MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_alcl_2l.yaml,1,all_of[0],Status post autoSCT in CR/PR,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_alcl_2l.yaml,1,all_of[1],"High-risk features present (primary refractory pre-ASCT, relapse <12 months from 1L, ≥2 prior lines, or extranodal at relapse)",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_alcl_2l.yaml,2,all_of[0],Brentuximab vedotin not used in prior line,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_alcl_2l.yaml,2,all_of[1],No baseline Grade ≥2 peripheral neuropathy,SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""peripheral_neuropathy_grade""}",peripheral_neuropathy_grade
+algo_alcl_2l.yaml,3,all_of[1],Brentuximab vedotin previously administered,MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_aml_1l.yaml,7,any_of[0],Fit for intensive chemotherapy (default if no fitness flags),SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_aml_2l.yaml,8,any_of[0],FLT3 wild-type R/R AML; clinical-trial / re-induction / BSC routing surfaced as annotation,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_amsterdam_ii_lynch.yaml,1,any_of[0],Familial adenomatous polyposis (FAP) confirmed or strongly suspected in pedigree,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_amsterdam_ii_lynch.yaml,2,all_of[0],"≥3 relatives with histologically verified Lynch-spectrum cancer (CRC, endometrial, small bowel, urothelial, gastric, ovarian, hepatobiliary, brain, sebaceous skin)",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_amsterdam_ii_lynch.yaml,2,all_of[1],One is a first-degree relative of the other two,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_amsterdam_ii_lynch.yaml,3,all_of[0],Lynch-spectrum cancers span at least two successive generations,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_amsterdam_ii_lynch.yaml,4,all_of[0],At least one Lynch-spectrum cancer diagnosed at age <50 years,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_amsterdam_ii_lynch.yaml,5,all_of[0],Tumors verified by pathology (histologic confirmation),SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_anal_scc_1l.yaml,1,all_of[0],Histology confirmed: squamous cell carcinoma of the anal canal,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_anal_scc_1l.yaml,1,all_of[1],CT CAP and/or PET-CT completed for staging,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_anal_scc_1l.yaml,2,any_of[0],"Locally advanced disease (any T, any N, M0) — stages I, II, or III",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_anal_scc_1l.yaml,3,all_of[0],ECOG PS 0-2,SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""ecog_status""}",ecog_status
+algo_anal_scc_1l.yaml,3,all_of[1],No prior pelvic RT to dose-limiting cumulative dose,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_anal_scc_1l.yaml,3,all_of[2],CrCl ≥50 mL/min and adequate hepatic function,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_anal_scc_1l.yaml,4,all_of[0],ECOG PS 0-1,SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""ecog_status""}",ecog_status
+algo_anal_scc_1l.yaml,4,all_of[1],No active autoimmune disease requiring systemic immunosuppression,SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""active_autoimmune_disease""}",active_autoimmune_disease
+algo_anal_scc_1l.yaml,4,all_of[2],"Adequate organ function (CrCl ≥50 mL/min, normal LFTs)",SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_apl_2l.yaml,4,all_of[0],Default first relapse post-ATRA+ATO frontline — ATRA+ATO re-induction,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_atll_1l.yaml,2,any_of[5],Shimoyama subtype: smoldering,DEAD,HIGH_CONFIDENCE_RENAME,"{finding: ""shimoyama_subtype""}",shimoyama_subtype
+algo_atll_1l.yaml,2,any_of[6],"Shimoyama subtype: chronic favourable (no LDH > 2× ULN, no BUN > ULN, no albumin < ULN)",DEAD,NEEDS_NEW_FINDING,,
+algo_atll_2l.yaml,1,any_of[0],R/R aggressive ATLL after CHOEP / mLSG15,DEAD,NEEDS_NEW_FINDING,,
+algo_atll_2l.yaml,1,any_of[1],R/R indolent ATLL after AZT+IFN-α,DEAD,NEEDS_NEW_FINDING,,
+algo_b_all_2l.yaml,3,all_of[0],Default 2L MRD+ or low-burden R/R B-ALL — blinatumomab per BLAST,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_bcc_1l.yaml,1,any_of[0],Metastatic BCC (distant metastases),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_bcc_1l.yaml,2,any_of[0],Locally advanced BCC (unresectable or radiation-inappropriate),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_bcsc_breast.yaml,1,any_of[0],Patient has known BRCA1/BRCA2 pathogenic variant,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""brca1_brca2_pathogenic""}",brca1_brca2_pathogenic
+algo_bcsc_breast.yaml,1,any_of[1],Patient has strong family history suggesting HBOC (use pedigree-based model),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_bcsc_breast.yaml,1,any_of[2],Patient had prior chest/thoracic radiation,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_bcsc_breast.yaml,1,any_of[3],Patient has personal history of breast cancer or DCIS / LCIS,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_bcsc_breast.yaml,1,any_of[4],Patient age <35 or >74 (outside BCSC validation range),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_bcsc_breast.yaml,2,any_of[0],BCSC 10-year invasive breast cancer risk ≥6% (high-risk threshold approximating lifetime ≥20-30%),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_bcsc_breast.yaml,3,any_of[0],BCSC 5-year invasive breast cancer risk ≥3.0%,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_bcsc_breast.yaml,4,all_of[0],BI-RADS density category c (heterogeneously dense) or d (extremely dense),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_bcsc_breast.yaml,4,all_of[1],BCSC 5-year invasive breast cancer risk ≥1.66%,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_boadicea_v6_breast_ovarian.yaml,1,any_of[0],BOADICEA v6 lifetime breast cancer risk ≥30% (NICE high-risk threshold),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_boadicea_v6_breast_ovarian.yaml,2,any_of[0],BOADICEA v6 lifetime breast cancer risk ≥20% (ACS/NCCN MRI-eligibility threshold),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_boadicea_v6_breast_ovarian.yaml,3,any_of[0],"BOADICEA v6 carrier probability ≥10% for any of BRCA1, BRCA2, PALB2, CHEK2, ATM, RAD51C, RAD51D, BARD1 (combined or per-gene)",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_boadicea_v6_breast_ovarian.yaml,4,any_of[0],BOADICEA v6 lifetime ovarian / fallopian / primary peritoneal cancer risk ≥3%,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_boadicea_v6_breast_ovarian.yaml,5,any_of[0],BOADICEA v6 lifetime pancreatic cancer risk ≥5%,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_brcapro.yaml,1,any_of[0],BRCAPRO combined BRCA1 + BRCA2 carrier probability ≥20%,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_brcapro.yaml,2,any_of[0],BRCAPRO combined BRCA1 + BRCA2 carrier probability ≥10%,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_brcapro.yaml,3,any_of[0],BRCAPRO combined BRCA1 + BRCA2 carrier probability ≥2.5%,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_breast_1l.yaml,2,any_of[12],Stage I-III (early),DEAD,HIGH_CONFIDENCE_RENAME,"{finding: ""stage_iii""}",stage_iii
+algo_breast_1l.yaml,3,any_of[5],ER <1% AND PR <1% (TNBC),DEAD,HIGH_CONFIDENCE_RENAME,"{all_of: [{finding: ""er_status""}, {finding: ""pr_status""}]}",er_status; pr_status
+algo_breast_1l.yaml,4,any_of[7],Stage IV (locally recurrent unresectable or distant metastatic),DEAD,NEEDS_CLINICAL_JUDGMENT,,stage_iv
+algo_breast_1l.yaml,5,all_of[0],Stage I-III (early HR+/HER2-),SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""stage_iii""}",stage_iii
+algo_breast_1l.yaml,5,all_of[1],High-risk: ≥4 axillary nodes OR (1-3 nodes + Ki67 ≥20% or grade 3) — monarchE eligibility,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_breast_her2_pos_2l.yaml,2,any_of[0],"Brain metastases present (active OR previously treated, stable or progressing)",SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,brain_metastases
+algo_breast_her2_pos_2l.yaml,2,any_of[1],MRI brain confirms intracranial disease ≤2 cm OR symptomatic ≥2 cm post-local therapy,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_breast_her2_pos_2l.yaml,3,any_of[0],No brain metastases OR brain mets not the dominant clinical issue,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,brain_metastases
+algo_breast_hr_pos_2l.yaml,1,any_of[2],PTEN loss-of-function (biallelic NGS or complete IHC loss + NGS confirmation),DEAD,NEEDS_NEW_FINDING,,
+algo_breast_hr_pos_2l.yaml,4,any_of[0],≥1 prior chemo line for metastatic disease OR rapid progression on endocrine,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{any_of: [{finding: ""metastatic_disease""}, {finding: ""rapid_progression""}]}",metastatic_disease; rapid_progression
+algo_breast_hr_pos_2l.yaml,5,any_of[0],No PIK3CA / AKT1 / PTEN / ESR1 alteration AND HER2 IHC 0,SOLE_ANY,NEEDS_NEW_FINDING,,her2_ihc
+algo_breast_tnbc_2l.yaml,3,any_of[0],≥1 prior chemo line for metastatic disease,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""metastatic_disease""}",metastatic_disease
+algo_breast_tnbc_2l.yaml,4,any_of[0],Non-BRCA AND HER2 IHC 0 metastatic TNBC ≥2L,SOLE_ANY,NEEDS_NEW_FINDING,,her2_ihc
+algo_burkitt_1l.yaml,2,all_of[0],Standard / intermediate risk,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_burkitt_1l.yaml,2,all_of[1],ECOG ≤ 3,SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""ecog_status""}",ecog_status
+algo_burkitt_2l.yaml,2,any_of[0],CrCl <50 mL/min OR baseline hearing loss / tinnitus precluding cisplatin,DEAD,NEEDS_CLINICAL_JUDGMENT,,
+algo_burkitt_2l.yaml,2,any_of[1],Prior cisplatin cumulative exposure ≥300 mg/m^2,DEAD,NEEDS_CLINICAL_JUDGMENT,,
+algo_burkitt_2l.yaml,3,any_of[7],Prior hemorrhagic cystitis OR pelvic RT field overlap,DEAD,NEEDS_NEW_FINDING,,prior_hemorrhagic_cystitis
+algo_burkitt_2l.yaml,3,any_of[8],Pre-existing grade ≥2 peripheral neuropathy,DEAD,HIGH_CONFIDENCE_RENAME,"{finding: ""peripheral_neuropathy_grade""}",peripheral_neuropathy_grade
+algo_burkitt_2l.yaml,3,any_of[9],Bladder dysfunction precluding mesna-protected ifosfamide,DEAD,NEEDS_CLINICAL_JUDGMENT,,
+algo_burkitt_2l.yaml,4,any_of[0],"Fit transplant-eligible relapsed/refractory Burkitt, no R-ICE-specific contraindication",DEAD,NEEDS_NEW_FINDING,,
+algo_carrier_cascade_lynch.yaml,1,all_of[0],"Index patient (proband) has confirmed Lynch syndrome germline pathogenic or likely-pathogenic (ACMG class 4/5) variant in MLH1, MSH2, MSH6, PMS2, or EPCAM",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_carrier_cascade_lynch.yaml,2,any_of[0],"Index patient has living first-degree relatives (parents, full siblings, biological children) age ≥18",SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_carrier_cascade_lynch.yaml,3,all_of[0],"Each adult FDR offered pre-test genetic counseling (informed consent, implications, GINA/EU GDPR considerations)",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_carrier_cascade_lynch.yaml,3,all_of[1],Targeted single-site testing for the known family variant ordered (NOT full Lynch panel — wasteful when family variant is documented),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_carrier_cascade_lynch.yaml,4,any_of[0],"Second- or third-degree relative is available (≥18), eligible (consent + counseling), and motivated to test",SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_carrier_cascade_lynch.yaml,5,all_of[0],Single-site test result available + post-test disclosure counseling completed,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_cascade_family_testing.yaml,1,all_of[0],Index patient (proband) has confirmed germline pathogenic or likely-pathogenic (ACMG class 4/5) variant in any hereditary cancer syndrome gene,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_cascade_family_testing.yaml,2,any_of[0],"Index patient has living first-degree relatives (parents, full siblings, biological children)",SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_cascade_family_testing.yaml,3,all_of[0],"FDR is age ≥18 OR is a minor with confirmed pediatric-onset syndrome (FAP / LFS / VHL / MEN2 / DICER1 / Beckwith-Wiedemann / retinoblastoma — testing from age of clinical surveillance initiation, typically 5-12 depending on syndrome)",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_cascade_family_testing.yaml,3,all_of[1],FDR has decision-making capacity OR a legal surrogate consents (for minors / cognitively impaired adults),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_cascade_family_testing.yaml,4,any_of[0],"Second- or third-degree relative is available, eligible (age + consent + counseling), and motivated to test",SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_cascade_family_testing.yaml,5,all_of[0],"Relative completes pre-test genetic counseling (informed consent, implications discussion, insurance/GINA considerations)",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_cascade_family_testing.yaml,5,all_of[1],"Targeted single-site (or family-variant-specific) germline test ordered — NOT full panel (faster, cheaper ~$250-500, higher analytic specificity for the known variant)",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_cascade_family_testing.yaml,6,all_of[0],Single-site germline test result available + post-test counseling completed,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_cascade_lfs_carrier_family_testing.yaml,1,all_of[0],Index patient (proband) has confirmed Li-Fraumeni syndrome germline pathogenic or likely-pathogenic (ACMG class 4/5) variant in TP53,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_cascade_lfs_carrier_family_testing.yaml,2,any_of[0],"Index patient has living first-degree relatives (parents, full siblings, biological children) at any age",SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_cascade_lfs_carrier_family_testing.yaml,3,all_of[0],FDR is age ≥18 (adult capacity for consent) OR FDR is age <18 + family + pediatric-genetics team consensus that testing supports clinical surveillance entry per Toronto Protocol,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_cascade_lfs_carrier_family_testing.yaml,3,all_of[1],"FDR / legal surrogate provides informed consent after pre-test counseling addressing: lifetime ~85-100% cancer risk, surveillance burden, psychological implications, GINA / EU GDPR insurance considerations, family-system implications",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_cascade_lfs_carrier_family_testing.yaml,4,any_of[0],"Second- or third-degree relative is available, eligible (age + consent + counseling), and motivated to test",SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_cascade_lfs_carrier_family_testing.yaml,5,all_of[0],"Relative completes pre-test genetic counseling — LFS-specific intensified content: lifetime ~85-100% cancer risk, multi-organ surveillance burden including annual whole-body MRI from infancy / childhood (Toronto Protocol), psychological support pathway, insurance / GINA / EU GDPR considerations, family-system implications, reproductive-options discussion (PGT-M, prenatal testing)",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_cascade_lfs_carrier_family_testing.yaml,5,all_of[1],"Targeted single-site TP53 test ordered (NOT full LFS panel — wasteful when family variant is documented); for sentinel-tumor probands without family history, comprehensive TP53 sequencing + del/dup analysis indicated",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_cascade_lfs_carrier_family_testing.yaml,6,all_of[0],Single-site test result available + post-test disclosure counseling + multidisciplinary follow-up plan (medical oncology + medical genetics + radiology + psychology) confirmed,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_cervical_locally_advanced_1l.yaml,1,all_of[0],FIGO IB3-IVA (locally advanced),MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_cervical_metastatic_1l.yaml,1,any_of[0],FIGO IVB (distant metastases),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_cervical_metastatic_1l.yaml,1,any_of[1],Recurrent cervical cancer not amenable to curative-intent surgery or RT,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_cervical_metastatic_1l.yaml,1,any_of[2],"Persistent disease after definitive CRT, not curable with further local therapy",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_cervical_metastatic_1l.yaml,2,any_of[0],PD-L1 CPS ≥ 1 (22C3 assay),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_cervical_metastatic_1l.yaml,3,all_of[0],No prior pelvic fistula (vesico-vaginal or recto-vaginal),SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_cervical_metastatic_1l.yaml,3,all_of[1],No active uncontrolled hemorrhage,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_cervical_metastatic_1l.yaml,3,all_of[2],Blood pressure controlled (< 150/100),SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_cervical_metastatic_1l.yaml,3,all_of[3],Urine protein < 2 g/24h (UPCR < 2),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_cervical_metastatic_1l.yaml,3,all_of[4],No therapeutic anticoagulation with active hemorrhagic risk,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_chl_2l.yaml,1,all_of[1],ASCT-eligible AND completed BV-based salvage → BEAM-ASCT,MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_chl_2l.yaml,1,all_of[2],≥1 high-risk feature: primary refractory OR extranodal involvement at relapse OR <12mo from CR1 to relapse OR ≥2 prior salvage lines,MIXED_ALL,NEEDS_NEW_FINDING,,primary_refractory; extranodal_involvement; prior_lines
+algo_chl_2l.yaml,2,any_of[0],Post-ASCT relapse,DEAD,NEEDS_NEW_FINDING,,
+algo_chl_2l.yaml,2,any_of[1],"Transplant-ineligible (age >70, comorbidity, ECOG ≥2)",DEAD,NEEDS_NEW_FINDING,,
+algo_chl_2l.yaml,2,any_of[2],"Post-BV failure pre-ASCT, salvage required",DEAD,NEEDS_NEW_FINDING,,
+algo_chl_2l.yaml,3,any_of[0],"1st relapse, ASCT-eligible, no high-risk feature",DEAD,NEEDS_NEW_FINDING,,
+algo_chl_2l.yaml,3,any_of[1],ASCT not accessible / patient declined,DEAD,NEEDS_NEW_FINDING,,
+algo_cholangio_1l.yaml,1,any_of[0],"ECOG 0-2 AND advanced/unresectable/metastatic AND no IO contraindication (active autoimmune disease, prior solid-organ transplant, ICI-incompatible immunosuppression)",SOLE_ANY,NEEDS_NEW_FINDING,,ecog_status
+algo_cholangio_1l.yaml,2,any_of[0],IO-eligible patient without durvalumab access (regional formulary / reimbursement),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_cholangio_1l.yaml,3,any_of[0],"IO contraindicated (active autoimmune, transplant, immunosuppression) OR no IO access",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_cholangio_2l.yaml,1,any_of[1],IDH1-R132 mutation confirmed by NGS (any of R132C/H/G/L/S),DEAD,HIGH_CONFIDENCE_RENAME,"{finding: ""idh1_r132_mutation""}",idh1_r132_mutation
+algo_cholangio_2l.yaml,2,any_of[0],HER2 amplification (IHC 3+ OR IHC 2+/ISH-amp) or HER2 overexpression per ASCO/CAP gastric criteria,SOLE_ANY,NEEDS_NEW_FINDING,,her2_ihc
+algo_cholangio_2l.yaml,3,any_of[1],FGFR2 fusion or rearrangement confirmed by RNA-NGS / DNA-NGS fusion-aware / FISH break-apart,DEAD,NEEDS_NEW_FINDING,,fgfr2_fusion
+algo_cholangio_2l.yaml,4,any_of[0],Disease progression on 1L gem+cis ± durvalumab; no actionable driver biomarker,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_chompret_2015_lfs.yaml,1,all_of[0],"Proband with LFS-spectrum tumor (premenopausal breast cancer, soft tissue sarcoma, osteosarcoma, ACC, CNS tumor, leukemia, lung adenocarcinoma) diagnosed at age <46",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_chompret_2015_lfs.yaml,1,all_of[1],"≥1 first-degree or second-degree relative with LFS-spectrum tumor (excluding breast cancer if proband has breast cancer) at age <56, OR multiple primary tumors at any age",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_chompret_2015_lfs.yaml,2,all_of[0],"Patient with multiple primary tumors (≥2), two of which belong to LFS-spectrum (premenopausal breast, soft tissue sarcoma, osteosarcoma, ACC, CNS, leukemia, lung adenocarcinoma)",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_chompret_2015_lfs.yaml,2,all_of[1],First tumor diagnosed at age <46,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_chompret_2015_lfs.yaml,3,any_of[0],"Patient with adrenocortical carcinoma (ACC) at any age, regardless of family history",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_chompret_2015_lfs.yaml,3,any_of[1],"Patient with choroid plexus carcinoma at any age, regardless of family history",SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_chompret_2015_lfs.yaml,3,any_of[2],"Patient with anaplastic rhabdomyosarcoma with embryonal-anaplastic histology at any age, regardless of family history",SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_chompret_2015_lfs.yaml,4,all_of[0],"Patient with breast cancer diagnosed at age <31, regardless of family history",SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_chompret_2015_lfs.yaml,4,all_of[1],BRCA1/2 germline pathogenic variant excluded,SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""germline_brca1_pathogenic_variant_confirmed""}",germline_brca1_pathogenic_variant_confirmed
+algo_chondrosarcoma_1l.yaml,1,any_of[0],ECOG 0-2 AND advanced/unresectable/metastatic,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,ecog_status
+algo_classic_fap_criteria.yaml,1,any_of[0],"≥100 colorectal adenomatous polyps on endoscopy or pathology, at any age",SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_classic_fap_criteria.yaml,2,any_of[0],Known family history of APC germline pathogenic / likely-pathogenic variant identified in first-degree relative,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_classic_fap_criteria.yaml,3,all_of[0],10-99 colorectal adenomatous polyps cumulative on endoscopy / pathology,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_classic_fap_criteria.yaml,3,all_of[1].any_of[0],Personal history of colorectal cancer + polyposis,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_classic_fap_criteria.yaml,3,all_of[1].any_of[1],First-degree relative with polyposis (≥10 polyps) or CRC <50,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_classic_fap_criteria.yaml,3,all_of[1].any_of[2],"Extracolonic FAP-spectrum features: desmoid tumor, congenital hypertrophy of retinal pigment epithelium (CHRPE), osteoma, epidermoid cyst, duodenal/ampullary adenoma, hepatoblastoma in childhood, papillary thyroid cancer (cribriform-morular variant)",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_classic_fap_criteria.yaml,4,any_of[0],Desmoid tumor at any age in patient without other known cause,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_classic_fap_criteria.yaml,4,any_of[1],Hepatoblastoma in infancy / childhood,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_classic_fap_criteria.yaml,4,any_of[2],Cribriform-morular variant papillary thyroid cancer,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_classic_fap_criteria.yaml,4,any_of[3],Multiple CHRPE lesions on ophthalmologic exam,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_classic_lfs_criteria.yaml,1,all_of[0],"Proband with sarcoma (soft tissue or bone — STS, osteosarcoma, rhabdomyosarcoma, leiomyosarcoma, etc.) diagnosed at age <45",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_classic_lfs_criteria.yaml,2,all_of[0],"First-degree relative (parent, sibling, child) with any cancer diagnosed at age <45",SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_classic_lfs_criteria.yaml,3,any_of[0],An additional first-degree or second-degree relative in the same lineage with sarcoma at any age,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_classic_lfs_criteria.yaml,3,any_of[1],An additional first-degree or second-degree relative in the same lineage with any cancer diagnosed at age <45,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_cll_1l.yaml,4,all_of[1],"No major anti-CD20 or obinutuzumab contraindication (e.g., active HBV reactivation risk unmanaged, severe infusion history)",MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_cml_1l.yaml,4,all_of[0],Default low-risk CML chronic phase (negative for Sokal-high / Hasford-high gated above),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_cml_2l.yaml,4,all_of[0],"Default 2L+ CML, T315I-negative, non-blast — asciminib preferred over 2GTKI recycle",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_cowden_carrier_surveillance.yaml,1,any_of[0],Confirmed PTEN germline pathogenic / likely-pathogenic (ACMG class 4/5) variant,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""germline_pten_pathogenic_variant_confirmed""}",germline_pten_pathogenic_variant_confirmed
+algo_cowden_carrier_surveillance.yaml,1,any_of[1],Clinical PHTS / Cowden syndrome (NCCN Cowden / PHTS major + minor criteria met) without confirmed PTEN variant — empirical-surveillance pathway,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_cowden_carrier_surveillance.yaml,2,all_of[0],Carrier is age ≥7 (thyroid surveillance entry) — pediatric thyroid US recommended from age 7-10 per NCCN PHTS,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_cowden_carrier_surveillance.yaml,3,all_of[0],Carrier is female age ≥30 OR carrier of any sex with personal history of Cowden-spectrum cancer,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_cowden_carrier_surveillance.yaml,3,all_of[1],Annual breast MRI from age 30 + annual mammography from age 30-35 (alternating q6 mo cadence acceptable per NCCN); clinical breast exam q6 mo from age 25; breast self-awareness counseling,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_cowden_carrier_surveillance.yaml,4,all_of[0],Thyroid US q1y from age 7 (pediatric entry) or from identification if adult — entry irrespective of carrier sex,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_cowden_carrier_surveillance.yaml,4,all_of[1],Endometrial sampling (transvaginal US ± endometrial biopsy) q1y from age 30-35 in female carriers; alternately patient education on early-symptom reporting (abnormal uterine bleeding) — sampling q1y is conservative cadence; some centers defer to symptom-driven evaluation per NCCN PHTS,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_cowden_carrier_surveillance.yaml,4,all_of[2],Colonoscopy q5y from age 35 (NCCN PHTS — earlier cadence q1-3y if hamartomatous polyposis identified),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_cowden_carrier_surveillance.yaml,4,all_of[3],Renal imaging (US or MRI) q2y from age 40,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_cowden_carrier_surveillance.yaml,4,all_of[4],Annual whole-body dermatologic exam (mucocutaneous features + melanoma surveillance),SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_crc_adjuvant.yaml,1,any_of[0],Stage II (T3-4 N0 M0) post-R0 resection,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_crc_adjuvant.yaml,1,any_of[1],"Stage III (any T, N1-2, M0) post-R0 resection",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_crc_adjuvant.yaml,2,all_of[0],Stage II (T3-4 N0 M0),MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_crc_adjuvant.yaml,3,all_of[0],Stage II (T3-4 N0 M0),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_crc_adjuvant.yaml,3,all_of[1],"High-risk features absent: T3, ≥12 nodes examined, no perforation, no obstruction, no LVI, no PNI, moderately differentiated",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_crc_adjuvant.yaml,4,any_of[0],"Stage III (any T, N1-2, M0)",SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""stage_iii""}",stage_iii
+algo_crc_adjuvant.yaml,4,any_of[1],Stage II high-risk (T4 OR <12 nodes OR perforation OR obstruction OR LVI OR PNI OR poor differentiation),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_crc_adjuvant.yaml,5,all_of[0],Stage III (N1-2 M0),SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""stage_iii""}",stage_iii
+algo_crc_adjuvant.yaml,5,all_of[1],"Low-risk: T1-3 N1 (not T4, not N2)",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_crc_adjuvant.yaml,6,any_of[0],Stage III high-risk: T4 or N2 (per IDEA stratification),SOLE_ANY,NEEDS_NEW_FINDING,,stage_iii
+algo_crc_adjuvant.yaml,6,any_of[1],"Stage II high-risk (T4 OR adverse features, MSS)",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_crc_adjuvant.yaml,7,any_of[0],CrCl <30 mL/min OR patient cannot reliably take oral medications,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_crc_metastatic_1l.yaml,2,all_of[1],Left-sided primary (splenic flexure or distal),MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_crc_metastatic_1l.yaml,3,all_of[1],ECOG PS 0-1 AND age <75,MIXED_ALL,HIGH_CONFIDENCE_RENAME,"{all_of: [{finding: ""ecog_status""}, {finding: ""age""}]}",ecog_status; age
+algo_crc_metastatic_1l.yaml,5,all_of[0],ECOG PS 0-1 AND age <75,SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{all_of: [{finding: ""ecog_status""}, {finding: ""age""}]}",ecog_status; age
+algo_crc_metastatic_1l.yaml,5,all_of[1],High tumour burden OR liver-limited disease with conversion-to-surgery intent,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_crc_metastatic_2l.yaml,1,any_of[1],MSI-H or dMMR confirmed by validated assay AND no prior anti-PD-1 exposure,DEAD,NEEDS_NEW_FINDING,,msi_status
+algo_crc_metastatic_2l.yaml,2,any_of[1],BRAF V600E confirmed by validated assay (NGS or IHC + confirm),DEAD,NEEDS_NEW_FINDING,,
+algo_crc_metastatic_2l.yaml,3,all_of[0],KRAS G12C confirmed by NGS (tissue OR ctDNA),SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,kras_g12c
+algo_crc_metastatic_2l.yaml,3,all_of[1],BRAF V600E excluded (ruled out via step 2),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_crc_metastatic_2l.yaml,4,any_of[1].all_of[0],HER2 amplified (IHC 3+ OR IHC 2+/ISH+),SOLE_ALL,NEEDS_NEW_FINDING,,her2_ihc
+algo_crc_metastatic_2l.yaml,4,any_of[1].all_of[1],RAS wild-type (MOUNTAINEER eligibility),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_crc_metastatic_2l.yaml,5,all_of[1],ctDNA RAS-WT at rechallenge timepoint (CHRONOS biomarker selection),MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_crc_metastatic_2l.yaml,5,all_of[2],Prior anti-EGFR response (PR or better OR SD ≥6 mo) in 1L,MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_crc_metastatic_2l.yaml,5,all_of[3],Intervening anti-EGFR-free 2L line completed (typically bev-based),MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_crc_metastatic_2l.yaml,5,all_of[4],BRAF V600E excluded (ruled out via step 2),MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_crc_metastatic_2l.yaml,6,any_of[0],"First disease progression on 1L FOLFOX-based regimen (FOLFOX, FOLFOX+bev, FOLFOX+cetux)",DEAD,NEEDS_NEW_FINDING,,
+algo_crc_metastatic_2l.yaml,7,any_of[0],"Disease progression on standard chemo (FOLFOX, FOLFIRI) + biologic; no driver mutation actionable",DEAD,NEEDS_NEW_FINDING,,
+algo_dlbcl_2l.yaml,1,all_of[1],"First relapse, chemosensitive disease (≥PR to salvage)",MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_dlbcl_2l.yaml,2,all_of[0],≥2 prior systemic lines failed,MIXED_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""prior_lines""}",prior_lines
+algo_dlbcl_2l.yaml,2,all_of[4],CD19+ disease confirmed,MIXED_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""disease""}",disease
+algo_dlbcl_2l.yaml,3,any_of[0],Transplant-ineligible (age >70 OR comorbidity OR ECOG ≥2),DEAD,NEEDS_CLINICAL_JUDGMENT,,ecog_status
+algo_dlbcl_2l.yaml,3,any_of[1],CAR-T not accessible,DEAD,NEEDS_NEW_FINDING,,
+algo_eatl_1l.yaml,1,any_of[0],EATL diagnosis confirmed,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_epithelioid_sarcoma_1l.yaml,1,any_of[0],SMARCB1/INI1 loss confirmed by IHC,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_esoph_2l.yaml,1,all_of[0],PD-L1 CPS ≥10 (22C3 assay),MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_esoph_2l.yaml,1,all_of[1],No prior ICI in 1L,MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_esoph_2l.yaml,1,all_of[3],No active autoimmune disease,MIXED_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""active_autoimmune_disease""}",active_autoimmune_disease
+algo_esoph_2l.yaml,2,all_of[0],Squamous-cell histology,MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_esoph_2l.yaml,2,all_of[1],No prior ICI in 1L,MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_esoph_2l.yaml,2,all_of[3],No active autoimmune disease,MIXED_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""active_autoimmune_disease""}",active_autoimmune_disease
+algo_esoph_definitive_1l.yaml,1,all_of[1].any_of[0],cT4b — unresectable due to invasion of adjacent structures,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_esoph_definitive_1l.yaml,1,all_of[1].any_of[1],M0 medically inoperable (cardiopulmonary or comorbidity contraindications),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_esoph_definitive_1l.yaml,1,all_of[1].any_of[2],Patient declines surgery,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_esoph_metastatic_1l.yaml,10,any_of[0],ESCC CPS >=1 chemo-sparing preference,DEAD,HIGH_CONFIDENCE_RENAME,"{finding: ""chemo_sparing_preference""}",chemo_sparing_preference
+algo_esoph_metastatic_1l.yaml,10,any_of[1].all_of[1].any_of[1],PD-L1 CPS >= 1 (22C3 or 28-8 assay),DEAD,NEEDS_NEW_FINDING,,
+algo_esoph_metastatic_1l.yaml,10,any_of[1].all_of[1].any_of[2],PD-L1 CPS ≥ 1 (22C3 or 28-8 assay),DEAD,NEEDS_NEW_FINDING,,
+algo_esoph_metastatic_1l.yaml,10,any_of[1].all_of[1].any_of[3],ESCC CPS >=1,DEAD,NEEDS_NEW_FINDING,,
+algo_esoph_metastatic_1l.yaml,10,any_of[1].all_of[2].any_of[1],Chemo-sparing preference,DEAD,HIGH_CONFIDENCE_RENAME,"{finding: ""chemo_sparing_preference""}",chemo_sparing_preference
+algo_esoph_metastatic_1l.yaml,10,any_of[1].all_of[2].any_of[2],Chemo unsuitable but ICI eligible,DEAD,NEEDS_NEW_FINDING,,
+algo_esoph_metastatic_1l.yaml,11,all_of[0].any_of[1],Adenocarcinoma histology (EAC or GEJ Siewert I),DEAD,NEEDS_NEW_FINDING,,histology_adenocarcinoma
+algo_esoph_metastatic_1l.yaml,11,all_of[1].any_of[1],HER2-positive adenocarcinoma,DEAD,HIGH_CONFIDENCE_RENAME,"{finding: ""her2_status""}",her2_status
+algo_esoph_metastatic_1l.yaml,11,all_of[1].any_of[3],BIO-HER2-SOLID positive,DEAD,HIGH_CONFIDENCE_RENAME,"{finding: ""BIO-HER2-SOLID""}",BIO-HER2-SOLID
+algo_esoph_metastatic_1l.yaml,1,any_of[0],Stage IV (metastatic) OR unresectable locally advanced esophageal carcinoma,DEAD,NEEDS_CLINICAL_JUDGMENT,,stage_iv
+algo_esoph_metastatic_1l.yaml,2,any_of[0],Squamous-cell carcinoma (ESCC) histology,DEAD,HIGH_CONFIDENCE_RENAME,"{finding: ""histology_escc""}",histology_escc
+algo_esoph_metastatic_1l.yaml,3,any_of[0],PD-L1 CPS ≥ 1 (22C3 or 28-8 assay),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_esoph_metastatic_1l.yaml,4,all_of[0].any_of[0],Adenocarcinoma histology (EAC or GEJ Siewert I),DEAD,NEEDS_NEW_FINDING,,histology_adenocarcinoma
+algo_esoph_metastatic_1l.yaml,4,all_of[1].any_of[0],PD-L1 CPS >= 10,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_esoph_metastatic_1l.yaml,4,all_of[1].any_of[1],PD-L1 CPS ≥ 10,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_esoph_resectable_1l.yaml,1,all_of[0],cT1b-T4a or N+ M0 (resectable / borderline),MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_et_1l.yaml,3,all_of[0],Default low-risk ET,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_et_2l.yaml,2,any_of[7],HU resistance (platelets ≥600 ×10^9/L on max-tolerated HU ≥3mo),DEAD,NEEDS_NEW_FINDING,,
+algo_et_2l.yaml,2,any_of[8],"HU intolerance (cytopenia, mucocutaneous toxicity, leg ulcers, GI)",DEAD,NEEDS_NEW_FINDING,,
+algo_et_2l.yaml,2,any_of[9],Thrombotic event on HU therapy,DEAD,NEEDS_NEW_FINDING,,
+algo_et_2l.yaml,2,any_of[10],Age <60 preferring non-cytotoxic option,DEAD,NEEDS_CLINICAL_JUDGMENT,,
+algo_et_2l.yaml,3,any_of[0],Persistent high-risk ET requiring switch from 1L,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_fl_2l.yaml,1,any_of[0],Rituximab-refractory (progression on or within 6 months of last rituximab),SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_fl_2l.yaml,2,all_of[0],≥2 prior systemic lines,MIXED_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""prior_lines""}",prior_lines
+algo_fl_2l.yaml,2,all_of[4],CD19+ disease confirmed,MIXED_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""disease""}",disease
+algo_fl_2l.yaml,3,any_of[0],Transplant-ineligible OR CAR-T inaccessible,SOLE_ANY,NEEDS_NEW_FINDING,,transplant_eligible
+algo_fl_2l.yaml,3,any_of[1],EZH2-WT and patient prefers chemo-free off-the-shelf,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,ezh2_status
+algo_gail_breast.yaml,1,any_of[0],Patient has known BRCA1/BRCA2 pathogenic variant,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""brca1_brca2_pathogenic""}",brca1_brca2_pathogenic
+algo_gail_breast.yaml,1,any_of[1],Patient has strong family history suggesting HBOC (use Manchester / Tyrer-Cuzick / BOADICEA instead),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_gail_breast.yaml,1,any_of[2],"Patient had prior chest/thoracic radiation (e.g., Hodgkin lymphoma treatment)",SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_gail_breast.yaml,1,any_of[3],Patient has personal history of breast cancer or LCIS / DCIS,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_gail_breast.yaml,2,any_of[0],Gail 5-year invasive breast cancer risk ≥1.66%,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_gail_breast.yaml,3,any_of[0],Gail 5-year invasive breast cancer risk ≥3.0%,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_gail_breast.yaml,3,any_of[1],Gail lifetime risk ≥20%,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_gastric_2l.yaml,1,all_of[1],HER2+ reconfirmed on archival or fresh biopsy (IHC 3+ OR 2+/ISH+),MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_gastric_2l.yaml,1,all_of[2],Prior trastuzumab-containing 1L,MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_gastric_2l.yaml,1,all_of[3],ECOG ≤1,MIXED_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""ecog_status""}",ecog_status
+algo_gastric_2l.yaml,2,all_of[0],≥2 prior systemic regimens (incl. platinum + fluoropyrimidine ± taxane/ramucirumab),MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_gastric_2l.yaml,3,all_of[0],Disease progression on or after 1L platinum + fluoropyrimidine ± ICI,MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_gastric_2l.yaml,3,all_of[1],HER2-negative OR HER2 status unknown / unable to test,MIXED_ALL,NEEDS_NEW_FINDING,,her2_status
+algo_gastric_resectable_periop.yaml,1,all_of[0],Adenocarcinoma histology (gastric or GEJ Siewert II/III),MIXED_ALL,NEEDS_NEW_FINDING,,histology_adenocarcinoma
+algo_gastric_resectable_periop.yaml,1,all_of[1],Resectable cT2-T4 or N+ M0 disease (or locally advanced potentially resectable per MDT),MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_gbm_newly_diagnosed_1l.yaml,1,all_of[0],IDH-WT confirmed (IDH1 R132H IHC negative + IDH1/2 sequencing),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_gbm_newly_diagnosed_1l.yaml,2,all_of[0],Age < 70,MIXED_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""age""}",age
+algo_gbm_newly_diagnosed_1l.yaml,3,all_of[0],MGMT promoter methylated,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_gbm_recurrent.yaml,1,any_of[0],No available clinical trial OR patient declines trial,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_gbm_recurrent.yaml,2,any_of[0],Progression confirmed on MRI (RANO criteria) OR biopsy-confirmed recurrence,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_gbm_recurrent.yaml,2,any_of[1],"Pseudoprogression excluded (>12 weeks from end of RT, or biopsy)",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_gbm_recurrent.yaml,4,all_of[0],MGMT promoter methylated,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_gbm_recurrent.yaml,4,all_of[1],Prior TMZ completed (≥6 adjuvant cycles or discontinued due to progression),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_gbm_recurrent.yaml,4,all_of[2],No prior bevacizumab,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_gct_metastatic_1l.yaml,1,any_of[0],Radical inguinal orchiectomy completed (or contraindicated by urgency),SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_gct_metastatic_1l.yaml,2,all_of[0],"Post-orchiectomy serum AFP, beta-hCG, and LDH measured",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_gct_metastatic_1l.yaml,2,all_of[1],CT CAP completed for staging,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_gct_metastatic_1l.yaml,2,all_of[2].any_of[0],Stage II (retroperitoneal lymph node involvement),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_gct_metastatic_1l.yaml,2,all_of[2].any_of[1],Stage III (distant metastases or above-diaphragm nodes),SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,stage_iii
+algo_gct_metastatic_1l.yaml,2,all_of[2].any_of[2],Stage I with rising markers post-orchiectomy,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_gct_metastatic_1l.yaml,3,any_of[0],AFP normal AND histology confirmed as pure seminoma,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_gct_metastatic_1l.yaml,4,any_of[0],Baseline DLCO ≥80% predicted AND CrCl ≥50 mL/min,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_gct_salvage_2l.yaml,1,any_of[0],Prior cisplatin-containing chemotherapy received (BEP or EP 1L),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_gct_salvage_2l.yaml,2,any_of[0],Cisplatin-refractory: disease progression during BEP/EP OR within 4 weeks of last cisplatin administration,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_gct_salvage_2l.yaml,3,any_of[0],Poor Indiana prognostic score: AFP ≥1000 ng/mL OR hCG ≥1000 IU/L at relapse,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_gct_salvage_2l.yaml,3,any_of[1],"Liver, bone, or brain metastases at relapse",SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,brain_metastases
+algo_gct_salvage_2l.yaml,3,any_of[2],Incomplete response to 1L (AFP/hCG never normalized after BEP completion),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_gct_salvage_2l.yaml,4,all_of[0],ECOG PS 0-1,SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""ecog_status""}",ecog_status
+algo_gct_salvage_2l.yaml,4,all_of[1],LVEF ≥45%,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_gct_salvage_2l.yaml,4,all_of[2],CrCl ≥30 mL/min,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_gct_salvage_2l.yaml,4,all_of[3],ASCT-capable center accessible,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_gist_1l.yaml,1,any_of[6],PDGFRA D842V mutation positive,DEAD,HIGH_CONFIDENCE_RENAME,"{finding: ""pdgfra_mutation""}",pdgfra_mutation
+algo_gist_1l.yaml,2,any_of[0],KIT exon 11 mutation positive,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""kit_mutation""}",kit_mutation
+algo_gist_1l.yaml,2,any_of[1],KIT exon 9 mutation positive,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""kit_mutation""}",kit_mutation
+algo_gist_1l.yaml,2,any_of[2],PDGFRA non-D842V exon 18 OR exon 12 OR exon 14 mutation positive,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,pdgfra_d842v
+algo_gist_1l.yaml,3,any_of[0],KIT/PDGFRA wild-type (SDH-deficient OR NF1-mutant OR uncharacterized),SOLE_ANY,NEEDS_NEW_FINDING,,nf1_status
+algo_gist_2l.yaml,1,any_of[0],PDGFRA D842V mutation positive,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""pdgfra_mutation""}",pdgfra_mutation
+algo_gist_2l.yaml,2,any_of[0],Imatinib-resistant GIST (any KIT genotype or WT),DEAD,NEEDS_NEW_FINDING,,
+algo_glioma_lgg_1l.yaml,1,any_of[0],IDH-wildtype LGG with EGFR amplification / +7-10 / TERT-promoter mutation,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_glioma_lgg_1l.yaml,2,any_of[0],High-risk features: age ≥40 OR subtotal resection/biopsy-only OR symptomatic/large residual,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_glioma_lgg_1l.yaml,3,any_of[0],Low-risk LGG: age <40 AND gross total resection AND asymptomatic,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_granulosa_cell_1l.yaml,1,any_of[0],Advanced stage III–IV AGCT OR recurrent AGCT with rapid progression,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{any_of: [{finding: ""stage_iii""}, {finding: ""rapid_progression""}]}",stage_iii; rapid_progression
+algo_granulosa_cell_1l.yaml,2,any_of[0],Recurrent hormone receptor-positive AGCT with slow progression,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_hcc_systemic_2l.yaml,2,any_of[0],Prior 1L was TKI-based (sorafenib OR lenvatinib monotherapy),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_hcc_systemic_2l.yaml,3,all_of[0],"Sorafenib was tolerated in 1L (≥21 days at ≥400 mg/d, stopped for progression not toxicity)",SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_hcc_systemic_2l.yaml,4,any_of[0],Child-Pugh A AND ECOG 0-1 AND no prior TKI in 1L,SOLE_ANY,NEEDS_NEW_FINDING,,ecog_status
+algo_hcl_1l.yaml,2,all_of[0],Treatment indication present (cytopenia or symptomatic splenomegaly),SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_hcl_1l.yaml,2,all_of[1],No active uncontrolled infection,SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""active_uncontrolled_infection""}",active_uncontrolled_infection
+algo_hcl_2l.yaml,2,all_of[1],"HCL relapse documented (cytopenia, splenomegaly, marrow infiltration) OR primary refractory after 1L purine",SOLE_ALL,NEEDS_NEW_FINDING,,primary_refractory
+algo_hcl_2l.yaml,3,any_of[1],"Vemurafenib inaccessible / contraindicated (severe arthralgia history, QTc prolongation, hepatic dysfunction)",DEAD,NEEDS_CLINICAL_JUDGMENT,,
+algo_hcl_2l.yaml,3,any_of[2],Late relapse (>1y from 1L) — cladribine retreatment retains efficacy,DEAD,NEEDS_CLINICAL_JUDGMENT,,
+algo_hcl_2l.yaml,4,any_of[0],"Classic HCL (BRAF-V600E+), 2L+ relapsed/refractory",DEAD,NEEDS_NEW_FINDING,,
+algo_hcv_mzl_1l.yaml,4,all_of[0],HCV RNA positive,SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""hcv_rna""}",hcv_rna
+algo_hcv_mzl_1l.yaml,4,all_of[1],"Indolent presentation (non-bulky, asymptomatic or minimally symptomatic)",SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_hcv_mzl_2l.yaml,1,any_of[0],"Aggressive histology suspected at relapse (rapid growth, B-symptoms, LDH ↑↑, extranodal sites)",DEAD,NEEDS_NEW_FINDING,,
+algo_hcv_mzl_2l.yaml,3,all_of[1],Documented lymphoma progression on imaging or biopsy after DAA,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_hcv_mzl_2l.yaml,4,all_of[1],No documented relapse / progression,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_hereditary_melanoma_surveillance.yaml,1,any_of[0],Confirmed CDKN2A germline pathogenic / likely-pathogenic (ACMG class 4/5) variant,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""germline_cdkn2a_pathogenic_variant_confirmed""}",germline_cdkn2a_pathogenic_variant_confirmed
+algo_hereditary_melanoma_surveillance.yaml,1,any_of[1],Confirmed CDK4 germline pathogenic / likely-pathogenic variant (codon 24 R24H / R24C — gain-of-function),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_hereditary_melanoma_surveillance.yaml,1,any_of[2],Confirmed MITF E318K germline variant (modest melanoma + RCC risk),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_hereditary_melanoma_surveillance.yaml,1,any_of[3],Confirmed POT1 germline pathogenic variant (familial melanoma + glioma),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_hereditary_melanoma_surveillance.yaml,2,all_of[0],Confirmed CDKN2A or CDK4 or MITF or POT1 carrier identified at step 1,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_hereditary_melanoma_surveillance.yaml,3,any_of[0],"≥3 confirmed melanoma cases (cutaneous or uveal) in a single family across any generations, including ≥1 with pancreatic adenocarcinoma",SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_hereditary_melanoma_surveillance.yaml,3,any_of[1],≥2 first-degree relatives with cutaneous melanoma,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_hereditary_melanoma_surveillance.yaml,3,any_of[2],Proband with ≥3 primary cutaneous melanomas,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_hereditary_melanoma_surveillance.yaml,3,any_of[3],Proband with cutaneous melanoma + pancreatic adenocarcinoma at any age,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_hereditary_melanoma_surveillance.yaml,4,all_of[0],≥50 atypical / dysplastic nevi on whole-body exam,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_hereditary_melanoma_surveillance.yaml,4,all_of[1],Personal history of cutaneous melanoma OR ≥1 first-degree relative with melanoma,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_hereditary_prostate_cancer_risk.yaml,1,any_of[0],Confirmed BRCA2 germline pathogenic / likely-pathogenic (ACMG class 4/5) variant,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""germline_brca2_pathogenic_variant_confirmed""}",germline_brca2_pathogenic_variant_confirmed
+algo_hereditary_prostate_cancer_risk.yaml,1,any_of[1],Confirmed BRCA1 germline pathogenic / likely-pathogenic variant,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""germline_brca1_pathogenic_variant_confirmed""}",germline_brca1_pathogenic_variant_confirmed
+algo_hereditary_prostate_cancer_risk.yaml,1,any_of[2],Confirmed HOXB13 G84E (or other HOXB13 P/LP) germline variant,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_hereditary_prostate_cancer_risk.yaml,1,any_of[3],Confirmed MLH1 / MSH2 / MSH6 / PMS2 / EPCAM germline pathogenic / likely-pathogenic variant (Lynch syndrome),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_hereditary_prostate_cancer_risk.yaml,1,any_of[4],Confirmed ATM / PALB2 / CHEK2 (modest-risk) germline variant in male carrier with family-history of high-grade prostate cancer,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_hereditary_prostate_cancer_risk.yaml,2,all_of[0],Male carrier with confirmed BRCA2 P/LP variant,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_hereditary_prostate_cancer_risk.yaml,2,all_of[1],Carrier age ≥40,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_hereditary_prostate_cancer_risk.yaml,3,all_of[0],Male carrier with confirmed BRCA2 P/LP variant,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_hereditary_prostate_cancer_risk.yaml,3,all_of[1],Carrier age <40,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_hereditary_prostate_cancer_risk.yaml,4,all_of[0],Male carrier with confirmed BRCA1 P/LP variant,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_hereditary_prostate_cancer_risk.yaml,4,all_of[1],Carrier age ≥40,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_hereditary_prostate_cancer_risk.yaml,5,all_of[0],Male carrier with confirmed HOXB13 G84E (or other HOXB13 P/LP) variant,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_hereditary_prostate_cancer_risk.yaml,5,all_of[1],Carrier age ≥40,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_hereditary_prostate_cancer_risk.yaml,6,all_of[0],Male carrier with confirmed MLH1 / MSH2 / MSH6 / PMS2 / EPCAM germline P/LP variant,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_hereditary_prostate_cancer_risk.yaml,6,all_of[1],Carrier age ≥40,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_hgbl_dh_1l.yaml,1,all_of[1],Continuous-infusion DA-EPOCH-R logistically feasible,MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_hgbl_dh_2l.yaml,2,any_of[0],Early relapse: <12 months from end of 1L therapy,DEAD,NEEDS_CLINICAL_JUDGMENT,,
+algo_hgbl_dh_2l.yaml,2,any_of[1],Primary refractory: residual FDG-avid disease at end-of-treatment (Deauville 4-5),DEAD,NEEDS_NEW_FINDING,,
+algo_hgbl_dh_2l.yaml,2,any_of[2],Chemorefractory: failure to achieve PR after 2 cycles of any salvage,DEAD,NEEDS_NEW_FINDING,,
+algo_hgbl_dh_2l.yaml,3,all_of[0],Late relapse: ≥12 months from end of 1L therapy,MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_hgbl_dh_2l.yaml,3,all_of[4],"Transplant-eligible: age ≤65-70, adequate organ function",MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_hgbl_dh_2l.yaml,3,all_of[5],Chemosensitive disease (≥PR to 2 cycles of salvage),MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_hgbl_dh_2l.yaml,3,all_of[6],CD20+ confirmed at relapse biopsy,MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_hgbl_dh_2l.yaml,4,any_of[0],"HGBL-DH relapsed/refractory, CAR-T-eligible, no specific salvage-chemo+autoSCT preference",DEAD,NEEDS_NEW_FINDING,,
+algo_hnscc_rm_1l.yaml,1,any_of[0],PD-L1 CPS ≥20 AND no rapid progression / visceral crisis AND ECOG 0-2,SOLE_ANY,NEEDS_NEW_FINDING,,rapid_visceral_progression; ecog_status
+algo_hnscc_rm_1l.yaml,2,any_of[0],PD-L1 CPS ≥1,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_hnscc_rm_2l.yaml,1,any_of[0],ECOG PS 0-2,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""ecog_status""}",ecog_status
+algo_hnscc_rm_2l.yaml,2,any_of[0],No prior anti-PD-(L)1 therapy (ICI-naive) — received EXTREME or platinum-only 1L without pembrolizumab,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_hnscc_rm_2l.yaml,3,any_of[0],PD-L1 CPS ≥20 AND pembrolizumab available,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_hstcl_1l.yaml,1,all_of[1],Age ≤ 65 OR fit,MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,age
+algo_hstcl_1l.yaml,1,all_of[2],AlloSCT donor pathway feasible (matched donor identified or imminent),MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_ifs_1l.yaml,1,any_of[0],BIO-NTRK-FUSION positive,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""BIO-NTRK-FUSION""}",BIO-NTRK-FUSION
+algo_imt_1l.yaml,1,any_of[0],BIO-ALK-FUSION positive,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""BIO-ALK-FUSION""}",BIO-ALK-FUSION
+algo_integrated_risk_from_multiple_rfs.yaml,1,all_of[0],Patient has ≥2 fired prevention RedFlags AND fires span ≥2 PreventionRiskCategory buckets (genetic / infectious / chronic_condition / occupational / iatrogenic / lifestyle / reproductive),SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_integrated_risk_from_multiple_rfs.yaml,2,any_of[0],Patient has fired RF combination known to be multiplicatively synergistic per IARC: smoking + asbestos / smoking + occupational radon / smoking + alcohol (UADT cancers) / smoking + HPV (oropharyngeal) / smoking + diesel exhaust / chronic HBV + chronic HCV / chronic HBV + aflatoxin (HCC),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_integrated_risk_from_multiple_rfs.yaml,3,any_of[0],"Patient has ≥2 fired prevention RFs targeting the SAME cancer (e.g., chronic HCV + chronic HBV both target HCC; chronic HCV + family Lynch both target intra-abdominal cancer hot zone)",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_integrated_risk_from_multiple_rfs.yaml,3,any_of[1],"Patient has ≥2 fired prevention RFs targeting DIFFERENT cancers with overlapping surveillance modalities (e.g., chronic HBV + Lynch — both require upper GI surveillance)",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_integrated_risk_from_multiple_rfs.yaml,4,all_of[0],Integrated-risk profile and prioritized intervention list constructed,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_lam_1l.yaml,1,any_of[0],FEV1 <70% predicted OR declining FEV1 (≥90 mL/year loss),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_lam_1l.yaml,1,any_of[1],Serum VEGF-D ≥800 pg/mL with bilateral cystic lung disease,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_lam_1l.yaml,2,any_of[0],Stable LAM with normal lung function (FEV1 ≥70%),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_manchester_brca.yaml,1,any_of[0],Manchester combined BRCA1 + BRCA2 score ≥15 points,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_manchester_brca.yaml,2,any_of[0],Triple-negative breast cancer at any age,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_manchester_brca.yaml,2,any_of[1],Breast cancer diagnosed at age <46 regardless of family history,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_manchester_brca.yaml,2,any_of[2],Male breast cancer at any age,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_manchester_brca.yaml,2,any_of[3],Ovarian cancer (epithelial non-mucinous) at any age regardless of family history,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""family_ovarian_cancer_any_age""}",family_ovarian_cancer_any_age
+algo_manchester_brca.yaml,2,any_of[4],Ashkenazi Jewish ancestry with breast or ovarian cancer at any age,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_mcl_2l.yaml,1,all_of[0],1L progression (post-chemo or post-BTKi+R from 1L algo),MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_mds_hr_2l.yaml,5,all_of[0],"Default post-HMA failure, transplant-ineligible — ven+aza off-label or clinical trial",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_mds_lr_1l.yaml,4,all_of[0],Default LR-MDS symptomatic anemia,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_mds_lr_2l.yaml,4,all_of[0],"Default non-del(5q), non-frail, post-ESA failure — imetelstat per IMerge",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_melanoma_metastatic_2l.yaml,41,any_of[0],"Patient fit for ipi+nivo Grade 3-4 irAE risk (ECOG 0-1, no significant baseline autoimmunity)",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_melanoma_metastatic_2l.yaml,5,any_of[0],"Patient unfit for ipi+nivo (baseline autoimmunity, frailty, advanced age) but IO-naive",DEAD,NEEDS_NEW_FINDING,,
+algo_men1_carrier_surveillance.yaml,1,any_of[0],Confirmed MEN1 germline pathogenic / likely-pathogenic (ACMG class 4/5) variant,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""germline_men1_pathogenic_variant_confirmed""}",germline_men1_pathogenic_variant_confirmed
+algo_men1_carrier_surveillance.yaml,1,any_of[1],Confirmed CDKN1B (p27Kip1) germline pathogenic variant (MEN4 — clinical phenocopy with overlapping surveillance protocol),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_men1_carrier_surveillance.yaml,2,all_of[0],"Carrier is age ≥5 (pediatric pediatric entry) OR pediatric carrier under family-history-modified entry (e.g., proband sibling with onset <10) — see notes",SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_men1_carrier_surveillance.yaml,3,all_of[0],"Annual biochemical surveillance ordered: calcium, ionised calcium, PTH (parathyroid); fasting glucose, insulin, proinsulin (insulinoma); gastrin, chromogranin A (gastrinoma); pancreatic polypeptide, glucagon, VIP, somatostatin (other functional NETs); prolactin, IGF-1 (pituitary); ACTH / cortisol / DHEA-S (adrenal — every 1-3 years per imaging findings)",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_men1_carrier_surveillance.yaml,4,all_of[0],"Pituitary MRI ordered: baseline at age 5-10, then q3y (more frequent if symptoms or biochemical abnormality)",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_men1_carrier_surveillance.yaml,4,all_of[1],Abdominal MRI (with pancreatic protocol) ordered: from age 10 q1-3y; or EUS q1-3y as preferred high-sensitivity modality for small pNETs (≤1cm),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_men1_carrier_surveillance.yaml,4,all_of[2],Thymic / bronchial imaging: chest CT (low-dose) or MRI q1-2y from age 15-20 — thymic NETs in MEN1 are high-mortality (median 9.5y survival per Goudet 2015 PMID 25646800),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_men2_carrier_prophylactic_thyroidectomy_timing.yaml,1,all_of[0],Confirmed RET germline pathogenic / likely-pathogenic (ACMG class 4/5) variant,SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""germline_ret_pathogenic_variant_confirmed""}",germline_ret_pathogenic_variant_confirmed
+algo_men2_carrier_prophylactic_thyroidectomy_timing.yaml,2,any_of[0],RET codon M918T (MEN2B classical mutation),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_men2_carrier_prophylactic_thyroidectomy_timing.yaml,2,any_of[1],"Clinical MEN2B phenotype: mucosal neuromas (lips, tongue, GI tract) + marfanoid habitus + ganglioneuromatosis + corneal nerve thickening + slipped capital femoral epiphysis",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_men2_carrier_prophylactic_thyroidectomy_timing.yaml,3,any_of[0],"RET codon C634 substitution (C634R, C634Y, C634F, C634G, C634S, C634W — classical MEN2A severe)",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_men2_carrier_prophylactic_thyroidectomy_timing.yaml,3,any_of[1],RET codon A883F,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_men2_carrier_prophylactic_thyroidectomy_timing.yaml,4,any_of[0],"RET pathogenic variant at codons 533, 609, 611, 618, 620, 630, 666, 768, 790, 791, 804 (V804M / V804L), 891, or other RET P/LP variants not classified as HST or H",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_mesothelioma_1l.yaml,1,any_of[0],"Unresectable MPM (multidisciplinary assessment: IMIG stage III-IV, bilateral disease, poor PS, or patient declines surgery)",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_mesothelioma_1l.yaml,1,any_of[1],Technical unresectability confirmed by thoracic surgery + MDT,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_mesothelioma_1l.yaml,3,any_of[0],"Non-epithelioid histology (sarcomatoid, desmoplastic, or biphasic with sarcomatoid component ≥50%)",SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_mesothelioma_1l.yaml,4,all_of[0],No active autoimmune disease requiring systemic treatment,SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""active_autoimmune_disease""}",active_autoimmune_disease
+algo_mesothelioma_1l.yaml,4,all_of[1],No solid organ transplant,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_mesothelioma_1l.yaml,4,all_of[2],No prior immune-mediated pneumonitis Grade ≥2,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_mf_sezary_1l.yaml,1,any_of[2],Stage IIB or higher (advanced disease),DEAD,NEEDS_CLINICAL_JUDGMENT,,m_stage
+algo_mf_sezary_2l.yaml,1,all_of[0],Best response to induction is CR or PR,SOLE_ALL,NEEDS_NEW_FINDING,,pr_status
+algo_mf_sezary_2l.yaml,1,all_of[1],Tolerating systemic therapy,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_mf_sezary_2l.yaml,2,all_of[1],Brentuximab vedotin not previously administered,MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_mf_sezary_2l.yaml,3,all_of[1],Mogamulizumab not previously administered,MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_mm_2l.yaml,1,all_of[0],Post-ASCT (autoSCT consolidation completed),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_mm_2l.yaml,1,all_of[1],"Disease status: CR, VGPR, or PR",SOLE_ALL,NEEDS_NEW_FINDING,,pr_status
+algo_mm_2l.yaml,1,all_of[2],No active progression,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_mm_2l.yaml,2,all_of[0],"≥3 prior lines including ≥1 IMiD, ≥1 PI, ≥1 anti-CD38",MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_mm_2l.yaml,2,all_of[1],Triple-class refractory (refractory to last line of each class),MIXED_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""triple_class_refractory""}",triple_class_refractory
+algo_mm_2l.yaml,2,all_of[3],adequate organ function for bispecific,MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_mm_2l.yaml,4,any_of[0],"Post-VRd / VTd progression, transplant-naive or post-ASCT relapse",DEAD,NEEDS_NEW_FINDING,,
+algo_mm_2l.yaml,4,any_of[1],anti-CD38-naive AND carfilzomib/proteasome-switch eligible,DEAD,NEEDS_CLINICAL_JUDGMENT,,cd38_status
+algo_mm_3l.yaml,1,all_of[0],"≥3 prior lines including ≥1 IMiD, ≥1 PI, ≥1 anti-CD38 monoclonal antibody",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_mm_3l.yaml,1,all_of[1],Refractory (progressed during or within 60 days of last line of each class),SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_mm_3l.yaml,2,all_of[0],Carfilzomib-naive (no prior carfilzomib or carfilzomib-based regimen),MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_mm_3l.yaml,2,all_of[1],≥2 prior lines including ≥1 PI (non-carfilzomib) + ≥1 IMiD,MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_mmrpro.yaml,1,any_of[0],MMRPRO combined MLH1 + MSH2 + MSH6 + PMS2 carrier probability ≥20%,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_mmrpro.yaml,2,any_of[0],MMRPRO combined MLH1 + MSH2 + MSH6 + PMS2 carrier probability ≥5%,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_mmrpro.yaml,3,any_of[0],MMRPRO combined MLH1 + MSH2 + MSH6 + PMS2 carrier probability ≥2.5%,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_mpnst_1l.yaml,1,any_of[0],ECOG 0-2 AND advanced/unresectable/metastatic,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,ecog_status
+algo_mtc_1l.yaml,1,any_of[12],RET mutation positive (somatic M918T OR germline MEN2-associated C634/M918T/other),DEAD,NEEDS_NEW_FINDING,,ret_somatic_mutation
+algo_mtc_1l.yaml,2,any_of[0],RET wild-type (RAS-mutant OR unknown OR negative),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_multi_syndrome_pedigree_triage.yaml,1,all_of[0],"Pedigree includes ≥2 Lynch-spectrum cancers (CRC, endometrial, ovarian, small bowel, urothelial / renal pelvis / ureter, gastric, hepatobiliary, brain, sebaceous skin) across first- or second-degree relatives",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_multi_syndrome_pedigree_triage.yaml,1,all_of[1],At least one Lynch-spectrum cancer diagnosed at age <50,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_multi_syndrome_pedigree_triage.yaml,2,all_of[0],"Pedigree includes ≥2 HBOC-spectrum cancers (female breast <50, ovarian / fallopian / primary peritoneal at any age, male breast at any age, pancreatic adenocarcinoma at any age, metastatic / Gleason ≥7 prostate cancer at any age, triple-negative breast cancer)",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_multi_syndrome_pedigree_triage.yaml,3,any_of[0],"Pedigree includes ≥2 LFS-spectrum cancers (soft-tissue or bone sarcoma at any age, breast <31, brain tumor / choroid plexus carcinoma / medulloblastoma, adrenocortical carcinoma at any age, leukemia, lung adenocarcinoma <46)",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_multi_syndrome_pedigree_triage.yaml,3,any_of[1],"Proband has multiple primary cancers at age <46, with ≥1 LFS-spectrum",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_multi_syndrome_pedigree_triage.yaml,3,any_of[2],Proband has childhood adrenocortical carcinoma OR choroid plexus carcinoma,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_multi_syndrome_pedigree_triage.yaml,4,any_of[0],Pedigree includes hamartomatous / adenomatous polyposis (≥10 adenomatous polyps + family pattern OR juvenile polyps + family pattern OR Peutz-Jeghers hamartomas / mucocutaneous pigmentation + family pattern),SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_multi_syndrome_pedigree_triage.yaml,5,any_of[0],Pedigree or proband includes hemangioblastoma + RCC + pheochromocytoma cluster (VHL pattern),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_multi_syndrome_pedigree_triage.yaml,5,any_of[1],Pedigree or proband includes paraganglioma + pheochromocytoma + GIST cluster (SDHx pattern),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_multi_syndrome_pedigree_triage.yaml,5,any_of[2],Proband has bilateral / multifocal pheochromocytoma OR paraganglioma at any age,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_multi_syndrome_pedigree_triage.yaml,6,all_of[0],Pedigree shows ≥3 cancers across ≥2 generations without a single-syndrome dominant pattern (mixed cluster),SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_nccn_pancreatic_caps_surveillance.yaml,1,any_of[0],Confirmed STK11 germline pathogenic / likely-pathogenic (ACMG class 4/5) variant,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""germline_stk11_pathogenic_variant_confirmed""}",germline_stk11_pathogenic_variant_confirmed
+algo_nccn_pancreatic_caps_surveillance.yaml,1,any_of[1],Clinical Peutz-Jeghers syndrome (mucocutaneous pigmentation + hamartomatous polyposis + family pattern) without confirmed STK11 variant,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_nccn_pancreatic_caps_surveillance.yaml,2,any_of[0],Confirmed CDKN2A germline pathogenic / likely-pathogenic variant (FAMMM),SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""germline_cdkn2a_pathogenic_variant_confirmed""}",germline_cdkn2a_pathogenic_variant_confirmed
+algo_nccn_pancreatic_caps_surveillance.yaml,3,any_of[0],"Confirmed PRSS1 germline pathogenic variant (hereditary pancreatitis, autosomal dominant)",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_nccn_pancreatic_caps_surveillance.yaml,3,any_of[1],Biallelic SPINK1 / CTRC / CFTR pathogenic variants with chronic pancreatitis phenotype,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_nccn_pancreatic_caps_surveillance.yaml,3,any_of[2],"Clinical hereditary pancreatitis (≥2 family members with chronic pancreatitis, onset <30, AD pattern) without confirmed gene",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_nccn_pancreatic_caps_surveillance.yaml,4,all_of[0],Confirmed BRCA2 OR BRCA1 OR PALB2 germline pathogenic / likely-pathogenic variant,SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{any_of: [{finding: ""brca2_status""}, {finding: ""brca1_status""}, {finding: ""palb2_germline_pathogenic""}]}",brca2_status; brca1_status; palb2_germline_pathogenic
+algo_nccn_pancreatic_caps_surveillance.yaml,4,all_of[1],≥1 first-degree or second-degree relative with pancreatic adenocarcinoma at any age,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_nccn_pancreatic_caps_surveillance.yaml,5,all_of[0],Confirmed ATM germline pathogenic / likely-pathogenic variant,SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""atm_germline""}",atm_germline
+algo_nccn_pancreatic_caps_surveillance.yaml,5,all_of[1],≥1 first-degree relative with pancreatic adenocarcinoma at any age,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_nccn_pancreatic_caps_surveillance.yaml,6,all_of[0],Confirmed MLH1 / MSH2 / MSH6 / PMS2 / EPCAM germline pathogenic / likely-pathogenic variant (Lynch syndrome),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_nccn_pancreatic_caps_surveillance.yaml,6,all_of[1],≥1 first-degree relative with pancreatic adenocarcinoma at any age,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_nccn_pancreatic_caps_surveillance.yaml,7,all_of[0],≥2 first-degree relatives with pancreatic adenocarcinoma,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_nccn_pancreatic_caps_surveillance.yaml,7,all_of[1],"Comprehensive hereditary cancer panel performed and negative for known PDAC-risk genes (BRCA1/2, PALB2, ATM, CDKN2A, STK11, MMR, TP53, etc.)",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_nk_t_nasal_1l.yaml,1,all_of[0],Age ≤ 70,MIXED_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""age""}",age
+algo_nk_t_nasal_1l.yaml,1,all_of[3],L-asparaginase access available,MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_nk_t_nasal_2l.yaml,1,any_of[0],R/R after asparaginase-based 1L,DEAD,NEEDS_CLINICAL_JUDGMENT,,
+algo_nlpbl_1l.yaml,1,all_of[0],Early stage I-II,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_nlpbl_1l.yaml,1,all_of[1],Localized disease amenable to RT,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_nlpbl_1l.yaml,2,any_of[6],"RT contraindicated (young patient breast/thyroid field overlap, prior RT, patient refuses)",DEAD,HIGH_CONFIDENCE_RENAME,"{finding: ""breast_field_rt_overlap""}",breast_field_rt_overlap
+algo_nlpbl_2l.yaml,1,any_of[0],Re-biopsy NOT performed at relapse site,DEAD,NEEDS_NEW_FINDING,,
+algo_nlpbl_2l.yaml,2,any_of[2],Re-biopsy confirms THRLBCL or DLBCL-like transformation,DEAD,NEEDS_NEW_FINDING,,
+algo_nlpbl_2l.yaml,3,all_of[0],"Re-biopsy: NLPBL histology preserved (LP-cells, CD20+ CD15- CD30-)",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_nlpbl_2l.yaml,3,all_of[1],"Indolent presentation, no B-symptoms, no LDH elevation",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_nlpbl_2l.yaml,4,any_of[0],Transformation suspected at relapse — biopsy pending or inconclusive,DEAD,NEEDS_CLINICAL_JUDGMENT,,
+algo_nmzl_1l.yaml,2,all_of[1],HCV RNA positive (anti-HCV alone insufficient),MIXED_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""hcv_rna""}",hcv_rna
+algo_nmzl_1l.yaml,2,all_of[2],Compensated liver function (no decompensated cirrhosis),MIXED_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""decompensated_cirrhosis""}",decompensated_cirrhosis
+algo_nmzl_1l.yaml,2,all_of[3],Indolent / low-burden presentation (GELF-negative),MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_nmzl_2l.yaml,3,any_of[0],Nodal progression / new extranodal sites after 1L,DEAD,NEEDS_CLINICAL_JUDGMENT,,
+algo_nmzl_2l.yaml,3,any_of[1],B-symptoms or symptomatic cytopenia from marrow involvement,DEAD,NEEDS_CLINICAL_JUDGMENT,,b_symptoms_present
+algo_nmzl_2l.yaml,3,any_of[2],"CD20+ confirmed at relapse biopsy, adequate marrow + organ function for bendamustine",DEAD,NEEDS_NEW_FINDING,,
+algo_nsclc_adjuvant.yaml,2,any_of[0],PD-L1 SP142 IHC ≥1% on resected tumour specimen (IMpower010 SP142 assay; not interchangeable with 22C3 TPS),DEAD,NEEDS_NEW_FINDING,,
+algo_nsclc_metastatic_1l.yaml,2,any_of[2],EGFR L858R or other classical sensitizing mutation,DEAD,NEEDS_NEW_FINDING,,
+algo_nsclc_metastatic_1l.yaml,10,any_of[0],Nivo+ipi+2-cycle chemo (CheckMate-9LA) accessible and preferred per MDT,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_nsclc_metastatic_2l.yaml,7,any_of[0],G2032R solvent-front resistance mutation OR post-entrectinib failure,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_nsclc_metastatic_2l.yaml,9,any_of[0],Active untreated brain metastases (adagrasib intracranial ORR ~33%),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_nsclc_metastatic_2l.yaml,11,any_of[0],Once-daily dosing preferred (adherence / convenience),SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_nsclc_metastatic_2l.yaml,16,any_of[0],"Driver-negative disease, progression on 1L platinum + ICI",DEAD,HIGH_CONFIDENCE_RENAME,"{finding: ""progression_on_platinum""}",progression_on_platinum
+algo_nsclc_resectable_periop.yaml,2,any_of[0],"Resectable stage II, IIIA, or IIIB (T3-4N2M0) NSCLC eligible for anatomic resection",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_ovarian_2l.yaml,4,any_of[0],"Platinum-sensitive, HRD-negative or unknown — default re-induction chemo+bev",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_ovarian_advanced_1l.yaml,6,any_of[0],HRD-negative or unknown,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,hrd_status
+algo_pcnsl_1l.yaml,2,any_of[0],Age > 70,DEAD,HIGH_CONFIDENCE_RENAME,"{finding: ""age""}",age
+algo_pcnsl_1l.yaml,2,any_of[1],ECOG > 2,DEAD,HIGH_CONFIDENCE_RENAME,"{finding: ""ecog_status""}",ecog_status
+algo_pcnsl_1l.yaml,2,any_of[3],Не кандидат на autoSCT consolidation,DEAD,NEEDS_CLINICAL_JUDGMENT,,
+algo_pcnsl_2l.yaml,1,any_of[2],CrCl <50 mL/min OR severe hepatic dysfunction (HD-MTX contraindicated),DEAD,NEEDS_NEW_FINDING,,
+algo_pcnsl_2l.yaml,2,any_of[0],Primary refractory: residual contrast-enhancing lesion ≥4 weeks post-1L,DEAD,NEEDS_CLINICAL_JUDGMENT,,
+algo_pcnsl_2l.yaml,2,any_of[1],Early relapse: <6 months from 1L completion,DEAD,NEEDS_CLINICAL_JUDGMENT,,
+algo_pcnsl_2l.yaml,2,any_of[2],Failure to achieve CR to 1L R-MPV / MATRix,DEAD,NEEDS_NEW_FINDING,,
+algo_pcnsl_2l.yaml,3,all_of[0],Documented CR or PR to 1L HD-MTX-based regimen,MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_pcnsl_2l.yaml,3,all_of[1],Late relapse: ≥6 months from 1L completion,MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_pcnsl_2l.yaml,4,any_of[0],"PCNSL relapsed, CD20+, HD-MTX-eligible by default",DEAD,NEEDS_NEW_FINDING,,
+algo_pdac_metastatic_2l.yaml,2,any_of[0],Total bilirubin ≤ 2× ULN OR biliary obstruction drained with stent/drain,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,bilirubin_uln_x
+algo_pdac_metastatic_2l.yaml,3,any_of[0],"Prior 1L was gemcitabine-based (gemcitabine monotherapy, gem+nab-paclitaxel, or gem+erlotinib)",SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_pediatric_cancer_predisposition_triage.yaml,1,any_of[0],Pediatric adrenocortical carcinoma (ACC) at any age — Chompret C; ~50-80% germline TP53 yield,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_pediatric_cancer_predisposition_triage.yaml,1,any_of[1],Pediatric choroid plexus carcinoma (CPC) at any age — Chompret C; ~50% germline TP53 yield,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_pediatric_cancer_predisposition_triage.yaml,1,any_of[2],Pediatric anaplastic rhabdomyosarcoma with embryonal-anaplastic histology — Chompret C; ~10-20% TP53 yield,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_pediatric_cancer_predisposition_triage.yaml,1,any_of[3],Bilateral or familial retinoblastoma at any age — ~100% germline RB1 yield,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_pediatric_cancer_predisposition_triage.yaml,1,any_of[4],Pediatric medulloblastoma SHH-subtype with anaplastic histology — germline TP53 (LFS) yield ~10-20%; PTCH1 / SUFU (Gorlin) yield ~5-15%; SMARCA4 / SMARCB1 (CMMRD / rhabdoid) ~10%,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_pediatric_cancer_predisposition_triage.yaml,1,any_of[5],"Pediatric DICER1-spectrum tumor (pleuropulmonary blastoma, ovarian Sertoli-Leydig cell tumor, multinodular goiter / thyroid neoplasms, cystic nephroma, embryonal rhabdomyosarcoma of cervix) — germline DICER1 yield variable but high in pleuropulmonary blastoma (~70%)",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_pediatric_cancer_predisposition_triage.yaml,2,all_of[0],Pediatric proband with ≥2 primary cancers at any age — multiple primaries are strongly suggestive of underlying predisposition,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_pediatric_cancer_predisposition_triage.yaml,3,any_of[0],"Neurocutaneous features (café-au-lait macules, neurofibromas, optic glioma, Lisch nodules, axillary / inguinal freckling) → suspect NF1",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_pediatric_cancer_predisposition_triage.yaml,3,any_of[1],Bilateral vestibular schwannomas or meningiomas + skin neurofibromas → suspect NF2,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_pediatric_cancer_predisposition_triage.yaml,3,any_of[2],Macrocephaly + hemihypertrophy + omphalocele + macroglossia + neonatal hypoglycemia → suspect Beckwith-Wiedemann syndrome,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_pediatric_cancer_predisposition_triage.yaml,3,any_of[3],Aniridia + GU anomalies + intellectual disability → suspect WAGR syndrome (WT1 deletion),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_pediatric_cancer_predisposition_triage.yaml,3,any_of[4],"Bone marrow failure + congenital anomalies (radial-ray defects, cafe-au-lait, short stature) → suspect Fanconi anemia",SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_pediatric_cancer_predisposition_triage.yaml,3,any_of[5],Short stature + sun-sensitivity + immunodeficiency → suspect Bloom syndrome,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_pediatric_cancer_predisposition_triage.yaml,3,any_of[6],Severe photosensitivity + early skin cancers → suspect xeroderma pigmentosum,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_pediatric_cancer_predisposition_triage.yaml,3,any_of[7],Cerebellar ataxia + immunodeficiency + telangiectasia → suspect ataxia-telangiectasia (ATM biallelic),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_pediatric_cancer_predisposition_triage.yaml,3,any_of[8],Marfanoid habitus + mucosal neuromas + ganglioneuromatosis → suspect MEN2B,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_pediatric_cancer_predisposition_triage.yaml,3,any_of[9],Café-au-lait macules in a child with ≥1 pediatric cancer AND consanguineous parents → suspect Constitutional Mismatch Repair Deficiency (CMMRD — biallelic MMR),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_pediatric_cancer_predisposition_triage.yaml,3,any_of[10],Bilateral / multifocal pheochromocytoma + paraganglioma → suspect VHL or SDHx,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_pediatric_cancer_predisposition_triage.yaml,3,any_of[11],"RASopathy features (Noonan, Costello, CFC) in proband with hematologic malignancy → suspect RASopathy-associated JMML",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_pediatric_cancer_predisposition_triage.yaml,4,all_of[0],Syndromic features identified at step 3 — refer to clinical genetics for syndrome-specific panel,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_pediatric_cancer_predisposition_triage.yaml,5,any_of[0],"First-degree relative with cancer diagnosed <50, OR ≥2 second-degree relatives with cancer at any age, OR ≥1 family member with sentinel-LFS-tumor (ACC, CPC, anaplastic rhabdomyosarcoma)",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_pediatric_cancer_predisposition_triage.yaml,6,all_of[0],Pediatric cancer proband without sentinel-tumor + without multi-primary + without syndromic features + without family-history suspicion — consider comprehensive panel per AACR 2017 / COG recommendations,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_peutz_jeghers_carrier_surveillance.yaml,1,any_of[0],Confirmed STK11 germline pathogenic / likely-pathogenic (ACMG class 4/5) variant,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""germline_stk11_pathogenic_variant_confirmed""}",germline_stk11_pathogenic_variant_confirmed
+algo_peutz_jeghers_carrier_surveillance.yaml,1,any_of[1],"Clinical Peutz-Jeghers syndrome (≥2 of: mucocutaneous melanotic pigmentation, hamartomatous polyps consistent with PJ histology, family history of PJS) without confirmed STK11 variant",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_peutz_jeghers_carrier_surveillance.yaml,2,all_of[0],Carrier is age ≥8 (pediatric GI entry),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_peutz_jeghers_carrier_surveillance.yaml,3,all_of[0],Upper endoscopy (EGD) q2-3y from age 8-10 (or symptom-driven earlier),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_peutz_jeghers_carrier_surveillance.yaml,3,all_of[1],Colonoscopy q2-3y from age 8-10,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_peutz_jeghers_carrier_surveillance.yaml,3,all_of[2],Small-bowel imaging — video capsule endoscopy q2-3y from age 8-10 — first-line modality; CT enterography or MR enterography acceptable alternates,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_peutz_jeghers_carrier_surveillance.yaml,3,all_of[3],Push enteroscopy / double-balloon enteroscopy / spiral enteroscopy for polypectomy of small-bowel polyps ≥1-1.5 cm (prevent intussusception + reduce cancer risk),SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_peutz_jeghers_carrier_surveillance.yaml,4,all_of[0],Pancreatic surveillance — EUS or MRI / MRCP q1-2y from age 30-35 (CAPS Consortium 2020 PJ-specific entry timing),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_peutz_jeghers_carrier_surveillance.yaml,5,all_of[0],Breast: female age ≥25 — clinical breast exam q6mo; female age ≥30 — annual breast MRI + annual mammography (alternating q6mo cadence acceptable),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_peutz_jeghers_carrier_surveillance.yaml,6,all_of[0],Female: pelvic exam + transvaginal US q1y from age 18-20 (SCTAT and cervical adenoma malignum surveillance); annual cervical cytology — note PJ cervical cancer is adenoma malignum / minimal-deviation adenocarcinoma which can have NORMAL conventional cytology — TVUS + clinical exam are primary surveillance,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_peutz_jeghers_carrier_surveillance.yaml,6,all_of[1],Male: annual testicular exam from age 10 (Sertoli-cell large-cell calcifying testicular tumors — risk of feminization / gynecomastia + small-but-real malignancy risk); testicular US if exam-abnormal,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_pmbcl_1l.yaml,2,any_of[0],Center cannot deliver infusional DA-EPOCH-R safely,DEAD,NEEDS_NEW_FINDING,,
+algo_pmbcl_1l.yaml,2,any_of[1],Patient prefers shorter chemo + RT,DEAD,NEEDS_NEW_FINDING,,
+algo_pmbcl_2l.yaml,1,any_of[2],Age >70 OR ECOG ≥2 OR LVEF <45% OR CrCl <50 (transplant-ineligible),DEAD,NEEDS_NEW_FINDING,,age; ecog_status
+algo_pmbcl_2l.yaml,2,all_of[0],R-ICE x 2 cycles completed,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_pmbcl_2l.yaml,2,all_of[1],Interim Deauville ≥4 (no metabolic response) — chemorefractory,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_pmbcl_2l.yaml,3,all_of[3],"Age ≤65-70, (transplant-eligible)",MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_pmbcl_2l.yaml,3,all_of[4],First relapse OR primary refractory with chemosensitive disease,MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,primary_refractory
+algo_pmbcl_2l.yaml,3,all_of[5],CD20+ confirmed at relapse biopsy,MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_pmbcl_2l.yaml,4,any_of[0],"PMBCL relapsed/refractory, transplant-eligible by default",DEAD,NEEDS_NEW_FINDING,,
+algo_pmf_1l.yaml,4,all_of[0],Default low / int-1 PMF; symptomatic management as needed,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_pmf_2l.yaml,5,all_of[0],Default ruxolitinib-resistant non-anemic non-frail — fedratinib per JAKARTA-2,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_premm5_lynch.yaml,1,any_of[0],PREMM5 carrier probability ≥5% (high-confidence testing indication),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_premm5_lynch.yaml,2,any_of[0],PREMM5 carrier probability ≥2.5%,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_premm5_lynch.yaml,3,all_of[0],PREMM5 carrier probability 1.0-2.5% (borderline),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_prevention_risk_triage_overview.yaml,1,all_of[0],Patient has ≥2 fired prevention RedFlags spanning ≥2 PreventionRiskCategory buckets (genetic / infectious / chronic_condition / occupational / iatrogenic / lifestyle / reproductive),SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_prevention_risk_triage_overview.yaml,2,any_of[0],Family history of hereditary cancer syndrome fires (RF-LYNCH-FAMILY-HISTORY-SUSPICION / RF-BRCA-HBOC-FAMILY-HISTORY-SUSPICION / RF-FAP-FAMILY-HISTORY-SUSPICION / RF-LI-FRAUMENI-FAMILY-HISTORY-SUSPICION / RF-VHL-FAMILY-HISTORY-SUSPICION / RF-HEREDITARY-PEDIGREE-SUSPICION) AND no confirmed-carrier status,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_prevention_risk_triage_overview.yaml,3,any_of[0],Confirmed hereditary cancer syndrome carrier fires (RF-LYNCH-CONFIRMED-CARRIER / RF-BRCA-CONFIRMED-CARRIER / RF-FAP-CONFIRMED-CARRIER / RF-LI-FRAUMENI-CONFIRMED-CARRIER / RF-VHL-CONFIRMED-CARRIER / etc.),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_prevention_risk_triage_overview.yaml,3,any_of[1],Confirmed chronic-condition surveillance eligibility fires (RF-BARRETTS-ESOPHAGUS / RF-CHRONIC-ATROPHIC-GASTRITIS / RF-CHRONIC-HBV / RF-CHRONIC-HCV / RF-CIRRHOSIS / RF-IBD-DURATION-RISK / etc.),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_prevention_risk_triage_overview.yaml,4,any_of[0],Lifestyle-RF only fires (RF-TOBACCO / RF-OBESITY / RF-ALCOHOL / RF-PHYSICAL-INACTIVITY / RF-LOW-FIBER-DIET / RF-HRT-USE / RF-OCCUPATIONAL-EXPOSURE / RF-IATROGENIC-IMMUNOSUPPRESSION / RF-IATROGENIC-RADIATION-HISTORY / etc.) with no other prevention bucket firing,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_prostate_mcrpc_1l.yaml,1,any_of[1],BRCA1 or BRCA2 somatic or germline pathogenic variant,DEAD,NEEDS_CLINICAL_JUDGMENT,,brca1_status; brca2_somatic
+algo_prostate_mcrpc_1l.yaml,2,any_of[0],No prior ARPI (enzalutamide/abiraterone/apalutamide/darolutamide) in mHSPC,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_prostate_mcrpc_1l.yaml,3,all_of[0],"PSMA-PET/CT positive (all lesions PSMA-avid, no PSMA-negative sites with metastases)",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_prostate_mcrpc_1l.yaml,3,all_of[1],Prior taxane AND prior ARPI both received (Lu-PSMA eligibility per VISION),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_prostate_mcrpc_1l.yaml,4,all_of[0],ECOG PS 0-2 (docetaxel eligible),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_prostate_mcrpc_1l.yaml,4,all_of[1],No prior taxane in mHSPC or mCRPC,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_prostate_mcrpc_2l.yaml,1,any_of[0],ECOG PS 0-2,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""ecog_status""}",ecog_status
+algo_prostate_mcrpc_2l.yaml,2,all_of[0],"BRCA1 or BRCA2 somatic or germline pathogenic variant (or ATM, CDK12, PALB2, RAD51C/D, BRIP1, FANCA)",SOLE_ALL,NEEDS_NEW_FINDING,,brca1_status; brca2_somatic
+algo_prostate_mcrpc_2l.yaml,2,all_of[1],"No prior PARPi therapy (olaparib, rucaparib, niraparib)",SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_prostate_mcrpc_2l.yaml,3,all_of[0],PSMA-PET/CT positive (68Ga-PSMA-11 or 18F-DCFPyL) — ALL metastatic lesions PSMA-avid; no PSMA-negative metastatic sites,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_prostate_mcrpc_2l.yaml,3,all_of[1],"Prior ARPI (enzalutamide, abiraterone, darolutamide, or apalutamide)",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_prostate_mcrpc_2l.yaml,3,all_of[2],Prior taxane-based chemotherapy (docetaxel) OR documented taxane-ineligible,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_prostate_mcrpc_2l.yaml,4,any_of[0],Prior docetaxel-based chemotherapy (mHSPC or mCRPC setting),SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_prostate_mcrpc_2l.yaml,5,any_of[0],"Visceral metastases present (liver, lung, brain, or peritoneal mets)",SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,brain_metastases
+algo_prostate_mcrpc_2l.yaml,6,all_of[0],Symptomatic bone metastases (bone pain or prior SSE),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_prostate_mcrpc_2l.yaml,6,all_of[1],ECOG PS 0-2,SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""ecog_status""}",ecog_status
+algo_prostate_mcrpc_2l.yaml,6,all_of[2],No concurrent novel ARPI planned (ERA 223 fracture harm),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_prostate_mcrpc_2l.yaml,6,all_of[3],Nuclear medicine theranostics center accessible,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_ptcl_2l.yaml,1,all_of[1],Romidepsin accessible (named-patient or trial),MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_ptcl_2l.yaml,1,all_of[2],No baseline cardiac arrhythmia / QTc prolongation precluding HDACi,MIXED_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""baseline_cardiac_arrhythmia""}",baseline_cardiac_arrhythmia
+algo_ptcl_2l.yaml,2,all_of[0],Pralatrexate accessible (named-patient or trial),MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_ptcl_2l.yaml,2,all_of[1],No prior Grade ≥3 mucositis from antifolates,MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_ptld_1l.yaml,1,any_of[1],T-cell or NK-cell PTLD (typically EBV-negative),DEAD,NEEDS_NEW_FINDING,,
+algo_ptld_1l.yaml,1,any_of[2],Failed reduce-IS + rituximab attempt,DEAD,NEEDS_NEW_FINDING,,
+algo_ptld_1l.yaml,2,all_of[1],EBV-positive on tumor EBER-ISH OR detectable plasma EBV-DNA,MIXED_ALL,NEEDS_NEW_FINDING,,ebv_status_tumor
+algo_ptld_1l.yaml,2,all_of[2],CD20-positive histology,MIXED_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""cd20_status""}",cd20_status
+algo_ptld_1l.yaml,3,all_of[0],EBV-negative on tumor EBER-ISH AND undetectable plasma EBV-DNA,SOLE_ALL,NEEDS_NEW_FINDING,,ebv_status_tumor
+algo_ptld_1l.yaml,3,all_of[1],CD20-positive histology,SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""cd20_status""}",cd20_status
+algo_ptld_2l.yaml,1,all_of[0],CR or PR after initial rituximab × 4 weekly induction,MIXED_ALL,NEEDS_NEW_FINDING,,
+algo_pv_1l.yaml,3,all_of[0],Default low-risk PV,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_pv_2l.yaml,4,all_of[0],Default 2L PV post-HU failure — ruxolitinib per RESPONSE,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_rcc_metastatic_1l.yaml,1,any_of[3],Clear-cell (conventional) RCC confirmed on pathology,DEAD,NEEDS_NEW_FINDING,,
+algo_rcc_metastatic_1l.yaml,3a,all_of[0],IMDC favorable risk (0 adverse factors),SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""imdc_risk""}",imdc_risk
+algo_rcc_metastatic_1l.yaml,3a,all_of[1],ECOG PS 0-1 AND fit for ICI+TKI combination,SOLE_ALL,NEEDS_NEW_FINDING,,ecog_status
+algo_rcc_metastatic_1l.yaml,4,all_of[0],ECOG PS 0-1,SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""ecog_status""}",ecog_status
+algo_rcc_metastatic_1l.yaml,4,all_of[1],High tumour burden OR conversion-to-resection intent OR rapid response needed,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_rcc_metastatic_1l.yaml,5,any_of[0],Significant bone metastases (MET/AXL pathway biological rationale for cabozantinib),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_rcc_metastatic_1l.yaml,5,any_of[1],Uncontrolled hypertension (lenvatinib toxicity concern),SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""uncontrolled_hypertension""}",uncontrolled_hypertension
+algo_rcc_metastatic_1l.yaml,5,any_of[2],ECOG PS 1-2 (better tolerability of nivo+cabo vs lenv+pembro),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_rcc_metastatic_2l.yaml,1,any_of[0],Prior PD-(L)1 + VEGF-TKI failure,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_rectal_locally_advanced_tnt.yaml,1,any_of[1],"MDT preference for SCRT (5×5 Gy short-course): rapid throughput, less radiation logistics, comparable DRTF outcomes",DEAD,NEEDS_NEW_FINDING,,
+algo_rectal_locally_advanced_tnt.yaml,2,any_of[1],"MDT preference for LCCRT (50.4 Gy + capecitabine): low-lying tumor with sphincter-sparing intent, patient tolerates 5.5-week RT logistics",DEAD,NEEDS_NEW_FINDING,,
+algo_revised_bethesda_lynch.yaml,1,any_of[0],Colorectal cancer diagnosed in a patient <50 years of age,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_revised_bethesda_lynch.yaml,2,any_of[0],"Synchronous (≥2 simultaneous) CRC, OR metachronous CRC (separate primaries at different times), regardless of age",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_revised_bethesda_lynch.yaml,2,any_of[1],"Synchronous or metachronous Lynch-spectrum cancers (CRC + endometrial / gastric / ovarian / pancreatic / urothelial / small bowel / hepatobiliary / brain / sebaceous skin), regardless of age",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_revised_bethesda_lynch.yaml,3,all_of[0],Colorectal cancer diagnosed at age <60,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_revised_bethesda_lynch.yaml,3,all_of[1].any_of[0],MSI-H histologic features: tumor-infiltrating lymphocytes (TILs),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_revised_bethesda_lynch.yaml,3,all_of[1].any_of[1],MSI-H histologic features: Crohn-like lymphocytic reaction,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_revised_bethesda_lynch.yaml,3,all_of[1].any_of[2],MSI-H histologic features: mucinous / signet-ring differentiation,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_revised_bethesda_lynch.yaml,3,all_of[1].any_of[3],MSI-H histologic features: medullary growth pattern,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_revised_bethesda_lynch.yaml,4,all_of[0],Patient has colorectal cancer,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_revised_bethesda_lynch.yaml,4,all_of[1],"≥1 first-degree relative with Lynch-spectrum cancer (CRC, endometrial, urothelial, small bowel, gastric, ovarian, pancreatic, hepatobiliary, brain, sebaceous)",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_revised_bethesda_lynch.yaml,4,all_of[2],At least one of these cancers (patient or relative) diagnosed at age <50,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_revised_bethesda_lynch.yaml,5,all_of[0],Patient has colorectal cancer,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_revised_bethesda_lynch.yaml,5,all_of[1],"≥2 first-degree or second-degree relatives with Lynch-spectrum cancer, regardless of age",SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_salivary_1l.yaml,1,any_of[0],ECOG 0-2 AND advanced/unresectable/metastatic,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,ecog_status
+algo_sclc_1l.yaml,1,any_of[0],Limited-stage (one hemithorax + tolerable RT field),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_sclc_1l.yaml,2,all_of[0],Concurrent platinum-based chemoradiotherapy (cCRT) completed,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_sclc_1l.yaml,2,all_of[1],No disease progression on or after cCRT,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_sclc_1l.yaml,2,all_of[2],Start within 1-42 days of completing last RT fraction (ADRIATIC window),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_sclc_2l.yaml,1,any_of[0],No available clinical trial OR patient declines trial enrollment,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_sclc_2l.yaml,3,any_of[0],DLL3 IHC positive (≥1% tumour cells; any DLL3 expression per DeLLphi-301 eligibility),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_sclc_2l.yaml,4,any_of[0],CTFI ≥ 180 days from end of 1L platinum chemotherapy,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_sclc_2l.yaml,5,any_of[0],CTFI ≥ 30 days from last platinum dose,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_sclc_2l.yaml,6,all_of[0],Lurbinectedin accessible (registered/reimbursed or international pharmacy available),SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_smzl_1l.yaml,2,any_of[0],HCV RNA negative OR no antiviral candidate,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,hcv_rna
+algo_smzl_1l.yaml,2,any_of[1],CD20+ histology confirmed,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""cd20_status""}",cd20_status
+algo_smzl_2l.yaml,3,any_of[0],"Symptomatic relapse after 1L (cytopenia, progressive splenomegaly, B-symptoms)",DEAD,NEEDS_CLINICAL_JUDGMENT,,
+algo_smzl_2l.yaml,3,any_of[1],CD20+ confirmed at relapse biopsy,DEAD,NEEDS_NEW_FINDING,,
+algo_smzl_2l.yaml,3,any_of[2],Adequate marrow + organ function for bendamustine,DEAD,NEEDS_CLINICAL_JUDGMENT,,
+algo_sts_advanced_1l.yaml,1,all_of[0],Soft tissue sarcoma confirmed by pathology (histology + IHC),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_sts_advanced_1l.yaml,1,all_of[1],NOT GIST (KIT/PDGFRA — use imatinib algorithm),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_sts_advanced_1l.yaml,1,all_of[2],NOT Ewing sarcoma (EWSR1 fusion — use VDC-IE algorithm),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_sts_advanced_1l.yaml,1,all_of[3],NOT rhabdomyosarcoma (pediatric protocols),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_sts_advanced_1l.yaml,1,all_of[4],NOT bone sarcoma / chondrosarcoma (separate disease entity),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_sts_advanced_1l.yaml,2,any_of[0],ECOG PS 0-1,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""ecog_status""}",ecog_status
+algo_sts_advanced_1l.yaml,2,any_of[1],ECOG PS 2 (doxorubicin mono consideration only),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_sts_advanced_1l.yaml,3,any_of[0],Neoadjuvant intent (tumor shrinkage goal for borderline resectable disease),SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_sts_advanced_1l.yaml,3,any_of[1],Rapidly progressive disease with visceral threat requiring fast response,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_sts_advanced_1l.yaml,3,any_of[2],Synovial sarcoma histology (ifosfamide-sensitive; AI preferred),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_sts_advanced_1l.yaml,3,any_of[3],Young ECOG 0-1 patient requesting most aggressive curative-intent approach,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_sts_advanced_1l.yaml,4,all_of[0],ECOG PS 0-1,SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""ecog_status""}",ecog_status
+algo_sts_advanced_1l.yaml,4,all_of[1],CrCl ≥50 mL/min,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_sts_advanced_1l.yaml,4,all_of[2],No prior Grade ≥3 ifosfamide encephalopathy or hemorrhagic cystitis,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_sts_advanced_2l.yaml,1,any_of[0],"STS subtype confirmed as non-GIST, non-Ewing, non-RMS",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_sts_advanced_2l.yaml,2,any_of[0],ECOG PS 0-2,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""ecog_status""}",ecog_status
+algo_sts_advanced_2l.yaml,3,any_of[0],STS subtype = leiomyosarcoma (uterine LMS or extra-uterine LMS) OR undifferentiated pleomorphic sarcoma (UPS),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_sts_advanced_2l.yaml,4,any_of[0],"STS subtype = liposarcoma (well-differentiated, dedifferentiated, myxoid, pleomorphic)",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_sts_advanced_2l.yaml,5,all_of[0],ECOG PS 0-2 AND adequate renal function (CrCl ≥30 mL/min),SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,ecog_status
+algo_sts_advanced_2l.yaml,5,all_of[1],No severe peripheral neuropathy (Grade ≥2),SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""peripheral_neuropathy_grade""}",peripheral_neuropathy_grade
+algo_t_all_1l.yaml,1,any_of[0],Any T-ALL diagnosis confirmed,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_t_all_2l.yaml,1,any_of[0],R/R T-ALL or T-LBL after ≥1 prior systemic line,DEAD,NEEDS_NEW_FINDING,,
+algo_t_pll_1l.yaml,1,any_of[0],T-PLL diagnosis confirmed,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_t_pll_2l.yaml,1,any_of[0],Relapsed/refractory after alemtuzumab IV monotherapy,DEAD,NEEDS_NEW_FINDING,,
+algo_t_pll_2l.yaml,1,any_of[1],Alemtuzumab-refractory primary disease,DEAD,HIGH_CONFIDENCE_RENAME,"{finding: ""primary_refractory""}",primary_refractory
+algo_tgct_1l.yaml,1,any_of[0],Severe symptomatic TGCT with functional limitation not amenable to surgery,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_thyroid_anaplastic_1l.yaml,1,any_of[0],BRAF V600E mutation confirmed (IHC VE1 or sequencing),SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,braf_v600e_mutation
+algo_thyroid_papillary_1l.yaml,1,any_of[0],ECOG 0-2 AND advanced/unresectable/metastatic,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,ecog_status
+algo_tyrer_cuzick_v8_breast.yaml,1,any_of[0],Tyrer-Cuzick v8 lifetime breast cancer risk ≥30% (NICE high-risk threshold),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_tyrer_cuzick_v8_breast.yaml,2,any_of[0],Tyrer-Cuzick v8 lifetime breast cancer risk ≥20% (ACS/NCCN MRI-eligibility threshold),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_tyrer_cuzick_v8_breast.yaml,3,any_of[0],Tyrer-Cuzick v8 10-year breast cancer risk ≥3% (NCCN BRSK chemoprevention-discussion threshold),SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_tyrer_cuzick_v8_breast.yaml,4,any_of[0],Tyrer-Cuzick v8 BRCA1/2 carrier probability ≥10%,SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_urothelial_metastatic_1l.yaml,2,all_of[0],"Cisplatin-eligible: CrCl ≥60 mL/min, ECOG PS 0-1, no significant hearing loss, no neuropathy Grade ≥2, no HF NYHA III/IV",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_urothelial_metastatic_2l.yaml,1,any_of[0],No available clinical trial OR patient declines trial enrollment,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_urothelial_metastatic_2l.yaml,2,any_of[0],ECOG PS 0-2,SOLE_ANY,HIGH_CONFIDENCE_RENAME,"{finding: ""ecog_status""}",ecog_status
+algo_urothelial_metastatic_2l.yaml,3,all_of[0],FGFR2/3 activating mutation OR FGFR2/FGFR3 gene fusion detected (Therascreen or NGS),SOLE_ALL,NEEDS_NEW_FINDING,,fgfr2_fusion
+algo_urothelial_metastatic_2l.yaml,3,all_of[1],Prior platinum-containing therapy AND prior anti-PD-(L)1 therapy,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_urothelial_metastatic_2l.yaml,4,any_of[0],"Prior 1L regimen contained EV (enfortumab vedotin) — i.e., EV+pembro (EV-302 pathway)",SOLE_ANY,NEEDS_NEW_FINDING,,
+algo_urothelial_metastatic_2l.yaml,5,all_of[0],CrCl ≥30 mL/min,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_urothelial_metastatic_2l.yaml,5,all_of[1],No prior platinum within 6 months (de novo platinum-eligible),SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_urothelial_metastatic_2l.yaml,6,all_of[0],No prior EV-containing therapy,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_urothelial_metastatic_2l.yaml,6,all_of[1],ECOG PS 0-1,SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""ecog_status""}",ecog_status
+algo_urothelial_metastatic_2l.yaml,6,all_of[2],"No severe peripheral neuropathy (Grade ≥2), no uncontrolled DM, no severe ocular disease",SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_vhl_carrier_surveillance_vhl_alliance.yaml,1,all_of[0],Confirmed VHL germline pathogenic / likely-pathogenic (ACMG class 4/5) variant,SOLE_ALL,HIGH_CONFIDENCE_RENAME,"{finding: ""germline_vhl_pathogenic_variant_confirmed""}",germline_vhl_pathogenic_variant_confirmed
+algo_vhl_carrier_surveillance_vhl_alliance.yaml,2,all_of[0],Carrier is age ≥1 — ophthalmologic surveillance entry,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_vhl_carrier_surveillance_vhl_alliance.yaml,3,all_of[0],Dilated fundus exam (ophthalmologist with retinal expertise) q6-12 months in childhood; q1y from adolescence — retinal hemangioblastoma surveillance,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_vhl_carrier_surveillance_vhl_alliance.yaml,3,all_of[1],Audiology q1-2y from age 5 — endolymphatic sac tumor surveillance (hearing loss is sentinel feature),SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_vhl_carrier_surveillance_vhl_alliance.yaml,3,all_of[2],Brain + spinal cord MRI with contrast (gadolinium) q2y from age 11-15 — cerebellar / brainstem / spinal cord hemangioblastoma surveillance; from age 30 q1y or based on growth,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_vhl_carrier_surveillance_vhl_alliance.yaml,4,all_of[0],Plasma OR urinary fractionated metanephrines q1y from age 5 — pheochromocytoma surveillance (bilateral / multifocal pattern typical of VHL); plasma free metanephrines preferred,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_vhl_carrier_surveillance_vhl_alliance.yaml,4,all_of[1],Abdominal MRI with contrast q2y from age 15 — RCC + pancreatic NET / cyst + adrenal pheochromocytoma surveillance; from age 30 alternate q1y MRI / q1y US or maintain q2y MRI,SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_vhl_carrier_surveillance_vhl_alliance.yaml,4,all_of[2],BP measurement q1y (symptomatic pheochromocytoma may present with hypertension),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_vhl_carrier_surveillance_vhl_alliance.yaml,5,all_of[0],RCC surgical threshold: tumor diameter ≥3 cm typically triggers partial nephrectomy / nephron-sparing surgery (delayed surgery for tumors <3 cm preserves renal function across lifetime per VHL Alliance — active surveillance with q6-12 month imaging is acceptable for sub-3-cm tumors),SOLE_ALL,NEEDS_NEW_FINDING,,
+algo_vhl_carrier_surveillance_vhl_alliance.yaml,5,all_of[1],Pheochromocytoma surgical threshold: any functional pheochromocytoma + asymptomatic adrenal lesion >3 cm OR with biochemical elevation,SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_vhl_carrier_surveillance_vhl_alliance.yaml,5,all_of[2],Cascade testing offered to all first-degree relatives at any age (pediatric appropriate — surveillance entry from age 1),SOLE_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_wm_1l.yaml,2,any_of[0],iwWM treatment indication present,SOLE_ANY,NEEDS_CLINICAL_JUDGMENT,,
+algo_wm_2l.yaml,1,any_of[5],Bortezomib-intolerant due to baseline neuropathy AND PI-class still indicated,DEAD,NEEDS_NEW_FINDING,,baseline_neuropathy
+algo_wm_2l.yaml,2,all_of[2],No high atrial fibrillation / cardiac risk precluding BTKi,MIXED_ALL,NEEDS_CLINICAL_JUDGMENT,,
+algo_wm_2l.yaml,3,any_of[0],Chemo-tolerant fixed-duration preference (avoid continuous BTKi),DEAD,NEEDS_CLINICAL_JUDGMENT,,
+algo_wm_2l.yaml,3,any_of[1],Post-cBTKi failure / progression,DEAD,NEEDS_CLINICAL_JUDGMENT,,
+algo_wm_2l.yaml,3,any_of[2],MYD88-WT (BTKi response markedly weaker),DEAD,NEEDS_NEW_FINDING,,

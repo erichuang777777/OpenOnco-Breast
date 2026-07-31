@@ -55,6 +55,7 @@ async def log_action(
 
 PLAN_GENERATE = "plan.generate"
 PLAN_REVISE = "plan.revise"
+PLAN_VIEW = "plan.view"
 ANNOTATION_ADD = "annotation.add"
 DRUG_REQ_CREATE = "drug_req.create"
 DRUG_REQ_SUBMIT = "drug_req.submit"

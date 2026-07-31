@@ -29,6 +29,14 @@ from typing import Optional
 
 CT_BASE = "https://clinicaltrials.gov/api/v2"
 
+# Pagination bounds for `search_trials`. `_MAX_PAGE_SIZE` is a conservative
+# per-request page size (CT.gov v2 documents a much higher ceiling, but this
+# keeps individual requests small and courtesy-friendly under the rate
+# limit). `_MAX_PAGES` bounds total requests for one `search_trials` call
+# so a very large `max_results` can't spiral into unbounded fetching.
+_MAX_PAGE_SIZE = 100
+_MAX_PAGES = 20
+
 # Fields to request for each study (CT.gov v2 FieldPath names)
 _FIELDS = ",".join([
     "NCTId", "BriefTitle", "OfficialTitle", "OverallStatus",
@@ -47,11 +55,19 @@ _FIELDS = ",".join([
     "PrimaryOutcomeMeasure",
 ])
 
-# Map our status shorthand → CT.gov enum values
+# Map our status shorthand → CT.gov enum values. "|" is the v2 API's
+# documented OR-separator for multi-value enum filters (e.g.
+# filter.overallStatus=RECRUITING|ACTIVE_NOT_RECRUITING).
+# "open" mirrors `engine.experimental_options._OPEN_STATUSES` exactly —
+# keeping the two in lock-step means the API-side filter and the
+# downstream client-side re-check select the same set, instead of the
+# API silently discarding ACTIVE_NOT_RECRUITING / ENROLLING_BY_INVITATION
+# before the client-side filter ever sees them.
 _STATUS_MAP = {
     "recruiting":    "RECRUITING",
     "active":        "ACTIVE_NOT_RECRUITING",
     "completed":     "COMPLETED",
+    "open":          "RECRUITING|ACTIVE_NOT_RECRUITING|ENROLLING_BY_INVITATION",
     "all":           None,  # no filter
 }
 
@@ -85,17 +101,30 @@ def _get(url: str, timeout: int = 15) -> Optional[dict]:
 def search_trials(
     condition: str,
     intervention: str = "",
+    term: str = "",
     status: str = "recruiting",
     phase: str = "",
     max_results: int = 10,
 ) -> list:
     """
-    Search ClinicalTrials.gov for studies matching condition + intervention.
+    Search ClinicalTrials.gov for studies matching condition + intervention/term.
 
     Args:
         condition:    Cancer type / disease query (e.g., "oropharyngeal cancer")
-        intervention: Drug or treatment name (e.g., "pembrolizumab")
-        status:       "recruiting" | "active" | "completed" | "all"
+        intervention: Drug or treatment name (e.g., "pembrolizumab") — maps to
+                      `query.intr`, CT.gov's dedicated intervention-name field.
+        term:         Free-text keyword query (e.g., "EGFR mutation") — maps to
+                      `query.term`, CT.gov's general Essie-syntax search field
+                      that reaches title/summary/eligibility text. Use this for
+                      biomarkers or other non-intervention keywords; passing a
+                      biomarker through `intervention` mismatches the field
+                      CT.gov actually searches (drug/device names) and silently
+                      narrows results.
+        status:       "recruiting" | "active" | "completed" | "open" | "all"
+                      ("open" = RECRUITING + ACTIVE_NOT_RECRUITING +
+                      ENROLLING_BY_INVITATION — matches what callers that
+                      re-filter client-side, e.g. `experimental_options.py`,
+                      actually keep.)
         phase:        "1" | "2" | "3" | "" (all phases)
         max_results:  Max studies to return
 
@@ -105,11 +134,12 @@ def search_trials(
     params: dict = {
         "query.cond":  condition,
         "fields":      _FIELDS,
-        "pageSize":    str(min(max_results, 25)),
         "format":      "json",
     }
     if intervention:
         params["query.intr"] = intervention
+    if term:
+        params["query.term"] = term
 
     status_enum = _STATUS_MAP.get(status.lower())
     if status_enum:
@@ -119,14 +149,38 @@ def search_trials(
     # we filter client-side from results instead.
     _requested_phase = _PHASE_MAP.get(phase.lower().replace(" ", ""))
 
-    url = f"{CT_BASE}/studies?" + urllib.parse.urlencode(params)
-    data = _get(url)
-    if not data:
-        return []
+    # Paginate via CT.gov v2's `nextPageToken` until `max_results` raw
+    # studies are collected (previously capped at a single 25-record page
+    # regardless of `max_results` — a common cancer type/biomarker easily
+    # has 100+ open trials, so most were never reachable). `_MAX_PAGE_SIZE`
+    # is a conservative per-page size; `_MAX_PAGES` bounds worst-case
+    # request count for a pathologically large `max_results`.
+    studies: list[dict] = []
+    page_token: Optional[str] = None
+    for _ in range(_MAX_PAGES):
+        if len(studies) >= max_results:
+            break
+        page_params = dict(params)
+        page_params["pageSize"] = str(min(max_results - len(studies), _MAX_PAGE_SIZE))
+        if page_token:
+            page_params["pageToken"] = page_token
+        url = f"{CT_BASE}/studies?" + urllib.parse.urlencode(page_params)
+        data = _get(url)
+        if not data:
+            break
+        page_studies = data.get("studies", [])
+        if not page_studies:
+            break
+        studies.extend(page_studies)
+        page_token = data.get("nextPageToken")
+        if not page_token:
+            break
 
-    studies = data.get("studies", [])
-    parsed = [_parse_study(s) for s in studies]
-    # Client-side phase filter — CT.gov returns e.g. "PHASE2 / PHASE3"
+    parsed = [_parse_study(s) for s in studies[:max_results]]
+    # Client-side phase filter — CT.gov returns e.g. "PHASE2 / PHASE3".
+    # Applied after pagination, so a narrow phase filter can still return
+    # fewer than `max_results` — same tradeoff as before this change,
+    # just no longer additionally capped at one 25-record page.
     if _requested_phase:
         parsed = [s for s in parsed if _requested_phase in s.get("phase", "").upper()]
     return parsed
@@ -263,6 +317,12 @@ def _parse_study(raw: dict) -> dict:
         "primary_outcomes":   primary_outcomes,
         "eligibility_summary": elig_summary,
         "age_range":          f"{min_age}–{max_age}" if (min_age or max_age) else "",
+        # Raw min/max age strings (e.g. "18 Years", "N/A") alongside the
+        # display-formatted `age_range` above. Consumed by
+        # `engine.trial_outlook._detect_age_sex_screen` for a per-patient
+        # age/sex eligibility screen.
+        "min_age":            min_age or None,
+        "max_age":            max_age or None,
         "sex":                sex,
         "sponsor":            sponsor,
         "countries":          [c for c in countries if c],
@@ -487,7 +547,8 @@ class CtgovQuery:
     single-trial fetch by NCT ID (mode='get')."""
 
     mode: Literal["search", "get"] = "search"
-    terms: str = ""
+    terms: str = ""       # condition/disease query (-> search_trials `condition`)
+    keyword: str = ""     # general keyword, e.g. a biomarker (-> `term`)
     nct_id: Optional[str] = None
     status: Optional[str] = None
     phase: Optional[str] = None
@@ -515,8 +576,9 @@ class CtgovClient(BaseSourceClient[CtgovQuery, dict]):
         return (
             search_trials(
                 query.terms,
-                status=query.status,
-                phase=query.phase,
+                term=query.keyword,
+                status=query.status or "recruiting",
+                phase=query.phase or "",
                 max_results=query.max_results,
             ),
             self.api_version,
