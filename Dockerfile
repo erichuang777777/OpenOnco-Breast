@@ -35,6 +35,7 @@ RUN pip install --no-cache-dir \
         pywebpush \
         pyyaml \
         anthropic \
+        reportlab \
     && pip install --no-cache-dir -e "."
 
 # Copy source

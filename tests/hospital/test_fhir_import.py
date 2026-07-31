@@ -162,6 +162,61 @@ async def test_fhir_import_upserts_existing(client: AsyncClient):
 
 
 @pytest.mark.asyncio
+async def test_fhir_import_rejects_update_from_other_care_team(client: AsyncClient):
+    """A second HCP must not be able to overwrite another team's patient.
+
+    Without an ownership check this endpoint is an IDOR: knowing an MRN is
+    enough to rewrite name, sex, birth year, diagnosis summary and FHIR id,
+    bypassing the check PATCH /patients/{mrn} enforces.
+    """
+    resource = {
+        "resourceType": "Patient",
+        "id": "int-003",
+        "identifier": [{"value": "MRN-INT-003"}],
+        "name": [{"use": "official", "text": "林原"}],
+        "gender": "female",
+        "birthDate": "1980",
+    }
+    created = await client.post(
+        "/api/v1/fhir/Patient/$import", json={"resource": resource}, headers=_hdr(sub="owner-001")
+    )
+    assert created.json()["action"] == "created"
+
+    # A different HCP, not on the care team, tries to overwrite the record.
+    tampered = {**resource, "name": [{"use": "official", "text": "假名"}], "gender": "male"}
+    resp = await client.post(
+        "/api/v1/fhir/Patient/$import", json={"resource": tampered}, headers=_hdr(sub="intruder-001")
+    )
+    assert resp.status_code == 403
+    assert resp.json()["detail"]["error"] == "NOT_ON_CARE_TEAM"
+
+    # And the record must be untouched.
+    check = await client.get("/api/v1/patients/MRN-INT-003", headers=_hdr(sub="owner-001"))
+    assert check.status_code == 200
+    assert check.json()["masked_name"] == "林●"
+    assert check.json()["sex"] == "F"
+
+
+@pytest.mark.asyncio
+async def test_fhir_import_allows_update_by_owner(client: AsyncClient):
+    """The primary doctor keeps being able to update their own patient."""
+    resource = {
+        "resourceType": "Patient",
+        "id": "int-004",
+        "identifier": [{"value": "MRN-INT-004"}],
+        "name": [{"use": "official", "text": "陳明"}],
+        "gender": "male",
+        "birthDate": "1975",
+    }
+    await client.post("/api/v1/fhir/Patient/$import", json={"resource": resource}, headers=_hdr(sub="owner-002"))
+    again = await client.post(
+        "/api/v1/fhir/Patient/$import", json={"resource": resource}, headers=_hdr(sub="owner-002")
+    )
+    assert again.status_code == 200
+    assert again.json()["action"] == "updated"
+
+
+@pytest.mark.asyncio
 async def test_fhir_import_rejects_wrong_resource_type(client: AsyncClient):
     resp = await client.post(
         "/api/v1/fhir/Patient/$import",

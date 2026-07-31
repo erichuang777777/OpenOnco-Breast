@@ -237,6 +237,17 @@ export function PatientDetailPage() {
   const [note, setNote] = useState('')
   const [oncoLoading, setOncoLoading] = useState(false)
   const [showMtdPicker, setShowMtdPicker] = useState(false)
+
+  // Real plan id from the patient's most recent `onco_query_initiated` event.
+  const planId = (() => {
+    for (let i = timeline.length - 1; i >= 0; i--) {
+      const raw = timeline[i]
+      if (raw.event_type !== 'onco_query_initiated' || !raw.body_json) continue
+      const body = typeof raw.body_json === 'string' ? JSON.parse(raw.body_json) : raw.body_json
+      if (body && typeof body.plan_id === 'string') return body.plan_id
+    }
+    return null
+  })()
   const [mtdSessions, setMtdSessions] = useState<MtdSessionResponse[]>([])
   const [consultFormTrigger, setConsultFormTrigger] = useState(0)
   const { show: showToast, ToastContainer } = useToast()
@@ -435,10 +446,15 @@ export function PatientDetailPage() {
         </div>
       </div>
 
-      {/* Plan actions row */}
-      {patient.his_synced_at && (
+      {/* Plan actions row. The plan id comes from the patient's
+          `onco_query_initiated` timeline event — the engine issues ids like
+          PLAN-MRN-123-V1 and revisions bump the version, so deriving one from
+          the MRN produced a link that 404s whenever a plan actually exists.
+          Gated on having a real id rather than on his_synced_at, which says
+          nothing about whether a plan was ever generated. */}
+      {planId && (
         <div style={{ marginTop: '1rem', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-          <PlanPdfButton planId={`plan-${mrn!.toLowerCase()}`} />
+          <PlanPdfButton planId={planId} />
         </div>
       )}
       <ToastContainer />

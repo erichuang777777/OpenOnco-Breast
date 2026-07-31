@@ -209,6 +209,34 @@ async def fhir_patient_import(
 
     existing = await db.scalar(select(Patient).where(Patient.mrn == mrn))
     if existing:
+        # Ownership check BEFORE the write, mirroring PATCH /patients/{mrn}.
+        # Without it this endpoint is an IDOR: any HCP who knows an MRN could
+        # overwrite another care team's patient record — name, sex, birth year,
+        # diagnosis summary and FHIR id — through the import path, bypassing
+        # the check the normal update endpoint enforces.
+        care_team_row = await db.scalar(
+            select(CareTeamMember).where(
+                CareTeamMember.patient_mrn == mrn,
+                CareTeamMember.user_id == user["sub"],
+                CareTeamMember.active.is_(True),
+            )
+        )
+        is_own = existing.primary_doctor_id == user["sub"] or care_team_row is not None
+        if not is_own:
+            await audit_service.log_action(
+                db, user_id=user["sub"],
+                action=audit_service.PATIENT_CROSS_ACCESS,
+                resource_type="patient", resource_id=mrn,
+                mrn=mrn,
+            )
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail={
+                    "error": "NOT_ON_CARE_TEAM",
+                    "message": "Only the primary doctor or a care-team member may update this patient.",
+                },
+            )
+
         # Update mutable fields; preserve what's already set if new value is None
         if mapped["masked_name"]:
             existing.masked_name = mapped["masked_name"]
