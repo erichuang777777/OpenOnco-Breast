@@ -169,3 +169,36 @@ class TestDecisionGaps:
             assert "field" in gap
             assert "tier" in gap
             assert "rationale" in gap
+
+
+class TestPlanPersistence:
+    @pytest.mark.asyncio
+    async def test_plan_persisted_and_retrievable(self, client, hcp_headers, sample_patient):
+        body = _make_breast_patient()
+        body["patient_mrn"] = sample_patient.mrn
+        with patch(
+            "hospital.decision.services.plan_service.generate_plan",
+            return_value=_mock_plan_result("PLAN-PERSIST-1"),
+        ):
+            post = await client.post("/api/v1/plan", json=body, headers=hcp_headers)
+        assert post.status_code == 200
+
+        # Round-trip: the plan is now retrievable by id.
+        got = await client.get("/api/v1/plan/PLAN-PERSIST-1", headers=hcp_headers)
+        assert got.status_code == 200
+        data = got.json()
+        assert data["plan_id"] == "PLAN-PERSIST-1"
+        assert data["disease_id"] == "DIS-BREAST"
+        assert data["algorithm_id"] == "ALGO-BREAST-1L"
+        assert len(data["tracks"]) >= 1
+
+    @pytest.mark.asyncio
+    async def test_get_unknown_plan_returns_404(self, client, hcp_headers):
+        resp = await client.get("/api/v1/plan/PLAN-NOPE", headers=hcp_headers)
+        assert resp.status_code == 404
+        assert resp.json()["detail"]["error"] == "PLAN_NOT_FOUND"
+
+    @pytest.mark.asyncio
+    async def test_get_plan_requires_auth(self, client):
+        resp = await client.get("/api/v1/plan/PLAN-X")
+        assert resp.status_code == 401

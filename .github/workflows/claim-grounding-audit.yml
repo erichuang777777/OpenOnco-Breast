@@ -9,10 +9,21 @@ name: KB claim-grounding audit
 # Manual workflow_dispatch supports an opt-in semantic grounding pass
 # (calls the Claude API; consumes ~$5-15 per full run).
 #
-# When the report changes, the workflow opens a small PR to refresh
-# `docs/kb-claim-grounding-report.md` + `.json`. We mirror the
-# civic-monthly-refresh.yml pattern (same peter-evans action, same
-# label conventions) for operator familiarity.
+# When the report changes, the workflow commits the refreshed
+# `docs/kb-claim-grounding-report.md` + `.json` straight back to master.
+# We mirror the daily-site-refresh.yml pattern (regenerate → diff →
+# commit) rather than opening a PR: the report is a generated audit
+# artifact under docs/, not clinical content under
+# knowledge_base/hosted/content/, so CHARTER §6.1 two-reviewer signoff
+# does not apply. The audit is a measurement, not a gate — no clinical
+# decision is made here.
+#
+# History: this step used peter-evans/create-pull-request until
+# 2026-07-30. Every scheduled run failed at PR creation with "GitHub
+# Actions is not permitted to create or approve pull requests" (repo
+# setting Settings → Actions → General → Workflow permissions), after
+# having already pushed a `kb-claim-grounding-refresh-<run_id>` branch —
+# so the job went red weekly and leaked one orphan branch per run.
 
 on:
   schedule:
@@ -27,9 +38,14 @@ on:
         description: "Cap entities checked (smoke runs); leave blank for full audit"
         required: false
 
+# Only one audit at a time — prevents a manual trigger racing the
+# scheduled run for the push to master.
+concurrency:
+  group: claim-grounding-audit
+  cancel-in-progress: false
+
 permissions:
-  contents: write
-  pull-requests: write
+  contents: write  # need push back to master
 
 jobs:
   audit:
@@ -38,6 +54,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/setup-python@v5
         with:
@@ -79,24 +96,34 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Open refresh PR
+      - name: Commit and push refreshed report
         if: steps.diff.outputs.changed == 'true'
-        uses: peter-evans/create-pull-request@v6
-        with:
-          branch: kb-claim-grounding-refresh-${{ github.run_id }}
-          title: "chore(kb): claim-grounding audit refresh"
-          add-paths: |
-            docs/kb-claim-grounding-report.md
-            docs/kb-claim-grounding-report.json
-          commit-message: "chore(kb): refresh claim-grounding audit report"
-          body: |
-            Automated refresh of the KB claim-anchor grounding report.
+        run: |
+          git config user.name  "openonco-kb-audit[bot]"
+          git config user.email "kb-audit@openonco.info"
+          git add docs/kb-claim-grounding-report.md docs/kb-claim-grounding-report.json
+          git commit -m "chore(kb): refresh claim-grounding audit report" -m "$(cat <<'EOF'
+          Automated refresh of the KB claim-anchor grounding report.
 
-            See `docs/kb-claim-grounding-report.md` for the human-readable
-            summary and `docs/kb-claim-grounding-report.json` for the
-            structured payload. This is an audit, not a gate — no quality
-            decisions are made here. Tracks Q4 + Q5 of
-            `docs/plans/kb_data_quality_plan_2026-04-29.md`.
-          labels: |
-            kb-quality
-            kb-audit-refresh
+          See docs/kb-claim-grounding-report.md for the human-readable
+          summary and docs/kb-claim-grounding-report.json for the
+          structured payload. This is an audit, not a gate — no quality
+          decisions are made here. Tracks Q4 + Q5 of
+          docs/plans/kb_data_quality_plan_2026-04-29.md.
+
+          Triggered by .github/workflows/claim-grounding-audit.yml
+          EOF
+          )"
+          # master may have moved (daily-site-refresh also pushes docs/).
+          # Rebase onto it rather than failing the run.
+          git pull --rebase origin master
+          git push origin HEAD:master
+
+      - name: Summary
+        if: always()
+        run: |
+          if [ "${{ steps.diff.outputs.changed }}" = "true" ]; then
+            echo "✓ Claim-grounding report refreshed and pushed to master."
+          else
+            echo "✓ No changes — report already in sync with KB."
+          fi

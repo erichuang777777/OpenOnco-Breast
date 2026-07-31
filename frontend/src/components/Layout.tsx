@@ -10,16 +10,18 @@ interface NavItem {
   testId: string
 }
 
-// `/guidelines` and `/audit` arrived on master while this branch was
-// replacing NavBar with the sidebar. They kept their nav entries in the
-// old NavBar, so they are carried over here — without them the merged
-// app would still route to both pages but offer no way to reach them.
+// `/guidelines`, `/audit` and `/review` arrived on master while this
+// branch was replacing NavBar with the sidebar. They kept their nav
+// entries in the old NavBar, so they are carried over here — without
+// them the merged app would still route to those pages but offer no way
+// to reach them.
 const NAV_ITEMS: NavItem[] = [
   { path: '/patients',   label: '患者列表', icon: '👥', roles: ['clinic_hcp', 'tumor_board_hcp', 'kb_admin', 'auditor'], testId: 'nav-patients' },
   { path: '/board',      label: '腫瘤委員會', icon: '🏥', roles: ['tumor_board_hcp', 'kb_admin'], testId: 'nav-board' },
   { path: '/guidelines', label: '指引流程圖', icon: '🗺️', testId: 'nav-guidelines' },
   { path: '/admin',      label: '管理後台', icon: '⚙️', roles: ['kb_admin', 'auditor'], testId: 'nav-admin' },
   { path: '/audit',      label: '驗證稽核', icon: '🔍', roles: ['kb_admin', 'auditor'], testId: 'nav-audit' },
+  { path: '/review',     label: '臨床簽核', icon: '✍️', roles: ['kb_admin', 'auditor'], testId: 'nav-review' },
 ]
 
 export function Layout({ children }: { children: React.ReactNode }) {

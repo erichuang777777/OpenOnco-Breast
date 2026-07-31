@@ -12,12 +12,15 @@ import { DrugReqPage } from './pages/DrugReqPage'
 import { AdminPage } from './pages/AdminPage'
 import { GuidelinesPage } from './pages/GuidelinesPage'
 import { AuditPage } from './pages/AuditPage'
+import { ClinicalReviewPage } from './pages/ClinicalReviewPage'
+import { DisclaimerBanner } from './components/DisclaimerBanner'
 
 function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
         <Layout>
+          <DisclaimerBanner />
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/pending" element={<PendingPage />} />
@@ -57,6 +60,10 @@ function App() {
             <Route
               path="/audit"
               element={<AuthGuard allowedRoles={['kb_admin', 'auditor']}><AuditPage /></AuthGuard>}
+            />
+            <Route
+              path="/review"
+              element={<AuthGuard allowedRoles={['kb_admin', 'auditor']}><ClinicalReviewPage /></AuthGuard>}
             />
             <Route path="*" element={<Navigate to="/patients" replace />} />
           </Routes>

@@ -2,6 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import type { GuidelineGraph, TraceEntry } from '../api/types'
 import { GuidelineFlowchart } from '../components/GuidelineFlowchart'
+import { DisclaimerBanner } from '../components/DisclaimerBanner'
 
 // Merged view. Two implementations of this page existed in parallel —
 // ClinicPage (decision-path flowchart, extracted-field grid, track
@@ -130,6 +131,8 @@ export function ClinicPage() {
       <h1 data-testid="clinic-header">
         OpenOnco 分析 — <span data-testid="clinic-mrn">{mrn}</span>
       </h1>
+
+      <DisclaimerBanner variant="prominent" />
 
       {loading && <div data-testid="clinic-loading">分析中…</div>}
 
