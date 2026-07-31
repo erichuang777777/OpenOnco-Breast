@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-06-02T11:47:26Z",
-  "kb_root": "/home/runner/work/OpenOnco/OpenOnco/knowledge_base/hosted/content",
+  "generated_at_utc": "2026-07-31T10:05:05Z",
+  "kb_root": "/home/runner/work/OpenOnco-Breast/OpenOnco-Breast/knowledge_base/hosted/content",
   "entity_counts": {
     "diseases": 92,
     "drugs": 298,
     "regimens": 384,
     "indications": 664,
-    "biomarkers": 242,
+    "biomarkers": 257,
     "biomarker_actionability": 475,
     "contraindications": 21,
     "redflags": 638,
@@ -23,9 +23,9 @@
     "procedures": 19,
     "radiation_courses": 6
   },
-  "loader_ok": false,
+  "loader_ok": true,
   "loader_error_counts": {
-    "schema_errors": 15,
+    "schema_errors": 0,
     "ref_errors": 0,
     "contract_errors": 0,
     "contract_warnings": 305

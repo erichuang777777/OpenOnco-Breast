@@ -21,7 +21,7 @@ tests; this file just validates the scorer's contract.
 
 from __future__ import annotations
 
-from knowledge_base.engine.trial_outlook import score_trial
+from knowledge_base.engine.trial_outlook import detect_age_sex_screen, score_trial
 from knowledge_base.schemas.experimental_option import (
     ExperimentalTrial,
     TrialOutlook,
@@ -175,6 +175,68 @@ def test_single_country_flagged():
 def test_two_countries_not_flagged():
     out = score_trial(_study(countries=["US", "DE"]), biomarker_term=None)
     assert "single_country" not in out.design_flags
+
+
+# ── 2b. Age / sex screen ─────────────────────────────────────────────────
+
+
+def test_age_sex_screen_unknown_when_no_patient_data():
+    screen, note = detect_age_sex_screen("18 Years", "N/A", "ALL", None, None)
+    assert screen == "unknown"
+    assert note is None
+
+
+def test_age_sex_screen_unknown_when_trial_has_no_constraint():
+    screen, note = detect_age_sex_screen(None, None, "ALL", 58, "female")
+    assert screen == "unknown"
+    assert note is None
+
+
+def test_age_sex_screen_mismatch_below_minimum_age():
+    screen, note = detect_age_sex_screen("18 Years", "N/A", "ALL", 12, None)
+    assert screen == "mismatch"
+    assert "below the trial minimum" in note
+
+
+def test_age_sex_screen_mismatch_above_maximum_age():
+    screen, note = detect_age_sex_screen(None, "65 Years", "ALL", 80, None)
+    assert screen == "mismatch"
+    assert "above the trial maximum" in note
+
+
+def test_age_sex_screen_match_within_age_range():
+    screen, note = detect_age_sex_screen("18 Years", "75 Years", "ALL", 58, None)
+    assert screen == "match"
+    assert "within the trial's stated range" in note
+
+
+def test_age_sex_screen_mismatch_on_sex_restriction():
+    screen, note = detect_age_sex_screen(None, None, "MALE", None, "female")
+    assert screen == "mismatch"
+    assert "restricted to MALE" in note
+
+
+def test_age_sex_screen_match_on_sex_restriction():
+    screen, note = detect_age_sex_screen(None, None, "FEMALE", None, "female")
+    assert screen == "match"
+
+
+def test_age_sex_screen_sex_all_is_not_a_restriction():
+    screen, note = detect_age_sex_screen(None, None, "ALL", None, "male")
+    assert screen == "unknown"
+    assert note is None
+
+
+def test_age_sex_screen_parses_months():
+    # A trial open from 6 months of age — a 58-year-old adult clears it.
+    screen, _ = detect_age_sex_screen("6 Months", "N/A", "ALL", 58, None)
+    assert screen == "match"
+
+
+def test_age_sex_screen_age_mismatch_takes_priority_when_sex_matches():
+    screen, note = detect_age_sex_screen("18 Years", "N/A", "FEMALE", 12, "female")
+    assert screen == "mismatch"
+    assert "below the trial minimum" in note
 
 
 # ── 3. Combined — last_scored, notes alignment ──────────────────────────

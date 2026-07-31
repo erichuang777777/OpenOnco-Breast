@@ -13,9 +13,10 @@ import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 
-_log = logging.getLogger(__name__)
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from hospital.config import get_settings
+from hospital.db.models import Plan as PlanRow
 from hospital.decision.services.onco_engine_client import engine as _engine
 from hospital.decision.schemas.plan import (
     GapItem,
@@ -24,6 +25,8 @@ from hospital.decision.schemas.plan import (
     PlanResponse,
     TrackResponse,
 )
+
+_log = logging.getLogger(__name__)
 
 
 def generate_plan(patient_dict: dict, *, kb_root) -> object:
@@ -114,6 +117,7 @@ def generate_plan_response(
         mdt=mdt_summary,
         gaps=gaps,
         warnings=result.warnings or [],
+        trace=list(getattr(result, "trace", None) or []),
     )
 
 
@@ -184,3 +188,66 @@ def plan_result_to_json(result) -> str:
     if hasattr(result, "to_dict"):
         return json.dumps(result.to_dict(), default=str, ensure_ascii=False)
     return json.dumps({}, ensure_ascii=False)
+
+
+async def persist_plan(
+    db: AsyncSession,
+    response: PlanResponse,
+    *,
+    mrn: str,
+    created_by: str,
+    supersedes: str | None = None,
+) -> None:
+    """Persist a generated `PlanResponse` so `GET /plan/{plan_id}` can
+    retrieve it later — previously `POST /plan` and `POST /plan/{id}/revise`
+    generated a plan_id but never stored anything, so reloading a saved
+    plan was impossible (frontend called a GET endpoint that didn't exist).
+
+    Stores the already-built API response shape (not the raw engine
+    `PlanResult`) so a GET round-trips it exactly via
+    `PlanResponse.model_validate_json`.
+
+    Does not commit — per this codebase's convention (see
+    `audit_service.log_action`), the caller's `get_db` request-scoped
+    session commits once at the end of the request, so this write lands
+    in the same transaction as the accompanying audit-log entry.
+    """
+    version = 1
+    prior: PlanRow | None = None
+    if supersedes:
+        prior = await db.get(PlanRow, supersedes)
+        if prior is not None:
+            version = prior.version + 1
+
+    db.add(
+        PlanRow(
+            plan_id=response.plan_id,
+            mrn=mrn,
+            version=version,
+            plan_json=response.model_dump_json(),
+            created_by=created_by,
+            supersedes=supersedes,
+            status="active",
+        )
+    )
+    if prior is not None:
+        # Flush the new row before pointing `prior.superseded_by` at it —
+        # that column is a FK to `plans.plan_id`, so updating it first
+        # (autoflush ordering isn't guaranteed across unrelated ORM
+        # objects) raises a FOREIGN KEY constraint failure under SQLite's
+        # FK enforcement.
+        await db.flush()
+        prior.superseded_by = response.plan_id
+        prior.status = "superseded"
+
+
+async def get_stored_plan(db: AsyncSession, plan_id: str) -> tuple[PlanResponse, str] | None:
+    """Look up a persisted plan by ID. Returns `(response, mrn)`, or None
+    if it was never generated (or the ID is unknown) — the caller maps
+    that to a 404. `mrn` is returned alongside the response (rather than
+    folded into it) because `PlanResponse` itself carries no MRN field;
+    the caller needs it only for audit-logging the view."""
+    row = await db.get(PlanRow, plan_id)
+    if row is None:
+        return None
+    return PlanResponse.model_validate_json(row.plan_json), row.mrn

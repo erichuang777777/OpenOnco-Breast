@@ -1,5 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import type { GuidelineGraph, TraceEntry } from '../api/types'
+import { GuidelineFlowchart } from '../components/GuidelineFlowchart'
 
 interface TrackData {
   track_id: string
@@ -15,9 +17,11 @@ interface TrackData {
 interface PlanData {
   plan_id: string
   disease_id: string
+  algorithm_id?: string
   tracks: TrackData[]
   gaps: Array<{ field: string; tier: number; rationale: string }>
   warnings: string[]
+  trace?: TraceEntry[]
 }
 
 export function ClinicPage() {
@@ -25,7 +29,8 @@ export function ClinicPage() {
   const navigate = useNavigate()
   const [plan, setPlan] = useState<PlanData | null>(null)
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+  const [graph, setGraph] = useState<GuidelineGraph | null>(null)
+  const [showFlowchart, setShowFlowchart] = useState(true)
 
   useEffect(() => {
     if (!mrn) return
@@ -37,43 +42,36 @@ export function ClinicPage() {
       credentials: 'include',
     }).catch(() => {})
 
-    setLoading(true)
-
+    // Load plan data from the patient's timeline
     fetch(`/api/v1/patients/${mrn}/timeline`, { credentials: 'include' })
       .then((r) => r.ok ? r.json() : [])
-      .then(async (events: Array<{ event_type: string; body_json: unknown }>) => {
+      .then((events: Array<{ event_type: string; body_json: unknown }>) => {
         const planEvent = events.find((e) => e.event_type === 'onco_query_initiated')
         if (planEvent && planEvent.body_json) {
           const body = typeof planEvent.body_json === 'string'
             ? JSON.parse(planEvent.body_json)
             : planEvent.body_json
           if (body.plan_id) {
-            const r = await fetch(`/api/v1/plan/${body.plan_id}`, { credentials: 'include' })
-            if (r.ok) return r.json()
+            return fetch(`/api/v1/plan/${body.plan_id}`, { credentials: 'include' })
+              .then((r) => r.ok ? r.json() : null)
           }
         }
-        // No existing plan — generate one now
-        const genResp = await fetch('/api/v1/plan', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          credentials: 'include',
-          body: JSON.stringify({
-            patient_mrn: mrn,
-            include_gaps: true,
-            patient: {
-              patient_id: mrn,
-              disease: { id: 'DIS-BREAST' },
-              line_of_therapy: 1,
-            },
-          }),
-        })
-        if (!genResp.ok) throw new Error(`HTTP ${genResp.status}`)
-        return genResp.json()
+        return null
       })
       .then((data) => { if (data) setPlan(data) })
-      .catch((e: Error) => setError(e.message))
+      .catch(() => {})
       .finally(() => setLoading(false))
   }, [mrn])
+
+  // Fetch the guideline flowchart for the plan's algorithm so the clinician
+  // can see *why* this recommendation was reached (decision path overlay).
+  useEffect(() => {
+    if (!plan?.algorithm_id) { setGraph(null); return }
+    fetch(`/api/v1/guidelines/${encodeURIComponent(plan.algorithm_id)}`, { credentials: 'include' })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => setGraph(data))
+      .catch(() => setGraph(null))
+  }, [plan?.algorithm_id])
 
   const selectTrack = (trackId: string) => {
     fetch(`/api/v1/patients/${mrn}/track-selection`, {
@@ -94,13 +92,6 @@ export function ClinicPage() {
       </h1>
 
       {loading && <div data-testid="clinic-loading">分析中…</div>}
-
-      {error && (
-        <div data-testid="clinic-error" style={{ padding: '1rem', color: '#dc2626', background: '#fef2f2', borderRadius: 4 }}>
-          無法載入分析結果：{error}
-          <button onClick={() => window.location.reload()} style={{ marginLeft: '1rem' }}>重試</button>
-        </div>
-      )}
 
       {plan && plan.gaps.length > 0 && (
         <div data-testid="gap-banner" style={{ background: '#fef3c7', padding: '0.5rem', marginBottom: '1rem' }}>
@@ -143,6 +134,29 @@ export function ClinicPage() {
           </div>
         ))}
       </div>
+
+      {graph && (
+        <div data-testid="decision-path-section" style={{ marginTop: '1.5rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+            <h2 style={{ margin: 0, fontSize: '1.1rem' }}>決策路徑 · Decision path</h2>
+            <button
+              data-testid="toggle-flowchart-btn"
+              onClick={() => setShowFlowchart((v) => !v)}
+              style={{ marginLeft: 'auto', cursor: 'pointer' }}
+            >
+              {showFlowchart ? '隱藏 Hide' : '顯示 Show'}
+            </button>
+          </div>
+          <p style={{ margin: '0 0 0.75rem', fontSize: '0.82rem', color: '#6b7280' }}>
+            根據此病人資料，規則引擎走過的指引路徑（高亮）。引擎為決策者，本圖僅呈現其依據。
+          </p>
+          {showFlowchart && (
+            <div style={{ border: '1px solid #e5e7eb', borderRadius: 6, padding: '1rem' }}>
+              <GuidelineFlowchart graph={graph} trace={plan?.trace} />
+            </div>
+          )}
+        </div>
+      )}
     </div>
   )
 }

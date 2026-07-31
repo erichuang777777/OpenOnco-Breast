@@ -46,6 +46,12 @@ DesignFlag = Literal[
     "single_country",         # site presence in only one country
 ]
 
+AgeSexScreen = Literal[
+    "match",    # patient's age + sex satisfy the trial's structured criteria
+    "mismatch", # patient's age or sex falls outside the trial's criteria
+    "unknown",  # no patient demographics given, or trial has no constraint
+]
+
 
 class TrialOutlook(Base):
     """Structured per-trial signals for the experimental-options render layer.
@@ -54,9 +60,20 @@ class TrialOutlook(Base):
     are intentionally minimal — every flag must be derivable from the
     parsed ctgov study dict alone (no KB lookup, no probabilistic
     modeling). Mechanism-precedent scoring is a follow-up.
+
+    `age_sex_screen` is deliberately NOT computed inside `score_trial` —
+    unlike the other fields it depends on the *patient*, not just the
+    trial, and `ExperimentalOption` bundles are cached per (disease,
+    biomarker, line) signature and shared across patients. Baking a
+    patient-specific verdict into a cached object would leak one
+    patient's screen result onto the next patient who hits the same
+    cache entry. It is computed as a post-cache overlay by
+    `engine.experimental_options._apply_patient_screen` instead.
+    Defaults to "unknown" so older cached trials still load.
     """
 
     biomarker_stratification: BiomarkerStratification
+    age_sex_screen: AgeSexScreen = "unknown"
     design_flags: list[DesignFlag] = Field(default_factory=list)
     notes: list[str] = Field(default_factory=list)  # one short string per flag
     last_scored: Optional[str] = None  # ISO date
@@ -95,6 +112,14 @@ class ExperimentalTrial(Base):
     summary: Optional[str] = None
     inclusion_summary: Optional[str] = None
     exclusion_summary: Optional[str] = None
+    # Raw structured eligibility fields from ctgov (e.g. "18 Years", "N/A",
+    # "ALL"/"MALE"/"FEMALE"). Patient-agnostic facts about the trial, so
+    # safe to cache — feeds the per-request `age_sex_screen` overlay in
+    # `engine.experimental_options._apply_patient_screen` without needing
+    # a fresh ctgov fetch per patient.
+    min_age: Optional[str] = None
+    max_age: Optional[str] = None
+    eligible_sex: Optional[str] = None
     countries: list[str] = Field(default_factory=list)  # ISO-2 codes from ctgov
     sites_ua: list[str] = Field(default_factory=list)   # UA city names if any
     # Structured per-UA-site detail (facility, city, state, status).

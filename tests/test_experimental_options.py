@@ -39,6 +39,9 @@ def _study(
     eligibility: str = "",
     phase: str = "PHASE2",
     sponsor: str = "Acme Onc",
+    min_age: str | None = None,
+    max_age: str | None = None,
+    sex: str | None = None,
 ) -> dict:
     """Mimics one entry returned by ctgov_client.search_trials."""
     return {
@@ -50,6 +53,9 @@ def _study(
         "summary": "Brief summary.",
         "eligibility_criteria": eligibility,
         "countries": countries or [],
+        "min_age": min_age,
+        "max_age": max_age,
+        "sex": sex,
     }
 
 
@@ -219,6 +225,170 @@ def test_query_signature_is_stable():
     c = TrialQuery(disease_term="NSCLC", biomarker_term="EGFR", line_of_therapy=2)
     assert a.signature() == b.signature()
     assert a.signature() != c.signature()
+
+
+def test_multi_biomarker_signature_ignores_term_order():
+    a = TrialQuery(disease_term="NSCLC", biomarker_terms=("EGFR", "TP53"))
+    b = TrialQuery(disease_term="NSCLC", biomarker_terms=("TP53", "EGFR"))
+    assert a.signature() == b.signature()
+
+
+# ── 6b. Query correctness — biomarker as term, not intervention ─────────
+
+
+def test_search_fn_receives_biomarker_as_term_not_intervention():
+    """A biomarker phrase must flow into ctgov's `query.term` field, not
+    `query.intr` (which is for drug/device names) — passing it as
+    `intervention` silently narrows/misdirects the ctgov query."""
+    seen_calls: list[dict] = []
+
+    def _stub(**kwargs):
+        seen_calls.append(kwargs)
+        return [_study("NCT-1")]
+
+    enumerate_experimental_options(
+        disease_id="DIS-NSCLC",
+        disease_term="NSCLC",
+        biomarker_profile="EGFR mutation",
+        search_fn=_stub,
+    )
+    assert len(seen_calls) == 1
+    assert seen_calls[0].get("term") == "EGFR mutation"
+    assert "intervention" not in seen_calls[0]
+
+
+def test_search_fn_receives_open_status_not_recruiting_only():
+    """`status="recruiting"` would ask ctgov to pre-filter to RECRUITING
+    only, silently starving the ACTIVE_NOT_RECRUITING / ENROLLING_BY_
+    INVITATION branch of `_OPEN_STATUSES` downstream."""
+    seen_calls: list[dict] = []
+
+    def _stub(**kwargs):
+        seen_calls.append(kwargs)
+        return []
+
+    enumerate_experimental_options(
+        disease_id="DIS-NSCLC", disease_term="NSCLC", search_fn=_stub,
+    )
+    assert seen_calls[0]["status"] == "open"
+
+
+# ── 6c. Multi-biomarker fan-out + merge ──────────────────────────────────
+
+
+def test_multi_biomarker_queries_are_merged_and_deduped():
+    """Two positive biomarkers → two searches; a trial returned by both
+    surfaces once, and a trial unique to the second search still shows up."""
+    calls: list[dict] = []
+
+    def _stub_search(**kwargs):
+        calls.append(kwargs)
+        if kwargs["term"] == "EGFR mutation":
+            return [_study("NCT-SHARED", eligibility="Inclusion: EGFR mutation required")]
+        return [
+            _study("NCT-SHARED", eligibility="Inclusion: EGFR mutation required"),
+            _study("NCT-TP53-ONLY", eligibility="Inclusion: TP53 mutation required"),
+        ]
+
+    opt = enumerate_experimental_options(
+        disease_id="DIS-NSCLC",
+        disease_term="NSCLC",
+        biomarker_profiles=["EGFR mutation", "TP53 mutation"],
+        search_fn=_stub_search,
+    )
+    assert len(calls) == 2
+    assert {c["term"] for c in calls} == {"EGFR mutation", "TP53 mutation"}
+    by_id = {t.nct_id: t for t in opt.trials}
+    assert set(by_id) == {"NCT-SHARED", "NCT-TP53-ONLY"}
+    # Merged trial keeps a real "enriched" stratification, not overwritten
+    # by a weaker pass.
+    assert by_id["NCT-SHARED"].outlook.biomarker_stratification == "enriched"
+    assert opt.molecular_subtype == "EGFR mutation, TP53 mutation"
+
+
+def test_biomarker_profiles_bounded_to_five_terms():
+    calls: list[dict] = []
+
+    def _stub_search(**kwargs):
+        calls.append(kwargs)
+        return []
+
+    enumerate_experimental_options(
+        disease_id="DIS-X",
+        disease_term="x cancer",
+        biomarker_profiles=[f"BM{i}" for i in range(8)],
+        search_fn=_stub_search,
+    )
+    assert len(calls) == 5
+
+
+# ── 6d. Patient age/sex overlay ──────────────────────────────────────────
+
+
+def test_age_sex_overlay_not_applied_without_patient_demographics():
+    """No patient_age/patient_sex passed → cache identity is preserved
+    (no unnecessary copy) and age_sex_screen stays 'unknown'."""
+
+    def _stub(**_):
+        return [_study("NCT-1")]
+
+    o1 = enumerate_experimental_options(
+        disease_id="DIS-X", disease_term="x cancer", search_fn=_stub,
+    )
+    o2 = enumerate_experimental_options(
+        disease_id="DIS-X", disease_term="x cancer", search_fn=_stub,
+    )
+    assert o1 is o2
+    assert o1.trials[0].outlook.age_sex_screen == "unknown"
+
+
+def test_age_sex_overlay_applied_per_patient_without_mutating_cache():
+    """Two different patients hitting the same cached (disease,
+    biomarker, line) signature must each see their own age_sex_screen
+    verdict — the cached, patient-agnostic bundle itself must not be
+    mutated by either call."""
+    calls = {"n": 0}
+
+    def _stub(**_):
+        calls["n"] += 1
+        return [_study("NCT-1", min_age="18 Years", max_age="65 Years", sex="ALL")]
+
+    young = enumerate_experimental_options(
+        disease_id="DIS-Y",
+        disease_term="y cancer",
+        search_fn=_stub,
+        patient_age=30,
+    )
+    old = enumerate_experimental_options(
+        disease_id="DIS-Y",
+        disease_term="y cancer",
+        search_fn=_stub,
+        patient_age=80,
+    )
+    assert calls["n"] == 1, "second call must be a cache hit, not a re-fetch"
+    assert young.trials[0].outlook.age_sex_screen == "match"
+    assert old.trials[0].outlook.age_sex_screen == "mismatch"
+    assert "above the trial maximum" in old.trials[0].outlook.notes[-1]
+
+    # The underlying cached bundle itself must remain patient-agnostic.
+    fresh = enumerate_experimental_options(
+        disease_id="DIS-Y", disease_term="y cancer", search_fn=_stub,
+    )
+    assert calls["n"] == 1
+    assert fresh.trials[0].outlook.age_sex_screen == "unknown"
+
+
+def test_age_sex_overlay_sex_mismatch():
+    def _stub(**_):
+        return [_study("NCT-1", sex="MALE")]
+
+    opt = enumerate_experimental_options(
+        disease_id="DIS-Z",
+        disease_term="z cancer",
+        search_fn=_stub,
+        patient_sex="female",
+    )
+    assert opt.trials[0].outlook.age_sex_screen == "mismatch"
 
 
 # ── 7. generate_plan() integration ──────────────────────────────────────

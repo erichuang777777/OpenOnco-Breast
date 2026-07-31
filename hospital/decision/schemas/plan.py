@@ -81,6 +81,9 @@ class PlanResponse(BaseModel):
     mdt: Optional[MdtRoleSummary] = None
     gaps: list[GapItem] = []
     warnings: list[str] = []
+    # Engine decision-tree trace (per-step records). Render-only; lets the
+    # frontend highlight the path walked through the guideline flowchart.
+    trace: list[dict[str, Any]] = []
 
 
 class GapsResponse(BaseModel):

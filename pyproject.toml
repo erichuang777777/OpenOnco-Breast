@@ -44,6 +44,21 @@ dev = [
     "anyio>=4.0",
     "ruff>=0.5",
 ]
+# Hospital Edition backend (`hospital/`) — FastAPI + async SQLAlchemy.
+# Undeclared until now: DEVELOPMENT_PLAN.md's "Gate rule" (`pytest
+# tests/hospital/`) could not run in a clean environment because none of
+# these were ever added to a requirements/pyproject file anywhere in the repo.
+hospital = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+    "sqlalchemy>=2.0",
+    "aiosqlite>=0.20",
+    "asyncpg>=0.29",
+    "alembic>=1.13",
+    "python-jose[cryptography]>=3.3",
+    "pydantic-settings>=2.2",
+    "slowapi>=0.1.9",
+]
 
 [build-system]
 requires = ["setuptools>=68"]

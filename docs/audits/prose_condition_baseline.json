@@ -1,0 +1,725 @@
+{
+  "_comment": "Per-file condition:/prose-condition counts, committed as a CI ratchet baseline by scripts/check_prose_conditions.py. The existing backlog is grandfathered (fixing it needs CHARTER \u00a76.1 clinical sign-off) \u2014 this file only prevents the count from growing further. Regenerate with --write-baseline only after a reviewed content change actually reduces a file's prose count; never to silence a real regression.",
+  "counts": {
+    "algo_advsm_1l.yaml": {
+      "prose": 5,
+      "total": 5
+    },
+    "algo_aitl_1l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_aitl_2l.yaml": {
+      "prose": 7,
+      "total": 8
+    },
+    "algo_alcl_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_alcl_2l.yaml": {
+      "prose": 5,
+      "total": 6
+    },
+    "algo_aml_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_aml_2l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_amsterdam_ii_lynch.yaml": {
+      "prose": 6,
+      "total": 6
+    },
+    "algo_anal_scc_1l.yaml": {
+      "prose": 9,
+      "total": 9
+    },
+    "algo_apl_1l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_apl_2l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_atll_1l.yaml": {
+      "prose": 2,
+      "total": 2
+    },
+    "algo_atll_2l.yaml": {
+      "prose": 2,
+      "total": 2
+    },
+    "algo_b_all_1l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_b_all_2l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_bcc_1l.yaml": {
+      "prose": 2,
+      "total": 2
+    },
+    "algo_bcsc_breast.yaml": {
+      "prose": 9,
+      "total": 9
+    },
+    "algo_boadicea_v6_breast_ovarian.yaml": {
+      "prose": 5,
+      "total": 5
+    },
+    "algo_brcapro.yaml": {
+      "prose": 3,
+      "total": 3
+    },
+    "algo_breast_1l.yaml": {
+      "prose": 5,
+      "total": 5
+    },
+    "algo_breast_her2_pos_2l.yaml": {
+      "prose": 3,
+      "total": 3
+    },
+    "algo_breast_hr_pos_2l.yaml": {
+      "prose": 3,
+      "total": 3
+    },
+    "algo_breast_tnbc_2l.yaml": {
+      "prose": 2,
+      "total": 2
+    },
+    "algo_burkitt_1l.yaml": {
+      "prose": 2,
+      "total": 2
+    },
+    "algo_burkitt_2l.yaml": {
+      "prose": 6,
+      "total": 6
+    },
+    "algo_carrier_cascade_lynch.yaml": {
+      "prose": 6,
+      "total": 6
+    },
+    "algo_cascade_family_testing.yaml": {
+      "prose": 8,
+      "total": 8
+    },
+    "algo_cascade_lfs_carrier_family_testing.yaml": {
+      "prose": 8,
+      "total": 8
+    },
+    "algo_cervical_locally_advanced_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_cervical_metastatic_1l.yaml": {
+      "prose": 9,
+      "total": 9
+    },
+    "algo_chl_1l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_chl_2l.yaml": {
+      "prose": 7,
+      "total": 7
+    },
+    "algo_cholangio_1l.yaml": {
+      "prose": 3,
+      "total": 3
+    },
+    "algo_cholangio_2l.yaml": {
+      "prose": 4,
+      "total": 4
+    },
+    "algo_chompret_2015_lfs.yaml": {
+      "prose": 9,
+      "total": 9
+    },
+    "algo_chondrosarcoma_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_classic_fap_criteria.yaml": {
+      "prose": 10,
+      "total": 10
+    },
+    "algo_classic_lfs_criteria.yaml": {
+      "prose": 4,
+      "total": 4
+    },
+    "algo_cll_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_cll_2l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_cml_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_cml_2l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_cowden_carrier_surveillance.yaml": {
+      "prose": 10,
+      "total": 10
+    },
+    "algo_crc_adjuvant.yaml": {
+      "prose": 12,
+      "total": 12
+    },
+    "algo_crc_metastatic_1l.yaml": {
+      "prose": 4,
+      "total": 4
+    },
+    "algo_crc_metastatic_2l.yaml": {
+      "prose": 12,
+      "total": 12
+    },
+    "algo_crc_metastatic_3l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_dlbcl_1l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_dlbcl_2l.yaml": {
+      "prose": 5,
+      "total": 6
+    },
+    "algo_dlbcl_3l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_eatl_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_endometrial_2l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_endometrial_advanced_1l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_epithelioid_sarcoma_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_esoph_2l.yaml": {
+      "prose": 6,
+      "total": 6
+    },
+    "algo_esoph_definitive_1l.yaml": {
+      "prose": 3,
+      "total": 3
+    },
+    "algo_esoph_metastatic_1l.yaml": {
+      "prose": 15,
+      "total": 23
+    },
+    "algo_esoph_resectable_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_esophageal_adjuvant_1l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_et_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_et_2l.yaml": {
+      "prose": 5,
+      "total": 5
+    },
+    "algo_fl_1l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_fl_2l.yaml": {
+      "prose": 5,
+      "total": 6
+    },
+    "algo_gail_breast.yaml": {
+      "prose": 7,
+      "total": 7
+    },
+    "algo_gastric_2l.yaml": {
+      "prose": 6,
+      "total": 6
+    },
+    "algo_gastric_metastatic_1l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_gastric_resectable_periop.yaml": {
+      "prose": 2,
+      "total": 2
+    },
+    "algo_gbm_newly_diagnosed_1l.yaml": {
+      "prose": 3,
+      "total": 3
+    },
+    "algo_gbm_recurrent.yaml": {
+      "prose": 6,
+      "total": 6
+    },
+    "algo_gct_metastatic_1l.yaml": {
+      "prose": 8,
+      "total": 8
+    },
+    "algo_gct_salvage_2l.yaml": {
+      "prose": 9,
+      "total": 9
+    },
+    "algo_gi_net_advanced_1l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_gist_1l.yaml": {
+      "prose": 5,
+      "total": 5
+    },
+    "algo_gist_2l.yaml": {
+      "prose": 2,
+      "total": 3
+    },
+    "algo_glioma_lgg_1l.yaml": {
+      "prose": 3,
+      "total": 3
+    },
+    "algo_granulosa_cell_1l.yaml": {
+      "prose": 2,
+      "total": 2
+    },
+    "algo_hcc_systemic_1l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_hcc_systemic_2l.yaml": {
+      "prose": 3,
+      "total": 3
+    },
+    "algo_hcl_1l.yaml": {
+      "prose": 2,
+      "total": 2
+    },
+    "algo_hcl_2l.yaml": {
+      "prose": 4,
+      "total": 4
+    },
+    "algo_hcv_mzl_1l.yaml": {
+      "prose": 2,
+      "total": 2
+    },
+    "algo_hcv_mzl_2l.yaml": {
+      "prose": 3,
+      "total": 3
+    },
+    "algo_hereditary_melanoma_surveillance.yaml": {
+      "prose": 11,
+      "total": 11
+    },
+    "algo_hereditary_prostate_cancer_risk.yaml": {
+      "prose": 15,
+      "total": 15
+    },
+    "algo_hgbl_dh_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_hgbl_dh_2l.yaml": {
+      "prose": 8,
+      "total": 8
+    },
+    "algo_hnscc_rm_1l.yaml": {
+      "prose": 2,
+      "total": 3
+    },
+    "algo_hnscc_rm_2l.yaml": {
+      "prose": 3,
+      "total": 3
+    },
+    "algo_hstcl_1l.yaml": {
+      "prose": 2,
+      "total": 2
+    },
+    "algo_ifs_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_imt_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_integrated_risk_from_multiple_rfs.yaml": {
+      "prose": 5,
+      "total": 5
+    },
+    "algo_jmml_1l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_lam_1l.yaml": {
+      "prose": 3,
+      "total": 3
+    },
+    "algo_manchester_brca.yaml": {
+      "prose": 6,
+      "total": 6
+    },
+    "algo_mcl_1l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_mcl_2l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_mcl_3l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_mds_hr_1l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_mds_hr_2l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_mds_lr_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_mds_lr_2l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_melanoma_adjuvant_1l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_melanoma_metastatic_1l.yaml": {
+      "prose": 0,
+      "total": 1
+    },
+    "algo_melanoma_metastatic_2l.yaml": {
+      "prose": 2,
+      "total": 2
+    },
+    "algo_men1_carrier_surveillance.yaml": {
+      "prose": 7,
+      "total": 7
+    },
+    "algo_men2_carrier_prophylactic_thyroidectomy_timing.yaml": {
+      "prose": 6,
+      "total": 6
+    },
+    "algo_meningioma_1l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_mesothelioma_1l.yaml": {
+      "prose": 6,
+      "total": 7
+    },
+    "algo_mesothelioma_2l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_mf_sezary_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_mf_sezary_2l.yaml": {
+      "prose": 4,
+      "total": 4
+    },
+    "algo_mm_1l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_mm_2l.yaml": {
+      "prose": 8,
+      "total": 8
+    },
+    "algo_mm_3l.yaml": {
+      "prose": 4,
+      "total": 4
+    },
+    "algo_mmrpro.yaml": {
+      "prose": 3,
+      "total": 3
+    },
+    "algo_mpnst_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_mtc_1l.yaml": {
+      "prose": 2,
+      "total": 2
+    },
+    "algo_multi_syndrome_pedigree_triage.yaml": {
+      "prose": 11,
+      "total": 11
+    },
+    "algo_nccn_pancreatic_caps_surveillance.yaml": {
+      "prose": 14,
+      "total": 14
+    },
+    "algo_nk_t_nasal_1l.yaml": {
+      "prose": 2,
+      "total": 2
+    },
+    "algo_nk_t_nasal_2l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_nlpbl_1l.yaml": {
+      "prose": 3,
+      "total": 3
+    },
+    "algo_nlpbl_2l.yaml": {
+      "prose": 5,
+      "total": 5
+    },
+    "algo_nmzl_1l.yaml": {
+      "prose": 3,
+      "total": 3
+    },
+    "algo_nmzl_2l.yaml": {
+      "prose": 3,
+      "total": 3
+    },
+    "algo_nsclc_adjuvant.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_nsclc_metastatic_1l.yaml": {
+      "prose": 2,
+      "total": 2
+    },
+    "algo_nsclc_metastatic_2l.yaml": {
+      "prose": 4,
+      "total": 4
+    },
+    "algo_nsclc_resectable_periop.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_ovarian_2l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_ovarian_advanced_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_pcnsl_1l.yaml": {
+      "prose": 3,
+      "total": 4
+    },
+    "algo_pcnsl_2l.yaml": {
+      "prose": 7,
+      "total": 8
+    },
+    "algo_pdac_lapc.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_pdac_metastatic_1l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_pdac_metastatic_2l.yaml": {
+      "prose": 2,
+      "total": 2
+    },
+    "algo_pdac_resectable_periop.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_pediatric_cancer_predisposition_triage.yaml": {
+      "prose": 22,
+      "total": 22
+    },
+    "algo_peutz_jeghers_carrier_surveillance.yaml": {
+      "prose": 11,
+      "total": 11
+    },
+    "algo_pmbcl_1l.yaml": {
+      "prose": 2,
+      "total": 2
+    },
+    "algo_pmbcl_2l.yaml": {
+      "prose": 7,
+      "total": 7
+    },
+    "algo_pmf_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_pmf_2l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_pnet_metastatic_1l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_premm5_lynch.yaml": {
+      "prose": 3,
+      "total": 3
+    },
+    "algo_prevention_risk_triage_overview.yaml": {
+      "prose": 5,
+      "total": 5
+    },
+    "algo_prostate_mcrpc_1l.yaml": {
+      "prose": 6,
+      "total": 6
+    },
+    "algo_prostate_mcrpc_2l.yaml": {
+      "prose": 12,
+      "total": 12
+    },
+    "algo_prostate_mhspc_1l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_ptcl_1l.yaml": {
+      "prose": 0,
+      "total": 0
+    },
+    "algo_ptcl_2l.yaml": {
+      "prose": 4,
+      "total": 4
+    },
+    "algo_ptld_1l.yaml": {
+      "prose": 6,
+      "total": 6
+    },
+    "algo_ptld_2l.yaml": {
+      "prose": 1,
+      "total": 2
+    },
+    "algo_pv_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_pv_2l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_rcc_metastatic_1l.yaml": {
+      "prose": 8,
+      "total": 8
+    },
+    "algo_rcc_metastatic_2l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_rectal_locally_advanced_tnt.yaml": {
+      "prose": 2,
+      "total": 2
+    },
+    "algo_revised_bethesda_lynch.yaml": {
+      "prose": 13,
+      "total": 13
+    },
+    "algo_salivary_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_sclc_1l.yaml": {
+      "prose": 4,
+      "total": 4
+    },
+    "algo_sclc_2l.yaml": {
+      "prose": 5,
+      "total": 5
+    },
+    "algo_smzl_1l.yaml": {
+      "prose": 2,
+      "total": 2
+    },
+    "algo_smzl_2l.yaml": {
+      "prose": 3,
+      "total": 3
+    },
+    "algo_sts_advanced_1l.yaml": {
+      "prose": 14,
+      "total": 14
+    },
+    "algo_sts_advanced_2l.yaml": {
+      "prose": 6,
+      "total": 6
+    },
+    "algo_t_all_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_t_all_2l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_t_pll_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_t_pll_2l.yaml": {
+      "prose": 2,
+      "total": 2
+    },
+    "algo_tgct_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_thyroid_anaplastic_1l.yaml": {
+      "prose": 1,
+      "total": 3
+    },
+    "algo_thyroid_papillary_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_tyrer_cuzick_v8_breast.yaml": {
+      "prose": 4,
+      "total": 4
+    },
+    "algo_urothelial_metastatic_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_urothelial_metastatic_2l.yaml": {
+      "prose": 10,
+      "total": 10
+    },
+    "algo_vhl_carrier_surveillance_vhl_alliance.yaml": {
+      "prose": 11,
+      "total": 11
+    },
+    "algo_wm_1l.yaml": {
+      "prose": 1,
+      "total": 1
+    },
+    "algo_wm_2l.yaml": {
+      "prose": 5,
+      "total": 5
+    }
+  }
+}

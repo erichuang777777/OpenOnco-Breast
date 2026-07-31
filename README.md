@@ -32,7 +32,7 @@ OpenOnco automates the chore work. The clinician gets a **drafted plan with ever
 - **Plan revisions / supersedes loop.** Immutable audit chain; refuses illegal downgrades.
 - **ESCAT + CIViC actionability.** Biomarker × disease × drug evidence tiers surfaced as render badges. CIViC (CC0) is the primary actionability source.
 - **HTML render layer.** Single-file A4-printable HTML per Plan / Diagnostic Brief / Revision Note. Patient-mode and HCP-mode. UA / EN.
-- **In-browser Pyodide demo.** The actual Python engine runs in the browser — no backend, no patient data leaves the device.
+- **In-browser Pyodide demo.** The actual Python engine runs in the browser — no backend, no patient data leaves the device. This is a showcase property of the `try.html` demo specifically, not a system-wide guarantee: Hospital Edition and the CQL/ELM decision engine ([ADR-0005](docs/adr/0005-production-decision-engine-runs-server-side.md)) run server-side, prioritizing decision-logic correctness over client-only execution.
 
 ---
 
