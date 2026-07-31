@@ -39,14 +39,32 @@ def _gh(args: list[str]) -> Any:
     return result.stdout
 
 
+def _gh_error(exc: Exception) -> str:
+    """One-line reason from a failed `gh` call, for log annotations."""
+    stderr = getattr(exc, "stderr", None)
+    return (stderr or str(exc)).strip().replace("\n", " ")
+
+
 def _list_assigned_chunk_issues() -> list[dict]:
-    issues = _gh([
-        "issue", "list",
-        "--label", "chunk-task",
-        "--state", "open",
-        "--json", "number,title,assignees,labels,updatedAt",
-        "--limit", "100",
-    ])
+    """Assigned open chunk-task issues, or [] if the board isn't set up yet.
+
+    `gh issue list --label chunk-task` exits non-zero when the label does
+    not exist in the repo (rather than returning an empty list). No chunk
+    board means no claims to sweep, so treat it as "nothing to do" — but
+    surface the reason as a workflow annotation so a genuine auth/API
+    failure doesn't pass for a quiet day.
+    """
+    try:
+        issues = _gh([
+            "issue", "list",
+            "--label", "chunk-task",
+            "--state", "open",
+            "--json", "number,title,assignees,labels,updatedAt",
+            "--limit", "100",
+        ])
+    except (subprocess.CalledProcessError, OSError) as exc:
+        print(f"::warning::cannot list chunk-task issues, skipping run: {_gh_error(exc)}")
+        return []
     return [i for i in issues if i.get("assignees")]
 
 

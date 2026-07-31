@@ -413,14 +413,19 @@ def test_audit_script_smoke(tmp_path: Path) -> None:
 
     # Direct in-process call: subprocess wouldn't see our overrides, and
     # we want to verify report files written somewhere we can clean up.
+    # --out-md/--out-json are what keep this smoke run out of the real
+    # docs/ report: a --limit 3 run produces a partial audit, and writing
+    # it to the canonical paths left the committed report looking like a
+    # full audit with a handful of claims in it.
     rc_code = aud.main([
         "--limit", "3", "--no-cache",
+        "--out-md", str(md_target),
+        "--out-json", str(json_target),
     ])
     assert rc_code == 0
-    # The script writes to the canonical docs/ paths; ensure they exist
-    assert aud.REPORT_MD.is_file()
-    assert aud.REPORT_JSON.is_file()
-    payload = json.loads(aud.REPORT_JSON.read_text(encoding="utf-8"))
+    assert md_target.is_file()
+    assert json_target.is_file()
+    payload = json.loads(json_target.read_text(encoding="utf-8"))
     assert "metrics" in payload
     assert payload["metrics"]["total_claims"] >= 1
 

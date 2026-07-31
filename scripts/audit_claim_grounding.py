@@ -509,6 +509,14 @@ def main(argv: Optional[list[str]] = None) -> int:
         "--kb-root", type=Path, default=KB_CONTENT,
         help="Override KB content root (default: knowledge_base/hosted/content)",
     )
+    parser.add_argument(
+        "--out-md", type=Path, default=REPORT_MD,
+        help=f"Markdown report path (default: {REPORT_MD})",
+    )
+    parser.add_argument(
+        "--out-json", type=Path, default=REPORT_JSON,
+        help=f"JSON report path (default: {REPORT_JSON})",
+    )
     args = parser.parse_args(argv)
 
     if args.semantic and not os.environ.get("ANTHROPIC_API_KEY"):
@@ -537,6 +545,8 @@ def main(argv: Optional[list[str]] = None) -> int:
         write_reports(
             metrics, claims, grounding,
             semantic_enabled=args.semantic,
+            md_path=args.out_md,
+            json_path=args.out_json,
         )
     except OSError as e:
         print(f"ERROR: writing report failed: {e}", file=sys.stderr)
@@ -561,7 +571,7 @@ def main(argv: Optional[list[str]] = None) -> int:
             f"{metrics.semantic_ungrounded} ungrounded, "
             f"{metrics.semantic_skipped} skipped"
         )
-    print(f"Reports written: {REPORT_MD} + {REPORT_JSON}")
+    print(f"Reports written: {args.out_md} + {args.out_json}")
     return 0
 
 
