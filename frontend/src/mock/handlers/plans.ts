@@ -75,7 +75,10 @@ export const planHandlers = [
       return HttpResponse.json(MOCK_PLANS[planId])
     }
 
-    // Support PLAN-{MRN}-V1 convention from PatientOncologyPage
+    // Support the PLAN-{MRN}-V1 convention. The page that derived plan ids
+    // this way is gone (merged into ClinicPage, which resolves the real
+    // plan_id from the timeline), but the fallback keeps mock-driven demo
+    // flows working for any caller that still guesses the id.
     const planV1Match = /^PLAN-(.+)-V1$/.exec(planId)
     if (planV1Match) {
       const mrn = planV1Match[1]

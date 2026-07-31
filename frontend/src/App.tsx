@@ -26,13 +26,10 @@ function App() {
               path="/patients"
               element={<AuthGuard><PatientListPage /></AuthGuard>}
             />
-            {/* Two implementations of this view exist after the merge:
-                ClinicPage (master — guideline flowchart, extracted-field
-                grid, covered by frontend/tests/clinic.test.tsx) and
-                PatientOncologyPage (this branch — track cards, PDF export,
-                no tests). Keeping master's wiring so the merge causes no
-                regression; which one should own the route is a product
-                decision, not a merge-conflict resolution. */}
+            {/* ClinicPage is the union of the two implementations this
+                merge brought together — master's flowchart + extracted-field
+                grid + track selection, plus the branch's track cards,
+                decision-gap detail, warnings and PDF export. */}
             <Route
               path="/patients/:mrn/onco"
               element={<AuthGuard><ClinicPage /></AuthGuard>}

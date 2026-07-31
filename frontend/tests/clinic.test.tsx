@@ -55,6 +55,44 @@ const PLAN_WITH_GAPS = {
   ],
 }
 
+// Covers the half of this page that came from the former
+// PatientOncologyPage — track-card detail, decision-gap detail, warnings
+// and PDF export. That component shipped with no tests of its own.
+const PLAN_RICH = {
+  ...PLAN_RESPONSE,
+  algorithm_id: 'ALGO-BRCA-1L',
+  tracks: [
+    {
+      track_id: 'T2',
+      label: 'EC-THP 1L',
+      label_en: 'EC-THP first line',
+      is_default: false,
+      indication_id: 'ind-2',
+      evidence_level: '2A',
+      nccn_category: '2A',
+      regimen_name: 'EC-THP',
+      median_os_months: 38,
+      selection_reason: '毒性較高，保留為積極選項',
+    },
+    {
+      track_id: 'T1',
+      label: 'THP 1L',
+      label_en: 'THP first line',
+      is_default: true,
+      indication_id: 'ind-1',
+      evidence_level: '1A',
+      nccn_category: '1',
+      regimen_name: 'THP',
+      median_os_months: 57,
+      selection_reason: '一線標準治療',
+    },
+  ],
+  gaps: [
+    { field: 'ER', tier: 1, rationale: '需要ER狀態', recommended_test: 'TEST-ER-IHC' },
+  ],
+  warnings: ['KB 快照已逾 30 天', '缺少 PD-L1 檢驗'],
+}
+
 function renderClinic(mrn = 'MRN-C1') {
   return render(
     <MemoryRouter initialEntries={[`/patients/${mrn}/onco`]}>
@@ -190,5 +228,81 @@ describe('ClinicPage', () => {
     renderClinic()
     await waitFor(() => expect(screen.queryByTestId('clinic-loading')).not.toBeInTheDocument())
     expect(screen.queryByTestId('standard-track')).not.toBeInTheDocument()
+    expect(screen.getByTestId('no-plan')).toBeInTheDocument()
+  })
+
+  // ---- merged-in coverage (formerly PatientOncologyPage, untested) ----
+
+  describe('track card detail', () => {
+    beforeEach(() => {
+      server.use(http.get('/api/v1/plan/:planId', () => HttpResponse.json(PLAN_RICH)))
+    })
+
+    it('test_clinic_default_track_sorted_first', async () => {
+      renderClinic()
+      // PLAN_RICH lists the non-default track first; the default one must
+      // still render as `standard-track`.
+      expect(await screen.findByTestId('standard-track')).toHaveTextContent('THP 1L')
+      expect(screen.getByTestId('aggressive-track')).toHaveTextContent('EC-THP 1L')
+    })
+
+    it('test_clinic_default_track_shows_recommended_badge', async () => {
+      renderClinic()
+      expect(await screen.findByTestId('standard-track')).toHaveTextContent('★ 建議')
+      expect(screen.getByTestId('aggressive-track')).not.toHaveTextContent('★ 建議')
+    })
+
+    it('test_clinic_track_shows_regimen_and_median_os', async () => {
+      renderClinic()
+      const track = await screen.findByTestId('standard-track')
+      expect(track).toHaveTextContent('THP')
+      expect(track).toHaveTextContent('57')
+    })
+
+    it('test_clinic_track_shows_selection_reason', async () => {
+      renderClinic()
+      expect(await screen.findByTestId('standard-track')).toHaveTextContent('一線標準治療')
+    })
+
+    it('test_clinic_pdf_button_links_to_real_plan_id', async () => {
+      renderClinic()
+      const btn = await screen.findByTestId('plan-pdf-btn')
+      // Must use the plan_id resolved from the timeline, not a
+      // PLAN-{MRN}-V1 guess.
+      expect(btn).toHaveAttribute('href', '/api/v1/plan/plan-1/pdf')
+    })
+  })
+
+  describe('decision gaps and warnings', () => {
+    beforeEach(() => {
+      server.use(http.get('/api/v1/plan/:planId', () => HttpResponse.json(PLAN_RICH)))
+    })
+
+    it('test_clinic_gaps_section_lists_recommended_test', async () => {
+      renderClinic()
+      const section = await screen.findByTestId('gaps-section')
+      expect(section).toHaveTextContent('ER')
+      expect(section).toHaveTextContent('TEST-ER-IHC')
+    })
+
+    it('test_clinic_warnings_collapsed_by_default', async () => {
+      renderClinic()
+      expect(await screen.findByTestId('warnings-section')).toHaveTextContent('警告 (2)')
+      expect(screen.queryByText('KB 快照已逾 30 天')).not.toBeInTheDocument()
+    })
+
+    it('test_clinic_warnings_expand_on_click', async () => {
+      renderClinic()
+      fireEvent.click(await screen.findByTestId('toggle-warnings-btn'))
+      expect(await screen.findByText('KB 快照已逾 30 天')).toBeInTheDocument()
+      expect(screen.getByText('缺少 PD-L1 檢驗')).toBeInTheDocument()
+    })
+
+    it('test_clinic_no_warnings_section_when_none', async () => {
+      server.use(http.get('/api/v1/plan/:planId', () => HttpResponse.json(PLAN_RESPONSE)))
+      renderClinic()
+      await screen.findByTestId('standard-track')
+      expect(screen.queryByTestId('warnings-section')).not.toBeInTheDocument()
+    })
   })
 })
