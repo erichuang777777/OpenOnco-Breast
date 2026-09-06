@@ -319,23 +319,16 @@ async def test_patient_patch_invalid_status_422(
 
 
 @pytest.mark.asyncio
-async def test_patient_patch_non_team_member_allowed(
+async def test_patient_patch_non_team_member_forbidden(
     client: AsyncClient, sample_patient: Patient, db_session: AsyncSession
 ):
-    # unrelated HCP can still patch (EMR-parity) — writes cross_access audit
+    # Unauthorized HCP cannot write to a patient they are not assigned to.
     resp = await client.patch(
         f"/api/v1/patients/{sample_patient.mrn}",
         json={"disease_summary": "cross edit"},
         headers=_hdr("user-outsider"),
     )
-    assert resp.status_code == 200
-    logs = list(await db_session.scalars(
-        select(AuditLog).where(
-            AuditLog.user_id == "user-outsider",
-            AuditLog.action == audit_service.PATIENT_CROSS_ACCESS,
-        )
-    ))
-    assert len(logs) >= 1
+    assert resp.status_code == 403
 
 
 # ── care team ─────────────────────────────────────────────────────────────────

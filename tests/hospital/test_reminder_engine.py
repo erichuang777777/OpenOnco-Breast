@@ -25,7 +25,7 @@ def _hdr(role="clinic_hcp", sub="user-001"):
 
 async def _seed(db: AsyncSession, mrn: str = "REM-P1") -> Patient:
     p = Patient(mrn=mrn, masked_name="R●●", status="active",
-                primary_doctor_id="u1", created_by="u1")
+                primary_doctor_id="user-001", created_by="user-001")
     db.add(p)
     await db.flush()
     return p

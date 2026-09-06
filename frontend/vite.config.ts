@@ -1,6 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
+import { copyFileSync, existsSync } from 'fs'
+
+// Copy MSW service worker to public/ so it can be served at root scope
+const mswSrc = 'node_modules/msw/lib/mockServiceWorker.js'
+if (existsSync(mswSrc)) {
+  try { copyFileSync(mswSrc, 'public/mockServiceWorker.js') } catch {}
+}
 
 export default defineConfig({
   plugins: [

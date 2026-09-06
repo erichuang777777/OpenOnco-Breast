@@ -2,10 +2,13 @@
 
 from __future__ import annotations
 
-from fastapi import APIRouter, Depends, Request, status
+from fastapi import APIRouter, Depends, HTTPException, Request, Response, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from sqlalchemy import func as sa_func, select as sa_select2
+
 from hospital.auth.dependencies import HCP_ROLES, require_role
+from hospital.db.models import Patient as PatientModel, Reminder as ReminderModel, MtdCase as MtdCaseModel
 from hospital.db.session import get_db
 from hospital.decision.schemas.patient import (
     CareTeamMemberCreate,
@@ -24,10 +27,16 @@ router = APIRouter(prefix="/patients", tags=["patients"])
 @router.get("", response_model=list[PatientResponse])
 async def list_patients(
     tab: str = "all",
+    q: str | None = None,
+    limit: int = 50,
+    offset: int = 0,
+    response: Response = None,
     user: dict = Depends(require_role(HCP_ROLES)),
     db: AsyncSession = Depends(get_db),
 ) -> list[PatientResponse]:
-    return await patient_service.list_patients(db, user["sub"], tab=tab)  # type: ignore[arg-type]
+    patients, total = await patient_service.list_patients(db, user["sub"], tab=tab, q=q, limit=limit, offset=offset)  # type: ignore[arg-type]
+    response.headers["X-Total-Count"] = str(total)
+    return patients
 
 
 @router.post("", response_model=PatientResponse, status_code=status.HTTP_201_CREATED)
@@ -46,6 +55,33 @@ async def create_patient(
         ip_address=request.client.host if request.client else None,
     )
     return await patient_service.build_patient_response(db, patient)
+
+
+@router.get("/stats")
+async def get_patient_stats(
+    user: dict = Depends(require_role(HCP_ROLES)),
+    db: AsyncSession = Depends(get_db),
+) -> dict:
+    """Return aggregate counts for the dashboard stat cards."""
+    total = await db.scalar(sa_select2(sa_func.count()).select_from(PatientModel)) or 0
+    urgent = await db.scalar(
+        sa_select2(sa_func.count()).select_from(ReminderModel).where(
+            ReminderModel.status == "active",
+            ReminderModel.urgency.in_(["high", "critical"]),
+        )
+    ) or 0
+    followup = await db.scalar(
+        sa_select2(sa_func.count()).select_from(ReminderModel).where(
+            ReminderModel.status == "active",
+            ReminderModel.reminder_type == "followup_appt",
+        )
+    ) or 0
+    mtd = await db.scalar(
+        sa_select2(sa_func.count(MtdCaseModel.patient_mrn.distinct())).where(
+            MtdCaseModel.status == "pending"
+        )
+    ) or 0
+    return {"total": total, "urgent": urgent, "followup": followup, "mtd": mtd}
 
 
 @router.get("/{mrn}", response_model=PatientResponse)
@@ -76,19 +112,18 @@ async def update_patient(
     user: dict = Depends(require_role(HCP_ROLES)),
     db: AsyncSession = Depends(get_db),
 ) -> PatientResponse:
-    patient = await patient_service.update_patient(db, mrn, body)
+    # Ownership check BEFORE the write — unauthorized mutations are blocked, not just logged.
+    patient = await patient_service.get_patient(db, mrn)
     is_own = (
         patient.primary_doctor_id == user["sub"]
         or await patient_service.is_on_care_team(db, mrn, user["sub"])
     )
     if not is_own:
-        await audit_service.log_action(
-            db, user_id=user["sub"],
-            action=audit_service.PATIENT_CROSS_ACCESS,
-            resource_type="patient", resource_id=mrn,
-            mrn=mrn,
-            diff_summary="patch",
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail={"error": "FORBIDDEN", "message": "Not authorized to update this patient."},
         )
+    patient = await patient_service.update_patient(db, mrn, body)
     return await patient_service.build_patient_response(db, patient)
 
 

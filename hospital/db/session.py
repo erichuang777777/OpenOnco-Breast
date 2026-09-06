@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import sqlite3
 from collections.abc import AsyncGenerator
+from contextlib import asynccontextmanager
 
 from sqlalchemy import event
 from sqlalchemy.ext.asyncio import AsyncEngine, AsyncSession, async_sessionmaker, create_async_engine
@@ -69,6 +70,23 @@ async def create_all_tables() -> None:
 
 async def get_db() -> AsyncGenerator[AsyncSession, None]:
     """FastAPI dependency — yields an async session per request."""
+    factory = get_session_factory()
+    async with factory() as session:
+        try:
+            yield session
+            await session.commit()
+        except Exception:
+            await session.rollback()
+            raise
+
+
+@asynccontextmanager
+async def db_context() -> AsyncGenerator[AsyncSession, None]:
+    """Async context manager for non-FastAPI callers (e.g. startup hooks).
+
+    Unlike `get_db`, this is safe to use with `async with` instead of
+    `async for ... break`, which would bypass the commit/rollback logic.
+    """
     factory = get_session_factory()
     async with factory() as session:
         try:

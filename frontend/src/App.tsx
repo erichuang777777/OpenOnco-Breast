@@ -1,12 +1,13 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import { AuthProvider, useAuth } from './hooks/useAuth'
+import { AuthProvider } from './hooks/useAuth'
 import { AuthGuard } from './components/AuthGuard'
+import { Layout } from './components/Layout'
 import { LoginPage } from './pages/LoginPage'
 import { PendingPage } from './pages/PendingPage'
 import { PatientListPage } from './pages/PatientListPage'
 import { PatientDetailPage } from './pages/PatientDetailPage'
-import { BoardPage } from './pages/BoardPage'
 import { ClinicPage } from './pages/ClinicPage'
+import { BoardPage } from './pages/BoardPage'
 import { DrugReqPage } from './pages/DrugReqPage'
 import { AdminPage } from './pages/AdminPage'
 import { GuidelinesPage } from './pages/GuidelinesPage'
@@ -14,81 +15,59 @@ import { AuditPage } from './pages/AuditPage'
 import { ClinicalReviewPage } from './pages/ClinicalReviewPage'
 import { DisclaimerBanner } from './components/DisclaimerBanner'
 
-function NavBar() {
-  const { user, logout } = useAuth()
-  if (!user) return null
-  return (
-    <nav data-testid="navbar" style={{ padding: '0.5rem 1rem', background: '#1e40af', color: '#fff', display: 'flex', gap: '1rem', alignItems: 'center' }}>
-      <span>OpenOnco</span>
-      {(user.role === 'clinic_hcp' || user.role === 'tumor_board_hcp') && (
-        <a href="/patients" style={{ color: '#fff' }} data-testid="nav-patients">患者列表</a>
-      )}
-      {user.role === 'tumor_board_hcp' && (
-        <a href="/board" style={{ color: '#fff' }} data-testid="nav-board">腫瘤委員會</a>
-      )}
-      <a href="/guidelines" style={{ color: '#fff' }} data-testid="nav-guidelines">指引流程圖</a>
-      {(user.role === 'kb_admin' || user.role === 'auditor') && (
-        <a href="/admin" style={{ color: '#fff' }} data-testid="nav-admin">管理</a>
-      )}
-      {(user.role === 'kb_admin' || user.role === 'auditor') && (
-        <a href="/audit" style={{ color: '#fff' }} data-testid="nav-audit">驗證稽核</a>
-      )}
-      {(user.role === 'kb_admin' || user.role === 'auditor') && (
-        <a href="/review" style={{ color: '#fff' }} data-testid="nav-review">臨床簽核</a>
-      )}
-      <button onClick={logout} data-testid="logout-btn" style={{ marginLeft: 'auto', cursor: 'pointer' }}>登出</button>
-    </nav>
-  )
-}
-
 function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <NavBar />
-        <DisclaimerBanner />
-        <Routes>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/pending" element={<PendingPage />} />
-          <Route path="/" element={<Navigate to="/patients" replace />} />
-          <Route
-            path="/patients"
-            element={<AuthGuard><PatientListPage /></AuthGuard>}
-          />
-          <Route
-            path="/patients/:mrn/onco"
-            element={<AuthGuard><ClinicPage /></AuthGuard>}
-          />
-          <Route
-            path="/patients/:mrn/drug-req"
-            element={<AuthGuard><DrugReqPage /></AuthGuard>}
-          />
-          <Route
-            path="/patients/:mrn"
-            element={<AuthGuard><PatientDetailPage /></AuthGuard>}
-          />
-          <Route
-            path="/board"
-            element={<AuthGuard allowedRoles={['tumor_board_hcp', 'kb_admin']}><BoardPage /></AuthGuard>}
-          />
-          <Route
-            path="/guidelines"
-            element={<AuthGuard><GuidelinesPage /></AuthGuard>}
-          />
-          <Route
-            path="/admin"
-            element={<AuthGuard allowedRoles={['kb_admin', 'auditor']}><AdminPage /></AuthGuard>}
-          />
-          <Route
-            path="/audit"
-            element={<AuthGuard allowedRoles={['kb_admin', 'auditor']}><AuditPage /></AuthGuard>}
-          />
-          <Route
-            path="/review"
-            element={<AuthGuard allowedRoles={['kb_admin', 'auditor']}><ClinicalReviewPage /></AuthGuard>}
-          />
-          <Route path="*" element={<Navigate to="/patients" replace />} />
-        </Routes>
+        <Layout>
+          <DisclaimerBanner />
+          <Routes>
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/pending" element={<PendingPage />} />
+            <Route path="/" element={<Navigate to="/patients" replace />} />
+            <Route
+              path="/patients"
+              element={<AuthGuard><PatientListPage /></AuthGuard>}
+            />
+            {/* ClinicPage is the union of the two implementations this
+                merge brought together — master's flowchart + extracted-field
+                grid + track selection, plus the branch's track cards,
+                decision-gap detail, warnings and PDF export. */}
+            <Route
+              path="/patients/:mrn/onco"
+              element={<AuthGuard><ClinicPage /></AuthGuard>}
+            />
+            <Route
+              path="/patients/:mrn/drug-req"
+              element={<AuthGuard><DrugReqPage /></AuthGuard>}
+            />
+            <Route
+              path="/patients/:mrn"
+              element={<AuthGuard><PatientDetailPage /></AuthGuard>}
+            />
+            <Route
+              path="/board"
+              element={<AuthGuard allowedRoles={['tumor_board_hcp', 'kb_admin']}><BoardPage /></AuthGuard>}
+            />
+            <Route
+              path="/guidelines"
+              element={<AuthGuard><GuidelinesPage /></AuthGuard>}
+            />
+            <Route
+              path="/admin"
+              element={<AuthGuard allowedRoles={['kb_admin', 'auditor']}><AdminPage /></AuthGuard>}
+            />
+            <Route
+              path="/audit"
+              element={<AuthGuard allowedRoles={['kb_admin', 'auditor']}><AuditPage /></AuthGuard>}
+            />
+            <Route
+              path="/review"
+              element={<AuthGuard allowedRoles={['kb_admin', 'auditor']}><ClinicalReviewPage /></AuthGuard>}
+            />
+            <Route path="*" element={<Navigate to="/patients" replace />} />
+          </Routes>
+        </Layout>
       </AuthProvider>
     </BrowserRouter>
   )
