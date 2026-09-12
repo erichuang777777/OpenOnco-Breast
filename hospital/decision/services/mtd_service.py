@@ -122,6 +122,7 @@ async def conclude_case(
             CareTeamMember.patient_mrn == mrn,
             CareTeamMember.user_id == caller_id,
             CareTeamMember.member_role == "care_coordinator",
+            CareTeamMember.active.is_(True),
         )
     )
     if not coordinator:

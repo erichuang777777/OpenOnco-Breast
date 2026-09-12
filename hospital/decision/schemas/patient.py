@@ -54,6 +54,7 @@ class PatientResponse(BaseModel):
     his_synced_at: datetime | None
     active_reminder_count: int
     urgent_reminder_count: int
+    his_sync_status: str = "unknown"  # "ok" | "stale" | "never" | "unknown"
     care_team: list[CareTeamMemberResponse]
     created_at: datetime
     updated_at: datetime

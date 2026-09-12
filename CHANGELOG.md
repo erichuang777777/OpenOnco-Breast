@@ -8,6 +8,58 @@ versioning per CHARTER §5 (KB content cadence).
 
 ## [Unreleased]
 
+---
+
+## [0.1.0] — 2026-06-05
+
+### Hospital Edition — initial release (phases B0–H0)
+
+#### Backend (`hospital/`)
+- Patient registry with care-team, HIS sync badge, pagination + full-text search
+- Timeline API (doctor notes, system events, `onco_query_initiated`)
+- OpenOnco KB integration: `POST /plan`, `GET /plan/{id}`, `/plan/gaps` (two-pass gap finder)
+- Reminder engine: rule-based reminders (drug reapplication, BRCA follow-up, mammography, etc.), acknowledge endpoint, daily scheduler
+- MTD (tumor board) sessions + cases: create, add case, conclude, annotation timeline
+- Consultations: create, messages, close; care-team authorization on read
+- Drug requisition: create from plan track, status PATCH, HTML preview/print
+- HIS webhook: HMAC-SHA256 auth, idempotency key, sync-event ingestion
+- KB admin: status, refresh, crawler-notify webhook
+- Audit log: structured action log for all clinical writes
+- Push notifications: VAPID / Web Push per-user subscription
+- Google OAuth 2.0 + JWT session (HttpOnly cookie)
+- Role-based access: `tumor_board_hcp`, `clinic_hcp`, `kb_admin`, `auditor`, `pending`
+- Rate limiting (slowapi), CORS, body-size limit, security headers
+- Alembic migrations (initial schema v0.1)
+
+#### Frontend (`frontend/`)
+- React 18 + TypeScript PWA (Vite, service worker, offline shell)
+- Patient list: search, tabs (all / follow-up / consulted / MTD / alerts), pagination, HIS badge
+- Patient detail: timeline, reminders (acknowledge), care-team, consultations, MTD button, drug-req link
+- Tumor board (BoardPage): session list, expand-to-plan tracks, conclude, annotation notes, export agenda
+- Drug requisition wizard: async plan load, track select, submit, print preview
+- Clinic page: appointment-based patient workflow
+- Admin page: KB status panel, entity counts, refresh button, user management
+- Auth flow: Google OAuth redirect, pending-state gate
+
+#### Knowledge base
+- CHARTER §8.3 rule engine (`knowledge_base/engine/`): deterministic, version-controlled YAML
+- 78 diseases, 438 biomarker actionability, 173 biomarkers, 383 sources, 251 drugs, 424 indications, 474 redflags, 360 regimens, 140 algorithms
+- CIViC (CC0) as primary actionability source; OncoKB rejected per ToS conflict (see `docs/reviews/`)
+- Schema validation CI (Python 3.12, `scripts/audit_validator.py`)
+
+#### Infrastructure
+- GitHub Actions CI: `validate` (KB schema), `backend` (pytest 282 tests), `frontend` (Vitest + tsc)
+- `Dockerfile` multi-stage (Node 20 frontend build → Python 3.11 backend)
+- `docker-compose.yml` with SQLite (dev) and PostgreSQL profile (prod)
+- `.env.example` with all required variables documented
+
+#### Security fixes (from code review)
+- Consultations and reminders endpoints now gated behind care-team membership
+- Annotation `user_role` derived from JWT, not client body
+- `revise_plan` validates and marks old plan `superseded`; `get_plan` surfaces stale-plan warning
+- `revision_trigger` null guard; gap probe failures now logged instead of silently dropped
+- Drug requisition: fix wrong `name_ua` key for Chinese regimen name field
+
 ### OncoKB integration — Phases 0 (mock) / 1a / 2 / 3a / 3b / 4 / 4.1 + 4 follow-ups
 
 **Status:** code-complete to `master`; **production deploy gated** on

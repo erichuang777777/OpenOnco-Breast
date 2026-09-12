@@ -104,7 +104,7 @@ async def add_annotation(
     annotation = Annotation(
         plan_id=body.plan_id,
         user_id=user["sub"],
-        user_role=body.role,
+        user_role=user.get("role", body.role),
         annotation_type=body.annotation_type,
         text=body.text,
         track_id=body.track_id,

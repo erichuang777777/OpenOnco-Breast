@@ -1,6 +1,7 @@
 {
   "name": "openonco-hospital-frontend",
   "version": "0.1.0",
+  "description": "OpenOnco Hospital Edition — clinical decision support portal (PWA)",
   "private": true,
   "type": "module",
   "scripts": {

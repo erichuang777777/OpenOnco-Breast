@@ -1,0 +1,56 @@
+version: "3.9"
+
+# ── Local development: SQLite (no postgres required) ─────────────────────────
+#   docker compose up
+#
+# ── Production with PostgreSQL ────────────────────────────────────────────────
+#   docker compose --profile postgres up
+# ─────────────────────────────────────────────────────────────────────────────
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      # Override DATABASE_URL when postgres profile is active
+      DATABASE_URL: ${DATABASE_URL:-sqlite+aiosqlite:///./hospital.db}
+    volumes:
+      # Persist SQLite DB between restarts (dev mode)
+      - app-data:/app
+      # Hot-reload KB content without rebuilding image
+      - ./knowledge_base/hosted/content:/app/knowledge_base/hosted/content:ro
+    depends_on:
+      db:
+        condition: service_healthy
+        required: false
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+
+  db:
+    image: postgres:16-alpine
+    profiles: [postgres]
+    environment:
+      POSTGRES_USER: openonco
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+      POSTGRES_DB: openonco
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U openonco"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  app-data:
+  pg-data:

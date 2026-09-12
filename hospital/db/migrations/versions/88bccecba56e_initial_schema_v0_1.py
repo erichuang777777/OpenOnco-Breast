@@ -252,7 +252,7 @@ def upgrade() -> None:
     sa.Column('acknowledged_by', sa.String(), nullable=True),
     sa.Column('acknowledged_at', sa.DateTime(), nullable=True),
     sa.Column('created_at', sa.DateTime(), nullable=False),
-    sa.CheckConstraint("reminder_type IN ('drug_reapplication','pending_lab','imaging_due','followup_appt','brca_result','custom')", name='ck_reminder_type'),
+    sa.CheckConstraint("reminder_type IN ('drug_reapplication','pending_lab','imaging_due','followup_appt','brca_result','his_sync_stale','custom')", name='ck_reminder_type'),
     sa.CheckConstraint("status IN ('active','acknowledged','expired')", name='ck_reminder_status'),
     sa.CheckConstraint("urgency IN ('low','normal','high','critical')", name='ck_reminder_urgency'),
     sa.ForeignKeyConstraint(['patient_mrn'], ['patients.mrn'], ),

@@ -8,6 +8,7 @@ schemas and the engine's patient dict format.
 from __future__ import annotations
 
 import json
+import logging
 import uuid
 from datetime import datetime, timezone
 from pathlib import Path
@@ -24,6 +25,8 @@ from hospital.decision.schemas.plan import (
     PlanResponse,
     TrackResponse,
 )
+
+_log = logging.getLogger(__name__)
 
 
 def generate_plan(patient_dict: dict, *, kb_root) -> object:
@@ -162,8 +165,8 @@ def compute_gaps(patient: PatientInput, result=None) -> list[GapItem]:
                     if_positive_changes_to=hyp_ind,
                     recommended_test=_test_for_field(field),
                 ))
-        except Exception:
-            pass  # probe failed — skip, don't block
+        except Exception as exc:
+            _log.warning("gap probe failed for field %s: %s", field, exc)
 
     return gaps
 
