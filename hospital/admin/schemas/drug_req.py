@@ -41,6 +41,7 @@ class EvidenceResponse(BaseModel):
 
 
 class DrugReqResponse(BaseModel):
+    id: str = ""  # DB primary key — used for preview URL
     requisition_id: str
     created_date: str
     patient_mrn: str

@@ -1,0 +1,20 @@
+{
+  "_comment": "OpenOnco MCP server config for Claude Desktop.",
+  "_instructions": [
+    "1. Copy this file or merge the 'mcpServers' block into your Claude Desktop config:",
+    "   macOS:   ~/Library/Application Support/Claude/claude_desktop_config.json",
+    "   Windows: %APPDATA%\\Claude\\claude_desktop_config.json",
+    "2. Replace /absolute/path/to/OpenOnco-Breast with the actual path to this repo.",
+    "3. Restart Claude Desktop.",
+    "4. The 'openonco' server will appear in Claude Desktop's tool list."
+  ],
+  "mcpServers": {
+    "openonco": {
+      "command": "python",
+      "args": ["/absolute/path/to/OpenOnco-Breast/hospital/mcp/server.py"],
+      "env": {
+        "KB_ROOT": "/absolute/path/to/OpenOnco-Breast/knowledge_base/hosted/content"
+      }
+    }
+  }
+}
