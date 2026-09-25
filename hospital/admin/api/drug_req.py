@@ -72,7 +72,7 @@ async def create_drug_requisition(
         ip_address=request.client.host if request.client else None,
     )
     await db.flush()
-    return DrugReqResponse(**req)
+    return DrugReqResponse(id=db_req.id, **req)
 
 
 @router.get("/{req_id}/preview", response_class=HTMLResponse)
@@ -109,7 +109,7 @@ async def update_requisition_status(
     if body.external_ref:
         db_req.external_ref = body.external_ref
     data = json.loads(db_req.requisition_json)
-    return DrugReqResponse(**data)
+    return DrugReqResponse(id=db_req.id, **data)
 
 
 # ── Private helpers ───────────────────────────────────────────────────────────
@@ -145,7 +145,7 @@ def _build_from_plan_dict(plan_dict: dict, body: DrugReqCreate) -> dict:
         "plan_track_id": body.track_id,
         "regimen_id": regimen.get("id", ""),
         "regimen_name_en": regimen.get("name", ""),
-        "regimen_name_zh": regimen.get("name_ua", ""),
+        "regimen_name_zh": regimen.get("name_zh", regimen.get("name", "")),
         "cycle_length_days": int(regimen.get("cycle_length_days", 0)),
         "total_cycles": str(regimen.get("total_cycles", "")),
         "components": regimen.get("components", []),

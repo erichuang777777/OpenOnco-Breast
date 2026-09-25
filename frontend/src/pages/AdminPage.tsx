@@ -22,12 +22,24 @@ interface AuditEntry {
   action: string
 }
 
+interface KbStatus {
+  ok: boolean
+  total_entities: number
+  by_type: Record<string, number>
+  schema_errors: number
+  ref_errors: number
+  contract_errors: number
+  last_refreshed_at: string | null
+}
+
 export function AdminPage() {
   const { user } = useAuth()
   const [users, setUsers] = useState<UserRecord[]>([])
   const [reviews, setReviews] = useState<KbReview[]>([])
   const [auditLog, setAuditLog] = useState<AuditEntry[]>([])
   const [filterUser, setFilterUser] = useState('')
+  const [kbStatus, setKbStatus] = useState<KbStatus | null>(null)
+  const [kbRefreshing, setKbRefreshing] = useState(false)
 
   useEffect(() => {
     fetch('/api/v1/admin/users', { credentials: 'include' })
@@ -36,6 +48,8 @@ export function AdminPage() {
       .then((r) => r.ok ? r.json() : []).then(setReviews).catch(() => {})
     fetch('/api/v1/admin/audit', { credentials: 'include' })
       .then((r) => r.ok ? r.json() : []).then(setAuditLog).catch(() => {})
+    fetch('/api/v1/admin/kb/status', { credentials: 'include' })
+      .then((r) => r.ok ? r.json() : null).then(setKbStatus).catch(() => {})
   }, [])
 
   if (!user || (user.role !== 'kb_admin' && user.role !== 'auditor')) {
@@ -56,6 +70,15 @@ export function AdminPage() {
   }
   const rejectReview = (id: string) => {
     fetch(`/api/v1/admin/kb/reviews/${id}/reject`, { method: 'POST', credentials: 'include' }).catch(() => {})
+  }
+
+  const refreshKb = () => {
+    setKbRefreshing(true)
+    fetch('/api/v1/admin/kb/refresh', { method: 'POST', credentials: 'include' })
+      .then((r) => r.ok ? r.json() : null)
+      .then((data) => { if (data) setKbStatus(data) })
+      .catch(() => {})
+      .finally(() => setKbRefreshing(false))
   }
 
   const filteredAudit = filterUser
@@ -87,6 +110,53 @@ export function AdminPage() {
             </select>
           </div>
         ))}
+      </section>
+
+      <section data-testid="kb-status-section">
+        <h2>知識庫狀態</h2>
+        {kbStatus ? (
+          <div style={{ background: kbStatus.ok ? '#f0fdf4' : '#fef2f2', border: `1px solid ${kbStatus.ok ? '#86efac' : '#fca5a5'}`, borderRadius: 6, padding: '0.75rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+              <span data-testid="kb-status-badge" style={{ fontWeight: 600, color: kbStatus.ok ? '#16a34a' : '#dc2626' }}>
+                {kbStatus.ok ? '正常' : '有錯誤'}
+              </span>
+              <span data-testid="kb-total-entities">{kbStatus.total_entities} 個實體</span>
+              {kbStatus.schema_errors > 0 && (
+                <span style={{ color: '#dc2626' }}>{kbStatus.schema_errors} Schema 錯誤</span>
+              )}
+              {kbStatus.ref_errors > 0 && (
+                <span style={{ color: '#dc2626' }}>{kbStatus.ref_errors} 參照錯誤</span>
+              )}
+              {kbStatus.last_refreshed_at && (
+                <span data-testid="kb-last-refreshed" style={{ color: '#6b7280', fontSize: '0.85rem' }}>
+                  上次刷新：{new Date(kbStatus.last_refreshed_at).toLocaleString('zh-TW')}
+                </span>
+              )}
+              <button
+                data-testid="kb-refresh-btn"
+                onClick={refreshKb}
+                disabled={kbRefreshing}
+                style={{ marginLeft: 'auto' }}
+              >
+                {kbRefreshing ? '刷新中…' : '刷新知識庫'}
+              </button>
+            </div>
+            {Object.keys(kbStatus.by_type).length > 0 && (
+              <details style={{ marginTop: '0.5rem' }}>
+                <summary style={{ cursor: 'pointer', color: '#6b7280', fontSize: '0.85rem' }}>實體分類明細</summary>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '0.5rem' }}>
+                  {Object.entries(kbStatus.by_type).sort().map(([type, count]) => (
+                    <span key={type} style={{ background: '#e0f2fe', padding: '0.1rem 0.4rem', borderRadius: 4, fontSize: '0.8rem' }}>
+                      {type}: {count}
+                    </span>
+                  ))}
+                </div>
+              </details>
+            )}
+          </div>
+        ) : (
+          <div style={{ color: '#6b7280' }}>KB 狀態載入中…</div>
+        )}
       </section>
 
       <section data-testid="kb-review-section">
