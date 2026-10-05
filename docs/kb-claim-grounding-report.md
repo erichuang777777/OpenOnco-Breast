@@ -1,6 +1,6 @@
 # KB Claim-Anchor Grounding Report
 
-_Generated_: 2026-09-28T12:35:32.815765+00:00
+_Generated_: 2026-10-05T13:15:51.192038+00:00
 
 Audit of claim-bearing prose fields on Indication, Regimen, and BiomarkerActionability entities. Layer 1 (detection) checks whether the parent entity cites ≥1 SRC-* anchor; Layer 2 (semantic, opt-in) asks the Claude API whether each cited source plausibly supports the claim. Tracks Q4/Q5 of `docs/plans/kb_data_quality_plan_2026-04-29.md`; v1.0 target ≥90% anchor coverage.
 
