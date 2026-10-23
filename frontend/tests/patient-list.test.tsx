@@ -248,7 +248,7 @@ describe('States', () => {
     setupHandlers()
     renderPage()
     await waitForLoad()
-    // Rows render without error
-    expect(screen.getAllByRole('row').length).toBeGreaterThan(0)
+    // Patient cards render without error
+    expect(screen.getAllByRole('button').length).toBeGreaterThan(0)
   })
 })

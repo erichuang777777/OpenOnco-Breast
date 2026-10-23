@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+.pytest_cache/
+*.db
+*.db-shm
+*.db-wal
+
+# Node / Frontend build artifacts (handled by multi-stage)
+frontend/node_modules/
+frontend/dist/
+
+# Git
+.git/
+.github/
+
+# Dev / docs
+legacy/
+mockups/
+docs/
+specs/
+tests/
+contributions/
+infograph/
+examples/
+scripts/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Patient data (CHARTER §9.3)
+patient_plans/
+*.html

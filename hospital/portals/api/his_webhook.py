@@ -7,6 +7,7 @@ Idempotency: de-dup on (raw_mrn, his_event_type, payload hash).
 from __future__ import annotations
 
 import hashlib
+import hmac
 import json
 
 from fastapi import APIRouter, Depends, Header, HTTPException, Request, status
@@ -43,7 +44,9 @@ async def his_ingest(
     db: AsyncSession = Depends(get_db),
 ) -> dict:
     settings = get_settings()
-    if not settings.HIS_WEBHOOK_SECRET or x_his_secret != settings.HIS_WEBHOOK_SECRET:
+    if not settings.HIS_WEBHOOK_SECRET or not hmac.compare_digest(
+        (x_his_secret or "").encode(), settings.HIS_WEBHOOK_SECRET.encode()
+    ):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail={"error": "INVALID_HIS_SECRET", "message": "Missing or wrong X-HIS-Secret."},
@@ -60,24 +63,17 @@ async def his_ingest(
                    sort_keys=True).encode()
     ).hexdigest()
 
-    existing = await db.scalar(
+    # Idempotency: fast pre-filter on hash prefix, then exact match on full hash
+    candidates = await db.scalars(
         select(HisSyncEvent).where(
             HisSyncEvent.raw_mrn == body.mrn,
             HisSyncEvent.his_event_type == body.event_type,
-            HisSyncEvent.payload_json.contains(payload_hash[:16]),  # fast pre-filter
+            HisSyncEvent.payload_json.contains(payload_hash[:16]),
         )
     )
-    # Full idempotency: check payload_json contains the hash marker
-    dupes = await db.scalars(
-        select(HisSyncEvent).where(
-            HisSyncEvent.raw_mrn == body.mrn,
-            HisSyncEvent.his_event_type == body.event_type,
-        )
-    )
-    for d in dupes.all():
+    for d in candidates.all():
         try:
-            stored = json.loads(d.payload_json)
-            if stored.get("_idempotency_key") == payload_hash:
+            if json.loads(d.payload_json).get("_idempotency_key") == payload_hash:
                 return {"status": "duplicate", "id": d.id}
         except Exception:
             pass

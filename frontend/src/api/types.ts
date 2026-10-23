@@ -10,6 +10,7 @@ export interface PatientResponse {
   primary_doctor_id?: string
   his_patient_id?: string
   his_synced_at?: string
+  his_sync_status?: string
   created_at: string
   updated_at: string
   care_team: CareTeamMemberResponse[]
@@ -48,7 +49,7 @@ export interface TimelineEventResponse {
   event_time: string
   source: string
   title: string
-  body_json?: unknown
+  body_json?: Record<string, unknown>
   created_by?: string
   created_at: string
 }
