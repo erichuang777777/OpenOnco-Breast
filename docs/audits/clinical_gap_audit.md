@@ -1,6 +1,6 @@
 # Clinical gap audit
 
-Generated: `2026-10-29T14:34:02Z`
+Generated: `2026-10-30T14:25:04Z`
 
 This is a coverage/governance audit, not a clinical recommendation set.
 It makes the five largest known gaps measurable and repeatable.
